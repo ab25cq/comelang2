@@ -35,7 +35,6 @@ void parse_sharp(sInfo* info=info) version 5
     while(memcmp(info.p, "__extension__", strlen("__extension__")) == 0) {
         info->p += strlen("__extension__");
         skip_spaces_and_lf();
-        skip_paren(info);
     }
 /*
     while(memcmp(info.p, "__asm", strlen("__asm")) == 0) {
@@ -116,6 +115,10 @@ void parse_sharp(sInfo* info=info) version 5
         info->p += strlen("__attribute__");
         skip_spaces_and_lf();
         skip_paren(info);
+    }
+    while(memcmp(info.p, "__extension__", strlen("__extension__")) == 0) {
+        info->p += strlen("__extension__");
+        skip_spaces_and_lf();
     }
 /*
     while(memcmp(info.p, "__asm", strlen("__asm")) == 0) {
@@ -594,7 +597,7 @@ exception tuple3<sType*%,string,bool>*% parse_type(sInfo* info=info, bool parse_
     info.define_struct = false;
     
     string type_name = parse_word();
-    if(type_name === "__extension__") {
+    while(type_name === "__extension__") {
         type_name = parse_word();
     }
     
