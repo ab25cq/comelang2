@@ -57,7 +57,7 @@ bool operator_overload_fun2(sType* type, char* fun_name, CVALUE* left_value, CVA
     
     bool result = false;
     
-    if(operator_fun && (type->mGenericsTypes.length() > 0 || (left_value.type.mClass.mName === right_value.type.mClass.mName && left_value.type.mPointerNum == right_value.type.mPointerNum))) {
+    if(operator_fun) {
         CVALUE*% come_value = new CVALUE;
         string left_value2;
         check_assign_type(s"\{fun_name2} is assigned to", operator_fun.mParamTypes[0], left_value.type);
@@ -1221,7 +1221,154 @@ int sLoadArrayNode*::sline(sLoadArrayNode* self, sInfo* info)
 
 string sLoadArrayNode*::sname(sLoadArrayNode* self, sInfo* info)
 {
-    return string("LOAD ARRAY NODE"); //string(self.sname);
+    return string(self.sname);
+}
+
+struct sLoadRangeArrayNode
+{
+    sNode*% mLeft;
+    list<sNode*%>*% mArrayNum;
+    bool mQuote;
+  
+    int sline;
+    string sname;
+};
+
+sLoadRangeArrayNode*% sLoadRangeArrayNode*::initialize(sLoadRangeArrayNode*% self, sNode* left, list<sNode*%>*% array_num, bool quote, sInfo* info)
+{
+    self.sline = info.sline;
+    self.sname = string(info.sname);
+    
+    self.mArrayNum = clone array_num;
+
+    self.mLeft = clone left;
+    self.mQuote = quote;
+
+    return self;
+}
+
+bool sLoadRangeArrayNode*::terminated()
+{
+    return false;
+}
+
+string sLoadRangeArrayNode*::kind()
+{
+    return string("sLoadRangeArrayNode");
+}
+
+bool sLoadRangeArrayNode*::compile(sLoadRangeArrayNode* self, sInfo* info)
+{
+    sNode* left = self.mLeft;
+    list<sNode*%>* array_num_nodes = self.mArrayNum;
+    
+    if(!left.compile->(info)) {
+        return false;
+    }
+    
+    CVALUE*% left_value = get_value_from_stack(-1, info);
+    dec_stack_ptr(1, info);
+    
+    sType*% left_type = clone left_value.type;
+    
+    list<CVALUE*%>*% array_num = new list<CVALUE*%>();
+    
+    foreach(it, array_num_nodes) {
+        if(!it.compile->(info)) {
+            return false;
+        }
+        
+        CVALUE*% c_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        array_num.push_back(c_value);
+    }
+    
+    sType*% type = clone left_value.type;
+    
+    char* fun_name = "operator_load_range_element";
+    bool calling_fun;
+    if(self.mQuote) {
+        calling_fun = false;
+    }
+    else {
+        calling_fun = operator_overload_fun2(type, fun_name, left_value, array_num[0], array_num[1], info);
+    }
+    
+    if(!calling_fun) {
+        CVALUE*% come_value = new CVALUE;
+        
+        buffer*% buf = new buffer();
+        
+        buf.append_str(left_value.c_value);
+        
+        foreach(it, array_num) {
+            buf.append_str(xsprintf("[%s]", it.c_value));
+        }
+        
+        string left_value_code = buf.to_string();
+        
+        come_value.c_value = xsprintf("%s", left_value_code);
+        
+        sType*% result_type = clone left_type;
+        
+        if(result_type->mOriginalLoadVarType->v1) {
+            result_type = result_type->mOriginalLoadVarType->v1;
+        }
+        
+        if(result_type.mArrayNum.length() > 0) {
+            int n = result_type.mArrayNum.length() - array_num.length();
+            
+            if(n == 0) {
+                result_type = clone left_type;
+                if(left_type->mOriginalLoadVarType.v1) {
+                    result_type = clone left_type->mOriginalLoadVarType.v1;
+                }
+                result_type->mArrayNum.reset();
+            }
+            else if(n > 0) {
+                for(int i=0; i<n; i++) {
+                    result_type.mArrayNum.delete(-1, -1);
+                }
+            }
+            else if(n < 0) {
+                result_type.mArrayNum.reset();
+                result_type.mPointerNum += n;
+                
+                if(result_type.mPointerNum < 0) {
+                    result_type.mPointerNum = 0;
+                }
+            }
+        }
+        else {
+            if(result_type->mPointerNum > 0) {
+                result_type->mPointerNum -= array_num.length();
+                
+                if(result_type->mPointerNum < 0) {
+                    result_type->mPointerNum = 0;
+                }
+            }
+        }
+        
+        come_value.type = clone result_type;
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+    }
+
+    return true;
+}
+
+int sLoadRangeArrayNode*::sline(sLoadRangeArrayNode* self, sInfo* info)
+{
+    return self.sline;
+}
+
+string sLoadRangeArrayNode*::sname(sLoadRangeArrayNode* self, sInfo* info)
+{
+    return string(self.sname);
 }
 
 sNode*% post_position_operator2(sNode*% node, sInfo* info) version 18
@@ -1239,7 +1386,7 @@ sNode*% parse_method_call(sNode*% obj, string fun_name, sInfo* info) version 18
 
 sNode*% exception_get_value(sNode*% node, sInfo* info)
 {
-    if(*info->p == '.' || (*info->p == '-' && *(info->p+1) == '>')) {
+    if((*info->p == '.' && *(info->p+1) != '.') || (*info->p == '-' && *(info->p+1) == '>')) {
         char* p = info.p;
         int sline = info.sline;
         
@@ -1286,6 +1433,8 @@ sNode*% post_position_operator(sNode*% node, sInfo* info) version 18
             if(quote) {
                 info->p++;
             }
+            
+            bool range = false;
             list<sNode*%>*% array_num = new list<sNode*%>();
             while(1) {
                 if(*info->p == '[') {
@@ -1298,13 +1447,31 @@ sNode*% post_position_operator(sNode*% node, sInfo* info) version 18
                     
                     array_num.push_back(node);
                     
-                    if(*info->p == ']') {
-                        info->p++;
-                        skip_spaces_and_lf();
+                    if(*info->p == '.' && *(info->p+1) == '.') {
+                        info->p += 2;
+                        skip_spaces_and_lf(info);
+                        
+                        skip_pointer_attribute();
+                        
+                        sNode*% node2 = expression();
+                        
+                        array_num.push_back(node2);
+                        
+                        expected_next_character(']');
+                        
+                        range = true;
+                        
+                        break;
                     }
                     else {
-                        err_msg(info, "require ] character");
-                        exit(2);
+                        if(*info->p == ']') {
+                            info->p++;
+                            skip_spaces_and_lf();
+                        }
+                        else {
+                            err_msg(info, "require ] character");
+                            exit(2);
+                        }
                     }
                 }
                 else {
@@ -1312,7 +1479,12 @@ sNode*% post_position_operator(sNode*% node, sInfo* info) version 18
                 }
             }
             
-            if(*info->p == '=' && *(info->p+1) != '=') {
+            if(range) {
+                node = new sLoadRangeArrayNode(node, array_num, quote, info) implements sNode;
+                
+//                node = exception_get_value(node, info)
+            }
+            else if(*info->p == '=' && *(info->p+1) != '=') {
                 info->p++;
                 skip_spaces_and_lf();
                 
@@ -1338,8 +1510,7 @@ sNode*% post_position_operator(sNode*% node, sInfo* info) version 18
             
             node = new sNullCheckNode(node, false@only_null_checker, info) implements sNode;
         }
-        else if(*info->p == '.' || (*info->p == '-' && *(info->p+1) == '>')) 
-        {
+        else if((*info->p == '.' && *(info->p+1) != '.') || (*info->p == '-' && *(info->p+1) == '>')) {
             if(*info->p == '.') {
                 info->p++;
                 skip_spaces_and_lf();

@@ -816,8 +816,6 @@ sNode*% expression_node(sInfo* info=info) version 1
     parse_sharp();
     
     err_msg(info, "invalid character(%c)(1)\n", *info->p);
-int* a =(void*)0;
-*a = 0;
     exit(3);
     return (sNode*%)null;
 }

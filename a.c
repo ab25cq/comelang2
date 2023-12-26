@@ -1,15 +1,15 @@
 #include <comelang2.h>
 
-__extension__
-
-
-typedef unsigned wchar_t;
-
 int main(int argc, char** argv)
 {
-    int a = 1;
+    string a = string("ABCDEF");
     
-    puts(s"a $a");
+    puts(a[0..3]);
+    
+    
+    var l = [1,2,3,4,5];
+    
+    puts(l[0..3].to_string());
     
     return 0;
 }

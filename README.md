@@ -7,7 +7,7 @@ Yet another modern compiler. It has a collection library with reffrence count gc
 
 もう一つのモダンなコンパイラ。オリジナルのリファレンスカウントGCを持ったコレクションライブラリがあります。C言語と互換性があります。
 
-version 2.0.3
+version 2.0.5
 
 I will release comelang2 version 2.0.0. When version 2.0.0, comelang2 will be complete.
 
@@ -189,7 +189,19 @@ int main()
     int zzz = 123;
     puts(s"zzz == \{zzz}");    // zzz == 123
     
+    puts(s"zzz == $zzz");      // zzz == 123
+    
     puts(s"1+1 == \{1+1}");    // 1+1 == 2
+    
+    var str2 = string("ABCDEF");
+    
+    puts(str2[0..2]);          // AB
+    
+    var list1 = [1,2,3,4,5];
+    
+    puts(list1[0..2].to_string());   // [1,2]
+    
+    int 
     
     int value = div(left:9, right:0)!;    // print out stackframe. and abort
     

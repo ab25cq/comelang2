@@ -1359,6 +1359,91 @@ string char*::reverse(char* str)
 
     return result;
 }
+string string::operator_load_range_element(char* str, int head, int tail)
+{
+    if(str == null) {
+        return string("");
+    }
+
+    int len = strlen(str);
+
+    if(head < 0) {
+        head += len;
+    }
+    if(tail < 0) {
+        tail += len + 1;
+    }
+
+    if(head > tail) {
+        return str.substring(tail, head).reverse();
+    }
+
+    if(head < 0) {
+        head = 0;
+    }
+
+    if(tail >= len) {
+        tail = len;
+    }
+
+    if(head == tail) {
+        return string("");
+    }
+
+    if(tail-head+1 < 1) {
+        return string("");
+    }
+
+    string result = new char[tail-head+1];
+
+    memcpy(result, str + head, tail-head);
+    result[tail-head] = '\0';
+
+    return result;
+}
+
+string char*::operator_load_range_element(char* str, int head, int tail)
+{
+    if(str == null) {
+        return string("");
+    }
+
+    int len = strlen(str);
+
+    if(head < 0) {
+        head += len;
+    }
+    if(tail < 0) {
+        tail += len + 1;
+    }
+
+    if(head > tail) {
+        return str.substring(tail, head).reverse();
+    }
+
+    if(head < 0) {
+        head = 0;
+    }
+
+    if(tail >= len) {
+        tail = len;
+    }
+
+    if(head == tail) {
+        return string("");
+    }
+
+    if(tail-head+1 < 1) {
+        return string("");
+    }
+
+    string result = new char[tail-head+1];
+
+    memcpy(result, str + head, tail-head);
+    result[tail-head] = '\0';
+
+    return result;
+}
 
 string char*::substring(char* str, int head, int tail)
 {

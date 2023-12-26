@@ -8,7 +8,6 @@ then
         ./configure --with-debug --prefix=$HOME
     else
         ./configure --with-debug
-        
     fi
 fi
 

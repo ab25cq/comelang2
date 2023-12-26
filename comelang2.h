@@ -749,6 +749,37 @@ impl list <T>
         memset(&default_value, 0, sizeof(T));
         return none(default_value);
     }
+    list<T>*% operator_load_range_element(list<T>* self, int begin, int tail) {
+        list<T>*% result = new list<T>.initialize();
+
+        if(begin < 0) {
+            begin += self.len;
+        }
+
+        if(tail < 0) {
+            tail += self.len + 1;
+        }
+
+        if(begin < 0) {
+            begin = 0;
+        }
+
+        if(tail >= self.len) {
+            tail = self.len;
+        }
+
+        list_item<T>* it = self.head;
+        int i = 0;
+        while(it != null) {
+            if(i >= begin && i < tail) {
+                result.push_back(it.item);
+            }
+            it = it.next;
+            i++;
+        };
+
+        return result;
+    }
     bool operator_equals(list<T>* self, list<T>* right) 
     {
         return self.equals(right);
@@ -2017,6 +2048,8 @@ int string::length(char* str);
 int char*::length(char* str);
 string char*::substring(char* str, int head, int tail);
 string string::substring(char* str, int head, int tail);
+string string::operator_load_range_element(char* str, int head, int tail);
+string char*::operator_load_range_element(char* str, int head, int tail);
 string char*::reverse(char* str) ;
 string string::reverse(char* str) ;
 string xsprintf(char* msg, ...);
