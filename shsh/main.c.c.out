@@ -1,0 +1,221 @@
+clang: warning: -lpcre: 'linker' input unused [-Wunused-command-line-argument]
+clang: warning: -lcomelang2-str: 'linker' input unused [-Wunused-command-line-argument]
+clang: warning: -lreadline: 'linker' input unused [-Wunused-command-line-argument]
+main.c.c:833:15: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+typedef short short __s16;
+              ^~~~~~
+main.c.c:2072:5: warning: incompatible redeclaration of library function 'snprintf' [-Wincompatible-library-redeclaration]
+int snprintf(char* __s, long int __maxlen, const char* __format, ...);
+    ^
+main.c.c:2072:5: note: 'snprintf' is a builtin with type 'int (char *, unsigned long, const char *, ...)'
+main.c.c:2074:5: warning: incompatible redeclaration of library function 'vsnprintf' [-Wincompatible-library-redeclaration]
+int vsnprintf(char* __s, long int __maxlen, const char* __format, va_list __arg);
+    ^
+main.c.c:2074:5: note: 'vsnprintf' is a builtin with type 'int (char *, unsigned long, const char *, __builtin_va_list)'
+main.c.c:2154:10: warning: incompatible redeclaration of library function 'fread' [-Wincompatible-library-redeclaration]
+long int fread(void* __ptr, long int __size, long int __n, struct _IO_FILE* __stream);
+         ^
+main.c.c:2154:10: note: 'fread' is a builtin with type 'unsigned long (void *, unsigned long, unsigned long, FILE *)' (aka 'unsigned long (void *, unsigned long, unsigned long, struct _IO_FILE *)')
+main.c.c:2156:10: warning: incompatible redeclaration of library function 'fwrite' [-Wincompatible-library-redeclaration]
+long int fwrite(const void* __ptr, long int __size, long int __n, struct _IO_FILE* __s);
+         ^
+main.c.c:2156:10: note: 'fwrite' is a builtin with type 'unsigned long (const void *, unsigned long, unsigned long, FILE *)' (aka 'unsigned long (const void *, unsigned long, unsigned long, struct _IO_FILE *)')
+main.c.c:2370:7: warning: incompatible redeclaration of library function 'malloc' [-Wincompatible-library-redeclaration]
+void* malloc(long int __size);
+      ^
+main.c.c:2370:7: note: 'malloc' is a builtin with type 'void *(unsigned long)'
+main.c.c:2372:7: warning: incompatible redeclaration of library function 'calloc' [-Wincompatible-library-redeclaration]
+void* calloc(long int __nmemb, long int __size);
+      ^
+main.c.c:2372:7: note: 'calloc' is a builtin with type 'void *(unsigned long, unsigned long)'
+main.c.c:2374:7: warning: incompatible redeclaration of library function 'realloc' [-Wincompatible-library-redeclaration]
+void* realloc(void* __ptr, long int __size);
+      ^
+main.c.c:2374:7: note: 'realloc' is a builtin with type 'void *(void *, unsigned long)'
+main.c.c:2380:7: warning: incompatible redeclaration of library function 'alloca' [-Wincompatible-library-redeclaration]
+void* alloca(long int __size);
+      ^
+main.c.c:2380:7: note: 'alloca' is a builtin with type 'void *(unsigned long)'
+main.c.c:2386:7: warning: incompatible redeclaration of library function 'aligned_alloc' [-Wincompatible-library-redeclaration]
+void* aligned_alloc(long int __alignment, long int __size);
+      ^
+main.c.c:2386:7: note: 'aligned_alloc' is a builtin with type 'void *(unsigned long, unsigned long)'
+main.c.c:2506:7: warning: incompatible redeclaration of library function 'memcpy' [-Wincompatible-library-redeclaration]
+void* memcpy(void* __dest, const void* __src, long int __n);
+      ^
+main.c.c:2506:7: note: 'memcpy' is a builtin with type 'void *(void *, const void *, unsigned long)'
+main.c.c:2508:7: warning: incompatible redeclaration of library function 'memmove' [-Wincompatible-library-redeclaration]
+void* memmove(void* __dest, const void* __src, long int __n);
+      ^
+main.c.c:2508:7: note: 'memmove' is a builtin with type 'void *(void *, const void *, unsigned long)'
+main.c.c:2510:7: warning: incompatible redeclaration of library function 'memccpy' [-Wincompatible-library-redeclaration]
+void* memccpy(void* __dest, const void* __src, int __c, long int __n);
+      ^
+main.c.c:2510:7: note: 'memccpy' is a builtin with type 'void *(void *, const void *, int, unsigned long)'
+main.c.c:2512:7: warning: incompatible redeclaration of library function 'memset' [-Wincompatible-library-redeclaration]
+void* memset(void* __s, int __c, long int __n);
+      ^
+main.c.c:2512:7: note: 'memset' is a builtin with type 'void *(void *, int, unsigned long)'
+main.c.c:2514:5: warning: incompatible redeclaration of library function 'memcmp' [-Wincompatible-library-redeclaration]
+int memcmp(const void* __s1, const void* __s2, long int __n);
+    ^
+main.c.c:2514:5: note: 'memcmp' is a builtin with type 'int (const void *, const void *, unsigned long)'
+main.c.c:2518:7: warning: incompatible redeclaration of library function 'memchr' [-Wincompatible-library-redeclaration]
+void* memchr(const void* __s, int __c, long int __n);
+      ^
+main.c.c:2518:7: note: 'memchr' is a builtin with type 'void *(const void *, int, unsigned long)'
+main.c.c:2526:7: warning: incompatible redeclaration of library function 'strncpy' [-Wincompatible-library-redeclaration]
+char* strncpy(char* __dest, const char* __src, long int __n);
+      ^
+main.c.c:2526:7: note: 'strncpy' is a builtin with type 'char *(char *, const char *, unsigned long)'
+main.c.c:2530:7: warning: incompatible redeclaration of library function 'strncat' [-Wincompatible-library-redeclaration]
+char* strncat(char* __dest, const char* __src, long int __n);
+      ^
+main.c.c:2530:7: note: 'strncat' is a builtin with type 'char *(char *, const char *, unsigned long)'
+main.c.c:2534:5: warning: incompatible redeclaration of library function 'strncmp' [-Wincompatible-library-redeclaration]
+int strncmp(const char* __s1, const char* __s2, long int __n);
+    ^
+main.c.c:2534:5: note: 'strncmp' is a builtin with type 'int (const char *, const char *, unsigned long)'
+main.c.c:2538:10: warning: incompatible redeclaration of library function 'strxfrm' [-Wincompatible-library-redeclaration]
+long int strxfrm(char* __dest, const char* __src, long int __n);
+         ^
+main.c.c:2538:10: note: 'strxfrm' is a builtin with type 'unsigned long (char *, const char *, unsigned long)'
+main.c.c:2546:7: warning: incompatible redeclaration of library function 'strndup' [-Wincompatible-library-redeclaration]
+char* strndup(const char* __string, long int __n);
+      ^
+main.c.c:2546:7: note: 'strndup' is a builtin with type 'char *(const char *, unsigned long)'
+main.c.c:2554:10: warning: incompatible redeclaration of library function 'strcspn' [-Wincompatible-library-redeclaration]
+long int strcspn(const char* __s, const char* __reject);
+         ^
+main.c.c:2554:10: note: 'strcspn' is a builtin with type 'unsigned long (const char *, const char *)'
+main.c.c:2556:10: warning: incompatible redeclaration of library function 'strspn' [-Wincompatible-library-redeclaration]
+long int strspn(const char* __s, const char* __accept);
+         ^
+main.c.c:2556:10: note: 'strspn' is a builtin with type 'unsigned long (const char *, const char *)'
+main.c.c:2574:7: warning: incompatible redeclaration of library function 'mempcpy' [-Wincompatible-library-redeclaration]
+void* mempcpy(void* __dest, const void* __src, long int __n);
+      ^
+main.c.c:2574:7: note: 'mempcpy' is a builtin with type 'void *(void *, const void *, unsigned long)'
+main.c.c:2576:10: warning: incompatible redeclaration of library function 'strlen' [-Wincompatible-library-redeclaration]
+long int strlen(const char* __s);
+         ^
+main.c.c:2576:10: note: 'strlen' is a builtin with type 'unsigned long (const char *)'
+main.c.c:2590:5: warning: incompatible redeclaration of library function 'bcmp' [-Wincompatible-library-redeclaration]
+int bcmp(const void* __s1, const void* __s2, long int __n);
+    ^
+main.c.c:2590:5: note: 'bcmp' is a builtin with type 'int (const void *, const void *, unsigned long)'
+main.c.c:2594:6: warning: incompatible redeclaration of library function 'bzero' [-Wincompatible-library-redeclaration]
+void bzero(void* __s, long int __n);
+     ^
+main.c.c:2594:6: note: 'bzero' is a builtin with type 'void (void *, unsigned long)'
+main.c.c:2608:5: warning: incompatible redeclaration of library function 'strncasecmp' [-Wincompatible-library-redeclaration]
+int strncasecmp(const char* __s1, const char* __s2, long int __n);
+    ^
+main.c.c:2608:5: note: 'strncasecmp' is a builtin with type 'int (const char *, const char *, unsigned long)'
+main.c.c:2630:7: warning: incompatible redeclaration of library function 'stpncpy' [-Wincompatible-library-redeclaration]
+char* stpncpy(char* __dest, const char* __src, long int __n);
+      ^
+main.c.c:2630:7: note: 'stpncpy' is a builtin with type 'char *(char *, const char *, unsigned long)'
+main.c.c:2718:63: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+struct buffer* buffer_append_short(struct buffer* self, short short value);
+                                                              ^~~~~~
+main.c.c:2736:26: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+_Bool short_equals(short short self, short short right);
+                         ^~~~~~
+main.c.c:2736:44: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+_Bool short_equals(short short self, short short right);
+                                           ^~~~~~
+main.c.c:2770:39: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+unsigned int short_get_hash_key(short short value);
+                                      ^~~~~~
+main.c.c:2790:29: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+short int short_clone(short short self);
+                            ^~~~~~
+main.c.c:2862:29: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+char* short_to_string(short short self);
+                            ^~~~~~
+main.c.c:2882:25: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int short_compare(short short left, short short right);
+                        ^~~~~~
+main.c.c:2882:43: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int short_compare(short short left, short short right);
+                                          ^~~~~~
+main.c.c:3102:5: warning: incompatible redeclaration of library function 'wcsncmp' [-Wincompatible-library-redeclaration]
+int wcsncmp(const unsigned int* __s1, const unsigned int* __s2, long int __n);
+    ^
+main.c.c:3102:5: note: 'wcsncmp' is a builtin with type 'int (const unsigned int *, const unsigned int *, unsigned long)'
+main.c.c:3138:10: warning: incompatible redeclaration of library function 'wcslen' [-Wincompatible-library-redeclaration]
+long int wcslen(const unsigned int* __s);
+         ^
+main.c.c:3138:10: note: 'wcslen' is a builtin with type 'unsigned long (const unsigned int *)'
+main.c.c:3144:15: warning: incompatible redeclaration of library function 'wmemchr' [-Wincompatible-library-redeclaration]
+unsigned int* wmemchr(const unsigned int* __s, unsigned int __c, long int __n);
+              ^
+main.c.c:3144:15: note: 'wmemchr' is a builtin with type 'unsigned int *(const unsigned int *, unsigned int, unsigned long)'
+main.c.c:3146:5: warning: incompatible redeclaration of library function 'wmemcmp' [-Wincompatible-library-redeclaration]
+int wmemcmp(const unsigned int* __s1, const unsigned int* __s2, long int __n);
+    ^
+main.c.c:3146:5: note: 'wmemcmp' is a builtin with type 'int (const unsigned int *, const unsigned int *, unsigned long)'
+main.c.c:3148:15: warning: incompatible redeclaration of library function 'wmemcpy' [-Wincompatible-library-redeclaration]
+unsigned int* wmemcpy(unsigned int* __s1, const unsigned int* __s2, long int __n);
+              ^
+main.c.c:3148:15: note: 'wmemcpy' is a builtin with type 'unsigned int *(unsigned int *, const unsigned int *, unsigned long)'
+main.c.c:3150:15: warning: incompatible redeclaration of library function 'wmemmove' [-Wincompatible-library-redeclaration]
+unsigned int* wmemmove(unsigned int* __s1, const unsigned int* __s2, long int __n);
+              ^
+main.c.c:3150:15: note: 'wmemmove' is a builtin with type 'unsigned int *(unsigned int *, const unsigned int *, unsigned long)'
+main.c.c:4918:30: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]
+    __result3__ = ((((__bsx)&18374686479671623680)>>56)|(((__bsx)&71776119061217280)>>40)|(((__bsx)&280375465082880)>>24)|(((__bsx)&1095216660480)>>8)|(((__bsx)&4278190080)<<8)|(((__bsx)&16711680)<<24)|(((__bsx)&65280)<<40)|(((__bsx)&255)<<56));
+                             ^
+main.c.c:5751:14: warning: address of 'glob_result_4' will always evaluate to 'true' [-Wpointer-bool-conversion]
+        if((&glob_result_4) && !__freed_obj__) { come_call_finalizer(glob_t_finalize,(&glob_result_4), (void*)0, (void*)0, 1, 0, 0, 0); }
+             ^~~~~~~~~~~~~  ~~
+main.c.c:5791:10: warning: address of 'glob_result_4' will always evaluate to 'true' [-Wpointer-bool-conversion]
+    if((&glob_result_4) && !__freed_obj__) { come_call_finalizer(glob_t_finalize,(&glob_result_4), (void*)0, (void*)0, 1, 0, 0, 0); }
+         ^~~~~~~~~~~~~  ~~
+main.c.c:5795:10: warning: address of 'glob_result_4' will always evaluate to 'true' [-Wpointer-bool-conversion]
+    if((&glob_result_4) && !__freed_obj__) { come_call_finalizer(glob_t_finalize,(&glob_result_4), (void*)0, (void*)0, 1, 0, 0, 0); }
+         ^~~~~~~~~~~~~  ~~
+main.c.c:7454:22: warning: address of 'info_70' will always evaluate to 'true' [-Wpointer-bool-conversion]
+                if((&info_70) && !__freed_obj__) { come_call_finalizer(sInfo_finalize,(&info_70), (void*)0, (void*)0, 1, 0, 0, 0); }
+                     ^~~~~~~  ~~
+main.c.c:7583:10: warning: address of 'info_70' will always evaluate to 'true' [-Wpointer-bool-conversion]
+    if((&info_70) && !__freed_obj__) { come_call_finalizer(sInfo_finalize,(&info_70), (void*)0, (void*)0, 1, 0, 0, 0); }
+         ^~~~~~~  ~~
+main.c.c:7587:10: warning: address of 'info_70' will always evaluate to 'true' [-Wpointer-bool-conversion]
+    if((&info_70) && !__freed_obj__) { come_call_finalizer(sInfo_finalize,(&info_70), (void*)0, (void*)0, 1, 0, 0, 0); }
+         ^~~~~~~  ~~
+main.c.c:8254:10: warning: address of 'sa_90' will always evaluate to 'true' [-Wpointer-bool-conversion]
+    if((&sa_90) && !__freed_obj__) { come_call_finalizer(sigaction_finalize,(&sa_90), (void*)0, (void*)0, 1, 0, 0, 0); }
+         ^~~~~  ~~
+main.c.c:8373:10: warning: address of 'sigset_91' will always evaluate to 'true' [-Wpointer-bool-conversion]
+    if((&sigset_91) && !__freed_obj__) { come_call_finalizer(sigset_t_finalize,(&sigset_91), (void*)0, (void*)0, 1, 0, 0, 0); }
+         ^~~~~~~~~  ~~
+main.c.c:8559:10: warning: address of 'sa_92' will always evaluate to 'true' [-Wpointer-bool-conversion]
+    if((&sa_92) && !__freed_obj__) { come_call_finalizer(sigaction_finalize,(&sa_92), (void*)0, (void*)0, 1, 0, 0, 0); }
+         ^~~~~  ~~
+main.c.c:8719:10: warning: address of 'stat__97' will always evaluate to 'true' [-Wpointer-bool-conversion]
+    if((&stat__97) && !__freed_obj__) { come_call_finalizer(stat_finalize,(&stat__97), (void*)0, (void*)0, 1, 0, 0, 0); }
+         ^~~~~~~~  ~~
+main.c.c:8988:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+main.c.c:9126:37: warning: incompatible pointer types assigning to 'char **' from 'char (*)[4096]' [-Wincompatible-pointer-types]
+        __current_stack10__.cwd_111 = &cwd_111;
+                                    ^ ~~~~~~~~
+main.c.c:9131:32: warning: cast to smaller integer type 'int' from 'void *' [-Wvoid-pointer-to-int-cast]
+                        return (int)__current_stack10__.__method_block_return_value__;
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:9167:41: warning: incompatible pointer types assigning to 'char **' from 'char (*)[4096]' [-Wincompatible-pointer-types]
+            __current_stack11__.cwd_111 = &cwd_111;
+                                        ^ ~~~~~~~~
+main.c.c:9180:36: warning: cast to smaller integer type 'int' from 'void *' [-Wvoid-pointer-to-int-cast]
+                            return (int)__current_stack11__.__method_block_return_value__;
+                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:9224:37: warning: incompatible pointer types assigning to 'char **' from 'char (*)[4096]' [-Wincompatible-pointer-types]
+        __current_stack12__.cwd_111 = &cwd_111;
+                                    ^ ~~~~~~~~
+main.c.c:9229:32: warning: cast to smaller integer type 'int' from 'void *' [-Wvoid-pointer-to-int-cast]
+                        return (int)__current_stack12__.__method_block_return_value__;
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+61 warnings generated.

@@ -1,0 +1,247 @@
+#########################################
+# installed directories
+#########################################
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+bindir=@bindir@
+datadir=@datadir@
+mandir=@mandir@
+sharedstatedir=@sharedstatedir@
+sysconfdir=@sysconfdir@/comelang
+includedir=@includedir@/comelang
+datarootdir=@datarootdir@/comelang
+docdir=@datadir@/doc
+libdir=@libdir@
+
+#########################################
+# environmnet variables
+#########################################
+CC=@CC@
+INSTALL=@INSTALL@
+CFLAGS=@CFLAGS@
+LIBS=@LIBS@
+OS=@OS@
+DESTDIR=@DESTDIR@
+OBJS=@OBJS@
+CLANG=@CLANG@
+SELF_HOST_OBJS=@SELF_HOST_OBJS@
+
+#########################################
+# main
+#########################################
+all: comelang2-sh
+
+comelang2: 01main.c.o 02transpile.c.o 03transpile2.c.o 04heap.c.o 05function.c.o 05function2.c.o 05function3.c.o 05function4.c.o 06str.c.o 07var.c.o 08if.c.o 09while.c.o 10do_while.c.o 11for.c.o 12switch.c.o 13op.c.o 14struct.c.o 15union.c.o 16enum.c.o 17typedef.c.o 18field.c.o 19eq.c.o 20method.c.o 21obj.c.o 22impl.c.o 23interface.c.o libcomelang2.a libcomelang2-str.a
+	comelang2 -o comelang2  01main.c.o 02transpile.c.o 03transpile2.c.o 04heap.c.o 05function.c.o 05function2.c.o 05function3.c.o 05function4.c.o 06str.c.o 07var.c.o 08if.c.o 09while.c.o 10do_while.c.o 11for.c.o 12switch.c.o 13op.c.o 14struct.c.o 15union.c.o 16enum.c.o 17typedef.c.o 18field.c.o 19eq.c.o 20method.c.o 21obj.c.o 22impl.c.o 23interface.c.o
+
+01main.c.o: 01main.c
+	comelang2 -o 01main.c.o -c 01main.c $(CFLAGS)
+
+02transpile.c.o: 02transpile.c
+	comelang2 -o 02transpile.c.o -c 02transpile.c $(CFLAGS)
+
+03transpile2.c.o: 03transpile2.c
+	comelang2 -o 03transpile2.c.o -c 03transpile2.c $(CFLAGS)
+
+04heap.c.o: 04heap.c
+	comelang2 -o 04heap.c.o -c 04heap.c $(CFLAGS)
+
+05function.c.o: 05function.c
+	comelang2 -o 05function.c.o -c 05function.c $(CFLAGS)
+
+05function2.c.o: 05function2.c
+	comelang2 -o 05function2.c.o -c 05function2.c $(CFLAGS)
+
+05function3.c.o: 05function3.c
+	comelang2 -o 05function3.c.o -c 05function3.c $(CFLAGS)
+
+05function4.c.o: 05function4.c
+	comelang2 -o 05function4.c.o -g -c 05function4.c $(CFLAGS)
+
+06str.c.o: 06str.c
+	comelang2 -o 06str.c.o -c 06str.c $(CFLAGS)
+
+07var.c.o: 07var.c
+	comelang2 -o 07var.c.o -c 07var.c $(CFLAGS)
+
+08if.c.o: 08if.c
+	comelang2 -o 08if.c.o -c 08if.c $(CFLAGS)
+
+09while.c.o: 09while.c
+	comelang2 -o 09while.c.o -c 09while.c $(CFLAGS)
+
+10do_while.c.o: 10do_while.c
+	comelang2 -o 10do_while.c.o -c 10do_while.c $(CFLAGS)
+
+11for.c.o: 11for.c
+	comelang2 -o 11for.c.o -c 11for.c $(CFLAGS)
+
+12switch.c.o: 12switch.c
+	comelang2 -o 12switch.c.o -c 12switch.c $(CFLAGS)
+
+13op.c.o: 13op.c
+	comelang2 -o 13op.c.o -c 13op.c $(CFLAGS)
+
+14struct.c.o: 14struct.c
+	comelang2 -o 14struct.c.o -c 14struct.c $(CFLAGS)
+
+15union.c.o: 15union.c
+	comelang2 -o 15union.c.o -c 15union.c $(CFLAGS)
+
+16enum.c.o: 16enum.c
+	comelang2 -o 16enum.c.o -c 16enum.c $(CFLAGS)
+
+17typedef.c.o: 17typedef.c
+	comelang2 -o 17typedef.c.o -c 17typedef.c $(CLAGS)
+
+18field.c.o: 18field.c
+	comelang2 -o 18field.c.o -c 18field.c $(CFLAGS)
+
+19eq.c.o: 19eq.c
+	comelang2 -o 19eq.c.o -c 19eq.c $(CFLAGS)
+
+20method.c.o: 20method.c
+	comelang2 -o 20method.c.o -c 20method.c $(CFLAGS)
+
+21obj.c.o: 21obj.c
+	comelang2 -o 21obj.c.o -c 21obj.c $(CFLAGS)
+
+22impl.c.o: 22impl.c
+	comelang2 -o 22impl.c.o -c 22impl.c $(CFLAGS)
+
+23interface.c.o: 23interface.c
+	comelang2 -o 23interface.c.o -c 23interface.c $(CFLAGS)
+
+libcomelang2.a: libcomelang2.c
+	comelang2 -c libcomelang2.c $(CFLAGS)
+	ar r libcomelang2.a libcomelang2.c.o
+
+libcomelang2-str.a: libcomelang2-str.c
+	comelang2 -c libcomelang2-str.c $(CFLAGS)
+	ar r libcomelang2-str.a libcomelang2-str.c.o
+
+comelang2-sh: 01main.c.o.tmp 02transpile.c.o.tmp 03transpile2.c.o.tmp 04heap.c.o.tmp 05function.c.o.tmp 05function2.c.o.tmp 05function3.c.o.tmp 05function4.c.o.tmp 06str.c.o.tmp 07var.c.o.tmp 08if.c.o.tmp 09while.c.o.tmp 10do_while.c.o.tmp 11for.c.o.tmp 12switch.c.o.tmp 13op.c.o.tmp 14struct.c.o.tmp 15union.c.o.tmp 16enum.c.o.tmp 17typedef.c.o.tmp 18field.c.o.tmp 19eq.c.o.tmp 20method.c.o.tmp 21obj.c.o.tmp 22impl.c.o.tmp 23interface.c.o.tmp libcomelang2.c.o.tmp libcomelang2-str.c.o.tmp
+	clang -o comelang2-sh  01main.c.o.tmp 02transpile.c.o.tmp 03transpile2.c.o.tmp 04heap.c.o.tmp 05function.c.o.tmp 05function2.c.o.tmp 05function3.c.o.tmp 05function4.c.o.tmp 06str.c.o.tmp 07var.c.o.tmp 08if.c.o.tmp 09while.c.o.tmp 10do_while.c.o.tmp 11for.c.o.tmp 12switch.c.o.tmp 13op.c.o.tmp 14struct.c.o.tmp 15union.c.o.tmp 16enum.c.o.tmp 17typedef.c.o.tmp 18field.c.o.tmp 19eq.c.o.tmp 20method.c.o.tmp 21obj.c.o.tmp 22impl.c.o.tmp 23interface.c.o.tmp libcomelang2.c.o.tmp
+	cp -p comelang2-sh comelang2
+
+01main.c.o.tmp: 01main.c.c
+	clang -o 01main.c.o.tmp -c 01main.c.c $(CFLAGS)
+
+02transpile.c.o.tmp: 02transpile.c.c
+	clang -o 02transpile.c.o.tmp -c 02transpile.c.c $(CFLAGS)
+
+03transpile2.c.o.tmp: 03transpile2.c.c
+	clang -o 03transpile2.c.o.tmp -c 03transpile2.c.c $(CFLAGS)
+
+04heap.c.o.tmp: 04heap.c.c
+	clang -o 04heap.c.o.tmp -c 04heap.c.c $(CFLAGS)
+
+05function.c.o.tmp: 05function.c.c
+	clang -o 05function.c.o.tmp -c 05function.c.c $(CFLAGS)
+
+05function2.c.o.tmp: 05function2.c.c
+	clang -o 05function2.c.o.tmp -c 05function2.c.c $(CFLAGS)
+
+05function3.c.o.tmp: 05function3.c.c
+	clang -o 05function3.c.o.tmp -c 05function3.c.c $(CFLAGS)
+
+05function4.c.o.tmp: 05function4.c.c
+	clang -o 05function4.c.o.tmp -g -c 05function4.c.c $(CFLAGS)
+
+06str.c.o.tmp: 06str.c.c
+	clang  -o 06str.c.o.tmp -c 06str.c.c $(CFLAGS)
+
+07var.c.o.tmp: 07var.c.c
+	clang -o 07var.c.o.tmp -c 07var.c.c $(CFLAGS)
+
+08if.c.o.tmp: 08if.c.c
+	clang -o 08if.c.o.tmp -c 08if.c.c $(CFLAGS)
+
+09while.c.o.tmp: 09while.c.c
+	clang -o 09while.c.o.tmp -c 09while.c.c $(CFLAGS)
+
+10do_while.c.o.tmp: 10do_while.c.c
+	clang -o 10do_while.c.o.tmp -c 10do_while.c.c $(CFLAGS)
+
+11for.c.o.tmp: 11for.c.c
+	clang -o 11for.c.o.tmp -c 11for.c.c $(CFLAGS)
+
+12switch.c.o.tmp: 12switch.c.c
+	clang -o 12switch.c.o.tmp -c 12switch.c.c $(CFLAGS)
+
+13op.c.o.tmp: 13op.c.c
+	clang -o 13op.c.o.tmp -c 13op.c.c $(CFLAGS)
+
+14struct.c.o.tmp: 14struct.c.c
+	clang -o 14struct.c.o.tmp -c 14struct.c.c $(CFLAGS)
+
+15union.c.o.tmp: 15union.c.c
+	clang -o 15union.c.o.tmp -c 15union.c.c $(CFLAGS)
+
+16enum.c.o.tmp: 16enum.c.c
+	clang -o 16enum.c.o.tmp -c 16enum.c.c $(CFLAGS)
+
+17typedef.c.o.tmp: 17typedef.c.c
+	clang -o 17typedef.c.o.tmp -c 17typedef.c.c $(CFLAGS)
+
+18field.c.o.tmp: 18field.c.c
+	clang -o 18field.c.o.tmp -c 18field.c.c $(CFLAGS)
+
+19eq.c.o.tmp: 19eq.c.c
+	clang -o 19eq.c.o.tmp -c 19eq.c.c $(CFLAGS)
+
+20method.c.o.tmp: 20method.c.c
+	clang -o 20method.c.o.tmp -c 20method.c.c $(CFLAGS)
+
+21obj.c.o.tmp: 21obj.c.c
+	clang -o 21obj.c.o.tmp -c 21obj.c.c $(CFLAGS)
+
+22impl.c.o.tmp: 22impl.c.c
+	clang -o 22impl.c.o.tmp -c 22impl.c.c $(CFLAGS)
+
+23interface.c.o.tmp: 23interface.c.c
+	clang -o 23interface.c.o.tmp -c 23interface.c.c $(CFLAGS)
+
+libcomelang2.c.o.tmp: libcomelang2.c.c
+	clang -o libcomelang2.c.o.tmp -c libcomelang2.c.c $(CFLAGS)
+	ar r libcomelang2.a libcomelang2.c.o.tmp
+
+libcomelang2-str.c.o.tmp: libcomelang2-str.c.c
+	clang -o libcomelang2-str.c.o.tmp -c libcomelang2-str.c.c $(CFLAGS)
+	ar r libcomelang2-str.a libcomelang2-str.c.o.tmp
+
+#########################################
+# install
+#########################################
+install:
+	mkdir -p "$(DESTDIR)/bin"
+	$(INSTALL) -m 755 ./comelang2 "$(DESTDIR)/bin"
+	mkdir -p "$(DESTDIR)/include"
+	$(INSTALL) -m 644 ./comelang2.h "$(DESTDIR)/include"
+	$(INSTALL) -m 644 ./comelang2-str.h "$(DESTDIR)/include"
+	mkdir -p "$(DESTDIR)/lib"
+	$(INSTALL) -m 644 ./libcomelang2.a "$(DESTDIR)/lib"
+	$(INSTALL) -m 644 ./libcomelang2-str.a "$(DESTDIR)/lib"
+	mkdir -p "$(DESTDIR)/share/doc/comelang2"
+	$(INSTALL) -m 644 README.md "$(DESTDIR)/share/doc/comelang2/README.md"
+
+#########################################
+# clean
+#########################################
+clean:
+	rm -fR *.c.o comelang2 libcomelang2.a libcomelang2-str.a *.o a *.tmp comelang2-val comelang2-sh comelang2-inf *.i *.val *.out
+
+distclean: clean
+	rm -fR  config.h Makefile autom4te.cache 
+
+#########################################
+# uninstall
+#########################################
+uninstall:
+	rm -f "$(DESTDIR)"/bin/comelang2
+	rm -f "$(DESTDIR)"/include/comelang2.h
+	rm -f "$(DESTDIR)"/include/comelang2-str.h
+	rm -f "$(DESTDIR)"/lib/libcomelang2.a
+	rm -f "$(DESTDIR)"/lib/libcomelang2-str.a
+	rm -f "$(DESTDIR)/share/doc/comelang2/README.md"
+
