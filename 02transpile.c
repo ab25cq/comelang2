@@ -546,7 +546,7 @@ int come_main(int argc, char** argv) version 2
                 i++;
             }
             else if(argv[i] === "-str") {
-                clang_option.append_str("-lpcre -lcomelang2-str ");
+                clang_option.append_str(" -lcomelang2-str -lpcre ");
             }
             else if(argv[i] === "-g") {
                 clang_option.append_str("-g ");
@@ -682,7 +682,7 @@ int come_main(int argc, char** argv) version 2
                 i++;
             }
             else if(argv[i] === "-str") {
-                clang_option.append_str("-lpcre -lcomelang2-str ");
+                clang_option.append_str(" -lcomelang2-str -lpcre ");
             }
             else if(argv[i] === "-common-header") {
                 gCommonHeader = true;
