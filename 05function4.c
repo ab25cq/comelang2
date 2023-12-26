@@ -32,6 +32,11 @@ void parse_sharp(sInfo* info=info) version 5
         skip_spaces_and_lf();
         skip_paren(info);
     }
+    while(memcmp(info.p, "__extension__", strlen("__extension__")) == 0) {
+        info->p += strlen("__extension__");
+        skip_spaces_and_lf();
+        skip_paren(info);
+    }
 /*
     while(memcmp(info.p, "__asm", strlen("__asm")) == 0) {
         if(memcmp(info.p, "__asm__", strlen("__asm__") == 0)) {

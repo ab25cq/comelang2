@@ -47,6 +47,7 @@ typedef unsigned int __id_t;
 typedef long int __time_t;
 typedef unsigned int __useconds_t;
 typedef long int __suseconds_t;
+typedef long int __suseconds64_t;
 typedef int __daddr_t;
 typedef int __key_t;
 typedef int __clockid_t;
@@ -152,40 +153,31 @@ typedef struct _G_fpos64_t fpos64_t;
 extern struct _IO_FILE* stdin;
 extern struct _IO_FILE* stdout;
 extern struct _IO_FILE* stderr;
-extern int sys_nerr;
-extern const char** sys_errlist;
-extern int _sys_nerr;
-extern const char** _sys_errlist;
-struct obstack;
-typedef unsigned int wchar_t;
-enum anonymous_typeY5 { P_ALL
-,P_PID
-,P_PGID
-};
-typedef enum anonymous_typeY5 idtype_t;
 typedef long double _Float128;
 typedef float _Float32;
 typedef double _Float64;
 typedef double _Float32x;
 typedef long double _Float64x;
-struct anonymous_typeX6
+struct obstack;
+typedef unsigned int wchar_t;
+struct anonymous_typeX5
 {
     int quot;
     int rem;
 };
-typedef struct anonymous_typeX6 div_t;
-struct anonymous_typeX7
+typedef struct anonymous_typeX5 div_t;
+struct anonymous_typeX6
 {
     long int quot;
     long int rem;
 };
-typedef struct anonymous_typeX7 ldiv_t;
-struct anonymous_typeX8
+typedef struct anonymous_typeX6 ldiv_t;
+struct anonymous_typeX7
 {
     long long int quot;
     long long int rem;
 };
-typedef struct anonymous_typeX8 lldiv_t;
+typedef struct anonymous_typeX7 lldiv_t;
 struct __locale_struct
 {
     struct __locale_data* __locales[13];
@@ -234,12 +226,12 @@ typedef unsigned short int u_int16_t;
 typedef unsigned int u_int32_t;
 typedef unsigned long int u_int64_t;
 typedef int register_t;
-struct anonymous_typeX9
+struct anonymous_typeX8
 {
     unsigned long int __val[(1024/(8*sizeof(unsigned long int)))];
 };
-typedef struct anonymous_typeX9 __sigset_t;
-typedef struct anonymous_typeX9 sigset_t;
+typedef struct anonymous_typeX8 __sigset_t;
+typedef struct anonymous_typeX8 sigset_t;
 struct timeval
 {
     long int tv_sec;
@@ -251,11 +243,11 @@ struct timespec
     long int tv_nsec;
 };
 typedef long int __fd_mask;
-struct anonymous_typeX10
+struct anonymous_typeX9
 {
     long int fds_bits[1024/(8*(int)sizeof(long int))];
 };
-typedef struct anonymous_typeX10 fd_set;
+typedef struct anonymous_typeX9 fd_set;
 typedef long int fd_mask;
 typedef int blksize_t;
 typedef long int blkcnt_t;
@@ -264,6 +256,17 @@ typedef unsigned long int fsfilcnt_t;
 typedef long int blkcnt64_t;
 typedef unsigned long int fsblkcnt64_t;
 typedef unsigned long int fsfilcnt64_t;
+struct anonymous_typeX11
+{
+    unsigned int __low;
+    unsigned int __high;
+};
+union anonymous_typeZ10
+{
+unsigned long long int __value64;
+struct anonymous_typeX11 __value32;
+};
+typedef union anonymous_typeZ10 __atomic_wide_counter;
 struct __pthread_internal_list
 {
     struct __pthread_internal_list* __prev;
@@ -299,55 +302,36 @@ struct __pthread_rwlock_arch_t
     unsigned long int __pad2;
     unsigned int __flags;
 };
-struct anonymous_typeX12
-{
-};
-struct anonymous_typeX14
-{
-    unsigned int __low;
-    unsigned int __high;
-};
-union anonymous_typeZ13
-{
-unsigned long long int __wseq;
-struct anonymous_typeX14 __wseq32;
-};
-struct anonymous_typeX16
-{
-};
-struct anonymous_typeX18
-{
-    unsigned int __low;
-    unsigned int __high;
-};
-union anonymous_typeZ17
-{
-unsigned long long int __g1_start;
-struct anonymous_typeX18 __g1_start32;
-};
 struct __pthread_cond_s
 {
-    union anonymous_typeZ13 anonymous_var_nameY2;
-    union anonymous_typeZ17 anonymous_var_nameY4;
+    union anonymous_typeZ10 __wseq;
+    union anonymous_typeZ10 __g1_start;
     unsigned int __g_refs[2];
     unsigned int __g_size[2];
     unsigned int __g1_orig_size;
     unsigned int __wrefs;
     unsigned int __g_signals[2];
 };
+typedef unsigned int __tss_t;
+typedef unsigned long int __thrd_t;
+struct anonymous_typeX12
+{
+    int __data;
+};
+typedef struct anonymous_typeX12 __once_flag;
 typedef unsigned long int pthread_t;
-union anonymous_typeZ19
+union anonymous_typeZ13
 {
 char __size[8];
 int __align;
 };
-typedef union anonymous_typeZ19 pthread_mutexattr_t;
-union anonymous_typeZ20
+typedef union anonymous_typeZ13 pthread_mutexattr_t;
+union anonymous_typeZ14
 {
 char __size[8];
 int __align;
 };
-typedef union anonymous_typeZ20 pthread_condattr_t;
+typedef union anonymous_typeZ14 pthread_condattr_t;
 typedef unsigned int pthread_key_t;
 typedef int pthread_once_t;
 union pthread_attr_t
@@ -356,46 +340,46 @@ char __size[64];
 long int __align;
 };
 typedef union pthread_attr_t pthread_attr_t;
-union anonymous_typeZ21
+union anonymous_typeZ15
 {
 struct __pthread_mutex_s __data;
 char __size[48];
 long int __align;
 };
-typedef union anonymous_typeZ21 pthread_mutex_t;
-union anonymous_typeZ22
+typedef union anonymous_typeZ15 pthread_mutex_t;
+union anonymous_typeZ16
 {
 struct __pthread_cond_s __data;
 char __size[48];
 long long int __align;
 };
-typedef union anonymous_typeZ22 pthread_cond_t;
-union anonymous_typeZ23
+typedef union anonymous_typeZ16 pthread_cond_t;
+union anonymous_typeZ17
 {
 struct __pthread_rwlock_arch_t __data;
 char __size[56];
 long int __align;
 };
-typedef union anonymous_typeZ23 pthread_rwlock_t;
-union anonymous_typeZ24
+typedef union anonymous_typeZ17 pthread_rwlock_t;
+union anonymous_typeZ18
 {
 char __size[8];
 long int __align;
 };
-typedef union anonymous_typeZ24 pthread_rwlockattr_t;
+typedef union anonymous_typeZ18 pthread_rwlockattr_t;
 typedef int pthread_spinlock_t;
-union anonymous_typeZ25
+union anonymous_typeZ19
 {
 char __size[32];
 long int __align;
 };
-typedef union anonymous_typeZ25 pthread_barrier_t;
-union anonymous_typeZ26
+typedef union anonymous_typeZ19 pthread_barrier_t;
+union anonymous_typeZ20
 {
 char __size[8];
 int __align;
 };
-typedef union anonymous_typeZ26 pthread_barrierattr_t;
+typedef union anonymous_typeZ20 pthread_barrierattr_t;
 struct random_data
 {
     int* fptr;
@@ -896,17 +880,17 @@ int renameat(int __oldfd, const char* __old, int __newfd, const char* __new);
 
 int renameat2(int __oldfd, const char* __old, int __newfd, const char* __new, unsigned int __flags);
 
+int fclose(struct _IO_FILE* __stream);
+
 struct _IO_FILE* tmpfile();
 
 struct _IO_FILE* tmpfile64();
 
-char* tmpnam(char* __s);
+char* tmpnam(char anonymous_var_nameX1[20]);
 
-char* tmpnam_r(char* __s);
+char* tmpnam_r(char __s[20]);
 
 char* tempnam(const char* __dir, const char* __pfx);
-
-int fclose(struct _IO_FILE* __stream);
 
 int fflush(struct _IO_FILE* __stream);
 
@@ -1082,9 +1066,9 @@ int fileno(struct _IO_FILE* __stream);
 
 int fileno_unlocked(struct _IO_FILE* __stream);
 
-struct _IO_FILE* popen(const char* __command, const char* __modes);
-
 int pclose(struct _IO_FILE* __stream);
+
+struct _IO_FILE* popen(const char* __command, const char* __modes);
 
 char* ctermid(char* __s);
 
@@ -1100,9 +1084,9 @@ int ftrylockfile(struct _IO_FILE* __stream);
 
 void funlockfile(struct _IO_FILE* __stream);
 
-int __uflow(struct _IO_FILE* anonymous_var_nameX1);
+int __uflow(struct _IO_FILE* anonymous_var_nameX2);
 
-int __overflow(struct _IO_FILE* anonymous_var_nameX2, int anonymous_var_nameX3);
+int __overflow(struct _IO_FILE* anonymous_var_nameX3, int anonymous_var_nameX4);
 
 long int __ctype_get_mb_cur_max();
 
@@ -1186,9 +1170,9 @@ char* l64a(long int __n);
 
 long int a64l(const char* __s);
 
-int select(int __nfds, struct anonymous_typeX10* __readfds, struct anonymous_typeX10* __writefds, struct anonymous_typeX10* __exceptfds, struct timeval* __timeout);
+int select(int __nfds, struct anonymous_typeX9* __readfds, struct anonymous_typeX9* __writefds, struct anonymous_typeX9* __exceptfds, struct timeval* __timeout);
 
-int pselect(int __nfds, struct anonymous_typeX10* __readfds, struct anonymous_typeX10* __writefds, struct anonymous_typeX10* __exceptfds, const struct timespec* __timeout, const struct anonymous_typeX9* __sigmask);
+int pselect(int __nfds, struct anonymous_typeX9* __readfds, struct anonymous_typeX9* __writefds, struct anonymous_typeX9* __exceptfds, const struct timespec* __timeout, const struct anonymous_typeX8* __sigmask);
 
 long int random();
 
@@ -1254,9 +1238,9 @@ void* calloc(long int __nmemb, long int __size);
 
 void* realloc(void* __ptr, long int __size);
 
-void* reallocarray(void* __ptr, long int __nmemb, long int __size);
-
 void free(void* __ptr);
+
+void* reallocarray(void* __ptr, long int __nmemb, long int __size);
 
 void* alloca(long int __size);
 
@@ -1330,11 +1314,11 @@ long int labs(long int __x);
 
 long long int llabs(long long int __x);
 
-struct anonymous_typeX6 div(int __numer, int __denom);
+struct anonymous_typeX5 div(int __numer, int __denom);
 
-struct anonymous_typeX7 ldiv(long int __numer, long int __denom);
+struct anonymous_typeX6 ldiv(long int __numer, long int __denom);
 
-struct anonymous_typeX8 lldiv(long long int __numer, long long int __denom);
+struct anonymous_typeX7 lldiv(long long int __numer, long long int __denom);
 
 char* ecvt(double __value, int __ndigit, int* __decpt, int* __sign);
 
@@ -1393,6 +1377,8 @@ void* memccpy(void* __dest, const void* __src, int __c, long int __n);
 void* memset(void* __s, int __c, long int __n);
 
 int memcmp(const void* __s1, const void* __s2, long int __n);
+
+int __memcmpeq(const void* __s1, const void* __s2, long int __n);
 
 void* memchr(const void* __s, int __c, long int __n);
 
@@ -1460,6 +1446,10 @@ char* strerror(int __errnum);
 
 char* strerror_r(int __errnum, char* __buf, long int __buflen);
 
+const char* strerrordesc_np(int __err);
+
+const char* strerrorname_np(int __err);
+
 char* strerror_l(int __errnum, struct __locale_struct* __l);
 
 int bcmp(const void* __s1, const void* __s2, long int __n);
@@ -1491,6 +1481,10 @@ void explicit_bzero(void* __s, long int __n);
 char* strsep(char** __stringp, const char* __delim);
 
 char* strsignal(int __sig);
+
+const char* sigabbrev_np(int __sig);
+
+const char* sigdescr_np(int __sig);
 
 char* __stpcpy(char* __dest, const char* __src);
 
@@ -2120,7 +2114,6 @@ int main(int argc, char** argv);
 static inline unsigned short int __bswap_16(unsigned short int __bsx){
 void* __result_obj__;
 _Bool __freed_obj__;
-void* __right_value_freed_obj[1024];
 unsigned short int __result1__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
@@ -2132,7 +2125,6 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 static inline unsigned int __bswap_32(unsigned int __bsx){
 void* __result_obj__;
 _Bool __freed_obj__;
-void* __right_value_freed_obj[1024];
 unsigned int __result2__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
@@ -2144,7 +2136,6 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 static inline unsigned long int __bswap_64(unsigned long int __bsx){
 void* __result_obj__;
 _Bool __freed_obj__;
-void* __right_value_freed_obj[1024];
 unsigned long int __result3__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
@@ -2156,7 +2147,6 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 static inline unsigned short int __uint16_identity(unsigned short int __x){
 void* __result_obj__;
 _Bool __freed_obj__;
-void* __right_value_freed_obj[1024];
 unsigned short int __result4__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
@@ -2168,7 +2158,6 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 static inline unsigned int __uint32_identity(unsigned int __x){
 void* __result_obj__;
 _Bool __freed_obj__;
-void* __right_value_freed_obj[1024];
 unsigned int __result5__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
@@ -2180,7 +2169,6 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 static inline unsigned long int __uint64_identity(unsigned long int __x){
 void* __result_obj__;
 _Bool __freed_obj__;
-void* __right_value_freed_obj[1024];
 unsigned long int __result6__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
@@ -2192,7 +2180,6 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 static inline void die(char* msg){
 void* __result_obj__;
 _Bool __freed_obj__;
-void* __right_value_freed_obj[1024];
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
     perror(msg);
@@ -2212,7 +2199,6 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 int come_main_v1(int argc, char** argv){
 void* __result_obj__;
 _Bool __freed_obj__;
-void* __right_value_freed_obj[1024];
 int __result7__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
@@ -2227,16 +2213,15 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 int main(int argc, char** argv){
 void* __result_obj__;
 _Bool __freed_obj__;
-void* __right_value_freed_obj[1024];
 int __result8__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-come_heap_init(1);
+come_heap_init(0);
     __result8__ = come_main_v2(argc,argv);
     __freed_obj__ = 0;
-    come_heap_final(1);
+    come_heap_final(0);
     return __result8__;
     __freed_obj__ = 0;
-come_heap_final(1);
+come_heap_final(0);
 }
 
