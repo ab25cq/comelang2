@@ -894,7 +894,7 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
             if(lambda_type.mVarArgs && lambda_type.mParamTypes[i] == null) {
             }
             else {
-                check_assign_type(s"\{fun_name} calling param #\{i}", lambda_type.mParamTypes[i], come_value.type);
+                check_assign_type(s"\{fun_name} calling param #\{i}", lambda_type.mParamTypes[i], come_value.type, come_value);
                 if(lambda_type.mParamTypes[i].mHeap && come_value.type.mHeap) {
                     if(come_value.var) {
                         if(come_value.var.mType.mDelegate) {
@@ -1128,7 +1128,7 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
                         n++;
                     }
                     if(n < fun.mParamTypes.length()) {
-                        check_assign_type(s"\{fun_name} calling param #\{n}", param_types[n], come_value.type);
+                        check_assign_type(s"\{fun_name} calling param #\{n}", param_types[n], come_value.type, come_value);
                     }
                     if(n < fun.mParamTypes.length() && param_types[n].mHeap && come_value.type.mHeap) {
                         if(come_value.var) {
@@ -1160,7 +1160,7 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
                 }
                 else {
                     if(i < fun.mParamTypes.length()) {
-                        check_assign_type(s"\{fun_name} calling param #\{i}", param_types[i], come_value.type);
+                        check_assign_type(s"\{fun_name} calling param #\{i}", param_types[i], come_value.type, come_value);
                     }
                     if(i < fun.mParamTypes.length() && param_types[i].mHeap && come_value.type.mHeap) {
                         if(come_value.var) {
@@ -1235,7 +1235,7 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
                     info.sline = sline;
             
                     CVALUE*% come_value = get_value_from_stack(-1, info);
-                    check_assign_type(s"\{fun_name} calling param #\{i}", param_types[i], come_value.type);
+                    check_assign_type(s"\{fun_name} calling param #\{i}", param_types[i], come_value.type, come_value);
                     if(param_types[i].mHeap && come_value.type.mHeap) {
                         if(come_value.var) {
                             if(come_value.var.mType.mDelegate) {
@@ -1285,7 +1285,7 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
                 CVALUE* come_value = label_params[param_name];
                 
                 if(come_value) {
-                    check_assign_type(s"\{fun_name} calling param \{i}", param_types[i], come_value.type);
+                    check_assign_type(s"\{fun_name} calling param \{i}", param_types[i], come_value.type, come_value);
                     come_params.replace(i, clone come_value);
                 }
             }

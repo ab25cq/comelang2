@@ -274,7 +274,7 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
                 
                 CVALUE*% come_value = get_value_from_stack(-1, info);
                 
-                check_assign_type(s"\{fun_name} param num \{i} is assinged to", lambda_type.mParamTypes[i-1], come_value.type);
+                check_assign_type(s"\{fun_name} param num \{i} is assinged to", lambda_type.mParamTypes[i-1], come_value.type, come_value);
                 if(lambda_type.mParamTypes[i-1].mHeap && come_value.type.mHeap) 
                 {
                     if(come_value.var) {
@@ -406,7 +406,7 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
             var label, node = it;
             
             if(i == 0) {
-                check_assign_type(s"\{fun_name} param num \{i} is assinged to", param_types[i], obj_value.type);
+                check_assign_type(s"\{fun_name} param num \{i} is assinged to", param_types[i], obj_value.type, obj_value);
                 if(param_types[i].mHeap && obj_value.type.mHeap) {
                     if(obj_value.var) {
                         if(obj_value.var.mType.mDelegate) {
@@ -459,7 +459,9 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
                         n++;
                     }
                     
-                    if(param_types[n]) check_assign_type(s"\{fun_name} param num \{i} is assinged to", param_types[n], come_value.type);
+                    if(param_types[n]) {
+                        check_assign_type(s"\{fun_name} param num \{i} is assinged to", param_types[n], come_value.type, come_value);
+                    }
                     if(param_types[n] && param_types[n].mHeap && come_value.type.mHeap) {
                         if(come_value.var) {
                             if(come_value.var.mType.mDelegate) {
@@ -489,7 +491,9 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
                     }
                 }
                 else {
-                    if(param_types[i]) check_assign_type(s"\{fun_name} param num \{i} is assinged to", param_types[i], come_value.type);
+                    if(param_types[i]) {
+                        check_assign_type(s"\{fun_name} param num \{i} is assinged to", param_types[i], come_value.type, come_value);
+                    }
                     if(param_types[i] && param_types[i].mHeap && come_value.type.mHeap) {
                         if(come_value.var) {
                             if(come_value.var.mType.mDelegate) {
@@ -564,7 +568,9 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
                     info.sline = sline;
             
                     CVALUE*% come_value = get_value_from_stack(-1, info);
-                    if(param_types[i]) check_assign_type(s"\{fun_name} param num \{i} is assinged to", param_types[i], come_value.type);
+                    if(param_types[i]) {
+                        check_assign_type(s"\{fun_name} param num \{i} is assinged to", param_types[i], come_value.type, come_value);
+                    }
                     if(param_types[i] && param_types[i].mHeap && come_value.type.mHeap) {
                         if(come_value.var) {
                             if(come_value.var.mType.mDelegate) {

@@ -384,7 +384,7 @@ void backtrace_parse_type(sInfo* info=info);
 void transpile_toplevel(bool block=false, sInfo* info=info);
 void skip_pointer_attribute(sInfo* info=info);
 sNode*% parse_normal_block(sInfo* info=info);
-void check_assign_type(char* msg, sType* left_type, sType* right_type, bool check_no_pointer=false, sInfo* info=info);
+void check_assign_type(char* msg, sType* left_type, sType* right_type, CVALUE* come_value, bool check_no_pointer=false, sInfo* info=info);
 string parse_attribute(sInfo* info=info);
 void come_init() version 5;
 void come_final() version 5;

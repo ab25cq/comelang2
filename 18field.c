@@ -60,7 +60,7 @@ bool operator_overload_fun2(sType* type, char* fun_name, CVALUE* left_value, CVA
     if(operator_fun) {
         CVALUE*% come_value = new CVALUE;
         string left_value2;
-        check_assign_type(s"\{fun_name2} is assigned to", operator_fun.mParamTypes[0], left_value.type);
+        check_assign_type(s"\{fun_name2} is assigned to", operator_fun.mParamTypes[0], left_value.type, left_value);
         if(operator_fun.mParamTypes[0].mHeap && left_value.type.mHeap) {
             if(left_value.var) {
                 if(left_value.var.mType.mDelegate) {
@@ -93,7 +93,7 @@ bool operator_overload_fun2(sType* type, char* fun_name, CVALUE* left_value, CVA
             left_value2 = clone left_value.c_value;
         }
         string middle_value2;
-        check_assign_type(s"\{fun_name2} is assigned to", operator_fun.mParamTypes[1], middle_value.type);
+        check_assign_type(s"\{fun_name2} is assigned to", operator_fun.mParamTypes[1], middle_value.type, middle_value);
         if(operator_fun.mParamTypes[1].mHeap && middle_value.type.mHeap) {
             if(middle_value.var) {
                 if(middle_value.var.mType.mDelegate) {
@@ -126,7 +126,7 @@ bool operator_overload_fun2(sType* type, char* fun_name, CVALUE* left_value, CVA
             middle_value2 = clone middle_value.c_value;
         }
         string right_value2;
-        check_assign_type(s"\{fun_name2} is assigned to", operator_fun.mParamTypes[2], right_value.type);
+        check_assign_type(s"\{fun_name2} is assigned to", operator_fun.mParamTypes[2], right_value.type, right_value);
         if(operator_fun.mParamTypes[2].mHeap && right_value.type.mHeap) {
             if(right_value.var) {
                 if(right_value.var.mType.mDelegate) {
@@ -317,7 +317,7 @@ bool sStoreFieldNode*::compile(sStoreFieldNode* self, sInfo* info)
         }
     }
     
-    check_assign_type(s"\{name} is assigned to", field_type, right_type);
+    check_assign_type(s"\{name} is assigned to", field_type, right_type, right_value);
     if(field_type->mHeap && right_type->mHeap && field_type->mPointerNum > 0 && right_type->mPointerNum > 0) 
     {
         if(left_value.type->mPointerNum == 1) {
@@ -971,7 +971,7 @@ bool sStoreArrayNode*::compile(sStoreArrayNode* self, sInfo* info)
         
         string left_value_code = buf.to_string();
         
-        check_assign_type(s"array is assinged to", left_type, right_type);
+        check_assign_type(s"array is assinged to", left_type, right_type, right_value);
         if(left_type->mHeap && right_type->mHeap && left_type->mPointerNum > 0 && right_type->mPointerNum > 0) 
         {
             if(left_value.type->mPointerNum >= 1) {

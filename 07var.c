@@ -336,7 +336,6 @@ bool sStoreNode*::compile(sStoreNode* self, sInfo* info)
                     
                     sType* left_type = parent_var->mType;
                     
-                    check_assign_type(s"\{self.name} is assigning to", left_type, right_type);
                     if(left_type->mPointerNum > 0 && right_type->mPointerNum > 0 && right_type->mHeap && left_type->mHeap) {
                         string c_value = xsprintf("*(parent->%s)", parent_var->mCValueName);
                         decrement_ref_count_object(parent_var->mType, c_value, info);
@@ -386,6 +385,8 @@ bool sStoreNode*::compile(sStoreNode* self, sInfo* info)
                     
                     come_value.type = clone left_type;
                     come_value.var = null;
+                    
+                    check_assign_type(s"\{self.name} is assigning to", left_type, right_type, come_value);
                     
                     add_come_last_code(info, "%s;\n", come_value.c_value);
                     
@@ -445,7 +446,7 @@ bool sStoreNode*::compile(sStoreNode* self, sInfo* info)
                     
                     CVALUE*% come_value = new CVALUE;
                     
-                    check_assign_type(s"\{self.name} is assining to}", left_type, right_type2);
+                    check_assign_type(s"\{self.name} is assining to}", left_type, right_type2, come_value);
                     if(right_type2->mHeap && left_type->mHeap && left_type->mPointerNum > 0 && right_type2->mPointerNum > 0)
                     {
                         if(self.alloc) {
@@ -521,7 +522,7 @@ bool sStoreNode*::compile(sStoreNode* self, sInfo* info)
             CVALUE*% come_value = new CVALUE;
             
             if(var_->mType->mStatic) {
-                check_assign_type(s"\{self.name} is assining to", left_type, right_type);
+                check_assign_type(s"\{self.name} is assining to", left_type, right_type, right_value);
                 add_come_code_at_function_head(info, "%s=%s;\n", make_define_var(left_type, var_->mCValueName), right_value.c_value);
                 come_value.c_value = string("");
                 
@@ -530,7 +531,7 @@ bool sStoreNode*::compile(sStoreNode* self, sInfo* info)
                 transpiler_clear_last_code(info);
             }
             else if(var_->mType->mConstant) {
-                check_assign_type(s"\{self.name} is assining to", left_type, right_type);
+                check_assign_type(s"\{self.name} is assining to", left_type, right_type, right_value);
                 if(self.alloc) {
                     add_come_code_at_function_head(info, "%s=%s;\n", make_define_var(left_type, var_->mCValueName), right_value.c_value);
                 }
@@ -545,7 +546,7 @@ bool sStoreNode*::compile(sStoreNode* self, sInfo* info)
             }
             else if(right_type->mHeap && left_type->mHeap && left_type->mPointerNum > 0 && right_type->mPointerNum > 0)
             {
-                check_assign_type(s"\{self.name} is assining to", left_type, right_type);
+                check_assign_type(s"\{self.name} is assining to", left_type, right_type, right_value);
                 if(self.alloc) {
                     if(right_value.var) {
                         if(right_value.var.mType.mDelegate) {
@@ -617,7 +618,7 @@ bool sStoreNode*::compile(sStoreNode* self, sInfo* info)
             }
             else if(right_type->mClass->mName === "void" && left_type->mHeap && left_type->mPointerNum > 0 && right_type->mPointerNum > 0)
             {
-                check_assign_type(s"\{self.name} is assining to", left_type, right_type);
+                check_assign_type(s"\{self.name} is assining to", left_type, right_type, right_value);
                 if(self.alloc) {
                     come_value.c_value = xsprintf("%s=%s", var_->mCValueName, right_value.c_value);
                 }
@@ -645,7 +646,7 @@ bool sStoreNode*::compile(sStoreNode* self, sInfo* info)
                     }
                 }
                 
-                check_assign_type(s"\{self.name} is assining to", left_type, right_type);
+                check_assign_type(s"\{self.name} is assining to", left_type, right_type, right_value);
                 come_value.c_value = xsprintf("%s=%s", var_->mCValueName, right_value.c_value);
                 come_value.type = clone left_type;
                 come_value.var = var_;
