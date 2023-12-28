@@ -58,7 +58,7 @@ bool sStrNode*::compile(sStrNode* self, sInfo* info)
     come_value.var = null;
     
     info.stack.push_back(come_value);
-    
+
     add_come_last_code(info, "%s;\n", come_value.c_value);
     
     return true;

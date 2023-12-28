@@ -372,7 +372,6 @@ void check_assign_type(char* msg, sType* left_type, sType* right_type, CVALUE* c
             exit(2);
     }
 */
-/*
     else if(left_type->mClass.mName === "char" && left_type->mPointerNum == 1) {
         if(right_type2->mClass.mName === "char" && right_type2->mPointerNum == 1) {
         }
@@ -426,7 +425,6 @@ void check_assign_type(char* msg, sType* left_type, sType* right_type, CVALUE* c
             right_type2 = clone type;
         }
     }
-*/
     else if(left_type->mPointerNum > 0) {
         if(right_type2->mPointerNum > 0) {
             if(left_type->mClass->mName === "void" || right_type2->mClass->mName === "void") {

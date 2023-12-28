@@ -949,7 +949,7 @@ void add_come_last_code3(sInfo* info, const char* msg, ...)
 
 void dec_stack_ptr(int value, sInfo* info)
 {
-    info.stack.delete(-value-1, -1);
+    info.stack.delete(-value, -1);
 }
 
 CVALUE*% get_value_from_stack(int offset, sInfo* info)

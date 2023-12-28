@@ -35,7 +35,7 @@ bool sWhileNode*::compile(sWhileNode* self, sInfo* info)
 {
     bool in_loop = info.in_loop;
     info.in_loop = true;
-    
+
     /// compile expression ///
     sNode* expression_node = self.mExpressionNode;
 
