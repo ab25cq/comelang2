@@ -7,7 +7,7 @@ Yet another modern compiler. It has a collection library with reffrence count gc
 
 もう一つのモダンなコンパイラ。オリジナルのリファレンスカウントGCを持ったコレクションライブラリがあります。C言語と互換性があります。
 
-version 2.1.0
+version 2.1.1
 
 I will release comelang2 version 2.0.0. When version 2.0.0, comelang2 will be complete.
 
@@ -361,6 +361,7 @@ bash self-host.sh
 2.0.5 some bug fix
 2.0.6 some gug fix
 2.1.0 null(nil) checker
+2.1.1 bug fixed
 
 # Language specifications
 
