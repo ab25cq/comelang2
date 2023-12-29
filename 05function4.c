@@ -372,6 +372,29 @@ void check_assign_type(char* msg, sType* left_type, sType* right_type, CVALUE* c
             exit(2);
     }
 */
+    else if(!left_type->mNullValue && right_type2->mNullValue) {
+        if(left_type->mClass->mName === "__builtin_va_list" || right_type2->mClass->mName === "__builtin_va_list") {
+        }
+        else if(left_type->mClass->mName === "va_list" || right_type2->mClass->mName === "va_list") {
+        }
+        else if(right_type2->mClass->mName === "void" && right_type2->mPointerNum == 0) {
+            err_msg(info, "type error6");
+            printf("left type is %s pointer num %d\n", left_type->mClass->mName, left_type->mPointerNum);
+            printf("right type is %s pointer num %d\n", right_type2->mClass->mName, right_type2->mPointerNum);
+            exit(2);
+        }
+        else {
+            var buf2 = new buffer();
+            
+            buf2.append_str(s"come_null_check(\{come_value.c_value}, \"\{info->sname}\", \{info->sline})");
+            
+            come_value.c_value = buf2.to_string();
+            come_value.type = clone left_type;
+            come_value.var = null;
+            
+            right_type2 = clone left_type;
+        }
+    }
     else if(left_type->mClass.mName === "char" && left_type->mPointerNum == 1) {
         if(right_type2->mClass.mName === "char" && right_type2->mPointerNum == 1) {
         }
@@ -1664,6 +1687,8 @@ exception tuple3<sType*%,string,bool>*% parse_type(sInfo* info=info, bool parse_
         if(*info->p == '?') {
             info->p++;
             skip_spaces_and_lf();
+            
+            type->mNullValue = true;
         }
         if(*info->p == '|') {
             info->p++;

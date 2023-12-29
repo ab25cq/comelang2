@@ -7,7 +7,7 @@ Yet another modern compiler. It has a collection library with reffrence count gc
 
 もう一つのモダンなコンパイラ。オリジナルのリファレンスカウントGCを持ったコレクションライブラリがあります。C言語と互換性があります。
 
-version 2.0.6
+version 2.1.0
 
 I will release comelang2 version 2.0.0. When version 2.0.0, comelang2 will be complete.
 
@@ -356,6 +356,7 @@ bash self-host.sh
 2.0.0 complete 
 2.0.5 some bug fix
 2.0.6 some gug fix
+2.1.0 null(nil) checker
 
 # Language specifications
 
@@ -1070,7 +1071,7 @@ If you add !, the source file name and line number will be output if the value i
 
 int main(int argc, char** argv)
 {
-    int*? b = null;
+    int* b = null;
     
     printf("null check %p\n", b!);
     
@@ -1080,6 +1081,69 @@ int main(int argc, char** argv)
 > ./a
 b.c 7: null check
 ```
+
+``` C
+> vin a.c
+#include <stdio.h>
+
+void fun(int* b)
+{
+}
+
+int main(int argc, char** argv)
+{
+    int*? b = nil;
+    
+    fun(b);
+    
+    return 0;
+}
+> comleang2 a.c
+> ./a
+called null checker
+```
+
+``` C
+> vin a.c
+#include <stdio.h>
+
+void fun(int*? b)
+{
+}
+
+int main(int argc, char** argv)
+{
+    int*? b = nil;
+    
+    fun(b);
+    
+    return 0;
+}
+> comleang2 a.c
+> ./a
+no called null checker
+```
+
+``` C
+> vin a.c
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+    puts(nil);
+    
+    return 0;
+}
+> comleang2 a.c
+> ./a
+called null checker
+```
+
+nil can't be assigned to null value variable type.(?)
+
+null can be assigend to all variable type.
+
+You can use nil instead of null for strictly checking null value.
 
 # Using C
 

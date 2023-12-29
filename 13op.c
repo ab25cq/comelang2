@@ -201,7 +201,6 @@ bool sNullNode*::compile(sNullNode* self, sInfo* info)
     
     come_value.c_value = xsprintf("((void*)0)");
     come_value.type = new sType("void*");
-    come_value.type->mNullValue = true;
     come_value.var = null;
     
     add_come_last_code(info, "%s;\n", come_value.c_value);
@@ -224,6 +223,62 @@ string sNullNode*::sname(sNullNode* self, sInfo* info)
 sNode*% create_null_object(sInfo* info)
 {
     return new sNullNode(info) implements sNode;
+}
+
+struct sNilNode
+{
+  int sline;
+  string sname;
+};
+
+
+sNilNode*% sNilNode*::initialize(sNilNode*% self, sInfo* info)
+{
+    self.sline = info.sline;
+    self.sname = string(info.sname);
+
+    return self;
+}
+
+bool sNilNode*::terminated()
+{
+    return false;
+}
+
+string sNilNode*::kind()
+{
+    return string("sNilNode");
+}
+
+bool sNilNode*::compile(sNilNode* self, sInfo* info)
+{
+    CVALUE*% come_value = new CVALUE;
+    
+    come_value.c_value = xsprintf("((void*)0)");
+    come_value.type = new sType("void*");
+    come_value.type->mNullValue = true;
+    come_value.var = null;
+    
+    add_come_last_code(info, "%s;\n", come_value.c_value);
+    
+    info.stack.push_back(come_value);
+
+    return true;
+}
+
+int sNilNode*::sline(sNilNode* self, sInfo* info)
+{
+    return self.sline;
+}
+
+string sNilNode*::sname(sNilNode* self, sInfo* info)
+{
+    return string(self.sname);
+}
+
+sNode*% create_null_object(sInfo* info)
+{
+    return new sNilNode(info) implements sNode;
 }
 
 
@@ -2776,6 +2831,9 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
 {
     if(buf === "null") {
         return some(new sNullNode(info) implements sNode);
+    }
+    else if(buf === "nil") {
+        return some(new sNilNode(info) implements sNode);
     }
     
     sNode*% result = inherit(buf, head,head_sline, info).catch {

@@ -50,6 +50,7 @@ sType*% solve_generics(sType* type, sType* generics_type, sInfo* info)
             bool no_heap = type->mNoHeap;
             bool no_calling_destructor = type->mNoCallingDestructor;
             bool exception_ = type->mException;
+            bool null_value = type->mNullValue;
             
             result = clone generics_type->mGenericsTypes[generics_number];
 
@@ -71,6 +72,10 @@ sType*% solve_generics(sType* type, sType* generics_type, sInfo* info)
             }
             if(array_num.length() > 0) {
                 result->mArrayNum = array_num;
+            }
+            
+            if(null_value) {
+                result->mNullValue = null_value;
             }
             
             if(pointer_num > 0) {

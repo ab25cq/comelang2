@@ -2248,6 +2248,13 @@ sNode*% expression_node(sInfo* info) version 98
                 exps.add(exp);
                 
                 value.append_str("%s");
+                
+                char* p = info->p -1;
+                while(*p == ' ' || *p == '\t') {
+                    p--;
+                }
+                
+                info->p = p + 1;
             }
             else if(*info->p == '\\') {
                 value.append_char('\\');
