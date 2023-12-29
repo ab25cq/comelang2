@@ -2452,7 +2452,7 @@ memset(&right_value83, 0, sizeof(void*));
     if(_if_conditional174=else_block,    __freed_obj__ = 0, 
     _if_conditional174) {
         __dec_obj41=((struct sIfNode*)come_null_check(self, "08if.c", 29))->mElseBlock;
-        ((struct sIfNode*)come_null_check(self, "08if.c", 29))->mElseBlock=(struct sBlock*)come_increment_ref_count(come_null_check(((struct sBlock*)(right_value83=sBlock_clone(else_block))), "08if.c", 29));
+        ((struct sIfNode*)come_null_check(self, "08if.c", 29))->mElseBlock=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value83=sBlock_clone(else_block))));
         if(__dec_obj41) { come_call_finalizer(sBlock_finalize,__dec_obj41, (void*)0, (void*)0, 0, 0, 0, 0); }
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value83);
         if(right_value83 && right_value83 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sBlock_finalize,right_value83, (void*)0, (void*)0, 0, 1, 0, 0); }

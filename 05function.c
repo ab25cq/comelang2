@@ -10,7 +10,7 @@ void come_final() version 5
 
 struct sReturnNode
 {
-    sNode*%? value;
+    sNode*% value;
     string value_source;
     int sline;
     string sname;
@@ -141,7 +141,7 @@ bool sReturnNode*::compile(sReturnNode* self, sInfo* info)
 
 struct sLineNode
 {
-    sNode*%? value;
+    sNode*% value;
     string value_source;
     int sline;
     string sname;
@@ -192,7 +192,7 @@ bool sLineNode*::compile(sLineNode* self, sInfo* info)
 
 struct sFuncNode
 {
-    sNode*%? value;
+    sNode*% value;
     string value_source;
     int sline;
     string sname;
@@ -244,7 +244,7 @@ bool sFuncNode*::compile(sFuncNode* self, sInfo* info)
 
 struct sCallerFuncNode
 {
-    sNode*%? value;
+    sNode*% value;
     string value_source;
     int sline;
     string sname;
@@ -301,7 +301,7 @@ bool sCallerFuncNode*::compile(sCallerFuncNode* self, sInfo* info)
 
 struct sCallerLineNode
 {
-    sNode*%? value;
+    sNode*% value;
     string value_source;
     int sline;
     string sname;
@@ -352,7 +352,7 @@ string sCallerLineNode*::kind()
 
 struct sParentReturnNode
 {
-    sNode*%? value;
+    sNode*% value;
     string value_source;
     int sline;
     string sname;
@@ -626,7 +626,7 @@ bool sParentContinueNode*::compile(sParentContinueNode* self, sInfo* info)
 
 struct sDerefferenceNode
 {
-    sNode*%? value;
+    sNode*% value;
     int sline;
     string sname;
 };
@@ -687,7 +687,7 @@ bool sDerefferenceNode*::compile(sDerefferenceNode* self, sInfo* info)
 
 struct sRefferenceNode
 {
-    sNode*%? value;
+    sNode*% value;
     int sline;
     string sname;
 };
@@ -751,7 +751,7 @@ bool sRefferenceNode*::compile(sRefferenceNode* self, sInfo* info)
 
 struct sReverseNode
 {
-    sNode*%? value;
+    sNode*% value;
     int sline;
     string sname;
 };
@@ -2510,12 +2510,12 @@ struct sGlobalVariable {
     
     string array_initializer;
     
-    list<tuple2<sType*%,string>*%>*%? multiple_declare;
+    list<tuple2<sType*%,string>*%>*% multiple_declare;
     
     string mDeclareSName;
 };
 
-sGlobalVariable*% sGlobalVariable*::initialize(sGlobalVariable*% self, list<tuple2<sType*%,string>*%>*%? multiple_declare, sType* type, string name, sNode*% right_node, string array_initializer, sInfo* info)
+sGlobalVariable*% sGlobalVariable*::initialize(sGlobalVariable*% self, list<tuple2<sType*%,string>*%>*% multiple_declare, sType* type, string name, sNode*% right_node, string array_initializer, sInfo* info)
 {
     self.sline = info.sline;
     self.sname = info.sname;
@@ -2611,12 +2611,12 @@ struct sExternalGlobalVariable {
     int sline;
     string sname;
     
-    list<tuple2<sType*%,string>*%>*%? multiple_declare;
+    list<tuple2<sType*%,string>*%>*% multiple_declare;
     
     string mDeclareSName;
 };
 
-sExternalGlobalVariable*% sExternalGlobalVariable*::initialize(sExternalGlobalVariable*% self, list<tuple2<sType*%, string>*%>*%? multiple_declare, sType* type, string name, sInfo* info)
+sExternalGlobalVariable*% sExternalGlobalVariable*::initialize(sExternalGlobalVariable*% self, list<tuple2<sType*%, string>*%>*% multiple_declare, sType* type, string name, sInfo* info)
 {
     self.type = clone type;
     self.name = string(name);

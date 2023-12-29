@@ -12,7 +12,7 @@ struct sForNode
 };
 
 
-sForNode*% sForNode*::initialize(sForNode*% self, sNode*%? expression_node, sNode*%? expression_node2, sNode*%? expression_node3, sBlock* block, sInfo* info)
+sForNode*% sForNode*::initialize(sForNode*% self, sNode*% expression_node, sNode*% expression_node2, sNode*% expression_node3, sBlock* block, sInfo* info)
 {
     self.sline = info.sline;
     self.sname = string(info.sname);

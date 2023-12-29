@@ -3092,7 +3092,7 @@ memset(&right_value49, 0, sizeof(void*));
         __freed_obj__ = 0;
         if(_if_conditional92=((struct sType*)come_null_check(result_type3_27, "05function.c", 80))->mException,        __freed_obj__ = 0, 
         _if_conditional92) {
-            node_28=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value40=create_some_object((struct sNode*)come_increment_ref_count(come_null_check(((struct sReturnNode*)come_null_check(self, "05function.c", 68))->value, "05function.c", 68)),info))));
+            node_28=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value40=create_some_object((struct sNode*)come_increment_ref_count(((struct sReturnNode*)come_null_check(self, "05function.c", 68))->value),info))));
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value40);
             if(right_value40 && right_value40 != __result_obj__ && !__freed_obj__) { right_value40 = come_decrement_ref_count(right_value40, ((struct sNode*)right_value40)->finalize, ((struct sNode*)right_value40)->_protocol_obj, 1, 0, 0); } 
             __right_value_freed_obj[0] = right_value40;
@@ -6220,7 +6220,7 @@ memset(&right_value121, 0, sizeof(void*));
 memset(&come_value_65, 0, sizeof(struct CVALUE*));
 memset(&right_value122, 0, sizeof(void*));
 memset(&right_value123, 0, sizeof(void*));
-    value_63=come_null_check(((struct sDerefferenceNode*)come_null_check(self, "05function.c", 661))->value, "05function.c", 661);
+    value_63=((struct sDerefferenceNode*)come_null_check(self, "05function.c", 661))->value;
     __freed_obj__ = 0;
     if(_if_conditional143=!((struct sNode*)come_null_check(value_63, "05function.c", 667))->compile(((struct sNode*)come_null_check(value_63, "05function.c", 667))->_protocol_obj,info),    __freed_obj__ = 0, 
     _if_conditional143) {
@@ -6390,7 +6390,7 @@ memset(&right_value128, 0, sizeof(void*));
 memset(&come_value_68, 0, sizeof(struct CVALUE*));
 memset(&right_value129, 0, sizeof(void*));
 memset(&right_value130, 0, sizeof(void*));
-    value_66=come_null_check(((struct sRefferenceNode*)come_null_check(self, "05function.c", 723))->value, "05function.c", 723);
+    value_66=((struct sRefferenceNode*)come_null_check(self, "05function.c", 723))->value;
     __freed_obj__ = 0;
     if(_if_conditional146=!((struct sNode*)come_null_check(value_66, "05function.c", 729))->compile(((struct sNode*)come_null_check(value_66, "05function.c", 729))->_protocol_obj,info),    __freed_obj__ = 0, 
     _if_conditional146) {
@@ -6565,7 +6565,7 @@ memset(&right_value135, 0, sizeof(void*));
 memset(&come_value_71, 0, sizeof(struct CVALUE*));
 memset(&right_value136, 0, sizeof(void*));
 memset(&right_value137, 0, sizeof(void*));
-    value_69=come_null_check(((struct sReverseNode*)come_null_check(self, "05function.c", 786))->value, "05function.c", 786);
+    value_69=((struct sReverseNode*)come_null_check(self, "05function.c", 786))->value;
     __freed_obj__ = 0;
     if(_if_conditional149=!((struct sNode*)come_null_check(value_69, "05function.c", 792))->compile(((struct sNode*)come_null_check(value_69, "05function.c", 792))->_protocol_obj,info),    __freed_obj__ = 0, 
     _if_conditional149) {

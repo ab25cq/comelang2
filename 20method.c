@@ -153,13 +153,13 @@ struct sMethodCallNode {
     sNode*% obj;
     string fun_name;
     list<tuple2<string,sNode*%>*%>*% params;
-    buffer*%? method_block;
+    buffer*% method_block;
     int sline;
     string sname;
     int method_block_sline;
 };
 
-sMethodCallNode*% sMethodCallNode*::initialize(sMethodCallNode*% self, char* fun_name,sNode*% obj, list<tuple2<string,sNode*%>*%>*% params, buffer*? method_block, int method_block_sline , sInfo* info)
+sMethodCallNode*% sMethodCallNode*::initialize(sMethodCallNode*% self, char* fun_name,sNode*% obj, list<tuple2<string,sNode*%>*%>*% params, buffer* method_block, int method_block_sline , sInfo* info)
 {
     self.obj = clone obj;
     self.fun_name = string(fun_name);
@@ -920,7 +920,7 @@ sNode*% parse_method_call(sNode*% obj, string fun_name, sInfo* info) version 20
     
     parse_sharp();
     
-    buffer*%? method_block = null;
+    buffer*% method_block = null;
     int method_block_sline = 0;
     if(*info->p == '{') {
         char* head = info.p;

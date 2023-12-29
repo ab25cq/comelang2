@@ -254,7 +254,7 @@ sBlock*% parse_block(sInfo* info=info, bool no_block_level=false)
     return result;
 }
 
-int transpile_block(sBlock* block, list<sType*%>*? param_types, list<string>*? param_names, sInfo* info, bool no_var_table=false, bool loop_block=false)
+int transpile_block(sBlock* block, list<sType*%>* param_types, list<string>* param_names, sInfo* info, bool no_var_table=false, bool loop_block=false)
 {
     if(info.output_header_file) {
         return 0;
@@ -271,8 +271,8 @@ int transpile_block(sBlock* block, list<sType*%>*? param_types, list<string>*? p
 	    info->current_loop_vtable = block->mVarTable;
 	}
     
-    list<sType*%>*? param_types_ = info.param_types;
-    list<string>*? param_names_ = info.param_names;
+    list<sType*%>* param_types_ = info.param_types;
+    list<string>* param_names_ = info.param_names;
     
     info.param_types = param_types;
     info.param_names = param_names;

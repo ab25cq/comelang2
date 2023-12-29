@@ -187,7 +187,7 @@ impl list <T>
         }
         var result = new list<T>.initialize();
 
-        list_item<T>*? it = self.head;
+        list_item<T>* it = self.head;
         while(it != null) {
             result.add(clone it.item);
 
@@ -568,7 +568,7 @@ impl list <T>
                 }
 
                 if(i >= head) {
-                    list_item<T>*? prev_it = it;
+                    list_item<T>* prev_it = it;
 
                     it = it.next;
                     i++;
@@ -800,8 +800,8 @@ impl list <T>
     list<T>*% merge_list_with_lambda(list<T>* left, list<T>* right, int (*compare)(T&,T&)) {
         auto result = new list<T>.initialize();
 
-        list_item<T>*? it = left.head;
-        list_item<T>*? it2= right.head;
+        list_item<T>* it = left.head;
+        list_item<T>* it2= right.head;
 
         while(true) {
             if(it && it2) {
@@ -860,7 +860,7 @@ impl list <T>
         auto list1 = new list<T>.initialize();
         auto list2 = new list<T>.initialize();
 
-        list_item<T>*? it = self.head;
+        list_item<T>* it = self.head;
 
         while(true) {
             list1.push_back(dupe it.item);
@@ -889,8 +889,8 @@ impl list <T>
     list<T>*% merge_list(list<T>* left, list<T>* right) {
         auto result = new list<T>.initialize();
 
-        list_item<T>*? it = left.head;
-        list_item<T>*? it2= right.head;
+        list_item<T>* it = left.head;
+        list_item<T>* it2= right.head;
 
         while(true) {
             if(it && it2) {
@@ -948,7 +948,7 @@ impl list <T>
         auto list1 = new list<T>.initialize();
         auto list2 = new list<T>.initialize();
 
-        list_item<T>*? it = self.head;
+        list_item<T>* it = self.head;
 
         while(true) {
             list1.push_back(dupe it.item);
@@ -978,7 +978,7 @@ impl list <T>
     {
         auto result = new list<any>.initialize();
 
-        list_item<T>?* it = self.head;
+        list_item<T>* it = self.head;
         while(it != null) {
             result.push_back(block(parent, it.item));
             
@@ -994,7 +994,7 @@ impl list <T>
     list<T>*% reverse(list<T>* self) {
         list<T>%* result = new list<T>();
 
-        list_item<T>*? it = self.tail;
+        list_item<T>* it = self.tail;
         while(it != null) {
             result.push_back(dupe it.item);
             it = it.prev;
@@ -1010,7 +1010,7 @@ impl list <T>
 
             result.push_back(dupe item_before);
 
-            list_item<T>*? it = self.head;
+            list_item<T>* it = self.head;
             it = it.next;
             while(it != null) {
                 if(!it.item.equals(item_before)) {
@@ -1029,7 +1029,7 @@ impl list <T>
     {
         list<T>*% result = new list<T>();
 
-        list_item<T>?* it = self.head;
+        list_item<T>* it = self.head;
         while(it != null) {
             if(block(parent, it.item)) {
                 result.push_back(dupe it.item);
@@ -1048,7 +1048,7 @@ impl list <T>
     list<T>*% operator_add(list<T>*% left, list<T>*% right) {
         list<T>*% result = new list<T>();
 
-        list_item<T>*? it = left.head;
+        list_item<T>* it = left.head;
         while(it != null) {
             result.push_back(dupe it.item);
 
@@ -1068,7 +1068,7 @@ impl list <T>
         list<T>*% result = new list<T>();
 
         for(int i=0; i<right; i++) {
-            list_item<T>*? it = left.head;
+            list_item<T>* it = left.head;
             while(it != null) {
                 result.push_back(dupe it.item);
     

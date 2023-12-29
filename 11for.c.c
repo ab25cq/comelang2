@@ -2345,7 +2345,7 @@ memset(&right_value76, 0, sizeof(void*));
     if(_if_conditional1=expression_node,    __freed_obj__ = 0, 
     _if_conditional1) {
         __dec_obj2=((struct sForNode*)come_null_check(self, "11for.c", 21))->mExpressionNode;
-        ((struct sForNode*)come_null_check(self, "11for.c", 21))->mExpressionNode=(struct sNode*)come_increment_ref_count(come_null_check(((struct sNode*)(right_value2=sNode_clone(expression_node))), "11for.c", 21));
+        ((struct sForNode*)come_null_check(self, "11for.c", 21))->mExpressionNode=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value2=sNode_clone(expression_node))));
         if(__dec_obj2) { __dec_obj2 = come_decrement_ref_count(__dec_obj2, ((struct sNode*)__dec_obj2)->finalize, ((struct sNode*)__dec_obj2)->_protocol_obj, 0,0,0); }
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value2);
         if(right_value2 && right_value2 != __result_obj__ && !__freed_obj__) { right_value2 = come_decrement_ref_count(right_value2, ((struct sNode*)right_value2)->finalize, ((struct sNode*)right_value2)->_protocol_obj, 1, 0, 0); } 
@@ -2362,7 +2362,7 @@ memset(&right_value76, 0, sizeof(void*));
     if(_if_conditional11=expression_node2,    __freed_obj__ = 0, 
     _if_conditional11) {
         __dec_obj4=((struct sForNode*)come_null_check(self, "11for.c", 27))->mExpressionNode2;
-        ((struct sForNode*)come_null_check(self, "11for.c", 27))->mExpressionNode2=(struct sNode*)come_increment_ref_count(come_null_check(((struct sNode*)(right_value3=sNode_clone(expression_node2))), "11for.c", 27));
+        ((struct sForNode*)come_null_check(self, "11for.c", 27))->mExpressionNode2=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value3=sNode_clone(expression_node2))));
         if(__dec_obj4) { __dec_obj4 = come_decrement_ref_count(__dec_obj4, ((struct sNode*)__dec_obj4)->finalize, ((struct sNode*)__dec_obj4)->_protocol_obj, 0,0,0); }
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value3);
         if(right_value3 && right_value3 != __result_obj__ && !__freed_obj__) { right_value3 = come_decrement_ref_count(right_value3, ((struct sNode*)right_value3)->finalize, ((struct sNode*)right_value3)->_protocol_obj, 1, 0, 0); } 
@@ -2379,7 +2379,7 @@ memset(&right_value76, 0, sizeof(void*));
     if(_if_conditional12=expression_node3,    __freed_obj__ = 0, 
     _if_conditional12) {
         __dec_obj6=((struct sForNode*)come_null_check(self, "11for.c", 33))->mExpressionNode3;
-        ((struct sForNode*)come_null_check(self, "11for.c", 33))->mExpressionNode3=(struct sNode*)come_increment_ref_count(come_null_check(((struct sNode*)(right_value4=sNode_clone(expression_node3))), "11for.c", 33));
+        ((struct sForNode*)come_null_check(self, "11for.c", 33))->mExpressionNode3=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value4=sNode_clone(expression_node3))));
         if(__dec_obj6) { __dec_obj6 = come_decrement_ref_count(__dec_obj6, ((struct sNode*)__dec_obj6)->finalize, ((struct sNode*)__dec_obj6)->_protocol_obj, 0,0,0); }
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value4);
         if(right_value4 && right_value4 != __result_obj__ && !__freed_obj__) { right_value4 = come_decrement_ref_count(right_value4, ((struct sNode*)right_value4)->finalize, ((struct sNode*)right_value4)->_protocol_obj, 1, 0, 0); } 

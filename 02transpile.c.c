@@ -8255,7 +8255,7 @@ memset(&right_value190, 0, sizeof(void*));
     __right_value_freed_obj[11] = right_value163;
     __freed_obj__ = 0;
     __dec_obj76=((struct sFun*)come_null_check(self, "02transpile.c", 362))->mBlock;
-    ((struct sFun*)come_null_check(self, "02transpile.c", 362))->mBlock=(struct sBlock*)come_increment_ref_count(come_null_check(((struct sBlock*)(right_value189=sBlock_clone(block))), "02transpile.c", 362));
+    ((struct sFun*)come_null_check(self, "02transpile.c", 362))->mBlock=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value189=sBlock_clone(block))));
     if(__dec_obj76) { come_call_finalizer(sBlock_finalize,__dec_obj76, (void*)0, (void*)0, 0, 0, 0, 0); }
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 12, right_value189);
     if(right_value189 && right_value189 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sBlock_finalize,right_value189, (void*)0, (void*)0, 0, 1, 0, 0); }

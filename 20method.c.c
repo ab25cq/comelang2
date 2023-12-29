@@ -7724,7 +7724,7 @@ memset(&right_value350, 0, sizeof(void*));
     __freed_obj__ = 0;
     obj_131=((struct sMethodCallNode*)come_null_check(self, "20method.c", 226))->obj;
     __freed_obj__ = 0;
-    method_block_132=come_null_check(((struct sMethodCallNode*)come_null_check(self, "20method.c", 227))->method_block, "20method.c", 227);
+    method_block_132=((struct sMethodCallNode*)come_null_check(self, "20method.c", 227))->method_block;
     __freed_obj__ = 0;
     method_block_sline_133=((struct sMethodCallNode*)come_null_check(self, "20method.c", 228))->method_block_sline;
     __freed_obj__ = 0;
@@ -12239,9 +12239,9 @@ memset(&right_value383, 0, sizeof(void*));
         __freed_obj__ = 0;
         mem_316[len_315]=0;
         __freed_obj__ = 0;
-        buffer_append_str(come_null_check(((struct buffer*)come_null_check(method_block_311, "20method.c", 936)), "20method.c", 936),mem_316);
+        buffer_append_str(((struct buffer*)come_null_check(method_block_311, "20method.c", 936)),mem_316);
         __freed_obj__ = 0;
-        buffer_append_str(come_null_check(((struct buffer*)come_null_check(method_block_311, "20method.c", 937)), "20method.c", 937),"\n");
+        buffer_append_str(((struct buffer*)come_null_check(method_block_311, "20method.c", 937)),"\n");
         __freed_obj__ = 0;
         if(mem_316 && !__freed_obj__) { mem_316 = come_decrement_ref_count(mem_316, (void*)0, (void*)0, 0, 0, 0); }
     }

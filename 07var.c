@@ -13,7 +13,7 @@ struct sStoreNode
     string sname;
 };
 
-sStoreNode*% sStoreNode*::initialize(sStoreNode*% self, string name, list<string>*%? multiple_assign, list<tuple3<sType*%, string, sNode*%>*%>*%? multiple_declare, sType*% type, bool alloc, sNode*%? right_value, string array_initializer, sInfo* info)
+sStoreNode*% sStoreNode*::initialize(sStoreNode*% self, string name, list<string>*% multiple_assign, list<tuple3<sType*%, string, sNode*%>*%>*% multiple_declare, sType*% type, bool alloc, sNode*% right_value, string array_initializer, sInfo* info)
 {
     self.name = string(name);
     self.alloc = alloc;
@@ -680,7 +680,7 @@ string sStoreNode*::sname(sStoreNode* self, sInfo* info)
     return string(self.sname);
 }
 
-sNode*% store_var(string name, list<string>*%? multiple_assign, sType*% type, bool alloc, sNode*%? right_node, sInfo* info)
+sNode*% store_var(string name, list<string>*% multiple_assign, sType*% type, bool alloc, sNode*% right_node, sInfo* info)
 {
     sNode*% result = new sStoreNode(name, multiple_assign, null@multiple_declare, type, alloc, right_node, null@array_initializer, info) implements sNode;
     

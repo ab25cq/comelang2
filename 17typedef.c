@@ -13,7 +13,7 @@ struct sTypedefNode
     string sname;
 };
 
-sTypedefNode*% sTypedefNode*::initialize(sTypedefNode*% self, string type_name, sType*% type, list<tuple2<sType*%, string>*%>*%? multiple_declare, sInfo* info)
+sTypedefNode*% sTypedefNode*::initialize(sTypedefNode*% self, string type_name, sType*% type, list<tuple2<sType*%, string>*%>*% multiple_declare, sInfo* info)
 {
     self.sline = info.sline;
     self.sname = string(info.sname);

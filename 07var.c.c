@@ -2481,7 +2481,7 @@ memset(&right_value48, 0, sizeof(void*));
     }
     __freed_obj__ = 0;
     __dec_obj26=((struct sStoreNode*)come_null_check(self, "07var.c", 26))->right_value;
-    ((struct sStoreNode*)come_null_check(self, "07var.c", 26))->right_value=(struct sNode*)come_increment_ref_count(come_null_check(right_value, "07var.c", 26));
+    ((struct sStoreNode*)come_null_check(self, "07var.c", 26))->right_value=(struct sNode*)come_increment_ref_count(right_value);
     if(__dec_obj26) { __dec_obj26 = come_decrement_ref_count(__dec_obj26, ((struct sNode*)__dec_obj26)->finalize, ((struct sNode*)__dec_obj26)->_protocol_obj, 0,0,0); }
     __freed_obj__ = 0;
     if(_if_conditional88=multiple_assign,    __freed_obj__ = 0, 
