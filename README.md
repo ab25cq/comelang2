@@ -355,6 +355,7 @@ bash self-host.sh
 1.9.1 fixed memory leak bugs
 2.0.0 complete 
 2.0.5 some bug fix
+2.0.6 some gug fix
 
 # Language specifications
 
