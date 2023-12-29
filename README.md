@@ -260,6 +260,10 @@ Rubyのようなメソッドブロックがあります。
 
 例外があります。
 
+11. null(nil) checking for occuring segmentation fault.
+
+nilを使うとnull segmentation faultが防げます。
+
 # INSTALL
 
 Required libraries are clang, make, autoconf, valgrind, gdb, lldb, musl-dev(alpine linux), pcre-dev
@@ -1100,7 +1104,7 @@ int main(int argc, char** argv)
 }
 > comleang2 a.c
 > ./a
-called null checker
+a.c 11: null check
 ```
 
 ``` C
@@ -1121,7 +1125,7 @@ int main(int argc, char** argv)
 }
 > comleang2 a.c
 > ./a
-no called null checker
+(no called checking null)
 ```
 
 ``` C
@@ -1136,10 +1140,10 @@ int main(int argc, char** argv)
 }
 > comleang2 a.c
 > ./a
-called null checker
+a.c 5: null check
 ```
 
-nil can't be assigned to null value variable type.(?)
+nil can be assigned to of null value variable type.(?)
 
 null can be assigend to all variable type.
 
