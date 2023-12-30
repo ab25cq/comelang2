@@ -2460,7 +2460,7 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 come_heap_init(0);
     __result13__ = come_main_v2(argc,argv);
     __freed_obj__ = 0;
-    come_heap_final(0);
+    come_heap_final(1);
     return __result13__;
     __freed_obj__ = 0;
 come_heap_final(0);
