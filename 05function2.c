@@ -1416,7 +1416,7 @@ sNode*% parse_function(sInfo* info)
     else if(info.impl_type && info.generics_type_names.length() > 0) {
         string none_generics_name = get_none_generics_name(info.impl_type.mClass.mName);
         
-        char* generics_sname = info.sname;
+        string generics_sname = string(info.sname);
         int generics_sline = info.sline;
         
         string block = skip_block(info);

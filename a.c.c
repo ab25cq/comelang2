@@ -1743,7 +1743,7 @@ come_heap_init(0);
     __freed_obj__ = 0;
     printf("%c\n",smart_pointer$1charp_operator_derefference(p_5));
     __freed_obj__ = 0;
-    smart_pointer$1charp_operator_plus_equal(p_5,4);
+    smart_pointer$1charp_operator_plus_equal(p_5,2);
     __freed_obj__ = 0;
     printf("%c\n",smart_pointer$1charp_operator_derefference(p_5));
     __freed_obj__ = 0;

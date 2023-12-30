@@ -6,7 +6,7 @@ int main(int argc, char** argv)
     
     printf("%c\n", *p);
     
-    p+=4;
+    p+=2;
     
     printf("%c\n", *p);
     

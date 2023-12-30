@@ -5,9 +5,11 @@ then
     
     if uname -a | grep Android
     then
-        ./configure --with-debug --prefix=$HOME
+        ./configure --with-optimize --prefix=$HOME
+        #./configure --with-debug --prefix=$HOME
     else
-        ./configure --with-debug
+        ./configure --with-optimize
+        #./configure --with-debug
     fi
 fi
 
