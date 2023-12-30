@@ -94,7 +94,7 @@ static bool cpp(sInfo* info)
     /// Mac ///
     int rc = system(cmd);
     if(rc == 0) {
-        string cmd2 = xsprintf("/opt/homebrew/opt/llvm/bin/clang-cpp -lang-c %s -I. -I/usr/local/include -DPREFIX=\"\\\"%s\\\"\" -I%s/include -DCOMELANG2 -D__DARWIN_ARM__ -I/opt/homebrew/opt/pcre/include -U__GNUC__ %s %s > %s", info.cpp_option, PREFIX, PREFIX, exist_common_h ? string(" -include common.h "):"", input_file_name, output_file_name);
+        string cmd2 = xsprintf("/opt/homebrew/opt/llvm/bin/clang-cpp -lang-c %s -I. -I/usr/local/include -DPREFIX=\"\\\"%s\\\"\" -I%s/include -DCOMELANG2 -D__DARWIN_ARM__ -I/opt/homebrew/opt/pcre/include -U__GNUC__ %s %s > %s 2> %s.cpp.out", info.cpp_option, PREFIX, PREFIX, exist_common_h ? string(" -include common.h "):"", input_file_name, output_file_name, output_file_name);
         if(info.verbose) puts(cmd2);
         
         int rc = system(cmd2);
@@ -103,19 +103,35 @@ static bool cpp(sInfo* info)
             printf("failed to cpp(2) (%s)\n", cmd2);
             exit(5);
         }
+        
+        var command2 = xsprintf("grep error\\: %s.cpp.out", output_file_name);
+        
+        if(info.verbose) puts(command2);
+        (void)system(command2);
     }
     /// Other ///
     else {
-        string cmd3 = xsprintf("cpp -lang-c %s -I. -I%s/include -DPREFIX=\"\\\"%s\\\"\" -I%s/include -DCOMELANG2 -U__GNUC__ %s %s > %s ", info.cpp_option, getenv("HOME"), PREFIX, PREFIX, exist_common_h ? string(" -include common.h "):"", input_file_name, output_file_name);
+        string cmd3 = xsprintf("cpp -lang-c %s -I. -I%s/include -DPREFIX=\"\\\"%s\\\"\" -I%s/include -DCOMELANG2 -U__GNUC__ %s %s > %s 2> %s.cpp.out", info.cpp_option, getenv("HOME"), PREFIX, PREFIX, exist_common_h ? string(" -include common.h "):"", input_file_name, output_file_name, output_file_name);
         
         if(info.verbose) puts(cmd3);
         rc = system(cmd3);
         
+        var command2 = xsprintf("grep error\\: %s.cpp.out", output_file_name);
+        
+        if(info.verbose) puts(command2);
+        (void)system(command2);
+        
         if(rc != 0) {
-            string cmd4 = xsprintf("cpp -I. %s -DPREFIX=%s -I%s/include -C %s %s > %s ", info.cpp_option, PREFIX, PREFIX, exist_common_h ? string(" -include common.h "):"", input_file_name, output_file_name);
+            string cmd4 = xsprintf("cpp -I. %s -DPREFIX=%s -I%s/include -C %s %s > %s 2> %s.cpp.out", info.cpp_option, PREFIX, PREFIX, exist_common_h ? string(" -include common.h "):"", input_file_name, output_file_name, output_file_name);
+    var command = xsprintf("clang -o %s -c %s %s >> %s.out 2>&1", output_file_name, input_file_name, info.clang_option, input_file_name);
     
             if(info.verbose) puts(cmd4);
             rc = system(cmd4);
+            
+            var command2 = xsprintf("grep error\\: %s.cpp.out", output_file_name);
+            
+            if(info.verbose) puts(command2);
+            (void)system(command2);
     
             if(rc != 0) {
                 printf("failed to cpp(2) (%s)\n", cmd4);
@@ -139,7 +155,7 @@ static bool compile(sInfo* info, bool output_object_file, list<string>* object_f
         output_file_name = info.sname + ".o";
     }
     
-    var command = xsprintf("clang -o %s -c %s %s > %s.out 2>&1", output_file_name, input_file_name, info.clang_option, input_file_name);
+    var command = xsprintf("clang -o %s -c %s %s >> %s.out 2>&1", output_file_name, input_file_name, info.clang_option, input_file_name);
     
     if(info.verbose) puts(command);
     int rc = system(command);
