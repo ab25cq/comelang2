@@ -239,12 +239,15 @@ bool sReturnNode*::compile(sReturnNode* self, sInfo* info)
         
         if(info.come_fun.mName === "main") {
             free_objects(info->gv_table, null@ret_value, info);
+            add_come_code(info, xsprintf("come_heap_final(1);\n"));
+            /*
             if(gComeDebug) {
                 add_come_code(info, xsprintf("come_heap_final(1);\n"));
             }
             else {
                 add_come_code(info, xsprintf("come_heap_final(0);\n"));
             }
+            */
         }
         
         add_come_code(info, "return __result%d__;\n", num_result_stack);
