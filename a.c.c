@@ -431,6 +431,26 @@ struct optional$2intbool
     int v1;
     _Bool v2;
 };
+struct smart_pointer$1char
+{
+    struct buffer* memory;
+    char* p;
+};
+struct smart_pointer$1short
+{
+    struct buffer* memory;
+    short short* p;
+};
+struct smart_pointer$1int
+{
+    struct buffer* memory;
+    int* p;
+};
+struct smart_pointer$1long
+{
+    struct buffer* memory;
+    long* p;
+};
 struct optional$2boolbool
 {
     _Bool v1;
@@ -1190,6 +1210,10 @@ struct buffer* charp_to_buffer(char* self);
 
 char* buffer_to_string(struct buffer* self);
 
+static void smart_pointer$1charp_finalize(struct smart_pointer$1char* self);
+static void smart_pointer$1shortp_finalize(struct smart_pointer$1short* self);
+static void smart_pointer$1intp_finalize(struct smart_pointer$1int* self);
+static void smart_pointer$1longp_finalize(struct smart_pointer$1long* self);
 _Bool bool_equals(_Bool self, _Bool right);
 
 _Bool char_equals(char self, char right);
@@ -1396,10 +1420,10 @@ struct optional$2charphbool* charp_print(char* self);
 
 void int_times(int self, void* parent, void (*block)(void*,int));
 
-void fun(char* str);
-
 int main(int argc, char** argv);
 
+static char smart_pointer$1charp_operator_derefference(struct smart_pointer$1char* self);
+static struct smart_pointer$1char* smart_pointer$1charp_operator_plus_equal(struct smart_pointer$1char* self, int value);
 // inline function
 static inline unsigned short int __bswap_16(unsigned short int __bsx){
 void* __result_obj__;
@@ -1477,6 +1501,156 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
     exit(4);
     __freed_obj__ = 0;
 }
+static inline struct smart_pointer$1char* buffer_to_pointer(struct buffer* self){
+void* __result_obj__;
+_Bool __freed_obj__;
+void* right_value0;
+struct smart_pointer$1char* result_0;
+void* right_value1;
+struct buffer* __dec_obj1;
+struct smart_pointer$1char* __result7__;
+memset(&__result_obj__, 0, sizeof(void*));
+memset(&__freed_obj__, 0, sizeof(_Bool));
+memset(&right_value0, 0, sizeof(void*));
+memset(&result_0, 0, sizeof(struct smart_pointer$1char*));
+memset(&right_value1, 0, sizeof(void*));
+    result_0=(struct smart_pointer$1char*)come_increment_ref_count(((struct smart_pointer$1char*)(right_value0=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./comelang2.h", 1987))));
+    if(right_value0 && right_value0 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,right_value0, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __freed_obj__ = 0;
+    __dec_obj1=((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 1989))->memory;
+    ((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 1989))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value1=buffer_clone(self))));
+    if(__dec_obj1) { come_call_finalizer(buffer_finalize,__dec_obj1, (void*)0, (void*)0, 0, 0, 0, 0); }
+    if(right_value1 && right_value1 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value1, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __freed_obj__ = 0;
+    ((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 1990))->p=((struct buffer*)come_null_check(((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 1990))->memory, "./comelang2.h", 1990))->buf;
+    __freed_obj__ = 0;
+    __result7__ = __result_obj__ = result_0;
+    if(result_0 && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,result_0, (void*)0, (void*)0, 0, 0, 1, 0); }
+    __freed_obj__ = 0;
+    return __result7__;
+    __freed_obj__ = 0;
+    if(result_0 && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,result_0, (void*)0, (void*)0, 0, 0, 0, 0); }
+}
+static inline struct smart_pointer$1char* buffer_to_char_pointer(struct buffer* self){
+void* __result_obj__;
+_Bool __freed_obj__;
+void* right_value2;
+struct smart_pointer$1char* result_1;
+void* right_value3;
+struct buffer* __dec_obj2;
+struct smart_pointer$1char* __result8__;
+memset(&__result_obj__, 0, sizeof(void*));
+memset(&__freed_obj__, 0, sizeof(_Bool));
+memset(&right_value2, 0, sizeof(void*));
+memset(&result_1, 0, sizeof(struct smart_pointer$1char*));
+memset(&right_value3, 0, sizeof(void*));
+    result_1=(struct smart_pointer$1char*)come_increment_ref_count(((struct smart_pointer$1char*)(right_value2=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./comelang2.h", 1997))));
+    if(right_value2 && right_value2 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,right_value2, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __freed_obj__ = 0;
+    __dec_obj2=((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 1999))->memory;
+    ((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 1999))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value3=buffer_clone(self))));
+    if(__dec_obj2) { come_call_finalizer(buffer_finalize,__dec_obj2, (void*)0, (void*)0, 0, 0, 0, 0); }
+    if(right_value3 && right_value3 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value3, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __freed_obj__ = 0;
+    ((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2000))->p=(char*)((struct buffer*)come_null_check(((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2000))->memory, "./comelang2.h", 2000))->buf;
+    __freed_obj__ = 0;
+    __result8__ = __result_obj__ = result_1;
+    if(result_1 && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,result_1, (void*)0, (void*)0, 0, 0, 1, 0); }
+    __freed_obj__ = 0;
+    return __result8__;
+    __freed_obj__ = 0;
+    if(result_1 && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,result_1, (void*)0, (void*)0, 0, 0, 0, 0); }
+}
+static inline struct smart_pointer$1short* buffer_to_short_pointer(struct buffer* self){
+void* __result_obj__;
+_Bool __freed_obj__;
+void* right_value4;
+struct smart_pointer$1short* result_2;
+void* right_value5;
+struct buffer* __dec_obj3;
+struct smart_pointer$1short* __result9__;
+memset(&__result_obj__, 0, sizeof(void*));
+memset(&__freed_obj__, 0, sizeof(_Bool));
+memset(&right_value4, 0, sizeof(void*));
+memset(&result_2, 0, sizeof(struct smart_pointer$1short*));
+memset(&right_value5, 0, sizeof(void*));
+    result_2=(struct smart_pointer$1short*)come_increment_ref_count(((struct smart_pointer$1short*)(right_value4=(struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./comelang2.h", 2007))));
+    if(right_value4 && right_value4 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1shortp_finalize,right_value4, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __freed_obj__ = 0;
+    __dec_obj3=((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2009))->memory;
+    ((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2009))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value5=buffer_clone(self))));
+    if(__dec_obj3) { come_call_finalizer(buffer_finalize,__dec_obj3, (void*)0, (void*)0, 0, 0, 0, 0); }
+    if(right_value5 && right_value5 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value5, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __freed_obj__ = 0;
+    ((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2010))->p=(short short*)((struct buffer*)come_null_check(((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2010))->memory, "./comelang2.h", 2010))->buf;
+    __freed_obj__ = 0;
+    __result9__ = __result_obj__ = result_2;
+    if(result_2 && !__freed_obj__) { come_call_finalizer(smart_pointer$1shortp_finalize,result_2, (void*)0, (void*)0, 0, 0, 1, 0); }
+    __freed_obj__ = 0;
+    return __result9__;
+    __freed_obj__ = 0;
+    if(result_2 && !__freed_obj__) { come_call_finalizer(smart_pointer$1shortp_finalize,result_2, (void*)0, (void*)0, 0, 0, 0, 0); }
+}
+static inline struct smart_pointer$1int* buffer_to_int_pointer(struct buffer* self){
+void* __result_obj__;
+_Bool __freed_obj__;
+void* right_value6;
+struct smart_pointer$1int* result_3;
+void* right_value7;
+struct buffer* __dec_obj4;
+struct smart_pointer$1int* __result10__;
+memset(&__result_obj__, 0, sizeof(void*));
+memset(&__freed_obj__, 0, sizeof(_Bool));
+memset(&right_value6, 0, sizeof(void*));
+memset(&result_3, 0, sizeof(struct smart_pointer$1int*));
+memset(&right_value7, 0, sizeof(void*));
+    result_3=(struct smart_pointer$1int*)come_increment_ref_count(((struct smart_pointer$1int*)(right_value6=(struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./comelang2.h", 2017))));
+    if(right_value6 && right_value6 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1intp_finalize,right_value6, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __freed_obj__ = 0;
+    __dec_obj4=((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2019))->memory;
+    ((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2019))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value7=buffer_clone(self))));
+    if(__dec_obj4) { come_call_finalizer(buffer_finalize,__dec_obj4, (void*)0, (void*)0, 0, 0, 0, 0); }
+    if(right_value7 && right_value7 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value7, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __freed_obj__ = 0;
+    ((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2020))->p=(int*)((struct buffer*)come_null_check(((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2020))->memory, "./comelang2.h", 2020))->buf;
+    __freed_obj__ = 0;
+    __result10__ = __result_obj__ = result_3;
+    if(result_3 && !__freed_obj__) { come_call_finalizer(smart_pointer$1intp_finalize,result_3, (void*)0, (void*)0, 0, 0, 1, 0); }
+    __freed_obj__ = 0;
+    return __result10__;
+    __freed_obj__ = 0;
+    if(result_3 && !__freed_obj__) { come_call_finalizer(smart_pointer$1intp_finalize,result_3, (void*)0, (void*)0, 0, 0, 0, 0); }
+}
+static inline struct smart_pointer$1long* buffer_to_long_pointer(struct buffer* self){
+void* __result_obj__;
+_Bool __freed_obj__;
+void* right_value8;
+struct smart_pointer$1long* result_4;
+void* right_value9;
+struct buffer* __dec_obj5;
+struct smart_pointer$1long* __result11__;
+memset(&__result_obj__, 0, sizeof(void*));
+memset(&__freed_obj__, 0, sizeof(_Bool));
+memset(&right_value8, 0, sizeof(void*));
+memset(&result_4, 0, sizeof(struct smart_pointer$1long*));
+memset(&right_value9, 0, sizeof(void*));
+    result_4=(struct smart_pointer$1long*)come_increment_ref_count(((struct smart_pointer$1long*)(right_value8=(struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./comelang2.h", 2027))));
+    if(right_value8 && right_value8 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1longp_finalize,right_value8, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __freed_obj__ = 0;
+    __dec_obj5=((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2029))->memory;
+    ((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2029))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value9=buffer_clone(self))));
+    if(__dec_obj5) { come_call_finalizer(buffer_finalize,__dec_obj5, (void*)0, (void*)0, 0, 0, 0, 0); }
+    if(right_value9 && right_value9 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value9, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __freed_obj__ = 0;
+    ((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2030))->p=(long*)((struct buffer*)come_null_check(((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2030))->memory, "./comelang2.h", 2030))->buf;
+    __freed_obj__ = 0;
+    __result11__ = __result_obj__ = result_4;
+    if(result_4 && !__freed_obj__) { come_call_finalizer(smart_pointer$1longp_finalize,result_4, (void*)0, (void*)0, 0, 0, 1, 0); }
+    __freed_obj__ = 0;
+    return __result11__;
+    __freed_obj__ = 0;
+    if(result_4 && !__freed_obj__) { come_call_finalizer(smart_pointer$1longp_finalize,result_4, (void*)0, (void*)0, 0, 0, 0, 0); }
+}
 
 // body function
 
@@ -1486,27 +1660,143 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 
 
 
-void fun(char* str){
+
+static void smart_pointer$1charp_finalize(struct smart_pointer$1char* self){
 void* __result_obj__;
 _Bool __freed_obj__;
+_Bool _if_conditional1;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
+        if(_if_conditional1=self!=((void*)0)&&((struct smart_pointer$1char*)come_null_check(self, "smart_pointer$1charp_finalize", 1))->memory!=((void*)0),        __freed_obj__ = 0, 
+        _if_conditional1) {
+            if(((struct smart_pointer$1char*)come_null_check(self, "smart_pointer$1charp_finalize", 0))->memory && !__freed_obj__) { come_call_finalizer(buffer_finalize,((struct smart_pointer$1char*)come_null_check(self, "smart_pointer$1charp_finalize", 0))->memory, (void*)0, (void*)0, 0, 0, 0, 0); }
+            __freed_obj__ = 0;
+        }
+        __freed_obj__ = 0;
+}
+
+
+
+static void smart_pointer$1shortp_finalize(struct smart_pointer$1short* self){
+void* __result_obj__;
+_Bool __freed_obj__;
+_Bool _if_conditional2;
+memset(&__result_obj__, 0, sizeof(void*));
+memset(&__freed_obj__, 0, sizeof(_Bool));
+        if(_if_conditional2=self!=((void*)0)&&((struct smart_pointer$1short*)come_null_check(self, "smart_pointer$1shortp_finalize", 1))->memory!=((void*)0),        __freed_obj__ = 0, 
+        _if_conditional2) {
+            if(((struct smart_pointer$1short*)come_null_check(self, "smart_pointer$1shortp_finalize", 0))->memory && !__freed_obj__) { come_call_finalizer(buffer_finalize,((struct smart_pointer$1short*)come_null_check(self, "smart_pointer$1shortp_finalize", 0))->memory, (void*)0, (void*)0, 0, 0, 0, 0); }
+            __freed_obj__ = 0;
+        }
+        __freed_obj__ = 0;
+}
+
+
+static void smart_pointer$1intp_finalize(struct smart_pointer$1int* self){
+void* __result_obj__;
+_Bool __freed_obj__;
+_Bool _if_conditional3;
+memset(&__result_obj__, 0, sizeof(void*));
+memset(&__freed_obj__, 0, sizeof(_Bool));
+        if(_if_conditional3=self!=((void*)0)&&((struct smart_pointer$1int*)come_null_check(self, "smart_pointer$1intp_finalize", 1))->memory!=((void*)0),        __freed_obj__ = 0, 
+        _if_conditional3) {
+            if(((struct smart_pointer$1int*)come_null_check(self, "smart_pointer$1intp_finalize", 0))->memory && !__freed_obj__) { come_call_finalizer(buffer_finalize,((struct smart_pointer$1int*)come_null_check(self, "smart_pointer$1intp_finalize", 0))->memory, (void*)0, (void*)0, 0, 0, 0, 0); }
+            __freed_obj__ = 0;
+        }
+        __freed_obj__ = 0;
+}
+
+
+static void smart_pointer$1longp_finalize(struct smart_pointer$1long* self){
+void* __result_obj__;
+_Bool __freed_obj__;
+_Bool _if_conditional4;
+memset(&__result_obj__, 0, sizeof(void*));
+memset(&__freed_obj__, 0, sizeof(_Bool));
+        if(_if_conditional4=self!=((void*)0)&&((struct smart_pointer$1long*)come_null_check(self, "smart_pointer$1longp_finalize", 1))->memory!=((void*)0),        __freed_obj__ = 0, 
+        _if_conditional4) {
+            if(((struct smart_pointer$1long*)come_null_check(self, "smart_pointer$1longp_finalize", 0))->memory && !__freed_obj__) { come_call_finalizer(buffer_finalize,((struct smart_pointer$1long*)come_null_check(self, "smart_pointer$1longp_finalize", 0))->memory, (void*)0, (void*)0, 0, 0, 0, 0); }
+            __freed_obj__ = 0;
+        }
+        __freed_obj__ = 0;
 }
 
 int main(int argc, char** argv){
 void* __result_obj__;
 _Bool __freed_obj__;
-int __result7__;
+void* right_value10;
+void* right_value11;
+void* right_value12;
+struct smart_pointer$1char* p_5;
+int __result14__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
+memset(&right_value10, 0, sizeof(void*));
+memset(&right_value11, 0, sizeof(void*));
+memset(&right_value12, 0, sizeof(void*));
+memset(&p_5, 0, sizeof(struct smart_pointer$1char*));
 come_heap_init(0);
-    fun(((void*)0));
+    p_5=(struct smart_pointer$1char*)come_increment_ref_count(((struct smart_pointer$1char*)(right_value12=buffer_to_pointer(((struct buffer*)come_null_check(((struct buffer*)(right_value11=charp_to_buffer(((char*)come_null_check(((char*)(right_value10=xsprintf("ABC"))), "a.c", 5))))), "a.c", 5))))));
+    if(right_value10 && right_value10 != __result_obj__ && !__freed_obj__) { right_value10 = come_decrement_ref_count(right_value10, (void*)0, (void*)0, 1, 0, 0); }
+    if(right_value11 && right_value11 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value11, (void*)0, (void*)0, 0, 1, 0, 0); }
+    if(right_value12 && right_value12 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,right_value12, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
-    __result7__ = 0;
+    printf("%c\n",smart_pointer$1charp_operator_derefference(p_5));
+    __freed_obj__ = 0;
+    smart_pointer$1charp_operator_plus_equal(p_5,4);
+    __freed_obj__ = 0;
+    printf("%c\n",smart_pointer$1charp_operator_derefference(p_5));
+    __freed_obj__ = 0;
+    __result14__ = 0;
+    if(p_5 && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,p_5, (void*)0, (void*)0, 0, 0, 0, 0); }
     __freed_obj__ = 0;
     come_heap_final(0);
-    return __result7__;
+    return __result14__;
     __freed_obj__ = 0;
+    if(p_5 && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,p_5, (void*)0, (void*)0, 0, 0, 0, 0); }
 come_heap_final(0);
+}
+
+static char smart_pointer$1charp_operator_derefference(struct smart_pointer$1char* self){
+void* __result_obj__;
+_Bool __freed_obj__;
+char* p_6;
+char __result12__;
+memset(&__result_obj__, 0, sizeof(void*));
+memset(&__freed_obj__, 0, sizeof(_Bool));
+memset(&p_6, 0, sizeof(char*));
+        p_6=((struct smart_pointer$1char*)come_null_check(self, "./comelang2.h", 2082))->p;
+        __freed_obj__ = 0;
+        __result12__ = *p_6;
+        __freed_obj__ = 0;
+        return __result12__;
+        __freed_obj__ = 0;
+}
+
+static struct smart_pointer$1char* smart_pointer$1charp_operator_plus_equal(struct smart_pointer$1char* self, int value){
+void* __result_obj__;
+_Bool __freed_obj__;
+int n_7;
+_Bool _if_conditional5;
+struct smart_pointer$1char* __result13__;
+memset(&__result_obj__, 0, sizeof(void*));
+memset(&__freed_obj__, 0, sizeof(_Bool));
+memset(&n_7, 0, sizeof(int));
+        n_7=((struct smart_pointer$1char*)come_null_check(self, "./comelang2.h", 2114))->p-(char*)((struct buffer*)come_null_check(((struct smart_pointer$1char*)come_null_check(self, "./comelang2.h", 2114))->memory, "./comelang2.h", 2114))->buf;
+        __freed_obj__ = 0;
+        ((struct smart_pointer$1char*)come_null_check(self, "./comelang2.h", 2115))->p=((char*)((struct buffer*)come_null_check(((struct smart_pointer$1char*)come_null_check(self, "./comelang2.h", 2115))->memory, "./comelang2.h", 2115))->buf)+n_7+value;
+        __freed_obj__ = 0;
+        if(_if_conditional5=(char*)((struct smart_pointer$1char*)come_null_check(self, "./comelang2.h", 2122))->p>((struct buffer*)come_null_check(((struct smart_pointer$1char*)come_null_check(self, "./comelang2.h", 2122))->memory, "./comelang2.h", 2122))->buf+((struct buffer*)come_null_check(((struct smart_pointer$1char*)come_null_check(self, "./comelang2.h", 2122))->memory, "./comelang2.h", 2122))->len,        __freed_obj__ = 0, 
+        _if_conditional5) {
+            fprintf(stderr,"%s %d: out of range of smart pointer(2)\n","a.c",9);
+            __freed_obj__ = 0;
+            exit(1);
+            __freed_obj__ = 0;
+        }
+        __freed_obj__ = 0;
+        __result13__ = __result_obj__ = self;
+        __freed_obj__ = 0;
+        return __result13__;
+        __freed_obj__ = 0;
 }
 

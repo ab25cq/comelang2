@@ -8,6 +8,138 @@ void come_final() version 5
 {
 }
 
+bool operator_overload_fun_self(sType* type, char* fun_name, CVALUE* left_value, sInfo* info)
+{
+    sType*% generics_type = clone type;
+    if(generics_type->mNoSolvedGenericsType.v1) {
+        generics_type = generics_type->mNoSolvedGenericsType.v1;
+    }
+    
+    if(type->mNoSolvedGenericsType.v1) {
+        type = type->mNoSolvedGenericsType.v1;
+    }
+    sClass* klass = type->mClass;
+    char* class_name = klass->mName;
+    
+    sFun* operator_fun = null;
+    
+    string fun_name2;
+    if(type->mGenericsTypes.length() > 0) {
+        string none_generics_name = get_none_generics_name(type.mClass.mName);
+        
+        sType*% obj_type = solve_generics(type, info.generics_type, info);
+        
+        fun_name2 = create_method_name(obj_type, false@no_pointer_name, fun_name, info);
+        string fun_name3 = xsprintf("%s_%s", none_generics_name, fun_name);
+        
+        sGenericsFun* generics_fun = info.generics_funcs.at(fun_name3, null);
+        
+        
+        if(generics_fun) {
+            if(!create_generics_fun(string(fun_name2), generics_fun, obj_type, info)) {
+                return false;
+            }
+            
+            operator_fun = info->funcs[fun_name2];
+        }
+        else {
+            if(fun_name === "operator_equals") {
+                var fun, fun_name = create_equals_automatically(obj_type, "equals", info);
+                var fun2, fun_name2 = create_operator_equals_automatically(obj_type, "operator_equals", info);
+                
+                operator_fun = fun2;
+            }
+            else if(fun_name === "operator_not_equals") {
+                var fun, fun_name = create_equals_automatically(obj_type, "not_equals", info);
+                var fun2, fun_name2 = create_operator_not_equals_automatically(obj_type, "operator_not_equals", info);
+                
+                operator_fun = fun2;
+            }
+            else {
+                operator_fun = info->funcs[fun_name2];
+            }
+        }
+    }
+    else {
+        fun_name2 = create_method_name(type, false@no_pointer_name, fun_name, info);
+        
+        int i;
+        for(i=FUN_VERSION_MAX-1; i>=1; i--) {
+            string new_fun_name = xsprintf("%s_v%d", fun_name2, i);
+            operator_fun = info->funcs[new_fun_name];
+            
+            if(operator_fun) {
+                fun_name2 = string(new_fun_name);
+                break;
+            }
+        }
+        
+        if(operator_fun == NULL) {
+            operator_fun = info->funcs[fun_name2];
+        }
+    }
+    
+    bool result = false;
+    
+    if(operator_fun) {
+        CVALUE*% come_value = new CVALUE;
+        string left_value2;
+        check_assign_type(s"\{fun_name2} is assigned to", operator_fun.mParamTypes[0], left_value.type, left_value);
+        if(operator_fun.mParamTypes[0].mHeap && left_value.type.mHeap) {
+            if(left_value.var) {
+                if(left_value.var.mType.mDelegate) {
+                    left_value.var->mCValueName = null;
+                }
+                else if(left_value.var.mType.mShare) {
+                    left_value.c_value = increment_ref_count_object(left_value.type, left_value.c_value, info);
+                }
+                else if(left_value.var.mType.mClone) {
+                    left_value.c_value = increment_ref_count_object(left_value.type, left_value.c_value, info);
+                }
+                else {
+                    left_value.c_value = increment_ref_count_object(left_value.type, left_value.c_value, info);
+                }
+            }
+            else {
+                if(left_value.type.mDelegate) {
+                }
+                else {
+                    left_value.c_value = increment_ref_count_object(left_value.type, left_value.c_value, info);
+                }
+            }
+            left_value2 = xsprintf("%s", left_value.c_value);
+        }
+        else {
+            left_value2 = clone left_value.c_value;
+        }
+        
+        come_value.c_value = xsprintf("%s(%s)", fun_name2, left_value2);
+        
+        sType*% type2 = clone operator_fun->mResultType;
+        
+        sType*% type3 = solve_generics(type2, generics_type, info);
+        
+        come_value.type = clone type3;
+        come_value.var = null;
+        
+        if(type3->mHeap) {
+            come_value.c_value = append_object_to_right_values(come_value.c_value, type3, info);
+        }
+        
+        if(operator_fun.mResultType->mException) {
+            come_value.c_value = append_exception_value(come_value.c_value, come_value.type, info);
+        }
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+        
+        info.stack.push_back(come_value);
+    
+        result = true;
+    }
+    
+    return result;
+}
+
 struct sReturnNode
 {
     sNode*% value;
@@ -190,6 +322,57 @@ bool sLineNode*::compile(sLineNode* self, sInfo* info)
     return true;
 }
 
+struct sSNameNode
+{
+    sNode*% value;
+    string value_source;
+    int sline;
+    string sname;
+};
+
+sSNameNode*% sSNameNode*::initialize(sSNameNode*% self, sInfo* info)
+{
+    self.sline = info.sline;
+    self.sname = string(info.sname);
+    
+    return self;
+}
+
+int sSNameNode*::sline(sSNameNode* self, sInfo* info)
+{
+    return self.sline;
+}
+
+string sSNameNode*::sname(sSNameNode* self, sInfo* info)
+{
+    return string(self.sname);
+}
+
+bool sSNameNode*::terminated()
+{
+    return false;
+}
+
+string sSNameNode*::kind()
+{
+    return string("sSNameNode");
+}
+
+bool sSNameNode*::compile(sSNameNode* self, sInfo* info)
+{
+    CVALUE*% come_value = new CVALUE;
+    
+    come_value.c_value = xsprintf("\"%s\"", info->sname);
+    come_value.type = new sType("char*");
+    come_value.var = null;
+    
+    info.stack.push_back(come_value);
+    
+    add_come_last_code(info, "%s;\n", come_value.c_value);
+    
+    return true;
+}
+
 struct sFuncNode
 {
     sNode*% value;
@@ -348,6 +531,57 @@ bool sCallerLineNode*::compile(sCallerLineNode* self, sInfo* info)
 string sCallerLineNode*::kind()
 {
     return string("sCallerLineNode");
+}
+
+struct sCallerSNameNode
+{
+    sNode*% value;
+    string value_source;
+    int sline;
+    string sname;
+};
+
+sCallerSNameNode*% sCallerSNameNode*::initialize(sCallerSNameNode*% self, sInfo* info)
+{
+    self.sline = info.sline;
+    self.sname = string(info.sname);
+    
+    return self;
+}
+
+int sCallerSNameNode*::sline(sCallerSNameNode* self, sInfo* info)
+{
+    return self.sline;
+}
+
+string sCallerSNameNode*::sname(sCallerSNameNode* self, sInfo* info)
+{
+    return string(self.sname);
+}
+
+bool sCallerSNameNode*::terminated()
+{
+    return false;
+}
+
+bool sCallerSNameNode*::compile(sCallerSNameNode* self, sInfo* info)
+{
+    CVALUE*% come_value = new CVALUE;
+    
+    come_value.c_value = xsprintf("\"%s\"", info->caller_sname);
+    come_value.type = new sType("char*");
+    come_value.var = null;
+    
+    info.stack.push_back(come_value);
+    
+    add_come_last_code(info, "%s;\n", come_value.c_value);
+    
+    return true;
+}
+
+string sCallerSNameNode*::kind()
+{
+    return string("sCallerSNameNode");
 }
 
 struct sParentReturnNode
@@ -627,15 +861,17 @@ bool sParentContinueNode*::compile(sParentContinueNode* self, sInfo* info)
 struct sDerefferenceNode
 {
     sNode*% value;
+    bool mQuote;
     int sline;
     string sname;
 };
 
-sDerefferenceNode*% sDerefferenceNode*::initialize(sDerefferenceNode*% self, sNode*% value, sInfo* info)
+sDerefferenceNode*% sDerefferenceNode*::initialize(sDerefferenceNode*% self, sNode*% value, bool quote, sInfo* info)
 {
     self.value = value;
     self.sline = info.sline;
     self.sname = string(info.sname);
+    self.mQuote = quote;
     
     return self;
 }
@@ -671,16 +907,30 @@ bool sDerefferenceNode*::compile(sDerefferenceNode* self, sInfo* info)
     CVALUE*% left_value = get_value_from_stack(-1, info);
     dec_stack_ptr(1, info);
     
-    CVALUE*% come_value = new CVALUE;
+    sType*% type = left_value.type;
     
-    come_value.c_value = xsprintf("*%s", left_value.c_value);
-    come_value.type = clone left_value.type;
-    come_value.type->mPointerNum--;
-    come_value.var = null;
+    char* fun_name = "operator_derefference";
     
-    add_come_last_code(info, "%s;\n", come_value.c_value);
+    bool calling_fun;
+    if(self.mQuote) {
+        calling_fun = false;
+    }
+    else {
+        calling_fun = operator_overload_fun_self(type, fun_name, left_value, info);
+    }
     
-    info.stack.push_back(come_value);
+    if(!calling_fun) {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("*%s", left_value.c_value);
+        come_value.type = clone left_value.type;
+        come_value.type->mPointerNum--;
+        come_value.var = null;
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+        
+        info.stack.push_back(come_value);
+    }
     
     return true;
 }
@@ -2078,16 +2328,25 @@ sNode*% expression_node(sInfo* info=info) version 99
         
         return new sParentContinueNode(info) implements sNode;
     }
-    else if(*info->p == '*') {
-        info->p ++;
-        skip_spaces_and_lf();
+    else if((*info->p == '\\' && *(info->p+1) == '*') || *info->p == '*') {
+        bool quote;
+        if(*info->p == '\\') {
+            info->p += 2;
+            skip_spaces_and_lf();
+            quote = true;
+        }
+        else {
+            info->p ++;
+            skip_spaces_and_lf();
+            quote = false;
+        }
         
         bool no_assign = info.no_assign;
         info.no_assign = true;
         sNode*% value = expression_node();
         info.no_assign = no_assign;
         
-        return new sDerefferenceNode(value, info) implements sNode
+        return new sDerefferenceNode(value, quote, info) implements sNode
     }
     else if(*info->p == '&' && refference) {
         info->p ++;
@@ -2259,11 +2518,17 @@ sNode*% expression_node(sInfo* info=info) version 99
         else if(buf === "__line__") {
             return new sLineNode(info) implements sNode;
         }
+        else if(buf === "__sname__") {
+            return new sSNameNode(info) implements sNode;
+        }
         else if(buf === "__caller_func__") {
             return new sCallerFuncNode(info) implements sNode;
         }
         else if(buf === "__caller_line__") {
             return new sCallerLineNode(info) implements sNode;
+        }
+        else if(buf === "__caller_sname__") {
+            return new sCallerSNameNode(info) implements sNode;
         }
         else if((buf === "sizeof" || buf === "_Alignof" || buf === "_Alignas" || buf === "__alignof__") && *info->p == '(') {
             sNode*% node = string_node(buf, head, head_sline, info)!

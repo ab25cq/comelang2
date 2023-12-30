@@ -7,7 +7,7 @@ Yet another modern compiler. It has a collection library with reffrence count gc
 
 もう一つのモダンなコンパイラ。オリジナルのリファレンスカウントGCを持ったコレクションライブラリがあります。C言語と互換性があります。
 
-version 2.1.1
+version 3.0.0
 
 ``` C
 #include <comelang2.h>
@@ -262,6 +262,12 @@ Rubyのようなメソッドブロックがあります。
 
 nilを使うとnull segmentation faultが防げます。
 
+With using nil, you can prevent from null segmentation fault.
+
+12. smart pointer
+
+Memory safe pointer
+
 # INSTALL
 
 Required libraries are clang, make, autoconf, valgrind, gdb, lldb, musl-dev(alpine linux), pcre-dev
@@ -360,6 +366,7 @@ bash self-host.sh
 2.0.6 some gug fix
 2.1.0 null(nil) checker
 2.1.1 bug fixed
+3.0.0 smart pointer
 
 # Language specifications
 
@@ -1478,6 +1485,30 @@ int main()
 }
 
 compile with -str option to link libpcre
+```
+
+# smart pointer
+
+```C
+> vin a.c
+#include <comelang2.h>
+
+int main(int argc, char** argv)
+{
+    var p = s"ABC".to_buffer().to_pointer();
+    
+    printf("%c\n", *p);
+    
+    p+=4;
+    
+    printf("%c\n", *p);
+    
+    return 0;
+}
+> comelang a.c
+> ./a
+A
+a.c 9: out of range of smart pointer(2)
 ```
 
 # afterword

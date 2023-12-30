@@ -1975,6 +1975,216 @@ buffer*% char*::to_buffer(char* self);
 string buffer*::to_string(buffer* self);
 
 //////////////////////////////
+// smart_pointer
+//////////////////////////////
+struct smart_pointer<T> {
+    buffer*% memory;
+    T* p;
+};
+
+static inline smart_pointer<char>*% buffer*::to_pointer(buffer* self)
+{
+    auto result = new smart_pointer<char>;
+    
+    result.memory = clone self;
+    result.p = result.memory.buf;
+    
+    return result;
+}
+
+static inline smart_pointer<char>*% buffer*::to_char_pointer(buffer* self)
+{
+    auto result = new smart_pointer<char>;
+    
+    result.memory = clone self;
+    result.p = (char*)result.memory.buf;
+    
+    return result;
+}
+
+static inline smart_pointer<short>*% buffer*::to_short_pointer(buffer* self)
+{
+    auto result = new smart_pointer<short>;
+    
+    result.memory = clone self;
+    result.p = (short*)result.memory.buf;
+    
+    return result;
+}
+
+static inline smart_pointer<int>*% buffer*::to_int_pointer(buffer* self)
+{
+    auto result = new smart_pointer<int>;
+    
+    result.memory = clone self;
+    result.p = (int*)result.memory.buf;
+    
+    return result;
+}
+
+static inline smart_pointer<long>*% buffer*::to_long_pointer(buffer* self)
+{
+    auto result = new smart_pointer<long>;
+    
+    result.memory = clone self;
+    result.p = (long*)result.memory.buf;
+    
+    return result;
+}
+
+impl smart_pointer<T>
+{
+    smart_pointer<T>*% initialize(smart_pointer<T>*% self, void* memory, int size)
+    {
+        self.memory = new buffer();
+        
+        self.memory.append(memory, sizeof(T)*size);
+        
+        self.p = (T*)self.memory.buf;
+        
+        return self;
+    }
+    
+    smart_pointer<T>*% operator_add(smart_pointer<T>* self, int value)
+    {
+        var result = new smart_pointer<T>;
+        
+        result.memory = self.memory;
+        int n = self.p - (T*)self.memory.buf;
+        result.p = ((T*)result.memory.buf) + n + value;
+        
+        if((char*)result.p > result.memory.buf + result.memory.len) {
+            fprintf(stderr, "%s %d: out of range of smart pointer(2)\n", __caller_sname__, __caller_sline__);
+            exit(1);
+        }
+        
+        return result;
+    }
+    
+    smart_pointer<T>*% operator_sub(smart_pointer<T>* self, int value)
+    {
+        smart_pointer<T>*% result = new smart_pointer<T>;
+        
+        result.memory = self.memory;
+        int n = self.p - (T*)self.memory.buf;
+        result.p = ((T*)result.memory.buf) + n - value;
+        
+        if((char*)result.p < result.memory.buf) {
+            fprintf(stderr, "%s %d: out of range of smart pointer\n", __caller_sname__, __caller_sline__);
+            exit(1);
+        }
+        
+        return result;
+    }
+    
+    T operator_derefference(smart_pointer<T>* self)
+    {
+        T* p = self.p;
+        return *p;
+    }
+    
+    smart_pointer<T>* operator_plus_plus(smart_pointer<T>* self)
+    {
+        int n = self.p - (T*)self.memory.buf;
+        self.p = ((T*)self.memory.buf) + n + 1;
+        
+        if((char*)self.p > self.memory.buf + self.memory.len) {
+            fprintf(stderr, "%s %d: out of range of smart pointer(2)\n", __caller_sname__, __caller_line__);
+            exit(1);
+        }
+        
+        return self;
+    }
+    
+    smart_pointer<T>* operator_minus_minus(smart_pointer<T>* self)
+    {
+        int n = self.p - (T*)self.memory.buf;
+        self.p = ((T*)self.memory.buf) + n - 1;
+        
+        if((char*)result.p < result.memory.buf) {
+            fprintf(stderr, "%s %d: out of range of smart pointer\n", __caller_sname__, __caller_line__);
+            exit(1);
+        }
+        
+        return self;
+    }
+    
+    smart_pointer<T>* operator_plus_equal(smart_pointer<T>* self, int value)
+    {
+        int n = self.p - (T*)self.memory.buf;
+        self.p = ((T*)self.memory.buf) + n + value;
+        
+        if((char*)self.p > self.memory.buf + self.memory.len) {
+            fprintf(stderr, "%s %d: out of range of smart pointer(2)\n", __caller_sname__, __caller_line__);
+            exit(1);
+        }
+        
+        return self;
+    }
+    
+    smart_pointer<T>* operator_minus_equal(smart_pointer<T>* self, int value)
+    {
+        int n = self.p - (T*)self.memory.buf;
+        self.p = ((T*)self.memory.buf) + n - value;
+        
+        if((char*)result.p < result.memory.buf) {
+            fprintf(stderr, "%s %d: out of range of smart pointer\n", __caller_sname__, __caller_line__);
+            exit(1);
+        }
+        
+        return self;
+    }
+    
+    bool as_bool(smart_pointer<T>* self)
+    {
+        using unsafe;
+        bool p = *(bool*)self.p;
+        return p;
+    }
+    
+    int as_char(smart_pointer<T>* self)
+    {
+        char p = *(char*)self.p;
+        return p;
+    }
+    
+    short as_short(smart_pointer<T>* self)
+    {
+        short p = *(short*)self.p;
+        return p;
+    }
+    
+    int as_int(smart_pointer<T>* self)
+    {
+        int p = *(int*)self.p;
+        return p;
+    }
+    
+    long as_long(smart_pointer<T>* self)
+    {
+        long p = *(long*)self.p;
+        return p;
+    }
+    
+    float as_float(smart_pointer<T>* self)
+    {
+        float p = *(float*)self.p;
+        return p;
+    }
+    
+    double as_double(smart_pointer<T>* self)
+    {
+        double p = *(double*)self.p;
+        return p;
+    }
+    
+    string to_string(smart_pointer<T>* self)
+    {
+        return self.memory.to_string();
+    }
+}
+
+//////////////////////////////
 /// base library(equals)
 //////////////////////////////
 bool bool::equals(bool self, bool right);

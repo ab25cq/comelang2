@@ -6,14 +6,16 @@ struct sPlusPlusNode
   
     int sline;
     string sname;
+    bool mQuote;
 };
 
-sPlusPlusNode*% sPlusPlusNode*::initialize(sPlusPlusNode*% self, sNode*% left, sInfo* info)
+sPlusPlusNode*% sPlusPlusNode*::initialize(sPlusPlusNode*% self, sNode*% left, bool quote, sInfo* info)
 {
     self.sline = info.sline;
     self.sname = string(info.sname);
 
     self.mLeft = clone left;
+    self.mQuote = quote;
 
     return self;
 }
@@ -39,15 +41,29 @@ bool sPlusPlusNode*::compile(sPlusPlusNode* self, sInfo* info)
     CVALUE*% left_value = get_value_from_stack(-1, info);
     dec_stack_ptr(1, info);
     
-    CVALUE*% come_value = new CVALUE;
+    sType*% type = left_value.type;
     
-    come_value.c_value = xsprintf("%s++", left_value.c_value);
-    come_value.type = clone left_value.type;
-    come_value.var = null;
+    char* fun_name = "operator_plus_plus";
     
-    info.stack.push_back(come_value);
+    bool calling_fun;
+    if(self.mQuote) {
+        calling_fun = false;
+    }
+    else {
+        calling_fun = operator_overload_fun_self(type, fun_name, left_value, info);
+    }
     
-    add_come_last_code(info, "%s;\n", come_value.c_value);
+    if(!calling_fun) {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%s++", left_value.c_value);
+        come_value.type = clone left_value.type;
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+    }
 
     return true;
 }
@@ -65,17 +81,19 @@ string sPlusPlusNode*::sname(sPlusPlusNode* self, sInfo* info)
 struct sMinusMinusNode
 {
     sNode*% mLeft;
+    bool mQuote;
   
     int sline;
     string sname;
 };
 
-sMinusMinusNode*% sMinusMinusNode*::initialize(sMinusMinusNode*% self, sNode*% left, sInfo* info)
+sMinusMinusNode*% sMinusMinusNode*::initialize(sMinusMinusNode*% self, sNode*% left, bool quote, sInfo* info)
 {
     self.sline = info.sline;
     self.sname = string(info.sname);
 
     self.mLeft = clone left;
+    self.mQuote = quote;
 
     return self;
 }
@@ -101,15 +119,29 @@ bool sMinusMinusNode*::compile(sMinusMinusNode* self, sInfo* info)
     CVALUE*% left_value = get_value_from_stack(-1, info);
     dec_stack_ptr(1, info);
     
-    CVALUE*% come_value = new CVALUE;
+    sType*% type = left_value.type;
     
-    come_value.c_value = xsprintf("%s--", left_value.c_value);
-    come_value.type = clone left_value.type;
-    come_value.var = null;
+    char* fun_name = "operator_minus_minus";
     
-    info.stack.push_back(come_value);
+    bool calling_fun;
+    if(self.mQuote) {
+        calling_fun = false;
+    }
+    else {
+        calling_fun = operator_overload_fun_self(type, fun_name, left_value, info);
+    }
     
-    add_come_last_code(info, "%s;\n", come_value.c_value);
+    if(!calling_fun) {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%s--", left_value.c_value);
+        come_value.type = clone left_value.type;
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+    }
 
     return true;
 }
@@ -128,18 +160,20 @@ struct sPlusEqualNode
 {
     sNode*% mLeft;
     sNode*% mRight;
+    bool mQuote;
   
     int sline;
     string sname;
 };
 
-sPlusEqualNode*% sPlusEqualNode*::initialize(sPlusEqualNode*% self, sNode*% left, sNode*% right, sInfo* info)
+sPlusEqualNode*% sPlusEqualNode*::initialize(sPlusEqualNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
 {
     self.sline = info.sline;
     self.sname = string(info.sname);
 
     self.mLeft = clone left;
     self.mRight = clone right;
+    self.mQuote = quote;
 
     return self;
 }
@@ -174,15 +208,28 @@ bool sPlusEqualNode*::compile(sPlusEqualNode* self, sInfo* info)
     CVALUE*% right_value = get_value_from_stack(-1, info);
     dec_stack_ptr(1, info);
     
-    CVALUE*% come_value = new CVALUE;
+    sType*% type = left_value.type;
     
-    come_value.c_value = xsprintf("%s+=%s", left_value.c_value, right_value.c_value);
-    come_value.type = clone left_value.type;
-    come_value.var = null;
+    char* fun_name = "operator_plus_equal";
+    bool calling_fun;
+    if(self.mQuote) {
+        calling_fun = false;
+    }
+    else {
+        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, info);
+    }
     
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
+    if(!calling_fun) {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%s+=%s", left_value.c_value, right_value.c_value);
+        come_value.type = clone left_value.type;
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+    }
 
     return true;
 }
@@ -201,15 +248,17 @@ struct sMinusEqualNode
 {
     sNode*% mLeft;
     sNode*% mRight;
+    bool mQuote;
   
     int sline;
     string sname;
 };
 
-sMinusEqualNode*% sMinusEqualNode*::initialize(sMinusEqualNode*% self, sNode*% left, sNode*% right, sInfo* info)
+sMinusEqualNode*% sMinusEqualNode*::initialize(sMinusEqualNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
 {
     self.sline = info.sline;
     self.sname = string(info.sname);
+    self.mQuote = quote;
 
     self.mLeft = clone left;
     self.mRight = clone right;
@@ -247,15 +296,28 @@ bool sMinusEqualNode*::compile(sMinusEqualNode* self, sInfo* info)
     CVALUE*% right_value = get_value_from_stack(-1, info);
     dec_stack_ptr(1, info);
     
-    CVALUE*% come_value = new CVALUE;
+    sType*% type = left_value.type;
     
-    come_value.c_value = xsprintf("%s-=%s", left_value.c_value, right_value.c_value);
-    come_value.type = clone left_value.type;
-    come_value.var = null;
+    char* fun_name = "operator_minus_equal";
+    bool calling_fun;
+    if(self.mQuote) {
+        calling_fun = false;
+    }
+    else {
+        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, info);
+    }
     
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
+    if(!calling_fun) {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%s-=%s", left_value.c_value, right_value.c_value);
+        come_value.type = clone left_value.type;
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+    }
 
     return true;
 }
@@ -274,15 +336,17 @@ struct sMultEqualNode
 {
     sNode*% mLeft;
     sNode*% mRight;
+    bool mQuote;
   
     int sline;
     string sname;
 };
 
-sMultEqualNode*% sMultEqualNode*::initialize(sMultEqualNode*% self, sNode*% left, sNode*% right, sInfo* info)
+sMultEqualNode*% sMultEqualNode*::initialize(sMultEqualNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
 {
     self.sline = info.sline;
     self.sname = string(info.sname);
+    self.mQuote = quote;
 
     self.mLeft = clone left;
     self.mRight = clone right;
@@ -320,15 +384,28 @@ bool sMultEqualNode*::compile(sMultEqualNode* self, sInfo* info)
     CVALUE*% right_value = get_value_from_stack(-1, info);
     dec_stack_ptr(1, info);
     
-    CVALUE*% come_value = new CVALUE;
+    sType*% type = left_value.type;
     
-    come_value.c_value = xsprintf("%s*=%s", left_value.c_value, right_value.c_value);
-    come_value.type = clone left_value.type;
-    come_value.var = null;
+    char* fun_name = "operator_mult_equal";
+    bool calling_fun;
+    if(self.mQuote) {
+        calling_fun = false;
+    }
+    else {
+        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, info);
+    }
     
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
+    if(!calling_fun) {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%s*=%s", left_value.c_value, right_value.c_value);
+        come_value.type = clone left_value.type;
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+    }
 
     return true;
 }
@@ -347,15 +424,17 @@ struct sDivEqualNode
 {
     sNode*% mLeft;
     sNode*% mRight;
+    bool mQuote;
   
     int sline;
     string sname;
 };
 
-sDivEqualNode*% sDivEqualNode*::initialize(sDivEqualNode*% self, sNode*% left, sNode*% right, sInfo* info)
+sDivEqualNode*% sDivEqualNode*::initialize(sDivEqualNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
 {
     self.sline = info.sline;
     self.sname = string(info.sname);
+    self.mQuote = quote;
 
     self.mLeft = clone left;
     self.mRight = clone right;
@@ -393,15 +472,28 @@ bool sDivEqualNode*::compile(sDivEqualNode* self, sInfo* info)
     CVALUE*% right_value = get_value_from_stack(-1, info);
     dec_stack_ptr(1, info);
     
-    CVALUE*% come_value = new CVALUE;
+    sType*% type = left_value.type;
     
-    come_value.c_value = xsprintf("%s/=%s", left_value.c_value, right_value.c_value);
-    come_value.type = clone left_value.type;
-    come_value.var = null;
+    char* fun_name = "operator_div_equal";
+    bool calling_fun;
+    if(self.mQuote) {
+        calling_fun = false;
+    }
+    else {
+        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, info);
+    }
     
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
+    if(!calling_fun) {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%s/=%s", left_value.c_value, right_value.c_value);
+        come_value.type = clone left_value.type;
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+    }
 
     return true;
 }
@@ -420,15 +512,17 @@ struct sModEqualNode
 {
     sNode*% mLeft;
     sNode*% mRight;
+    bool mQuote;
   
     int sline;
     string sname;
 };
 
-sModEqualNode*% sModEqualNode*::initialize(sModEqualNode*% self, sNode*% left, sNode*% right, sInfo* info)
+sModEqualNode*% sModEqualNode*::initialize(sModEqualNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
 {
     self.sline = info.sline;
     self.sname = string(info.sname);
+    self.mQuote = quote;
 
     self.mLeft = clone left;
     self.mRight = clone right;
@@ -466,15 +560,28 @@ bool sModEqualNode*::compile(sModEqualNode* self, sInfo* info)
     CVALUE*% right_value = get_value_from_stack(-1, info);
     dec_stack_ptr(1, info);
     
-    CVALUE*% come_value = new CVALUE;
+    sType*% type = left_value.type;
     
-    come_value.c_value = xsprintf("%s%%=%s", left_value.c_value, right_value.c_value);
-    come_value.type = clone left_value.type;
-    come_value.var = null;
+    char* fun_name = "operator_mod_equal";
+    bool calling_fun;
+    if(self.mQuote) {
+        calling_fun = false;
+    }
+    else {
+        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, info);
+    }
     
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
+    if(!calling_fun) {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%s%%=%s", left_value.c_value, right_value.c_value);
+        come_value.type = clone left_value.type;
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+    }
 
     return true;
 }
@@ -493,15 +600,17 @@ struct sLShifEqualNode
 {
     sNode*% mLeft;
     sNode*% mRight;
+    bool mQuote;
   
     int sline;
     string sname;
 };
 
-sLShifEqualNode*% sLShifEqualNode*::initialize(sLShifEqualNode*% self, sNode*% left, sNode*% right, sInfo* info)
+sLShifEqualNode*% sLShifEqualNode*::initialize(sLShifEqualNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
 {
     self.sline = info.sline;
     self.sname = string(info.sname);
+    self.mQuote = quote;
 
     self.mLeft = clone left;
     self.mRight = clone right;
@@ -540,15 +649,28 @@ bool sLShifEqualNode*::compile(sLShifEqualNode* self, sInfo* info)
     CVALUE*% right_value = get_value_from_stack(-1, info);
     dec_stack_ptr(1, info);
     
-    CVALUE*% come_value = new CVALUE;
+    sType*% type = left_value.type;
     
-    come_value.c_value = xsprintf("%s<<=%s", left_value.c_value, right_value.c_value);
-    come_value.type = clone left_value.type;
-    come_value.var = null;
+    char* fun_name = "operator_lshift_equal";
+    bool calling_fun;
+    if(self.mQuote) {
+        calling_fun = false;
+    }
+    else {
+        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, info);
+    }
     
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
+    if(!calling_fun) {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%s<<=%s", left_value.c_value, right_value.c_value);
+        come_value.type = clone left_value.type;
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+    }
 
     return true;
 }
@@ -567,15 +689,17 @@ struct sRShiftEqualNode
 {
     sNode*% mLeft;
     sNode*% mRight;
+    bool mQuote;
   
     int sline;
     string sname;
 };
 
-sRShiftEqualNode*% sRShiftEqualNode*::initialize(sRShiftEqualNode*% self, sNode*% left, sNode*% right, sInfo* info)
+sRShiftEqualNode*% sRShiftEqualNode*::initialize(sRShiftEqualNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
 {
     self.sline = info.sline;
     self.sname = string(info.sname);
+    self.mQuote = quote;
 
     self.mLeft = clone left;
     self.mRight = clone right;
@@ -613,15 +737,28 @@ bool sRShiftEqualNode*::compile(sRShiftEqualNode* self, sInfo* info)
     CVALUE*% right_value = get_value_from_stack(-1, info);
     dec_stack_ptr(1, info);
     
-    CVALUE*% come_value = new CVALUE;
+    sType*% type = left_value.type;
     
-    come_value.c_value = xsprintf("%s>>=%s", left_value.c_value, right_value.c_value);
-    come_value.type = clone left_value.type;
-    come_value.var = null;
+    char* fun_name = "operator_rshift_equal";
+    bool calling_fun;
+    if(self.mQuote) {
+        calling_fun = false;
+    }
+    else {
+        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, info);
+    }
     
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
+    if(!calling_fun) {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%s>>=%s", left_value.c_value, right_value.c_value);
+        come_value.type = clone left_value.type;
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+    }
 
     return true;
 }
@@ -640,15 +777,17 @@ struct sXorEqualNode
 {
     sNode*% mLeft;
     sNode*% mRight;
+    bool mQuote;
   
     int sline;
     string sname;
 };
 
-sXorEqualNode*% sXorEqualNode*::initialize(sXorEqualNode*% self, sNode*% left, sNode*% right, sInfo* info)
+sXorEqualNode*% sXorEqualNode*::initialize(sXorEqualNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
 {
     self.sline = info.sline;
     self.sname = string(info.sname);
+    self.mQuote = quote;
 
     self.mLeft = clone left;
     self.mRight = clone right;
@@ -686,15 +825,28 @@ bool sXorEqualNode*::compile(sXorEqualNode* self, sInfo* info)
     CVALUE*% right_value = get_value_from_stack(-1, info);
     dec_stack_ptr(1, info);
     
-    CVALUE*% come_value = new CVALUE;
+    sType*% type = left_value.type;
     
-    come_value.c_value = xsprintf("%s^=%s", left_value.c_value, right_value.c_value);
-    come_value.type = clone left_value.type;
-    come_value.var = null;
+    char* fun_name = "operator_xor_equal";
+    bool calling_fun;
+    if(self.mQuote) {
+        calling_fun = false;
+    }
+    else {
+        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, info);
+    }
     
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
+    if(!calling_fun) {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%s^=%s", left_value.c_value, right_value.c_value);
+        come_value.type = clone left_value.type;
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+    }
 
     return true;
 }
@@ -713,15 +865,17 @@ struct sOrEqualNode
 {
     sNode*% mLeft;
     sNode*% mRight;
+    bool mQuote;
   
     int sline;
     string sname;
 };
 
-sOrEqualNode*% sOrEqualNode*::initialize(sOrEqualNode*% self, sNode*% left, sNode*% right, sInfo* info)
+sOrEqualNode*% sOrEqualNode*::initialize(sOrEqualNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
 {
     self.sline = info.sline;
     self.sname = string(info.sname);
+    self.mQuote = quote;
 
     self.mLeft = clone left;
     self.mRight = clone right;
@@ -759,15 +913,28 @@ bool sOrEqualNode*::compile(sOrEqualNode* self, sInfo* info)
     CVALUE*% right_value = get_value_from_stack(-1, info);
     dec_stack_ptr(1, info);
     
-    CVALUE*% come_value = new CVALUE;
+    sType*% type = left_value.type;
     
-    come_value.c_value = xsprintf("%s|=%s", left_value.c_value, right_value.c_value);
-    come_value.type = clone left_value.type;
-    come_value.var = null;
+    char* fun_name = "operator_or_equal";
+    bool calling_fun;
+    if(self.mQuote) {
+        calling_fun = false;
+    }
+    else {
+        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, info);
+    }
     
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
+    if(!calling_fun) {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%s|=%s", left_value.c_value, right_value.c_value);
+        come_value.type = clone left_value.type;
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+    }
 
     return true;
 }
@@ -786,15 +953,17 @@ struct sAndEqualNode
 {
     sNode*% mLeft;
     sNode*% mRight;
+    bool mQuote;
   
     int sline;
     string sname;
 };
 
-sAndEqualNode*% sAndEqualNode*::initialize(sAndEqualNode*% self, sNode*% left, sNode*% right, sInfo* info)
+sAndEqualNode*% sAndEqualNode*::initialize(sAndEqualNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
 {
     self.sline = info.sline;
     self.sname = string(info.sname);
+    self.mQuote = quote;
 
     self.mLeft = clone left;
     self.mRight = clone right;
@@ -832,15 +1001,28 @@ bool sAndEqualNode*::compile(sAndEqualNode* self, sInfo* info)
     CVALUE*% right_value = get_value_from_stack(-1, info);
     dec_stack_ptr(1, info);
     
-    CVALUE*% come_value = new CVALUE;
+    sType*% type = left_value.type;
     
-    come_value.c_value = xsprintf("%s&=%s", left_value.c_value, right_value.c_value);
-    come_value.type = clone left_value.type;
-    come_value.var = null;
+    char* fun_name = "operator_and_equal";
+    bool calling_fun;
+    if(self.mQuote) {
+        calling_fun = false;
+    }
+    else {
+        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, info);
+    }
     
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
+    if(!calling_fun) {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%s&=%s", left_value.c_value, right_value.c_value);
+        come_value.type = clone left_value.type;
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+    }
 
     return true;
 }
@@ -859,15 +1041,17 @@ struct sExpEqualNode
 {
     sNode*% mLeft;
     sNode*% mRight;
+    bool mQuote;
   
     int sline;
     string sname;
 };
 
-sExpEqualNode*% sExpEqualNode*::initialize(sExpEqualNode*% self, sNode*% left, sNode*% right, sInfo* info)
+sExpEqualNode*% sExpEqualNode*::initialize(sExpEqualNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
 {
     self.sline = info.sline;
     self.sname = string(info.sname);
+    self.mQuote = quote;
 
     self.mLeft = clone left;
     self.mRight = clone right;
@@ -905,15 +1089,28 @@ bool sExpEqualNode*::compile(sExpEqualNode* self, sInfo* info)
     CVALUE*% right_value = get_value_from_stack(-1, info);
     dec_stack_ptr(1, info);
     
-    CVALUE*% come_value = new CVALUE;
+    sType*% type = left_value.type;
     
-    come_value.c_value = xsprintf("%s=%s", left_value.c_value, right_value.c_value);
-    come_value.type = clone left_value.type;
-    come_value.var = null;
+    char* fun_name = "operator_exp_equal";
+    bool calling_fun;
+    if(self.mQuote) {
+        calling_fun = false;
+    }
+    else {
+        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, info);
+    }
     
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
+    if(!calling_fun) {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%s=%s", left_value.c_value, right_value.c_value);
+        come_value.type = clone left_value.type;
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+    }
 
     return true;
 }
@@ -930,105 +1127,223 @@ string sExpEqualNode*::sname(sExpEqualNode* self, sInfo* info)
 
 sNode*% post_position_operator2(sNode*% node, sInfo* info) version 19
 {
-    if(*info->p == '+' && *(info->p+1) == '+') {
-         info->p+=2;
-         skip_spaces_and_lf();
-        
-         return new sPlusPlusNode(node, info) implements sNode;
+    if((*info->p == '\\' && *(info->p+1) == '+' && *(info->p+2) == '+') || (*info->p == '+' && *(info->p+1) == '+')) {
+         bool quote
+         if(*info->p == '\\') {
+             info->p+=3;
+             skip_spaces_and_lf();
+             quote = true;
+         }
+         else {
+             info->p+=2;
+             skip_spaces_and_lf();
+             quote = false;
+         }
+         
+         return new sPlusPlusNode(node, quote, info) implements sNode;
     }
-    else if(*info->p == '-' && *(info->p+1) == '-') {
-         info->p+=2;
-         skip_spaces_and_lf();
+    else if((*info->p == '\\' && *(info->p+1) == '-' && *(info->p+2) == '-') || (*info->p == '-' && *(info->p+1) == '-')) {
+        bool quote
+        if(*info->p == '\\') {
+            info->p+=3;
+            skip_spaces_and_lf();
+            quote = true;
+        }
+        else {
+            info->p+=2;
+            skip_spaces_and_lf();
+            quote = false;
+        }
         
-         return new sMinusMinusNode(node, info) implements sNode;
+        return new sMinusMinusNode(node, quote, info) implements sNode;
     }
-    else if(*info->p == '+' && *(info->p+1) == '=') {
-         info->p+=2;
-         skip_spaces_and_lf();
+    else if((*info->p == '\\' && *(info->p+1) == '+' && *(info->p+2) == '=') || (*info->p == '+' && *(info->p+1) == '=')) {
+         bool quote
+         if(*info->p == '\\') {
+             info->p+=3;
+             skip_spaces_and_lf();
+             quote = true;
+         }
+         else {
+             info->p+=2;
+             skip_spaces_and_lf();
+             quote = false;
+         }
          
          sNode*% right_node = expression();
         
-         return new sPlusEqualNode(node, right_node, info) implements sNode;
+         return new sPlusEqualNode(node, right_node, quote, info) implements sNode;
     }
-    else if(*info->p == '-' && *(info->p+1) == '=') {
-         info->p+=2;
-         skip_spaces_and_lf();
+    else if((*info->p == '\\' && *(info->p+1) == '-' && *(info->p+2) == '=') || (*info->p == '-' && *(info->p+1) == '=')) {
+         bool quote
+         if(*info->p == '\\') {
+             info->p+=3;
+             skip_spaces_and_lf();
+             quote = true;
+         }
+         else {
+             info->p+=2;
+             skip_spaces_and_lf();
+             quote = false;
+         }
          
          sNode*% right_node = expression();
         
-         return new sMinusEqualNode(node, right_node, info) implements sNode;
+         return new sMinusEqualNode(node, right_node, quote, info) implements sNode;
     }
-    else if(*info->p == '*' && *(info->p+1) == '=') {
-         info->p+=2;
-         skip_spaces_and_lf();
+    else if((*info->p == '\\' && *(info->p+1) == '*' && *(info->p+2) == '=') || (*info->p == '*' && *(info->p+1) == '=')) {
+         bool quote
+         if(*info->p == '\\') {
+             info->p+=3;
+             skip_spaces_and_lf();
+             quote = true;
+         }
+         else {
+             info->p+=2;
+             skip_spaces_and_lf();
+             quote = false;
+         }
          
          sNode*% right_node = expression();
         
-         return new sMultEqualNode(node, right_node, info) implements sNode;
+         return new sMultEqualNode(node, right_node, quote, info) implements sNode;
     }
-    else if(*info->p == '/' && *(info->p+1) == '=') {
-         info->p+=2;
-         skip_spaces_and_lf();
+    else if((*info->p == '\\' && *(info->p+1) == '/' && *(info->p+2) == '=') || (*info->p == '/' && *(info->p+1) == '=')) {
+         bool quote
+         if(*info->p == '\\') {
+             info->p+=3;
+             skip_spaces_and_lf();
+             quote = true;
+         }
+         else {
+             info->p+=2;
+             skip_spaces_and_lf();
+             quote = false;
+         }
          
          sNode*% right_node = expression();
         
-         return new sDivEqualNode(node, right_node, info) implements sNode;
+         return new sDivEqualNode(node, right_node, quote, info) implements sNode;
     }
-    else if(*info->p == '%' && *(info->p+1) == '=') {
-         info->p+=2;
-         skip_spaces_and_lf();
+    else if((*info->p == '\\' && *(info->p+1) == '%' && *(info->p+2) == '=') || (*info->p == '%' && *(info->p+1) == '=')) {
+         bool quote
+         if(*info->p == '\\') {
+             info->p+=3;
+             skip_spaces_and_lf();
+             quote = true;
+         }
+         else {
+             info->p+=2;
+             skip_spaces_and_lf();
+             quote = false;
+         }
+         
          
          sNode*% right_node = expression();
         
-         return new sModEqualNode(node, right_node, info) implements sNode;
+         return new sModEqualNode(node, right_node, quote, info) implements sNode;
     }
-    else if(*info->p == '<' && *(info->p+1) == '<' && *(info->p+2) == '=') {
-         info->p+=3;
-         skip_spaces_and_lf();
+    else if((*info->p == '\\' && *(info->p+1) == '<' && *(info->p+2) == '<' && *(info->p+3) == '=') || (*info->p == '<' && *(info->p+1) == '<' && *(info->p+2) == '=')) {
+         bool quote
+         if(*info->p == '\\') {
+             info->p+=4;
+             skip_spaces_and_lf();
+             quote = true;
+         }
+         else {
+             info->p+=3;
+             skip_spaces_and_lf();
+             quote = false;
+         }
          
          sNode*% right_node = expression();
         
-         return new sLShifEqualNode(node, right_node, info) implements sNode;
+         return new sLShifEqualNode(node, right_node, quote, info) implements sNode;
     }
-    else if(*info->p == '>' && *(info->p+1) == '>' && *(info->p+2) == '=') {
-         info->p+=3;
-         skip_spaces_and_lf();
+    else if((*info->p == '\\' && *(info->p+1) == '>' && *(info->p+2) == '>' && *(info->p+3) == '=') || (*info->p == '>' && *(info->p+1) == '>' && *(info->p+2) == '=')) {
+         bool quote
+         if(*info->p == '\\') {
+             info->p+=4;
+             skip_spaces_and_lf();
+             quote = true;
+         }
+         else {
+             info->p+=3;
+             skip_spaces_and_lf();
+             quote = false;
+         }
          
          sNode*% right_node = expression();
         
-         return new sRShiftEqualNode(node, right_node, info) implements sNode;
+         return new sRShiftEqualNode(node, right_node, quote, info) implements sNode;
     }
-    else if(*info->p == '^' && *(info->p+1) == '=') {
-         info->p+=2;
-         skip_spaces_and_lf();
+    else if((*info->p == '\\' && *(info->p+1) == '^' && *(info->p+2) == '=') || (*info->p == '^' && *(info->p+1) == '=')) {
+         bool quote
+         if(*info->p == '\\') {
+             info->p+=3;
+             skip_spaces_and_lf();
+             quote = true;
+         }
+         else {
+             info->p+=2;
+             skip_spaces_and_lf();
+             quote = false;
+         }
          
          sNode*% right_node = expression();
         
-         return new sXorEqualNode(node, right_node, info) implements sNode;
+         return new sXorEqualNode(node, right_node, quote, info) implements sNode;
     }
-    else if(*info->p == '&' && *(info->p+1) == '=') {
-         info->p+=2;
-         skip_spaces_and_lf();
+    else if((*info->p == '\\' && *(info->p+1) == '&' && *(info->p+2) == '=') || (*info->p == '&' && *(info->p+1) == '=')) {
+         bool quote
+         if(*info->p == '\\') {
+             info->p+=3;
+             skip_spaces_and_lf();
+             quote = true;
+         }
+         else {
+             info->p+=2;
+             skip_spaces_and_lf();
+             quote = false;
+         }
          
          sNode*% right_node = expression();
         
-         return new sAndEqualNode(node, right_node, info) implements sNode;
+         return new sAndEqualNode(node, right_node, quote, info) implements sNode;
     }
-    else if(*info->p == '|' && *(info->p+1) == '=') {
-         info->p+=2;
-         skip_spaces_and_lf();
+    else if((*info->p == '\\' && *(info->p+1) == '|' && *(info->p+2) == '=') || (*info->p == '|' && *(info->p+1) == '=')) {
+         bool quote
+         if(*info->p == '\\') {
+             info->p+=3;
+             skip_spaces_and_lf();
+             quote = true;
+         }
+         else {
+             info->p+=2;
+             skip_spaces_and_lf();
+             quote = false;
+         }
          
          sNode*% right_node = expression();
         
-         return new sOrEqualNode(node, right_node, info) implements sNode;
+         return new sOrEqualNode(node, right_node, quote, info) implements sNode;
     }
-    else if(*info->p == '=' && *(info->p+1) != '=') {
-         info->p++;
-         skip_spaces_and_lf();
+    else if((*info->p == '\\' && *(info->p+1) == '=' && *(info->p+2) != '=') || (*info->p == '=' && *(info->p+1) != '=')) {
+         bool quote
+         if(*info->p == '\\') {
+             info->p+=2;
+             skip_spaces_and_lf();
+             quote = true;
+         }
+         else {
+             info->p++;
+             skip_spaces_and_lf();
+             quote = false;
+         }
          
          sNode*% right_node = expression();
         
-         return new sExpEqualNode(node, right_node, info) implements sNode;
+         return new sExpEqualNode(node, right_node, quote, info) implements sNode;
     }
     
     return (sNode*%)null;
