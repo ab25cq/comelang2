@@ -360,3 +360,365 @@ main.c.c:8255:10: warning: address of 'info_84' will always evaluate to 'true' [
     if((&info_84) && !__freed_obj__) { come_call_finalizer(sInfo_finalize,(&info_84), (void*)0, (void*)0, 1, 0, 0, 0); }
          ^~~~~~~  ~~
 109 warnings generated.
+main.c.c:442:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short* p;
+          ^~~~~
+main.c.c:677:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short _cury;
+          ^~~~~~
+main.c.c:678:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short _curx;
+          ^~~~~~
+main.c.c:679:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short _maxy;
+          ^~~~~~
+main.c.c:680:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short _maxx;
+          ^~~~~~
+main.c.c:681:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short _begy;
+          ^~~~~~
+main.c.c:682:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short _begx;
+          ^~~~~~
+main.c.c:683:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short _flags;
+          ^~~~~~
+main.c.c:697:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short _regtop;
+          ^~~~~~
+main.c.c:698:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short _regbottom;
+          ^~~~~~
+main.c.c:703:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short _yoffset;
+          ^~~~~~
+main.c.c:724:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short id;
+          ^~~~~~
+main.c.c:798:15: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+typedef short short __s16;
+              ^~~~~~
+main.c.c:1613:5: warning: incompatible redeclaration of library function 'snprintf' [-Wincompatible-library-redeclaration]
+int snprintf(char* __s, long int __maxlen, const char* __format, ...);
+    ^
+main.c.c:1613:5: note: 'snprintf' is a builtin with type 'int (char *, unsigned long, const char *, ...)'
+main.c.c:1615:5: warning: incompatible redeclaration of library function 'vsnprintf' [-Wincompatible-library-redeclaration]
+int vsnprintf(char* __s, long int __maxlen, const char* __format, va_list __arg);
+    ^
+main.c.c:1615:5: note: 'vsnprintf' is a builtin with type 'int (char *, unsigned long, const char *, __builtin_va_list)'
+main.c.c:1695:10: warning: incompatible redeclaration of library function 'fread' [-Wincompatible-library-redeclaration]
+long int fread(void* __ptr, long int __size, long int __n, struct _IO_FILE* __stream);
+         ^
+main.c.c:1695:10: note: 'fread' is a builtin with type 'unsigned long (void *, unsigned long, unsigned long, FILE *)' (aka 'unsigned long (void *, unsigned long, unsigned long, struct _IO_FILE *)')
+main.c.c:1697:10: warning: incompatible redeclaration of library function 'fwrite' [-Wincompatible-library-redeclaration]
+long int fwrite(const void* __ptr, long int __size, long int __n, struct _IO_FILE* __s);
+         ^
+main.c.c:1697:10: note: 'fwrite' is a builtin with type 'unsigned long (const void *, unsigned long, unsigned long, FILE *)' (aka 'unsigned long (const void *, unsigned long, unsigned long, struct _IO_FILE *)')
+main.c.c:1911:7: warning: incompatible redeclaration of library function 'malloc' [-Wincompatible-library-redeclaration]
+void* malloc(long int __size);
+      ^
+main.c.c:1911:7: note: 'malloc' is a builtin with type 'void *(unsigned long)'
+main.c.c:1913:7: warning: incompatible redeclaration of library function 'calloc' [-Wincompatible-library-redeclaration]
+void* calloc(long int __nmemb, long int __size);
+      ^
+main.c.c:1913:7: note: 'calloc' is a builtin with type 'void *(unsigned long, unsigned long)'
+main.c.c:1915:7: warning: incompatible redeclaration of library function 'realloc' [-Wincompatible-library-redeclaration]
+void* realloc(void* __ptr, long int __size);
+      ^
+main.c.c:1915:7: note: 'realloc' is a builtin with type 'void *(void *, unsigned long)'
+main.c.c:1921:7: warning: incompatible redeclaration of library function 'alloca' [-Wincompatible-library-redeclaration]
+void* alloca(long int __size);
+      ^
+main.c.c:1921:7: note: 'alloca' is a builtin with type 'void *(unsigned long)'
+main.c.c:1927:7: warning: incompatible redeclaration of library function 'aligned_alloc' [-Wincompatible-library-redeclaration]
+void* aligned_alloc(long int __alignment, long int __size);
+      ^
+main.c.c:1927:7: note: 'aligned_alloc' is a builtin with type 'void *(unsigned long, unsigned long)'
+main.c.c:2047:7: warning: incompatible redeclaration of library function 'memcpy' [-Wincompatible-library-redeclaration]
+void* memcpy(void* __dest, const void* __src, long int __n);
+      ^
+main.c.c:2047:7: note: 'memcpy' is a builtin with type 'void *(void *, const void *, unsigned long)'
+main.c.c:2049:7: warning: incompatible redeclaration of library function 'memmove' [-Wincompatible-library-redeclaration]
+void* memmove(void* __dest, const void* __src, long int __n);
+      ^
+main.c.c:2049:7: note: 'memmove' is a builtin with type 'void *(void *, const void *, unsigned long)'
+main.c.c:2051:7: warning: incompatible redeclaration of library function 'memccpy' [-Wincompatible-library-redeclaration]
+void* memccpy(void* __dest, const void* __src, int __c, long int __n);
+      ^
+main.c.c:2051:7: note: 'memccpy' is a builtin with type 'void *(void *, const void *, int, unsigned long)'
+main.c.c:2053:7: warning: incompatible redeclaration of library function 'memset' [-Wincompatible-library-redeclaration]
+void* memset(void* __s, int __c, long int __n);
+      ^
+main.c.c:2053:7: note: 'memset' is a builtin with type 'void *(void *, int, unsigned long)'
+main.c.c:2055:5: warning: incompatible redeclaration of library function 'memcmp' [-Wincompatible-library-redeclaration]
+int memcmp(const void* __s1, const void* __s2, long int __n);
+    ^
+main.c.c:2055:5: note: 'memcmp' is a builtin with type 'int (const void *, const void *, unsigned long)'
+main.c.c:2059:7: warning: incompatible redeclaration of library function 'memchr' [-Wincompatible-library-redeclaration]
+void* memchr(const void* __s, int __c, long int __n);
+      ^
+main.c.c:2059:7: note: 'memchr' is a builtin with type 'void *(const void *, int, unsigned long)'
+main.c.c:2067:7: warning: incompatible redeclaration of library function 'strncpy' [-Wincompatible-library-redeclaration]
+char* strncpy(char* __dest, const char* __src, long int __n);
+      ^
+main.c.c:2067:7: note: 'strncpy' is a builtin with type 'char *(char *, const char *, unsigned long)'
+main.c.c:2071:7: warning: incompatible redeclaration of library function 'strncat' [-Wincompatible-library-redeclaration]
+char* strncat(char* __dest, const char* __src, long int __n);
+      ^
+main.c.c:2071:7: note: 'strncat' is a builtin with type 'char *(char *, const char *, unsigned long)'
+main.c.c:2075:5: warning: incompatible redeclaration of library function 'strncmp' [-Wincompatible-library-redeclaration]
+int strncmp(const char* __s1, const char* __s2, long int __n);
+    ^
+main.c.c:2075:5: note: 'strncmp' is a builtin with type 'int (const char *, const char *, unsigned long)'
+main.c.c:2079:10: warning: incompatible redeclaration of library function 'strxfrm' [-Wincompatible-library-redeclaration]
+long int strxfrm(char* __dest, const char* __src, long int __n);
+         ^
+main.c.c:2079:10: note: 'strxfrm' is a builtin with type 'unsigned long (char *, const char *, unsigned long)'
+main.c.c:2087:7: warning: incompatible redeclaration of library function 'strndup' [-Wincompatible-library-redeclaration]
+char* strndup(const char* __string, long int __n);
+      ^
+main.c.c:2087:7: note: 'strndup' is a builtin with type 'char *(const char *, unsigned long)'
+main.c.c:2095:10: warning: incompatible redeclaration of library function 'strcspn' [-Wincompatible-library-redeclaration]
+long int strcspn(const char* __s, const char* __reject);
+         ^
+main.c.c:2095:10: note: 'strcspn' is a builtin with type 'unsigned long (const char *, const char *)'
+main.c.c:2097:10: warning: incompatible redeclaration of library function 'strspn' [-Wincompatible-library-redeclaration]
+long int strspn(const char* __s, const char* __accept);
+         ^
+main.c.c:2097:10: note: 'strspn' is a builtin with type 'unsigned long (const char *, const char *)'
+main.c.c:2115:7: warning: incompatible redeclaration of library function 'mempcpy' [-Wincompatible-library-redeclaration]
+void* mempcpy(void* __dest, const void* __src, long int __n);
+      ^
+main.c.c:2115:7: note: 'mempcpy' is a builtin with type 'void *(void *, const void *, unsigned long)'
+main.c.c:2117:10: warning: incompatible redeclaration of library function 'strlen' [-Wincompatible-library-redeclaration]
+long int strlen(const char* __s);
+         ^
+main.c.c:2117:10: note: 'strlen' is a builtin with type 'unsigned long (const char *)'
+main.c.c:2131:5: warning: incompatible redeclaration of library function 'bcmp' [-Wincompatible-library-redeclaration]
+int bcmp(const void* __s1, const void* __s2, long int __n);
+    ^
+main.c.c:2131:5: note: 'bcmp' is a builtin with type 'int (const void *, const void *, unsigned long)'
+main.c.c:2135:6: warning: incompatible redeclaration of library function 'bzero' [-Wincompatible-library-redeclaration]
+void bzero(void* __s, long int __n);
+     ^
+main.c.c:2135:6: note: 'bzero' is a builtin with type 'void (void *, unsigned long)'
+main.c.c:2149:5: warning: incompatible redeclaration of library function 'strncasecmp' [-Wincompatible-library-redeclaration]
+int strncasecmp(const char* __s1, const char* __s2, long int __n);
+    ^
+main.c.c:2149:5: note: 'strncasecmp' is a builtin with type 'int (const char *, const char *, unsigned long)'
+main.c.c:2171:7: warning: incompatible redeclaration of library function 'stpncpy' [-Wincompatible-library-redeclaration]
+char* stpncpy(char* __dest, const char* __src, long int __n);
+      ^
+main.c.c:2171:7: note: 'stpncpy' is a builtin with type 'char *(char *, const char *, unsigned long)'
+main.c.c:2259:63: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+struct buffer* buffer_append_short(struct buffer* self, short short value);
+                                                              ^~~~~~
+main.c.c:2281:26: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+_Bool short_equals(short short self, short short right);
+                         ^~~~~~
+main.c.c:2281:44: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+_Bool short_equals(short short self, short short right);
+                                           ^~~~~~
+main.c.c:2315:39: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+unsigned int short_get_hash_key(short short value);
+                                      ^~~~~~
+main.c.c:2335:29: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+short int short_clone(short short self);
+                            ^~~~~~
+main.c.c:2411:29: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+char* short_to_string(short short self);
+                            ^~~~~~
+main.c.c:2431:25: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int short_compare(short short left, short short right);
+                        ^~~~~~
+main.c.c:2431:43: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int short_compare(short short left, short short right);
+                                          ^~~~~~
+main.c.c:2651:5: warning: incompatible redeclaration of library function 'wcsncmp' [-Wincompatible-library-redeclaration]
+int wcsncmp(const unsigned int* __s1, const unsigned int* __s2, long int __n);
+    ^
+main.c.c:2651:5: note: 'wcsncmp' is a builtin with type 'int (const unsigned int *, const unsigned int *, unsigned long)'
+main.c.c:2687:10: warning: incompatible redeclaration of library function 'wcslen' [-Wincompatible-library-redeclaration]
+long int wcslen(const unsigned int* __s);
+         ^
+main.c.c:2687:10: note: 'wcslen' is a builtin with type 'unsigned long (const unsigned int *)'
+main.c.c:2693:15: warning: incompatible redeclaration of library function 'wmemchr' [-Wincompatible-library-redeclaration]
+unsigned int* wmemchr(const unsigned int* __s, unsigned int __c, long int __n);
+              ^
+main.c.c:2693:15: note: 'wmemchr' is a builtin with type 'unsigned int *(const unsigned int *, unsigned int, unsigned long)'
+main.c.c:2695:5: warning: incompatible redeclaration of library function 'wmemcmp' [-Wincompatible-library-redeclaration]
+int wmemcmp(const unsigned int* __s1, const unsigned int* __s2, long int __n);
+    ^
+main.c.c:2695:5: note: 'wmemcmp' is a builtin with type 'int (const unsigned int *, const unsigned int *, unsigned long)'
+main.c.c:2697:15: warning: incompatible redeclaration of library function 'wmemcpy' [-Wincompatible-library-redeclaration]
+unsigned int* wmemcpy(unsigned int* __s1, const unsigned int* __s2, long int __n);
+              ^
+main.c.c:2697:15: note: 'wmemcpy' is a builtin with type 'unsigned int *(unsigned int *, const unsigned int *, unsigned long)'
+main.c.c:2699:15: warning: incompatible redeclaration of library function 'wmemmove' [-Wincompatible-library-redeclaration]
+unsigned int* wmemmove(unsigned int* __s1, const unsigned int* __s2, long int __n);
+              ^
+main.c.c:2699:15: note: 'wmemmove' is a builtin with type 'unsigned int *(unsigned int *, const unsigned int *, unsigned long)'
+main.c.c:3021:58: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int attr_get(unsigned int* anonymous_var_nameX488, short short* anonymous_var_nameX489, void* anonymous_var_nameX490);
+                                                         ^~~~~
+main.c.c:3027:57: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int attr_set(unsigned int anonymous_var_nameX495, short short anonymous_var_nameX496, void* anonymous_var_nameX497);
+                                                        ^~~~~~
+main.c.c:3045:82: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int chgat(int anonymous_var_nameX511, unsigned int anonymous_var_nameX512, short short anonymous_var_nameX513, const void* anonymous_var_nameX514);
+                                                                                 ^~~~~~
+main.c.c:3055:25: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int color_content(short short anonymous_var_nameX517, short short* anonymous_var_nameX518, short short* anonymous_var_nameX519, short short* anonymous_var_nameX520);
+                        ^~~~~~
+main.c.c:3055:61: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int color_content(short short anonymous_var_nameX517, short short* anonymous_var_nameX518, short short* anonymous_var_nameX519, short short* anonymous_var_nameX520);
+                                                            ^~~~~
+main.c.c:3055:98: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int color_content(short short anonymous_var_nameX517, short short* anonymous_var_nameX518, short short* anonymous_var_nameX519, short short* anonymous_var_nameX520);
+                                                                                                 ^~~~~
+main.c.c:3055:135: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int color_content(short short anonymous_var_nameX517, short short* anonymous_var_nameX518, short short* anonymous_var_nameX519, short short* anonymous_var_nameX520);
+                                                                                                                                      ^~~~~
+main.c.c:3057:21: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int color_set(short short anonymous_var_nameX521, void* anonymous_var_nameX522);
+                    ^~~~~~
+main.c.c:3135:22: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_color(short short anonymous_var_nameX561, short short anonymous_var_nameX562, short short anonymous_var_nameX563, short short anonymous_var_nameX564);
+                     ^~~~~~
+main.c.c:3135:58: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_color(short short anonymous_var_nameX561, short short anonymous_var_nameX562, short short anonymous_var_nameX563, short short anonymous_var_nameX564);
+                                                         ^~~~~~
+main.c.c:3135:94: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_color(short short anonymous_var_nameX561, short short anonymous_var_nameX562, short short anonymous_var_nameX563, short short anonymous_var_nameX564);
+                                                                                             ^~~~~~
+main.c.c:3135:130: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_color(short short anonymous_var_nameX561, short short anonymous_var_nameX562, short short anonymous_var_nameX563, short short anonymous_var_nameX564);
+                                                                                                                                 ^~~~~~
+main.c.c:3137:21: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_pair(short short anonymous_var_nameX565, short short anonymous_var_nameX566, short short anonymous_var_nameX567);
+                    ^~~~~~
+main.c.c:3137:57: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_pair(short short anonymous_var_nameX565, short short anonymous_var_nameX566, short short anonymous_var_nameX567);
+                                                        ^~~~~~
+main.c.c:3137:93: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_pair(short short anonymous_var_nameX565, short short anonymous_var_nameX566, short short anonymous_var_nameX567);
+                                                                                            ^~~~~~
+main.c.c:3185:140: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int mvchgat(int anonymous_var_nameX607, int anonymous_var_nameX608, int anonymous_var_nameX609, unsigned int anonymous_var_nameX610, short short anonymous_var_nameX611, const void* anonymous_var_nameX612);
+                                                                                                                                           ^~~~~~
+main.c.c:3233:181: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int mvwchgat(struct _win_st* anonymous_var_nameX693, int anonymous_var_nameX694, int anonymous_var_nameX695, int anonymous_var_nameX696, unsigned int anonymous_var_nameX697, short short anonymous_var_nameX698, const void* anonymous_var_nameX699);
+                                                                                                                                                                                    ^~~~~~
+main.c.c:3297:24: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int pair_content(short short anonymous_var_nameX788, short short* anonymous_var_nameX789, short short* anonymous_var_nameX790);
+                       ^~~~~~
+main.c.c:3297:60: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int pair_content(short short anonymous_var_nameX788, short short* anonymous_var_nameX789, short short* anonymous_var_nameX790);
+                                                           ^~~~~
+main.c.c:3297:97: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int pair_content(short short anonymous_var_nameX788, short short* anonymous_var_nameX789, short short* anonymous_var_nameX790);
+                                                                                                ^~~~~
+main.c.c:3361:67: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int slk_attr_set(const unsigned int anonymous_var_nameX834, short short anonymous_var_nameX835, void* anonymous_var_nameX836);
+                                                                  ^~~~~~
+main.c.c:3365:21: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int slk_color(short short anonymous_var_nameX837);
+                    ^~~~~~
+main.c.c:3443:99: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int wattr_get(struct _win_st* anonymous_var_nameX900, unsigned int* anonymous_var_nameX901, short short* anonymous_var_nameX902, void* anonymous_var_nameX903);
+                                                                                                  ^~~~~
+main.c.c:3449:98: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int wattr_set(struct _win_st* anonymous_var_nameX910, unsigned int anonymous_var_nameX911, short short anonymous_var_nameX912, void* anonymous_var_nameX913);
+                                                                                                 ^~~~~~
+main.c.c:3457:123: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int wchgat(struct _win_st* anonymous_var_nameX927, int anonymous_var_nameX928, unsigned int anonymous_var_nameX929, short short anonymous_var_nameX930, const void* anonymous_var_nameX931);
+                                                                                                                          ^~~~~~
+main.c.c:3465:62: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int wcolor_set(struct _win_st* anonymous_var_nameX935, short short anonymous_var_nameX936, void* anonymous_var_nameX937);
+                                                             ^~~~~~
+main.c.c:3663:68: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int color_content_sp(struct screen* anonymous_var_nameX1096, short short anonymous_var_nameX1097, short short* anonymous_var_nameX1098, short short* anonymous_var_nameX1099, short short* anonymous_var_nameX1100);
+                                                                   ^~~~~~
+main.c.c:3663:105: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int color_content_sp(struct screen* anonymous_var_nameX1096, short short anonymous_var_nameX1097, short short* anonymous_var_nameX1098, short short* anonymous_var_nameX1099, short short* anonymous_var_nameX1100);
+                                                                                                        ^~~~~
+main.c.c:3663:143: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int color_content_sp(struct screen* anonymous_var_nameX1096, short short anonymous_var_nameX1097, short short* anonymous_var_nameX1098, short short* anonymous_var_nameX1099, short short* anonymous_var_nameX1100);
+                                                                                                                                              ^~~~~
+main.c.c:3663:181: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int color_content_sp(struct screen* anonymous_var_nameX1096, short short anonymous_var_nameX1097, short short* anonymous_var_nameX1098, short short* anonymous_var_nameX1099, short short* anonymous_var_nameX1100);
+                                                                                                                                                                                    ^~~~~
+main.c.c:3695:65: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_color_sp(struct screen* anonymous_var_nameX1119, short short anonymous_var_nameX1120, short short anonymous_var_nameX1121, short short anonymous_var_nameX1122, short short anonymous_var_nameX1123);
+                                                                ^~~~~~
+main.c.c:3695:102: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_color_sp(struct screen* anonymous_var_nameX1119, short short anonymous_var_nameX1120, short short anonymous_var_nameX1121, short short anonymous_var_nameX1122, short short anonymous_var_nameX1123);
+                                                                                                     ^~~~~~
+main.c.c:3695:139: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_color_sp(struct screen* anonymous_var_nameX1119, short short anonymous_var_nameX1120, short short anonymous_var_nameX1121, short short anonymous_var_nameX1122, short short anonymous_var_nameX1123);
+                                                                                                                                          ^~~~~~
+main.c.c:3695:176: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_color_sp(struct screen* anonymous_var_nameX1119, short short anonymous_var_nameX1120, short short anonymous_var_nameX1121, short short anonymous_var_nameX1122, short short anonymous_var_nameX1123);
+                                                                                                                                                                               ^~~~~~
+main.c.c:3697:64: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_pair_sp(struct screen* anonymous_var_nameX1124, short short anonymous_var_nameX1125, short short anonymous_var_nameX1126, short short anonymous_var_nameX1127);
+                                                               ^~~~~~
+main.c.c:3697:101: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_pair_sp(struct screen* anonymous_var_nameX1124, short short anonymous_var_nameX1125, short short anonymous_var_nameX1126, short short anonymous_var_nameX1127);
+                                                                                                    ^~~~~~
+main.c.c:3697:138: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_pair_sp(struct screen* anonymous_var_nameX1124, short short anonymous_var_nameX1125, short short anonymous_var_nameX1126, short short anonymous_var_nameX1127);
+                                                                                                                                         ^~~~~~
+main.c.c:3731:67: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int pair_content_sp(struct screen* anonymous_var_nameX1161, short short anonymous_var_nameX1162, short short* anonymous_var_nameX1163, short short* anonymous_var_nameX1164);
+                                                                  ^~~~~~
+main.c.c:3731:104: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int pair_content_sp(struct screen* anonymous_var_nameX1161, short short anonymous_var_nameX1162, short short* anonymous_var_nameX1163, short short* anonymous_var_nameX1164);
+                                                                                                       ^~~~~
+main.c.c:3731:142: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int pair_content_sp(struct screen* anonymous_var_nameX1161, short short anonymous_var_nameX1162, short short* anonymous_var_nameX1163, short short* anonymous_var_nameX1164);
+                                                                                                                                             ^~~~~
+main.c.c:3761:111: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int slk_attr_set_sp(struct screen* anonymous_var_nameX1188, const unsigned int anonymous_var_nameX1189, short short anonymous_var_nameX1190, void* anonymous_var_nameX1191);
+                                                                                                              ^~~~~~
+main.c.c:3765:64: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int slk_color_sp(struct screen* anonymous_var_nameX1193, short short anonymous_var_nameX1194);
+                                                               ^~~~~~
+main.c.c:3873:155: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int getcchar(const struct anonymous_typeX22* anonymous_var_nameX1309, unsigned int* anonymous_var_nameX1310, unsigned int* anonymous_var_nameX1311, short short* anonymous_var_nameX1312, void* anonymous_var_nameX1313);
+                                                                                                                                                          ^~~~~
+main.c.c:3973:160: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int setcchar(struct anonymous_typeX22* anonymous_var_nameX1475, const unsigned int* anonymous_var_nameX1476, const unsigned int anonymous_var_nameX1477, short short anonymous_var_nameX1478, const void* anonymous_var_nameX1479);
+                                                                                                                                                               ^~~~~~
+main.c.c:3981:58: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int vid_attr(unsigned int anonymous_var_nameX1484, short short anonymous_var_nameX1485, void* anonymous_var_nameX1486);
+                                                         ^~~~~~
+main.c.c:3983:58: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int vid_puts(unsigned int anonymous_var_nameX1487, short short anonymous_var_nameX1488, void* anonymous_var_nameX1489, int (*anonymous_var_nameX1490)(int));
+                                                         ^~~~~~
+main.c.c:4043:101: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int vid_attr_sp(struct screen* anonymous_var_nameX1562, unsigned int anonymous_var_nameX1563, short short anonymous_var_nameX1564, void* anonymous_var_nameX1565);
+                                                                                                    ^~~~~~
+main.c.c:4045:101: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int vid_puts_sp(struct screen* anonymous_var_nameX1566, unsigned int anonymous_var_nameX1567, short short anonymous_var_nameX1568, void* anonymous_var_nameX1569, int (*anonymous_var_nameX1570)(struct screen*,int));
+                                                                                                    ^~~~~~
+main.c.c:5335:30: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]
+    __result3__ = ((((__bsx)&18374686479671623680)>>56)|(((__bsx)&71776119061217280)>>40)|(((__bsx)&280375465082880)>>24)|(((__bsx)&1095216660480)>>8)|(((__bsx)&4278190080)<<8)|(((__bsx)&16711680)<<24)|(((__bsx)&65280)<<40)|(((__bsx)&255)<<56));
+                             ^
+main.c.c:5464:113: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    ((struct smart_pointer$1short*)come_null_check(result_2, "/usr/local/include/comelang2.h", 2010))->p=(short short*)((struct buffer*)come_null_check(((struct smart_pointer$1short*)come_null_check(result_2, "/usr/local/include/comelang2.h", 2010))->memory, "/usr/local/include/comelang2.h", 2010))->buf;
+                                                                                                                ^~~~~
+main.c.c:7473:14: warning: address of 'stat__58' will always evaluate to 'true' [-Wpointer-bool-conversion]
+        if((&stat__58) && !__freed_obj__) { come_call_finalizer(stat_finalize,(&stat__58), (void*)0, (void*)0, 1, 0, 0, 0); }
+             ^~~~~~~~  ~~
+main.c.c:7864:18: warning: address of 'stat__79' will always evaluate to 'true' [-Wpointer-bool-conversion]
+            if((&stat__79) && !__freed_obj__) { come_call_finalizer(stat_finalize,(&stat__79), (void*)0, (void*)0, 1, 0, 0, 0); }
+                 ^~~~~~~~  ~~
+main.c.c:8250:10: warning: address of 'info_84' will always evaluate to 'true' [-Wpointer-bool-conversion]
+    if((&info_84) && !__freed_obj__) { come_call_finalizer(sInfo_finalize,(&info_84), (void*)0, (void*)0, 1, 0, 0, 0); }
+         ^~~~~~~  ~~
+main.c.c:8255:10: warning: address of 'info_84' will always evaluate to 'true' [-Wpointer-bool-conversion]
+    if((&info_84) && !__freed_obj__) { come_call_finalizer(sInfo_finalize,(&info_84), (void*)0, (void*)0, 1, 0, 0, 0); }
+         ^~~~~~~  ~~
+109 warnings generated.
