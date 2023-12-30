@@ -9,8 +9,6 @@ Yet another modern compiler. It has a collection library with reffrence count gc
 
 version 2.1.1
 
-I will release comelang2 version 2.0.0. When version 2.0.0, comelang2 will be complete.
-
 ``` C
 #include <comelang2.h>
 
