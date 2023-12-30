@@ -237,6 +237,8 @@ bool sReturnNode*::compile(sReturnNode* self, sInfo* info)
         free_objects_on_return(come_fun.mBlock, info, come_value.var, false@top_block);
         free_right_value_objects(info);
         
+        caller_end();
+        
         if(info.come_fun.mName === "main") {
             free_objects(info->gv_table, null@ret_value, info);
             add_come_code(info, xsprintf("come_heap_final(1);\n"));
@@ -254,6 +256,7 @@ bool sReturnNode*::compile(sReturnNode* self, sInfo* info)
     }
     else {
         sFun* come_fun = info.come_fun;
+        caller_end();
         free_objects_on_return(come_fun.mBlock, info, null, false@top_block);
         free_right_value_objects(info);
         
@@ -1552,6 +1555,10 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
         
         buffer*% buf = new buffer();
         
+        if(fun_name !== "come_calloc" && fun_name !== "come_alloc_mem_from_heap_pool") {
+            buf.append_str(s"(gCallerSName = \"\{info->sname}\", gCallerSLine = \{info->sline},");
+        }
+        
         buf.append_str(fun_name);
         buf.append_str("(");
         
@@ -1565,7 +1572,12 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
             
             j++;
         }
-        buf.append_str(")");
+        if(fun_name !== "come_calloc" && fun_name !== "come_alloc_mem_from_heap_pool") {
+            buf.append_str("))");
+        }
+        else {
+            buf.append_str(")");
+        }
         
         CVALUE*% come_value = new CVALUE;
         come_value.c_value = buf.to_string();

@@ -379,6 +379,8 @@ void decrement_ref_count_object(sType* type, char* obj, sInfo* info, bool force_
 /////////////////////////////////////////////////////////////////////
 /// 05function.c ///
 /////////////////////////////////////////////////////////////////////
+void caller_begin(sInfo* info=info);
+void caller_end(sInfo* info=info);
 bool operator_overload_fun_self(sType* type, char* fun_name, CVALUE* left_value, sInfo* info);
 sNode*% craete_logical_denial(sNode*% node, sInfo* info);
 void backtrace_parse_type(sInfo* info=info);

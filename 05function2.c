@@ -107,10 +107,105 @@ string sFunNode*::kind()
     return string("sFunNode");
 }
 
+void caller_begin(sInfo* info=info)
+{
+    if(info.come_fun.mName !== "come_calloc" && info.come_fun.mName !== "come_alloc_mem_from_heap_pool") {
+        add_come_code_at_function_head(info, "char* __caller_sname__;\n");
+        add_come_code_at_function_head(info, "char* __caller_sname2__;\n");
+        add_come_code_at_function_head(info, "char* __caller_sname3__;\n");
+        add_come_code_at_function_head(info, "char* __caller_sname4__;\n");
+        add_come_code_at_function_head(info, "char* __caller_sname5__;\n");
+        add_come_code_at_function_head(info, "char* __caller_sname6__;\n");
+        add_come_code_at_function_head(info, "char* __caller_sname7__;\n");
+        add_come_code_at_function_head(info, "char* __caller_sname8__;\n");
+        add_come_code_at_function_head(info, "char* __caller_sname9__;\n");
+        add_come_code_at_function_head(info, "char* __caller_sname10__;\n");
+        
+        add_come_code_at_function_head(info, "int __caller_sline__;\n");
+        add_come_code_at_function_head(info, "int __caller_sline2__;\n");
+        add_come_code_at_function_head(info, "int __caller_sline3__;\n");
+        add_come_code_at_function_head(info, "int __caller_sline4__;\n");
+        add_come_code_at_function_head(info, "int __caller_sline5__;\n");
+        add_come_code_at_function_head(info, "int __caller_sline6__;\n");
+        add_come_code_at_function_head(info, "int __caller_sline7__;\n");
+        add_come_code_at_function_head(info, "int __caller_sline8__;\n");
+        add_come_code_at_function_head(info, "int __caller_sline9__;\n");
+        add_come_code_at_function_head(info, "int __caller_sline10__;\n");
+        
+        add_come_code(info, "__caller_sname10__ = gCallerSName10;\n");
+        add_come_code(info, "__caller_sname9__ = gCallerSName9;\n");
+        add_come_code(info, "__caller_sname8__ = gCallerSName8;\n");
+        add_come_code(info, "__caller_sname7__ = gCallerSName7;\n");
+        add_come_code(info, "__caller_sname6__ = gCallerSName6;\n");
+        add_come_code(info, "__caller_sname5__ = gCallerSName5;\n");
+        add_come_code(info, "__caller_sname4__ = gCallerSName4;\n");
+        add_come_code(info, "__caller_sname3__ = gCallerSName3;\n");
+        add_come_code(info, "__caller_sname2__ = gCallerSName2;\n");
+        add_come_code(info, "__caller_sname__ = gCallerSName;\n");
+        
+        add_come_code(info, "__caller_sline10__ = gCallerSLine10;\n");
+        add_come_code(info, "__caller_sline9__ = gCallerSLine9;\n");
+        add_come_code(info, "__caller_sline8__ = gCallerSLine8;\n");
+        add_come_code(info, "__caller_sline7__ = gCallerSLine7;\n");
+        add_come_code(info, "__caller_sline6__ = gCallerSLine6;\n");
+        add_come_code(info, "__caller_sline5__ = gCallerSLine5;\n");
+        add_come_code(info, "__caller_sline4__ = gCallerSLine4;\n");
+        add_come_code(info, "__caller_sline3__ = gCallerSLine3;\n");
+        add_come_code(info, "__caller_sline2__ = gCallerSLine2;\n");
+        add_come_code(info, "__caller_sline__ = gCallerSLine;\n");
+        
+        add_come_code(info, "gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;\n");
+        add_come_code(info, "gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;\n");
+        add_come_code(info, "gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;\n");
+        add_come_code(info, "gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;\n");
+        add_come_code(info, "gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;\n");
+        add_come_code(info, "gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;\n");
+        add_come_code(info, "gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;\n");
+        add_come_code(info, "gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;\n");
+        add_come_code(info, "gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;\n");
+    }
+}
+
+void caller_end(sInfo* info=info)
+{
+    if(info.come_fun.mName !== "come_calloc" && info.come_fun.mName !== "come_alloc_mem_from_heap_pool") {
+        add_come_code(info, "gCallerSName10 = __caller_sname10__;\n");
+        add_come_code(info, "gCallerSName9 = __caller_sname9__;\n");
+        add_come_code(info, "gCallerSName8 = __caller_sname8__;\n");
+        add_come_code(info, "gCallerSName7 = __caller_sname7__;\n");
+        add_come_code(info, "gCallerSName6 = __caller_sname6__;\n");
+        add_come_code(info, "gCallerSName5 = __caller_sname5__;\n");
+        add_come_code(info, "gCallerSName5 = __caller_sname5__;\n");
+        add_come_code(info, "gCallerSName4 = __caller_sname4__;\n");
+        add_come_code(info, "gCallerSName3 = __caller_sname3__;\n");
+        add_come_code(info, "gCallerSName2 = __caller_sname2__;\n");
+        add_come_code(info, "gCallerSName = __caller_sname__;\n");
+        
+        add_come_code(info, "gCallerSLine10 = __caller_sline10__;\n");
+        add_come_code(info, "gCallerSLine9 = __caller_sline9__;\n");
+        add_come_code(info, "gCallerSLine8 = __caller_sline8__;\n");
+        add_come_code(info, "gCallerSLine7 = __caller_sline7__;\n");
+        add_come_code(info, "gCallerSLine6 = __caller_sline6__;\n");
+        add_come_code(info, "gCallerSLine5 = __caller_sline5__;\n");
+        add_come_code(info, "gCallerSLine4 = __caller_sline4__;\n");
+        add_come_code(info, "gCallerSLine3 = __caller_sline3__;\n");
+        add_come_code(info, "gCallerSLine2 = __caller_sline2__;\n");
+        add_come_code(info, "gCallerSLine = __caller_sline__;\n");
+    }
+}
+
 bool sFunNode*::compile(sFunNode* self, sInfo* info)
 {
     sFun* come_fun = info.come_fun;
     info.come_fun = self.mFun;
+    
+    caller_begin();
+    
+    string var_name = s"__caller_sname_stack__";
+    add_come_code_at_function_head(info, "%s;\n", make_define_var(new sType("char*"), var_name));
+    
+    string var_name2 = s"__caller_sline_stack__";
+    add_come_code_at_function_head(info, "%s;\n", make_define_var(new sType("int"), var_name2));
     
     if(self.mFun.mBlock) {
         if(info.come_fun.mName === "main") {
@@ -147,6 +242,7 @@ bool sFunNode*::compile(sFunNode* self, sInfo* info)
         }
     }
     
+    caller_end();
     info.come_fun = come_fun;
     
     return true;

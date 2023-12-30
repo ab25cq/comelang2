@@ -7,7 +7,7 @@ Yet another modern compiler. It has a collection library with reffrence count gc
 
 もう一つのモダンなコンパイラ。オリジナルのリファレンスカウントGCを持ったコレクションライブラリがあります。C言語と互換性があります。
 
-version 3.0.0
+version 3.1.0
 
 ``` C
 #include <comelang2.h>
@@ -367,6 +367,7 @@ bash self-host.sh
 2.1.0 null(nil) checker
 2.1.1 bug fixed
 3.0.0 smart pointer
+3.1.0 detecting memory leak
 
 # Language specifications
 

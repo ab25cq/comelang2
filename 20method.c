@@ -748,6 +748,9 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
         
         buffer*% buf = new buffer();
         
+        if(generics_fun_name !== "come_calloc" && generics_fun_name !== "come_alloc_mem_from_heap_pool") {
+            buf.append_str(s"(gCallerSName = \"\{info->sname}\", gCallerSLine = \{info->sline},");
+        }
         buf.append_str(generics_fun_name);
         buf.append_str("(");
         
@@ -761,7 +764,12 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
             
             j++;
         }
-        buf.append_str(")");
+        if(generics_fun_name !== "come_calloc" && generics_fun_name !== "come_alloc_mem_from_heap_pool") {
+            buf.append_str("))");
+        }
+        else {
+            buf.append_str(")");
+        }
         
         
         CVALUE*% come_value2 = new CVALUE;

@@ -125,6 +125,27 @@ string __builtin_string(char* str);
 
 bool come_is_contained_element(void** array, int len, void* element);
 
+extern char* gCallerSName;
+extern char* gCallerSName2;
+extern char* gCallerSName3;
+extern char* gCallerSName4;
+extern char* gCallerSName5;
+extern char* gCallerSName6;
+extern char* gCallerSName7;
+extern char* gCallerSName8
+extern char* gCallerSName9;
+extern char* gCallerSName10;
+extern int gCallerSLine;
+extern int gCallerSLine2;
+extern int gCallerSLine3;
+extern int gCallerSLine4;
+extern int gCallerSLine5;
+extern int gCallerSLine6;
+extern int gCallerSLine7;
+extern int gCallerSLine8;
+extern int gCallerSLine9;
+extern int gCallerSLine10;
+
 //////////////////////////////
 // list
 //////////////////////////////
