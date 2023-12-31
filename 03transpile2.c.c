@@ -3040,7 +3040,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     if(right_value0 && right_value0 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,right_value0, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     __dec_obj1=((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 2010))->memory;
-    ((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 2010))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value1=buffer_clone(self))));
+    ((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 2010))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value1=(gCallerSName = "./comelang2.h", gCallerSLine = 2010,buffer_clone(self)))));
     if(__dec_obj1) { come_call_finalizer(buffer_finalize,__dec_obj1, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(right_value1 && right_value1 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value1, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
@@ -3163,7 +3163,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     if(right_value2 && right_value2 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,right_value2, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     __dec_obj2=((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2020))->memory;
-    ((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2020))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value3=buffer_clone(self))));
+    ((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2020))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value3=(gCallerSName = "./comelang2.h", gCallerSLine = 2020,buffer_clone(self)))));
     if(__dec_obj2) { come_call_finalizer(buffer_finalize,__dec_obj2, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(right_value3 && right_value3 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value3, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
@@ -3286,7 +3286,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     if(right_value4 && right_value4 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1shortp_finalize,right_value4, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     __dec_obj3=((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2030))->memory;
-    ((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2030))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value5=buffer_clone(self))));
+    ((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2030))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value5=(gCallerSName = "./comelang2.h", gCallerSLine = 2030,buffer_clone(self)))));
     if(__dec_obj3) { come_call_finalizer(buffer_finalize,__dec_obj3, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(right_value5 && right_value5 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value5, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
@@ -3409,7 +3409,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     if(right_value6 && right_value6 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1intp_finalize,right_value6, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     __dec_obj4=((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2040))->memory;
-    ((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2040))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value7=buffer_clone(self))));
+    ((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2040))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value7=(gCallerSName = "./comelang2.h", gCallerSLine = 2040,buffer_clone(self)))));
     if(__dec_obj4) { come_call_finalizer(buffer_finalize,__dec_obj4, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(right_value7 && right_value7 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value7, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
@@ -3532,7 +3532,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     if(right_value8 && right_value8 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1longp_finalize,right_value8, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     __dec_obj5=((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2050))->memory;
-    ((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2050))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value9=buffer_clone(self))));
+    ((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2050))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value9=(gCallerSName = "./comelang2.h", gCallerSLine = 2050,buffer_clone(self)))));
     if(__dec_obj5) { come_call_finalizer(buffer_finalize,__dec_obj5, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(right_value9 && right_value9 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value9, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
@@ -4319,19 +4319,19 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    if(_if_conditional30=string_operator_equals(((struct sType*)come_null_check(type, "03transpile2.c", 128))->mOriginalTypeName,"va_list"),    __freed_obj__ = 0, 
+    if(_if_conditional30=(gCallerSName = "03transpile2.c", gCallerSLine = 128, string_operator_equals(((struct sType*)come_null_check(type, "03transpile2.c", 128))->mOriginalTypeName,"va_list")),    __freed_obj__ = 0, 
     _if_conditional30) {
         (gCallerSName = "03transpile2.c", gCallerSLine = 49,buffer_append_str(((struct buffer*)come_null_check(buf_5, "03transpile2.c", 49)),"va_list"));
         __freed_obj__ = 0;
     }
     else {
-        if(_if_conditional31=string_operator_equals(((struct sType*)come_null_check(type, "03transpile2.c", 128))->mOriginalTypeName,"__builtin_va_list"),        __freed_obj__ = 0, 
+        if(_if_conditional31=(gCallerSName = "03transpile2.c", gCallerSLine = 128, string_operator_equals(((struct sType*)come_null_check(type, "03transpile2.c", 128))->mOriginalTypeName,"__builtin_va_list")),        __freed_obj__ = 0, 
         _if_conditional31) {
             (gCallerSName = "03transpile2.c", gCallerSLine = 52,buffer_append_str(((struct buffer*)come_null_check(buf_5, "03transpile2.c", 52)),"__builtin_va_list"));
             __freed_obj__ = 0;
         }
         else {
-            if(_if_conditional32=charp_operator_equals(class_name_6,"__builtin_va_list"),            __freed_obj__ = 0, 
+            if(_if_conditional32=(gCallerSName = "03transpile2.c", gCallerSLine = 128, charp_operator_equals(class_name_6,"__builtin_va_list")),            __freed_obj__ = 0, 
             _if_conditional32) {
                 if(_if_conditional33=in_header,                __freed_obj__ = 0, 
                 _if_conditional33) {
@@ -4371,13 +4371,13 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                         else {
                             if(_if_conditional37=((struct sType*)come_null_check(type, "03transpile2.c", 128))->mLongLong,                            __freed_obj__ = 0, 
                             _if_conditional37) {
-                                if(_if_conditional38=charp_operator_equals(class_name_6,"int"),                                __freed_obj__ = 0, 
+                                if(_if_conditional38=(gCallerSName = "03transpile2.c", gCallerSLine = 81, charp_operator_equals(class_name_6,"int")),                                __freed_obj__ = 0, 
                                 _if_conditional38) {
                                     (gCallerSName = "03transpile2.c", gCallerSLine = 76,buffer_append_str(((struct buffer*)come_null_check(buf_5, "03transpile2.c", 76)),"long long int"));
                                     __freed_obj__ = 0;
                                 }
                                 else {
-                                    if(_if_conditional39=charp_operator_equals(class_name_6,"long"),                                    __freed_obj__ = 0, 
+                                    if(_if_conditional39=(gCallerSName = "03transpile2.c", gCallerSLine = 81, charp_operator_equals(class_name_6,"long")),                                    __freed_obj__ = 0, 
                                     _if_conditional39) {
                                         (gCallerSName = "03transpile2.c", gCallerSLine = 79,buffer_append_str(((struct buffer*)come_null_check(buf_5, "03transpile2.c", 79)),"long long"));
                                         __freed_obj__ = 0;
@@ -4389,19 +4389,19 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                             else {
                                 if(_if_conditional40=((struct sType*)come_null_check(type, "03transpile2.c", 128))->mLong,                                __freed_obj__ = 0, 
                                 _if_conditional40) {
-                                    if(_if_conditional41=charp_operator_equals(class_name_6,"int"),                                    __freed_obj__ = 0, 
+                                    if(_if_conditional41=(gCallerSName = "03transpile2.c", gCallerSLine = 92, charp_operator_equals(class_name_6,"int")),                                    __freed_obj__ = 0, 
                                     _if_conditional41) {
                                         (gCallerSName = "03transpile2.c", gCallerSLine = 84,buffer_append_str(((struct buffer*)come_null_check(buf_5, "03transpile2.c", 84)),"long int"));
                                         __freed_obj__ = 0;
                                     }
                                     else {
-                                        if(_if_conditional42=charp_operator_equals(class_name_6,"long"),                                        __freed_obj__ = 0, 
+                                        if(_if_conditional42=(gCallerSName = "03transpile2.c", gCallerSLine = 92, charp_operator_equals(class_name_6,"long")),                                        __freed_obj__ = 0, 
                                         _if_conditional42) {
                                             (gCallerSName = "03transpile2.c", gCallerSLine = 87,buffer_append_str(((struct buffer*)come_null_check(buf_5, "03transpile2.c", 87)),"long long"));
                                             __freed_obj__ = 0;
                                         }
                                         else {
-                                            if(_if_conditional43=charp_operator_equals(class_name_6,"double"),                                            __freed_obj__ = 0, 
+                                            if(_if_conditional43=(gCallerSName = "03transpile2.c", gCallerSLine = 92, charp_operator_equals(class_name_6,"double")),                                            __freed_obj__ = 0, 
                                             _if_conditional43) {
                                                 (gCallerSName = "03transpile2.c", gCallerSLine = 90,buffer_append_str(((struct buffer*)come_null_check(buf_5, "03transpile2.c", 90)),"long double"));
                                                 __freed_obj__ = 0;
@@ -4413,25 +4413,25 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                                     __freed_obj__ = 0;
                                 }
                                 else {
-                                    if(_if_conditional44=charp_operator_equals(class_name_6,"long"),                                    __freed_obj__ = 0, 
+                                    if(_if_conditional44=(gCallerSName = "03transpile2.c", gCallerSLine = 128, charp_operator_equals(class_name_6,"long")),                                    __freed_obj__ = 0, 
                                     _if_conditional44) {
                                         (gCallerSName = "03transpile2.c", gCallerSLine = 94,buffer_append_str(((struct buffer*)come_null_check(buf_5, "03transpile2.c", 94)),"long"));
                                         __freed_obj__ = 0;
                                     }
                                     else {
-                                        if(_if_conditional45=charp_operator_equals(class_name_6,"__uint128_t"),                                        __freed_obj__ = 0, 
+                                        if(_if_conditional45=(gCallerSName = "03transpile2.c", gCallerSLine = 128, charp_operator_equals(class_name_6,"__uint128_t")),                                        __freed_obj__ = 0, 
                                         _if_conditional45) {
                                             (gCallerSName = "03transpile2.c", gCallerSLine = 97,buffer_append_str(((struct buffer*)come_null_check(buf_5, "03transpile2.c", 97)),"__uint128_t"));
                                             __freed_obj__ = 0;
                                         }
                                         else {
-                                            if(_if_conditional46=charp_operator_equals(class_name_6,"bool"),                                            __freed_obj__ = 0, 
+                                            if(_if_conditional46=(gCallerSName = "03transpile2.c", gCallerSLine = 128, charp_operator_equals(class_name_6,"bool")),                                            __freed_obj__ = 0, 
                                             _if_conditional46) {
                                                 (gCallerSName = "03transpile2.c", gCallerSLine = 100,buffer_append_str(((struct buffer*)come_null_check(buf_5, "03transpile2.c", 100)),"_Bool"));
                                                 __freed_obj__ = 0;
                                             }
                                             else {
-                                                if(_if_conditional47=charp_operator_equals(class_name_6,"lambda"),                                                __freed_obj__ = 0, 
+                                                if(_if_conditional47=(gCallerSName = "03transpile2.c", gCallerSLine = 128, charp_operator_equals(class_name_6,"lambda")),                                                __freed_obj__ = 0, 
                                                 _if_conditional47) {
                                                     result_type_str_14=(char*)come_increment_ref_count(optional$2charphbool_expect((come_push_stackframe("03transpile2.c", 103),((struct optional$2charphbool*)(right_value17=(gCallerSName = "03transpile2.c", gCallerSLine = 103,make_type_name_string(((struct tuple1$1sTypeph*)come_null_check(((struct sType*)come_null_check(type, "03transpile2.c", 103))->mResultType, "03transpile2.c", 103))->v1,in_header,(_Bool)0,(_Bool)0,info)))))));
                                                     come_pop_stackframe();
@@ -4532,7 +4532,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    if(_if_conditional55=((struct sType*)come_null_check(type, "03transpile2.c", 134))->mNoArrayPointerNum==0&&charp_operator_not_equals(class_name_6,"lambda")&&!no_pointer&&string_operator_not_equals(((struct sType*)come_null_check(type, "03transpile2.c", 134))->mOriginalTypeName,"va_list")&&string_operator_not_equals(((struct sType*)come_null_check(type, "03transpile2.c", 134))->mOriginalTypeName,"__builtin_va_list"),    __freed_obj__ = 0, 
+    if(_if_conditional55=((struct sType*)come_null_check(type, "03transpile2.c", 134))->mNoArrayPointerNum==0&&(gCallerSName = "03transpile2.c", gCallerSLine = 134, charp_operator_not_equals(class_name_6,"lambda"))&&!no_pointer&&(gCallerSName = "03transpile2.c", gCallerSLine = 134, string_operator_not_equals(((struct sType*)come_null_check(type, "03transpile2.c", 134))->mOriginalTypeName,"va_list"))&&(gCallerSName = "03transpile2.c", gCallerSLine = 134, string_operator_not_equals(((struct sType*)come_null_check(type, "03transpile2.c", 134))->mOriginalTypeName,"__builtin_va_list")),    __freed_obj__ = 0, 
     _if_conditional55) {
         for(
         i_23=0 ,        __freed_obj__ = 0, 
@@ -4545,7 +4545,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    if(_if_conditional56=array_cast_pointer&&(gCallerSName = "03transpile2.c", gCallerSLine = 138,list$1sNodeph_length(((struct list$1sNodeph*)come_null_check(((struct sType*)come_null_check(type, "03transpile2.c", 138))->mArrayNum, "03transpile2.c", 138))))>0&&!no_pointer&&string_operator_not_equals(((struct sType*)come_null_check(type, "03transpile2.c", 138))->mOriginalTypeName,"va_list")&&string_operator_not_equals(((struct sType*)come_null_check(type, "03transpile2.c", 138))->mOriginalTypeName,"__builtin_va_list"),    __freed_obj__ = 0, 
+    if(_if_conditional56=array_cast_pointer&&(gCallerSName = "03transpile2.c", gCallerSLine = 138,list$1sNodeph_length(((struct list$1sNodeph*)come_null_check(((struct sType*)come_null_check(type, "03transpile2.c", 138))->mArrayNum, "03transpile2.c", 138))))>0&&!no_pointer&&(gCallerSName = "03transpile2.c", gCallerSLine = 138, string_operator_not_equals(((struct sType*)come_null_check(type, "03transpile2.c", 138))->mOriginalTypeName,"va_list"))&&(gCallerSName = "03transpile2.c", gCallerSLine = 138, string_operator_not_equals(((struct sType*)come_null_check(type, "03transpile2.c", 138))->mOriginalTypeName,"__builtin_va_list")),    __freed_obj__ = 0, 
     _if_conditional56) {
         (gCallerSName = "03transpile2.c", gCallerSLine = 135,buffer_append_str(((struct buffer*)come_null_check(buf_5, "03transpile2.c", 135)),"*"));
         __freed_obj__ = 0;
@@ -6591,7 +6591,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         _for_condtionalA3;        i_26++ ,        __freed_obj__ = 0, 
         0        ){
             come_clear_stackframe();
-            gtype_31=optional$2sTypephbool_value((come_push_stackframe("03transpile2.c", 156),((struct optional$2sTypephbool*)(right_value31=list$1sTypephp_operator_load_element(((struct sType*)come_null_check(type, "03transpile2.c", 156))->mGenericsTypes,i_26)))));
+            gtype_31=optional$2sTypephbool_value((come_push_stackframe("03transpile2.c", 156),((struct optional$2sTypephbool*)(right_value31=(gCallerSName = "03transpile2.c", gCallerSLine = 156, list$1sTypephp_operator_load_element(((struct sType*)come_null_check(type, "03transpile2.c", 156))->mGenericsTypes,i_26))))));
             come_pop_stackframe();
             if(right_value31 && right_value31 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sTypephboolp_finalize,right_value31, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -6610,7 +6610,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    if(_if_conditional64=((struct sType*)come_null_check(type, "03transpile2.c", 174))->mNoArrayPointerNum==0&&charp_operator_not_equals(class_name_25,"lambda"),    __freed_obj__ = 0, 
+    if(_if_conditional64=((struct sType*)come_null_check(type, "03transpile2.c", 174))->mNoArrayPointerNum==0&&(gCallerSName = "03transpile2.c", gCallerSLine = 174, charp_operator_not_equals(class_name_25,"lambda")),    __freed_obj__ = 0, 
     _if_conditional64) {
         for(
         i_32=0 ,        __freed_obj__ = 0, 
@@ -7447,7 +7447,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    if(_if_conditional67=((struct tuple1$1sTypeph*)come_null_check(((struct sType*)come_null_check(type, "03transpile2.c", 230))->mResultType, "03transpile2.c", 230))->v1&&string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(((struct tuple1$1sTypeph*)come_null_check(((struct sType*)come_null_check(type, "03transpile2.c", 230))->mResultType, "03transpile2.c", 230))->v1, "03transpile2.c", 230))->mClass, "03transpile2.c", 230))->mName,"lambda"),    __freed_obj__ = 0, 
+    if(_if_conditional67=((struct tuple1$1sTypeph*)come_null_check(((struct sType*)come_null_check(type, "03transpile2.c", 230))->mResultType, "03transpile2.c", 230))->v1&&(gCallerSName = "03transpile2.c", gCallerSLine = 230, string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(((struct tuple1$1sTypeph*)come_null_check(((struct sType*)come_null_check(type, "03transpile2.c", 230))->mResultType, "03transpile2.c", 230))->v1, "03transpile2.c", 230))->mClass, "03transpile2.c", 230))->mName,"lambda")),    __freed_obj__ = 0, 
     _if_conditional67) {
         (gCallerSName = "03transpile2.c", gCallerSLine = 196,buffer_append_str(((struct buffer*)come_null_check(buf_33, "03transpile2.c", 196)),((char*)(right_value40=(gCallerSName = "03transpile2.c", gCallerSLine = 196,xsprintf("(*%s)(",var_name))))));
         if(right_value40 && right_value40 != __result_obj__ && !__freed_obj__) { right_value40 = come_decrement_ref_count(right_value40, (void*)0, (void*)0, 1, 0, 0); }
@@ -7782,7 +7782,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     if(right_value55 && right_value55 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value55, (void*)0, (void*)0, 0, 1, 0, 0); }
     if(right_value56 && right_value56 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value56, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
-    if(_if_conditional70=string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(type, "03transpile2.c", 336))->mClass, "03transpile2.c", 336))->mName,"lambda")&&((struct sType*)come_null_check(type, "03transpile2.c", 336))->mAsmName!=((void*)0)&&string_operator_not_equals(((struct sType*)come_null_check(type, "03transpile2.c", 336))->mAsmName,""),    __freed_obj__ = 0, 
+    if(_if_conditional70=(gCallerSName = "03transpile2.c", gCallerSLine = 336, string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(type, "03transpile2.c", 336))->mClass, "03transpile2.c", 336))->mName,"lambda"))&&((struct sType*)come_null_check(type, "03transpile2.c", 336))->mAsmName!=((void*)0)&&(gCallerSName = "03transpile2.c", gCallerSLine = 336, string_operator_not_equals(((struct sType*)come_null_check(type, "03transpile2.c", 336))->mAsmName,"")),    __freed_obj__ = 0, 
     _if_conditional70) {
         str_41=(char*)come_increment_ref_count(((char*)(right_value57=(gCallerSName = "03transpile2.c", gCallerSLine = 240,header_lambda(type,(char*)come_increment_ref_count(((struct sType*)come_null_check(type, "03transpile2.c", 240))->mAsmName),info)))));
         if(right_value57 && right_value57 != __result_obj__ && !__freed_obj__) { right_value57 = come_decrement_ref_count(right_value57, (void*)0, (void*)0, 1, 0, 0); }
@@ -7792,7 +7792,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         if(str_41 && !__freed_obj__) { str_41 = come_decrement_ref_count(str_41, (void*)0, (void*)0, 0, 0, 0); }
     }
     else {
-        if(_if_conditional71=string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(type, "03transpile2.c", 336))->mClass, "03transpile2.c", 336))->mName,"lambda"),        __freed_obj__ = 0, 
+        if(_if_conditional71=(gCallerSName = "03transpile2.c", gCallerSLine = 336, string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(type, "03transpile2.c", 336))->mClass, "03transpile2.c", 336))->mName,"lambda")),        __freed_obj__ = 0, 
         _if_conditional71) {
             str_42=(char*)come_increment_ref_count(optional$2charphbool_expect((come_push_stackframe("03transpile2.c", 245),((struct optional$2charphbool*)(right_value58=(gCallerSName = "03transpile2.c", gCallerSLine = 245,make_lambda_type_name_string(type,name,info)))))));
             come_pop_stackframe();
@@ -7855,14 +7855,14 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                 (gCallerSName = "03transpile2.c", gCallerSLine = 260,buffer_append_str(((struct buffer*)come_null_check(buf_40, "03transpile2.c", 260)),((char*)(right_value65=(gCallerSName = "03transpile2.c", gCallerSLine = 260,xsprintf("%s:%s",name,((struct CVALUE*)come_null_check(come_value_43, "03transpile2.c", 260))->c_value))))));
                 if(right_value65 && right_value65 != __result_obj__ && !__freed_obj__) { right_value65 = come_decrement_ref_count(right_value65, (void*)0, (void*)0, 1, 0, 0); }
                 __freed_obj__ = 0;
-                if(_if_conditional74=((struct sType*)come_null_check(type, "03transpile2.c", 266))->mAsmName!=((void*)0)&&string_operator_not_equals(((struct sType*)come_null_check(type, "03transpile2.c", 266))->mAsmName,""),                __freed_obj__ = 0, 
+                if(_if_conditional74=((struct sType*)come_null_check(type, "03transpile2.c", 266))->mAsmName!=((void*)0)&&(gCallerSName = "03transpile2.c", gCallerSLine = 266, string_operator_not_equals(((struct sType*)come_null_check(type, "03transpile2.c", 266))->mAsmName,"")),                __freed_obj__ = 0, 
                 _if_conditional74) {
                     (gCallerSName = "03transpile2.c", gCallerSLine = 263,buffer_append_str(((struct buffer*)come_null_check(buf_40, "03transpile2.c", 263)),((char*)(right_value66=(gCallerSName = "03transpile2.c", gCallerSLine = 263,xsprintf(" __asm__(\"%s\")",((struct sType*)come_null_check(type, "03transpile2.c", 263))->mAsmName))))));
                     if(right_value66 && right_value66 != __result_obj__ && !__freed_obj__) { right_value66 = come_decrement_ref_count(right_value66, (void*)0, (void*)0, 1, 0, 0); }
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                if(_if_conditional75=((struct sType*)come_null_check(type, "03transpile2.c", 269))->mAsmName!=((void*)0)&&string_operator_not_equals(((struct sType*)come_null_check(type, "03transpile2.c", 269))->mAsmName,""),                __freed_obj__ = 0, 
+                if(_if_conditional75=((struct sType*)come_null_check(type, "03transpile2.c", 269))->mAsmName!=((void*)0)&&(gCallerSName = "03transpile2.c", gCallerSLine = 269, string_operator_not_equals(((struct sType*)come_null_check(type, "03transpile2.c", 269))->mAsmName,"")),                __freed_obj__ = 0, 
                 _if_conditional75) {
                     (gCallerSName = "03transpile2.c", gCallerSLine = 267,buffer_append_str(((struct buffer*)come_null_check(buf_40, "03transpile2.c", 267)),((char*)(right_value67=(gCallerSName = "03transpile2.c", gCallerSLine = 267,xsprintf(" __asm__(\"%s\")",((struct sType*)come_null_check(type, "03transpile2.c", 267))->mAsmName))))));
                     if(right_value67 && right_value67 != __result_obj__ && !__freed_obj__) { right_value67 = come_decrement_ref_count(right_value67, (void*)0, (void*)0, 1, 0, 0); }
@@ -7887,7 +7887,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                     __freed_obj__ = 0;
                     (gCallerSName = "03transpile2.c", gCallerSLine = 278,buffer_append_str(((struct buffer*)come_null_check(buf_40, "03transpile2.c", 278)),"[]"));
                     __freed_obj__ = 0;
-                    if(_if_conditional77=((struct sType*)come_null_check(type, "03transpile2.c", 283))->mAsmName!=((void*)0)&&string_operator_not_equals(((struct sType*)come_null_check(type, "03transpile2.c", 283))->mAsmName,""),                    __freed_obj__ = 0, 
+                    if(_if_conditional77=((struct sType*)come_null_check(type, "03transpile2.c", 283))->mAsmName!=((void*)0)&&(gCallerSName = "03transpile2.c", gCallerSLine = 283, string_operator_not_equals(((struct sType*)come_null_check(type, "03transpile2.c", 283))->mAsmName,"")),                    __freed_obj__ = 0, 
                     _if_conditional77) {
                         (gCallerSName = "03transpile2.c", gCallerSLine = 281,buffer_append_str(((struct buffer*)come_null_check(buf_40, "03transpile2.c", 281)),((char*)(right_value69=(gCallerSName = "03transpile2.c", gCallerSLine = 281,xsprintf(" __asm__(\"%s\")",((struct sType*)come_null_check(type, "03transpile2.c", 281))->mAsmName))))));
                         if(right_value69 && right_value69 != __result_obj__ && !__freed_obj__) { right_value69 = come_decrement_ref_count(right_value69, (void*)0, (void*)0, 1, 0, 0); }
@@ -7975,7 +7975,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                         }
                         if(o2_saved_47 && !__freed_obj__) { come_call_finalizer(list$1sNodephp_finalize,o2_saved_47, (void*)0, (void*)0, 0, 0, 0, 0); }
                         __freed_obj__ = 0;
-                        if(_if_conditional86=((struct sType*)come_null_check(type, "03transpile2.c", 312))->mAsmName!=((void*)0)&&string_operator_not_equals(((struct sType*)come_null_check(type, "03transpile2.c", 312))->mAsmName,""),                        __freed_obj__ = 0, 
+                        if(_if_conditional86=((struct sType*)come_null_check(type, "03transpile2.c", 312))->mAsmName!=((void*)0)&&(gCallerSName = "03transpile2.c", gCallerSLine = 312, string_operator_not_equals(((struct sType*)come_null_check(type, "03transpile2.c", 312))->mAsmName,"")),                        __freed_obj__ = 0, 
                         _if_conditional86) {
                             (gCallerSName = "03transpile2.c", gCallerSLine = 310,buffer_append_str(((struct buffer*)come_null_check(buf_40, "03transpile2.c", 310)),((char*)(right_value76=(gCallerSName = "03transpile2.c", gCallerSLine = 310,xsprintf(" __asm__(\"%s\")",((struct sType*)come_null_check(type, "03transpile2.c", 310))->mAsmName))))));
                             if(right_value76 && right_value76 != __result_obj__ && !__freed_obj__) { right_value76 = come_decrement_ref_count(right_value76, (void*)0, (void*)0, 1, 0, 0); }
@@ -7989,7 +7989,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                         come_pop_stackframe();
                         if(right_value77 && right_value77 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value77, (void*)0, (void*)0, 0, 1, 0, 0); }
                         __freed_obj__ = 0;
-                        if(_if_conditional87=string_operator_equals(type_str_54,""),                        __freed_obj__ = 0, 
+                        if(_if_conditional87=(gCallerSName = "03transpile2.c", gCallerSLine = 320, string_operator_equals(type_str_54,"")),                        __freed_obj__ = 0, 
                         _if_conditional87) {
                             __result45__ = __result_obj__ = (come_save_stackframe("03transpile2.c", 317), ((struct optional$2charphbool*)(right_value80=optional$2charphbool_initialize(((struct optional$2charphbool*)(right_value79=(struct optional$2charphbool*)come_calloc(1, sizeof(struct optional$2charphbool)*(1), "03transpile2.c", 317))),(char*)come_increment_ref_count(((char*)(right_value78=(gCallerSName = "03transpile2.c", gCallerSLine = 317,__builtin_string(""))))),(_Bool)0))));
                             if(type_str_54 && !__freed_obj__) { type_str_54 = come_decrement_ref_count(type_str_54, (void*)0, (void*)0, 0, 0, 0); }
@@ -8041,7 +8041,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
-                        if(_if_conditional90=((struct sType*)come_null_check(type, "03transpile2.c", 334))->mAsmName!=((void*)0)&&string_operator_not_equals(((struct sType*)come_null_check(type, "03transpile2.c", 334))->mAsmName,""),                        __freed_obj__ = 0, 
+                        if(_if_conditional90=((struct sType*)come_null_check(type, "03transpile2.c", 334))->mAsmName!=((void*)0)&&(gCallerSName = "03transpile2.c", gCallerSLine = 334, string_operator_not_equals(((struct sType*)come_null_check(type, "03transpile2.c", 334))->mAsmName,"")),                        __freed_obj__ = 0, 
                         _if_conditional90) {
                             (gCallerSName = "03transpile2.c", gCallerSLine = 332,buffer_append_str(((struct buffer*)come_null_check(buf_40, "03transpile2.c", 332)),((char*)(right_value81=(gCallerSName = "03transpile2.c", gCallerSLine = 332,xsprintf(" __asm__(\"%s\")",((struct sType*)come_null_check(type, "03transpile2.c", 332))->mAsmName))))));
                             if(right_value81 && right_value81 != __result_obj__ && !__freed_obj__) { right_value81 = come_decrement_ref_count(right_value81, (void*)0, (void*)0, 1, 0, 0); }
@@ -8773,7 +8773,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         _for_condtionalA8;        it_59=(gCallerSName = "03transpile2.c", gCallerSLine = 366,list$1sTypeph_next(((struct list$1sTypeph*)come_null_check((o2_saved_58), "03transpile2.c", 366)))) ,        __freed_obj__ = 0, 
         0        ){
             come_clear_stackframe();
-            name_63=optional$2charphbool_expect((come_push_stackframe("03transpile2.c", 350),((struct optional$2charphbool*)(right_value93=list$1charphp_operator_load_element(((struct sFun*)come_null_check(fun, "03transpile2.c", 350))->mParamNames,i_57)))));
+            name_63=optional$2charphbool_expect((come_push_stackframe("03transpile2.c", 350),((struct optional$2charphbool*)(right_value93=(gCallerSName = "03transpile2.c", gCallerSLine = 350, list$1charphp_operator_load_element(((struct sFun*)come_null_check(fun, "03transpile2.c", 350))->mParamNames,i_57))))));
             come_pop_stackframe();
             if(right_value93 && right_value93 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value93, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -8825,7 +8825,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     else {
         if(_if_conditional96=(gCallerSName = "03transpile2.c", gCallerSLine = 455,list$1sNodeph_length(((struct list$1sNodeph*)come_null_check(((struct sType*)come_null_check(((struct sFun*)come_null_check(fun, "03transpile2.c", 455))->mResultType, "03transpile2.c", 455))->mArrayNum, "03transpile2.c", 455))))>0,        __freed_obj__ = 0, 
         _if_conditional96) {
-            base_result_type_84=(struct sType*)come_increment_ref_count(((struct sType*)(right_value132=sType_clone(((struct sFun*)come_null_check(fun, "03transpile2.c", 378))->mResultType))));
+            base_result_type_84=(struct sType*)come_increment_ref_count(((struct sType*)(right_value132=(gCallerSName = "03transpile2.c", gCallerSLine = 378,sType_clone(((struct sFun*)come_null_check(fun, "03transpile2.c", 378))->mResultType)))));
             if(right_value132 && right_value132 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value132, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
             __dec_obj30=((struct sType*)come_null_check(base_result_type_84, "03transpile2.c", 379))->mArrayNum;
@@ -8855,7 +8855,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
             _for_condtionalA9;            it_88=(gCallerSName = "03transpile2.c", gCallerSLine = 408,list$1sTypeph_next(((struct list$1sTypeph*)come_null_check((o2_saved_87), "03transpile2.c", 408)))) ,            __freed_obj__ = 0, 
             0            ){
                 come_clear_stackframe();
-                name_89=optional$2charphbool_expect((come_push_stackframe("03transpile2.c", 391),((struct optional$2charphbool*)(right_value136=list$1charphp_operator_load_element(((struct sFun*)come_null_check(fun, "03transpile2.c", 391))->mParamNames,i_86)))));
+                name_89=optional$2charphbool_expect((come_push_stackframe("03transpile2.c", 391),((struct optional$2charphbool*)(right_value136=(gCallerSName = "03transpile2.c", gCallerSLine = 391, list$1charphp_operator_load_element(((struct sFun*)come_null_check(fun, "03transpile2.c", 391))->mParamNames,i_86))))));
                 come_pop_stackframe();
                 if(right_value136 && right_value136 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value136, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
@@ -8887,7 +8887,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
             if(o2_saved_87 && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,o2_saved_87, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
             come_clear_stackframe();
-            node_95=optional$2sNodephbool_value((come_push_stackframe("03transpile2.c", 408),((struct optional$2sNodephbool*)(right_value142=list$1sNodephp_operator_load_element(((struct sType*)come_null_check(((struct sFun*)come_null_check(fun, "03transpile2.c", 408))->mResultType, "03transpile2.c", 408))->mArrayNum,0)))));
+            node_95=optional$2sNodephbool_value((come_push_stackframe("03transpile2.c", 408),((struct optional$2sNodephbool*)(right_value142=(gCallerSName = "03transpile2.c", gCallerSLine = 408, list$1sNodephp_operator_load_element(((struct sType*)come_null_check(((struct sFun*)come_null_check(fun, "03transpile2.c", 408))->mResultType, "03transpile2.c", 408))->mArrayNum,0))))));
             come_pop_stackframe();
             if(right_value142 && right_value142 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sNodephboolp_finalize,right_value142, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -8967,7 +8967,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
             _for_condtionalA10;            it_100=(gCallerSName = "03transpile2.c", gCallerSLine = 449,list$1sTypeph_next(((struct list$1sTypeph*)come_null_check((o2_saved_99), "03transpile2.c", 449)))) ,            __freed_obj__ = 0, 
             0            ){
                 come_clear_stackframe();
-                name_101=optional$2charphbool_expect((come_push_stackframe("03transpile2.c", 433),((struct optional$2charphbool*)(right_value150=list$1charphp_operator_load_element(((struct sFun*)come_null_check(fun, "03transpile2.c", 433))->mParamNames,i_98)))));
+                name_101=optional$2charphbool_expect((come_push_stackframe("03transpile2.c", 433),((struct optional$2charphbool*)(right_value150=(gCallerSName = "03transpile2.c", gCallerSLine = 433, list$1charphp_operator_load_element(((struct sFun*)come_null_check(fun, "03transpile2.c", 433))->mParamNames,i_98))))));
                 come_pop_stackframe();
                 if(right_value150 && right_value150 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value150, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
@@ -9439,7 +9439,7 @@ memset(&right_value131, 0, sizeof(void*));
                 if(_if_conditional99=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 6))->mNoSolvedGenericsType!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional99) {
                     __dec_obj9=((struct sType*)come_null_check(result_66, "sType_clone", 5))->mNoSolvedGenericsType;
-                    ((struct sType*)come_null_check(result_66, "sType_clone", 5))->mNoSolvedGenericsType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value101=tuple1$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 5))->mNoSolvedGenericsType))));
+                    ((struct sType*)come_null_check(result_66, "sType_clone", 5))->mNoSolvedGenericsType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value101=(gCallerSName = "sType_clone", gCallerSLine = 5,tuple1$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 5))->mNoSolvedGenericsType)))));
                     if(__dec_obj9) { come_call_finalizer(tuple1$1sTypeph_finalize,__dec_obj9, (void*)0, (void*)0, 0, 0, 0, 0); }
                     if(right_value101 && right_value101 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,right_value101, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
@@ -9448,7 +9448,7 @@ memset(&right_value131, 0, sizeof(void*));
                 if(_if_conditional103=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 7))->mOriginalLoadVarType!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional103) {
                     __dec_obj10=((struct sType*)come_null_check(result_66, "sType_clone", 6))->mOriginalLoadVarType;
-                    ((struct sType*)come_null_check(result_66, "sType_clone", 6))->mOriginalLoadVarType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value102=tuple1$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 6))->mOriginalLoadVarType))));
+                    ((struct sType*)come_null_check(result_66, "sType_clone", 6))->mOriginalLoadVarType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value102=(gCallerSName = "sType_clone", gCallerSLine = 6,tuple1$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 6))->mOriginalLoadVarType)))));
                     if(__dec_obj10) { come_call_finalizer(tuple1$1sTypeph_finalize,__dec_obj10, (void*)0, (void*)0, 0, 0, 0, 0); }
                     if(right_value102 && right_value102 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,right_value102, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
@@ -9457,7 +9457,7 @@ memset(&right_value131, 0, sizeof(void*));
                 if(_if_conditional104=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 8))->mGenericsName!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional104) {
                     __dec_obj11=((struct sType*)come_null_check(result_66, "sType_clone", 7))->mGenericsName;
-                    ((struct sType*)come_null_check(result_66, "sType_clone", 7))->mGenericsName=(char*)come_increment_ref_count(((char*)(right_value103=string_clone(((struct sType*)come_null_check(self, "sType_clone", 7))->mGenericsName))));
+                    ((struct sType*)come_null_check(result_66, "sType_clone", 7))->mGenericsName=(char*)come_increment_ref_count(((char*)(right_value103=(gCallerSName = "sType_clone", gCallerSLine = 7,string_clone(((struct sType*)come_null_check(self, "sType_clone", 7))->mGenericsName)))));
                     if(__dec_obj11) { __dec_obj11 = come_decrement_ref_count(__dec_obj11, (void*)0, (void*)0, 0,0,0); }
                     if(right_value103 && right_value103 != __result_obj__ && !__freed_obj__) { right_value103 = come_decrement_ref_count(right_value103, (void*)0, (void*)0, 1, 0, 0); }
                     __freed_obj__ = 0;
@@ -9466,7 +9466,7 @@ memset(&right_value131, 0, sizeof(void*));
                 if(_if_conditional105=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 9))->mGenericsTypes!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional105) {
                     __dec_obj15=((struct sType*)come_null_check(result_66, "sType_clone", 8))->mGenericsTypes;
-                    ((struct sType*)come_null_check(result_66, "sType_clone", 8))->mGenericsTypes=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value110=list$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 8))->mGenericsTypes))));
+                    ((struct sType*)come_null_check(result_66, "sType_clone", 8))->mGenericsTypes=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value110=(gCallerSName = "sType_clone", gCallerSLine = 8,list$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 8))->mGenericsTypes)))));
                     if(__dec_obj15) { come_call_finalizer(list$1sTypeph_finalize,__dec_obj15, (void*)0, (void*)0, 0, 0, 0, 0); }
                     if(right_value110 && right_value110 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,right_value110, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
@@ -9475,7 +9475,7 @@ memset(&right_value131, 0, sizeof(void*));
                 if(_if_conditional109=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 10))->mArrayNum!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional109) {
                     __dec_obj19=((struct sType*)come_null_check(result_66, "sType_clone", 9))->mArrayNum;
-                    ((struct sType*)come_null_check(result_66, "sType_clone", 9))->mArrayNum=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value118=list$1sNodephp_clone(((struct sType*)come_null_check(self, "sType_clone", 9))->mArrayNum))));
+                    ((struct sType*)come_null_check(result_66, "sType_clone", 9))->mArrayNum=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value118=(gCallerSName = "sType_clone", gCallerSLine = 9,list$1sNodephp_clone(((struct sType*)come_null_check(self, "sType_clone", 9))->mArrayNum)))));
                     if(__dec_obj19) { come_call_finalizer(list$1sNodeph_finalize,__dec_obj19, (void*)0, (void*)0, 0, 0, 0, 0); }
                     if(right_value118 && right_value118 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sNodephp_finalize,right_value118, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
@@ -9490,7 +9490,7 @@ memset(&right_value131, 0, sizeof(void*));
                 if(_if_conditional123=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 12))->mParamTypes!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional123) {
                     __dec_obj20=((struct sType*)come_null_check(result_66, "sType_clone", 11))->mParamTypes;
-                    ((struct sType*)come_null_check(result_66, "sType_clone", 11))->mParamTypes=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value119=list$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 11))->mParamTypes))));
+                    ((struct sType*)come_null_check(result_66, "sType_clone", 11))->mParamTypes=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value119=(gCallerSName = "sType_clone", gCallerSLine = 11,list$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 11))->mParamTypes)))));
                     if(__dec_obj20) { come_call_finalizer(list$1sTypeph_finalize,__dec_obj20, (void*)0, (void*)0, 0, 0, 0, 0); }
                     if(right_value119 && right_value119 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,right_value119, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
@@ -9499,7 +9499,7 @@ memset(&right_value131, 0, sizeof(void*));
                 if(_if_conditional124=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 13))->mParamNames!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional124) {
                     __dec_obj24=((struct sType*)come_null_check(result_66, "sType_clone", 12))->mParamNames;
-                    ((struct sType*)come_null_check(result_66, "sType_clone", 12))->mParamNames=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value126=list$1charphp_clone(((struct sType*)come_null_check(self, "sType_clone", 12))->mParamNames))));
+                    ((struct sType*)come_null_check(result_66, "sType_clone", 12))->mParamNames=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value126=(gCallerSName = "sType_clone", gCallerSLine = 12,list$1charphp_clone(((struct sType*)come_null_check(self, "sType_clone", 12))->mParamNames)))));
                     if(__dec_obj24) { come_call_finalizer(list$1charph_finalize,__dec_obj24, (void*)0, (void*)0, 0, 0, 0, 0); }
                     if(right_value126 && right_value126 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value126, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
@@ -9508,7 +9508,7 @@ memset(&right_value131, 0, sizeof(void*));
                 if(_if_conditional128=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 14))->mResultType!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional128) {
                     __dec_obj25=((struct sType*)come_null_check(result_66, "sType_clone", 13))->mResultType;
-                    ((struct sType*)come_null_check(result_66, "sType_clone", 13))->mResultType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value127=tuple1$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 13))->mResultType))));
+                    ((struct sType*)come_null_check(result_66, "sType_clone", 13))->mResultType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value127=(gCallerSName = "sType_clone", gCallerSLine = 13,tuple1$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 13))->mResultType)))));
                     if(__dec_obj25) { come_call_finalizer(tuple1$1sTypeph_finalize,__dec_obj25, (void*)0, (void*)0, 0, 0, 0, 0); }
                     if(right_value127 && right_value127 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,right_value127, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
@@ -9523,7 +9523,7 @@ memset(&right_value131, 0, sizeof(void*));
                 if(_if_conditional130=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 16))->mAlignas!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional130) {
                     __dec_obj26=((struct sType*)come_null_check(result_66, "sType_clone", 15))->mAlignas;
-                    ((struct sType*)come_null_check(result_66, "sType_clone", 15))->mAlignas=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value128=sNode_clone(((struct sType*)come_null_check(self, "sType_clone", 15))->mAlignas))));
+                    ((struct sType*)come_null_check(result_66, "sType_clone", 15))->mAlignas=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value128=(gCallerSName = "sType_clone", gCallerSLine = 15,sNode_clone(((struct sType*)come_null_check(self, "sType_clone", 15))->mAlignas)))));
                     if(__dec_obj26) { __dec_obj26 = come_decrement_ref_count(__dec_obj26, ((struct sNode*)__dec_obj26)->finalize, ((struct sNode*)__dec_obj26)->_protocol_obj, 0,0,0); }
                     if(right_value128 && right_value128 != __result_obj__ && !__freed_obj__) { right_value128 = come_decrement_ref_count(right_value128, ((struct sNode*)right_value128)->finalize, ((struct sNode*)right_value128)->_protocol_obj, 1, 0, 0); } 
                     __freed_obj__ = 0;
@@ -9670,7 +9670,7 @@ memset(&right_value131, 0, sizeof(void*));
                 if(_if_conditional154=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 40))->mSizeNum!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional154) {
                     __dec_obj27=((struct sType*)come_null_check(result_66, "sType_clone", 39))->mSizeNum;
-                    ((struct sType*)come_null_check(result_66, "sType_clone", 39))->mSizeNum=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value129=sNode_clone(((struct sType*)come_null_check(self, "sType_clone", 39))->mSizeNum))));
+                    ((struct sType*)come_null_check(result_66, "sType_clone", 39))->mSizeNum=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value129=(gCallerSName = "sType_clone", gCallerSLine = 39,sNode_clone(((struct sType*)come_null_check(self, "sType_clone", 39))->mSizeNum)))));
                     if(__dec_obj27) { __dec_obj27 = come_decrement_ref_count(__dec_obj27, ((struct sNode*)__dec_obj27)->finalize, ((struct sNode*)__dec_obj27)->_protocol_obj, 0,0,0); }
                     if(right_value129 && right_value129 != __result_obj__ && !__freed_obj__) { right_value129 = come_decrement_ref_count(right_value129, ((struct sNode*)right_value129)->finalize, ((struct sNode*)right_value129)->_protocol_obj, 1, 0, 0); } 
                     __freed_obj__ = 0;
@@ -9691,7 +9691,7 @@ memset(&right_value131, 0, sizeof(void*));
                 if(_if_conditional157=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 43))->mOriginalTypeName!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional157) {
                     __dec_obj28=((struct sType*)come_null_check(result_66, "sType_clone", 42))->mOriginalTypeName;
-                    ((struct sType*)come_null_check(result_66, "sType_clone", 42))->mOriginalTypeName=(char*)come_increment_ref_count(((char*)(right_value130=string_clone(((struct sType*)come_null_check(self, "sType_clone", 42))->mOriginalTypeName))));
+                    ((struct sType*)come_null_check(result_66, "sType_clone", 42))->mOriginalTypeName=(char*)come_increment_ref_count(((char*)(right_value130=(gCallerSName = "sType_clone", gCallerSLine = 42,string_clone(((struct sType*)come_null_check(self, "sType_clone", 42))->mOriginalTypeName)))));
                     if(__dec_obj28) { __dec_obj28 = come_decrement_ref_count(__dec_obj28, (void*)0, (void*)0, 0,0,0); }
                     if(right_value130 && right_value130 != __result_obj__ && !__freed_obj__) { right_value130 = come_decrement_ref_count(right_value130, (void*)0, (void*)0, 1, 0, 0); }
                     __freed_obj__ = 0;
@@ -9748,7 +9748,7 @@ memset(&right_value131, 0, sizeof(void*));
                 if(_if_conditional166=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 52))->mAsmName!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional166) {
                     __dec_obj29=((struct sType*)come_null_check(result_66, "sType_clone", 51))->mAsmName;
-                    ((struct sType*)come_null_check(result_66, "sType_clone", 51))->mAsmName=(char*)come_increment_ref_count(((char*)(right_value131=string_clone(((struct sType*)come_null_check(self, "sType_clone", 51))->mAsmName))));
+                    ((struct sType*)come_null_check(result_66, "sType_clone", 51))->mAsmName=(char*)come_increment_ref_count(((char*)(right_value131=(gCallerSName = "sType_clone", gCallerSLine = 51,string_clone(((struct sType*)come_null_check(self, "sType_clone", 51))->mAsmName)))));
                     if(__dec_obj29) { __dec_obj29 = come_decrement_ref_count(__dec_obj29, (void*)0, (void*)0, 0,0,0); }
                     if(right_value131 && right_value131 != __result_obj__ && !__freed_obj__) { right_value131 = come_decrement_ref_count(right_value131, (void*)0, (void*)0, 1, 0, 0); }
                     __freed_obj__ = 0;
@@ -9906,7 +9906,7 @@ memset(&right_value100, 0, sizeof(void*));
                         if(_if_conditional102=self!=((void*)0)&&((struct tuple1$1sTypeph*)come_null_check(self, "tuple1$1sTypephp_clone", 5))->v1!=((void*)0),                        __freed_obj__ = 0, 
                         _if_conditional102) {
                             __dec_obj8=((struct tuple1$1sTypeph*)come_null_check(result_67, "tuple1$1sTypephp_clone", 4))->v1;
-                            ((struct tuple1$1sTypeph*)come_null_check(result_67, "tuple1$1sTypephp_clone", 4))->v1=(struct sType*)come_increment_ref_count(((struct sType*)(right_value100=sType_clone(((struct tuple1$1sTypeph*)come_null_check(self, "tuple1$1sTypephp_clone", 4))->v1))));
+                            ((struct tuple1$1sTypeph*)come_null_check(result_67, "tuple1$1sTypephp_clone", 4))->v1=(struct sType*)come_increment_ref_count(((struct sType*)(right_value100=(gCallerSName = "tuple1$1sTypephp_clone", gCallerSLine = 4,sType_clone(((struct tuple1$1sTypeph*)come_null_check(self, "tuple1$1sTypephp_clone", 4))->v1)))));
                             if(__dec_obj8) { come_call_finalizer(sType_finalize,__dec_obj8, (void*)0, (void*)0, 0, 0, 0, 0); }
                             if(right_value100 && right_value100 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value100, (void*)0, (void*)0, 0, 1, 0, 0); }
                             __freed_obj__ = 0;
@@ -10155,7 +10155,7 @@ memset(&right_value109, 0, sizeof(void*));
                         __freed_obj__ = 0;
                         while(_while_condtional6=it_69!=((void*)0),                        __freed_obj__ = 0, 
                         _while_condtional6) {
-                            (gCallerSName = "./comelang2.h", gCallerSLine = 213,list$1sTypeph_add(((struct list$1sTypeph*)come_null_check(result_68, "./comelang2.h", 213)),(struct sType*)come_increment_ref_count(((struct sType*)(right_value109=sType_clone(((struct list_item$1sTypeph*)come_null_check(it_69, "./comelang2.h", 213))->item))))));
+                            (gCallerSName = "./comelang2.h", gCallerSLine = 213,list$1sTypeph_add(((struct list$1sTypeph*)come_null_check(result_68, "./comelang2.h", 213)),(struct sType*)come_increment_ref_count(((struct sType*)(right_value109=(gCallerSName = "./comelang2.h", gCallerSLine = 213,sType_clone(((struct list_item$1sTypeph*)come_null_check(it_69, "./comelang2.h", 213))->item)))))));
                             if(right_value109 && right_value109 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value109, (void*)0, (void*)0, 0, 1, 0, 0); }
                             __freed_obj__ = 0;
                             it_69=((struct list_item$1sTypeph*)come_null_check(it_69, "./comelang2.h", 215))->next;
@@ -10694,7 +10694,7 @@ memset(&right_value117, 0, sizeof(void*));
                         __freed_obj__ = 0;
                         while(_while_condtional7=it_74!=((void*)0),                        __freed_obj__ = 0, 
                         _while_condtional7) {
-                            (gCallerSName = "./comelang2.h", gCallerSLine = 213,list$1sNodeph_add(((struct list$1sNodeph*)come_null_check(result_73, "./comelang2.h", 213)),(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value117=sNode_clone(((struct list_item$1sNodeph*)come_null_check(it_74, "./comelang2.h", 213))->item))))));
+                            (gCallerSName = "./comelang2.h", gCallerSLine = 213,list$1sNodeph_add(((struct list$1sNodeph*)come_null_check(result_73, "./comelang2.h", 213)),(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value117=(gCallerSName = "./comelang2.h", gCallerSLine = 213,sNode_clone(((struct list_item$1sNodeph*)come_null_check(it_74, "./comelang2.h", 213))->item)))))));
                             if(right_value117 && right_value117 != __result_obj__ && !__freed_obj__) { right_value117 = come_decrement_ref_count(right_value117, ((struct sNode*)right_value117)->finalize, ((struct sNode*)right_value117)->_protocol_obj, 1, 0, 0); } 
                             __freed_obj__ = 0;
                             it_74=((struct list_item$1sNodeph*)come_null_check(it_74, "./comelang2.h", 215))->next;
@@ -11434,7 +11434,7 @@ memset(&right_value125, 0, sizeof(void*));
                         __freed_obj__ = 0;
                         while(_while_condtional8=it_80!=((void*)0),                        __freed_obj__ = 0, 
                         _while_condtional8) {
-                            (gCallerSName = "./comelang2.h", gCallerSLine = 213,list$1charph_add(((struct list$1charph*)come_null_check(result_79, "./comelang2.h", 213)),(char*)come_increment_ref_count(((char*)(right_value125=string_clone(((struct list_item$1charph*)come_null_check(it_80, "./comelang2.h", 213))->item))))));
+                            (gCallerSName = "./comelang2.h", gCallerSLine = 213,list$1charph_add(((struct list$1charph*)come_null_check(result_79, "./comelang2.h", 213)),(char*)come_increment_ref_count(((char*)(right_value125=(gCallerSName = "./comelang2.h", gCallerSLine = 213,string_clone(((struct list_item$1charph*)come_null_check(it_80, "./comelang2.h", 213))->item)))))));
                             if(right_value125 && right_value125 != __result_obj__ && !__freed_obj__) { right_value125 = come_decrement_ref_count(right_value125, (void*)0, (void*)0, 1, 0, 0); }
                             __freed_obj__ = 0;
                             it_80=((struct list_item$1charph*)come_null_check(it_80, "./comelang2.h", 215))->next;
@@ -12575,7 +12575,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         _for_condtionalA11;        it_107=(gCallerSName = "03transpile2.c", gCallerSLine = 488,list$1sTypeph_next(((struct list$1sTypeph*)come_null_check((o2_saved_106), "03transpile2.c", 488)))) ,        __freed_obj__ = 0, 
         0        ){
             come_clear_stackframe();
-            name_108=optional$2charphbool_expect((come_push_stackframe("03transpile2.c", 478),((struct optional$2charphbool*)(right_value161=list$1charphp_operator_load_element(((struct sFun*)come_null_check(fun, "03transpile2.c", 478))->mParamNames,i_105)))));
+            name_108=optional$2charphbool_expect((come_push_stackframe("03transpile2.c", 478),((struct optional$2charphbool*)(right_value161=(gCallerSName = "03transpile2.c", gCallerSLine = 478, list$1charphp_operator_load_element(((struct sFun*)come_null_check(fun, "03transpile2.c", 478))->mParamNames,i_105))))));
             come_pop_stackframe();
             if(right_value161 && right_value161 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value161, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -12616,7 +12616,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     else {
         if(_if_conditional178=(gCallerSName = "03transpile2.c", gCallerSLine = 565,list$1sNodeph_length(((struct list$1sNodeph*)come_null_check(((struct sType*)come_null_check(((struct sFun*)come_null_check(fun, "03transpile2.c", 565))->mResultType, "03transpile2.c", 565))->mArrayNum, "03transpile2.c", 565))))>0,        __freed_obj__ = 0, 
         _if_conditional178) {
-            base_result_type_111=(struct sType*)come_increment_ref_count(((struct sType*)(right_value165=sType_clone(((struct sFun*)come_null_check(fun, "03transpile2.c", 496))->mResultType))));
+            base_result_type_111=(struct sType*)come_increment_ref_count(((struct sType*)(right_value165=(gCallerSName = "03transpile2.c", gCallerSLine = 496,sType_clone(((struct sFun*)come_null_check(fun, "03transpile2.c", 496))->mResultType)))));
             if(right_value165 && right_value165 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value165, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
             __dec_obj32=((struct sType*)come_null_check(base_result_type_111, "03transpile2.c", 497))->mArrayNum;
@@ -12646,7 +12646,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
             _for_condtionalA12;            it_115=(gCallerSName = "03transpile2.c", gCallerSLine = 525,list$1sTypeph_next(((struct list$1sTypeph*)come_null_check((o2_saved_114), "03transpile2.c", 525)))) ,            __freed_obj__ = 0, 
             0            ){
                 come_clear_stackframe();
-                name_116=optional$2charphbool_expect((come_push_stackframe("03transpile2.c", 509),((struct optional$2charphbool*)(right_value169=list$1charphp_operator_load_element(((struct sFun*)come_null_check(fun, "03transpile2.c", 509))->mParamNames,i_113)))));
+                name_116=optional$2charphbool_expect((come_push_stackframe("03transpile2.c", 509),((struct optional$2charphbool*)(right_value169=(gCallerSName = "03transpile2.c", gCallerSLine = 509, list$1charphp_operator_load_element(((struct sFun*)come_null_check(fun, "03transpile2.c", 509))->mParamNames,i_113))))));
                 come_pop_stackframe();
                 if(right_value169 && right_value169 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value169, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
@@ -12678,7 +12678,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
             if(o2_saved_114 && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,o2_saved_114, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
             come_clear_stackframe();
-            node_118=optional$2sNodephbool_value((come_push_stackframe("03transpile2.c", 525),((struct optional$2sNodephbool*)(right_value171=list$1sNodephp_operator_load_element(((struct sType*)come_null_check(((struct sFun*)come_null_check(fun, "03transpile2.c", 525))->mResultType, "03transpile2.c", 525))->mArrayNum,0)))));
+            node_118=optional$2sNodephbool_value((come_push_stackframe("03transpile2.c", 525),((struct optional$2sNodephbool*)(right_value171=(gCallerSName = "03transpile2.c", gCallerSLine = 525, list$1sNodephp_operator_load_element(((struct sType*)come_null_check(((struct sFun*)come_null_check(fun, "03transpile2.c", 525))->mResultType, "03transpile2.c", 525))->mArrayNum,0))))));
             if(right_value171 && right_value171 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sNodephboolp_finalize,right_value171, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
             if(_if_conditional181=!((struct sNode*)come_null_check(node_118, "03transpile2.c", 530))->compile(((struct sNode*)come_null_check(node_118, "03transpile2.c", 530))->_protocol_obj,info),            __freed_obj__ = 0, 
@@ -12752,7 +12752,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
             _for_condtionalA13;            it_123=(gCallerSName = "03transpile2.c", gCallerSLine = 562,list$1sTypeph_next(((struct list$1sTypeph*)come_null_check((o2_saved_122), "03transpile2.c", 562)))) ,            __freed_obj__ = 0, 
             0            ){
                 come_clear_stackframe();
-                name_124=optional$2charphbool_expect((come_push_stackframe("03transpile2.c", 546),((struct optional$2charphbool*)(right_value178=list$1charphp_operator_load_element(((struct sFun*)come_null_check(fun, "03transpile2.c", 546))->mParamNames,i_121)))));
+                name_124=optional$2charphbool_expect((come_push_stackframe("03transpile2.c", 546),((struct optional$2charphbool*)(right_value178=(gCallerSName = "03transpile2.c", gCallerSLine = 546, list$1charphp_operator_load_element(((struct sFun*)come_null_check(fun, "03transpile2.c", 546))->mParamNames,i_121))))));
                 come_pop_stackframe();
                 if(right_value178 && right_value178 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value178, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
@@ -12951,7 +12951,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     _for_condtionalA14;    it_130=(gCallerSName = "03transpile2.c", gCallerSLine = 598,list$1sTypeph_next(((struct list$1sTypeph*)come_null_check((o2_saved_129), "03transpile2.c", 598)))) ,    __freed_obj__ = 0, 
     0    ){
         come_clear_stackframe();
-        name_131=optional$2charphbool_expect((come_push_stackframe("03transpile2.c", 582),((struct optional$2charphbool*)(right_value184=list$1charphp_operator_load_element(((struct sType*)come_null_check(lambda_type, "03transpile2.c", 582))->mParamNames,i_128)))));
+        name_131=optional$2charphbool_expect((come_push_stackframe("03transpile2.c", 582),((struct optional$2charphbool*)(right_value184=(gCallerSName = "03transpile2.c", gCallerSLine = 582, list$1charphp_operator_load_element(((struct sType*)come_null_check(lambda_type, "03transpile2.c", 582))->mParamNames,i_128))))));
         come_pop_stackframe();
         if(right_value184 && right_value184 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value184, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
@@ -17363,7 +17363,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     _for_condtionalA20;    it_204=(gCallerSName = "03transpile2.c", gCallerSLine = 704,map$2charphsFunph_next(((struct map$2charphsFunph*)come_null_check((o2_saved_203), "03transpile2.c", 704)))) ,    __freed_obj__ = 0, 
     0    ){
         come_clear_stackframe();
-        it2_209=optional$2sFunpbool_value((come_push_stackframe("03transpile2.c", 688),((struct optional$2sFunpbool*)(right_value240=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "03transpile2.c", 688))->funcs,((char*)(right_value230=(gCallerSName = "03transpile2.c", gCallerSLine = 688,__builtin_string(it_204)))))))));
+        it2_209=optional$2sFunpbool_value((come_push_stackframe("03transpile2.c", 688),((struct optional$2sFunpbool*)(right_value240=(gCallerSName = "03transpile2.c", gCallerSLine = 688, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "03transpile2.c", 688))->funcs,((char*)(right_value230=(gCallerSName = "03transpile2.c", gCallerSLine = 688,__builtin_string(it_204))))))))));
         come_pop_stackframe();
         if(right_value230 && right_value230 != __result_obj__ && !__freed_obj__) { right_value230 = come_decrement_ref_count(right_value230, (void*)0, (void*)0, 1, 0, 0); }
         if(right_value240 && right_value240 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value240, (void*)0, (void*)0, 0, 1, 0, 0); }
@@ -17385,7 +17385,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                 _if_conditional263) {
                 }
                 else {
-                    if(_if_conditional264=string_operator_not_equals(it_204,"__builtin_va_start")&&string_operator_not_equals(it_204,"__builtin_va_end"),                    __freed_obj__ = 0, 
+                    if(_if_conditional264=(gCallerSName = "03transpile2.c", gCallerSLine = 702, string_operator_not_equals(it_204,"__builtin_va_start"))&&(gCallerSName = "03transpile2.c", gCallerSLine = 702, string_operator_not_equals(it_204,"__builtin_va_end")),                    __freed_obj__ = 0, 
                     _if_conditional264) {
                         (gCallerSName = "03transpile2.c", gCallerSLine = 700,fprintf(f_202,"%s\n",header_210,it_204));
                         __freed_obj__ = 0;
@@ -17409,7 +17409,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     _for_condtionalA23;    it_216=(gCallerSName = "03transpile2.c", gCallerSLine = 724,map$2charphsFunph_next(((struct map$2charphsFunph*)come_null_check((o2_saved_215), "03transpile2.c", 724)))) ,    __freed_obj__ = 0, 
     0    ){
         come_clear_stackframe();
-        it2_217=optional$2sFunpbool_value((come_push_stackframe("03transpile2.c", 706),((struct optional$2sFunpbool*)(right_value243=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "03transpile2.c", 706))->funcs,((char*)(right_value242=(gCallerSName = "03transpile2.c", gCallerSLine = 706,__builtin_string(it_216)))))))));
+        it2_217=optional$2sFunpbool_value((come_push_stackframe("03transpile2.c", 706),((struct optional$2sFunpbool*)(right_value243=(gCallerSName = "03transpile2.c", gCallerSLine = 706, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "03transpile2.c", 706))->funcs,((char*)(right_value242=(gCallerSName = "03transpile2.c", gCallerSLine = 706,__builtin_string(it_216))))))))));
         if(right_value242 && right_value242 != __result_obj__ && !__freed_obj__) { right_value242 = come_decrement_ref_count(right_value242, (void*)0, (void*)0, 1, 0, 0); }
         if(right_value243 && right_value243 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value243, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
@@ -17440,7 +17440,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                 _if_conditional271) {
                 }
                 else {
-                    if(_if_conditional272=string_operator_not_equals(it_216,"__builtin_va_start")&&string_operator_not_equals(it_216,"__builtin_va_end"),                    __freed_obj__ = 0, 
+                    if(_if_conditional272=(gCallerSName = "03transpile2.c", gCallerSLine = 722, string_operator_not_equals(it_216,"__builtin_va_start"))&&(gCallerSName = "03transpile2.c", gCallerSLine = 722, string_operator_not_equals(it_216,"__builtin_va_end")),                    __freed_obj__ = 0, 
                     _if_conditional272) {
                     }
                     __freed_obj__ = 0;
@@ -17464,7 +17464,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     _for_condtionalA24;    it_222=(gCallerSName = "03transpile2.c", gCallerSLine = 748,map$2charphsFunph_next(((struct map$2charphsFunph*)come_null_check((o2_saved_221), "03transpile2.c", 748)))) ,    __freed_obj__ = 0, 
     0    ){
         come_clear_stackframe();
-        it2_223=optional$2sFunpbool_value((come_push_stackframe("03transpile2.c", 728),((struct optional$2sFunpbool*)(right_value247=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "03transpile2.c", 728))->funcs,it_222)))));
+        it2_223=optional$2sFunpbool_value((come_push_stackframe("03transpile2.c", 728),((struct optional$2sFunpbool*)(right_value247=(gCallerSName = "03transpile2.c", gCallerSLine = 728, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "03transpile2.c", 728))->funcs,it_222))))));
         if(right_value247 && right_value247 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value247, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
         if(_if_conditional273=!((struct sFun*)come_null_check(it2_223, "03transpile2.c", 746))->mExternal,        __freed_obj__ = 0, 
@@ -18488,7 +18488,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     __freed_obj__ = 0;
     f_226=(gCallerSName = "03transpile2.c", gCallerSLine = 758,fopen(output_file_name_225,"a"));
     __freed_obj__ = 0;
-    if(_if_conditional277=((struct sInfo*)come_null_check(info, "03transpile2.c", 766))->num_source_files==0&&string_operator_equals(((struct sInfo*)come_null_check(info, "03transpile2.c", 766))->output_file_name,"common.h"),    __freed_obj__ = 0, 
+    if(_if_conditional277=((struct sInfo*)come_null_check(info, "03transpile2.c", 766))->num_source_files==0&&(gCallerSName = "03transpile2.c", gCallerSLine = 766, string_operator_equals(((struct sInfo*)come_null_check(info, "03transpile2.c", 766))->output_file_name,"common.h")),    __freed_obj__ = 0, 
     _if_conditional277) {
         (gCallerSName = "03transpile2.c", gCallerSLine = 761,fprintf(f_226,"#ifndef __COMMON_H__\n"));
         __freed_obj__ = 0;
@@ -18511,7 +18511,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     _for_condtionalA25;    it_228=(gCallerSName = "03transpile2.c", gCallerSLine = 788,map$2charphsFunph_next(((struct map$2charphsFunph*)come_null_check((o2_saved_227), "03transpile2.c", 788)))) ,    __freed_obj__ = 0, 
     0    ){
         come_clear_stackframe();
-        it2_229=optional$2sFunpbool_value((come_push_stackframe("03transpile2.c", 771),((struct optional$2sFunpbool*)(right_value251=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "03transpile2.c", 771))->funcs,((char*)(right_value250=(gCallerSName = "03transpile2.c", gCallerSLine = 771,__builtin_string(it_228)))))))));
+        it2_229=optional$2sFunpbool_value((come_push_stackframe("03transpile2.c", 771),((struct optional$2sFunpbool*)(right_value251=(gCallerSName = "03transpile2.c", gCallerSLine = 771, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "03transpile2.c", 771))->funcs,((char*)(right_value250=(gCallerSName = "03transpile2.c", gCallerSLine = 771,__builtin_string(it_228))))))))));
         if(right_value250 && right_value250 != __result_obj__ && !__freed_obj__) { right_value250 = come_decrement_ref_count(right_value250, (void*)0, (void*)0, 1, 0, 0); }
         if(right_value251 && right_value251 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value251, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
@@ -18530,9 +18530,9 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                 _if_conditional280) {
                 }
                 else {
-                    if(_if_conditional281=string_operator_not_equals(it_228,"__builtin_va_start")&&string_operator_not_equals(it_228,"__builtin_va_end"),                    __freed_obj__ = 0, 
+                    if(_if_conditional281=(gCallerSName = "03transpile2.c", gCallerSLine = 786, string_operator_not_equals(it_228,"__builtin_va_start"))&&(gCallerSName = "03transpile2.c", gCallerSLine = 786, string_operator_not_equals(it_228,"__builtin_va_end")),                    __freed_obj__ = 0, 
                     _if_conditional281) {
-                        if(_if_conditional282=string_operator_equals(((struct sFun*)come_null_check(it2_229, "03transpile2.c", 785))->mDeclareSName,((struct sInfo*)come_null_check(info, "03transpile2.c", 785))->base_sname),                        __freed_obj__ = 0, 
+                        if(_if_conditional282=(gCallerSName = "03transpile2.c", gCallerSLine = 785, string_operator_equals(((struct sFun*)come_null_check(it2_229, "03transpile2.c", 785))->mDeclareSName,((struct sInfo*)come_null_check(info, "03transpile2.c", 785))->base_sname)),                        __freed_obj__ = 0, 
                         _if_conditional282) {
                             (gCallerSName = "03transpile2.c", gCallerSLine = 783,fprintf(f_226,"%s\n",header_230,it_228));
                             __freed_obj__ = 0;
@@ -18558,7 +18558,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     _for_condtionalA26;    it_232=(gCallerSName = "03transpile2.c", gCallerSLine = 812,map$2charphsFunph_next(((struct map$2charphsFunph*)come_null_check((o2_saved_231), "03transpile2.c", 812)))) ,    __freed_obj__ = 0, 
     0    ){
         come_clear_stackframe();
-        it2_233=optional$2sFunpbool_value((come_push_stackframe("03transpile2.c", 790),((struct optional$2sFunpbool*)(right_value254=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "03transpile2.c", 790))->funcs,((char*)(right_value253=(gCallerSName = "03transpile2.c", gCallerSLine = 790,__builtin_string(it_232)))))))));
+        it2_233=optional$2sFunpbool_value((come_push_stackframe("03transpile2.c", 790),((struct optional$2sFunpbool*)(right_value254=(gCallerSName = "03transpile2.c", gCallerSLine = 790, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "03transpile2.c", 790))->funcs,((char*)(right_value253=(gCallerSName = "03transpile2.c", gCallerSLine = 790,__builtin_string(it_232))))))))));
         if(right_value253 && right_value253 != __result_obj__ && !__freed_obj__) { right_value253 = come_decrement_ref_count(right_value253, (void*)0, (void*)0, 1, 0, 0); }
         if(right_value254 && right_value254 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value254, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
@@ -18567,7 +18567,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         __freed_obj__ = 0;
         if(_if_conditional283=((struct sFun*)come_null_check(it2_233, "03transpile2.c", 810))->mStatic&&((struct sType*)come_null_check(((struct sFun*)come_null_check(it2_233, "03transpile2.c", 810))->mResultType, "03transpile2.c", 810))->mInline,        __freed_obj__ = 0, 
         _if_conditional283) {
-            if(_if_conditional284=string_operator_equals(((struct sFun*)come_null_check(it2_233, "03transpile2.c", 799))->mDeclareSName,((struct sInfo*)come_null_check(info, "03transpile2.c", 799))->base_sname),            __freed_obj__ = 0, 
+            if(_if_conditional284=(gCallerSName = "03transpile2.c", gCallerSLine = 799, string_operator_equals(((struct sFun*)come_null_check(it2_233, "03transpile2.c", 799))->mDeclareSName,((struct sInfo*)come_null_check(info, "03transpile2.c", 799))->base_sname)),            __freed_obj__ = 0, 
             _if_conditional284) {
                 output_235=(char*)come_increment_ref_count(((char*)(right_value256=(gCallerSName = "03transpile2.c", gCallerSLine = 796,output_function(it2_233,info)))));
                 if(right_value256 && right_value256 != __result_obj__ && !__freed_obj__) { right_value256 = come_decrement_ref_count(right_value256, (void*)0, (void*)0, 1, 0, 0); }
@@ -18581,7 +18581,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         else {
             if(_if_conditional285=((struct sType*)come_null_check(((struct sFun*)come_null_check(it2_233, "03transpile2.c", 810))->mResultType, "03transpile2.c", 810))->mInline,            __freed_obj__ = 0, 
             _if_conditional285) {
-                if(_if_conditional286=string_operator_equals(((struct sFun*)come_null_check(it2_233, "03transpile2.c", 805))->mDeclareSName,((struct sInfo*)come_null_check(info, "03transpile2.c", 805))->base_sname),                __freed_obj__ = 0, 
+                if(_if_conditional286=(gCallerSName = "03transpile2.c", gCallerSLine = 805, string_operator_equals(((struct sFun*)come_null_check(it2_233, "03transpile2.c", 805))->mDeclareSName,((struct sInfo*)come_null_check(info, "03transpile2.c", 805))->base_sname)),                __freed_obj__ = 0, 
                 _if_conditional286) {
                     output_236=(char*)come_increment_ref_count(((char*)(right_value257=(gCallerSName = "03transpile2.c", gCallerSLine = 802,output_function(it2_233,info)))));
                     if(right_value257 && right_value257 != __result_obj__ && !__freed_obj__) { right_value257 = come_decrement_ref_count(right_value257, (void*)0, (void*)0, 1, 0, 0); }
@@ -18597,7 +18597,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                 _if_conditional287) {
                 }
                 else {
-                    if(_if_conditional288=string_operator_not_equals(it_232,"__builtin_va_start")&&string_operator_not_equals(it_232,"__builtin_va_end"),                    __freed_obj__ = 0, 
+                    if(_if_conditional288=(gCallerSName = "03transpile2.c", gCallerSLine = 810, string_operator_not_equals(it_232,"__builtin_va_start"))&&(gCallerSName = "03transpile2.c", gCallerSLine = 810, string_operator_not_equals(it_232,"__builtin_va_end")),                    __freed_obj__ = 0, 
                     _if_conditional288) {
                     }
                     __freed_obj__ = 0;
@@ -18613,7 +18613,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     __freed_obj__ = 0;
     (gCallerSName = "03transpile2.c", gCallerSLine = 812,fprintf(f_226,"\n"));
     __freed_obj__ = 0;
-    if(_if_conditional289=((struct sInfo*)come_null_check(info, "03transpile2.c", 818))->num_source_files==((struct sInfo*)come_null_check(info, "03transpile2.c", 818))->max_source_files-1&&string_operator_equals(((struct sInfo*)come_null_check(info, "03transpile2.c", 818))->output_file_name,"common.h"),    __freed_obj__ = 0, 
+    if(_if_conditional289=((struct sInfo*)come_null_check(info, "03transpile2.c", 818))->num_source_files==((struct sInfo*)come_null_check(info, "03transpile2.c", 818))->max_source_files-1&&(gCallerSName = "03transpile2.c", gCallerSLine = 818, string_operator_equals(((struct sInfo*)come_null_check(info, "03transpile2.c", 818))->output_file_name,"common.h")),    __freed_obj__ = 0, 
     _if_conditional289) {
         (gCallerSName = "03transpile2.c", gCallerSLine = 815,fprintf(f_226,"#endif\n"));
         __freed_obj__ = 0;
@@ -20359,7 +20359,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     if(__dec_obj48) { __dec_obj48 = come_decrement_ref_count(__dec_obj48, (void*)0, (void*)0, 0,0,0); }
     __freed_obj__ = 0;
     come_clear_stackframe();
-    __result127__ = __result_obj__ = ((struct CVALUE*)(right_value272=CVALUE_clone(optional$2CVALUEphbool_value((come_push_stackframe("03transpile2.c", 960),((struct optional$2CVALUEphbool*)(right_value268=list$1CVALUEphp_operator_load_element(((struct sInfo*)come_null_check(info, "03transpile2.c", 960))->stack,offset))))))));
+    __result127__ = __result_obj__ = ((struct CVALUE*)(right_value272=(gCallerSName = "03transpile2.c", gCallerSLine = 960,CVALUE_clone(optional$2CVALUEphbool_value((come_push_stackframe("03transpile2.c", 960),((struct optional$2CVALUEphbool*)(right_value268=(gCallerSName = "03transpile2.c", gCallerSLine = 960, list$1CVALUEphp_operator_load_element(((struct sInfo*)come_null_check(info, "03transpile2.c", 960))->stack,offset))))))))));
     if(right_value268 && right_value268 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2CVALUEphboolp_finalize,right_value268, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     gCallerSName10 = __caller_sname10__;
@@ -21039,7 +21039,7 @@ memset(&right_value271, 0, sizeof(void*));
         if(_if_conditional329=self!=((void*)0)&&((struct CVALUE*)come_null_check(self, "CVALUE_clone", 5))->c_value!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional329) {
             __dec_obj50=((struct CVALUE*)come_null_check(result_270, "CVALUE_clone", 4))->c_value;
-            ((struct CVALUE*)come_null_check(result_270, "CVALUE_clone", 4))->c_value=(char*)come_increment_ref_count(((char*)(right_value270=string_clone(((struct CVALUE*)come_null_check(self, "CVALUE_clone", 4))->c_value))));
+            ((struct CVALUE*)come_null_check(result_270, "CVALUE_clone", 4))->c_value=(char*)come_increment_ref_count(((char*)(right_value270=(gCallerSName = "CVALUE_clone", gCallerSLine = 4,string_clone(((struct CVALUE*)come_null_check(self, "CVALUE_clone", 4))->c_value)))));
             if(__dec_obj50) { __dec_obj50 = come_decrement_ref_count(__dec_obj50, (void*)0, (void*)0, 0,0,0); }
             if(right_value270 && right_value270 != __result_obj__ && !__freed_obj__) { right_value270 = come_decrement_ref_count(right_value270, (void*)0, (void*)0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -21048,7 +21048,7 @@ memset(&right_value271, 0, sizeof(void*));
         if(_if_conditional330=self!=((void*)0)&&((struct CVALUE*)come_null_check(self, "CVALUE_clone", 6))->type!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional330) {
             __dec_obj51=((struct CVALUE*)come_null_check(result_270, "CVALUE_clone", 5))->type;
-            ((struct CVALUE*)come_null_check(result_270, "CVALUE_clone", 5))->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value271=sType_clone(((struct CVALUE*)come_null_check(self, "CVALUE_clone", 5))->type))));
+            ((struct CVALUE*)come_null_check(result_270, "CVALUE_clone", 5))->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value271=(gCallerSName = "CVALUE_clone", gCallerSLine = 5,sType_clone(((struct CVALUE*)come_null_check(self, "CVALUE_clone", 5))->type)))));
             if(__dec_obj51) { come_call_finalizer(sType_finalize,__dec_obj51, (void*)0, (void*)0, 0, 0, 0, 0); }
             if(right_value271 && right_value271 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value271, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;

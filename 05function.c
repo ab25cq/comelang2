@@ -113,7 +113,7 @@ bool operator_overload_fun_self(sType* type, char* fun_name, CVALUE* left_value,
             left_value2 = clone left_value.c_value;
         }
         
-        come_value.c_value = xsprintf("%s(%s)", fun_name2, left_value2);
+        come_value.c_value = xsprintf("(gCallerSName = \"{info->sname}\", gCallerSLine = \{info->sline}, %s(%s))", fun_name2, left_value2);
         
         sType*% type2 = clone operator_fun->mResultType;
         

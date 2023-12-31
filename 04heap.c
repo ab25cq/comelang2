@@ -726,7 +726,7 @@ sType*%, string clone_object(sType* type, char* obj, sInfo* info)
 
     /// call cloner ///
     if(cloner != null) {
-        result = xsprintf("%s(%s)", fun_name2, c_value);
+        result = xsprintf("(gCallerSName = \"%s\", gCallerSLine = %d,%s(%s))", info->sname, info->sline, fun_name2, c_value);
         result_type = cloner->mResultType;
         result_type = solve_generics(result_type, type, info);
     }

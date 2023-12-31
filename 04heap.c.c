@@ -3045,7 +3045,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     if(right_value0 && right_value0 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,right_value0, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     __dec_obj1=((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 2010))->memory;
-    ((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 2010))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value1=buffer_clone(self))));
+    ((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 2010))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value1=(gCallerSName = "./comelang2.h", gCallerSLine = 2010,buffer_clone(self)))));
     if(__dec_obj1) { come_call_finalizer(buffer_finalize,__dec_obj1, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(right_value1 && right_value1 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value1, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
@@ -3168,7 +3168,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     if(right_value2 && right_value2 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,right_value2, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     __dec_obj2=((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2020))->memory;
-    ((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2020))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value3=buffer_clone(self))));
+    ((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2020))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value3=(gCallerSName = "./comelang2.h", gCallerSLine = 2020,buffer_clone(self)))));
     if(__dec_obj2) { come_call_finalizer(buffer_finalize,__dec_obj2, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(right_value3 && right_value3 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value3, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
@@ -3291,7 +3291,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     if(right_value4 && right_value4 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1shortp_finalize,right_value4, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     __dec_obj3=((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2030))->memory;
-    ((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2030))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value5=buffer_clone(self))));
+    ((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2030))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value5=(gCallerSName = "./comelang2.h", gCallerSLine = 2030,buffer_clone(self)))));
     if(__dec_obj3) { come_call_finalizer(buffer_finalize,__dec_obj3, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(right_value5 && right_value5 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value5, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
@@ -3414,7 +3414,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     if(right_value6 && right_value6 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1intp_finalize,right_value6, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     __dec_obj4=((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2040))->memory;
-    ((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2040))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value7=buffer_clone(self))));
+    ((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2040))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value7=(gCallerSName = "./comelang2.h", gCallerSLine = 2040,buffer_clone(self)))));
     if(__dec_obj4) { come_call_finalizer(buffer_finalize,__dec_obj4, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(right_value7 && right_value7 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value7, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
@@ -3537,7 +3537,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     if(right_value8 && right_value8 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1longp_finalize,right_value8, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     __dec_obj5=((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2050))->memory;
-    ((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2050))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value9=buffer_clone(self))));
+    ((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2050))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value9=(gCallerSName = "./comelang2.h", gCallerSLine = 2050,buffer_clone(self)))));
     if(__dec_obj5) { come_call_finalizer(buffer_finalize,__dec_obj5, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(right_value9 && right_value9 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value9, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
@@ -4102,7 +4102,7 @@ gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
 gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
 gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
 gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-    result_29=(struct sType*)come_increment_ref_count(((struct sType*)(right_value44=sType_clone(type))));
+    result_29=(struct sType*)come_increment_ref_count(((struct sType*)(right_value44=(gCallerSName = "04heap.c", gCallerSLine = 5,sType_clone(type)))));
     if(right_value44 && right_value44 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value44, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     if(_if_conditional91=generics_type==((void*)0),    __freed_obj__ = 0, 
@@ -4167,7 +4167,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     __freed_obj__ = 0;
     klass_30=((struct sType*)come_null_check(type, "04heap.c", 13))->mClass;
     __freed_obj__ = 0;
-    if(_if_conditional93=string_operator_equals(((struct sClass*)come_null_check(klass_30, "04heap.c", 101))->mName,"lambda"),    __freed_obj__ = 0, 
+    if(_if_conditional93=(gCallerSName = "04heap.c", gCallerSLine = 101, string_operator_equals(((struct sClass*)come_null_check(klass_30, "04heap.c", 101))->mName,"lambda")),    __freed_obj__ = 0, 
     _if_conditional93) {
         result_type_31=(struct sType*)come_increment_ref_count(((struct sType*)(right_value45=(gCallerSName = "04heap.c", gCallerSLine = 16,solve_generics(((struct tuple1$1sTypeph*)come_null_check(((struct sType*)come_null_check(type, "04heap.c", 16))->mResultType, "04heap.c", 16))->v1,generics_type,info)))));
         if(right_value45 && right_value45 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value45, (void*)0, (void*)0, 0, 1, 0, 0); }
@@ -4217,7 +4217,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
             }
             __freed_obj__ = 0;
             come_clear_stackframe();
-            klass2_48=((struct sType*)come_null_check(optional$2sTypephbool_value((come_push_stackframe("04heap.c", 39),((struct optional$2sTypephbool*)(right_value59=list$1sTypephp_operator_load_element(((struct sType*)come_null_check(generics_type, "04heap.c", 39))->mGenericsTypes,generics_number_43))))), "04heap.c", 39))->mClass;
+            klass2_48=((struct sType*)come_null_check(optional$2sTypephbool_value((come_push_stackframe("04heap.c", 39),((struct optional$2sTypephbool*)(right_value59=(gCallerSName = "04heap.c", gCallerSLine = 39, list$1sTypephp_operator_load_element(((struct sType*)come_null_check(generics_type, "04heap.c", 39))->mGenericsTypes,generics_number_43)))))), "04heap.c", 39))->mClass;
             come_pop_stackframe();
             if(right_value59 && right_value59 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sTypephboolp_finalize,right_value59, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -4225,7 +4225,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
             __freed_obj__ = 0;
             if(_if_conditional106=generics_number_43!=generics_number2_49,            __freed_obj__ = 0, 
             _if_conditional106) {
-                array_num_50=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value60=list$1sNodephp_clone(((struct sType*)come_null_check(type, "04heap.c", 45))->mArrayNum))));
+                array_num_50=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value60=(gCallerSName = "04heap.c", gCallerSLine = 45,list$1sNodephp_clone(((struct sType*)come_null_check(type, "04heap.c", 45))->mArrayNum)))));
                 if(right_value60 && right_value60 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sNodephp_finalize,right_value60, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
                 immutable__51=((struct sType*)come_null_check(type, "04heap.c", 46))->mImmutable;
@@ -4244,7 +4244,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                 __freed_obj__ = 0;
                 come_clear_stackframe();
                 __dec_obj35=result_29;
-                result_29=(struct sType*)come_increment_ref_count(((struct sType*)(right_value62=sType_clone(optional$2sTypephbool_value((come_push_stackframe("04heap.c", 55),((struct optional$2sTypephbool*)(right_value61=list$1sTypephp_operator_load_element(((struct sType*)come_null_check(generics_type, "04heap.c", 55))->mGenericsTypes,generics_number_43)))))))));
+                result_29=(struct sType*)come_increment_ref_count(((struct sType*)(right_value62=(gCallerSName = "04heap.c", gCallerSLine = 55,sType_clone(optional$2sTypephbool_value((come_push_stackframe("04heap.c", 55),((struct optional$2sTypephbool*)(right_value61=(gCallerSName = "04heap.c", gCallerSLine = 55, list$1sTypephp_operator_load_element(((struct sType*)come_null_check(generics_type, "04heap.c", 55))->mGenericsTypes,generics_number_43)))))))))));
                 if(__dec_obj35) { come_call_finalizer(sType_finalize,__dec_obj35, (void*)0, (void*)0, 0, 0, 0, 0); }
                 if(right_value61 && right_value61 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sTypephboolp_finalize,right_value61, (void*)0, (void*)0, 0, 1, 0, 0); }
                 if(right_value62 && right_value62 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value62, (void*)0, (void*)0, 0, 1, 0, 0); }
@@ -4316,7 +4316,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                 type_62=(struct sType*)come_increment_ref_count(((struct sType*)(right_value63=(gCallerSName = "04heap.c", gCallerSLine = 89,solve_generics(it_61,generics_type,info)))));
                 if(right_value63 && right_value63 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value63, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
-                (gCallerSName = "04heap.c", gCallerSLine = 90,list$1sTypeph_push_back(((struct list$1sTypeph*)come_null_check(((struct sType*)come_null_check(result_29, "04heap.c", 90))->mGenericsTypes, "04heap.c", 90)),(struct sType*)come_increment_ref_count(((struct sType*)(right_value64=sType_clone(type_62))))));
+                (gCallerSName = "04heap.c", gCallerSLine = 90,list$1sTypeph_push_back(((struct list$1sTypeph*)come_null_check(((struct sType*)come_null_check(result_29, "04heap.c", 90))->mGenericsTypes, "04heap.c", 90)),(struct sType*)come_increment_ref_count(((struct sType*)(right_value64=(gCallerSName = "04heap.c", gCallerSLine = 90,sType_clone(type_62)))))));
                 if(right_value64 && right_value64 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value64, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
                 if(type_62 && !__freed_obj__) { come_call_finalizer(sType_finalize,type_62, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -4577,7 +4577,7 @@ memset(&right_value43, 0, sizeof(void*));
         if(_if_conditional23=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 6))->mNoSolvedGenericsType!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional23) {
             __dec_obj7=((struct sType*)come_null_check(result_5, "sType_clone", 5))->mNoSolvedGenericsType;
-            ((struct sType*)come_null_check(result_5, "sType_clone", 5))->mNoSolvedGenericsType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value13=tuple1$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 5))->mNoSolvedGenericsType))));
+            ((struct sType*)come_null_check(result_5, "sType_clone", 5))->mNoSolvedGenericsType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value13=(gCallerSName = "sType_clone", gCallerSLine = 5,tuple1$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 5))->mNoSolvedGenericsType)))));
             if(__dec_obj7) { come_call_finalizer(tuple1$1sTypeph_finalize,__dec_obj7, (void*)0, (void*)0, 0, 0, 0, 0); }
             if(right_value13 && right_value13 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,right_value13, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -4586,7 +4586,7 @@ memset(&right_value43, 0, sizeof(void*));
         if(_if_conditional27=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 7))->mOriginalLoadVarType!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional27) {
             __dec_obj8=((struct sType*)come_null_check(result_5, "sType_clone", 6))->mOriginalLoadVarType;
-            ((struct sType*)come_null_check(result_5, "sType_clone", 6))->mOriginalLoadVarType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value14=tuple1$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 6))->mOriginalLoadVarType))));
+            ((struct sType*)come_null_check(result_5, "sType_clone", 6))->mOriginalLoadVarType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value14=(gCallerSName = "sType_clone", gCallerSLine = 6,tuple1$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 6))->mOriginalLoadVarType)))));
             if(__dec_obj8) { come_call_finalizer(tuple1$1sTypeph_finalize,__dec_obj8, (void*)0, (void*)0, 0, 0, 0, 0); }
             if(right_value14 && right_value14 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,right_value14, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -4595,7 +4595,7 @@ memset(&right_value43, 0, sizeof(void*));
         if(_if_conditional28=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 8))->mGenericsName!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional28) {
             __dec_obj9=((struct sType*)come_null_check(result_5, "sType_clone", 7))->mGenericsName;
-            ((struct sType*)come_null_check(result_5, "sType_clone", 7))->mGenericsName=(char*)come_increment_ref_count(((char*)(right_value15=string_clone(((struct sType*)come_null_check(self, "sType_clone", 7))->mGenericsName))));
+            ((struct sType*)come_null_check(result_5, "sType_clone", 7))->mGenericsName=(char*)come_increment_ref_count(((char*)(right_value15=(gCallerSName = "sType_clone", gCallerSLine = 7,string_clone(((struct sType*)come_null_check(self, "sType_clone", 7))->mGenericsName)))));
             if(__dec_obj9) { __dec_obj9 = come_decrement_ref_count(__dec_obj9, (void*)0, (void*)0, 0,0,0); }
             if(right_value15 && right_value15 != __result_obj__ && !__freed_obj__) { right_value15 = come_decrement_ref_count(right_value15, (void*)0, (void*)0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -4604,7 +4604,7 @@ memset(&right_value43, 0, sizeof(void*));
         if(_if_conditional29=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 9))->mGenericsTypes!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional29) {
             __dec_obj13=((struct sType*)come_null_check(result_5, "sType_clone", 8))->mGenericsTypes;
-            ((struct sType*)come_null_check(result_5, "sType_clone", 8))->mGenericsTypes=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value22=list$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 8))->mGenericsTypes))));
+            ((struct sType*)come_null_check(result_5, "sType_clone", 8))->mGenericsTypes=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value22=(gCallerSName = "sType_clone", gCallerSLine = 8,list$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 8))->mGenericsTypes)))));
             if(__dec_obj13) { come_call_finalizer(list$1sTypeph_finalize,__dec_obj13, (void*)0, (void*)0, 0, 0, 0, 0); }
             if(right_value22 && right_value22 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,right_value22, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -4613,7 +4613,7 @@ memset(&right_value43, 0, sizeof(void*));
         if(_if_conditional33=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 10))->mArrayNum!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional33) {
             __dec_obj17=((struct sType*)come_null_check(result_5, "sType_clone", 9))->mArrayNum;
-            ((struct sType*)come_null_check(result_5, "sType_clone", 9))->mArrayNum=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value30=list$1sNodephp_clone(((struct sType*)come_null_check(self, "sType_clone", 9))->mArrayNum))));
+            ((struct sType*)come_null_check(result_5, "sType_clone", 9))->mArrayNum=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value30=(gCallerSName = "sType_clone", gCallerSLine = 9,list$1sNodephp_clone(((struct sType*)come_null_check(self, "sType_clone", 9))->mArrayNum)))));
             if(__dec_obj17) { come_call_finalizer(list$1sNodeph_finalize,__dec_obj17, (void*)0, (void*)0, 0, 0, 0, 0); }
             if(right_value30 && right_value30 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sNodephp_finalize,right_value30, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -4628,7 +4628,7 @@ memset(&right_value43, 0, sizeof(void*));
         if(_if_conditional47=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 12))->mParamTypes!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional47) {
             __dec_obj18=((struct sType*)come_null_check(result_5, "sType_clone", 11))->mParamTypes;
-            ((struct sType*)come_null_check(result_5, "sType_clone", 11))->mParamTypes=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value31=list$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 11))->mParamTypes))));
+            ((struct sType*)come_null_check(result_5, "sType_clone", 11))->mParamTypes=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value31=(gCallerSName = "sType_clone", gCallerSLine = 11,list$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 11))->mParamTypes)))));
             if(__dec_obj18) { come_call_finalizer(list$1sTypeph_finalize,__dec_obj18, (void*)0, (void*)0, 0, 0, 0, 0); }
             if(right_value31 && right_value31 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,right_value31, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -4637,7 +4637,7 @@ memset(&right_value43, 0, sizeof(void*));
         if(_if_conditional48=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 13))->mParamNames!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional48) {
             __dec_obj22=((struct sType*)come_null_check(result_5, "sType_clone", 12))->mParamNames;
-            ((struct sType*)come_null_check(result_5, "sType_clone", 12))->mParamNames=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value38=list$1charphp_clone(((struct sType*)come_null_check(self, "sType_clone", 12))->mParamNames))));
+            ((struct sType*)come_null_check(result_5, "sType_clone", 12))->mParamNames=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value38=(gCallerSName = "sType_clone", gCallerSLine = 12,list$1charphp_clone(((struct sType*)come_null_check(self, "sType_clone", 12))->mParamNames)))));
             if(__dec_obj22) { come_call_finalizer(list$1charph_finalize,__dec_obj22, (void*)0, (void*)0, 0, 0, 0, 0); }
             if(right_value38 && right_value38 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value38, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -4646,7 +4646,7 @@ memset(&right_value43, 0, sizeof(void*));
         if(_if_conditional52=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 14))->mResultType!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional52) {
             __dec_obj23=((struct sType*)come_null_check(result_5, "sType_clone", 13))->mResultType;
-            ((struct sType*)come_null_check(result_5, "sType_clone", 13))->mResultType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value39=tuple1$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 13))->mResultType))));
+            ((struct sType*)come_null_check(result_5, "sType_clone", 13))->mResultType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value39=(gCallerSName = "sType_clone", gCallerSLine = 13,tuple1$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 13))->mResultType)))));
             if(__dec_obj23) { come_call_finalizer(tuple1$1sTypeph_finalize,__dec_obj23, (void*)0, (void*)0, 0, 0, 0, 0); }
             if(right_value39 && right_value39 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,right_value39, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -4661,7 +4661,7 @@ memset(&right_value43, 0, sizeof(void*));
         if(_if_conditional54=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 16))->mAlignas!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional54) {
             __dec_obj24=((struct sType*)come_null_check(result_5, "sType_clone", 15))->mAlignas;
-            ((struct sType*)come_null_check(result_5, "sType_clone", 15))->mAlignas=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value40=sNode_clone(((struct sType*)come_null_check(self, "sType_clone", 15))->mAlignas))));
+            ((struct sType*)come_null_check(result_5, "sType_clone", 15))->mAlignas=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value40=(gCallerSName = "sType_clone", gCallerSLine = 15,sNode_clone(((struct sType*)come_null_check(self, "sType_clone", 15))->mAlignas)))));
             if(__dec_obj24) { __dec_obj24 = come_decrement_ref_count(__dec_obj24, ((struct sNode*)__dec_obj24)->finalize, ((struct sNode*)__dec_obj24)->_protocol_obj, 0,0,0); }
             if(right_value40 && right_value40 != __result_obj__ && !__freed_obj__) { right_value40 = come_decrement_ref_count(right_value40, ((struct sNode*)right_value40)->finalize, ((struct sNode*)right_value40)->_protocol_obj, 1, 0, 0); } 
             __freed_obj__ = 0;
@@ -4808,7 +4808,7 @@ memset(&right_value43, 0, sizeof(void*));
         if(_if_conditional78=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 40))->mSizeNum!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional78) {
             __dec_obj25=((struct sType*)come_null_check(result_5, "sType_clone", 39))->mSizeNum;
-            ((struct sType*)come_null_check(result_5, "sType_clone", 39))->mSizeNum=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value41=sNode_clone(((struct sType*)come_null_check(self, "sType_clone", 39))->mSizeNum))));
+            ((struct sType*)come_null_check(result_5, "sType_clone", 39))->mSizeNum=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value41=(gCallerSName = "sType_clone", gCallerSLine = 39,sNode_clone(((struct sType*)come_null_check(self, "sType_clone", 39))->mSizeNum)))));
             if(__dec_obj25) { __dec_obj25 = come_decrement_ref_count(__dec_obj25, ((struct sNode*)__dec_obj25)->finalize, ((struct sNode*)__dec_obj25)->_protocol_obj, 0,0,0); }
             if(right_value41 && right_value41 != __result_obj__ && !__freed_obj__) { right_value41 = come_decrement_ref_count(right_value41, ((struct sNode*)right_value41)->finalize, ((struct sNode*)right_value41)->_protocol_obj, 1, 0, 0); } 
             __freed_obj__ = 0;
@@ -4829,7 +4829,7 @@ memset(&right_value43, 0, sizeof(void*));
         if(_if_conditional81=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 43))->mOriginalTypeName!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional81) {
             __dec_obj26=((struct sType*)come_null_check(result_5, "sType_clone", 42))->mOriginalTypeName;
-            ((struct sType*)come_null_check(result_5, "sType_clone", 42))->mOriginalTypeName=(char*)come_increment_ref_count(((char*)(right_value42=string_clone(((struct sType*)come_null_check(self, "sType_clone", 42))->mOriginalTypeName))));
+            ((struct sType*)come_null_check(result_5, "sType_clone", 42))->mOriginalTypeName=(char*)come_increment_ref_count(((char*)(right_value42=(gCallerSName = "sType_clone", gCallerSLine = 42,string_clone(((struct sType*)come_null_check(self, "sType_clone", 42))->mOriginalTypeName)))));
             if(__dec_obj26) { __dec_obj26 = come_decrement_ref_count(__dec_obj26, (void*)0, (void*)0, 0,0,0); }
             if(right_value42 && right_value42 != __result_obj__ && !__freed_obj__) { right_value42 = come_decrement_ref_count(right_value42, (void*)0, (void*)0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -4886,7 +4886,7 @@ memset(&right_value43, 0, sizeof(void*));
         if(_if_conditional90=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 52))->mAsmName!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional90) {
             __dec_obj27=((struct sType*)come_null_check(result_5, "sType_clone", 51))->mAsmName;
-            ((struct sType*)come_null_check(result_5, "sType_clone", 51))->mAsmName=(char*)come_increment_ref_count(((char*)(right_value43=string_clone(((struct sType*)come_null_check(self, "sType_clone", 51))->mAsmName))));
+            ((struct sType*)come_null_check(result_5, "sType_clone", 51))->mAsmName=(char*)come_increment_ref_count(((char*)(right_value43=(gCallerSName = "sType_clone", gCallerSLine = 51,string_clone(((struct sType*)come_null_check(self, "sType_clone", 51))->mAsmName)))));
             if(__dec_obj27) { __dec_obj27 = come_decrement_ref_count(__dec_obj27, (void*)0, (void*)0, 0,0,0); }
             if(right_value43 && right_value43 != __result_obj__ && !__freed_obj__) { right_value43 = come_decrement_ref_count(right_value43, (void*)0, (void*)0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -5839,7 +5839,7 @@ memset(&right_value12, 0, sizeof(void*));
                 if(_if_conditional26=self!=((void*)0)&&((struct tuple1$1sTypeph*)come_null_check(self, "tuple1$1sTypephp_clone", 5))->v1!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional26) {
                     __dec_obj6=((struct tuple1$1sTypeph*)come_null_check(result_12, "tuple1$1sTypephp_clone", 4))->v1;
-                    ((struct tuple1$1sTypeph*)come_null_check(result_12, "tuple1$1sTypephp_clone", 4))->v1=(struct sType*)come_increment_ref_count(((struct sType*)(right_value12=sType_clone(((struct tuple1$1sTypeph*)come_null_check(self, "tuple1$1sTypephp_clone", 4))->v1))));
+                    ((struct tuple1$1sTypeph*)come_null_check(result_12, "tuple1$1sTypephp_clone", 4))->v1=(struct sType*)come_increment_ref_count(((struct sType*)(right_value12=(gCallerSName = "tuple1$1sTypephp_clone", gCallerSLine = 4,sType_clone(((struct tuple1$1sTypeph*)come_null_check(self, "tuple1$1sTypephp_clone", 4))->v1)))));
                     if(__dec_obj6) { come_call_finalizer(sType_finalize,__dec_obj6, (void*)0, (void*)0, 0, 0, 0, 0); }
                     if(right_value12 && right_value12 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value12, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
@@ -6088,7 +6088,7 @@ memset(&right_value21, 0, sizeof(void*));
                 __freed_obj__ = 0;
                 while(_while_condtional4=it_14!=((void*)0),                __freed_obj__ = 0, 
                 _while_condtional4) {
-                    (gCallerSName = "./comelang2.h", gCallerSLine = 213,list$1sTypeph_add(((struct list$1sTypeph*)come_null_check(result_13, "./comelang2.h", 213)),(struct sType*)come_increment_ref_count(((struct sType*)(right_value21=sType_clone(((struct list_item$1sTypeph*)come_null_check(it_14, "./comelang2.h", 213))->item))))));
+                    (gCallerSName = "./comelang2.h", gCallerSLine = 213,list$1sTypeph_add(((struct list$1sTypeph*)come_null_check(result_13, "./comelang2.h", 213)),(struct sType*)come_increment_ref_count(((struct sType*)(right_value21=(gCallerSName = "./comelang2.h", gCallerSLine = 213,sType_clone(((struct list_item$1sTypeph*)come_null_check(it_14, "./comelang2.h", 213))->item)))))));
                     if(right_value21 && right_value21 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value21, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
                     it_14=((struct list_item$1sTypeph*)come_null_check(it_14, "./comelang2.h", 215))->next;
@@ -6627,7 +6627,7 @@ memset(&right_value29, 0, sizeof(void*));
                 __freed_obj__ = 0;
                 while(_while_condtional5=it_19!=((void*)0),                __freed_obj__ = 0, 
                 _while_condtional5) {
-                    (gCallerSName = "./comelang2.h", gCallerSLine = 213,list$1sNodeph_add(((struct list$1sNodeph*)come_null_check(result_18, "./comelang2.h", 213)),(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value29=sNode_clone(((struct list_item$1sNodeph*)come_null_check(it_19, "./comelang2.h", 213))->item))))));
+                    (gCallerSName = "./comelang2.h", gCallerSLine = 213,list$1sNodeph_add(((struct list$1sNodeph*)come_null_check(result_18, "./comelang2.h", 213)),(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value29=(gCallerSName = "./comelang2.h", gCallerSLine = 213,sNode_clone(((struct list_item$1sNodeph*)come_null_check(it_19, "./comelang2.h", 213))->item)))))));
                     if(right_value29 && right_value29 != __result_obj__ && !__freed_obj__) { right_value29 = come_decrement_ref_count(right_value29, ((struct sNode*)right_value29)->finalize, ((struct sNode*)right_value29)->_protocol_obj, 1, 0, 0); } 
                     __freed_obj__ = 0;
                     it_19=((struct list_item$1sNodeph*)come_null_check(it_19, "./comelang2.h", 215))->next;
@@ -7367,7 +7367,7 @@ memset(&right_value37, 0, sizeof(void*));
                 __freed_obj__ = 0;
                 while(_while_condtional6=it_25!=((void*)0),                __freed_obj__ = 0, 
                 _while_condtional6) {
-                    (gCallerSName = "./comelang2.h", gCallerSLine = 213,list$1charph_add(((struct list$1charph*)come_null_check(result_24, "./comelang2.h", 213)),(char*)come_increment_ref_count(((char*)(right_value37=string_clone(((struct list_item$1charph*)come_null_check(it_25, "./comelang2.h", 213))->item))))));
+                    (gCallerSName = "./comelang2.h", gCallerSLine = 213,list$1charph_add(((struct list$1charph*)come_null_check(result_24, "./comelang2.h", 213)),(char*)come_increment_ref_count(((char*)(right_value37=(gCallerSName = "./comelang2.h", gCallerSLine = 213,string_clone(((struct list_item$1charph*)come_null_check(it_25, "./comelang2.h", 213))->item)))))));
                     if(right_value37 && right_value37 != __result_obj__ && !__freed_obj__) { right_value37 = come_decrement_ref_count(right_value37, (void*)0, (void*)0, 1, 0, 0); }
                     __freed_obj__ = 0;
                     it_25=((struct list_item$1charph*)come_null_check(it_25, "./comelang2.h", 215))->next;
@@ -7965,7 +7965,7 @@ memset(&right_value47, 0, sizeof(void*));
         gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
         gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
             __dec_obj28=((struct tuple1$1sTypeph*)come_null_check(self, "./comelang2.h", 1793))->v1;
-            ((struct tuple1$1sTypeph*)come_null_check(self, "./comelang2.h", 1793))->v1=(struct sType*)come_increment_ref_count(((struct sType*)(right_value47=sType_clone(v1))));
+            ((struct tuple1$1sTypeph*)come_null_check(self, "./comelang2.h", 1793))->v1=(struct sType*)come_increment_ref_count(((struct sType*)(right_value47=(gCallerSName = "./comelang2.h", gCallerSLine = 1793,sType_clone(v1)))));
             if(__dec_obj28) { come_call_finalizer(sType_finalize,__dec_obj28, (void*)0, (void*)0, 0, 0, 0, 0); }
             if(right_value47 && right_value47 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value47, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -9488,7 +9488,7 @@ gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
 gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
 gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
 gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-    result_64=(struct sType*)come_increment_ref_count(((struct sType*)(right_value66=sType_clone(type))));
+    result_64=(struct sType*)come_increment_ref_count(((struct sType*)(right_value66=(gCallerSName = "04heap.c", gCallerSLine = 106,sType_clone(type)))));
     if(right_value66 && right_value66 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value66, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     if(_if_conditional116=generics_type,    __freed_obj__ = 0, 
@@ -9863,7 +9863,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     if(right_value70 && right_value70 != __result_obj__ && !__freed_obj__) { right_value70 = come_decrement_ref_count(right_value70, (void*)0, (void*)0, 1, 0, 0); }
     __freed_obj__ = 0;
     __dec_obj40=((struct sRightValueObject*)come_null_check(new_value_67, "04heap.c", 155))->mFunName;
-    ((struct sRightValueObject*)come_null_check(new_value_67, "04heap.c", 155))->mFunName=(char*)come_increment_ref_count(((char*)(right_value71=string_clone(((struct sFun*)come_null_check(((struct sInfo*)come_null_check(info, "04heap.c", 155))->come_fun, "04heap.c", 155))->mName))));
+    ((struct sRightValueObject*)come_null_check(new_value_67, "04heap.c", 155))->mFunName=(char*)come_increment_ref_count(((char*)(right_value71=(gCallerSName = "04heap.c", gCallerSLine = 155,string_clone(((struct sFun*)come_null_check(((struct sInfo*)come_null_check(info, "04heap.c", 155))->come_fun, "04heap.c", 155))->mName)))));
     if(__dec_obj40) { __dec_obj40 = come_decrement_ref_count(__dec_obj40, (void*)0, (void*)0, 0,0,0); }
     if(right_value71 && right_value71 != __result_obj__ && !__freed_obj__) { right_value71 = come_decrement_ref_count(right_value71, (void*)0, (void*)0, 1, 0, 0); }
     __freed_obj__ = 0;
@@ -12130,7 +12130,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         __freed_obj__ = 0;
         fun_name_108="finalize";
         __freed_obj__ = 0;
-        type2_109=(struct sType*)come_increment_ref_count(((struct sType*)(right_value83=sType_clone(type))));
+        type2_109=(struct sType*)come_increment_ref_count(((struct sType*)(right_value83=(gCallerSName = "04heap.c", gCallerSLine = 216,sType_clone(type)))));
         if(right_value83 && right_value83 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value83, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
         ((struct sType*)come_null_check(type2_109, "04heap.c", 217))->mHeap=(_Bool)0;
@@ -12143,7 +12143,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         if(_if_conditional155=(gCallerSName = "04heap.c", gCallerSLine = 258,list$1sTypeph_length(((struct list$1sTypeph*)come_null_check(((struct sType*)come_null_check(type, "04heap.c", 258))->mGenericsTypes, "04heap.c", 258))))>0,        __freed_obj__ = 0, 
         _if_conditional155) {
             come_clear_stackframe();
-            finalizer_111=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 223),((struct optional$2sFunpbool*)(right_value94=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 223))->funcs,fun_name2_110)))));
+            finalizer_111=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 223),((struct optional$2sFunpbool*)(right_value94=(gCallerSName = "04heap.c", gCallerSLine = 223, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 223))->funcs,fun_name2_110))))));
             come_pop_stackframe();
             if(right_value94 && right_value94 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value94, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -12156,7 +12156,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                 if(right_value96 && right_value96 != __result_obj__ && !__freed_obj__) { right_value96 = come_decrement_ref_count(right_value96, (void*)0, (void*)0, 1, 0, 0); }
                 __freed_obj__ = 0;
                 come_clear_stackframe();
-                generics_fun_123=optional$2sGenericsFunpbool_value((come_push_stackframe("04heap.c", 229),((struct optional$2sGenericsFunpbool*)(right_value106=map$2charphsGenericsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 229))->generics_funcs,generics_fun_name_118)))));
+                generics_fun_123=optional$2sGenericsFunpbool_value((come_push_stackframe("04heap.c", 229),((struct optional$2sGenericsFunpbool*)(right_value106=(gCallerSName = "04heap.c", gCallerSLine = 229, map$2charphsGenericsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 229))->generics_funcs,generics_fun_name_118))))));
                 come_pop_stackframe();
                 if(right_value106 && right_value106 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sGenericsFunpboolp_finalize,right_value106, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
@@ -12171,7 +12171,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                     }
                     __freed_obj__ = 0;
                     come_clear_stackframe();
-                    finalizer_111=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 237),((struct optional$2sFunpbool*)(right_value107=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 237))->funcs,fun_name2_110)))));
+                    finalizer_111=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 237),((struct optional$2sFunpbool*)(right_value107=(gCallerSName = "04heap.c", gCallerSLine = 237, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 237))->funcs,fun_name2_110))))));
                     if(right_value107 && right_value107 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value107, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
                 }
@@ -12192,7 +12192,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                 if(right_value108 && right_value108 != __result_obj__ && !__freed_obj__) { right_value108 = come_decrement_ref_count(right_value108, (void*)0, (void*)0, 1, 0, 0); }
                 __freed_obj__ = 0;
                 come_clear_stackframe();
-                finalizer_111=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 245),((struct optional$2sFunpbool*)(right_value109=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 245))->funcs,new_fun_name_125)))));
+                finalizer_111=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 245),((struct optional$2sFunpbool*)(right_value109=(gCallerSName = "04heap.c", gCallerSLine = 245, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 245))->funcs,new_fun_name_125))))));
                 if(right_value109 && right_value109 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value109, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
                 if(_if_conditional170=finalizer_111,                __freed_obj__ = 0, 
@@ -12213,7 +12213,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
             if(_if_conditional171=finalizer_111==((void*)0),            __freed_obj__ = 0, 
             _if_conditional171) {
                 come_clear_stackframe();
-                finalizer_111=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 254),((struct optional$2sFunpbool*)(right_value111=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 254))->funcs,fun_name2_110)))));
+                finalizer_111=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 254),((struct optional$2sFunpbool*)(right_value111=(gCallerSName = "04heap.c", gCallerSLine = 254, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 254))->funcs,fun_name2_110))))));
                 if(right_value111 && right_value111 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value111, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
             }
@@ -14620,7 +14620,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
             __freed_obj__ = 0;
             fun_name_138="force_finalize";
             __freed_obj__ = 0;
-            type2_139=(struct sType*)come_increment_ref_count(((struct sType*)(right_value119=sType_clone(type))));
+            type2_139=(struct sType*)come_increment_ref_count(((struct sType*)(right_value119=(gCallerSName = "04heap.c", gCallerSLine = 317,sType_clone(type)))));
             if(right_value119 && right_value119 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value119, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
             ((struct sType*)come_null_check(type2_139, "04heap.c", 318))->mHeap=(_Bool)0;
@@ -14633,7 +14633,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
             if(_if_conditional185=(gCallerSName = "04heap.c", gCallerSLine = 359,list$1sTypeph_length(((struct list$1sTypeph*)come_null_check(((struct sType*)come_null_check(type, "04heap.c", 359))->mGenericsTypes, "04heap.c", 359))))>0,            __freed_obj__ = 0, 
             _if_conditional185) {
                 come_clear_stackframe();
-                finalizer_141=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 324),((struct optional$2sFunpbool*)(right_value121=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 324))->funcs,fun_name2_140)))));
+                finalizer_141=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 324),((struct optional$2sFunpbool*)(right_value121=(gCallerSName = "04heap.c", gCallerSLine = 324, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 324))->funcs,fun_name2_140))))));
                 if(right_value121 && right_value121 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value121, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
                 if(_if_conditional186=finalizer_141==((void*)0),                __freed_obj__ = 0, 
@@ -14645,7 +14645,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                     if(right_value123 && right_value123 != __result_obj__ && !__freed_obj__) { right_value123 = come_decrement_ref_count(right_value123, (void*)0, (void*)0, 1, 0, 0); }
                     __freed_obj__ = 0;
                     come_clear_stackframe();
-                    generics_fun_144=optional$2sGenericsFunpbool_value((come_push_stackframe("04heap.c", 330),((struct optional$2sGenericsFunpbool*)(right_value124=map$2charphsGenericsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 330))->generics_funcs,generics_fun_name_143)))));
+                    generics_fun_144=optional$2sGenericsFunpbool_value((come_push_stackframe("04heap.c", 330),((struct optional$2sGenericsFunpbool*)(right_value124=(gCallerSName = "04heap.c", gCallerSLine = 330, map$2charphsGenericsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 330))->generics_funcs,generics_fun_name_143))))));
                     if(right_value124 && right_value124 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sGenericsFunpboolp_finalize,right_value124, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
                     if(_if_conditional187=generics_fun_144,                    __freed_obj__ = 0, 
@@ -14659,7 +14659,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                         }
                         __freed_obj__ = 0;
                         come_clear_stackframe();
-                        finalizer_141=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 338),((struct optional$2sFunpbool*)(right_value125=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 338))->funcs,fun_name2_140)))));
+                        finalizer_141=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 338),((struct optional$2sFunpbool*)(right_value125=(gCallerSName = "04heap.c", gCallerSLine = 338, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 338))->funcs,fun_name2_140))))));
                         if(right_value125 && right_value125 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value125, (void*)0, (void*)0, 0, 1, 0, 0); }
                         __freed_obj__ = 0;
                     }
@@ -14680,7 +14680,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                     if(right_value126 && right_value126 != __result_obj__ && !__freed_obj__) { right_value126 = come_decrement_ref_count(right_value126, (void*)0, (void*)0, 1, 0, 0); }
                     __freed_obj__ = 0;
                     come_clear_stackframe();
-                    finalizer_141=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 346),((struct optional$2sFunpbool*)(right_value127=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 346))->funcs,new_fun_name_146)))));
+                    finalizer_141=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 346),((struct optional$2sFunpbool*)(right_value127=(gCallerSName = "04heap.c", gCallerSLine = 346, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 346))->funcs,new_fun_name_146))))));
                     if(right_value127 && right_value127 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value127, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
                     if(_if_conditional189=finalizer_141,                    __freed_obj__ = 0, 
@@ -14701,7 +14701,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                 if(_if_conditional190=finalizer_141==((void*)0),                __freed_obj__ = 0, 
                 _if_conditional190) {
                     come_clear_stackframe();
-                    finalizer_141=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 355),((struct optional$2sFunpbool*)(right_value129=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 355))->funcs,fun_name2_140)))));
+                    finalizer_141=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 355),((struct optional$2sFunpbool*)(right_value129=(gCallerSName = "04heap.c", gCallerSLine = 355, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 355))->funcs,fun_name2_140))))));
                     if(right_value129 && right_value129 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value129, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
                 }
@@ -14960,7 +14960,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
             __freed_obj__ = 0;
             fun_name_170="finalize";
             __freed_obj__ = 0;
-            type2_171=(struct sType*)come_increment_ref_count(((struct sType*)(right_value142=sType_clone(type))));
+            type2_171=(struct sType*)come_increment_ref_count(((struct sType*)(right_value142=(gCallerSName = "04heap.c", gCallerSLine = 490,sType_clone(type)))));
             if(right_value142 && right_value142 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value142, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
             ((struct sType*)come_null_check(type2_171, "04heap.c", 491))->mHeap=(_Bool)0;
@@ -14973,7 +14973,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
             if(_if_conditional223=(gCallerSName = "04heap.c", gCallerSLine = 532,list$1sTypeph_length(((struct list$1sTypeph*)come_null_check(((struct sType*)come_null_check(type, "04heap.c", 532))->mGenericsTypes, "04heap.c", 532))))>0,            __freed_obj__ = 0, 
             _if_conditional223) {
                 come_clear_stackframe();
-                finalizer_173=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 497),((struct optional$2sFunpbool*)(right_value144=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 497))->funcs,fun_name2_172)))));
+                finalizer_173=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 497),((struct optional$2sFunpbool*)(right_value144=(gCallerSName = "04heap.c", gCallerSLine = 497, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 497))->funcs,fun_name2_172))))));
                 if(right_value144 && right_value144 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value144, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
                 if(_if_conditional224=finalizer_173==((void*)0),                __freed_obj__ = 0, 
@@ -14985,7 +14985,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                     if(right_value146 && right_value146 != __result_obj__ && !__freed_obj__) { right_value146 = come_decrement_ref_count(right_value146, (void*)0, (void*)0, 1, 0, 0); }
                     __freed_obj__ = 0;
                     come_clear_stackframe();
-                    generics_fun_176=optional$2sGenericsFunpbool_value((come_push_stackframe("04heap.c", 503),((struct optional$2sGenericsFunpbool*)(right_value147=map$2charphsGenericsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 503))->generics_funcs,generics_fun_name_175)))));
+                    generics_fun_176=optional$2sGenericsFunpbool_value((come_push_stackframe("04heap.c", 503),((struct optional$2sGenericsFunpbool*)(right_value147=(gCallerSName = "04heap.c", gCallerSLine = 503, map$2charphsGenericsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 503))->generics_funcs,generics_fun_name_175))))));
                     if(right_value147 && right_value147 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sGenericsFunpboolp_finalize,right_value147, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
                     if(_if_conditional225=generics_fun_176,                    __freed_obj__ = 0, 
@@ -14999,7 +14999,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                         }
                         __freed_obj__ = 0;
                         come_clear_stackframe();
-                        finalizer_173=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 511),((struct optional$2sFunpbool*)(right_value148=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 511))->funcs,fun_name2_172)))));
+                        finalizer_173=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 511),((struct optional$2sFunpbool*)(right_value148=(gCallerSName = "04heap.c", gCallerSLine = 511, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 511))->funcs,fun_name2_172))))));
                         if(right_value148 && right_value148 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value148, (void*)0, (void*)0, 0, 1, 0, 0); }
                         __freed_obj__ = 0;
                     }
@@ -15020,7 +15020,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                     if(right_value149 && right_value149 != __result_obj__ && !__freed_obj__) { right_value149 = come_decrement_ref_count(right_value149, (void*)0, (void*)0, 1, 0, 0); }
                     __freed_obj__ = 0;
                     come_clear_stackframe();
-                    finalizer_173=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 519),((struct optional$2sFunpbool*)(right_value150=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 519))->funcs,new_fun_name_178)))));
+                    finalizer_173=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 519),((struct optional$2sFunpbool*)(right_value150=(gCallerSName = "04heap.c", gCallerSLine = 519, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 519))->funcs,new_fun_name_178))))));
                     if(right_value150 && right_value150 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value150, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
                     if(_if_conditional227=finalizer_173,                    __freed_obj__ = 0, 
@@ -15041,7 +15041,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                 if(_if_conditional228=finalizer_173==((void*)0),                __freed_obj__ = 0, 
                 _if_conditional228) {
                     come_clear_stackframe();
-                    finalizer_173=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 528),((struct optional$2sFunpbool*)(right_value152=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 528))->funcs,fun_name2_172)))));
+                    finalizer_173=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 528),((struct optional$2sFunpbool*)(right_value152=(gCallerSName = "04heap.c", gCallerSLine = 528, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 528))->funcs,fun_name2_172))))));
                     if(right_value152 && right_value152 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value152, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
                 }
@@ -16238,7 +16238,7 @@ gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
 gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
 gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
 gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-    type2_193=(struct sType*)come_increment_ref_count(((struct sType*)(right_value164=sType_clone(type))));
+    type2_193=(struct sType*)come_increment_ref_count(((struct sType*)(right_value164=(gCallerSName = "04heap.c", gCallerSLine = 662,sType_clone(type)))));
     if(right_value164 && right_value164 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value164, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     if(_if_conditional254=((struct tuple1$1sTypeph*)come_null_check(((struct sType*)come_null_check(type, "04heap.c", 667))->mNoSolvedGenericsType, "04heap.c", 667))->v1,    __freed_obj__ = 0, 
@@ -16334,7 +16334,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         }
         __freed_obj__ = 0;
         come_clear_stackframe();
-        cloner_202=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 698),((struct optional$2sFunpbool*)(right_value180=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 698))->funcs,fun_name2_203)))));
+        cloner_202=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 698),((struct optional$2sFunpbool*)(right_value180=(gCallerSName = "04heap.c", gCallerSLine = 698, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 698))->funcs,fun_name2_203))))));
         if(right_value180 && right_value180 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value180, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
         if(none_generics_name_204 && !__freed_obj__) { none_generics_name_204 = come_decrement_ref_count(none_generics_name_204, (void*)0, (void*)0, 0, 0, 0); }
@@ -16357,7 +16357,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
             if(right_value182 && right_value182 != __result_obj__ && !__freed_obj__) { right_value182 = come_decrement_ref_count(right_value182, (void*)0, (void*)0, 1, 0, 0); }
             __freed_obj__ = 0;
             come_clear_stackframe();
-            cloner_202=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 706),((struct optional$2sFunpbool*)(right_value183=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 706))->funcs,new_fun_name_211)))));
+            cloner_202=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 706),((struct optional$2sFunpbool*)(right_value183=(gCallerSName = "04heap.c", gCallerSLine = 706, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 706))->funcs,new_fun_name_211))))));
             if(right_value183 && right_value183 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value183, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
             if(_if_conditional273=cloner_202,            __freed_obj__ = 0, 
@@ -16378,7 +16378,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         if(_if_conditional274=cloner_202==((void*)0),        __freed_obj__ = 0, 
         _if_conditional274) {
             come_clear_stackframe();
-            cloner_202=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 715),((struct optional$2sFunpbool*)(right_value185=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 715))->funcs,fun_name2_203)))));
+            cloner_202=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 715),((struct optional$2sFunpbool*)(right_value185=(gCallerSName = "04heap.c", gCallerSLine = 715, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 715))->funcs,fun_name2_203))))));
             if(right_value185 && right_value185 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value185, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
         }
@@ -16404,7 +16404,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     if(_if_conditional276=cloner_202!=((void*)0),    __freed_obj__ = 0, 
     _if_conditional276) {
         __dec_obj60=result_194;
-        result_194=(char*)come_increment_ref_count(((char*)(right_value187=(gCallerSName = "04heap.c", gCallerSLine = 729,xsprintf("%s(%s)",fun_name2_203,c_value_198)))));
+        result_194=(char*)come_increment_ref_count(((char*)(right_value187=(gCallerSName = "04heap.c", gCallerSLine = 729,xsprintf("(gCallerSName = \"%s\", gCallerSLine = %d,%s(%s))",((struct sInfo*)come_null_check(info, "04heap.c", 729))->sname,((struct sInfo*)come_null_check(info, "04heap.c", 729))->sline,fun_name2_203,c_value_198)))));
         if(__dec_obj60) { __dec_obj60 = come_decrement_ref_count(__dec_obj60, (void*)0, (void*)0, 0,0,0); }
         if(right_value187 && right_value187 != __result_obj__ && !__freed_obj__) { right_value187 = come_decrement_ref_count(right_value187, (void*)0, (void*)0, 1, 0, 0); }
         __freed_obj__ = 0;
@@ -16432,7 +16432,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         if(right_value190 && right_value190 != __result_obj__ && !__freed_obj__) { right_value190 = come_decrement_ref_count(right_value190, (void*)0, (void*)0, 1, 0, 0); }
         __freed_obj__ = 0;
         __dec_obj64=result_type_195;
-        result_type_195=(struct sType*)come_increment_ref_count(((struct sType*)(right_value191=sType_clone(type))));
+        result_type_195=(struct sType*)come_increment_ref_count(((struct sType*)(right_value191=(gCallerSName = "04heap.c", gCallerSLine = 737,sType_clone(type)))));
         if(__dec_obj64) { come_call_finalizer(sType_finalize,__dec_obj64, (void*)0, (void*)0, 0, 0, 0, 0); }
         if(right_value191 && right_value191 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value191, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
@@ -16942,12 +16942,12 @@ memset(&right_value178, 0, sizeof(void*));
                 gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
                 gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                     __dec_obj55=((struct tuple2$2sTypephcharph*)come_null_check(self, "./comelang2.h", 1825))->v1;
-                    ((struct tuple2$2sTypephcharph*)come_null_check(self, "./comelang2.h", 1825))->v1=(struct sType*)come_increment_ref_count(((struct sType*)(right_value177=sType_clone(v1))));
+                    ((struct tuple2$2sTypephcharph*)come_null_check(self, "./comelang2.h", 1825))->v1=(struct sType*)come_increment_ref_count(((struct sType*)(right_value177=(gCallerSName = "./comelang2.h", gCallerSLine = 1825,sType_clone(v1)))));
                     if(__dec_obj55) { come_call_finalizer(sType_finalize,__dec_obj55, (void*)0, (void*)0, 0, 0, 0, 0); }
                     if(right_value177 && right_value177 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value177, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
                     __dec_obj56=((struct tuple2$2sTypephcharph*)come_null_check(self, "./comelang2.h", 1826))->v2;
-                    ((struct tuple2$2sTypephcharph*)come_null_check(self, "./comelang2.h", 1826))->v2=(char*)come_increment_ref_count(((char*)(right_value178=string_clone(v2))));
+                    ((struct tuple2$2sTypephcharph*)come_null_check(self, "./comelang2.h", 1826))->v2=(char*)come_increment_ref_count(((char*)(right_value178=(gCallerSName = "./comelang2.h", gCallerSLine = 1826,string_clone(v2)))));
                     if(__dec_obj56) { __dec_obj56 = come_decrement_ref_count(__dec_obj56, (void*)0, (void*)0, 0,0,0); }
                     if(right_value178 && right_value178 != __result_obj__ && !__freed_obj__) { right_value178 = come_decrement_ref_count(right_value178, (void*)0, (void*)0, 1, 0, 0); }
                     __freed_obj__ = 0;
@@ -17253,7 +17253,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     __freed_obj__ = 0;
     fun_name_220="equals";
     __freed_obj__ = 0;
-    type2_221=(struct sType*)come_increment_ref_count(((struct sType*)(right_value194=sType_clone(type))));
+    type2_221=(struct sType*)come_increment_ref_count(((struct sType*)(right_value194=(gCallerSName = "04heap.c", gCallerSLine = 761,sType_clone(type)))));
     if(right_value194 && right_value194 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value194, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     ((struct sType*)come_null_check(type2_221, "04heap.c", 762))->mHeap=(_Bool)0;
@@ -17322,7 +17322,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         }
         __freed_obj__ = 0;
         come_clear_stackframe();
-        cloner_222=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 782),((struct optional$2sFunpbool*)(right_value201=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 782))->funcs,fun_name2_223)))));
+        cloner_222=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 782),((struct optional$2sFunpbool*)(right_value201=(gCallerSName = "04heap.c", gCallerSLine = 782, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 782))->funcs,fun_name2_223))))));
         if(right_value201 && right_value201 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value201, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
         if(none_generics_name_224 && !__freed_obj__) { none_generics_name_224 = come_decrement_ref_count(none_generics_name_224, (void*)0, (void*)0, 0, 0, 0); }
@@ -17345,7 +17345,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
             if(right_value203 && right_value203 != __result_obj__ && !__freed_obj__) { right_value203 = come_decrement_ref_count(right_value203, (void*)0, (void*)0, 1, 0, 0); }
             __freed_obj__ = 0;
             come_clear_stackframe();
-            cloner_222=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 790),((struct optional$2sFunpbool*)(right_value204=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 790))->funcs,new_fun_name_229)))));
+            cloner_222=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 790),((struct optional$2sFunpbool*)(right_value204=(gCallerSName = "04heap.c", gCallerSLine = 790, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 790))->funcs,new_fun_name_229))))));
             if(right_value204 && right_value204 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value204, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
             if(_if_conditional281=cloner_222,            __freed_obj__ = 0, 
@@ -17366,7 +17366,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         if(_if_conditional282=cloner_222==((void*)0),        __freed_obj__ = 0, 
         _if_conditional282) {
             come_clear_stackframe();
-            cloner_222=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 799),((struct optional$2sFunpbool*)(right_value206=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 799))->funcs,fun_name2_223)))));
+            cloner_222=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 799),((struct optional$2sFunpbool*)(right_value206=(gCallerSName = "04heap.c", gCallerSLine = 799, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 799))->funcs,fun_name2_223))))));
             if(right_value206 && right_value206 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value206, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
         }
@@ -17608,7 +17608,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     __freed_obj__ = 0;
     fun_name_237="operator_equals";
     __freed_obj__ = 0;
-    type2_238=(struct sType*)come_increment_ref_count(((struct sType*)(right_value208=sType_clone(type))));
+    type2_238=(struct sType*)come_increment_ref_count(((struct sType*)(right_value208=(gCallerSName = "04heap.c", gCallerSLine = 832,sType_clone(type)))));
     if(right_value208 && right_value208 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value208, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     ((struct sType*)come_null_check(type2_238, "04heap.c", 833))->mHeap=(_Bool)0;
@@ -17677,7 +17677,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         }
         __freed_obj__ = 0;
         come_clear_stackframe();
-        cloner_239=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 853),((struct optional$2sFunpbool*)(right_value215=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 853))->funcs,fun_name2_240)))));
+        cloner_239=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 853),((struct optional$2sFunpbool*)(right_value215=(gCallerSName = "04heap.c", gCallerSLine = 853, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 853))->funcs,fun_name2_240))))));
         if(right_value215 && right_value215 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value215, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
         if(none_generics_name_241 && !__freed_obj__) { none_generics_name_241 = come_decrement_ref_count(none_generics_name_241, (void*)0, (void*)0, 0, 0, 0); }
@@ -17700,7 +17700,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
             if(right_value217 && right_value217 != __result_obj__ && !__freed_obj__) { right_value217 = come_decrement_ref_count(right_value217, (void*)0, (void*)0, 1, 0, 0); }
             __freed_obj__ = 0;
             come_clear_stackframe();
-            cloner_239=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 861),((struct optional$2sFunpbool*)(right_value218=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 861))->funcs,new_fun_name_246)))));
+            cloner_239=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 861),((struct optional$2sFunpbool*)(right_value218=(gCallerSName = "04heap.c", gCallerSLine = 861, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 861))->funcs,new_fun_name_246))))));
             if(right_value218 && right_value218 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value218, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
             if(_if_conditional288=cloner_239,            __freed_obj__ = 0, 
@@ -17721,7 +17721,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         if(_if_conditional289=cloner_239==((void*)0),        __freed_obj__ = 0, 
         _if_conditional289) {
             come_clear_stackframe();
-            cloner_239=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 870),((struct optional$2sFunpbool*)(right_value220=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 870))->funcs,fun_name2_240)))));
+            cloner_239=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 870),((struct optional$2sFunpbool*)(right_value220=(gCallerSName = "04heap.c", gCallerSLine = 870, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 870))->funcs,fun_name2_240))))));
             if(right_value220 && right_value220 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value220, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
         }
@@ -17963,7 +17963,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     __freed_obj__ = 0;
     fun_name_254="operator_not_equals";
     __freed_obj__ = 0;
-    type2_255=(struct sType*)come_increment_ref_count(((struct sType*)(right_value222=sType_clone(type))));
+    type2_255=(struct sType*)come_increment_ref_count(((struct sType*)(right_value222=(gCallerSName = "04heap.c", gCallerSLine = 903,sType_clone(type)))));
     if(right_value222 && right_value222 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value222, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     ((struct sType*)come_null_check(type2_255, "04heap.c", 904))->mHeap=(_Bool)0;
@@ -18032,7 +18032,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         }
         __freed_obj__ = 0;
         come_clear_stackframe();
-        cloner_256=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 924),((struct optional$2sFunpbool*)(right_value229=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 924))->funcs,fun_name2_257)))));
+        cloner_256=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 924),((struct optional$2sFunpbool*)(right_value229=(gCallerSName = "04heap.c", gCallerSLine = 924, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 924))->funcs,fun_name2_257))))));
         if(right_value229 && right_value229 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value229, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
         if(none_generics_name_258 && !__freed_obj__) { none_generics_name_258 = come_decrement_ref_count(none_generics_name_258, (void*)0, (void*)0, 0, 0, 0); }
@@ -18055,7 +18055,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
             if(right_value231 && right_value231 != __result_obj__ && !__freed_obj__) { right_value231 = come_decrement_ref_count(right_value231, (void*)0, (void*)0, 1, 0, 0); }
             __freed_obj__ = 0;
             come_clear_stackframe();
-            cloner_256=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 932),((struct optional$2sFunpbool*)(right_value232=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 932))->funcs,new_fun_name_263)))));
+            cloner_256=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 932),((struct optional$2sFunpbool*)(right_value232=(gCallerSName = "04heap.c", gCallerSLine = 932, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 932))->funcs,new_fun_name_263))))));
             if(right_value232 && right_value232 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value232, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
             if(_if_conditional295=cloner_256,            __freed_obj__ = 0, 
@@ -18076,7 +18076,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         if(_if_conditional296=cloner_256==((void*)0),        __freed_obj__ = 0, 
         _if_conditional296) {
             come_clear_stackframe();
-            cloner_256=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 941),((struct optional$2sFunpbool*)(right_value234=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 941))->funcs,fun_name2_257)))));
+            cloner_256=optional$2sFunpbool_value((come_push_stackframe("04heap.c", 941),((struct optional$2sFunpbool*)(right_value234=(gCallerSName = "04heap.c", gCallerSLine = 941, map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "04heap.c", 941))->funcs,fun_name2_257))))));
             if(right_value234 && right_value234 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value234, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
         }
@@ -18257,9 +18257,9 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     0    ){
         if(_if_conditional298=it_270&&!((struct sRightValueObject*)come_null_check(it_270, "04heap.c", 997))->mFreed,        __freed_obj__ = 0, 
         _if_conditional298) {
-            if(_if_conditional299=string_operator_equals(((struct sRightValueObject*)come_null_check(it_270, "04heap.c", 995))->mFunName,((struct sFun*)come_null_check(((struct sInfo*)come_null_check(info, "04heap.c", 995))->come_fun, "04heap.c", 995))->mName)&&((struct sRightValueObject*)come_null_check(it_270, "04heap.c", 995))->mBlockLevel==((struct sInfo*)come_null_check(info, "04heap.c", 995))->block_level,            __freed_obj__ = 0, 
+            if(_if_conditional299=(gCallerSName = "04heap.c", gCallerSLine = 995, string_operator_equals(((struct sRightValueObject*)come_null_check(it_270, "04heap.c", 995))->mFunName,((struct sFun*)come_null_check(((struct sInfo*)come_null_check(info, "04heap.c", 995))->come_fun, "04heap.c", 995))->mName))&&((struct sRightValueObject*)come_null_check(it_270, "04heap.c", 995))->mBlockLevel==((struct sInfo*)come_null_check(info, "04heap.c", 995))->block_level,            __freed_obj__ = 0, 
             _if_conditional299) {
-                type_271=(struct sType*)come_increment_ref_count(((struct sType*)(right_value236=sType_clone(((struct sRightValueObject*)come_null_check(it_270, "04heap.c", 968))->mType))));
+                type_271=(struct sType*)come_increment_ref_count(((struct sType*)(right_value236=(gCallerSName = "04heap.c", gCallerSLine = 968,sType_clone(((struct sRightValueObject*)come_null_check(it_270, "04heap.c", 968))->mType)))));
                 if(right_value236 && right_value236 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value236, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
                 __dec_obj85=type_271;
@@ -18564,7 +18564,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     while(_while_condtional21=it_274,    __freed_obj__ = 0, 
     _while_condtional21) {
         come_clear_stackframe();
-        var__279=optional$2sVarpbool_value((come_push_stackframe("04heap.c", 1025),((struct optional$2sVarpbool*)(right_value247=map$2charphsVarphp_operator_load_element(((struct sVarTable*)come_null_check(it_274, "04heap.c", 1025))->mVars,name)))));
+        var__279=optional$2sVarpbool_value((come_push_stackframe("04heap.c", 1025),((struct optional$2sVarpbool*)(right_value247=(gCallerSName = "04heap.c", gCallerSLine = 1025, map$2charphsVarphp_operator_load_element(((struct sVarTable*)come_null_check(it_274, "04heap.c", 1025))->mVars,name))))));
         come_pop_stackframe();
         if(right_value247 && right_value247 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sVarpboolp_finalize,right_value247, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
@@ -19325,14 +19325,14 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     _for_condtionalA17;    it_283=(gCallerSName = "04heap.c", gCallerSLine = 1063,map$2charphsVarph_next(((struct map$2charphsVarph*)come_null_check((o2_saved_280), "04heap.c", 1063)))) ,    __freed_obj__ = 0, 
     0    ){
         come_clear_stackframe();
-        p_286=optional$2sVarpbool_value((come_push_stackframe("04heap.c", 1040),((struct optional$2sVarpbool*)(right_value248=map$2charphsVarphp_operator_load_element(((struct sVarTable*)come_null_check(table, "04heap.c", 1040))->mVars,it_283)))));
+        p_286=optional$2sVarpbool_value((come_push_stackframe("04heap.c", 1040),((struct optional$2sVarpbool*)(right_value248=(gCallerSName = "04heap.c", gCallerSLine = 1040, map$2charphsVarphp_operator_load_element(((struct sVarTable*)come_null_check(table, "04heap.c", 1040))->mVars,it_283))))));
         if(right_value248 && right_value248 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sVarpboolp_finalize,right_value248, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
         type_287=((struct sVar*)come_null_check(p_286, "04heap.c", 1041))->mType;
         __freed_obj__ = 0;
         klass_288=((struct sType*)come_null_check(type_287, "04heap.c", 1042))->mClass;
         __freed_obj__ = 0;
-        if(_if_conditional316=ret_value!=((void*)0)&&((struct sVar*)come_null_check(p_286, "04heap.c", 1062))->mCValueName!=((void*)0)&&string_operator_equals(((struct sVar*)come_null_check(p_286, "04heap.c", 1062))->mCValueName,((struct sVar*)come_null_check(ret_value, "04heap.c", 1062))->mCValueName)&&((struct sType*)come_null_check(type_287, "04heap.c", 1062))->mHeap,        __freed_obj__ = 0, 
+        if(_if_conditional316=ret_value!=((void*)0)&&((struct sVar*)come_null_check(p_286, "04heap.c", 1062))->mCValueName!=((void*)0)&&(gCallerSName = "04heap.c", gCallerSLine = 1062, string_operator_equals(((struct sVar*)come_null_check(p_286, "04heap.c", 1062))->mCValueName,((struct sVar*)come_null_check(ret_value, "04heap.c", 1062))->mCValueName))&&((struct sType*)come_null_check(type_287, "04heap.c", 1062))->mHeap,        __freed_obj__ = 0, 
         _if_conditional316) {
             (gCallerSName = "04heap.c", gCallerSLine = 1046,free_object(((struct sVar*)come_null_check(p_286, "04heap.c", 1046))->mType,((struct sVar*)come_null_check(p_286, "04heap.c", 1046))->mCValueName,(_Bool)0,(_Bool)1,info,(_Bool)0,(_Bool)1,(_Bool)0));
             __freed_obj__ = 0;
@@ -19357,7 +19357,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                     c_value_289=(char*)come_increment_ref_count(((char*)(right_value249=(gCallerSName = "04heap.c", gCallerSLine = 1057,xsprintf("(&%s)",((struct sVar*)come_null_check(p_286, "04heap.c", 1057))->mCValueName)))));
                     if(right_value249 && right_value249 != __result_obj__ && !__freed_obj__) { right_value249 = come_decrement_ref_count(right_value249, (void*)0, (void*)0, 1, 0, 0); }
                     __freed_obj__ = 0;
-                    type2_290=(struct sType*)come_increment_ref_count(((struct sType*)(right_value250=sType_clone(type_287))));
+                    type2_290=(struct sType*)come_increment_ref_count(((struct sType*)(right_value250=(gCallerSName = "04heap.c", gCallerSLine = 1058,sType_clone(type_287)))));
                     if(right_value250 && right_value250 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value250, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
                     ((struct sType*)come_null_check(type2_290, "04heap.c", 1059))->mPointerNum++;
@@ -20619,11 +20619,11 @@ gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
 gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     if(_if_conditional330=((struct sInfo*)come_null_check(info, "04heap.c", 1139))->without_semicolon,    __freed_obj__ = 0, 
     _if_conditional330) {
-        if(_if_conditional331=string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(type, "04heap.c", 1128))->mClass, "04heap.c", 1128))->mName,"void")&&((struct sType*)come_null_check(type, "04heap.c", 1128))->mPointerNum==0,        __freed_obj__ = 0, 
+        if(_if_conditional331=(gCallerSName = "04heap.c", gCallerSLine = 1128, string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(type, "04heap.c", 1128))->mClass, "04heap.c", 1128))->mName,"void"))&&((struct sType*)come_null_check(type, "04heap.c", 1128))->mPointerNum==0,        __freed_obj__ = 0, 
         _if_conditional331) {
             if(_if_conditional332=!((struct sType*)come_null_check(((struct sFun*)come_null_check(((struct sInfo*)come_null_check(info, "04heap.c", 1109))->come_fun, "04heap.c", 1109))->mResultType, "04heap.c", 1109))->mException,            __freed_obj__ = 0, 
             _if_conditional332) {
-                __result124__ = __result_obj__ = ((char*)(right_value254=xsprintf("(come_clear_stackframe(), come_push_stackframe(\"\%s\", \%s),\%s, come_pop_stackframe())",((char*)(right_value251=string_to_string(((struct sInfo*)come_null_check(info, "04heap.c", 1104))->sname))),((char*)(right_value252=int_to_string(((struct sInfo*)come_null_check(info, "04heap.c", 1104))->sline))),((char*)(right_value253=charp_to_string(c_value))))));
+                __result124__ = __result_obj__ = ((char*)(right_value254=xsprintf("(come_clear_stackframe(), come_push_stackframe(\"\%s\", \%s),\%s, come_pop_stackframe())",((char*)(right_value251=(gCallerSName = "04heap.c", gCallerSLine = 1104,string_to_string(((struct sInfo*)come_null_check(info, "04heap.c", 1104))->sname)))),((char*)(right_value252=(gCallerSName = "04heap.c", gCallerSLine = 1104,int_to_string(((struct sInfo*)come_null_check(info, "04heap.c", 1104))->sline)))),((char*)(right_value253=(gCallerSName = "04heap.c", gCallerSLine = 1104,charp_to_string(c_value)))))));
                 if(right_value251 && right_value251 != __result_obj__ && !__freed_obj__) { right_value251 = come_decrement_ref_count(right_value251, (void*)0, (void*)0, 1, 0, 0); }
                 if(right_value252 && right_value252 != __result_obj__ && !__freed_obj__) { right_value252 = come_decrement_ref_count(right_value252, (void*)0, (void*)0, 1, 0, 0); }
                 if(right_value253 && right_value253 != __result_obj__ && !__freed_obj__) { right_value253 = come_decrement_ref_count(right_value253, (void*)0, (void*)0, 1, 0, 0); }
@@ -20653,7 +20653,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                 __freed_obj__ = 0;
             }
             else {
-                __result125__ = __result_obj__ = ((char*)(right_value258=xsprintf("(come_push_stackframe(\"\%s\", \%s),\%s,come_pop_stackframe())",((char*)(right_value255=string_to_string(((struct sInfo*)come_null_check(info, "04heap.c", 1107))->sname))),((char*)(right_value256=int_to_string(((struct sInfo*)come_null_check(info, "04heap.c", 1107))->sline))),((char*)(right_value257=charp_to_string(c_value))))));
+                __result125__ = __result_obj__ = ((char*)(right_value258=xsprintf("(come_push_stackframe(\"\%s\", \%s),\%s,come_pop_stackframe())",((char*)(right_value255=(gCallerSName = "04heap.c", gCallerSLine = 1107,string_to_string(((struct sInfo*)come_null_check(info, "04heap.c", 1107))->sname)))),((char*)(right_value256=(gCallerSName = "04heap.c", gCallerSLine = 1107,int_to_string(((struct sInfo*)come_null_check(info, "04heap.c", 1107))->sline)))),((char*)(right_value257=(gCallerSName = "04heap.c", gCallerSLine = 1107,charp_to_string(c_value)))))));
                 if(right_value255 && right_value255 != __result_obj__ && !__freed_obj__) { right_value255 = come_decrement_ref_count(right_value255, (void*)0, (void*)0, 1, 0, 0); }
                 if(right_value256 && right_value256 != __result_obj__ && !__freed_obj__) { right_value256 = come_decrement_ref_count(right_value256, (void*)0, (void*)0, 1, 0, 0); }
                 if(right_value257 && right_value257 != __result_obj__ && !__freed_obj__) { right_value257 = come_decrement_ref_count(right_value257, (void*)0, (void*)0, 1, 0, 0); }
@@ -20698,7 +20698,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                 come_pop_stackframe();
                 if(right_value260 && right_value260 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value260, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
-                __result126__ = __result_obj__ = ((char*)(right_value266=xsprintf("(come_clear_stackframe(), come_push_stackframe(\"\%s\", \%s),\%s=\%s, come_pop_stackframe(), \%s)",((char*)(right_value261=string_to_string(((struct sInfo*)come_null_check(info, "04heap.c", 1117))->sname))),((char*)(right_value262=int_to_string(((struct sInfo*)come_null_check(info, "04heap.c", 1117))->sline))),((char*)(right_value263=string_to_string(var_name_300))),((char*)(right_value264=charp_to_string(c_value))),((char*)(right_value265=string_to_string(var_name_300))))));
+                __result126__ = __result_obj__ = ((char*)(right_value266=xsprintf("(come_clear_stackframe(), come_push_stackframe(\"\%s\", \%s),\%s=\%s, come_pop_stackframe(), \%s)",((char*)(right_value261=(gCallerSName = "04heap.c", gCallerSLine = 1117,string_to_string(((struct sInfo*)come_null_check(info, "04heap.c", 1117))->sname)))),((char*)(right_value262=(gCallerSName = "04heap.c", gCallerSLine = 1117,int_to_string(((struct sInfo*)come_null_check(info, "04heap.c", 1117))->sline)))),((char*)(right_value263=(gCallerSName = "04heap.c", gCallerSLine = 1117,string_to_string(var_name_300)))),((char*)(right_value264=(gCallerSName = "04heap.c", gCallerSLine = 1117,charp_to_string(c_value)))),((char*)(right_value265=(gCallerSName = "04heap.c", gCallerSLine = 1117,string_to_string(var_name_300)))))));
                 if(var_name_300 && !__freed_obj__) { var_name_300 = come_decrement_ref_count(var_name_300, (void*)0, (void*)0, 0, 0, 0); }
                 if(right_value261 && right_value261 != __result_obj__ && !__freed_obj__) { right_value261 = come_decrement_ref_count(right_value261, (void*)0, (void*)0, 1, 0, 0); }
                 if(right_value262 && right_value262 != __result_obj__ && !__freed_obj__) { right_value262 = come_decrement_ref_count(right_value262, (void*)0, (void*)0, 1, 0, 0); }
@@ -20743,7 +20743,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                 come_pop_stackframe();
                 if(right_value268 && right_value268 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value268, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
-                __result127__ = __result_obj__ = ((char*)(right_value274=xsprintf("(come_push_stackframe(\"\%s\", \%s),\%s=\%s, come_pop_stackframe(), \%s)",((char*)(right_value269=string_to_string(((struct sInfo*)come_null_check(info, "04heap.c", 1125))->sname))),((char*)(right_value270=int_to_string(((struct sInfo*)come_null_check(info, "04heap.c", 1125))->sline))),((char*)(right_value271=string_to_string(var_name_302))),((char*)(right_value272=charp_to_string(c_value))),((char*)(right_value273=string_to_string(var_name_302))))));
+                __result127__ = __result_obj__ = ((char*)(right_value274=xsprintf("(come_push_stackframe(\"\%s\", \%s),\%s=\%s, come_pop_stackframe(), \%s)",((char*)(right_value269=(gCallerSName = "04heap.c", gCallerSLine = 1125,string_to_string(((struct sInfo*)come_null_check(info, "04heap.c", 1125))->sname)))),((char*)(right_value270=(gCallerSName = "04heap.c", gCallerSLine = 1125,int_to_string(((struct sInfo*)come_null_check(info, "04heap.c", 1125))->sline)))),((char*)(right_value271=(gCallerSName = "04heap.c", gCallerSLine = 1125,string_to_string(var_name_302)))),((char*)(right_value272=(gCallerSName = "04heap.c", gCallerSLine = 1125,charp_to_string(c_value)))),((char*)(right_value273=(gCallerSName = "04heap.c", gCallerSLine = 1125,string_to_string(var_name_302)))))));
                 if(var_name_302 && !__freed_obj__) { var_name_302 = come_decrement_ref_count(var_name_302, (void*)0, (void*)0, 0, 0, 0); }
                 if(right_value269 && right_value269 != __result_obj__ && !__freed_obj__) { right_value269 = come_decrement_ref_count(right_value269, (void*)0, (void*)0, 1, 0, 0); }
                 if(right_value270 && right_value270 != __result_obj__ && !__freed_obj__) { right_value270 = come_decrement_ref_count(right_value270, (void*)0, (void*)0, 1, 0, 0); }
@@ -20787,7 +20787,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-        result_303=(char*)come_increment_ref_count(((char*)(right_value278=xsprintf("(come_push_stackframe(\"\%s\", \%s),\%s)",((char*)(right_value275=string_to_string(((struct sInfo*)come_null_check(info, "04heap.c", 1133))->sname))),((char*)(right_value276=int_to_string(((struct sInfo*)come_null_check(info, "04heap.c", 1133))->sline))),((char*)(right_value277=charp_to_string(c_value)))))));
+        result_303=(char*)come_increment_ref_count(((char*)(right_value278=xsprintf("(come_push_stackframe(\"\%s\", \%s),\%s)",((char*)(right_value275=(gCallerSName = "04heap.c", gCallerSLine = 1133,string_to_string(((struct sInfo*)come_null_check(info, "04heap.c", 1133))->sname)))),((char*)(right_value276=(gCallerSName = "04heap.c", gCallerSLine = 1133,int_to_string(((struct sInfo*)come_null_check(info, "04heap.c", 1133))->sline)))),((char*)(right_value277=(gCallerSName = "04heap.c", gCallerSLine = 1133,charp_to_string(c_value))))))));
         if(right_value275 && right_value275 != __result_obj__ && !__freed_obj__) { right_value275 = come_decrement_ref_count(right_value275, (void*)0, (void*)0, 1, 0, 0); }
         if(right_value276 && right_value276 != __result_obj__ && !__freed_obj__) { right_value276 = come_decrement_ref_count(right_value276, (void*)0, (void*)0, 1, 0, 0); }
         if(right_value277 && right_value277 != __result_obj__ && !__freed_obj__) { right_value277 = come_decrement_ref_count(right_value277, (void*)0, (void*)0, 1, 0, 0); }
