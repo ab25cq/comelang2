@@ -706,6 +706,7 @@ ac_user_opts='
 enable_option_checking
 with_debug
 with_come_debug
+with_malloc
 with_optimize
 '
       ac_precious_vars='build_alias
@@ -3820,10 +3821,10 @@ then :
 fi
 
 
-# Check whether --with-come-debug was given.
-if test ${with_come_debug+y}
+# Check whether --with-malloc was given.
+if test ${with_malloc+y}
 then :
-  withval=$with_come_debug;  MALLOC=1;
+  withval=$with_malloc;  MALLOC=1;
 fi
 
 

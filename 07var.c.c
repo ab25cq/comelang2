@@ -6419,7 +6419,7 @@ memset(&right_value192, 0, sizeof(void*));
                 if(right_value160 && right_value160 != __result_obj__ && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,right_value160, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __right_value_freed_obj[1] = right_value160;
                 __freed_obj__ = 0;
-                if(_if_conditional210=((struct sType*)come_null_check(((struct sVar*)come_null_check(var__126, "07var.c", 659))->mType, "07var.c", 659))->mStatic,                __freed_obj__ = 0, 
+                if(_if_conditional210=((struct sType*)come_null_check(((struct sVar*)come_null_check(var__126, "07var.c", 659))->mType, "07var.c", 659))->mStatic&&!((struct sVar*)come_null_check(var__126, "07var.c", 659))->mGlobal,                __freed_obj__ = 0, 
                 _if_conditional210) {
                     check_assign_type(((char*)(right_value162=xsprintf("\%s is assining to",((char*)(right_value161=string_to_string(((struct sStoreNode*)come_null_check(self, "07var.c", 525))->name)))))),left_type_127,right_type_81,right_value_80,(_Bool)0,info);
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value161);

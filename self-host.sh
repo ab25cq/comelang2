@@ -7,9 +7,11 @@ then
     then
         #./configure --with-optimize --prefix=$HOME
         ./configure --prefix=$HOME --with-debug
+        #./configure --prefix=$HOME --with-debug --with-come-debug --with-come-malloc
     else
         #./configure --with-optimize
         ./configure --with-debug
+        #./configure --with-debug --with-come-debug --with-come-malloc
     fi
 fi
 

@@ -521,7 +521,7 @@ bool sStoreNode*::compile(sStoreNode* self, sInfo* info)
             
             CVALUE*% come_value = new CVALUE;
             
-            if(var_->mType->mStatic) {
+            if(var_->mType->mStatic && !var_->mGlobal) {
                 check_assign_type(s"\{self.name} is assining to", left_type, right_type, right_value);
                 add_come_code_at_function_head(info, "%s=%s;\n", make_define_var(left_type, var_->mCValueName), right_value.c_value);
                 come_value.c_value = string("");

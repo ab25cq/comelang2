@@ -145,7 +145,7 @@ bool sFunNode*::compile(sFunNode* self, sInfo* info)
     
     if(self.mFun.mBlock) {
         if(info.come_fun.mName === "main") {
-            add_come_code(info, "come_heap_init();\n");
+            add_come_code(info, "come_heap_init(%d, %d);\n", gComeMalloc, gComeDebug);
         }
         
         sType*% result_type = new sType("void*");
@@ -793,14 +793,14 @@ int transpile(sInfo* info) version 5
     {
         var name = string("come_heap_init");
         var result_type = new sType("void");
-        var param_types = new list<sType*%>();
-        var param_names = new list<string>();
+        var param_types = [new sType("int"), new sType("int")];
+        var param_names = [s"come_malloc", s"come_debug"];
         var param_default_parametors = new list<string>();
         param_default_parametors.push_back(null);
         var main_fun = new sFun(name, result_type, param_types, param_names
             , param_default_parametors, true@external, false@var_args
             , null@block, false@static_
-            , string("come_heap_init()")
+            , string("come_heap_init(int come_malloc, int come_debug)")
             , string("")
             , info);
         
