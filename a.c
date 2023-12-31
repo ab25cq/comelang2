@@ -1,30 +1,20 @@
 #include <comelang2.h>
 
-int fun()
+int fun() 
 {
-    char* a = gc_inc(string("AAA"));
+    puts("AAA");
+    null!;
 }
 
-void fun2()
+int fun2()
 {
-    strcmp("ABC", "ABC");
+    puts("BBB");
     fun();
-}
-
-void fun3()
-{
-    fun2();
-    fun();
-}
-
-void fun4()
-{
-    fun3();
 }
 
 int main(int argc, char** argv)
 {
-    fun4();
+    fun2();
     
     return 0;
 }

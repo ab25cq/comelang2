@@ -627,9 +627,9 @@ struct come_regex
 };
 
 // header function
-void come_heap_init(_Bool self);
+void come_heap_init();
 
-void come_heap_final(int check_mem_leak);
+void come_heap_final();
 
 int remove(const char* __filename);
 
@@ -2094,131 +2094,108 @@ char* string_chomp(char* str);
 
 // inline function
 static inline unsigned short int __bswap_16(unsigned short int __bsx){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 unsigned short int __result1__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __result1__ = ((unsigned short int)((((__bsx)>>8)&255)|(((__bsx)&255)<<8)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result1__;
+    return __result1__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline unsigned int __bswap_32(unsigned int __bsx){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 unsigned int __result2__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __result2__ = ((((__bsx)&4278190080)>>24)|(((__bsx)&16711680)>>8)|(((__bsx)&65280)<<8)|(((__bsx)&255)<<24));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result2__;
+    return __result2__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline unsigned long int __bswap_64(unsigned long int __bsx){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 unsigned long int __result3__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __result3__ = ((((__bsx)&18374686479671623680)>>56)|(((__bsx)&71776119061217280)>>40)|(((__bsx)&280375465082880)>>24)|(((__bsx)&1095216660480)>>8)|(((__bsx)&4278190080)<<8)|(((__bsx)&16711680)<<24)|(((__bsx)&65280)<<40)|(((__bsx)&255)<<56));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result3__;
+    return __result3__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline unsigned short int __uint16_identity(unsigned short int __x){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 unsigned short int __result4__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __result4__ = __x;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result4__;
+    return __result4__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline unsigned int __uint32_identity(unsigned int __x){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 unsigned int __result5__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __result5__ = __x;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result5__;
+    return __result5__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline unsigned long int __uint64_identity(unsigned long int __x){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 unsigned long int __result6__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __result6__ = __x;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result6__;
+    return __result6__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline void die(char* msg){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 106,perror(msg));
+    perror(msg);
     __freed_obj__ = 0;
-    (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 107,exit(4));
+    exit(4);
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline struct smart_pointer$1char* buffer_to_pointer(struct buffer* self){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value0;
 struct smart_pointer$1char* result_0;
 void* right_value1;
@@ -2229,32 +2206,33 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value0, 0, sizeof(void*));
 memset(&result_0, 0, sizeof(struct smart_pointer$1char*));
 memset(&right_value1, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     result_0=(struct smart_pointer$1char*)come_increment_ref_count(((struct smart_pointer$1char*)(right_value0=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./comelang2.h", 1992))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value0);
     if(right_value0 && right_value0 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,right_value0, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value0;
     __freed_obj__ = 0;
     __dec_obj1=((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 1994))->memory;
-    ((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 1994))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value1=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1994,buffer_clone(self)))));
+    ((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 1994))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value1=buffer_clone(self))));
     if(__dec_obj1) { come_call_finalizer(buffer_finalize,__dec_obj1, (void*)0, (void*)0, 0, 0, 0, 0); }
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value1);
     if(right_value1 && right_value1 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value1, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value1;
     __freed_obj__ = 0;
     ((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 1995))->p=((struct buffer*)come_null_check(((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 1995))->memory, "./comelang2.h", 1995))->buf;
     __freed_obj__ = 0;
     __result7__ = __result_obj__ = result_0;
     if(result_0 && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,result_0, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result7__;
+    return __result7__;
     __freed_obj__ = 0;
     if(result_0 && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,result_0, (void*)0, (void*)0, 0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline struct smart_pointer$1char* buffer_to_char_pointer(struct buffer* self){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value2;
 struct smart_pointer$1char* result_1;
 void* right_value3;
@@ -2265,32 +2243,33 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value2, 0, sizeof(void*));
 memset(&result_1, 0, sizeof(struct smart_pointer$1char*));
 memset(&right_value3, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     result_1=(struct smart_pointer$1char*)come_increment_ref_count(((struct smart_pointer$1char*)(right_value2=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./comelang2.h", 2002))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value2);
     if(right_value2 && right_value2 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,right_value2, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value2;
     __freed_obj__ = 0;
     __dec_obj2=((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2004))->memory;
-    ((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2004))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value3=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 2004,buffer_clone(self)))));
+    ((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2004))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value3=buffer_clone(self))));
     if(__dec_obj2) { come_call_finalizer(buffer_finalize,__dec_obj2, (void*)0, (void*)0, 0, 0, 0, 0); }
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value3);
     if(right_value3 && right_value3 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value3, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value3;
     __freed_obj__ = 0;
     ((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2005))->p=(char*)((struct buffer*)come_null_check(((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2005))->memory, "./comelang2.h", 2005))->buf;
     __freed_obj__ = 0;
     __result8__ = __result_obj__ = result_1;
     if(result_1 && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,result_1, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result8__;
+    return __result8__;
     __freed_obj__ = 0;
     if(result_1 && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,result_1, (void*)0, (void*)0, 0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline struct smart_pointer$1short* buffer_to_short_pointer(struct buffer* self){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value4;
 struct smart_pointer$1short* result_2;
 void* right_value5;
@@ -2301,32 +2280,33 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value4, 0, sizeof(void*));
 memset(&result_2, 0, sizeof(struct smart_pointer$1short*));
 memset(&right_value5, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     result_2=(struct smart_pointer$1short*)come_increment_ref_count(((struct smart_pointer$1short*)(right_value4=(struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./comelang2.h", 2012))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value4);
     if(right_value4 && right_value4 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1shortp_finalize,right_value4, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value4;
     __freed_obj__ = 0;
     __dec_obj3=((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2014))->memory;
-    ((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2014))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value5=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 2014,buffer_clone(self)))));
+    ((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2014))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value5=buffer_clone(self))));
     if(__dec_obj3) { come_call_finalizer(buffer_finalize,__dec_obj3, (void*)0, (void*)0, 0, 0, 0, 0); }
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value5);
     if(right_value5 && right_value5 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value5, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value5;
     __freed_obj__ = 0;
     ((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2015))->p=(short short*)((struct buffer*)come_null_check(((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2015))->memory, "./comelang2.h", 2015))->buf;
     __freed_obj__ = 0;
     __result9__ = __result_obj__ = result_2;
     if(result_2 && !__freed_obj__) { come_call_finalizer(smart_pointer$1shortp_finalize,result_2, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result9__;
+    return __result9__;
     __freed_obj__ = 0;
     if(result_2 && !__freed_obj__) { come_call_finalizer(smart_pointer$1shortp_finalize,result_2, (void*)0, (void*)0, 0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline struct smart_pointer$1int* buffer_to_int_pointer(struct buffer* self){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value6;
 struct smart_pointer$1int* result_3;
 void* right_value7;
@@ -2337,32 +2317,33 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value6, 0, sizeof(void*));
 memset(&result_3, 0, sizeof(struct smart_pointer$1int*));
 memset(&right_value7, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     result_3=(struct smart_pointer$1int*)come_increment_ref_count(((struct smart_pointer$1int*)(right_value6=(struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./comelang2.h", 2022))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value6);
     if(right_value6 && right_value6 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1intp_finalize,right_value6, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value6;
     __freed_obj__ = 0;
     __dec_obj4=((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2024))->memory;
-    ((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2024))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value7=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 2024,buffer_clone(self)))));
+    ((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2024))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value7=buffer_clone(self))));
     if(__dec_obj4) { come_call_finalizer(buffer_finalize,__dec_obj4, (void*)0, (void*)0, 0, 0, 0, 0); }
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value7);
     if(right_value7 && right_value7 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value7, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value7;
     __freed_obj__ = 0;
     ((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2025))->p=(int*)((struct buffer*)come_null_check(((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2025))->memory, "./comelang2.h", 2025))->buf;
     __freed_obj__ = 0;
     __result10__ = __result_obj__ = result_3;
     if(result_3 && !__freed_obj__) { come_call_finalizer(smart_pointer$1intp_finalize,result_3, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result10__;
+    return __result10__;
     __freed_obj__ = 0;
     if(result_3 && !__freed_obj__) { come_call_finalizer(smart_pointer$1intp_finalize,result_3, (void*)0, (void*)0, 0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline struct smart_pointer$1long* buffer_to_long_pointer(struct buffer* self){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value8;
 struct smart_pointer$1long* result_4;
 void* right_value9;
@@ -2373,754 +2354,637 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value8, 0, sizeof(void*));
 memset(&result_4, 0, sizeof(struct smart_pointer$1long*));
 memset(&right_value9, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     result_4=(struct smart_pointer$1long*)come_increment_ref_count(((struct smart_pointer$1long*)(right_value8=(struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./comelang2.h", 2032))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value8);
     if(right_value8 && right_value8 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1longp_finalize,right_value8, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value8;
     __freed_obj__ = 0;
     __dec_obj5=((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2034))->memory;
-    ((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2034))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value9=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 2034,buffer_clone(self)))));
+    ((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2034))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value9=buffer_clone(self))));
     if(__dec_obj5) { come_call_finalizer(buffer_finalize,__dec_obj5, (void*)0, (void*)0, 0, 0, 0, 0); }
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value9);
     if(right_value9 && right_value9 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value9, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value9;
     __freed_obj__ = 0;
     ((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2035))->p=(long*)((struct buffer*)come_null_check(((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2035))->memory, "./comelang2.h", 2035))->buf;
     __freed_obj__ = 0;
     __result11__ = __result_obj__ = result_4;
     if(result_4 && !__freed_obj__) { come_call_finalizer(smart_pointer$1longp_finalize,result_4, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result11__;
+    return __result11__;
     __freed_obj__ = 0;
     if(result_4 && !__freed_obj__) { come_call_finalizer(smart_pointer$1longp_finalize,result_4, (void*)0, (void*)0, 0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline unsigned int* wstring_substring(unsigned int* str, int head, int tail){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value10;
 unsigned int* __result12__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value10, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result12__ = __result_obj__ = ((unsigned int*)(right_value10=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 47,wchar_tp_substring(str,head,tail))));
+    __result12__ = __result_obj__ = ((unsigned int*)(right_value10=wchar_tp_substring(str,head,tail)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result12__;
+    return __result12__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline int string_index_count(char* str, char* search_str, int count, int default_value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int __result13__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result13__ = (gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 53,charp_index_count(str,search_str,count,default_value));
+    __result13__ = charp_index_count(str,search_str,count,default_value);
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result13__;
+    return __result13__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline int string_index_regex_count(char* self, struct come_regex* reg, int count, int default_value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int __result14__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result14__ = (gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 59,charp_index_regex_count(self,reg,count,default_value));
+    __result14__ = charp_index_regex_count(self,reg,count,default_value);
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result14__;
+    return __result14__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline int string_rindex(char* str, char* search_str, int default_value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int __result15__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result15__ = (gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 65,charp_rindex(str,search_str,default_value));
+    __result15__ = charp_rindex(str,search_str,default_value);
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result15__;
+    return __result15__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline int string_rindex_regex(char* self, struct come_regex* reg, int default_value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int __result16__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result16__ = (gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 71,charp_rindex_regex(self,reg,default_value));
+    __result16__ = charp_rindex_regex(self,reg,default_value);
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result16__;
+    return __result16__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline int string_rindex_count(char* str, char* search_str, int count, int default_value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int __result17__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result17__ = (gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 77,charp_rindex_count(str,search_str,default_value,-1));
+    __result17__ = charp_rindex_count(str,search_str,default_value,-1);
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result17__;
+    return __result17__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline struct list$1charph* string_scan_block(char* self, struct come_regex* reg, void* parent, char* (*block)(void*,char*,struct list$1charph*)){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value11;
 struct list$1charph* __result18__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value11, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result18__ = __result_obj__ = ((struct list$1charph*)(right_value11=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 83,charp_scan_block(self,reg,parent,block))));
+    __result18__ = __result_obj__ = ((struct list$1charph*)(right_value11=charp_scan_block(self,reg,parent,block)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result18__;
+    return __result18__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline struct list$1charph* string_scan_block_count(char* self, struct come_regex* reg, int count, void* parent, char* (*block)(void*,char*,struct list$1charph*)){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value12;
 struct list$1charph* __result19__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value12, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result19__ = __result_obj__ = ((struct list$1charph*)(right_value12=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 89,charp_scan_block_count(self,reg,count,parent,block))));
+    __result19__ = __result_obj__ = ((struct list$1charph*)(right_value12=charp_scan_block_count(self,reg,count,parent,block)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result19__;
+    return __result19__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline struct list$1charph* string_split_block(char* self, struct come_regex* reg, void* parent, char* (*block)(void*,char*,struct list$1charph*)){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value13;
 struct list$1charph* __result20__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value13, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result20__ = __result_obj__ = ((struct list$1charph*)(right_value13=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 95,charp_split_block(self,reg,parent,block))));
+    __result20__ = __result_obj__ = ((struct list$1charph*)(right_value13=charp_split_block(self,reg,parent,block)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result20__;
+    return __result20__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline struct list$1charph* string_split_block_count(char* self, struct come_regex* reg, int count, void* parent, char* (*block)(void*,char*,struct list$1charph*)){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value14;
 struct list$1charph* __result21__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value14, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result21__ = __result_obj__ = ((struct list$1charph*)(right_value14=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 101,charp_split_block_count(self,reg,count,parent,block))));
+    __result21__ = __result_obj__ = ((struct list$1charph*)(right_value14=charp_split_block_count(self,reg,count,parent,block)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result21__;
+    return __result21__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline struct list$1charph* string_scan_group_strings(char* self, struct come_regex* reg, struct list$1charph* group_strings, int* num_group_string_in_regex){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value15;
 struct list$1charph* __result22__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value15, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result22__ = __result_obj__ = ((struct list$1charph*)(right_value15=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 107,charp_scan_group_strings(self,reg,group_strings,num_group_string_in_regex))));
+    __result22__ = __result_obj__ = ((struct list$1charph*)(right_value15=charp_scan_group_strings(self,reg,group_strings,num_group_string_in_regex)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result22__;
+    return __result22__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline char* string_strip(char* self){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value16;
 char* __result23__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value16, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result23__ = __result_obj__ = ((char*)(right_value16=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 113,charp_strip(self))));
+    __result23__ = __result_obj__ = ((char*)(right_value16=charp_strip(self)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result23__;
+    return __result23__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline char* string_printable(char* str){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value17;
 char* __result24__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value17, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result24__ = __result_obj__ = ((char*)(right_value17=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 119,string_printable(str))));
+    __result24__ = __result_obj__ = ((char*)(right_value17=string_printable(str)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result24__;
+    return __result24__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline unsigned int* string_to_wstring(char* str){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value18;
 unsigned int* __result25__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value18, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result25__ = __result_obj__ = ((unsigned int*)(right_value18=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 125,charp_to_wstring(str))));
+    __result25__ = __result_obj__ = ((unsigned int*)(right_value18=charp_to_wstring(str)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result25__;
+    return __result25__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline char* wstring_to_string(unsigned int* wstr){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value19;
 char* __result26__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value19, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result26__ = __result_obj__ = ((char*)(right_value19=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 133,wchar_tp_to_string(wstr))));
+    __result26__ = __result_obj__ = ((char*)(right_value19=wchar_tp_to_string(wstr)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result26__;
+    return __result26__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline int wstring_length(unsigned int* str){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int __result27__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result27__ = (gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 139,wchar_tp_length(str));
+    __result27__ = wchar_tp_length(str);
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result27__;
+    return __result27__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline unsigned int* wstring_delete(unsigned int* str, int head, int tail){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value20;
 unsigned int* __result28__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value20, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result28__ = __result_obj__ = ((unsigned int*)(right_value20=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 145,wchar_tp_delete(str,head,tail))));
+    __result28__ = __result_obj__ = ((unsigned int*)(right_value20=wchar_tp_delete(str,head,tail)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result28__;
+    return __result28__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline int wstring_index(unsigned int* str, unsigned int* search_str, int default_value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int __result29__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result29__ = (gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 151,wchar_tp_index(str,search_str,default_value));
+    __result29__ = wchar_tp_index(str,search_str,default_value);
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result29__;
+    return __result29__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline int wstring_rindex(unsigned int* str, unsigned int* search_str, int default_value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int __result30__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result30__ = (gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 157,wchar_tp_rindex(str,search_str,default_value));
+    __result30__ = wchar_tp_rindex(str,search_str,default_value);
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result30__;
+    return __result30__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline unsigned int* wstring_reverse(unsigned int* str){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value21;
 unsigned int* __result31__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value21, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result31__ = __result_obj__ = ((unsigned int*)(right_value21=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 163,wchar_tp_reverse(str))));
+    __result31__ = __result_obj__ = ((unsigned int*)(right_value21=wchar_tp_reverse(str)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result31__;
+    return __result31__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline unsigned int* wstring_multiply(unsigned int* str, int n){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value22;
 unsigned int* __result32__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value22, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result32__ = __result_obj__ = ((unsigned int*)(right_value22=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 169,wchar_tp_multiply(str,n))));
+    __result32__ = __result_obj__ = ((unsigned int*)(right_value22=wchar_tp_multiply(str,n)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result32__;
+    return __result32__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline unsigned int* wstring_printable(unsigned int* str){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value23;
 unsigned int* __result33__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value23, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result33__ = __result_obj__ = ((unsigned int*)(right_value23=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 175,wchar_tp_printable(str))));
+    __result33__ = __result_obj__ = ((unsigned int*)(right_value23=wchar_tp_printable(str)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result33__;
+    return __result33__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline unsigned int wstring_get_hash_key(unsigned int* value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 unsigned int __result34__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result34__ = (gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 197,wchar_tp_get_hash_key(value));
+    __result34__ = wchar_tp_get_hash_key(value);
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result34__;
+    return __result34__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline _Bool string_match_group_strings(char* self, struct come_regex* reg, int count, struct list$1charph* group_strings){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool __result35__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result35__ = (gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 209,charp_match_group_strings(self,reg,count,group_strings));
+    __result35__ = charp_match_group_strings(self,reg,count,group_strings);
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result35__;
+    return __result35__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline int string_index(char* str, char* search_str, int default_value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int __result36__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result36__ = (gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 215,charp_index(str,search_str,default_value));
+    __result36__ = charp_index(str,search_str,default_value);
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result36__;
+    return __result36__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline int string_index_regex(char* self, struct come_regex* reg, int default_value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int __result37__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result37__ = (gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 221,charp_index_regex(self,reg,default_value));
+    __result37__ = charp_index_regex(self,reg,default_value);
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result37__;
+    return __result37__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline char* string_replace(char* self, int index, char c){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value24;
 char* __result38__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value24, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result38__ = __result_obj__ = ((char*)(right_value24=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 228,charp_replace(self,index,c))));
+    __result38__ = __result_obj__ = ((char*)(right_value24=charp_replace(self,index,c)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result38__;
+    return __result38__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline char* string_multiply(char* str, int n){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value25;
 char* __result39__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value25, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result39__ = __result_obj__ = ((char*)(right_value25=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 234,charp_multiply(str,n))));
+    __result39__ = __result_obj__ = ((char*)(right_value25=charp_multiply(str,n)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result39__;
+    return __result39__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline char* string_sub(char* self, struct come_regex* reg, char* replace){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value26;
 char* __result40__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value26, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result40__ = __result_obj__ = ((char*)(right_value26=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 240,charp_sub(self,reg,replace))));
+    __result40__ = __result_obj__ = ((char*)(right_value26=charp_sub(self,reg,replace)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result40__;
+    return __result40__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline char* string_sub_count(char* self, struct come_regex* reg, char* replace, int count){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value27;
 char* __result41__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value27, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result41__ = __result_obj__ = ((char*)(right_value27=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 246,charp_sub_count(self,reg,replace,count))));
+    __result41__ = __result_obj__ = ((char*)(right_value27=charp_sub_count(self,reg,replace,count)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result41__;
+    return __result41__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline struct list$1charph* string_split_str(char* self, char* str){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value28;
 struct list$1charph* __result42__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value28, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result42__ = __result_obj__ = ((struct list$1charph*)(right_value28=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 252,charp_split_str(self,str))));
+    __result42__ = __result_obj__ = ((struct list$1charph*)(right_value28=charp_split_str(self,str)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result42__;
+    return __result42__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline struct list$1charph* string_scan(char* self, struct come_regex* reg){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value29;
 struct list$1charph* __result43__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value29, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result43__ = __result_obj__ = ((struct list$1charph*)(right_value29=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 258,charp_scan(self,reg))));
+    __result43__ = __result_obj__ = ((struct list$1charph*)(right_value29=charp_scan(self,reg)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result43__;
+    return __result43__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline struct list$1charph* string_split(char* self, struct come_regex* reg){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value30;
 struct list$1charph* __result44__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value30, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result44__ = __result_obj__ = ((struct list$1charph*)(right_value30=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 264,charp_split(self,reg))));
+    __result44__ = __result_obj__ = ((struct list$1charph*)(right_value30=charp_split(self,reg)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result44__;
+    return __result44__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline _Bool string_match(char* self, struct come_regex* reg){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool __result45__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result45__ = (gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 270,charp_match(self,reg));
+    __result45__ = charp_match(self,reg);
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result45__;
+    return __result45__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline struct list$1charph* string_split_maxsplit(char* self, struct come_regex* reg, int maxsplit){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value31;
 struct list$1charph* __result46__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value31, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result46__ = __result_obj__ = ((struct list$1charph*)(right_value31=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 276,charp_split_maxsplit(self,reg,maxsplit))));
+    __result46__ = __result_obj__ = ((struct list$1charph*)(right_value31=charp_split_maxsplit(self,reg,maxsplit)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result46__;
+    return __result46__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline int string_rindex_regex_count(char* self, struct come_regex* reg, int count, int default_value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int __result47__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result47__ = (gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 282,charp_rindex_regex_count(self,reg,count,default_value));
+    __result47__ = charp_rindex_regex_count(self,reg,count,default_value);
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result47__;
+    return __result47__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline _Bool string_match_count(char* self, struct come_regex* reg, int count){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool __result48__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result48__ = (gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 288,charp_match_count(self,reg,count));
+    __result48__ = charp_match_count(self,reg,count);
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result48__;
+    return __result48__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline char* string_sub_block(char* self, struct come_regex* reg, void* parent, char* (*block)(void*,char*,struct list$1charph*)){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value32;
 char* __result49__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value32, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result49__ = __result_obj__ = ((char*)(right_value32=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 294,charp_sub_block(self,reg,parent,block))));
+    __result49__ = __result_obj__ = ((char*)(right_value32=charp_sub_block(self,reg,parent,block)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result49__;
+    return __result49__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline char* string_sub_block_count(char* self, struct come_regex* reg, int count, void* parent, char* (*block)(void*,char*,struct list$1charph*)){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value33;
 char* __result50__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value33, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result50__ = __result_obj__ = ((char*)(right_value33=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 300,charp_sub_block_count(self,reg,count,parent,block))));
+    __result50__ = __result_obj__ = ((char*)(right_value33=charp_sub_block_count(self,reg,count,parent,block)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result50__;
+    return __result50__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 static inline char* charp_chomp(char* str){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value35;
 char* __result52__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value35, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result52__ = __result_obj__ = ((char*)(right_value35=(gCallerSName[0] = "./comelang2-str.h", gCallerSLine[0] = 318,string_chomp(str))));
+    __result52__ = __result_obj__ = ((char*)(right_value35=string_chomp(str)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result52__;
+    return __result52__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 // body function
 
@@ -3132,88 +2996,76 @@ memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __
 
 
 static void smart_pointer$1charp_finalize(struct smart_pointer$1char* self){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool _if_conditional1;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
         if(_if_conditional1=self!=((void*)0)&&((struct smart_pointer$1char*)come_null_check(self, "smart_pointer$1charp_finalize", 1))->memory!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional1) {
             if(((struct smart_pointer$1char*)come_null_check(self, "smart_pointer$1charp_finalize", 0))->memory && !__freed_obj__) { come_call_finalizer(buffer_finalize,((struct smart_pointer$1char*)come_null_check(self, "smart_pointer$1charp_finalize", 0))->memory, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 
 
 static void smart_pointer$1shortp_finalize(struct smart_pointer$1short* self){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool _if_conditional2;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
         if(_if_conditional2=self!=((void*)0)&&((struct smart_pointer$1short*)come_null_check(self, "smart_pointer$1shortp_finalize", 1))->memory!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional2) {
             if(((struct smart_pointer$1short*)come_null_check(self, "smart_pointer$1shortp_finalize", 0))->memory && !__freed_obj__) { come_call_finalizer(buffer_finalize,((struct smart_pointer$1short*)come_null_check(self, "smart_pointer$1shortp_finalize", 0))->memory, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 
 static void smart_pointer$1intp_finalize(struct smart_pointer$1int* self){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool _if_conditional3;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
         if(_if_conditional3=self!=((void*)0)&&((struct smart_pointer$1int*)come_null_check(self, "smart_pointer$1intp_finalize", 1))->memory!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional3) {
             if(((struct smart_pointer$1int*)come_null_check(self, "smart_pointer$1intp_finalize", 0))->memory && !__freed_obj__) { come_call_finalizer(buffer_finalize,((struct smart_pointer$1int*)come_null_check(self, "smart_pointer$1intp_finalize", 0))->memory, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 
 static void smart_pointer$1longp_finalize(struct smart_pointer$1long* self){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool _if_conditional4;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
         if(_if_conditional4=self!=((void*)0)&&((struct smart_pointer$1long*)come_null_check(self, "smart_pointer$1longp_finalize", 1))->memory!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional4) {
             if(((struct smart_pointer$1long*)come_null_check(self, "smart_pointer$1longp_finalize", 0))->memory && !__freed_obj__) { come_call_finalizer(buffer_finalize,((struct smart_pointer$1long*)come_null_check(self, "smart_pointer$1longp_finalize", 0))->memory, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 
 
@@ -3256,13 +3108,11 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 
 
 struct come_regex* come_regex_initialize(struct come_regex* self, char* str, _Bool ignore_case, _Bool multiline, _Bool global, _Bool extended, _Bool dotall, _Bool anchored, _Bool dollar_endonly, _Bool ungreedy){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 const char* err_5;
 int erro_ofs_6;
 int options_7;
@@ -3275,15 +3125,16 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&erro_ofs_6, 0, sizeof(int));
 memset(&options_7, 0, sizeof(int));
 memset(&right_value36, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __freed_obj__ = 0;
     __freed_obj__ = 0;
     options_7=2048|(ignore_case?1:0)|(multiline?2:0)|(extended?8:0)|(dotall?4:0)|(dollar_endonly?32:0)|(ungreedy?512:0);
     __freed_obj__ = 0;
     __dec_obj6=((struct come_regex*)come_null_check(self, "libcomelang2-str.c", 24))->str;
-    ((struct come_regex*)come_null_check(self, "libcomelang2-str.c", 24))->str=(char*)come_increment_ref_count(((char*)(right_value36=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 24,__builtin_string(str)))));
+    ((struct come_regex*)come_null_check(self, "libcomelang2-str.c", 24))->str=(char*)come_increment_ref_count(((char*)(right_value36=__builtin_string(str))));
     if(__dec_obj6) { __dec_obj6 = come_decrement_ref_count(__dec_obj6, (void*)0, (void*)0, 0,0,0); }
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value36);
     if(right_value36 && right_value36 != __result_obj__ && !__freed_obj__) { right_value36 = come_decrement_ref_count(right_value36, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value36;
     __freed_obj__ = 0;
     ((struct come_regex*)come_null_check(self, "libcomelang2-str.c", 26))->ignore_case=ignore_case;
     __freed_obj__ = 0;
@@ -3302,37 +3153,34 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     ((struct come_regex*)come_null_check(self, "libcomelang2-str.c", 34))->options=options_7;
     __freed_obj__ = 0;
-    ((struct come_regex*)come_null_check(self, "libcomelang2-str.c", 36))->re=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 36,pcre_compile(str,options_7,&err_5,&erro_ofs_6,((void*)0)));
+    ((struct come_regex*)come_null_check(self, "libcomelang2-str.c", 36))->re=pcre_compile(str,options_7,&err_5,&erro_ofs_6,((void*)0));
     __freed_obj__ = 0;
     if(_if_conditional5=((struct come_regex*)come_null_check(self, "libcomelang2-str.c", 49))->re==((void*)0),    __freed_obj__ = 0, 
     _if_conditional5) {
-        (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 39,printf("regex error (%s)\n",str));
+        printf("regex error (%s)\n",str);
         __freed_obj__ = 0;
-        (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 40,exit(1));
+        exit(1);
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
     __result53__ = __result_obj__ = self;
     if(self && !__freed_obj__) { come_call_finalizer(come_regex_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result53__;
+    return __result53__;
     __freed_obj__ = 0;
     if(self && !__freed_obj__) { come_call_finalizer(come_regex_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 void come_regex_finalize(struct come_regex* reg){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool _if_conditional6;
 _Bool _if_conditional7;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     if(_if_conditional6=reg&&((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 57))->str,    __freed_obj__ = 0, 
     _if_conditional6) {
         if(((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 55))->str && !__freed_obj__) { ((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 55))->str = come_decrement_ref_count(((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 55))->str, (void*)0, (void*)0, 0, 0, 0); }
@@ -3341,20 +3189,18 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     if(_if_conditional7=reg&&((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 60))->re,    __freed_obj__ = 0, 
     _if_conditional7) {
-        (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 58,free(((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 58))->re));
+        free(((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 58))->re);
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 struct come_regex* charp_to_regex(char* self, _Bool ignore_case, _Bool multiline, _Bool global, _Bool extended, _Bool dotall, _Bool anchored, _Bool dollar_endonly, _Bool ungreedy){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value37;
 void* right_value38;
 struct come_regex* __result54__;
@@ -3362,22 +3208,21 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value37, 0, sizeof(void*));
 memset(&right_value38, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result54__ = __result_obj__ = ((struct come_regex*)(right_value38=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 64,come_regex_initialize((struct come_regex*)come_increment_ref_count(((struct come_regex*)(right_value37=(struct come_regex*)come_calloc(1, sizeof(struct come_regex)*(1), "libcomelang2-str.c", 64)))),self,ignore_case,multiline,global,extended,dotall,anchored,dollar_endonly,ungreedy))));
+    __result54__ = __result_obj__ = ((struct come_regex*)(right_value38=come_regex_initialize((struct come_regex*)come_increment_ref_count(((struct come_regex*)(right_value37=(struct come_regex*)come_calloc(1, sizeof(struct come_regex)*(1), "libcomelang2-str.c", 64)))),self,ignore_case,multiline,global,extended,dotall,anchored,dollar_endonly,ungreedy)));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value37);
     if(right_value37 && right_value37 != __result_obj__ && !__freed_obj__) { come_call_finalizer(come_regex_finalize,right_value37, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value37;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result54__;
+    return __result54__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 struct come_regex* string_to_regex(char* self, _Bool ignore_case, _Bool multiline, _Bool global, _Bool extended, _Bool dotall, _Bool anchored, _Bool dollar_endonly, _Bool ungreedy){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value39;
 void* right_value40;
 struct come_regex* __result55__;
@@ -3385,22 +3230,21 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value39, 0, sizeof(void*));
 memset(&right_value40, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result55__ = __result_obj__ = ((struct come_regex*)(right_value40=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 69,come_regex_initialize((struct come_regex*)come_increment_ref_count(((struct come_regex*)(right_value39=(struct come_regex*)come_calloc(1, sizeof(struct come_regex)*(1), "libcomelang2-str.c", 69)))),self,ignore_case,multiline,global,extended,dotall,anchored,dollar_endonly,ungreedy))));
+    __result55__ = __result_obj__ = ((struct come_regex*)(right_value40=come_regex_initialize((struct come_regex*)come_increment_ref_count(((struct come_regex*)(right_value39=(struct come_regex*)come_calloc(1, sizeof(struct come_regex)*(1), "libcomelang2-str.c", 69)))),self,ignore_case,multiline,global,extended,dotall,anchored,dollar_endonly,ungreedy)));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value39);
     if(right_value39 && right_value39 != __result_obj__ && !__freed_obj__) { come_call_finalizer(come_regex_finalize,right_value39, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value39;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result55__;
+    return __result55__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 struct come_regex* come_regex_clone(struct come_regex* reg){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool _if_conditional8;
 struct come_regex* __result56__;
 void* right_value41;
@@ -3417,22 +3261,25 @@ memset(&right_value41, 0, sizeof(void*));
 memset(&result_8, 0, sizeof(struct come_regex*));
 memset(&right_value42, 0, sizeof(void*));
 memset(&erro_ofs_10, 0, sizeof(int));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     if(_if_conditional8=reg==((void*)0),    __freed_obj__ = 0, 
     _if_conditional8) {
         __result56__ = __result_obj__ = ((void*)0);
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result56__;
+        return __result56__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
     result_8=(struct come_regex*)come_increment_ref_count(((struct come_regex*)(right_value41=(struct come_regex*)come_calloc(1, sizeof(struct come_regex)*(1), "libcomelang2-str.c", 79))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value41);
     if(right_value41 && right_value41 != __result_obj__ && !__freed_obj__) { come_call_finalizer(come_regex_finalize,right_value41, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value41;
     __freed_obj__ = 0;
     __dec_obj7=((struct come_regex*)come_null_check(result_8, "libcomelang2-str.c", 81))->str;
-    ((struct come_regex*)come_null_check(result_8, "libcomelang2-str.c", 81))->str=(char*)come_increment_ref_count(((char*)(right_value42=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 81,string_clone(((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 81))->str)))));
+    ((struct come_regex*)come_null_check(result_8, "libcomelang2-str.c", 81))->str=(char*)come_increment_ref_count(((char*)(right_value42=string_clone(((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 81))->str))));
     if(__dec_obj7) { __dec_obj7 = come_decrement_ref_count(__dec_obj7, (void*)0, (void*)0, 0,0,0); }
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value42);
     if(right_value42 && right_value42 != __result_obj__ && !__freed_obj__) { right_value42 = come_decrement_ref_count(right_value42, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value42;
     __freed_obj__ = 0;
     ((struct come_regex*)come_null_check(result_8, "libcomelang2-str.c", 83))->ignore_case=((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 83))->ignore_case;
     __freed_obj__ = 0;
@@ -3454,52 +3301,47 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     __freed_obj__ = 0;
     __freed_obj__ = 0;
-    ((struct come_regex*)come_null_check(result_8, "libcomelang2-str.c", 97))->re=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 97,pcre_compile(((struct come_regex*)come_null_check(result_8, "libcomelang2-str.c", 97))->str,((struct come_regex*)come_null_check(result_8, "libcomelang2-str.c", 97))->options,&err_9,&erro_ofs_10,((void*)0)));
+    ((struct come_regex*)come_null_check(result_8, "libcomelang2-str.c", 97))->re=pcre_compile(((struct come_regex*)come_null_check(result_8, "libcomelang2-str.c", 97))->str,((struct come_regex*)come_null_check(result_8, "libcomelang2-str.c", 97))->options,&err_9,&erro_ofs_10,((void*)0));
     __freed_obj__ = 0;
     if(_if_conditional9=((struct come_regex*)come_null_check(result_8, "libcomelang2-str.c", 104))->re==((void*)0),    __freed_obj__ = 0, 
     _if_conditional9) {
-        (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 100,printf("regex compile error(%s)\n",((struct come_regex*)come_null_check(result_8, "libcomelang2-str.c", 100))->str));
+        printf("regex compile error(%s)\n",((struct come_regex*)come_null_check(result_8, "libcomelang2-str.c", 100))->str);
         __freed_obj__ = 0;
-        (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 101,exit(1));
+        exit(1);
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
     __result57__ = __result_obj__ = result_8;
     if(result_8 && !__freed_obj__) { come_call_finalizer(come_regex_finalize,result_8, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result57__;
+    return __result57__;
     __freed_obj__ = 0;
     if(result_8 && !__freed_obj__) { come_call_finalizer(come_regex_finalize,result_8, (void*)0, (void*)0, 0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 char* come_regex_to_string(struct come_regex* regex){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value43;
 char* __result58__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value43, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result58__ = __result_obj__ = ((char*)(right_value43=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 109,__builtin_string(((struct come_regex*)come_null_check(regex, "libcomelang2-str.c", 109))->str))));
+    __result58__ = __result_obj__ = ((char*)(right_value43=__builtin_string(((struct come_regex*)come_null_check(regex, "libcomelang2-str.c", 109))->str)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result58__;
+    return __result58__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 char* string_lower_case(char* str){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value44;
 char* result_11;
 int i_12;
@@ -3511,13 +3353,14 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value44, 0, sizeof(void*));
 memset(&result_11, 0, sizeof(char*));
 memset(&i_12, 0, sizeof(int));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    result_11=(char*)come_increment_ref_count(((char*)(right_value44=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 114,__builtin_string(str)))));
+    result_11=(char*)come_increment_ref_count(((char*)(right_value44=__builtin_string(str))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value44);
     if(right_value44 && right_value44 != __result_obj__ && !__freed_obj__) { right_value44 = come_decrement_ref_count(right_value44, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value44;
     __freed_obj__ = 0;
     for(
     i_12=0 ,    __freed_obj__ = 0, 
-    0;    _for_condtionalA1=    i_12<(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 121,strlen(str)) ,    __freed_obj__ = 0, 
+    0;    _for_condtionalA1=    i_12<strlen(str) ,    __freed_obj__ = 0, 
     _for_condtionalA1;    i_12++ ,    __freed_obj__ = 0, 
     0    ){
         if(_if_conditional10=str[i_12]>=65&&str[i_12]<=90,        __freed_obj__ = 0, 
@@ -3531,19 +3374,17 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __result59__ = __result_obj__ = result_11;
     if(result_11 && !__freed_obj__) { result_11 = come_decrement_ref_count(result_11, (void*)0, (void*)0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result59__;
+    return __result59__;
     __freed_obj__ = 0;
     if(result_11 && !__freed_obj__) { result_11 = come_decrement_ref_count(result_11, (void*)0, (void*)0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 char* string_upper_case(char* str){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value45;
 char* result_13;
 int i_14;
@@ -3555,13 +3396,14 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value45, 0, sizeof(void*));
 memset(&result_13, 0, sizeof(char*));
 memset(&i_14, 0, sizeof(int));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    result_13=(char*)come_increment_ref_count(((char*)(right_value45=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 126,__builtin_string(str)))));
+    result_13=(char*)come_increment_ref_count(((char*)(right_value45=__builtin_string(str))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value45);
     if(right_value45 && right_value45 != __result_obj__ && !__freed_obj__) { right_value45 = come_decrement_ref_count(right_value45, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value45;
     __freed_obj__ = 0;
     for(
     i_14=0 ,    __freed_obj__ = 0, 
-    0;    _for_condtionalA2=    i_14<(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 133,strlen(str)) ,    __freed_obj__ = 0, 
+    0;    _for_condtionalA2=    i_14<strlen(str) ,    __freed_obj__ = 0, 
     _for_condtionalA2;    i_14++ ,    __freed_obj__ = 0, 
     0    ){
         if(_if_conditional11=str[i_14]>=97&&str[i_14]<=122,        __freed_obj__ = 0, 
@@ -3575,19 +3417,17 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __result60__ = __result_obj__ = result_13;
     if(result_13 && !__freed_obj__) { result_13 = come_decrement_ref_count(result_13, (void*)0, (void*)0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result60__;
+    return __result60__;
     __freed_obj__ = 0;
     if(result_13 && !__freed_obj__) { result_13 = come_decrement_ref_count(result_13, (void*)0, (void*)0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 unsigned int* wchar_tp_substring(unsigned int* str, int head, int tail){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool _if_conditional12;
 void* right_value46;
 unsigned int* __result61__;
@@ -3617,17 +3457,16 @@ memset(&right_value48, 0, sizeof(void*));
 memset(&right_value49, 0, sizeof(void*));
 memset(&right_value50, 0, sizeof(void*));
 memset(&result_16, 0, sizeof(unsigned int*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __freed_obj__ = 0;
     if(_if_conditional12=str==((void*)0),    __freed_obj__ = 0, 
     _if_conditional12) {
-        __result61__ = __result_obj__ = ((unsigned int*)(right_value46=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 141,__builtin_wstring(""))));
+        __result61__ = __result_obj__ = ((unsigned int*)(right_value46=__builtin_wstring("")));
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result61__;
+        return __result61__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    len_15=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 144,wcslen(str));
+    len_15=wcslen(str);
     __freed_obj__ = 0;
     if(_if_conditional13=head<0,    __freed_obj__ = 0, 
     _if_conditional13) {
@@ -3643,9 +3482,9 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     if(_if_conditional15=head>tail,    __freed_obj__ = 0, 
     _if_conditional15) {
-        __result62__ = __result_obj__ = ((unsigned int*)(right_value47=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 154,__builtin_wstring(""))));
+        __result62__ = __result_obj__ = ((unsigned int*)(right_value47=__builtin_wstring("")));
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result62__;
+        return __result62__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
@@ -3663,43 +3502,43 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     if(_if_conditional18=head==tail,    __freed_obj__ = 0, 
     _if_conditional18) {
-        __result63__ = __result_obj__ = ((unsigned int*)(right_value48=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 166,__builtin_wstring(""))));
+        __result63__ = __result_obj__ = ((unsigned int*)(right_value48=__builtin_wstring("")));
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result63__;
+        return __result63__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
     if(_if_conditional19=tail-head+1<1,    __freed_obj__ = 0, 
     _if_conditional19) {
-        __result64__ = __result_obj__ = ((unsigned int*)(right_value49=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 170,__builtin_wstring(""))));
+        __result64__ = __result_obj__ = ((unsigned int*)(right_value49=__builtin_wstring("")));
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result64__;
+        return __result64__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
     result_16=(unsigned int*)come_increment_ref_count(((unsigned int*)(right_value50=(unsigned int*)come_calloc(1, sizeof(unsigned int)*(1*(tail-head+1)), "libcomelang2-str.c", 173))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value50);
     if(right_value50 && right_value50 != __result_obj__ && !__freed_obj__) { right_value50 = come_decrement_ref_count(right_value50, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value50;
     __freed_obj__ = 0;
-    (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 175,memcpy(result_16,str+head,sizeof(unsigned int)*(tail-head)));
+    memcpy(result_16,str+head,sizeof(unsigned int)*(tail-head));
     __freed_obj__ = 0;
     result_16[tail-head]=0;
     __freed_obj__ = 0;
     __result65__ = __result_obj__ = result_16;
     if(result_16 && !__freed_obj__) { result_16 = come_decrement_ref_count(result_16, (void*)0, (void*)0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result65__;
+    return __result65__;
     __freed_obj__ = 0;
     if(result_16 && !__freed_obj__) { result_16 = come_decrement_ref_count(result_16, (void*)0, (void*)0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 unsigned int* __builtin_wstring(char* str){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool _if_conditional20;
 unsigned int* __result66__;
 int len_17;
@@ -3714,21 +3553,22 @@ memset(&len_17, 0, sizeof(int));
 memset(&right_value51, 0, sizeof(void*));
 memset(&wstr_18, 0, sizeof(unsigned int*));
 memset(&ret_19, 0, sizeof(int));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     if(_if_conditional20=str==((void*)0),    __freed_obj__ = 0, 
     _if_conditional20) {
         __result66__ = __result_obj__ = ((void*)0);
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result66__;
+        return __result66__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    len_17=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 186,strlen(str));
+    len_17=strlen(str);
     __freed_obj__ = 0;
     wstr_18=(unsigned int*)come_increment_ref_count(((unsigned int*)(right_value51=(unsigned int*)come_calloc(1, sizeof(unsigned int)*(1*(len_17+1)), "libcomelang2-str.c", 188))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value51);
     if(right_value51 && right_value51 != __result_obj__ && !__freed_obj__) { right_value51 = come_decrement_ref_count(right_value51, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value51;
     __freed_obj__ = 0;
-    ret_19=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 190,mbstowcs(wstr_18,str,len_17+1));
+    ret_19=mbstowcs(wstr_18,str,len_17+1);
     __freed_obj__ = 0;
     wstr_18[ret_19]=0;
     __freed_obj__ = 0;
@@ -3741,19 +3581,17 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __result67__ = __result_obj__ = wstr_18;
     if(wstr_18 && !__freed_obj__) { wstr_18 = come_decrement_ref_count(wstr_18, (void*)0, (void*)0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result67__;
+    return __result67__;
     __freed_obj__ = 0;
     if(wstr_18 && !__freed_obj__) { wstr_18 = come_decrement_ref_count(wstr_18, (void*)0, (void*)0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 int charp_index_count(char* str, char* search_str, int count, int default_value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int n_20;
 int len_21;
 int i_22;
@@ -3773,17 +3611,16 @@ memset(&len_21, 0, sizeof(int));
 memset(&i_22, 0, sizeof(int));
 memset(&len2_23, 0, sizeof(int));
 memset(&j_24, 0, sizeof(int));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     n_20=0;
     __freed_obj__ = 0;
-    len_21=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 203,strlen(str));
+    len_21=strlen(str);
     __freed_obj__ = 0;
     for(
     i_22=0 ,    __freed_obj__ = 0, 
     0;    _for_condtionalA3=    i_22<len_21 ,    __freed_obj__ = 0, 
     _for_condtionalA3;    i_22++ ,    __freed_obj__ = 0, 
     0    ){
-        len2_23=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 205,strlen(search_str));
+        len2_23=strlen(search_str);
         __freed_obj__ = 0;
         __freed_obj__ = 0;
         for(
@@ -3807,7 +3644,7 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
             _if_conditional24) {
                 __result68__ = i_22;
                 __freed_obj__ = 0;
-                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result68__;
+                return __result68__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -3817,18 +3654,16 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     __result69__ = default_value;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result69__;
+    return __result69__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 int charp_index_regex_count(char* self, struct come_regex* reg, int count, int default_value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int ovec_max_25;
 int result_29;
 int offset_30;
@@ -3865,7 +3700,6 @@ memset(&len_38, 0, sizeof(int));
 memset(&regex_result_39, 0, sizeof(int));
 memset(&i_40, 0, sizeof(int));
 memset(&i_41, 0, sizeof(int));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     ovec_max_25=16;
     __freed_obj__ = 0;
     int start_26[ovec_max_25];
@@ -3895,9 +3729,9 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _while_condtional1) {
         options_37=2097152;
         __freed_obj__ = 0;
-        len_38=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 248,strlen(self));
+        len_38=strlen(self);
         __freed_obj__ = 0;
-        regex_result_39=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 249,pcre_exec(re_35,(struct pcre_extra*)0,self,len_38,offset_30,options_37,ovec_value_28,ovec_max_25*3));
+        regex_result_39=pcre_exec(re_35,(struct pcre_extra*)0,self,len_38,offset_30,options_37,ovec_value_28,ovec_max_25*3);
         __freed_obj__ = 0;
         for(
         i_40=0 ,        __freed_obj__ = 0, 
@@ -3949,18 +3783,16 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     __result70__ = result_29;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result70__;
+    return __result70__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 int charp_rindex(char* str, char* search_str, int default_value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int len_42;
 char* p_43;
 _Bool _while_condtional2;
@@ -3971,19 +3803,18 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&len_42, 0, sizeof(int));
 memset(&p_43, 0, sizeof(char*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __freed_obj__ = 0;
-    len_42=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 287,strlen(search_str));
+    len_42=strlen(search_str);
     __freed_obj__ = 0;
-    p_43=str+(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 288,strlen(str))-len_42;
+    p_43=str+strlen(str)-len_42;
     __freed_obj__ = 0;
     while(_while_condtional2=p_43>=str,    __freed_obj__ = 0, 
     _while_condtional2) {
-        if(_if_conditional28=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 295,strncmp(p_43,search_str,len_42))==0,        __freed_obj__ = 0, 
+        if(_if_conditional28=strncmp(p_43,search_str,len_42)==0,        __freed_obj__ = 0, 
         _if_conditional28) {
             __result71__ = p_43-str;
             __freed_obj__ = 0;
-            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result71__;
+            return __result71__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
@@ -3993,18 +3824,16 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     __result72__ = default_value;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result72__;
+    return __result72__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 int charp_rindex_regex(char* self, struct come_regex* reg, int default_value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 const char* err_44;
 int erro_ofs_45;
 int options_46;
@@ -4041,7 +3870,6 @@ memset(&len_57, 0, sizeof(int));
 memset(&regex_result_58, 0, sizeof(int));
 memset(&i_59, 0, sizeof(int));
 memset(&i_60, 0, sizeof(int));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __freed_obj__ = 0;
     __freed_obj__ = 0;
     options_46=((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 306))->options;
@@ -4050,8 +3878,10 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     re_48=((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 309))->re;
     __freed_obj__ = 0;
-    self2_49=(char*)come_increment_ref_count(((char*)(right_value52=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 311,charp_reverse(((char*)come_null_check(self, "libcomelang2-str.c", 311)))))));
+    self2_49=(char*)come_increment_ref_count(((char*)(right_value52=charp_reverse(((char*)come_null_check(self, "libcomelang2-str.c", 311))))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value52);
     if(right_value52 && right_value52 != __result_obj__ && !__freed_obj__) { right_value52 = come_decrement_ref_count(right_value52, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value52;
     __freed_obj__ = 0;
     ovec_max_50=16;
     __freed_obj__ = 0;
@@ -4072,9 +3902,9 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _while_condtional3) {
         options_56=2097152;
         __freed_obj__ = 0;
-        len_57=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 324,strlen(self2_49));
+        len_57=strlen(self2_49);
         __freed_obj__ = 0;
-        regex_result_58=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 325,pcre_exec(re_48,(struct pcre_extra*)0,self2_49,len_57,offset_55,options_56,ovec_value_53,ovec_max_50*3));
+        regex_result_58=pcre_exec(re_48,(struct pcre_extra*)0,self2_49,len_57,offset_55,options_56,ovec_value_53,ovec_max_50*3);
         __freed_obj__ = 0;
         for(
         i_59=0 ,        __freed_obj__ = 0, 
@@ -4096,7 +3926,7 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         __freed_obj__ = 0;
         if(_if_conditional29=regex_result_58==1||regex_result_58>0,        __freed_obj__ = 0, 
         _if_conditional29) {
-            result_54=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 337,strlen(self))-1-start_51[0];
+            result_54=strlen(self)-1-start_51[0];
             __freed_obj__ = 0;
             break;
             __freed_obj__ = 0;
@@ -4112,19 +3942,17 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __result73__ = result_54;
     if(self2_49 && !__freed_obj__) { self2_49 = come_decrement_ref_count(self2_49, (void*)0, (void*)0, 0, 0, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result73__;
+    return __result73__;
     __freed_obj__ = 0;
     if(self2_49 && !__freed_obj__) { self2_49 = come_decrement_ref_count(self2_49, (void*)0, (void*)0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 int charp_rindex_count(char* str, char* search_str, int count, int default_value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int len_61;
 char* p_62;
 int n_63;
@@ -4138,17 +3966,16 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&len_61, 0, sizeof(int));
 memset(&p_62, 0, sizeof(char*));
 memset(&n_63, 0, sizeof(int));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __freed_obj__ = 0;
-    len_61=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 353,strlen(search_str));
+    len_61=strlen(search_str);
     __freed_obj__ = 0;
-    p_62=str+(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 354,strlen(str))-len_61;
+    p_62=str+strlen(str)-len_61;
     __freed_obj__ = 0;
     n_63=0;
     __freed_obj__ = 0;
     while(_while_condtional4=p_62>=str,    __freed_obj__ = 0, 
     _while_condtional4) {
-        if(_if_conditional30=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 366,strncmp(p_62,search_str,len_61))==0,        __freed_obj__ = 0, 
+        if(_if_conditional30=strncmp(p_62,search_str,len_61)==0,        __freed_obj__ = 0, 
         _if_conditional30) {
             n_63++;
             __freed_obj__ = 0;
@@ -4156,7 +3983,7 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
             _if_conditional31) {
                 __result74__ = p_62-str;
                 __freed_obj__ = 0;
-                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result74__;
+                return __result74__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -4168,18 +3995,16 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     __result75__ = default_value;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result75__;
+    return __result75__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 struct list$1charph* charp_scan_block(char* self, struct come_regex* reg, void* parent, char* (*block)(void*,char*,struct list$1charph*)){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value53;
 void* right_value54;
 struct list$1charph* result_66;
@@ -4258,10 +4083,13 @@ memset(&right_value65, 0, sizeof(void*));
 memset(&match_string_91, 0, sizeof(char*));
 memset(&right_value66, 0, sizeof(void*));
 memset(&str2_92, 0, sizeof(char*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    result_66=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value54=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 374,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value53=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 374))), "libcomelang2-str.c", 374))))))));
+    result_66=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value54=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value53=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 374))), "libcomelang2-str.c", 374)))))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value53);
     if(right_value53 && right_value53 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value53, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value53;
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value54);
     if(right_value54 && right_value54 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value54, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value54;
     __freed_obj__ = 0;
     offset_67=0;
     __freed_obj__ = 0;
@@ -4288,9 +4116,9 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _while_condtional6) {
         options_77=2097152;
         __freed_obj__ = 0;
-        len_78=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 393,strlen(self));
+        len_78=strlen(self);
         __freed_obj__ = 0;
-        regex_result_79=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 394,pcre_exec(re_76,(struct pcre_extra*)0,self,len_78,offset_67,options_77,ovec_value_71,ovec_max_68*3));
+        regex_result_79=pcre_exec(re_76,(struct pcre_extra*)0,self,len_78,offset_67,options_77,ovec_value_71,ovec_max_68*3);
         __freed_obj__ = 0;
         for(
         i_80=0 ,        __freed_obj__ = 0, 
@@ -4312,15 +4140,23 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         __freed_obj__ = 0;
         if(_if_conditional33=regex_result_79==1,        __freed_obj__ = 0, 
         _if_conditional33) {
-            str_82=(char*)come_increment_ref_count(((char*)(right_value55=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 406,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 406)),start_69[0],end_70[0])))));
+            str_82=(char*)come_increment_ref_count(((char*)(right_value55=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 406)),start_69[0],end_70[0]))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value55);
             if(right_value55 && right_value55 != __result_obj__ && !__freed_obj__) { right_value55 = come_decrement_ref_count(right_value55, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[0] = right_value55;
             __freed_obj__ = 0;
-            group_strings_83=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value57=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 408,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value56=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 408))), "libcomelang2-str.c", 408))))))));
+            group_strings_83=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value57=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value56=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 408))), "libcomelang2-str.c", 408)))))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value56);
             if(right_value56 && right_value56 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value56, (void*)0, (void*)0, 0, 1, 0, 0); }
+            __right_value_freed_obj[1] = right_value56;
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value57);
             if(right_value57 && right_value57 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value57, (void*)0, (void*)0, 0, 1, 0, 0); }
+            __right_value_freed_obj[2] = right_value57;
             __freed_obj__ = 0;
             str2_84=(char*)come_increment_ref_count(((char*)(right_value58=block(parent,str_82,group_strings_83))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value58);
             if(right_value58 && right_value58 != __result_obj__ && !__freed_obj__) { right_value58 = come_decrement_ref_count(right_value58, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[3] = right_value58;
             __freed_obj__ = 0;
             if(_if_conditional34=((struct sDummyCurrentStack*)come_null_check(((struct sDummyCurrentStack*)parent), "libcomelang2-str.c", 416))->__method_block_result_kind__!=0,            __freed_obj__ = 0, 
             _if_conditional34) {
@@ -4330,11 +4166,11 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
                 if(str2_84 && !__freed_obj__) { str2_84 = come_decrement_ref_count(str2_84, (void*)0, (void*)0, 0, 0, 0); }
                 if(result_66 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_66, (void*)0, (void*)0, 0, 0, 1, 0); }
                 __freed_obj__ = 0;
-                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result77__;
+                return __result77__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 416,list$1charph_push_back(((struct list$1charph*)come_null_check(result_66, "libcomelang2-str.c", 416)),(char*)come_increment_ref_count(str2_84)));
+            list$1charph_push_back(((struct list$1charph*)come_null_check(result_66, "libcomelang2-str.c", 416)),(char*)come_increment_ref_count(str2_84));
             __freed_obj__ = 0;
             if(_if_conditional37=offset_67==end_70[0],            __freed_obj__ = 0, 
             _if_conditional37) {
@@ -4353,28 +4189,38 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         else {
             if(_if_conditional38=regex_result_79>1,            __freed_obj__ = 0, 
             _if_conditional38) {
-                str_88=(char*)come_increment_ref_count(((char*)(right_value62=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 427,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 427)),start_69[0],end_70[0])))));
+                str_88=(char*)come_increment_ref_count(((char*)(right_value62=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 427)),start_69[0],end_70[0]))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value62);
                 if(right_value62 && right_value62 != __result_obj__ && !__freed_obj__) { right_value62 = come_decrement_ref_count(right_value62, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[0] = right_value62;
                 __freed_obj__ = 0;
-                group_strings_89=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value64=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 429,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value63=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 429))), "libcomelang2-str.c", 429))))))));
+                group_strings_89=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value64=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value63=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 429))), "libcomelang2-str.c", 429)))))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value63);
                 if(right_value63 && right_value63 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value63, (void*)0, (void*)0, 0, 1, 0, 0); }
+                __right_value_freed_obj[1] = right_value63;
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value64);
                 if(right_value64 && right_value64 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value64, (void*)0, (void*)0, 0, 1, 0, 0); }
+                __right_value_freed_obj[2] = right_value64;
                 __freed_obj__ = 0;
                 for(
                 i_90=1 ,                __freed_obj__ = 0, 
                 0;                _for_condtionalA11=                i_90<regex_result_79 ,                __freed_obj__ = 0, 
                 _for_condtionalA11;                i_90++ ,                __freed_obj__ = 0, 
                 0                ){
-                    match_string_91=(char*)come_increment_ref_count(((char*)(right_value65=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 431,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 431)),start_69[i_90],end_70[i_90])))));
+                    match_string_91=(char*)come_increment_ref_count(((char*)(right_value65=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 431)),start_69[i_90],end_70[i_90]))));
+                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value65);
                     if(right_value65 && right_value65 != __result_obj__ && !__freed_obj__) { right_value65 = come_decrement_ref_count(right_value65, (void*)0, (void*)0, 1, 0, 0); }
+                    __right_value_freed_obj[0] = right_value65;
                     __freed_obj__ = 0;
-                    (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 432,list$1charph_push_back(((struct list$1charph*)come_null_check(group_strings_89, "libcomelang2-str.c", 432)),(char*)come_increment_ref_count(match_string_91)));
+                    list$1charph_push_back(((struct list$1charph*)come_null_check(group_strings_89, "libcomelang2-str.c", 432)),(char*)come_increment_ref_count(match_string_91));
                     __freed_obj__ = 0;
                     if(match_string_91 && !__freed_obj__) { match_string_91 = come_decrement_ref_count(match_string_91, (void*)0, (void*)0, 0, 0, 0); }
                 }
                 __freed_obj__ = 0;
                 str2_92=(char*)come_increment_ref_count(((char*)(right_value66=block(parent,str_88,group_strings_89))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value66);
                 if(right_value66 && right_value66 != __result_obj__ && !__freed_obj__) { right_value66 = come_decrement_ref_count(right_value66, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[3] = right_value66;
                 __freed_obj__ = 0;
                 if(_if_conditional39=((struct sDummyCurrentStack*)come_null_check(((struct sDummyCurrentStack*)parent), "libcomelang2-str.c", 441))->__method_block_result_kind__!=0,                __freed_obj__ = 0, 
                 _if_conditional39) {
@@ -4384,11 +4230,11 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
                     if(str2_92 && !__freed_obj__) { str2_92 = come_decrement_ref_count(str2_92, (void*)0, (void*)0, 0, 0, 0); }
                     if(result_66 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_66, (void*)0, (void*)0, 0, 0, 1, 0); }
                     __freed_obj__ = 0;
-                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                    return __result79__;
+                    return __result79__;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 441,list$1charph_push_back(((struct list$1charph*)come_null_check(result_66, "libcomelang2-str.c", 441)),(char*)come_increment_ref_count(str2_92)));
+                list$1charph_push_back(((struct list$1charph*)come_null_check(result_66, "libcomelang2-str.c", 441)),(char*)come_increment_ref_count(str2_92));
                 __freed_obj__ = 0;
                 if(_if_conditional40=offset_67==end_70[0],                __freed_obj__ = 0, 
                 _if_conditional40) {
@@ -4416,23 +4262,20 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __result80__ = __result_obj__ = result_66;
     if(result_66 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_66, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result80__;
+    return __result80__;
     __freed_obj__ = 0;
     if(result_66 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_66, (void*)0, (void*)0, 0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 static struct list$1charph* list$1charph_initialize(struct list$1charph* self){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 struct list$1charph* __result76__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
         ((struct list$1charph*)come_null_check(self, "./comelang2.h", 155))->head=((void*)0);
         __freed_obj__ = 0;
         ((struct list$1charph*)come_null_check(self, "./comelang2.h", 156))->tail=((void*)0);
@@ -4442,19 +4285,17 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
         __result76__ = __result_obj__ = self;
         if(self && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result76__;
+        return __result76__;
         __freed_obj__ = 0;
         if(self && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 static void list$1charphp_finalize(struct list$1charph* self){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 struct list_item$1charph* it_64;
 _Bool _while_condtional5;
 struct list_item$1charph* prev_it_65;
@@ -4462,7 +4303,6 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&it_64, 0, sizeof(struct list_item$1charph*));
 memset(&prev_it_65, 0, sizeof(struct list_item$1charph*));
-        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
             it_64=((struct list$1charph*)come_null_check(self, "./comelang2.h", 174))->head;
             __freed_obj__ = 0;
             while(_while_condtional5=it_64!=((void*)0),            __freed_obj__ = 0, 
@@ -4475,36 +4315,31 @@ memset(&prev_it_65, 0, sizeof(struct list_item$1charph*));
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 static void list_item$1charphp_finalize(struct list_item$1charph* self){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool _if_conditional32;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                     if(_if_conditional32=self!=((void*)0)&&((struct list_item$1charph*)come_null_check(self, "list_item$1charphp_finalize", 1))->item!=((void*)0),                    __freed_obj__ = 0, 
                     _if_conditional32) {
                         if(((struct list_item$1charph*)come_null_check(self, "list_item$1charphp_finalize", 0))->item && !__freed_obj__) { ((struct list_item$1charph*)come_null_check(self, "list_item$1charphp_finalize", 0))->item = come_decrement_ref_count(((struct list_item$1charph*)come_null_check(self, "list_item$1charphp_finalize", 0))->item, (void*)0, (void*)0, 0, 0, 0); }
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
-                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 static struct list$1charph* list$1charph_push_back(struct list$1charph* self, char* item){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool _if_conditional35;
 void* right_value59;
 struct list_item$1charph* litem_85;
@@ -4525,11 +4360,12 @@ memset(&right_value60, 0, sizeof(void*));
 memset(&litem_86, 0, sizeof(struct list_item$1charph*));
 memset(&right_value61, 0, sizeof(void*));
 memset(&litem_87, 0, sizeof(struct list_item$1charph*));
-            memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);            memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);            for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                 if(_if_conditional35=((struct list$1charph*)come_null_check(self, "./comelang2.h", 307))->len==0,                __freed_obj__ = 0, 
                 _if_conditional35) {
                     litem_85=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value59=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 277))));
+                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value59);
                     if(right_value59 && right_value59 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1charphp_finalize,right_value59, (void*)0, (void*)0, 0, 1, 0, 0); }
+                    __right_value_freed_obj[0] = right_value59;
                     __freed_obj__ = 0;
                     ((struct list_item$1charph*)come_null_check(litem_85, "./comelang2.h", 279))->prev=((void*)0);
                     __freed_obj__ = 0;
@@ -4548,7 +4384,9 @@ memset(&litem_87, 0, sizeof(struct list_item$1charph*));
                     if(_if_conditional36=((struct list$1charph*)come_null_check(self, "./comelang2.h", 307))->len==1,                    __freed_obj__ = 0, 
                     _if_conditional36) {
                         litem_86=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value60=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 287))));
+                        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value60);
                         if(right_value60 && right_value60 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1charphp_finalize,right_value60, (void*)0, (void*)0, 0, 1, 0, 0); }
+                        __right_value_freed_obj[0] = right_value60;
                         __freed_obj__ = 0;
                         ((struct list_item$1charph*)come_null_check(litem_86, "./comelang2.h", 289))->prev=((struct list$1charph*)come_null_check(self, "./comelang2.h", 289))->head;
                         __freed_obj__ = 0;
@@ -4565,7 +4403,9 @@ memset(&litem_87, 0, sizeof(struct list_item$1charph*));
                     }
                     else {
                         litem_87=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value61=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 297))));
+                        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value61);
                         if(right_value61 && right_value61 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1charphp_finalize,right_value61, (void*)0, (void*)0, 0, 1, 0, 0); }
+                        __right_value_freed_obj[0] = right_value61;
                         __freed_obj__ = 0;
                         ((struct list_item$1charph*)come_null_check(litem_87, "./comelang2.h", 299))->prev=((struct list$1charph*)come_null_check(self, "./comelang2.h", 299))->tail;
                         __freed_obj__ = 0;
@@ -4588,19 +4428,17 @@ memset(&litem_87, 0, sizeof(struct list_item$1charph*));
                 __result78__ = __result_obj__ = self;
                 if(item && !__freed_obj__) { item = come_decrement_ref_count(item, (void*)0, (void*)0, 0, 1, 0); }
                 __freed_obj__ = 0;
-                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result78__;
+                return __result78__;
                 __freed_obj__ = 0;
                 if(item && !__freed_obj__) { item = come_decrement_ref_count(item, (void*)0, (void*)0, 0, 1, 0); }
-            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 struct list$1charph* charp_scan_block_count(char* self, struct come_regex* reg, int count, void* parent, char* (*block)(void*,char*,struct list$1charph*)){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value67;
 void* right_value68;
 struct list$1charph* result_93;
@@ -4683,10 +4521,13 @@ memset(&right_value76, 0, sizeof(void*));
 memset(&match_string_116, 0, sizeof(char*));
 memset(&right_value77, 0, sizeof(void*));
 memset(&str2_117, 0, sizeof(char*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    result_93=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value68=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 463,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value67=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 463))), "libcomelang2-str.c", 463))))))));
+    result_93=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value68=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value67=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 463))), "libcomelang2-str.c", 463)))))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value67);
     if(right_value67 && right_value67 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value67, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value67;
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value68);
     if(right_value68 && right_value68 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value68, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value68;
     __freed_obj__ = 0;
     offset_94=0;
     __freed_obj__ = 0;
@@ -4715,9 +4556,9 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _while_condtional7) {
         options_105=2097152;
         __freed_obj__ = 0;
-        len_106=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 484,strlen(self));
+        len_106=strlen(self);
         __freed_obj__ = 0;
-        regex_result_107=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 485,pcre_exec(re_103,(struct pcre_extra*)0,self,len_106,offset_94,options_105,ovec_value_98,ovec_max_95*3));
+        regex_result_107=pcre_exec(re_103,(struct pcre_extra*)0,self,len_106,offset_94,options_105,ovec_value_98,ovec_max_95*3);
         __freed_obj__ = 0;
         for(
         i_108=0 ,        __freed_obj__ = 0, 
@@ -4739,15 +4580,23 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         __freed_obj__ = 0;
         if(_if_conditional41=regex_result_107==1,        __freed_obj__ = 0, 
         _if_conditional41) {
-            str_110=(char*)come_increment_ref_count(((char*)(right_value69=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 497,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 497)),start_96[0],end_97[0])))));
+            str_110=(char*)come_increment_ref_count(((char*)(right_value69=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 497)),start_96[0],end_97[0]))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value69);
             if(right_value69 && right_value69 != __result_obj__ && !__freed_obj__) { right_value69 = come_decrement_ref_count(right_value69, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[0] = right_value69;
             __freed_obj__ = 0;
-            group_strings_111=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value71=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 499,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value70=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 499))), "libcomelang2-str.c", 499))))))));
+            group_strings_111=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value71=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value70=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 499))), "libcomelang2-str.c", 499)))))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value70);
             if(right_value70 && right_value70 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value70, (void*)0, (void*)0, 0, 1, 0, 0); }
+            __right_value_freed_obj[1] = right_value70;
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value71);
             if(right_value71 && right_value71 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value71, (void*)0, (void*)0, 0, 1, 0, 0); }
+            __right_value_freed_obj[2] = right_value71;
             __freed_obj__ = 0;
             str2_112=(char*)come_increment_ref_count(((char*)(right_value72=block(parent,str_110,group_strings_111))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value72);
             if(right_value72 && right_value72 != __result_obj__ && !__freed_obj__) { right_value72 = come_decrement_ref_count(right_value72, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[3] = right_value72;
             __freed_obj__ = 0;
             if(_if_conditional42=((struct sDummyCurrentStack*)come_null_check(((struct sDummyCurrentStack*)parent), "libcomelang2-str.c", 507))->__method_block_result_kind__!=0,            __freed_obj__ = 0, 
             _if_conditional42) {
@@ -4757,11 +4606,11 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
                 if(str2_112 && !__freed_obj__) { str2_112 = come_decrement_ref_count(str2_112, (void*)0, (void*)0, 0, 0, 0); }
                 if(result_93 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_93, (void*)0, (void*)0, 0, 0, 1, 0); }
                 __freed_obj__ = 0;
-                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result81__;
+                return __result81__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 507,list$1charph_push_back(((struct list$1charph*)come_null_check(result_93, "libcomelang2-str.c", 507)),(char*)come_increment_ref_count(str2_112)));
+            list$1charph_push_back(((struct list$1charph*)come_null_check(result_93, "libcomelang2-str.c", 507)),(char*)come_increment_ref_count(str2_112));
             __freed_obj__ = 0;
             if(_if_conditional43=offset_94==end_97[0],            __freed_obj__ = 0, 
             _if_conditional43) {
@@ -4791,28 +4640,38 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         else {
             if(_if_conditional45=regex_result_107>1,            __freed_obj__ = 0, 
             _if_conditional45) {
-                str_113=(char*)come_increment_ref_count(((char*)(right_value73=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 523,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 523)),start_96[0],end_97[0])))));
+                str_113=(char*)come_increment_ref_count(((char*)(right_value73=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 523)),start_96[0],end_97[0]))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value73);
                 if(right_value73 && right_value73 != __result_obj__ && !__freed_obj__) { right_value73 = come_decrement_ref_count(right_value73, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[0] = right_value73;
                 __freed_obj__ = 0;
-                group_strings_114=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value75=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 525,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value74=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 525))), "libcomelang2-str.c", 525))))))));
+                group_strings_114=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value75=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value74=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 525))), "libcomelang2-str.c", 525)))))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value74);
                 if(right_value74 && right_value74 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value74, (void*)0, (void*)0, 0, 1, 0, 0); }
+                __right_value_freed_obj[1] = right_value74;
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value75);
                 if(right_value75 && right_value75 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value75, (void*)0, (void*)0, 0, 1, 0, 0); }
+                __right_value_freed_obj[2] = right_value75;
                 __freed_obj__ = 0;
                 for(
                 i_115=1 ,                __freed_obj__ = 0, 
                 0;                _for_condtionalA14=                i_115<regex_result_107 ,                __freed_obj__ = 0, 
                 _for_condtionalA14;                i_115++ ,                __freed_obj__ = 0, 
                 0                ){
-                    match_string_116=(char*)come_increment_ref_count(((char*)(right_value76=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 527,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 527)),start_96[i_115],end_97[i_115])))));
+                    match_string_116=(char*)come_increment_ref_count(((char*)(right_value76=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 527)),start_96[i_115],end_97[i_115]))));
+                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value76);
                     if(right_value76 && right_value76 != __result_obj__ && !__freed_obj__) { right_value76 = come_decrement_ref_count(right_value76, (void*)0, (void*)0, 1, 0, 0); }
+                    __right_value_freed_obj[0] = right_value76;
                     __freed_obj__ = 0;
-                    (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 528,list$1charph_push_back(((struct list$1charph*)come_null_check(group_strings_114, "libcomelang2-str.c", 528)),(char*)come_increment_ref_count(match_string_116)));
+                    list$1charph_push_back(((struct list$1charph*)come_null_check(group_strings_114, "libcomelang2-str.c", 528)),(char*)come_increment_ref_count(match_string_116));
                     __freed_obj__ = 0;
                     if(match_string_116 && !__freed_obj__) { match_string_116 = come_decrement_ref_count(match_string_116, (void*)0, (void*)0, 0, 0, 0); }
                 }
                 __freed_obj__ = 0;
                 str2_117=(char*)come_increment_ref_count(((char*)(right_value77=block(parent,str_113,group_strings_114))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value77);
                 if(right_value77 && right_value77 != __result_obj__ && !__freed_obj__) { right_value77 = come_decrement_ref_count(right_value77, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[3] = right_value77;
                 __freed_obj__ = 0;
                 if(_if_conditional46=((struct sDummyCurrentStack*)come_null_check(((struct sDummyCurrentStack*)parent), "libcomelang2-str.c", 537))->__method_block_result_kind__!=0,                __freed_obj__ = 0, 
                 _if_conditional46) {
@@ -4822,11 +4681,11 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
                     if(str2_117 && !__freed_obj__) { str2_117 = come_decrement_ref_count(str2_117, (void*)0, (void*)0, 0, 0, 0); }
                     if(result_93 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_93, (void*)0, (void*)0, 0, 0, 1, 0); }
                     __freed_obj__ = 0;
-                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                    return __result82__;
+                    return __result82__;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 537,list$1charph_push_back(((struct list$1charph*)come_null_check(result_93, "libcomelang2-str.c", 537)),(char*)come_increment_ref_count(str2_117)));
+                list$1charph_push_back(((struct list$1charph*)come_null_check(result_93, "libcomelang2-str.c", 537)),(char*)come_increment_ref_count(str2_117));
                 __freed_obj__ = 0;
                 if(_if_conditional47=offset_94==end_97[0],                __freed_obj__ = 0, 
                 _if_conditional47) {
@@ -4865,19 +4724,17 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __result83__ = __result_obj__ = result_93;
     if(result_93 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_93, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result83__;
+    return __result83__;
     __freed_obj__ = 0;
     if(result_93 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_93, (void*)0, (void*)0, 0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 struct list$1charph* charp_split_block(char* self, struct come_regex* reg, void* parent, char* (*block)(void*,char*,struct list$1charph*)){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 const char* err_118;
 int erro_ofs_119;
 int options_120;
@@ -4973,7 +4830,6 @@ memset(&right_value91, 0, sizeof(void*));
 memset(&match_strings_143, 0, sizeof(struct list$1charph*));
 memset(&right_value92, 0, sizeof(void*));
 memset(&str2_144, 0, sizeof(char*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __freed_obj__ = 0;
     __freed_obj__ = 0;
     options_120=((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 566))->options;
@@ -4982,9 +4838,13 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     re_122=((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 569))->re;
     __freed_obj__ = 0;
-    result_123=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value79=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 571,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value78=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 571))), "libcomelang2-str.c", 571))))))));
+    result_123=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value79=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value78=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 571))), "libcomelang2-str.c", 571)))))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value78);
     if(right_value78 && right_value78 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value78, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value78;
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value79);
     if(right_value79 && right_value79 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value79, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value79;
     __freed_obj__ = 0;
     offset_124=0;
     __freed_obj__ = 0;
@@ -5003,9 +4863,9 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _while_condtional8) {
         options_129=2097152;
         __freed_obj__ = 0;
-        len_130=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 582,strlen(self));
+        len_130=strlen(self);
         __freed_obj__ = 0;
-        regex_result_131=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 584,pcre_exec(re_122,(struct pcre_extra*)0,self,len_130,offset_124,options_129,ovec_value_128,ovec_max_125*3));
+        regex_result_131=pcre_exec(re_122,(struct pcre_extra*)0,self,len_130,offset_124,options_129,ovec_value_128,ovec_max_125*3);
         __freed_obj__ = 0;
         for(
         i_132=0 ,        __freed_obj__ = 0, 
@@ -5027,15 +4887,23 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         __freed_obj__ = 0;
         if(_if_conditional49=regex_result_131==1,        __freed_obj__ = 0, 
         _if_conditional49) {
-            str_134=(char*)come_increment_ref_count(((char*)(right_value80=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 596,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 596)),offset_124,start_126[0])))));
+            str_134=(char*)come_increment_ref_count(((char*)(right_value80=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 596)),offset_124,start_126[0]))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value80);
             if(right_value80 && right_value80 != __result_obj__ && !__freed_obj__) { right_value80 = come_decrement_ref_count(right_value80, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[0] = right_value80;
             __freed_obj__ = 0;
-            match_strings_135=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value82=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 598,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value81=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 598))), "libcomelang2-str.c", 598))))))));
+            match_strings_135=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value82=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value81=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 598))), "libcomelang2-str.c", 598)))))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value81);
             if(right_value81 && right_value81 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value81, (void*)0, (void*)0, 0, 1, 0, 0); }
+            __right_value_freed_obj[1] = right_value81;
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value82);
             if(right_value82 && right_value82 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value82, (void*)0, (void*)0, 0, 1, 0, 0); }
+            __right_value_freed_obj[2] = right_value82;
             __freed_obj__ = 0;
             str2_136=(char*)come_increment_ref_count(((char*)(right_value83=block(parent,str_134,match_strings_135))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value83);
             if(right_value83 && right_value83 != __result_obj__ && !__freed_obj__) { right_value83 = come_decrement_ref_count(right_value83, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[3] = right_value83;
             __freed_obj__ = 0;
             if(_if_conditional50=((struct sDummyCurrentStack*)come_null_check(((struct sDummyCurrentStack*)parent), "libcomelang2-str.c", 605))->__method_block_result_kind__!=0,            __freed_obj__ = 0, 
             _if_conditional50) {
@@ -5045,11 +4913,11 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
                 if(str2_136 && !__freed_obj__) { str2_136 = come_decrement_ref_count(str2_136, (void*)0, (void*)0, 0, 0, 0); }
                 if(result_123 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_123, (void*)0, (void*)0, 0, 0, 1, 0); }
                 __freed_obj__ = 0;
-                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result84__;
+                return __result84__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 605,list$1charph_push_back(((struct list$1charph*)come_null_check(result_123, "libcomelang2-str.c", 605)),(char*)come_increment_ref_count(str2_136)));
+            list$1charph_push_back(((struct list$1charph*)come_null_check(result_123, "libcomelang2-str.c", 605)),(char*)come_increment_ref_count(str2_136));
             __freed_obj__ = 0;
             if(_if_conditional51=offset_124==end_127[0],            __freed_obj__ = 0, 
             _if_conditional51) {
@@ -5068,8 +4936,10 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         else {
             if(_if_conditional52=regex_result_131>1,            __freed_obj__ = 0, 
             _if_conditional52) {
-                str_137=(char*)come_increment_ref_count(((char*)(right_value84=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 616,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 616)),offset_124,start_126[0])))));
+                str_137=(char*)come_increment_ref_count(((char*)(right_value84=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 616)),offset_124,start_126[0]))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value84);
                 if(right_value84 && right_value84 != __result_obj__ && !__freed_obj__) { right_value84 = come_decrement_ref_count(right_value84, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[0] = right_value84;
                 __freed_obj__ = 0;
                 if(_if_conditional53=offset_124==end_127[0],                __freed_obj__ = 0, 
                 _if_conditional53) {
@@ -5081,25 +4951,33 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                match_strings_138=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value86=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 625,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value85=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 625))), "libcomelang2-str.c", 625))))))));
+                match_strings_138=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value86=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value85=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 625))), "libcomelang2-str.c", 625)))))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value85);
                 if(right_value85 && right_value85 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value85, (void*)0, (void*)0, 0, 1, 0, 0); }
+                __right_value_freed_obj[1] = right_value85;
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value86);
                 if(right_value86 && right_value86 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value86, (void*)0, (void*)0, 0, 1, 0, 0); }
+                __right_value_freed_obj[2] = right_value86;
                 __freed_obj__ = 0;
                 for(
                 i_139=1 ,                __freed_obj__ = 0, 
                 0;                _for_condtionalA17=                i_139<regex_result_131 ,                __freed_obj__ = 0, 
                 _for_condtionalA17;                i_139++ ,                __freed_obj__ = 0, 
                 0                ){
-                    match_str_140=(char*)come_increment_ref_count(((char*)(right_value87=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 627,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 627)),start_126[i_139],end_127[i_139])))));
+                    match_str_140=(char*)come_increment_ref_count(((char*)(right_value87=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 627)),start_126[i_139],end_127[i_139]))));
+                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value87);
                     if(right_value87 && right_value87 != __result_obj__ && !__freed_obj__) { right_value87 = come_decrement_ref_count(right_value87, (void*)0, (void*)0, 1, 0, 0); }
+                    __right_value_freed_obj[0] = right_value87;
                     __freed_obj__ = 0;
-                    (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 628,list$1charph_push_back(((struct list$1charph*)come_null_check(match_strings_138, "libcomelang2-str.c", 628)),(char*)come_increment_ref_count(match_str_140)));
+                    list$1charph_push_back(((struct list$1charph*)come_null_check(match_strings_138, "libcomelang2-str.c", 628)),(char*)come_increment_ref_count(match_str_140));
                     __freed_obj__ = 0;
                     if(match_str_140 && !__freed_obj__) { match_str_140 = come_decrement_ref_count(match_str_140, (void*)0, (void*)0, 0, 0, 0); }
                 }
                 __freed_obj__ = 0;
                 str2_141=(char*)come_increment_ref_count(((char*)(right_value88=block(parent,str_137,match_strings_138))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value88);
                 if(right_value88 && right_value88 != __result_obj__ && !__freed_obj__) { right_value88 = come_decrement_ref_count(right_value88, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[3] = right_value88;
                 __freed_obj__ = 0;
                 if(_if_conditional54=((struct sDummyCurrentStack*)come_null_check(((struct sDummyCurrentStack*)parent), "libcomelang2-str.c", 636))->__method_block_result_kind__!=0,                __freed_obj__ = 0, 
                 _if_conditional54) {
@@ -5109,11 +4987,11 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
                     if(str2_141 && !__freed_obj__) { str2_141 = come_decrement_ref_count(str2_141, (void*)0, (void*)0, 0, 0, 0); }
                     if(result_123 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_123, (void*)0, (void*)0, 0, 0, 1, 0); }
                     __freed_obj__ = 0;
-                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                    return __result85__;
+                    return __result85__;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 636,list$1charph_push_back(((struct list$1charph*)come_null_check(result_123, "libcomelang2-str.c", 636)),(char*)come_increment_ref_count(str2_141)));
+                list$1charph_push_back(((struct list$1charph*)come_null_check(result_123, "libcomelang2-str.c", 636)),(char*)come_increment_ref_count(str2_141));
                 __freed_obj__ = 0;
                 if(str_137 && !__freed_obj__) { str_137 = come_decrement_ref_count(str_137, (void*)0, (void*)0, 0, 0, 0); }
                 if(match_strings_138 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,match_strings_138, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -5128,17 +5006,25 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    if(_if_conditional55=offset_124<(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 656,charp_length(((char*)come_null_check(self, "libcomelang2-str.c", 656)))),    __freed_obj__ = 0, 
+    if(_if_conditional55=offset_124<charp_length(((char*)come_null_check(self, "libcomelang2-str.c", 656))),    __freed_obj__ = 0, 
     _if_conditional55) {
-        str_142=(char*)come_increment_ref_count(((char*)(right_value89=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 646,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 646)),offset_124,-1)))));
+        str_142=(char*)come_increment_ref_count(((char*)(right_value89=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 646)),offset_124,-1))));
+        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value89);
         if(right_value89 && right_value89 != __result_obj__ && !__freed_obj__) { right_value89 = come_decrement_ref_count(right_value89, (void*)0, (void*)0, 1, 0, 0); }
+        __right_value_freed_obj[0] = right_value89;
         __freed_obj__ = 0;
-        match_strings_143=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value91=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 647,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value90=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 647))), "libcomelang2-str.c", 647))))))));
+        match_strings_143=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value91=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value90=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 647))), "libcomelang2-str.c", 647)))))));
+        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value90);
         if(right_value90 && right_value90 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value90, (void*)0, (void*)0, 0, 1, 0, 0); }
+        __right_value_freed_obj[1] = right_value90;
+        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value91);
         if(right_value91 && right_value91 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value91, (void*)0, (void*)0, 0, 1, 0, 0); }
+        __right_value_freed_obj[2] = right_value91;
         __freed_obj__ = 0;
         str2_144=(char*)come_increment_ref_count(((char*)(right_value92=block(parent,str_142,match_strings_143))));
+        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value92);
         if(right_value92 && right_value92 != __result_obj__ && !__freed_obj__) { right_value92 = come_decrement_ref_count(right_value92, (void*)0, (void*)0, 1, 0, 0); }
+        __right_value_freed_obj[3] = right_value92;
         __freed_obj__ = 0;
         if(_if_conditional56=((struct sDummyCurrentStack*)come_null_check(((struct sDummyCurrentStack*)parent), "libcomelang2-str.c", 653))->__method_block_result_kind__!=0,        __freed_obj__ = 0, 
         _if_conditional56) {
@@ -5148,11 +5034,11 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
             if(str2_144 && !__freed_obj__) { str2_144 = come_decrement_ref_count(str2_144, (void*)0, (void*)0, 0, 0, 0); }
             if(result_123 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_123, (void*)0, (void*)0, 0, 0, 1, 0); }
             __freed_obj__ = 0;
-            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result86__;
+            return __result86__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-        (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 653,list$1charph_push_back(((struct list$1charph*)come_null_check(result_123, "libcomelang2-str.c", 653)),(char*)come_increment_ref_count(str2_144)));
+        list$1charph_push_back(((struct list$1charph*)come_null_check(result_123, "libcomelang2-str.c", 653)),(char*)come_increment_ref_count(str2_144));
         __freed_obj__ = 0;
         if(str_142 && !__freed_obj__) { str_142 = come_decrement_ref_count(str_142, (void*)0, (void*)0, 0, 0, 0); }
         if(match_strings_143 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,match_strings_143, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -5162,19 +5048,17 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __result87__ = __result_obj__ = result_123;
     if(result_123 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_123, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result87__;
+    return __result87__;
     __freed_obj__ = 0;
     if(result_123 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_123, (void*)0, (void*)0, 0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 struct list$1charph* charp_split_block_count(char* self, struct come_regex* reg, int count, void* parent, char* (*block)(void*,char*,struct list$1charph*)){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 const char* err_145;
 int erro_ofs_146;
 int options_147;
@@ -5256,7 +5140,6 @@ memset(&right_value102, 0, sizeof(void*));
 memset(&match_str_168, 0, sizeof(char*));
 memset(&right_value103, 0, sizeof(void*));
 memset(&str2_169, 0, sizeof(char*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __freed_obj__ = 0;
     __freed_obj__ = 0;
     options_147=((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 664))->options;
@@ -5265,9 +5148,13 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     re_149=((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 667))->re;
     __freed_obj__ = 0;
-    result_150=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value94=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 669,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value93=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 669))), "libcomelang2-str.c", 669))))))));
+    result_150=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value94=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value93=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 669))), "libcomelang2-str.c", 669)))))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value93);
     if(right_value93 && right_value93 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value93, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value93;
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value94);
     if(right_value94 && right_value94 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value94, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value94;
     __freed_obj__ = 0;
     offset_151=0;
     __freed_obj__ = 0;
@@ -5288,9 +5175,9 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _while_condtional9) {
         options_157=2097152;
         __freed_obj__ = 0;
-        len_158=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 682,strlen(self));
+        len_158=strlen(self);
         __freed_obj__ = 0;
-        regex_result_159=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 684,pcre_exec(re_149,(struct pcre_extra*)0,self,len_158,offset_151,options_157,ovec_value_155,ovec_max_152*3));
+        regex_result_159=pcre_exec(re_149,(struct pcre_extra*)0,self,len_158,offset_151,options_157,ovec_value_155,ovec_max_152*3);
         __freed_obj__ = 0;
         for(
         i_160=0 ,        __freed_obj__ = 0, 
@@ -5312,15 +5199,23 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         __freed_obj__ = 0;
         if(_if_conditional57=regex_result_159==1,        __freed_obj__ = 0, 
         _if_conditional57) {
-            str_162=(char*)come_increment_ref_count(((char*)(right_value95=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 696,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 696)),offset_151,start_153[0])))));
+            str_162=(char*)come_increment_ref_count(((char*)(right_value95=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 696)),offset_151,start_153[0]))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value95);
             if(right_value95 && right_value95 != __result_obj__ && !__freed_obj__) { right_value95 = come_decrement_ref_count(right_value95, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[0] = right_value95;
             __freed_obj__ = 0;
-            match_strings_163=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value97=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 698,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value96=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 698))), "libcomelang2-str.c", 698))))))));
+            match_strings_163=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value97=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value96=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 698))), "libcomelang2-str.c", 698)))))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value96);
             if(right_value96 && right_value96 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value96, (void*)0, (void*)0, 0, 1, 0, 0); }
+            __right_value_freed_obj[1] = right_value96;
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value97);
             if(right_value97 && right_value97 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value97, (void*)0, (void*)0, 0, 1, 0, 0); }
+            __right_value_freed_obj[2] = right_value97;
             __freed_obj__ = 0;
             str2_164=(char*)come_increment_ref_count(((char*)(right_value98=block(parent,str_162,match_strings_163))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value98);
             if(right_value98 && right_value98 != __result_obj__ && !__freed_obj__) { right_value98 = come_decrement_ref_count(right_value98, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[3] = right_value98;
             __freed_obj__ = 0;
             if(_if_conditional58=((struct sDummyCurrentStack*)come_null_check(((struct sDummyCurrentStack*)parent), "libcomelang2-str.c", 704))->__method_block_result_kind__!=0,            __freed_obj__ = 0, 
             _if_conditional58) {
@@ -5330,11 +5225,11 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
                 if(str2_164 && !__freed_obj__) { str2_164 = come_decrement_ref_count(str2_164, (void*)0, (void*)0, 0, 0, 0); }
                 if(result_150 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_150, (void*)0, (void*)0, 0, 0, 1, 0); }
                 __freed_obj__ = 0;
-                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result88__;
+                return __result88__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 704,list$1charph_push_back(((struct list$1charph*)come_null_check(result_150, "libcomelang2-str.c", 704)),(char*)come_increment_ref_count(str2_164)));
+            list$1charph_push_back(((struct list$1charph*)come_null_check(result_150, "libcomelang2-str.c", 704)),(char*)come_increment_ref_count(str2_164));
             __freed_obj__ = 0;
             if(_if_conditional59=offset_151==end_154[0],            __freed_obj__ = 0, 
             _if_conditional59) {
@@ -5353,8 +5248,10 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         else {
             if(_if_conditional60=regex_result_159>1,            __freed_obj__ = 0, 
             _if_conditional60) {
-                str_165=(char*)come_increment_ref_count(((char*)(right_value99=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 715,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 715)),offset_151,start_153[0])))));
+                str_165=(char*)come_increment_ref_count(((char*)(right_value99=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 715)),offset_151,start_153[0]))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value99);
                 if(right_value99 && right_value99 != __result_obj__ && !__freed_obj__) { right_value99 = come_decrement_ref_count(right_value99, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[0] = right_value99;
                 __freed_obj__ = 0;
                 if(_if_conditional61=offset_151==end_154[0],                __freed_obj__ = 0, 
                 _if_conditional61) {
@@ -5366,25 +5263,33 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                match_strings_166=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value101=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 724,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value100=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 724))), "libcomelang2-str.c", 724))))))));
+                match_strings_166=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value101=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value100=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 724))), "libcomelang2-str.c", 724)))))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value100);
                 if(right_value100 && right_value100 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value100, (void*)0, (void*)0, 0, 1, 0, 0); }
+                __right_value_freed_obj[1] = right_value100;
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value101);
                 if(right_value101 && right_value101 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value101, (void*)0, (void*)0, 0, 1, 0, 0); }
+                __right_value_freed_obj[2] = right_value101;
                 __freed_obj__ = 0;
                 for(
                 i_167=1 ,                __freed_obj__ = 0, 
                 0;                _for_condtionalA20=                i_167<regex_result_159 ,                __freed_obj__ = 0, 
                 _for_condtionalA20;                i_167++ ,                __freed_obj__ = 0, 
                 0                ){
-                    match_str_168=(char*)come_increment_ref_count(((char*)(right_value102=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 726,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 726)),start_153[i_167],end_154[i_167])))));
+                    match_str_168=(char*)come_increment_ref_count(((char*)(right_value102=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 726)),start_153[i_167],end_154[i_167]))));
+                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value102);
                     if(right_value102 && right_value102 != __result_obj__ && !__freed_obj__) { right_value102 = come_decrement_ref_count(right_value102, (void*)0, (void*)0, 1, 0, 0); }
+                    __right_value_freed_obj[0] = right_value102;
                     __freed_obj__ = 0;
-                    (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 727,list$1charph_push_back(((struct list$1charph*)come_null_check(match_strings_166, "libcomelang2-str.c", 727)),(char*)come_increment_ref_count(match_str_168)));
+                    list$1charph_push_back(((struct list$1charph*)come_null_check(match_strings_166, "libcomelang2-str.c", 727)),(char*)come_increment_ref_count(match_str_168));
                     __freed_obj__ = 0;
                     if(match_str_168 && !__freed_obj__) { match_str_168 = come_decrement_ref_count(match_str_168, (void*)0, (void*)0, 0, 0, 0); }
                 }
                 __freed_obj__ = 0;
                 str2_169=(char*)come_increment_ref_count(((char*)(right_value103=block(parent,str_165,match_strings_166))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value103);
                 if(right_value103 && right_value103 != __result_obj__ && !__freed_obj__) { right_value103 = come_decrement_ref_count(right_value103, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[3] = right_value103;
                 __freed_obj__ = 0;
                 if(_if_conditional62=((struct sDummyCurrentStack*)come_null_check(((struct sDummyCurrentStack*)parent), "libcomelang2-str.c", 736))->__method_block_result_kind__!=0,                __freed_obj__ = 0, 
                 _if_conditional62) {
@@ -5394,11 +5299,11 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
                     if(str2_169 && !__freed_obj__) { str2_169 = come_decrement_ref_count(str2_169, (void*)0, (void*)0, 0, 0, 0); }
                     if(result_150 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_150, (void*)0, (void*)0, 0, 0, 1, 0); }
                     __freed_obj__ = 0;
-                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                    return __result89__;
+                    return __result89__;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 736,list$1charph_push_back(((struct list$1charph*)come_null_check(result_150, "libcomelang2-str.c", 736)),(char*)come_increment_ref_count(str2_169)));
+                list$1charph_push_back(((struct list$1charph*)come_null_check(result_150, "libcomelang2-str.c", 736)),(char*)come_increment_ref_count(str2_169));
                 __freed_obj__ = 0;
                 if(str_165 && !__freed_obj__) { str_165 = come_decrement_ref_count(str_165, (void*)0, (void*)0, 0, 0, 0); }
                 if(match_strings_166 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,match_strings_166, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -5424,19 +5329,17 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __result90__ = __result_obj__ = result_150;
     if(result_150 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_150, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result90__;
+    return __result90__;
     __freed_obj__ = 0;
     if(result_150 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_150, (void*)0, (void*)0, 0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 _Bool come_regex_equals(struct come_regex* left, struct come_regex* right){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool _if_conditional64;
 _Bool __result91__;
 _Bool _if_conditional65;
@@ -5460,12 +5363,11 @@ _Bool __result100__;
 _Bool __result101__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    if(_if_conditional64=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 759,strcmp(((struct come_regex*)come_null_check(left, "libcomelang2-str.c", 759))->str,((struct come_regex*)come_null_check(right, "libcomelang2-str.c", 759))->str))!=0,    __freed_obj__ = 0, 
+    if(_if_conditional64=strcmp(((struct come_regex*)come_null_check(left, "libcomelang2-str.c", 759))->str,((struct come_regex*)come_null_check(right, "libcomelang2-str.c", 759))->str)!=0,    __freed_obj__ = 0, 
     _if_conditional64) {
         __result91__ = (_Bool)0;
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result91__;
+        return __result91__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
@@ -5473,7 +5375,7 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _if_conditional65) {
         __result92__ = (_Bool)0;
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result92__;
+        return __result92__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
@@ -5481,7 +5383,7 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _if_conditional66) {
         __result93__ = (_Bool)0;
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result93__;
+        return __result93__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
@@ -5489,7 +5391,7 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _if_conditional67) {
         __result94__ = (_Bool)0;
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result94__;
+        return __result94__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
@@ -5497,7 +5399,7 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _if_conditional68) {
         __result95__ = (_Bool)0;
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result95__;
+        return __result95__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
@@ -5505,7 +5407,7 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _if_conditional69) {
         __result96__ = (_Bool)0;
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result96__;
+        return __result96__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
@@ -5513,7 +5415,7 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _if_conditional70) {
         __result97__ = (_Bool)0;
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result97__;
+        return __result97__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
@@ -5521,7 +5423,7 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _if_conditional71) {
         __result98__ = (_Bool)0;
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result98__;
+        return __result98__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
@@ -5529,7 +5431,7 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _if_conditional72) {
         __result99__ = (_Bool)0;
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result99__;
+        return __result99__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
@@ -5537,24 +5439,22 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _if_conditional73) {
         __result100__ = (_Bool)0;
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result100__;
+        return __result100__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
     __result101__ = (_Bool)1;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result101__;
+    return __result101__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 struct list$1charph* charp_scan_group_strings(char* self, struct come_regex* reg, struct list$1charph* group_strings, int* num_group_string_in_regex){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value104;
 void* right_value105;
 struct list$1charph* result_170;
@@ -5609,10 +5509,13 @@ memset(&str_187, 0, sizeof(char*));
 memset(&i_188, 0, sizeof(int));
 memset(&right_value108, 0, sizeof(void*));
 memset(&match_string_189, 0, sizeof(char*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    result_170=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value105=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 792,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value104=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 792))), "libcomelang2-str.c", 792))))))));
+    result_170=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value105=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value104=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 792))), "libcomelang2-str.c", 792)))))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value104);
     if(right_value104 && right_value104 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value104, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value104;
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value105);
     if(right_value105 && right_value105 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value105, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value105;
     __freed_obj__ = 0;
     offset_171=0;
     __freed_obj__ = 0;
@@ -5639,9 +5542,9 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _while_condtional10) {
         options_181=2097152;
         __freed_obj__ = 0;
-        len_182=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 813,strlen(self));
+        len_182=strlen(self);
         __freed_obj__ = 0;
-        regex_result_183=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 814,pcre_exec(re_180,(struct pcre_extra*)0,self,len_182,offset_171,options_181,ovec_value_175,ovec_max_172*3));
+        regex_result_183=pcre_exec(re_180,(struct pcre_extra*)0,self,len_182,offset_171,options_181,ovec_value_175,ovec_max_172*3);
         __freed_obj__ = 0;
         for(
         i_184=0 ,        __freed_obj__ = 0, 
@@ -5663,10 +5566,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         __freed_obj__ = 0;
         if(_if_conditional74=regex_result_183==1,        __freed_obj__ = 0, 
         _if_conditional74) {
-            str_186=(char*)come_increment_ref_count(((char*)(right_value106=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 826,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 826)),start_173[0],end_174[0])))));
+            str_186=(char*)come_increment_ref_count(((char*)(right_value106=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 826)),start_173[0],end_174[0]))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value106);
             if(right_value106 && right_value106 != __result_obj__ && !__freed_obj__) { right_value106 = come_decrement_ref_count(right_value106, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[0] = right_value106;
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 827,list$1charph_push_back(((struct list$1charph*)come_null_check(result_170, "libcomelang2-str.c", 827)),(char*)come_increment_ref_count(str_186)));
+            list$1charph_push_back(((struct list$1charph*)come_null_check(result_170, "libcomelang2-str.c", 827)),(char*)come_increment_ref_count(str_186));
             __freed_obj__ = 0;
             if(_if_conditional75=offset_171==end_174[0],            __freed_obj__ = 0, 
             _if_conditional75) {
@@ -5683,10 +5588,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         else {
             if(_if_conditional76=regex_result_183>1,            __freed_obj__ = 0, 
             _if_conditional76) {
-                str_187=(char*)come_increment_ref_count(((char*)(right_value107=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 838,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 838)),start_173[0],end_174[0])))));
+                str_187=(char*)come_increment_ref_count(((char*)(right_value107=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 838)),start_173[0],end_174[0]))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value107);
                 if(right_value107 && right_value107 != __result_obj__ && !__freed_obj__) { right_value107 = come_decrement_ref_count(right_value107, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[0] = right_value107;
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 839,list$1charph_push_back(((struct list$1charph*)come_null_check(result_170, "libcomelang2-str.c", 839)),(char*)come_increment_ref_count(str_187)));
+                list$1charph_push_back(((struct list$1charph*)come_null_check(result_170, "libcomelang2-str.c", 839)),(char*)come_increment_ref_count(str_187));
                 __freed_obj__ = 0;
                 if(_if_conditional77=offset_171==end_174[0],                __freed_obj__ = 0, 
                 _if_conditional77) {
@@ -5705,10 +5612,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
                 0;                _for_condtionalA23=                i_188<regex_result_183 ,                __freed_obj__ = 0, 
                 _for_condtionalA23;                i_188++ ,                __freed_obj__ = 0, 
                 0                ){
-                    match_string_189=(char*)come_increment_ref_count(((char*)(right_value108=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 850,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 850)),start_173[i_188],end_174[i_188])))));
+                    match_string_189=(char*)come_increment_ref_count(((char*)(right_value108=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 850)),start_173[i_188],end_174[i_188]))));
+                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value108);
                     if(right_value108 && right_value108 != __result_obj__ && !__freed_obj__) { right_value108 = come_decrement_ref_count(right_value108, (void*)0, (void*)0, 1, 0, 0); }
+                    __right_value_freed_obj[0] = right_value108;
                     __freed_obj__ = 0;
-                    (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 851,list$1charph_push_back(((struct list$1charph*)come_null_check(group_strings, "libcomelang2-str.c", 851)),(char*)come_increment_ref_count(match_string_189)));
+                    list$1charph_push_back(((struct list$1charph*)come_null_check(group_strings, "libcomelang2-str.c", 851)),(char*)come_increment_ref_count(match_string_189));
                     __freed_obj__ = 0;
                     if(match_string_189 && !__freed_obj__) { match_string_189 = come_decrement_ref_count(match_string_189, (void*)0, (void*)0, 0, 0, 0); }
                 }
@@ -5727,19 +5636,17 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __result102__ = __result_obj__ = result_170;
     if(result_170 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_170, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result102__;
+    return __result102__;
     __freed_obj__ = 0;
     if(result_170 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_170, (void*)0, (void*)0, 0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 char* charp_strip(char* self){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value109;
 char* result_190;
 int len_191;
@@ -5752,11 +5659,12 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value109, 0, sizeof(void*));
 memset(&result_190, 0, sizeof(char*));
 memset(&len_191, 0, sizeof(int));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    result_190=(char*)come_increment_ref_count(((char*)(right_value109=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 866,__builtin_string(self)))));
+    result_190=(char*)come_increment_ref_count(((char*)(right_value109=__builtin_string(self))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value109);
     if(right_value109 && right_value109 != __result_obj__ && !__freed_obj__) { right_value109 = come_decrement_ref_count(right_value109, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value109;
     __freed_obj__ = 0;
-    len_191=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 868,strlen(self));
+    len_191=strlen(self);
     __freed_obj__ = 0;
     if(_if_conditional78=self[len_191-1]==10,    __freed_obj__ = 0, 
     _if_conditional78) {
@@ -5783,19 +5691,17 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __result103__ = __result_obj__ = result_190;
     if(result_190 && !__freed_obj__) { result_190 = come_decrement_ref_count(result_190, (void*)0, (void*)0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result103__;
+    return __result103__;
     __freed_obj__ = 0;
     if(result_190 && !__freed_obj__) { result_190 = come_decrement_ref_count(result_190, (void*)0, (void*)0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 char* charp_printable(char* str){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int len_192;
 void* right_value110;
 char* result_193;
@@ -5813,11 +5719,12 @@ memset(&result_193, 0, sizeof(char*));
 memset(&n_194, 0, sizeof(int));
 memset(&i_195, 0, sizeof(int));
 memset(&c_196, 0, sizeof(char));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    len_192=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 885,charp_length(((char*)come_null_check(str, "libcomelang2-str.c", 885))));
+    len_192=charp_length(((char*)come_null_check(str, "libcomelang2-str.c", 885)));
     __freed_obj__ = 0;
     result_193=(char*)come_increment_ref_count(((char*)(right_value110=(char*)come_calloc(1, sizeof(char)*(1*(len_192*2+1)), "libcomelang2-str.c", 886))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value110);
     if(right_value110 && right_value110 != __result_obj__ && !__freed_obj__) { right_value110 = come_decrement_ref_count(right_value110, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value110;
     __freed_obj__ = 0;
     n_194=0;
     __freed_obj__ = 0;
@@ -5847,19 +5754,17 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __result104__ = __result_obj__ = result_193;
     if(result_193 && !__freed_obj__) { result_193 = come_decrement_ref_count(result_193, (void*)0, (void*)0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result104__;
+    return __result104__;
     __freed_obj__ = 0;
     if(result_193 && !__freed_obj__) { result_193 = come_decrement_ref_count(result_193, (void*)0, (void*)0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 char* wchar_tp_to_string(unsigned int* wstr){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int len_197;
 void* right_value111;
 char* result_198;
@@ -5870,72 +5775,65 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&len_197, 0, sizeof(int));
 memset(&right_value111, 0, sizeof(void*));
 memset(&result_198, 0, sizeof(char*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    len_197=16*((gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 910,wcslen(wstr))+1);
+    len_197=16*(wcslen(wstr)+1);
     __freed_obj__ = 0;
     result_198=(char*)come_increment_ref_count(((char*)(right_value111=(char*)come_calloc(1, sizeof(char)*(1*(len_197)), "libcomelang2-str.c", 912))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value111);
     if(right_value111 && right_value111 != __result_obj__ && !__freed_obj__) { right_value111 = come_decrement_ref_count(right_value111, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value111;
     __freed_obj__ = 0;
-    if(_if_conditional82=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 919,wcstombs(result_198,wstr,len_197))<0,    __freed_obj__ = 0, 
+    if(_if_conditional82=wcstombs(result_198,wstr,len_197)<0,    __freed_obj__ = 0, 
     _if_conditional82) {
-        (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 916,strncpy(result_198,"",len_197));
+        strncpy(result_198,"",len_197);
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
     __result105__ = __result_obj__ = result_198;
     if(result_198 && !__freed_obj__) { result_198 = come_decrement_ref_count(result_198, (void*)0, (void*)0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result105__;
+    return __result105__;
     __freed_obj__ = 0;
     if(result_198 && !__freed_obj__) { result_198 = come_decrement_ref_count(result_198, (void*)0, (void*)0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 unsigned int* charp_to_wstring(char* str){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value112;
 unsigned int* __result106__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value112, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result106__ = __result_obj__ = ((unsigned int*)(right_value112=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 924,__builtin_wstring(str))));
+    __result106__ = __result_obj__ = ((unsigned int*)(right_value112=__builtin_wstring(str)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result106__;
+    return __result106__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 int wchar_tp_length(unsigned int* str){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int __result107__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result107__ = (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 929,wcslen(str));
+    __result107__ = wcslen(str);
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result107__;
+    return __result107__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 unsigned int* wchar_tp_delete(unsigned int* str, int head, int tail){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int len_199;
 _Bool _if_conditional83;
 void* right_value113;
@@ -5965,16 +5863,17 @@ memset(&right_value117, 0, sizeof(void*));
 memset(&sub_str_200, 0, sizeof(unsigned int*));
 memset(&right_value118, 0, sizeof(void*));
 memset(&right_value119, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __freed_obj__ = 0;
-    len_199=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 936,wcslen(str));
+    len_199=wcslen(str);
     __freed_obj__ = 0;
     if(_if_conditional83=len_199==0,    __freed_obj__ = 0, 
     _if_conditional83) {
-        __result108__ = __result_obj__ = ((unsigned int*)(right_value114=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 939,string_to_wstring(((char*)come_null_check(((char*)(right_value113=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 939,wchar_tp_to_string(((unsigned int*)come_null_check(str, "libcomelang2-str.c", 939)))))), "libcomelang2-str.c", 939))))));
+        __result108__ = __result_obj__ = ((unsigned int*)(right_value114=string_to_wstring(((char*)come_null_check(((char*)(right_value113=wchar_tp_to_string(((unsigned int*)come_null_check(str, "libcomelang2-str.c", 939))))), "libcomelang2-str.c", 939)))));
+        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value113);
         if(right_value113 && right_value113 != __result_obj__ && !__freed_obj__) { right_value113 = come_decrement_ref_count(right_value113, (void*)0, (void*)0, 1, 0, 0); }
+        __right_value_freed_obj[0] = right_value113;
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result108__;
+        return __result108__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
@@ -5998,10 +5897,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     if(_if_conditional87=tail<0,    __freed_obj__ = 0, 
     _if_conditional87) {
-        __result109__ = __result_obj__ = ((unsigned int*)(right_value116=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 955,string_to_wstring(((char*)come_null_check(((char*)(right_value115=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 955,wchar_tp_to_string(((unsigned int*)come_null_check(str, "libcomelang2-str.c", 955)))))), "libcomelang2-str.c", 955))))));
+        __result109__ = __result_obj__ = ((unsigned int*)(right_value116=string_to_wstring(((char*)come_null_check(((char*)(right_value115=wchar_tp_to_string(((unsigned int*)come_null_check(str, "libcomelang2-str.c", 955))))), "libcomelang2-str.c", 955)))));
+        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value115);
         if(right_value115 && right_value115 != __result_obj__ && !__freed_obj__) { right_value115 = come_decrement_ref_count(right_value115, (void*)0, (void*)0, 1, 0, 0); }
+        __right_value_freed_obj[0] = right_value115;
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result109__;
+        return __result109__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
@@ -6011,28 +5912,30 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    sub_str_200=(unsigned int*)come_increment_ref_count(((unsigned int*)(right_value117=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 962,wchar_tp_substring(((unsigned int*)come_null_check(str, "libcomelang2-str.c", 962)),tail,-1)))));
+    sub_str_200=(unsigned int*)come_increment_ref_count(((unsigned int*)(right_value117=wchar_tp_substring(((unsigned int*)come_null_check(str, "libcomelang2-str.c", 962)),tail,-1))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value117);
     if(right_value117 && right_value117 != __result_obj__ && !__freed_obj__) { right_value117 = come_decrement_ref_count(right_value117, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value117;
     __freed_obj__ = 0;
-    (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 964,memcpy(str+head,sub_str_200,sizeof(unsigned int)*((gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 964,wstring_length(((unsigned int*)come_null_check(sub_str_200, "libcomelang2-str.c", 964))))+1)));
+    memcpy(str+head,sub_str_200,sizeof(unsigned int)*(wstring_length(((unsigned int*)come_null_check(sub_str_200, "libcomelang2-str.c", 964)))+1));
     __freed_obj__ = 0;
-    __result110__ = __result_obj__ = ((unsigned int*)(right_value119=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 966,string_to_wstring(((char*)come_null_check(((char*)(right_value118=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 966,wchar_tp_to_string(((unsigned int*)come_null_check(str, "libcomelang2-str.c", 966)))))), "libcomelang2-str.c", 966))))));
+    __result110__ = __result_obj__ = ((unsigned int*)(right_value119=string_to_wstring(((char*)come_null_check(((char*)(right_value118=wchar_tp_to_string(((unsigned int*)come_null_check(str, "libcomelang2-str.c", 966))))), "libcomelang2-str.c", 966)))));
     if(sub_str_200 && !__freed_obj__) { sub_str_200 = come_decrement_ref_count(sub_str_200, (void*)0, (void*)0, 0, 0, 0); }
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value118);
     if(right_value118 && right_value118 != __result_obj__ && !__freed_obj__) { right_value118 = come_decrement_ref_count(right_value118, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value118;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result110__;
+    return __result110__;
     __freed_obj__ = 0;
     if(sub_str_200 && !__freed_obj__) { sub_str_200 = come_decrement_ref_count(sub_str_200, (void*)0, (void*)0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 int wchar_tp_index(unsigned int* str, unsigned int* search_str, int default_value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 unsigned int* head_201;
 _Bool _if_conditional89;
 int __result111__;
@@ -6040,32 +5943,29 @@ int __result112__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&head_201, 0, sizeof(unsigned int*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __freed_obj__ = 0;
-    head_201=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 973,wcsstr(str,search_str));
+    head_201=wcsstr(str,search_str);
     __freed_obj__ = 0;
     if(_if_conditional89=head_201==((void*)0),    __freed_obj__ = 0, 
     _if_conditional89) {
         __result111__ = default_value;
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result111__;
+        return __result111__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
     __result112__ = head_201-str;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result112__;
+    return __result112__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 int wchar_tp_rindex(unsigned int* str, unsigned int* search_str, int default_value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int len_202;
 unsigned int* p_203;
 _Bool _while_condtional11;
@@ -6084,15 +5984,14 @@ memset(&p_203, 0, sizeof(unsigned int*));
 memset(&len2_204, 0, sizeof(int));
 memset(&result_205, 0, sizeof(_Bool));
 memset(&i_206, 0, sizeof(int));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __freed_obj__ = 0;
-    len_202=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 986,wcslen(search_str));
+    len_202=wcslen(search_str);
     __freed_obj__ = 0;
-    p_203=str+(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 988,wcslen(str))-len_202;
+    p_203=str+wcslen(str)-len_202;
     __freed_obj__ = 0;
     while(_while_condtional11=p_203>=str,    __freed_obj__ = 0, 
     _while_condtional11) {
-        len2_204=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 991,wcslen(p_203));
+        len2_204=wcslen(p_203);
         __freed_obj__ = 0;
         result_205=(_Bool)1;
         __freed_obj__ = 0;
@@ -6114,7 +6013,7 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         _if_conditional91) {
             __result113__ = (p_203-str);
             __freed_obj__ = 0;
-            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result113__;
+            return __result113__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
@@ -6124,18 +6023,16 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     __result114__ = default_value;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result114__;
+    return __result114__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 unsigned int* wchar_tp_reverse(unsigned int* str){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int len_207;
 void* right_value120;
 unsigned int* result_208;
@@ -6148,11 +6045,12 @@ memset(&len_207, 0, sizeof(int));
 memset(&right_value120, 0, sizeof(void*));
 memset(&result_208, 0, sizeof(unsigned int*));
 memset(&i_209, 0, sizeof(int));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    len_207=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1011,wcslen(str));
+    len_207=wcslen(str);
     __freed_obj__ = 0;
     result_208=(unsigned int*)come_increment_ref_count(((unsigned int*)(right_value120=(unsigned int*)come_calloc(1, sizeof(unsigned int)*(1*(len_207+1)), "libcomelang2-str.c", 1012))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value120);
     if(right_value120 && right_value120 != __result_obj__ && !__freed_obj__) { right_value120 = come_decrement_ref_count(right_value120, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value120;
     __freed_obj__ = 0;
     for(
     i_209=0 ,    __freed_obj__ = 0, 
@@ -6168,19 +6066,17 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __result115__ = __result_obj__ = result_208;
     if(result_208 && !__freed_obj__) { result_208 = come_decrement_ref_count(result_208, (void*)0, (void*)0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result115__;
+    return __result115__;
     __freed_obj__ = 0;
     if(result_208 && !__freed_obj__) { result_208 = come_decrement_ref_count(result_208, (void*)0, (void*)0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 unsigned int* wchar_tp_multiply(unsigned int* str, int n){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int len_210;
 void* right_value121;
 unsigned int* result_211;
@@ -6193,11 +6089,12 @@ memset(&len_210, 0, sizeof(int));
 memset(&right_value121, 0, sizeof(void*));
 memset(&result_211, 0, sizeof(unsigned int*));
 memset(&i_212, 0, sizeof(int));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    len_210=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1025,wcslen(str))*n+1;
+    len_210=wcslen(str)*n+1;
     __freed_obj__ = 0;
     result_211=(unsigned int*)come_increment_ref_count(((unsigned int*)(right_value121=(unsigned int*)come_calloc(1, sizeof(unsigned int)*(1*(len_210)), "libcomelang2-str.c", 1027))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value121);
     if(right_value121 && right_value121 != __result_obj__ && !__freed_obj__) { right_value121 = come_decrement_ref_count(right_value121, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value121;
     __freed_obj__ = 0;
     result_211[0]=0;
     __freed_obj__ = 0;
@@ -6206,26 +6103,24 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     0;    _for_condtionalA27=    i_212<n ,    __freed_obj__ = 0, 
     _for_condtionalA27;    i_212++ ,    __freed_obj__ = 0, 
     0    ){
-        (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1032,wcscat(result_211,str));
+        wcscat(result_211,str);
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
     __result116__ = __result_obj__ = result_211;
     if(result_211 && !__freed_obj__) { result_211 = come_decrement_ref_count(result_211, (void*)0, (void*)0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result116__;
+    return __result116__;
     __freed_obj__ = 0;
     if(result_211 && !__freed_obj__) { result_211 = come_decrement_ref_count(result_211, (void*)0, (void*)0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 unsigned int* wchar_tp_printable(unsigned int* str){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int len_213;
 void* right_value122;
 unsigned int* result_214;
@@ -6243,11 +6138,12 @@ memset(&result_214, 0, sizeof(unsigned int*));
 memset(&n_215, 0, sizeof(int));
 memset(&i_216, 0, sizeof(int));
 memset(&c_217, 0, sizeof(unsigned int));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    len_213=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1040,wchar_tp_length(((unsigned int*)come_null_check(str, "libcomelang2-str.c", 1040))));
+    len_213=wchar_tp_length(((unsigned int*)come_null_check(str, "libcomelang2-str.c", 1040)));
     __freed_obj__ = 0;
     result_214=(unsigned int*)come_increment_ref_count(((unsigned int*)(right_value122=(unsigned int*)come_calloc(1, sizeof(unsigned int)*(1*(len_213*2+1)), "libcomelang2-str.c", 1041))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value122);
     if(right_value122 && right_value122 != __result_obj__ && !__freed_obj__) { right_value122 = come_decrement_ref_count(right_value122, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value122;
     __freed_obj__ = 0;
     n_215=0;
     __freed_obj__ = 0;
@@ -6277,19 +6173,17 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __result117__ = __result_obj__ = result_214;
     if(result_214 && !__freed_obj__) { result_214 = come_decrement_ref_count(result_214, (void*)0, (void*)0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result117__;
+    return __result117__;
     __freed_obj__ = 0;
     if(result_214 && !__freed_obj__) { result_214 = come_decrement_ref_count(result_214, (void*)0, (void*)0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 _Bool charp_match_group_strings(char* self, struct come_regex* reg, int count, struct list$1charph* group_strings){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int offset_218;
 int ovec_max_219;
 const char* err_223;
@@ -6337,7 +6231,6 @@ memset(&i_233, 0, sizeof(int));
 memset(&i_236, 0, sizeof(int));
 memset(&right_value123, 0, sizeof(void*));
 memset(&match_string_237, 0, sizeof(char*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     offset_218=0;
     __freed_obj__ = 0;
     ovec_max_219=16;
@@ -6365,9 +6258,9 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _while_condtional12) {
         options_229=2097152;
         __freed_obj__ = 0;
-        len_230=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1084,strlen(self));
+        len_230=strlen(self);
         __freed_obj__ = 0;
-        regex_result_231=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1086,pcre_exec(re_227,(struct pcre_extra*)0,self,len_230,offset_218,options_229,ovec_value_222,ovec_max_219*3));
+        regex_result_231=pcre_exec(re_227,(struct pcre_extra*)0,self,len_230,offset_218,options_229,ovec_value_222,ovec_max_219*3);
         __freed_obj__ = 0;
         for(
         i_232=0 ,        __freed_obj__ = 0, 
@@ -6395,7 +6288,7 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
             _if_conditional94) {
                 __result118__ = (_Bool)1;
                 __freed_obj__ = 0;
-                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result118__;
+                return __result118__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -6415,17 +6308,19 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
             _if_conditional96) {
                 n_228++;
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1115,list$1charph_reset(((struct list$1charph*)come_null_check(group_strings, "libcomelang2-str.c", 1115))));
+                list$1charph_reset(((struct list$1charph*)come_null_check(group_strings, "libcomelang2-str.c", 1115)));
                 __freed_obj__ = 0;
                 for(
                 i_236=1 ,                __freed_obj__ = 0, 
                 0;                _for_condtionalA31=                i_236<regex_result_231 ,                __freed_obj__ = 0, 
                 _for_condtionalA31;                i_236++ ,                __freed_obj__ = 0, 
                 0                ){
-                    match_string_237=(char*)come_increment_ref_count(((char*)(right_value123=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1117,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1117)),start_220[i_236],end_221[i_236])))));
+                    match_string_237=(char*)come_increment_ref_count(((char*)(right_value123=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1117)),start_220[i_236],end_221[i_236]))));
+                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value123);
                     if(right_value123 && right_value123 != __result_obj__ && !__freed_obj__) { right_value123 = come_decrement_ref_count(right_value123, (void*)0, (void*)0, 1, 0, 0); }
+                    __right_value_freed_obj[0] = right_value123;
                     __freed_obj__ = 0;
-                    (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1118,list$1charph_push_back(((struct list$1charph*)come_null_check(group_strings, "libcomelang2-str.c", 1118)),(char*)come_increment_ref_count(match_string_237)));
+                    list$1charph_push_back(((struct list$1charph*)come_null_check(group_strings, "libcomelang2-str.c", 1118)),(char*)come_increment_ref_count(match_string_237));
                     __freed_obj__ = 0;
                     if(match_string_237 && !__freed_obj__) { match_string_237 = come_decrement_ref_count(match_string_237, (void*)0, (void*)0, 0, 0, 0); }
                 }
@@ -6434,7 +6329,7 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
                 _if_conditional97) {
                     __result120__ = (_Bool)1;
                     __freed_obj__ = 0;
-                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                    return __result120__;
+                    return __result120__;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
@@ -6452,7 +6347,7 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
             else {
                 __result121__ = (_Bool)0;
                 __freed_obj__ = 0;
-                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result121__;
+                return __result121__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -6462,18 +6357,16 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     __result122__ = (_Bool)0;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result122__;
+    return __result122__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 static struct list$1charph* list$1charph_reset(struct list$1charph* self){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 struct list_item$1charph* it_234;
 _Bool _while_condtional13;
 struct list_item$1charph* prev_it_235;
@@ -6482,7 +6375,6 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&it_234, 0, sizeof(struct list_item$1charph*));
 memset(&prev_it_235, 0, sizeof(struct list_item$1charph*));
-                memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                     it_234=((struct list$1charph*)come_null_check(self, "./comelang2.h", 481))->head;
                     __freed_obj__ = 0;
                     while(_while_condtional13=it_234!=((void*)0),                    __freed_obj__ = 0, 
@@ -6503,238 +6395,200 @@ memset(&prev_it_235, 0, sizeof(struct list_item$1charph*));
                     __freed_obj__ = 0;
                     __result119__ = __result_obj__ = self;
                     __freed_obj__ = 0;
-                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                    return __result119__;
+                    return __result119__;
                     __freed_obj__ = 0;
-                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 int wchar_tp_compare(unsigned int* left, unsigned int* right){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int __result123__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result123__ = (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1144,wcscmp(left,right));
+    __result123__ = wcscmp(left,right);
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result123__;
+    return __result123__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 int wstring_compare(unsigned int* left, unsigned int* right){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int __result124__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result124__ = (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1149,wcscmp(left,right));
+    __result124__ = wcscmp(left,right);
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result124__;
+    return __result124__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 unsigned int come_regex_get_hash_key(struct come_regex* reg){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 unsigned int __result125__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result125__ = (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1154,string_get_hash_key(((char*)come_null_check(((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 1154))->str, "libcomelang2-str.c", 1154))));
+    __result125__ = string_get_hash_key(((char*)come_null_check(((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 1154))->str, "libcomelang2-str.c", 1154)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result125__;
+    return __result125__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 _Bool wchar_tp_equals(unsigned int left, unsigned int right){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool __result126__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __result126__ = left==right;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result126__;
+    return __result126__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 unsigned int* wchar_tp_operator_mult(unsigned int* str, int n){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value124;
 unsigned int* __result127__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value124, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result127__ = __result_obj__ = ((unsigned int*)(right_value124=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1165,wchar_tp_multiply(str,n))));
+    __result127__ = __result_obj__ = ((unsigned int*)(right_value124=wchar_tp_multiply(str,n)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result127__;
+    return __result127__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 unsigned int* wstring_operator_mult(unsigned int* str, int n){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value125;
 unsigned int* __result128__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value125, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result128__ = __result_obj__ = ((unsigned int*)(right_value125=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1170,wchar_tp_multiply(str,n))));
+    __result128__ = __result_obj__ = ((unsigned int*)(right_value125=wchar_tp_multiply(str,n)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result128__;
+    return __result128__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 _Bool wchar_tp_operator_equals(unsigned int* left, unsigned int* right){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool __result129__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result129__ = (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1175,wcscmp(left,right))==0;
+    __result129__ = wcscmp(left,right)==0;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result129__;
+    return __result129__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 _Bool wstring_operator_equals(unsigned int* left, unsigned int* right){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool __result130__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result130__ = (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1180,wcscmp(left,right))==0;
+    __result130__ = wcscmp(left,right)==0;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result130__;
+    return __result130__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 _Bool wchar_tp_operator_not_equals(unsigned int* left, unsigned int* right){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool __result131__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result131__ = (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1185,wcscmp(left,right))!=0;
+    __result131__ = wcscmp(left,right)!=0;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result131__;
+    return __result131__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 _Bool wstring_operator_not_equals(unsigned int* left, unsigned int* right){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool __result132__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result132__ = (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1190,wcscmp(left,right))!=0;
+    __result132__ = wcscmp(left,right)!=0;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result132__;
+    return __result132__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 _Bool come_regex_operator_equals(struct come_regex* left, struct come_regex* right){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool __result133__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result133__ = (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1195,come_regex_equals(((struct come_regex*)come_null_check(left, "libcomelang2-str.c", 1195)),right));
+    __result133__ = come_regex_equals(((struct come_regex*)come_null_check(left, "libcomelang2-str.c", 1195)),right);
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result133__;
+    return __result133__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 _Bool come_regex_operator_not_equals(struct come_regex* left, struct come_regex* right){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool __result134__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result134__ = !(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1200,come_regex_equals(((struct come_regex*)come_null_check(left, "libcomelang2-str.c", 1200)),right));
+    __result134__ = !come_regex_equals(((struct come_regex*)come_null_check(left, "libcomelang2-str.c", 1200)),right);
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result134__;
+    return __result134__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 unsigned int* wchar_tp_operator_add(unsigned int* left, unsigned int* right){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value126;
 unsigned int* result_238;
 unsigned int* __result135__;
@@ -6742,30 +6596,29 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value126, 0, sizeof(void*));
 memset(&result_238, 0, sizeof(unsigned int*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    result_238=(unsigned int*)come_increment_ref_count(((unsigned int*)(right_value126=(unsigned int*)come_calloc(1, sizeof(unsigned int)*(1*((gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1205,wcslen(left))+(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1205,wcslen(right))+1)), "libcomelang2-str.c", 1205))));
+    result_238=(unsigned int*)come_increment_ref_count(((unsigned int*)(right_value126=(unsigned int*)come_calloc(1, sizeof(unsigned int)*(1*(wcslen(left)+wcslen(right)+1)), "libcomelang2-str.c", 1205))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value126);
     if(right_value126 && right_value126 != __result_obj__ && !__freed_obj__) { right_value126 = come_decrement_ref_count(right_value126, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value126;
     __freed_obj__ = 0;
-    (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1207,wcscpy(result_238,left));
+    wcscpy(result_238,left);
     __freed_obj__ = 0;
-    (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1208,wcscat(result_238,right));
+    wcscat(result_238,right);
     __freed_obj__ = 0;
     __result135__ = __result_obj__ = result_238;
     if(result_238 && !__freed_obj__) { result_238 = come_decrement_ref_count(result_238, (void*)0, (void*)0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result135__;
+    return __result135__;
     __freed_obj__ = 0;
     if(result_238 && !__freed_obj__) { result_238 = come_decrement_ref_count(result_238, (void*)0, (void*)0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 unsigned int* wstring_operator_add(unsigned int* left, unsigned int* right){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value127;
 unsigned int* result_239;
 unsigned int* __result136__;
@@ -6773,30 +6626,29 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value127, 0, sizeof(void*));
 memset(&result_239, 0, sizeof(unsigned int*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    result_239=(unsigned int*)come_increment_ref_count(((unsigned int*)(right_value127=(unsigned int*)come_calloc(1, sizeof(unsigned int)*(1*((gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1215,wcslen(left))+(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1215,wcslen(right))+1)), "libcomelang2-str.c", 1215))));
+    result_239=(unsigned int*)come_increment_ref_count(((unsigned int*)(right_value127=(unsigned int*)come_calloc(1, sizeof(unsigned int)*(1*(wcslen(left)+wcslen(right)+1)), "libcomelang2-str.c", 1215))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value127);
     if(right_value127 && right_value127 != __result_obj__ && !__freed_obj__) { right_value127 = come_decrement_ref_count(right_value127, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value127;
     __freed_obj__ = 0;
-    (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1217,wcscpy(result_239,left));
+    wcscpy(result_239,left);
     __freed_obj__ = 0;
-    (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1218,wcscat(result_239,right));
+    wcscat(result_239,right);
     __freed_obj__ = 0;
     __result136__ = __result_obj__ = result_239;
     if(result_239 && !__freed_obj__) { result_239 = come_decrement_ref_count(result_239, (void*)0, (void*)0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result136__;
+    return __result136__;
     __freed_obj__ = 0;
     if(result_239 && !__freed_obj__) { result_239 = come_decrement_ref_count(result_239, (void*)0, (void*)0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 int charp_index(char* str, char* search_str, int default_value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 char* head_240;
 _Bool _if_conditional99;
 int __result137__;
@@ -6804,32 +6656,29 @@ int __result138__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&head_240, 0, sizeof(char*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __freed_obj__ = 0;
-    head_240=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1227,strstr(str,search_str));
+    head_240=strstr(str,search_str);
     __freed_obj__ = 0;
     if(_if_conditional99=head_240==((void*)0),    __freed_obj__ = 0, 
     _if_conditional99) {
         __result137__ = default_value;
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result137__;
+        return __result137__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
     __result138__ = head_240-str;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result138__;
+    return __result138__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 int charp_index_regex(char* self, struct come_regex* reg, int default_value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int ovec_max_241;
 int result_245;
 int offset_246;
@@ -6862,7 +6711,6 @@ memset(&len_253, 0, sizeof(int));
 memset(&regex_result_254, 0, sizeof(int));
 memset(&i_255, 0, sizeof(int));
 memset(&i_256, 0, sizeof(int));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     ovec_max_241=16;
     __freed_obj__ = 0;
     int start_242[ovec_max_241];
@@ -6890,9 +6738,9 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _while_condtional14) {
         options_252=2097152;
         __freed_obj__ = 0;
-        len_253=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1258,strlen(self));
+        len_253=strlen(self);
         __freed_obj__ = 0;
-        regex_result_254=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1259,pcre_exec(re_251,(struct pcre_extra*)0,self,len_253,offset_246,options_252,ovec_value_244,ovec_max_241*3));
+        regex_result_254=pcre_exec(re_251,(struct pcre_extra*)0,self,len_253,offset_246,options_252,ovec_value_244,ovec_max_241*3);
         __freed_obj__ = 0;
         for(
         i_255=0 ,        __freed_obj__ = 0, 
@@ -6929,18 +6777,16 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     __result139__ = result_245;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result139__;
+    return __result139__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 char* charp_replace(char* self, int index, char c){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int len_257;
 _Bool _if_conditional101;
 void* right_value128;
@@ -6955,14 +6801,13 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&len_257, 0, sizeof(int));
 memset(&right_value128, 0, sizeof(void*));
 memset(&right_value129, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    len_257=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1286,strlen(self));
+    len_257=strlen(self);
     __freed_obj__ = 0;
-    if(_if_conditional101=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1292,strcmp(self,""))==0,    __freed_obj__ = 0, 
+    if(_if_conditional101=strcmp(self,"")==0,    __freed_obj__ = 0, 
     _if_conditional101) {
-        __result140__ = __result_obj__ = ((char*)(right_value128=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1289,__builtin_string(self))));
+        __result140__ = __result_obj__ = ((char*)(right_value128=__builtin_string(self)));
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result140__;
+        return __result140__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
@@ -6986,20 +6831,18 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     self[index]=c;
     __freed_obj__ = 0;
-    __result141__ = __result_obj__ = ((char*)(right_value129=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1306,__builtin_string(self))));
+    __result141__ = __result_obj__ = ((char*)(right_value129=__builtin_string(self)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result141__;
+    return __result141__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 char* charp_multiply(char* str, int n){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int len_258;
 void* right_value130;
 char* result_259;
@@ -7012,11 +6855,12 @@ memset(&len_258, 0, sizeof(int));
 memset(&right_value130, 0, sizeof(void*));
 memset(&result_259, 0, sizeof(char*));
 memset(&i_260, 0, sizeof(int));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    len_258=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1311,strlen(str))*n+1;
+    len_258=strlen(str)*n+1;
     __freed_obj__ = 0;
     result_259=(char*)come_increment_ref_count(((char*)(right_value130=(char*)come_calloc(1, sizeof(char)*(1*(len_258)), "libcomelang2-str.c", 1313))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value130);
     if(right_value130 && right_value130 != __result_obj__ && !__freed_obj__) { right_value130 = come_decrement_ref_count(right_value130, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value130;
     __freed_obj__ = 0;
     result_259[0]=0;
     __freed_obj__ = 0;
@@ -7025,26 +6869,24 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     0;    _for_condtionalA34=    i_260<n ,    __freed_obj__ = 0, 
     _for_condtionalA34;    i_260++ ,    __freed_obj__ = 0, 
     0    ){
-        (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1318,strcat(result_259,str));
+        strcat(result_259,str);
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
     __result142__ = __result_obj__ = result_259;
     if(result_259 && !__freed_obj__) { result_259 = come_decrement_ref_count(result_259, (void*)0, (void*)0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result142__;
+    return __result142__;
     __freed_obj__ = 0;
     if(result_259 && !__freed_obj__) { result_259 = come_decrement_ref_count(result_259, (void*)0, (void*)0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 char* charp_sub(char* self, struct come_regex* reg, char* replace){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int offset_261;
 int ovec_max_262;
 const char* err_266;
@@ -7097,7 +6939,6 @@ memset(&str_278, 0, sizeof(char*));
 memset(&right_value135, 0, sizeof(void*));
 memset(&str_279, 0, sizeof(char*));
 memset(&right_value136, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     offset_261=0;
     __freed_obj__ = 0;
     ovec_max_262=16;
@@ -7119,17 +6960,21 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     re_270=((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 1339))->re;
     __freed_obj__ = 0;
-    result_271=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value132=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1341,buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)come_null_check(((struct buffer*)(right_value131=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libcomelang2-str.c", 1341))), "libcomelang2-str.c", 1341))))))));
+    result_271=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value132=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)come_null_check(((struct buffer*)(right_value131=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libcomelang2-str.c", 1341))), "libcomelang2-str.c", 1341)))))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value131);
     if(right_value131 && right_value131 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value131, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value131;
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value132);
     if(right_value132 && right_value132 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value132, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value132;
     __freed_obj__ = 0;
     while(_while_condtional15=(_Bool)1,    __freed_obj__ = 0, 
     _while_condtional15) {
         options_272=2097152;
         __freed_obj__ = 0;
-        len_273=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1345,strlen(self));
+        len_273=strlen(self);
         __freed_obj__ = 0;
-        regex_result_274=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1346,pcre_exec(re_270,(struct pcre_extra*)0,self,len_273,offset_261,options_272,ovec_value_265,ovec_max_262*3));
+        regex_result_274=pcre_exec(re_270,(struct pcre_extra*)0,self,len_273,offset_261,options_272,ovec_value_265,ovec_max_262*3);
         __freed_obj__ = 0;
         for(
         i_275=0 ,        __freed_obj__ = 0, 
@@ -7151,12 +6996,14 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         __freed_obj__ = 0;
         if(_if_conditional105=regex_result_274==1,        __freed_obj__ = 0, 
         _if_conditional105) {
-            str_277=(char*)come_increment_ref_count(((char*)(right_value133=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1358,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1358)),offset_261,start_263[0])))));
+            str_277=(char*)come_increment_ref_count(((char*)(right_value133=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1358)),offset_261,start_263[0]))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value133);
             if(right_value133 && right_value133 != __result_obj__ && !__freed_obj__) { right_value133 = come_decrement_ref_count(right_value133, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[0] = right_value133;
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1360,buffer_append_str(((struct buffer*)come_null_check(result_271, "libcomelang2-str.c", 1360)),str_277));
+            buffer_append_str(((struct buffer*)come_null_check(result_271, "libcomelang2-str.c", 1360)),str_277);
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1361,buffer_append_str(((struct buffer*)come_null_check(result_271, "libcomelang2-str.c", 1361)),replace));
+            buffer_append_str(((struct buffer*)come_null_check(result_271, "libcomelang2-str.c", 1361)),replace);
             __freed_obj__ = 0;
             if(_if_conditional106=offset_261==end_264[0],            __freed_obj__ = 0, 
             _if_conditional106) {
@@ -7170,10 +7017,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
             __freed_obj__ = 0;
             if(_if_conditional107=!((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 1375))->global,            __freed_obj__ = 0, 
             _if_conditional107) {
-                str_278=(char*)come_increment_ref_count(((char*)(right_value134=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1371,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1371)),offset_261,-1)))));
+                str_278=(char*)come_increment_ref_count(((char*)(right_value134=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1371)),offset_261,-1))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value134);
                 if(right_value134 && right_value134 != __result_obj__ && !__freed_obj__) { right_value134 = come_decrement_ref_count(right_value134, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[0] = right_value134;
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1372,buffer_append_str(((struct buffer*)come_null_check(result_271, "libcomelang2-str.c", 1372)),str_278));
+                buffer_append_str(((struct buffer*)come_null_check(result_271, "libcomelang2-str.c", 1372)),str_278);
                 __freed_obj__ = 0;
                 if(str_278 && !__freed_obj__) { str_278 = come_decrement_ref_count(str_278, (void*)0, (void*)0, 0, 0, 0); }
                 if(str_277 && !__freed_obj__) { str_277 = come_decrement_ref_count(str_277, (void*)0, (void*)0, 0, 0, 0); }
@@ -7185,10 +7034,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
             if(str_277 && !__freed_obj__) { str_277 = come_decrement_ref_count(str_277, (void*)0, (void*)0, 0, 0, 0); }
         }
         else {
-            str_279=(char*)come_increment_ref_count(((char*)(right_value135=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1378,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1378)),offset_261,-1)))));
+            str_279=(char*)come_increment_ref_count(((char*)(right_value135=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1378)),offset_261,-1))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value135);
             if(right_value135 && right_value135 != __result_obj__ && !__freed_obj__) { right_value135 = come_decrement_ref_count(right_value135, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[0] = right_value135;
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1379,buffer_append_str(((struct buffer*)come_null_check(result_271, "libcomelang2-str.c", 1379)),str_279));
+            buffer_append_str(((struct buffer*)come_null_check(result_271, "libcomelang2-str.c", 1379)),str_279);
             __freed_obj__ = 0;
             if(str_279 && !__freed_obj__) { str_279 = come_decrement_ref_count(str_279, (void*)0, (void*)0, 0, 0, 0); }
             break;
@@ -7198,22 +7049,20 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    __result143__ = __result_obj__ = ((char*)(right_value136=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1384,buffer_to_string(((struct buffer*)come_null_check(result_271, "libcomelang2-str.c", 1384))))));
+    __result143__ = __result_obj__ = ((char*)(right_value136=buffer_to_string(((struct buffer*)come_null_check(result_271, "libcomelang2-str.c", 1384)))));
     if(result_271 && !__freed_obj__) { come_call_finalizer(buffer_finalize,result_271, (void*)0, (void*)0, 0, 0, 0, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result143__;
+    return __result143__;
     __freed_obj__ = 0;
     if(result_271 && !__freed_obj__) { come_call_finalizer(buffer_finalize,result_271, (void*)0, (void*)0, 0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 char* charp_sub_count(char* self, struct come_regex* reg, char* replace, int count){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int offset_280;
 int ovec_max_281;
 const char* err_285;
@@ -7273,7 +7122,6 @@ memset(&str_299, 0, sizeof(char*));
 memset(&right_value142, 0, sizeof(void*));
 memset(&str_300, 0, sizeof(char*));
 memset(&right_value143, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     offset_280=0;
     __freed_obj__ = 0;
     ovec_max_281=16;
@@ -7295,9 +7143,13 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     re_289=((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 1402))->re;
     __freed_obj__ = 0;
-    result_290=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value138=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1404,buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)come_null_check(((struct buffer*)(right_value137=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libcomelang2-str.c", 1404))), "libcomelang2-str.c", 1404))))))));
+    result_290=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value138=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)come_null_check(((struct buffer*)(right_value137=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libcomelang2-str.c", 1404))), "libcomelang2-str.c", 1404)))))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value137);
     if(right_value137 && right_value137 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value137, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value137;
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value138);
     if(right_value138 && right_value138 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value138, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value138;
     __freed_obj__ = 0;
     n_291=0;
     __freed_obj__ = 0;
@@ -7305,9 +7157,9 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _while_condtional16) {
         options_292=2097152;
         __freed_obj__ = 0;
-        len_293=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1410,strlen(self));
+        len_293=strlen(self);
         __freed_obj__ = 0;
-        regex_result_294=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1411,pcre_exec(re_289,(struct pcre_extra*)0,self,len_293,offset_280,options_292,ovec_value_284,ovec_max_281*3));
+        regex_result_294=pcre_exec(re_289,(struct pcre_extra*)0,self,len_293,offset_280,options_292,ovec_value_284,ovec_max_281*3);
         __freed_obj__ = 0;
         for(
         i_295=0 ,        __freed_obj__ = 0, 
@@ -7331,12 +7183,14 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         _if_conditional108) {
             n_291++;
             __freed_obj__ = 0;
-            str_297=(char*)come_increment_ref_count(((char*)(right_value139=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1424,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1424)),offset_280,start_282[0])))));
+            str_297=(char*)come_increment_ref_count(((char*)(right_value139=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1424)),offset_280,start_282[0]))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value139);
             if(right_value139 && right_value139 != __result_obj__ && !__freed_obj__) { right_value139 = come_decrement_ref_count(right_value139, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[0] = right_value139;
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1426,buffer_append_str(((struct buffer*)come_null_check(result_290, "libcomelang2-str.c", 1426)),str_297));
+            buffer_append_str(((struct buffer*)come_null_check(result_290, "libcomelang2-str.c", 1426)),str_297);
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1427,buffer_append_str(((struct buffer*)come_null_check(result_290, "libcomelang2-str.c", 1427)),replace));
+            buffer_append_str(((struct buffer*)come_null_check(result_290, "libcomelang2-str.c", 1427)),replace);
             __freed_obj__ = 0;
             if(_if_conditional109=offset_280==end_283[0],            __freed_obj__ = 0, 
             _if_conditional109) {
@@ -7350,10 +7204,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
             __freed_obj__ = 0;
             if(_if_conditional110=!((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 1441))->global,            __freed_obj__ = 0, 
             _if_conditional110) {
-                str_298=(char*)come_increment_ref_count(((char*)(right_value140=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1437,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1437)),offset_280,-1)))));
+                str_298=(char*)come_increment_ref_count(((char*)(right_value140=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1437)),offset_280,-1))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value140);
                 if(right_value140 && right_value140 != __result_obj__ && !__freed_obj__) { right_value140 = come_decrement_ref_count(right_value140, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[0] = right_value140;
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1438,buffer_append_str(((struct buffer*)come_null_check(result_290, "libcomelang2-str.c", 1438)),str_298));
+                buffer_append_str(((struct buffer*)come_null_check(result_290, "libcomelang2-str.c", 1438)),str_298);
                 __freed_obj__ = 0;
                 if(str_298 && !__freed_obj__) { str_298 = come_decrement_ref_count(str_298, (void*)0, (void*)0, 0, 0, 0); }
                 if(str_297 && !__freed_obj__) { str_297 = come_decrement_ref_count(str_297, (void*)0, (void*)0, 0, 0, 0); }
@@ -7364,10 +7220,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
             __freed_obj__ = 0;
             if(_if_conditional111=n_291==count,            __freed_obj__ = 0, 
             _if_conditional111) {
-                str_299=(char*)come_increment_ref_count(((char*)(right_value141=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1442,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1442)),offset_280,-1)))));
+                str_299=(char*)come_increment_ref_count(((char*)(right_value141=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1442)),offset_280,-1))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value141);
                 if(right_value141 && right_value141 != __result_obj__ && !__freed_obj__) { right_value141 = come_decrement_ref_count(right_value141, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[0] = right_value141;
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1443,buffer_append_str(((struct buffer*)come_null_check(result_290, "libcomelang2-str.c", 1443)),str_299));
+                buffer_append_str(((struct buffer*)come_null_check(result_290, "libcomelang2-str.c", 1443)),str_299);
                 __freed_obj__ = 0;
                 if(str_299 && !__freed_obj__) { str_299 = come_decrement_ref_count(str_299, (void*)0, (void*)0, 0, 0, 0); }
                 if(str_297 && !__freed_obj__) { str_297 = come_decrement_ref_count(str_297, (void*)0, (void*)0, 0, 0, 0); }
@@ -7379,10 +7237,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
             if(str_297 && !__freed_obj__) { str_297 = come_decrement_ref_count(str_297, (void*)0, (void*)0, 0, 0, 0); }
         }
         else {
-            str_300=(char*)come_increment_ref_count(((char*)(right_value142=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1449,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1449)),offset_280,-1)))));
+            str_300=(char*)come_increment_ref_count(((char*)(right_value142=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1449)),offset_280,-1))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value142);
             if(right_value142 && right_value142 != __result_obj__ && !__freed_obj__) { right_value142 = come_decrement_ref_count(right_value142, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[0] = right_value142;
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1450,buffer_append_str(((struct buffer*)come_null_check(result_290, "libcomelang2-str.c", 1450)),str_300));
+            buffer_append_str(((struct buffer*)come_null_check(result_290, "libcomelang2-str.c", 1450)),str_300);
             __freed_obj__ = 0;
             if(str_300 && !__freed_obj__) { str_300 = come_decrement_ref_count(str_300, (void*)0, (void*)0, 0, 0, 0); }
             break;
@@ -7392,22 +7252,20 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    __result144__ = __result_obj__ = ((char*)(right_value143=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1455,buffer_to_string(((struct buffer*)come_null_check(result_290, "libcomelang2-str.c", 1455))))));
+    __result144__ = __result_obj__ = ((char*)(right_value143=buffer_to_string(((struct buffer*)come_null_check(result_290, "libcomelang2-str.c", 1455)))));
     if(result_290 && !__freed_obj__) { come_call_finalizer(buffer_finalize,result_290, (void*)0, (void*)0, 0, 0, 0, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result144__;
+    return __result144__;
     __freed_obj__ = 0;
     if(result_290 && !__freed_obj__) { come_call_finalizer(buffer_finalize,result_290, (void*)0, (void*)0, 0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 struct list$1charph* charp_split_str(char* self, char* str){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value144;
 void* right_value145;
 struct list$1charph* result_301;
@@ -7432,42 +7290,53 @@ memset(&buf_302, 0, sizeof(struct buffer*));
 memset(&i_303, 0, sizeof(int));
 memset(&right_value148, 0, sizeof(void*));
 memset(&right_value149, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __freed_obj__ = 0;
-    result_301=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value145=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1463,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value144=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 1463))), "libcomelang2-str.c", 1463))))))));
+    result_301=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value145=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value144=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 1463))), "libcomelang2-str.c", 1463)))))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value144);
     if(right_value144 && right_value144 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value144, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value144;
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value145);
     if(right_value145 && right_value145 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value145, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value145;
     __freed_obj__ = 0;
-    buf_302=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value147=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1465,buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)come_null_check(((struct buffer*)(right_value146=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libcomelang2-str.c", 1465))), "libcomelang2-str.c", 1465))))))));
+    buf_302=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value147=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)come_null_check(((struct buffer*)(right_value146=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libcomelang2-str.c", 1465))), "libcomelang2-str.c", 1465)))))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value146);
     if(right_value146 && right_value146 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value146, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[2] = right_value146;
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value147);
     if(right_value147 && right_value147 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value147, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[3] = right_value147;
     __freed_obj__ = 0;
     for(
     i_303=0 ,    __freed_obj__ = 0, 
-    0;    _for_condtionalA39=    i_303<(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1477,charp_length(((char*)come_null_check(self, "libcomelang2-str.c", 1477)))) ,    __freed_obj__ = 0, 
+    0;    _for_condtionalA39=    i_303<charp_length(((char*)come_null_check(self, "libcomelang2-str.c", 1477))) ,    __freed_obj__ = 0, 
     _for_condtionalA39;    i_303++ ,    __freed_obj__ = 0, 
     0    ){
-        if(_if_conditional112=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1476,strstr(self+i_303,str))==self+i_303,        __freed_obj__ = 0, 
+        if(_if_conditional112=strstr(self+i_303,str)==self+i_303,        __freed_obj__ = 0, 
         _if_conditional112) {
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1469,list$1charph_push_back(((struct list$1charph*)come_null_check(result_301, "libcomelang2-str.c", 1469)),(char*)come_increment_ref_count(((char*)(right_value148=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1469,__builtin_string(((struct buffer*)come_null_check(buf_302, "libcomelang2-str.c", 1469))->buf)))))));
+            list$1charph_push_back(((struct list$1charph*)come_null_check(result_301, "libcomelang2-str.c", 1469)),(char*)come_increment_ref_count(((char*)(right_value148=__builtin_string(((struct buffer*)come_null_check(buf_302, "libcomelang2-str.c", 1469))->buf)))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value148);
             if(right_value148 && right_value148 != __result_obj__ && !__freed_obj__) { right_value148 = come_decrement_ref_count(right_value148, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[0] = right_value148;
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1470,buffer_reset(((struct buffer*)come_null_check(buf_302, "libcomelang2-str.c", 1470))));
+            buffer_reset(((struct buffer*)come_null_check(buf_302, "libcomelang2-str.c", 1470)));
             __freed_obj__ = 0;
-            i_303+=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1471,strlen(str))-1;
+            i_303+=strlen(str)-1;
             __freed_obj__ = 0;
         }
         else {
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1474,buffer_append_char(((struct buffer*)come_null_check(buf_302, "libcomelang2-str.c", 1474)),self[i_303]));
+            buffer_append_char(((struct buffer*)come_null_check(buf_302, "libcomelang2-str.c", 1474)),self[i_303]);
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    if(_if_conditional113=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1481,buffer_length(((struct buffer*)come_null_check(buf_302, "libcomelang2-str.c", 1481))))!=0,    __freed_obj__ = 0, 
+    if(_if_conditional113=buffer_length(((struct buffer*)come_null_check(buf_302, "libcomelang2-str.c", 1481)))!=0,    __freed_obj__ = 0, 
     _if_conditional113) {
-        (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1478,list$1charph_push_back(((struct list$1charph*)come_null_check(result_301, "libcomelang2-str.c", 1478)),(char*)come_increment_ref_count(((char*)(right_value149=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1478,__builtin_string(((struct buffer*)come_null_check(buf_302, "libcomelang2-str.c", 1478))->buf)))))));
+        list$1charph_push_back(((struct list$1charph*)come_null_check(result_301, "libcomelang2-str.c", 1478)),(char*)come_increment_ref_count(((char*)(right_value149=__builtin_string(((struct buffer*)come_null_check(buf_302, "libcomelang2-str.c", 1478))->buf)))));
+        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value149);
         if(right_value149 && right_value149 != __result_obj__ && !__freed_obj__) { right_value149 = come_decrement_ref_count(right_value149, (void*)0, (void*)0, 1, 0, 0); }
+        __right_value_freed_obj[0] = right_value149;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
@@ -7475,20 +7344,18 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     if(result_301 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_301, (void*)0, (void*)0, 0, 0, 1, 0); }
     if(buf_302 && !__freed_obj__) { come_call_finalizer(buffer_finalize,buf_302, (void*)0, (void*)0, 0, 0, 0, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result145__;
+    return __result145__;
     __freed_obj__ = 0;
     if(result_301 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_301, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(buf_302 && !__freed_obj__) { come_call_finalizer(buffer_finalize,buf_302, (void*)0, (void*)0, 0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 struct list$1charph* charp_scan(char* self, struct come_regex* reg){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value150;
 void* right_value151;
 struct list$1charph* result_304;
@@ -7543,10 +7410,13 @@ memset(&str_321, 0, sizeof(char*));
 memset(&i_322, 0, sizeof(int));
 memset(&right_value154, 0, sizeof(void*));
 memset(&match_string_323, 0, sizeof(char*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    result_304=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value151=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1486,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value150=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 1486))), "libcomelang2-str.c", 1486))))))));
+    result_304=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value151=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value150=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 1486))), "libcomelang2-str.c", 1486)))))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value150);
     if(right_value150 && right_value150 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value150, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value150;
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value151);
     if(right_value151 && right_value151 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value151, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value151;
     __freed_obj__ = 0;
     offset_305=0;
     __freed_obj__ = 0;
@@ -7573,9 +7443,9 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _while_condtional17) {
         options_315=2097152;
         __freed_obj__ = 0;
-        len_316=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1506,strlen(self));
+        len_316=strlen(self);
         __freed_obj__ = 0;
-        regex_result_317=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1507,pcre_exec(re_314,(struct pcre_extra*)0,self,len_316,offset_305,options_315,ovec_value_309,ovec_max_306*3));
+        regex_result_317=pcre_exec(re_314,(struct pcre_extra*)0,self,len_316,offset_305,options_315,ovec_value_309,ovec_max_306*3);
         __freed_obj__ = 0;
         for(
         i_318=0 ,        __freed_obj__ = 0, 
@@ -7597,10 +7467,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         __freed_obj__ = 0;
         if(_if_conditional114=regex_result_317==1,        __freed_obj__ = 0, 
         _if_conditional114) {
-            str_320=(char*)come_increment_ref_count(((char*)(right_value152=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1519,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1519)),start_307[0],end_308[0])))));
+            str_320=(char*)come_increment_ref_count(((char*)(right_value152=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1519)),start_307[0],end_308[0]))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value152);
             if(right_value152 && right_value152 != __result_obj__ && !__freed_obj__) { right_value152 = come_decrement_ref_count(right_value152, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[0] = right_value152;
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1521,list$1charph_push_back(((struct list$1charph*)come_null_check(result_304, "libcomelang2-str.c", 1521)),(char*)come_increment_ref_count(str_320)));
+            list$1charph_push_back(((struct list$1charph*)come_null_check(result_304, "libcomelang2-str.c", 1521)),(char*)come_increment_ref_count(str_320));
             __freed_obj__ = 0;
             if(_if_conditional115=offset_305==end_308[0],            __freed_obj__ = 0, 
             _if_conditional115) {
@@ -7617,10 +7489,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         else {
             if(_if_conditional116=regex_result_317>1,            __freed_obj__ = 0, 
             _if_conditional116) {
-                str_321=(char*)come_increment_ref_count(((char*)(right_value153=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1532,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1532)),start_307[0],end_308[0])))));
+                str_321=(char*)come_increment_ref_count(((char*)(right_value153=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1532)),start_307[0],end_308[0]))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value153);
                 if(right_value153 && right_value153 != __result_obj__ && !__freed_obj__) { right_value153 = come_decrement_ref_count(right_value153, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[0] = right_value153;
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1533,list$1charph_push_back(((struct list$1charph*)come_null_check(result_304, "libcomelang2-str.c", 1533)),(char*)come_increment_ref_count(str_321)));
+                list$1charph_push_back(((struct list$1charph*)come_null_check(result_304, "libcomelang2-str.c", 1533)),(char*)come_increment_ref_count(str_321));
                 __freed_obj__ = 0;
                 if(_if_conditional117=offset_305==end_308[0],                __freed_obj__ = 0, 
                 _if_conditional117) {
@@ -7637,10 +7511,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
                 0;                _for_condtionalA42=                i_322<regex_result_317 ,                __freed_obj__ = 0, 
                 _for_condtionalA42;                i_322++ ,                __freed_obj__ = 0, 
                 0                ){
-                    match_string_323=(char*)come_increment_ref_count(((char*)(right_value154=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1543,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1543)),start_307[i_322],end_308[i_322])))));
+                    match_string_323=(char*)come_increment_ref_count(((char*)(right_value154=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1543)),start_307[i_322],end_308[i_322]))));
+                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value154);
                     if(right_value154 && right_value154 != __result_obj__ && !__freed_obj__) { right_value154 = come_decrement_ref_count(right_value154, (void*)0, (void*)0, 1, 0, 0); }
+                    __right_value_freed_obj[0] = right_value154;
                     __freed_obj__ = 0;
-                    (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1544,list$1charph_push_back(((struct list$1charph*)come_null_check(result_304, "libcomelang2-str.c", 1544)),(char*)come_increment_ref_count(match_string_323)));
+                    list$1charph_push_back(((struct list$1charph*)come_null_check(result_304, "libcomelang2-str.c", 1544)),(char*)come_increment_ref_count(match_string_323));
                     __freed_obj__ = 0;
                     if(match_string_323 && !__freed_obj__) { match_string_323 = come_decrement_ref_count(match_string_323, (void*)0, (void*)0, 0, 0, 0); }
                 }
@@ -7659,19 +7535,17 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __result146__ = __result_obj__ = result_304;
     if(result_304 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_304, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result146__;
+    return __result146__;
     __freed_obj__ = 0;
     if(result_304 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_304, (void*)0, (void*)0, 0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 struct list$1charph* charp_split(char* self, struct come_regex* reg){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 const char* err_324;
 int erro_ofs_325;
 int options_326;
@@ -7731,7 +7605,6 @@ memset(&right_value159, 0, sizeof(void*));
 memset(&match_str_343, 0, sizeof(char*));
 memset(&right_value160, 0, sizeof(void*));
 memset(&str_344, 0, sizeof(char*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __freed_obj__ = 0;
     __freed_obj__ = 0;
     options_326=((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 1562))->options;
@@ -7740,9 +7613,13 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     re_328=((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 1565))->re;
     __freed_obj__ = 0;
-    result_329=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value156=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1567,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value155=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 1567))), "libcomelang2-str.c", 1567))))))));
+    result_329=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value156=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value155=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 1567))), "libcomelang2-str.c", 1567)))))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value155);
     if(right_value155 && right_value155 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value155, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value155;
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value156);
     if(right_value156 && right_value156 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value156, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value156;
     __freed_obj__ = 0;
     offset_330=0;
     __freed_obj__ = 0;
@@ -7761,9 +7638,9 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _while_condtional18) {
         options_335=2097152;
         __freed_obj__ = 0;
-        len_336=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1578,strlen(self));
+        len_336=strlen(self);
         __freed_obj__ = 0;
-        regex_result_337=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1580,pcre_exec(re_328,(struct pcre_extra*)0,self,len_336,offset_330,options_335,ovec_value_334,ovec_max_331*3));
+        regex_result_337=pcre_exec(re_328,(struct pcre_extra*)0,self,len_336,offset_330,options_335,ovec_value_334,ovec_max_331*3);
         __freed_obj__ = 0;
         for(
         i_338=0 ,        __freed_obj__ = 0, 
@@ -7785,10 +7662,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         __freed_obj__ = 0;
         if(_if_conditional118=regex_result_337==1,        __freed_obj__ = 0, 
         _if_conditional118) {
-            str_340=(char*)come_increment_ref_count(((char*)(right_value157=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1592,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1592)),offset_330,start_332[0])))));
+            str_340=(char*)come_increment_ref_count(((char*)(right_value157=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1592)),offset_330,start_332[0]))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value157);
             if(right_value157 && right_value157 != __result_obj__ && !__freed_obj__) { right_value157 = come_decrement_ref_count(right_value157, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[0] = right_value157;
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1593,list$1charph_push_back(((struct list$1charph*)come_null_check(result_329, "libcomelang2-str.c", 1593)),(char*)come_increment_ref_count(str_340)));
+            list$1charph_push_back(((struct list$1charph*)come_null_check(result_329, "libcomelang2-str.c", 1593)),(char*)come_increment_ref_count(str_340));
             __freed_obj__ = 0;
             if(_if_conditional119=offset_330==end_333[0],            __freed_obj__ = 0, 
             _if_conditional119) {
@@ -7805,10 +7684,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         else {
             if(_if_conditional120=regex_result_337>1,            __freed_obj__ = 0, 
             _if_conditional120) {
-                str_341=(char*)come_increment_ref_count(((char*)(right_value158=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1604,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1604)),offset_330,start_332[0])))));
+                str_341=(char*)come_increment_ref_count(((char*)(right_value158=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1604)),offset_330,start_332[0]))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value158);
                 if(right_value158 && right_value158 != __result_obj__ && !__freed_obj__) { right_value158 = come_decrement_ref_count(right_value158, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[0] = right_value158;
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1605,list$1charph_push_back(((struct list$1charph*)come_null_check(result_329, "libcomelang2-str.c", 1605)),(char*)come_increment_ref_count(str_341)));
+                list$1charph_push_back(((struct list$1charph*)come_null_check(result_329, "libcomelang2-str.c", 1605)),(char*)come_increment_ref_count(str_341));
                 __freed_obj__ = 0;
                 if(_if_conditional121=offset_330==end_333[0],                __freed_obj__ = 0, 
                 _if_conditional121) {
@@ -7825,10 +7706,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
                 0;                _for_condtionalA45=                i_342<regex_result_337 ,                __freed_obj__ = 0, 
                 _for_condtionalA45;                i_342++ ,                __freed_obj__ = 0, 
                 0                ){
-                    match_str_343=(char*)come_increment_ref_count(((char*)(right_value159=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1615,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1615)),start_332[i_342],end_333[i_342])))));
+                    match_str_343=(char*)come_increment_ref_count(((char*)(right_value159=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1615)),start_332[i_342],end_333[i_342]))));
+                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value159);
                     if(right_value159 && right_value159 != __result_obj__ && !__freed_obj__) { right_value159 = come_decrement_ref_count(right_value159, (void*)0, (void*)0, 1, 0, 0); }
+                    __right_value_freed_obj[0] = right_value159;
                     __freed_obj__ = 0;
-                    (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1616,list$1charph_push_back(((struct list$1charph*)come_null_check(result_329, "libcomelang2-str.c", 1616)),(char*)come_increment_ref_count(match_str_343)));
+                    list$1charph_push_back(((struct list$1charph*)come_null_check(result_329, "libcomelang2-str.c", 1616)),(char*)come_increment_ref_count(match_str_343));
                     __freed_obj__ = 0;
                     if(match_str_343 && !__freed_obj__) { match_str_343 = come_decrement_ref_count(match_str_343, (void*)0, (void*)0, 0, 0, 0); }
                 }
@@ -7844,12 +7727,14 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    if(_if_conditional122=offset_330<(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1631,charp_length(((char*)come_null_check(self, "libcomelang2-str.c", 1631)))),    __freed_obj__ = 0, 
+    if(_if_conditional122=offset_330<charp_length(((char*)come_null_check(self, "libcomelang2-str.c", 1631))),    __freed_obj__ = 0, 
     _if_conditional122) {
-        str_344=(char*)come_increment_ref_count(((char*)(right_value160=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1627,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1627)),offset_330,-1)))));
+        str_344=(char*)come_increment_ref_count(((char*)(right_value160=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1627)),offset_330,-1))));
+        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value160);
         if(right_value160 && right_value160 != __result_obj__ && !__freed_obj__) { right_value160 = come_decrement_ref_count(right_value160, (void*)0, (void*)0, 1, 0, 0); }
+        __right_value_freed_obj[0] = right_value160;
         __freed_obj__ = 0;
-        (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1628,list$1charph_push_back(((struct list$1charph*)come_null_check(result_329, "libcomelang2-str.c", 1628)),(char*)come_increment_ref_count(str_344)));
+        list$1charph_push_back(((struct list$1charph*)come_null_check(result_329, "libcomelang2-str.c", 1628)),(char*)come_increment_ref_count(str_344));
         __freed_obj__ = 0;
         if(str_344 && !__freed_obj__) { str_344 = come_decrement_ref_count(str_344, (void*)0, (void*)0, 0, 0, 0); }
     }
@@ -7857,19 +7742,17 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __result147__ = __result_obj__ = result_329;
     if(result_329 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_329, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result147__;
+    return __result147__;
     __freed_obj__ = 0;
     if(result_329 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_329, (void*)0, (void*)0, 0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 _Bool charp_match(char* self, struct come_regex* reg){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int offset_345;
 int ovec_max_346;
 const char* err_350;
@@ -7902,7 +7785,6 @@ memset(&len_356, 0, sizeof(int));
 memset(&regex_result_357, 0, sizeof(int));
 memset(&i_358, 0, sizeof(int));
 memset(&i_359, 0, sizeof(int));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     offset_345=0;
     __freed_obj__ = 0;
     ovec_max_346=16;
@@ -7928,9 +7810,9 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _while_condtional19) {
         options_355=2097152;
         __freed_obj__ = 0;
-        len_356=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1653,strlen(self));
+        len_356=strlen(self);
         __freed_obj__ = 0;
-        regex_result_357=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1655,pcre_exec(re_354,(struct pcre_extra*)0,self,len_356,offset_345,options_355,ovec_value_349,ovec_max_346*3));
+        regex_result_357=pcre_exec(re_354,(struct pcre_extra*)0,self,len_356,offset_345,options_355,ovec_value_349,ovec_max_346*3);
         __freed_obj__ = 0;
         for(
         i_358=0 ,        __freed_obj__ = 0, 
@@ -7954,13 +7836,13 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         _if_conditional123) {
             __result148__ = (_Bool)1;
             __freed_obj__ = 0;
-            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result148__;
+            return __result148__;
             __freed_obj__ = 0;
         }
         else {
             __result149__ = (_Bool)0;
             __freed_obj__ = 0;
-            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result149__;
+            return __result149__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
@@ -7968,18 +7850,16 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     __result150__ = (_Bool)0;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result150__;
+    return __result150__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 struct list$1charph* charp_split_maxsplit(char* self, struct come_regex* reg, int maxsplit){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 const char* err_360;
 int erro_ofs_361;
 int options_362;
@@ -8042,7 +7922,6 @@ memset(&right_value165, 0, sizeof(void*));
 memset(&match_str_380, 0, sizeof(char*));
 memset(&right_value166, 0, sizeof(void*));
 memset(&str_381, 0, sizeof(char*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __freed_obj__ = 0;
     __freed_obj__ = 0;
     options_362=((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 1684))->options;
@@ -8051,9 +7930,13 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     re_364=((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 1687))->re;
     __freed_obj__ = 0;
-    result_365=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value162=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1689,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value161=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 1689))), "libcomelang2-str.c", 1689))))))));
+    result_365=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value162=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value161=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 1689))), "libcomelang2-str.c", 1689)))))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value161);
     if(right_value161 && right_value161 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value161, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value161;
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value162);
     if(right_value162 && right_value162 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value162, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value162;
     __freed_obj__ = 0;
     offset_366=0;
     __freed_obj__ = 0;
@@ -8074,9 +7957,9 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _while_condtional20) {
         options_372=2097152;
         __freed_obj__ = 0;
-        len_373=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1702,strlen(self));
+        len_373=strlen(self);
         __freed_obj__ = 0;
-        regex_result_374=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1704,pcre_exec(re_364,(struct pcre_extra*)0,self,len_373,offset_366,options_372,ovec_value_370,ovec_max_367*3));
+        regex_result_374=pcre_exec(re_364,(struct pcre_extra*)0,self,len_373,offset_366,options_372,ovec_value_370,ovec_max_367*3);
         __freed_obj__ = 0;
         for(
         i_375=0 ,        __freed_obj__ = 0, 
@@ -8098,10 +7981,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         __freed_obj__ = 0;
         if(_if_conditional124=regex_result_374==1,        __freed_obj__ = 0, 
         _if_conditional124) {
-            str_377=(char*)come_increment_ref_count(((char*)(right_value163=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1716,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1716)),offset_366,start_368[0])))));
+            str_377=(char*)come_increment_ref_count(((char*)(right_value163=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1716)),offset_366,start_368[0]))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value163);
             if(right_value163 && right_value163 != __result_obj__ && !__freed_obj__) { right_value163 = come_decrement_ref_count(right_value163, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[0] = right_value163;
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1717,list$1charph_push_back(((struct list$1charph*)come_null_check(result_365, "libcomelang2-str.c", 1717)),(char*)come_increment_ref_count(str_377)));
+            list$1charph_push_back(((struct list$1charph*)come_null_check(result_365, "libcomelang2-str.c", 1717)),(char*)come_increment_ref_count(str_377));
             __freed_obj__ = 0;
             if(_if_conditional125=offset_366==end_369[0],            __freed_obj__ = 0, 
             _if_conditional125) {
@@ -8118,10 +8003,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         else {
             if(_if_conditional126=regex_result_374>1,            __freed_obj__ = 0, 
             _if_conditional126) {
-                str_378=(char*)come_increment_ref_count(((char*)(right_value164=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1728,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1728)),offset_366,start_368[0])))));
+                str_378=(char*)come_increment_ref_count(((char*)(right_value164=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1728)),offset_366,start_368[0]))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value164);
                 if(right_value164 && right_value164 != __result_obj__ && !__freed_obj__) { right_value164 = come_decrement_ref_count(right_value164, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[0] = right_value164;
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1729,list$1charph_push_back(((struct list$1charph*)come_null_check(result_365, "libcomelang2-str.c", 1729)),(char*)come_increment_ref_count(str_378)));
+                list$1charph_push_back(((struct list$1charph*)come_null_check(result_365, "libcomelang2-str.c", 1729)),(char*)come_increment_ref_count(str_378));
                 __freed_obj__ = 0;
                 if(_if_conditional127=offset_366==end_369[0],                __freed_obj__ = 0, 
                 _if_conditional127) {
@@ -8138,10 +8025,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
                 0;                _for_condtionalA50=                i_379<regex_result_374 ,                __freed_obj__ = 0, 
                 _for_condtionalA50;                i_379++ ,                __freed_obj__ = 0, 
                 0                ){
-                    match_str_380=(char*)come_increment_ref_count(((char*)(right_value165=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1739,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1739)),start_368[i_379],end_369[i_379])))));
+                    match_str_380=(char*)come_increment_ref_count(((char*)(right_value165=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1739)),start_368[i_379],end_369[i_379]))));
+                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value165);
                     if(right_value165 && right_value165 != __result_obj__ && !__freed_obj__) { right_value165 = come_decrement_ref_count(right_value165, (void*)0, (void*)0, 1, 0, 0); }
+                    __right_value_freed_obj[0] = right_value165;
                     __freed_obj__ = 0;
-                    (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1740,list$1charph_push_back(((struct list$1charph*)come_null_check(result_365, "libcomelang2-str.c", 1740)),(char*)come_increment_ref_count(match_str_380)));
+                    list$1charph_push_back(((struct list$1charph*)come_null_check(result_365, "libcomelang2-str.c", 1740)),(char*)come_increment_ref_count(match_str_380));
                     __freed_obj__ = 0;
                     if(match_str_380 && !__freed_obj__) { match_str_380 = come_decrement_ref_count(match_str_380, (void*)0, (void*)0, 0, 0, 0); }
                 }
@@ -8165,12 +8054,14 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    if(_if_conditional129=offset_366<(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1761,charp_length(((char*)come_null_check(self, "libcomelang2-str.c", 1761)))),    __freed_obj__ = 0, 
+    if(_if_conditional129=offset_366<charp_length(((char*)come_null_check(self, "libcomelang2-str.c", 1761))),    __freed_obj__ = 0, 
     _if_conditional129) {
-        str_381=(char*)come_increment_ref_count(((char*)(right_value166=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1757,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1757)),offset_366,-1)))));
+        str_381=(char*)come_increment_ref_count(((char*)(right_value166=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1757)),offset_366,-1))));
+        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value166);
         if(right_value166 && right_value166 != __result_obj__ && !__freed_obj__) { right_value166 = come_decrement_ref_count(right_value166, (void*)0, (void*)0, 1, 0, 0); }
+        __right_value_freed_obj[0] = right_value166;
         __freed_obj__ = 0;
-        (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1758,list$1charph_push_back(((struct list$1charph*)come_null_check(result_365, "libcomelang2-str.c", 1758)),(char*)come_increment_ref_count(str_381)));
+        list$1charph_push_back(((struct list$1charph*)come_null_check(result_365, "libcomelang2-str.c", 1758)),(char*)come_increment_ref_count(str_381));
         __freed_obj__ = 0;
         if(str_381 && !__freed_obj__) { str_381 = come_decrement_ref_count(str_381, (void*)0, (void*)0, 0, 0, 0); }
     }
@@ -8178,19 +8069,17 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __result151__ = __result_obj__ = result_365;
     if(result_365 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_365, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result151__;
+    return __result151__;
     __freed_obj__ = 0;
     if(result_365 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_365, (void*)0, (void*)0, 0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 int charp_rindex_regex_count(char* self, struct come_regex* reg, int count, int default_value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 const char* err_382;
 int erro_ofs_383;
 int options_384;
@@ -8231,7 +8120,6 @@ memset(&len_396, 0, sizeof(int));
 memset(&regex_result_397, 0, sizeof(int));
 memset(&i_398, 0, sizeof(int));
 memset(&i_399, 0, sizeof(int));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __freed_obj__ = 0;
     __freed_obj__ = 0;
     options_384=((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 1769))->options;
@@ -8240,8 +8128,10 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     re_386=((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 1772))->re;
     __freed_obj__ = 0;
-    self2_387=(char*)come_increment_ref_count(((char*)(right_value167=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1774,charp_reverse(((char*)come_null_check(self, "libcomelang2-str.c", 1774)))))));
+    self2_387=(char*)come_increment_ref_count(((char*)(right_value167=charp_reverse(((char*)come_null_check(self, "libcomelang2-str.c", 1774))))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value167);
     if(right_value167 && right_value167 != __result_obj__ && !__freed_obj__) { right_value167 = come_decrement_ref_count(right_value167, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value167;
     __freed_obj__ = 0;
     ovec_max_388=16;
     __freed_obj__ = 0;
@@ -8264,9 +8154,9 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _while_condtional21) {
         options_395=2097152;
         __freed_obj__ = 0;
-        len_396=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1789,strlen(self2_387));
+        len_396=strlen(self2_387);
         __freed_obj__ = 0;
-        regex_result_397=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1790,pcre_exec(re_386,(struct pcre_extra*)0,self2_387,len_396,offset_393,options_395,ovec_value_391,ovec_max_388*3));
+        regex_result_397=pcre_exec(re_386,(struct pcre_extra*)0,self2_387,len_396,offset_393,options_395,ovec_value_391,ovec_max_388*3);
         __freed_obj__ = 0;
         for(
         i_398=0 ,        __freed_obj__ = 0, 
@@ -8302,7 +8192,7 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
             __freed_obj__ = 0;
             if(_if_conditional132=n_394==count,            __freed_obj__ = 0, 
             _if_conditional132) {
-                result_392=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1812,strlen(self))-end_390[0];
+                result_392=strlen(self)-end_390[0];
                 __freed_obj__ = 0;
                 break;
                 __freed_obj__ = 0;
@@ -8319,19 +8209,17 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __result152__ = result_392;
     if(self2_387 && !__freed_obj__) { self2_387 = come_decrement_ref_count(self2_387, (void*)0, (void*)0, 0, 0, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result152__;
+    return __result152__;
     __freed_obj__ = 0;
     if(self2_387 && !__freed_obj__) { self2_387 = come_decrement_ref_count(self2_387, (void*)0, (void*)0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 _Bool charp_match_count(char* self, struct come_regex* reg, int count){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int offset_400;
 int ovec_max_401;
 const char* err_405;
@@ -8368,7 +8256,6 @@ memset(&len_412, 0, sizeof(int));
 memset(&regex_result_413, 0, sizeof(int));
 memset(&i_414, 0, sizeof(int));
 memset(&i_415, 0, sizeof(int));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     offset_400=0;
     __freed_obj__ = 0;
     ovec_max_401=16;
@@ -8396,9 +8283,9 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _while_condtional22) {
         options_411=2097152;
         __freed_obj__ = 0;
-        len_412=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1847,strlen(self));
+        len_412=strlen(self);
         __freed_obj__ = 0;
-        regex_result_413=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1849,pcre_exec(re_409,(struct pcre_extra*)0,self,len_412,offset_400,options_411,ovec_value_404,ovec_max_401*3));
+        regex_result_413=pcre_exec(re_409,(struct pcre_extra*)0,self,len_412,offset_400,options_411,ovec_value_404,ovec_max_401*3);
         __freed_obj__ = 0;
         for(
         i_414=0 ,        __freed_obj__ = 0, 
@@ -8426,7 +8313,7 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
             _if_conditional134) {
                 __result153__ = (_Bool)1;
                 __freed_obj__ = 0;
-                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result153__;
+                return __result153__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -8444,7 +8331,7 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         else {
             __result154__ = (_Bool)0;
             __freed_obj__ = 0;
-            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result154__;
+            return __result154__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
@@ -8452,18 +8339,16 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     __result155__ = (_Bool)0;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result155__;
+    return __result155__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 char* charp_sub_block(char* self, struct come_regex* reg, void* parent, char* (*block)(void*,char*,struct list$1charph*)){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int offset_416;
 int ovec_max_417;
 const char* err_421;
@@ -8572,7 +8457,6 @@ memset(&str_443, 0, sizeof(char*));
 memset(&right_value186, 0, sizeof(void*));
 memset(&str_444, 0, sizeof(char*));
 memset(&right_value187, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     offset_416=0;
     __freed_obj__ = 0;
     ovec_max_417=16;
@@ -8594,17 +8478,21 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     re_425=((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 1899))->re;
     __freed_obj__ = 0;
-    result_426=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value169=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1901,buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)come_null_check(((struct buffer*)(right_value168=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libcomelang2-str.c", 1901))), "libcomelang2-str.c", 1901))))))));
+    result_426=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value169=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)come_null_check(((struct buffer*)(right_value168=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libcomelang2-str.c", 1901))), "libcomelang2-str.c", 1901)))))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value168);
     if(right_value168 && right_value168 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value168, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value168;
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value169);
     if(right_value169 && right_value169 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value169, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value169;
     __freed_obj__ = 0;
     while(_while_condtional23=(_Bool)1,    __freed_obj__ = 0, 
     _while_condtional23) {
         options_427=2097152;
         __freed_obj__ = 0;
-        len_428=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1905,strlen(self));
+        len_428=strlen(self);
         __freed_obj__ = 0;
-        regex_result_429=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1906,pcre_exec(re_425,(struct pcre_extra*)0,self,len_428,offset_416,options_427,ovec_value_420,ovec_max_417*3));
+        regex_result_429=pcre_exec(re_425,(struct pcre_extra*)0,self,len_428,offset_416,options_427,ovec_value_420,ovec_max_417*3);
         __freed_obj__ = 0;
         for(
         i_430=0 ,        __freed_obj__ = 0, 
@@ -8626,38 +8514,50 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         __freed_obj__ = 0;
         if(_if_conditional136=regex_result_429==1,        __freed_obj__ = 0, 
         _if_conditional136) {
-            str_432=(char*)come_increment_ref_count(((char*)(right_value170=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1917,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1917)),offset_416,start_418[0])))));
+            str_432=(char*)come_increment_ref_count(((char*)(right_value170=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1917)),offset_416,start_418[0]))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value170);
             if(right_value170 && right_value170 != __result_obj__ && !__freed_obj__) { right_value170 = come_decrement_ref_count(right_value170, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[0] = right_value170;
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1919,buffer_append_str(((struct buffer*)come_null_check(result_426, "libcomelang2-str.c", 1919)),str_432));
+            buffer_append_str(((struct buffer*)come_null_check(result_426, "libcomelang2-str.c", 1919)),str_432);
             __freed_obj__ = 0;
-            group_strings_433=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value172=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1921,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value171=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 1921))), "libcomelang2-str.c", 1921))))))));
+            group_strings_433=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value172=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value171=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 1921))), "libcomelang2-str.c", 1921)))))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value171);
             if(right_value171 && right_value171 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value171, (void*)0, (void*)0, 0, 1, 0, 0); }
+            __right_value_freed_obj[1] = right_value171;
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value172);
             if(right_value172 && right_value172 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value172, (void*)0, (void*)0, 0, 1, 0, 0); }
+            __right_value_freed_obj[2] = right_value172;
             __freed_obj__ = 0;
-            match_string_434=(char*)come_increment_ref_count(((char*)(right_value173=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1923,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1923)),start_418[0],end_419[0])))));
+            match_string_434=(char*)come_increment_ref_count(((char*)(right_value173=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1923)),start_418[0],end_419[0]))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value173);
             if(right_value173 && right_value173 != __result_obj__ && !__freed_obj__) { right_value173 = come_decrement_ref_count(right_value173, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[3] = right_value173;
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1925,list$1charph_push_back(((struct list$1charph*)come_null_check(group_strings_433, "libcomelang2-str.c", 1925)),(char*)come_increment_ref_count(((char*)(right_value174=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1925,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1925)),start_418[0],end_419[0])))))));
+            list$1charph_push_back(((struct list$1charph*)come_null_check(group_strings_433, "libcomelang2-str.c", 1925)),(char*)come_increment_ref_count(((char*)(right_value174=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1925)),start_418[0],end_419[0])))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 4, right_value174);
             if(right_value174 && right_value174 != __result_obj__ && !__freed_obj__) { right_value174 = come_decrement_ref_count(right_value174, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[4] = right_value174;
             __freed_obj__ = 0;
             block_result_435=(char*)come_increment_ref_count(((char*)(right_value175=block(parent,match_string_434,group_strings_433))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 5, right_value175);
             if(right_value175 && right_value175 != __result_obj__ && !__freed_obj__) { right_value175 = come_decrement_ref_count(right_value175, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[5] = right_value175;
             __freed_obj__ = 0;
             if(_if_conditional137=((struct sDummyCurrentStack*)come_null_check(((struct sDummyCurrentStack*)parent), "libcomelang2-str.c", 1933))->__method_block_result_kind__!=0,            __freed_obj__ = 0, 
             _if_conditional137) {
-                __result156__ = __result_obj__ = ((char*)(right_value176=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1930,buffer_to_string(((struct buffer*)come_null_check(result_426, "libcomelang2-str.c", 1930))))));
+                __result156__ = __result_obj__ = ((char*)(right_value176=buffer_to_string(((struct buffer*)come_null_check(result_426, "libcomelang2-str.c", 1930)))));
                 if(str_432 && !__freed_obj__) { str_432 = come_decrement_ref_count(str_432, (void*)0, (void*)0, 0, 0, 0); }
                 if(group_strings_433 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,group_strings_433, (void*)0, (void*)0, 0, 0, 0, 0); }
                 if(match_string_434 && !__freed_obj__) { match_string_434 = come_decrement_ref_count(match_string_434, (void*)0, (void*)0, 0, 0, 0); }
                 if(block_result_435 && !__freed_obj__) { block_result_435 = come_decrement_ref_count(block_result_435, (void*)0, (void*)0, 0, 0, 0); }
                 if(result_426 && !__freed_obj__) { come_call_finalizer(buffer_finalize,result_426, (void*)0, (void*)0, 0, 0, 0, 0); }
                 __freed_obj__ = 0;
-                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result156__;
+                return __result156__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1933,buffer_append_str(((struct buffer*)come_null_check(result_426, "libcomelang2-str.c", 1933)),block_result_435));
+            buffer_append_str(((struct buffer*)come_null_check(result_426, "libcomelang2-str.c", 1933)),block_result_435);
             __freed_obj__ = 0;
             if(_if_conditional138=offset_416==end_419[0],            __freed_obj__ = 0, 
             _if_conditional138) {
@@ -8671,10 +8571,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
             __freed_obj__ = 0;
             if(_if_conditional139=!((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 1947))->global,            __freed_obj__ = 0, 
             _if_conditional139) {
-                str_436=(char*)come_increment_ref_count(((char*)(right_value177=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1943,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1943)),offset_416,-1)))));
+                str_436=(char*)come_increment_ref_count(((char*)(right_value177=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1943)),offset_416,-1))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value177);
                 if(right_value177 && right_value177 != __result_obj__ && !__freed_obj__) { right_value177 = come_decrement_ref_count(right_value177, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[0] = right_value177;
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1944,buffer_append_str(((struct buffer*)come_null_check(result_426, "libcomelang2-str.c", 1944)),str_436));
+                buffer_append_str(((struct buffer*)come_null_check(result_426, "libcomelang2-str.c", 1944)),str_436);
                 __freed_obj__ = 0;
                 if(str_436 && !__freed_obj__) { str_436 = come_decrement_ref_count(str_436, (void*)0, (void*)0, 0, 0, 0); }
                 if(str_432 && !__freed_obj__) { str_432 = come_decrement_ref_count(str_432, (void*)0, (void*)0, 0, 0, 0); }
@@ -8694,10 +8596,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         else {
             if(_if_conditional140=regex_result_429>1,            __freed_obj__ = 0, 
             _if_conditional140) {
-                str_437=(char*)come_increment_ref_count(((char*)(right_value178=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1950,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1950)),offset_416,start_418[0])))));
+                str_437=(char*)come_increment_ref_count(((char*)(right_value178=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1950)),offset_416,start_418[0]))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value178);
                 if(right_value178 && right_value178 != __result_obj__ && !__freed_obj__) { right_value178 = come_decrement_ref_count(right_value178, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[0] = right_value178;
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1951,buffer_append_str(((struct buffer*)come_null_check(result_426, "libcomelang2-str.c", 1951)),str_437));
+                buffer_append_str(((struct buffer*)come_null_check(result_426, "libcomelang2-str.c", 1951)),str_437);
                 __freed_obj__ = 0;
                 if(_if_conditional141=offset_416==end_419[0],                __freed_obj__ = 0, 
                 _if_conditional141) {
@@ -8709,50 +8613,62 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                group_strings_438=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value180=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1960,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value179=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 1960))), "libcomelang2-str.c", 1960))))))));
+                group_strings_438=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value180=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value179=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 1960))), "libcomelang2-str.c", 1960)))))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value179);
                 if(right_value179 && right_value179 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value179, (void*)0, (void*)0, 0, 1, 0, 0); }
+                __right_value_freed_obj[1] = right_value179;
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value180);
                 if(right_value180 && right_value180 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value180, (void*)0, (void*)0, 0, 1, 0, 0); }
+                __right_value_freed_obj[2] = right_value180;
                 __freed_obj__ = 0;
                 for(
                 i_439=1 ,                __freed_obj__ = 0, 
                 0;                _for_condtionalA57=                i_439<regex_result_429 ,                __freed_obj__ = 0, 
                 _for_condtionalA57;                i_439++ ,                __freed_obj__ = 0, 
                 0                ){
-                    match_string_440=(char*)come_increment_ref_count(((char*)(right_value181=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1963,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1963)),start_418[i_439],end_419[i_439])))));
+                    match_string_440=(char*)come_increment_ref_count(((char*)(right_value181=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1963)),start_418[i_439],end_419[i_439]))));
+                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value181);
                     if(right_value181 && right_value181 != __result_obj__ && !__freed_obj__) { right_value181 = come_decrement_ref_count(right_value181, (void*)0, (void*)0, 1, 0, 0); }
+                    __right_value_freed_obj[0] = right_value181;
                     __freed_obj__ = 0;
-                    (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1964,list$1charph_push_back(((struct list$1charph*)come_null_check(group_strings_438, "libcomelang2-str.c", 1964)),(char*)come_increment_ref_count(match_string_440)));
+                    list$1charph_push_back(((struct list$1charph*)come_null_check(group_strings_438, "libcomelang2-str.c", 1964)),(char*)come_increment_ref_count(match_string_440));
                     __freed_obj__ = 0;
                     if(match_string_440 && !__freed_obj__) { match_string_440 = come_decrement_ref_count(match_string_440, (void*)0, (void*)0, 0, 0, 0); }
                 }
                 __freed_obj__ = 0;
-                match_string_441=(char*)come_increment_ref_count(((char*)(right_value182=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1967,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1967)),start_418[0],end_419[0])))));
+                match_string_441=(char*)come_increment_ref_count(((char*)(right_value182=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1967)),start_418[0],end_419[0]))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value182);
                 if(right_value182 && right_value182 != __result_obj__ && !__freed_obj__) { right_value182 = come_decrement_ref_count(right_value182, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[3] = right_value182;
                 __freed_obj__ = 0;
                 block_result_442=(char*)come_increment_ref_count(((char*)(right_value183=block(parent,match_string_441,group_strings_438))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 4, right_value183);
                 if(right_value183 && right_value183 != __result_obj__ && !__freed_obj__) { right_value183 = come_decrement_ref_count(right_value183, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[4] = right_value183;
                 __freed_obj__ = 0;
                 if(_if_conditional142=((struct sDummyCurrentStack*)come_null_check(((struct sDummyCurrentStack*)parent), "libcomelang2-str.c", 1974))->__method_block_result_kind__!=0,                __freed_obj__ = 0, 
                 _if_conditional142) {
-                    __result157__ = __result_obj__ = ((char*)(right_value184=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1972,buffer_to_string(((struct buffer*)come_null_check(result_426, "libcomelang2-str.c", 1972))))));
+                    __result157__ = __result_obj__ = ((char*)(right_value184=buffer_to_string(((struct buffer*)come_null_check(result_426, "libcomelang2-str.c", 1972)))));
                     if(str_437 && !__freed_obj__) { str_437 = come_decrement_ref_count(str_437, (void*)0, (void*)0, 0, 0, 0); }
                     if(group_strings_438 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,group_strings_438, (void*)0, (void*)0, 0, 0, 0, 0); }
                     if(match_string_441 && !__freed_obj__) { match_string_441 = come_decrement_ref_count(match_string_441, (void*)0, (void*)0, 0, 0, 0); }
                     if(block_result_442 && !__freed_obj__) { block_result_442 = come_decrement_ref_count(block_result_442, (void*)0, (void*)0, 0, 0, 0); }
                     if(result_426 && !__freed_obj__) { come_call_finalizer(buffer_finalize,result_426, (void*)0, (void*)0, 0, 0, 0, 0); }
                     __freed_obj__ = 0;
-                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                    return __result157__;
+                    return __result157__;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1974,buffer_append_str(((struct buffer*)come_null_check(result_426, "libcomelang2-str.c", 1974)),block_result_442));
+                buffer_append_str(((struct buffer*)come_null_check(result_426, "libcomelang2-str.c", 1974)),block_result_442);
                 __freed_obj__ = 0;
                 if(_if_conditional143=!((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 1981))->global,                __freed_obj__ = 0, 
                 _if_conditional143) {
-                    str_443=(char*)come_increment_ref_count(((char*)(right_value185=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1977,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1977)),offset_416,-1)))));
+                    str_443=(char*)come_increment_ref_count(((char*)(right_value185=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1977)),offset_416,-1))));
+                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value185);
                     if(right_value185 && right_value185 != __result_obj__ && !__freed_obj__) { right_value185 = come_decrement_ref_count(right_value185, (void*)0, (void*)0, 1, 0, 0); }
+                    __right_value_freed_obj[0] = right_value185;
                     __freed_obj__ = 0;
-                    (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1978,buffer_append_str(((struct buffer*)come_null_check(result_426, "libcomelang2-str.c", 1978)),str_443));
+                    buffer_append_str(((struct buffer*)come_null_check(result_426, "libcomelang2-str.c", 1978)),str_443);
                     __freed_obj__ = 0;
                     if(str_443 && !__freed_obj__) { str_443 = come_decrement_ref_count(str_443, (void*)0, (void*)0, 0, 0, 0); }
                     if(str_437 && !__freed_obj__) { str_437 = come_decrement_ref_count(str_437, (void*)0, (void*)0, 0, 0, 0); }
@@ -8770,10 +8686,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
                 if(block_result_442 && !__freed_obj__) { block_result_442 = come_decrement_ref_count(block_result_442, (void*)0, (void*)0, 0, 0, 0); }
             }
             else {
-                str_444=(char*)come_increment_ref_count(((char*)(right_value186=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1984,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1984)),offset_416,-1)))));
+                str_444=(char*)come_increment_ref_count(((char*)(right_value186=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 1984)),offset_416,-1))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value186);
                 if(right_value186 && right_value186 != __result_obj__ && !__freed_obj__) { right_value186 = come_decrement_ref_count(right_value186, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[0] = right_value186;
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1985,buffer_append_str(((struct buffer*)come_null_check(result_426, "libcomelang2-str.c", 1985)),str_444));
+                buffer_append_str(((struct buffer*)come_null_check(result_426, "libcomelang2-str.c", 1985)),str_444);
                 __freed_obj__ = 0;
                 if(str_444 && !__freed_obj__) { str_444 = come_decrement_ref_count(str_444, (void*)0, (void*)0, 0, 0, 0); }
                 break;
@@ -8785,22 +8703,20 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    __result158__ = __result_obj__ = ((char*)(right_value187=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 1989,buffer_to_string(((struct buffer*)come_null_check(result_426, "libcomelang2-str.c", 1989))))));
+    __result158__ = __result_obj__ = ((char*)(right_value187=buffer_to_string(((struct buffer*)come_null_check(result_426, "libcomelang2-str.c", 1989)))));
     if(result_426 && !__freed_obj__) { come_call_finalizer(buffer_finalize,result_426, (void*)0, (void*)0, 0, 0, 0, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result158__;
+    return __result158__;
     __freed_obj__ = 0;
     if(result_426 && !__freed_obj__) { come_call_finalizer(buffer_finalize,result_426, (void*)0, (void*)0, 0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 char* charp_sub_block_count(char* self, struct come_regex* reg, int count, void* parent, char* (*block)(void*,char*,struct list$1charph*)){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int offset_445;
 int ovec_max_446;
 const char* err_450;
@@ -8921,7 +8837,6 @@ memset(&str_475, 0, sizeof(char*));
 memset(&right_value208, 0, sizeof(void*));
 memset(&str_476, 0, sizeof(char*));
 memset(&right_value209, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     offset_445=0;
     __freed_obj__ = 0;
     ovec_max_446=16;
@@ -8943,9 +8858,13 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     re_454=((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 2007))->re;
     __freed_obj__ = 0;
-    result_455=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value189=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2009,buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)come_null_check(((struct buffer*)(right_value188=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libcomelang2-str.c", 2009))), "libcomelang2-str.c", 2009))))))));
+    result_455=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value189=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)come_null_check(((struct buffer*)(right_value188=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libcomelang2-str.c", 2009))), "libcomelang2-str.c", 2009)))))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value188);
     if(right_value188 && right_value188 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value188, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value188;
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value189);
     if(right_value189 && right_value189 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value189, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value189;
     __freed_obj__ = 0;
     n_456=0;
     __freed_obj__ = 0;
@@ -8953,9 +8872,9 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     _while_condtional24) {
         options_457=2097152;
         __freed_obj__ = 0;
-        len_458=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2015,strlen(self));
+        len_458=strlen(self);
         __freed_obj__ = 0;
-        regex_result_459=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2016,pcre_exec(re_454,(struct pcre_extra*)0,self,len_458,offset_445,options_457,ovec_value_449,ovec_max_446*3));
+        regex_result_459=pcre_exec(re_454,(struct pcre_extra*)0,self,len_458,offset_445,options_457,ovec_value_449,ovec_max_446*3);
         __freed_obj__ = 0;
         for(
         i_460=0 ,        __freed_obj__ = 0, 
@@ -8979,38 +8898,50 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         _if_conditional144) {
             n_456++;
             __freed_obj__ = 0;
-            str_462=(char*)come_increment_ref_count(((char*)(right_value190=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2028,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2028)),offset_445,start_447[0])))));
+            str_462=(char*)come_increment_ref_count(((char*)(right_value190=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2028)),offset_445,start_447[0]))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value190);
             if(right_value190 && right_value190 != __result_obj__ && !__freed_obj__) { right_value190 = come_decrement_ref_count(right_value190, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[0] = right_value190;
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2030,buffer_append_str(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2030)),str_462));
+            buffer_append_str(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2030)),str_462);
             __freed_obj__ = 0;
-            group_strings_463=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value192=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2032,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value191=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 2032))), "libcomelang2-str.c", 2032))))))));
+            group_strings_463=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value192=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value191=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 2032))), "libcomelang2-str.c", 2032)))))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value191);
             if(right_value191 && right_value191 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value191, (void*)0, (void*)0, 0, 1, 0, 0); }
+            __right_value_freed_obj[1] = right_value191;
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value192);
             if(right_value192 && right_value192 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value192, (void*)0, (void*)0, 0, 1, 0, 0); }
+            __right_value_freed_obj[2] = right_value192;
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2034,list$1charph_push_back(((struct list$1charph*)come_null_check(group_strings_463, "libcomelang2-str.c", 2034)),(char*)come_increment_ref_count(((char*)(right_value193=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2034,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2034)),start_447[0],end_448[0])))))));
+            list$1charph_push_back(((struct list$1charph*)come_null_check(group_strings_463, "libcomelang2-str.c", 2034)),(char*)come_increment_ref_count(((char*)(right_value193=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2034)),start_447[0],end_448[0])))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value193);
             if(right_value193 && right_value193 != __result_obj__ && !__freed_obj__) { right_value193 = come_decrement_ref_count(right_value193, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[3] = right_value193;
             __freed_obj__ = 0;
-            match_string_464=(char*)come_increment_ref_count(((char*)(right_value194=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2036,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2036)),start_447[0],end_448[0])))));
+            match_string_464=(char*)come_increment_ref_count(((char*)(right_value194=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2036)),start_447[0],end_448[0]))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 4, right_value194);
             if(right_value194 && right_value194 != __result_obj__ && !__freed_obj__) { right_value194 = come_decrement_ref_count(right_value194, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[4] = right_value194;
             __freed_obj__ = 0;
             block_result_465=(char*)come_increment_ref_count(((char*)(right_value195=block(parent,match_string_464,group_strings_463))));
+            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 5, right_value195);
             if(right_value195 && right_value195 != __result_obj__ && !__freed_obj__) { right_value195 = come_decrement_ref_count(right_value195, (void*)0, (void*)0, 1, 0, 0); }
+            __right_value_freed_obj[5] = right_value195;
             __freed_obj__ = 0;
             if(_if_conditional145=((struct sDummyCurrentStack*)come_null_check(((struct sDummyCurrentStack*)parent), "libcomelang2-str.c", 2044))->__method_block_result_kind__!=0,            __freed_obj__ = 0, 
             _if_conditional145) {
-                __result159__ = __result_obj__ = ((char*)(right_value196=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2041,buffer_to_string(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2041))))));
+                __result159__ = __result_obj__ = ((char*)(right_value196=buffer_to_string(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2041)))));
                 if(str_462 && !__freed_obj__) { str_462 = come_decrement_ref_count(str_462, (void*)0, (void*)0, 0, 0, 0); }
                 if(group_strings_463 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,group_strings_463, (void*)0, (void*)0, 0, 0, 0, 0); }
                 if(match_string_464 && !__freed_obj__) { match_string_464 = come_decrement_ref_count(match_string_464, (void*)0, (void*)0, 0, 0, 0); }
                 if(block_result_465 && !__freed_obj__) { block_result_465 = come_decrement_ref_count(block_result_465, (void*)0, (void*)0, 0, 0, 0); }
                 if(result_455 && !__freed_obj__) { come_call_finalizer(buffer_finalize,result_455, (void*)0, (void*)0, 0, 0, 0, 0); }
                 __freed_obj__ = 0;
-                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result159__;
+                return __result159__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-            (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2044,buffer_append_str(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2044)),block_result_465));
+            buffer_append_str(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2044)),block_result_465);
             __freed_obj__ = 0;
             if(_if_conditional146=offset_445==end_448[0],            __freed_obj__ = 0, 
             _if_conditional146) {
@@ -9024,10 +8955,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
             __freed_obj__ = 0;
             if(_if_conditional147=!((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 2059))->global,            __freed_obj__ = 0, 
             _if_conditional147) {
-                str_466=(char*)come_increment_ref_count(((char*)(right_value197=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2054,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2054)),offset_445,-1)))));
+                str_466=(char*)come_increment_ref_count(((char*)(right_value197=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2054)),offset_445,-1))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value197);
                 if(right_value197 && right_value197 != __result_obj__ && !__freed_obj__) { right_value197 = come_decrement_ref_count(right_value197, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[0] = right_value197;
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2055,buffer_append_str(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2055)),str_466));
+                buffer_append_str(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2055)),str_466);
                 __freed_obj__ = 0;
                 if(str_466 && !__freed_obj__) { str_466 = come_decrement_ref_count(str_466, (void*)0, (void*)0, 0, 0, 0); }
                 if(str_462 && !__freed_obj__) { str_462 = come_decrement_ref_count(str_462, (void*)0, (void*)0, 0, 0, 0); }
@@ -9041,10 +8974,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
             __freed_obj__ = 0;
             if(_if_conditional148=n_456==count,            __freed_obj__ = 0, 
             _if_conditional148) {
-                str_467=(char*)come_increment_ref_count(((char*)(right_value198=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2060,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2060)),offset_445,-1)))));
+                str_467=(char*)come_increment_ref_count(((char*)(right_value198=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2060)),offset_445,-1))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value198);
                 if(right_value198 && right_value198 != __result_obj__ && !__freed_obj__) { right_value198 = come_decrement_ref_count(right_value198, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[0] = right_value198;
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2061,buffer_append_str(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2061)),str_467));
+                buffer_append_str(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2061)),str_467);
                 __freed_obj__ = 0;
                 if(str_467 && !__freed_obj__) { str_467 = come_decrement_ref_count(str_467, (void*)0, (void*)0, 0, 0, 0); }
                 if(str_462 && !__freed_obj__) { str_462 = come_decrement_ref_count(str_462, (void*)0, (void*)0, 0, 0, 0); }
@@ -9066,10 +9001,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
             _if_conditional149) {
                 n_456++;
                 __freed_obj__ = 0;
-                str_468=(char*)come_increment_ref_count(((char*)(right_value199=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2069,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2069)),offset_445,start_447[0])))));
+                str_468=(char*)come_increment_ref_count(((char*)(right_value199=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2069)),offset_445,start_447[0]))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value199);
                 if(right_value199 && right_value199 != __result_obj__ && !__freed_obj__) { right_value199 = come_decrement_ref_count(right_value199, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[0] = right_value199;
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2070,buffer_append_str(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2070)),str_468));
+                buffer_append_str(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2070)),str_468);
                 __freed_obj__ = 0;
                 if(_if_conditional150=offset_445==end_448[0],                __freed_obj__ = 0, 
                 _if_conditional150) {
@@ -9081,50 +9018,62 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                group_strings_469=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value201=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2079,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value200=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 2079))), "libcomelang2-str.c", 2079))))))));
+                group_strings_469=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value201=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value200=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libcomelang2-str.c", 2079))), "libcomelang2-str.c", 2079)))))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value200);
                 if(right_value200 && right_value200 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value200, (void*)0, (void*)0, 0, 1, 0, 0); }
+                __right_value_freed_obj[1] = right_value200;
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value201);
                 if(right_value201 && right_value201 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value201, (void*)0, (void*)0, 0, 1, 0, 0); }
+                __right_value_freed_obj[2] = right_value201;
                 __freed_obj__ = 0;
                 for(
                 i_470=1 ,                __freed_obj__ = 0, 
                 0;                _for_condtionalA60=                i_470<regex_result_459 ,                __freed_obj__ = 0, 
                 _for_condtionalA60;                i_470++ ,                __freed_obj__ = 0, 
                 0                ){
-                    match_string_471=(char*)come_increment_ref_count(((char*)(right_value202=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2082,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2082)),start_447[i_470],end_448[i_470])))));
+                    match_string_471=(char*)come_increment_ref_count(((char*)(right_value202=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2082)),start_447[i_470],end_448[i_470]))));
+                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value202);
                     if(right_value202 && right_value202 != __result_obj__ && !__freed_obj__) { right_value202 = come_decrement_ref_count(right_value202, (void*)0, (void*)0, 1, 0, 0); }
+                    __right_value_freed_obj[0] = right_value202;
                     __freed_obj__ = 0;
-                    (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2083,list$1charph_push_back(((struct list$1charph*)come_null_check(group_strings_469, "libcomelang2-str.c", 2083)),(char*)come_increment_ref_count(match_string_471)));
+                    list$1charph_push_back(((struct list$1charph*)come_null_check(group_strings_469, "libcomelang2-str.c", 2083)),(char*)come_increment_ref_count(match_string_471));
                     __freed_obj__ = 0;
                     if(match_string_471 && !__freed_obj__) { match_string_471 = come_decrement_ref_count(match_string_471, (void*)0, (void*)0, 0, 0, 0); }
                 }
                 __freed_obj__ = 0;
-                match_string_472=(char*)come_increment_ref_count(((char*)(right_value203=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2086,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2086)),start_447[0],end_448[0])))));
+                match_string_472=(char*)come_increment_ref_count(((char*)(right_value203=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2086)),start_447[0],end_448[0]))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value203);
                 if(right_value203 && right_value203 != __result_obj__ && !__freed_obj__) { right_value203 = come_decrement_ref_count(right_value203, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[3] = right_value203;
                 __freed_obj__ = 0;
                 block_result_473=(char*)come_increment_ref_count(((char*)(right_value204=block(parent,match_string_472,group_strings_469))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 4, right_value204);
                 if(right_value204 && right_value204 != __result_obj__ && !__freed_obj__) { right_value204 = come_decrement_ref_count(right_value204, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[4] = right_value204;
                 __freed_obj__ = 0;
                 if(_if_conditional151=((struct sDummyCurrentStack*)come_null_check(((struct sDummyCurrentStack*)parent), "libcomelang2-str.c", 2093))->__method_block_result_kind__!=0,                __freed_obj__ = 0, 
                 _if_conditional151) {
-                    __result160__ = __result_obj__ = ((char*)(right_value205=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2091,buffer_to_string(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2091))))));
+                    __result160__ = __result_obj__ = ((char*)(right_value205=buffer_to_string(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2091)))));
                     if(str_468 && !__freed_obj__) { str_468 = come_decrement_ref_count(str_468, (void*)0, (void*)0, 0, 0, 0); }
                     if(group_strings_469 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,group_strings_469, (void*)0, (void*)0, 0, 0, 0, 0); }
                     if(match_string_472 && !__freed_obj__) { match_string_472 = come_decrement_ref_count(match_string_472, (void*)0, (void*)0, 0, 0, 0); }
                     if(block_result_473 && !__freed_obj__) { block_result_473 = come_decrement_ref_count(block_result_473, (void*)0, (void*)0, 0, 0, 0); }
                     if(result_455 && !__freed_obj__) { come_call_finalizer(buffer_finalize,result_455, (void*)0, (void*)0, 0, 0, 0, 0); }
                     __freed_obj__ = 0;
-                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                    return __result160__;
+                    return __result160__;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2093,buffer_append_str(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2093)),block_result_473));
+                buffer_append_str(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2093)),block_result_473);
                 __freed_obj__ = 0;
                 if(_if_conditional152=!((struct come_regex*)come_null_check(reg, "libcomelang2-str.c", 2101))->global,                __freed_obj__ = 0, 
                 _if_conditional152) {
-                    str_474=(char*)come_increment_ref_count(((char*)(right_value206=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2096,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2096)),offset_445,-1)))));
+                    str_474=(char*)come_increment_ref_count(((char*)(right_value206=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2096)),offset_445,-1))));
+                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value206);
                     if(right_value206 && right_value206 != __result_obj__ && !__freed_obj__) { right_value206 = come_decrement_ref_count(right_value206, (void*)0, (void*)0, 1, 0, 0); }
+                    __right_value_freed_obj[0] = right_value206;
                     __freed_obj__ = 0;
-                    (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2097,buffer_append_str(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2097)),str_474));
+                    buffer_append_str(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2097)),str_474);
                     __freed_obj__ = 0;
                     if(str_474 && !__freed_obj__) { str_474 = come_decrement_ref_count(str_474, (void*)0, (void*)0, 0, 0, 0); }
                     if(str_468 && !__freed_obj__) { str_468 = come_decrement_ref_count(str_468, (void*)0, (void*)0, 0, 0, 0); }
@@ -9138,10 +9087,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
                 __freed_obj__ = 0;
                 if(_if_conditional153=n_456==count,                __freed_obj__ = 0, 
                 _if_conditional153) {
-                    str_475=(char*)come_increment_ref_count(((char*)(right_value207=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2102,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2102)),offset_445,-1)))));
+                    str_475=(char*)come_increment_ref_count(((char*)(right_value207=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2102)),offset_445,-1))));
+                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value207);
                     if(right_value207 && right_value207 != __result_obj__ && !__freed_obj__) { right_value207 = come_decrement_ref_count(right_value207, (void*)0, (void*)0, 1, 0, 0); }
+                    __right_value_freed_obj[0] = right_value207;
                     __freed_obj__ = 0;
-                    (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2103,buffer_append_str(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2103)),str_475));
+                    buffer_append_str(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2103)),str_475);
                     __freed_obj__ = 0;
                     if(str_475 && !__freed_obj__) { str_475 = come_decrement_ref_count(str_475, (void*)0, (void*)0, 0, 0, 0); }
                     if(str_468 && !__freed_obj__) { str_468 = come_decrement_ref_count(str_468, (void*)0, (void*)0, 0, 0, 0); }
@@ -9159,10 +9110,12 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
                 if(block_result_473 && !__freed_obj__) { block_result_473 = come_decrement_ref_count(block_result_473, (void*)0, (void*)0, 0, 0, 0); }
             }
             else {
-                str_476=(char*)come_increment_ref_count(((char*)(right_value208=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2109,charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2109)),offset_445,-1)))));
+                str_476=(char*)come_increment_ref_count(((char*)(right_value208=charp_substring(((char*)come_null_check(self, "libcomelang2-str.c", 2109)),offset_445,-1))));
+                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value208);
                 if(right_value208 && right_value208 != __result_obj__ && !__freed_obj__) { right_value208 = come_decrement_ref_count(right_value208, (void*)0, (void*)0, 1, 0, 0); }
+                __right_value_freed_obj[0] = right_value208;
                 __freed_obj__ = 0;
-                (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2110,buffer_append_str(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2110)),str_476));
+                buffer_append_str(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2110)),str_476);
                 __freed_obj__ = 0;
                 if(str_476 && !__freed_obj__) { str_476 = come_decrement_ref_count(str_476, (void*)0, (void*)0, 0, 0, 0); }
                 break;
@@ -9174,22 +9127,20 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    __result161__ = __result_obj__ = ((char*)(right_value209=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2115,buffer_to_string(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2115))))));
+    __result161__ = __result_obj__ = ((char*)(right_value209=buffer_to_string(((struct buffer*)come_null_check(result_455, "libcomelang2-str.c", 2115)))));
     if(result_455 && !__freed_obj__) { come_call_finalizer(buffer_finalize,result_455, (void*)0, (void*)0, 0, 0, 0, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result161__;
+    return __result161__;
     __freed_obj__ = 0;
     if(result_455 && !__freed_obj__) { come_call_finalizer(buffer_finalize,result_455, (void*)0, (void*)0, 0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 unsigned int wchar_tp_get_hash_key(unsigned int* value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 int result_477;
 unsigned int* p_478;
 _Bool _while_condtional25;
@@ -9198,7 +9149,6 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_477, 0, sizeof(int));
 memset(&p_478, 0, sizeof(unsigned int*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __freed_obj__ = 0;
     result_477=0;
     __freed_obj__ = 0;
@@ -9214,128 +9164,108 @@ memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__
     __freed_obj__ = 0;
     __result162__ = result_477;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result162__;
+    return __result162__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 _Bool wstring_equals(unsigned int* left, unsigned int* right){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool __result164__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result164__ = (gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2139,wcscmp(left,right))==0;
+    __result164__ = wcscmp(left,right)==0;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result164__;
+    return __result164__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 _Bool wchar_t_operator_equals(unsigned int left, unsigned int right){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool __result166__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __result166__ = left==right;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result166__;
+    return __result166__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 _Bool wchar_t_operator_not_equals(unsigned int left, unsigned int right){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool __result167__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __result167__ = left!=right;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result167__;
+    return __result167__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 unsigned int wchar_t_get_hash_key(unsigned int value){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 unsigned int __result168__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __result168__ = value;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result168__;
+    return __result168__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 _Bool wchar_t_equals(unsigned int left, unsigned int right){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 _Bool __result169__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __result169__ = left==right;
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result169__;
+    return __result169__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 char* wchar_t_to_string(unsigned int wc){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value210;
 char* __result170__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value210, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    __result170__ = __result_obj__ = ((char*)(right_value210=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2169,xsprintf("%ls",wc))));
+    __result170__ = __result_obj__ = ((char*)(right_value210=xsprintf("%ls",wc)));
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result170__;
+    return __result170__;
     __freed_obj__ = 0;
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 
 char* string_chomp(char* str){
-char* __caller_sname__[10];
-int __caller_sline__[10];
-int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
 void* right_value211;
 char* result_479;
 _Bool _if_conditional154;
@@ -9347,24 +9277,25 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value211, 0, sizeof(void*));
 memset(&result_479, 0, sizeof(char*));
 memset(&right_value212, 0, sizeof(void*));
-memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
-    result_479=(char*)come_increment_ref_count(((char*)(right_value211=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2174,__builtin_string(str)))));
+    result_479=(char*)come_increment_ref_count(((char*)(right_value211=__builtin_string(str))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value211);
     if(right_value211 && right_value211 != __result_obj__ && !__freed_obj__) { right_value211 = come_decrement_ref_count(right_value211, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value211;
     __freed_obj__ = 0;
-    if(_if_conditional154=result_479[(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2180,string_length(((char*)come_null_check(result_479, "libcomelang2-str.c", 2180))))-1]==10,    __freed_obj__ = 0, 
+    if(_if_conditional154=result_479[string_length(((char*)come_null_check(result_479, "libcomelang2-str.c", 2180)))-1]==10,    __freed_obj__ = 0, 
     _if_conditional154) {
-        __result171__ = __result_obj__ = ((char*)(right_value212=(gCallerSName[0] = "libcomelang2-str.c", gCallerSLine[0] = 2177,string_substring(((char*)come_null_check(result_479, "libcomelang2-str.c", 2177)),0,-2))));
+        __result171__ = __result_obj__ = ((char*)(right_value212=string_substring(((char*)come_null_check(result_479, "libcomelang2-str.c", 2177)),0,-2)));
         if(result_479 && !__freed_obj__) { result_479 = come_decrement_ref_count(result_479, (void*)0, (void*)0, 0, 0, 0); }
         __freed_obj__ = 0;
-        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result171__;
+        return __result171__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
     __result172__ = __result_obj__ = result_479;
     if(result_479 && !__freed_obj__) { result_479 = come_decrement_ref_count(result_479, (void*)0, (void*)0, 0, 1, 0); }
     __freed_obj__ = 0;
-    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result172__;
+    return __result172__;
     __freed_obj__ = 0;
     if(result_479 && !__freed_obj__) { result_479 = come_decrement_ref_count(result_479, (void*)0, (void*)0, 0, 0, 0); }
-memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
+}
 

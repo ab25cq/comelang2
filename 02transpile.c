@@ -7,7 +7,6 @@ using c
 #include <errno.h>
 }
 
-bool gComeDebug = false;
 bool gComeGC = false;
 bool gComeC = false;
 char* gProgramName = NULL;
@@ -566,10 +565,15 @@ int come_main(int argc, char** argv) version 2
             }
             else if(argv[i] === "-g") {
                 clang_option.append_str("-g ");
-                gComeDebug = true;
             }
             else if(argv[i] === "-common-header") {
                 gCommonHeader = true;
+            }
+            else if(argv[i] === "-come-debug") {
+                gComeDebug = true;
+            }
+            else if(argv[i] === "-come-malloc") {
+                gComeMalloc = true;
             }
             else if(argv[i] === "-v") {
                 clang_option.append_str("-v ");
@@ -580,7 +584,6 @@ int come_main(int argc, char** argv) version 2
             }
             else if(argv[i] === "-gdwarf-4") {
                 clang_option.append_str("-gdwarf-4 ");
-                gComeDebug = true;
             }
             else if(argv[i] === "-gc") {
                 gComeGC = true;
@@ -700,12 +703,17 @@ int come_main(int argc, char** argv) version 2
             else if(argv[i] === "-str") {
                 clang_option.append_str(" -lcomelang2-str -lpcre ");
             }
+            else if(argv[i] === "-come-debug") {
+                gComeDebug = true;
+            }
+            else if(argv[i] === "-come-malloc") {
+                gComeMalloc = true;
+            }
             else if(argv[i] === "-common-header") {
                 gCommonHeader = true;
             }
             else if(argv[i] === "-g") {
                 clang_option.append_str("-g ");
-                gComeDebug = true;
             }
             else if(argv[i] === "-v") {
                 clang_option.append_str("-v ");
@@ -716,7 +724,6 @@ int come_main(int argc, char** argv) version 2
             }
             else if(argv[i] === "-gdwarf-4") {
                 clang_option.append_str("-gdwarf-4 ");
-                gComeDebug = true;
             }
             else if(argv[i] === "-gc") {
                 gComeGC = true;

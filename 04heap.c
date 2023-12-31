@@ -726,7 +726,12 @@ sType*%, string clone_object(sType* type, char* obj, sInfo* info)
 
     /// call cloner ///
     if(cloner != null) {
-        result = xsprintf("(gCallerSName[0] = \"%s\", gCallerSLine[0] = %d,%s(%s))", info->sname, info->sline, fun_name2, c_value);
+        if(gComeDebug) {
+            result = xsprintf("(gCallerSName[0] = \"%s\", gCallerSLine[0] = %d,%s(%s))", info->sname, info->sline, fun_name2, c_value);
+        }
+        else {
+            result = xsprintf("%s(%s)", fun_name2, c_value);
+        }
         result_type = cloner->mResultType;
         result_type = solve_generics(result_type, type, info);
     }
@@ -969,25 +974,25 @@ void free_right_value_objects(sInfo* info, bool comma=false)
                 
                 type = solve_type(type, info->generics_type, info->method_generics_types, info);
                 
-                if(gComeDebug) {
+//                if(gComeMalloc) {
                     if(comma) {
                         add_come_code(info, "__freed_obj__ = come_is_contained_element(__right_value_freed_obj, %d, %s),\n", n, it->mVarName);
                     }
                     else {
                         add_come_code(info, "__freed_obj__ = come_is_contained_element(__right_value_freed_obj, %d, %s);\n", n, it->mVarName);
                     }
-                }
+//                }
 
                 free_object(type, it->mVarName, true@no_decrement, false@no_free, info, comma:comma, force_delete_:false);
                 
-                if(gComeDebug) {
+//                if(gComeMalloc) {
                     if(comma) {
                         add_come_code(info, "__right_value_freed_obj[%d] = %s, \n", n, it->mVarName);
                     }
                     else {
                         add_come_code(info, "__right_value_freed_obj[%d] = %s;\n", n, it->mVarName);
                     }
-                }
+//                }
                 
                 it->mFreed = true;
                 free_right_value = true;

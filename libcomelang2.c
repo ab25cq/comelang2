@@ -80,6 +80,12 @@ void* come_null_check(void* mem, char* sname, int sline)
 {
     if(mem == null) {
         printf("%s %d: null check error\n", sname, sline);
+        
+        for(int i=2; i<MEMLEAK_MAX; i++) {
+            if(gCallerSName[i]) {
+                printf("%s %d\n", gCallerSName[i], gCallerSLine[i]);
+            }
+        }
         exit(2);
     }
     
@@ -191,6 +197,7 @@ char* gCallerSName[MEMLEAK_MAX];
 int gCallerSLine[MEMLEAK_MAX];
 
 bool gComeMalloc = false;
+bool gComeDebug = false;
 
 struct sMemHeader
 {
@@ -219,7 +226,7 @@ struct sHeapPool
 
 struct sHeapPool gHeapPool;
 
-void come_heap_init(bool come_malloc)
+void come_heap_init()
 {
 /*
     if(gComeGC) {
@@ -227,12 +234,10 @@ void come_heap_init(bool come_malloc)
         GC_init();
     }
 */
-    gComeMalloc = come_malloc;
-    
     memset(gCallerSName, 0, sizeof(char*)*MEMLEAK_MAX);
     memset(gCallerSLine, 0, sizeof(int)*MEMLEAK_MAX);
     
-    if(!gComeMalloc) {
+    if(gComeMalloc) {
         memset(&gHeapPool, 0, sizeof(struct sHeapPool));
         
         const int size_pages = 4;
@@ -251,13 +256,13 @@ void come_heap_init(bool come_malloc)
     gComeStackFrameBuffer = borrow gc_inc(new buffer());
 }
 
-void come_heap_final(int check_mem_leak)
+void come_heap_final()
 {
     delete borrow gComeStackFrame;
     delete borrow gComeStackFrameBuffer;
     
-    if(!gComeMalloc) {
-        if(check_mem_leak) {
+    if(gComeMalloc) {
+        if(gComeDebug) {
             sMemHeader* it = gHeapPool.alloc_mem;
             while(it) {
                 sMemHeader* next_it = it.alloc_next;
@@ -303,7 +308,7 @@ static void* come_alloc_mem_from_heap_pool(size_t size, char* sname=null, int sl
         return result;
     }
 */
-    if(gComeMalloc) {
+    if(!gComeMalloc) {
         return calloc(1, size);
     }
     else {
@@ -442,7 +447,7 @@ static void come_free_mem_of_heap_pool(char* mem)
     }
     else
 */
-    if(gComeMalloc) {
+    if(!gComeMalloc) {
         if(mem) {
             free(mem);
         }

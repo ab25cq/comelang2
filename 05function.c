@@ -113,7 +113,12 @@ bool operator_overload_fun_self(sType* type, char* fun_name, CVALUE* left_value,
             left_value2 = clone left_value.c_value;
         }
         
-        come_value.c_value = xsprintf("(gCallerSName[0] = \"{info->sname}\", gCallerSLine[0] = \{info->sline}, %s(%s))", fun_name2, left_value2);
+        if(gComeDebug) {
+            come_value.c_value = xsprintf("(gCallerSName[0] = \"%s\", gCallerSLine[0] = %d, %s(%s))", info->sname, info->sline, fun_name2, left_value2);
+        }
+        else {
+            come_value.c_value = xsprintf("%s(%s)", fun_name2, left_value2);
+        }
         
         sType*% type2 = clone operator_fun->mResultType;
         
@@ -241,15 +246,7 @@ bool sReturnNode*::compile(sReturnNode* self, sInfo* info)
         
         if(info.come_fun.mName === "main") {
             free_objects(info->gv_table, null@ret_value, info);
-            add_come_code(info, xsprintf("come_heap_final(1);\n"));
-            /*
-            if(gComeDebug) {
-                add_come_code(info, xsprintf("come_heap_final(1);\n"));
-            }
-            else {
-                add_come_code(info, xsprintf("come_heap_final(0);\n"));
-            }
-            */
+            add_come_code(info, xsprintf("come_heap_final();\n"));
         }
         
         add_come_code(info, "return __result%d__;\n", num_result_stack);
@@ -262,12 +259,7 @@ bool sReturnNode*::compile(sReturnNode* self, sInfo* info)
         
         if(info.come_fun.mName === "main") {
             free_objects(info->gv_table, null@ret_value, info);
-            if(gComeDebug) {
-                add_come_code(info, xsprintf("come_heap_final(1);\n"));
-            }
-            else {
-                add_come_code(info, xsprintf("come_heap_final(0);\n"));
-            }
+            add_come_code(info, xsprintf("come_heap_final();\n"));
         }
         add_come_code(info, "return;\n");
     }
@@ -1351,7 +1343,7 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
         
         list<sType*%>*% param_types = new list<sType*%>();
         foreach(it, fun.mParamTypes) {
-            sType*% it2 = solve_generics(it, info.generics_type, info);
+            sType*% it2 = solve_generics(clone it, info.generics_type, info);
             param_types.push_back(clone it2);
         }
         
@@ -1555,7 +1547,7 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
         
         buffer*% buf = new buffer();
         
-        if(fun_name !== "come_calloc" && fun_name !== "come_alloc_mem_from_heap_pool") {
+        if(gComeDebug && fun_name !== "come_calloc" && fun_name !== "come_alloc_mem_from_heap_pool") {
             buf.append_str(s"(gCallerSName[0] = \"\{info->sname}\", gCallerSLine[0] = \{info->sline},");
         }
         
@@ -1572,7 +1564,7 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
             
             j++;
         }
-        if(fun_name !== "come_calloc" && fun_name !== "come_alloc_mem_from_heap_pool") {
+        if(gComeDebug && fun_name !== "come_calloc" && fun_name !== "come_alloc_mem_from_heap_pool") {
             buf.append_str("))");
         }
         else {
@@ -1650,7 +1642,7 @@ bool sCastNode*::compile(sCastNode* self, sInfo* info)
     CVALUE*% left_value = get_value_from_stack(-1, info);
     dec_stack_ptr(1, info);
     
-    sType*% type2 = solve_generics(type, info.generics_type, info);
+    sType*% type2 = solve_generics(clone type, info.generics_type, info);
     
     CVALUE*% come_value = new CVALUE;
     

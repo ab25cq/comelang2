@@ -49,9 +49,9 @@ bool sLambdaNode*::compile(sLambdaNode* self, sInfo* info)
     add_come_code_at_function_head(info, "%s;\n", make_define_var(result_type2, "__freed_obj__"));
     add_come_code_at_function_head2(info, "memset(&__freed_obj__, 0, sizeof(%s));\n", make_type_name_string(result_type2)!);
 
-    if(gComeDebug) {
+    //if(!gComeMalloc) {
         add_come_code_at_function_head(info, "void* __right_value_freed_obj[%d];\n", RIGHT_VALUE_OBJECT_NUM_MAX);
-    }
+    //}
     
     if(self.mFun.mBlock) {
         transpile_block(self.mFun.mBlock, self.mFun.mParamTypes, self.mFun.mParamNames, info);
@@ -109,7 +109,7 @@ string sFunNode*::kind()
 
 void caller_begin(sInfo* info=info)
 {
-    if(info.come_fun.mName !== "come_calloc" && info.come_fun.mName !== "come_alloc_mem_from_heap_pool") {
+    if(gComeDebug && info.come_fun.mName !== "come_calloc" && info.come_fun.mName !== "come_alloc_mem_from_heap_pool") {
         add_come_code_at_function_head(info, "char* __caller_sname__[%d];\n", MEMLEAK_MAX);
         
         add_come_code_at_function_head(info, "int __caller_sline__[%d];\n", MEMLEAK_MAX);
@@ -124,7 +124,7 @@ void caller_begin(sInfo* info=info)
 
 void caller_end(sInfo* info=info)
 {
-    if(info.come_fun.mName !== "come_calloc" && info.come_fun.mName !== "come_alloc_mem_from_heap_pool") {
+    if(gComeDebug && info.come_fun.mName !== "come_calloc" && info.come_fun.mName !== "come_alloc_mem_from_heap_pool") {
         add_come_code(info, "memcpy(gCallerSName, __caller_sname__, sizeof(char*)*%d);", MEMLEAK_MAX);
         add_come_code(info, "memcpy(gCallerSLine, __caller_sline__, sizeof(int)*%d);", MEMLEAK_MAX);
     }
@@ -145,12 +145,7 @@ bool sFunNode*::compile(sFunNode* self, sInfo* info)
     
     if(self.mFun.mBlock) {
         if(info.come_fun.mName === "main") {
-            if(gComeDebug) {
-                add_come_code(info, "come_heap_init(1);\n");
-            }
-            else {
-                add_come_code(info, "come_heap_init(0);\n");
-            }
+            add_come_code(info, "come_heap_init();\n");
         }
         
         sType*% result_type = new sType("void*");
@@ -162,19 +157,14 @@ bool sFunNode*::compile(sFunNode* self, sInfo* info)
         add_come_code_at_function_head(info, "%s;\n", make_define_var(result_type2, "__freed_obj__"));
         add_come_code_at_function_head2(info, "memset(&__freed_obj__, 0, sizeof(%s));\n", make_type_name_string(result_type2)!);
     
-        if(gComeDebug) {
+        //if(!gComeMalloc) {
             add_come_code_at_function_head(info, "void* __right_value_freed_obj[%d];\n", RIGHT_VALUE_OBJECT_NUM_MAX);
-        }
+        //}
         
         transpile_block(self.mFun.mBlock, self.mFun.mParamTypes, self.mFun.mParamNames, info);
         if(info.come_fun.mName === "main") {
             free_objects(info->gv_table, null@ret_value, info);
-            if(gComeDebug) {
-                add_come_code(info, xsprintf("come_heap_final(1);\n"));
-            }
-            else {
-                add_come_code(info, xsprintf("come_heap_final(0);\n"));
-            }
+            add_come_code(info, xsprintf("come_heap_final();\n"));
         }
     }
     
@@ -803,8 +793,8 @@ int transpile(sInfo* info) version 5
     {
         var name = string("come_heap_init");
         var result_type = new sType("void");
-        var param_types = [new sType("bool")];
-        var param_names = [string("self")];
+        var param_types = new list<sType*%>();
+        var param_names = new list<string>();
         var param_default_parametors = new list<string>();
         param_default_parametors.push_back(null);
         var main_fun = new sFun(name, result_type, param_types, param_names
@@ -819,13 +809,13 @@ int transpile(sInfo* info) version 5
     {
         var name = string("come_heap_final");
         var result_type = new sType("void");
-        var param_types = [new sType("int") ];
-        var param_names = [string("check_mem_leak")];
+        var param_types = new list<sType*%>();
+        var param_names = new list<string>();
         var param_default_parametors = new list<string>();
         var main_fun = new sFun(name, result_type, param_types, param_names
             , param_default_parametors, true@external, false@var_args
             , null@block, false@static_
-            , string("void come_heap_final(int check_mem_leak)")
+            , string("void come_heap_final()")
             , string("")
             , info);
         

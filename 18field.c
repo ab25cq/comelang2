@@ -159,7 +159,12 @@ bool operator_overload_fun2(sType* type, char* fun_name, CVALUE* left_value, CVA
             right_value2 = clone right_value.c_value;
         }
         
-        come_value.c_value = s"(gCallerSName[0] = \"\{info->sname\}\", gCallerSLine[0] = \{info->sline}, \{fun_name2}(\{left_value2},\{middle_value2},\{right_value2}))";
+        if(gComeDebug) {
+            come_value.c_value = s"(gCallerSName[0] = \"\{info->sname\}\", gCallerSLine[0] = \{info->sline}, \{fun_name2}(\{left_value2},\{middle_value2},\{right_value2}))";
+        }
+        else {
+            come_value.c_value = s"\{fun_name2}(\{left_value2},\{middle_value2},\{right_value2})";
+        }
         
         sType*% result_type1 = clone operator_fun->mResultType;
         

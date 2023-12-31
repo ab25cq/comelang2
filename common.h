@@ -17,6 +17,7 @@
 extern bool gComeDebug;
 extern bool gComeGC;
 extern bool gComeC;
+extern bool gComeMalloc;
 extern bool gCommonHeader;
 
 struct sType;

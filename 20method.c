@@ -748,7 +748,7 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
         
         buffer*% buf = new buffer();
         
-        if(generics_fun_name !== "come_calloc" && generics_fun_name !== "come_alloc_mem_from_heap_pool") {
+        if(gComeDebug && generics_fun_name !== "come_calloc" && generics_fun_name !== "come_alloc_mem_from_heap_pool") {
             buf.append_str(s"(gCallerSName[0] = \"\{info->sname}\", gCallerSLine[0] = \{info->sline},");
         }
         buf.append_str(generics_fun_name);
@@ -764,7 +764,7 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
             
             j++;
         }
-        if(generics_fun_name !== "come_calloc" && generics_fun_name !== "come_alloc_mem_from_heap_pool") {
+        if(gComeDebug && generics_fun_name !== "come_calloc" && generics_fun_name !== "come_alloc_mem_from_heap_pool") {
             buf.append_str("))");
         }
         else {
