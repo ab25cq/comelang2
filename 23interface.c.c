@@ -407,26 +407,8 @@ struct sDummyCurrentStack
 {
     int __method_block_result_kind__;
 };
-extern char* gCallerSName;
-extern char* gCallerSName2;
-extern char* gCallerSName3;
-extern char* gCallerSName4;
-extern char* gCallerSName5;
-extern char* gCallerSName6;
-extern char* gCallerSName7;
-extern char* gCallerSName8;
-extern char* gCallerSName9;
-extern char* gCallerSName10;
-extern int gCallerSLine;
-extern int gCallerSLine2;
-extern int gCallerSLine3;
-extern int gCallerSLine4;
-extern int gCallerSLine5;
-extern int gCallerSLine6;
-extern int gCallerSLine7;
-extern int gCallerSLine8;
-extern int gCallerSLine9;
-extern int gCallerSLine10;
+extern char* gCallerSName[10];
+extern int gCallerSLine[10];
 struct list_item$1voidp
 {
     void* item;
@@ -2264,26 +2246,9 @@ static void sInterfaceNode_finalize(struct sInterfaceNode* self);
 static struct sInterfaceNode* sInterfaceNode_clone(struct sInterfaceNode* self);
 // inline function
 static inline unsigned short int __bswap_16(unsigned short int __bsx){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -2291,103 +2256,16 @@ _Bool __freed_obj__;
 unsigned short int __result1__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-__caller_sname10__ = gCallerSName10;
-__caller_sname9__ = gCallerSName9;
-__caller_sname8__ = gCallerSName8;
-__caller_sname7__ = gCallerSName7;
-__caller_sname6__ = gCallerSName6;
-__caller_sname5__ = gCallerSName5;
-__caller_sname4__ = gCallerSName4;
-__caller_sname3__ = gCallerSName3;
-__caller_sname2__ = gCallerSName2;
-__caller_sname__ = gCallerSName;
-__caller_sline10__ = gCallerSLine10;
-__caller_sline9__ = gCallerSLine9;
-__caller_sline8__ = gCallerSLine8;
-__caller_sline7__ = gCallerSLine7;
-__caller_sline6__ = gCallerSLine6;
-__caller_sline5__ = gCallerSLine5;
-__caller_sline4__ = gCallerSLine4;
-__caller_sline3__ = gCallerSLine3;
-__caller_sline2__ = gCallerSLine2;
-__caller_sline__ = gCallerSLine;
-gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __result1__ = ((unsigned short int)((((__bsx)>>8)&255)|(((__bsx)&255)<<8)));
     __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-    return __result1__;
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result1__;
     __freed_obj__ = 0;
-gCallerSName10 = __caller_sname10__;
-gCallerSName9 = __caller_sname9__;
-gCallerSName8 = __caller_sname8__;
-gCallerSName7 = __caller_sname7__;
-gCallerSName6 = __caller_sname6__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName4 = __caller_sname4__;
-gCallerSName3 = __caller_sname3__;
-gCallerSName2 = __caller_sname2__;
-gCallerSName = __caller_sname__;
-gCallerSLine10 = __caller_sline10__;
-gCallerSLine9 = __caller_sline9__;
-gCallerSLine8 = __caller_sline8__;
-gCallerSLine7 = __caller_sline7__;
-gCallerSLine6 = __caller_sline6__;
-gCallerSLine5 = __caller_sline5__;
-gCallerSLine4 = __caller_sline4__;
-gCallerSLine3 = __caller_sline3__;
-gCallerSLine2 = __caller_sline2__;
-gCallerSLine = __caller_sline__;
-}
+memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 static inline unsigned int __bswap_32(unsigned int __bsx){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -2395,103 +2273,16 @@ _Bool __freed_obj__;
 unsigned int __result2__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-__caller_sname10__ = gCallerSName10;
-__caller_sname9__ = gCallerSName9;
-__caller_sname8__ = gCallerSName8;
-__caller_sname7__ = gCallerSName7;
-__caller_sname6__ = gCallerSName6;
-__caller_sname5__ = gCallerSName5;
-__caller_sname4__ = gCallerSName4;
-__caller_sname3__ = gCallerSName3;
-__caller_sname2__ = gCallerSName2;
-__caller_sname__ = gCallerSName;
-__caller_sline10__ = gCallerSLine10;
-__caller_sline9__ = gCallerSLine9;
-__caller_sline8__ = gCallerSLine8;
-__caller_sline7__ = gCallerSLine7;
-__caller_sline6__ = gCallerSLine6;
-__caller_sline5__ = gCallerSLine5;
-__caller_sline4__ = gCallerSLine4;
-__caller_sline3__ = gCallerSLine3;
-__caller_sline2__ = gCallerSLine2;
-__caller_sline__ = gCallerSLine;
-gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __result2__ = ((((__bsx)&4278190080)>>24)|(((__bsx)&16711680)>>8)|(((__bsx)&65280)<<8)|(((__bsx)&255)<<24));
     __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-    return __result2__;
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result2__;
     __freed_obj__ = 0;
-gCallerSName10 = __caller_sname10__;
-gCallerSName9 = __caller_sname9__;
-gCallerSName8 = __caller_sname8__;
-gCallerSName7 = __caller_sname7__;
-gCallerSName6 = __caller_sname6__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName4 = __caller_sname4__;
-gCallerSName3 = __caller_sname3__;
-gCallerSName2 = __caller_sname2__;
-gCallerSName = __caller_sname__;
-gCallerSLine10 = __caller_sline10__;
-gCallerSLine9 = __caller_sline9__;
-gCallerSLine8 = __caller_sline8__;
-gCallerSLine7 = __caller_sline7__;
-gCallerSLine6 = __caller_sline6__;
-gCallerSLine5 = __caller_sline5__;
-gCallerSLine4 = __caller_sline4__;
-gCallerSLine3 = __caller_sline3__;
-gCallerSLine2 = __caller_sline2__;
-gCallerSLine = __caller_sline__;
-}
+memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 static inline unsigned long int __bswap_64(unsigned long int __bsx){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -2499,103 +2290,16 @@ _Bool __freed_obj__;
 unsigned long int __result3__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-__caller_sname10__ = gCallerSName10;
-__caller_sname9__ = gCallerSName9;
-__caller_sname8__ = gCallerSName8;
-__caller_sname7__ = gCallerSName7;
-__caller_sname6__ = gCallerSName6;
-__caller_sname5__ = gCallerSName5;
-__caller_sname4__ = gCallerSName4;
-__caller_sname3__ = gCallerSName3;
-__caller_sname2__ = gCallerSName2;
-__caller_sname__ = gCallerSName;
-__caller_sline10__ = gCallerSLine10;
-__caller_sline9__ = gCallerSLine9;
-__caller_sline8__ = gCallerSLine8;
-__caller_sline7__ = gCallerSLine7;
-__caller_sline6__ = gCallerSLine6;
-__caller_sline5__ = gCallerSLine5;
-__caller_sline4__ = gCallerSLine4;
-__caller_sline3__ = gCallerSLine3;
-__caller_sline2__ = gCallerSLine2;
-__caller_sline__ = gCallerSLine;
-gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __result3__ = ((((__bsx)&18374686479671623680)>>56)|(((__bsx)&71776119061217280)>>40)|(((__bsx)&280375465082880)>>24)|(((__bsx)&1095216660480)>>8)|(((__bsx)&4278190080)<<8)|(((__bsx)&16711680)<<24)|(((__bsx)&65280)<<40)|(((__bsx)&255)<<56));
     __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-    return __result3__;
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result3__;
     __freed_obj__ = 0;
-gCallerSName10 = __caller_sname10__;
-gCallerSName9 = __caller_sname9__;
-gCallerSName8 = __caller_sname8__;
-gCallerSName7 = __caller_sname7__;
-gCallerSName6 = __caller_sname6__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName4 = __caller_sname4__;
-gCallerSName3 = __caller_sname3__;
-gCallerSName2 = __caller_sname2__;
-gCallerSName = __caller_sname__;
-gCallerSLine10 = __caller_sline10__;
-gCallerSLine9 = __caller_sline9__;
-gCallerSLine8 = __caller_sline8__;
-gCallerSLine7 = __caller_sline7__;
-gCallerSLine6 = __caller_sline6__;
-gCallerSLine5 = __caller_sline5__;
-gCallerSLine4 = __caller_sline4__;
-gCallerSLine3 = __caller_sline3__;
-gCallerSLine2 = __caller_sline2__;
-gCallerSLine = __caller_sline__;
-}
+memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 static inline unsigned short int __uint16_identity(unsigned short int __x){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -2603,103 +2307,16 @@ _Bool __freed_obj__;
 unsigned short int __result4__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-__caller_sname10__ = gCallerSName10;
-__caller_sname9__ = gCallerSName9;
-__caller_sname8__ = gCallerSName8;
-__caller_sname7__ = gCallerSName7;
-__caller_sname6__ = gCallerSName6;
-__caller_sname5__ = gCallerSName5;
-__caller_sname4__ = gCallerSName4;
-__caller_sname3__ = gCallerSName3;
-__caller_sname2__ = gCallerSName2;
-__caller_sname__ = gCallerSName;
-__caller_sline10__ = gCallerSLine10;
-__caller_sline9__ = gCallerSLine9;
-__caller_sline8__ = gCallerSLine8;
-__caller_sline7__ = gCallerSLine7;
-__caller_sline6__ = gCallerSLine6;
-__caller_sline5__ = gCallerSLine5;
-__caller_sline4__ = gCallerSLine4;
-__caller_sline3__ = gCallerSLine3;
-__caller_sline2__ = gCallerSLine2;
-__caller_sline__ = gCallerSLine;
-gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __result4__ = __x;
     __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-    return __result4__;
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result4__;
     __freed_obj__ = 0;
-gCallerSName10 = __caller_sname10__;
-gCallerSName9 = __caller_sname9__;
-gCallerSName8 = __caller_sname8__;
-gCallerSName7 = __caller_sname7__;
-gCallerSName6 = __caller_sname6__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName4 = __caller_sname4__;
-gCallerSName3 = __caller_sname3__;
-gCallerSName2 = __caller_sname2__;
-gCallerSName = __caller_sname__;
-gCallerSLine10 = __caller_sline10__;
-gCallerSLine9 = __caller_sline9__;
-gCallerSLine8 = __caller_sline8__;
-gCallerSLine7 = __caller_sline7__;
-gCallerSLine6 = __caller_sline6__;
-gCallerSLine5 = __caller_sline5__;
-gCallerSLine4 = __caller_sline4__;
-gCallerSLine3 = __caller_sline3__;
-gCallerSLine2 = __caller_sline2__;
-gCallerSLine = __caller_sline__;
-}
+memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 static inline unsigned int __uint32_identity(unsigned int __x){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -2707,103 +2324,16 @@ _Bool __freed_obj__;
 unsigned int __result5__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-__caller_sname10__ = gCallerSName10;
-__caller_sname9__ = gCallerSName9;
-__caller_sname8__ = gCallerSName8;
-__caller_sname7__ = gCallerSName7;
-__caller_sname6__ = gCallerSName6;
-__caller_sname5__ = gCallerSName5;
-__caller_sname4__ = gCallerSName4;
-__caller_sname3__ = gCallerSName3;
-__caller_sname2__ = gCallerSName2;
-__caller_sname__ = gCallerSName;
-__caller_sline10__ = gCallerSLine10;
-__caller_sline9__ = gCallerSLine9;
-__caller_sline8__ = gCallerSLine8;
-__caller_sline7__ = gCallerSLine7;
-__caller_sline6__ = gCallerSLine6;
-__caller_sline5__ = gCallerSLine5;
-__caller_sline4__ = gCallerSLine4;
-__caller_sline3__ = gCallerSLine3;
-__caller_sline2__ = gCallerSLine2;
-__caller_sline__ = gCallerSLine;
-gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __result5__ = __x;
     __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-    return __result5__;
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result5__;
     __freed_obj__ = 0;
-gCallerSName10 = __caller_sname10__;
-gCallerSName9 = __caller_sname9__;
-gCallerSName8 = __caller_sname8__;
-gCallerSName7 = __caller_sname7__;
-gCallerSName6 = __caller_sname6__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName4 = __caller_sname4__;
-gCallerSName3 = __caller_sname3__;
-gCallerSName2 = __caller_sname2__;
-gCallerSName = __caller_sname__;
-gCallerSLine10 = __caller_sline10__;
-gCallerSLine9 = __caller_sline9__;
-gCallerSLine8 = __caller_sline8__;
-gCallerSLine7 = __caller_sline7__;
-gCallerSLine6 = __caller_sline6__;
-gCallerSLine5 = __caller_sline5__;
-gCallerSLine4 = __caller_sline4__;
-gCallerSLine3 = __caller_sline3__;
-gCallerSLine2 = __caller_sline2__;
-gCallerSLine = __caller_sline__;
-}
+memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 static inline unsigned long int __uint64_identity(unsigned long int __x){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -2811,185 +2341,32 @@ _Bool __freed_obj__;
 unsigned long int __result6__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-__caller_sname10__ = gCallerSName10;
-__caller_sname9__ = gCallerSName9;
-__caller_sname8__ = gCallerSName8;
-__caller_sname7__ = gCallerSName7;
-__caller_sname6__ = gCallerSName6;
-__caller_sname5__ = gCallerSName5;
-__caller_sname4__ = gCallerSName4;
-__caller_sname3__ = gCallerSName3;
-__caller_sname2__ = gCallerSName2;
-__caller_sname__ = gCallerSName;
-__caller_sline10__ = gCallerSLine10;
-__caller_sline9__ = gCallerSLine9;
-__caller_sline8__ = gCallerSLine8;
-__caller_sline7__ = gCallerSLine7;
-__caller_sline6__ = gCallerSLine6;
-__caller_sline5__ = gCallerSLine5;
-__caller_sline4__ = gCallerSLine4;
-__caller_sline3__ = gCallerSLine3;
-__caller_sline2__ = gCallerSLine2;
-__caller_sline__ = gCallerSLine;
-gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __result6__ = __x;
     __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-    return __result6__;
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result6__;
     __freed_obj__ = 0;
-gCallerSName10 = __caller_sname10__;
-gCallerSName9 = __caller_sname9__;
-gCallerSName8 = __caller_sname8__;
-gCallerSName7 = __caller_sname7__;
-gCallerSName6 = __caller_sname6__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName4 = __caller_sname4__;
-gCallerSName3 = __caller_sname3__;
-gCallerSName2 = __caller_sname2__;
-gCallerSName = __caller_sname__;
-gCallerSLine10 = __caller_sline10__;
-gCallerSLine9 = __caller_sline9__;
-gCallerSLine8 = __caller_sline8__;
-gCallerSLine7 = __caller_sline7__;
-gCallerSLine6 = __caller_sline6__;
-gCallerSLine5 = __caller_sline5__;
-gCallerSLine4 = __caller_sline4__;
-gCallerSLine3 = __caller_sline3__;
-gCallerSLine2 = __caller_sline2__;
-gCallerSLine = __caller_sline__;
-}
+memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 static inline void die(char* msg){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-__caller_sname10__ = gCallerSName10;
-__caller_sname9__ = gCallerSName9;
-__caller_sname8__ = gCallerSName8;
-__caller_sname7__ = gCallerSName7;
-__caller_sname6__ = gCallerSName6;
-__caller_sname5__ = gCallerSName5;
-__caller_sname4__ = gCallerSName4;
-__caller_sname3__ = gCallerSName3;
-__caller_sname2__ = gCallerSName2;
-__caller_sname__ = gCallerSName;
-__caller_sline10__ = gCallerSLine10;
-__caller_sline9__ = gCallerSLine9;
-__caller_sline8__ = gCallerSLine8;
-__caller_sline7__ = gCallerSLine7;
-__caller_sline6__ = gCallerSLine6;
-__caller_sline5__ = gCallerSLine5;
-__caller_sline4__ = gCallerSLine4;
-__caller_sline3__ = gCallerSLine3;
-__caller_sline2__ = gCallerSLine2;
-__caller_sline__ = gCallerSLine;
-gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-    (gCallerSName = "./comelang2.h", gCallerSLine = 106,perror(msg));
+memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+    (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 106,perror(msg));
     __freed_obj__ = 0;
-    (gCallerSName = "./comelang2.h", gCallerSLine = 107,exit(4));
+    (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 107,exit(4));
     __freed_obj__ = 0;
-gCallerSName10 = __caller_sname10__;
-gCallerSName9 = __caller_sname9__;
-gCallerSName8 = __caller_sname8__;
-gCallerSName7 = __caller_sname7__;
-gCallerSName6 = __caller_sname6__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName4 = __caller_sname4__;
-gCallerSName3 = __caller_sname3__;
-gCallerSName2 = __caller_sname2__;
-gCallerSName = __caller_sname__;
-gCallerSLine10 = __caller_sline10__;
-gCallerSLine9 = __caller_sline9__;
-gCallerSLine8 = __caller_sline8__;
-gCallerSLine7 = __caller_sline7__;
-gCallerSLine6 = __caller_sline6__;
-gCallerSLine5 = __caller_sline5__;
-gCallerSLine4 = __caller_sline4__;
-gCallerSLine3 = __caller_sline3__;
-gCallerSLine2 = __caller_sline2__;
-gCallerSLine = __caller_sline__;
-}
+memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 static inline struct smart_pointer$1char* buffer_to_pointer(struct buffer* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -3004,115 +2381,28 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value0, 0, sizeof(void*));
 memset(&result_0, 0, sizeof(struct smart_pointer$1char*));
 memset(&right_value1, 0, sizeof(void*));
-__caller_sname10__ = gCallerSName10;
-__caller_sname9__ = gCallerSName9;
-__caller_sname8__ = gCallerSName8;
-__caller_sname7__ = gCallerSName7;
-__caller_sname6__ = gCallerSName6;
-__caller_sname5__ = gCallerSName5;
-__caller_sname4__ = gCallerSName4;
-__caller_sname3__ = gCallerSName3;
-__caller_sname2__ = gCallerSName2;
-__caller_sname__ = gCallerSName;
-__caller_sline10__ = gCallerSLine10;
-__caller_sline9__ = gCallerSLine9;
-__caller_sline8__ = gCallerSLine8;
-__caller_sline7__ = gCallerSLine7;
-__caller_sline6__ = gCallerSLine6;
-__caller_sline5__ = gCallerSLine5;
-__caller_sline4__ = gCallerSLine4;
-__caller_sline3__ = gCallerSLine3;
-__caller_sline2__ = gCallerSLine2;
-__caller_sline__ = gCallerSLine;
-gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-    result_0=(struct smart_pointer$1char*)come_increment_ref_count(((struct smart_pointer$1char*)(right_value0=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./comelang2.h", 2008))));
+memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+    result_0=(struct smart_pointer$1char*)come_increment_ref_count(((struct smart_pointer$1char*)(right_value0=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./comelang2.h", 1992))));
     if(right_value0 && right_value0 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,right_value0, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
-    __dec_obj1=((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 2010))->memory;
-    ((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 2010))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value1=(gCallerSName = "./comelang2.h", gCallerSLine = 2010,buffer_clone(self)))));
+    __dec_obj1=((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 1994))->memory;
+    ((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 1994))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value1=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1994,buffer_clone(self)))));
     if(__dec_obj1) { come_call_finalizer(buffer_finalize,__dec_obj1, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(right_value1 && right_value1 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value1, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
-    ((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 2011))->p=((struct buffer*)come_null_check(((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 2011))->memory, "./comelang2.h", 2011))->buf;
+    ((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 1995))->p=((struct buffer*)come_null_check(((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 1995))->memory, "./comelang2.h", 1995))->buf;
     __freed_obj__ = 0;
     __result7__ = __result_obj__ = result_0;
     if(result_0 && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,result_0, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-    return __result7__;
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result7__;
     __freed_obj__ = 0;
     if(result_0 && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,result_0, (void*)0, (void*)0, 0, 0, 0, 0); }
-gCallerSName10 = __caller_sname10__;
-gCallerSName9 = __caller_sname9__;
-gCallerSName8 = __caller_sname8__;
-gCallerSName7 = __caller_sname7__;
-gCallerSName6 = __caller_sname6__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName4 = __caller_sname4__;
-gCallerSName3 = __caller_sname3__;
-gCallerSName2 = __caller_sname2__;
-gCallerSName = __caller_sname__;
-gCallerSLine10 = __caller_sline10__;
-gCallerSLine9 = __caller_sline9__;
-gCallerSLine8 = __caller_sline8__;
-gCallerSLine7 = __caller_sline7__;
-gCallerSLine6 = __caller_sline6__;
-gCallerSLine5 = __caller_sline5__;
-gCallerSLine4 = __caller_sline4__;
-gCallerSLine3 = __caller_sline3__;
-gCallerSLine2 = __caller_sline2__;
-gCallerSLine = __caller_sline__;
-}
+memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 static inline struct smart_pointer$1char* buffer_to_char_pointer(struct buffer* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -3127,115 +2417,28 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value2, 0, sizeof(void*));
 memset(&result_1, 0, sizeof(struct smart_pointer$1char*));
 memset(&right_value3, 0, sizeof(void*));
-__caller_sname10__ = gCallerSName10;
-__caller_sname9__ = gCallerSName9;
-__caller_sname8__ = gCallerSName8;
-__caller_sname7__ = gCallerSName7;
-__caller_sname6__ = gCallerSName6;
-__caller_sname5__ = gCallerSName5;
-__caller_sname4__ = gCallerSName4;
-__caller_sname3__ = gCallerSName3;
-__caller_sname2__ = gCallerSName2;
-__caller_sname__ = gCallerSName;
-__caller_sline10__ = gCallerSLine10;
-__caller_sline9__ = gCallerSLine9;
-__caller_sline8__ = gCallerSLine8;
-__caller_sline7__ = gCallerSLine7;
-__caller_sline6__ = gCallerSLine6;
-__caller_sline5__ = gCallerSLine5;
-__caller_sline4__ = gCallerSLine4;
-__caller_sline3__ = gCallerSLine3;
-__caller_sline2__ = gCallerSLine2;
-__caller_sline__ = gCallerSLine;
-gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-    result_1=(struct smart_pointer$1char*)come_increment_ref_count(((struct smart_pointer$1char*)(right_value2=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./comelang2.h", 2018))));
+memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+    result_1=(struct smart_pointer$1char*)come_increment_ref_count(((struct smart_pointer$1char*)(right_value2=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./comelang2.h", 2002))));
     if(right_value2 && right_value2 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,right_value2, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
-    __dec_obj2=((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2020))->memory;
-    ((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2020))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value3=(gCallerSName = "./comelang2.h", gCallerSLine = 2020,buffer_clone(self)))));
+    __dec_obj2=((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2004))->memory;
+    ((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2004))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value3=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 2004,buffer_clone(self)))));
     if(__dec_obj2) { come_call_finalizer(buffer_finalize,__dec_obj2, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(right_value3 && right_value3 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value3, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
-    ((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2021))->p=(char*)((struct buffer*)come_null_check(((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2021))->memory, "./comelang2.h", 2021))->buf;
+    ((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2005))->p=(char*)((struct buffer*)come_null_check(((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2005))->memory, "./comelang2.h", 2005))->buf;
     __freed_obj__ = 0;
     __result8__ = __result_obj__ = result_1;
     if(result_1 && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,result_1, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-    return __result8__;
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result8__;
     __freed_obj__ = 0;
     if(result_1 && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,result_1, (void*)0, (void*)0, 0, 0, 0, 0); }
-gCallerSName10 = __caller_sname10__;
-gCallerSName9 = __caller_sname9__;
-gCallerSName8 = __caller_sname8__;
-gCallerSName7 = __caller_sname7__;
-gCallerSName6 = __caller_sname6__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName4 = __caller_sname4__;
-gCallerSName3 = __caller_sname3__;
-gCallerSName2 = __caller_sname2__;
-gCallerSName = __caller_sname__;
-gCallerSLine10 = __caller_sline10__;
-gCallerSLine9 = __caller_sline9__;
-gCallerSLine8 = __caller_sline8__;
-gCallerSLine7 = __caller_sline7__;
-gCallerSLine6 = __caller_sline6__;
-gCallerSLine5 = __caller_sline5__;
-gCallerSLine4 = __caller_sline4__;
-gCallerSLine3 = __caller_sline3__;
-gCallerSLine2 = __caller_sline2__;
-gCallerSLine = __caller_sline__;
-}
+memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 static inline struct smart_pointer$1short* buffer_to_short_pointer(struct buffer* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -3250,115 +2453,28 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value4, 0, sizeof(void*));
 memset(&result_2, 0, sizeof(struct smart_pointer$1short*));
 memset(&right_value5, 0, sizeof(void*));
-__caller_sname10__ = gCallerSName10;
-__caller_sname9__ = gCallerSName9;
-__caller_sname8__ = gCallerSName8;
-__caller_sname7__ = gCallerSName7;
-__caller_sname6__ = gCallerSName6;
-__caller_sname5__ = gCallerSName5;
-__caller_sname4__ = gCallerSName4;
-__caller_sname3__ = gCallerSName3;
-__caller_sname2__ = gCallerSName2;
-__caller_sname__ = gCallerSName;
-__caller_sline10__ = gCallerSLine10;
-__caller_sline9__ = gCallerSLine9;
-__caller_sline8__ = gCallerSLine8;
-__caller_sline7__ = gCallerSLine7;
-__caller_sline6__ = gCallerSLine6;
-__caller_sline5__ = gCallerSLine5;
-__caller_sline4__ = gCallerSLine4;
-__caller_sline3__ = gCallerSLine3;
-__caller_sline2__ = gCallerSLine2;
-__caller_sline__ = gCallerSLine;
-gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-    result_2=(struct smart_pointer$1short*)come_increment_ref_count(((struct smart_pointer$1short*)(right_value4=(struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./comelang2.h", 2028))));
+memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+    result_2=(struct smart_pointer$1short*)come_increment_ref_count(((struct smart_pointer$1short*)(right_value4=(struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./comelang2.h", 2012))));
     if(right_value4 && right_value4 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1shortp_finalize,right_value4, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
-    __dec_obj3=((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2030))->memory;
-    ((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2030))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value5=(gCallerSName = "./comelang2.h", gCallerSLine = 2030,buffer_clone(self)))));
+    __dec_obj3=((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2014))->memory;
+    ((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2014))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value5=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 2014,buffer_clone(self)))));
     if(__dec_obj3) { come_call_finalizer(buffer_finalize,__dec_obj3, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(right_value5 && right_value5 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value5, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
-    ((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2031))->p=(short short*)((struct buffer*)come_null_check(((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2031))->memory, "./comelang2.h", 2031))->buf;
+    ((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2015))->p=(short short*)((struct buffer*)come_null_check(((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2015))->memory, "./comelang2.h", 2015))->buf;
     __freed_obj__ = 0;
     __result9__ = __result_obj__ = result_2;
     if(result_2 && !__freed_obj__) { come_call_finalizer(smart_pointer$1shortp_finalize,result_2, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-    return __result9__;
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result9__;
     __freed_obj__ = 0;
     if(result_2 && !__freed_obj__) { come_call_finalizer(smart_pointer$1shortp_finalize,result_2, (void*)0, (void*)0, 0, 0, 0, 0); }
-gCallerSName10 = __caller_sname10__;
-gCallerSName9 = __caller_sname9__;
-gCallerSName8 = __caller_sname8__;
-gCallerSName7 = __caller_sname7__;
-gCallerSName6 = __caller_sname6__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName4 = __caller_sname4__;
-gCallerSName3 = __caller_sname3__;
-gCallerSName2 = __caller_sname2__;
-gCallerSName = __caller_sname__;
-gCallerSLine10 = __caller_sline10__;
-gCallerSLine9 = __caller_sline9__;
-gCallerSLine8 = __caller_sline8__;
-gCallerSLine7 = __caller_sline7__;
-gCallerSLine6 = __caller_sline6__;
-gCallerSLine5 = __caller_sline5__;
-gCallerSLine4 = __caller_sline4__;
-gCallerSLine3 = __caller_sline3__;
-gCallerSLine2 = __caller_sline2__;
-gCallerSLine = __caller_sline__;
-}
+memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 static inline struct smart_pointer$1int* buffer_to_int_pointer(struct buffer* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -3373,115 +2489,28 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value6, 0, sizeof(void*));
 memset(&result_3, 0, sizeof(struct smart_pointer$1int*));
 memset(&right_value7, 0, sizeof(void*));
-__caller_sname10__ = gCallerSName10;
-__caller_sname9__ = gCallerSName9;
-__caller_sname8__ = gCallerSName8;
-__caller_sname7__ = gCallerSName7;
-__caller_sname6__ = gCallerSName6;
-__caller_sname5__ = gCallerSName5;
-__caller_sname4__ = gCallerSName4;
-__caller_sname3__ = gCallerSName3;
-__caller_sname2__ = gCallerSName2;
-__caller_sname__ = gCallerSName;
-__caller_sline10__ = gCallerSLine10;
-__caller_sline9__ = gCallerSLine9;
-__caller_sline8__ = gCallerSLine8;
-__caller_sline7__ = gCallerSLine7;
-__caller_sline6__ = gCallerSLine6;
-__caller_sline5__ = gCallerSLine5;
-__caller_sline4__ = gCallerSLine4;
-__caller_sline3__ = gCallerSLine3;
-__caller_sline2__ = gCallerSLine2;
-__caller_sline__ = gCallerSLine;
-gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-    result_3=(struct smart_pointer$1int*)come_increment_ref_count(((struct smart_pointer$1int*)(right_value6=(struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./comelang2.h", 2038))));
+memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+    result_3=(struct smart_pointer$1int*)come_increment_ref_count(((struct smart_pointer$1int*)(right_value6=(struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./comelang2.h", 2022))));
     if(right_value6 && right_value6 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1intp_finalize,right_value6, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
-    __dec_obj4=((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2040))->memory;
-    ((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2040))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value7=(gCallerSName = "./comelang2.h", gCallerSLine = 2040,buffer_clone(self)))));
+    __dec_obj4=((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2024))->memory;
+    ((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2024))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value7=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 2024,buffer_clone(self)))));
     if(__dec_obj4) { come_call_finalizer(buffer_finalize,__dec_obj4, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(right_value7 && right_value7 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value7, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
-    ((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2041))->p=(int*)((struct buffer*)come_null_check(((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2041))->memory, "./comelang2.h", 2041))->buf;
+    ((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2025))->p=(int*)((struct buffer*)come_null_check(((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2025))->memory, "./comelang2.h", 2025))->buf;
     __freed_obj__ = 0;
     __result10__ = __result_obj__ = result_3;
     if(result_3 && !__freed_obj__) { come_call_finalizer(smart_pointer$1intp_finalize,result_3, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-    return __result10__;
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result10__;
     __freed_obj__ = 0;
     if(result_3 && !__freed_obj__) { come_call_finalizer(smart_pointer$1intp_finalize,result_3, (void*)0, (void*)0, 0, 0, 0, 0); }
-gCallerSName10 = __caller_sname10__;
-gCallerSName9 = __caller_sname9__;
-gCallerSName8 = __caller_sname8__;
-gCallerSName7 = __caller_sname7__;
-gCallerSName6 = __caller_sname6__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName4 = __caller_sname4__;
-gCallerSName3 = __caller_sname3__;
-gCallerSName2 = __caller_sname2__;
-gCallerSName = __caller_sname__;
-gCallerSLine10 = __caller_sline10__;
-gCallerSLine9 = __caller_sline9__;
-gCallerSLine8 = __caller_sline8__;
-gCallerSLine7 = __caller_sline7__;
-gCallerSLine6 = __caller_sline6__;
-gCallerSLine5 = __caller_sline5__;
-gCallerSLine4 = __caller_sline4__;
-gCallerSLine3 = __caller_sline3__;
-gCallerSLine2 = __caller_sline2__;
-gCallerSLine = __caller_sline__;
-}
+memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 static inline struct smart_pointer$1long* buffer_to_long_pointer(struct buffer* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -3496,94 +2525,24 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value8, 0, sizeof(void*));
 memset(&result_4, 0, sizeof(struct smart_pointer$1long*));
 memset(&right_value9, 0, sizeof(void*));
-__caller_sname10__ = gCallerSName10;
-__caller_sname9__ = gCallerSName9;
-__caller_sname8__ = gCallerSName8;
-__caller_sname7__ = gCallerSName7;
-__caller_sname6__ = gCallerSName6;
-__caller_sname5__ = gCallerSName5;
-__caller_sname4__ = gCallerSName4;
-__caller_sname3__ = gCallerSName3;
-__caller_sname2__ = gCallerSName2;
-__caller_sname__ = gCallerSName;
-__caller_sline10__ = gCallerSLine10;
-__caller_sline9__ = gCallerSLine9;
-__caller_sline8__ = gCallerSLine8;
-__caller_sline7__ = gCallerSLine7;
-__caller_sline6__ = gCallerSLine6;
-__caller_sline5__ = gCallerSLine5;
-__caller_sline4__ = gCallerSLine4;
-__caller_sline3__ = gCallerSLine3;
-__caller_sline2__ = gCallerSLine2;
-__caller_sline__ = gCallerSLine;
-gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-    result_4=(struct smart_pointer$1long*)come_increment_ref_count(((struct smart_pointer$1long*)(right_value8=(struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./comelang2.h", 2048))));
+memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+    result_4=(struct smart_pointer$1long*)come_increment_ref_count(((struct smart_pointer$1long*)(right_value8=(struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./comelang2.h", 2032))));
     if(right_value8 && right_value8 != __result_obj__ && !__freed_obj__) { come_call_finalizer(smart_pointer$1longp_finalize,right_value8, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
-    __dec_obj5=((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2050))->memory;
-    ((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2050))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value9=(gCallerSName = "./comelang2.h", gCallerSLine = 2050,buffer_clone(self)))));
+    __dec_obj5=((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2034))->memory;
+    ((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2034))->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value9=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 2034,buffer_clone(self)))));
     if(__dec_obj5) { come_call_finalizer(buffer_finalize,__dec_obj5, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(right_value9 && right_value9 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value9, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
-    ((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2051))->p=(long*)((struct buffer*)come_null_check(((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2051))->memory, "./comelang2.h", 2051))->buf;
+    ((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2035))->p=(long*)((struct buffer*)come_null_check(((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2035))->memory, "./comelang2.h", 2035))->buf;
     __freed_obj__ = 0;
     __result11__ = __result_obj__ = result_4;
     if(result_4 && !__freed_obj__) { come_call_finalizer(smart_pointer$1longp_finalize,result_4, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-    return __result11__;
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result11__;
     __freed_obj__ = 0;
     if(result_4 && !__freed_obj__) { come_call_finalizer(smart_pointer$1longp_finalize,result_4, (void*)0, (void*)0, 0, 0, 0, 0); }
-gCallerSName10 = __caller_sname10__;
-gCallerSName9 = __caller_sname9__;
-gCallerSName8 = __caller_sname8__;
-gCallerSName7 = __caller_sname7__;
-gCallerSName6 = __caller_sname6__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName4 = __caller_sname4__;
-gCallerSName3 = __caller_sname3__;
-gCallerSName2 = __caller_sname2__;
-gCallerSName = __caller_sname__;
-gCallerSLine10 = __caller_sline10__;
-gCallerSLine9 = __caller_sline9__;
-gCallerSLine8 = __caller_sline8__;
-gCallerSLine7 = __caller_sline7__;
-gCallerSLine6 = __caller_sline6__;
-gCallerSLine5 = __caller_sline5__;
-gCallerSLine4 = __caller_sline4__;
-gCallerSLine3 = __caller_sline3__;
-gCallerSLine2 = __caller_sline2__;
-gCallerSLine = __caller_sline__;
-}
+memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 // body function
 
@@ -3595,26 +2554,9 @@ gCallerSLine = __caller_sline__;
 
 
 static void smart_pointer$1charp_finalize(struct smart_pointer$1char* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -3622,87 +2564,21 @@ _Bool __freed_obj__;
 _Bool _if_conditional1;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-    __caller_sname10__ = gCallerSName10;
-    __caller_sname9__ = gCallerSName9;
-    __caller_sname8__ = gCallerSName8;
-    __caller_sname7__ = gCallerSName7;
-    __caller_sname6__ = gCallerSName6;
-    __caller_sname5__ = gCallerSName5;
-    __caller_sname4__ = gCallerSName4;
-    __caller_sname3__ = gCallerSName3;
-    __caller_sname2__ = gCallerSName2;
-    __caller_sname__ = gCallerSName;
-    __caller_sline10__ = gCallerSLine10;
-    __caller_sline9__ = gCallerSLine9;
-    __caller_sline8__ = gCallerSLine8;
-    __caller_sline7__ = gCallerSLine7;
-    __caller_sline6__ = gCallerSLine6;
-    __caller_sline5__ = gCallerSLine5;
-    __caller_sline4__ = gCallerSLine4;
-    __caller_sline3__ = gCallerSLine3;
-    __caller_sline2__ = gCallerSLine2;
-    __caller_sline__ = gCallerSLine;
-    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
         if(_if_conditional1=self!=((void*)0)&&((struct smart_pointer$1char*)come_null_check(self, "smart_pointer$1charp_finalize", 1))->memory!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional1) {
             if(((struct smart_pointer$1char*)come_null_check(self, "smart_pointer$1charp_finalize", 0))->memory && !__freed_obj__) { come_call_finalizer(buffer_finalize,((struct smart_pointer$1char*)come_null_check(self, "smart_pointer$1charp_finalize", 0))->memory, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-}
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 
 
 static void smart_pointer$1shortp_finalize(struct smart_pointer$1short* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -3710,86 +2586,20 @@ _Bool __freed_obj__;
 _Bool _if_conditional2;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-    __caller_sname10__ = gCallerSName10;
-    __caller_sname9__ = gCallerSName9;
-    __caller_sname8__ = gCallerSName8;
-    __caller_sname7__ = gCallerSName7;
-    __caller_sname6__ = gCallerSName6;
-    __caller_sname5__ = gCallerSName5;
-    __caller_sname4__ = gCallerSName4;
-    __caller_sname3__ = gCallerSName3;
-    __caller_sname2__ = gCallerSName2;
-    __caller_sname__ = gCallerSName;
-    __caller_sline10__ = gCallerSLine10;
-    __caller_sline9__ = gCallerSLine9;
-    __caller_sline8__ = gCallerSLine8;
-    __caller_sline7__ = gCallerSLine7;
-    __caller_sline6__ = gCallerSLine6;
-    __caller_sline5__ = gCallerSLine5;
-    __caller_sline4__ = gCallerSLine4;
-    __caller_sline3__ = gCallerSLine3;
-    __caller_sline2__ = gCallerSLine2;
-    __caller_sline__ = gCallerSLine;
-    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
         if(_if_conditional2=self!=((void*)0)&&((struct smart_pointer$1short*)come_null_check(self, "smart_pointer$1shortp_finalize", 1))->memory!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional2) {
             if(((struct smart_pointer$1short*)come_null_check(self, "smart_pointer$1shortp_finalize", 0))->memory && !__freed_obj__) { come_call_finalizer(buffer_finalize,((struct smart_pointer$1short*)come_null_check(self, "smart_pointer$1shortp_finalize", 0))->memory, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-}
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 
 static void smart_pointer$1intp_finalize(struct smart_pointer$1int* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -3797,86 +2607,20 @@ _Bool __freed_obj__;
 _Bool _if_conditional3;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-    __caller_sname10__ = gCallerSName10;
-    __caller_sname9__ = gCallerSName9;
-    __caller_sname8__ = gCallerSName8;
-    __caller_sname7__ = gCallerSName7;
-    __caller_sname6__ = gCallerSName6;
-    __caller_sname5__ = gCallerSName5;
-    __caller_sname4__ = gCallerSName4;
-    __caller_sname3__ = gCallerSName3;
-    __caller_sname2__ = gCallerSName2;
-    __caller_sname__ = gCallerSName;
-    __caller_sline10__ = gCallerSLine10;
-    __caller_sline9__ = gCallerSLine9;
-    __caller_sline8__ = gCallerSLine8;
-    __caller_sline7__ = gCallerSLine7;
-    __caller_sline6__ = gCallerSLine6;
-    __caller_sline5__ = gCallerSLine5;
-    __caller_sline4__ = gCallerSLine4;
-    __caller_sline3__ = gCallerSLine3;
-    __caller_sline2__ = gCallerSLine2;
-    __caller_sline__ = gCallerSLine;
-    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
         if(_if_conditional3=self!=((void*)0)&&((struct smart_pointer$1int*)come_null_check(self, "smart_pointer$1intp_finalize", 1))->memory!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional3) {
             if(((struct smart_pointer$1int*)come_null_check(self, "smart_pointer$1intp_finalize", 0))->memory && !__freed_obj__) { come_call_finalizer(buffer_finalize,((struct smart_pointer$1int*)come_null_check(self, "smart_pointer$1intp_finalize", 0))->memory, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-}
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 
 static void smart_pointer$1longp_finalize(struct smart_pointer$1long* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -3884,85 +2628,19 @@ _Bool __freed_obj__;
 _Bool _if_conditional4;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-    __caller_sname10__ = gCallerSName10;
-    __caller_sname9__ = gCallerSName9;
-    __caller_sname8__ = gCallerSName8;
-    __caller_sname7__ = gCallerSName7;
-    __caller_sname6__ = gCallerSName6;
-    __caller_sname5__ = gCallerSName5;
-    __caller_sname4__ = gCallerSName4;
-    __caller_sname3__ = gCallerSName3;
-    __caller_sname2__ = gCallerSName2;
-    __caller_sname__ = gCallerSName;
-    __caller_sline10__ = gCallerSLine10;
-    __caller_sline9__ = gCallerSLine9;
-    __caller_sline8__ = gCallerSLine8;
-    __caller_sline7__ = gCallerSLine7;
-    __caller_sline6__ = gCallerSLine6;
-    __caller_sline5__ = gCallerSLine5;
-    __caller_sline4__ = gCallerSLine4;
-    __caller_sline3__ = gCallerSLine3;
-    __caller_sline2__ = gCallerSLine2;
-    __caller_sline__ = gCallerSLine;
-    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
         if(_if_conditional4=self!=((void*)0)&&((struct smart_pointer$1long*)come_null_check(self, "smart_pointer$1longp_finalize", 1))->memory!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional4) {
             if(((struct smart_pointer$1long*)come_null_check(self, "smart_pointer$1longp_finalize", 0))->memory && !__freed_obj__) { come_call_finalizer(buffer_finalize,((struct smart_pointer$1long*)come_null_check(self, "smart_pointer$1longp_finalize", 0))->memory, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-}
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 struct sInterfaceNode* sInterfaceNode_initialize(struct sInterfaceNode* self, char* name, struct sClass* klass, struct sInfo* info){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -3979,49 +2657,21 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value10, 0, sizeof(void*));
 memset(&right_value62, 0, sizeof(void*));
 memset(&right_value63, 0, sizeof(void*));
-__caller_sname10__ = gCallerSName10;
-__caller_sname9__ = gCallerSName9;
-__caller_sname8__ = gCallerSName8;
-__caller_sname7__ = gCallerSName7;
-__caller_sname6__ = gCallerSName6;
-__caller_sname5__ = gCallerSName5;
-__caller_sname4__ = gCallerSName4;
-__caller_sname3__ = gCallerSName3;
-__caller_sname2__ = gCallerSName2;
-__caller_sname__ = gCallerSName;
-__caller_sline10__ = gCallerSLine10;
-__caller_sline9__ = gCallerSLine9;
-__caller_sline8__ = gCallerSLine8;
-__caller_sline7__ = gCallerSLine7;
-__caller_sline6__ = gCallerSLine6;
-__caller_sline5__ = gCallerSLine5;
-__caller_sline4__ = gCallerSLine4;
-__caller_sline3__ = gCallerSLine3;
-__caller_sline2__ = gCallerSLine2;
-__caller_sline__ = gCallerSLine;
-gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __dec_obj6=((struct sInterfaceNode*)come_null_check(self, "23interface.c", 13))->name;
-    ((struct sInterfaceNode*)come_null_check(self, "23interface.c", 13))->name=(char*)come_increment_ref_count(((char*)(right_value10=(gCallerSName = "23interface.c", gCallerSLine = 13,__builtin_string(name)))));
+    ((struct sInterfaceNode*)come_null_check(self, "23interface.c", 13))->name=(char*)come_increment_ref_count(((char*)(right_value10=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 13,__builtin_string(name)))));
     if(__dec_obj6) { __dec_obj6 = come_decrement_ref_count(__dec_obj6, (void*)0, (void*)0, 0,0,0); }
     if(right_value10 && right_value10 != __result_obj__ && !__freed_obj__) { right_value10 = come_decrement_ref_count(right_value10, (void*)0, (void*)0, 1, 0, 0); }
     __freed_obj__ = 0;
     __dec_obj39=((struct sInterfaceNode*)come_null_check(self, "23interface.c", 14))->klass;
-    ((struct sInterfaceNode*)come_null_check(self, "23interface.c", 14))->klass=(struct sClass*)come_increment_ref_count(((struct sClass*)(right_value62=(gCallerSName = "23interface.c", gCallerSLine = 14,sClass_clone(klass)))));
+    ((struct sInterfaceNode*)come_null_check(self, "23interface.c", 14))->klass=(struct sClass*)come_increment_ref_count(((struct sClass*)(right_value62=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 14,sClass_clone(klass)))));
     if(__dec_obj39) { come_call_finalizer(sClass_finalize,__dec_obj39, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(right_value62 && right_value62 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sClass_finalize,right_value62, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     ((struct sInterfaceNode*)come_null_check(self, "23interface.c", 16))->sline=((struct sInfo*)come_null_check(info, "23interface.c", 16))->sline;
     __freed_obj__ = 0;
     __dec_obj40=((struct sInterfaceNode*)come_null_check(self, "23interface.c", 17))->sname;
-    ((struct sInterfaceNode*)come_null_check(self, "23interface.c", 17))->sname=(char*)come_increment_ref_count(((char*)(right_value63=(gCallerSName = "23interface.c", gCallerSLine = 17,__builtin_string(((struct sInfo*)come_null_check(info, "23interface.c", 17))->sname)))));
+    ((struct sInterfaceNode*)come_null_check(self, "23interface.c", 17))->sname=(char*)come_increment_ref_count(((char*)(right_value63=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 17,__builtin_string(((struct sInfo*)come_null_check(info, "23interface.c", 17))->sname)))));
     if(__dec_obj40) { __dec_obj40 = come_decrement_ref_count(__dec_obj40, (void*)0, (void*)0, 0,0,0); }
     if(right_value63 && right_value63 != __result_obj__ && !__freed_obj__) { right_value63 = come_decrement_ref_count(right_value63, (void*)0, (void*)0, 1, 0, 0); }
     __freed_obj__ = 0;
@@ -4030,76 +2680,17 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     if(name && !__freed_obj__) { name = come_decrement_ref_count(name, (void*)0, (void*)0, 0, 1, 0); }
     if(klass && !__freed_obj__) { come_call_finalizer(sClass_finalize,klass, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-    return __result42__;
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result42__;
     __freed_obj__ = 0;
     if(self && !__freed_obj__) { come_call_finalizer(sInterfaceNode_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
     if(name && !__freed_obj__) { name = come_decrement_ref_count(name, (void*)0, (void*)0, 0, 1, 0); }
     if(klass && !__freed_obj__) { come_call_finalizer(sClass_finalize,klass, (void*)0, (void*)0, 0, 0, 1, 0); }
-gCallerSName10 = __caller_sname10__;
-gCallerSName9 = __caller_sname9__;
-gCallerSName8 = __caller_sname8__;
-gCallerSName7 = __caller_sname7__;
-gCallerSName6 = __caller_sname6__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName4 = __caller_sname4__;
-gCallerSName3 = __caller_sname3__;
-gCallerSName2 = __caller_sname2__;
-gCallerSName = __caller_sname__;
-gCallerSLine10 = __caller_sline10__;
-gCallerSLine9 = __caller_sline9__;
-gCallerSLine8 = __caller_sline8__;
-gCallerSLine7 = __caller_sline7__;
-gCallerSLine6 = __caller_sline6__;
-gCallerSLine5 = __caller_sline5__;
-gCallerSLine4 = __caller_sline4__;
-gCallerSLine3 = __caller_sline3__;
-gCallerSLine2 = __caller_sline2__;
-gCallerSLine = __caller_sline__;
-}
+memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct sClass* sClass_clone(struct sClass* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -4136,61 +2727,12 @@ memset(&result_5, 0, sizeof(struct sClass*));
 memset(&right_value12, 0, sizeof(void*));
 memset(&right_value60, 0, sizeof(void*));
 memset(&right_value61, 0, sizeof(void*));
-    __caller_sname10__ = gCallerSName10;
-    __caller_sname9__ = gCallerSName9;
-    __caller_sname8__ = gCallerSName8;
-    __caller_sname7__ = gCallerSName7;
-    __caller_sname6__ = gCallerSName6;
-    __caller_sname5__ = gCallerSName5;
-    __caller_sname4__ = gCallerSName4;
-    __caller_sname3__ = gCallerSName3;
-    __caller_sname2__ = gCallerSName2;
-    __caller_sname__ = gCallerSName;
-    __caller_sline10__ = gCallerSLine10;
-    __caller_sline9__ = gCallerSLine9;
-    __caller_sline8__ = gCallerSLine8;
-    __caller_sline7__ = gCallerSLine7;
-    __caller_sline6__ = gCallerSLine6;
-    __caller_sline5__ = gCallerSLine5;
-    __caller_sline4__ = gCallerSLine4;
-    __caller_sline3__ = gCallerSLine3;
-    __caller_sline2__ = gCallerSLine2;
-    __caller_sline__ = gCallerSLine;
-    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
         if(_if_conditional5=self==(void*)0,        __freed_obj__ = 0, 
         _if_conditional5) {
             __result12__ = __result_obj__ = (void*)0;
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result12__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result12__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
@@ -4248,7 +2790,7 @@ memset(&right_value61, 0, sizeof(void*));
         if(_if_conditional36=self!=((void*)0)&&((struct sClass*)come_null_check(self, "sClass_clone", 13))->mName!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional36) {
             __dec_obj7=((struct sClass*)come_null_check(result_5, "sClass_clone", 12))->mName;
-            ((struct sClass*)come_null_check(result_5, "sClass_clone", 12))->mName=(char*)come_increment_ref_count(((char*)(right_value12=(gCallerSName = "sClass_clone", gCallerSLine = 12,string_clone(((struct sClass*)come_null_check(self, "sClass_clone", 12))->mName)))));
+            ((struct sClass*)come_null_check(result_5, "sClass_clone", 12))->mName=(char*)come_increment_ref_count(((char*)(right_value12=(gCallerSName[0] = "sClass_clone", gCallerSLine[0] = 12,string_clone(((struct sClass*)come_null_check(self, "sClass_clone", 12))->mName)))));
             if(__dec_obj7) { __dec_obj7 = come_decrement_ref_count(__dec_obj7, (void*)0, (void*)0, 0,0,0); }
             if(right_value12 && right_value12 != __result_obj__ && !__freed_obj__) { right_value12 = come_decrement_ref_count(right_value12, (void*)0, (void*)0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -4269,7 +2811,7 @@ memset(&right_value61, 0, sizeof(void*));
         if(_if_conditional39=self!=((void*)0)&&((struct sClass*)come_null_check(self, "sClass_clone", 16))->mFields!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional39) {
             __dec_obj37=((struct sClass*)come_null_check(result_5, "sClass_clone", 15))->mFields;
-            ((struct sClass*)come_null_check(result_5, "sClass_clone", 15))->mFields=(struct list$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list$1tuple2$2charphsTypephph*)(right_value60=(gCallerSName = "sClass_clone", gCallerSLine = 15,list$1tuple2$2charphsTypephphp_clone(((struct sClass*)come_null_check(self, "sClass_clone", 15))->mFields)))));
+            ((struct sClass*)come_null_check(result_5, "sClass_clone", 15))->mFields=(struct list$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list$1tuple2$2charphsTypephph*)(right_value60=(gCallerSName[0] = "sClass_clone", gCallerSLine[0] = 15,list$1tuple2$2charphsTypephphp_clone(((struct sClass*)come_null_check(self, "sClass_clone", 15))->mFields)))));
             if(__dec_obj37) { come_call_finalizer(list$1tuple2$2charphsTypephph_finalize,__dec_obj37, (void*)0, (void*)0, 0, 0, 0, 0); }
             if(right_value60 && right_value60 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1tuple2$2charphsTypephphp_finalize,right_value60, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -4284,7 +2826,7 @@ memset(&right_value61, 0, sizeof(void*));
         if(_if_conditional123=self!=((void*)0)&&((struct sClass*)come_null_check(self, "sClass_clone", 18))->mDeclareSName!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional123) {
             __dec_obj38=((struct sClass*)come_null_check(result_5, "sClass_clone", 17))->mDeclareSName;
-            ((struct sClass*)come_null_check(result_5, "sClass_clone", 17))->mDeclareSName=(char*)come_increment_ref_count(((char*)(right_value61=(gCallerSName = "sClass_clone", gCallerSLine = 17,string_clone(((struct sClass*)come_null_check(self, "sClass_clone", 17))->mDeclareSName)))));
+            ((struct sClass*)come_null_check(result_5, "sClass_clone", 17))->mDeclareSName=(char*)come_increment_ref_count(((char*)(right_value61=(gCallerSName[0] = "sClass_clone", gCallerSLine[0] = 17,string_clone(((struct sClass*)come_null_check(self, "sClass_clone", 17))->mDeclareSName)))));
             if(__dec_obj38) { __dec_obj38 = come_decrement_ref_count(__dec_obj38, (void*)0, (void*)0, 0,0,0); }
             if(right_value61 && right_value61 != __result_obj__ && !__freed_obj__) { right_value61 = come_decrement_ref_count(right_value61, (void*)0, (void*)0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -4293,74 +2835,15 @@ memset(&right_value61, 0, sizeof(void*));
         __result41__ = __result_obj__ = result_5;
         if(result_5 && !__freed_obj__) { come_call_finalizer(sClass_finalize,result_5, (void*)0, (void*)0, 0, 0, 1, 0); }
         __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-        return __result41__;
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result41__;
         __freed_obj__ = 0;
         if(result_5 && !__freed_obj__) { come_call_finalizer(sClass_finalize,result_5, (void*)0, (void*)0, 0, 0, 0, 0); }
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-}
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void sClass_finalize(struct sClass* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -4370,35 +2853,7 @@ _Bool _if_conditional7;
 _Bool _if_conditional27;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-        __caller_sname10__ = gCallerSName10;
-        __caller_sname9__ = gCallerSName9;
-        __caller_sname8__ = gCallerSName8;
-        __caller_sname7__ = gCallerSName7;
-        __caller_sname6__ = gCallerSName6;
-        __caller_sname5__ = gCallerSName5;
-        __caller_sname4__ = gCallerSName4;
-        __caller_sname3__ = gCallerSName3;
-        __caller_sname2__ = gCallerSName2;
-        __caller_sname__ = gCallerSName;
-        __caller_sline10__ = gCallerSLine10;
-        __caller_sline9__ = gCallerSLine9;
-        __caller_sline8__ = gCallerSLine8;
-        __caller_sline7__ = gCallerSLine7;
-        __caller_sline6__ = gCallerSLine6;
-        __caller_sline5__ = gCallerSLine5;
-        __caller_sline4__ = gCallerSLine4;
-        __caller_sline3__ = gCallerSLine3;
-        __caller_sline2__ = gCallerSLine2;
-        __caller_sline__ = gCallerSLine;
-        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
             if(_if_conditional6=self!=((void*)0)&&((struct sClass*)come_null_check(self, "sClass_finalize", 1))->mName!=((void*)0),            __freed_obj__ = 0, 
             _if_conditional6) {
                 if(((struct sClass*)come_null_check(self, "sClass_finalize", 0))->mName && !__freed_obj__) { ((struct sClass*)come_null_check(self, "sClass_finalize", 0))->mName = come_decrement_ref_count(((struct sClass*)come_null_check(self, "sClass_finalize", 0))->mName, (void*)0, (void*)0, 0, 0, 0); }
@@ -4417,50 +2872,12 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-}
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void list$1tuple2$2charphsTypephphp_finalize(struct list$1tuple2$2charphsTypephph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -4472,91 +2889,25 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&it_6, 0, sizeof(struct list_item$1tuple2$2charphsTypephph*));
 memset(&prev_it_7, 0, sizeof(struct list_item$1tuple2$2charphsTypephph*));
-                __caller_sname10__ = gCallerSName10;
-                __caller_sname9__ = gCallerSName9;
-                __caller_sname8__ = gCallerSName8;
-                __caller_sname7__ = gCallerSName7;
-                __caller_sname6__ = gCallerSName6;
-                __caller_sname5__ = gCallerSName5;
-                __caller_sname4__ = gCallerSName4;
-                __caller_sname3__ = gCallerSName3;
-                __caller_sname2__ = gCallerSName2;
-                __caller_sname__ = gCallerSName;
-                __caller_sline10__ = gCallerSLine10;
-                __caller_sline9__ = gCallerSLine9;
-                __caller_sline8__ = gCallerSLine8;
-                __caller_sline7__ = gCallerSLine7;
-                __caller_sline6__ = gCallerSLine6;
-                __caller_sline5__ = gCallerSLine5;
-                __caller_sline4__ = gCallerSLine4;
-                __caller_sline3__ = gCallerSLine3;
-                __caller_sline2__ = gCallerSLine2;
-                __caller_sline__ = gCallerSLine;
-                gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                    it_6=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 190))->head;
+                memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                    it_6=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 174))->head;
                     __freed_obj__ = 0;
                     while(_while_condtional1=it_6!=((void*)0),                    __freed_obj__ = 0, 
                     _while_condtional1) {
                         prev_it_7=it_6;
                         __freed_obj__ = 0;
-                        it_6=((struct list_item$1tuple2$2charphsTypephph*)come_null_check(it_6, "./comelang2.h", 193))->next;
+                        it_6=((struct list_item$1tuple2$2charphsTypephph*)come_null_check(it_6, "./comelang2.h", 177))->next;
                         __freed_obj__ = 0;
                         if(prev_it_7 && !__freed_obj__) { come_call_finalizer(list_item$1tuple2$2charphsTypephphp_finalize,prev_it_7, (void*)0, (void*)0, 0, 0, 0, 0); }
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
-                gCallerSName10 = __caller_sname10__;
-                gCallerSName9 = __caller_sname9__;
-                gCallerSName8 = __caller_sname8__;
-                gCallerSName7 = __caller_sname7__;
-                gCallerSName6 = __caller_sname6__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName4 = __caller_sname4__;
-                gCallerSName3 = __caller_sname3__;
-                gCallerSName2 = __caller_sname2__;
-                gCallerSName = __caller_sname__;
-                gCallerSLine10 = __caller_sline10__;
-                gCallerSLine9 = __caller_sline9__;
-                gCallerSLine8 = __caller_sline8__;
-                gCallerSLine7 = __caller_sline7__;
-                gCallerSLine6 = __caller_sline6__;
-                gCallerSLine5 = __caller_sline5__;
-                gCallerSLine4 = __caller_sline4__;
-                gCallerSLine3 = __caller_sline3__;
-                gCallerSLine2 = __caller_sline2__;
-                gCallerSLine = __caller_sline__;
-}
+                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void list_item$1tuple2$2charphsTypephphp_finalize(struct list_item$1tuple2$2charphsTypephph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -4564,85 +2915,19 @@ _Bool __freed_obj__;
 _Bool _if_conditional8;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                        __caller_sname10__ = gCallerSName10;
-                        __caller_sname9__ = gCallerSName9;
-                        __caller_sname8__ = gCallerSName8;
-                        __caller_sname7__ = gCallerSName7;
-                        __caller_sname6__ = gCallerSName6;
-                        __caller_sname5__ = gCallerSName5;
-                        __caller_sname4__ = gCallerSName4;
-                        __caller_sname3__ = gCallerSName3;
-                        __caller_sname2__ = gCallerSName2;
-                        __caller_sname__ = gCallerSName;
-                        __caller_sline10__ = gCallerSLine10;
-                        __caller_sline9__ = gCallerSLine9;
-                        __caller_sline8__ = gCallerSLine8;
-                        __caller_sline7__ = gCallerSLine7;
-                        __caller_sline6__ = gCallerSLine6;
-                        __caller_sline5__ = gCallerSLine5;
-                        __caller_sline4__ = gCallerSLine4;
-                        __caller_sline3__ = gCallerSLine3;
-                        __caller_sline2__ = gCallerSLine2;
-                        __caller_sline__ = gCallerSLine;
-                        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                             if(_if_conditional8=self!=((void*)0)&&((struct list_item$1tuple2$2charphsTypephph*)come_null_check(self, "list_item$1tuple2$2charphsTypephphp_finalize", 1))->item!=((void*)0),                            __freed_obj__ = 0, 
                             _if_conditional8) {
                                 if(((struct list_item$1tuple2$2charphsTypephph*)come_null_check(self, "list_item$1tuple2$2charphsTypephphp_finalize", 0))->item && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,((struct list_item$1tuple2$2charphsTypephph*)come_null_check(self, "list_item$1tuple2$2charphsTypephphp_finalize", 0))->item, (void*)0, (void*)0, 0, 0, 0, 0); }
                                 __freed_obj__ = 0;
                             }
                             __freed_obj__ = 0;
-                        gCallerSName10 = __caller_sname10__;
-                        gCallerSName9 = __caller_sname9__;
-                        gCallerSName8 = __caller_sname8__;
-                        gCallerSName7 = __caller_sname7__;
-                        gCallerSName6 = __caller_sname6__;
-                        gCallerSName5 = __caller_sname5__;
-                        gCallerSName5 = __caller_sname5__;
-                        gCallerSName4 = __caller_sname4__;
-                        gCallerSName3 = __caller_sname3__;
-                        gCallerSName2 = __caller_sname2__;
-                        gCallerSName = __caller_sname__;
-                        gCallerSLine10 = __caller_sline10__;
-                        gCallerSLine9 = __caller_sline9__;
-                        gCallerSLine8 = __caller_sline8__;
-                        gCallerSLine7 = __caller_sline7__;
-                        gCallerSLine6 = __caller_sline6__;
-                        gCallerSLine5 = __caller_sline5__;
-                        gCallerSLine4 = __caller_sline4__;
-                        gCallerSLine3 = __caller_sline3__;
-                        gCallerSLine2 = __caller_sline2__;
-                        gCallerSLine = __caller_sline__;
-}
+                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void tuple2$2charphsTypephp_finalize(struct tuple2$2charphsTypeph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -4651,35 +2936,7 @@ _Bool _if_conditional9;
 _Bool _if_conditional10;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                                __caller_sname10__ = gCallerSName10;
-                                __caller_sname9__ = gCallerSName9;
-                                __caller_sname8__ = gCallerSName8;
-                                __caller_sname7__ = gCallerSName7;
-                                __caller_sname6__ = gCallerSName6;
-                                __caller_sname5__ = gCallerSName5;
-                                __caller_sname4__ = gCallerSName4;
-                                __caller_sname3__ = gCallerSName3;
-                                __caller_sname2__ = gCallerSName2;
-                                __caller_sname__ = gCallerSName;
-                                __caller_sline10__ = gCallerSLine10;
-                                __caller_sline9__ = gCallerSLine9;
-                                __caller_sline8__ = gCallerSLine8;
-                                __caller_sline7__ = gCallerSLine7;
-                                __caller_sline6__ = gCallerSLine6;
-                                __caller_sline5__ = gCallerSLine5;
-                                __caller_sline4__ = gCallerSLine4;
-                                __caller_sline3__ = gCallerSLine3;
-                                __caller_sline2__ = gCallerSLine2;
-                                __caller_sline__ = gCallerSLine;
-                                gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                                memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                                     if(_if_conditional9=self!=((void*)0)&&((struct tuple2$2charphsTypeph*)come_null_check(self, "tuple2$2charphsTypephp_finalize", 1))->v1!=((void*)0),                                    __freed_obj__ = 0, 
                                     _if_conditional9) {
                                         if(((struct tuple2$2charphsTypeph*)come_null_check(self, "tuple2$2charphsTypephp_finalize", 0))->v1 && !__freed_obj__) { ((struct tuple2$2charphsTypeph*)come_null_check(self, "tuple2$2charphsTypephp_finalize", 0))->v1 = come_decrement_ref_count(((struct tuple2$2charphsTypeph*)come_null_check(self, "tuple2$2charphsTypephp_finalize", 0))->v1, (void*)0, (void*)0, 0, 0, 0); }
@@ -4692,50 +2949,12 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
                                         __freed_obj__ = 0;
                                     }
                                     __freed_obj__ = 0;
-                                gCallerSName10 = __caller_sname10__;
-                                gCallerSName9 = __caller_sname9__;
-                                gCallerSName8 = __caller_sname8__;
-                                gCallerSName7 = __caller_sname7__;
-                                gCallerSName6 = __caller_sname6__;
-                                gCallerSName5 = __caller_sname5__;
-                                gCallerSName5 = __caller_sname5__;
-                                gCallerSName4 = __caller_sname4__;
-                                gCallerSName3 = __caller_sname3__;
-                                gCallerSName2 = __caller_sname2__;
-                                gCallerSName = __caller_sname__;
-                                gCallerSLine10 = __caller_sline10__;
-                                gCallerSLine9 = __caller_sline9__;
-                                gCallerSLine8 = __caller_sline8__;
-                                gCallerSLine7 = __caller_sline7__;
-                                gCallerSLine6 = __caller_sline6__;
-                                gCallerSLine5 = __caller_sline5__;
-                                gCallerSLine4 = __caller_sline4__;
-                                gCallerSLine3 = __caller_sline3__;
-                                gCallerSLine2 = __caller_sline2__;
-                                gCallerSLine = __caller_sline__;
-}
+                                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void sType_finalize(struct sType* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -4754,35 +2973,7 @@ _Bool _if_conditional25;
 _Bool _if_conditional26;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                                        __caller_sname10__ = gCallerSName10;
-                                        __caller_sname9__ = gCallerSName9;
-                                        __caller_sname8__ = gCallerSName8;
-                                        __caller_sname7__ = gCallerSName7;
-                                        __caller_sname6__ = gCallerSName6;
-                                        __caller_sname5__ = gCallerSName5;
-                                        __caller_sname4__ = gCallerSName4;
-                                        __caller_sname3__ = gCallerSName3;
-                                        __caller_sname2__ = gCallerSName2;
-                                        __caller_sname__ = gCallerSName;
-                                        __caller_sline10__ = gCallerSLine10;
-                                        __caller_sline9__ = gCallerSLine9;
-                                        __caller_sline8__ = gCallerSLine8;
-                                        __caller_sline7__ = gCallerSLine7;
-                                        __caller_sline6__ = gCallerSLine6;
-                                        __caller_sline5__ = gCallerSLine5;
-                                        __caller_sline4__ = gCallerSLine4;
-                                        __caller_sline3__ = gCallerSLine3;
-                                        __caller_sline2__ = gCallerSLine2;
-                                        __caller_sline__ = gCallerSLine;
-                                        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                                        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                                             if(_if_conditional11=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 1))->mNoSolvedGenericsType!=((void*)0),                                            __freed_obj__ = 0, 
                                             _if_conditional11) {
                                                 if(((struct sType*)come_null_check(self, "sType_finalize", 0))->mNoSolvedGenericsType && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,((struct sType*)come_null_check(self, "sType_finalize", 0))->mNoSolvedGenericsType, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -4855,50 +3046,12 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
                                                 __freed_obj__ = 0;
                                             }
                                             __freed_obj__ = 0;
-                                        gCallerSName10 = __caller_sname10__;
-                                        gCallerSName9 = __caller_sname9__;
-                                        gCallerSName8 = __caller_sname8__;
-                                        gCallerSName7 = __caller_sname7__;
-                                        gCallerSName6 = __caller_sname6__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName4 = __caller_sname4__;
-                                        gCallerSName3 = __caller_sname3__;
-                                        gCallerSName2 = __caller_sname2__;
-                                        gCallerSName = __caller_sname__;
-                                        gCallerSLine10 = __caller_sline10__;
-                                        gCallerSLine9 = __caller_sline9__;
-                                        gCallerSLine8 = __caller_sline8__;
-                                        gCallerSLine7 = __caller_sline7__;
-                                        gCallerSLine6 = __caller_sline6__;
-                                        gCallerSLine5 = __caller_sline5__;
-                                        gCallerSLine4 = __caller_sline4__;
-                                        gCallerSLine3 = __caller_sline3__;
-                                        gCallerSLine2 = __caller_sline2__;
-                                        gCallerSLine = __caller_sline__;
-}
+                                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void tuple1$1sTypephp_finalize(struct tuple1$1sTypeph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -4906,85 +3059,19 @@ _Bool __freed_obj__;
 _Bool _if_conditional12;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                                                __caller_sname10__ = gCallerSName10;
-                                                __caller_sname9__ = gCallerSName9;
-                                                __caller_sname8__ = gCallerSName8;
-                                                __caller_sname7__ = gCallerSName7;
-                                                __caller_sname6__ = gCallerSName6;
-                                                __caller_sname5__ = gCallerSName5;
-                                                __caller_sname4__ = gCallerSName4;
-                                                __caller_sname3__ = gCallerSName3;
-                                                __caller_sname2__ = gCallerSName2;
-                                                __caller_sname__ = gCallerSName;
-                                                __caller_sline10__ = gCallerSLine10;
-                                                __caller_sline9__ = gCallerSLine9;
-                                                __caller_sline8__ = gCallerSLine8;
-                                                __caller_sline7__ = gCallerSLine7;
-                                                __caller_sline6__ = gCallerSLine6;
-                                                __caller_sline5__ = gCallerSLine5;
-                                                __caller_sline4__ = gCallerSLine4;
-                                                __caller_sline3__ = gCallerSLine3;
-                                                __caller_sline2__ = gCallerSLine2;
-                                                __caller_sline__ = gCallerSLine;
-                                                gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                                gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                                gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                                gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                                gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                                gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                                gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                                gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                                gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                                                memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                                memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                                for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                                                     if(_if_conditional12=self!=((void*)0)&&((struct tuple1$1sTypeph*)come_null_check(self, "tuple1$1sTypephp_finalize", 1))->v1!=((void*)0),                                                    __freed_obj__ = 0, 
                                                     _if_conditional12) {
                                                         if(((struct tuple1$1sTypeph*)come_null_check(self, "tuple1$1sTypephp_finalize", 0))->v1 && !__freed_obj__) { come_call_finalizer(sType_finalize,((struct tuple1$1sTypeph*)come_null_check(self, "tuple1$1sTypephp_finalize", 0))->v1, (void*)0, (void*)0, 0, 0, 0, 0); }
                                                         __freed_obj__ = 0;
                                                     }
                                                     __freed_obj__ = 0;
-                                                gCallerSName10 = __caller_sname10__;
-                                                gCallerSName9 = __caller_sname9__;
-                                                gCallerSName8 = __caller_sname8__;
-                                                gCallerSName7 = __caller_sname7__;
-                                                gCallerSName6 = __caller_sname6__;
-                                                gCallerSName5 = __caller_sname5__;
-                                                gCallerSName5 = __caller_sname5__;
-                                                gCallerSName4 = __caller_sname4__;
-                                                gCallerSName3 = __caller_sname3__;
-                                                gCallerSName2 = __caller_sname2__;
-                                                gCallerSName = __caller_sname__;
-                                                gCallerSLine10 = __caller_sline10__;
-                                                gCallerSLine9 = __caller_sline9__;
-                                                gCallerSLine8 = __caller_sline8__;
-                                                gCallerSLine7 = __caller_sline7__;
-                                                gCallerSLine6 = __caller_sline6__;
-                                                gCallerSLine5 = __caller_sline5__;
-                                                gCallerSLine4 = __caller_sline4__;
-                                                gCallerSLine3 = __caller_sline3__;
-                                                gCallerSLine2 = __caller_sline2__;
-                                                gCallerSLine = __caller_sline__;
-}
+                                                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void list$1sTypephp_finalize(struct list$1sTypeph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -4996,91 +3083,25 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&it_8, 0, sizeof(struct list_item$1sTypeph*));
 memset(&prev_it_9, 0, sizeof(struct list_item$1sTypeph*));
-                                                __caller_sname10__ = gCallerSName10;
-                                                __caller_sname9__ = gCallerSName9;
-                                                __caller_sname8__ = gCallerSName8;
-                                                __caller_sname7__ = gCallerSName7;
-                                                __caller_sname6__ = gCallerSName6;
-                                                __caller_sname5__ = gCallerSName5;
-                                                __caller_sname4__ = gCallerSName4;
-                                                __caller_sname3__ = gCallerSName3;
-                                                __caller_sname2__ = gCallerSName2;
-                                                __caller_sname__ = gCallerSName;
-                                                __caller_sline10__ = gCallerSLine10;
-                                                __caller_sline9__ = gCallerSLine9;
-                                                __caller_sline8__ = gCallerSLine8;
-                                                __caller_sline7__ = gCallerSLine7;
-                                                __caller_sline6__ = gCallerSLine6;
-                                                __caller_sline5__ = gCallerSLine5;
-                                                __caller_sline4__ = gCallerSLine4;
-                                                __caller_sline3__ = gCallerSLine3;
-                                                __caller_sline2__ = gCallerSLine2;
-                                                __caller_sline__ = gCallerSLine;
-                                                gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                                gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                                gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                                gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                                gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                                gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                                gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                                gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                                gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                                                    it_8=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 190))->head;
+                                                memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                                memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                                for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                                                    it_8=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 174))->head;
                                                     __freed_obj__ = 0;
                                                     while(_while_condtional2=it_8!=((void*)0),                                                    __freed_obj__ = 0, 
                                                     _while_condtional2) {
                                                         prev_it_9=it_8;
                                                         __freed_obj__ = 0;
-                                                        it_8=((struct list_item$1sTypeph*)come_null_check(it_8, "./comelang2.h", 193))->next;
+                                                        it_8=((struct list_item$1sTypeph*)come_null_check(it_8, "./comelang2.h", 177))->next;
                                                         __freed_obj__ = 0;
                                                         if(prev_it_9 && !__freed_obj__) { come_call_finalizer(list_item$1sTypephp_finalize,prev_it_9, (void*)0, (void*)0, 0, 0, 0, 0); }
                                                         __freed_obj__ = 0;
                                                     }
                                                     __freed_obj__ = 0;
-                                                gCallerSName10 = __caller_sname10__;
-                                                gCallerSName9 = __caller_sname9__;
-                                                gCallerSName8 = __caller_sname8__;
-                                                gCallerSName7 = __caller_sname7__;
-                                                gCallerSName6 = __caller_sname6__;
-                                                gCallerSName5 = __caller_sname5__;
-                                                gCallerSName5 = __caller_sname5__;
-                                                gCallerSName4 = __caller_sname4__;
-                                                gCallerSName3 = __caller_sname3__;
-                                                gCallerSName2 = __caller_sname2__;
-                                                gCallerSName = __caller_sname__;
-                                                gCallerSLine10 = __caller_sline10__;
-                                                gCallerSLine9 = __caller_sline9__;
-                                                gCallerSLine8 = __caller_sline8__;
-                                                gCallerSLine7 = __caller_sline7__;
-                                                gCallerSLine6 = __caller_sline6__;
-                                                gCallerSLine5 = __caller_sline5__;
-                                                gCallerSLine4 = __caller_sline4__;
-                                                gCallerSLine3 = __caller_sline3__;
-                                                gCallerSLine2 = __caller_sline2__;
-                                                gCallerSLine = __caller_sline__;
-}
+                                                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void list_item$1sTypephp_finalize(struct list_item$1sTypeph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -5088,85 +3109,19 @@ _Bool __freed_obj__;
 _Bool _if_conditional16;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                                                        __caller_sname10__ = gCallerSName10;
-                                                        __caller_sname9__ = gCallerSName9;
-                                                        __caller_sname8__ = gCallerSName8;
-                                                        __caller_sname7__ = gCallerSName7;
-                                                        __caller_sname6__ = gCallerSName6;
-                                                        __caller_sname5__ = gCallerSName5;
-                                                        __caller_sname4__ = gCallerSName4;
-                                                        __caller_sname3__ = gCallerSName3;
-                                                        __caller_sname2__ = gCallerSName2;
-                                                        __caller_sname__ = gCallerSName;
-                                                        __caller_sline10__ = gCallerSLine10;
-                                                        __caller_sline9__ = gCallerSLine9;
-                                                        __caller_sline8__ = gCallerSLine8;
-                                                        __caller_sline7__ = gCallerSLine7;
-                                                        __caller_sline6__ = gCallerSLine6;
-                                                        __caller_sline5__ = gCallerSLine5;
-                                                        __caller_sline4__ = gCallerSLine4;
-                                                        __caller_sline3__ = gCallerSLine3;
-                                                        __caller_sline2__ = gCallerSLine2;
-                                                        __caller_sline__ = gCallerSLine;
-                                                        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                                        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                                        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                                        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                                        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                                        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                                        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                                        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                                        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                                                        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                                        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                                        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                                                             if(_if_conditional16=self!=((void*)0)&&((struct list_item$1sTypeph*)come_null_check(self, "list_item$1sTypephp_finalize", 1))->item!=((void*)0),                                                            __freed_obj__ = 0, 
                                                             _if_conditional16) {
                                                                 if(((struct list_item$1sTypeph*)come_null_check(self, "list_item$1sTypephp_finalize", 0))->item && !__freed_obj__) { come_call_finalizer(sType_finalize,((struct list_item$1sTypeph*)come_null_check(self, "list_item$1sTypephp_finalize", 0))->item, (void*)0, (void*)0, 0, 0, 0, 0); }
                                                                 __freed_obj__ = 0;
                                                             }
                                                             __freed_obj__ = 0;
-                                                        gCallerSName10 = __caller_sname10__;
-                                                        gCallerSName9 = __caller_sname9__;
-                                                        gCallerSName8 = __caller_sname8__;
-                                                        gCallerSName7 = __caller_sname7__;
-                                                        gCallerSName6 = __caller_sname6__;
-                                                        gCallerSName5 = __caller_sname5__;
-                                                        gCallerSName5 = __caller_sname5__;
-                                                        gCallerSName4 = __caller_sname4__;
-                                                        gCallerSName3 = __caller_sname3__;
-                                                        gCallerSName2 = __caller_sname2__;
-                                                        gCallerSName = __caller_sname__;
-                                                        gCallerSLine10 = __caller_sline10__;
-                                                        gCallerSLine9 = __caller_sline9__;
-                                                        gCallerSLine8 = __caller_sline8__;
-                                                        gCallerSLine7 = __caller_sline7__;
-                                                        gCallerSLine6 = __caller_sline6__;
-                                                        gCallerSLine5 = __caller_sline5__;
-                                                        gCallerSLine4 = __caller_sline4__;
-                                                        gCallerSLine3 = __caller_sline3__;
-                                                        gCallerSLine2 = __caller_sline2__;
-                                                        gCallerSLine = __caller_sline__;
-}
+                                                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void list$1sNodephp_finalize(struct list$1sNodeph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -5178,91 +3133,25 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&it_10, 0, sizeof(struct list_item$1sNodeph*));
 memset(&prev_it_11, 0, sizeof(struct list_item$1sNodeph*));
-                                                __caller_sname10__ = gCallerSName10;
-                                                __caller_sname9__ = gCallerSName9;
-                                                __caller_sname8__ = gCallerSName8;
-                                                __caller_sname7__ = gCallerSName7;
-                                                __caller_sname6__ = gCallerSName6;
-                                                __caller_sname5__ = gCallerSName5;
-                                                __caller_sname4__ = gCallerSName4;
-                                                __caller_sname3__ = gCallerSName3;
-                                                __caller_sname2__ = gCallerSName2;
-                                                __caller_sname__ = gCallerSName;
-                                                __caller_sline10__ = gCallerSLine10;
-                                                __caller_sline9__ = gCallerSLine9;
-                                                __caller_sline8__ = gCallerSLine8;
-                                                __caller_sline7__ = gCallerSLine7;
-                                                __caller_sline6__ = gCallerSLine6;
-                                                __caller_sline5__ = gCallerSLine5;
-                                                __caller_sline4__ = gCallerSLine4;
-                                                __caller_sline3__ = gCallerSLine3;
-                                                __caller_sline2__ = gCallerSLine2;
-                                                __caller_sline__ = gCallerSLine;
-                                                gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                                gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                                gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                                gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                                gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                                gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                                gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                                gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                                gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                                                    it_10=((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 190))->head;
+                                                memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                                memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                                for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                                                    it_10=((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 174))->head;
                                                     __freed_obj__ = 0;
                                                     while(_while_condtional3=it_10!=((void*)0),                                                    __freed_obj__ = 0, 
                                                     _while_condtional3) {
                                                         prev_it_11=it_10;
                                                         __freed_obj__ = 0;
-                                                        it_10=((struct list_item$1sNodeph*)come_null_check(it_10, "./comelang2.h", 193))->next;
+                                                        it_10=((struct list_item$1sNodeph*)come_null_check(it_10, "./comelang2.h", 177))->next;
                                                         __freed_obj__ = 0;
                                                         if(prev_it_11 && !__freed_obj__) { come_call_finalizer(list_item$1sNodephp_finalize,prev_it_11, (void*)0, (void*)0, 0, 0, 0, 0); }
                                                         __freed_obj__ = 0;
                                                     }
                                                     __freed_obj__ = 0;
-                                                gCallerSName10 = __caller_sname10__;
-                                                gCallerSName9 = __caller_sname9__;
-                                                gCallerSName8 = __caller_sname8__;
-                                                gCallerSName7 = __caller_sname7__;
-                                                gCallerSName6 = __caller_sname6__;
-                                                gCallerSName5 = __caller_sname5__;
-                                                gCallerSName5 = __caller_sname5__;
-                                                gCallerSName4 = __caller_sname4__;
-                                                gCallerSName3 = __caller_sname3__;
-                                                gCallerSName2 = __caller_sname2__;
-                                                gCallerSName = __caller_sname__;
-                                                gCallerSLine10 = __caller_sline10__;
-                                                gCallerSLine9 = __caller_sline9__;
-                                                gCallerSLine8 = __caller_sline8__;
-                                                gCallerSLine7 = __caller_sline7__;
-                                                gCallerSLine6 = __caller_sline6__;
-                                                gCallerSLine5 = __caller_sline5__;
-                                                gCallerSLine4 = __caller_sline4__;
-                                                gCallerSLine3 = __caller_sline3__;
-                                                gCallerSLine2 = __caller_sline2__;
-                                                gCallerSLine = __caller_sline__;
-}
+                                                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void list_item$1sNodephp_finalize(struct list_item$1sNodeph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -5270,85 +3159,19 @@ _Bool __freed_obj__;
 _Bool _if_conditional18;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                                                        __caller_sname10__ = gCallerSName10;
-                                                        __caller_sname9__ = gCallerSName9;
-                                                        __caller_sname8__ = gCallerSName8;
-                                                        __caller_sname7__ = gCallerSName7;
-                                                        __caller_sname6__ = gCallerSName6;
-                                                        __caller_sname5__ = gCallerSName5;
-                                                        __caller_sname4__ = gCallerSName4;
-                                                        __caller_sname3__ = gCallerSName3;
-                                                        __caller_sname2__ = gCallerSName2;
-                                                        __caller_sname__ = gCallerSName;
-                                                        __caller_sline10__ = gCallerSLine10;
-                                                        __caller_sline9__ = gCallerSLine9;
-                                                        __caller_sline8__ = gCallerSLine8;
-                                                        __caller_sline7__ = gCallerSLine7;
-                                                        __caller_sline6__ = gCallerSLine6;
-                                                        __caller_sline5__ = gCallerSLine5;
-                                                        __caller_sline4__ = gCallerSLine4;
-                                                        __caller_sline3__ = gCallerSLine3;
-                                                        __caller_sline2__ = gCallerSLine2;
-                                                        __caller_sline__ = gCallerSLine;
-                                                        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                                        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                                        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                                        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                                        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                                        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                                        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                                        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                                        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                                                        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                                        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                                        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                                                             if(_if_conditional18=self!=((void*)0)&&((struct list_item$1sNodeph*)come_null_check(self, "list_item$1sNodephp_finalize", 1))->item!=((void*)0),                                                            __freed_obj__ = 0, 
                                                             _if_conditional18) {
                                                                 if(((struct list_item$1sNodeph*)come_null_check(self, "list_item$1sNodephp_finalize", 0))->item && !__freed_obj__) { ((struct list_item$1sNodeph*)come_null_check(self, "list_item$1sNodephp_finalize", 0))->item = come_decrement_ref_count(((struct list_item$1sNodeph*)come_null_check(self, "list_item$1sNodephp_finalize", 0))->item, ((struct sNode*)((struct list_item$1sNodeph*)come_null_check(self, "list_item$1sNodephp_finalize", 0))->item)->finalize, ((struct sNode*)((struct list_item$1sNodeph*)come_null_check(self, "list_item$1sNodephp_finalize", 0))->item)->_protocol_obj, 0, 0, 0); } 
                                                                 __freed_obj__ = 0;
                                                             }
                                                             __freed_obj__ = 0;
-                                                        gCallerSName10 = __caller_sname10__;
-                                                        gCallerSName9 = __caller_sname9__;
-                                                        gCallerSName8 = __caller_sname8__;
-                                                        gCallerSName7 = __caller_sname7__;
-                                                        gCallerSName6 = __caller_sname6__;
-                                                        gCallerSName5 = __caller_sname5__;
-                                                        gCallerSName5 = __caller_sname5__;
-                                                        gCallerSName4 = __caller_sname4__;
-                                                        gCallerSName3 = __caller_sname3__;
-                                                        gCallerSName2 = __caller_sname2__;
-                                                        gCallerSName = __caller_sname__;
-                                                        gCallerSLine10 = __caller_sline10__;
-                                                        gCallerSLine9 = __caller_sline9__;
-                                                        gCallerSLine8 = __caller_sline8__;
-                                                        gCallerSLine7 = __caller_sline7__;
-                                                        gCallerSLine6 = __caller_sline6__;
-                                                        gCallerSLine5 = __caller_sline5__;
-                                                        gCallerSLine4 = __caller_sline4__;
-                                                        gCallerSLine3 = __caller_sline3__;
-                                                        gCallerSLine2 = __caller_sline2__;
-                                                        gCallerSLine = __caller_sline__;
-}
+                                                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void list$1charphp_finalize(struct list$1charph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -5360,91 +3183,25 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&it_12, 0, sizeof(struct list_item$1charph*));
 memset(&prev_it_13, 0, sizeof(struct list_item$1charph*));
-                                                __caller_sname10__ = gCallerSName10;
-                                                __caller_sname9__ = gCallerSName9;
-                                                __caller_sname8__ = gCallerSName8;
-                                                __caller_sname7__ = gCallerSName7;
-                                                __caller_sname6__ = gCallerSName6;
-                                                __caller_sname5__ = gCallerSName5;
-                                                __caller_sname4__ = gCallerSName4;
-                                                __caller_sname3__ = gCallerSName3;
-                                                __caller_sname2__ = gCallerSName2;
-                                                __caller_sname__ = gCallerSName;
-                                                __caller_sline10__ = gCallerSLine10;
-                                                __caller_sline9__ = gCallerSLine9;
-                                                __caller_sline8__ = gCallerSLine8;
-                                                __caller_sline7__ = gCallerSLine7;
-                                                __caller_sline6__ = gCallerSLine6;
-                                                __caller_sline5__ = gCallerSLine5;
-                                                __caller_sline4__ = gCallerSLine4;
-                                                __caller_sline3__ = gCallerSLine3;
-                                                __caller_sline2__ = gCallerSLine2;
-                                                __caller_sline__ = gCallerSLine;
-                                                gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                                gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                                gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                                gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                                gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                                gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                                gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                                gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                                gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                                                    it_12=((struct list$1charph*)come_null_check(self, "./comelang2.h", 190))->head;
+                                                memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                                memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                                for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                                                    it_12=((struct list$1charph*)come_null_check(self, "./comelang2.h", 174))->head;
                                                     __freed_obj__ = 0;
                                                     while(_while_condtional4=it_12!=((void*)0),                                                    __freed_obj__ = 0, 
                                                     _while_condtional4) {
                                                         prev_it_13=it_12;
                                                         __freed_obj__ = 0;
-                                                        it_12=((struct list_item$1charph*)come_null_check(it_12, "./comelang2.h", 193))->next;
+                                                        it_12=((struct list_item$1charph*)come_null_check(it_12, "./comelang2.h", 177))->next;
                                                         __freed_obj__ = 0;
                                                         if(prev_it_13 && !__freed_obj__) { come_call_finalizer(list_item$1charphp_finalize,prev_it_13, (void*)0, (void*)0, 0, 0, 0, 0); }
                                                         __freed_obj__ = 0;
                                                     }
                                                     __freed_obj__ = 0;
-                                                gCallerSName10 = __caller_sname10__;
-                                                gCallerSName9 = __caller_sname9__;
-                                                gCallerSName8 = __caller_sname8__;
-                                                gCallerSName7 = __caller_sname7__;
-                                                gCallerSName6 = __caller_sname6__;
-                                                gCallerSName5 = __caller_sname5__;
-                                                gCallerSName5 = __caller_sname5__;
-                                                gCallerSName4 = __caller_sname4__;
-                                                gCallerSName3 = __caller_sname3__;
-                                                gCallerSName2 = __caller_sname2__;
-                                                gCallerSName = __caller_sname__;
-                                                gCallerSLine10 = __caller_sline10__;
-                                                gCallerSLine9 = __caller_sline9__;
-                                                gCallerSLine8 = __caller_sline8__;
-                                                gCallerSLine7 = __caller_sline7__;
-                                                gCallerSLine6 = __caller_sline6__;
-                                                gCallerSLine5 = __caller_sline5__;
-                                                gCallerSLine4 = __caller_sline4__;
-                                                gCallerSLine3 = __caller_sline3__;
-                                                gCallerSLine2 = __caller_sline2__;
-                                                gCallerSLine = __caller_sline__;
-}
+                                                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void list_item$1charphp_finalize(struct list_item$1charph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -5452,85 +3209,19 @@ _Bool __freed_obj__;
 _Bool _if_conditional21;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                                                        __caller_sname10__ = gCallerSName10;
-                                                        __caller_sname9__ = gCallerSName9;
-                                                        __caller_sname8__ = gCallerSName8;
-                                                        __caller_sname7__ = gCallerSName7;
-                                                        __caller_sname6__ = gCallerSName6;
-                                                        __caller_sname5__ = gCallerSName5;
-                                                        __caller_sname4__ = gCallerSName4;
-                                                        __caller_sname3__ = gCallerSName3;
-                                                        __caller_sname2__ = gCallerSName2;
-                                                        __caller_sname__ = gCallerSName;
-                                                        __caller_sline10__ = gCallerSLine10;
-                                                        __caller_sline9__ = gCallerSLine9;
-                                                        __caller_sline8__ = gCallerSLine8;
-                                                        __caller_sline7__ = gCallerSLine7;
-                                                        __caller_sline6__ = gCallerSLine6;
-                                                        __caller_sline5__ = gCallerSLine5;
-                                                        __caller_sline4__ = gCallerSLine4;
-                                                        __caller_sline3__ = gCallerSLine3;
-                                                        __caller_sline2__ = gCallerSLine2;
-                                                        __caller_sline__ = gCallerSLine;
-                                                        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                                        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                                        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                                        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                                        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                                        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                                        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                                        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                                        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                                                        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                                        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                                        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                                                             if(_if_conditional21=self!=((void*)0)&&((struct list_item$1charph*)come_null_check(self, "list_item$1charphp_finalize", 1))->item!=((void*)0),                                                            __freed_obj__ = 0, 
                                                             _if_conditional21) {
                                                                 if(((struct list_item$1charph*)come_null_check(self, "list_item$1charphp_finalize", 0))->item && !__freed_obj__) { ((struct list_item$1charph*)come_null_check(self, "list_item$1charphp_finalize", 0))->item = come_decrement_ref_count(((struct list_item$1charph*)come_null_check(self, "list_item$1charphp_finalize", 0))->item, (void*)0, (void*)0, 0, 0, 0); }
                                                                 __freed_obj__ = 0;
                                                             }
                                                             __freed_obj__ = 0;
-                                                        gCallerSName10 = __caller_sname10__;
-                                                        gCallerSName9 = __caller_sname9__;
-                                                        gCallerSName8 = __caller_sname8__;
-                                                        gCallerSName7 = __caller_sname7__;
-                                                        gCallerSName6 = __caller_sname6__;
-                                                        gCallerSName5 = __caller_sname5__;
-                                                        gCallerSName5 = __caller_sname5__;
-                                                        gCallerSName4 = __caller_sname4__;
-                                                        gCallerSName3 = __caller_sname3__;
-                                                        gCallerSName2 = __caller_sname2__;
-                                                        gCallerSName = __caller_sname__;
-                                                        gCallerSLine10 = __caller_sline10__;
-                                                        gCallerSLine9 = __caller_sline9__;
-                                                        gCallerSLine8 = __caller_sline8__;
-                                                        gCallerSLine7 = __caller_sline7__;
-                                                        gCallerSLine6 = __caller_sline6__;
-                                                        gCallerSLine5 = __caller_sline5__;
-                                                        gCallerSLine4 = __caller_sline4__;
-                                                        gCallerSLine3 = __caller_sline3__;
-                                                        gCallerSLine2 = __caller_sline2__;
-                                                        gCallerSLine = __caller_sline__;
-}
+                                                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1tuple2$2charphsTypephph* list$1tuple2$2charphsTypephphp_clone(struct list$1tuple2$2charphsTypephph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -5551,150 +3242,42 @@ memset(&right_value14, 0, sizeof(void*));
 memset(&result_14, 0, sizeof(struct list$1tuple2$2charphsTypephph*));
 memset(&it_15, 0, sizeof(struct list_item$1tuple2$2charphsTypephph*));
 memset(&right_value59, 0, sizeof(void*));
-            __caller_sname10__ = gCallerSName10;
-            __caller_sname9__ = gCallerSName9;
-            __caller_sname8__ = gCallerSName8;
-            __caller_sname7__ = gCallerSName7;
-            __caller_sname6__ = gCallerSName6;
-            __caller_sname5__ = gCallerSName5;
-            __caller_sname4__ = gCallerSName4;
-            __caller_sname3__ = gCallerSName3;
-            __caller_sname2__ = gCallerSName2;
-            __caller_sname__ = gCallerSName;
-            __caller_sline10__ = gCallerSLine10;
-            __caller_sline9__ = gCallerSLine9;
-            __caller_sline8__ = gCallerSLine8;
-            __caller_sline7__ = gCallerSLine7;
-            __caller_sline6__ = gCallerSLine6;
-            __caller_sline5__ = gCallerSLine5;
-            __caller_sline4__ = gCallerSLine4;
-            __caller_sline3__ = gCallerSLine3;
-            __caller_sline2__ = gCallerSLine2;
-            __caller_sline__ = gCallerSLine;
-            gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-            gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-            gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-            gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-            gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-            gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-            gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-            gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-            gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+            memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);            memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);            for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                 if(_if_conditional40=self==((void*)0),                __freed_obj__ = 0, 
                 _if_conditional40) {
                     __result13__ = __result_obj__ = ((void*)0);
                     __freed_obj__ = 0;
-                    gCallerSName10 = __caller_sname10__;
-                    gCallerSName9 = __caller_sname9__;
-                    gCallerSName8 = __caller_sname8__;
-                    gCallerSName7 = __caller_sname7__;
-                    gCallerSName6 = __caller_sname6__;
-                    gCallerSName5 = __caller_sname5__;
-                    gCallerSName5 = __caller_sname5__;
-                    gCallerSName4 = __caller_sname4__;
-                    gCallerSName3 = __caller_sname3__;
-                    gCallerSName2 = __caller_sname2__;
-                    gCallerSName = __caller_sname__;
-                    gCallerSLine10 = __caller_sline10__;
-                    gCallerSLine9 = __caller_sline9__;
-                    gCallerSLine8 = __caller_sline8__;
-                    gCallerSLine7 = __caller_sline7__;
-                    gCallerSLine6 = __caller_sline6__;
-                    gCallerSLine5 = __caller_sline5__;
-                    gCallerSLine4 = __caller_sline4__;
-                    gCallerSLine3 = __caller_sline3__;
-                    gCallerSLine2 = __caller_sline2__;
-                    gCallerSLine = __caller_sline__;
-                    return __result13__;
+                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                    return __result13__;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                result_14=(struct list$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list$1tuple2$2charphsTypephph*)(right_value14=(gCallerSName = "./comelang2.h", gCallerSLine = 209,list$1tuple2$2charphsTypephph_initialize((struct list$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list$1tuple2$2charphsTypephph*)come_null_check(((struct list$1tuple2$2charphsTypephph*)(right_value13=(struct list$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list$1tuple2$2charphsTypephph)*(1), "./comelang2.h", 209))), "./comelang2.h", 209))))))));
+                result_14=(struct list$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list$1tuple2$2charphsTypephph*)(right_value14=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 193,list$1tuple2$2charphsTypephph_initialize((struct list$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list$1tuple2$2charphsTypephph*)come_null_check(((struct list$1tuple2$2charphsTypephph*)(right_value13=(struct list$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list$1tuple2$2charphsTypephph)*(1), "./comelang2.h", 193))), "./comelang2.h", 193))))))));
                 if(right_value13 && right_value13 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1tuple2$2charphsTypephphp_finalize,right_value13, (void*)0, (void*)0, 0, 1, 0, 0); }
                 if(right_value14 && right_value14 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1tuple2$2charphsTypephphp_finalize,right_value14, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
-                it_15=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 211))->head;
+                it_15=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 195))->head;
                 __freed_obj__ = 0;
                 while(_while_condtional5=it_15!=((void*)0),                __freed_obj__ = 0, 
                 _while_condtional5) {
-                    (gCallerSName = "./comelang2.h", gCallerSLine = 213,list$1tuple2$2charphsTypephph_add(((struct list$1tuple2$2charphsTypephph*)come_null_check(result_14, "./comelang2.h", 213)),(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value59=(gCallerSName = "./comelang2.h", gCallerSLine = 213,tuple2$2charphsTypephp_clone(((struct list_item$1tuple2$2charphsTypephph*)come_null_check(it_15, "./comelang2.h", 213))->item)))))));
+                    (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 197,list$1tuple2$2charphsTypephph_add(((struct list$1tuple2$2charphsTypephph*)come_null_check(result_14, "./comelang2.h", 197)),(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value59=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 197,tuple2$2charphsTypephp_clone(((struct list_item$1tuple2$2charphsTypephph*)come_null_check(it_15, "./comelang2.h", 197))->item)))))));
                     if(right_value59 && right_value59 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,right_value59, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
-                    it_15=((struct list_item$1tuple2$2charphsTypephph*)come_null_check(it_15, "./comelang2.h", 215))->next;
+                    it_15=((struct list_item$1tuple2$2charphsTypephph*)come_null_check(it_15, "./comelang2.h", 199))->next;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
                 __result40__ = __result_obj__ = result_14;
                 if(result_14 && !__freed_obj__) { come_call_finalizer(list$1tuple2$2charphsTypephphp_finalize,result_14, (void*)0, (void*)0, 0, 0, 1, 0); }
                 __freed_obj__ = 0;
-                gCallerSName10 = __caller_sname10__;
-                gCallerSName9 = __caller_sname9__;
-                gCallerSName8 = __caller_sname8__;
-                gCallerSName7 = __caller_sname7__;
-                gCallerSName6 = __caller_sname6__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName4 = __caller_sname4__;
-                gCallerSName3 = __caller_sname3__;
-                gCallerSName2 = __caller_sname2__;
-                gCallerSName = __caller_sname__;
-                gCallerSLine10 = __caller_sline10__;
-                gCallerSLine9 = __caller_sline9__;
-                gCallerSLine8 = __caller_sline8__;
-                gCallerSLine7 = __caller_sline7__;
-                gCallerSLine6 = __caller_sline6__;
-                gCallerSLine5 = __caller_sline5__;
-                gCallerSLine4 = __caller_sline4__;
-                gCallerSLine3 = __caller_sline3__;
-                gCallerSLine2 = __caller_sline2__;
-                gCallerSLine = __caller_sline__;
-                return __result40__;
+                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result40__;
                 __freed_obj__ = 0;
                 if(result_14 && !__freed_obj__) { come_call_finalizer(list$1tuple2$2charphsTypephphp_finalize,result_14, (void*)0, (void*)0, 0, 0, 0, 0); }
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-}
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1tuple2$2charphsTypephph* list$1tuple2$2charphsTypephph_initialize(struct list$1tuple2$2charphsTypephph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -5702,112 +3285,25 @@ _Bool __freed_obj__;
 struct list$1tuple2$2charphsTypephph* __result14__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                __caller_sname10__ = gCallerSName10;
-                __caller_sname9__ = gCallerSName9;
-                __caller_sname8__ = gCallerSName8;
-                __caller_sname7__ = gCallerSName7;
-                __caller_sname6__ = gCallerSName6;
-                __caller_sname5__ = gCallerSName5;
-                __caller_sname4__ = gCallerSName4;
-                __caller_sname3__ = gCallerSName3;
-                __caller_sname2__ = gCallerSName2;
-                __caller_sname__ = gCallerSName;
-                __caller_sline10__ = gCallerSLine10;
-                __caller_sline9__ = gCallerSLine9;
-                __caller_sline8__ = gCallerSLine8;
-                __caller_sline7__ = gCallerSLine7;
-                __caller_sline6__ = gCallerSLine6;
-                __caller_sline5__ = gCallerSLine5;
-                __caller_sline4__ = gCallerSLine4;
-                __caller_sline3__ = gCallerSLine3;
-                __caller_sline2__ = gCallerSLine2;
-                __caller_sline__ = gCallerSLine;
-                gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                    ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 171))->head=((void*)0);
+                memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                    ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 155))->head=((void*)0);
                     __freed_obj__ = 0;
-                    ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 172))->tail=((void*)0);
+                    ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 156))->tail=((void*)0);
                     __freed_obj__ = 0;
-                    ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 173))->len=0;
+                    ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 157))->len=0;
                     __freed_obj__ = 0;
                     __result14__ = __result_obj__ = self;
                     if(self && !__freed_obj__) { come_call_finalizer(list$1tuple2$2charphsTypephphp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
                     __freed_obj__ = 0;
-                    gCallerSName10 = __caller_sname10__;
-                    gCallerSName9 = __caller_sname9__;
-                    gCallerSName8 = __caller_sname8__;
-                    gCallerSName7 = __caller_sname7__;
-                    gCallerSName6 = __caller_sname6__;
-                    gCallerSName5 = __caller_sname5__;
-                    gCallerSName5 = __caller_sname5__;
-                    gCallerSName4 = __caller_sname4__;
-                    gCallerSName3 = __caller_sname3__;
-                    gCallerSName2 = __caller_sname2__;
-                    gCallerSName = __caller_sname__;
-                    gCallerSLine10 = __caller_sline10__;
-                    gCallerSLine9 = __caller_sline9__;
-                    gCallerSLine8 = __caller_sline8__;
-                    gCallerSLine7 = __caller_sline7__;
-                    gCallerSLine6 = __caller_sline6__;
-                    gCallerSLine5 = __caller_sline5__;
-                    gCallerSLine4 = __caller_sline4__;
-                    gCallerSLine3 = __caller_sline3__;
-                    gCallerSLine2 = __caller_sline2__;
-                    gCallerSLine = __caller_sline__;
-                    return __result14__;
+                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                    return __result14__;
                     __freed_obj__ = 0;
                     if(self && !__freed_obj__) { come_call_finalizer(list$1tuple2$2charphsTypephphp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
-                gCallerSName10 = __caller_sname10__;
-                gCallerSName9 = __caller_sname9__;
-                gCallerSName8 = __caller_sname8__;
-                gCallerSName7 = __caller_sname7__;
-                gCallerSName6 = __caller_sname6__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName4 = __caller_sname4__;
-                gCallerSName3 = __caller_sname3__;
-                gCallerSName2 = __caller_sname2__;
-                gCallerSName = __caller_sname__;
-                gCallerSLine10 = __caller_sline10__;
-                gCallerSLine9 = __caller_sline9__;
-                gCallerSLine8 = __caller_sline8__;
-                gCallerSLine7 = __caller_sline7__;
-                gCallerSLine6 = __caller_sline6__;
-                gCallerSLine5 = __caller_sline5__;
-                gCallerSLine4 = __caller_sline4__;
-                gCallerSLine3 = __caller_sline3__;
-                gCallerSLine2 = __caller_sline2__;
-                gCallerSLine = __caller_sline__;
-}
+                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1tuple2$2charphsTypephph* list$1tuple2$2charphsTypephph_add(struct list$1tuple2$2charphsTypephph* self, struct tuple2$2charphsTypeph* item){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -5832,165 +3328,78 @@ memset(&right_value16, 0, sizeof(void*));
 memset(&litem_17, 0, sizeof(struct list_item$1tuple2$2charphsTypephph*));
 memset(&right_value17, 0, sizeof(void*));
 memset(&litem_18, 0, sizeof(struct list_item$1tuple2$2charphsTypephph*));
-                    __caller_sname10__ = gCallerSName10;
-                    __caller_sname9__ = gCallerSName9;
-                    __caller_sname8__ = gCallerSName8;
-                    __caller_sname7__ = gCallerSName7;
-                    __caller_sname6__ = gCallerSName6;
-                    __caller_sname5__ = gCallerSName5;
-                    __caller_sname4__ = gCallerSName4;
-                    __caller_sname3__ = gCallerSName3;
-                    __caller_sname2__ = gCallerSName2;
-                    __caller_sname__ = gCallerSName;
-                    __caller_sline10__ = gCallerSLine10;
-                    __caller_sline9__ = gCallerSLine9;
-                    __caller_sline8__ = gCallerSLine8;
-                    __caller_sline7__ = gCallerSLine7;
-                    __caller_sline6__ = gCallerSLine6;
-                    __caller_sline5__ = gCallerSLine5;
-                    __caller_sline4__ = gCallerSLine4;
-                    __caller_sline3__ = gCallerSLine3;
-                    __caller_sline2__ = gCallerSLine2;
-                    __caller_sline__ = gCallerSLine;
-                    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                        if(_if_conditional41=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 253))->len==0,                        __freed_obj__ = 0, 
+                    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                        if(_if_conditional41=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 237))->len==0,                        __freed_obj__ = 0, 
                         _if_conditional41) {
-                            litem_16=(struct list_item$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsTypephph*)(right_value15=(struct list_item$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsTypephph)*(1), "./comelang2.h", 223))));
+                            litem_16=(struct list_item$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsTypephph*)(right_value15=(struct list_item$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsTypephph)*(1), "./comelang2.h", 207))));
                             if(right_value15 && right_value15 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1tuple2$2charphsTypephphp_finalize,right_value15, (void*)0, (void*)0, 0, 1, 0, 0); }
                             __freed_obj__ = 0;
-                            ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_16, "./comelang2.h", 225))->prev=((void*)0);
+                            ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_16, "./comelang2.h", 209))->prev=((void*)0);
                             __freed_obj__ = 0;
-                            ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_16, "./comelang2.h", 226))->next=((void*)0);
+                            ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_16, "./comelang2.h", 210))->next=((void*)0);
                             __freed_obj__ = 0;
-                            __dec_obj8=((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_16, "./comelang2.h", 227))->item;
-                            ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_16, "./comelang2.h", 227))->item=(struct tuple2$2charphsTypeph*)come_increment_ref_count(item);
+                            __dec_obj8=((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_16, "./comelang2.h", 211))->item;
+                            ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_16, "./comelang2.h", 211))->item=(struct tuple2$2charphsTypeph*)come_increment_ref_count(item);
                             if(__dec_obj8) { come_call_finalizer(tuple2$2charphsTypeph_finalize,__dec_obj8, (void*)0, (void*)0, 0, 0, 0, 0); }
                             __freed_obj__ = 0;
-                            ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 229))->tail=litem_16;
+                            ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 213))->tail=litem_16;
                             __freed_obj__ = 0;
-                            ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 230))->head=litem_16;
+                            ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 214))->head=litem_16;
                             __freed_obj__ = 0;
                         }
                         else {
-                            if(_if_conditional44=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 253))->len==1,                            __freed_obj__ = 0, 
+                            if(_if_conditional44=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 237))->len==1,                            __freed_obj__ = 0, 
                             _if_conditional44) {
-                                litem_17=(struct list_item$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsTypephph*)(right_value16=(struct list_item$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsTypephph)*(1), "./comelang2.h", 233))));
+                                litem_17=(struct list_item$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsTypephph*)(right_value16=(struct list_item$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsTypephph)*(1), "./comelang2.h", 217))));
                                 if(right_value16 && right_value16 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1tuple2$2charphsTypephphp_finalize,right_value16, (void*)0, (void*)0, 0, 1, 0, 0); }
                                 __freed_obj__ = 0;
-                                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_17, "./comelang2.h", 235))->prev=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 235))->head;
+                                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_17, "./comelang2.h", 219))->prev=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 219))->head;
                                 __freed_obj__ = 0;
-                                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_17, "./comelang2.h", 236))->next=((void*)0);
+                                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_17, "./comelang2.h", 220))->next=((void*)0);
                                 __freed_obj__ = 0;
-                                __dec_obj9=((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_17, "./comelang2.h", 237))->item;
-                                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_17, "./comelang2.h", 237))->item=(struct tuple2$2charphsTypeph*)come_increment_ref_count(item);
+                                __dec_obj9=((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_17, "./comelang2.h", 221))->item;
+                                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_17, "./comelang2.h", 221))->item=(struct tuple2$2charphsTypeph*)come_increment_ref_count(item);
                                 if(__dec_obj9) { come_call_finalizer(tuple2$2charphsTypeph_finalize,__dec_obj9, (void*)0, (void*)0, 0, 0, 0, 0); }
                                 __freed_obj__ = 0;
-                                ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 239))->tail=litem_17;
+                                ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 223))->tail=litem_17;
                                 __freed_obj__ = 0;
-                                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 240))->head, "./comelang2.h", 240))->next=litem_17;
+                                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 224))->head, "./comelang2.h", 224))->next=litem_17;
                                 __freed_obj__ = 0;
                             }
                             else {
-                                litem_18=(struct list_item$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsTypephph*)(right_value17=(struct list_item$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsTypephph)*(1), "./comelang2.h", 243))));
+                                litem_18=(struct list_item$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsTypephph*)(right_value17=(struct list_item$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsTypephph)*(1), "./comelang2.h", 227))));
                                 if(right_value17 && right_value17 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1tuple2$2charphsTypephphp_finalize,right_value17, (void*)0, (void*)0, 0, 1, 0, 0); }
                                 __freed_obj__ = 0;
-                                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_18, "./comelang2.h", 245))->prev=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 245))->tail;
+                                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_18, "./comelang2.h", 229))->prev=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 229))->tail;
                                 __freed_obj__ = 0;
-                                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_18, "./comelang2.h", 246))->next=((void*)0);
+                                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_18, "./comelang2.h", 230))->next=((void*)0);
                                 __freed_obj__ = 0;
-                                __dec_obj10=((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_18, "./comelang2.h", 247))->item;
-                                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_18, "./comelang2.h", 247))->item=(struct tuple2$2charphsTypeph*)come_increment_ref_count(item);
+                                __dec_obj10=((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_18, "./comelang2.h", 231))->item;
+                                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_18, "./comelang2.h", 231))->item=(struct tuple2$2charphsTypeph*)come_increment_ref_count(item);
                                 if(__dec_obj10) { come_call_finalizer(tuple2$2charphsTypeph_finalize,__dec_obj10, (void*)0, (void*)0, 0, 0, 0, 0); }
                                 __freed_obj__ = 0;
-                                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 249))->tail, "./comelang2.h", 249))->next=litem_18;
+                                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 233))->tail, "./comelang2.h", 233))->next=litem_18;
                                 __freed_obj__ = 0;
-                                ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 250))->tail=litem_18;
+                                ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 234))->tail=litem_18;
                                 __freed_obj__ = 0;
                             }
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
-                        ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 253))->len++;
+                        ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 237))->len++;
                         __freed_obj__ = 0;
                         __result15__ = __result_obj__ = self;
                         if(item && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
                         __freed_obj__ = 0;
-                        gCallerSName10 = __caller_sname10__;
-                        gCallerSName9 = __caller_sname9__;
-                        gCallerSName8 = __caller_sname8__;
-                        gCallerSName7 = __caller_sname7__;
-                        gCallerSName6 = __caller_sname6__;
-                        gCallerSName5 = __caller_sname5__;
-                        gCallerSName5 = __caller_sname5__;
-                        gCallerSName4 = __caller_sname4__;
-                        gCallerSName3 = __caller_sname3__;
-                        gCallerSName2 = __caller_sname2__;
-                        gCallerSName = __caller_sname__;
-                        gCallerSLine10 = __caller_sline10__;
-                        gCallerSLine9 = __caller_sline9__;
-                        gCallerSLine8 = __caller_sline8__;
-                        gCallerSLine7 = __caller_sline7__;
-                        gCallerSLine6 = __caller_sline6__;
-                        gCallerSLine5 = __caller_sline5__;
-                        gCallerSLine4 = __caller_sline4__;
-                        gCallerSLine3 = __caller_sline3__;
-                        gCallerSLine2 = __caller_sline2__;
-                        gCallerSLine = __caller_sline__;
-                        return __result15__;
+                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                        return __result15__;
                         __freed_obj__ = 0;
                         if(item && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
-                    gCallerSName10 = __caller_sname10__;
-                    gCallerSName9 = __caller_sname9__;
-                    gCallerSName8 = __caller_sname8__;
-                    gCallerSName7 = __caller_sname7__;
-                    gCallerSName6 = __caller_sname6__;
-                    gCallerSName5 = __caller_sname5__;
-                    gCallerSName5 = __caller_sname5__;
-                    gCallerSName4 = __caller_sname4__;
-                    gCallerSName3 = __caller_sname3__;
-                    gCallerSName2 = __caller_sname2__;
-                    gCallerSName = __caller_sname__;
-                    gCallerSLine10 = __caller_sline10__;
-                    gCallerSLine9 = __caller_sline9__;
-                    gCallerSLine8 = __caller_sline8__;
-                    gCallerSLine7 = __caller_sline7__;
-                    gCallerSLine6 = __caller_sline6__;
-                    gCallerSLine5 = __caller_sline5__;
-                    gCallerSLine4 = __caller_sline4__;
-                    gCallerSLine3 = __caller_sline3__;
-                    gCallerSLine2 = __caller_sline2__;
-                    gCallerSLine = __caller_sline__;
-}
+                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void tuple2$2charphsTypeph_finalize(struct tuple2$2charphsTypeph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -5999,35 +3408,7 @@ _Bool _if_conditional42;
 _Bool _if_conditional43;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                            __caller_sname10__ = gCallerSName10;
-                            __caller_sname9__ = gCallerSName9;
-                            __caller_sname8__ = gCallerSName8;
-                            __caller_sname7__ = gCallerSName7;
-                            __caller_sname6__ = gCallerSName6;
-                            __caller_sname5__ = gCallerSName5;
-                            __caller_sname4__ = gCallerSName4;
-                            __caller_sname3__ = gCallerSName3;
-                            __caller_sname2__ = gCallerSName2;
-                            __caller_sname__ = gCallerSName;
-                            __caller_sline10__ = gCallerSLine10;
-                            __caller_sline9__ = gCallerSLine9;
-                            __caller_sline8__ = gCallerSLine8;
-                            __caller_sline7__ = gCallerSLine7;
-                            __caller_sline6__ = gCallerSLine6;
-                            __caller_sline5__ = gCallerSLine5;
-                            __caller_sline4__ = gCallerSLine4;
-                            __caller_sline3__ = gCallerSLine3;
-                            __caller_sline2__ = gCallerSLine2;
-                            __caller_sline__ = gCallerSLine;
-                            gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                            gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                            gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                            gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                            gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                            gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                            gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                            gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                            gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                            memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                            memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                            for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                                 if(_if_conditional42=self!=((void*)0)&&((struct tuple2$2charphsTypeph*)come_null_check(self, "tuple2$2charphsTypeph_finalize", 1))->v1!=((void*)0),                                __freed_obj__ = 0, 
                                 _if_conditional42) {
                                     if(((struct tuple2$2charphsTypeph*)come_null_check(self, "tuple2$2charphsTypeph_finalize", 0))->v1 && !__freed_obj__) { ((struct tuple2$2charphsTypeph*)come_null_check(self, "tuple2$2charphsTypeph_finalize", 0))->v1 = come_decrement_ref_count(((struct tuple2$2charphsTypeph*)come_null_check(self, "tuple2$2charphsTypeph_finalize", 0))->v1, (void*)0, (void*)0, 0, 0, 0); }
@@ -6040,50 +3421,12 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
                                     __freed_obj__ = 0;
                                 }
                                 __freed_obj__ = 0;
-                            gCallerSName10 = __caller_sname10__;
-                            gCallerSName9 = __caller_sname9__;
-                            gCallerSName8 = __caller_sname8__;
-                            gCallerSName7 = __caller_sname7__;
-                            gCallerSName6 = __caller_sname6__;
-                            gCallerSName5 = __caller_sname5__;
-                            gCallerSName5 = __caller_sname5__;
-                            gCallerSName4 = __caller_sname4__;
-                            gCallerSName3 = __caller_sname3__;
-                            gCallerSName2 = __caller_sname2__;
-                            gCallerSName = __caller_sname__;
-                            gCallerSLine10 = __caller_sline10__;
-                            gCallerSLine9 = __caller_sline9__;
-                            gCallerSLine8 = __caller_sline8__;
-                            gCallerSLine7 = __caller_sline7__;
-                            gCallerSLine6 = __caller_sline6__;
-                            gCallerSLine5 = __caller_sline5__;
-                            gCallerSLine4 = __caller_sline4__;
-                            gCallerSLine3 = __caller_sline3__;
-                            gCallerSLine2 = __caller_sline2__;
-                            gCallerSLine = __caller_sline__;
-}
+                            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct tuple2$2charphsTypeph* tuple2$2charphsTypephp_clone(struct tuple2$2charphsTypeph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -6105,61 +3448,12 @@ memset(&right_value18, 0, sizeof(void*));
 memset(&result_19, 0, sizeof(struct tuple2$2charphsTypeph*));
 memset(&right_value19, 0, sizeof(void*));
 memset(&right_value58, 0, sizeof(void*));
-                    __caller_sname10__ = gCallerSName10;
-                    __caller_sname9__ = gCallerSName9;
-                    __caller_sname8__ = gCallerSName8;
-                    __caller_sname7__ = gCallerSName7;
-                    __caller_sname6__ = gCallerSName6;
-                    __caller_sname5__ = gCallerSName5;
-                    __caller_sname4__ = gCallerSName4;
-                    __caller_sname3__ = gCallerSName3;
-                    __caller_sname2__ = gCallerSName2;
-                    __caller_sname__ = gCallerSName;
-                    __caller_sline10__ = gCallerSLine10;
-                    __caller_sline9__ = gCallerSLine9;
-                    __caller_sline8__ = gCallerSLine8;
-                    __caller_sline7__ = gCallerSLine7;
-                    __caller_sline6__ = gCallerSLine6;
-                    __caller_sline5__ = gCallerSLine5;
-                    __caller_sline4__ = gCallerSLine4;
-                    __caller_sline3__ = gCallerSLine3;
-                    __caller_sline2__ = gCallerSLine2;
-                    __caller_sline__ = gCallerSLine;
-                    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                         if(_if_conditional45=self==(void*)0,                        __freed_obj__ = 0, 
                         _if_conditional45) {
                             __result16__ = __result_obj__ = (void*)0;
                             __freed_obj__ = 0;
-                            gCallerSName10 = __caller_sname10__;
-                            gCallerSName9 = __caller_sname9__;
-                            gCallerSName8 = __caller_sname8__;
-                            gCallerSName7 = __caller_sname7__;
-                            gCallerSName6 = __caller_sname6__;
-                            gCallerSName5 = __caller_sname5__;
-                            gCallerSName5 = __caller_sname5__;
-                            gCallerSName4 = __caller_sname4__;
-                            gCallerSName3 = __caller_sname3__;
-                            gCallerSName2 = __caller_sname2__;
-                            gCallerSName = __caller_sname__;
-                            gCallerSLine10 = __caller_sline10__;
-                            gCallerSLine9 = __caller_sline9__;
-                            gCallerSLine8 = __caller_sline8__;
-                            gCallerSLine7 = __caller_sline7__;
-                            gCallerSLine6 = __caller_sline6__;
-                            gCallerSLine5 = __caller_sline5__;
-                            gCallerSLine4 = __caller_sline4__;
-                            gCallerSLine3 = __caller_sline3__;
-                            gCallerSLine2 = __caller_sline2__;
-                            gCallerSLine = __caller_sline__;
-                            return __result16__;
+                            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                            return __result16__;
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
@@ -6169,7 +3463,7 @@ memset(&right_value58, 0, sizeof(void*));
                         if(_if_conditional46=self!=((void*)0)&&((struct tuple2$2charphsTypeph*)come_null_check(self, "tuple2$2charphsTypephp_clone", 5))->v1!=((void*)0),                        __freed_obj__ = 0, 
                         _if_conditional46) {
                             __dec_obj11=((struct tuple2$2charphsTypeph*)come_null_check(result_19, "tuple2$2charphsTypephp_clone", 4))->v1;
-                            ((struct tuple2$2charphsTypeph*)come_null_check(result_19, "tuple2$2charphsTypephp_clone", 4))->v1=(char*)come_increment_ref_count(((char*)(right_value19=(gCallerSName = "tuple2$2charphsTypephp_clone", gCallerSLine = 4,string_clone(((struct tuple2$2charphsTypeph*)come_null_check(self, "tuple2$2charphsTypephp_clone", 4))->v1)))));
+                            ((struct tuple2$2charphsTypeph*)come_null_check(result_19, "tuple2$2charphsTypephp_clone", 4))->v1=(char*)come_increment_ref_count(((char*)(right_value19=(gCallerSName[0] = "tuple2$2charphsTypephp_clone", gCallerSLine[0] = 4,string_clone(((struct tuple2$2charphsTypeph*)come_null_check(self, "tuple2$2charphsTypephp_clone", 4))->v1)))));
                             if(__dec_obj11) { __dec_obj11 = come_decrement_ref_count(__dec_obj11, (void*)0, (void*)0, 0,0,0); }
                             if(right_value19 && right_value19 != __result_obj__ && !__freed_obj__) { right_value19 = come_decrement_ref_count(right_value19, (void*)0, (void*)0, 1, 0, 0); }
                             __freed_obj__ = 0;
@@ -6178,7 +3472,7 @@ memset(&right_value58, 0, sizeof(void*));
                         if(_if_conditional47=self!=((void*)0)&&((struct tuple2$2charphsTypeph*)come_null_check(self, "tuple2$2charphsTypephp_clone", 6))->v2!=((void*)0),                        __freed_obj__ = 0, 
                         _if_conditional47) {
                             __dec_obj36=((struct tuple2$2charphsTypeph*)come_null_check(result_19, "tuple2$2charphsTypephp_clone", 5))->v2;
-                            ((struct tuple2$2charphsTypeph*)come_null_check(result_19, "tuple2$2charphsTypephp_clone", 5))->v2=(struct sType*)come_increment_ref_count(((struct sType*)(right_value58=(gCallerSName = "tuple2$2charphsTypephp_clone", gCallerSLine = 5,sType_clone(((struct tuple2$2charphsTypeph*)come_null_check(self, "tuple2$2charphsTypephp_clone", 5))->v2)))));
+                            ((struct tuple2$2charphsTypeph*)come_null_check(result_19, "tuple2$2charphsTypephp_clone", 5))->v2=(struct sType*)come_increment_ref_count(((struct sType*)(right_value58=(gCallerSName[0] = "tuple2$2charphsTypephp_clone", gCallerSLine[0] = 5,sType_clone(((struct tuple2$2charphsTypeph*)come_null_check(self, "tuple2$2charphsTypephp_clone", 5))->v2)))));
                             if(__dec_obj36) { come_call_finalizer(sType_finalize,__dec_obj36, (void*)0, (void*)0, 0, 0, 0, 0); }
                             if(right_value58 && right_value58 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value58, (void*)0, (void*)0, 0, 1, 0, 0); }
                             __freed_obj__ = 0;
@@ -6187,74 +3481,15 @@ memset(&right_value58, 0, sizeof(void*));
                         __result39__ = __result_obj__ = result_19;
                         if(result_19 && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypeph_finalize,result_19, (void*)0, (void*)0, 0, 0, 1, 0); }
                         __freed_obj__ = 0;
-                        gCallerSName10 = __caller_sname10__;
-                        gCallerSName9 = __caller_sname9__;
-                        gCallerSName8 = __caller_sname8__;
-                        gCallerSName7 = __caller_sname7__;
-                        gCallerSName6 = __caller_sname6__;
-                        gCallerSName5 = __caller_sname5__;
-                        gCallerSName5 = __caller_sname5__;
-                        gCallerSName4 = __caller_sname4__;
-                        gCallerSName3 = __caller_sname3__;
-                        gCallerSName2 = __caller_sname2__;
-                        gCallerSName = __caller_sname__;
-                        gCallerSLine10 = __caller_sline10__;
-                        gCallerSLine9 = __caller_sline9__;
-                        gCallerSLine8 = __caller_sline8__;
-                        gCallerSLine7 = __caller_sline7__;
-                        gCallerSLine6 = __caller_sline6__;
-                        gCallerSLine5 = __caller_sline5__;
-                        gCallerSLine4 = __caller_sline4__;
-                        gCallerSLine3 = __caller_sline3__;
-                        gCallerSLine2 = __caller_sline2__;
-                        gCallerSLine = __caller_sline__;
-                        return __result39__;
+                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                        return __result39__;
                         __freed_obj__ = 0;
                         if(result_19 && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypeph_finalize,result_19, (void*)0, (void*)0, 0, 0, 0, 0); }
-                    gCallerSName10 = __caller_sname10__;
-                    gCallerSName9 = __caller_sname9__;
-                    gCallerSName8 = __caller_sname8__;
-                    gCallerSName7 = __caller_sname7__;
-                    gCallerSName6 = __caller_sname6__;
-                    gCallerSName5 = __caller_sname5__;
-                    gCallerSName5 = __caller_sname5__;
-                    gCallerSName4 = __caller_sname4__;
-                    gCallerSName3 = __caller_sname3__;
-                    gCallerSName2 = __caller_sname2__;
-                    gCallerSName = __caller_sname__;
-                    gCallerSLine10 = __caller_sline10__;
-                    gCallerSLine9 = __caller_sline9__;
-                    gCallerSLine8 = __caller_sline8__;
-                    gCallerSLine7 = __caller_sline7__;
-                    gCallerSLine6 = __caller_sline6__;
-                    gCallerSLine5 = __caller_sline5__;
-                    gCallerSLine4 = __caller_sline4__;
-                    gCallerSLine3 = __caller_sline3__;
-                    gCallerSLine2 = __caller_sline2__;
-                    gCallerSLine = __caller_sline__;
-}
+                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct sType* sType_clone(struct sType* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -6352,61 +3587,12 @@ memset(&right_value54, 0, sizeof(void*));
 memset(&right_value55, 0, sizeof(void*));
 memset(&right_value56, 0, sizeof(void*));
 memset(&right_value57, 0, sizeof(void*));
-                            __caller_sname10__ = gCallerSName10;
-                            __caller_sname9__ = gCallerSName9;
-                            __caller_sname8__ = gCallerSName8;
-                            __caller_sname7__ = gCallerSName7;
-                            __caller_sname6__ = gCallerSName6;
-                            __caller_sname5__ = gCallerSName5;
-                            __caller_sname4__ = gCallerSName4;
-                            __caller_sname3__ = gCallerSName3;
-                            __caller_sname2__ = gCallerSName2;
-                            __caller_sname__ = gCallerSName;
-                            __caller_sline10__ = gCallerSLine10;
-                            __caller_sline9__ = gCallerSLine9;
-                            __caller_sline8__ = gCallerSLine8;
-                            __caller_sline7__ = gCallerSLine7;
-                            __caller_sline6__ = gCallerSLine6;
-                            __caller_sline5__ = gCallerSLine5;
-                            __caller_sline4__ = gCallerSLine4;
-                            __caller_sline3__ = gCallerSLine3;
-                            __caller_sline2__ = gCallerSLine2;
-                            __caller_sline__ = gCallerSLine;
-                            gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                            gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                            gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                            gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                            gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                            gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                            gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                            gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                            gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                            memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                            memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                            for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                                 if(_if_conditional48=self==(void*)0,                                __freed_obj__ = 0, 
                                 _if_conditional48) {
                                     __result17__ = __result_obj__ = (void*)0;
                                     __freed_obj__ = 0;
-                                    gCallerSName10 = __caller_sname10__;
-                                    gCallerSName9 = __caller_sname9__;
-                                    gCallerSName8 = __caller_sname8__;
-                                    gCallerSName7 = __caller_sname7__;
-                                    gCallerSName6 = __caller_sname6__;
-                                    gCallerSName5 = __caller_sname5__;
-                                    gCallerSName5 = __caller_sname5__;
-                                    gCallerSName4 = __caller_sname4__;
-                                    gCallerSName3 = __caller_sname3__;
-                                    gCallerSName2 = __caller_sname2__;
-                                    gCallerSName = __caller_sname__;
-                                    gCallerSLine10 = __caller_sline10__;
-                                    gCallerSLine9 = __caller_sline9__;
-                                    gCallerSLine8 = __caller_sline8__;
-                                    gCallerSLine7 = __caller_sline7__;
-                                    gCallerSLine6 = __caller_sline6__;
-                                    gCallerSLine5 = __caller_sline5__;
-                                    gCallerSLine4 = __caller_sline4__;
-                                    gCallerSLine3 = __caller_sline3__;
-                                    gCallerSLine2 = __caller_sline2__;
-                                    gCallerSLine = __caller_sline__;
-                                    return __result17__;
+                                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                    return __result17__;
                                     __freed_obj__ = 0;
                                 }
                                 __freed_obj__ = 0;
@@ -6422,7 +3608,7 @@ memset(&right_value57, 0, sizeof(void*));
                                 if(_if_conditional50=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 6))->mNoSolvedGenericsType!=((void*)0),                                __freed_obj__ = 0, 
                                 _if_conditional50) {
                                     __dec_obj13=((struct sType*)come_null_check(result_20, "sType_clone", 5))->mNoSolvedGenericsType;
-                                    ((struct sType*)come_null_check(result_20, "sType_clone", 5))->mNoSolvedGenericsType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value23=(gCallerSName = "sType_clone", gCallerSLine = 5,tuple1$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 5))->mNoSolvedGenericsType)))));
+                                    ((struct sType*)come_null_check(result_20, "sType_clone", 5))->mNoSolvedGenericsType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value23=(gCallerSName[0] = "sType_clone", gCallerSLine[0] = 5,tuple1$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 5))->mNoSolvedGenericsType)))));
                                     if(__dec_obj13) { come_call_finalizer(tuple1$1sTypeph_finalize,__dec_obj13, (void*)0, (void*)0, 0, 0, 0, 0); }
                                     if(right_value23 && right_value23 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,right_value23, (void*)0, (void*)0, 0, 1, 0, 0); }
                                     __freed_obj__ = 0;
@@ -6431,7 +3617,7 @@ memset(&right_value57, 0, sizeof(void*));
                                 if(_if_conditional54=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 7))->mOriginalLoadVarType!=((void*)0),                                __freed_obj__ = 0, 
                                 _if_conditional54) {
                                     __dec_obj15=((struct sType*)come_null_check(result_20, "sType_clone", 6))->mOriginalLoadVarType;
-                                    ((struct sType*)come_null_check(result_20, "sType_clone", 6))->mOriginalLoadVarType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value26=(gCallerSName = "sType_clone", gCallerSLine = 6,tuple1$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 6))->mOriginalLoadVarType)))));
+                                    ((struct sType*)come_null_check(result_20, "sType_clone", 6))->mOriginalLoadVarType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value26=(gCallerSName[0] = "sType_clone", gCallerSLine[0] = 6,tuple1$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 6))->mOriginalLoadVarType)))));
                                     if(__dec_obj15) { come_call_finalizer(tuple1$1sTypeph_finalize,__dec_obj15, (void*)0, (void*)0, 0, 0, 0, 0); }
                                     if(right_value26 && right_value26 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,right_value26, (void*)0, (void*)0, 0, 1, 0, 0); }
                                     __freed_obj__ = 0;
@@ -6440,7 +3626,7 @@ memset(&right_value57, 0, sizeof(void*));
                                 if(_if_conditional57=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 8))->mGenericsName!=((void*)0),                                __freed_obj__ = 0, 
                                 _if_conditional57) {
                                     __dec_obj16=((struct sType*)come_null_check(result_20, "sType_clone", 7))->mGenericsName;
-                                    ((struct sType*)come_null_check(result_20, "sType_clone", 7))->mGenericsName=(char*)come_increment_ref_count(((char*)(right_value27=(gCallerSName = "sType_clone", gCallerSLine = 7,string_clone(((struct sType*)come_null_check(self, "sType_clone", 7))->mGenericsName)))));
+                                    ((struct sType*)come_null_check(result_20, "sType_clone", 7))->mGenericsName=(char*)come_increment_ref_count(((char*)(right_value27=(gCallerSName[0] = "sType_clone", gCallerSLine[0] = 7,string_clone(((struct sType*)come_null_check(self, "sType_clone", 7))->mGenericsName)))));
                                     if(__dec_obj16) { __dec_obj16 = come_decrement_ref_count(__dec_obj16, (void*)0, (void*)0, 0,0,0); }
                                     if(right_value27 && right_value27 != __result_obj__ && !__freed_obj__) { right_value27 = come_decrement_ref_count(right_value27, (void*)0, (void*)0, 1, 0, 0); }
                                     __freed_obj__ = 0;
@@ -6449,7 +3635,7 @@ memset(&right_value57, 0, sizeof(void*));
                                 if(_if_conditional58=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 9))->mGenericsTypes!=((void*)0),                                __freed_obj__ = 0, 
                                 _if_conditional58) {
                                     __dec_obj20=((struct sType*)come_null_check(result_20, "sType_clone", 8))->mGenericsTypes;
-                                    ((struct sType*)come_null_check(result_20, "sType_clone", 8))->mGenericsTypes=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value34=(gCallerSName = "sType_clone", gCallerSLine = 8,list$1sTypeph_clone(((struct sType*)come_null_check(self, "sType_clone", 8))->mGenericsTypes)))));
+                                    ((struct sType*)come_null_check(result_20, "sType_clone", 8))->mGenericsTypes=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value34=(gCallerSName[0] = "sType_clone", gCallerSLine[0] = 8,list$1sTypeph_clone(((struct sType*)come_null_check(self, "sType_clone", 8))->mGenericsTypes)))));
                                     if(__dec_obj20) { come_call_finalizer(list$1sTypeph_finalize,__dec_obj20, (void*)0, (void*)0, 0, 0, 0, 0); }
                                     if(right_value34 && right_value34 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,right_value34, (void*)0, (void*)0, 0, 1, 0, 0); }
                                     __freed_obj__ = 0;
@@ -6458,7 +3644,7 @@ memset(&right_value57, 0, sizeof(void*));
                                 if(_if_conditional62=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 10))->mArrayNum!=((void*)0),                                __freed_obj__ = 0, 
                                 _if_conditional62) {
                                     __dec_obj24=((struct sType*)come_null_check(result_20, "sType_clone", 9))->mArrayNum;
-                                    ((struct sType*)come_null_check(result_20, "sType_clone", 9))->mArrayNum=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value42=(gCallerSName = "sType_clone", gCallerSLine = 9,list$1sNodeph_clone(((struct sType*)come_null_check(self, "sType_clone", 9))->mArrayNum)))));
+                                    ((struct sType*)come_null_check(result_20, "sType_clone", 9))->mArrayNum=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value42=(gCallerSName[0] = "sType_clone", gCallerSLine[0] = 9,list$1sNodeph_clone(((struct sType*)come_null_check(self, "sType_clone", 9))->mArrayNum)))));
                                     if(__dec_obj24) { come_call_finalizer(list$1sNodeph_finalize,__dec_obj24, (void*)0, (void*)0, 0, 0, 0, 0); }
                                     if(right_value42 && right_value42 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sNodephp_finalize,right_value42, (void*)0, (void*)0, 0, 1, 0, 0); }
                                     __freed_obj__ = 0;
@@ -6473,7 +3659,7 @@ memset(&right_value57, 0, sizeof(void*));
                                 if(_if_conditional76=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 12))->mParamTypes!=((void*)0),                                __freed_obj__ = 0, 
                                 _if_conditional76) {
                                     __dec_obj25=((struct sType*)come_null_check(result_20, "sType_clone", 11))->mParamTypes;
-                                    ((struct sType*)come_null_check(result_20, "sType_clone", 11))->mParamTypes=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value43=(gCallerSName = "sType_clone", gCallerSLine = 11,list$1sTypeph_clone(((struct sType*)come_null_check(self, "sType_clone", 11))->mParamTypes)))));
+                                    ((struct sType*)come_null_check(result_20, "sType_clone", 11))->mParamTypes=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value43=(gCallerSName[0] = "sType_clone", gCallerSLine[0] = 11,list$1sTypeph_clone(((struct sType*)come_null_check(self, "sType_clone", 11))->mParamTypes)))));
                                     if(__dec_obj25) { come_call_finalizer(list$1sTypeph_finalize,__dec_obj25, (void*)0, (void*)0, 0, 0, 0, 0); }
                                     if(right_value43 && right_value43 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,right_value43, (void*)0, (void*)0, 0, 1, 0, 0); }
                                     __freed_obj__ = 0;
@@ -6482,7 +3668,7 @@ memset(&right_value57, 0, sizeof(void*));
                                 if(_if_conditional77=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 13))->mParamNames!=((void*)0),                                __freed_obj__ = 0, 
                                 _if_conditional77) {
                                     __dec_obj29=((struct sType*)come_null_check(result_20, "sType_clone", 12))->mParamNames;
-                                    ((struct sType*)come_null_check(result_20, "sType_clone", 12))->mParamNames=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value50=(gCallerSName = "sType_clone", gCallerSLine = 12,list$1charph_clone(((struct sType*)come_null_check(self, "sType_clone", 12))->mParamNames)))));
+                                    ((struct sType*)come_null_check(result_20, "sType_clone", 12))->mParamNames=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value50=(gCallerSName[0] = "sType_clone", gCallerSLine[0] = 12,list$1charph_clone(((struct sType*)come_null_check(self, "sType_clone", 12))->mParamNames)))));
                                     if(__dec_obj29) { come_call_finalizer(list$1charph_finalize,__dec_obj29, (void*)0, (void*)0, 0, 0, 0, 0); }
                                     if(right_value50 && right_value50 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value50, (void*)0, (void*)0, 0, 1, 0, 0); }
                                     __freed_obj__ = 0;
@@ -6491,7 +3677,7 @@ memset(&right_value57, 0, sizeof(void*));
                                 if(_if_conditional81=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 14))->mResultType!=((void*)0),                                __freed_obj__ = 0, 
                                 _if_conditional81) {
                                     __dec_obj31=((struct sType*)come_null_check(result_20, "sType_clone", 13))->mResultType;
-                                    ((struct sType*)come_null_check(result_20, "sType_clone", 13))->mResultType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value53=(gCallerSName = "sType_clone", gCallerSLine = 13,tuple1$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 13))->mResultType)))));
+                                    ((struct sType*)come_null_check(result_20, "sType_clone", 13))->mResultType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value53=(gCallerSName[0] = "sType_clone", gCallerSLine[0] = 13,tuple1$1sTypephp_clone(((struct sType*)come_null_check(self, "sType_clone", 13))->mResultType)))));
                                     if(__dec_obj31) { come_call_finalizer(tuple1$1sTypeph_finalize,__dec_obj31, (void*)0, (void*)0, 0, 0, 0, 0); }
                                     if(right_value53 && right_value53 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,right_value53, (void*)0, (void*)0, 0, 1, 0, 0); }
                                     __freed_obj__ = 0;
@@ -6506,7 +3692,7 @@ memset(&right_value57, 0, sizeof(void*));
                                 if(_if_conditional85=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 16))->mAlignas!=((void*)0),                                __freed_obj__ = 0, 
                                 _if_conditional85) {
                                     __dec_obj32=((struct sType*)come_null_check(result_20, "sType_clone", 15))->mAlignas;
-                                    ((struct sType*)come_null_check(result_20, "sType_clone", 15))->mAlignas=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value54=(gCallerSName = "sType_clone", gCallerSLine = 15,sNode_clone(((struct sType*)come_null_check(self, "sType_clone", 15))->mAlignas)))));
+                                    ((struct sType*)come_null_check(result_20, "sType_clone", 15))->mAlignas=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value54=(gCallerSName[0] = "sType_clone", gCallerSLine[0] = 15,sNode_clone(((struct sType*)come_null_check(self, "sType_clone", 15))->mAlignas)))));
                                     if(__dec_obj32) { __dec_obj32 = come_decrement_ref_count(__dec_obj32, ((struct sNode*)__dec_obj32)->finalize, ((struct sNode*)__dec_obj32)->_protocol_obj, 0,0,0); }
                                     if(right_value54 && right_value54 != __result_obj__ && !__freed_obj__) { right_value54 = come_decrement_ref_count(right_value54, ((struct sNode*)right_value54)->finalize, ((struct sNode*)right_value54)->_protocol_obj, 1, 0, 0); } 
                                     __freed_obj__ = 0;
@@ -6653,7 +3839,7 @@ memset(&right_value57, 0, sizeof(void*));
                                 if(_if_conditional109=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 40))->mSizeNum!=((void*)0),                                __freed_obj__ = 0, 
                                 _if_conditional109) {
                                     __dec_obj33=((struct sType*)come_null_check(result_20, "sType_clone", 39))->mSizeNum;
-                                    ((struct sType*)come_null_check(result_20, "sType_clone", 39))->mSizeNum=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value55=(gCallerSName = "sType_clone", gCallerSLine = 39,sNode_clone(((struct sType*)come_null_check(self, "sType_clone", 39))->mSizeNum)))));
+                                    ((struct sType*)come_null_check(result_20, "sType_clone", 39))->mSizeNum=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value55=(gCallerSName[0] = "sType_clone", gCallerSLine[0] = 39,sNode_clone(((struct sType*)come_null_check(self, "sType_clone", 39))->mSizeNum)))));
                                     if(__dec_obj33) { __dec_obj33 = come_decrement_ref_count(__dec_obj33, ((struct sNode*)__dec_obj33)->finalize, ((struct sNode*)__dec_obj33)->_protocol_obj, 0,0,0); }
                                     if(right_value55 && right_value55 != __result_obj__ && !__freed_obj__) { right_value55 = come_decrement_ref_count(right_value55, ((struct sNode*)right_value55)->finalize, ((struct sNode*)right_value55)->_protocol_obj, 1, 0, 0); } 
                                     __freed_obj__ = 0;
@@ -6674,7 +3860,7 @@ memset(&right_value57, 0, sizeof(void*));
                                 if(_if_conditional112=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 43))->mOriginalTypeName!=((void*)0),                                __freed_obj__ = 0, 
                                 _if_conditional112) {
                                     __dec_obj34=((struct sType*)come_null_check(result_20, "sType_clone", 42))->mOriginalTypeName;
-                                    ((struct sType*)come_null_check(result_20, "sType_clone", 42))->mOriginalTypeName=(char*)come_increment_ref_count(((char*)(right_value56=(gCallerSName = "sType_clone", gCallerSLine = 42,string_clone(((struct sType*)come_null_check(self, "sType_clone", 42))->mOriginalTypeName)))));
+                                    ((struct sType*)come_null_check(result_20, "sType_clone", 42))->mOriginalTypeName=(char*)come_increment_ref_count(((char*)(right_value56=(gCallerSName[0] = "sType_clone", gCallerSLine[0] = 42,string_clone(((struct sType*)come_null_check(self, "sType_clone", 42))->mOriginalTypeName)))));
                                     if(__dec_obj34) { __dec_obj34 = come_decrement_ref_count(__dec_obj34, (void*)0, (void*)0, 0,0,0); }
                                     if(right_value56 && right_value56 != __result_obj__ && !__freed_obj__) { right_value56 = come_decrement_ref_count(right_value56, (void*)0, (void*)0, 1, 0, 0); }
                                     __freed_obj__ = 0;
@@ -6731,7 +3917,7 @@ memset(&right_value57, 0, sizeof(void*));
                                 if(_if_conditional121=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_clone", 52))->mAsmName!=((void*)0),                                __freed_obj__ = 0, 
                                 _if_conditional121) {
                                     __dec_obj35=((struct sType*)come_null_check(result_20, "sType_clone", 51))->mAsmName;
-                                    ((struct sType*)come_null_check(result_20, "sType_clone", 51))->mAsmName=(char*)come_increment_ref_count(((char*)(right_value57=(gCallerSName = "sType_clone", gCallerSLine = 51,string_clone(((struct sType*)come_null_check(self, "sType_clone", 51))->mAsmName)))));
+                                    ((struct sType*)come_null_check(result_20, "sType_clone", 51))->mAsmName=(char*)come_increment_ref_count(((char*)(right_value57=(gCallerSName[0] = "sType_clone", gCallerSLine[0] = 51,string_clone(((struct sType*)come_null_check(self, "sType_clone", 51))->mAsmName)))));
                                     if(__dec_obj35) { __dec_obj35 = come_decrement_ref_count(__dec_obj35, (void*)0, (void*)0, 0,0,0); }
                                     if(right_value57 && right_value57 != __result_obj__ && !__freed_obj__) { right_value57 = come_decrement_ref_count(right_value57, (void*)0, (void*)0, 1, 0, 0); }
                                     __freed_obj__ = 0;
@@ -6740,74 +3926,15 @@ memset(&right_value57, 0, sizeof(void*));
                                 __result38__ = __result_obj__ = result_20;
                                 if(result_20 && !__freed_obj__) { come_call_finalizer(sType_finalize,result_20, (void*)0, (void*)0, 0, 0, 1, 0); }
                                 __freed_obj__ = 0;
-                                gCallerSName10 = __caller_sname10__;
-                                gCallerSName9 = __caller_sname9__;
-                                gCallerSName8 = __caller_sname8__;
-                                gCallerSName7 = __caller_sname7__;
-                                gCallerSName6 = __caller_sname6__;
-                                gCallerSName5 = __caller_sname5__;
-                                gCallerSName5 = __caller_sname5__;
-                                gCallerSName4 = __caller_sname4__;
-                                gCallerSName3 = __caller_sname3__;
-                                gCallerSName2 = __caller_sname2__;
-                                gCallerSName = __caller_sname__;
-                                gCallerSLine10 = __caller_sline10__;
-                                gCallerSLine9 = __caller_sline9__;
-                                gCallerSLine8 = __caller_sline8__;
-                                gCallerSLine7 = __caller_sline7__;
-                                gCallerSLine6 = __caller_sline6__;
-                                gCallerSLine5 = __caller_sline5__;
-                                gCallerSLine4 = __caller_sline4__;
-                                gCallerSLine3 = __caller_sline3__;
-                                gCallerSLine2 = __caller_sline2__;
-                                gCallerSLine = __caller_sline__;
-                                return __result38__;
+                                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                return __result38__;
                                 __freed_obj__ = 0;
                                 if(result_20 && !__freed_obj__) { come_call_finalizer(sType_finalize,result_20, (void*)0, (void*)0, 0, 0, 0, 0); }
-                            gCallerSName10 = __caller_sname10__;
-                            gCallerSName9 = __caller_sname9__;
-                            gCallerSName8 = __caller_sname8__;
-                            gCallerSName7 = __caller_sname7__;
-                            gCallerSName6 = __caller_sname6__;
-                            gCallerSName5 = __caller_sname5__;
-                            gCallerSName5 = __caller_sname5__;
-                            gCallerSName4 = __caller_sname4__;
-                            gCallerSName3 = __caller_sname3__;
-                            gCallerSName2 = __caller_sname2__;
-                            gCallerSName = __caller_sname__;
-                            gCallerSLine10 = __caller_sline10__;
-                            gCallerSLine9 = __caller_sline9__;
-                            gCallerSLine8 = __caller_sline8__;
-                            gCallerSLine7 = __caller_sline7__;
-                            gCallerSLine6 = __caller_sline6__;
-                            gCallerSLine5 = __caller_sline5__;
-                            gCallerSLine4 = __caller_sline4__;
-                            gCallerSLine3 = __caller_sline3__;
-                            gCallerSLine2 = __caller_sline2__;
-                            gCallerSLine = __caller_sline__;
-}
+                            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void tuple1$1sTypeph_finalize(struct tuple1$1sTypeph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -6815,85 +3942,19 @@ _Bool __freed_obj__;
 _Bool _if_conditional52;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                                        __caller_sname10__ = gCallerSName10;
-                                        __caller_sname9__ = gCallerSName9;
-                                        __caller_sname8__ = gCallerSName8;
-                                        __caller_sname7__ = gCallerSName7;
-                                        __caller_sname6__ = gCallerSName6;
-                                        __caller_sname5__ = gCallerSName5;
-                                        __caller_sname4__ = gCallerSName4;
-                                        __caller_sname3__ = gCallerSName3;
-                                        __caller_sname2__ = gCallerSName2;
-                                        __caller_sname__ = gCallerSName;
-                                        __caller_sline10__ = gCallerSLine10;
-                                        __caller_sline9__ = gCallerSLine9;
-                                        __caller_sline8__ = gCallerSLine8;
-                                        __caller_sline7__ = gCallerSLine7;
-                                        __caller_sline6__ = gCallerSLine6;
-                                        __caller_sline5__ = gCallerSLine5;
-                                        __caller_sline4__ = gCallerSLine4;
-                                        __caller_sline3__ = gCallerSLine3;
-                                        __caller_sline2__ = gCallerSLine2;
-                                        __caller_sline__ = gCallerSLine;
-                                        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                                        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                                             if(_if_conditional52=self!=((void*)0)&&((struct tuple1$1sTypeph*)come_null_check(self, "tuple1$1sTypeph_finalize", 1))->v1!=((void*)0),                                            __freed_obj__ = 0, 
                                             _if_conditional52) {
                                                 if(((struct tuple1$1sTypeph*)come_null_check(self, "tuple1$1sTypeph_finalize", 0))->v1 && !__freed_obj__) { come_call_finalizer(sType_finalize,((struct tuple1$1sTypeph*)come_null_check(self, "tuple1$1sTypeph_finalize", 0))->v1, (void*)0, (void*)0, 0, 0, 0, 0); }
                                                 __freed_obj__ = 0;
                                             }
                                             __freed_obj__ = 0;
-                                        gCallerSName10 = __caller_sname10__;
-                                        gCallerSName9 = __caller_sname9__;
-                                        gCallerSName8 = __caller_sname8__;
-                                        gCallerSName7 = __caller_sname7__;
-                                        gCallerSName6 = __caller_sname6__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName4 = __caller_sname4__;
-                                        gCallerSName3 = __caller_sname3__;
-                                        gCallerSName2 = __caller_sname2__;
-                                        gCallerSName = __caller_sname__;
-                                        gCallerSLine10 = __caller_sline10__;
-                                        gCallerSLine9 = __caller_sline9__;
-                                        gCallerSLine8 = __caller_sline8__;
-                                        gCallerSLine7 = __caller_sline7__;
-                                        gCallerSLine6 = __caller_sline6__;
-                                        gCallerSLine5 = __caller_sline5__;
-                                        gCallerSLine4 = __caller_sline4__;
-                                        gCallerSLine3 = __caller_sline3__;
-                                        gCallerSLine2 = __caller_sline2__;
-                                        gCallerSLine = __caller_sline__;
-}
+                                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1sTypeph* list$1sTypeph_clone(struct list$1sTypeph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -6914,150 +3975,42 @@ memset(&right_value29, 0, sizeof(void*));
 memset(&result_23, 0, sizeof(struct list$1sTypeph*));
 memset(&it_24, 0, sizeof(struct list_item$1sTypeph*));
 memset(&right_value33, 0, sizeof(void*));
-                                    __caller_sname10__ = gCallerSName10;
-                                    __caller_sname9__ = gCallerSName9;
-                                    __caller_sname8__ = gCallerSName8;
-                                    __caller_sname7__ = gCallerSName7;
-                                    __caller_sname6__ = gCallerSName6;
-                                    __caller_sname5__ = gCallerSName5;
-                                    __caller_sname4__ = gCallerSName4;
-                                    __caller_sname3__ = gCallerSName3;
-                                    __caller_sname2__ = gCallerSName2;
-                                    __caller_sname__ = gCallerSName;
-                                    __caller_sline10__ = gCallerSLine10;
-                                    __caller_sline9__ = gCallerSLine9;
-                                    __caller_sline8__ = gCallerSLine8;
-                                    __caller_sline7__ = gCallerSLine7;
-                                    __caller_sline6__ = gCallerSLine6;
-                                    __caller_sline5__ = gCallerSLine5;
-                                    __caller_sline4__ = gCallerSLine4;
-                                    __caller_sline3__ = gCallerSLine3;
-                                    __caller_sline2__ = gCallerSLine2;
-                                    __caller_sline__ = gCallerSLine;
-                                    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                                    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                                         if(_if_conditional59=self==((void*)0),                                        __freed_obj__ = 0, 
                                         _if_conditional59) {
                                             __result22__ = __result_obj__ = ((void*)0);
                                             __freed_obj__ = 0;
-                                            gCallerSName10 = __caller_sname10__;
-                                            gCallerSName9 = __caller_sname9__;
-                                            gCallerSName8 = __caller_sname8__;
-                                            gCallerSName7 = __caller_sname7__;
-                                            gCallerSName6 = __caller_sname6__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName4 = __caller_sname4__;
-                                            gCallerSName3 = __caller_sname3__;
-                                            gCallerSName2 = __caller_sname2__;
-                                            gCallerSName = __caller_sname__;
-                                            gCallerSLine10 = __caller_sline10__;
-                                            gCallerSLine9 = __caller_sline9__;
-                                            gCallerSLine8 = __caller_sline8__;
-                                            gCallerSLine7 = __caller_sline7__;
-                                            gCallerSLine6 = __caller_sline6__;
-                                            gCallerSLine5 = __caller_sline5__;
-                                            gCallerSLine4 = __caller_sline4__;
-                                            gCallerSLine3 = __caller_sline3__;
-                                            gCallerSLine2 = __caller_sline2__;
-                                            gCallerSLine = __caller_sline__;
-                                            return __result22__;
+                                            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                            return __result22__;
                                             __freed_obj__ = 0;
                                         }
                                         __freed_obj__ = 0;
-                                        result_23=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value29=(gCallerSName = "./comelang2.h", gCallerSLine = 209,list$1sTypeph_initialize((struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)come_null_check(((struct list$1sTypeph*)(right_value28=(struct list$1sTypeph*)come_calloc(1, sizeof(struct list$1sTypeph)*(1), "./comelang2.h", 209))), "./comelang2.h", 209))))))));
+                                        result_23=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value29=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 193,list$1sTypeph_initialize((struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)come_null_check(((struct list$1sTypeph*)(right_value28=(struct list$1sTypeph*)come_calloc(1, sizeof(struct list$1sTypeph)*(1), "./comelang2.h", 193))), "./comelang2.h", 193))))))));
                                         if(right_value28 && right_value28 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,right_value28, (void*)0, (void*)0, 0, 1, 0, 0); }
                                         if(right_value29 && right_value29 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,right_value29, (void*)0, (void*)0, 0, 1, 0, 0); }
                                         __freed_obj__ = 0;
-                                        it_24=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 211))->head;
+                                        it_24=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 195))->head;
                                         __freed_obj__ = 0;
                                         while(_while_condtional6=it_24!=((void*)0),                                        __freed_obj__ = 0, 
                                         _while_condtional6) {
-                                            (gCallerSName = "./comelang2.h", gCallerSLine = 213,list$1sTypeph_add(((struct list$1sTypeph*)come_null_check(result_23, "./comelang2.h", 213)),(struct sType*)come_increment_ref_count(((struct sType*)(right_value33=(gCallerSName = "./comelang2.h", gCallerSLine = 213,sType_clone(((struct list_item$1sTypeph*)come_null_check(it_24, "./comelang2.h", 213))->item)))))));
+                                            (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 197,list$1sTypeph_add(((struct list$1sTypeph*)come_null_check(result_23, "./comelang2.h", 197)),(struct sType*)come_increment_ref_count(((struct sType*)(right_value33=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 197,sType_clone(((struct list_item$1sTypeph*)come_null_check(it_24, "./comelang2.h", 197))->item)))))));
                                             if(right_value33 && right_value33 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value33, (void*)0, (void*)0, 0, 1, 0, 0); }
                                             __freed_obj__ = 0;
-                                            it_24=((struct list_item$1sTypeph*)come_null_check(it_24, "./comelang2.h", 215))->next;
+                                            it_24=((struct list_item$1sTypeph*)come_null_check(it_24, "./comelang2.h", 199))->next;
                                             __freed_obj__ = 0;
                                         }
                                         __freed_obj__ = 0;
                                         __result25__ = __result_obj__ = result_23;
                                         if(result_23 && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,result_23, (void*)0, (void*)0, 0, 0, 1, 0); }
                                         __freed_obj__ = 0;
-                                        gCallerSName10 = __caller_sname10__;
-                                        gCallerSName9 = __caller_sname9__;
-                                        gCallerSName8 = __caller_sname8__;
-                                        gCallerSName7 = __caller_sname7__;
-                                        gCallerSName6 = __caller_sname6__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName4 = __caller_sname4__;
-                                        gCallerSName3 = __caller_sname3__;
-                                        gCallerSName2 = __caller_sname2__;
-                                        gCallerSName = __caller_sname__;
-                                        gCallerSLine10 = __caller_sline10__;
-                                        gCallerSLine9 = __caller_sline9__;
-                                        gCallerSLine8 = __caller_sline8__;
-                                        gCallerSLine7 = __caller_sline7__;
-                                        gCallerSLine6 = __caller_sline6__;
-                                        gCallerSLine5 = __caller_sline5__;
-                                        gCallerSLine4 = __caller_sline4__;
-                                        gCallerSLine3 = __caller_sline3__;
-                                        gCallerSLine2 = __caller_sline2__;
-                                        gCallerSLine = __caller_sline__;
-                                        return __result25__;
+                                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                        return __result25__;
                                         __freed_obj__ = 0;
                                         if(result_23 && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,result_23, (void*)0, (void*)0, 0, 0, 0, 0); }
-                                    gCallerSName10 = __caller_sname10__;
-                                    gCallerSName9 = __caller_sname9__;
-                                    gCallerSName8 = __caller_sname8__;
-                                    gCallerSName7 = __caller_sname7__;
-                                    gCallerSName6 = __caller_sname6__;
-                                    gCallerSName5 = __caller_sname5__;
-                                    gCallerSName5 = __caller_sname5__;
-                                    gCallerSName4 = __caller_sname4__;
-                                    gCallerSName3 = __caller_sname3__;
-                                    gCallerSName2 = __caller_sname2__;
-                                    gCallerSName = __caller_sname__;
-                                    gCallerSLine10 = __caller_sline10__;
-                                    gCallerSLine9 = __caller_sline9__;
-                                    gCallerSLine8 = __caller_sline8__;
-                                    gCallerSLine7 = __caller_sline7__;
-                                    gCallerSLine6 = __caller_sline6__;
-                                    gCallerSLine5 = __caller_sline5__;
-                                    gCallerSLine4 = __caller_sline4__;
-                                    gCallerSLine3 = __caller_sline3__;
-                                    gCallerSLine2 = __caller_sline2__;
-                                    gCallerSLine = __caller_sline__;
-}
+                                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1sTypeph* list$1sTypeph_initialize(struct list$1sTypeph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -7065,112 +4018,25 @@ _Bool __freed_obj__;
 struct list$1sTypeph* __result23__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                                        __caller_sname10__ = gCallerSName10;
-                                        __caller_sname9__ = gCallerSName9;
-                                        __caller_sname8__ = gCallerSName8;
-                                        __caller_sname7__ = gCallerSName7;
-                                        __caller_sname6__ = gCallerSName6;
-                                        __caller_sname5__ = gCallerSName5;
-                                        __caller_sname4__ = gCallerSName4;
-                                        __caller_sname3__ = gCallerSName3;
-                                        __caller_sname2__ = gCallerSName2;
-                                        __caller_sname__ = gCallerSName;
-                                        __caller_sline10__ = gCallerSLine10;
-                                        __caller_sline9__ = gCallerSLine9;
-                                        __caller_sline8__ = gCallerSLine8;
-                                        __caller_sline7__ = gCallerSLine7;
-                                        __caller_sline6__ = gCallerSLine6;
-                                        __caller_sline5__ = gCallerSLine5;
-                                        __caller_sline4__ = gCallerSLine4;
-                                        __caller_sline3__ = gCallerSLine3;
-                                        __caller_sline2__ = gCallerSLine2;
-                                        __caller_sline__ = gCallerSLine;
-                                        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                                            ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 171))->head=((void*)0);
+                                        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                                            ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 155))->head=((void*)0);
                                             __freed_obj__ = 0;
-                                            ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 172))->tail=((void*)0);
+                                            ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 156))->tail=((void*)0);
                                             __freed_obj__ = 0;
-                                            ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 173))->len=0;
+                                            ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 157))->len=0;
                                             __freed_obj__ = 0;
                                             __result23__ = __result_obj__ = self;
                                             if(self && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
                                             __freed_obj__ = 0;
-                                            gCallerSName10 = __caller_sname10__;
-                                            gCallerSName9 = __caller_sname9__;
-                                            gCallerSName8 = __caller_sname8__;
-                                            gCallerSName7 = __caller_sname7__;
-                                            gCallerSName6 = __caller_sname6__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName4 = __caller_sname4__;
-                                            gCallerSName3 = __caller_sname3__;
-                                            gCallerSName2 = __caller_sname2__;
-                                            gCallerSName = __caller_sname__;
-                                            gCallerSLine10 = __caller_sline10__;
-                                            gCallerSLine9 = __caller_sline9__;
-                                            gCallerSLine8 = __caller_sline8__;
-                                            gCallerSLine7 = __caller_sline7__;
-                                            gCallerSLine6 = __caller_sline6__;
-                                            gCallerSLine5 = __caller_sline5__;
-                                            gCallerSLine4 = __caller_sline4__;
-                                            gCallerSLine3 = __caller_sline3__;
-                                            gCallerSLine2 = __caller_sline2__;
-                                            gCallerSLine = __caller_sline__;
-                                            return __result23__;
+                                            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                            return __result23__;
                                             __freed_obj__ = 0;
                                             if(self && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
-                                        gCallerSName10 = __caller_sname10__;
-                                        gCallerSName9 = __caller_sname9__;
-                                        gCallerSName8 = __caller_sname8__;
-                                        gCallerSName7 = __caller_sname7__;
-                                        gCallerSName6 = __caller_sname6__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName4 = __caller_sname4__;
-                                        gCallerSName3 = __caller_sname3__;
-                                        gCallerSName2 = __caller_sname2__;
-                                        gCallerSName = __caller_sname__;
-                                        gCallerSLine10 = __caller_sline10__;
-                                        gCallerSLine9 = __caller_sline9__;
-                                        gCallerSLine8 = __caller_sline8__;
-                                        gCallerSLine7 = __caller_sline7__;
-                                        gCallerSLine6 = __caller_sline6__;
-                                        gCallerSLine5 = __caller_sline5__;
-                                        gCallerSLine4 = __caller_sline4__;
-                                        gCallerSLine3 = __caller_sline3__;
-                                        gCallerSLine2 = __caller_sline2__;
-                                        gCallerSLine = __caller_sline__;
-}
+                                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1sTypeph* list$1sTypeph_add(struct list$1sTypeph* self, struct sType* item){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -7195,244 +4061,91 @@ memset(&right_value31, 0, sizeof(void*));
 memset(&litem_26, 0, sizeof(struct list_item$1sTypeph*));
 memset(&right_value32, 0, sizeof(void*));
 memset(&litem_27, 0, sizeof(struct list_item$1sTypeph*));
-                                            __caller_sname10__ = gCallerSName10;
-                                            __caller_sname9__ = gCallerSName9;
-                                            __caller_sname8__ = gCallerSName8;
-                                            __caller_sname7__ = gCallerSName7;
-                                            __caller_sname6__ = gCallerSName6;
-                                            __caller_sname5__ = gCallerSName5;
-                                            __caller_sname4__ = gCallerSName4;
-                                            __caller_sname3__ = gCallerSName3;
-                                            __caller_sname2__ = gCallerSName2;
-                                            __caller_sname__ = gCallerSName;
-                                            __caller_sline10__ = gCallerSLine10;
-                                            __caller_sline9__ = gCallerSLine9;
-                                            __caller_sline8__ = gCallerSLine8;
-                                            __caller_sline7__ = gCallerSLine7;
-                                            __caller_sline6__ = gCallerSLine6;
-                                            __caller_sline5__ = gCallerSLine5;
-                                            __caller_sline4__ = gCallerSLine4;
-                                            __caller_sline3__ = gCallerSLine3;
-                                            __caller_sline2__ = gCallerSLine2;
-                                            __caller_sline__ = gCallerSLine;
-                                            gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                            gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                            gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                            gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                            gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                            gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                            gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                            gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                            gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                                                if(_if_conditional60=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 253))->len==0,                                                __freed_obj__ = 0, 
+                                            memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                            memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                            for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                                                if(_if_conditional60=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 237))->len==0,                                                __freed_obj__ = 0, 
                                                 _if_conditional60) {
-                                                    litem_25=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value30=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./comelang2.h", 223))));
+                                                    litem_25=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value30=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./comelang2.h", 207))));
                                                     if(right_value30 && right_value30 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1sTypephp_finalize,right_value30, (void*)0, (void*)0, 0, 1, 0, 0); }
                                                     __freed_obj__ = 0;
-                                                    ((struct list_item$1sTypeph*)come_null_check(litem_25, "./comelang2.h", 225))->prev=((void*)0);
+                                                    ((struct list_item$1sTypeph*)come_null_check(litem_25, "./comelang2.h", 209))->prev=((void*)0);
                                                     __freed_obj__ = 0;
-                                                    ((struct list_item$1sTypeph*)come_null_check(litem_25, "./comelang2.h", 226))->next=((void*)0);
+                                                    ((struct list_item$1sTypeph*)come_null_check(litem_25, "./comelang2.h", 210))->next=((void*)0);
                                                     __freed_obj__ = 0;
-                                                    __dec_obj17=((struct list_item$1sTypeph*)come_null_check(litem_25, "./comelang2.h", 227))->item;
-                                                    ((struct list_item$1sTypeph*)come_null_check(litem_25, "./comelang2.h", 227))->item=(struct sType*)come_increment_ref_count(item);
+                                                    __dec_obj17=((struct list_item$1sTypeph*)come_null_check(litem_25, "./comelang2.h", 211))->item;
+                                                    ((struct list_item$1sTypeph*)come_null_check(litem_25, "./comelang2.h", 211))->item=(struct sType*)come_increment_ref_count(item);
                                                     if(__dec_obj17) { come_call_finalizer(sType_finalize,__dec_obj17, (void*)0, (void*)0, 0, 0, 0, 0); }
                                                     __freed_obj__ = 0;
-                                                    ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 229))->tail=litem_25;
+                                                    ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 213))->tail=litem_25;
                                                     __freed_obj__ = 0;
-                                                    ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 230))->head=litem_25;
+                                                    ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 214))->head=litem_25;
                                                     __freed_obj__ = 0;
                                                 }
                                                 else {
-                                                    if(_if_conditional61=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 253))->len==1,                                                    __freed_obj__ = 0, 
+                                                    if(_if_conditional61=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 237))->len==1,                                                    __freed_obj__ = 0, 
                                                     _if_conditional61) {
-                                                        litem_26=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value31=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./comelang2.h", 233))));
+                                                        litem_26=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value31=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./comelang2.h", 217))));
                                                         if(right_value31 && right_value31 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1sTypephp_finalize,right_value31, (void*)0, (void*)0, 0, 1, 0, 0); }
                                                         __freed_obj__ = 0;
-                                                        ((struct list_item$1sTypeph*)come_null_check(litem_26, "./comelang2.h", 235))->prev=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 235))->head;
+                                                        ((struct list_item$1sTypeph*)come_null_check(litem_26, "./comelang2.h", 219))->prev=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 219))->head;
                                                         __freed_obj__ = 0;
-                                                        ((struct list_item$1sTypeph*)come_null_check(litem_26, "./comelang2.h", 236))->next=((void*)0);
+                                                        ((struct list_item$1sTypeph*)come_null_check(litem_26, "./comelang2.h", 220))->next=((void*)0);
                                                         __freed_obj__ = 0;
-                                                        __dec_obj18=((struct list_item$1sTypeph*)come_null_check(litem_26, "./comelang2.h", 237))->item;
-                                                        ((struct list_item$1sTypeph*)come_null_check(litem_26, "./comelang2.h", 237))->item=(struct sType*)come_increment_ref_count(item);
+                                                        __dec_obj18=((struct list_item$1sTypeph*)come_null_check(litem_26, "./comelang2.h", 221))->item;
+                                                        ((struct list_item$1sTypeph*)come_null_check(litem_26, "./comelang2.h", 221))->item=(struct sType*)come_increment_ref_count(item);
                                                         if(__dec_obj18) { come_call_finalizer(sType_finalize,__dec_obj18, (void*)0, (void*)0, 0, 0, 0, 0); }
                                                         __freed_obj__ = 0;
-                                                        ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 239))->tail=litem_26;
+                                                        ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 223))->tail=litem_26;
                                                         __freed_obj__ = 0;
-                                                        ((struct list_item$1sTypeph*)come_null_check(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 240))->head, "./comelang2.h", 240))->next=litem_26;
+                                                        ((struct list_item$1sTypeph*)come_null_check(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 224))->head, "./comelang2.h", 224))->next=litem_26;
                                                         __freed_obj__ = 0;
                                                     }
                                                     else {
-                                                        litem_27=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value32=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./comelang2.h", 243))));
+                                                        litem_27=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value32=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./comelang2.h", 227))));
                                                         if(right_value32 && right_value32 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1sTypephp_finalize,right_value32, (void*)0, (void*)0, 0, 1, 0, 0); }
                                                         __freed_obj__ = 0;
-                                                        ((struct list_item$1sTypeph*)come_null_check(litem_27, "./comelang2.h", 245))->prev=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 245))->tail;
+                                                        ((struct list_item$1sTypeph*)come_null_check(litem_27, "./comelang2.h", 229))->prev=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 229))->tail;
                                                         __freed_obj__ = 0;
-                                                        ((struct list_item$1sTypeph*)come_null_check(litem_27, "./comelang2.h", 246))->next=((void*)0);
+                                                        ((struct list_item$1sTypeph*)come_null_check(litem_27, "./comelang2.h", 230))->next=((void*)0);
                                                         __freed_obj__ = 0;
-                                                        __dec_obj19=((struct list_item$1sTypeph*)come_null_check(litem_27, "./comelang2.h", 247))->item;
-                                                        ((struct list_item$1sTypeph*)come_null_check(litem_27, "./comelang2.h", 247))->item=(struct sType*)come_increment_ref_count(item);
+                                                        __dec_obj19=((struct list_item$1sTypeph*)come_null_check(litem_27, "./comelang2.h", 231))->item;
+                                                        ((struct list_item$1sTypeph*)come_null_check(litem_27, "./comelang2.h", 231))->item=(struct sType*)come_increment_ref_count(item);
                                                         if(__dec_obj19) { come_call_finalizer(sType_finalize,__dec_obj19, (void*)0, (void*)0, 0, 0, 0, 0); }
                                                         __freed_obj__ = 0;
-                                                        ((struct list_item$1sTypeph*)come_null_check(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 249))->tail, "./comelang2.h", 249))->next=litem_27;
+                                                        ((struct list_item$1sTypeph*)come_null_check(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 233))->tail, "./comelang2.h", 233))->next=litem_27;
                                                         __freed_obj__ = 0;
-                                                        ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 250))->tail=litem_27;
+                                                        ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 234))->tail=litem_27;
                                                         __freed_obj__ = 0;
                                                     }
                                                     __freed_obj__ = 0;
                                                 }
                                                 __freed_obj__ = 0;
-                                                ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 253))->len++;
+                                                ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 237))->len++;
                                                 __freed_obj__ = 0;
                                                 __result24__ = __result_obj__ = self;
                                                 if(item && !__freed_obj__) { come_call_finalizer(sType_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
                                                 __freed_obj__ = 0;
-                                                gCallerSName10 = __caller_sname10__;
-                                                gCallerSName9 = __caller_sname9__;
-                                                gCallerSName8 = __caller_sname8__;
-                                                gCallerSName7 = __caller_sname7__;
-                                                gCallerSName6 = __caller_sname6__;
-                                                gCallerSName5 = __caller_sname5__;
-                                                gCallerSName5 = __caller_sname5__;
-                                                gCallerSName4 = __caller_sname4__;
-                                                gCallerSName3 = __caller_sname3__;
-                                                gCallerSName2 = __caller_sname2__;
-                                                gCallerSName = __caller_sname__;
-                                                gCallerSLine10 = __caller_sline10__;
-                                                gCallerSLine9 = __caller_sline9__;
-                                                gCallerSLine8 = __caller_sline8__;
-                                                gCallerSLine7 = __caller_sline7__;
-                                                gCallerSLine6 = __caller_sline6__;
-                                                gCallerSLine5 = __caller_sline5__;
-                                                gCallerSLine4 = __caller_sline4__;
-                                                gCallerSLine3 = __caller_sline3__;
-                                                gCallerSLine2 = __caller_sline2__;
-                                                gCallerSLine = __caller_sline__;
-                                                return __result24__;
+                                                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                                return __result24__;
                                                 __freed_obj__ = 0;
                                                 if(item && !__freed_obj__) { come_call_finalizer(sType_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
-                                            gCallerSName10 = __caller_sname10__;
-                                            gCallerSName9 = __caller_sname9__;
-                                            gCallerSName8 = __caller_sname8__;
-                                            gCallerSName7 = __caller_sname7__;
-                                            gCallerSName6 = __caller_sname6__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName4 = __caller_sname4__;
-                                            gCallerSName3 = __caller_sname3__;
-                                            gCallerSName2 = __caller_sname2__;
-                                            gCallerSName = __caller_sname__;
-                                            gCallerSLine10 = __caller_sline10__;
-                                            gCallerSLine9 = __caller_sline9__;
-                                            gCallerSLine8 = __caller_sline8__;
-                                            gCallerSLine7 = __caller_sline7__;
-                                            gCallerSLine6 = __caller_sline6__;
-                                            gCallerSLine5 = __caller_sline5__;
-                                            gCallerSLine4 = __caller_sline4__;
-                                            gCallerSLine3 = __caller_sline3__;
-                                            gCallerSLine2 = __caller_sline2__;
-                                            gCallerSLine = __caller_sline__;
-}
+                                            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void list$1sTypeph_finalize(struct list$1sTypeph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                                    __caller_sname10__ = gCallerSName10;
-                                    __caller_sname9__ = gCallerSName9;
-                                    __caller_sname8__ = gCallerSName8;
-                                    __caller_sname7__ = gCallerSName7;
-                                    __caller_sname6__ = gCallerSName6;
-                                    __caller_sname5__ = gCallerSName5;
-                                    __caller_sname4__ = gCallerSName4;
-                                    __caller_sname3__ = gCallerSName3;
-                                    __caller_sname2__ = gCallerSName2;
-                                    __caller_sname__ = gCallerSName;
-                                    __caller_sline10__ = gCallerSLine10;
-                                    __caller_sline9__ = gCallerSLine9;
-                                    __caller_sline8__ = gCallerSLine8;
-                                    __caller_sline7__ = gCallerSLine7;
-                                    __caller_sline6__ = gCallerSLine6;
-                                    __caller_sline5__ = gCallerSLine5;
-                                    __caller_sline4__ = gCallerSLine4;
-                                    __caller_sline3__ = gCallerSLine3;
-                                    __caller_sline2__ = gCallerSLine2;
-                                    __caller_sline__ = gCallerSLine;
-                                    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                                    gCallerSName10 = __caller_sname10__;
-                                    gCallerSName9 = __caller_sname9__;
-                                    gCallerSName8 = __caller_sname8__;
-                                    gCallerSName7 = __caller_sname7__;
-                                    gCallerSName6 = __caller_sname6__;
-                                    gCallerSName5 = __caller_sname5__;
-                                    gCallerSName5 = __caller_sname5__;
-                                    gCallerSName4 = __caller_sname4__;
-                                    gCallerSName3 = __caller_sname3__;
-                                    gCallerSName2 = __caller_sname2__;
-                                    gCallerSName = __caller_sname__;
-                                    gCallerSLine10 = __caller_sline10__;
-                                    gCallerSLine9 = __caller_sline9__;
-                                    gCallerSLine8 = __caller_sline8__;
-                                    gCallerSLine7 = __caller_sline7__;
-                                    gCallerSLine6 = __caller_sline6__;
-                                    gCallerSLine5 = __caller_sline5__;
-                                    gCallerSLine4 = __caller_sline4__;
-                                    gCallerSLine3 = __caller_sline3__;
-                                    gCallerSLine2 = __caller_sline2__;
-                                    gCallerSLine = __caller_sline__;
-}
+                                    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1sNodeph* list$1sNodeph_clone(struct list$1sNodeph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -7453,150 +4166,42 @@ memset(&right_value36, 0, sizeof(void*));
 memset(&result_28, 0, sizeof(struct list$1sNodeph*));
 memset(&it_29, 0, sizeof(struct list_item$1sNodeph*));
 memset(&right_value41, 0, sizeof(void*));
-                                    __caller_sname10__ = gCallerSName10;
-                                    __caller_sname9__ = gCallerSName9;
-                                    __caller_sname8__ = gCallerSName8;
-                                    __caller_sname7__ = gCallerSName7;
-                                    __caller_sname6__ = gCallerSName6;
-                                    __caller_sname5__ = gCallerSName5;
-                                    __caller_sname4__ = gCallerSName4;
-                                    __caller_sname3__ = gCallerSName3;
-                                    __caller_sname2__ = gCallerSName2;
-                                    __caller_sname__ = gCallerSName;
-                                    __caller_sline10__ = gCallerSLine10;
-                                    __caller_sline9__ = gCallerSLine9;
-                                    __caller_sline8__ = gCallerSLine8;
-                                    __caller_sline7__ = gCallerSLine7;
-                                    __caller_sline6__ = gCallerSLine6;
-                                    __caller_sline5__ = gCallerSLine5;
-                                    __caller_sline4__ = gCallerSLine4;
-                                    __caller_sline3__ = gCallerSLine3;
-                                    __caller_sline2__ = gCallerSLine2;
-                                    __caller_sline__ = gCallerSLine;
-                                    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                                    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                                         if(_if_conditional63=self==((void*)0),                                        __freed_obj__ = 0, 
                                         _if_conditional63) {
                                             __result26__ = __result_obj__ = ((void*)0);
                                             __freed_obj__ = 0;
-                                            gCallerSName10 = __caller_sname10__;
-                                            gCallerSName9 = __caller_sname9__;
-                                            gCallerSName8 = __caller_sname8__;
-                                            gCallerSName7 = __caller_sname7__;
-                                            gCallerSName6 = __caller_sname6__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName4 = __caller_sname4__;
-                                            gCallerSName3 = __caller_sname3__;
-                                            gCallerSName2 = __caller_sname2__;
-                                            gCallerSName = __caller_sname__;
-                                            gCallerSLine10 = __caller_sline10__;
-                                            gCallerSLine9 = __caller_sline9__;
-                                            gCallerSLine8 = __caller_sline8__;
-                                            gCallerSLine7 = __caller_sline7__;
-                                            gCallerSLine6 = __caller_sline6__;
-                                            gCallerSLine5 = __caller_sline5__;
-                                            gCallerSLine4 = __caller_sline4__;
-                                            gCallerSLine3 = __caller_sline3__;
-                                            gCallerSLine2 = __caller_sline2__;
-                                            gCallerSLine = __caller_sline__;
-                                            return __result26__;
+                                            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                            return __result26__;
                                             __freed_obj__ = 0;
                                         }
                                         __freed_obj__ = 0;
-                                        result_28=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value36=(gCallerSName = "./comelang2.h", gCallerSLine = 209,list$1sNodeph_initialize((struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)come_null_check(((struct list$1sNodeph*)(right_value35=(struct list$1sNodeph*)come_calloc(1, sizeof(struct list$1sNodeph)*(1), "./comelang2.h", 209))), "./comelang2.h", 209))))))));
+                                        result_28=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value36=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 193,list$1sNodeph_initialize((struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)come_null_check(((struct list$1sNodeph*)(right_value35=(struct list$1sNodeph*)come_calloc(1, sizeof(struct list$1sNodeph)*(1), "./comelang2.h", 193))), "./comelang2.h", 193))))))));
                                         if(right_value35 && right_value35 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sNodephp_finalize,right_value35, (void*)0, (void*)0, 0, 1, 0, 0); }
                                         if(right_value36 && right_value36 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sNodephp_finalize,right_value36, (void*)0, (void*)0, 0, 1, 0, 0); }
                                         __freed_obj__ = 0;
-                                        it_29=((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 211))->head;
+                                        it_29=((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 195))->head;
                                         __freed_obj__ = 0;
                                         while(_while_condtional7=it_29!=((void*)0),                                        __freed_obj__ = 0, 
                                         _while_condtional7) {
-                                            (gCallerSName = "./comelang2.h", gCallerSLine = 213,list$1sNodeph_add(((struct list$1sNodeph*)come_null_check(result_28, "./comelang2.h", 213)),(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value41=(gCallerSName = "./comelang2.h", gCallerSLine = 213,sNode_clone(((struct list_item$1sNodeph*)come_null_check(it_29, "./comelang2.h", 213))->item)))))));
+                                            (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 197,list$1sNodeph_add(((struct list$1sNodeph*)come_null_check(result_28, "./comelang2.h", 197)),(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value41=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 197,sNode_clone(((struct list_item$1sNodeph*)come_null_check(it_29, "./comelang2.h", 197))->item)))))));
                                             if(right_value41 && right_value41 != __result_obj__ && !__freed_obj__) { right_value41 = come_decrement_ref_count(right_value41, ((struct sNode*)right_value41)->finalize, ((struct sNode*)right_value41)->_protocol_obj, 1, 0, 0); } 
                                             __freed_obj__ = 0;
-                                            it_29=((struct list_item$1sNodeph*)come_null_check(it_29, "./comelang2.h", 215))->next;
+                                            it_29=((struct list_item$1sNodeph*)come_null_check(it_29, "./comelang2.h", 199))->next;
                                             __freed_obj__ = 0;
                                         }
                                         __freed_obj__ = 0;
                                         __result31__ = __result_obj__ = result_28;
                                         if(result_28 && !__freed_obj__) { come_call_finalizer(list$1sNodephp_finalize,result_28, (void*)0, (void*)0, 0, 0, 1, 0); }
                                         __freed_obj__ = 0;
-                                        gCallerSName10 = __caller_sname10__;
-                                        gCallerSName9 = __caller_sname9__;
-                                        gCallerSName8 = __caller_sname8__;
-                                        gCallerSName7 = __caller_sname7__;
-                                        gCallerSName6 = __caller_sname6__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName4 = __caller_sname4__;
-                                        gCallerSName3 = __caller_sname3__;
-                                        gCallerSName2 = __caller_sname2__;
-                                        gCallerSName = __caller_sname__;
-                                        gCallerSLine10 = __caller_sline10__;
-                                        gCallerSLine9 = __caller_sline9__;
-                                        gCallerSLine8 = __caller_sline8__;
-                                        gCallerSLine7 = __caller_sline7__;
-                                        gCallerSLine6 = __caller_sline6__;
-                                        gCallerSLine5 = __caller_sline5__;
-                                        gCallerSLine4 = __caller_sline4__;
-                                        gCallerSLine3 = __caller_sline3__;
-                                        gCallerSLine2 = __caller_sline2__;
-                                        gCallerSLine = __caller_sline__;
-                                        return __result31__;
+                                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                        return __result31__;
                                         __freed_obj__ = 0;
                                         if(result_28 && !__freed_obj__) { come_call_finalizer(list$1sNodephp_finalize,result_28, (void*)0, (void*)0, 0, 0, 0, 0); }
-                                    gCallerSName10 = __caller_sname10__;
-                                    gCallerSName9 = __caller_sname9__;
-                                    gCallerSName8 = __caller_sname8__;
-                                    gCallerSName7 = __caller_sname7__;
-                                    gCallerSName6 = __caller_sname6__;
-                                    gCallerSName5 = __caller_sname5__;
-                                    gCallerSName5 = __caller_sname5__;
-                                    gCallerSName4 = __caller_sname4__;
-                                    gCallerSName3 = __caller_sname3__;
-                                    gCallerSName2 = __caller_sname2__;
-                                    gCallerSName = __caller_sname__;
-                                    gCallerSLine10 = __caller_sline10__;
-                                    gCallerSLine9 = __caller_sline9__;
-                                    gCallerSLine8 = __caller_sline8__;
-                                    gCallerSLine7 = __caller_sline7__;
-                                    gCallerSLine6 = __caller_sline6__;
-                                    gCallerSLine5 = __caller_sline5__;
-                                    gCallerSLine4 = __caller_sline4__;
-                                    gCallerSLine3 = __caller_sline3__;
-                                    gCallerSLine2 = __caller_sline2__;
-                                    gCallerSLine = __caller_sline__;
-}
+                                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1sNodeph* list$1sNodeph_initialize(struct list$1sNodeph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -7604,112 +4209,25 @@ _Bool __freed_obj__;
 struct list$1sNodeph* __result27__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                                        __caller_sname10__ = gCallerSName10;
-                                        __caller_sname9__ = gCallerSName9;
-                                        __caller_sname8__ = gCallerSName8;
-                                        __caller_sname7__ = gCallerSName7;
-                                        __caller_sname6__ = gCallerSName6;
-                                        __caller_sname5__ = gCallerSName5;
-                                        __caller_sname4__ = gCallerSName4;
-                                        __caller_sname3__ = gCallerSName3;
-                                        __caller_sname2__ = gCallerSName2;
-                                        __caller_sname__ = gCallerSName;
-                                        __caller_sline10__ = gCallerSLine10;
-                                        __caller_sline9__ = gCallerSLine9;
-                                        __caller_sline8__ = gCallerSLine8;
-                                        __caller_sline7__ = gCallerSLine7;
-                                        __caller_sline6__ = gCallerSLine6;
-                                        __caller_sline5__ = gCallerSLine5;
-                                        __caller_sline4__ = gCallerSLine4;
-                                        __caller_sline3__ = gCallerSLine3;
-                                        __caller_sline2__ = gCallerSLine2;
-                                        __caller_sline__ = gCallerSLine;
-                                        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                                            ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 171))->head=((void*)0);
+                                        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                                            ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 155))->head=((void*)0);
                                             __freed_obj__ = 0;
-                                            ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 172))->tail=((void*)0);
+                                            ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 156))->tail=((void*)0);
                                             __freed_obj__ = 0;
-                                            ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 173))->len=0;
+                                            ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 157))->len=0;
                                             __freed_obj__ = 0;
                                             __result27__ = __result_obj__ = self;
                                             if(self && !__freed_obj__) { come_call_finalizer(list$1sNodephp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
                                             __freed_obj__ = 0;
-                                            gCallerSName10 = __caller_sname10__;
-                                            gCallerSName9 = __caller_sname9__;
-                                            gCallerSName8 = __caller_sname8__;
-                                            gCallerSName7 = __caller_sname7__;
-                                            gCallerSName6 = __caller_sname6__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName4 = __caller_sname4__;
-                                            gCallerSName3 = __caller_sname3__;
-                                            gCallerSName2 = __caller_sname2__;
-                                            gCallerSName = __caller_sname__;
-                                            gCallerSLine10 = __caller_sline10__;
-                                            gCallerSLine9 = __caller_sline9__;
-                                            gCallerSLine8 = __caller_sline8__;
-                                            gCallerSLine7 = __caller_sline7__;
-                                            gCallerSLine6 = __caller_sline6__;
-                                            gCallerSLine5 = __caller_sline5__;
-                                            gCallerSLine4 = __caller_sline4__;
-                                            gCallerSLine3 = __caller_sline3__;
-                                            gCallerSLine2 = __caller_sline2__;
-                                            gCallerSLine = __caller_sline__;
-                                            return __result27__;
+                                            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                            return __result27__;
                                             __freed_obj__ = 0;
                                             if(self && !__freed_obj__) { come_call_finalizer(list$1sNodephp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
-                                        gCallerSName10 = __caller_sname10__;
-                                        gCallerSName9 = __caller_sname9__;
-                                        gCallerSName8 = __caller_sname8__;
-                                        gCallerSName7 = __caller_sname7__;
-                                        gCallerSName6 = __caller_sname6__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName4 = __caller_sname4__;
-                                        gCallerSName3 = __caller_sname3__;
-                                        gCallerSName2 = __caller_sname2__;
-                                        gCallerSName = __caller_sname__;
-                                        gCallerSLine10 = __caller_sline10__;
-                                        gCallerSLine9 = __caller_sline9__;
-                                        gCallerSLine8 = __caller_sline8__;
-                                        gCallerSLine7 = __caller_sline7__;
-                                        gCallerSLine6 = __caller_sline6__;
-                                        gCallerSLine5 = __caller_sline5__;
-                                        gCallerSLine4 = __caller_sline4__;
-                                        gCallerSLine3 = __caller_sline3__;
-                                        gCallerSLine2 = __caller_sline2__;
-                                        gCallerSLine = __caller_sline__;
-}
+                                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1sNodeph* list$1sNodeph_add(struct list$1sNodeph* self, struct sNode* item){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -7734,165 +4252,78 @@ memset(&right_value38, 0, sizeof(void*));
 memset(&litem_31, 0, sizeof(struct list_item$1sNodeph*));
 memset(&right_value39, 0, sizeof(void*));
 memset(&litem_32, 0, sizeof(struct list_item$1sNodeph*));
-                                            __caller_sname10__ = gCallerSName10;
-                                            __caller_sname9__ = gCallerSName9;
-                                            __caller_sname8__ = gCallerSName8;
-                                            __caller_sname7__ = gCallerSName7;
-                                            __caller_sname6__ = gCallerSName6;
-                                            __caller_sname5__ = gCallerSName5;
-                                            __caller_sname4__ = gCallerSName4;
-                                            __caller_sname3__ = gCallerSName3;
-                                            __caller_sname2__ = gCallerSName2;
-                                            __caller_sname__ = gCallerSName;
-                                            __caller_sline10__ = gCallerSLine10;
-                                            __caller_sline9__ = gCallerSLine9;
-                                            __caller_sline8__ = gCallerSLine8;
-                                            __caller_sline7__ = gCallerSLine7;
-                                            __caller_sline6__ = gCallerSLine6;
-                                            __caller_sline5__ = gCallerSLine5;
-                                            __caller_sline4__ = gCallerSLine4;
-                                            __caller_sline3__ = gCallerSLine3;
-                                            __caller_sline2__ = gCallerSLine2;
-                                            __caller_sline__ = gCallerSLine;
-                                            gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                            gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                            gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                            gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                            gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                            gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                            gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                            gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                            gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                                                if(_if_conditional64=((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 253))->len==0,                                                __freed_obj__ = 0, 
+                                            memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                            memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                            for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                                                if(_if_conditional64=((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 237))->len==0,                                                __freed_obj__ = 0, 
                                                 _if_conditional64) {
-                                                    litem_30=(struct list_item$1sNodeph*)come_increment_ref_count(((struct list_item$1sNodeph*)(right_value37=(struct list_item$1sNodeph*)come_calloc(1, sizeof(struct list_item$1sNodeph)*(1), "./comelang2.h", 223))));
+                                                    litem_30=(struct list_item$1sNodeph*)come_increment_ref_count(((struct list_item$1sNodeph*)(right_value37=(struct list_item$1sNodeph*)come_calloc(1, sizeof(struct list_item$1sNodeph)*(1), "./comelang2.h", 207))));
                                                     if(right_value37 && right_value37 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1sNodephp_finalize,right_value37, (void*)0, (void*)0, 0, 1, 0, 0); }
                                                     __freed_obj__ = 0;
-                                                    ((struct list_item$1sNodeph*)come_null_check(litem_30, "./comelang2.h", 225))->prev=((void*)0);
+                                                    ((struct list_item$1sNodeph*)come_null_check(litem_30, "./comelang2.h", 209))->prev=((void*)0);
                                                     __freed_obj__ = 0;
-                                                    ((struct list_item$1sNodeph*)come_null_check(litem_30, "./comelang2.h", 226))->next=((void*)0);
+                                                    ((struct list_item$1sNodeph*)come_null_check(litem_30, "./comelang2.h", 210))->next=((void*)0);
                                                     __freed_obj__ = 0;
-                                                    __dec_obj21=((struct list_item$1sNodeph*)come_null_check(litem_30, "./comelang2.h", 227))->item;
-                                                    ((struct list_item$1sNodeph*)come_null_check(litem_30, "./comelang2.h", 227))->item=(struct sNode*)come_increment_ref_count(item);
+                                                    __dec_obj21=((struct list_item$1sNodeph*)come_null_check(litem_30, "./comelang2.h", 211))->item;
+                                                    ((struct list_item$1sNodeph*)come_null_check(litem_30, "./comelang2.h", 211))->item=(struct sNode*)come_increment_ref_count(item);
                                                     if(__dec_obj21) { __dec_obj21 = come_decrement_ref_count(__dec_obj21, ((struct sNode*)__dec_obj21)->finalize, ((struct sNode*)__dec_obj21)->_protocol_obj, 0,0,0); }
                                                     __freed_obj__ = 0;
-                                                    ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 229))->tail=litem_30;
+                                                    ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 213))->tail=litem_30;
                                                     __freed_obj__ = 0;
-                                                    ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 230))->head=litem_30;
+                                                    ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 214))->head=litem_30;
                                                     __freed_obj__ = 0;
                                                 }
                                                 else {
-                                                    if(_if_conditional65=((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 253))->len==1,                                                    __freed_obj__ = 0, 
+                                                    if(_if_conditional65=((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 237))->len==1,                                                    __freed_obj__ = 0, 
                                                     _if_conditional65) {
-                                                        litem_31=(struct list_item$1sNodeph*)come_increment_ref_count(((struct list_item$1sNodeph*)(right_value38=(struct list_item$1sNodeph*)come_calloc(1, sizeof(struct list_item$1sNodeph)*(1), "./comelang2.h", 233))));
+                                                        litem_31=(struct list_item$1sNodeph*)come_increment_ref_count(((struct list_item$1sNodeph*)(right_value38=(struct list_item$1sNodeph*)come_calloc(1, sizeof(struct list_item$1sNodeph)*(1), "./comelang2.h", 217))));
                                                         if(right_value38 && right_value38 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1sNodephp_finalize,right_value38, (void*)0, (void*)0, 0, 1, 0, 0); }
                                                         __freed_obj__ = 0;
-                                                        ((struct list_item$1sNodeph*)come_null_check(litem_31, "./comelang2.h", 235))->prev=((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 235))->head;
+                                                        ((struct list_item$1sNodeph*)come_null_check(litem_31, "./comelang2.h", 219))->prev=((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 219))->head;
                                                         __freed_obj__ = 0;
-                                                        ((struct list_item$1sNodeph*)come_null_check(litem_31, "./comelang2.h", 236))->next=((void*)0);
+                                                        ((struct list_item$1sNodeph*)come_null_check(litem_31, "./comelang2.h", 220))->next=((void*)0);
                                                         __freed_obj__ = 0;
-                                                        __dec_obj22=((struct list_item$1sNodeph*)come_null_check(litem_31, "./comelang2.h", 237))->item;
-                                                        ((struct list_item$1sNodeph*)come_null_check(litem_31, "./comelang2.h", 237))->item=(struct sNode*)come_increment_ref_count(item);
+                                                        __dec_obj22=((struct list_item$1sNodeph*)come_null_check(litem_31, "./comelang2.h", 221))->item;
+                                                        ((struct list_item$1sNodeph*)come_null_check(litem_31, "./comelang2.h", 221))->item=(struct sNode*)come_increment_ref_count(item);
                                                         if(__dec_obj22) { __dec_obj22 = come_decrement_ref_count(__dec_obj22, ((struct sNode*)__dec_obj22)->finalize, ((struct sNode*)__dec_obj22)->_protocol_obj, 0,0,0); }
                                                         __freed_obj__ = 0;
-                                                        ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 239))->tail=litem_31;
+                                                        ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 223))->tail=litem_31;
                                                         __freed_obj__ = 0;
-                                                        ((struct list_item$1sNodeph*)come_null_check(((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 240))->head, "./comelang2.h", 240))->next=litem_31;
+                                                        ((struct list_item$1sNodeph*)come_null_check(((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 224))->head, "./comelang2.h", 224))->next=litem_31;
                                                         __freed_obj__ = 0;
                                                     }
                                                     else {
-                                                        litem_32=(struct list_item$1sNodeph*)come_increment_ref_count(((struct list_item$1sNodeph*)(right_value39=(struct list_item$1sNodeph*)come_calloc(1, sizeof(struct list_item$1sNodeph)*(1), "./comelang2.h", 243))));
+                                                        litem_32=(struct list_item$1sNodeph*)come_increment_ref_count(((struct list_item$1sNodeph*)(right_value39=(struct list_item$1sNodeph*)come_calloc(1, sizeof(struct list_item$1sNodeph)*(1), "./comelang2.h", 227))));
                                                         if(right_value39 && right_value39 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1sNodephp_finalize,right_value39, (void*)0, (void*)0, 0, 1, 0, 0); }
                                                         __freed_obj__ = 0;
-                                                        ((struct list_item$1sNodeph*)come_null_check(litem_32, "./comelang2.h", 245))->prev=((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 245))->tail;
+                                                        ((struct list_item$1sNodeph*)come_null_check(litem_32, "./comelang2.h", 229))->prev=((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 229))->tail;
                                                         __freed_obj__ = 0;
-                                                        ((struct list_item$1sNodeph*)come_null_check(litem_32, "./comelang2.h", 246))->next=((void*)0);
+                                                        ((struct list_item$1sNodeph*)come_null_check(litem_32, "./comelang2.h", 230))->next=((void*)0);
                                                         __freed_obj__ = 0;
-                                                        __dec_obj23=((struct list_item$1sNodeph*)come_null_check(litem_32, "./comelang2.h", 247))->item;
-                                                        ((struct list_item$1sNodeph*)come_null_check(litem_32, "./comelang2.h", 247))->item=(struct sNode*)come_increment_ref_count(item);
+                                                        __dec_obj23=((struct list_item$1sNodeph*)come_null_check(litem_32, "./comelang2.h", 231))->item;
+                                                        ((struct list_item$1sNodeph*)come_null_check(litem_32, "./comelang2.h", 231))->item=(struct sNode*)come_increment_ref_count(item);
                                                         if(__dec_obj23) { __dec_obj23 = come_decrement_ref_count(__dec_obj23, ((struct sNode*)__dec_obj23)->finalize, ((struct sNode*)__dec_obj23)->_protocol_obj, 0,0,0); }
                                                         __freed_obj__ = 0;
-                                                        ((struct list_item$1sNodeph*)come_null_check(((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 249))->tail, "./comelang2.h", 249))->next=litem_32;
+                                                        ((struct list_item$1sNodeph*)come_null_check(((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 233))->tail, "./comelang2.h", 233))->next=litem_32;
                                                         __freed_obj__ = 0;
-                                                        ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 250))->tail=litem_32;
+                                                        ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 234))->tail=litem_32;
                                                         __freed_obj__ = 0;
                                                     }
                                                     __freed_obj__ = 0;
                                                 }
                                                 __freed_obj__ = 0;
-                                                ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 253))->len++;
+                                                ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 237))->len++;
                                                 __freed_obj__ = 0;
                                                 __result28__ = __result_obj__ = self;
                                                 if(item && !__freed_obj__) { item = come_decrement_ref_count(item, ((struct sNode*)item)->finalize, ((struct sNode*)item)->_protocol_obj, 0, 1, 0); } 
                                                 __freed_obj__ = 0;
-                                                gCallerSName10 = __caller_sname10__;
-                                                gCallerSName9 = __caller_sname9__;
-                                                gCallerSName8 = __caller_sname8__;
-                                                gCallerSName7 = __caller_sname7__;
-                                                gCallerSName6 = __caller_sname6__;
-                                                gCallerSName5 = __caller_sname5__;
-                                                gCallerSName5 = __caller_sname5__;
-                                                gCallerSName4 = __caller_sname4__;
-                                                gCallerSName3 = __caller_sname3__;
-                                                gCallerSName2 = __caller_sname2__;
-                                                gCallerSName = __caller_sname__;
-                                                gCallerSLine10 = __caller_sline10__;
-                                                gCallerSLine9 = __caller_sline9__;
-                                                gCallerSLine8 = __caller_sline8__;
-                                                gCallerSLine7 = __caller_sline7__;
-                                                gCallerSLine6 = __caller_sline6__;
-                                                gCallerSLine5 = __caller_sline5__;
-                                                gCallerSLine4 = __caller_sline4__;
-                                                gCallerSLine3 = __caller_sline3__;
-                                                gCallerSLine2 = __caller_sline2__;
-                                                gCallerSLine = __caller_sline__;
-                                                return __result28__;
+                                                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                                return __result28__;
                                                 __freed_obj__ = 0;
                                                 if(item && !__freed_obj__) { item = come_decrement_ref_count(item, ((struct sNode*)item)->finalize, ((struct sNode*)item)->_protocol_obj, 0, 1, 0); } 
-                                            gCallerSName10 = __caller_sname10__;
-                                            gCallerSName9 = __caller_sname9__;
-                                            gCallerSName8 = __caller_sname8__;
-                                            gCallerSName7 = __caller_sname7__;
-                                            gCallerSName6 = __caller_sname6__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName4 = __caller_sname4__;
-                                            gCallerSName3 = __caller_sname3__;
-                                            gCallerSName2 = __caller_sname2__;
-                                            gCallerSName = __caller_sname__;
-                                            gCallerSLine10 = __caller_sline10__;
-                                            gCallerSLine9 = __caller_sline9__;
-                                            gCallerSLine8 = __caller_sline8__;
-                                            gCallerSLine7 = __caller_sline7__;
-                                            gCallerSLine6 = __caller_sline6__;
-                                            gCallerSLine5 = __caller_sline5__;
-                                            gCallerSLine4 = __caller_sline4__;
-                                            gCallerSLine3 = __caller_sline3__;
-                                            gCallerSLine2 = __caller_sline2__;
-                                            gCallerSLine = __caller_sline__;
-}
+                                            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct sNode* sNode_clone(struct sNode* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -7914,61 +4345,12 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value40, 0, sizeof(void*));
 memset(&result_33, 0, sizeof(struct sNode*));
-                                            __caller_sname10__ = gCallerSName10;
-                                            __caller_sname9__ = gCallerSName9;
-                                            __caller_sname8__ = gCallerSName8;
-                                            __caller_sname7__ = gCallerSName7;
-                                            __caller_sname6__ = gCallerSName6;
-                                            __caller_sname5__ = gCallerSName5;
-                                            __caller_sname4__ = gCallerSName4;
-                                            __caller_sname3__ = gCallerSName3;
-                                            __caller_sname2__ = gCallerSName2;
-                                            __caller_sname__ = gCallerSName;
-                                            __caller_sline10__ = gCallerSLine10;
-                                            __caller_sline9__ = gCallerSLine9;
-                                            __caller_sline8__ = gCallerSLine8;
-                                            __caller_sline7__ = gCallerSLine7;
-                                            __caller_sline6__ = gCallerSLine6;
-                                            __caller_sline5__ = gCallerSLine5;
-                                            __caller_sline4__ = gCallerSLine4;
-                                            __caller_sline3__ = gCallerSLine3;
-                                            __caller_sline2__ = gCallerSLine2;
-                                            __caller_sline__ = gCallerSLine;
-                                            gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                            gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                            gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                            gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                            gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                            gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                            gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                            gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                            gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                                            memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                            memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                            for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                                                 if(_if_conditional66=self==(void*)0,                                                __freed_obj__ = 0, 
                                                 _if_conditional66) {
                                                     __result29__ = __result_obj__ = (void*)0;
                                                     __freed_obj__ = 0;
-                                                    gCallerSName10 = __caller_sname10__;
-                                                    gCallerSName9 = __caller_sname9__;
-                                                    gCallerSName8 = __caller_sname8__;
-                                                    gCallerSName7 = __caller_sname7__;
-                                                    gCallerSName6 = __caller_sname6__;
-                                                    gCallerSName5 = __caller_sname5__;
-                                                    gCallerSName5 = __caller_sname5__;
-                                                    gCallerSName4 = __caller_sname4__;
-                                                    gCallerSName3 = __caller_sname3__;
-                                                    gCallerSName2 = __caller_sname2__;
-                                                    gCallerSName = __caller_sname__;
-                                                    gCallerSLine10 = __caller_sline10__;
-                                                    gCallerSLine9 = __caller_sline9__;
-                                                    gCallerSLine8 = __caller_sline8__;
-                                                    gCallerSLine7 = __caller_sline7__;
-                                                    gCallerSLine6 = __caller_sline6__;
-                                                    gCallerSLine5 = __caller_sline5__;
-                                                    gCallerSLine4 = __caller_sline4__;
-                                                    gCallerSLine3 = __caller_sline3__;
-                                                    gCallerSLine2 = __caller_sline2__;
-                                                    gCallerSLine = __caller_sline__;
-                                                    return __result29__;
+                                                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                                    return __result29__;
                                                     __freed_obj__ = 0;
                                                 }
                                                 __freed_obj__ = 0;
@@ -8026,153 +4408,28 @@ memset(&result_33, 0, sizeof(struct sNode*));
                                                 __result30__ = __result_obj__ = result_33;
                                                 if(result_33 && !__freed_obj__) { result_33 = come_decrement_ref_count(result_33, ((struct sNode*)result_33)->finalize, ((struct sNode*)result_33)->_protocol_obj, 0, 1, 0); } 
                                                 __freed_obj__ = 0;
-                                                gCallerSName10 = __caller_sname10__;
-                                                gCallerSName9 = __caller_sname9__;
-                                                gCallerSName8 = __caller_sname8__;
-                                                gCallerSName7 = __caller_sname7__;
-                                                gCallerSName6 = __caller_sname6__;
-                                                gCallerSName5 = __caller_sname5__;
-                                                gCallerSName5 = __caller_sname5__;
-                                                gCallerSName4 = __caller_sname4__;
-                                                gCallerSName3 = __caller_sname3__;
-                                                gCallerSName2 = __caller_sname2__;
-                                                gCallerSName = __caller_sname__;
-                                                gCallerSLine10 = __caller_sline10__;
-                                                gCallerSLine9 = __caller_sline9__;
-                                                gCallerSLine8 = __caller_sline8__;
-                                                gCallerSLine7 = __caller_sline7__;
-                                                gCallerSLine6 = __caller_sline6__;
-                                                gCallerSLine5 = __caller_sline5__;
-                                                gCallerSLine4 = __caller_sline4__;
-                                                gCallerSLine3 = __caller_sline3__;
-                                                gCallerSLine2 = __caller_sline2__;
-                                                gCallerSLine = __caller_sline__;
-                                                return __result30__;
+                                                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                                return __result30__;
                                                 __freed_obj__ = 0;
                                                 if(result_33 && !__freed_obj__) { result_33 = come_decrement_ref_count(result_33, ((struct sNode*)result_33)->finalize, ((struct sNode*)result_33)->_protocol_obj, 0, 0, 0); } 
-                                            gCallerSName10 = __caller_sname10__;
-                                            gCallerSName9 = __caller_sname9__;
-                                            gCallerSName8 = __caller_sname8__;
-                                            gCallerSName7 = __caller_sname7__;
-                                            gCallerSName6 = __caller_sname6__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName4 = __caller_sname4__;
-                                            gCallerSName3 = __caller_sname3__;
-                                            gCallerSName2 = __caller_sname2__;
-                                            gCallerSName = __caller_sname__;
-                                            gCallerSLine10 = __caller_sline10__;
-                                            gCallerSLine9 = __caller_sline9__;
-                                            gCallerSLine8 = __caller_sline8__;
-                                            gCallerSLine7 = __caller_sline7__;
-                                            gCallerSLine6 = __caller_sline6__;
-                                            gCallerSLine5 = __caller_sline5__;
-                                            gCallerSLine4 = __caller_sline4__;
-                                            gCallerSLine3 = __caller_sline3__;
-                                            gCallerSLine2 = __caller_sline2__;
-                                            gCallerSLine = __caller_sline__;
-}
+                                            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void list$1sNodeph_finalize(struct list$1sNodeph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                                    __caller_sname10__ = gCallerSName10;
-                                    __caller_sname9__ = gCallerSName9;
-                                    __caller_sname8__ = gCallerSName8;
-                                    __caller_sname7__ = gCallerSName7;
-                                    __caller_sname6__ = gCallerSName6;
-                                    __caller_sname5__ = gCallerSName5;
-                                    __caller_sname4__ = gCallerSName4;
-                                    __caller_sname3__ = gCallerSName3;
-                                    __caller_sname2__ = gCallerSName2;
-                                    __caller_sname__ = gCallerSName;
-                                    __caller_sline10__ = gCallerSLine10;
-                                    __caller_sline9__ = gCallerSLine9;
-                                    __caller_sline8__ = gCallerSLine8;
-                                    __caller_sline7__ = gCallerSLine7;
-                                    __caller_sline6__ = gCallerSLine6;
-                                    __caller_sline5__ = gCallerSLine5;
-                                    __caller_sline4__ = gCallerSLine4;
-                                    __caller_sline3__ = gCallerSLine3;
-                                    __caller_sline2__ = gCallerSLine2;
-                                    __caller_sline__ = gCallerSLine;
-                                    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                                    gCallerSName10 = __caller_sname10__;
-                                    gCallerSName9 = __caller_sname9__;
-                                    gCallerSName8 = __caller_sname8__;
-                                    gCallerSName7 = __caller_sname7__;
-                                    gCallerSName6 = __caller_sname6__;
-                                    gCallerSName5 = __caller_sname5__;
-                                    gCallerSName5 = __caller_sname5__;
-                                    gCallerSName4 = __caller_sname4__;
-                                    gCallerSName3 = __caller_sname3__;
-                                    gCallerSName2 = __caller_sname2__;
-                                    gCallerSName = __caller_sname__;
-                                    gCallerSLine10 = __caller_sline10__;
-                                    gCallerSLine9 = __caller_sline9__;
-                                    gCallerSLine8 = __caller_sline8__;
-                                    gCallerSLine7 = __caller_sline7__;
-                                    gCallerSLine6 = __caller_sline6__;
-                                    gCallerSLine5 = __caller_sline5__;
-                                    gCallerSLine4 = __caller_sline4__;
-                                    gCallerSLine3 = __caller_sline3__;
-                                    gCallerSLine2 = __caller_sline2__;
-                                    gCallerSLine = __caller_sline__;
-}
+                                    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1charph* list$1charph_clone(struct list$1charph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -8193,150 +4450,42 @@ memset(&right_value45, 0, sizeof(void*));
 memset(&result_34, 0, sizeof(struct list$1charph*));
 memset(&it_35, 0, sizeof(struct list_item$1charph*));
 memset(&right_value49, 0, sizeof(void*));
-                                    __caller_sname10__ = gCallerSName10;
-                                    __caller_sname9__ = gCallerSName9;
-                                    __caller_sname8__ = gCallerSName8;
-                                    __caller_sname7__ = gCallerSName7;
-                                    __caller_sname6__ = gCallerSName6;
-                                    __caller_sname5__ = gCallerSName5;
-                                    __caller_sname4__ = gCallerSName4;
-                                    __caller_sname3__ = gCallerSName3;
-                                    __caller_sname2__ = gCallerSName2;
-                                    __caller_sname__ = gCallerSName;
-                                    __caller_sline10__ = gCallerSLine10;
-                                    __caller_sline9__ = gCallerSLine9;
-                                    __caller_sline8__ = gCallerSLine8;
-                                    __caller_sline7__ = gCallerSLine7;
-                                    __caller_sline6__ = gCallerSLine6;
-                                    __caller_sline5__ = gCallerSLine5;
-                                    __caller_sline4__ = gCallerSLine4;
-                                    __caller_sline3__ = gCallerSLine3;
-                                    __caller_sline2__ = gCallerSLine2;
-                                    __caller_sline__ = gCallerSLine;
-                                    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                                    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                                         if(_if_conditional78=self==((void*)0),                                        __freed_obj__ = 0, 
                                         _if_conditional78) {
                                             __result32__ = __result_obj__ = ((void*)0);
                                             __freed_obj__ = 0;
-                                            gCallerSName10 = __caller_sname10__;
-                                            gCallerSName9 = __caller_sname9__;
-                                            gCallerSName8 = __caller_sname8__;
-                                            gCallerSName7 = __caller_sname7__;
-                                            gCallerSName6 = __caller_sname6__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName4 = __caller_sname4__;
-                                            gCallerSName3 = __caller_sname3__;
-                                            gCallerSName2 = __caller_sname2__;
-                                            gCallerSName = __caller_sname__;
-                                            gCallerSLine10 = __caller_sline10__;
-                                            gCallerSLine9 = __caller_sline9__;
-                                            gCallerSLine8 = __caller_sline8__;
-                                            gCallerSLine7 = __caller_sline7__;
-                                            gCallerSLine6 = __caller_sline6__;
-                                            gCallerSLine5 = __caller_sline5__;
-                                            gCallerSLine4 = __caller_sline4__;
-                                            gCallerSLine3 = __caller_sline3__;
-                                            gCallerSLine2 = __caller_sline2__;
-                                            gCallerSLine = __caller_sline__;
-                                            return __result32__;
+                                            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                            return __result32__;
                                             __freed_obj__ = 0;
                                         }
                                         __freed_obj__ = 0;
-                                        result_34=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value45=(gCallerSName = "./comelang2.h", gCallerSLine = 209,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value44=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "./comelang2.h", 209))), "./comelang2.h", 209))))))));
+                                        result_34=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value45=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 193,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value44=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "./comelang2.h", 193))), "./comelang2.h", 193))))))));
                                         if(right_value44 && right_value44 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value44, (void*)0, (void*)0, 0, 1, 0, 0); }
                                         if(right_value45 && right_value45 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value45, (void*)0, (void*)0, 0, 1, 0, 0); }
                                         __freed_obj__ = 0;
-                                        it_35=((struct list$1charph*)come_null_check(self, "./comelang2.h", 211))->head;
+                                        it_35=((struct list$1charph*)come_null_check(self, "./comelang2.h", 195))->head;
                                         __freed_obj__ = 0;
                                         while(_while_condtional8=it_35!=((void*)0),                                        __freed_obj__ = 0, 
                                         _while_condtional8) {
-                                            (gCallerSName = "./comelang2.h", gCallerSLine = 213,list$1charph_add(((struct list$1charph*)come_null_check(result_34, "./comelang2.h", 213)),(char*)come_increment_ref_count(((char*)(right_value49=(gCallerSName = "./comelang2.h", gCallerSLine = 213,string_clone(((struct list_item$1charph*)come_null_check(it_35, "./comelang2.h", 213))->item)))))));
+                                            (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 197,list$1charph_add(((struct list$1charph*)come_null_check(result_34, "./comelang2.h", 197)),(char*)come_increment_ref_count(((char*)(right_value49=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 197,string_clone(((struct list_item$1charph*)come_null_check(it_35, "./comelang2.h", 197))->item)))))));
                                             if(right_value49 && right_value49 != __result_obj__ && !__freed_obj__) { right_value49 = come_decrement_ref_count(right_value49, (void*)0, (void*)0, 1, 0, 0); }
                                             __freed_obj__ = 0;
-                                            it_35=((struct list_item$1charph*)come_null_check(it_35, "./comelang2.h", 215))->next;
+                                            it_35=((struct list_item$1charph*)come_null_check(it_35, "./comelang2.h", 199))->next;
                                             __freed_obj__ = 0;
                                         }
                                         __freed_obj__ = 0;
                                         __result35__ = __result_obj__ = result_34;
                                         if(result_34 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_34, (void*)0, (void*)0, 0, 0, 1, 0); }
                                         __freed_obj__ = 0;
-                                        gCallerSName10 = __caller_sname10__;
-                                        gCallerSName9 = __caller_sname9__;
-                                        gCallerSName8 = __caller_sname8__;
-                                        gCallerSName7 = __caller_sname7__;
-                                        gCallerSName6 = __caller_sname6__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName4 = __caller_sname4__;
-                                        gCallerSName3 = __caller_sname3__;
-                                        gCallerSName2 = __caller_sname2__;
-                                        gCallerSName = __caller_sname__;
-                                        gCallerSLine10 = __caller_sline10__;
-                                        gCallerSLine9 = __caller_sline9__;
-                                        gCallerSLine8 = __caller_sline8__;
-                                        gCallerSLine7 = __caller_sline7__;
-                                        gCallerSLine6 = __caller_sline6__;
-                                        gCallerSLine5 = __caller_sline5__;
-                                        gCallerSLine4 = __caller_sline4__;
-                                        gCallerSLine3 = __caller_sline3__;
-                                        gCallerSLine2 = __caller_sline2__;
-                                        gCallerSLine = __caller_sline__;
-                                        return __result35__;
+                                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                        return __result35__;
                                         __freed_obj__ = 0;
                                         if(result_34 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_34, (void*)0, (void*)0, 0, 0, 0, 0); }
-                                    gCallerSName10 = __caller_sname10__;
-                                    gCallerSName9 = __caller_sname9__;
-                                    gCallerSName8 = __caller_sname8__;
-                                    gCallerSName7 = __caller_sname7__;
-                                    gCallerSName6 = __caller_sname6__;
-                                    gCallerSName5 = __caller_sname5__;
-                                    gCallerSName5 = __caller_sname5__;
-                                    gCallerSName4 = __caller_sname4__;
-                                    gCallerSName3 = __caller_sname3__;
-                                    gCallerSName2 = __caller_sname2__;
-                                    gCallerSName = __caller_sname__;
-                                    gCallerSLine10 = __caller_sline10__;
-                                    gCallerSLine9 = __caller_sline9__;
-                                    gCallerSLine8 = __caller_sline8__;
-                                    gCallerSLine7 = __caller_sline7__;
-                                    gCallerSLine6 = __caller_sline6__;
-                                    gCallerSLine5 = __caller_sline5__;
-                                    gCallerSLine4 = __caller_sline4__;
-                                    gCallerSLine3 = __caller_sline3__;
-                                    gCallerSLine2 = __caller_sline2__;
-                                    gCallerSLine = __caller_sline__;
-}
+                                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1charph* list$1charph_initialize(struct list$1charph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -8344,112 +4493,25 @@ _Bool __freed_obj__;
 struct list$1charph* __result33__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                                        __caller_sname10__ = gCallerSName10;
-                                        __caller_sname9__ = gCallerSName9;
-                                        __caller_sname8__ = gCallerSName8;
-                                        __caller_sname7__ = gCallerSName7;
-                                        __caller_sname6__ = gCallerSName6;
-                                        __caller_sname5__ = gCallerSName5;
-                                        __caller_sname4__ = gCallerSName4;
-                                        __caller_sname3__ = gCallerSName3;
-                                        __caller_sname2__ = gCallerSName2;
-                                        __caller_sname__ = gCallerSName;
-                                        __caller_sline10__ = gCallerSLine10;
-                                        __caller_sline9__ = gCallerSLine9;
-                                        __caller_sline8__ = gCallerSLine8;
-                                        __caller_sline7__ = gCallerSLine7;
-                                        __caller_sline6__ = gCallerSLine6;
-                                        __caller_sline5__ = gCallerSLine5;
-                                        __caller_sline4__ = gCallerSLine4;
-                                        __caller_sline3__ = gCallerSLine3;
-                                        __caller_sline2__ = gCallerSLine2;
-                                        __caller_sline__ = gCallerSLine;
-                                        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                                            ((struct list$1charph*)come_null_check(self, "./comelang2.h", 171))->head=((void*)0);
+                                        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                                            ((struct list$1charph*)come_null_check(self, "./comelang2.h", 155))->head=((void*)0);
                                             __freed_obj__ = 0;
-                                            ((struct list$1charph*)come_null_check(self, "./comelang2.h", 172))->tail=((void*)0);
+                                            ((struct list$1charph*)come_null_check(self, "./comelang2.h", 156))->tail=((void*)0);
                                             __freed_obj__ = 0;
-                                            ((struct list$1charph*)come_null_check(self, "./comelang2.h", 173))->len=0;
+                                            ((struct list$1charph*)come_null_check(self, "./comelang2.h", 157))->len=0;
                                             __freed_obj__ = 0;
                                             __result33__ = __result_obj__ = self;
                                             if(self && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
                                             __freed_obj__ = 0;
-                                            gCallerSName10 = __caller_sname10__;
-                                            gCallerSName9 = __caller_sname9__;
-                                            gCallerSName8 = __caller_sname8__;
-                                            gCallerSName7 = __caller_sname7__;
-                                            gCallerSName6 = __caller_sname6__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName4 = __caller_sname4__;
-                                            gCallerSName3 = __caller_sname3__;
-                                            gCallerSName2 = __caller_sname2__;
-                                            gCallerSName = __caller_sname__;
-                                            gCallerSLine10 = __caller_sline10__;
-                                            gCallerSLine9 = __caller_sline9__;
-                                            gCallerSLine8 = __caller_sline8__;
-                                            gCallerSLine7 = __caller_sline7__;
-                                            gCallerSLine6 = __caller_sline6__;
-                                            gCallerSLine5 = __caller_sline5__;
-                                            gCallerSLine4 = __caller_sline4__;
-                                            gCallerSLine3 = __caller_sline3__;
-                                            gCallerSLine2 = __caller_sline2__;
-                                            gCallerSLine = __caller_sline__;
-                                            return __result33__;
+                                            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                            return __result33__;
                                             __freed_obj__ = 0;
                                             if(self && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
-                                        gCallerSName10 = __caller_sname10__;
-                                        gCallerSName9 = __caller_sname9__;
-                                        gCallerSName8 = __caller_sname8__;
-                                        gCallerSName7 = __caller_sname7__;
-                                        gCallerSName6 = __caller_sname6__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName4 = __caller_sname4__;
-                                        gCallerSName3 = __caller_sname3__;
-                                        gCallerSName2 = __caller_sname2__;
-                                        gCallerSName = __caller_sname__;
-                                        gCallerSLine10 = __caller_sline10__;
-                                        gCallerSLine9 = __caller_sline9__;
-                                        gCallerSLine8 = __caller_sline8__;
-                                        gCallerSLine7 = __caller_sline7__;
-                                        gCallerSLine6 = __caller_sline6__;
-                                        gCallerSLine5 = __caller_sline5__;
-                                        gCallerSLine4 = __caller_sline4__;
-                                        gCallerSLine3 = __caller_sline3__;
-                                        gCallerSLine2 = __caller_sline2__;
-                                        gCallerSLine = __caller_sline__;
-}
+                                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1charph* list$1charph_add(struct list$1charph* self, char* item){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -8474,244 +4536,91 @@ memset(&right_value47, 0, sizeof(void*));
 memset(&litem_37, 0, sizeof(struct list_item$1charph*));
 memset(&right_value48, 0, sizeof(void*));
 memset(&litem_38, 0, sizeof(struct list_item$1charph*));
-                                            __caller_sname10__ = gCallerSName10;
-                                            __caller_sname9__ = gCallerSName9;
-                                            __caller_sname8__ = gCallerSName8;
-                                            __caller_sname7__ = gCallerSName7;
-                                            __caller_sname6__ = gCallerSName6;
-                                            __caller_sname5__ = gCallerSName5;
-                                            __caller_sname4__ = gCallerSName4;
-                                            __caller_sname3__ = gCallerSName3;
-                                            __caller_sname2__ = gCallerSName2;
-                                            __caller_sname__ = gCallerSName;
-                                            __caller_sline10__ = gCallerSLine10;
-                                            __caller_sline9__ = gCallerSLine9;
-                                            __caller_sline8__ = gCallerSLine8;
-                                            __caller_sline7__ = gCallerSLine7;
-                                            __caller_sline6__ = gCallerSLine6;
-                                            __caller_sline5__ = gCallerSLine5;
-                                            __caller_sline4__ = gCallerSLine4;
-                                            __caller_sline3__ = gCallerSLine3;
-                                            __caller_sline2__ = gCallerSLine2;
-                                            __caller_sline__ = gCallerSLine;
-                                            gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                            gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                            gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                            gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                            gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                            gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                            gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                            gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                            gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                                                if(_if_conditional79=((struct list$1charph*)come_null_check(self, "./comelang2.h", 253))->len==0,                                                __freed_obj__ = 0, 
+                                            memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                            memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                            for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                                                if(_if_conditional79=((struct list$1charph*)come_null_check(self, "./comelang2.h", 237))->len==0,                                                __freed_obj__ = 0, 
                                                 _if_conditional79) {
-                                                    litem_36=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value46=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 223))));
+                                                    litem_36=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value46=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 207))));
                                                     if(right_value46 && right_value46 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1charphp_finalize,right_value46, (void*)0, (void*)0, 0, 1, 0, 0); }
                                                     __freed_obj__ = 0;
-                                                    ((struct list_item$1charph*)come_null_check(litem_36, "./comelang2.h", 225))->prev=((void*)0);
+                                                    ((struct list_item$1charph*)come_null_check(litem_36, "./comelang2.h", 209))->prev=((void*)0);
                                                     __freed_obj__ = 0;
-                                                    ((struct list_item$1charph*)come_null_check(litem_36, "./comelang2.h", 226))->next=((void*)0);
+                                                    ((struct list_item$1charph*)come_null_check(litem_36, "./comelang2.h", 210))->next=((void*)0);
                                                     __freed_obj__ = 0;
-                                                    __dec_obj26=((struct list_item$1charph*)come_null_check(litem_36, "./comelang2.h", 227))->item;
-                                                    ((struct list_item$1charph*)come_null_check(litem_36, "./comelang2.h", 227))->item=(char*)come_increment_ref_count(item);
+                                                    __dec_obj26=((struct list_item$1charph*)come_null_check(litem_36, "./comelang2.h", 211))->item;
+                                                    ((struct list_item$1charph*)come_null_check(litem_36, "./comelang2.h", 211))->item=(char*)come_increment_ref_count(item);
                                                     if(__dec_obj26) { __dec_obj26 = come_decrement_ref_count(__dec_obj26, (void*)0, (void*)0, 0,0,0); }
                                                     __freed_obj__ = 0;
-                                                    ((struct list$1charph*)come_null_check(self, "./comelang2.h", 229))->tail=litem_36;
+                                                    ((struct list$1charph*)come_null_check(self, "./comelang2.h", 213))->tail=litem_36;
                                                     __freed_obj__ = 0;
-                                                    ((struct list$1charph*)come_null_check(self, "./comelang2.h", 230))->head=litem_36;
+                                                    ((struct list$1charph*)come_null_check(self, "./comelang2.h", 214))->head=litem_36;
                                                     __freed_obj__ = 0;
                                                 }
                                                 else {
-                                                    if(_if_conditional80=((struct list$1charph*)come_null_check(self, "./comelang2.h", 253))->len==1,                                                    __freed_obj__ = 0, 
+                                                    if(_if_conditional80=((struct list$1charph*)come_null_check(self, "./comelang2.h", 237))->len==1,                                                    __freed_obj__ = 0, 
                                                     _if_conditional80) {
-                                                        litem_37=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value47=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 233))));
+                                                        litem_37=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value47=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 217))));
                                                         if(right_value47 && right_value47 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1charphp_finalize,right_value47, (void*)0, (void*)0, 0, 1, 0, 0); }
                                                         __freed_obj__ = 0;
-                                                        ((struct list_item$1charph*)come_null_check(litem_37, "./comelang2.h", 235))->prev=((struct list$1charph*)come_null_check(self, "./comelang2.h", 235))->head;
+                                                        ((struct list_item$1charph*)come_null_check(litem_37, "./comelang2.h", 219))->prev=((struct list$1charph*)come_null_check(self, "./comelang2.h", 219))->head;
                                                         __freed_obj__ = 0;
-                                                        ((struct list_item$1charph*)come_null_check(litem_37, "./comelang2.h", 236))->next=((void*)0);
+                                                        ((struct list_item$1charph*)come_null_check(litem_37, "./comelang2.h", 220))->next=((void*)0);
                                                         __freed_obj__ = 0;
-                                                        __dec_obj27=((struct list_item$1charph*)come_null_check(litem_37, "./comelang2.h", 237))->item;
-                                                        ((struct list_item$1charph*)come_null_check(litem_37, "./comelang2.h", 237))->item=(char*)come_increment_ref_count(item);
+                                                        __dec_obj27=((struct list_item$1charph*)come_null_check(litem_37, "./comelang2.h", 221))->item;
+                                                        ((struct list_item$1charph*)come_null_check(litem_37, "./comelang2.h", 221))->item=(char*)come_increment_ref_count(item);
                                                         if(__dec_obj27) { __dec_obj27 = come_decrement_ref_count(__dec_obj27, (void*)0, (void*)0, 0,0,0); }
                                                         __freed_obj__ = 0;
-                                                        ((struct list$1charph*)come_null_check(self, "./comelang2.h", 239))->tail=litem_37;
+                                                        ((struct list$1charph*)come_null_check(self, "./comelang2.h", 223))->tail=litem_37;
                                                         __freed_obj__ = 0;
-                                                        ((struct list_item$1charph*)come_null_check(((struct list$1charph*)come_null_check(self, "./comelang2.h", 240))->head, "./comelang2.h", 240))->next=litem_37;
+                                                        ((struct list_item$1charph*)come_null_check(((struct list$1charph*)come_null_check(self, "./comelang2.h", 224))->head, "./comelang2.h", 224))->next=litem_37;
                                                         __freed_obj__ = 0;
                                                     }
                                                     else {
-                                                        litem_38=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value48=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 243))));
+                                                        litem_38=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value48=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 227))));
                                                         if(right_value48 && right_value48 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1charphp_finalize,right_value48, (void*)0, (void*)0, 0, 1, 0, 0); }
                                                         __freed_obj__ = 0;
-                                                        ((struct list_item$1charph*)come_null_check(litem_38, "./comelang2.h", 245))->prev=((struct list$1charph*)come_null_check(self, "./comelang2.h", 245))->tail;
+                                                        ((struct list_item$1charph*)come_null_check(litem_38, "./comelang2.h", 229))->prev=((struct list$1charph*)come_null_check(self, "./comelang2.h", 229))->tail;
                                                         __freed_obj__ = 0;
-                                                        ((struct list_item$1charph*)come_null_check(litem_38, "./comelang2.h", 246))->next=((void*)0);
+                                                        ((struct list_item$1charph*)come_null_check(litem_38, "./comelang2.h", 230))->next=((void*)0);
                                                         __freed_obj__ = 0;
-                                                        __dec_obj28=((struct list_item$1charph*)come_null_check(litem_38, "./comelang2.h", 247))->item;
-                                                        ((struct list_item$1charph*)come_null_check(litem_38, "./comelang2.h", 247))->item=(char*)come_increment_ref_count(item);
+                                                        __dec_obj28=((struct list_item$1charph*)come_null_check(litem_38, "./comelang2.h", 231))->item;
+                                                        ((struct list_item$1charph*)come_null_check(litem_38, "./comelang2.h", 231))->item=(char*)come_increment_ref_count(item);
                                                         if(__dec_obj28) { __dec_obj28 = come_decrement_ref_count(__dec_obj28, (void*)0, (void*)0, 0,0,0); }
                                                         __freed_obj__ = 0;
-                                                        ((struct list_item$1charph*)come_null_check(((struct list$1charph*)come_null_check(self, "./comelang2.h", 249))->tail, "./comelang2.h", 249))->next=litem_38;
+                                                        ((struct list_item$1charph*)come_null_check(((struct list$1charph*)come_null_check(self, "./comelang2.h", 233))->tail, "./comelang2.h", 233))->next=litem_38;
                                                         __freed_obj__ = 0;
-                                                        ((struct list$1charph*)come_null_check(self, "./comelang2.h", 250))->tail=litem_38;
+                                                        ((struct list$1charph*)come_null_check(self, "./comelang2.h", 234))->tail=litem_38;
                                                         __freed_obj__ = 0;
                                                     }
                                                     __freed_obj__ = 0;
                                                 }
                                                 __freed_obj__ = 0;
-                                                ((struct list$1charph*)come_null_check(self, "./comelang2.h", 253))->len++;
+                                                ((struct list$1charph*)come_null_check(self, "./comelang2.h", 237))->len++;
                                                 __freed_obj__ = 0;
                                                 __result34__ = __result_obj__ = self;
                                                 if(item && !__freed_obj__) { item = come_decrement_ref_count(item, (void*)0, (void*)0, 0, 1, 0); }
                                                 __freed_obj__ = 0;
-                                                gCallerSName10 = __caller_sname10__;
-                                                gCallerSName9 = __caller_sname9__;
-                                                gCallerSName8 = __caller_sname8__;
-                                                gCallerSName7 = __caller_sname7__;
-                                                gCallerSName6 = __caller_sname6__;
-                                                gCallerSName5 = __caller_sname5__;
-                                                gCallerSName5 = __caller_sname5__;
-                                                gCallerSName4 = __caller_sname4__;
-                                                gCallerSName3 = __caller_sname3__;
-                                                gCallerSName2 = __caller_sname2__;
-                                                gCallerSName = __caller_sname__;
-                                                gCallerSLine10 = __caller_sline10__;
-                                                gCallerSLine9 = __caller_sline9__;
-                                                gCallerSLine8 = __caller_sline8__;
-                                                gCallerSLine7 = __caller_sline7__;
-                                                gCallerSLine6 = __caller_sline6__;
-                                                gCallerSLine5 = __caller_sline5__;
-                                                gCallerSLine4 = __caller_sline4__;
-                                                gCallerSLine3 = __caller_sline3__;
-                                                gCallerSLine2 = __caller_sline2__;
-                                                gCallerSLine = __caller_sline__;
-                                                return __result34__;
+                                                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                                return __result34__;
                                                 __freed_obj__ = 0;
                                                 if(item && !__freed_obj__) { item = come_decrement_ref_count(item, (void*)0, (void*)0, 0, 1, 0); }
-                                            gCallerSName10 = __caller_sname10__;
-                                            gCallerSName9 = __caller_sname9__;
-                                            gCallerSName8 = __caller_sname8__;
-                                            gCallerSName7 = __caller_sname7__;
-                                            gCallerSName6 = __caller_sname6__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName4 = __caller_sname4__;
-                                            gCallerSName3 = __caller_sname3__;
-                                            gCallerSName2 = __caller_sname2__;
-                                            gCallerSName = __caller_sname__;
-                                            gCallerSLine10 = __caller_sline10__;
-                                            gCallerSLine9 = __caller_sline9__;
-                                            gCallerSLine8 = __caller_sline8__;
-                                            gCallerSLine7 = __caller_sline7__;
-                                            gCallerSLine6 = __caller_sline6__;
-                                            gCallerSLine5 = __caller_sline5__;
-                                            gCallerSLine4 = __caller_sline4__;
-                                            gCallerSLine3 = __caller_sline3__;
-                                            gCallerSLine2 = __caller_sline2__;
-                                            gCallerSLine = __caller_sline__;
-}
+                                            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void list$1charph_finalize(struct list$1charph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                                    __caller_sname10__ = gCallerSName10;
-                                    __caller_sname9__ = gCallerSName9;
-                                    __caller_sname8__ = gCallerSName8;
-                                    __caller_sname7__ = gCallerSName7;
-                                    __caller_sname6__ = gCallerSName6;
-                                    __caller_sname5__ = gCallerSName5;
-                                    __caller_sname4__ = gCallerSName4;
-                                    __caller_sname3__ = gCallerSName3;
-                                    __caller_sname2__ = gCallerSName2;
-                                    __caller_sname__ = gCallerSName;
-                                    __caller_sline10__ = gCallerSLine10;
-                                    __caller_sline9__ = gCallerSLine9;
-                                    __caller_sline8__ = gCallerSLine8;
-                                    __caller_sline7__ = gCallerSLine7;
-                                    __caller_sline6__ = gCallerSLine6;
-                                    __caller_sline5__ = gCallerSLine5;
-                                    __caller_sline4__ = gCallerSLine4;
-                                    __caller_sline3__ = gCallerSLine3;
-                                    __caller_sline2__ = gCallerSLine2;
-                                    __caller_sline__ = gCallerSLine;
-                                    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                                    gCallerSName10 = __caller_sname10__;
-                                    gCallerSName9 = __caller_sname9__;
-                                    gCallerSName8 = __caller_sname8__;
-                                    gCallerSName7 = __caller_sname7__;
-                                    gCallerSName6 = __caller_sname6__;
-                                    gCallerSName5 = __caller_sname5__;
-                                    gCallerSName5 = __caller_sname5__;
-                                    gCallerSName4 = __caller_sname4__;
-                                    gCallerSName3 = __caller_sname3__;
-                                    gCallerSName2 = __caller_sname2__;
-                                    gCallerSName = __caller_sname__;
-                                    gCallerSLine10 = __caller_sline10__;
-                                    gCallerSLine9 = __caller_sline9__;
-                                    gCallerSLine8 = __caller_sline8__;
-                                    gCallerSLine7 = __caller_sline7__;
-                                    gCallerSLine6 = __caller_sline6__;
-                                    gCallerSLine5 = __caller_sline5__;
-                                    gCallerSLine4 = __caller_sline4__;
-                                    gCallerSLine3 = __caller_sline3__;
-                                    gCallerSLine2 = __caller_sline2__;
-                                    gCallerSLine = __caller_sline__;
-}
+                                    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct tuple1$1sTypeph* tuple1$1sTypephp_clone(struct tuple1$1sTypeph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -8729,61 +4638,12 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value51, 0, sizeof(void*));
 memset(&result_39, 0, sizeof(struct tuple1$1sTypeph*));
 memset(&right_value52, 0, sizeof(void*));
-                                    __caller_sname10__ = gCallerSName10;
-                                    __caller_sname9__ = gCallerSName9;
-                                    __caller_sname8__ = gCallerSName8;
-                                    __caller_sname7__ = gCallerSName7;
-                                    __caller_sname6__ = gCallerSName6;
-                                    __caller_sname5__ = gCallerSName5;
-                                    __caller_sname4__ = gCallerSName4;
-                                    __caller_sname3__ = gCallerSName3;
-                                    __caller_sname2__ = gCallerSName2;
-                                    __caller_sname__ = gCallerSName;
-                                    __caller_sline10__ = gCallerSLine10;
-                                    __caller_sline9__ = gCallerSLine9;
-                                    __caller_sline8__ = gCallerSLine8;
-                                    __caller_sline7__ = gCallerSLine7;
-                                    __caller_sline6__ = gCallerSLine6;
-                                    __caller_sline5__ = gCallerSLine5;
-                                    __caller_sline4__ = gCallerSLine4;
-                                    __caller_sline3__ = gCallerSLine3;
-                                    __caller_sline2__ = gCallerSLine2;
-                                    __caller_sline__ = gCallerSLine;
-                                    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                                    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                                         if(_if_conditional82=self==(void*)0,                                        __freed_obj__ = 0, 
                                         _if_conditional82) {
                                             __result36__ = __result_obj__ = (void*)0;
                                             __freed_obj__ = 0;
-                                            gCallerSName10 = __caller_sname10__;
-                                            gCallerSName9 = __caller_sname9__;
-                                            gCallerSName8 = __caller_sname8__;
-                                            gCallerSName7 = __caller_sname7__;
-                                            gCallerSName6 = __caller_sname6__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName4 = __caller_sname4__;
-                                            gCallerSName3 = __caller_sname3__;
-                                            gCallerSName2 = __caller_sname2__;
-                                            gCallerSName = __caller_sname__;
-                                            gCallerSLine10 = __caller_sline10__;
-                                            gCallerSLine9 = __caller_sline9__;
-                                            gCallerSLine8 = __caller_sline8__;
-                                            gCallerSLine7 = __caller_sline7__;
-                                            gCallerSLine6 = __caller_sline6__;
-                                            gCallerSLine5 = __caller_sline5__;
-                                            gCallerSLine4 = __caller_sline4__;
-                                            gCallerSLine3 = __caller_sline3__;
-                                            gCallerSLine2 = __caller_sline2__;
-                                            gCallerSLine = __caller_sline__;
-                                            return __result36__;
+                                            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                            return __result36__;
                                             __freed_obj__ = 0;
                                         }
                                         __freed_obj__ = 0;
@@ -8793,7 +4653,7 @@ memset(&right_value52, 0, sizeof(void*));
                                         if(_if_conditional83=self!=((void*)0)&&((struct tuple1$1sTypeph*)come_null_check(self, "tuple1$1sTypephp_clone", 5))->v1!=((void*)0),                                        __freed_obj__ = 0, 
                                         _if_conditional83) {
                                             __dec_obj30=((struct tuple1$1sTypeph*)come_null_check(result_39, "tuple1$1sTypephp_clone", 4))->v1;
-                                            ((struct tuple1$1sTypeph*)come_null_check(result_39, "tuple1$1sTypephp_clone", 4))->v1=(struct sType*)come_increment_ref_count(((struct sType*)(right_value52=(gCallerSName = "tuple1$1sTypephp_clone", gCallerSLine = 4,sType_clone(((struct tuple1$1sTypeph*)come_null_check(self, "tuple1$1sTypephp_clone", 4))->v1)))));
+                                            ((struct tuple1$1sTypeph*)come_null_check(result_39, "tuple1$1sTypephp_clone", 4))->v1=(struct sType*)come_increment_ref_count(((struct sType*)(right_value52=(gCallerSName[0] = "tuple1$1sTypephp_clone", gCallerSLine[0] = 4,sType_clone(((struct tuple1$1sTypeph*)come_null_check(self, "tuple1$1sTypephp_clone", 4))->v1)))));
                                             if(__dec_obj30) { come_call_finalizer(sType_finalize,__dec_obj30, (void*)0, (void*)0, 0, 0, 0, 0); }
                                             if(right_value52 && right_value52 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value52, (void*)0, (void*)0, 0, 1, 0, 0); }
                                             __freed_obj__ = 0;
@@ -8802,153 +4662,28 @@ memset(&right_value52, 0, sizeof(void*));
                                         __result37__ = __result_obj__ = result_39;
                                         if(result_39 && !__freed_obj__) { come_call_finalizer(tuple1$1sTypeph_finalize,result_39, (void*)0, (void*)0, 0, 0, 1, 0); }
                                         __freed_obj__ = 0;
-                                        gCallerSName10 = __caller_sname10__;
-                                        gCallerSName9 = __caller_sname9__;
-                                        gCallerSName8 = __caller_sname8__;
-                                        gCallerSName7 = __caller_sname7__;
-                                        gCallerSName6 = __caller_sname6__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName4 = __caller_sname4__;
-                                        gCallerSName3 = __caller_sname3__;
-                                        gCallerSName2 = __caller_sname2__;
-                                        gCallerSName = __caller_sname__;
-                                        gCallerSLine10 = __caller_sline10__;
-                                        gCallerSLine9 = __caller_sline9__;
-                                        gCallerSLine8 = __caller_sline8__;
-                                        gCallerSLine7 = __caller_sline7__;
-                                        gCallerSLine6 = __caller_sline6__;
-                                        gCallerSLine5 = __caller_sline5__;
-                                        gCallerSLine4 = __caller_sline4__;
-                                        gCallerSLine3 = __caller_sline3__;
-                                        gCallerSLine2 = __caller_sline2__;
-                                        gCallerSLine = __caller_sline__;
-                                        return __result37__;
+                                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                        return __result37__;
                                         __freed_obj__ = 0;
                                         if(result_39 && !__freed_obj__) { come_call_finalizer(tuple1$1sTypeph_finalize,result_39, (void*)0, (void*)0, 0, 0, 0, 0); }
-                                    gCallerSName10 = __caller_sname10__;
-                                    gCallerSName9 = __caller_sname9__;
-                                    gCallerSName8 = __caller_sname8__;
-                                    gCallerSName7 = __caller_sname7__;
-                                    gCallerSName6 = __caller_sname6__;
-                                    gCallerSName5 = __caller_sname5__;
-                                    gCallerSName5 = __caller_sname5__;
-                                    gCallerSName4 = __caller_sname4__;
-                                    gCallerSName3 = __caller_sname3__;
-                                    gCallerSName2 = __caller_sname2__;
-                                    gCallerSName = __caller_sname__;
-                                    gCallerSLine10 = __caller_sline10__;
-                                    gCallerSLine9 = __caller_sline9__;
-                                    gCallerSLine8 = __caller_sline8__;
-                                    gCallerSLine7 = __caller_sline7__;
-                                    gCallerSLine6 = __caller_sline6__;
-                                    gCallerSLine5 = __caller_sline5__;
-                                    gCallerSLine4 = __caller_sline4__;
-                                    gCallerSLine3 = __caller_sline3__;
-                                    gCallerSLine2 = __caller_sline2__;
-                                    gCallerSLine = __caller_sline__;
-}
+                                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void list$1tuple2$2charphsTypephph_finalize(struct list$1tuple2$2charphsTypephph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-            __caller_sname10__ = gCallerSName10;
-            __caller_sname9__ = gCallerSName9;
-            __caller_sname8__ = gCallerSName8;
-            __caller_sname7__ = gCallerSName7;
-            __caller_sname6__ = gCallerSName6;
-            __caller_sname5__ = gCallerSName5;
-            __caller_sname4__ = gCallerSName4;
-            __caller_sname3__ = gCallerSName3;
-            __caller_sname2__ = gCallerSName2;
-            __caller_sname__ = gCallerSName;
-            __caller_sline10__ = gCallerSLine10;
-            __caller_sline9__ = gCallerSLine9;
-            __caller_sline8__ = gCallerSLine8;
-            __caller_sline7__ = gCallerSLine7;
-            __caller_sline6__ = gCallerSLine6;
-            __caller_sline5__ = gCallerSLine5;
-            __caller_sline4__ = gCallerSLine4;
-            __caller_sline3__ = gCallerSLine3;
-            __caller_sline2__ = gCallerSLine2;
-            __caller_sline__ = gCallerSLine;
-            gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-            gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-            gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-            gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-            gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-            gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-            gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-            gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-            gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-}
+            memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);            memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);            for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 int sInterfaceNode_sline(struct sInterfaceNode* self, struct sInfo* info){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -8956,104 +4691,17 @@ _Bool __freed_obj__;
 int __result43__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-__caller_sname10__ = gCallerSName10;
-__caller_sname9__ = gCallerSName9;
-__caller_sname8__ = gCallerSName8;
-__caller_sname7__ = gCallerSName7;
-__caller_sname6__ = gCallerSName6;
-__caller_sname5__ = gCallerSName5;
-__caller_sname4__ = gCallerSName4;
-__caller_sname3__ = gCallerSName3;
-__caller_sname2__ = gCallerSName2;
-__caller_sname__ = gCallerSName;
-__caller_sline10__ = gCallerSLine10;
-__caller_sline9__ = gCallerSLine9;
-__caller_sline8__ = gCallerSLine8;
-__caller_sline7__ = gCallerSLine7;
-__caller_sline6__ = gCallerSLine6;
-__caller_sline5__ = gCallerSLine5;
-__caller_sline4__ = gCallerSLine4;
-__caller_sline3__ = gCallerSLine3;
-__caller_sline2__ = gCallerSLine2;
-__caller_sline__ = gCallerSLine;
-gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __result43__ = ((struct sInterfaceNode*)come_null_check(self, "23interface.c", 24))->sline;
     __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-    return __result43__;
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result43__;
     __freed_obj__ = 0;
-gCallerSName10 = __caller_sname10__;
-gCallerSName9 = __caller_sname9__;
-gCallerSName8 = __caller_sname8__;
-gCallerSName7 = __caller_sname7__;
-gCallerSName6 = __caller_sname6__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName4 = __caller_sname4__;
-gCallerSName3 = __caller_sname3__;
-gCallerSName2 = __caller_sname2__;
-gCallerSName = __caller_sname__;
-gCallerSLine10 = __caller_sline10__;
-gCallerSLine9 = __caller_sline9__;
-gCallerSLine8 = __caller_sline8__;
-gCallerSLine7 = __caller_sline7__;
-gCallerSLine6 = __caller_sline6__;
-gCallerSLine5 = __caller_sline5__;
-gCallerSLine4 = __caller_sline4__;
-gCallerSLine3 = __caller_sline3__;
-gCallerSLine2 = __caller_sline2__;
-gCallerSLine = __caller_sline__;
-}
+memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 char* sInterfaceNode_sname(struct sInterfaceNode* self, struct sInfo* info){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -9063,104 +4711,17 @@ char* __result44__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value64, 0, sizeof(void*));
-__caller_sname10__ = gCallerSName10;
-__caller_sname9__ = gCallerSName9;
-__caller_sname8__ = gCallerSName8;
-__caller_sname7__ = gCallerSName7;
-__caller_sname6__ = gCallerSName6;
-__caller_sname5__ = gCallerSName5;
-__caller_sname4__ = gCallerSName4;
-__caller_sname3__ = gCallerSName3;
-__caller_sname2__ = gCallerSName2;
-__caller_sname__ = gCallerSName;
-__caller_sline10__ = gCallerSLine10;
-__caller_sline9__ = gCallerSLine9;
-__caller_sline8__ = gCallerSLine8;
-__caller_sline7__ = gCallerSLine7;
-__caller_sline6__ = gCallerSLine6;
-__caller_sline5__ = gCallerSLine5;
-__caller_sline4__ = gCallerSLine4;
-__caller_sline3__ = gCallerSLine3;
-__caller_sline2__ = gCallerSLine2;
-__caller_sline__ = gCallerSLine;
-gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-    __result44__ = __result_obj__ = ((char*)(right_value64=(gCallerSName = "23interface.c", gCallerSLine = 29,__builtin_string(((struct sInterfaceNode*)come_null_check(self, "23interface.c", 29))->sname))));
+memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+    __result44__ = __result_obj__ = ((char*)(right_value64=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 29,__builtin_string(((struct sInterfaceNode*)come_null_check(self, "23interface.c", 29))->sname))));
     __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-    return __result44__;
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result44__;
     __freed_obj__ = 0;
-gCallerSName10 = __caller_sname10__;
-gCallerSName9 = __caller_sname9__;
-gCallerSName8 = __caller_sname8__;
-gCallerSName7 = __caller_sname7__;
-gCallerSName6 = __caller_sname6__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName4 = __caller_sname4__;
-gCallerSName3 = __caller_sname3__;
-gCallerSName2 = __caller_sname2__;
-gCallerSName = __caller_sname__;
-gCallerSLine10 = __caller_sline10__;
-gCallerSLine9 = __caller_sline9__;
-gCallerSLine8 = __caller_sline8__;
-gCallerSLine7 = __caller_sline7__;
-gCallerSLine6 = __caller_sline6__;
-gCallerSLine5 = __caller_sline5__;
-gCallerSLine4 = __caller_sline4__;
-gCallerSLine3 = __caller_sline3__;
-gCallerSLine2 = __caller_sline2__;
-gCallerSLine = __caller_sline__;
-}
+memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 _Bool sInterfaceNode_terminated(){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -9168,104 +4729,17 @@ _Bool __freed_obj__;
 _Bool __result45__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-__caller_sname10__ = gCallerSName10;
-__caller_sname9__ = gCallerSName9;
-__caller_sname8__ = gCallerSName8;
-__caller_sname7__ = gCallerSName7;
-__caller_sname6__ = gCallerSName6;
-__caller_sname5__ = gCallerSName5;
-__caller_sname4__ = gCallerSName4;
-__caller_sname3__ = gCallerSName3;
-__caller_sname2__ = gCallerSName2;
-__caller_sname__ = gCallerSName;
-__caller_sline10__ = gCallerSLine10;
-__caller_sline9__ = gCallerSLine9;
-__caller_sline8__ = gCallerSLine8;
-__caller_sline7__ = gCallerSLine7;
-__caller_sline6__ = gCallerSLine6;
-__caller_sline5__ = gCallerSLine5;
-__caller_sline4__ = gCallerSLine4;
-__caller_sline3__ = gCallerSLine3;
-__caller_sline2__ = gCallerSLine2;
-__caller_sline__ = gCallerSLine;
-gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     __result45__ = (_Bool)0;
     __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-    return __result45__;
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result45__;
     __freed_obj__ = 0;
-gCallerSName10 = __caller_sname10__;
-gCallerSName9 = __caller_sname9__;
-gCallerSName8 = __caller_sname8__;
-gCallerSName7 = __caller_sname7__;
-gCallerSName6 = __caller_sname6__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName4 = __caller_sname4__;
-gCallerSName3 = __caller_sname3__;
-gCallerSName2 = __caller_sname2__;
-gCallerSName = __caller_sname__;
-gCallerSLine10 = __caller_sline10__;
-gCallerSLine9 = __caller_sline9__;
-gCallerSLine8 = __caller_sline8__;
-gCallerSLine7 = __caller_sline7__;
-gCallerSLine6 = __caller_sline6__;
-gCallerSLine5 = __caller_sline5__;
-gCallerSLine4 = __caller_sline4__;
-gCallerSLine3 = __caller_sline3__;
-gCallerSLine2 = __caller_sline2__;
-gCallerSLine = __caller_sline__;
-}
+memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 char* sInterfaceNode_kind(){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -9275,104 +4749,17 @@ char* __result46__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value65, 0, sizeof(void*));
-__caller_sname10__ = gCallerSName10;
-__caller_sname9__ = gCallerSName9;
-__caller_sname8__ = gCallerSName8;
-__caller_sname7__ = gCallerSName7;
-__caller_sname6__ = gCallerSName6;
-__caller_sname5__ = gCallerSName5;
-__caller_sname4__ = gCallerSName4;
-__caller_sname3__ = gCallerSName3;
-__caller_sname2__ = gCallerSName2;
-__caller_sname__ = gCallerSName;
-__caller_sline10__ = gCallerSLine10;
-__caller_sline9__ = gCallerSLine9;
-__caller_sline8__ = gCallerSLine8;
-__caller_sline7__ = gCallerSLine7;
-__caller_sline6__ = gCallerSLine6;
-__caller_sline5__ = gCallerSLine5;
-__caller_sline4__ = gCallerSLine4;
-__caller_sline3__ = gCallerSLine3;
-__caller_sline2__ = gCallerSLine2;
-__caller_sline__ = gCallerSLine;
-gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-    __result46__ = __result_obj__ = ((char*)(right_value65=(gCallerSName = "23interface.c", gCallerSLine = 39,__builtin_string("sInterfaceNode"))));
+memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+    __result46__ = __result_obj__ = ((char*)(right_value65=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 39,__builtin_string("sInterfaceNode"))));
     __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-    return __result46__;
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result46__;
     __freed_obj__ = 0;
-gCallerSName10 = __caller_sname10__;
-gCallerSName9 = __caller_sname9__;
-gCallerSName8 = __caller_sname8__;
-gCallerSName7 = __caller_sname7__;
-gCallerSName6 = __caller_sname6__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName4 = __caller_sname4__;
-gCallerSName3 = __caller_sname3__;
-gCallerSName2 = __caller_sname2__;
-gCallerSName = __caller_sname__;
-gCallerSLine10 = __caller_sline10__;
-gCallerSLine9 = __caller_sline9__;
-gCallerSLine8 = __caller_sline8__;
-gCallerSLine7 = __caller_sline7__;
-gCallerSLine6 = __caller_sline6__;
-gCallerSLine5 = __caller_sline5__;
-gCallerSLine4 = __caller_sline4__;
-gCallerSLine3 = __caller_sline3__;
-gCallerSLine2 = __caller_sline2__;
-gCallerSLine = __caller_sline__;
-}
+memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 _Bool sInterfaceNode_compile(struct sInterfaceNode* self, struct sInfo* info){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -9414,78 +4801,50 @@ memset(&right_value70, 0, sizeof(void*));
 memset(&right_value71, 0, sizeof(void*));
 memset(&right_value84, 0, sizeof(void*));
 memset(&right_value85, 0, sizeof(void*));
-__caller_sname10__ = gCallerSName10;
-__caller_sname9__ = gCallerSName9;
-__caller_sname8__ = gCallerSName8;
-__caller_sname7__ = gCallerSName7;
-__caller_sname6__ = gCallerSName6;
-__caller_sname5__ = gCallerSName5;
-__caller_sname4__ = gCallerSName4;
-__caller_sname3__ = gCallerSName3;
-__caller_sname2__ = gCallerSName2;
-__caller_sname__ = gCallerSName;
-__caller_sline10__ = gCallerSLine10;
-__caller_sline9__ = gCallerSLine9;
-__caller_sline8__ = gCallerSLine8;
-__caller_sline7__ = gCallerSLine7;
-__caller_sline6__ = gCallerSLine6;
-__caller_sline5__ = gCallerSLine5;
-__caller_sline4__ = gCallerSLine4;
-__caller_sline3__ = gCallerSLine3;
-__caller_sline2__ = gCallerSLine2;
-__caller_sline__ = gCallerSLine;
-gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-    name_40=(char*)come_increment_ref_count(((char*)(right_value66=(gCallerSName = "23interface.c", gCallerSLine = 44,__builtin_string(((struct sInterfaceNode*)come_null_check(self, "23interface.c", 44))->name)))));
+memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+    name_40=(char*)come_increment_ref_count(((char*)(right_value66=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 44,__builtin_string(((struct sInterfaceNode*)come_null_check(self, "23interface.c", 44))->name)))));
     if(right_value66 && right_value66 != __result_obj__ && !__freed_obj__) { right_value66 = come_decrement_ref_count(right_value66, (void*)0, (void*)0, 1, 0, 0); }
     __freed_obj__ = 0;
     klass_41=((struct sInterfaceNode*)come_null_check(self, "23interface.c", 45))->klass;
     __freed_obj__ = 0;
     ((struct sClass*)come_null_check(klass_41, "23interface.c", 46))->mProtocol=(_Bool)1;
     __freed_obj__ = 0;
-    buf_42=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value68=(gCallerSName = "23interface.c", gCallerSLine = 48,buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value67=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "23interface.c", 48)))))))));
+    buf_42=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value68=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 48,buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value67=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "23interface.c", 48)))))))));
     if(right_value67 && right_value67 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value67, (void*)0, (void*)0, 0, 1, 0, 0); }
     if(right_value68 && right_value68 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value68, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
-    (gCallerSName = "23interface.c", gCallerSLine = 50,buffer_append_str(((struct buffer*)come_null_check(buf_42, "23interface.c", 50)),((char*)(right_value69=(gCallerSName = "23interface.c", gCallerSLine = 50,xsprintf("struct %s\n{\n",((struct sClass*)come_null_check(klass_41, "23interface.c", 50))->mName))))));
+    (gCallerSName[0] = "23interface.c", gCallerSLine[0] = 50,buffer_append_str(((struct buffer*)come_null_check(buf_42, "23interface.c", 50)),((char*)(right_value69=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 50,xsprintf("struct %s\n{\n",((struct sClass*)come_null_check(klass_41, "23interface.c", 50))->mName))))));
     if(right_value69 && right_value69 != __result_obj__ && !__freed_obj__) { right_value69 = come_decrement_ref_count(right_value69, (void*)0, (void*)0, 1, 0, 0); }
     __freed_obj__ = 0;
     for(
-    o2_saved_43=(struct list$1tuple2$2charphsTypephph*)come_increment_ref_count((((struct sClass*)come_null_check(klass_41, "23interface.c", 61))->mFields)),it_46=(gCallerSName = "23interface.c", gCallerSLine = 61,list$1tuple2$2charphsTypephph_begin(((struct list$1tuple2$2charphsTypephph*)come_null_check((o2_saved_43), "23interface.c", 61)))) ,    __freed_obj__ = 0, 
-    0;    _for_condtionalA1=    !(gCallerSName = "23interface.c", gCallerSLine = 61,list$1tuple2$2charphsTypephph_end(((struct list$1tuple2$2charphsTypephph*)come_null_check((o2_saved_43), "23interface.c", 61)))) ,    __freed_obj__ = 0, 
-    _for_condtionalA1;    it_46=(gCallerSName = "23interface.c", gCallerSLine = 61,list$1tuple2$2charphsTypephph_next(((struct list$1tuple2$2charphsTypephph*)come_null_check((o2_saved_43), "23interface.c", 61)))) ,    __freed_obj__ = 0, 
+    o2_saved_43=(struct list$1tuple2$2charphsTypephph*)come_increment_ref_count((((struct sClass*)come_null_check(klass_41, "23interface.c", 61))->mFields)),it_46=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 61,list$1tuple2$2charphsTypephph_begin(((struct list$1tuple2$2charphsTypephph*)come_null_check((o2_saved_43), "23interface.c", 61)))) ,    __freed_obj__ = 0, 
+    0;    _for_condtionalA1=    !(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 61,list$1tuple2$2charphsTypephph_end(((struct list$1tuple2$2charphsTypephph*)come_null_check((o2_saved_43), "23interface.c", 61)))) ,    __freed_obj__ = 0, 
+    _for_condtionalA1;    it_46=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 61,list$1tuple2$2charphsTypephph_next(((struct list$1tuple2$2charphsTypephph*)come_null_check((o2_saved_43), "23interface.c", 61)))) ,    __freed_obj__ = 0, 
     0    ){
         multiple_assgin_var1=it_46;
         name_49=(char*)come_increment_ref_count(multiple_assgin_var1->v1);
         type_50=(struct sType*)come_increment_ref_count(multiple_assgin_var1->v2);
         __freed_obj__ = 0;
-        (gCallerSName = "23interface.c", gCallerSLine = 56,buffer_append_str(((struct buffer*)come_null_check(buf_42, "23interface.c", 56)),"    "));
+        (gCallerSName[0] = "23interface.c", gCallerSLine[0] = 56,buffer_append_str(((struct buffer*)come_null_check(buf_42, "23interface.c", 56)),"    "));
         __freed_obj__ = 0;
         come_clear_stackframe();
-        (gCallerSName = "23interface.c", gCallerSLine = 57,buffer_append_str(((struct buffer*)come_null_check(buf_42, "23interface.c", 57)),optional$2charphbool_value((come_push_stackframe("23interface.c", 57),((struct optional$2charphbool*)(right_value70=(gCallerSName = "23interface.c", gCallerSLine = 57,make_define_var(type_50,name_49,(_Bool)0,info))))))));
+        (gCallerSName[0] = "23interface.c", gCallerSLine[0] = 57,buffer_append_str(((struct buffer*)come_null_check(buf_42, "23interface.c", 57)),optional$2charphbool_value((come_push_stackframe("23interface.c", 57),((struct optional$2charphbool*)(right_value70=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 57,make_define_var(type_50,name_49,(_Bool)0,info))))))));
         come_pop_stackframe();
         if(right_value70 && right_value70 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value70, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
-        (gCallerSName = "23interface.c", gCallerSLine = 58,buffer_append_str(((struct buffer*)come_null_check(buf_42, "23interface.c", 58)),";\n"));
+        (gCallerSName[0] = "23interface.c", gCallerSLine[0] = 58,buffer_append_str(((struct buffer*)come_null_check(buf_42, "23interface.c", 58)),";\n"));
         __freed_obj__ = 0;
         if(name_49 && !__freed_obj__) { name_49 = come_decrement_ref_count(name_49, (void*)0, (void*)0, 0, 0, 0); }
         if(type_50 && !__freed_obj__) { come_call_finalizer(sType_finalize,type_50, (void*)0, (void*)0, 0, 0, 0, 0); }
     }
     if(o2_saved_43 && !__freed_obj__) { come_call_finalizer(list$1tuple2$2charphsTypephphp_finalize,o2_saved_43, (void*)0, (void*)0, 0, 0, 0, 0); }
     __freed_obj__ = 0;
-    (gCallerSName = "23interface.c", gCallerSLine = 61,buffer_append_str(((struct buffer*)come_null_check(buf_42, "23interface.c", 61)),"};\n"));
+    (gCallerSName[0] = "23interface.c", gCallerSLine[0] = 61,buffer_append_str(((struct buffer*)come_null_check(buf_42, "23interface.c", 61)),"};\n"));
     __freed_obj__ = 0;
-    (gCallerSName = "23interface.c", gCallerSLine = 63,add_come_code_at_source_head(info,"%s",((char*)(right_value71=(gCallerSName = "23interface.c", gCallerSLine = 63,buffer_to_string(((struct buffer*)come_null_check(buf_42, "23interface.c", 63))))))));
+    (gCallerSName[0] = "23interface.c", gCallerSLine[0] = 63,add_come_code_at_source_head(info,"%s",((char*)(right_value71=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 63,buffer_to_string(((struct buffer*)come_null_check(buf_42, "23interface.c", 63))))))));
     if(right_value71 && right_value71 != __result_obj__ && !__freed_obj__) { right_value71 = come_decrement_ref_count(right_value71, (void*)0, (void*)0, 1, 0, 0); }
     __freed_obj__ = 0;
-    (gCallerSName = "23interface.c", gCallerSLine = 65,map$2charphsClassph_insert(((struct map$2charphsClassph*)come_null_check(((struct sInfo*)come_null_check(info, "23interface.c", 65))->classes, "23interface.c", 65)),(char*)come_increment_ref_count(((char*)(right_value84=(gCallerSName = "23interface.c", gCallerSLine = 65,__builtin_string(name_40))))),(struct sClass*)come_increment_ref_count(((struct sClass*)(right_value85=(gCallerSName = "23interface.c", gCallerSLine = 65,sClass_clone(klass_41)))))));
+    (gCallerSName[0] = "23interface.c", gCallerSLine[0] = 65,map$2charphsClassph_insert(((struct map$2charphsClassph*)come_null_check(((struct sInfo*)come_null_check(info, "23interface.c", 65))->classes, "23interface.c", 65)),(char*)come_increment_ref_count(((char*)(right_value84=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 65,__builtin_string(name_40))))),(struct sClass*)come_increment_ref_count(((struct sClass*)(right_value85=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 65,sClass_clone(klass_41)))))));
     if(right_value84 && right_value84 != __result_obj__ && !__freed_obj__) { right_value84 = come_decrement_ref_count(right_value84, (void*)0, (void*)0, 1, 0, 0); }
     if(right_value85 && right_value85 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sClass_finalize,right_value85, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
@@ -9493,75 +4852,16 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     if(name_40 && !__freed_obj__) { name_40 = come_decrement_ref_count(name_40, (void*)0, (void*)0, 0, 0, 0); }
     if(buf_42 && !__freed_obj__) { come_call_finalizer(buffer_finalize,buf_42, (void*)0, (void*)0, 0, 0, 0, 0); }
     __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-    return __result82__;
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result82__;
     __freed_obj__ = 0;
     if(name_40 && !__freed_obj__) { name_40 = come_decrement_ref_count(name_40, (void*)0, (void*)0, 0, 0, 0); }
     if(buf_42 && !__freed_obj__) { come_call_finalizer(buffer_finalize,buf_42, (void*)0, (void*)0, 0, 0, 0, 0); }
-gCallerSName10 = __caller_sname10__;
-gCallerSName9 = __caller_sname9__;
-gCallerSName8 = __caller_sname8__;
-gCallerSName7 = __caller_sname7__;
-gCallerSName6 = __caller_sname6__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName4 = __caller_sname4__;
-gCallerSName3 = __caller_sname3__;
-gCallerSName2 = __caller_sname2__;
-gCallerSName = __caller_sname__;
-gCallerSLine10 = __caller_sline10__;
-gCallerSLine9 = __caller_sline9__;
-gCallerSLine8 = __caller_sline8__;
-gCallerSLine7 = __caller_sline7__;
-gCallerSLine6 = __caller_sline6__;
-gCallerSLine5 = __caller_sline5__;
-gCallerSLine4 = __caller_sline4__;
-gCallerSLine3 = __caller_sline3__;
-gCallerSLine2 = __caller_sline2__;
-gCallerSLine = __caller_sline__;
-}
+memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct tuple2$2charphsTypeph* list$1tuple2$2charphsTypephph_begin(struct list$1tuple2$2charphsTypephph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -9577,170 +4877,41 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_44, 0, sizeof(struct tuple2$2charphsTypeph*));
 memset(&result_45, 0, sizeof(struct tuple2$2charphsTypeph*));
-    __caller_sname10__ = gCallerSName10;
-    __caller_sname9__ = gCallerSName9;
-    __caller_sname8__ = gCallerSName8;
-    __caller_sname7__ = gCallerSName7;
-    __caller_sname6__ = gCallerSName6;
-    __caller_sname5__ = gCallerSName5;
-    __caller_sname4__ = gCallerSName4;
-    __caller_sname3__ = gCallerSName3;
-    __caller_sname2__ = gCallerSName2;
-    __caller_sname__ = gCallerSName;
-    __caller_sline10__ = gCallerSLine10;
-    __caller_sline9__ = gCallerSLine9;
-    __caller_sline8__ = gCallerSLine8;
-    __caller_sline7__ = gCallerSLine7;
-    __caller_sline6__ = gCallerSLine6;
-    __caller_sline5__ = gCallerSLine5;
-    __caller_sline4__ = gCallerSLine4;
-    __caller_sline3__ = gCallerSLine3;
-    __caller_sline2__ = gCallerSLine2;
-    __caller_sline__ = gCallerSLine;
-    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
         if(_if_conditional127=self==((void*)0),        __freed_obj__ = 0, 
         _if_conditional127) {
             __freed_obj__ = 0;
-            (gCallerSName = "./comelang2.h", gCallerSLine = 354,memset(&result_44,0,sizeof(struct tuple2$2charphsTypeph*)));
+            (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 338,memset(&result_44,0,sizeof(struct tuple2$2charphsTypeph*)));
             __freed_obj__ = 0;
             __result47__ = __result_obj__ = result_44;
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result47__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result47__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-        ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 357))->it=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 357))->head;
+        ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 341))->it=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 341))->head;
         __freed_obj__ = 0;
-        if(_if_conditional128=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 363))->it,        __freed_obj__ = 0, 
+        if(_if_conditional128=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 347))->it,        __freed_obj__ = 0, 
         _if_conditional128) {
-            __result48__ = __result_obj__ = ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 360))->it, "./comelang2.h", 360))->item;
+            __result48__ = __result_obj__ = ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 344))->it, "./comelang2.h", 344))->item;
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result48__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result48__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
         __freed_obj__ = 0;
-        (gCallerSName = "./comelang2.h", gCallerSLine = 364,memset(&result_45,0,sizeof(struct tuple2$2charphsTypeph*)));
+        (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 348,memset(&result_45,0,sizeof(struct tuple2$2charphsTypeph*)));
         __freed_obj__ = 0;
         __result49__ = __result_obj__ = result_45;
         __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-        return __result49__;
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result49__;
         __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-}
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static _Bool list$1tuple2$2charphsTypephph_end(struct list$1tuple2$2charphsTypephph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -9748,104 +4919,17 @@ _Bool __freed_obj__;
 _Bool __result50__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-    __caller_sname10__ = gCallerSName10;
-    __caller_sname9__ = gCallerSName9;
-    __caller_sname8__ = gCallerSName8;
-    __caller_sname7__ = gCallerSName7;
-    __caller_sname6__ = gCallerSName6;
-    __caller_sname5__ = gCallerSName5;
-    __caller_sname4__ = gCallerSName4;
-    __caller_sname3__ = gCallerSName3;
-    __caller_sname2__ = gCallerSName2;
-    __caller_sname__ = gCallerSName;
-    __caller_sline10__ = gCallerSLine10;
-    __caller_sline9__ = gCallerSLine9;
-    __caller_sline8__ = gCallerSLine8;
-    __caller_sline7__ = gCallerSLine7;
-    __caller_sline6__ = gCallerSLine6;
-    __caller_sline5__ = gCallerSLine5;
-    __caller_sline4__ = gCallerSLine4;
-    __caller_sline3__ = gCallerSLine3;
-    __caller_sline2__ = gCallerSLine2;
-    __caller_sline__ = gCallerSLine;
-    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-        __result50__ = self==((void*)0)||((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 387))->it==((void*)0);
+    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+        __result50__ = self==((void*)0)||((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 371))->it==((void*)0);
         __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-        return __result50__;
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result50__;
         __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-}
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct tuple2$2charphsTypeph* list$1tuple2$2charphsTypephph_next(struct list$1tuple2$2charphsTypephph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -9861,170 +4945,41 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_47, 0, sizeof(struct tuple2$2charphsTypeph*));
 memset(&result_48, 0, sizeof(struct tuple2$2charphsTypeph*));
-    __caller_sname10__ = gCallerSName10;
-    __caller_sname9__ = gCallerSName9;
-    __caller_sname8__ = gCallerSName8;
-    __caller_sname7__ = gCallerSName7;
-    __caller_sname6__ = gCallerSName6;
-    __caller_sname5__ = gCallerSName5;
-    __caller_sname4__ = gCallerSName4;
-    __caller_sname3__ = gCallerSName3;
-    __caller_sname2__ = gCallerSName2;
-    __caller_sname__ = gCallerSName;
-    __caller_sline10__ = gCallerSLine10;
-    __caller_sline9__ = gCallerSLine9;
-    __caller_sline8__ = gCallerSLine8;
-    __caller_sline7__ = gCallerSLine7;
-    __caller_sline6__ = gCallerSLine6;
-    __caller_sline5__ = gCallerSLine5;
-    __caller_sline4__ = gCallerSLine4;
-    __caller_sline3__ = gCallerSLine3;
-    __caller_sline2__ = gCallerSLine2;
-    __caller_sline__ = gCallerSLine;
-    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
         if(_if_conditional129=self==((void*)0),        __freed_obj__ = 0, 
         _if_conditional129) {
             __freed_obj__ = 0;
-            (gCallerSName = "./comelang2.h", gCallerSLine = 371,memset(&result_47,0,sizeof(struct tuple2$2charphsTypeph*)));
+            (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 355,memset(&result_47,0,sizeof(struct tuple2$2charphsTypeph*)));
             __freed_obj__ = 0;
             __result51__ = __result_obj__ = result_47;
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result51__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result51__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-        ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 375))->it=((struct list_item$1tuple2$2charphsTypephph*)come_null_check(((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 375))->it, "./comelang2.h", 375))->next;
+        ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 359))->it=((struct list_item$1tuple2$2charphsTypephph*)come_null_check(((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 359))->it, "./comelang2.h", 359))->next;
         __freed_obj__ = 0;
-        if(_if_conditional130=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 381))->it,        __freed_obj__ = 0, 
+        if(_if_conditional130=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 365))->it,        __freed_obj__ = 0, 
         _if_conditional130) {
-            __result52__ = __result_obj__ = ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 378))->it, "./comelang2.h", 378))->item;
+            __result52__ = __result_obj__ = ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 362))->it, "./comelang2.h", 362))->item;
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result52__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result52__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
         __freed_obj__ = 0;
-        (gCallerSName = "./comelang2.h", gCallerSLine = 382,memset(&result_48,0,sizeof(struct tuple2$2charphsTypeph*)));
+        (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 366,memset(&result_48,0,sizeof(struct tuple2$2charphsTypeph*)));
         __freed_obj__ = 0;
         __result53__ = __result_obj__ = result_48;
         __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-        return __result53__;
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result53__;
         __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-}
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static char* optional$2charphbool_value(struct optional$2charphbool* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -10036,138 +4991,30 @@ char* __result55__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&default_value_51, 0, sizeof(char*));
-        __caller_sname10__ = gCallerSName10;
-        __caller_sname9__ = gCallerSName9;
-        __caller_sname8__ = gCallerSName8;
-        __caller_sname7__ = gCallerSName7;
-        __caller_sname6__ = gCallerSName6;
-        __caller_sname5__ = gCallerSName5;
-        __caller_sname4__ = gCallerSName4;
-        __caller_sname3__ = gCallerSName3;
-        __caller_sname2__ = gCallerSName2;
-        __caller_sname__ = gCallerSName;
-        __caller_sline10__ = gCallerSLine10;
-        __caller_sline9__ = gCallerSLine9;
-        __caller_sline8__ = gCallerSLine8;
-        __caller_sline7__ = gCallerSLine7;
-        __caller_sline6__ = gCallerSLine6;
-        __caller_sline5__ = gCallerSLine5;
-        __caller_sline4__ = gCallerSLine4;
-        __caller_sline3__ = gCallerSLine3;
-        __caller_sline2__ = gCallerSLine2;
-        __caller_sline__ = gCallerSLine;
-        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
             if(_if_conditional131=self==((void*)0),            __freed_obj__ = 0, 
             _if_conditional131) {
                 __freed_obj__ = 0;
-                (gCallerSName = "./comelang2.h", gCallerSLine = 61,memset(&default_value_51,0,sizeof(char*)));
+                (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 61,memset(&default_value_51,0,sizeof(char*)));
                 __freed_obj__ = 0;
                 __result54__ = __result_obj__ = default_value_51;
                 __freed_obj__ = 0;
-                gCallerSName10 = __caller_sname10__;
-                gCallerSName9 = __caller_sname9__;
-                gCallerSName8 = __caller_sname8__;
-                gCallerSName7 = __caller_sname7__;
-                gCallerSName6 = __caller_sname6__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName4 = __caller_sname4__;
-                gCallerSName3 = __caller_sname3__;
-                gCallerSName2 = __caller_sname2__;
-                gCallerSName = __caller_sname__;
-                gCallerSLine10 = __caller_sline10__;
-                gCallerSLine9 = __caller_sline9__;
-                gCallerSLine8 = __caller_sline8__;
-                gCallerSLine7 = __caller_sline7__;
-                gCallerSLine6 = __caller_sline6__;
-                gCallerSLine5 = __caller_sline5__;
-                gCallerSLine4 = __caller_sline4__;
-                gCallerSLine3 = __caller_sline3__;
-                gCallerSLine2 = __caller_sline2__;
-                gCallerSLine = __caller_sline__;
-                return __result54__;
+                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result54__;
                 __freed_obj__ = 0;
             }
             else {
                 __result55__ = __result_obj__ = ((struct optional$2charphbool*)come_null_check(self, "./comelang2.h", 65))->v1;
                 __freed_obj__ = 0;
-                gCallerSName10 = __caller_sname10__;
-                gCallerSName9 = __caller_sname9__;
-                gCallerSName8 = __caller_sname8__;
-                gCallerSName7 = __caller_sname7__;
-                gCallerSName6 = __caller_sname6__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName4 = __caller_sname4__;
-                gCallerSName3 = __caller_sname3__;
-                gCallerSName2 = __caller_sname2__;
-                gCallerSName = __caller_sname__;
-                gCallerSLine10 = __caller_sline10__;
-                gCallerSLine9 = __caller_sline9__;
-                gCallerSLine8 = __caller_sline8__;
-                gCallerSLine7 = __caller_sline7__;
-                gCallerSLine6 = __caller_sline6__;
-                gCallerSLine5 = __caller_sline5__;
-                gCallerSLine4 = __caller_sline4__;
-                gCallerSLine3 = __caller_sline3__;
-                gCallerSLine2 = __caller_sline2__;
-                gCallerSLine = __caller_sline__;
-                return __result55__;
+                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result55__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-}
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void optional$2charphboolp_finalize(struct optional$2charphbool* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -10175,85 +5022,19 @@ _Bool __freed_obj__;
 _Bool _if_conditional132;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-        __caller_sname10__ = gCallerSName10;
-        __caller_sname9__ = gCallerSName9;
-        __caller_sname8__ = gCallerSName8;
-        __caller_sname7__ = gCallerSName7;
-        __caller_sname6__ = gCallerSName6;
-        __caller_sname5__ = gCallerSName5;
-        __caller_sname4__ = gCallerSName4;
-        __caller_sname3__ = gCallerSName3;
-        __caller_sname2__ = gCallerSName2;
-        __caller_sname__ = gCallerSName;
-        __caller_sline10__ = gCallerSLine10;
-        __caller_sline9__ = gCallerSLine9;
-        __caller_sline8__ = gCallerSLine8;
-        __caller_sline7__ = gCallerSLine7;
-        __caller_sline6__ = gCallerSLine6;
-        __caller_sline5__ = gCallerSLine5;
-        __caller_sline4__ = gCallerSLine4;
-        __caller_sline3__ = gCallerSLine3;
-        __caller_sline2__ = gCallerSLine2;
-        __caller_sline__ = gCallerSLine;
-        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
             if(_if_conditional132=self!=((void*)0)&&((struct optional$2charphbool*)come_null_check(self, "optional$2charphboolp_finalize", 1))->v1!=((void*)0),            __freed_obj__ = 0, 
             _if_conditional132) {
                 if(((struct optional$2charphbool*)come_null_check(self, "optional$2charphboolp_finalize", 0))->v1 && !__freed_obj__) { ((struct optional$2charphbool*)come_null_check(self, "optional$2charphboolp_finalize", 0))->v1 = come_decrement_ref_count(((struct optional$2charphbool*)come_null_check(self, "optional$2charphboolp_finalize", 0))->v1, (void*)0, (void*)0, 0, 0, 0); }
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-}
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct map$2charphsClassph* map$2charphsClassph_insert(struct map$2charphsClassph* self, char* key, struct sClass* item){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -10288,77 +5069,49 @@ memset(&right_value78, 0, sizeof(void*));
 memset(&same_key_exist_88, 0, sizeof(_Bool));
 memset(&it2_91, 0, sizeof(char*));
 memset(&right_value80, 0, sizeof(void*));
-    __caller_sname10__ = gCallerSName10;
-    __caller_sname9__ = gCallerSName9;
-    __caller_sname8__ = gCallerSName8;
-    __caller_sname7__ = gCallerSName7;
-    __caller_sname6__ = gCallerSName6;
-    __caller_sname5__ = gCallerSName5;
-    __caller_sname4__ = gCallerSName4;
-    __caller_sname3__ = gCallerSName3;
-    __caller_sname2__ = gCallerSName2;
-    __caller_sname__ = gCallerSName;
-    __caller_sline10__ = gCallerSLine10;
-    __caller_sline9__ = gCallerSLine9;
-    __caller_sline8__ = gCallerSLine8;
-    __caller_sline7__ = gCallerSLine7;
-    __caller_sline6__ = gCallerSLine6;
-    __caller_sline5__ = gCallerSLine5;
-    __caller_sline4__ = gCallerSLine4;
-    __caller_sline3__ = gCallerSLine3;
-    __caller_sline2__ = gCallerSLine2;
-    __caller_sline__ = gCallerSLine;
-    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-        if(_if_conditional133=((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1445))->len*10>=((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1445))->size,        __freed_obj__ = 0, 
+    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+        if(_if_conditional133=((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1429))->len*10>=((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1429))->size,        __freed_obj__ = 0, 
         _if_conditional133) {
-            (gCallerSName = "./comelang2.h", gCallerSLine = 1443,map$2charphsClassph_rehash(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1443))));
+            (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1427,map$2charphsClassph_rehash(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1427))));
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-        hash_70=(gCallerSName = "./comelang2.h", gCallerSLine = 1445,string_get_hash_key(((char*)come_null_check(key, "./comelang2.h", 1445))))%((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1445))->size;
+        hash_70=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1429,string_get_hash_key(((char*)come_null_check(key, "./comelang2.h", 1429))))%((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1429))->size;
         __freed_obj__ = 0;
         it_71=hash_70;
         __freed_obj__ = 0;
         while(_while_condtional11=(_Bool)1,        __freed_obj__ = 0, 
         _while_condtional11) {
-            if(_if_conditional146=((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1501))->item_existance[it_71],            __freed_obj__ = 0, 
+            if(_if_conditional146=((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1485))->item_existance[it_71],            __freed_obj__ = 0, 
             _if_conditional146) {
-                if(_if_conditional147=optional$2boolbool_value((come_clear_stackframe(), come_push_stackframe("./comelang2.h", 1472),__exception_result_var_a2=((struct optional$2boolbool*)(right_value78=(gCallerSName = "./comelang2.h", gCallerSLine = 1472,string_equals(((char*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1472))->keys[it_71], "./comelang2.h", 1472)),key)))), come_pop_stackframe(), __exception_result_var_a2)),                (right_value78 && right_value78 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value78, (void*)0, (void*)0, 0, 1, 0, 0):0,
+                if(_if_conditional147=optional$2boolbool_value((come_clear_stackframe(), come_push_stackframe("./comelang2.h", 1456),__exception_result_var_a2=((struct optional$2boolbool*)(right_value78=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1456,string_equals(((char*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1456))->keys[it_71], "./comelang2.h", 1456)),key)))), come_pop_stackframe(), __exception_result_var_a2)),                (right_value78 && right_value78 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value78, (void*)0, (void*)0, 0, 1, 0, 0):0,
                 __freed_obj__ = 0, 
                 _if_conditional147) {
                     if(_if_conditional148=1,                    __freed_obj__ = 0, 
                     _if_conditional148) {
-                        (gCallerSName = "./comelang2.h", gCallerSLine = 1454,list$1charp_remove(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1454))->key_list, "./comelang2.h", 1454)),((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1454))->keys[it_71]));
+                        (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1438,list$1charp_remove(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1438))->key_list, "./comelang2.h", 1438)),((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1438))->keys[it_71]));
                         __freed_obj__ = 0;
-                        if(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1455))->keys[it_71] && !__freed_obj__) { ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1455))->keys[it_71] = come_decrement_ref_count(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1455))->keys[it_71], (void*)0, (void*)0, 0, 0, 0); }
+                        if(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1439))->keys[it_71] && !__freed_obj__) { ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1439))->keys[it_71] = come_decrement_ref_count(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1439))->keys[it_71], (void*)0, (void*)0, 0, 0, 0); }
                         __freed_obj__ = 0;
-                        ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1456))->keys[it_71]=(char*)come_increment_ref_count(key);
+                        ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1440))->keys[it_71]=(char*)come_increment_ref_count(key);
                         __freed_obj__ = 0;
                     }
                     else {
-                        (gCallerSName = "./comelang2.h", gCallerSLine = 1459,list$1charp_remove(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1459))->key_list, "./comelang2.h", 1459)),((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1459))->keys[it_71]));
+                        (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1443,list$1charp_remove(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1443))->key_list, "./comelang2.h", 1443)),((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1443))->keys[it_71]));
                         __freed_obj__ = 0;
-                        ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1460))->keys[it_71]=key;
+                        ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1444))->keys[it_71]=key;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
                     if(_if_conditional168=1,                    __freed_obj__ = 0, 
                     _if_conditional168) {
-                        if(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1463))->items[it_71] && !__freed_obj__) { come_call_finalizer(sClass_finalize,((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1463))->items[it_71], (void*)0, (void*)0, 0, 0, 0, 0); }
+                        if(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1447))->items[it_71] && !__freed_obj__) { come_call_finalizer(sClass_finalize,((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1447))->items[it_71], (void*)0, (void*)0, 0, 0, 0, 0); }
                         __freed_obj__ = 0;
-                        ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1464))->items[it_71]=(struct sClass*)come_increment_ref_count(item);
+                        ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1448))->items[it_71]=(struct sClass*)come_increment_ref_count(item);
                         __freed_obj__ = 0;
                     }
                     else {
-                        ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1467))->items[it_71]=item;
+                        ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1451))->items[it_71]=item;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
@@ -10368,7 +5121,7 @@ memset(&right_value80, 0, sizeof(void*));
                 __freed_obj__ = 0;
                 it_71++;
                 __freed_obj__ = 0;
-                if(_if_conditional169=it_71>=((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1481))->size,                __freed_obj__ = 0, 
+                if(_if_conditional169=it_71>=((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1465))->size,                __freed_obj__ = 0, 
                 _if_conditional169) {
                     it_71=0;
                     __freed_obj__ = 0;
@@ -10376,9 +5129,9 @@ memset(&right_value80, 0, sizeof(void*));
                 else {
                     if(_if_conditional170=it_71==hash_70,                    __freed_obj__ = 0, 
                     _if_conditional170) {
-                        (gCallerSName = "./comelang2.h", gCallerSLine = 1478,printf("unexpected error in map.insert\n"));
+                        (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1462,printf("unexpected error in map.insert\n"));
                         __freed_obj__ = 0;
-                        (gCallerSName = "./comelang2.h", gCallerSLine = 1479,exit(2));
+                        (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1463,exit(2));
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
@@ -10386,29 +5139,29 @@ memset(&right_value80, 0, sizeof(void*));
                 __freed_obj__ = 0;
             }
             else {
-                ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1483))->item_existance[it_71]=(_Bool)1;
+                ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1467))->item_existance[it_71]=(_Bool)1;
                 __freed_obj__ = 0;
                 if(_if_conditional171=1,                __freed_obj__ = 0, 
                 _if_conditional171) {
-                    ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1485))->keys[it_71]=(char*)come_increment_ref_count(key);
+                    ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1469))->keys[it_71]=(char*)come_increment_ref_count(key);
                     __freed_obj__ = 0;
                 }
                 else {
-                    ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1488))->keys[it_71]=key;
+                    ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1472))->keys[it_71]=key;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
                 if(_if_conditional172=1,                __freed_obj__ = 0, 
                 _if_conditional172) {
-                    ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1491))->items[it_71]=(struct sClass*)come_increment_ref_count(item);
+                    ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1475))->items[it_71]=(struct sClass*)come_increment_ref_count(item);
                     __freed_obj__ = 0;
                 }
                 else {
-                    ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1494))->items[it_71]=item;
+                    ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1478))->items[it_71]=item;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1497))->len++;
+                ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1481))->len++;
                 __freed_obj__ = 0;
                 break;
                 __freed_obj__ = 0;
@@ -10419,11 +5172,11 @@ memset(&right_value80, 0, sizeof(void*));
         same_key_exist_88=(_Bool)0;
         __freed_obj__ = 0;
         for(
-        it2_91=(gCallerSName = "./comelang2.h", gCallerSLine = 1511,list$1charp_begin(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1511))->key_list, "./comelang2.h", 1511)))) ,        __freed_obj__ = 0, 
-        0;        _for_condtionalA3=        !(gCallerSName = "./comelang2.h", gCallerSLine = 1511,list$1charp_end(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1511))->key_list, "./comelang2.h", 1511)))) ,        __freed_obj__ = 0, 
-        _for_condtionalA3;        it2_91=(gCallerSName = "./comelang2.h", gCallerSLine = 1511,list$1charp_next(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1511))->key_list, "./comelang2.h", 1511)))) ,        __freed_obj__ = 0, 
+        it2_91=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1495,list$1charp_begin(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1495))->key_list, "./comelang2.h", 1495)))) ,        __freed_obj__ = 0, 
+        0;        _for_condtionalA3=        !(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1495,list$1charp_end(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1495))->key_list, "./comelang2.h", 1495)))) ,        __freed_obj__ = 0, 
+        _for_condtionalA3;        it2_91=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1495,list$1charp_next(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1495))->key_list, "./comelang2.h", 1495)))) ,        __freed_obj__ = 0, 
         0        ){
-            if(_if_conditional177=optional$2boolbool_value((come_clear_stackframe(), come_push_stackframe("./comelang2.h", 1509),__exception_result_var_a4=((struct optional$2boolbool*)(right_value80=(gCallerSName = "./comelang2.h", gCallerSLine = 1509,string_equals(((char*)come_null_check(it2_91, "./comelang2.h", 1509)),key)))), come_pop_stackframe(), __exception_result_var_a4)),            (right_value80 && right_value80 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value80, (void*)0, (void*)0, 0, 1, 0, 0):0,
+            if(_if_conditional177=optional$2boolbool_value((come_clear_stackframe(), come_push_stackframe("./comelang2.h", 1493),__exception_result_var_a4=((struct optional$2boolbool*)(right_value80=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1493,string_equals(((char*)come_null_check(it2_91, "./comelang2.h", 1493)),key)))), come_pop_stackframe(), __exception_result_var_a4)),            (right_value80 && right_value80 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value80, (void*)0, (void*)0, 0, 1, 0, 0):0,
             __freed_obj__ = 0, 
             _if_conditional177) {
                 same_key_exist_88=(_Bool)1;
@@ -10434,7 +5187,7 @@ memset(&right_value80, 0, sizeof(void*));
         __freed_obj__ = 0;
         if(_if_conditional178=!same_key_exist_88,        __freed_obj__ = 0, 
         _if_conditional178) {
-            (gCallerSName = "./comelang2.h", gCallerSLine = 1512,list$1charp_push_back(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1512))->key_list, "./comelang2.h", 1512)),key));
+            (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1496,list$1charp_push_back(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1496))->key_list, "./comelang2.h", 1496)),key));
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
@@ -10442,75 +5195,16 @@ memset(&right_value80, 0, sizeof(void*));
         if(key && !__freed_obj__) { key = come_decrement_ref_count(key, (void*)0, (void*)0, 0, 1, 0); }
         if(item && !__freed_obj__) { come_call_finalizer(sClass_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
         __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-        return __result81__;
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result81__;
         __freed_obj__ = 0;
         if(key && !__freed_obj__) { key = come_decrement_ref_count(key, (void*)0, (void*)0, 0, 1, 0); }
         if(item && !__freed_obj__) { come_call_finalizer(sClass_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-}
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void map$2charphsClassph_rehash(struct map$2charphsClassph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -10554,60 +5248,32 @@ memset(&hash_67, 0, sizeof(unsigned int));
 memset(&n_68, 0, sizeof(int));
 memset(&default_value_69, 0, sizeof(struct sClass*));
 memset(&right_value77, 0, sizeof(void*));
-            __caller_sname10__ = gCallerSName10;
-            __caller_sname9__ = gCallerSName9;
-            __caller_sname8__ = gCallerSName8;
-            __caller_sname7__ = gCallerSName7;
-            __caller_sname6__ = gCallerSName6;
-            __caller_sname5__ = gCallerSName5;
-            __caller_sname4__ = gCallerSName4;
-            __caller_sname3__ = gCallerSName3;
-            __caller_sname2__ = gCallerSName2;
-            __caller_sname__ = gCallerSName;
-            __caller_sline10__ = gCallerSLine10;
-            __caller_sline9__ = gCallerSLine9;
-            __caller_sline8__ = gCallerSLine8;
-            __caller_sline7__ = gCallerSLine7;
-            __caller_sline6__ = gCallerSLine6;
-            __caller_sline5__ = gCallerSLine5;
-            __caller_sline4__ = gCallerSLine4;
-            __caller_sline3__ = gCallerSLine3;
-            __caller_sline2__ = gCallerSLine2;
-            __caller_sline__ = gCallerSLine;
-            gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-            gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-            gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-            gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-            gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-            gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-            gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-            gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-            gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                size_52=((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1390))->size*10;
+            memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);            memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);            for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                size_52=((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1374))->size*10;
                 __freed_obj__ = 0;
-                keys_53=(char**)come_increment_ref_count(((char**)(right_value72=(char**)come_calloc(1, sizeof(char*)*(1*(size_52)), "./comelang2.h", 1391))));
+                keys_53=(char**)come_increment_ref_count(((char**)(right_value72=(char**)come_calloc(1, sizeof(char*)*(1*(size_52)), "./comelang2.h", 1375))));
                 if(right_value72 && right_value72 != __result_obj__ && !__freed_obj__) { right_value72 = come_decrement_ref_count(right_value72, (void*)0, (void*)0, 1, 0, 0); }
                 __freed_obj__ = 0;
-                items_54=(struct sClass**)come_increment_ref_count(((struct sClass**)(right_value73=(struct sClass**)come_calloc(1, sizeof(struct sClass*)*(1*(size_52)), "./comelang2.h", 1392))));
+                items_54=(struct sClass**)come_increment_ref_count(((struct sClass**)(right_value73=(struct sClass**)come_calloc(1, sizeof(struct sClass*)*(1*(size_52)), "./comelang2.h", 1376))));
                 if(right_value73 && right_value73 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sClass_finalize,right_value73, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
-                item_existance_55=(_Bool*)come_increment_ref_count(((_Bool*)(right_value74=(_Bool*)come_calloc(1, sizeof(_Bool)*(1*(size_52)), "./comelang2.h", 1393))));
+                item_existance_55=(_Bool*)come_increment_ref_count(((_Bool*)(right_value74=(_Bool*)come_calloc(1, sizeof(_Bool)*(1*(size_52)), "./comelang2.h", 1377))));
                 if(right_value74 && right_value74 != __result_obj__ && !__freed_obj__) { right_value74 = come_decrement_ref_count(right_value74, (void*)0, (void*)0, 1, 0, 0); }
                 __freed_obj__ = 0;
                 len_56=0;
                 __freed_obj__ = 0;
                 for(
-                it_59=(gCallerSName = "./comelang2.h", gCallerSLine = 1429,map$2charphsClassph_begin(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1429)))) ,                __freed_obj__ = 0, 
-                0;                _for_condtionalA2=                !(gCallerSName = "./comelang2.h", gCallerSLine = 1429,map$2charphsClassph_end(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1429)))) ,                __freed_obj__ = 0, 
-                _for_condtionalA2;                it_59=(gCallerSName = "./comelang2.h", gCallerSLine = 1429,map$2charphsClassph_next(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1429)))) ,                __freed_obj__ = 0, 
+                it_59=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1413,map$2charphsClassph_begin(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1413)))) ,                __freed_obj__ = 0, 
+                0;                _for_condtionalA2=                !(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1413,map$2charphsClassph_end(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1413)))) ,                __freed_obj__ = 0, 
+                _for_condtionalA2;                it_59=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1413,map$2charphsClassph_next(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1413)))) ,                __freed_obj__ = 0, 
                 0                ){
                     __freed_obj__ = 0;
-                    (gCallerSName = "./comelang2.h", gCallerSLine = 1399,memset(&default_value_62,0,sizeof(struct sClass*)));
+                    (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1383,memset(&default_value_62,0,sizeof(struct sClass*)));
                     __freed_obj__ = 0;
-                    it2_66=((struct sClass*)(right_value76=(gCallerSName = "./comelang2.h", gCallerSLine = 1400,map$2charphsClassph_at(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1400)),it_59,default_value_62))));
+                    it2_66=((struct sClass*)(right_value76=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1384,map$2charphsClassph_at(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1384)),it_59,default_value_62))));
                     if(right_value76 && right_value76 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sClass_finalize,right_value76, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
-                    hash_67=(gCallerSName = "./comelang2.h", gCallerSLine = 1401,string_get_hash_key(((char*)come_null_check(it_59, "./comelang2.h", 1401))))%size_52;
+                    hash_67=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1385,string_get_hash_key(((char*)come_null_check(it_59, "./comelang2.h", 1385))))%size_52;
                     __freed_obj__ = 0;
                     n_68=hash_67;
                     __freed_obj__ = 0;
@@ -10625,9 +5291,9 @@ memset(&right_value77, 0, sizeof(void*));
                             else {
                                 if(_if_conditional145=n_68==hash_67,                                __freed_obj__ = 0, 
                                 _if_conditional145) {
-                                    (gCallerSName = "./comelang2.h", gCallerSLine = 1413,printf("unexpected error in map.rehash(1)\n"));
+                                    (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1397,printf("unexpected error in map.rehash(1)\n"));
                                     __freed_obj__ = 0;
-                                    (gCallerSName = "./comelang2.h", gCallerSLine = 1414,exit(2));
+                                    (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1398,exit(2));
                                     __freed_obj__ = 0;
                                 }
                                 __freed_obj__ = 0;
@@ -10640,7 +5306,7 @@ memset(&right_value77, 0, sizeof(void*));
                             keys_53[n_68]=it_59;
                             __freed_obj__ = 0;
                             __freed_obj__ = 0;
-                            items_54[n_68]=((struct sClass*)(right_value77=(gCallerSName = "./comelang2.h", gCallerSLine = 1421,map$2charphsClassph_at(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1421)),it_59,default_value_69))));
+                            items_54[n_68]=((struct sClass*)(right_value77=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1405,map$2charphsClassph_at(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1405)),it_59,default_value_69))));
                             if(right_value77 && right_value77 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sClass_finalize,right_value77, (void*)0, (void*)0, 0, 1, 0, 0); }
                             __freed_obj__ = 0;
                             len_56++;
@@ -10653,66 +5319,28 @@ memset(&right_value77, 0, sizeof(void*));
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                (gCallerSName = "./comelang2.h", gCallerSLine = 1429,come_free_object((char*)((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1429))->items));
+                (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1413,come_free_object((char*)((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1413))->items));
                 __freed_obj__ = 0;
-                if(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1430))->item_existance && !__freed_obj__) { ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1430))->item_existance = come_decrement_ref_count(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1430))->item_existance, (void*)0, (void*)0, 0, 0, 0); }
+                if(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1414))->item_existance && !__freed_obj__) { ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1414))->item_existance = come_decrement_ref_count(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1414))->item_existance, (void*)0, (void*)0, 0, 0, 0); }
                 __freed_obj__ = 0;
-                (gCallerSName = "./comelang2.h", gCallerSLine = 1431,come_free_object((char*)((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1431))->keys));
+                (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1415,come_free_object((char*)((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1415))->keys));
                 __freed_obj__ = 0;
-                ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1433))->keys=keys_53;
+                ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1417))->keys=keys_53;
                 __freed_obj__ = 0;
-                ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1434))->items=items_54;
+                ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1418))->items=items_54;
                 __freed_obj__ = 0;
-                ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1435))->item_existance=item_existance_55;
+                ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1419))->item_existance=item_existance_55;
                 __freed_obj__ = 0;
-                ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1437))->size=size_52;
+                ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1421))->size=size_52;
                 __freed_obj__ = 0;
-                ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1438))->len=len_56;
+                ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1422))->len=len_56;
                 __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-}
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static char* map$2charphsClassph_begin(struct map$2charphsClassph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -10728,170 +5356,41 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_57, 0, sizeof(char*));
 memset(&result_58, 0, sizeof(char*));
-                __caller_sname10__ = gCallerSName10;
-                __caller_sname9__ = gCallerSName9;
-                __caller_sname8__ = gCallerSName8;
-                __caller_sname7__ = gCallerSName7;
-                __caller_sname6__ = gCallerSName6;
-                __caller_sname5__ = gCallerSName5;
-                __caller_sname4__ = gCallerSName4;
-                __caller_sname3__ = gCallerSName3;
-                __caller_sname2__ = gCallerSName2;
-                __caller_sname__ = gCallerSName;
-                __caller_sline10__ = gCallerSLine10;
-                __caller_sline9__ = gCallerSLine9;
-                __caller_sline8__ = gCallerSLine8;
-                __caller_sline7__ = gCallerSLine7;
-                __caller_sline6__ = gCallerSLine6;
-                __caller_sline5__ = gCallerSLine5;
-                __caller_sline4__ = gCallerSLine4;
-                __caller_sline3__ = gCallerSLine3;
-                __caller_sline2__ = gCallerSLine2;
-                __caller_sline__ = gCallerSLine;
-                gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                     if(_if_conditional134=self==((void*)0),                    __freed_obj__ = 0, 
                     _if_conditional134) {
                         __freed_obj__ = 0;
-                        (gCallerSName = "./comelang2.h", gCallerSLine = 1354,memset(&result_57,0,sizeof(char*)));
+                        (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1338,memset(&result_57,0,sizeof(char*)));
                         __freed_obj__ = 0;
                         __result56__ = __result_obj__ = result_57;
                         __freed_obj__ = 0;
-                        gCallerSName10 = __caller_sname10__;
-                        gCallerSName9 = __caller_sname9__;
-                        gCallerSName8 = __caller_sname8__;
-                        gCallerSName7 = __caller_sname7__;
-                        gCallerSName6 = __caller_sname6__;
-                        gCallerSName5 = __caller_sname5__;
-                        gCallerSName5 = __caller_sname5__;
-                        gCallerSName4 = __caller_sname4__;
-                        gCallerSName3 = __caller_sname3__;
-                        gCallerSName2 = __caller_sname2__;
-                        gCallerSName = __caller_sname__;
-                        gCallerSLine10 = __caller_sline10__;
-                        gCallerSLine9 = __caller_sline9__;
-                        gCallerSLine8 = __caller_sline8__;
-                        gCallerSLine7 = __caller_sline7__;
-                        gCallerSLine6 = __caller_sline6__;
-                        gCallerSLine5 = __caller_sline5__;
-                        gCallerSLine4 = __caller_sline4__;
-                        gCallerSLine3 = __caller_sline3__;
-                        gCallerSLine2 = __caller_sline2__;
-                        gCallerSLine = __caller_sline__;
-                        return __result56__;
+                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                        return __result56__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
-                    ((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1357))->key_list, "./comelang2.h", 1357))->it=((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1357))->key_list, "./comelang2.h", 1357))->head;
+                    ((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1341))->key_list, "./comelang2.h", 1341))->it=((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1341))->key_list, "./comelang2.h", 1341))->head;
                     __freed_obj__ = 0;
-                    if(_if_conditional135=((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1363))->key_list, "./comelang2.h", 1363))->it,                    __freed_obj__ = 0, 
+                    if(_if_conditional135=((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1347))->key_list, "./comelang2.h", 1347))->it,                    __freed_obj__ = 0, 
                     _if_conditional135) {
-                        __result57__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1360))->key_list, "./comelang2.h", 1360))->it, "./comelang2.h", 1360))->item;
+                        __result57__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1344))->key_list, "./comelang2.h", 1344))->it, "./comelang2.h", 1344))->item;
                         __freed_obj__ = 0;
-                        gCallerSName10 = __caller_sname10__;
-                        gCallerSName9 = __caller_sname9__;
-                        gCallerSName8 = __caller_sname8__;
-                        gCallerSName7 = __caller_sname7__;
-                        gCallerSName6 = __caller_sname6__;
-                        gCallerSName5 = __caller_sname5__;
-                        gCallerSName5 = __caller_sname5__;
-                        gCallerSName4 = __caller_sname4__;
-                        gCallerSName3 = __caller_sname3__;
-                        gCallerSName2 = __caller_sname2__;
-                        gCallerSName = __caller_sname__;
-                        gCallerSLine10 = __caller_sline10__;
-                        gCallerSLine9 = __caller_sline9__;
-                        gCallerSLine8 = __caller_sline8__;
-                        gCallerSLine7 = __caller_sline7__;
-                        gCallerSLine6 = __caller_sline6__;
-                        gCallerSLine5 = __caller_sline5__;
-                        gCallerSLine4 = __caller_sline4__;
-                        gCallerSLine3 = __caller_sline3__;
-                        gCallerSLine2 = __caller_sline2__;
-                        gCallerSLine = __caller_sline__;
-                        return __result57__;
+                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                        return __result57__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
                     __freed_obj__ = 0;
-                    (gCallerSName = "./comelang2.h", gCallerSLine = 1364,memset(&result_58,0,sizeof(char*)));
+                    (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1348,memset(&result_58,0,sizeof(char*)));
                     __freed_obj__ = 0;
                     __result58__ = __result_obj__ = result_58;
                     __freed_obj__ = 0;
-                    gCallerSName10 = __caller_sname10__;
-                    gCallerSName9 = __caller_sname9__;
-                    gCallerSName8 = __caller_sname8__;
-                    gCallerSName7 = __caller_sname7__;
-                    gCallerSName6 = __caller_sname6__;
-                    gCallerSName5 = __caller_sname5__;
-                    gCallerSName5 = __caller_sname5__;
-                    gCallerSName4 = __caller_sname4__;
-                    gCallerSName3 = __caller_sname3__;
-                    gCallerSName2 = __caller_sname2__;
-                    gCallerSName = __caller_sname__;
-                    gCallerSLine10 = __caller_sline10__;
-                    gCallerSLine9 = __caller_sline9__;
-                    gCallerSLine8 = __caller_sline8__;
-                    gCallerSLine7 = __caller_sline7__;
-                    gCallerSLine6 = __caller_sline6__;
-                    gCallerSLine5 = __caller_sline5__;
-                    gCallerSLine4 = __caller_sline4__;
-                    gCallerSLine3 = __caller_sline3__;
-                    gCallerSLine2 = __caller_sline2__;
-                    gCallerSLine = __caller_sline__;
-                    return __result58__;
+                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                    return __result58__;
                     __freed_obj__ = 0;
-                gCallerSName10 = __caller_sname10__;
-                gCallerSName9 = __caller_sname9__;
-                gCallerSName8 = __caller_sname8__;
-                gCallerSName7 = __caller_sname7__;
-                gCallerSName6 = __caller_sname6__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName4 = __caller_sname4__;
-                gCallerSName3 = __caller_sname3__;
-                gCallerSName2 = __caller_sname2__;
-                gCallerSName = __caller_sname__;
-                gCallerSLine10 = __caller_sline10__;
-                gCallerSLine9 = __caller_sline9__;
-                gCallerSLine8 = __caller_sline8__;
-                gCallerSLine7 = __caller_sline7__;
-                gCallerSLine6 = __caller_sline6__;
-                gCallerSLine5 = __caller_sline5__;
-                gCallerSLine4 = __caller_sline4__;
-                gCallerSLine3 = __caller_sline3__;
-                gCallerSLine2 = __caller_sline2__;
-                gCallerSLine = __caller_sline__;
-}
+                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static _Bool map$2charphsClassph_end(struct map$2charphsClassph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -10899,104 +5398,17 @@ _Bool __freed_obj__;
 _Bool __result59__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                __caller_sname10__ = gCallerSName10;
-                __caller_sname9__ = gCallerSName9;
-                __caller_sname8__ = gCallerSName8;
-                __caller_sname7__ = gCallerSName7;
-                __caller_sname6__ = gCallerSName6;
-                __caller_sname5__ = gCallerSName5;
-                __caller_sname4__ = gCallerSName4;
-                __caller_sname3__ = gCallerSName3;
-                __caller_sname2__ = gCallerSName2;
-                __caller_sname__ = gCallerSName;
-                __caller_sline10__ = gCallerSLine10;
-                __caller_sline9__ = gCallerSLine9;
-                __caller_sline8__ = gCallerSLine8;
-                __caller_sline7__ = gCallerSLine7;
-                __caller_sline6__ = gCallerSLine6;
-                __caller_sline5__ = gCallerSLine5;
-                __caller_sline4__ = gCallerSLine4;
-                __caller_sline3__ = gCallerSLine3;
-                __caller_sline2__ = gCallerSLine2;
-                __caller_sline__ = gCallerSLine;
-                gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                    __result59__ = self==((void*)0)||((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1386))->key_list==((void*)0)||((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1386))->key_list, "./comelang2.h", 1386))->it==((void*)0);
+                memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                    __result59__ = self==((void*)0)||((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1370))->key_list==((void*)0)||((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1370))->key_list, "./comelang2.h", 1370))->it==((void*)0);
                     __freed_obj__ = 0;
-                    gCallerSName10 = __caller_sname10__;
-                    gCallerSName9 = __caller_sname9__;
-                    gCallerSName8 = __caller_sname8__;
-                    gCallerSName7 = __caller_sname7__;
-                    gCallerSName6 = __caller_sname6__;
-                    gCallerSName5 = __caller_sname5__;
-                    gCallerSName5 = __caller_sname5__;
-                    gCallerSName4 = __caller_sname4__;
-                    gCallerSName3 = __caller_sname3__;
-                    gCallerSName2 = __caller_sname2__;
-                    gCallerSName = __caller_sname__;
-                    gCallerSLine10 = __caller_sline10__;
-                    gCallerSLine9 = __caller_sline9__;
-                    gCallerSLine8 = __caller_sline8__;
-                    gCallerSLine7 = __caller_sline7__;
-                    gCallerSLine6 = __caller_sline6__;
-                    gCallerSLine5 = __caller_sline5__;
-                    gCallerSLine4 = __caller_sline4__;
-                    gCallerSLine3 = __caller_sline3__;
-                    gCallerSLine2 = __caller_sline2__;
-                    gCallerSLine = __caller_sline__;
-                    return __result59__;
+                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                    return __result59__;
                     __freed_obj__ = 0;
-                gCallerSName10 = __caller_sname10__;
-                gCallerSName9 = __caller_sname9__;
-                gCallerSName8 = __caller_sname8__;
-                gCallerSName7 = __caller_sname7__;
-                gCallerSName6 = __caller_sname6__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName4 = __caller_sname4__;
-                gCallerSName3 = __caller_sname3__;
-                gCallerSName2 = __caller_sname2__;
-                gCallerSName = __caller_sname__;
-                gCallerSLine10 = __caller_sline10__;
-                gCallerSLine9 = __caller_sline9__;
-                gCallerSLine8 = __caller_sline8__;
-                gCallerSLine7 = __caller_sline7__;
-                gCallerSLine6 = __caller_sline6__;
-                gCallerSLine5 = __caller_sline5__;
-                gCallerSLine4 = __caller_sline4__;
-                gCallerSLine3 = __caller_sline3__;
-                gCallerSLine2 = __caller_sline2__;
-                gCallerSLine = __caller_sline__;
-}
+                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static char* map$2charphsClassph_next(struct map$2charphsClassph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -11012,170 +5424,41 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_60, 0, sizeof(char*));
 memset(&result_61, 0, sizeof(char*));
-                __caller_sname10__ = gCallerSName10;
-                __caller_sname9__ = gCallerSName9;
-                __caller_sname8__ = gCallerSName8;
-                __caller_sname7__ = gCallerSName7;
-                __caller_sname6__ = gCallerSName6;
-                __caller_sname5__ = gCallerSName5;
-                __caller_sname4__ = gCallerSName4;
-                __caller_sname3__ = gCallerSName3;
-                __caller_sname2__ = gCallerSName2;
-                __caller_sname__ = gCallerSName;
-                __caller_sline10__ = gCallerSLine10;
-                __caller_sline9__ = gCallerSLine9;
-                __caller_sline8__ = gCallerSLine8;
-                __caller_sline7__ = gCallerSLine7;
-                __caller_sline6__ = gCallerSLine6;
-                __caller_sline5__ = gCallerSLine5;
-                __caller_sline4__ = gCallerSLine4;
-                __caller_sline3__ = gCallerSLine3;
-                __caller_sline2__ = gCallerSLine2;
-                __caller_sline__ = gCallerSLine;
-                gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                     if(_if_conditional136=self==((void*)0),                    __freed_obj__ = 0, 
                     _if_conditional136) {
                         __freed_obj__ = 0;
-                        (gCallerSName = "./comelang2.h", gCallerSLine = 1371,memset(&result_60,0,sizeof(char*)));
+                        (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1355,memset(&result_60,0,sizeof(char*)));
                         __freed_obj__ = 0;
                         __result60__ = __result_obj__ = result_60;
                         __freed_obj__ = 0;
-                        gCallerSName10 = __caller_sname10__;
-                        gCallerSName9 = __caller_sname9__;
-                        gCallerSName8 = __caller_sname8__;
-                        gCallerSName7 = __caller_sname7__;
-                        gCallerSName6 = __caller_sname6__;
-                        gCallerSName5 = __caller_sname5__;
-                        gCallerSName5 = __caller_sname5__;
-                        gCallerSName4 = __caller_sname4__;
-                        gCallerSName3 = __caller_sname3__;
-                        gCallerSName2 = __caller_sname2__;
-                        gCallerSName = __caller_sname__;
-                        gCallerSLine10 = __caller_sline10__;
-                        gCallerSLine9 = __caller_sline9__;
-                        gCallerSLine8 = __caller_sline8__;
-                        gCallerSLine7 = __caller_sline7__;
-                        gCallerSLine6 = __caller_sline6__;
-                        gCallerSLine5 = __caller_sline5__;
-                        gCallerSLine4 = __caller_sline4__;
-                        gCallerSLine3 = __caller_sline3__;
-                        gCallerSLine2 = __caller_sline2__;
-                        gCallerSLine = __caller_sline__;
-                        return __result60__;
+                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                        return __result60__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
-                    ((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1374))->key_list, "./comelang2.h", 1374))->it=((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1374))->key_list, "./comelang2.h", 1374))->it, "./comelang2.h", 1374))->next;
+                    ((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1358))->key_list, "./comelang2.h", 1358))->it=((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1358))->key_list, "./comelang2.h", 1358))->it, "./comelang2.h", 1358))->next;
                     __freed_obj__ = 0;
-                    if(_if_conditional137=((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1380))->key_list, "./comelang2.h", 1380))->it,                    __freed_obj__ = 0, 
+                    if(_if_conditional137=((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1364))->key_list, "./comelang2.h", 1364))->it,                    __freed_obj__ = 0, 
                     _if_conditional137) {
-                        __result61__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1377))->key_list, "./comelang2.h", 1377))->it, "./comelang2.h", 1377))->item;
+                        __result61__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1361))->key_list, "./comelang2.h", 1361))->it, "./comelang2.h", 1361))->item;
                         __freed_obj__ = 0;
-                        gCallerSName10 = __caller_sname10__;
-                        gCallerSName9 = __caller_sname9__;
-                        gCallerSName8 = __caller_sname8__;
-                        gCallerSName7 = __caller_sname7__;
-                        gCallerSName6 = __caller_sname6__;
-                        gCallerSName5 = __caller_sname5__;
-                        gCallerSName5 = __caller_sname5__;
-                        gCallerSName4 = __caller_sname4__;
-                        gCallerSName3 = __caller_sname3__;
-                        gCallerSName2 = __caller_sname2__;
-                        gCallerSName = __caller_sname__;
-                        gCallerSLine10 = __caller_sline10__;
-                        gCallerSLine9 = __caller_sline9__;
-                        gCallerSLine8 = __caller_sline8__;
-                        gCallerSLine7 = __caller_sline7__;
-                        gCallerSLine6 = __caller_sline6__;
-                        gCallerSLine5 = __caller_sline5__;
-                        gCallerSLine4 = __caller_sline4__;
-                        gCallerSLine3 = __caller_sline3__;
-                        gCallerSLine2 = __caller_sline2__;
-                        gCallerSLine = __caller_sline__;
-                        return __result61__;
+                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                        return __result61__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
                     __freed_obj__ = 0;
-                    (gCallerSName = "./comelang2.h", gCallerSLine = 1381,memset(&result_61,0,sizeof(char*)));
+                    (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1365,memset(&result_61,0,sizeof(char*)));
                     __freed_obj__ = 0;
                     __result62__ = __result_obj__ = result_61;
                     __freed_obj__ = 0;
-                    gCallerSName10 = __caller_sname10__;
-                    gCallerSName9 = __caller_sname9__;
-                    gCallerSName8 = __caller_sname8__;
-                    gCallerSName7 = __caller_sname7__;
-                    gCallerSName6 = __caller_sname6__;
-                    gCallerSName5 = __caller_sname5__;
-                    gCallerSName5 = __caller_sname5__;
-                    gCallerSName4 = __caller_sname4__;
-                    gCallerSName3 = __caller_sname3__;
-                    gCallerSName2 = __caller_sname2__;
-                    gCallerSName = __caller_sname__;
-                    gCallerSLine10 = __caller_sline10__;
-                    gCallerSLine9 = __caller_sline9__;
-                    gCallerSLine8 = __caller_sline8__;
-                    gCallerSLine7 = __caller_sline7__;
-                    gCallerSLine6 = __caller_sline6__;
-                    gCallerSLine5 = __caller_sline5__;
-                    gCallerSLine4 = __caller_sline4__;
-                    gCallerSLine3 = __caller_sline3__;
-                    gCallerSLine2 = __caller_sline2__;
-                    gCallerSLine = __caller_sline__;
-                    return __result62__;
+                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                    return __result62__;
                     __freed_obj__ = 0;
-                gCallerSName10 = __caller_sname10__;
-                gCallerSName9 = __caller_sname9__;
-                gCallerSName8 = __caller_sname8__;
-                gCallerSName7 = __caller_sname7__;
-                gCallerSName6 = __caller_sname6__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName4 = __caller_sname4__;
-                gCallerSName3 = __caller_sname3__;
-                gCallerSName2 = __caller_sname2__;
-                gCallerSName = __caller_sname__;
-                gCallerSLine10 = __caller_sline10__;
-                gCallerSLine9 = __caller_sline9__;
-                gCallerSLine8 = __caller_sline8__;
-                gCallerSLine7 = __caller_sline7__;
-                gCallerSLine6 = __caller_sline6__;
-                gCallerSLine5 = __caller_sline5__;
-                gCallerSLine4 = __caller_sline4__;
-                gCallerSLine3 = __caller_sline3__;
-                gCallerSLine2 = __caller_sline2__;
-                gCallerSLine = __caller_sline__;
-}
+                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct sClass* map$2charphsClassph_at(struct map$2charphsClassph* self, char* key, struct sClass* default_value){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -11198,76 +5481,27 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&hash_63, 0, sizeof(unsigned int));
 memset(&it_64, 0, sizeof(unsigned int));
 memset(&right_value75, 0, sizeof(void*));
-                    __caller_sname10__ = gCallerSName10;
-                    __caller_sname9__ = gCallerSName9;
-                    __caller_sname8__ = gCallerSName8;
-                    __caller_sname7__ = gCallerSName7;
-                    __caller_sname6__ = gCallerSName6;
-                    __caller_sname5__ = gCallerSName5;
-                    __caller_sname4__ = gCallerSName4;
-                    __caller_sname3__ = gCallerSName3;
-                    __caller_sname2__ = gCallerSName2;
-                    __caller_sname__ = gCallerSName;
-                    __caller_sline10__ = gCallerSLine10;
-                    __caller_sline9__ = gCallerSLine9;
-                    __caller_sline8__ = gCallerSLine8;
-                    __caller_sline7__ = gCallerSLine7;
-                    __caller_sline6__ = gCallerSLine6;
-                    __caller_sline5__ = gCallerSLine5;
-                    __caller_sline4__ = gCallerSLine4;
-                    __caller_sline3__ = gCallerSLine3;
-                    __caller_sline2__ = gCallerSLine2;
-                    __caller_sline__ = gCallerSLine;
-                    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                        hash_63=(gCallerSName = "./comelang2.h", gCallerSLine = 1279,string_get_hash_key(((char*)come_null_check(((char*)key), "./comelang2.h", 1279))))%((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1279))->size;
+                    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                        hash_63=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1263,string_get_hash_key(((char*)come_null_check(((char*)key), "./comelang2.h", 1263))))%((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1263))->size;
                         __freed_obj__ = 0;
                         it_64=hash_63;
                         __freed_obj__ = 0;
                         while(_while_condtional9=(_Bool)1,                        __freed_obj__ = 0, 
                         _while_condtional9) {
-                            if(_if_conditional138=((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1302))->item_existance[it_64],                            __freed_obj__ = 0, 
+                            if(_if_conditional138=((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1286))->item_existance[it_64],                            __freed_obj__ = 0, 
                             _if_conditional138) {
-                                if(_if_conditional140=optional$2boolbool_value((come_clear_stackframe(), come_push_stackframe("./comelang2.h", 1290),__exception_result_var_a1=((struct optional$2boolbool*)(right_value75=(gCallerSName = "./comelang2.h", gCallerSLine = 1290,string_equals(((char*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1290))->keys[it_64], "./comelang2.h", 1290)),key)))), come_pop_stackframe(), __exception_result_var_a1)),                                (right_value75 && right_value75 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value75, (void*)0, (void*)0, 0, 1, 0, 0):0,
+                                if(_if_conditional140=optional$2boolbool_value((come_clear_stackframe(), come_push_stackframe("./comelang2.h", 1274),__exception_result_var_a1=((struct optional$2boolbool*)(right_value75=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1274,string_equals(((char*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1274))->keys[it_64], "./comelang2.h", 1274)),key)))), come_pop_stackframe(), __exception_result_var_a1)),                                (right_value75 && right_value75 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value75, (void*)0, (void*)0, 0, 1, 0, 0):0,
                                 __freed_obj__ = 0, 
                                 _if_conditional140) {
-                                    __result65__ = __result_obj__ = ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1287))->items[it_64];
+                                    __result65__ = __result_obj__ = ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1271))->items[it_64];
                                     __freed_obj__ = 0;
-                                    gCallerSName10 = __caller_sname10__;
-                                    gCallerSName9 = __caller_sname9__;
-                                    gCallerSName8 = __caller_sname8__;
-                                    gCallerSName7 = __caller_sname7__;
-                                    gCallerSName6 = __caller_sname6__;
-                                    gCallerSName5 = __caller_sname5__;
-                                    gCallerSName5 = __caller_sname5__;
-                                    gCallerSName4 = __caller_sname4__;
-                                    gCallerSName3 = __caller_sname3__;
-                                    gCallerSName2 = __caller_sname2__;
-                                    gCallerSName = __caller_sname__;
-                                    gCallerSLine10 = __caller_sline10__;
-                                    gCallerSLine9 = __caller_sline9__;
-                                    gCallerSLine8 = __caller_sline8__;
-                                    gCallerSLine7 = __caller_sline7__;
-                                    gCallerSLine6 = __caller_sline6__;
-                                    gCallerSLine5 = __caller_sline5__;
-                                    gCallerSLine4 = __caller_sline4__;
-                                    gCallerSLine3 = __caller_sline3__;
-                                    gCallerSLine2 = __caller_sline2__;
-                                    gCallerSLine = __caller_sline__;
-                                    return __result65__;
+                                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                    return __result65__;
                                     __freed_obj__ = 0;
                                 }
                                 __freed_obj__ = 0;
                                 it_64++;
                                 __freed_obj__ = 0;
-                                if(_if_conditional141=it_64>=((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1298))->size,                                __freed_obj__ = 0, 
+                                if(_if_conditional141=it_64>=((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1282))->size,                                __freed_obj__ = 0, 
                                 _if_conditional141) {
                                     it_64=0;
                                     __freed_obj__ = 0;
@@ -11277,28 +5511,7 @@ memset(&right_value75, 0, sizeof(void*));
                                     _if_conditional142) {
                                         __result66__ = __result_obj__ = default_value;
                                         __freed_obj__ = 0;
-                                        gCallerSName10 = __caller_sname10__;
-                                        gCallerSName9 = __caller_sname9__;
-                                        gCallerSName8 = __caller_sname8__;
-                                        gCallerSName7 = __caller_sname7__;
-                                        gCallerSName6 = __caller_sname6__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName4 = __caller_sname4__;
-                                        gCallerSName3 = __caller_sname3__;
-                                        gCallerSName2 = __caller_sname2__;
-                                        gCallerSName = __caller_sname__;
-                                        gCallerSLine10 = __caller_sline10__;
-                                        gCallerSLine9 = __caller_sline9__;
-                                        gCallerSLine8 = __caller_sline8__;
-                                        gCallerSLine7 = __caller_sline7__;
-                                        gCallerSLine6 = __caller_sline6__;
-                                        gCallerSLine5 = __caller_sline5__;
-                                        gCallerSLine4 = __caller_sline4__;
-                                        gCallerSLine3 = __caller_sline3__;
-                                        gCallerSLine2 = __caller_sline2__;
-                                        gCallerSLine = __caller_sline__;
-                                        return __result66__;
+                                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                        return __result66__;
                                         __freed_obj__ = 0;
                                     }
                                     __freed_obj__ = 0;
@@ -11308,28 +5521,7 @@ memset(&right_value75, 0, sizeof(void*));
                             else {
                                 __result67__ = __result_obj__ = default_value;
                                 __freed_obj__ = 0;
-                                gCallerSName10 = __caller_sname10__;
-                                gCallerSName9 = __caller_sname9__;
-                                gCallerSName8 = __caller_sname8__;
-                                gCallerSName7 = __caller_sname7__;
-                                gCallerSName6 = __caller_sname6__;
-                                gCallerSName5 = __caller_sname5__;
-                                gCallerSName5 = __caller_sname5__;
-                                gCallerSName4 = __caller_sname4__;
-                                gCallerSName3 = __caller_sname3__;
-                                gCallerSName2 = __caller_sname2__;
-                                gCallerSName = __caller_sname__;
-                                gCallerSLine10 = __caller_sline10__;
-                                gCallerSLine9 = __caller_sline9__;
-                                gCallerSLine8 = __caller_sline8__;
-                                gCallerSLine7 = __caller_sline7__;
-                                gCallerSLine6 = __caller_sline6__;
-                                gCallerSLine5 = __caller_sline5__;
-                                gCallerSLine4 = __caller_sline4__;
-                                gCallerSLine3 = __caller_sline3__;
-                                gCallerSLine2 = __caller_sline2__;
-                                gCallerSLine = __caller_sline__;
-                                return __result67__;
+                                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                return __result67__;
                                 __freed_obj__ = 0;
                             }
                             __freed_obj__ = 0;
@@ -11337,73 +5529,14 @@ memset(&right_value75, 0, sizeof(void*));
                         __freed_obj__ = 0;
                         __result68__ = __result_obj__ = default_value;
                         __freed_obj__ = 0;
-                        gCallerSName10 = __caller_sname10__;
-                        gCallerSName9 = __caller_sname9__;
-                        gCallerSName8 = __caller_sname8__;
-                        gCallerSName7 = __caller_sname7__;
-                        gCallerSName6 = __caller_sname6__;
-                        gCallerSName5 = __caller_sname5__;
-                        gCallerSName5 = __caller_sname5__;
-                        gCallerSName4 = __caller_sname4__;
-                        gCallerSName3 = __caller_sname3__;
-                        gCallerSName2 = __caller_sname2__;
-                        gCallerSName = __caller_sname__;
-                        gCallerSLine10 = __caller_sline10__;
-                        gCallerSLine9 = __caller_sline9__;
-                        gCallerSLine8 = __caller_sline8__;
-                        gCallerSLine7 = __caller_sline7__;
-                        gCallerSLine6 = __caller_sline6__;
-                        gCallerSLine5 = __caller_sline5__;
-                        gCallerSLine4 = __caller_sline4__;
-                        gCallerSLine3 = __caller_sline3__;
-                        gCallerSLine2 = __caller_sline2__;
-                        gCallerSLine = __caller_sline__;
-                        return __result68__;
+                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                        return __result68__;
                         __freed_obj__ = 0;
-                    gCallerSName10 = __caller_sname10__;
-                    gCallerSName9 = __caller_sname9__;
-                    gCallerSName8 = __caller_sname8__;
-                    gCallerSName7 = __caller_sname7__;
-                    gCallerSName6 = __caller_sname6__;
-                    gCallerSName5 = __caller_sname5__;
-                    gCallerSName5 = __caller_sname5__;
-                    gCallerSName4 = __caller_sname4__;
-                    gCallerSName3 = __caller_sname3__;
-                    gCallerSName2 = __caller_sname2__;
-                    gCallerSName = __caller_sname__;
-                    gCallerSLine10 = __caller_sline10__;
-                    gCallerSLine9 = __caller_sline9__;
-                    gCallerSLine8 = __caller_sline8__;
-                    gCallerSLine7 = __caller_sline7__;
-                    gCallerSLine6 = __caller_sline6__;
-                    gCallerSLine5 = __caller_sline5__;
-                    gCallerSLine4 = __caller_sline4__;
-                    gCallerSLine3 = __caller_sline3__;
-                    gCallerSLine2 = __caller_sline2__;
-                    gCallerSLine = __caller_sline__;
-}
+                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static _Bool optional$2boolbool_value(struct optional$2boolbool* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -11415,217 +5548,43 @@ _Bool __result64__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&default_value_65, 0, sizeof(_Bool));
-                                __caller_sname10__ = gCallerSName10;
-                                __caller_sname9__ = gCallerSName9;
-                                __caller_sname8__ = gCallerSName8;
-                                __caller_sname7__ = gCallerSName7;
-                                __caller_sname6__ = gCallerSName6;
-                                __caller_sname5__ = gCallerSName5;
-                                __caller_sname4__ = gCallerSName4;
-                                __caller_sname3__ = gCallerSName3;
-                                __caller_sname2__ = gCallerSName2;
-                                __caller_sname__ = gCallerSName;
-                                __caller_sline10__ = gCallerSLine10;
-                                __caller_sline9__ = gCallerSLine9;
-                                __caller_sline8__ = gCallerSLine8;
-                                __caller_sline7__ = gCallerSLine7;
-                                __caller_sline6__ = gCallerSLine6;
-                                __caller_sline5__ = gCallerSLine5;
-                                __caller_sline4__ = gCallerSLine4;
-                                __caller_sline3__ = gCallerSLine3;
-                                __caller_sline2__ = gCallerSLine2;
-                                __caller_sline__ = gCallerSLine;
-                                gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                                memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                                     if(_if_conditional139=self==((void*)0),                                    __freed_obj__ = 0, 
                                     _if_conditional139) {
                                         __freed_obj__ = 0;
-                                        (gCallerSName = "./comelang2.h", gCallerSLine = 61,memset(&default_value_65,0,sizeof(_Bool)));
+                                        (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 61,memset(&default_value_65,0,sizeof(_Bool)));
                                         __freed_obj__ = 0;
                                         __result63__ = default_value_65;
                                         __freed_obj__ = 0;
-                                        gCallerSName10 = __caller_sname10__;
-                                        gCallerSName9 = __caller_sname9__;
-                                        gCallerSName8 = __caller_sname8__;
-                                        gCallerSName7 = __caller_sname7__;
-                                        gCallerSName6 = __caller_sname6__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName4 = __caller_sname4__;
-                                        gCallerSName3 = __caller_sname3__;
-                                        gCallerSName2 = __caller_sname2__;
-                                        gCallerSName = __caller_sname__;
-                                        gCallerSLine10 = __caller_sline10__;
-                                        gCallerSLine9 = __caller_sline9__;
-                                        gCallerSLine8 = __caller_sline8__;
-                                        gCallerSLine7 = __caller_sline7__;
-                                        gCallerSLine6 = __caller_sline6__;
-                                        gCallerSLine5 = __caller_sline5__;
-                                        gCallerSLine4 = __caller_sline4__;
-                                        gCallerSLine3 = __caller_sline3__;
-                                        gCallerSLine2 = __caller_sline2__;
-                                        gCallerSLine = __caller_sline__;
-                                        return __result63__;
+                                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                        return __result63__;
                                         __freed_obj__ = 0;
                                     }
                                     else {
                                         __result64__ = ((struct optional$2boolbool*)come_null_check(self, "./comelang2.h", 65))->v1;
                                         __freed_obj__ = 0;
-                                        gCallerSName10 = __caller_sname10__;
-                                        gCallerSName9 = __caller_sname9__;
-                                        gCallerSName8 = __caller_sname8__;
-                                        gCallerSName7 = __caller_sname7__;
-                                        gCallerSName6 = __caller_sname6__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName4 = __caller_sname4__;
-                                        gCallerSName3 = __caller_sname3__;
-                                        gCallerSName2 = __caller_sname2__;
-                                        gCallerSName = __caller_sname__;
-                                        gCallerSLine10 = __caller_sline10__;
-                                        gCallerSLine9 = __caller_sline9__;
-                                        gCallerSLine8 = __caller_sline8__;
-                                        gCallerSLine7 = __caller_sline7__;
-                                        gCallerSLine6 = __caller_sline6__;
-                                        gCallerSLine5 = __caller_sline5__;
-                                        gCallerSLine4 = __caller_sline4__;
-                                        gCallerSLine3 = __caller_sline3__;
-                                        gCallerSLine2 = __caller_sline2__;
-                                        gCallerSLine = __caller_sline__;
-                                        return __result64__;
+                                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                        return __result64__;
                                         __freed_obj__ = 0;
                                     }
                                     __freed_obj__ = 0;
-                                gCallerSName10 = __caller_sname10__;
-                                gCallerSName9 = __caller_sname9__;
-                                gCallerSName8 = __caller_sname8__;
-                                gCallerSName7 = __caller_sname7__;
-                                gCallerSName6 = __caller_sname6__;
-                                gCallerSName5 = __caller_sname5__;
-                                gCallerSName5 = __caller_sname5__;
-                                gCallerSName4 = __caller_sname4__;
-                                gCallerSName3 = __caller_sname3__;
-                                gCallerSName2 = __caller_sname2__;
-                                gCallerSName = __caller_sname__;
-                                gCallerSLine10 = __caller_sline10__;
-                                gCallerSLine9 = __caller_sline9__;
-                                gCallerSLine8 = __caller_sline8__;
-                                gCallerSLine7 = __caller_sline7__;
-                                gCallerSLine6 = __caller_sline6__;
-                                gCallerSLine5 = __caller_sline5__;
-                                gCallerSLine4 = __caller_sline4__;
-                                gCallerSLine3 = __caller_sline3__;
-                                gCallerSLine2 = __caller_sline2__;
-                                gCallerSLine = __caller_sline__;
-}
+                                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void optional$2boolboolp_finalize(struct optional$2boolbool* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                                __caller_sname10__ = gCallerSName10;
-                                __caller_sname9__ = gCallerSName9;
-                                __caller_sname8__ = gCallerSName8;
-                                __caller_sname7__ = gCallerSName7;
-                                __caller_sname6__ = gCallerSName6;
-                                __caller_sname5__ = gCallerSName5;
-                                __caller_sname4__ = gCallerSName4;
-                                __caller_sname3__ = gCallerSName3;
-                                __caller_sname2__ = gCallerSName2;
-                                __caller_sname__ = gCallerSName;
-                                __caller_sline10__ = gCallerSLine10;
-                                __caller_sline9__ = gCallerSLine9;
-                                __caller_sline8__ = gCallerSLine8;
-                                __caller_sline7__ = gCallerSLine7;
-                                __caller_sline6__ = gCallerSLine6;
-                                __caller_sline5__ = gCallerSLine5;
-                                __caller_sline4__ = gCallerSLine4;
-                                __caller_sline3__ = gCallerSLine3;
-                                __caller_sline2__ = gCallerSLine2;
-                                __caller_sline__ = gCallerSLine;
-                                gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                                gCallerSName10 = __caller_sname10__;
-                                gCallerSName9 = __caller_sname9__;
-                                gCallerSName8 = __caller_sname8__;
-                                gCallerSName7 = __caller_sname7__;
-                                gCallerSName6 = __caller_sname6__;
-                                gCallerSName5 = __caller_sname5__;
-                                gCallerSName5 = __caller_sname5__;
-                                gCallerSName4 = __caller_sname4__;
-                                gCallerSName3 = __caller_sname3__;
-                                gCallerSName2 = __caller_sname2__;
-                                gCallerSName = __caller_sname__;
-                                gCallerSLine10 = __caller_sline10__;
-                                gCallerSLine9 = __caller_sline9__;
-                                gCallerSLine8 = __caller_sline8__;
-                                gCallerSLine7 = __caller_sline7__;
-                                gCallerSLine6 = __caller_sline6__;
-                                gCallerSLine5 = __caller_sline5__;
-                                gCallerSLine4 = __caller_sline4__;
-                                gCallerSLine3 = __caller_sline3__;
-                                gCallerSLine2 = __caller_sline2__;
-                                gCallerSLine = __caller_sline__;
-}
+                                memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1charp* list$1charp_remove(struct list$1charp* self, char* item){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -11642,45 +5601,17 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&it2_72, 0, sizeof(int));
 memset(&it_73, 0, sizeof(struct list_item$1charp*));
 memset(&right_value79, 0, sizeof(void*));
-                        __caller_sname10__ = gCallerSName10;
-                        __caller_sname9__ = gCallerSName9;
-                        __caller_sname8__ = gCallerSName8;
-                        __caller_sname7__ = gCallerSName7;
-                        __caller_sname6__ = gCallerSName6;
-                        __caller_sname5__ = gCallerSName5;
-                        __caller_sname4__ = gCallerSName4;
-                        __caller_sname3__ = gCallerSName3;
-                        __caller_sname2__ = gCallerSName2;
-                        __caller_sname__ = gCallerSName;
-                        __caller_sline10__ = gCallerSLine10;
-                        __caller_sline9__ = gCallerSLine9;
-                        __caller_sline8__ = gCallerSLine8;
-                        __caller_sline7__ = gCallerSLine7;
-                        __caller_sline6__ = gCallerSLine6;
-                        __caller_sline5__ = gCallerSLine5;
-                        __caller_sline4__ = gCallerSLine4;
-                        __caller_sline3__ = gCallerSLine3;
-                        __caller_sline2__ = gCallerSLine2;
-                        __caller_sline__ = gCallerSLine;
-                        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                             it2_72=0;
                             __freed_obj__ = 0;
-                            it_73=((struct list$1charp*)come_null_check(self, "./comelang2.h", 513))->head;
+                            it_73=((struct list$1charp*)come_null_check(self, "./comelang2.h", 497))->head;
                             __freed_obj__ = 0;
                             while(_while_condtional12=it_73!=((void*)0),                            __freed_obj__ = 0, 
                             _while_condtional12) {
-                                if(_if_conditional149=optional$2boolbool_value((come_clear_stackframe(), come_push_stackframe("./comelang2.h", 519),__exception_result_var_a3=((struct optional$2boolbool*)(right_value79=(gCallerSName = "./comelang2.h", gCallerSLine = 519,string_equals(((char*)come_null_check(((struct list_item$1charp*)come_null_check(it_73, "./comelang2.h", 519))->item, "./comelang2.h", 519)),item)))), come_pop_stackframe(), __exception_result_var_a3)),                                (right_value79 && right_value79 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value79, (void*)0, (void*)0, 0, 1, 0, 0):0,
+                                if(_if_conditional149=optional$2boolbool_value((come_clear_stackframe(), come_push_stackframe("./comelang2.h", 503),__exception_result_var_a3=((struct optional$2boolbool*)(right_value79=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 503,string_equals(((char*)come_null_check(((struct list_item$1charp*)come_null_check(it_73, "./comelang2.h", 503))->item, "./comelang2.h", 503)),item)))), come_pop_stackframe(), __exception_result_var_a3)),                                (right_value79 && right_value79 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value79, (void*)0, (void*)0, 0, 1, 0, 0):0,
                                 __freed_obj__ = 0, 
                                 _if_conditional149) {
-                                    (gCallerSName = "./comelang2.h", gCallerSLine = 516,list$1charp_delete(((struct list$1charp*)come_null_check(self, "./comelang2.h", 516)),it2_72,it2_72+1));
+                                    (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 500,list$1charp_delete(((struct list$1charp*)come_null_check(self, "./comelang2.h", 500)),it2_72,it2_72+1));
                                     __freed_obj__ = 0;
                                     break;
                                     __freed_obj__ = 0;
@@ -11688,79 +5619,20 @@ memset(&right_value79, 0, sizeof(void*));
                                 __freed_obj__ = 0;
                                 it2_72++;
                                 __freed_obj__ = 0;
-                                it_73=((struct list_item$1charp*)come_null_check(it_73, "./comelang2.h", 521))->next;
+                                it_73=((struct list_item$1charp*)come_null_check(it_73, "./comelang2.h", 505))->next;
                                 __freed_obj__ = 0;
                             }
                             __freed_obj__ = 0;
                             __result72__ = __result_obj__ = self;
                             __freed_obj__ = 0;
-                            gCallerSName10 = __caller_sname10__;
-                            gCallerSName9 = __caller_sname9__;
-                            gCallerSName8 = __caller_sname8__;
-                            gCallerSName7 = __caller_sname7__;
-                            gCallerSName6 = __caller_sname6__;
-                            gCallerSName5 = __caller_sname5__;
-                            gCallerSName5 = __caller_sname5__;
-                            gCallerSName4 = __caller_sname4__;
-                            gCallerSName3 = __caller_sname3__;
-                            gCallerSName2 = __caller_sname2__;
-                            gCallerSName = __caller_sname__;
-                            gCallerSLine10 = __caller_sline10__;
-                            gCallerSLine9 = __caller_sline9__;
-                            gCallerSLine8 = __caller_sline8__;
-                            gCallerSLine7 = __caller_sline7__;
-                            gCallerSLine6 = __caller_sline6__;
-                            gCallerSLine5 = __caller_sline5__;
-                            gCallerSLine4 = __caller_sline4__;
-                            gCallerSLine3 = __caller_sline3__;
-                            gCallerSLine2 = __caller_sline2__;
-                            gCallerSLine = __caller_sline__;
-                            return __result72__;
+                            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                            return __result72__;
                             __freed_obj__ = 0;
-                        gCallerSName10 = __caller_sname10__;
-                        gCallerSName9 = __caller_sname9__;
-                        gCallerSName8 = __caller_sname8__;
-                        gCallerSName7 = __caller_sname7__;
-                        gCallerSName6 = __caller_sname6__;
-                        gCallerSName5 = __caller_sname5__;
-                        gCallerSName5 = __caller_sname5__;
-                        gCallerSName4 = __caller_sname4__;
-                        gCallerSName3 = __caller_sname3__;
-                        gCallerSName2 = __caller_sname2__;
-                        gCallerSName = __caller_sname__;
-                        gCallerSLine10 = __caller_sline10__;
-                        gCallerSLine9 = __caller_sline9__;
-                        gCallerSLine8 = __caller_sline8__;
-                        gCallerSLine7 = __caller_sline7__;
-                        gCallerSLine6 = __caller_sline6__;
-                        gCallerSLine5 = __caller_sline5__;
-                        gCallerSLine4 = __caller_sline4__;
-                        gCallerSLine3 = __caller_sline3__;
-                        gCallerSLine2 = __caller_sline2__;
-                        gCallerSLine = __caller_sline__;
-}
+                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1charp* list$1charp_delete(struct list$1charp* self, int head, int tail){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -11814,44 +5686,16 @@ memset(&head_prev_it_84, 0, sizeof(struct list_item$1charp*));
 memset(&tail_it_85, 0, sizeof(struct list_item$1charp*));
 memset(&i_86, 0, sizeof(int));
 memset(&prev_it_87, 0, sizeof(struct list_item$1charp*));
-                                    __caller_sname10__ = gCallerSName10;
-                                    __caller_sname9__ = gCallerSName9;
-                                    __caller_sname8__ = gCallerSName8;
-                                    __caller_sname7__ = gCallerSName7;
-                                    __caller_sname6__ = gCallerSName6;
-                                    __caller_sname5__ = gCallerSName5;
-                                    __caller_sname4__ = gCallerSName4;
-                                    __caller_sname3__ = gCallerSName3;
-                                    __caller_sname2__ = gCallerSName2;
-                                    __caller_sname__ = gCallerSName;
-                                    __caller_sline10__ = gCallerSLine10;
-                                    __caller_sline9__ = gCallerSLine9;
-                                    __caller_sline8__ = gCallerSLine8;
-                                    __caller_sline7__ = gCallerSLine7;
-                                    __caller_sline6__ = gCallerSLine6;
-                                    __caller_sline5__ = gCallerSLine5;
-                                    __caller_sline4__ = gCallerSLine4;
-                                    __caller_sline3__ = gCallerSLine3;
-                                    __caller_sline2__ = gCallerSLine2;
-                                    __caller_sline__ = gCallerSLine;
-                                    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+                                    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                                         if(_if_conditional150=head<0,                                        __freed_obj__ = 0, 
                                         _if_conditional150) {
-                                            head+=((struct list$1charp*)come_null_check(self, "./comelang2.h", 529))->len;
+                                            head+=((struct list$1charp*)come_null_check(self, "./comelang2.h", 513))->len;
                                             __freed_obj__ = 0;
                                         }
                                         __freed_obj__ = 0;
                                         if(_if_conditional151=tail<0,                                        __freed_obj__ = 0, 
                                         _if_conditional151) {
-                                            tail+=((struct list$1charp*)come_null_check(self, "./comelang2.h", 532))->len+1;
+                                            tail+=((struct list$1charp*)come_null_check(self, "./comelang2.h", 516))->len+1;
                                             __freed_obj__ = 0;
                                         }
                                         __freed_obj__ = 0;
@@ -11871,9 +5715,9 @@ memset(&prev_it_87, 0, sizeof(struct list_item$1charp*));
                                             __freed_obj__ = 0;
                                         }
                                         __freed_obj__ = 0;
-                                        if(_if_conditional154=tail>((struct list$1charp*)come_null_check(self, "./comelang2.h", 549))->len,                                        __freed_obj__ = 0, 
+                                        if(_if_conditional154=tail>((struct list$1charp*)come_null_check(self, "./comelang2.h", 533))->len,                                        __freed_obj__ = 0, 
                                         _if_conditional154) {
-                                            tail=((struct list$1charp*)come_null_check(self, "./comelang2.h", 546))->len;
+                                            tail=((struct list$1charp*)come_null_check(self, "./comelang2.h", 530))->len;
                                             __freed_obj__ = 0;
                                         }
                                         __freed_obj__ = 0;
@@ -11881,40 +5725,19 @@ memset(&prev_it_87, 0, sizeof(struct list_item$1charp*));
                                         _if_conditional155) {
                                             __result69__ = __result_obj__ = self;
                                             __freed_obj__ = 0;
-                                            gCallerSName10 = __caller_sname10__;
-                                            gCallerSName9 = __caller_sname9__;
-                                            gCallerSName8 = __caller_sname8__;
-                                            gCallerSName7 = __caller_sname7__;
-                                            gCallerSName6 = __caller_sname6__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName4 = __caller_sname4__;
-                                            gCallerSName3 = __caller_sname3__;
-                                            gCallerSName2 = __caller_sname2__;
-                                            gCallerSName = __caller_sname__;
-                                            gCallerSLine10 = __caller_sline10__;
-                                            gCallerSLine9 = __caller_sline9__;
-                                            gCallerSLine8 = __caller_sline8__;
-                                            gCallerSLine7 = __caller_sline7__;
-                                            gCallerSLine6 = __caller_sline6__;
-                                            gCallerSLine5 = __caller_sline5__;
-                                            gCallerSLine4 = __caller_sline4__;
-                                            gCallerSLine3 = __caller_sline3__;
-                                            gCallerSLine2 = __caller_sline2__;
-                                            gCallerSLine = __caller_sline__;
-                                            return __result69__;
+                                            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                            return __result69__;
                                             __freed_obj__ = 0;
                                         }
                                         __freed_obj__ = 0;
-                                        if(_if_conditional156=head==0&&tail==((struct list$1charp*)come_null_check(self, "./comelang2.h", 648))->len,                                        __freed_obj__ = 0, 
+                                        if(_if_conditional156=head==0&&tail==((struct list$1charp*)come_null_check(self, "./comelang2.h", 632))->len,                                        __freed_obj__ = 0, 
                                         _if_conditional156) {
-                                            (gCallerSName = "./comelang2.h", gCallerSLine = 555,list$1charp_reset(((struct list$1charp*)come_null_check(self, "./comelang2.h", 555))));
+                                            (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 539,list$1charp_reset(((struct list$1charp*)come_null_check(self, "./comelang2.h", 539))));
                                             __freed_obj__ = 0;
                                         }
                                         else {
                                             if(_if_conditional157=head==0,                                            __freed_obj__ = 0, 
                                             _if_conditional157) {
-                                                it_77=((struct list$1charp*)come_null_check(self, "./comelang2.h", 558))->head;
+                                                it_77=((struct list$1charp*)come_null_check(self, "./comelang2.h", 542))->head;
                                                 __freed_obj__ = 0;
                                                 i_78=0;
                                                 __freed_obj__ = 0;
@@ -11924,27 +5747,27 @@ memset(&prev_it_87, 0, sizeof(struct list_item$1charp*));
                                                     _if_conditional158) {
                                                         prev_it_79=it_77;
                                                         __freed_obj__ = 0;
-                                                        it_77=((struct list_item$1charp*)come_null_check(it_77, "./comelang2.h", 564))->next;
+                                                        it_77=((struct list_item$1charp*)come_null_check(it_77, "./comelang2.h", 548))->next;
                                                         __freed_obj__ = 0;
                                                         i_78++;
                                                         __freed_obj__ = 0;
                                                         if(prev_it_79 && !__freed_obj__) { come_call_finalizer(list_item$1charpp_finalize,prev_it_79, (void*)0, (void*)0, 0, 0, 0, 0); }
                                                         __freed_obj__ = 0;
-                                                        ((struct list$1charp*)come_null_check(self, "./comelang2.h", 569))->len--;
+                                                        ((struct list$1charp*)come_null_check(self, "./comelang2.h", 553))->len--;
                                                         __freed_obj__ = 0;
                                                     }
                                                     else {
                                                         if(_if_conditional159=i_78==tail,                                                        __freed_obj__ = 0, 
                                                         _if_conditional159) {
-                                                            ((struct list$1charp*)come_null_check(self, "./comelang2.h", 572))->head=it_77;
+                                                            ((struct list$1charp*)come_null_check(self, "./comelang2.h", 556))->head=it_77;
                                                             __freed_obj__ = 0;
-                                                            ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(self, "./comelang2.h", 573))->head, "./comelang2.h", 573))->prev=((void*)0);
+                                                            ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(self, "./comelang2.h", 557))->head, "./comelang2.h", 557))->prev=((void*)0);
                                                             __freed_obj__ = 0;
                                                             break;
                                                             __freed_obj__ = 0;
                                                         }
                                                         else {
-                                                            it_77=((struct list_item$1charp*)come_null_check(it_77, "./comelang2.h", 577))->next;
+                                                            it_77=((struct list_item$1charp*)come_null_check(it_77, "./comelang2.h", 561))->next;
                                                             __freed_obj__ = 0;
                                                             i_78++;
                                                             __freed_obj__ = 0;
@@ -11956,9 +5779,9 @@ memset(&prev_it_87, 0, sizeof(struct list_item$1charp*));
                                                 __freed_obj__ = 0;
                                             }
                                             else {
-                                                if(_if_conditional160=tail==((struct list$1charp*)come_null_check(self, "./comelang2.h", 648))->len,                                                __freed_obj__ = 0, 
+                                                if(_if_conditional160=tail==((struct list$1charp*)come_null_check(self, "./comelang2.h", 632))->len,                                                __freed_obj__ = 0, 
                                                 _if_conditional160) {
-                                                    it_80=((struct list$1charp*)come_null_check(self, "./comelang2.h", 583))->head;
+                                                    it_80=((struct list$1charp*)come_null_check(self, "./comelang2.h", 567))->head;
                                                     __freed_obj__ = 0;
                                                     i_81=0;
                                                     __freed_obj__ = 0;
@@ -11966,9 +5789,9 @@ memset(&prev_it_87, 0, sizeof(struct list_item$1charp*));
                                                     _while_condtional15) {
                                                         if(_if_conditional161=i_81==head,                                                        __freed_obj__ = 0, 
                                                         _if_conditional161) {
-                                                            ((struct list$1charp*)come_null_check(self, "./comelang2.h", 587))->tail=((struct list_item$1charp*)come_null_check(it_80, "./comelang2.h", 587))->prev;
+                                                            ((struct list$1charp*)come_null_check(self, "./comelang2.h", 571))->tail=((struct list_item$1charp*)come_null_check(it_80, "./comelang2.h", 571))->prev;
                                                             __freed_obj__ = 0;
-                                                            ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(self, "./comelang2.h", 588))->tail, "./comelang2.h", 588))->next=((void*)0);
+                                                            ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(self, "./comelang2.h", 572))->tail, "./comelang2.h", 572))->next=((void*)0);
                                                             __freed_obj__ = 0;
                                                         }
                                                         __freed_obj__ = 0;
@@ -11976,17 +5799,17 @@ memset(&prev_it_87, 0, sizeof(struct list_item$1charp*));
                                                         _if_conditional162) {
                                                             prev_it_82=it_80;
                                                             __freed_obj__ = 0;
-                                                            it_80=((struct list_item$1charp*)come_null_check(it_80, "./comelang2.h", 594))->next;
+                                                            it_80=((struct list_item$1charp*)come_null_check(it_80, "./comelang2.h", 578))->next;
                                                             __freed_obj__ = 0;
                                                             i_81++;
                                                             __freed_obj__ = 0;
                                                             if(prev_it_82 && !__freed_obj__) { come_call_finalizer(list_item$1charpp_finalize,prev_it_82, (void*)0, (void*)0, 0, 0, 0, 0); }
                                                             __freed_obj__ = 0;
-                                                            ((struct list$1charp*)come_null_check(self, "./comelang2.h", 599))->len--;
+                                                            ((struct list$1charp*)come_null_check(self, "./comelang2.h", 583))->len--;
                                                             __freed_obj__ = 0;
                                                         }
                                                         else {
-                                                            it_80=((struct list_item$1charp*)come_null_check(it_80, "./comelang2.h", 602))->next;
+                                                            it_80=((struct list_item$1charp*)come_null_check(it_80, "./comelang2.h", 586))->next;
                                                             __freed_obj__ = 0;
                                                             i_81++;
                                                             __freed_obj__ = 0;
@@ -11996,7 +5819,7 @@ memset(&prev_it_87, 0, sizeof(struct list_item$1charp*));
                                                     __freed_obj__ = 0;
                                                 }
                                                 else {
-                                                    it_83=((struct list$1charp*)come_null_check(self, "./comelang2.h", 608))->head;
+                                                    it_83=((struct list$1charp*)come_null_check(self, "./comelang2.h", 592))->head;
                                                     __freed_obj__ = 0;
                                                     head_prev_it_84=((void*)0);
                                                     __freed_obj__ = 0;
@@ -12008,7 +5831,7 @@ memset(&prev_it_87, 0, sizeof(struct list_item$1charp*));
                                                     _while_condtional16) {
                                                         if(_if_conditional163=i_86==head,                                                        __freed_obj__ = 0, 
                                                         _if_conditional163) {
-                                                            head_prev_it_84=((struct list_item$1charp*)come_null_check(it_83, "./comelang2.h", 617))->prev;
+                                                            head_prev_it_84=((struct list_item$1charp*)come_null_check(it_83, "./comelang2.h", 601))->prev;
                                                             __freed_obj__ = 0;
                                                         }
                                                         __freed_obj__ = 0;
@@ -12022,17 +5845,17 @@ memset(&prev_it_87, 0, sizeof(struct list_item$1charp*));
                                                         _if_conditional165) {
                                                             prev_it_87=it_83;
                                                             __freed_obj__ = 0;
-                                                            it_83=((struct list_item$1charp*)come_null_check(it_83, "./comelang2.h", 627))->next;
+                                                            it_83=((struct list_item$1charp*)come_null_check(it_83, "./comelang2.h", 611))->next;
                                                             __freed_obj__ = 0;
                                                             i_86++;
                                                             __freed_obj__ = 0;
                                                             if(prev_it_87 && !__freed_obj__) { come_call_finalizer(list_item$1charpp_finalize,prev_it_87, (void*)0, (void*)0, 0, 0, 0, 0); }
                                                             __freed_obj__ = 0;
-                                                            ((struct list$1charp*)come_null_check(self, "./comelang2.h", 632))->len--;
+                                                            ((struct list$1charp*)come_null_check(self, "./comelang2.h", 616))->len--;
                                                             __freed_obj__ = 0;
                                                         }
                                                         else {
-                                                            it_83=((struct list_item$1charp*)come_null_check(it_83, "./comelang2.h", 635))->next;
+                                                            it_83=((struct list_item$1charp*)come_null_check(it_83, "./comelang2.h", 619))->next;
                                                             __freed_obj__ = 0;
                                                             i_86++;
                                                             __freed_obj__ = 0;
@@ -12042,13 +5865,13 @@ memset(&prev_it_87, 0, sizeof(struct list_item$1charp*));
                                                     __freed_obj__ = 0;
                                                     if(_if_conditional166=head_prev_it_84!=((void*)0),                                                    __freed_obj__ = 0, 
                                                     _if_conditional166) {
-                                                        ((struct list_item$1charp*)come_null_check(head_prev_it_84, "./comelang2.h", 641))->next=tail_it_85;
+                                                        ((struct list_item$1charp*)come_null_check(head_prev_it_84, "./comelang2.h", 625))->next=tail_it_85;
                                                         __freed_obj__ = 0;
                                                     }
                                                     __freed_obj__ = 0;
                                                     if(_if_conditional167=tail_it_85!=((void*)0),                                                    __freed_obj__ = 0, 
                                                     _if_conditional167) {
-                                                        ((struct list_item$1charp*)come_null_check(tail_it_85, "./comelang2.h", 644))->prev=head_prev_it_84;
+                                                        ((struct list_item$1charp*)come_null_check(tail_it_85, "./comelang2.h", 628))->prev=head_prev_it_84;
                                                         __freed_obj__ = 0;
                                                     }
                                                     __freed_obj__ = 0;
@@ -12060,73 +5883,14 @@ memset(&prev_it_87, 0, sizeof(struct list_item$1charp*));
                                         __freed_obj__ = 0;
                                         __result71__ = __result_obj__ = self;
                                         __freed_obj__ = 0;
-                                        gCallerSName10 = __caller_sname10__;
-                                        gCallerSName9 = __caller_sname9__;
-                                        gCallerSName8 = __caller_sname8__;
-                                        gCallerSName7 = __caller_sname7__;
-                                        gCallerSName6 = __caller_sname6__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName5 = __caller_sname5__;
-                                        gCallerSName4 = __caller_sname4__;
-                                        gCallerSName3 = __caller_sname3__;
-                                        gCallerSName2 = __caller_sname2__;
-                                        gCallerSName = __caller_sname__;
-                                        gCallerSLine10 = __caller_sline10__;
-                                        gCallerSLine9 = __caller_sline9__;
-                                        gCallerSLine8 = __caller_sline8__;
-                                        gCallerSLine7 = __caller_sline7__;
-                                        gCallerSLine6 = __caller_sline6__;
-                                        gCallerSLine5 = __caller_sline5__;
-                                        gCallerSLine4 = __caller_sline4__;
-                                        gCallerSLine3 = __caller_sline3__;
-                                        gCallerSLine2 = __caller_sline2__;
-                                        gCallerSLine = __caller_sline__;
-                                        return __result71__;
+                                        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                        return __result71__;
                                         __freed_obj__ = 0;
-                                    gCallerSName10 = __caller_sname10__;
-                                    gCallerSName9 = __caller_sname9__;
-                                    gCallerSName8 = __caller_sname8__;
-                                    gCallerSName7 = __caller_sname7__;
-                                    gCallerSName6 = __caller_sname6__;
-                                    gCallerSName5 = __caller_sname5__;
-                                    gCallerSName5 = __caller_sname5__;
-                                    gCallerSName4 = __caller_sname4__;
-                                    gCallerSName3 = __caller_sname3__;
-                                    gCallerSName2 = __caller_sname2__;
-                                    gCallerSName = __caller_sname__;
-                                    gCallerSLine10 = __caller_sline10__;
-                                    gCallerSLine9 = __caller_sline9__;
-                                    gCallerSLine8 = __caller_sline8__;
-                                    gCallerSLine7 = __caller_sline7__;
-                                    gCallerSLine6 = __caller_sline6__;
-                                    gCallerSLine5 = __caller_sline5__;
-                                    gCallerSLine4 = __caller_sline4__;
-                                    gCallerSLine3 = __caller_sline3__;
-                                    gCallerSLine2 = __caller_sline2__;
-                                    gCallerSLine = __caller_sline__;
-}
+                                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1charp* list$1charp_reset(struct list$1charp* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -12139,201 +5903,48 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&it_75, 0, sizeof(struct list_item$1charp*));
 memset(&prev_it_76, 0, sizeof(struct list_item$1charp*));
-                                            __caller_sname10__ = gCallerSName10;
-                                            __caller_sname9__ = gCallerSName9;
-                                            __caller_sname8__ = gCallerSName8;
-                                            __caller_sname7__ = gCallerSName7;
-                                            __caller_sname6__ = gCallerSName6;
-                                            __caller_sname5__ = gCallerSName5;
-                                            __caller_sname4__ = gCallerSName4;
-                                            __caller_sname3__ = gCallerSName3;
-                                            __caller_sname2__ = gCallerSName2;
-                                            __caller_sname__ = gCallerSName;
-                                            __caller_sline10__ = gCallerSLine10;
-                                            __caller_sline9__ = gCallerSLine9;
-                                            __caller_sline8__ = gCallerSLine8;
-                                            __caller_sline7__ = gCallerSLine7;
-                                            __caller_sline6__ = gCallerSLine6;
-                                            __caller_sline5__ = gCallerSLine5;
-                                            __caller_sline4__ = gCallerSLine4;
-                                            __caller_sline3__ = gCallerSLine3;
-                                            __caller_sline2__ = gCallerSLine2;
-                                            __caller_sline__ = gCallerSLine;
-                                            gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                            gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                            gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                            gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                            gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                            gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                            gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                            gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                            gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                                                it_75=((struct list$1charp*)come_null_check(self, "./comelang2.h", 497))->head;
+                                            memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                            memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                            for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                                                it_75=((struct list$1charp*)come_null_check(self, "./comelang2.h", 481))->head;
                                                 __freed_obj__ = 0;
                                                 while(_while_condtional13=it_75!=((void*)0),                                                __freed_obj__ = 0, 
                                                 _while_condtional13) {
                                                     prev_it_76=it_75;
                                                     __freed_obj__ = 0;
-                                                    it_75=((struct list_item$1charp*)come_null_check(it_75, "./comelang2.h", 500))->next;
+                                                    it_75=((struct list_item$1charp*)come_null_check(it_75, "./comelang2.h", 484))->next;
                                                     __freed_obj__ = 0;
                                                     if(prev_it_76 && !__freed_obj__) { come_call_finalizer(list_item$1charpp_finalize,prev_it_76, (void*)0, (void*)0, 0, 0, 0, 0); }
                                                     __freed_obj__ = 0;
                                                 }
                                                 __freed_obj__ = 0;
-                                                ((struct list$1charp*)come_null_check(self, "./comelang2.h", 504))->head=((void*)0);
+                                                ((struct list$1charp*)come_null_check(self, "./comelang2.h", 488))->head=((void*)0);
                                                 __freed_obj__ = 0;
-                                                ((struct list$1charp*)come_null_check(self, "./comelang2.h", 505))->tail=((void*)0);
+                                                ((struct list$1charp*)come_null_check(self, "./comelang2.h", 489))->tail=((void*)0);
                                                 __freed_obj__ = 0;
-                                                ((struct list$1charp*)come_null_check(self, "./comelang2.h", 507))->len=0;
+                                                ((struct list$1charp*)come_null_check(self, "./comelang2.h", 491))->len=0;
                                                 __freed_obj__ = 0;
                                                 __result70__ = __result_obj__ = self;
                                                 __freed_obj__ = 0;
-                                                gCallerSName10 = __caller_sname10__;
-                                                gCallerSName9 = __caller_sname9__;
-                                                gCallerSName8 = __caller_sname8__;
-                                                gCallerSName7 = __caller_sname7__;
-                                                gCallerSName6 = __caller_sname6__;
-                                                gCallerSName5 = __caller_sname5__;
-                                                gCallerSName5 = __caller_sname5__;
-                                                gCallerSName4 = __caller_sname4__;
-                                                gCallerSName3 = __caller_sname3__;
-                                                gCallerSName2 = __caller_sname2__;
-                                                gCallerSName = __caller_sname__;
-                                                gCallerSLine10 = __caller_sline10__;
-                                                gCallerSLine9 = __caller_sline9__;
-                                                gCallerSLine8 = __caller_sline8__;
-                                                gCallerSLine7 = __caller_sline7__;
-                                                gCallerSLine6 = __caller_sline6__;
-                                                gCallerSLine5 = __caller_sline5__;
-                                                gCallerSLine4 = __caller_sline4__;
-                                                gCallerSLine3 = __caller_sline3__;
-                                                gCallerSLine2 = __caller_sline2__;
-                                                gCallerSLine = __caller_sline__;
-                                                return __result70__;
+                                                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                                                return __result70__;
                                                 __freed_obj__ = 0;
-                                            gCallerSName10 = __caller_sname10__;
-                                            gCallerSName9 = __caller_sname9__;
-                                            gCallerSName8 = __caller_sname8__;
-                                            gCallerSName7 = __caller_sname7__;
-                                            gCallerSName6 = __caller_sname6__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName5 = __caller_sname5__;
-                                            gCallerSName4 = __caller_sname4__;
-                                            gCallerSName3 = __caller_sname3__;
-                                            gCallerSName2 = __caller_sname2__;
-                                            gCallerSName = __caller_sname__;
-                                            gCallerSLine10 = __caller_sline10__;
-                                            gCallerSLine9 = __caller_sline9__;
-                                            gCallerSLine8 = __caller_sline8__;
-                                            gCallerSLine7 = __caller_sline7__;
-                                            gCallerSLine6 = __caller_sline6__;
-                                            gCallerSLine5 = __caller_sline5__;
-                                            gCallerSLine4 = __caller_sline4__;
-                                            gCallerSLine3 = __caller_sline3__;
-                                            gCallerSLine2 = __caller_sline2__;
-                                            gCallerSLine = __caller_sline__;
-}
+                                            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void list_item$1charpp_finalize(struct list_item$1charp* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                                                    __caller_sname10__ = gCallerSName10;
-                                                    __caller_sname9__ = gCallerSName9;
-                                                    __caller_sname8__ = gCallerSName8;
-                                                    __caller_sname7__ = gCallerSName7;
-                                                    __caller_sname6__ = gCallerSName6;
-                                                    __caller_sname5__ = gCallerSName5;
-                                                    __caller_sname4__ = gCallerSName4;
-                                                    __caller_sname3__ = gCallerSName3;
-                                                    __caller_sname2__ = gCallerSName2;
-                                                    __caller_sname__ = gCallerSName;
-                                                    __caller_sline10__ = gCallerSLine10;
-                                                    __caller_sline9__ = gCallerSLine9;
-                                                    __caller_sline8__ = gCallerSLine8;
-                                                    __caller_sline7__ = gCallerSLine7;
-                                                    __caller_sline6__ = gCallerSLine6;
-                                                    __caller_sline5__ = gCallerSLine5;
-                                                    __caller_sline4__ = gCallerSLine4;
-                                                    __caller_sline3__ = gCallerSLine3;
-                                                    __caller_sline2__ = gCallerSLine2;
-                                                    __caller_sline__ = gCallerSLine;
-                                                    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-                                                    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-                                                    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-                                                    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-                                                    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-                                                    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-                                                    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-                                                    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-                                                    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                                                    gCallerSName10 = __caller_sname10__;
-                                                    gCallerSName9 = __caller_sname9__;
-                                                    gCallerSName8 = __caller_sname8__;
-                                                    gCallerSName7 = __caller_sname7__;
-                                                    gCallerSName6 = __caller_sname6__;
-                                                    gCallerSName5 = __caller_sname5__;
-                                                    gCallerSName5 = __caller_sname5__;
-                                                    gCallerSName4 = __caller_sname4__;
-                                                    gCallerSName3 = __caller_sname3__;
-                                                    gCallerSName2 = __caller_sname2__;
-                                                    gCallerSName = __caller_sname__;
-                                                    gCallerSLine10 = __caller_sline10__;
-                                                    gCallerSLine9 = __caller_sline9__;
-                                                    gCallerSLine8 = __caller_sline8__;
-                                                    gCallerSLine7 = __caller_sline7__;
-                                                    gCallerSLine6 = __caller_sline6__;
-                                                    gCallerSLine5 = __caller_sline5__;
-                                                    gCallerSLine4 = __caller_sline4__;
-                                                    gCallerSLine3 = __caller_sline3__;
-                                                    gCallerSLine2 = __caller_sline2__;
-                                                    gCallerSLine = __caller_sline__;
-}
+                                                    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);                                                    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);                                                    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                                                    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                                                    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static char* list$1charp_begin(struct list$1charp* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -12349,170 +5960,41 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_89, 0, sizeof(char*));
 memset(&result_90, 0, sizeof(char*));
-        __caller_sname10__ = gCallerSName10;
-        __caller_sname9__ = gCallerSName9;
-        __caller_sname8__ = gCallerSName8;
-        __caller_sname7__ = gCallerSName7;
-        __caller_sname6__ = gCallerSName6;
-        __caller_sname5__ = gCallerSName5;
-        __caller_sname4__ = gCallerSName4;
-        __caller_sname3__ = gCallerSName3;
-        __caller_sname2__ = gCallerSName2;
-        __caller_sname__ = gCallerSName;
-        __caller_sline10__ = gCallerSLine10;
-        __caller_sline9__ = gCallerSLine9;
-        __caller_sline8__ = gCallerSLine8;
-        __caller_sline7__ = gCallerSLine7;
-        __caller_sline6__ = gCallerSLine6;
-        __caller_sline5__ = gCallerSLine5;
-        __caller_sline4__ = gCallerSLine4;
-        __caller_sline3__ = gCallerSLine3;
-        __caller_sline2__ = gCallerSLine2;
-        __caller_sline__ = gCallerSLine;
-        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
             if(_if_conditional173=self==((void*)0),            __freed_obj__ = 0, 
             _if_conditional173) {
                 __freed_obj__ = 0;
-                (gCallerSName = "./comelang2.h", gCallerSLine = 354,memset(&result_89,0,sizeof(char*)));
+                (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 338,memset(&result_89,0,sizeof(char*)));
                 __freed_obj__ = 0;
                 __result73__ = __result_obj__ = result_89;
                 __freed_obj__ = 0;
-                gCallerSName10 = __caller_sname10__;
-                gCallerSName9 = __caller_sname9__;
-                gCallerSName8 = __caller_sname8__;
-                gCallerSName7 = __caller_sname7__;
-                gCallerSName6 = __caller_sname6__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName4 = __caller_sname4__;
-                gCallerSName3 = __caller_sname3__;
-                gCallerSName2 = __caller_sname2__;
-                gCallerSName = __caller_sname__;
-                gCallerSLine10 = __caller_sline10__;
-                gCallerSLine9 = __caller_sline9__;
-                gCallerSLine8 = __caller_sline8__;
-                gCallerSLine7 = __caller_sline7__;
-                gCallerSLine6 = __caller_sline6__;
-                gCallerSLine5 = __caller_sline5__;
-                gCallerSLine4 = __caller_sline4__;
-                gCallerSLine3 = __caller_sline3__;
-                gCallerSLine2 = __caller_sline2__;
-                gCallerSLine = __caller_sline__;
-                return __result73__;
+                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result73__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-            ((struct list$1charp*)come_null_check(self, "./comelang2.h", 357))->it=((struct list$1charp*)come_null_check(self, "./comelang2.h", 357))->head;
+            ((struct list$1charp*)come_null_check(self, "./comelang2.h", 341))->it=((struct list$1charp*)come_null_check(self, "./comelang2.h", 341))->head;
             __freed_obj__ = 0;
-            if(_if_conditional174=((struct list$1charp*)come_null_check(self, "./comelang2.h", 363))->it,            __freed_obj__ = 0, 
+            if(_if_conditional174=((struct list$1charp*)come_null_check(self, "./comelang2.h", 347))->it,            __freed_obj__ = 0, 
             _if_conditional174) {
-                __result74__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(self, "./comelang2.h", 360))->it, "./comelang2.h", 360))->item;
+                __result74__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(self, "./comelang2.h", 344))->it, "./comelang2.h", 344))->item;
                 __freed_obj__ = 0;
-                gCallerSName10 = __caller_sname10__;
-                gCallerSName9 = __caller_sname9__;
-                gCallerSName8 = __caller_sname8__;
-                gCallerSName7 = __caller_sname7__;
-                gCallerSName6 = __caller_sname6__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName4 = __caller_sname4__;
-                gCallerSName3 = __caller_sname3__;
-                gCallerSName2 = __caller_sname2__;
-                gCallerSName = __caller_sname__;
-                gCallerSLine10 = __caller_sline10__;
-                gCallerSLine9 = __caller_sline9__;
-                gCallerSLine8 = __caller_sline8__;
-                gCallerSLine7 = __caller_sline7__;
-                gCallerSLine6 = __caller_sline6__;
-                gCallerSLine5 = __caller_sline5__;
-                gCallerSLine4 = __caller_sline4__;
-                gCallerSLine3 = __caller_sline3__;
-                gCallerSLine2 = __caller_sline2__;
-                gCallerSLine = __caller_sline__;
-                return __result74__;
+                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result74__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
             __freed_obj__ = 0;
-            (gCallerSName = "./comelang2.h", gCallerSLine = 364,memset(&result_90,0,sizeof(char*)));
+            (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 348,memset(&result_90,0,sizeof(char*)));
             __freed_obj__ = 0;
             __result75__ = __result_obj__ = result_90;
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result75__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result75__;
             __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-}
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static _Bool list$1charp_end(struct list$1charp* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -12520,104 +6002,17 @@ _Bool __freed_obj__;
 _Bool __result76__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-        __caller_sname10__ = gCallerSName10;
-        __caller_sname9__ = gCallerSName9;
-        __caller_sname8__ = gCallerSName8;
-        __caller_sname7__ = gCallerSName7;
-        __caller_sname6__ = gCallerSName6;
-        __caller_sname5__ = gCallerSName5;
-        __caller_sname4__ = gCallerSName4;
-        __caller_sname3__ = gCallerSName3;
-        __caller_sname2__ = gCallerSName2;
-        __caller_sname__ = gCallerSName;
-        __caller_sline10__ = gCallerSLine10;
-        __caller_sline9__ = gCallerSLine9;
-        __caller_sline8__ = gCallerSLine8;
-        __caller_sline7__ = gCallerSLine7;
-        __caller_sline6__ = gCallerSLine6;
-        __caller_sline5__ = gCallerSLine5;
-        __caller_sline4__ = gCallerSLine4;
-        __caller_sline3__ = gCallerSLine3;
-        __caller_sline2__ = gCallerSLine2;
-        __caller_sline__ = gCallerSLine;
-        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-            __result76__ = self==((void*)0)||((struct list$1charp*)come_null_check(self, "./comelang2.h", 387))->it==((void*)0);
+        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+            __result76__ = self==((void*)0)||((struct list$1charp*)come_null_check(self, "./comelang2.h", 371))->it==((void*)0);
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result76__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result76__;
             __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-}
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static char* list$1charp_next(struct list$1charp* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -12633,170 +6028,41 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_92, 0, sizeof(char*));
 memset(&result_93, 0, sizeof(char*));
-        __caller_sname10__ = gCallerSName10;
-        __caller_sname9__ = gCallerSName9;
-        __caller_sname8__ = gCallerSName8;
-        __caller_sname7__ = gCallerSName7;
-        __caller_sname6__ = gCallerSName6;
-        __caller_sname5__ = gCallerSName5;
-        __caller_sname4__ = gCallerSName4;
-        __caller_sname3__ = gCallerSName3;
-        __caller_sname2__ = gCallerSName2;
-        __caller_sname__ = gCallerSName;
-        __caller_sline10__ = gCallerSLine10;
-        __caller_sline9__ = gCallerSLine9;
-        __caller_sline8__ = gCallerSLine8;
-        __caller_sline7__ = gCallerSLine7;
-        __caller_sline6__ = gCallerSLine6;
-        __caller_sline5__ = gCallerSLine5;
-        __caller_sline4__ = gCallerSLine4;
-        __caller_sline3__ = gCallerSLine3;
-        __caller_sline2__ = gCallerSLine2;
-        __caller_sline__ = gCallerSLine;
-        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
             if(_if_conditional175=self==((void*)0),            __freed_obj__ = 0, 
             _if_conditional175) {
                 __freed_obj__ = 0;
-                (gCallerSName = "./comelang2.h", gCallerSLine = 371,memset(&result_92,0,sizeof(char*)));
+                (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 355,memset(&result_92,0,sizeof(char*)));
                 __freed_obj__ = 0;
                 __result77__ = __result_obj__ = result_92;
                 __freed_obj__ = 0;
-                gCallerSName10 = __caller_sname10__;
-                gCallerSName9 = __caller_sname9__;
-                gCallerSName8 = __caller_sname8__;
-                gCallerSName7 = __caller_sname7__;
-                gCallerSName6 = __caller_sname6__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName4 = __caller_sname4__;
-                gCallerSName3 = __caller_sname3__;
-                gCallerSName2 = __caller_sname2__;
-                gCallerSName = __caller_sname__;
-                gCallerSLine10 = __caller_sline10__;
-                gCallerSLine9 = __caller_sline9__;
-                gCallerSLine8 = __caller_sline8__;
-                gCallerSLine7 = __caller_sline7__;
-                gCallerSLine6 = __caller_sline6__;
-                gCallerSLine5 = __caller_sline5__;
-                gCallerSLine4 = __caller_sline4__;
-                gCallerSLine3 = __caller_sline3__;
-                gCallerSLine2 = __caller_sline2__;
-                gCallerSLine = __caller_sline__;
-                return __result77__;
+                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result77__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-            ((struct list$1charp*)come_null_check(self, "./comelang2.h", 375))->it=((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(self, "./comelang2.h", 375))->it, "./comelang2.h", 375))->next;
+            ((struct list$1charp*)come_null_check(self, "./comelang2.h", 359))->it=((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(self, "./comelang2.h", 359))->it, "./comelang2.h", 359))->next;
             __freed_obj__ = 0;
-            if(_if_conditional176=((struct list$1charp*)come_null_check(self, "./comelang2.h", 381))->it,            __freed_obj__ = 0, 
+            if(_if_conditional176=((struct list$1charp*)come_null_check(self, "./comelang2.h", 365))->it,            __freed_obj__ = 0, 
             _if_conditional176) {
-                __result78__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(self, "./comelang2.h", 378))->it, "./comelang2.h", 378))->item;
+                __result78__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(self, "./comelang2.h", 362))->it, "./comelang2.h", 362))->item;
                 __freed_obj__ = 0;
-                gCallerSName10 = __caller_sname10__;
-                gCallerSName9 = __caller_sname9__;
-                gCallerSName8 = __caller_sname8__;
-                gCallerSName7 = __caller_sname7__;
-                gCallerSName6 = __caller_sname6__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName4 = __caller_sname4__;
-                gCallerSName3 = __caller_sname3__;
-                gCallerSName2 = __caller_sname2__;
-                gCallerSName = __caller_sname__;
-                gCallerSLine10 = __caller_sline10__;
-                gCallerSLine9 = __caller_sline9__;
-                gCallerSLine8 = __caller_sline8__;
-                gCallerSLine7 = __caller_sline7__;
-                gCallerSLine6 = __caller_sline6__;
-                gCallerSLine5 = __caller_sline5__;
-                gCallerSLine4 = __caller_sline4__;
-                gCallerSLine3 = __caller_sline3__;
-                gCallerSLine2 = __caller_sline2__;
-                gCallerSLine = __caller_sline__;
-                return __result78__;
+                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result78__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
             __freed_obj__ = 0;
-            (gCallerSName = "./comelang2.h", gCallerSLine = 382,memset(&result_93,0,sizeof(char*)));
+            (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 366,memset(&result_93,0,sizeof(char*)));
             __freed_obj__ = 0;
             __result79__ = __result_obj__ = result_93;
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result79__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result79__;
             __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-}
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1charp* list$1charp_push_back(struct list$1charp* self, char* item){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -12818,157 +6084,70 @@ memset(&right_value82, 0, sizeof(void*));
 memset(&litem_95, 0, sizeof(struct list_item$1charp*));
 memset(&right_value83, 0, sizeof(void*));
 memset(&litem_96, 0, sizeof(struct list_item$1charp*));
-            __caller_sname10__ = gCallerSName10;
-            __caller_sname9__ = gCallerSName9;
-            __caller_sname8__ = gCallerSName8;
-            __caller_sname7__ = gCallerSName7;
-            __caller_sname6__ = gCallerSName6;
-            __caller_sname5__ = gCallerSName5;
-            __caller_sname4__ = gCallerSName4;
-            __caller_sname3__ = gCallerSName3;
-            __caller_sname2__ = gCallerSName2;
-            __caller_sname__ = gCallerSName;
-            __caller_sline10__ = gCallerSLine10;
-            __caller_sline9__ = gCallerSLine9;
-            __caller_sline8__ = gCallerSLine8;
-            __caller_sline7__ = gCallerSLine7;
-            __caller_sline6__ = gCallerSLine6;
-            __caller_sline5__ = gCallerSLine5;
-            __caller_sline4__ = gCallerSLine4;
-            __caller_sline3__ = gCallerSLine3;
-            __caller_sline2__ = gCallerSLine2;
-            __caller_sline__ = gCallerSLine;
-            gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-            gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-            gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-            gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-            gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-            gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-            gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-            gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-            gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                if(_if_conditional179=((struct list$1charp*)come_null_check(self, "./comelang2.h", 323))->len==0,                __freed_obj__ = 0, 
+            memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);            memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);            for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                if(_if_conditional179=((struct list$1charp*)come_null_check(self, "./comelang2.h", 307))->len==0,                __freed_obj__ = 0, 
                 _if_conditional179) {
-                    litem_94=(struct list_item$1charp*)come_increment_ref_count(((struct list_item$1charp*)(right_value81=(struct list_item$1charp*)come_calloc(1, sizeof(struct list_item$1charp)*(1), "./comelang2.h", 293))));
+                    litem_94=(struct list_item$1charp*)come_increment_ref_count(((struct list_item$1charp*)(right_value81=(struct list_item$1charp*)come_calloc(1, sizeof(struct list_item$1charp)*(1), "./comelang2.h", 277))));
                     if(right_value81 && right_value81 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1charpp_finalize,right_value81, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
-                    ((struct list_item$1charp*)come_null_check(litem_94, "./comelang2.h", 295))->prev=((void*)0);
+                    ((struct list_item$1charp*)come_null_check(litem_94, "./comelang2.h", 279))->prev=((void*)0);
                     __freed_obj__ = 0;
-                    ((struct list_item$1charp*)come_null_check(litem_94, "./comelang2.h", 296))->next=((void*)0);
+                    ((struct list_item$1charp*)come_null_check(litem_94, "./comelang2.h", 280))->next=((void*)0);
                     __freed_obj__ = 0;
-                    ((struct list_item$1charp*)come_null_check(litem_94, "./comelang2.h", 297))->item=item;
+                    ((struct list_item$1charp*)come_null_check(litem_94, "./comelang2.h", 281))->item=item;
                     __freed_obj__ = 0;
-                    ((struct list$1charp*)come_null_check(self, "./comelang2.h", 299))->tail=litem_94;
+                    ((struct list$1charp*)come_null_check(self, "./comelang2.h", 283))->tail=litem_94;
                     __freed_obj__ = 0;
-                    ((struct list$1charp*)come_null_check(self, "./comelang2.h", 300))->head=litem_94;
+                    ((struct list$1charp*)come_null_check(self, "./comelang2.h", 284))->head=litem_94;
                     __freed_obj__ = 0;
                 }
                 else {
-                    if(_if_conditional180=((struct list$1charp*)come_null_check(self, "./comelang2.h", 323))->len==1,                    __freed_obj__ = 0, 
+                    if(_if_conditional180=((struct list$1charp*)come_null_check(self, "./comelang2.h", 307))->len==1,                    __freed_obj__ = 0, 
                     _if_conditional180) {
-                        litem_95=(struct list_item$1charp*)come_increment_ref_count(((struct list_item$1charp*)(right_value82=(struct list_item$1charp*)come_calloc(1, sizeof(struct list_item$1charp)*(1), "./comelang2.h", 303))));
+                        litem_95=(struct list_item$1charp*)come_increment_ref_count(((struct list_item$1charp*)(right_value82=(struct list_item$1charp*)come_calloc(1, sizeof(struct list_item$1charp)*(1), "./comelang2.h", 287))));
                         if(right_value82 && right_value82 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1charpp_finalize,right_value82, (void*)0, (void*)0, 0, 1, 0, 0); }
                         __freed_obj__ = 0;
-                        ((struct list_item$1charp*)come_null_check(litem_95, "./comelang2.h", 305))->prev=((struct list$1charp*)come_null_check(self, "./comelang2.h", 305))->head;
+                        ((struct list_item$1charp*)come_null_check(litem_95, "./comelang2.h", 289))->prev=((struct list$1charp*)come_null_check(self, "./comelang2.h", 289))->head;
                         __freed_obj__ = 0;
-                        ((struct list_item$1charp*)come_null_check(litem_95, "./comelang2.h", 306))->next=((void*)0);
+                        ((struct list_item$1charp*)come_null_check(litem_95, "./comelang2.h", 290))->next=((void*)0);
                         __freed_obj__ = 0;
-                        ((struct list_item$1charp*)come_null_check(litem_95, "./comelang2.h", 307))->item=item;
+                        ((struct list_item$1charp*)come_null_check(litem_95, "./comelang2.h", 291))->item=item;
                         __freed_obj__ = 0;
-                        ((struct list$1charp*)come_null_check(self, "./comelang2.h", 309))->tail=litem_95;
+                        ((struct list$1charp*)come_null_check(self, "./comelang2.h", 293))->tail=litem_95;
                         __freed_obj__ = 0;
-                        ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(self, "./comelang2.h", 310))->head, "./comelang2.h", 310))->next=litem_95;
+                        ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(self, "./comelang2.h", 294))->head, "./comelang2.h", 294))->next=litem_95;
                         __freed_obj__ = 0;
                     }
                     else {
-                        litem_96=(struct list_item$1charp*)come_increment_ref_count(((struct list_item$1charp*)(right_value83=(struct list_item$1charp*)come_calloc(1, sizeof(struct list_item$1charp)*(1), "./comelang2.h", 313))));
+                        litem_96=(struct list_item$1charp*)come_increment_ref_count(((struct list_item$1charp*)(right_value83=(struct list_item$1charp*)come_calloc(1, sizeof(struct list_item$1charp)*(1), "./comelang2.h", 297))));
                         if(right_value83 && right_value83 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1charpp_finalize,right_value83, (void*)0, (void*)0, 0, 1, 0, 0); }
                         __freed_obj__ = 0;
-                        ((struct list_item$1charp*)come_null_check(litem_96, "./comelang2.h", 315))->prev=((struct list$1charp*)come_null_check(self, "./comelang2.h", 315))->tail;
+                        ((struct list_item$1charp*)come_null_check(litem_96, "./comelang2.h", 299))->prev=((struct list$1charp*)come_null_check(self, "./comelang2.h", 299))->tail;
                         __freed_obj__ = 0;
-                        ((struct list_item$1charp*)come_null_check(litem_96, "./comelang2.h", 316))->next=((void*)0);
+                        ((struct list_item$1charp*)come_null_check(litem_96, "./comelang2.h", 300))->next=((void*)0);
                         __freed_obj__ = 0;
-                        ((struct list_item$1charp*)come_null_check(litem_96, "./comelang2.h", 317))->item=item;
+                        ((struct list_item$1charp*)come_null_check(litem_96, "./comelang2.h", 301))->item=item;
                         __freed_obj__ = 0;
-                        ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(self, "./comelang2.h", 319))->tail, "./comelang2.h", 319))->next=litem_96;
+                        ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(self, "./comelang2.h", 303))->tail, "./comelang2.h", 303))->next=litem_96;
                         __freed_obj__ = 0;
-                        ((struct list$1charp*)come_null_check(self, "./comelang2.h", 320))->tail=litem_96;
+                        ((struct list$1charp*)come_null_check(self, "./comelang2.h", 304))->tail=litem_96;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                ((struct list$1charp*)come_null_check(self, "./comelang2.h", 323))->len++;
+                ((struct list$1charp*)come_null_check(self, "./comelang2.h", 307))->len++;
                 __freed_obj__ = 0;
                 __result80__ = __result_obj__ = self;
                 __freed_obj__ = 0;
-                gCallerSName10 = __caller_sname10__;
-                gCallerSName9 = __caller_sname9__;
-                gCallerSName8 = __caller_sname8__;
-                gCallerSName7 = __caller_sname7__;
-                gCallerSName6 = __caller_sname6__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName4 = __caller_sname4__;
-                gCallerSName3 = __caller_sname3__;
-                gCallerSName2 = __caller_sname2__;
-                gCallerSName = __caller_sname__;
-                gCallerSLine10 = __caller_sline10__;
-                gCallerSLine9 = __caller_sline9__;
-                gCallerSLine8 = __caller_sline8__;
-                gCallerSLine7 = __caller_sline7__;
-                gCallerSLine6 = __caller_sline6__;
-                gCallerSLine5 = __caller_sline5__;
-                gCallerSLine4 = __caller_sline4__;
-                gCallerSLine3 = __caller_sline3__;
-                gCallerSLine2 = __caller_sline2__;
-                gCallerSLine = __caller_sline__;
-                return __result80__;
+                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result80__;
                 __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-}
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 struct tuple2$2sTypephcharph* parse_interface_function(struct sInfo* info){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -13037,37 +6216,9 @@ memset(&right_value116, 0, sizeof(void*));
 memset(&right_value117, 0, sizeof(void*));
 memset(&right_value118, 0, sizeof(void*));
 memset(&right_value121, 0, sizeof(void*));
-__caller_sname10__ = gCallerSName10;
-__caller_sname9__ = gCallerSName9;
-__caller_sname8__ = gCallerSName8;
-__caller_sname7__ = gCallerSName7;
-__caller_sname6__ = gCallerSName6;
-__caller_sname5__ = gCallerSName5;
-__caller_sname4__ = gCallerSName4;
-__caller_sname3__ = gCallerSName3;
-__caller_sname2__ = gCallerSName2;
-__caller_sname__ = gCallerSName;
-__caller_sline10__ = gCallerSLine10;
-__caller_sline9__ = gCallerSLine9;
-__caller_sline8__ = gCallerSLine8;
-__caller_sline7__ = gCallerSLine7;
-__caller_sline6__ = gCallerSLine6;
-__caller_sline5__ = gCallerSLine5;
-__caller_sline4__ = gCallerSLine4;
-__caller_sline3__ = gCallerSLine3;
-__caller_sline2__ = gCallerSLine2;
-__caller_sline__ = gCallerSLine;
-gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
     come_clear_stackframe();
-    multiple_assgin_var2=optional$2tuple3$3sTypephcharphboolphbool_value((come_push_stackframe("23interface.c", 72),((struct optional$2tuple3$3sTypephcharphboolphbool*)(right_value86=(gCallerSName = "23interface.c", gCallerSLine = 72,parse_type(info,(_Bool)0,(_Bool)1))))));
+    multiple_assgin_var2=optional$2tuple3$3sTypephcharphboolphbool_value((come_push_stackframe("23interface.c", 72),((struct optional$2tuple3$3sTypephcharphboolphbool*)(right_value86=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 72,parse_type(info,(_Bool)0,(_Bool)1))))));
     result_type_98=(struct sType*)come_increment_ref_count(multiple_assgin_var2->v1);
     var_name_99=(char*)come_increment_ref_count(multiple_assgin_var2->v2);
     err_100=multiple_assgin_var2->v3;
@@ -13076,18 +6227,18 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     __freed_obj__ = 0;
     if(_if_conditional185=!err_100,    __freed_obj__ = 0, 
     _if_conditional185) {
-        (gCallerSName = "23interface.c", gCallerSLine = 74,printf("%s %d: parse_type failed\n",((struct sInfo*)come_null_check(info, "23interface.c", 74))->sname,((struct sInfo*)come_null_check(info, "23interface.c", 74))->sline));
+        (gCallerSName[0] = "23interface.c", gCallerSLine[0] = 74,printf("%s %d: parse_type failed\n",((struct sInfo*)come_null_check(info, "23interface.c", 74))->sname,((struct sInfo*)come_null_check(info, "23interface.c", 74))->sline));
         __freed_obj__ = 0;
-        (gCallerSName = "23interface.c", gCallerSLine = 75,exit(2));
+        (gCallerSName[0] = "23interface.c", gCallerSLine[0] = 75,exit(2));
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
     come_clear_stackframe();
-    fun_name_101=(char*)come_increment_ref_count(optional$2charphbool_value((come_push_stackframe("23interface.c", 78),((struct optional$2charphbool*)(right_value87=(gCallerSName = "23interface.c", gCallerSLine = 78,parse_word(info)))))));
+    fun_name_101=(char*)come_increment_ref_count(optional$2charphbool_value((come_push_stackframe("23interface.c", 78),((struct optional$2charphbool*)(right_value87=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 78,parse_word(info)))))));
     if(right_value87 && right_value87 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value87, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     come_clear_stackframe();
-    multiple_assgin_var3=optional$2tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolphbool_value((come_push_stackframe("23interface.c", 80),((struct optional$2tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolphbool*)(right_value88=(gCallerSName = "23interface.c", gCallerSLine = 80,parse_params(info))))));
+    multiple_assgin_var3=optional$2tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolphbool_value((come_push_stackframe("23interface.c", 80),((struct optional$2tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolphbool*)(right_value88=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 80,parse_params(info))))));
     param_types_103=(struct list$1sTypeph*)come_increment_ref_count(multiple_assgin_var3->v1);
     param_names_104=(struct list$1charph*)come_increment_ref_count(multiple_assgin_var3->v2);
     param_default_parametors_105=(struct list$1charph*)come_increment_ref_count(multiple_assgin_var3->v3);
@@ -13095,37 +6246,37 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     come_pop_stackframe();
     if(right_value88 && right_value88 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolphboolp_finalize,right_value88, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
-    (gCallerSName = "23interface.c", gCallerSLine = 82,list$1sTypeph_insert(((struct list$1sTypeph*)come_null_check(param_types_103, "23interface.c", 82)),0,(struct sType*)come_increment_ref_count(((struct sType*)(right_value96=(gCallerSName = "23interface.c", gCallerSLine = 82,sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value95=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "23interface.c", 82)))),"void*",(_Bool)0,info)))))));
+    (gCallerSName[0] = "23interface.c", gCallerSLine[0] = 82,list$1sTypeph_insert(((struct list$1sTypeph*)come_null_check(param_types_103, "23interface.c", 82)),0,(struct sType*)come_increment_ref_count(((struct sType*)(right_value96=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 82,sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value95=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "23interface.c", 82)))),"void*",(_Bool)0,info)))))));
     if(right_value95 && right_value95 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value95, (void*)0, (void*)0, 0, 1, 0, 0); }
     if(right_value96 && right_value96 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value96, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
-    (gCallerSName = "23interface.c", gCallerSLine = 83,list$1charph_insert(((struct list$1charph*)come_null_check(param_names_104, "23interface.c", 83)),0,(char*)come_increment_ref_count(((char*)(right_value103=(gCallerSName = "23interface.c", gCallerSLine = 83,__builtin_string("self")))))));
+    (gCallerSName[0] = "23interface.c", gCallerSLine[0] = 83,list$1charph_insert(((struct list$1charph*)come_null_check(param_names_104, "23interface.c", 83)),0,(char*)come_increment_ref_count(((char*)(right_value103=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 83,__builtin_string("self")))))));
     if(right_value103 && right_value103 != __result_obj__ && !__freed_obj__) { right_value103 = come_decrement_ref_count(right_value103, (void*)0, (void*)0, 1, 0, 0); }
     __freed_obj__ = 0;
-    type_123=(struct sType*)come_increment_ref_count(((struct sType*)(right_value105=(gCallerSName = "23interface.c", gCallerSLine = 85,sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value104=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "23interface.c", 85)))),"lambda",(_Bool)0,info)))));
+    type_123=(struct sType*)come_increment_ref_count(((struct sType*)(right_value105=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 85,sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value104=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "23interface.c", 85)))),"lambda",(_Bool)0,info)))));
     if(right_value104 && right_value104 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value104, (void*)0, (void*)0, 0, 1, 0, 0); }
     if(right_value105 && right_value105 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value105, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     __dec_obj53=((struct sType*)come_null_check(type_123, "23interface.c", 87))->mParamTypes;
-    ((struct sType*)come_null_check(type_123, "23interface.c", 87))->mParamTypes=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value109=(gCallerSName = "23interface.c", gCallerSLine = 87,list$1sTypephp_clone(param_types_103)))));
+    ((struct sType*)come_null_check(type_123, "23interface.c", 87))->mParamTypes=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value109=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 87,list$1sTypephp_clone(param_types_103)))));
     if(__dec_obj53) { come_call_finalizer(list$1sTypeph_finalize,__dec_obj53, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(right_value109 && right_value109 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,right_value109, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     __dec_obj54=((struct sType*)come_null_check(type_123, "23interface.c", 88))->mParamNames;
-    ((struct sType*)come_null_check(type_123, "23interface.c", 88))->mParamNames=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value113=(gCallerSName = "23interface.c", gCallerSLine = 88,list$1charphp_clone(param_names_104)))));
+    ((struct sType*)come_null_check(type_123, "23interface.c", 88))->mParamNames=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value113=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 88,list$1charphp_clone(param_names_104)))));
     if(__dec_obj54) { come_call_finalizer(list$1charph_finalize,__dec_obj54, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(right_value113 && right_value113 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value113, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
     ((struct sType*)come_null_check(type_123, "23interface.c", 89))->mVarArgs=var_args_106;
     __freed_obj__ = 0;
     __dec_obj56=((struct sType*)come_null_check(type_123, "23interface.c", 90))->mResultType;
-    ((struct sType*)come_null_check(type_123, "23interface.c", 90))->mResultType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value117=(gCallerSName = "23interface.c", gCallerSLine = 90,tuple1$1sTypeph_initialize((struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value114=(struct tuple1$1sTypeph*)come_calloc(1, sizeof(struct tuple1$1sTypeph)*(1), "23interface.c", 90)))),(struct sType*)come_increment_ref_count(((struct sType*)(right_value116=(gCallerSName = "23interface.c", gCallerSLine = 90,sType_clone(result_type_98))))))))));
+    ((struct sType*)come_null_check(type_123, "23interface.c", 90))->mResultType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value117=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 90,tuple1$1sTypeph_initialize((struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value114=(struct tuple1$1sTypeph*)come_calloc(1, sizeof(struct tuple1$1sTypeph)*(1), "23interface.c", 90)))),(struct sType*)come_increment_ref_count(((struct sType*)(right_value116=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 90,sType_clone(result_type_98))))))))));
     if(__dec_obj56) { come_call_finalizer(tuple1$1sTypeph_finalize,__dec_obj56, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(right_value114 && right_value114 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,right_value114, (void*)0, (void*)0, 0, 1, 0, 0); }
     if(right_value116 && right_value116 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value116, (void*)0, (void*)0, 0, 1, 0, 0); }
     if(right_value117 && right_value117 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,right_value117, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
-    __result99__ = __result_obj__ = ((struct tuple2$2sTypephcharph*)(right_value121=(gCallerSName = "23interface.c", gCallerSLine = 92,tuple2$2sTypephcharph_initialize((struct tuple2$2sTypephcharph*)come_increment_ref_count(((struct tuple2$2sTypephcharph*)(right_value118=(struct tuple2$2sTypephcharph*)come_calloc(1, sizeof(struct tuple2$2sTypephcharph)*(1), "23interface.c", 92)))),(struct sType*)come_increment_ref_count(type_123),(char*)come_increment_ref_count(fun_name_101)))));
+    __result99__ = __result_obj__ = ((struct tuple2$2sTypephcharph*)(right_value121=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 92,tuple2$2sTypephcharph_initialize((struct tuple2$2sTypephcharph*)come_increment_ref_count(((struct tuple2$2sTypephcharph*)(right_value118=(struct tuple2$2sTypephcharph*)come_calloc(1, sizeof(struct tuple2$2sTypephcharph)*(1), "23interface.c", 92)))),(struct sType*)come_increment_ref_count(type_123),(char*)come_increment_ref_count(fun_name_101)))));
     if(result_type_98 && !__freed_obj__) { come_call_finalizer(sType_finalize,result_type_98, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(var_name_99 && !__freed_obj__) { var_name_99 = come_decrement_ref_count(var_name_99, (void*)0, (void*)0, 0, 0, 0); }
     if(fun_name_101 && !__freed_obj__) { fun_name_101 = come_decrement_ref_count(fun_name_101, (void*)0, (void*)0, 0, 0, 0); }
@@ -13135,28 +6286,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     if(type_123 && !__freed_obj__) { come_call_finalizer(sType_finalize,type_123, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(right_value118 && right_value118 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2sTypephcharphp_finalize,right_value118, (void*)0, (void*)0, 0, 1, 0, 0); }
     __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-    return __result99__;
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result99__;
     __freed_obj__ = 0;
     if(result_type_98 && !__freed_obj__) { come_call_finalizer(sType_finalize,result_type_98, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(var_name_99 && !__freed_obj__) { var_name_99 = come_decrement_ref_count(var_name_99, (void*)0, (void*)0, 0, 0, 0); }
@@ -13165,50 +6295,12 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
     if(param_names_104 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,param_names_104, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(param_default_parametors_105 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,param_default_parametors_105, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(type_123 && !__freed_obj__) { come_call_finalizer(sType_finalize,type_123, (void*)0, (void*)0, 0, 0, 0, 0); }
-gCallerSName10 = __caller_sname10__;
-gCallerSName9 = __caller_sname9__;
-gCallerSName8 = __caller_sname8__;
-gCallerSName7 = __caller_sname7__;
-gCallerSName6 = __caller_sname6__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName4 = __caller_sname4__;
-gCallerSName3 = __caller_sname3__;
-gCallerSName2 = __caller_sname2__;
-gCallerSName = __caller_sname__;
-gCallerSLine10 = __caller_sline10__;
-gCallerSLine9 = __caller_sline9__;
-gCallerSLine8 = __caller_sline8__;
-gCallerSLine7 = __caller_sline7__;
-gCallerSLine6 = __caller_sline6__;
-gCallerSLine5 = __caller_sline5__;
-gCallerSLine4 = __caller_sline4__;
-gCallerSLine3 = __caller_sline3__;
-gCallerSLine2 = __caller_sline2__;
-gCallerSLine = __caller_sline__;
-}
+memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct tuple3$3sTypephcharphbool* optional$2tuple3$3sTypephcharphboolphbool_value(struct optional$2tuple3$3sTypephcharphboolphbool* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -13220,138 +6312,30 @@ struct tuple3$3sTypephcharphbool* __result84__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&default_value_97, 0, sizeof(struct tuple3$3sTypephcharphbool*));
-    __caller_sname10__ = gCallerSName10;
-    __caller_sname9__ = gCallerSName9;
-    __caller_sname8__ = gCallerSName8;
-    __caller_sname7__ = gCallerSName7;
-    __caller_sname6__ = gCallerSName6;
-    __caller_sname5__ = gCallerSName5;
-    __caller_sname4__ = gCallerSName4;
-    __caller_sname3__ = gCallerSName3;
-    __caller_sname2__ = gCallerSName2;
-    __caller_sname__ = gCallerSName;
-    __caller_sline10__ = gCallerSLine10;
-    __caller_sline9__ = gCallerSLine9;
-    __caller_sline8__ = gCallerSLine8;
-    __caller_sline7__ = gCallerSLine7;
-    __caller_sline6__ = gCallerSLine6;
-    __caller_sline5__ = gCallerSLine5;
-    __caller_sline4__ = gCallerSLine4;
-    __caller_sline3__ = gCallerSLine3;
-    __caller_sline2__ = gCallerSLine2;
-    __caller_sline__ = gCallerSLine;
-    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
         if(_if_conditional181=self==((void*)0),        __freed_obj__ = 0, 
         _if_conditional181) {
             __freed_obj__ = 0;
-            (gCallerSName = "./comelang2.h", gCallerSLine = 61,memset(&default_value_97,0,sizeof(struct tuple3$3sTypephcharphbool*)));
+            (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 61,memset(&default_value_97,0,sizeof(struct tuple3$3sTypephcharphbool*)));
             __freed_obj__ = 0;
             __result83__ = __result_obj__ = default_value_97;
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result83__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result83__;
             __freed_obj__ = 0;
         }
         else {
             __result84__ = __result_obj__ = ((struct optional$2tuple3$3sTypephcharphboolphbool*)come_null_check(self, "./comelang2.h", 65))->v1;
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result84__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result84__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-}
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void optional$2tuple3$3sTypephcharphboolphboolp_finalize(struct optional$2tuple3$3sTypephcharphboolphbool* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -13359,85 +6343,19 @@ _Bool __freed_obj__;
 _Bool _if_conditional182;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-    __caller_sname10__ = gCallerSName10;
-    __caller_sname9__ = gCallerSName9;
-    __caller_sname8__ = gCallerSName8;
-    __caller_sname7__ = gCallerSName7;
-    __caller_sname6__ = gCallerSName6;
-    __caller_sname5__ = gCallerSName5;
-    __caller_sname4__ = gCallerSName4;
-    __caller_sname3__ = gCallerSName3;
-    __caller_sname2__ = gCallerSName2;
-    __caller_sname__ = gCallerSName;
-    __caller_sline10__ = gCallerSLine10;
-    __caller_sline9__ = gCallerSLine9;
-    __caller_sline8__ = gCallerSLine8;
-    __caller_sline7__ = gCallerSLine7;
-    __caller_sline6__ = gCallerSLine6;
-    __caller_sline5__ = gCallerSLine5;
-    __caller_sline4__ = gCallerSLine4;
-    __caller_sline3__ = gCallerSLine3;
-    __caller_sline2__ = gCallerSLine2;
-    __caller_sline__ = gCallerSLine;
-    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
         if(_if_conditional182=self!=((void*)0)&&((struct optional$2tuple3$3sTypephcharphboolphbool*)come_null_check(self, "optional$2tuple3$3sTypephcharphboolphboolp_finalize", 1))->v1!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional182) {
             if(((struct optional$2tuple3$3sTypephcharphboolphbool*)come_null_check(self, "optional$2tuple3$3sTypephcharphboolphboolp_finalize", 0))->v1 && !__freed_obj__) { come_call_finalizer(tuple3$3sTypephcharphboolp_finalize,((struct optional$2tuple3$3sTypephcharphboolphbool*)come_null_check(self, "optional$2tuple3$3sTypephcharphboolphboolp_finalize", 0))->v1, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-}
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void tuple3$3sTypephcharphboolp_finalize(struct tuple3$3sTypephcharphbool* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -13446,35 +6364,7 @@ _Bool _if_conditional183;
 _Bool _if_conditional184;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-            __caller_sname10__ = gCallerSName10;
-            __caller_sname9__ = gCallerSName9;
-            __caller_sname8__ = gCallerSName8;
-            __caller_sname7__ = gCallerSName7;
-            __caller_sname6__ = gCallerSName6;
-            __caller_sname5__ = gCallerSName5;
-            __caller_sname4__ = gCallerSName4;
-            __caller_sname3__ = gCallerSName3;
-            __caller_sname2__ = gCallerSName2;
-            __caller_sname__ = gCallerSName;
-            __caller_sline10__ = gCallerSLine10;
-            __caller_sline9__ = gCallerSLine9;
-            __caller_sline8__ = gCallerSLine8;
-            __caller_sline7__ = gCallerSLine7;
-            __caller_sline6__ = gCallerSLine6;
-            __caller_sline5__ = gCallerSLine5;
-            __caller_sline4__ = gCallerSLine4;
-            __caller_sline3__ = gCallerSLine3;
-            __caller_sline2__ = gCallerSLine2;
-            __caller_sline__ = gCallerSLine;
-            gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-            gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-            gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-            gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-            gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-            gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-            gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-            gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-            gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+            memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);            memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);            for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                 if(_if_conditional183=self!=((void*)0)&&((struct tuple3$3sTypephcharphbool*)come_null_check(self, "tuple3$3sTypephcharphboolp_finalize", 1))->v1!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional183) {
                     if(((struct tuple3$3sTypephcharphbool*)come_null_check(self, "tuple3$3sTypephcharphboolp_finalize", 0))->v1 && !__freed_obj__) { come_call_finalizer(sType_finalize,((struct tuple3$3sTypephcharphbool*)come_null_check(self, "tuple3$3sTypephcharphboolp_finalize", 0))->v1, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -13487,50 +6377,12 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-}
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool* optional$2tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolphbool_value(struct optional$2tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolphbool* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -13542,138 +6394,30 @@ struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool* __result86__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&default_value_102, 0, sizeof(struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool*));
-    __caller_sname10__ = gCallerSName10;
-    __caller_sname9__ = gCallerSName9;
-    __caller_sname8__ = gCallerSName8;
-    __caller_sname7__ = gCallerSName7;
-    __caller_sname6__ = gCallerSName6;
-    __caller_sname5__ = gCallerSName5;
-    __caller_sname4__ = gCallerSName4;
-    __caller_sname3__ = gCallerSName3;
-    __caller_sname2__ = gCallerSName2;
-    __caller_sname__ = gCallerSName;
-    __caller_sline10__ = gCallerSLine10;
-    __caller_sline9__ = gCallerSLine9;
-    __caller_sline8__ = gCallerSLine8;
-    __caller_sline7__ = gCallerSLine7;
-    __caller_sline6__ = gCallerSLine6;
-    __caller_sline5__ = gCallerSLine5;
-    __caller_sline4__ = gCallerSLine4;
-    __caller_sline3__ = gCallerSLine3;
-    __caller_sline2__ = gCallerSLine2;
-    __caller_sline__ = gCallerSLine;
-    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
         if(_if_conditional186=self==((void*)0),        __freed_obj__ = 0, 
         _if_conditional186) {
             __freed_obj__ = 0;
-            (gCallerSName = "./comelang2.h", gCallerSLine = 61,memset(&default_value_102,0,sizeof(struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool*)));
+            (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 61,memset(&default_value_102,0,sizeof(struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool*)));
             __freed_obj__ = 0;
             __result85__ = __result_obj__ = default_value_102;
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result85__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result85__;
             __freed_obj__ = 0;
         }
         else {
             __result86__ = __result_obj__ = ((struct optional$2tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolphbool*)come_null_check(self, "./comelang2.h", 65))->v1;
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result86__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result86__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-}
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void optional$2tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolphboolp_finalize(struct optional$2tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolphbool* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -13681,85 +6425,19 @@ _Bool __freed_obj__;
 _Bool _if_conditional187;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-    __caller_sname10__ = gCallerSName10;
-    __caller_sname9__ = gCallerSName9;
-    __caller_sname8__ = gCallerSName8;
-    __caller_sname7__ = gCallerSName7;
-    __caller_sname6__ = gCallerSName6;
-    __caller_sname5__ = gCallerSName5;
-    __caller_sname4__ = gCallerSName4;
-    __caller_sname3__ = gCallerSName3;
-    __caller_sname2__ = gCallerSName2;
-    __caller_sname__ = gCallerSName;
-    __caller_sline10__ = gCallerSLine10;
-    __caller_sline9__ = gCallerSLine9;
-    __caller_sline8__ = gCallerSLine8;
-    __caller_sline7__ = gCallerSLine7;
-    __caller_sline6__ = gCallerSLine6;
-    __caller_sline5__ = gCallerSLine5;
-    __caller_sline4__ = gCallerSLine4;
-    __caller_sline3__ = gCallerSLine3;
-    __caller_sline2__ = gCallerSLine2;
-    __caller_sline__ = gCallerSLine;
-    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
         if(_if_conditional187=self!=((void*)0)&&((struct optional$2tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolphbool*)come_null_check(self, "optional$2tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolphboolp_finalize", 1))->v1!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional187) {
             if(((struct optional$2tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolphbool*)come_null_check(self, "optional$2tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolphboolp_finalize", 0))->v1 && !__freed_obj__) { come_call_finalizer(tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolp_finalize,((struct optional$2tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolphbool*)come_null_check(self, "optional$2tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolphboolp_finalize", 0))->v1, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-}
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolp_finalize(struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -13769,35 +6447,7 @@ _Bool _if_conditional189;
 _Bool _if_conditional190;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-            __caller_sname10__ = gCallerSName10;
-            __caller_sname9__ = gCallerSName9;
-            __caller_sname8__ = gCallerSName8;
-            __caller_sname7__ = gCallerSName7;
-            __caller_sname6__ = gCallerSName6;
-            __caller_sname5__ = gCallerSName5;
-            __caller_sname4__ = gCallerSName4;
-            __caller_sname3__ = gCallerSName3;
-            __caller_sname2__ = gCallerSName2;
-            __caller_sname__ = gCallerSName;
-            __caller_sline10__ = gCallerSLine10;
-            __caller_sline9__ = gCallerSLine9;
-            __caller_sline8__ = gCallerSLine8;
-            __caller_sline7__ = gCallerSLine7;
-            __caller_sline6__ = gCallerSLine6;
-            __caller_sline5__ = gCallerSLine5;
-            __caller_sline4__ = gCallerSLine4;
-            __caller_sline3__ = gCallerSLine3;
-            __caller_sline2__ = gCallerSLine2;
-            __caller_sline__ = gCallerSLine;
-            gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-            gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-            gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-            gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-            gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-            gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-            gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-            gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-            gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+            memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);            memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);            for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
                 if(_if_conditional188=self!=((void*)0)&&((struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool*)come_null_check(self, "tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolp_finalize", 1))->v1!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional188) {
                     if(((struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool*)come_null_check(self, "tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolp_finalize", 0))->v1 && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,((struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool*)come_null_check(self, "tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolp_finalize", 0))->v1, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -13816,50 +6466,12 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-}
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1sTypeph* list$1sTypeph_insert(struct list$1sTypeph* self, int position, struct sType* item){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -13894,38 +6506,10 @@ memset(&it_112, 0, sizeof(struct list_item$1sTypeph*));
 memset(&i_113, 0, sizeof(int));
 memset(&right_value94, 0, sizeof(void*));
 memset(&litem_114, 0, sizeof(struct list_item$1sTypeph*));
-    __caller_sname10__ = gCallerSName10;
-    __caller_sname9__ = gCallerSName9;
-    __caller_sname8__ = gCallerSName8;
-    __caller_sname7__ = gCallerSName7;
-    __caller_sname6__ = gCallerSName6;
-    __caller_sname5__ = gCallerSName5;
-    __caller_sname4__ = gCallerSName4;
-    __caller_sname3__ = gCallerSName3;
-    __caller_sname2__ = gCallerSName2;
-    __caller_sname__ = gCallerSName;
-    __caller_sline10__ = gCallerSLine10;
-    __caller_sline9__ = gCallerSLine9;
-    __caller_sline8__ = gCallerSLine8;
-    __caller_sline7__ = gCallerSLine7;
-    __caller_sline6__ = gCallerSLine6;
-    __caller_sline5__ = gCallerSLine5;
-    __caller_sline4__ = gCallerSLine4;
-    __caller_sline3__ = gCallerSLine3;
-    __caller_sline2__ = gCallerSLine2;
-    __caller_sline__ = gCallerSLine;
-    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
         if(_if_conditional191=position<0,        __freed_obj__ = 0, 
         _if_conditional191) {
-            position+=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 437))->len+1;
+            position+=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 421))->len+1;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
@@ -13935,81 +6519,60 @@ memset(&litem_114, 0, sizeof(struct list_item$1sTypeph*));
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-        if(_if_conditional193=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 448))->len==0||position>=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 448))->len,        __freed_obj__ = 0, 
+        if(_if_conditional193=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 432))->len==0||position>=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 432))->len,        __freed_obj__ = 0, 
         _if_conditional193) {
-            (gCallerSName = "./comelang2.h", gCallerSLine = 444,list$1sTypeph_push_back(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 444)),(struct sType*)come_increment_ref_count(item)));
+            (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 428,list$1sTypeph_push_back(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 428)),(struct sType*)come_increment_ref_count(item)));
             __freed_obj__ = 0;
             __result88__ = __result_obj__ = self;
             if(item && !__freed_obj__) { come_call_finalizer(sType_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result88__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result88__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
         if(_if_conditional196=position==0,        __freed_obj__ = 0, 
         _if_conditional196) {
-            litem_110=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value92=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./comelang2.h", 449))));
+            litem_110=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value92=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./comelang2.h", 433))));
             if(right_value92 && right_value92 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1sTypephp_finalize,right_value92, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
-            ((struct list_item$1sTypeph*)come_null_check(litem_110, "./comelang2.h", 451))->prev=((void*)0);
+            ((struct list_item$1sTypeph*)come_null_check(litem_110, "./comelang2.h", 435))->prev=((void*)0);
             __freed_obj__ = 0;
-            ((struct list_item$1sTypeph*)come_null_check(litem_110, "./comelang2.h", 452))->next=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 452))->head;
+            ((struct list_item$1sTypeph*)come_null_check(litem_110, "./comelang2.h", 436))->next=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 436))->head;
             __freed_obj__ = 0;
-            __dec_obj44=((struct list_item$1sTypeph*)come_null_check(litem_110, "./comelang2.h", 453))->item;
-            ((struct list_item$1sTypeph*)come_null_check(litem_110, "./comelang2.h", 453))->item=(struct sType*)come_increment_ref_count(item);
+            __dec_obj44=((struct list_item$1sTypeph*)come_null_check(litem_110, "./comelang2.h", 437))->item;
+            ((struct list_item$1sTypeph*)come_null_check(litem_110, "./comelang2.h", 437))->item=(struct sType*)come_increment_ref_count(item);
             if(__dec_obj44) { come_call_finalizer(sType_finalize,__dec_obj44, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
-            ((struct list_item$1sTypeph*)come_null_check(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 455))->head, "./comelang2.h", 455))->prev=litem_110;
+            ((struct list_item$1sTypeph*)come_null_check(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 439))->head, "./comelang2.h", 439))->prev=litem_110;
             __freed_obj__ = 0;
-            ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 456))->head=litem_110;
+            ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 440))->head=litem_110;
             __freed_obj__ = 0;
-            ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 458))->len++;
+            ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 442))->len++;
             __freed_obj__ = 0;
         }
         else {
-            if(_if_conditional197=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 494))->len==1,            __freed_obj__ = 0, 
+            if(_if_conditional197=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 478))->len==1,            __freed_obj__ = 0, 
             _if_conditional197) {
-                litem_111=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value93=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./comelang2.h", 461))));
+                litem_111=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value93=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./comelang2.h", 445))));
                 if(right_value93 && right_value93 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1sTypephp_finalize,right_value93, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
-                ((struct list_item$1sTypeph*)come_null_check(litem_111, "./comelang2.h", 463))->prev=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 463))->head;
+                ((struct list_item$1sTypeph*)come_null_check(litem_111, "./comelang2.h", 447))->prev=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 447))->head;
                 __freed_obj__ = 0;
-                ((struct list_item$1sTypeph*)come_null_check(litem_111, "./comelang2.h", 464))->next=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 464))->tail;
+                ((struct list_item$1sTypeph*)come_null_check(litem_111, "./comelang2.h", 448))->next=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 448))->tail;
                 __freed_obj__ = 0;
-                __dec_obj45=((struct list_item$1sTypeph*)come_null_check(litem_111, "./comelang2.h", 465))->item;
-                ((struct list_item$1sTypeph*)come_null_check(litem_111, "./comelang2.h", 465))->item=(struct sType*)come_increment_ref_count(item);
+                __dec_obj45=((struct list_item$1sTypeph*)come_null_check(litem_111, "./comelang2.h", 449))->item;
+                ((struct list_item$1sTypeph*)come_null_check(litem_111, "./comelang2.h", 449))->item=(struct sType*)come_increment_ref_count(item);
                 if(__dec_obj45) { come_call_finalizer(sType_finalize,__dec_obj45, (void*)0, (void*)0, 0, 0, 0, 0); }
                 __freed_obj__ = 0;
-                ((struct list_item$1sTypeph*)come_null_check(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 467))->tail, "./comelang2.h", 467))->prev=litem_111;
+                ((struct list_item$1sTypeph*)come_null_check(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 451))->tail, "./comelang2.h", 451))->prev=litem_111;
                 __freed_obj__ = 0;
-                ((struct list_item$1sTypeph*)come_null_check(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 468))->head, "./comelang2.h", 468))->next=litem_111;
+                ((struct list_item$1sTypeph*)come_null_check(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 452))->head, "./comelang2.h", 452))->next=litem_111;
                 __freed_obj__ = 0;
-                ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 470))->len++;
+                ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 454))->len++;
                 __freed_obj__ = 0;
             }
             else {
-                it_112=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 473))->head;
+                it_112=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 457))->head;
                 __freed_obj__ = 0;
                 i_113=0;
                 __freed_obj__ = 0;
@@ -14017,26 +6580,26 @@ memset(&litem_114, 0, sizeof(struct list_item$1sTypeph*));
                 _while_condtional17) {
                     if(_if_conditional198=position==i_113,                    __freed_obj__ = 0, 
                     _if_conditional198) {
-                        litem_114=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value94=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./comelang2.h", 477))));
+                        litem_114=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value94=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./comelang2.h", 461))));
                         if(right_value94 && right_value94 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1sTypephp_finalize,right_value94, (void*)0, (void*)0, 0, 1, 0, 0); }
                         __freed_obj__ = 0;
-                        ((struct list_item$1sTypeph*)come_null_check(litem_114, "./comelang2.h", 479))->prev=((struct list_item$1sTypeph*)come_null_check(it_112, "./comelang2.h", 479))->prev;
+                        ((struct list_item$1sTypeph*)come_null_check(litem_114, "./comelang2.h", 463))->prev=((struct list_item$1sTypeph*)come_null_check(it_112, "./comelang2.h", 463))->prev;
                         __freed_obj__ = 0;
-                        ((struct list_item$1sTypeph*)come_null_check(litem_114, "./comelang2.h", 480))->next=it_112;
+                        ((struct list_item$1sTypeph*)come_null_check(litem_114, "./comelang2.h", 464))->next=it_112;
                         __freed_obj__ = 0;
-                        __dec_obj46=((struct list_item$1sTypeph*)come_null_check(litem_114, "./comelang2.h", 481))->item;
-                        ((struct list_item$1sTypeph*)come_null_check(litem_114, "./comelang2.h", 481))->item=(struct sType*)come_increment_ref_count(item);
+                        __dec_obj46=((struct list_item$1sTypeph*)come_null_check(litem_114, "./comelang2.h", 465))->item;
+                        ((struct list_item$1sTypeph*)come_null_check(litem_114, "./comelang2.h", 465))->item=(struct sType*)come_increment_ref_count(item);
                         if(__dec_obj46) { come_call_finalizer(sType_finalize,__dec_obj46, (void*)0, (void*)0, 0, 0, 0, 0); }
                         __freed_obj__ = 0;
-                        ((struct list_item$1sTypeph*)come_null_check(((struct list_item$1sTypeph*)come_null_check(it_112, "./comelang2.h", 483))->prev, "./comelang2.h", 483))->next=litem_114;
+                        ((struct list_item$1sTypeph*)come_null_check(((struct list_item$1sTypeph*)come_null_check(it_112, "./comelang2.h", 467))->prev, "./comelang2.h", 467))->next=litem_114;
                         __freed_obj__ = 0;
-                        ((struct list_item$1sTypeph*)come_null_check(it_112, "./comelang2.h", 484))->prev=litem_114;
+                        ((struct list_item$1sTypeph*)come_null_check(it_112, "./comelang2.h", 468))->prev=litem_114;
                         __freed_obj__ = 0;
-                        ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 486))->len++;
+                        ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 470))->len++;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
-                    it_112=((struct list_item$1sTypeph*)come_null_check(it_112, "./comelang2.h", 489))->next;
+                    it_112=((struct list_item$1sTypeph*)come_null_check(it_112, "./comelang2.h", 473))->next;
                     __freed_obj__ = 0;
                     i_113++;
                     __freed_obj__ = 0;
@@ -14049,74 +6612,15 @@ memset(&litem_114, 0, sizeof(struct list_item$1sTypeph*));
         __result89__ = __result_obj__ = self;
         if(item && !__freed_obj__) { come_call_finalizer(sType_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
         __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-        return __result89__;
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result89__;
         __freed_obj__ = 0;
         if(item && !__freed_obj__) { come_call_finalizer(sType_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-}
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1sTypeph* list$1sTypeph_push_back(struct list$1sTypeph* self, struct sType* item){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -14141,165 +6645,78 @@ memset(&right_value90, 0, sizeof(void*));
 memset(&litem_108, 0, sizeof(struct list_item$1sTypeph*));
 memset(&right_value91, 0, sizeof(void*));
 memset(&litem_109, 0, sizeof(struct list_item$1sTypeph*));
-            __caller_sname10__ = gCallerSName10;
-            __caller_sname9__ = gCallerSName9;
-            __caller_sname8__ = gCallerSName8;
-            __caller_sname7__ = gCallerSName7;
-            __caller_sname6__ = gCallerSName6;
-            __caller_sname5__ = gCallerSName5;
-            __caller_sname4__ = gCallerSName4;
-            __caller_sname3__ = gCallerSName3;
-            __caller_sname2__ = gCallerSName2;
-            __caller_sname__ = gCallerSName;
-            __caller_sline10__ = gCallerSLine10;
-            __caller_sline9__ = gCallerSLine9;
-            __caller_sline8__ = gCallerSLine8;
-            __caller_sline7__ = gCallerSLine7;
-            __caller_sline6__ = gCallerSLine6;
-            __caller_sline5__ = gCallerSLine5;
-            __caller_sline4__ = gCallerSLine4;
-            __caller_sline3__ = gCallerSLine3;
-            __caller_sline2__ = gCallerSLine2;
-            __caller_sline__ = gCallerSLine;
-            gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-            gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-            gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-            gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-            gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-            gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-            gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-            gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-            gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                if(_if_conditional194=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 323))->len==0,                __freed_obj__ = 0, 
+            memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);            memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);            for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                if(_if_conditional194=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 307))->len==0,                __freed_obj__ = 0, 
                 _if_conditional194) {
-                    litem_107=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value89=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./comelang2.h", 293))));
+                    litem_107=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value89=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./comelang2.h", 277))));
                     if(right_value89 && right_value89 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1sTypephp_finalize,right_value89, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
-                    ((struct list_item$1sTypeph*)come_null_check(litem_107, "./comelang2.h", 295))->prev=((void*)0);
+                    ((struct list_item$1sTypeph*)come_null_check(litem_107, "./comelang2.h", 279))->prev=((void*)0);
                     __freed_obj__ = 0;
-                    ((struct list_item$1sTypeph*)come_null_check(litem_107, "./comelang2.h", 296))->next=((void*)0);
+                    ((struct list_item$1sTypeph*)come_null_check(litem_107, "./comelang2.h", 280))->next=((void*)0);
                     __freed_obj__ = 0;
-                    __dec_obj41=((struct list_item$1sTypeph*)come_null_check(litem_107, "./comelang2.h", 297))->item;
-                    ((struct list_item$1sTypeph*)come_null_check(litem_107, "./comelang2.h", 297))->item=(struct sType*)come_increment_ref_count(item);
+                    __dec_obj41=((struct list_item$1sTypeph*)come_null_check(litem_107, "./comelang2.h", 281))->item;
+                    ((struct list_item$1sTypeph*)come_null_check(litem_107, "./comelang2.h", 281))->item=(struct sType*)come_increment_ref_count(item);
                     if(__dec_obj41) { come_call_finalizer(sType_finalize,__dec_obj41, (void*)0, (void*)0, 0, 0, 0, 0); }
                     __freed_obj__ = 0;
-                    ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 299))->tail=litem_107;
+                    ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 283))->tail=litem_107;
                     __freed_obj__ = 0;
-                    ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 300))->head=litem_107;
+                    ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 284))->head=litem_107;
                     __freed_obj__ = 0;
                 }
                 else {
-                    if(_if_conditional195=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 323))->len==1,                    __freed_obj__ = 0, 
+                    if(_if_conditional195=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 307))->len==1,                    __freed_obj__ = 0, 
                     _if_conditional195) {
-                        litem_108=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value90=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./comelang2.h", 303))));
+                        litem_108=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value90=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./comelang2.h", 287))));
                         if(right_value90 && right_value90 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1sTypephp_finalize,right_value90, (void*)0, (void*)0, 0, 1, 0, 0); }
                         __freed_obj__ = 0;
-                        ((struct list_item$1sTypeph*)come_null_check(litem_108, "./comelang2.h", 305))->prev=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 305))->head;
+                        ((struct list_item$1sTypeph*)come_null_check(litem_108, "./comelang2.h", 289))->prev=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 289))->head;
                         __freed_obj__ = 0;
-                        ((struct list_item$1sTypeph*)come_null_check(litem_108, "./comelang2.h", 306))->next=((void*)0);
+                        ((struct list_item$1sTypeph*)come_null_check(litem_108, "./comelang2.h", 290))->next=((void*)0);
                         __freed_obj__ = 0;
-                        __dec_obj42=((struct list_item$1sTypeph*)come_null_check(litem_108, "./comelang2.h", 307))->item;
-                        ((struct list_item$1sTypeph*)come_null_check(litem_108, "./comelang2.h", 307))->item=(struct sType*)come_increment_ref_count(item);
+                        __dec_obj42=((struct list_item$1sTypeph*)come_null_check(litem_108, "./comelang2.h", 291))->item;
+                        ((struct list_item$1sTypeph*)come_null_check(litem_108, "./comelang2.h", 291))->item=(struct sType*)come_increment_ref_count(item);
                         if(__dec_obj42) { come_call_finalizer(sType_finalize,__dec_obj42, (void*)0, (void*)0, 0, 0, 0, 0); }
                         __freed_obj__ = 0;
-                        ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 309))->tail=litem_108;
+                        ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 293))->tail=litem_108;
                         __freed_obj__ = 0;
-                        ((struct list_item$1sTypeph*)come_null_check(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 310))->head, "./comelang2.h", 310))->next=litem_108;
+                        ((struct list_item$1sTypeph*)come_null_check(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 294))->head, "./comelang2.h", 294))->next=litem_108;
                         __freed_obj__ = 0;
                     }
                     else {
-                        litem_109=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value91=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./comelang2.h", 313))));
+                        litem_109=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value91=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./comelang2.h", 297))));
                         if(right_value91 && right_value91 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1sTypephp_finalize,right_value91, (void*)0, (void*)0, 0, 1, 0, 0); }
                         __freed_obj__ = 0;
-                        ((struct list_item$1sTypeph*)come_null_check(litem_109, "./comelang2.h", 315))->prev=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 315))->tail;
+                        ((struct list_item$1sTypeph*)come_null_check(litem_109, "./comelang2.h", 299))->prev=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 299))->tail;
                         __freed_obj__ = 0;
-                        ((struct list_item$1sTypeph*)come_null_check(litem_109, "./comelang2.h", 316))->next=((void*)0);
+                        ((struct list_item$1sTypeph*)come_null_check(litem_109, "./comelang2.h", 300))->next=((void*)0);
                         __freed_obj__ = 0;
-                        __dec_obj43=((struct list_item$1sTypeph*)come_null_check(litem_109, "./comelang2.h", 317))->item;
-                        ((struct list_item$1sTypeph*)come_null_check(litem_109, "./comelang2.h", 317))->item=(struct sType*)come_increment_ref_count(item);
+                        __dec_obj43=((struct list_item$1sTypeph*)come_null_check(litem_109, "./comelang2.h", 301))->item;
+                        ((struct list_item$1sTypeph*)come_null_check(litem_109, "./comelang2.h", 301))->item=(struct sType*)come_increment_ref_count(item);
                         if(__dec_obj43) { come_call_finalizer(sType_finalize,__dec_obj43, (void*)0, (void*)0, 0, 0, 0, 0); }
                         __freed_obj__ = 0;
-                        ((struct list_item$1sTypeph*)come_null_check(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 319))->tail, "./comelang2.h", 319))->next=litem_109;
+                        ((struct list_item$1sTypeph*)come_null_check(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 303))->tail, "./comelang2.h", 303))->next=litem_109;
                         __freed_obj__ = 0;
-                        ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 320))->tail=litem_109;
+                        ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 304))->tail=litem_109;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 323))->len++;
+                ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 307))->len++;
                 __freed_obj__ = 0;
                 __result87__ = __result_obj__ = self;
                 if(item && !__freed_obj__) { come_call_finalizer(sType_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
                 __freed_obj__ = 0;
-                gCallerSName10 = __caller_sname10__;
-                gCallerSName9 = __caller_sname9__;
-                gCallerSName8 = __caller_sname8__;
-                gCallerSName7 = __caller_sname7__;
-                gCallerSName6 = __caller_sname6__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName4 = __caller_sname4__;
-                gCallerSName3 = __caller_sname3__;
-                gCallerSName2 = __caller_sname2__;
-                gCallerSName = __caller_sname__;
-                gCallerSLine10 = __caller_sline10__;
-                gCallerSLine9 = __caller_sline9__;
-                gCallerSLine8 = __caller_sline8__;
-                gCallerSLine7 = __caller_sline7__;
-                gCallerSLine6 = __caller_sline6__;
-                gCallerSLine5 = __caller_sline5__;
-                gCallerSLine4 = __caller_sline4__;
-                gCallerSLine3 = __caller_sline3__;
-                gCallerSLine2 = __caller_sline2__;
-                gCallerSLine = __caller_sline__;
-                return __result87__;
+                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result87__;
                 __freed_obj__ = 0;
                 if(item && !__freed_obj__) { come_call_finalizer(sType_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-}
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1charph* list$1charph_insert(struct list$1charph* self, int position, char* item){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -14334,38 +6751,10 @@ memset(&it_120, 0, sizeof(struct list_item$1charph*));
 memset(&i_121, 0, sizeof(int));
 memset(&right_value102, 0, sizeof(void*));
 memset(&litem_122, 0, sizeof(struct list_item$1charph*));
-    __caller_sname10__ = gCallerSName10;
-    __caller_sname9__ = gCallerSName9;
-    __caller_sname8__ = gCallerSName8;
-    __caller_sname7__ = gCallerSName7;
-    __caller_sname6__ = gCallerSName6;
-    __caller_sname5__ = gCallerSName5;
-    __caller_sname4__ = gCallerSName4;
-    __caller_sname3__ = gCallerSName3;
-    __caller_sname2__ = gCallerSName2;
-    __caller_sname__ = gCallerSName;
-    __caller_sline10__ = gCallerSLine10;
-    __caller_sline9__ = gCallerSLine9;
-    __caller_sline8__ = gCallerSLine8;
-    __caller_sline7__ = gCallerSLine7;
-    __caller_sline6__ = gCallerSLine6;
-    __caller_sline5__ = gCallerSLine5;
-    __caller_sline4__ = gCallerSLine4;
-    __caller_sline3__ = gCallerSLine3;
-    __caller_sline2__ = gCallerSLine2;
-    __caller_sline__ = gCallerSLine;
-    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
         if(_if_conditional199=position<0,        __freed_obj__ = 0, 
         _if_conditional199) {
-            position+=((struct list$1charph*)come_null_check(self, "./comelang2.h", 437))->len+1;
+            position+=((struct list$1charph*)come_null_check(self, "./comelang2.h", 421))->len+1;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
@@ -14375,81 +6764,60 @@ memset(&litem_122, 0, sizeof(struct list_item$1charph*));
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-        if(_if_conditional201=((struct list$1charph*)come_null_check(self, "./comelang2.h", 448))->len==0||position>=((struct list$1charph*)come_null_check(self, "./comelang2.h", 448))->len,        __freed_obj__ = 0, 
+        if(_if_conditional201=((struct list$1charph*)come_null_check(self, "./comelang2.h", 432))->len==0||position>=((struct list$1charph*)come_null_check(self, "./comelang2.h", 432))->len,        __freed_obj__ = 0, 
         _if_conditional201) {
-            (gCallerSName = "./comelang2.h", gCallerSLine = 444,list$1charph_push_back(((struct list$1charph*)come_null_check(self, "./comelang2.h", 444)),(char*)come_increment_ref_count(item)));
+            (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 428,list$1charph_push_back(((struct list$1charph*)come_null_check(self, "./comelang2.h", 428)),(char*)come_increment_ref_count(item)));
             __freed_obj__ = 0;
             __result91__ = __result_obj__ = self;
             if(item && !__freed_obj__) { item = come_decrement_ref_count(item, (void*)0, (void*)0, 0, 1, 0); }
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result91__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result91__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
         if(_if_conditional204=position==0,        __freed_obj__ = 0, 
         _if_conditional204) {
-            litem_118=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value100=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 449))));
+            litem_118=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value100=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 433))));
             if(right_value100 && right_value100 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1charphp_finalize,right_value100, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
-            ((struct list_item$1charph*)come_null_check(litem_118, "./comelang2.h", 451))->prev=((void*)0);
+            ((struct list_item$1charph*)come_null_check(litem_118, "./comelang2.h", 435))->prev=((void*)0);
             __freed_obj__ = 0;
-            ((struct list_item$1charph*)come_null_check(litem_118, "./comelang2.h", 452))->next=((struct list$1charph*)come_null_check(self, "./comelang2.h", 452))->head;
+            ((struct list_item$1charph*)come_null_check(litem_118, "./comelang2.h", 436))->next=((struct list$1charph*)come_null_check(self, "./comelang2.h", 436))->head;
             __freed_obj__ = 0;
-            __dec_obj50=((struct list_item$1charph*)come_null_check(litem_118, "./comelang2.h", 453))->item;
-            ((struct list_item$1charph*)come_null_check(litem_118, "./comelang2.h", 453))->item=(char*)come_increment_ref_count(item);
+            __dec_obj50=((struct list_item$1charph*)come_null_check(litem_118, "./comelang2.h", 437))->item;
+            ((struct list_item$1charph*)come_null_check(litem_118, "./comelang2.h", 437))->item=(char*)come_increment_ref_count(item);
             if(__dec_obj50) { __dec_obj50 = come_decrement_ref_count(__dec_obj50, (void*)0, (void*)0, 0,0,0); }
             __freed_obj__ = 0;
-            ((struct list_item$1charph*)come_null_check(((struct list$1charph*)come_null_check(self, "./comelang2.h", 455))->head, "./comelang2.h", 455))->prev=litem_118;
+            ((struct list_item$1charph*)come_null_check(((struct list$1charph*)come_null_check(self, "./comelang2.h", 439))->head, "./comelang2.h", 439))->prev=litem_118;
             __freed_obj__ = 0;
-            ((struct list$1charph*)come_null_check(self, "./comelang2.h", 456))->head=litem_118;
+            ((struct list$1charph*)come_null_check(self, "./comelang2.h", 440))->head=litem_118;
             __freed_obj__ = 0;
-            ((struct list$1charph*)come_null_check(self, "./comelang2.h", 458))->len++;
+            ((struct list$1charph*)come_null_check(self, "./comelang2.h", 442))->len++;
             __freed_obj__ = 0;
         }
         else {
-            if(_if_conditional205=((struct list$1charph*)come_null_check(self, "./comelang2.h", 494))->len==1,            __freed_obj__ = 0, 
+            if(_if_conditional205=((struct list$1charph*)come_null_check(self, "./comelang2.h", 478))->len==1,            __freed_obj__ = 0, 
             _if_conditional205) {
-                litem_119=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value101=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 461))));
+                litem_119=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value101=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 445))));
                 if(right_value101 && right_value101 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1charphp_finalize,right_value101, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
-                ((struct list_item$1charph*)come_null_check(litem_119, "./comelang2.h", 463))->prev=((struct list$1charph*)come_null_check(self, "./comelang2.h", 463))->head;
+                ((struct list_item$1charph*)come_null_check(litem_119, "./comelang2.h", 447))->prev=((struct list$1charph*)come_null_check(self, "./comelang2.h", 447))->head;
                 __freed_obj__ = 0;
-                ((struct list_item$1charph*)come_null_check(litem_119, "./comelang2.h", 464))->next=((struct list$1charph*)come_null_check(self, "./comelang2.h", 464))->tail;
+                ((struct list_item$1charph*)come_null_check(litem_119, "./comelang2.h", 448))->next=((struct list$1charph*)come_null_check(self, "./comelang2.h", 448))->tail;
                 __freed_obj__ = 0;
-                __dec_obj51=((struct list_item$1charph*)come_null_check(litem_119, "./comelang2.h", 465))->item;
-                ((struct list_item$1charph*)come_null_check(litem_119, "./comelang2.h", 465))->item=(char*)come_increment_ref_count(item);
+                __dec_obj51=((struct list_item$1charph*)come_null_check(litem_119, "./comelang2.h", 449))->item;
+                ((struct list_item$1charph*)come_null_check(litem_119, "./comelang2.h", 449))->item=(char*)come_increment_ref_count(item);
                 if(__dec_obj51) { __dec_obj51 = come_decrement_ref_count(__dec_obj51, (void*)0, (void*)0, 0,0,0); }
                 __freed_obj__ = 0;
-                ((struct list_item$1charph*)come_null_check(((struct list$1charph*)come_null_check(self, "./comelang2.h", 467))->tail, "./comelang2.h", 467))->prev=litem_119;
+                ((struct list_item$1charph*)come_null_check(((struct list$1charph*)come_null_check(self, "./comelang2.h", 451))->tail, "./comelang2.h", 451))->prev=litem_119;
                 __freed_obj__ = 0;
-                ((struct list_item$1charph*)come_null_check(((struct list$1charph*)come_null_check(self, "./comelang2.h", 468))->head, "./comelang2.h", 468))->next=litem_119;
+                ((struct list_item$1charph*)come_null_check(((struct list$1charph*)come_null_check(self, "./comelang2.h", 452))->head, "./comelang2.h", 452))->next=litem_119;
                 __freed_obj__ = 0;
-                ((struct list$1charph*)come_null_check(self, "./comelang2.h", 470))->len++;
+                ((struct list$1charph*)come_null_check(self, "./comelang2.h", 454))->len++;
                 __freed_obj__ = 0;
             }
             else {
-                it_120=((struct list$1charph*)come_null_check(self, "./comelang2.h", 473))->head;
+                it_120=((struct list$1charph*)come_null_check(self, "./comelang2.h", 457))->head;
                 __freed_obj__ = 0;
                 i_121=0;
                 __freed_obj__ = 0;
@@ -14457,26 +6825,26 @@ memset(&litem_122, 0, sizeof(struct list_item$1charph*));
                 _while_condtional18) {
                     if(_if_conditional206=position==i_121,                    __freed_obj__ = 0, 
                     _if_conditional206) {
-                        litem_122=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value102=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 477))));
+                        litem_122=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value102=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 461))));
                         if(right_value102 && right_value102 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1charphp_finalize,right_value102, (void*)0, (void*)0, 0, 1, 0, 0); }
                         __freed_obj__ = 0;
-                        ((struct list_item$1charph*)come_null_check(litem_122, "./comelang2.h", 479))->prev=((struct list_item$1charph*)come_null_check(it_120, "./comelang2.h", 479))->prev;
+                        ((struct list_item$1charph*)come_null_check(litem_122, "./comelang2.h", 463))->prev=((struct list_item$1charph*)come_null_check(it_120, "./comelang2.h", 463))->prev;
                         __freed_obj__ = 0;
-                        ((struct list_item$1charph*)come_null_check(litem_122, "./comelang2.h", 480))->next=it_120;
+                        ((struct list_item$1charph*)come_null_check(litem_122, "./comelang2.h", 464))->next=it_120;
                         __freed_obj__ = 0;
-                        __dec_obj52=((struct list_item$1charph*)come_null_check(litem_122, "./comelang2.h", 481))->item;
-                        ((struct list_item$1charph*)come_null_check(litem_122, "./comelang2.h", 481))->item=(char*)come_increment_ref_count(item);
+                        __dec_obj52=((struct list_item$1charph*)come_null_check(litem_122, "./comelang2.h", 465))->item;
+                        ((struct list_item$1charph*)come_null_check(litem_122, "./comelang2.h", 465))->item=(char*)come_increment_ref_count(item);
                         if(__dec_obj52) { __dec_obj52 = come_decrement_ref_count(__dec_obj52, (void*)0, (void*)0, 0,0,0); }
                         __freed_obj__ = 0;
-                        ((struct list_item$1charph*)come_null_check(((struct list_item$1charph*)come_null_check(it_120, "./comelang2.h", 483))->prev, "./comelang2.h", 483))->next=litem_122;
+                        ((struct list_item$1charph*)come_null_check(((struct list_item$1charph*)come_null_check(it_120, "./comelang2.h", 467))->prev, "./comelang2.h", 467))->next=litem_122;
                         __freed_obj__ = 0;
-                        ((struct list_item$1charph*)come_null_check(it_120, "./comelang2.h", 484))->prev=litem_122;
+                        ((struct list_item$1charph*)come_null_check(it_120, "./comelang2.h", 468))->prev=litem_122;
                         __freed_obj__ = 0;
-                        ((struct list$1charph*)come_null_check(self, "./comelang2.h", 486))->len++;
+                        ((struct list$1charph*)come_null_check(self, "./comelang2.h", 470))->len++;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
-                    it_120=((struct list_item$1charph*)come_null_check(it_120, "./comelang2.h", 489))->next;
+                    it_120=((struct list_item$1charph*)come_null_check(it_120, "./comelang2.h", 473))->next;
                     __freed_obj__ = 0;
                     i_121++;
                     __freed_obj__ = 0;
@@ -14489,74 +6857,15 @@ memset(&litem_122, 0, sizeof(struct list_item$1charph*));
         __result92__ = __result_obj__ = self;
         if(item && !__freed_obj__) { item = come_decrement_ref_count(item, (void*)0, (void*)0, 0, 1, 0); }
         __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-        return __result92__;
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result92__;
         __freed_obj__ = 0;
         if(item && !__freed_obj__) { item = come_decrement_ref_count(item, (void*)0, (void*)0, 0, 1, 0); }
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-}
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1charph* list$1charph_push_back(struct list$1charph* self, char* item){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -14581,165 +6890,78 @@ memset(&right_value98, 0, sizeof(void*));
 memset(&litem_116, 0, sizeof(struct list_item$1charph*));
 memset(&right_value99, 0, sizeof(void*));
 memset(&litem_117, 0, sizeof(struct list_item$1charph*));
-            __caller_sname10__ = gCallerSName10;
-            __caller_sname9__ = gCallerSName9;
-            __caller_sname8__ = gCallerSName8;
-            __caller_sname7__ = gCallerSName7;
-            __caller_sname6__ = gCallerSName6;
-            __caller_sname5__ = gCallerSName5;
-            __caller_sname4__ = gCallerSName4;
-            __caller_sname3__ = gCallerSName3;
-            __caller_sname2__ = gCallerSName2;
-            __caller_sname__ = gCallerSName;
-            __caller_sline10__ = gCallerSLine10;
-            __caller_sline9__ = gCallerSLine9;
-            __caller_sline8__ = gCallerSLine8;
-            __caller_sline7__ = gCallerSLine7;
-            __caller_sline6__ = gCallerSLine6;
-            __caller_sline5__ = gCallerSLine5;
-            __caller_sline4__ = gCallerSLine4;
-            __caller_sline3__ = gCallerSLine3;
-            __caller_sline2__ = gCallerSLine2;
-            __caller_sline__ = gCallerSLine;
-            gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-            gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-            gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-            gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-            gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-            gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-            gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-            gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-            gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-                if(_if_conditional202=((struct list$1charph*)come_null_check(self, "./comelang2.h", 323))->len==0,                __freed_obj__ = 0, 
+            memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);            memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);            for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+                if(_if_conditional202=((struct list$1charph*)come_null_check(self, "./comelang2.h", 307))->len==0,                __freed_obj__ = 0, 
                 _if_conditional202) {
-                    litem_115=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value97=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 293))));
+                    litem_115=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value97=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 277))));
                     if(right_value97 && right_value97 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1charphp_finalize,right_value97, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
-                    ((struct list_item$1charph*)come_null_check(litem_115, "./comelang2.h", 295))->prev=((void*)0);
+                    ((struct list_item$1charph*)come_null_check(litem_115, "./comelang2.h", 279))->prev=((void*)0);
                     __freed_obj__ = 0;
-                    ((struct list_item$1charph*)come_null_check(litem_115, "./comelang2.h", 296))->next=((void*)0);
+                    ((struct list_item$1charph*)come_null_check(litem_115, "./comelang2.h", 280))->next=((void*)0);
                     __freed_obj__ = 0;
-                    __dec_obj47=((struct list_item$1charph*)come_null_check(litem_115, "./comelang2.h", 297))->item;
-                    ((struct list_item$1charph*)come_null_check(litem_115, "./comelang2.h", 297))->item=(char*)come_increment_ref_count(item);
+                    __dec_obj47=((struct list_item$1charph*)come_null_check(litem_115, "./comelang2.h", 281))->item;
+                    ((struct list_item$1charph*)come_null_check(litem_115, "./comelang2.h", 281))->item=(char*)come_increment_ref_count(item);
                     if(__dec_obj47) { __dec_obj47 = come_decrement_ref_count(__dec_obj47, (void*)0, (void*)0, 0,0,0); }
                     __freed_obj__ = 0;
-                    ((struct list$1charph*)come_null_check(self, "./comelang2.h", 299))->tail=litem_115;
+                    ((struct list$1charph*)come_null_check(self, "./comelang2.h", 283))->tail=litem_115;
                     __freed_obj__ = 0;
-                    ((struct list$1charph*)come_null_check(self, "./comelang2.h", 300))->head=litem_115;
+                    ((struct list$1charph*)come_null_check(self, "./comelang2.h", 284))->head=litem_115;
                     __freed_obj__ = 0;
                 }
                 else {
-                    if(_if_conditional203=((struct list$1charph*)come_null_check(self, "./comelang2.h", 323))->len==1,                    __freed_obj__ = 0, 
+                    if(_if_conditional203=((struct list$1charph*)come_null_check(self, "./comelang2.h", 307))->len==1,                    __freed_obj__ = 0, 
                     _if_conditional203) {
-                        litem_116=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value98=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 303))));
+                        litem_116=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value98=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 287))));
                         if(right_value98 && right_value98 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1charphp_finalize,right_value98, (void*)0, (void*)0, 0, 1, 0, 0); }
                         __freed_obj__ = 0;
-                        ((struct list_item$1charph*)come_null_check(litem_116, "./comelang2.h", 305))->prev=((struct list$1charph*)come_null_check(self, "./comelang2.h", 305))->head;
+                        ((struct list_item$1charph*)come_null_check(litem_116, "./comelang2.h", 289))->prev=((struct list$1charph*)come_null_check(self, "./comelang2.h", 289))->head;
                         __freed_obj__ = 0;
-                        ((struct list_item$1charph*)come_null_check(litem_116, "./comelang2.h", 306))->next=((void*)0);
+                        ((struct list_item$1charph*)come_null_check(litem_116, "./comelang2.h", 290))->next=((void*)0);
                         __freed_obj__ = 0;
-                        __dec_obj48=((struct list_item$1charph*)come_null_check(litem_116, "./comelang2.h", 307))->item;
-                        ((struct list_item$1charph*)come_null_check(litem_116, "./comelang2.h", 307))->item=(char*)come_increment_ref_count(item);
+                        __dec_obj48=((struct list_item$1charph*)come_null_check(litem_116, "./comelang2.h", 291))->item;
+                        ((struct list_item$1charph*)come_null_check(litem_116, "./comelang2.h", 291))->item=(char*)come_increment_ref_count(item);
                         if(__dec_obj48) { __dec_obj48 = come_decrement_ref_count(__dec_obj48, (void*)0, (void*)0, 0,0,0); }
                         __freed_obj__ = 0;
-                        ((struct list$1charph*)come_null_check(self, "./comelang2.h", 309))->tail=litem_116;
+                        ((struct list$1charph*)come_null_check(self, "./comelang2.h", 293))->tail=litem_116;
                         __freed_obj__ = 0;
-                        ((struct list_item$1charph*)come_null_check(((struct list$1charph*)come_null_check(self, "./comelang2.h", 310))->head, "./comelang2.h", 310))->next=litem_116;
+                        ((struct list_item$1charph*)come_null_check(((struct list$1charph*)come_null_check(self, "./comelang2.h", 294))->head, "./comelang2.h", 294))->next=litem_116;
                         __freed_obj__ = 0;
                     }
                     else {
-                        litem_117=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value99=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 313))));
+                        litem_117=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value99=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./comelang2.h", 297))));
                         if(right_value99 && right_value99 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1charphp_finalize,right_value99, (void*)0, (void*)0, 0, 1, 0, 0); }
                         __freed_obj__ = 0;
-                        ((struct list_item$1charph*)come_null_check(litem_117, "./comelang2.h", 315))->prev=((struct list$1charph*)come_null_check(self, "./comelang2.h", 315))->tail;
+                        ((struct list_item$1charph*)come_null_check(litem_117, "./comelang2.h", 299))->prev=((struct list$1charph*)come_null_check(self, "./comelang2.h", 299))->tail;
                         __freed_obj__ = 0;
-                        ((struct list_item$1charph*)come_null_check(litem_117, "./comelang2.h", 316))->next=((void*)0);
+                        ((struct list_item$1charph*)come_null_check(litem_117, "./comelang2.h", 300))->next=((void*)0);
                         __freed_obj__ = 0;
-                        __dec_obj49=((struct list_item$1charph*)come_null_check(litem_117, "./comelang2.h", 317))->item;
-                        ((struct list_item$1charph*)come_null_check(litem_117, "./comelang2.h", 317))->item=(char*)come_increment_ref_count(item);
+                        __dec_obj49=((struct list_item$1charph*)come_null_check(litem_117, "./comelang2.h", 301))->item;
+                        ((struct list_item$1charph*)come_null_check(litem_117, "./comelang2.h", 301))->item=(char*)come_increment_ref_count(item);
                         if(__dec_obj49) { __dec_obj49 = come_decrement_ref_count(__dec_obj49, (void*)0, (void*)0, 0,0,0); }
                         __freed_obj__ = 0;
-                        ((struct list_item$1charph*)come_null_check(((struct list$1charph*)come_null_check(self, "./comelang2.h", 319))->tail, "./comelang2.h", 319))->next=litem_117;
+                        ((struct list_item$1charph*)come_null_check(((struct list$1charph*)come_null_check(self, "./comelang2.h", 303))->tail, "./comelang2.h", 303))->next=litem_117;
                         __freed_obj__ = 0;
-                        ((struct list$1charph*)come_null_check(self, "./comelang2.h", 320))->tail=litem_117;
+                        ((struct list$1charph*)come_null_check(self, "./comelang2.h", 304))->tail=litem_117;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                ((struct list$1charph*)come_null_check(self, "./comelang2.h", 323))->len++;
+                ((struct list$1charph*)come_null_check(self, "./comelang2.h", 307))->len++;
                 __freed_obj__ = 0;
                 __result90__ = __result_obj__ = self;
                 if(item && !__freed_obj__) { item = come_decrement_ref_count(item, (void*)0, (void*)0, 0, 1, 0); }
                 __freed_obj__ = 0;
-                gCallerSName10 = __caller_sname10__;
-                gCallerSName9 = __caller_sname9__;
-                gCallerSName8 = __caller_sname8__;
-                gCallerSName7 = __caller_sname7__;
-                gCallerSName6 = __caller_sname6__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName4 = __caller_sname4__;
-                gCallerSName3 = __caller_sname3__;
-                gCallerSName2 = __caller_sname2__;
-                gCallerSName = __caller_sname__;
-                gCallerSLine10 = __caller_sline10__;
-                gCallerSLine9 = __caller_sline9__;
-                gCallerSLine8 = __caller_sline8__;
-                gCallerSLine7 = __caller_sline7__;
-                gCallerSLine6 = __caller_sline6__;
-                gCallerSLine5 = __caller_sline5__;
-                gCallerSLine4 = __caller_sline4__;
-                gCallerSLine3 = __caller_sline3__;
-                gCallerSLine2 = __caller_sline2__;
-                gCallerSLine = __caller_sline__;
-                return __result90__;
+                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result90__;
                 __freed_obj__ = 0;
                 if(item && !__freed_obj__) { item = come_decrement_ref_count(item, (void*)0, (void*)0, 0, 1, 0); }
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-}
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1sTypeph* list$1sTypephp_clone(struct list$1sTypeph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -14760,150 +6982,42 @@ memset(&right_value107, 0, sizeof(void*));
 memset(&result_124, 0, sizeof(struct list$1sTypeph*));
 memset(&it_125, 0, sizeof(struct list_item$1sTypeph*));
 memset(&right_value108, 0, sizeof(void*));
-    __caller_sname10__ = gCallerSName10;
-    __caller_sname9__ = gCallerSName9;
-    __caller_sname8__ = gCallerSName8;
-    __caller_sname7__ = gCallerSName7;
-    __caller_sname6__ = gCallerSName6;
-    __caller_sname5__ = gCallerSName5;
-    __caller_sname4__ = gCallerSName4;
-    __caller_sname3__ = gCallerSName3;
-    __caller_sname2__ = gCallerSName2;
-    __caller_sname__ = gCallerSName;
-    __caller_sline10__ = gCallerSLine10;
-    __caller_sline9__ = gCallerSLine9;
-    __caller_sline8__ = gCallerSLine8;
-    __caller_sline7__ = gCallerSLine7;
-    __caller_sline6__ = gCallerSLine6;
-    __caller_sline5__ = gCallerSLine5;
-    __caller_sline4__ = gCallerSLine4;
-    __caller_sline3__ = gCallerSLine3;
-    __caller_sline2__ = gCallerSLine2;
-    __caller_sline__ = gCallerSLine;
-    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
         if(_if_conditional207=self==((void*)0),        __freed_obj__ = 0, 
         _if_conditional207) {
             __result93__ = __result_obj__ = ((void*)0);
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result93__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result93__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-        result_124=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value107=(gCallerSName = "./comelang2.h", gCallerSLine = 209,list$1sTypeph_initialize((struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)come_null_check(((struct list$1sTypeph*)(right_value106=(struct list$1sTypeph*)come_calloc(1, sizeof(struct list$1sTypeph)*(1), "./comelang2.h", 209))), "./comelang2.h", 209))))))));
+        result_124=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value107=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 193,list$1sTypeph_initialize((struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)come_null_check(((struct list$1sTypeph*)(right_value106=(struct list$1sTypeph*)come_calloc(1, sizeof(struct list$1sTypeph)*(1), "./comelang2.h", 193))), "./comelang2.h", 193))))))));
         if(right_value106 && right_value106 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,right_value106, (void*)0, (void*)0, 0, 1, 0, 0); }
         if(right_value107 && right_value107 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,right_value107, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
-        it_125=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 211))->head;
+        it_125=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 195))->head;
         __freed_obj__ = 0;
         while(_while_condtional19=it_125!=((void*)0),        __freed_obj__ = 0, 
         _while_condtional19) {
-            (gCallerSName = "./comelang2.h", gCallerSLine = 213,list$1sTypeph_add(((struct list$1sTypeph*)come_null_check(result_124, "./comelang2.h", 213)),(struct sType*)come_increment_ref_count(((struct sType*)(right_value108=(gCallerSName = "./comelang2.h", gCallerSLine = 213,sType_clone(((struct list_item$1sTypeph*)come_null_check(it_125, "./comelang2.h", 213))->item)))))));
+            (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 197,list$1sTypeph_add(((struct list$1sTypeph*)come_null_check(result_124, "./comelang2.h", 197)),(struct sType*)come_increment_ref_count(((struct sType*)(right_value108=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 197,sType_clone(((struct list_item$1sTypeph*)come_null_check(it_125, "./comelang2.h", 197))->item)))))));
             if(right_value108 && right_value108 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value108, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
-            it_125=((struct list_item$1sTypeph*)come_null_check(it_125, "./comelang2.h", 215))->next;
+            it_125=((struct list_item$1sTypeph*)come_null_check(it_125, "./comelang2.h", 199))->next;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
         __result94__ = __result_obj__ = result_124;
         if(result_124 && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,result_124, (void*)0, (void*)0, 0, 0, 1, 0); }
         __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-        return __result94__;
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result94__;
         __freed_obj__ = 0;
         if(result_124 && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,result_124, (void*)0, (void*)0, 0, 0, 0, 0); }
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-}
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1charph* list$1charphp_clone(struct list$1charph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -14924,150 +7038,42 @@ memset(&right_value111, 0, sizeof(void*));
 memset(&result_126, 0, sizeof(struct list$1charph*));
 memset(&it_127, 0, sizeof(struct list_item$1charph*));
 memset(&right_value112, 0, sizeof(void*));
-    __caller_sname10__ = gCallerSName10;
-    __caller_sname9__ = gCallerSName9;
-    __caller_sname8__ = gCallerSName8;
-    __caller_sname7__ = gCallerSName7;
-    __caller_sname6__ = gCallerSName6;
-    __caller_sname5__ = gCallerSName5;
-    __caller_sname4__ = gCallerSName4;
-    __caller_sname3__ = gCallerSName3;
-    __caller_sname2__ = gCallerSName2;
-    __caller_sname__ = gCallerSName;
-    __caller_sline10__ = gCallerSLine10;
-    __caller_sline9__ = gCallerSLine9;
-    __caller_sline8__ = gCallerSLine8;
-    __caller_sline7__ = gCallerSLine7;
-    __caller_sline6__ = gCallerSLine6;
-    __caller_sline5__ = gCallerSLine5;
-    __caller_sline4__ = gCallerSLine4;
-    __caller_sline3__ = gCallerSLine3;
-    __caller_sline2__ = gCallerSLine2;
-    __caller_sline__ = gCallerSLine;
-    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
         if(_if_conditional208=self==((void*)0),        __freed_obj__ = 0, 
         _if_conditional208) {
             __result95__ = __result_obj__ = ((void*)0);
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result95__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result95__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-        result_126=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value111=(gCallerSName = "./comelang2.h", gCallerSLine = 209,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value110=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "./comelang2.h", 209))), "./comelang2.h", 209))))))));
+        result_126=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value111=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 193,list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value110=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "./comelang2.h", 193))), "./comelang2.h", 193))))))));
         if(right_value110 && right_value110 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value110, (void*)0, (void*)0, 0, 1, 0, 0); }
         if(right_value111 && right_value111 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value111, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
-        it_127=((struct list$1charph*)come_null_check(self, "./comelang2.h", 211))->head;
+        it_127=((struct list$1charph*)come_null_check(self, "./comelang2.h", 195))->head;
         __freed_obj__ = 0;
         while(_while_condtional20=it_127!=((void*)0),        __freed_obj__ = 0, 
         _while_condtional20) {
-            (gCallerSName = "./comelang2.h", gCallerSLine = 213,list$1charph_add(((struct list$1charph*)come_null_check(result_126, "./comelang2.h", 213)),(char*)come_increment_ref_count(((char*)(right_value112=(gCallerSName = "./comelang2.h", gCallerSLine = 213,string_clone(((struct list_item$1charph*)come_null_check(it_127, "./comelang2.h", 213))->item)))))));
+            (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 197,list$1charph_add(((struct list$1charph*)come_null_check(result_126, "./comelang2.h", 197)),(char*)come_increment_ref_count(((char*)(right_value112=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 197,string_clone(((struct list_item$1charph*)come_null_check(it_127, "./comelang2.h", 197))->item)))))));
             if(right_value112 && right_value112 != __result_obj__ && !__freed_obj__) { right_value112 = come_decrement_ref_count(right_value112, (void*)0, (void*)0, 1, 0, 0); }
             __freed_obj__ = 0;
-            it_127=((struct list_item$1charph*)come_null_check(it_127, "./comelang2.h", 215))->next;
+            it_127=((struct list_item$1charph*)come_null_check(it_127, "./comelang2.h", 199))->next;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
         __result96__ = __result_obj__ = result_126;
         if(result_126 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_126, (void*)0, (void*)0, 0, 0, 1, 0); }
         __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-        return __result96__;
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result96__;
         __freed_obj__ = 0;
         if(result_126 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_126, (void*)0, (void*)0, 0, 0, 0, 0); }
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-}
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct tuple1$1sTypeph* tuple1$1sTypeph_initialize(struct tuple1$1sTypeph* self, struct sType* v1){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -15078,37 +7084,9 @@ struct tuple1$1sTypeph* __result97__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value115, 0, sizeof(void*));
-    __caller_sname10__ = gCallerSName10;
-    __caller_sname9__ = gCallerSName9;
-    __caller_sname8__ = gCallerSName8;
-    __caller_sname7__ = gCallerSName7;
-    __caller_sname6__ = gCallerSName6;
-    __caller_sname5__ = gCallerSName5;
-    __caller_sname4__ = gCallerSName4;
-    __caller_sname3__ = gCallerSName3;
-    __caller_sname2__ = gCallerSName2;
-    __caller_sname__ = gCallerSName;
-    __caller_sline10__ = gCallerSLine10;
-    __caller_sline9__ = gCallerSLine9;
-    __caller_sline8__ = gCallerSLine8;
-    __caller_sline7__ = gCallerSLine7;
-    __caller_sline6__ = gCallerSLine6;
-    __caller_sline5__ = gCallerSLine5;
-    __caller_sline4__ = gCallerSLine4;
-    __caller_sline3__ = gCallerSLine3;
-    __caller_sline2__ = gCallerSLine2;
-    __caller_sline__ = gCallerSLine;
-    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-        __dec_obj55=((struct tuple1$1sTypeph*)come_null_check(self, "./comelang2.h", 1793))->v1;
-        ((struct tuple1$1sTypeph*)come_null_check(self, "./comelang2.h", 1793))->v1=(struct sType*)come_increment_ref_count(((struct sType*)(right_value115=(gCallerSName = "./comelang2.h", gCallerSLine = 1793,sType_clone(v1)))));
+    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+        __dec_obj55=((struct tuple1$1sTypeph*)come_null_check(self, "./comelang2.h", 1777))->v1;
+        ((struct tuple1$1sTypeph*)come_null_check(self, "./comelang2.h", 1777))->v1=(struct sType*)come_increment_ref_count(((struct sType*)(right_value115=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1777,sType_clone(v1)))));
         if(__dec_obj55) { come_call_finalizer(sType_finalize,__dec_obj55, (void*)0, (void*)0, 0, 0, 0, 0); }
         if(right_value115 && right_value115 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value115, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
@@ -15116,75 +7094,16 @@ memset(&right_value115, 0, sizeof(void*));
         if(self && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
         if(v1 && !__freed_obj__) { come_call_finalizer(sType_finalize,v1, (void*)0, (void*)0, 0, 0, 1, 0); }
         __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-        return __result97__;
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result97__;
         __freed_obj__ = 0;
         if(self && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
         if(v1 && !__freed_obj__) { come_call_finalizer(sType_finalize,v1, (void*)0, (void*)0, 0, 0, 1, 0); }
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-}
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct tuple2$2sTypephcharph* tuple2$2sTypephcharph_initialize(struct tuple2$2sTypephcharph* self, struct sType* v1, char* v2){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -15198,42 +7117,14 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value119, 0, sizeof(void*));
 memset(&right_value120, 0, sizeof(void*));
-    __caller_sname10__ = gCallerSName10;
-    __caller_sname9__ = gCallerSName9;
-    __caller_sname8__ = gCallerSName8;
-    __caller_sname7__ = gCallerSName7;
-    __caller_sname6__ = gCallerSName6;
-    __caller_sname5__ = gCallerSName5;
-    __caller_sname4__ = gCallerSName4;
-    __caller_sname3__ = gCallerSName3;
-    __caller_sname2__ = gCallerSName2;
-    __caller_sname__ = gCallerSName;
-    __caller_sline10__ = gCallerSLine10;
-    __caller_sline9__ = gCallerSLine9;
-    __caller_sline8__ = gCallerSLine8;
-    __caller_sline7__ = gCallerSLine7;
-    __caller_sline6__ = gCallerSLine6;
-    __caller_sline5__ = gCallerSLine5;
-    __caller_sline4__ = gCallerSLine4;
-    __caller_sline3__ = gCallerSLine3;
-    __caller_sline2__ = gCallerSLine2;
-    __caller_sline__ = gCallerSLine;
-    gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-    gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-    gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-    gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-    gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-    gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-    gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-    gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-    gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-        __dec_obj57=((struct tuple2$2sTypephcharph*)come_null_check(self, "./comelang2.h", 1825))->v1;
-        ((struct tuple2$2sTypephcharph*)come_null_check(self, "./comelang2.h", 1825))->v1=(struct sType*)come_increment_ref_count(((struct sType*)(right_value119=(gCallerSName = "./comelang2.h", gCallerSLine = 1825,sType_clone(v1)))));
+    memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);    memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);    for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+        __dec_obj57=((struct tuple2$2sTypephcharph*)come_null_check(self, "./comelang2.h", 1809))->v1;
+        ((struct tuple2$2sTypephcharph*)come_null_check(self, "./comelang2.h", 1809))->v1=(struct sType*)come_increment_ref_count(((struct sType*)(right_value119=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1809,sType_clone(v1)))));
         if(__dec_obj57) { come_call_finalizer(sType_finalize,__dec_obj57, (void*)0, (void*)0, 0, 0, 0, 0); }
         if(right_value119 && right_value119 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value119, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
-        __dec_obj58=((struct tuple2$2sTypephcharph*)come_null_check(self, "./comelang2.h", 1826))->v2;
-        ((struct tuple2$2sTypephcharph*)come_null_check(self, "./comelang2.h", 1826))->v2=(char*)come_increment_ref_count(((char*)(right_value120=(gCallerSName = "./comelang2.h", gCallerSLine = 1826,string_clone(v2)))));
+        __dec_obj58=((struct tuple2$2sTypephcharph*)come_null_check(self, "./comelang2.h", 1810))->v2;
+        ((struct tuple2$2sTypephcharph*)come_null_check(self, "./comelang2.h", 1810))->v2=(char*)come_increment_ref_count(((char*)(right_value120=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1810,string_clone(v2)))));
         if(__dec_obj58) { __dec_obj58 = come_decrement_ref_count(__dec_obj58, (void*)0, (void*)0, 0,0,0); }
         if(right_value120 && right_value120 != __result_obj__ && !__freed_obj__) { right_value120 = come_decrement_ref_count(right_value120, (void*)0, (void*)0, 1, 0, 0); }
         __freed_obj__ = 0;
@@ -15242,76 +7133,17 @@ memset(&right_value120, 0, sizeof(void*));
         if(v1 && !__freed_obj__) { come_call_finalizer(sType_finalize,v1, (void*)0, (void*)0, 0, 0, 1, 0); }
         if(v2 && !__freed_obj__) { v2 = come_decrement_ref_count(v2, (void*)0, (void*)0, 0, 1, 0); }
         __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-        return __result98__;
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result98__;
         __freed_obj__ = 0;
         if(self && !__freed_obj__) { come_call_finalizer(tuple2$2sTypephcharphp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
         if(v1 && !__freed_obj__) { come_call_finalizer(sType_finalize,v1, (void*)0, (void*)0, 0, 0, 1, 0); }
         if(v2 && !__freed_obj__) { v2 = come_decrement_ref_count(v2, (void*)0, (void*)0, 0, 1, 0); }
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-}
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void tuple2$2sTypephcharphp_finalize(struct tuple2$2sTypephcharph* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -15320,35 +7152,7 @@ _Bool _if_conditional209;
 _Bool _if_conditional210;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-        __caller_sname10__ = gCallerSName10;
-        __caller_sname9__ = gCallerSName9;
-        __caller_sname8__ = gCallerSName8;
-        __caller_sname7__ = gCallerSName7;
-        __caller_sname6__ = gCallerSName6;
-        __caller_sname5__ = gCallerSName5;
-        __caller_sname4__ = gCallerSName4;
-        __caller_sname3__ = gCallerSName3;
-        __caller_sname2__ = gCallerSName2;
-        __caller_sname__ = gCallerSName;
-        __caller_sline10__ = gCallerSLine10;
-        __caller_sline9__ = gCallerSLine9;
-        __caller_sline8__ = gCallerSLine8;
-        __caller_sline7__ = gCallerSLine7;
-        __caller_sline6__ = gCallerSLine6;
-        __caller_sline5__ = gCallerSLine5;
-        __caller_sline4__ = gCallerSLine4;
-        __caller_sline3__ = gCallerSLine3;
-        __caller_sline2__ = gCallerSLine2;
-        __caller_sline__ = gCallerSLine;
-        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
             if(_if_conditional209=self!=((void*)0)&&((struct tuple2$2sTypephcharph*)come_null_check(self, "tuple2$2sTypephcharphp_finalize", 1))->v1!=((void*)0),            __freed_obj__ = 0, 
             _if_conditional209) {
                 if(((struct tuple2$2sTypephcharph*)come_null_check(self, "tuple2$2sTypephcharphp_finalize", 0))->v1 && !__freed_obj__) { come_call_finalizer(sType_finalize,((struct tuple2$2sTypephcharph*)come_null_check(self, "tuple2$2sTypephcharphp_finalize", 0))->v1, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -15361,50 +7165,12 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-}
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 struct sNode* top_level_v92(char* buf, char* head, int head_sline, struct sInfo* info){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -15550,47 +7316,19 @@ memset(&right_value174, 0, sizeof(void*));
 memset(&right_value179, 0, sizeof(void*));
 memset(&right_value180, 0, sizeof(void*));
 memset(&right_value181, 0, sizeof(void*));
-__caller_sname10__ = gCallerSName10;
-__caller_sname9__ = gCallerSName9;
-__caller_sname8__ = gCallerSName8;
-__caller_sname7__ = gCallerSName7;
-__caller_sname6__ = gCallerSName6;
-__caller_sname5__ = gCallerSName5;
-__caller_sname4__ = gCallerSName4;
-__caller_sname3__ = gCallerSName3;
-__caller_sname2__ = gCallerSName2;
-__caller_sname__ = gCallerSName;
-__caller_sline10__ = gCallerSLine10;
-__caller_sline9__ = gCallerSLine9;
-__caller_sline8__ = gCallerSLine8;
-__caller_sline7__ = gCallerSLine7;
-__caller_sline6__ = gCallerSLine6;
-__caller_sline5__ = gCallerSLine5;
-__caller_sline4__ = gCallerSLine4;
-__caller_sline3__ = gCallerSLine3;
-__caller_sline2__ = gCallerSLine2;
-__caller_sline__ = gCallerSLine;
-gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-    if(_if_conditional211=(gCallerSName = "23interface.c", gCallerSLine = 153, string_operator_equals(buf,"interface"))||(gCallerSName = "23interface.c", gCallerSLine = 153, string_operator_equals(buf,"protocol")),    __freed_obj__ = 0, 
+memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+    if(_if_conditional211=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 153, string_operator_equals(buf,"interface"))||(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 153, string_operator_equals(buf,"protocol")),    __freed_obj__ = 0, 
     _if_conditional211) {
         come_clear_stackframe();
-        type_name_128=(char*)come_increment_ref_count(optional$2charphbool_value((come_push_stackframe("23interface.c", 98),((struct optional$2charphbool*)(right_value122=(gCallerSName = "23interface.c", gCallerSLine = 98,parse_word(info)))))));
+        type_name_128=(char*)come_increment_ref_count(optional$2charphbool_value((come_push_stackframe("23interface.c", 98),((struct optional$2charphbool*)(right_value122=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 98,parse_word(info)))))));
         if(right_value122 && right_value122 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value122, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
         __freed_obj__ = 0;
-        if(_if_conditional212=((struct sClass*)(right_value123=(gCallerSName = "23interface.c", gCallerSLine = 108,map$2charphsClassph_at(((struct map$2charphsClassph*)come_null_check(((struct sInfo*)come_null_check(info, "23interface.c", 108))->classes, "23interface.c", 108)),type_name_128,((void*)0)))))==((void*)0),        (right_value123 && right_value123 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(sClass_finalize,right_value123, (void*)0, (void*)0, 0, 1, 0, 0):0,
+        if(_if_conditional212=((struct sClass*)(right_value123=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 108,map$2charphsClassph_at(((struct map$2charphsClassph*)come_null_check(((struct sInfo*)come_null_check(info, "23interface.c", 108))->classes, "23interface.c", 108)),type_name_128,((void*)0)))))==((void*)0),        (right_value123 && right_value123 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(sClass_finalize,right_value123, (void*)0, (void*)0, 0, 1, 0, 0):0,
         __freed_obj__ = 0, 
         _if_conditional212) {
             __dec_obj59=klass_129;
-            klass_129=(struct sClass*)come_increment_ref_count(((struct sClass*)(right_value125=(gCallerSName = "23interface.c", gCallerSLine = 102,sClass_initialize((struct sClass*)come_increment_ref_count(((struct sClass*)(right_value124=(struct sClass*)come_calloc(1, sizeof(struct sClass)*(1), "23interface.c", 102)))),type_name_128,(_Bool)0,(_Bool)0,(_Bool)0,(_Bool)0,(_Bool)1,(_Bool)1,(_Bool)0,-1,-1,(_Bool)0,info)))));
+            klass_129=(struct sClass*)come_increment_ref_count(((struct sClass*)(right_value125=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 102,sClass_initialize((struct sClass*)come_increment_ref_count(((struct sClass*)(right_value124=(struct sClass*)come_calloc(1, sizeof(struct sClass)*(1), "23interface.c", 102)))),type_name_128,(_Bool)0,(_Bool)0,(_Bool)0,(_Bool)0,(_Bool)1,(_Bool)1,(_Bool)0,-1,-1,(_Bool)0,info)))));
             if(__dec_obj59) { come_call_finalizer(sClass_finalize,__dec_obj59, (void*)0, (void*)0, 0, 0, 0, 0); }
             if(right_value124 && right_value124 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sClass_finalize,right_value124, (void*)0, (void*)0, 0, 1, 0, 0); }
             if(right_value125 && right_value125 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sClass_finalize,right_value125, (void*)0, (void*)0, 0, 1, 0, 0); }
@@ -15598,7 +7336,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         }
         else {
             __dec_obj60=klass_129;
-            klass_129=(struct sClass*)come_increment_ref_count(((struct sClass*)(right_value127=(gCallerSName = "23interface.c", gCallerSLine = 105,sClass_clone(((struct sClass*)(right_value126=(gCallerSName = "23interface.c", gCallerSLine = 105,map$2charphsClassph_at(((struct map$2charphsClassph*)come_null_check(((struct sInfo*)come_null_check(info, "23interface.c", 105))->classes, "23interface.c", 105)),type_name_128,((void*)0))))))))));
+            klass_129=(struct sClass*)come_increment_ref_count(((struct sClass*)(right_value127=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 105,sClass_clone(((struct sClass*)(right_value126=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 105,map$2charphsClassph_at(((struct map$2charphsClassph*)come_null_check(((struct sInfo*)come_null_check(info, "23interface.c", 105))->classes, "23interface.c", 105)),type_name_128,((void*)0))))))))));
             if(__dec_obj60) { come_call_finalizer(sClass_finalize,__dec_obj60, (void*)0, (void*)0, 0, 0, 0, 0); }
             if(right_value126 && right_value126 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sClass_finalize,right_value126, (void*)0, (void*)0, 0, 1, 0, 0); }
             if(right_value127 && right_value127 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sClass_finalize,right_value127, (void*)0, (void*)0, 0, 1, 0, 0); }
@@ -15606,26 +7344,26 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         }
         __freed_obj__ = 0;
         come_clear_stackframe();
-        optional$2intbool_value((come_push_stackframe("23interface.c", 108),((struct optional$2intbool*)(right_value128=(gCallerSName = "23interface.c", gCallerSLine = 108,expected_next_character(123,info))))));
+        optional$2intbool_value((come_push_stackframe("23interface.c", 108),((struct optional$2intbool*)(right_value128=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 108,expected_next_character(123,info))))));
         come_pop_stackframe();
         if(right_value128 && right_value128 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2intboolp_finalize,right_value128, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
-        voidp_131=(struct sType*)come_increment_ref_count(((struct sType*)(right_value130=(gCallerSName = "23interface.c", gCallerSLine = 110,sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value129=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "23interface.c", 110)))),"void",(_Bool)0,info)))));
+        voidp_131=(struct sType*)come_increment_ref_count(((struct sType*)(right_value130=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 110,sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value129=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "23interface.c", 110)))),"void",(_Bool)0,info)))));
         if(right_value129 && right_value129 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value129, (void*)0, (void*)0, 0, 1, 0, 0); }
         if(right_value130 && right_value130 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value130, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
         ((struct sType*)come_null_check(voidp_131, "23interface.c", 111))->mPointerNum++;
         __freed_obj__ = 0;
-        (gCallerSName = "23interface.c", gCallerSLine = 113,list$1tuple2$2charphsTypephph_push_back(((struct list$1tuple2$2charphsTypephph*)come_null_check(((struct sClass*)come_null_check(klass_129, "23interface.c", 113))->mFields, "23interface.c", 113)),(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value138=(gCallerSName = "23interface.c", gCallerSLine = 113,tuple2$2charphsTypeph_initialize((struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value134=(struct tuple2$2charphsTypeph*)come_calloc(1, sizeof(struct tuple2$2charphsTypeph)*(1), "23interface.c", 113)))),(char*)come_increment_ref_count(((char*)(right_value137=(gCallerSName = "23interface.c", gCallerSLine = 113,__builtin_string("_protocol_obj"))))),(struct sType*)come_increment_ref_count(voidp_131))))))));
+        (gCallerSName[0] = "23interface.c", gCallerSLine[0] = 113,list$1tuple2$2charphsTypephph_push_back(((struct list$1tuple2$2charphsTypephph*)come_null_check(((struct sClass*)come_null_check(klass_129, "23interface.c", 113))->mFields, "23interface.c", 113)),(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value138=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 113,tuple2$2charphsTypeph_initialize((struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value134=(struct tuple2$2charphsTypeph*)come_calloc(1, sizeof(struct tuple2$2charphsTypeph)*(1), "23interface.c", 113)))),(char*)come_increment_ref_count(((char*)(right_value137=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 113,__builtin_string("_protocol_obj"))))),(struct sType*)come_increment_ref_count(voidp_131))))))));
         if(right_value134 && right_value134 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,right_value134, (void*)0, (void*)0, 0, 1, 0, 0); }
         if(right_value137 && right_value137 != __result_obj__ && !__freed_obj__) { right_value137 = come_decrement_ref_count(right_value137, (void*)0, (void*)0, 1, 0, 0); }
         if(right_value138 && right_value138 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,right_value138, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
-        finalizer_135=(struct sType*)come_increment_ref_count(((struct sType*)(right_value140=(gCallerSName = "23interface.c", gCallerSLine = 115,sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value139=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "23interface.c", 115)))),"lambda",(_Bool)0,info)))));
+        finalizer_135=(struct sType*)come_increment_ref_count(((struct sType*)(right_value140=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 115,sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value139=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "23interface.c", 115)))),"lambda",(_Bool)0,info)))));
         if(right_value139 && right_value139 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value139, (void*)0, (void*)0, 0, 1, 0, 0); }
         if(right_value140 && right_value140 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value140, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
-        {__list_values1___136[0]=come_increment_ref_count(((struct sType*)(right_value141=(gCallerSName = "23interface.c", gCallerSLine = 117,sType_clone(voidp_131)))));
+        {__list_values1___136[0]=come_increment_ref_count(((struct sType*)(right_value141=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 117,sType_clone(voidp_131)))));
 }        __dec_obj66=((struct sType*)come_null_check(finalizer_135, "23interface.c", 117))->mParamTypes;
         ((struct sType*)come_null_check(finalizer_135, "23interface.c", 117))->mParamTypes=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value143=list$1sTypeph_initialize_with_values((struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value142=(struct list$1sTypeph*)come_calloc(1, sizeof(struct list$1sTypeph)*(1), "23interface.c", 117)))),1,__list_values1___136))));
         if(__dec_obj66) { come_call_finalizer(list$1sTypeph_finalize,__dec_obj66, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -15633,7 +7371,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         if(right_value142 && right_value142 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sTypeph_finalize,right_value142, (void*)0, (void*)0, 0, 1, 0, 0); }
         if(right_value143 && right_value143 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,right_value143, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
-        {__list_values2___138[0]=come_increment_ref_count(((char*)(right_value144=(gCallerSName = "23interface.c", gCallerSLine = 118,__builtin_string("self")))));
+        {__list_values2___138[0]=come_increment_ref_count(((char*)(right_value144=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 118,__builtin_string("self")))));
 }        __dec_obj67=((struct sType*)come_null_check(finalizer_135, "23interface.c", 118))->mParamNames;
         ((struct sType*)come_null_check(finalizer_135, "23interface.c", 118))->mParamNames=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value146=list$1charph_initialize_with_values((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value145=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "23interface.c", 118)))),1,__list_values2___138))));
         if(__dec_obj67) { come_call_finalizer(list$1charph_finalize,__dec_obj67, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -15644,23 +7382,23 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         ((struct sType*)come_null_check(finalizer_135, "23interface.c", 119))->mVarArgs=(_Bool)0;
         __freed_obj__ = 0;
         __dec_obj68=((struct sType*)come_null_check(finalizer_135, "23interface.c", 120))->mResultType;
-        ((struct sType*)come_null_check(finalizer_135, "23interface.c", 120))->mResultType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value150=(gCallerSName = "23interface.c", gCallerSLine = 120,tuple1$1sTypeph_initialize((struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value147=(struct tuple1$1sTypeph*)come_calloc(1, sizeof(struct tuple1$1sTypeph)*(1), "23interface.c", 120)))),(struct sType*)come_increment_ref_count(((struct sType*)(right_value149=(gCallerSName = "23interface.c", gCallerSLine = 120,sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value148=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "23interface.c", 120)))),"void",(_Bool)0,info))))))))));
+        ((struct sType*)come_null_check(finalizer_135, "23interface.c", 120))->mResultType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value150=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 120,tuple1$1sTypeph_initialize((struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value147=(struct tuple1$1sTypeph*)come_calloc(1, sizeof(struct tuple1$1sTypeph)*(1), "23interface.c", 120)))),(struct sType*)come_increment_ref_count(((struct sType*)(right_value149=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 120,sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value148=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "23interface.c", 120)))),"void",(_Bool)0,info))))))))));
         if(__dec_obj68) { come_call_finalizer(tuple1$1sTypeph_finalize,__dec_obj68, (void*)0, (void*)0, 0, 0, 0, 0); }
         if(right_value147 && right_value147 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,right_value147, (void*)0, (void*)0, 0, 1, 0, 0); }
         if(right_value148 && right_value148 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value148, (void*)0, (void*)0, 0, 1, 0, 0); }
         if(right_value149 && right_value149 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value149, (void*)0, (void*)0, 0, 1, 0, 0); }
         if(right_value150 && right_value150 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,right_value150, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
-        (gCallerSName = "23interface.c", gCallerSLine = 122,list$1tuple2$2charphsTypephph_push_back(((struct list$1tuple2$2charphsTypephph*)come_null_check(((struct sClass*)come_null_check(klass_129, "23interface.c", 122))->mFields, "23interface.c", 122)),(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value153=(gCallerSName = "23interface.c", gCallerSLine = 122,tuple2$2charphsTypeph_initialize((struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value151=(struct tuple2$2charphsTypeph*)come_calloc(1, sizeof(struct tuple2$2charphsTypeph)*(1), "23interface.c", 122)))),(char*)come_increment_ref_count(((char*)(right_value152=(gCallerSName = "23interface.c", gCallerSLine = 122,__builtin_string("finalize"))))),(struct sType*)come_increment_ref_count(finalizer_135))))))));
+        (gCallerSName[0] = "23interface.c", gCallerSLine[0] = 122,list$1tuple2$2charphsTypephph_push_back(((struct list$1tuple2$2charphsTypephph*)come_null_check(((struct sClass*)come_null_check(klass_129, "23interface.c", 122))->mFields, "23interface.c", 122)),(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value153=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 122,tuple2$2charphsTypeph_initialize((struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value151=(struct tuple2$2charphsTypeph*)come_calloc(1, sizeof(struct tuple2$2charphsTypeph)*(1), "23interface.c", 122)))),(char*)come_increment_ref_count(((char*)(right_value152=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 122,__builtin_string("finalize"))))),(struct sType*)come_increment_ref_count(finalizer_135))))))));
         if(right_value151 && right_value151 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,right_value151, (void*)0, (void*)0, 0, 1, 0, 0); }
         if(right_value152 && right_value152 != __result_obj__ && !__freed_obj__) { right_value152 = come_decrement_ref_count(right_value152, (void*)0, (void*)0, 1, 0, 0); }
         if(right_value153 && right_value153 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,right_value153, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
-        cloner_140=(struct sType*)come_increment_ref_count(((struct sType*)(right_value155=(gCallerSName = "23interface.c", gCallerSLine = 124,sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value154=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "23interface.c", 124)))),"lambda",(_Bool)0,info)))));
+        cloner_140=(struct sType*)come_increment_ref_count(((struct sType*)(right_value155=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 124,sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value154=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "23interface.c", 124)))),"lambda",(_Bool)0,info)))));
         if(right_value154 && right_value154 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value154, (void*)0, (void*)0, 0, 1, 0, 0); }
         if(right_value155 && right_value155 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value155, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
-        {__list_values3___141[0]=come_increment_ref_count(((struct sType*)(right_value156=(gCallerSName = "23interface.c", gCallerSLine = 126,sType_clone(voidp_131)))));
+        {__list_values3___141[0]=come_increment_ref_count(((struct sType*)(right_value156=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 126,sType_clone(voidp_131)))));
 }        __dec_obj69=((struct sType*)come_null_check(cloner_140, "23interface.c", 126))->mParamTypes;
         ((struct sType*)come_null_check(cloner_140, "23interface.c", 126))->mParamTypes=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value158=list$1sTypeph_initialize_with_values((struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value157=(struct list$1sTypeph*)come_calloc(1, sizeof(struct list$1sTypeph)*(1), "23interface.c", 126)))),1,__list_values3___141))));
         if(__dec_obj69) { come_call_finalizer(list$1sTypeph_finalize,__dec_obj69, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -15668,7 +7406,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         if(right_value157 && right_value157 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sTypeph_finalize,right_value157, (void*)0, (void*)0, 0, 1, 0, 0); }
         if(right_value158 && right_value158 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,right_value158, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
-        {__list_values4___142[0]=come_increment_ref_count(((char*)(right_value159=(gCallerSName = "23interface.c", gCallerSLine = 127,__builtin_string("self")))));
+        {__list_values4___142[0]=come_increment_ref_count(((char*)(right_value159=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 127,__builtin_string("self")))));
 }        __dec_obj70=((struct sType*)come_null_check(cloner_140, "23interface.c", 127))->mParamNames;
         ((struct sType*)come_null_check(cloner_140, "23interface.c", 127))->mParamNames=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value161=list$1charph_initialize_with_values((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value160=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "23interface.c", 127)))),1,__list_values4___142))));
         if(__dec_obj70) { come_call_finalizer(list$1charph_finalize,__dec_obj70, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -15679,41 +7417,41 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         ((struct sType*)come_null_check(cloner_140, "23interface.c", 128))->mVarArgs=(_Bool)0;
         __freed_obj__ = 0;
         __dec_obj71=((struct sType*)come_null_check(cloner_140, "23interface.c", 129))->mResultType;
-        ((struct sType*)come_null_check(cloner_140, "23interface.c", 129))->mResultType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value164=(gCallerSName = "23interface.c", gCallerSLine = 129,tuple1$1sTypeph_initialize((struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value162=(struct tuple1$1sTypeph*)come_calloc(1, sizeof(struct tuple1$1sTypeph)*(1), "23interface.c", 129)))),(struct sType*)come_increment_ref_count(((struct sType*)(right_value163=(gCallerSName = "23interface.c", gCallerSLine = 129,sType_clone(voidp_131))))))))));
+        ((struct sType*)come_null_check(cloner_140, "23interface.c", 129))->mResultType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value164=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 129,tuple1$1sTypeph_initialize((struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value162=(struct tuple1$1sTypeph*)come_calloc(1, sizeof(struct tuple1$1sTypeph)*(1), "23interface.c", 129)))),(struct sType*)come_increment_ref_count(((struct sType*)(right_value163=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 129,sType_clone(voidp_131))))))))));
         if(__dec_obj71) { come_call_finalizer(tuple1$1sTypeph_finalize,__dec_obj71, (void*)0, (void*)0, 0, 0, 0, 0); }
         if(right_value162 && right_value162 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,right_value162, (void*)0, (void*)0, 0, 1, 0, 0); }
         if(right_value163 && right_value163 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value163, (void*)0, (void*)0, 0, 1, 0, 0); }
         if(right_value164 && right_value164 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,right_value164, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
-        (gCallerSName = "23interface.c", gCallerSLine = 131,list$1tuple2$2charphsTypephph_push_back(((struct list$1tuple2$2charphsTypephph*)come_null_check(((struct sClass*)come_null_check(klass_129, "23interface.c", 131))->mFields, "23interface.c", 131)),(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value167=(gCallerSName = "23interface.c", gCallerSLine = 131,tuple2$2charphsTypeph_initialize((struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value165=(struct tuple2$2charphsTypeph*)come_calloc(1, sizeof(struct tuple2$2charphsTypeph)*(1), "23interface.c", 131)))),(char*)come_increment_ref_count(((char*)(right_value166=(gCallerSName = "23interface.c", gCallerSLine = 131,__builtin_string("clone"))))),(struct sType*)come_increment_ref_count(cloner_140))))))));
+        (gCallerSName[0] = "23interface.c", gCallerSLine[0] = 131,list$1tuple2$2charphsTypephph_push_back(((struct list$1tuple2$2charphsTypephph*)come_null_check(((struct sClass*)come_null_check(klass_129, "23interface.c", 131))->mFields, "23interface.c", 131)),(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value167=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 131,tuple2$2charphsTypeph_initialize((struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value165=(struct tuple2$2charphsTypeph*)come_calloc(1, sizeof(struct tuple2$2charphsTypeph)*(1), "23interface.c", 131)))),(char*)come_increment_ref_count(((char*)(right_value166=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 131,__builtin_string("clone"))))),(struct sType*)come_increment_ref_count(cloner_140))))))));
         if(right_value165 && right_value165 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,right_value165, (void*)0, (void*)0, 0, 1, 0, 0); }
         if(right_value166 && right_value166 != __result_obj__ && !__freed_obj__) { right_value166 = come_decrement_ref_count(right_value166, (void*)0, (void*)0, 1, 0, 0); }
         if(right_value167 && right_value167 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,right_value167, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
         while(_while_condtional21=(_Bool)1,        __freed_obj__ = 0, 
         _while_condtional21) {
-            (gCallerSName = "23interface.c", gCallerSLine = 134,parse_sharp_v5(info));
+            (gCallerSName[0] = "23interface.c", gCallerSLine[0] = 134,parse_sharp_v5(info));
             __freed_obj__ = 0;
-            multiple_assgin_var4=((struct tuple2$2sTypephcharph*)(right_value168=(gCallerSName = "23interface.c", gCallerSLine = 135,parse_interface_function(info))));
+            multiple_assgin_var4=((struct tuple2$2sTypephcharph*)(right_value168=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 135,parse_interface_function(info))));
             type2_143=(struct sType*)come_increment_ref_count(multiple_assgin_var4->v1);
             name_144=(char*)come_increment_ref_count(multiple_assgin_var4->v2);
             if(right_value168 && right_value168 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2sTypephcharphp_finalize,right_value168, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
             come_clear_stackframe();
-            optional$2intbool_value((come_push_stackframe("23interface.c", 136),((struct optional$2intbool*)(right_value169=(gCallerSName = "23interface.c", gCallerSLine = 136,expected_next_character(59,info))))));
+            optional$2intbool_value((come_push_stackframe("23interface.c", 136),((struct optional$2intbool*)(right_value169=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 136,expected_next_character(59,info))))));
             if(right_value169 && right_value169 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2intboolp_finalize,right_value169, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
-            (gCallerSName = "23interface.c", gCallerSLine = 138,list$1tuple2$2charphsTypephph_push_back(((struct list$1tuple2$2charphsTypephph*)come_null_check(((struct sClass*)come_null_check(klass_129, "23interface.c", 138))->mFields, "23interface.c", 138)),(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value171=(gCallerSName = "23interface.c", gCallerSLine = 138,tuple2$2charphsTypeph_initialize((struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value170=(struct tuple2$2charphsTypeph*)come_calloc(1, sizeof(struct tuple2$2charphsTypeph)*(1), "23interface.c", 138)))),(char*)come_increment_ref_count(name_144),(struct sType*)come_increment_ref_count(type2_143))))))));
+            (gCallerSName[0] = "23interface.c", gCallerSLine[0] = 138,list$1tuple2$2charphsTypephph_push_back(((struct list$1tuple2$2charphsTypephph*)come_null_check(((struct sClass*)come_null_check(klass_129, "23interface.c", 138))->mFields, "23interface.c", 138)),(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value171=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 138,tuple2$2charphsTypeph_initialize((struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value170=(struct tuple2$2charphsTypeph*)come_calloc(1, sizeof(struct tuple2$2charphsTypeph)*(1), "23interface.c", 138)))),(char*)come_increment_ref_count(name_144),(struct sType*)come_increment_ref_count(type2_143))))))));
             if(right_value170 && right_value170 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,right_value170, (void*)0, (void*)0, 0, 1, 0, 0); }
             if(right_value171 && right_value171 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,right_value171, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
-            (gCallerSName = "23interface.c", gCallerSLine = 140,parse_sharp_v5(info));
+            (gCallerSName[0] = "23interface.c", gCallerSLine[0] = 140,parse_sharp_v5(info));
             __freed_obj__ = 0;
             if(_if_conditional216=*((struct sInfo*)come_null_check(info, "23interface.c", 147))->p==125,            __freed_obj__ = 0, 
             _if_conditional216) {
                 ((struct sInfo*)come_null_check(info, "23interface.c", 143))->p++;
                 __freed_obj__ = 0;
-                (gCallerSName = "23interface.c", gCallerSLine = 144,skip_spaces_and_lf(info));
+                (gCallerSName[0] = "23interface.c", gCallerSLine[0] = 144,skip_spaces_and_lf(info));
                 __freed_obj__ = 0;
                 if(type2_143 && !__freed_obj__) { come_call_finalizer(sType_finalize,type2_143, (void*)0, (void*)0, 0, 0, 0, 0); }
                 if(name_144 && !__freed_obj__) { name_144 = come_decrement_ref_count(name_144, (void*)0, (void*)0, 0, 0, 0); }
@@ -15721,14 +7459,14 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-            (gCallerSName = "23interface.c", gCallerSLine = 147,parse_sharp_v5(info));
+            (gCallerSName[0] = "23interface.c", gCallerSLine[0] = 147,parse_sharp_v5(info));
             __freed_obj__ = 0;
             if(type2_143 && !__freed_obj__) { come_call_finalizer(sType_finalize,type2_143, (void*)0, (void*)0, 0, 0, 0, 0); }
             if(name_144 && !__freed_obj__) { name_144 = come_decrement_ref_count(name_144, (void*)0, (void*)0, 0, 0, 0); }
         }
         __freed_obj__ = 0;
         _inf_value1=(struct sNode*)come_calloc(1, sizeof(struct sNode), "23interface.c", 150);
-        _inf_obj_value1=come_increment_ref_count(((struct sInterfaceNode*)(right_value174=(gCallerSName = "23interface.c", gCallerSLine = 150,sInterfaceNode_initialize((struct sInterfaceNode*)come_increment_ref_count(((struct sInterfaceNode*)(right_value172=(struct sInterfaceNode*)come_calloc(1, sizeof(struct sInterfaceNode)*(1), "23interface.c", 150)))),(char*)come_increment_ref_count(((char*)(right_value173=(gCallerSName = "23interface.c", gCallerSLine = 150,__builtin_string(type_name_128))))),(struct sClass*)come_increment_ref_count(klass_129),info)))));
+        _inf_obj_value1=come_increment_ref_count(((struct sInterfaceNode*)(right_value174=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 150,sInterfaceNode_initialize((struct sInterfaceNode*)come_increment_ref_count(((struct sInterfaceNode*)(right_value172=(struct sInterfaceNode*)come_calloc(1, sizeof(struct sInterfaceNode)*(1), "23interface.c", 150)))),(char*)come_increment_ref_count(((char*)(right_value173=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 150,__builtin_string(type_name_128))))),(struct sClass*)come_increment_ref_count(klass_129),info)))));
         _inf_value1->_protocol_obj=_inf_obj_value1;
         _inf_value1->finalize=(void*)sInterfaceNode_finalize;
         _inf_value1->clone=(void*)sInterfaceNode_clone;
@@ -15748,28 +7486,7 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         if(right_value173 && right_value173 != __result_obj__ && !__freed_obj__) { right_value173 = come_decrement_ref_count(right_value173, (void*)0, (void*)0, 1, 0, 0); }
         if(right_value174 && right_value174 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sInterfaceNode_finalize,right_value174, (void*)0, (void*)0, 0, 1, 0, 0); }
         __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-        return __result108__;
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);        return __result108__;
         __freed_obj__ = 0;
         if(type_name_128 && !__freed_obj__) { type_name_128 = come_decrement_ref_count(type_name_128, (void*)0, (void*)0, 0, 0, 0); }
         if(klass_129 && !__freed_obj__) { come_call_finalizer(sClass_finalize,klass_129, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -15778,78 +7495,19 @@ gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
         if(cloner_140 && !__freed_obj__) { come_call_finalizer(sType_finalize,cloner_140, (void*)0, (void*)0, 0, 0, 0, 0); }
     }
     __freed_obj__ = 0;
-    __result109__ = __result_obj__ = ((struct sNode*)(right_value181=(gCallerSName = "23interface.c", gCallerSLine = 153,top_level_v1((char*)come_increment_ref_count(((char*)(right_value180=(gCallerSName = "23interface.c", gCallerSLine = 153,__builtin_string(buf))))),head,head_sline,info))));
+    __result109__ = __result_obj__ = ((struct sNode*)(right_value181=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 153,top_level_v1((char*)come_increment_ref_count(((char*)(right_value180=(gCallerSName[0] = "23interface.c", gCallerSLine[0] = 153,__builtin_string(buf))))),head,head_sline,info))));
     if(buf && !__freed_obj__) { buf = come_decrement_ref_count(buf, (void*)0, (void*)0, 0, 1, 0); }
     if(right_value180 && right_value180 != __result_obj__ && !__freed_obj__) { right_value180 = come_decrement_ref_count(right_value180, (void*)0, (void*)0, 1, 0, 0); }
     __freed_obj__ = 0;
-    gCallerSName10 = __caller_sname10__;
-    gCallerSName9 = __caller_sname9__;
-    gCallerSName8 = __caller_sname8__;
-    gCallerSName7 = __caller_sname7__;
-    gCallerSName6 = __caller_sname6__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName5 = __caller_sname5__;
-    gCallerSName4 = __caller_sname4__;
-    gCallerSName3 = __caller_sname3__;
-    gCallerSName2 = __caller_sname2__;
-    gCallerSName = __caller_sname__;
-    gCallerSLine10 = __caller_sline10__;
-    gCallerSLine9 = __caller_sline9__;
-    gCallerSLine8 = __caller_sline8__;
-    gCallerSLine7 = __caller_sline7__;
-    gCallerSLine6 = __caller_sline6__;
-    gCallerSLine5 = __caller_sline5__;
-    gCallerSLine4 = __caller_sline4__;
-    gCallerSLine3 = __caller_sline3__;
-    gCallerSLine2 = __caller_sline2__;
-    gCallerSLine = __caller_sline__;
-    return __result109__;
+    memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);    memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);    return __result109__;
     __freed_obj__ = 0;
     if(buf && !__freed_obj__) { buf = come_decrement_ref_count(buf, (void*)0, (void*)0, 0, 1, 0); }
-gCallerSName10 = __caller_sname10__;
-gCallerSName9 = __caller_sname9__;
-gCallerSName8 = __caller_sname8__;
-gCallerSName7 = __caller_sname7__;
-gCallerSName6 = __caller_sname6__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName5 = __caller_sname5__;
-gCallerSName4 = __caller_sname4__;
-gCallerSName3 = __caller_sname3__;
-gCallerSName2 = __caller_sname2__;
-gCallerSName = __caller_sname__;
-gCallerSLine10 = __caller_sline10__;
-gCallerSLine9 = __caller_sline9__;
-gCallerSLine8 = __caller_sline8__;
-gCallerSLine7 = __caller_sline7__;
-gCallerSLine6 = __caller_sline6__;
-gCallerSLine5 = __caller_sline5__;
-gCallerSLine4 = __caller_sline4__;
-gCallerSLine3 = __caller_sline3__;
-gCallerSLine2 = __caller_sline2__;
-gCallerSLine = __caller_sline__;
-}
+memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static int optional$2intbool_value(struct optional$2intbool* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -15861,217 +7519,43 @@ int __result101__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&default_value_130, 0, sizeof(int));
-        __caller_sname10__ = gCallerSName10;
-        __caller_sname9__ = gCallerSName9;
-        __caller_sname8__ = gCallerSName8;
-        __caller_sname7__ = gCallerSName7;
-        __caller_sname6__ = gCallerSName6;
-        __caller_sname5__ = gCallerSName5;
-        __caller_sname4__ = gCallerSName4;
-        __caller_sname3__ = gCallerSName3;
-        __caller_sname2__ = gCallerSName2;
-        __caller_sname__ = gCallerSName;
-        __caller_sline10__ = gCallerSLine10;
-        __caller_sline9__ = gCallerSLine9;
-        __caller_sline8__ = gCallerSLine8;
-        __caller_sline7__ = gCallerSLine7;
-        __caller_sline6__ = gCallerSLine6;
-        __caller_sline5__ = gCallerSLine5;
-        __caller_sline4__ = gCallerSLine4;
-        __caller_sline3__ = gCallerSLine3;
-        __caller_sline2__ = gCallerSLine2;
-        __caller_sline__ = gCallerSLine;
-        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
             if(_if_conditional213=self==((void*)0),            __freed_obj__ = 0, 
             _if_conditional213) {
                 __freed_obj__ = 0;
-                (gCallerSName = "./comelang2.h", gCallerSLine = 61,memset(&default_value_130,0,sizeof(int)));
+                (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 61,memset(&default_value_130,0,sizeof(int)));
                 __freed_obj__ = 0;
                 __result100__ = default_value_130;
                 __freed_obj__ = 0;
-                gCallerSName10 = __caller_sname10__;
-                gCallerSName9 = __caller_sname9__;
-                gCallerSName8 = __caller_sname8__;
-                gCallerSName7 = __caller_sname7__;
-                gCallerSName6 = __caller_sname6__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName4 = __caller_sname4__;
-                gCallerSName3 = __caller_sname3__;
-                gCallerSName2 = __caller_sname2__;
-                gCallerSName = __caller_sname__;
-                gCallerSLine10 = __caller_sline10__;
-                gCallerSLine9 = __caller_sline9__;
-                gCallerSLine8 = __caller_sline8__;
-                gCallerSLine7 = __caller_sline7__;
-                gCallerSLine6 = __caller_sline6__;
-                gCallerSLine5 = __caller_sline5__;
-                gCallerSLine4 = __caller_sline4__;
-                gCallerSLine3 = __caller_sline3__;
-                gCallerSLine2 = __caller_sline2__;
-                gCallerSLine = __caller_sline__;
-                return __result100__;
+                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result100__;
                 __freed_obj__ = 0;
             }
             else {
                 __result101__ = ((struct optional$2intbool*)come_null_check(self, "./comelang2.h", 65))->v1;
                 __freed_obj__ = 0;
-                gCallerSName10 = __caller_sname10__;
-                gCallerSName9 = __caller_sname9__;
-                gCallerSName8 = __caller_sname8__;
-                gCallerSName7 = __caller_sname7__;
-                gCallerSName6 = __caller_sname6__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName4 = __caller_sname4__;
-                gCallerSName3 = __caller_sname3__;
-                gCallerSName2 = __caller_sname2__;
-                gCallerSName = __caller_sname__;
-                gCallerSLine10 = __caller_sline10__;
-                gCallerSLine9 = __caller_sline9__;
-                gCallerSLine8 = __caller_sline8__;
-                gCallerSLine7 = __caller_sline7__;
-                gCallerSLine6 = __caller_sline6__;
-                gCallerSLine5 = __caller_sline5__;
-                gCallerSLine4 = __caller_sline4__;
-                gCallerSLine3 = __caller_sline3__;
-                gCallerSLine2 = __caller_sline2__;
-                gCallerSLine = __caller_sline__;
-                return __result101__;
+                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result101__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-}
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void optional$2intboolp_finalize(struct optional$2intbool* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-        __caller_sname10__ = gCallerSName10;
-        __caller_sname9__ = gCallerSName9;
-        __caller_sname8__ = gCallerSName8;
-        __caller_sname7__ = gCallerSName7;
-        __caller_sname6__ = gCallerSName6;
-        __caller_sname5__ = gCallerSName5;
-        __caller_sname4__ = gCallerSName4;
-        __caller_sname3__ = gCallerSName3;
-        __caller_sname2__ = gCallerSName2;
-        __caller_sname__ = gCallerSName;
-        __caller_sline10__ = gCallerSLine10;
-        __caller_sline9__ = gCallerSLine9;
-        __caller_sline8__ = gCallerSLine8;
-        __caller_sline7__ = gCallerSLine7;
-        __caller_sline6__ = gCallerSLine6;
-        __caller_sline5__ = gCallerSLine5;
-        __caller_sline4__ = gCallerSLine4;
-        __caller_sline3__ = gCallerSLine3;
-        __caller_sline2__ = gCallerSLine2;
-        __caller_sline__ = gCallerSLine;
-        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-}
+        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1tuple2$2charphsTypephph* list$1tuple2$2charphsTypephph_push_back(struct list$1tuple2$2charphsTypephph* self, struct tuple2$2charphsTypeph* item){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -16096,165 +7580,78 @@ memset(&right_value132, 0, sizeof(void*));
 memset(&litem_133, 0, sizeof(struct list_item$1tuple2$2charphsTypephph*));
 memset(&right_value133, 0, sizeof(void*));
 memset(&litem_134, 0, sizeof(struct list_item$1tuple2$2charphsTypephph*));
-        __caller_sname10__ = gCallerSName10;
-        __caller_sname9__ = gCallerSName9;
-        __caller_sname8__ = gCallerSName8;
-        __caller_sname7__ = gCallerSName7;
-        __caller_sname6__ = gCallerSName6;
-        __caller_sname5__ = gCallerSName5;
-        __caller_sname4__ = gCallerSName4;
-        __caller_sname3__ = gCallerSName3;
-        __caller_sname2__ = gCallerSName2;
-        __caller_sname__ = gCallerSName;
-        __caller_sline10__ = gCallerSLine10;
-        __caller_sline9__ = gCallerSLine9;
-        __caller_sline8__ = gCallerSLine8;
-        __caller_sline7__ = gCallerSLine7;
-        __caller_sline6__ = gCallerSLine6;
-        __caller_sline5__ = gCallerSLine5;
-        __caller_sline4__ = gCallerSLine4;
-        __caller_sline3__ = gCallerSLine3;
-        __caller_sline2__ = gCallerSLine2;
-        __caller_sline__ = gCallerSLine;
-        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-            if(_if_conditional214=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 323))->len==0,            __freed_obj__ = 0, 
+        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+            if(_if_conditional214=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 307))->len==0,            __freed_obj__ = 0, 
             _if_conditional214) {
-                litem_132=(struct list_item$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsTypephph*)(right_value131=(struct list_item$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsTypephph)*(1), "./comelang2.h", 293))));
+                litem_132=(struct list_item$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsTypephph*)(right_value131=(struct list_item$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsTypephph)*(1), "./comelang2.h", 277))));
                 if(right_value131 && right_value131 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1tuple2$2charphsTypephphp_finalize,right_value131, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
-                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_132, "./comelang2.h", 295))->prev=((void*)0);
+                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_132, "./comelang2.h", 279))->prev=((void*)0);
                 __freed_obj__ = 0;
-                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_132, "./comelang2.h", 296))->next=((void*)0);
+                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_132, "./comelang2.h", 280))->next=((void*)0);
                 __freed_obj__ = 0;
-                __dec_obj61=((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_132, "./comelang2.h", 297))->item;
-                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_132, "./comelang2.h", 297))->item=(struct tuple2$2charphsTypeph*)come_increment_ref_count(item);
+                __dec_obj61=((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_132, "./comelang2.h", 281))->item;
+                ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_132, "./comelang2.h", 281))->item=(struct tuple2$2charphsTypeph*)come_increment_ref_count(item);
                 if(__dec_obj61) { come_call_finalizer(tuple2$2charphsTypeph_finalize,__dec_obj61, (void*)0, (void*)0, 0, 0, 0, 0); }
                 __freed_obj__ = 0;
-                ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 299))->tail=litem_132;
+                ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 283))->tail=litem_132;
                 __freed_obj__ = 0;
-                ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 300))->head=litem_132;
+                ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 284))->head=litem_132;
                 __freed_obj__ = 0;
             }
             else {
-                if(_if_conditional215=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 323))->len==1,                __freed_obj__ = 0, 
+                if(_if_conditional215=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 307))->len==1,                __freed_obj__ = 0, 
                 _if_conditional215) {
-                    litem_133=(struct list_item$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsTypephph*)(right_value132=(struct list_item$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsTypephph)*(1), "./comelang2.h", 303))));
+                    litem_133=(struct list_item$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsTypephph*)(right_value132=(struct list_item$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsTypephph)*(1), "./comelang2.h", 287))));
                     if(right_value132 && right_value132 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1tuple2$2charphsTypephphp_finalize,right_value132, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
-                    ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_133, "./comelang2.h", 305))->prev=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 305))->head;
+                    ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_133, "./comelang2.h", 289))->prev=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 289))->head;
                     __freed_obj__ = 0;
-                    ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_133, "./comelang2.h", 306))->next=((void*)0);
+                    ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_133, "./comelang2.h", 290))->next=((void*)0);
                     __freed_obj__ = 0;
-                    __dec_obj62=((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_133, "./comelang2.h", 307))->item;
-                    ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_133, "./comelang2.h", 307))->item=(struct tuple2$2charphsTypeph*)come_increment_ref_count(item);
+                    __dec_obj62=((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_133, "./comelang2.h", 291))->item;
+                    ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_133, "./comelang2.h", 291))->item=(struct tuple2$2charphsTypeph*)come_increment_ref_count(item);
                     if(__dec_obj62) { come_call_finalizer(tuple2$2charphsTypeph_finalize,__dec_obj62, (void*)0, (void*)0, 0, 0, 0, 0); }
                     __freed_obj__ = 0;
-                    ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 309))->tail=litem_133;
+                    ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 293))->tail=litem_133;
                     __freed_obj__ = 0;
-                    ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 310))->head, "./comelang2.h", 310))->next=litem_133;
+                    ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 294))->head, "./comelang2.h", 294))->next=litem_133;
                     __freed_obj__ = 0;
                 }
                 else {
-                    litem_134=(struct list_item$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsTypephph*)(right_value133=(struct list_item$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsTypephph)*(1), "./comelang2.h", 313))));
+                    litem_134=(struct list_item$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsTypephph*)(right_value133=(struct list_item$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsTypephph)*(1), "./comelang2.h", 297))));
                     if(right_value133 && right_value133 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list_item$1tuple2$2charphsTypephphp_finalize,right_value133, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __freed_obj__ = 0;
-                    ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_134, "./comelang2.h", 315))->prev=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 315))->tail;
+                    ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_134, "./comelang2.h", 299))->prev=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 299))->tail;
                     __freed_obj__ = 0;
-                    ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_134, "./comelang2.h", 316))->next=((void*)0);
+                    ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_134, "./comelang2.h", 300))->next=((void*)0);
                     __freed_obj__ = 0;
-                    __dec_obj63=((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_134, "./comelang2.h", 317))->item;
-                    ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_134, "./comelang2.h", 317))->item=(struct tuple2$2charphsTypeph*)come_increment_ref_count(item);
+                    __dec_obj63=((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_134, "./comelang2.h", 301))->item;
+                    ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(litem_134, "./comelang2.h", 301))->item=(struct tuple2$2charphsTypeph*)come_increment_ref_count(item);
                     if(__dec_obj63) { come_call_finalizer(tuple2$2charphsTypeph_finalize,__dec_obj63, (void*)0, (void*)0, 0, 0, 0, 0); }
                     __freed_obj__ = 0;
-                    ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 319))->tail, "./comelang2.h", 319))->next=litem_134;
+                    ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 303))->tail, "./comelang2.h", 303))->next=litem_134;
                     __freed_obj__ = 0;
-                    ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 320))->tail=litem_134;
+                    ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 304))->tail=litem_134;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-            ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 323))->len++;
+            ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 307))->len++;
             __freed_obj__ = 0;
             __result102__ = __result_obj__ = self;
             if(item && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result102__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result102__;
             __freed_obj__ = 0;
             if(item && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-}
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct tuple2$2charphsTypeph* tuple2$2charphsTypeph_initialize(struct tuple2$2charphsTypeph* self, char* v1, struct sType* v2){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -16268,42 +7665,14 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value135, 0, sizeof(void*));
 memset(&right_value136, 0, sizeof(void*));
-        __caller_sname10__ = gCallerSName10;
-        __caller_sname9__ = gCallerSName9;
-        __caller_sname8__ = gCallerSName8;
-        __caller_sname7__ = gCallerSName7;
-        __caller_sname6__ = gCallerSName6;
-        __caller_sname5__ = gCallerSName5;
-        __caller_sname4__ = gCallerSName4;
-        __caller_sname3__ = gCallerSName3;
-        __caller_sname2__ = gCallerSName2;
-        __caller_sname__ = gCallerSName;
-        __caller_sline10__ = gCallerSLine10;
-        __caller_sline9__ = gCallerSLine9;
-        __caller_sline8__ = gCallerSLine8;
-        __caller_sline7__ = gCallerSLine7;
-        __caller_sline6__ = gCallerSLine6;
-        __caller_sline5__ = gCallerSLine5;
-        __caller_sline4__ = gCallerSLine4;
-        __caller_sline3__ = gCallerSLine3;
-        __caller_sline2__ = gCallerSLine2;
-        __caller_sline__ = gCallerSLine;
-        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-            __dec_obj64=((struct tuple2$2charphsTypeph*)come_null_check(self, "./comelang2.h", 1825))->v1;
-            ((struct tuple2$2charphsTypeph*)come_null_check(self, "./comelang2.h", 1825))->v1=(char*)come_increment_ref_count(((char*)(right_value135=(gCallerSName = "./comelang2.h", gCallerSLine = 1825,string_clone(v1)))));
+        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+            __dec_obj64=((struct tuple2$2charphsTypeph*)come_null_check(self, "./comelang2.h", 1809))->v1;
+            ((struct tuple2$2charphsTypeph*)come_null_check(self, "./comelang2.h", 1809))->v1=(char*)come_increment_ref_count(((char*)(right_value135=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1809,string_clone(v1)))));
             if(__dec_obj64) { __dec_obj64 = come_decrement_ref_count(__dec_obj64, (void*)0, (void*)0, 0,0,0); }
             if(right_value135 && right_value135 != __result_obj__ && !__freed_obj__) { right_value135 = come_decrement_ref_count(right_value135, (void*)0, (void*)0, 1, 0, 0); }
             __freed_obj__ = 0;
-            __dec_obj65=((struct tuple2$2charphsTypeph*)come_null_check(self, "./comelang2.h", 1826))->v2;
-            ((struct tuple2$2charphsTypeph*)come_null_check(self, "./comelang2.h", 1826))->v2=(struct sType*)come_increment_ref_count(((struct sType*)(right_value136=(gCallerSName = "./comelang2.h", gCallerSLine = 1826,sType_clone(v2)))));
+            __dec_obj65=((struct tuple2$2charphsTypeph*)come_null_check(self, "./comelang2.h", 1810))->v2;
+            ((struct tuple2$2charphsTypeph*)come_null_check(self, "./comelang2.h", 1810))->v2=(struct sType*)come_increment_ref_count(((struct sType*)(right_value136=(gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 1810,sType_clone(v2)))));
             if(__dec_obj65) { come_call_finalizer(sType_finalize,__dec_obj65, (void*)0, (void*)0, 0, 0, 0, 0); }
             if(right_value136 && right_value136 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value136, (void*)0, (void*)0, 0, 1, 0, 0); }
             __freed_obj__ = 0;
@@ -16312,76 +7681,17 @@ memset(&right_value136, 0, sizeof(void*));
             if(v1 && !__freed_obj__) { v1 = come_decrement_ref_count(v1, (void*)0, (void*)0, 0, 1, 0); }
             if(v2 && !__freed_obj__) { come_call_finalizer(sType_finalize,v2, (void*)0, (void*)0, 0, 0, 1, 0); }
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result103__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result103__;
             __freed_obj__ = 0;
             if(self && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
             if(v1 && !__freed_obj__) { v1 = come_decrement_ref_count(v1, (void*)0, (void*)0, 0, 1, 0); }
             if(v2 && !__freed_obj__) { come_call_finalizer(sType_finalize,v2, (void*)0, (void*)0, 0, 0, 1, 0); }
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-}
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1sTypeph* list$1sTypeph_initialize_with_values(struct list$1sTypeph* self, int num_value, struct sType** values){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -16392,121 +7702,34 @@ struct list$1sTypeph* __result104__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&i_137, 0, sizeof(int));
-        __caller_sname10__ = gCallerSName10;
-        __caller_sname9__ = gCallerSName9;
-        __caller_sname8__ = gCallerSName8;
-        __caller_sname7__ = gCallerSName7;
-        __caller_sname6__ = gCallerSName6;
-        __caller_sname5__ = gCallerSName5;
-        __caller_sname4__ = gCallerSName4;
-        __caller_sname3__ = gCallerSName3;
-        __caller_sname2__ = gCallerSName2;
-        __caller_sname__ = gCallerSName;
-        __caller_sline10__ = gCallerSLine10;
-        __caller_sline9__ = gCallerSLine9;
-        __caller_sline8__ = gCallerSLine8;
-        __caller_sline7__ = gCallerSLine7;
-        __caller_sline6__ = gCallerSLine6;
-        __caller_sline5__ = gCallerSLine5;
-        __caller_sline4__ = gCallerSLine4;
-        __caller_sline3__ = gCallerSLine3;
-        __caller_sline2__ = gCallerSLine2;
-        __caller_sline__ = gCallerSLine;
-        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-            ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 179))->head=((void*)0);
+        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+            ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 163))->head=((void*)0);
             __freed_obj__ = 0;
-            ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 180))->tail=((void*)0);
+            ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 164))->tail=((void*)0);
             __freed_obj__ = 0;
-            ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 181))->len=0;
+            ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 165))->len=0;
             __freed_obj__ = 0;
             for(
             i_137=0 ,            __freed_obj__ = 0, 
             0;            _for_condtionalA4=            i_137<num_value ,            __freed_obj__ = 0, 
             _for_condtionalA4;            i_137++ ,            __freed_obj__ = 0, 
             0            ){
-                (gCallerSName = "./comelang2.h", gCallerSLine = 184,list$1sTypeph_push_back(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 184)),values[i_137]));
+                (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 168,list$1sTypeph_push_back(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 168)),values[i_137]));
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
             __result104__ = __result_obj__ = self;
             if(self && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result104__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result104__;
             __freed_obj__ = 0;
             if(self && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-}
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct list$1charph* list$1charph_initialize_with_values(struct list$1charph* self, int num_value, char** values){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -16517,121 +7740,34 @@ struct list$1charph* __result105__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&i_139, 0, sizeof(int));
-        __caller_sname10__ = gCallerSName10;
-        __caller_sname9__ = gCallerSName9;
-        __caller_sname8__ = gCallerSName8;
-        __caller_sname7__ = gCallerSName7;
-        __caller_sname6__ = gCallerSName6;
-        __caller_sname5__ = gCallerSName5;
-        __caller_sname4__ = gCallerSName4;
-        __caller_sname3__ = gCallerSName3;
-        __caller_sname2__ = gCallerSName2;
-        __caller_sname__ = gCallerSName;
-        __caller_sline10__ = gCallerSLine10;
-        __caller_sline9__ = gCallerSLine9;
-        __caller_sline8__ = gCallerSLine8;
-        __caller_sline7__ = gCallerSLine7;
-        __caller_sline6__ = gCallerSLine6;
-        __caller_sline5__ = gCallerSLine5;
-        __caller_sline4__ = gCallerSLine4;
-        __caller_sline3__ = gCallerSLine3;
-        __caller_sline2__ = gCallerSLine2;
-        __caller_sline__ = gCallerSLine;
-        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
-            ((struct list$1charph*)come_null_check(self, "./comelang2.h", 179))->head=((void*)0);
+        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
+            ((struct list$1charph*)come_null_check(self, "./comelang2.h", 163))->head=((void*)0);
             __freed_obj__ = 0;
-            ((struct list$1charph*)come_null_check(self, "./comelang2.h", 180))->tail=((void*)0);
+            ((struct list$1charph*)come_null_check(self, "./comelang2.h", 164))->tail=((void*)0);
             __freed_obj__ = 0;
-            ((struct list$1charph*)come_null_check(self, "./comelang2.h", 181))->len=0;
+            ((struct list$1charph*)come_null_check(self, "./comelang2.h", 165))->len=0;
             __freed_obj__ = 0;
             for(
             i_139=0 ,            __freed_obj__ = 0, 
             0;            _for_condtionalA5=            i_139<num_value ,            __freed_obj__ = 0, 
             _for_condtionalA5;            i_139++ ,            __freed_obj__ = 0, 
             0            ){
-                (gCallerSName = "./comelang2.h", gCallerSLine = 184,list$1charph_push_back(((struct list$1charph*)come_null_check(self, "./comelang2.h", 184)),values[i_139]));
+                (gCallerSName[0] = "./comelang2.h", gCallerSLine[0] = 168,list$1charph_push_back(((struct list$1charph*)come_null_check(self, "./comelang2.h", 168)),values[i_139]));
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
             __result105__ = __result_obj__ = self;
             if(self && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result105__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result105__;
             __freed_obj__ = 0;
             if(self && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-}
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static void sInterfaceNode_finalize(struct sInterfaceNode* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -16641,35 +7777,7 @@ _Bool _if_conditional218;
 _Bool _if_conditional219;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-        __caller_sname10__ = gCallerSName10;
-        __caller_sname9__ = gCallerSName9;
-        __caller_sname8__ = gCallerSName8;
-        __caller_sname7__ = gCallerSName7;
-        __caller_sname6__ = gCallerSName6;
-        __caller_sname5__ = gCallerSName5;
-        __caller_sname4__ = gCallerSName4;
-        __caller_sname3__ = gCallerSName3;
-        __caller_sname2__ = gCallerSName2;
-        __caller_sname__ = gCallerSName;
-        __caller_sline10__ = gCallerSLine10;
-        __caller_sline9__ = gCallerSLine9;
-        __caller_sline8__ = gCallerSLine8;
-        __caller_sline7__ = gCallerSLine7;
-        __caller_sline6__ = gCallerSLine6;
-        __caller_sline5__ = gCallerSLine5;
-        __caller_sline4__ = gCallerSLine4;
-        __caller_sline3__ = gCallerSLine3;
-        __caller_sline2__ = gCallerSLine2;
-        __caller_sline__ = gCallerSLine;
-        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
             if(_if_conditional217=self!=((void*)0)&&((struct sInterfaceNode*)come_null_check(self, "sInterfaceNode_finalize", 1))->name!=((void*)0),            __freed_obj__ = 0, 
             _if_conditional217) {
                 if(((struct sInterfaceNode*)come_null_check(self, "sInterfaceNode_finalize", 0))->name && !__freed_obj__) { ((struct sInterfaceNode*)come_null_check(self, "sInterfaceNode_finalize", 0))->name = come_decrement_ref_count(((struct sInterfaceNode*)come_null_check(self, "sInterfaceNode_finalize", 0))->name, (void*)0, (void*)0, 0, 0, 0); }
@@ -16688,50 +7796,12 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-}
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 
 static struct sInterfaceNode* sInterfaceNode_clone(struct sInterfaceNode* self){
-char* __caller_sname__;
-char* __caller_sname2__;
-char* __caller_sname3__;
-char* __caller_sname4__;
-char* __caller_sname5__;
-char* __caller_sname6__;
-char* __caller_sname7__;
-char* __caller_sname8__;
-char* __caller_sname9__;
-char* __caller_sname10__;
-int __caller_sline__;
-int __caller_sline2__;
-int __caller_sline3__;
-int __caller_sline4__;
-int __caller_sline5__;
-int __caller_sline6__;
-int __caller_sline7__;
-int __caller_sline8__;
-int __caller_sline9__;
-int __caller_sline10__;
+char* __caller_sname__[10];
+int __caller_sline__[10];
+int __caller_i__;
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -16758,61 +7828,12 @@ memset(&result_145, 0, sizeof(struct sInterfaceNode*));
 memset(&right_value176, 0, sizeof(void*));
 memset(&right_value177, 0, sizeof(void*));
 memset(&right_value178, 0, sizeof(void*));
-        __caller_sname10__ = gCallerSName10;
-        __caller_sname9__ = gCallerSName9;
-        __caller_sname8__ = gCallerSName8;
-        __caller_sname7__ = gCallerSName7;
-        __caller_sname6__ = gCallerSName6;
-        __caller_sname5__ = gCallerSName5;
-        __caller_sname4__ = gCallerSName4;
-        __caller_sname3__ = gCallerSName3;
-        __caller_sname2__ = gCallerSName2;
-        __caller_sname__ = gCallerSName;
-        __caller_sline10__ = gCallerSLine10;
-        __caller_sline9__ = gCallerSLine9;
-        __caller_sline8__ = gCallerSLine8;
-        __caller_sline7__ = gCallerSLine7;
-        __caller_sline6__ = gCallerSLine6;
-        __caller_sline5__ = gCallerSLine5;
-        __caller_sline4__ = gCallerSLine4;
-        __caller_sline3__ = gCallerSLine3;
-        __caller_sline2__ = gCallerSLine2;
-        __caller_sline__ = gCallerSLine;
-        gCallerSName10 = gCallerSName9, gCallerSLine10 = gCallerSLine9;
-        gCallerSName9 = gCallerSName8, gCallerSLine9 = gCallerSLine8;
-        gCallerSName8 = gCallerSName7, gCallerSLine8 = gCallerSLine7;
-        gCallerSName7 = gCallerSName6, gCallerSLine7 = gCallerSLine6;
-        gCallerSName6 = gCallerSName5, gCallerSLine6 = gCallerSLine5;
-        gCallerSName5 = gCallerSName4, gCallerSLine5 = gCallerSLine4;
-        gCallerSName4 = gCallerSName3, gCallerSLine4 = gCallerSLine3;
-        gCallerSName3 = gCallerSName2, gCallerSLine3 = gCallerSLine2;
-        gCallerSName2 = gCallerSName, gCallerSLine2 = gCallerSLine;
+        memcpy(__caller_sname__, gCallerSName, sizeof(char*)*10);        memcpy(__caller_sline__, gCallerSLine, sizeof(int)*10);        for(__caller_i__=10-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } 
             if(_if_conditional220=self==(void*)0,            __freed_obj__ = 0, 
             _if_conditional220) {
                 __result106__ = __result_obj__ = (void*)0;
                 __freed_obj__ = 0;
-                gCallerSName10 = __caller_sname10__;
-                gCallerSName9 = __caller_sname9__;
-                gCallerSName8 = __caller_sname8__;
-                gCallerSName7 = __caller_sname7__;
-                gCallerSName6 = __caller_sname6__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName5 = __caller_sname5__;
-                gCallerSName4 = __caller_sname4__;
-                gCallerSName3 = __caller_sname3__;
-                gCallerSName2 = __caller_sname2__;
-                gCallerSName = __caller_sname__;
-                gCallerSLine10 = __caller_sline10__;
-                gCallerSLine9 = __caller_sline9__;
-                gCallerSLine8 = __caller_sline8__;
-                gCallerSLine7 = __caller_sline7__;
-                gCallerSLine6 = __caller_sline6__;
-                gCallerSLine5 = __caller_sline5__;
-                gCallerSLine4 = __caller_sline4__;
-                gCallerSLine3 = __caller_sline3__;
-                gCallerSLine2 = __caller_sline2__;
-                gCallerSLine = __caller_sline__;
-                return __result106__;
+                memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);                memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);                return __result106__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -16822,7 +7843,7 @@ memset(&right_value178, 0, sizeof(void*));
             if(_if_conditional221=self!=((void*)0)&&((struct sInterfaceNode*)come_null_check(self, "sInterfaceNode_clone", 5))->name!=((void*)0),            __freed_obj__ = 0, 
             _if_conditional221) {
                 __dec_obj72=((struct sInterfaceNode*)come_null_check(result_145, "sInterfaceNode_clone", 4))->name;
-                ((struct sInterfaceNode*)come_null_check(result_145, "sInterfaceNode_clone", 4))->name=(char*)come_increment_ref_count(((char*)(right_value176=(gCallerSName = "sInterfaceNode_clone", gCallerSLine = 4,string_clone(((struct sInterfaceNode*)come_null_check(self, "sInterfaceNode_clone", 4))->name)))));
+                ((struct sInterfaceNode*)come_null_check(result_145, "sInterfaceNode_clone", 4))->name=(char*)come_increment_ref_count(((char*)(right_value176=(gCallerSName[0] = "sInterfaceNode_clone", gCallerSLine[0] = 4,string_clone(((struct sInterfaceNode*)come_null_check(self, "sInterfaceNode_clone", 4))->name)))));
                 if(__dec_obj72) { __dec_obj72 = come_decrement_ref_count(__dec_obj72, (void*)0, (void*)0, 0,0,0); }
                 if(right_value176 && right_value176 != __result_obj__ && !__freed_obj__) { right_value176 = come_decrement_ref_count(right_value176, (void*)0, (void*)0, 1, 0, 0); }
                 __freed_obj__ = 0;
@@ -16831,7 +7852,7 @@ memset(&right_value178, 0, sizeof(void*));
             if(_if_conditional222=self!=((void*)0)&&((struct sInterfaceNode*)come_null_check(self, "sInterfaceNode_clone", 6))->klass!=((void*)0),            __freed_obj__ = 0, 
             _if_conditional222) {
                 __dec_obj73=((struct sInterfaceNode*)come_null_check(result_145, "sInterfaceNode_clone", 5))->klass;
-                ((struct sInterfaceNode*)come_null_check(result_145, "sInterfaceNode_clone", 5))->klass=(struct sClass*)come_increment_ref_count(((struct sClass*)(right_value177=(gCallerSName = "sInterfaceNode_clone", gCallerSLine = 5,sClass_clone(((struct sInterfaceNode*)come_null_check(self, "sInterfaceNode_clone", 5))->klass)))));
+                ((struct sInterfaceNode*)come_null_check(result_145, "sInterfaceNode_clone", 5))->klass=(struct sClass*)come_increment_ref_count(((struct sClass*)(right_value177=(gCallerSName[0] = "sInterfaceNode_clone", gCallerSLine[0] = 5,sClass_clone(((struct sInterfaceNode*)come_null_check(self, "sInterfaceNode_clone", 5))->klass)))));
                 if(__dec_obj73) { come_call_finalizer(sClass_finalize,__dec_obj73, (void*)0, (void*)0, 0, 0, 0, 0); }
                 if(right_value177 && right_value177 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sClass_finalize,right_value177, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __freed_obj__ = 0;
@@ -16846,7 +7867,7 @@ memset(&right_value178, 0, sizeof(void*));
             if(_if_conditional224=self!=((void*)0)&&((struct sInterfaceNode*)come_null_check(self, "sInterfaceNode_clone", 8))->sname!=((void*)0),            __freed_obj__ = 0, 
             _if_conditional224) {
                 __dec_obj74=((struct sInterfaceNode*)come_null_check(result_145, "sInterfaceNode_clone", 7))->sname;
-                ((struct sInterfaceNode*)come_null_check(result_145, "sInterfaceNode_clone", 7))->sname=(char*)come_increment_ref_count(((char*)(right_value178=(gCallerSName = "sInterfaceNode_clone", gCallerSLine = 7,string_clone(((struct sInterfaceNode*)come_null_check(self, "sInterfaceNode_clone", 7))->sname)))));
+                ((struct sInterfaceNode*)come_null_check(result_145, "sInterfaceNode_clone", 7))->sname=(char*)come_increment_ref_count(((char*)(right_value178=(gCallerSName[0] = "sInterfaceNode_clone", gCallerSLine[0] = 7,string_clone(((struct sInterfaceNode*)come_null_check(self, "sInterfaceNode_clone", 7))->sname)))));
                 if(__dec_obj74) { __dec_obj74 = come_decrement_ref_count(__dec_obj74, (void*)0, (void*)0, 0,0,0); }
                 if(right_value178 && right_value178 != __result_obj__ && !__freed_obj__) { right_value178 = come_decrement_ref_count(right_value178, (void*)0, (void*)0, 1, 0, 0); }
                 __freed_obj__ = 0;
@@ -16855,50 +7876,8 @@ memset(&right_value178, 0, sizeof(void*));
             __result107__ = __result_obj__ = result_145;
             if(result_145 && !__freed_obj__) { come_call_finalizer(sInterfaceNode_finalize,result_145, (void*)0, (void*)0, 0, 0, 1, 0); }
             __freed_obj__ = 0;
-            gCallerSName10 = __caller_sname10__;
-            gCallerSName9 = __caller_sname9__;
-            gCallerSName8 = __caller_sname8__;
-            gCallerSName7 = __caller_sname7__;
-            gCallerSName6 = __caller_sname6__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName5 = __caller_sname5__;
-            gCallerSName4 = __caller_sname4__;
-            gCallerSName3 = __caller_sname3__;
-            gCallerSName2 = __caller_sname2__;
-            gCallerSName = __caller_sname__;
-            gCallerSLine10 = __caller_sline10__;
-            gCallerSLine9 = __caller_sline9__;
-            gCallerSLine8 = __caller_sline8__;
-            gCallerSLine7 = __caller_sline7__;
-            gCallerSLine6 = __caller_sline6__;
-            gCallerSLine5 = __caller_sline5__;
-            gCallerSLine4 = __caller_sline4__;
-            gCallerSLine3 = __caller_sline3__;
-            gCallerSLine2 = __caller_sline2__;
-            gCallerSLine = __caller_sline__;
-            return __result107__;
+            memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);            memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);            return __result107__;
             __freed_obj__ = 0;
             if(result_145 && !__freed_obj__) { come_call_finalizer(sInterfaceNode_finalize,result_145, (void*)0, (void*)0, 0, 0, 0, 0); }
-        gCallerSName10 = __caller_sname10__;
-        gCallerSName9 = __caller_sname9__;
-        gCallerSName8 = __caller_sname8__;
-        gCallerSName7 = __caller_sname7__;
-        gCallerSName6 = __caller_sname6__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName5 = __caller_sname5__;
-        gCallerSName4 = __caller_sname4__;
-        gCallerSName3 = __caller_sname3__;
-        gCallerSName2 = __caller_sname2__;
-        gCallerSName = __caller_sname__;
-        gCallerSLine10 = __caller_sline10__;
-        gCallerSLine9 = __caller_sline9__;
-        gCallerSLine8 = __caller_sline8__;
-        gCallerSLine7 = __caller_sline7__;
-        gCallerSLine6 = __caller_sline6__;
-        gCallerSLine5 = __caller_sline5__;
-        gCallerSLine4 = __caller_sline4__;
-        gCallerSLine3 = __caller_sline3__;
-        gCallerSLine2 = __caller_sline2__;
-        gCallerSLine = __caller_sline__;
-}
+        memcpy(gCallerSName, __caller_sname__, sizeof(char*)*10);        memcpy(gCallerSLine, __caller_sline__, sizeof(int)*10);}
 

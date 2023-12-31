@@ -139,7 +139,7 @@ bool sSStringNode*::compile(sSStringNode* self, sInfo* info)
             
             var buf2 = new buffer();
             
-            buf2.append_str(s"(gCallerSName = \"\{info->sname}\", gCallerSLine = \{info->sline},");
+            buf2.append_str(s"(gCallerSName[0] = \"\{info->sname}\", gCallerSLine[0] = \{info->sline},");
             buf2.append_str(method_name);
             buf2.append_str("(");
             buf2.append_str(come_value.c_value);

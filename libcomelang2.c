@@ -187,26 +187,8 @@ void xassert(char* msg, bool test)
 //////////////////////////////
 #define HEAP_POOL_PAGE_SIZE 4048*2
 
-char* gCallerSName = 0;
-char* gCallerSName2 = 0;
-char* gCallerSName3 = 0;
-char* gCallerSName4 = 0;
-char* gCallerSName5 = 0;
-char* gCallerSName6 = 0;
-char* gCallerSName7 = 0;
-char* gCallerSName8 = 0;
-char* gCallerSName9 = 0;
-char* gCallerSName10 = 0;
-int gCallerSLine = 0;
-int gCallerSLine2 = 0;
-int gCallerSLine3 = 0;
-int gCallerSLine4 = 0;
-int gCallerSLine5 = 0;
-int gCallerSLine6 = 0;
-int gCallerSLine7 = 0;
-int gCallerSLine8 = 0;
-int gCallerSLine9 = 0;
-int gCallerSLine10 = 0;
+char* gCallerSName[MEMLEAK_MAX];
+int gCallerSLine[MEMLEAK_MAX];
 
 bool gComeMalloc = false;
 
@@ -216,26 +198,8 @@ struct sMemHeader
     int freed;
     char* sname;
     int sline;
-    char* caller_sname;
-    char* caller_sname2;
-    char* caller_sname3;
-    char* caller_sname4;
-    char* caller_sname5;
-    char* caller_sname6;
-    char* caller_sname7;
-    char* caller_sname8;
-    char* caller_sname9;
-    char* caller_sname10;
-    int caller_sline;
-    int caller_sline2;
-    int caller_sline3;
-    int caller_sline4;
-    int caller_sline5;
-    int caller_sline6;
-    int caller_sline7;
-    int caller_sline8;
-    int caller_sline9;
-    int caller_sline10;
+    char* caller_sname[MEMLEAK_MAX];
+    int caller_sline[MEMLEAK_MAX];
     struct sMemHeader* next;
     struct sMemHeader* alloc_next;
 };
@@ -264,6 +228,9 @@ void come_heap_init(bool come_malloc)
     }
 */
     gComeMalloc = come_malloc;
+    
+    memset(gCallerSName, 0, sizeof(char*)*MEMLEAK_MAX);
+    memset(gCallerSLine, 0, sizeof(int)*MEMLEAK_MAX);
     
     if(!gComeMalloc) {
         memset(&gHeapPool, 0, sizeof(struct sHeapPool));
@@ -296,7 +263,17 @@ void come_heap_final(int check_mem_leak)
                 sMemHeader* next_it = it.alloc_next;
                 
                 if(!it->freed) {
-                    printf("%s %d, %s %d, %s %d, %s %d, %s %d, %s %d, %s %d, %s %d, %s %d, %s %d: detecting memory leak(%p)\n", it->sname, it->sline, it->caller_sname2, it->caller_sline2, it->caller_sname3, it->caller_sline3, it->caller_sname4, it->caller_sline4, it->caller_sname5, it->caller_sline5, it->caller_sname6, it->caller_sline6, it->caller_sname7, it->caller_sline7, it->caller_sname8, it->caller_sline8, it->caller_sname9, it->caller_sline9, it->caller_sname10, it->caller_sline10, (char*)it + sizeof(sMemHeader) + sizeof(size_t) + sizeof(size_t));
+                    printf("%s %d, ", it->sname, it->sline);
+                    for(int i=0; i<MEMLEAK_MAX; i++) {
+                        printf("%s %d", it->caller_sname[i], it->caller_sline[i]);
+                        if(i == MEMLEAK_MAX-1) {
+                            printf(":");
+                        }
+                        else {
+                            printf(", ");
+                        }
+                    }
+                    printf(": detecting memory leak(%p)\n", (char*)it + sizeof(sMemHeader) + sizeof(size_t) + sizeof(size_t));
                 }
                 
                 it = next_it;
@@ -353,26 +330,8 @@ static void* come_alloc_mem_from_heap_pool(size_t size, char* sname=null, int sl
                     it.next = null;
                     it.sname = sname;
                     it.sline = sline;
-                    it.caller_sname = gCallerSName;
-                    it.caller_sline = gCallerSLine;
-                    it.caller_sname2 = gCallerSName2;
-                    it.caller_sline2 = gCallerSLine2;
-                    it.caller_sname3 = gCallerSName3;
-                    it.caller_sline3 = gCallerSLine3;
-                    it.caller_sname4 = gCallerSName4;
-                    it.caller_sline4 = gCallerSLine4;
-                    it.caller_sname5 = gCallerSName5;
-                    it.caller_sline5 = gCallerSLine5;
-                    it.caller_sname6 = gCallerSName6;
-                    it.caller_sline6 = gCallerSLine6;
-                    it.caller_sname7 = gCallerSName7;
-                    it.caller_sline7 = gCallerSLine7;
-                    it.caller_sname8 = gCallerSName8;
-                    it.caller_sline8 = gCallerSLine8;
-                    it.caller_sname9 = gCallerSName9;
-                    it.caller_sline9 = gCallerSLine9;
-                    it.caller_sname10 = gCallerSName10;
-                    it.caller_sline10 = gCallerSLine10;
+                    memcpy(it.caller_sname, gCallerSName, sizeof(char*)*MEMLEAK_MAX);
+                    memcpy(it.caller_sline, gCallerSLine, sizeof(int)*MEMLEAK_MAX);
                     
                     return result;
                 }
@@ -389,26 +348,8 @@ static void* come_alloc_mem_from_heap_pool(size_t size, char* sname=null, int sl
             header.freed = false;
             header.sname = sname;
             header.sline = sline;
-            header.caller_sname = gCallerSName;
-            header.caller_sline = gCallerSLine;
-            header.caller_sname2 = gCallerSName2;
-            header.caller_sline2 = gCallerSLine2;
-            header.caller_sname3 = gCallerSName3;
-            header.caller_sline3 = gCallerSLine3;
-            header.caller_sname4 = gCallerSName4;
-            header.caller_sline4 = gCallerSLine4;
-            header.caller_sname5 = gCallerSName5;
-            header.caller_sline5 = gCallerSLine5;
-            header.caller_sname6 = gCallerSName6;
-            header.caller_sline6 = gCallerSLine6;
-            header.caller_sname7 = gCallerSName7;
-            header.caller_sline7 = gCallerSLine7;
-            header.caller_sname8 = gCallerSName8;
-            header.caller_sline8 = gCallerSLine8;
-            header.caller_sname9 = gCallerSName9;
-            header.caller_sline9 = gCallerSLine9;
-            header.caller_sname10 = gCallerSName10;
-            header.caller_sline10 = gCallerSLine10;
+            memcpy(header.caller_sname, gCallerSName, sizeof(char*)*MEMLEAK_MAX);
+            memcpy(header.caller_sline, gCallerSLine, sizeof(int)*MEMLEAK_MAX);
             
             header.alloc_next = gHeapPool.alloc_mem;
             gHeapPool.alloc_mem = header;
@@ -436,26 +377,8 @@ static void* come_alloc_mem_from_heap_pool(size_t size, char* sname=null, int sl
                 it.next = null;
                 it.sname = sname;
                 it.sline = sline;
-                it.caller_sname = gCallerSName;
-                it.caller_sline = gCallerSLine;
-                it.caller_sname2 = gCallerSName2;
-                it.caller_sline2 = gCallerSLine2;
-                it.caller_sname3 = gCallerSName3;
-                it.caller_sline3 = gCallerSLine3;
-                it.caller_sname4 = gCallerSName4;
-                it.caller_sline4 = gCallerSLine4;
-                it.caller_sname5 = gCallerSName5;
-                it.caller_sline5 = gCallerSLine5;
-                it.caller_sname6 = gCallerSName6;
-                it.caller_sline6 = gCallerSLine6;
-                it.caller_sname7 = gCallerSName7;
-                it.caller_sline7 = gCallerSLine7;
-                it.caller_sname8 = gCallerSName8;
-                it.caller_sline8 = gCallerSLine8;
-                it.caller_sname9 = gCallerSName9;
-                it.caller_sline9 = gCallerSLine9;
-                it.caller_sname10 = gCallerSName10;
-                it.caller_sline10 = gCallerSLine10;
+                memcpy(it.caller_sname, gCallerSName, sizeof(char*)*MEMLEAK_MAX);
+                memcpy(it.caller_sline, gCallerSLine, sizeof(int)*MEMLEAK_MAX);
                 
                 return result;
             }
@@ -497,26 +420,8 @@ static void* come_alloc_mem_from_heap_pool(size_t size, char* sname=null, int sl
         header.freed = false;
         header.sname = sname;
         header.sline = sline;
-        header.caller_sname = gCallerSName;
-        header.caller_sline = gCallerSLine;
-        header.caller_sname2 = gCallerSName2;
-        header.caller_sline2 = gCallerSLine2;
-        header.caller_sname3 = gCallerSName3;
-        header.caller_sline3 = gCallerSLine3;
-        header.caller_sname4 = gCallerSName4;
-        header.caller_sline4 = gCallerSLine4;
-        header.caller_sname5 = gCallerSName5;
-        header.caller_sline5 = gCallerSLine5;
-        header.caller_sname6 = gCallerSName6;
-        header.caller_sline6 = gCallerSLine6;
-        header.caller_sname7 = gCallerSName7;
-        header.caller_sline7 = gCallerSLine7;
-        header.caller_sname8 = gCallerSName8;
-        header.caller_sline8 = gCallerSLine8;
-        header.caller_sname9 = gCallerSName9;
-        header.caller_sline9 = gCallerSLine9;
-        header.caller_sname10 = gCallerSName10;
-        header.caller_sline10 = gCallerSLine10;
+        memcpy(header.caller_sname, gCallerSName, sizeof(char*)*MEMLEAK_MAX);
+        memcpy(header.caller_sline, gCallerSLine, sizeof(int)*MEMLEAK_MAX);
         header.next = null;
         
         header.alloc_next = gHeapPool.alloc_mem;

@@ -113,7 +113,7 @@ bool operator_overload_fun_self(sType* type, char* fun_name, CVALUE* left_value,
             left_value2 = clone left_value.c_value;
         }
         
-        come_value.c_value = xsprintf("(gCallerSName = \"{info->sname}\", gCallerSLine = \{info->sline}, %s(%s))", fun_name2, left_value2);
+        come_value.c_value = xsprintf("(gCallerSName[0] = \"{info->sname}\", gCallerSLine[0] = \{info->sline}, %s(%s))", fun_name2, left_value2);
         
         sType*% type2 = clone operator_fun->mResultType;
         
@@ -1556,7 +1556,7 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
         buffer*% buf = new buffer();
         
         if(fun_name !== "come_calloc" && fun_name !== "come_alloc_mem_from_heap_pool") {
-            buf.append_str(s"(gCallerSName = \"\{info->sname}\", gCallerSLine = \{info->sline},");
+            buf.append_str(s"(gCallerSName[0] = \"\{info->sname}\", gCallerSLine[0] = \{info->sline},");
         }
         
         buf.append_str(fun_name);
