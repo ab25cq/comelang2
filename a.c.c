@@ -488,7 +488,7 @@ struct optional$2list$1charphphbool
 };
 
 // header function
-void come_heap_init();
+void come_heap_init(int come_malloc, int come_debug);
 
 void come_heap_final();
 
@@ -1830,7 +1830,7 @@ void* __right_value_freed_obj[1024];
 int __result12__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-come_heap_init();
+come_heap_init(0, 0);
     fun2();
     __freed_obj__ = 0;
     __result12__ = 0;

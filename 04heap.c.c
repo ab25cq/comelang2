@@ -912,7 +912,7 @@ struct optional$2sVarpbool
 };
 
 // header function
-void come_heap_init();
+void come_heap_init(int come_malloc, int come_debug);
 
 void come_heap_final();
 

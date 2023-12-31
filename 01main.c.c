@@ -891,7 +891,7 @@ struct optional$2sNodephbool
 };
 
 // header function
-void come_heap_init();
+void come_heap_init(int come_malloc, int come_debug);
 
 void come_heap_final();
 
@@ -2538,7 +2538,7 @@ void* __right_value_freed_obj[1024];
 int __result13__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-come_heap_init();
+come_heap_init(0, 0);
     __result13__ = come_main_v2(argc,argv);
     __freed_obj__ = 0;
     come_heap_final();
