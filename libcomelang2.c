@@ -7,56 +7,53 @@
 //////////////////////////////
 #define COME_STACKFRAME_MAX 7
 
-struct sComeStackFrame
-{
-    char mSName[256];
-    int mSLine;
-};
-
-list<sComeStackFrame*%>* gComeStackFrame = NULL;
-buffer* gComeStackFrameBuffer = NULL;
+char* gComeStackFrameSName[COME_STACKFRAME_MAX];
+int gComeStackFrameSLine[COME_STACKFRAME_MAX];
 int gNumComeStackFrame = 0;
+
+buffer* gComeStackFrameBuffer = NULL;
 
 void come_push_stackframe(char* sname, int sline)
 {
-    if(gComeStackFrame) {
-        sComeStackFrame*% come_stackframe = new sComeStackFrame;
-        
-        strncpy(come_stackframe.mSName, sname, 256);
-        come_stackframe.mSLine = sline;
-        
-        if(gComeStackFrame.length() >= COME_STACKFRAME_MAX) {
-            gComeStackFrame.pop_front();
+    if(gNumComeStackFrame == COME_STACKFRAME_MAX) {
+        int i;
+        for(i=0; i<COME_STACKFRAME_MAX-1; i++) {
+            gComeStackFrameSName[i] = gComeStackFrameSName[i+1];
+            gComeStackFrameSLine[i] = gComeStackFrameSLine[i+1];
         }
-        
-        gComeStackFrame.add(clone come_stackframe);
+        gComeStackFrameSName[i] = sname;
+        gComeStackFrameSLine[i] = sline;
+    }
+    else {
+        gComeStackFrameSName[gNumComeStackFrame] = sname;  // const string
+        gComeStackFrameSLine[gNumComeStackFrame] = sline;
+    
+        gNumComeStackFrame++;
     }
 }
 
 void come_pop_stackframe()
 {
-    if(gComeStackFrame) {
-        gComeStackFrame.pop_front();
+    if(gNumComeStackFrame > 0) {
+        gNumComeStackFrame--;
     }
 }
 
 void come_clear_stackframe()
 {
-    gComeStackFrameBuffer.reset();
-    gComeStackFrame.reset();
+    if(gComeStackFrameBuffer) {
+        gComeStackFrameBuffer.reset();
+    }
     gNumComeStackFrame = 0;
 }
 
 void come_save_stackframe(char* sname, int sline)
 {
-    if(gComeStackFrame) {
-        if(gComeStackFrame.length() > gNumComeStackFrame) {
-            gComeStackFrameBuffer.reset();
-            gComeStackFrameBuffer.append_str(xsprintf("%s %d\n", sname, sline));
-            foreach(it, gComeStackFrame.reverse()) {
-                gComeStackFrameBuffer.append_str(xsprintf("%s %d\n", it.mSName, it.mSLine));
-            }
-            gNumComeStackFrame = gComeStackFrame.length();
+    if(gComeStackFrameBuffer) {
+        gComeStackFrameBuffer.reset();
+        gComeStackFrameBuffer.append_str(xsprintf("%s %d\n", sname, sline));
+        for(int i=gNumComeStackFrame-1; i>=0; i--) {
+            gComeStackFrameBuffer.append_str(xsprintf("%s %d\n", gComeStackFrameSName[i], gComeStackFrameSLine[i]));
         }
     }
 }
@@ -255,13 +252,11 @@ void come_heap_init(int come_malloc, int come_debug)
         gHeapPool.top = gHeapPool.mem_pages[0];
     }
     
-    gComeStackFrame = borrow gc_inc(new list<sComeStackFrame*%>());
     gComeStackFrameBuffer = borrow gc_inc(new buffer());
 }
 
 void come_heap_final()
 {
-    delete borrow gComeStackFrame;
     delete borrow gComeStackFrameBuffer;
     
     if(gComeMallocLib) {

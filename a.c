@@ -1,15 +1,13 @@
 #include <comelang2.h>
 
-int fun() 
+exception int fun() 
 {
-    puts("AAA");
-    null!;
+    return none(0);
 }
 
-int fun2()
+exception int fun2()
 {
-    puts("BBB");
-    fun();
+    return fun()!;
 }
 
 int main(int argc, char** argv)

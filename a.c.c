@@ -1422,10 +1422,13 @@ struct optional$2charphbool* charp_print(char* self);
 
 void int_times(int self, void* parent, void (*block)(void*,int));
 
-int fun();
+struct optional$2intbool* fun();
 
-int fun2();
+static struct optional$2intbool* optional$2intbool_initialize(struct optional$2intbool* self, int v1, _Bool v2);
+static void optional$2intboolp_finalize(struct optional$2intbool* self);
+struct optional$2intbool* fun2();
 
+static int optional$2intbool_expect(struct optional$2intbool* self);
 int main(int argc, char** argv);
 
 // inline function
@@ -1793,21 +1796,53 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
         __freed_obj__ = 0;
 }
 
-int fun(){
+struct optional$2intbool* fun(){
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
+void* right_value10;
+void* right_value11;
+struct optional$2intbool* __result13__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-    puts("AAA");
+memset(&right_value10, 0, sizeof(void*));
+memset(&right_value11, 0, sizeof(void*));
+    __result13__ = __result_obj__ = (come_save_stackframe("a.c", 5), ((struct optional$2intbool*)(right_value11=optional$2intbool_initialize(((struct optional$2intbool*)(right_value10=(struct optional$2intbool*)come_calloc(1, sizeof(struct optional$2intbool)*(1), "a.c", 5))),0,(_Bool)0))));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value10);
+    if(right_value10 && right_value10 != __result_obj__ && !__freed_obj__) { right_value10 = come_decrement_ref_count(right_value10, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value10;
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value11);
+    if(right_value11 && right_value11 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2intboolp_finalize,right_value11, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value11;
     __freed_obj__ = 0;
-    ((void*)come_null_check(((void*)0), "a.c", 6));
+    return __result13__;
     __freed_obj__ = 0;
 }
 
-int fun2(){
+static struct optional$2intbool* optional$2intbool_initialize(struct optional$2intbool* self, int v1, _Bool v2){
+char* __caller_sname_stack__;
+int __caller_sline_stack__;
+void* __result_obj__;
+_Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
+struct optional$2intbool* __result12__;
+memset(&__result_obj__, 0, sizeof(void*));
+memset(&__freed_obj__, 0, sizeof(_Bool));
+        ((struct optional$2intbool*)come_null_check(self, "./comelang2.h", 38))->v1=v1;
+        __freed_obj__ = 0;
+        ((struct optional$2intbool*)come_null_check(self, "./comelang2.h", 39))->v2=v2;
+        __freed_obj__ = 0;
+        __result12__ = __result_obj__ = self;
+        if(self && !__freed_obj__) { come_call_finalizer(optional$2intboolp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
+        __freed_obj__ = 0;
+        return __result12__;
+        __freed_obj__ = 0;
+        if(self && !__freed_obj__) { come_call_finalizer(optional$2intboolp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
+}
+
+static void optional$2intboolp_finalize(struct optional$2intbool* self){
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
@@ -1815,10 +1850,61 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-    puts("BBB");
+}
+
+struct optional$2intbool* fun2(){
+char* __caller_sname_stack__;
+int __caller_sline_stack__;
+void* __result_obj__;
+_Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
+void* right_value12;
+void* right_value13;
+void* right_value14;
+struct optional$2intbool* __result15__;
+memset(&__result_obj__, 0, sizeof(void*));
+memset(&__freed_obj__, 0, sizeof(_Bool));
+memset(&right_value12, 0, sizeof(void*));
+memset(&right_value13, 0, sizeof(void*));
+memset(&right_value14, 0, sizeof(void*));
+    __result15__ = __result_obj__ = ((struct optional$2intbool*)(right_value14=optional$2intbool_initialize((struct optional$2intbool*)come_increment_ref_count(((struct optional$2intbool*)(right_value13=(struct optional$2intbool*)come_calloc(1, sizeof(struct optional$2intbool)*(1), "a.c", 10)))),optional$2intbool_expect((come_push_stackframe("a.c", 10),((struct optional$2intbool*)(right_value12=fun())))),(_Bool)1)));
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value12);
+    if(right_value12 && right_value12 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2intboolp_finalize,right_value12, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value12;
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value13);
+    if(right_value13 && right_value13 != __result_obj__ && !__freed_obj__) { right_value13 = come_decrement_ref_count(right_value13, (void*)0, (void*)0, 1, 0, 0); }
+    __right_value_freed_obj[1] = right_value13;
     __freed_obj__ = 0;
-    fun();
+    return __result15__;
     __freed_obj__ = 0;
+}
+
+static int optional$2intbool_expect(struct optional$2intbool* self){
+char* __caller_sname_stack__;
+int __caller_sline_stack__;
+void* __result_obj__;
+_Bool __freed_obj__;
+void* __right_value_freed_obj[1024];
+_Bool _if_conditional5;
+int __result14__;
+memset(&__result_obj__, 0, sizeof(void*));
+memset(&__freed_obj__, 0, sizeof(_Bool));
+        if(_if_conditional5=!((struct optional$2intbool*)come_null_check(self, "./comelang2.h", 76))->v2,        __freed_obj__ = 0, 
+        _if_conditional5) {
+            puts("Exception: at");
+            __freed_obj__ = 0;
+            come_show_stackframe();
+            __freed_obj__ = 0;
+            puts("abort.");
+            __freed_obj__ = 0;
+            exit(2);
+            __freed_obj__ = 0;
+        }
+        __freed_obj__ = 0;
+        __result14__ = ((struct optional$2intbool*)come_null_check(self, "./comelang2.h", 76))->v1;
+        __freed_obj__ = 0;
+        return __result14__;
+        __freed_obj__ = 0;
 }
 
 int main(int argc, char** argv){
@@ -1827,16 +1913,23 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-int __result12__;
+void* right_value15;
+int __result16__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
+memset(&right_value15, 0, sizeof(void*));
 come_heap_init(0, 0);
-    fun2();
+    come_clear_stackframe();
+    optional$2intbool_expect((come_push_stackframe("a.c", 15),((struct optional$2intbool*)(right_value15=fun2()))));
+    come_pop_stackframe();
+    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value15);
+    if(right_value15 && right_value15 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2intboolp_finalize,right_value15, (void*)0, (void*)0, 0, 1, 0, 0); }
+    __right_value_freed_obj[0] = right_value15;
     __freed_obj__ = 0;
-    __result12__ = 0;
+    __result16__ = 0;
     __freed_obj__ = 0;
     come_heap_final();
-    return __result12__;
+    return __result16__;
     __freed_obj__ = 0;
 come_heap_final();
 }
