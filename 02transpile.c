@@ -11,7 +11,7 @@ bool gComeGC = false;
 bool gComeC = false;
 char* gProgramName = NULL;
 bool gCommonHeader = false;
-bool gComeMalloc = true;
+bool gComeMalloc = false;
 bool gComeDebug = true;
 
 void come_init() version 2
