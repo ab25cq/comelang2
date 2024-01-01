@@ -1,17 +1,13 @@
 #include <comelang2.h>
 
-int fun() 
+int fun()
 {
-    puts("AAA");
+    stackframe();
     return 0;
 }
 
 int fun2()
 {
-    fun();
-    puts("BBB");
-    fun();
-    stackframe();
     return fun();
 }
 

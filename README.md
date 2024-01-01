@@ -1514,6 +1514,38 @@ A
 a.c 9: out of range of smart pointer(2)
 ```
 
+# stackfame
+
+```C
+> vin a.c
+#include <comelang2.h>
+
+int fun()
+{
+    stackframe();
+    return 0;
+}
+
+int fun2()
+{
+    return fun();
+}
+
+int main(int argc, char** argv)
+{
+    fun2();
+    
+    return 0;
+}
+> comelang2 a.c
+> ./a
+a.c 5
+a.c 11
+a.c 16
+```
+
+for debug
+
 # afterword
 
 親友DIO、僕はついに天の国を見てきたよ。
