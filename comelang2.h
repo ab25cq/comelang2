@@ -105,6 +105,7 @@ bool bool::except(bool self, void* parent, void (*block)(void* parent));
 static inline void die(char* msg)
 {
     perror(msg);
+    stackframe();
     exit(4);
 }
 
@@ -1391,6 +1392,7 @@ impl map <T, T2>
                     }
                     else if(n == hash) {
                         printf("unexpected error in map.rehash(1)\n");
+                        stackframe();
                         exit(2);
                     }
                 }
@@ -1456,6 +1458,7 @@ impl map <T, T2>
                 }
                 else if(it == hash) {
                     printf("unexpected error in map.insert\n");
+                    stackframe();
                     exit(2);
                 }
             }
@@ -1532,6 +1535,7 @@ impl map <T, T2>
                 }
                 else if(it == hash) {
                     printf("unexpected error in map.insert\n");
+                    stackframe();
                     exit(2);
                 }
             }
@@ -2055,7 +2059,8 @@ impl smart_pointer<T>
         result.p = ((T*)result.memory.buf) + n + value;
         
         if((char*)result.p > result.memory.buf + result.memory.len) {
-            fprintf(stderr, "%s %d: out of range of smart pointer(2)\n", __caller_sname__, __caller_sline__);
+            puts("out of range of smart pointer");
+            stackframe();
             exit(1);
         }
         
@@ -2071,7 +2076,8 @@ impl smart_pointer<T>
         result.p = ((T*)result.memory.buf) + n - value;
         
         if((char*)result.p < result.memory.buf) {
-            fprintf(stderr, "%s %d: out of range of smart pointer\n", __caller_sname__, __caller_sline__);
+            puts("out of range of smart pointer");
+            stackframe();
             exit(1);
         }
         
@@ -2090,7 +2096,8 @@ impl smart_pointer<T>
         self.p = ((T*)self.memory.buf) + n + 1;
         
         if((char*)self.p > self.memory.buf + self.memory.len) {
-            fprintf(stderr, "%s %d: out of range of smart pointer(2)\n", __caller_sname__, __caller_line__);
+            puts("out of range of smart pointer");
+            stackframe();
             exit(1);
         }
         
@@ -2103,7 +2110,8 @@ impl smart_pointer<T>
         self.p = ((T*)self.memory.buf) + n - 1;
         
         if((char*)result.p < result.memory.buf) {
-            fprintf(stderr, "%s %d: out of range of smart pointer\n", __caller_sname__, __caller_line__);
+            puts("out of range of smart pointer");
+            stackframe();
             exit(1);
         }
         
@@ -2116,7 +2124,8 @@ impl smart_pointer<T>
         self.p = ((T*)self.memory.buf) + n + value;
         
         if((char*)self.p > self.memory.buf + self.memory.len) {
-            fprintf(stderr, "%s %d: out of range of smart pointer(2)\n", __caller_sname__, __caller_line__);
+            puts("out of range of smart pointer");
+            stackframe();
             exit(1);
         }
         
@@ -2129,7 +2138,8 @@ impl smart_pointer<T>
         self.p = ((T*)self.memory.buf) + n - value;
         
         if((char*)result.p < result.memory.buf) {
-            fprintf(stderr, "%s %d: out of range of smart pointer\n", __caller_sname__, __caller_line__);
+            puts("out of range of smart pointer");
+            stackframe();
             exit(1);
         }
         

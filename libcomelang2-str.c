@@ -37,6 +37,7 @@ come_regex*% come_regex*::initialize(come_regex*% self, char* str, bool ignore_c
 
     if(self.re == null) {
         printf("regex error (%s)\n", str);
+        stackframe();
         exit(1);
     }
     
@@ -98,6 +99,7 @@ come_regex*% come_regex*::clone(come_regex* reg)
 
     if(result.re == null) {
         printf("regex compile error(%s)\n", result.str);
+        stackframe();
         exit(1);
     }
 

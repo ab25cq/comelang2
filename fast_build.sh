@@ -15,7 +15,7 @@ fi
         
 if uname -a | grep Android
 then
-    make && make install && make distclean
+    make && make install
 else
-    make && sudo make install && make distclean
+    make && sudo make install
 fi

@@ -1570,7 +1570,7 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
             come_value.c_value = append_object_to_right_values(come_value.c_value, result_type, info);
         }
         
-        if((fun.mResultType->mException || gComeDebug) && fun_name !== "come_calloc" && fun_name !== "come_alloc_mem_from_heap_pool" && fun_name !== "null_check" && fun_name !== "stackframe") {
+        if((fun.mResultType->mException || gComeDebug) && fun_name !== "come_calloc" && fun_name !== "come_alloc_mem_from_heap_pool" && fun_name !== "null_check") {
             come_value.c_value = append_exception_value(come_value.c_value, come_value.type, info);
         }
         

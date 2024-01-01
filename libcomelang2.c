@@ -51,7 +51,7 @@ void come_save_stackframe(char* sname, int sline)
     if(gComeStackFrameBuffer) {
         gComeStackFrameBuffer.reset();
         gComeStackFrameBuffer.append_str(xsprintf("%s %d\n", sname, sline));
-        for(int i=gNumComeStackFrame-1; i>=0; i--) {
+        for(int i=gNumComeStackFrame-2; i>=0; i--) {
             gComeStackFrameBuffer.append_str(xsprintf("%s %d\n", gComeStackFrameSName[i], gComeStackFrameSLine[i]));
         }
     }
@@ -92,6 +92,7 @@ bool bool::expect(bool self, void* parent, void (*block)(void* parent))
         if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
             return self;
         }
+        stackframe();
         exit(1);
     }
     
@@ -123,6 +124,7 @@ int int::expect(int self, void* parent, void (*block)(void* parent))
         if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
             return self;
         }
+        stackframe();
         exit(1);
     }
     

@@ -2,11 +2,16 @@
 
 int fun() 
 {
-    null!;
+    puts("AAA");
+    return 0;
 }
 
 int fun2()
 {
+    fun();
+    puts("BBB");
+    fun();
+    stackframe();
     return fun();
 }
 
