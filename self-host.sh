@@ -8,12 +8,12 @@ then
         #./configure --with-optimize --prefix=$HOME
         #./configure --prefix=$HOME --with-debug --with-come-malloc
         #./configure --prefix=$HOME --with-debug
-        ./configure --prefix=$HOME --with-debug
+        ./configure --prefix=$HOME --with-debug --with-optimize
     else
         #./configure --with-optimize
         #./configure --with-debug --with-come-malloc
         #./configure --with-debug
-        ./configure --with-debug
+        ./configure --with-debug --with-optimize
     fi
 fi
 

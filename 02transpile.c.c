@@ -1336,7 +1336,7 @@ _Bool gComeGC=(_Bool)0;
 _Bool gComeC=(_Bool)0;
 char* gProgramName=((void*)0);
 _Bool gCommonHeader=(_Bool)0;
-_Bool gComeMalloc=(_Bool)0;
+_Bool gComeMalloc=(_Bool)1;
 _Bool gComeDebug=(_Bool)1;
 struct __current_stack1__
 {

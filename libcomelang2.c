@@ -38,16 +38,6 @@ void come_pop_stackframe()
     }
 }
 
-/*
-void come_clear_stackframe()
-{
-    if(gComeStackFrameBuffer) {
-        gComeStackFrameBuffer.reset();
-    }
-    gNumComeStackFrame = 0;
-}
-*/
-
 void come_save_stackframe(char* sname, int sline)
 {
     if(gComeStackFrameBuffer) {
@@ -188,65 +178,38 @@ void xassert(char* msg, bool test)
 //////////////////////////////
 /// heap
 //////////////////////////////
-#define HEAP_POOL_PAGE_SIZE 4048*2
+#define HEAP_POOL_PAGE_SIZE 4048
 
 static bool gComeMallocLib = false;
 static bool gComeDebugLib = false;
 
+#define DUMMY_SIZE 1024
+
 struct sMemHeader
 {
-    size_t size;
-    int freed;
-    char* sname;
-    int sline;
+    void* mem;
     char* caller_sname[COME_STACKFRAME_MAX];
     int caller_sline[COME_STACKFRAME_MAX];
-    struct sMemHeader* next;
-    struct sMemHeader* alloc_next;
 };
 
-struct sHeapPool
-{
-    char** mem_pages;
-    
-    int size_pages;
-    int num_pages;
-    char* top;
-    
-    struct sMemHeader* free_mem;
-    struct sMemHeader* malloced_free_mem;
-    struct sMemHeader* alloc_mem;
-};
+sMemHeader* gMemHeaderTable;
 
-struct sHeapPool gHeapPool;
+unsigned int gSizeMemHeaders = 0;
+unsigned int gNumMemHeaders = 0;
 
 void come_heap_init(int come_malloc, int come_debug)
 {
-/*
-    if(gComeGC) {
-        GC_enable_incremental();
-        GC_init();
-    }
-*/
+    gComeStackFrameBuffer = borrow gc_inc(new buffer());
+    
     gComeMallocLib = come_malloc;
     gComeDebugLib = come_debug
     
     if(gComeMallocLib) {
-        memset(&gHeapPool, 0, sizeof(struct sHeapPool));
+        gSizeMemHeaders = 1024;
         
-        const int size_pages = 4;
-        
-        gHeapPool.size_pages = size_pages;
-        gHeapPool.mem_pages = calloc(1, sizeof(void*)*size_pages);
-        
-        for(int i=0; i<size_pages; i++) {
-            gHeapPool.mem_pages[i] = calloc(1, sizeof(char)*HEAP_POOL_PAGE_SIZE);
-        }
-        
-        gHeapPool.top = gHeapPool.mem_pages[0];
+        gMemHeaderTable = calloc(1, sizeof(sMemHeader)*gSizeMemHeaders);
+        gNumMemHeaders = 0;
     }
-    
-    gComeStackFrameBuffer = borrow gc_inc(new buffer());
 }
 
 void come_heap_final()
@@ -254,14 +217,11 @@ void come_heap_final()
     delete borrow gComeStackFrameBuffer;
     
     if(gComeMallocLib) {
-        if(gComeDebugLib) {
-            sMemHeader* it = gHeapPool.alloc_mem;
-            while(it) {
-                sMemHeader* next_it = it.alloc_next;
-                
-                if(!it->freed) {
-                    printf("%s %d, ", it->sname, it->sline);
-                    for(int i=0; i<COME_STACKFRAME_MAX ; i++) {
+        sMemHeader* it = gMemHeaderTable;
+        while(it < gMemHeaderTable + gSizeMemHeaders) {
+            if(it->mem) {
+                for(int i=0; i<COME_STACKFRAME_MAX ; i++) {
+                    if(it->caller_sname[i]) {
                         printf("%s %d", it->caller_sname[i], it->caller_sline[i]);
                         if(i == COME_STACKFRAME_MAX-1) {
                         }
@@ -269,163 +229,87 @@ void come_heap_final()
                             printf(", ");
                         }
                     }
-                    printf(": detecting memory leak(%p)\n", (char*)it + sizeof(sMemHeader) + sizeof(size_t) + sizeof(size_t));
                 }
-                
-                it = next_it;
+                printf(": detecting memory leak(%p)\n", (char*)it->mem);
             }
-        }
-        
-        for(int i=0; i<gHeapPool.size_pages; i++) {
-            free(gHeapPool.mem_pages[i]);
-        }
-        free(gHeapPool.mem_pages);
-        
-        sMemHeader* it = gHeapPool.malloced_free_mem;
-        while(it) {
-            sMemHeader* next_it = it.next;
-            free(it);
-            it = next_it;
+            
+            it++;
         }
     }
 }
 
+static void come_mem_header_rehash()
+{
+    int new_size = gSizeMemHeaders * 3;
+    sMemHeader* new_table = calloc(1, sizeof(sMemHeader)*new_size);
+    
+    sMemHeader* it = gMemHeaderTable;
+    while(it < gMemHeaderTable + gSizeMemHeaders) {
+        if(it->mem) {
+            unsigned int key = (long)it->mem % new_size;
+            
+            sMemHeader* it2 = new_table + key;
+            
+            while(it2->mem) {
+                it2++;
+                
+                if(it2 == new_table + new_size) {
+                    it2 = new_table;
+                }
+                else if(it2 == new_table + key) {
+                    puts("mem header unexpected error");
+                    stackframe();
+                    exit(2);
+                }
+            }
+            
+            *it2 = *it;
+        }
+        
+        it++;
+    }
+    
+    free(gMemHeaderTable);
+    
+    gMemHeaderTable = new_table;
+    gSizeMemHeaders = new_size;
+}
+
 static void* come_alloc_mem_from_heap_pool(size_t size, char* sname=null, int sline=0)
 {
-/*
-    if(gComeGC) {
-        void* result = GC_malloc(size);
-        memset(result, 0, size);
-        return result;
-    }
-*/
     if(!gComeMallocLib) {
         return calloc(1, size);
     }
     else {
-        void* result = null;
+        void* result = calloc(1, size);
         
-        if(size + sizeof(sMemHeader) >= HEAP_POOL_PAGE_SIZE) {
-            struct sMemHeader* it = gHeapPool.malloced_free_mem;
-            struct sMemHeader* prev_it = it;
-            
-            while(it) {
-                if(size <= it.size) {
-                    result = (char*)it + sizeof(sMemHeader);
-                    
-                    if(it == gHeapPool.malloced_free_mem) {
-                        gHeapPool.malloced_free_mem = it.next;
-                    }
-                    else {
-                        prev_it.next = it.next;
-                    }
-                    
-                    memset(result, 0, size);
-                    
-                    it.freed = false;
-                    it.next = null;
-                    it.sname = sname;
-                    it.sline = sline;
-                    memcpy(it.caller_sname, gComeStackFrameSName, sizeof(char*)*COME_STACKFRAME_MAX);
-                    memcpy(it.caller_sline, gComeStackFrameSLine, sizeof(int)*COME_STACKFRAME_MAX);
-                    
-                    return result;
-                }
-                
-                prev_it = it;
-                it = it.next;
-            }
-            
-            sMemHeader* header = calloc(1, size+sizeof(sMemHeader));
-            
-            result = (char*)header + sizeof(sMemHeader);
-            
-            header.size = size;
-            header.freed = false;
-            header.sname = sname;
-            header.sline = sline;
-            memcpy(header.caller_sname, gComeStackFrameSName, sizeof(char*)*COME_STACKFRAME_MAX);
-            memcpy(header.caller_sline, gComeStackFrameSLine, sizeof(int)*COME_STACKFRAME_MAX);
-            
-            header.alloc_next = gHeapPool.alloc_mem;
-            gHeapPool.alloc_mem = header;
-            
-            return result;
+        if(gNumMemHeaders >= gSizeMemHeaders / 3) {
+            come_mem_header_rehash();
         }
         
-        struct sMemHeader* it = gHeapPool.free_mem;
-        struct sMemHeader* prev_it = it;
+        unsigned int key = (long)result % gSizeMemHeaders;
         
-        while(it) {
-            if(size <= it.size) {
-                result = (char*)it + sizeof(sMemHeader);
-                
-                if(it == gHeapPool.free_mem) {
-                    gHeapPool.free_mem = it.next;
-                }
-                else {
-                    prev_it.next = it.next;
-                }
-                
-                memset(result, 0, size);
-                
-                it.freed = false;
-                it.next = null;
-                it.sname = sname;
-                it.sline = sline;
-                memcpy(it.caller_sname, gComeStackFrameSName, sizeof(char*)*COME_STACKFRAME_MAX);
-                memcpy(it.caller_sline, gComeStackFrameSLine, sizeof(int)*COME_STACKFRAME_MAX);
-                
-                return result;
-            }
+        sMemHeader* it = gMemHeaderTable + key;
+        
+        while(it->mem) {
+            it++;
             
-            prev_it = it;
-            it = it.next;
+            if(it == gMemHeaderTable + gSizeMemHeaders) {
+                it = gMemHeaderTable;
+            }
+            else if(it == gMemHeaderTable + key) {
+                puts("mem header unexpected error");
+                stackframe();
+                exit(2);
+            }
         }
         
-        if(gHeapPool.top + size + sizeof(sMemHeader) - gHeapPool.mem_pages[gHeapPool.num_pages] >= HEAP_POOL_PAGE_SIZE) {
-            gHeapPool.num_pages++;
-            
-            if(gHeapPool.num_pages == gHeapPool.size_pages) {
-                int new_size_pages = gHeapPool.size_pages * 2;
-                
-                char** new_mem_pages = calloc(1, sizeof(char*)*new_size_pages);
-                
-                for(int i=0; i< gHeapPool.size_pages; i++) {
-                    new_mem_pages[i] = gHeapPool.mem_pages[i];
-                }
-                
-                for(int i=gHeapPool.size_pages; i<new_size_pages; i++) {
-                    new_mem_pages[i] = calloc(1, sizeof(char)*HEAP_POOL_PAGE_SIZE);
-                }
-                
-                free(gHeapPool.mem_pages);
-                
-                gHeapPool.mem_pages = new_mem_pages;
-                gHeapPool.size_pages = new_size_pages;
-            }
-            
-            gHeapPool.top = gHeapPool.mem_pages[gHeapPool.num_pages];
-        }
+        it.mem = result;
         
-        sMemHeader* header = (sMemHeader*)gHeapPool.top;
+        memcpy(it.caller_sname, gComeStackFrameSName, sizeof(char*)*COME_STACKFRAME_MAX);
+        memcpy(it.caller_sline, gComeStackFrameSLine, sizeof(int)*COME_STACKFRAME_MAX);
         
-        result = gHeapPool.top + sizeof(sMemHeader);
-        
-        header.size = size;
-        header.freed = false;
-        header.sname = sname;
-        header.sline = sline;
-        memcpy(header.caller_sname, gComeStackFrameSName, sizeof(char*)*COME_STACKFRAME_MAX);
-        memcpy(header.caller_sline, gComeStackFrameSLine, sizeof(int)*COME_STACKFRAME_MAX);
-        header.next = null;
-        
-        header.alloc_next = gHeapPool.alloc_mem;
-        gHeapPool.alloc_mem = header;
-        
-        gHeapPool.top += size + sizeof(sMemHeader);
-        
-        memset(result, 0, size);
+        gNumMemHeaders++;
         
         return result;
     }
@@ -433,43 +317,31 @@ static void* come_alloc_mem_from_heap_pool(size_t size, char* sname=null, int sl
 
 static void come_free_mem_of_heap_pool(char* mem)
 {
-/*
-    if(gComeGC) {
-    }
-    else
-*/
-    if(!gComeMallocLib) {
-        if(mem) {
+    if(mem) {
+        if(!gComeMallocLib) {
             free(mem);
         }
-    }
-    else {
-        sMemHeader* header = (sMemHeader*)(mem - sizeof(sMemHeader));
-        size_t size = header.size;
-        int freed = header.freed;
-        
-        if(size + sizeof(sMemHeader) >= HEAP_POOL_PAGE_SIZE) {
-            /// prevent from double free ///
-            if(freed) {
-                return ;
-            }
-            
-            /// go ///
-            header.next = gHeapPool.malloced_free_mem;
-            gHeapPool.malloced_free_mem = header;
-            
-            header.freed = true;
-        }
         else {
-            if(freed) {
-                return;
+            unsigned int key = (long)mem % gSizeMemHeaders;
+            
+            sMemHeader* it = gMemHeaderTable + key;
+            
+            while(it->mem != mem) {
+                it++;
+                
+                if(it == gMemHeaderTable + gSizeMemHeaders) {
+                    it = gMemHeaderTable;
+                }
+                else if(it == gMemHeaderTable + key) {
+                    return;
+                }
             }
             
-            /// go ///
-            header.next = gHeapPool.free_mem;
-            gHeapPool.free_mem = header;
+            memset(it, 0, sizeof(sMemHeader));
             
-            header.freed = true;
+            free(mem);
+            
+            gNumMemHeaders--;
         }
     }
 }
@@ -545,7 +417,6 @@ void* come_print_ref_count(void* mem)
     return mem;
 }
 
-//void* come_decrement_ref_count(void* mem, void* protocol_fun, void* protocol_obj, bool no_decrement, bool no_free)
 void* come_decrement_ref_count(void* mem, void* protocol_fun, void* protocol_obj, bool no_decrement, bool no_free, bool force_delete_)
 {
     if(mem == NULL) {
@@ -559,7 +430,6 @@ void* come_decrement_ref_count(void* mem, void* protocol_fun, void* protocol_obj
     }
     
     size_t count = *ref_count;
-    //if(!no_free && count <= 0) {
     if(!no_free && (count <= 0 || force_delete_)) {
         if(protocol_obj && protocol_fun) {
             void (*finalizer)(void*) = protocol_fun;
@@ -574,7 +444,6 @@ void* come_decrement_ref_count(void* mem, void* protocol_fun, void* protocol_obj
     return mem;
 }
 
-//void come_call_finalizer(void* fun, void* mem, void* protocol_fun, void* protocol_obj, int call_finalizer_only, int no_decrement, int no_free)
 void come_call_finalizer(void* fun, void* mem, void* protocol_fun, void* protocol_obj, int call_finalizer_only, int no_decrement, int no_free, int force_delete_)
 {
     if(mem == NULL) {
@@ -599,7 +468,6 @@ void come_call_finalizer(void* fun, void* mem, void* protocol_fun, void* protoco
         }
         
         size_t count = *ref_count;
-        //if(!no_free && count <= 0) {
         if(!no_free && (count <= 0 || force_delete_)) {
             if(mem) {
                 if(protocol_obj && protocol_fun) {
