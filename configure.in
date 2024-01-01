@@ -18,10 +18,10 @@ fi
 #################################################
 DEBUG=0
 COME_MALLOC=0
-COME_DEBUG=0
+COME_NO_DEBUG=0
 
 AC_ARG_WITH(debug,              [  --with-debug              include debug info ], [ DEBUG=1; ], [])
-AC_ARG_WITH(come-debug,         [  --with-come-debug         include come debug info ], [ COME_DEBUG=1; ], [])
+AC_ARG_WITH(come-no-debug,      [  --with-no-come-debug      include come no debug info ], [ COME_NO_DEBUG=1; ], [])
 AC_ARG_WITH(come-malloc,        [  --with-come-malloc        use malloc for memory allocate ], [ COME_MALLOC=1; ], [])
 AC_ARG_WITH(optimize,           [  --with-optimize           with optimize(-O2 in CFLAGS) ], [ ENABLE_OPTIMIZE=1 ], [ ENABLE_OPTIMIZE=0 ])
 
@@ -240,9 +240,9 @@ then
     COME_CFLAGS="$COME_CFLAGS -come-malloc"
 fi
 
-if test $COME_DEBUG = 1
+if test $COME_NO_DEBUG = 1
 then
-    COME_CFLAGS="$COME_CFLAGS -come-debug"
+    COME_CFLAGS="$COME_CFLAGS -come-no-debug"
 fi
 
 AC_SUBST(OS)

@@ -64,7 +64,9 @@ void come_show_stackframe()
 
 void stackframe()
 {
-    printf("%s", gComeStackFrameBuffer.to_string());
+    for(int i=gNumComeStackFrame-1; i>=0; i--) {
+        printf("%s %d\n", gComeStackFrameSName[i], gComeStackFrameSLine[i]);
+    }
 }
 
 string come_get_stackframe()
@@ -76,12 +78,7 @@ void* come_null_check(void* mem, char* sname, int sline)
 {
     if(mem == null) {
         printf("%s %d: null check error\n", sname, sline);
-        
-        for(int i=COME_STACKFRAME_MAX-1; i>=0; i--) {
-            if(gComeStackFrameSName[i]) {
-                printf("%s %d\n", gComeStackFrameSName[i], gComeStackFrameSLine[i]);
-            }
-        }
+        stackframe();
         exit(2);
     }
     

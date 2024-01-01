@@ -233,6 +233,7 @@ bool sReturnNode*::compile(sReturnNode* self, sInfo* info)
             add_come_code_at_function_head(info, "%s;\n", make_define_var(result_type2, var_name));
             add_come_code(info, "%s = %s;\n", var_name, come_value.c_value);
         }
+        add_last_code_to_source(info);
 
         free_objects_on_return(come_fun.mBlock, info, come_value.var, false@top_block);
         free_right_value_objects(info);
@@ -249,6 +250,8 @@ bool sReturnNode*::compile(sReturnNode* self, sInfo* info)
     else {
         sFun* come_fun = info.come_fun;
         caller_end();
+        
+        add_last_code_to_source(info);
         free_objects_on_return(come_fun.mBlock, info, null, false@top_block);
         free_right_value_objects(info);
         
@@ -1567,7 +1570,7 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
             come_value.c_value = append_object_to_right_values(come_value.c_value, result_type, info);
         }
         
-        if(fun.mResultType->mException && fun_name !== "come_calloc" && fun_name !== "come_alloc_mem_from_heap_pool" && fun_name !== "null_check" || gComeDebug) {
+        if((fun.mResultType->mException || gComeDebug) && fun_name !== "come_calloc" && fun_name !== "come_alloc_mem_from_heap_pool" && fun_name !== "null_check" && fun_name !== "stackframe") {
             come_value.c_value = append_exception_value(come_value.c_value, come_value.type, info);
         }
         

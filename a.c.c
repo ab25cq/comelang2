@@ -1811,9 +1811,9 @@ int __result12__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
     __result12__ = (come_push_stackframe("a.c", 10),fun());
+    come_pop_stackframe();
     __freed_obj__ = 0;
     return __result12__;
-    come_pop_stackframe();
     __freed_obj__ = 0;
 }
 
