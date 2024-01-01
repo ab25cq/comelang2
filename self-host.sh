@@ -19,7 +19,7 @@ fi
 
 if uname -a | grep Android
 then
-    make comelang2 && make install
+    make comelang2 && make install && make distclean
 else
-    make comelang2 && sudo make install
+    make comelang2 && sudo make install && make distclean
 fi

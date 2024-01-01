@@ -5,7 +5,6 @@
 //////////////////////////////
 /// exception
 //////////////////////////////
-#define COME_STACKFRAME_MAX 7
 
 char* gComeStackFrameSName[COME_STACKFRAME_MAX];
 int gComeStackFrameSLine[COME_STACKFRAME_MAX];
@@ -78,9 +77,9 @@ void* come_null_check(void* mem, char* sname, int sline)
     if(mem == null) {
         printf("%s %d: null check error\n", sname, sline);
         
-        for(int i=2; i<MEMLEAK_MAX; i++) {
-            if(gCallerSName[i]) {
-                printf("%s %d\n", gCallerSName[i], gCallerSLine[i]);
+        for(int i=COME_STACKFRAME_MAX-1; i>=0; i--) {
+            if(gComeStackFrameSName[i]) {
+                printf("%s %d\n", gComeStackFrameSName[i], gComeStackFrameSLine[i]);
             }
         }
         exit(2);
@@ -190,9 +189,6 @@ void xassert(char* msg, bool test)
 //////////////////////////////
 #define HEAP_POOL_PAGE_SIZE 4048*2
 
-char* gCallerSName[MEMLEAK_MAX];
-int gCallerSLine[MEMLEAK_MAX];
-
 static bool gComeMallocLib = false;
 static bool gComeDebugLib = false;
 
@@ -202,8 +198,8 @@ struct sMemHeader
     int freed;
     char* sname;
     int sline;
-    char* caller_sname[MEMLEAK_MAX];
-    int caller_sline[MEMLEAK_MAX];
+    char* caller_sname[COME_STACKFRAME_MAX];
+    int caller_sline[COME_STACKFRAME_MAX];
     struct sMemHeader* next;
     struct sMemHeader* alloc_next;
 };
@@ -231,9 +227,6 @@ void come_heap_init(int come_malloc, int come_debug)
         GC_init();
     }
 */
-    memset(gCallerSName, 0, sizeof(char*)*MEMLEAK_MAX);
-    memset(gCallerSLine, 0, sizeof(int)*MEMLEAK_MAX);
-    
     gComeMallocLib = come_malloc;
     gComeDebugLib = come_debug
     
@@ -267,10 +260,9 @@ void come_heap_final()
                 
                 if(!it->freed) {
                     printf("%s %d, ", it->sname, it->sline);
-                    for(int i=0; i<MEMLEAK_MAX; i++) {
+                    for(int i=0; i<COME_STACKFRAME_MAX ; i++) {
                         printf("%s %d", it->caller_sname[i], it->caller_sline[i]);
-                        if(i == MEMLEAK_MAX-1) {
-                            printf(":");
+                        if(i == COME_STACKFRAME_MAX-1) {
                         }
                         else {
                             printf(", ");
@@ -333,8 +325,8 @@ static void* come_alloc_mem_from_heap_pool(size_t size, char* sname=null, int sl
                     it.next = null;
                     it.sname = sname;
                     it.sline = sline;
-                    memcpy(it.caller_sname, gCallerSName, sizeof(char*)*MEMLEAK_MAX);
-                    memcpy(it.caller_sline, gCallerSLine, sizeof(int)*MEMLEAK_MAX);
+                    memcpy(it.caller_sname, gComeStackFrameSName, sizeof(char*)*COME_STACKFRAME_MAX);
+                    memcpy(it.caller_sline, gComeStackFrameSLine, sizeof(int)*COME_STACKFRAME_MAX);
                     
                     return result;
                 }
@@ -351,8 +343,8 @@ static void* come_alloc_mem_from_heap_pool(size_t size, char* sname=null, int sl
             header.freed = false;
             header.sname = sname;
             header.sline = sline;
-            memcpy(header.caller_sname, gCallerSName, sizeof(char*)*MEMLEAK_MAX);
-            memcpy(header.caller_sline, gCallerSLine, sizeof(int)*MEMLEAK_MAX);
+            memcpy(header.caller_sname, gComeStackFrameSName, sizeof(char*)*COME_STACKFRAME_MAX);
+            memcpy(header.caller_sline, gComeStackFrameSLine, sizeof(int)*COME_STACKFRAME_MAX);
             
             header.alloc_next = gHeapPool.alloc_mem;
             gHeapPool.alloc_mem = header;
@@ -380,8 +372,8 @@ static void* come_alloc_mem_from_heap_pool(size_t size, char* sname=null, int sl
                 it.next = null;
                 it.sname = sname;
                 it.sline = sline;
-                memcpy(it.caller_sname, gCallerSName, sizeof(char*)*MEMLEAK_MAX);
-                memcpy(it.caller_sline, gCallerSLine, sizeof(int)*MEMLEAK_MAX);
+                memcpy(it.caller_sname, gComeStackFrameSName, sizeof(char*)*COME_STACKFRAME_MAX);
+                memcpy(it.caller_sline, gComeStackFrameSLine, sizeof(int)*COME_STACKFRAME_MAX);
                 
                 return result;
             }
@@ -423,8 +415,8 @@ static void* come_alloc_mem_from_heap_pool(size_t size, char* sname=null, int sl
         header.freed = false;
         header.sname = sname;
         header.sline = sline;
-        memcpy(header.caller_sname, gCallerSName, sizeof(char*)*MEMLEAK_MAX);
-        memcpy(header.caller_sline, gCallerSLine, sizeof(int)*MEMLEAK_MAX);
+        memcpy(header.caller_sname, gComeStackFrameSName, sizeof(char*)*COME_STACKFRAME_MAX);
+        memcpy(header.caller_sline, gComeStackFrameSLine, sizeof(int)*COME_STACKFRAME_MAX);
         header.next = null;
         
         header.alloc_next = gHeapPool.alloc_mem;

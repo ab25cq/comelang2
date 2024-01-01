@@ -20,6 +20,8 @@ void __builtin_va_end(char*);
 //////////////////////////////
 /// exception
 //////////////////////////////
+#define COME_STACKFRAME_MAX 7
+
 struct optional<T, T2>
 {
     T v1;
@@ -84,11 +86,10 @@ impl optional<T, T2>
 
 void come_push_stackframe(char* sname, int sline);
 void come_pop_stackframe();
-void come_save_stackframe(char* sname, int sline);
 void come_show_stackframe();
-void come_clear_stackframe();
 string come_get_stackframe();
 void stackframe();
+
 void* come_null_check(void* mem, char* sname, int sline);
 
 bool bool::expect(bool self, void* parent, void (*block)(void* parent)) ;
@@ -124,11 +125,6 @@ void* come_memdup(void* block, char* sname=null, int sline=0);
 string __builtin_string(char* str);
 
 bool come_is_contained_element(void** array, int len, void* element);
-
-#define MEMLEAK_MAX 10
-
-extern char* gCallerSName[MEMLEAK_MAX];
-extern int gCallerSLine[MEMLEAK_MAX];
 
 //////////////////////////////
 // list

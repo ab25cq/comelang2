@@ -748,9 +748,6 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
         
         buffer*% buf = new buffer();
         
-        if(gComeDebug && generics_fun_name !== "come_calloc" && generics_fun_name !== "come_alloc_mem_from_heap_pool") {
-            buf.append_str(s"(gCallerSName[0] = \"\{info->sname}\", gCallerSLine[0] = \{info->sline},");
-        }
         buf.append_str(generics_fun_name);
         buf.append_str("(");
         
@@ -764,12 +761,7 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
             
             j++;
         }
-        if(gComeDebug && generics_fun_name !== "come_calloc" && generics_fun_name !== "come_alloc_mem_from_heap_pool") {
-            buf.append_str("))");
-        }
-        else {
-            buf.append_str(")");
-        }
+        buf.append_str(")");
         
         
         CVALUE*% come_value2 = new CVALUE;
@@ -783,7 +775,7 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
             come_value2.c_value = append_object_to_right_values(come_value2.c_value, result_type2, info);
         }
         
-        if(fun.mResultType->mException) {
+        if(fun.mResultType->mException || gComeDebug) {
             come_value2.c_value = append_exception_value(come_value2.c_value, come_value2.type, info);
         }
         

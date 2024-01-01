@@ -113,12 +113,7 @@ bool operator_overload_fun_self(sType* type, char* fun_name, CVALUE* left_value,
             left_value2 = clone left_value.c_value;
         }
         
-        if(gComeDebug) {
-            come_value.c_value = xsprintf("(gCallerSName[0] = \"%s\", gCallerSLine[0] = %d, %s(%s))", info->sname, info->sline, fun_name2, left_value2);
-        }
-        else {
-            come_value.c_value = xsprintf("%s(%s)", fun_name2, left_value2);
-        }
+        come_value.c_value = xsprintf("%s(%s)", fun_name2, left_value2);
         
         sType*% type2 = clone operator_fun->mResultType;
         
@@ -131,7 +126,7 @@ bool operator_overload_fun_self(sType* type, char* fun_name, CVALUE* left_value,
             come_value.c_value = append_object_to_right_values(come_value.c_value, type3, info);
         }
         
-        if(operator_fun.mResultType->mException) {
+        if(operator_fun.mResultType->mException || gComeDebug) {
             come_value.c_value = append_exception_value(come_value.c_value, come_value.type, info);
         }
         
@@ -1547,10 +1542,6 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
         
         buffer*% buf = new buffer();
         
-        if(gComeDebug && fun_name !== "come_calloc" && fun_name !== "come_alloc_mem_from_heap_pool") {
-            buf.append_str(s"(gCallerSName[0] = \"\{info->sname}\", gCallerSLine[0] = \{info->sline},");
-        }
-        
         buf.append_str(fun_name);
         buf.append_str("(");
         
@@ -1564,12 +1555,7 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
             
             j++;
         }
-        if(gComeDebug && fun_name !== "come_calloc" && fun_name !== "come_alloc_mem_from_heap_pool") {
-            buf.append_str("))");
-        }
-        else {
-            buf.append_str(")");
-        }
+        buf.append_str(")");
         
         CVALUE*% come_value = new CVALUE;
         come_value.c_value = buf.to_string();
@@ -1581,7 +1567,7 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
             come_value.c_value = append_object_to_right_values(come_value.c_value, result_type, info);
         }
         
-        if(fun.mResultType->mException) {
+        if(fun.mResultType->mException && fun_name !== "come_calloc" && fun_name !== "come_alloc_mem_from_heap_pool" && fun_name !== "null_check" || gComeDebug) {
             come_value.c_value = append_exception_value(come_value.c_value, come_value.type, info);
         }
         

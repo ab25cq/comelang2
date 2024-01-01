@@ -726,12 +726,7 @@ sType*%, string clone_object(sType* type, char* obj, sInfo* info)
 
     /// call cloner ///
     if(cloner != null) {
-        if(gComeDebug) {
-            result = xsprintf("(gCallerSName[0] = \"%s\", gCallerSLine[0] = %d,%s(%s))", info->sname, info->sline, fun_name2, c_value);
-        }
-        else {
-            result = xsprintf("%s(%s)", fun_name2, c_value);
-        }
+        result = xsprintf("%s(%s)", fun_name2, c_value);
         result_type = cloner->mResultType;
         result_type = solve_generics(result_type, type, info);
     }
@@ -1105,7 +1100,7 @@ string append_exception_value(char* c_value, sType* type, sInfo* info)
 {
     if(info.without_semicolon) {
         if(type->mClass->mName === "void" && type->mPointerNum == 0) {
-            if(!info.come_fun.mResultType->mException) {
+            if(!info.come_fun.mResultType->mException && !gComeDebug) {
                 return s"(come_clear_stackframe(), come_push_stackframe(\"\{info.sname}\", \{info.sline}),\{c_value}, come_pop_stackframe())";
             }
             else {
@@ -1113,7 +1108,7 @@ string append_exception_value(char* c_value, sType* type, sInfo* info)
             }
         }
         else {
-            if(!info.come_fun.mResultType->mException) {
+            if(!info.come_fun.mResultType->mException && !gComeDebug) {
                 static int n = 0;
                 ++n;
                 
@@ -1132,7 +1127,7 @@ string append_exception_value(char* c_value, sType* type, sInfo* info)
         }
     }
     else {
-        if(!info.come_fun.mResultType->mException) {
+        if(!info.come_fun.mResultType->mException && !gComeDebug) {
             add_come_code(info, "come_clear_stackframe();\n");
         }
         string result = s"(come_push_stackframe(\"\{info.sname}\", \{info.sline}),\{c_value})";

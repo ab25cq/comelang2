@@ -109,25 +109,10 @@ string sFunNode*::kind()
 
 void caller_begin(sInfo* info=info)
 {
-    if(gComeDebug && info.come_fun.mName !== "come_calloc" && info.come_fun.mName !== "come_alloc_mem_from_heap_pool") {
-        add_come_code_at_function_head(info, "char* __caller_sname__[%d];\n", MEMLEAK_MAX);
-        
-        add_come_code_at_function_head(info, "int __caller_sline__[%d];\n", MEMLEAK_MAX);
-        add_come_code_at_function_head(info, "int __caller_i__;\n");
-        
-        add_come_code(info, "memcpy(__caller_sname__, gCallerSName, sizeof(char*)*%d);", MEMLEAK_MAX);
-        add_come_code(info, "memcpy(__caller_sline__, gCallerSLine, sizeof(int)*%d);", MEMLEAK_MAX);
-        
-        add_come_code(info, "for(__caller_i__=%d-1; __caller_i__>=1; __caller_i__--) { gCallerSName[__caller_i__] = gCallerSName[__caller_i__-1]; gCallerSLine[__caller_i__] = gCallerSLine[__caller_i__-1]; } \n", MEMLEAK_MAX);
-    }
 }
 
 void caller_end(sInfo* info=info)
 {
-    if(gComeDebug && info.come_fun.mName !== "come_calloc" && info.come_fun.mName !== "come_alloc_mem_from_heap_pool") {
-        add_come_code(info, "memcpy(gCallerSName, __caller_sname__, sizeof(char*)*%d);", MEMLEAK_MAX);
-        add_come_code(info, "memcpy(gCallerSLine, __caller_sline__, sizeof(int)*%d);", MEMLEAK_MAX);
-    }
 }
 
 bool sFunNode*::compile(sFunNode* self, sInfo* info)

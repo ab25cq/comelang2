@@ -1,13 +1,13 @@
 #include <comelang2.h>
 
-exception int fun() 
+int fun() 
 {
-    return none(0);
+    null!;
 }
 
-exception int fun2()
+int fun2()
 {
-    return fun()!;
+    return fun();
 }
 
 int main(int argc, char** argv)

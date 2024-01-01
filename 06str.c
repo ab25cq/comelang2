@@ -139,16 +139,10 @@ bool sSStringNode*::compile(sSStringNode* self, sInfo* info)
             
             var buf2 = new buffer();
             
-            if(gComeDebug) {
-                buf2.append_str(s"(gCallerSName[0] = \"\{info->sname}\", gCallerSLine[0] = \{info->sline},");
-            }
             buf2.append_str(method_name);
             buf2.append_str("(");
             buf2.append_str(come_value.c_value);
             buf2.append_str(")");
-            if(gComeDebug) {
-                buf2.append_str(")");
-            }
             
             sType*% type = new sType("char*");
             type->mHeap = true;

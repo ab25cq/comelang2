@@ -142,12 +142,7 @@ bool operator_overload_fun(sType* type, char* fun_name, CVALUE* left_value, CVAL
             right_value2 = clone right_value.c_value;
         }
         
-        if(gComeDebug) {
-            come_value.c_value = s"(gCallerSName[0] = \"\{info->sname}\", gCallerSLine[0] = \{info->sline}, \{fun_name2}(\{left_value2},\{right_value2}))";
-        }
-        else {
-            come_value.c_value = s"\{fun_name2}(\{left_value2},\{right_value2})";
-        }
+        come_value.c_value = s"\{fun_name2}(\{left_value2},\{right_value2})";
         
         sType*% type2 = clone operator_fun->mResultType;
         
@@ -160,7 +155,7 @@ bool operator_overload_fun(sType* type, char* fun_name, CVALUE* left_value, CVAL
             come_value.c_value = append_object_to_right_values(come_value.c_value, type3, info);
         }
         
-        if(operator_fun.mResultType->mException) {
+        if(operator_fun.mResultType->mException || gComeDebug) {
             come_value.c_value = append_exception_value(come_value.c_value, come_value.type, info);
         }
         
