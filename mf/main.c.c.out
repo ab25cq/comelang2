@@ -1084,3 +1084,776 @@ main.c.c:8700:10: warning: address of 'info_84' will always evaluate to 'true' [
     if((&info_84) && !__freed_obj__) { come_call_finalizer(sInfo_finalize,(&info_84), (void*)0, (void*)0, 1, 0, 0, 0); }
          ^~~~~~~  ~~
 109 warnings generated.
+main.c.c:442:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short* p;
+          ^~~~~
+main.c.c:677:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short _cury;
+          ^~~~~~
+main.c.c:678:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short _curx;
+          ^~~~~~
+main.c.c:679:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short _maxy;
+          ^~~~~~
+main.c.c:680:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short _maxx;
+          ^~~~~~
+main.c.c:681:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short _begy;
+          ^~~~~~
+main.c.c:682:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short _begx;
+          ^~~~~~
+main.c.c:683:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short _flags;
+          ^~~~~~
+main.c.c:697:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short _regtop;
+          ^~~~~~
+main.c.c:698:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short _regbottom;
+          ^~~~~~
+main.c.c:703:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short _yoffset;
+          ^~~~~~
+main.c.c:724:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    short short id;
+          ^~~~~~
+main.c.c:798:15: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+typedef short short __s16;
+              ^~~~~~
+main.c.c:1613:5: warning: incompatible redeclaration of library function 'snprintf' [-Wincompatible-library-redeclaration]
+int snprintf(char* __s, long int __maxlen, const char* __format, ...);
+    ^
+main.c.c:1613:5: note: 'snprintf' is a builtin with type 'int (char *, unsigned long, const char *, ...)'
+main.c.c:1615:5: warning: incompatible redeclaration of library function 'vsnprintf' [-Wincompatible-library-redeclaration]
+int vsnprintf(char* __s, long int __maxlen, const char* __format, va_list __arg);
+    ^
+main.c.c:1615:5: note: 'vsnprintf' is a builtin with type 'int (char *, unsigned long, const char *, __builtin_va_list)'
+main.c.c:1695:10: warning: incompatible redeclaration of library function 'fread' [-Wincompatible-library-redeclaration]
+long int fread(void* __ptr, long int __size, long int __n, struct _IO_FILE* __stream);
+         ^
+main.c.c:1695:10: note: 'fread' is a builtin with type 'unsigned long (void *, unsigned long, unsigned long, FILE *)' (aka 'unsigned long (void *, unsigned long, unsigned long, struct _IO_FILE *)')
+main.c.c:1697:10: warning: incompatible redeclaration of library function 'fwrite' [-Wincompatible-library-redeclaration]
+long int fwrite(const void* __ptr, long int __size, long int __n, struct _IO_FILE* __s);
+         ^
+main.c.c:1697:10: note: 'fwrite' is a builtin with type 'unsigned long (const void *, unsigned long, unsigned long, FILE *)' (aka 'unsigned long (const void *, unsigned long, unsigned long, struct _IO_FILE *)')
+main.c.c:1911:7: warning: incompatible redeclaration of library function 'malloc' [-Wincompatible-library-redeclaration]
+void* malloc(long int __size);
+      ^
+main.c.c:1911:7: note: 'malloc' is a builtin with type 'void *(unsigned long)'
+main.c.c:1913:7: warning: incompatible redeclaration of library function 'calloc' [-Wincompatible-library-redeclaration]
+void* calloc(long int __nmemb, long int __size);
+      ^
+main.c.c:1913:7: note: 'calloc' is a builtin with type 'void *(unsigned long, unsigned long)'
+main.c.c:1915:7: warning: incompatible redeclaration of library function 'realloc' [-Wincompatible-library-redeclaration]
+void* realloc(void* __ptr, long int __size);
+      ^
+main.c.c:1915:7: note: 'realloc' is a builtin with type 'void *(void *, unsigned long)'
+main.c.c:1921:7: warning: incompatible redeclaration of library function 'alloca' [-Wincompatible-library-redeclaration]
+void* alloca(long int __size);
+      ^
+main.c.c:1921:7: note: 'alloca' is a builtin with type 'void *(unsigned long)'
+main.c.c:1927:7: warning: incompatible redeclaration of library function 'aligned_alloc' [-Wincompatible-library-redeclaration]
+void* aligned_alloc(long int __alignment, long int __size);
+      ^
+main.c.c:1927:7: note: 'aligned_alloc' is a builtin with type 'void *(unsigned long, unsigned long)'
+main.c.c:2047:7: warning: incompatible redeclaration of library function 'memcpy' [-Wincompatible-library-redeclaration]
+void* memcpy(void* __dest, const void* __src, long int __n);
+      ^
+main.c.c:2047:7: note: 'memcpy' is a builtin with type 'void *(void *, const void *, unsigned long)'
+main.c.c:2049:7: warning: incompatible redeclaration of library function 'memmove' [-Wincompatible-library-redeclaration]
+void* memmove(void* __dest, const void* __src, long int __n);
+      ^
+main.c.c:2049:7: note: 'memmove' is a builtin with type 'void *(void *, const void *, unsigned long)'
+main.c.c:2051:7: warning: incompatible redeclaration of library function 'memccpy' [-Wincompatible-library-redeclaration]
+void* memccpy(void* __dest, const void* __src, int __c, long int __n);
+      ^
+main.c.c:2051:7: note: 'memccpy' is a builtin with type 'void *(void *, const void *, int, unsigned long)'
+main.c.c:2053:7: warning: incompatible redeclaration of library function 'memset' [-Wincompatible-library-redeclaration]
+void* memset(void* __s, int __c, long int __n);
+      ^
+main.c.c:2053:7: note: 'memset' is a builtin with type 'void *(void *, int, unsigned long)'
+main.c.c:2055:5: warning: incompatible redeclaration of library function 'memcmp' [-Wincompatible-library-redeclaration]
+int memcmp(const void* __s1, const void* __s2, long int __n);
+    ^
+main.c.c:2055:5: note: 'memcmp' is a builtin with type 'int (const void *, const void *, unsigned long)'
+main.c.c:2059:7: warning: incompatible redeclaration of library function 'memchr' [-Wincompatible-library-redeclaration]
+void* memchr(const void* __s, int __c, long int __n);
+      ^
+main.c.c:2059:7: note: 'memchr' is a builtin with type 'void *(const void *, int, unsigned long)'
+main.c.c:2067:7: warning: incompatible redeclaration of library function 'strncpy' [-Wincompatible-library-redeclaration]
+char* strncpy(char* __dest, const char* __src, long int __n);
+      ^
+main.c.c:2067:7: note: 'strncpy' is a builtin with type 'char *(char *, const char *, unsigned long)'
+main.c.c:2071:7: warning: incompatible redeclaration of library function 'strncat' [-Wincompatible-library-redeclaration]
+char* strncat(char* __dest, const char* __src, long int __n);
+      ^
+main.c.c:2071:7: note: 'strncat' is a builtin with type 'char *(char *, const char *, unsigned long)'
+main.c.c:2075:5: warning: incompatible redeclaration of library function 'strncmp' [-Wincompatible-library-redeclaration]
+int strncmp(const char* __s1, const char* __s2, long int __n);
+    ^
+main.c.c:2075:5: note: 'strncmp' is a builtin with type 'int (const char *, const char *, unsigned long)'
+main.c.c:2079:10: warning: incompatible redeclaration of library function 'strxfrm' [-Wincompatible-library-redeclaration]
+long int strxfrm(char* __dest, const char* __src, long int __n);
+         ^
+main.c.c:2079:10: note: 'strxfrm' is a builtin with type 'unsigned long (char *, const char *, unsigned long)'
+main.c.c:2087:7: warning: incompatible redeclaration of library function 'strndup' [-Wincompatible-library-redeclaration]
+char* strndup(const char* __string, long int __n);
+      ^
+main.c.c:2087:7: note: 'strndup' is a builtin with type 'char *(const char *, unsigned long)'
+main.c.c:2095:10: warning: incompatible redeclaration of library function 'strcspn' [-Wincompatible-library-redeclaration]
+long int strcspn(const char* __s, const char* __reject);
+         ^
+main.c.c:2095:10: note: 'strcspn' is a builtin with type 'unsigned long (const char *, const char *)'
+main.c.c:2097:10: warning: incompatible redeclaration of library function 'strspn' [-Wincompatible-library-redeclaration]
+long int strspn(const char* __s, const char* __accept);
+         ^
+main.c.c:2097:10: note: 'strspn' is a builtin with type 'unsigned long (const char *, const char *)'
+main.c.c:2115:7: warning: incompatible redeclaration of library function 'mempcpy' [-Wincompatible-library-redeclaration]
+void* mempcpy(void* __dest, const void* __src, long int __n);
+      ^
+main.c.c:2115:7: note: 'mempcpy' is a builtin with type 'void *(void *, const void *, unsigned long)'
+main.c.c:2117:10: warning: incompatible redeclaration of library function 'strlen' [-Wincompatible-library-redeclaration]
+long int strlen(const char* __s);
+         ^
+main.c.c:2117:10: note: 'strlen' is a builtin with type 'unsigned long (const char *)'
+main.c.c:2131:5: warning: incompatible redeclaration of library function 'bcmp' [-Wincompatible-library-redeclaration]
+int bcmp(const void* __s1, const void* __s2, long int __n);
+    ^
+main.c.c:2131:5: note: 'bcmp' is a builtin with type 'int (const void *, const void *, unsigned long)'
+main.c.c:2135:6: warning: incompatible redeclaration of library function 'bzero' [-Wincompatible-library-redeclaration]
+void bzero(void* __s, long int __n);
+     ^
+main.c.c:2135:6: note: 'bzero' is a builtin with type 'void (void *, unsigned long)'
+main.c.c:2149:5: warning: incompatible redeclaration of library function 'strncasecmp' [-Wincompatible-library-redeclaration]
+int strncasecmp(const char* __s1, const char* __s2, long int __n);
+    ^
+main.c.c:2149:5: note: 'strncasecmp' is a builtin with type 'int (const char *, const char *, unsigned long)'
+main.c.c:2171:7: warning: incompatible redeclaration of library function 'stpncpy' [-Wincompatible-library-redeclaration]
+char* stpncpy(char* __dest, const char* __src, long int __n);
+      ^
+main.c.c:2171:7: note: 'stpncpy' is a builtin with type 'char *(char *, const char *, unsigned long)'
+main.c.c:2251:63: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+struct buffer* buffer_append_short(struct buffer* self, short short value);
+                                                              ^~~~~~
+main.c.c:2273:26: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+_Bool short_equals(short short self, short short right);
+                         ^~~~~~
+main.c.c:2273:44: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+_Bool short_equals(short short self, short short right);
+                                           ^~~~~~
+main.c.c:2307:39: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+unsigned int short_get_hash_key(short short value);
+                                      ^~~~~~
+main.c.c:2327:29: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+short int short_clone(short short self);
+                            ^~~~~~
+main.c.c:2403:29: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+char* short_to_string(short short self);
+                            ^~~~~~
+main.c.c:2423:25: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int short_compare(short short left, short short right);
+                        ^~~~~~
+main.c.c:2423:43: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int short_compare(short short left, short short right);
+                                          ^~~~~~
+main.c.c:2643:5: warning: incompatible redeclaration of library function 'wcsncmp' [-Wincompatible-library-redeclaration]
+int wcsncmp(const unsigned int* __s1, const unsigned int* __s2, long int __n);
+    ^
+main.c.c:2643:5: note: 'wcsncmp' is a builtin with type 'int (const unsigned int *, const unsigned int *, unsigned long)'
+main.c.c:2679:10: warning: incompatible redeclaration of library function 'wcslen' [-Wincompatible-library-redeclaration]
+long int wcslen(const unsigned int* __s);
+         ^
+main.c.c:2679:10: note: 'wcslen' is a builtin with type 'unsigned long (const unsigned int *)'
+main.c.c:2685:15: warning: incompatible redeclaration of library function 'wmemchr' [-Wincompatible-library-redeclaration]
+unsigned int* wmemchr(const unsigned int* __s, unsigned int __c, long int __n);
+              ^
+main.c.c:2685:15: note: 'wmemchr' is a builtin with type 'unsigned int *(const unsigned int *, unsigned int, unsigned long)'
+main.c.c:2687:5: warning: incompatible redeclaration of library function 'wmemcmp' [-Wincompatible-library-redeclaration]
+int wmemcmp(const unsigned int* __s1, const unsigned int* __s2, long int __n);
+    ^
+main.c.c:2687:5: note: 'wmemcmp' is a builtin with type 'int (const unsigned int *, const unsigned int *, unsigned long)'
+main.c.c:2689:15: warning: incompatible redeclaration of library function 'wmemcpy' [-Wincompatible-library-redeclaration]
+unsigned int* wmemcpy(unsigned int* __s1, const unsigned int* __s2, long int __n);
+              ^
+main.c.c:2689:15: note: 'wmemcpy' is a builtin with type 'unsigned int *(unsigned int *, const unsigned int *, unsigned long)'
+main.c.c:2691:15: warning: incompatible redeclaration of library function 'wmemmove' [-Wincompatible-library-redeclaration]
+unsigned int* wmemmove(unsigned int* __s1, const unsigned int* __s2, long int __n);
+              ^
+main.c.c:2691:15: note: 'wmemmove' is a builtin with type 'unsigned int *(unsigned int *, const unsigned int *, unsigned long)'
+main.c.c:3015:58: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int attr_get(unsigned int* anonymous_var_nameX500, short short* anonymous_var_nameX501, void* anonymous_var_nameX502);
+                                                         ^~~~~
+main.c.c:3021:57: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int attr_set(unsigned int anonymous_var_nameX507, short short anonymous_var_nameX508, void* anonymous_var_nameX509);
+                                                        ^~~~~~
+main.c.c:3039:82: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int chgat(int anonymous_var_nameX523, unsigned int anonymous_var_nameX524, short short anonymous_var_nameX525, const void* anonymous_var_nameX526);
+                                                                                 ^~~~~~
+main.c.c:3049:25: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int color_content(short short anonymous_var_nameX529, short short* anonymous_var_nameX530, short short* anonymous_var_nameX531, short short* anonymous_var_nameX532);
+                        ^~~~~~
+main.c.c:3049:61: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int color_content(short short anonymous_var_nameX529, short short* anonymous_var_nameX530, short short* anonymous_var_nameX531, short short* anonymous_var_nameX532);
+                                                            ^~~~~
+main.c.c:3049:98: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int color_content(short short anonymous_var_nameX529, short short* anonymous_var_nameX530, short short* anonymous_var_nameX531, short short* anonymous_var_nameX532);
+                                                                                                 ^~~~~
+main.c.c:3049:135: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int color_content(short short anonymous_var_nameX529, short short* anonymous_var_nameX530, short short* anonymous_var_nameX531, short short* anonymous_var_nameX532);
+                                                                                                                                      ^~~~~
+main.c.c:3051:21: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int color_set(short short anonymous_var_nameX533, void* anonymous_var_nameX534);
+                    ^~~~~~
+main.c.c:3129:22: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_color(short short anonymous_var_nameX573, short short anonymous_var_nameX574, short short anonymous_var_nameX575, short short anonymous_var_nameX576);
+                     ^~~~~~
+main.c.c:3129:58: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_color(short short anonymous_var_nameX573, short short anonymous_var_nameX574, short short anonymous_var_nameX575, short short anonymous_var_nameX576);
+                                                         ^~~~~~
+main.c.c:3129:94: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_color(short short anonymous_var_nameX573, short short anonymous_var_nameX574, short short anonymous_var_nameX575, short short anonymous_var_nameX576);
+                                                                                             ^~~~~~
+main.c.c:3129:130: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_color(short short anonymous_var_nameX573, short short anonymous_var_nameX574, short short anonymous_var_nameX575, short short anonymous_var_nameX576);
+                                                                                                                                 ^~~~~~
+main.c.c:3131:21: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_pair(short short anonymous_var_nameX577, short short anonymous_var_nameX578, short short anonymous_var_nameX579);
+                    ^~~~~~
+main.c.c:3131:57: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_pair(short short anonymous_var_nameX577, short short anonymous_var_nameX578, short short anonymous_var_nameX579);
+                                                        ^~~~~~
+main.c.c:3131:93: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_pair(short short anonymous_var_nameX577, short short anonymous_var_nameX578, short short anonymous_var_nameX579);
+                                                                                            ^~~~~~
+main.c.c:3179:140: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int mvchgat(int anonymous_var_nameX619, int anonymous_var_nameX620, int anonymous_var_nameX621, unsigned int anonymous_var_nameX622, short short anonymous_var_nameX623, const void* anonymous_var_nameX624);
+                                                                                                                                           ^~~~~~
+main.c.c:3227:181: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int mvwchgat(struct _win_st* anonymous_var_nameX705, int anonymous_var_nameX706, int anonymous_var_nameX707, int anonymous_var_nameX708, unsigned int anonymous_var_nameX709, short short anonymous_var_nameX710, const void* anonymous_var_nameX711);
+                                                                                                                                                                                    ^~~~~~
+main.c.c:3291:24: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int pair_content(short short anonymous_var_nameX800, short short* anonymous_var_nameX801, short short* anonymous_var_nameX802);
+                       ^~~~~~
+main.c.c:3291:60: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int pair_content(short short anonymous_var_nameX800, short short* anonymous_var_nameX801, short short* anonymous_var_nameX802);
+                                                           ^~~~~
+main.c.c:3291:97: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int pair_content(short short anonymous_var_nameX800, short short* anonymous_var_nameX801, short short* anonymous_var_nameX802);
+                                                                                                ^~~~~
+main.c.c:3355:67: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int slk_attr_set(const unsigned int anonymous_var_nameX846, short short anonymous_var_nameX847, void* anonymous_var_nameX848);
+                                                                  ^~~~~~
+main.c.c:3359:21: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int slk_color(short short anonymous_var_nameX849);
+                    ^~~~~~
+main.c.c:3437:99: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int wattr_get(struct _win_st* anonymous_var_nameX912, unsigned int* anonymous_var_nameX913, short short* anonymous_var_nameX914, void* anonymous_var_nameX915);
+                                                                                                  ^~~~~
+main.c.c:3443:98: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int wattr_set(struct _win_st* anonymous_var_nameX922, unsigned int anonymous_var_nameX923, short short anonymous_var_nameX924, void* anonymous_var_nameX925);
+                                                                                                 ^~~~~~
+main.c.c:3451:123: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int wchgat(struct _win_st* anonymous_var_nameX939, int anonymous_var_nameX940, unsigned int anonymous_var_nameX941, short short anonymous_var_nameX942, const void* anonymous_var_nameX943);
+                                                                                                                          ^~~~~~
+main.c.c:3459:62: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int wcolor_set(struct _win_st* anonymous_var_nameX947, short short anonymous_var_nameX948, void* anonymous_var_nameX949);
+                                                             ^~~~~~
+main.c.c:3657:68: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int color_content_sp(struct screen* anonymous_var_nameX1108, short short anonymous_var_nameX1109, short short* anonymous_var_nameX1110, short short* anonymous_var_nameX1111, short short* anonymous_var_nameX1112);
+                                                                   ^~~~~~
+main.c.c:3657:105: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int color_content_sp(struct screen* anonymous_var_nameX1108, short short anonymous_var_nameX1109, short short* anonymous_var_nameX1110, short short* anonymous_var_nameX1111, short short* anonymous_var_nameX1112);
+                                                                                                        ^~~~~
+main.c.c:3657:143: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int color_content_sp(struct screen* anonymous_var_nameX1108, short short anonymous_var_nameX1109, short short* anonymous_var_nameX1110, short short* anonymous_var_nameX1111, short short* anonymous_var_nameX1112);
+                                                                                                                                              ^~~~~
+main.c.c:3657:181: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int color_content_sp(struct screen* anonymous_var_nameX1108, short short anonymous_var_nameX1109, short short* anonymous_var_nameX1110, short short* anonymous_var_nameX1111, short short* anonymous_var_nameX1112);
+                                                                                                                                                                                    ^~~~~
+main.c.c:3689:65: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_color_sp(struct screen* anonymous_var_nameX1131, short short anonymous_var_nameX1132, short short anonymous_var_nameX1133, short short anonymous_var_nameX1134, short short anonymous_var_nameX1135);
+                                                                ^~~~~~
+main.c.c:3689:102: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_color_sp(struct screen* anonymous_var_nameX1131, short short anonymous_var_nameX1132, short short anonymous_var_nameX1133, short short anonymous_var_nameX1134, short short anonymous_var_nameX1135);
+                                                                                                     ^~~~~~
+main.c.c:3689:139: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_color_sp(struct screen* anonymous_var_nameX1131, short short anonymous_var_nameX1132, short short anonymous_var_nameX1133, short short anonymous_var_nameX1134, short short anonymous_var_nameX1135);
+                                                                                                                                          ^~~~~~
+main.c.c:3689:176: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_color_sp(struct screen* anonymous_var_nameX1131, short short anonymous_var_nameX1132, short short anonymous_var_nameX1133, short short anonymous_var_nameX1134, short short anonymous_var_nameX1135);
+                                                                                                                                                                               ^~~~~~
+main.c.c:3691:64: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_pair_sp(struct screen* anonymous_var_nameX1136, short short anonymous_var_nameX1137, short short anonymous_var_nameX1138, short short anonymous_var_nameX1139);
+                                                               ^~~~~~
+main.c.c:3691:101: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_pair_sp(struct screen* anonymous_var_nameX1136, short short anonymous_var_nameX1137, short short anonymous_var_nameX1138, short short anonymous_var_nameX1139);
+                                                                                                    ^~~~~~
+main.c.c:3691:138: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int init_pair_sp(struct screen* anonymous_var_nameX1136, short short anonymous_var_nameX1137, short short anonymous_var_nameX1138, short short anonymous_var_nameX1139);
+                                                                                                                                         ^~~~~~
+main.c.c:3725:67: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int pair_content_sp(struct screen* anonymous_var_nameX1173, short short anonymous_var_nameX1174, short short* anonymous_var_nameX1175, short short* anonymous_var_nameX1176);
+                                                                  ^~~~~~
+main.c.c:3725:104: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int pair_content_sp(struct screen* anonymous_var_nameX1173, short short anonymous_var_nameX1174, short short* anonymous_var_nameX1175, short short* anonymous_var_nameX1176);
+                                                                                                       ^~~~~
+main.c.c:3725:142: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int pair_content_sp(struct screen* anonymous_var_nameX1173, short short anonymous_var_nameX1174, short short* anonymous_var_nameX1175, short short* anonymous_var_nameX1176);
+                                                                                                                                             ^~~~~
+main.c.c:3755:111: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int slk_attr_set_sp(struct screen* anonymous_var_nameX1200, const unsigned int anonymous_var_nameX1201, short short anonymous_var_nameX1202, void* anonymous_var_nameX1203);
+                                                                                                              ^~~~~~
+main.c.c:3759:64: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int slk_color_sp(struct screen* anonymous_var_nameX1205, short short anonymous_var_nameX1206);
+                                                               ^~~~~~
+main.c.c:3867:155: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int getcchar(const struct anonymous_typeX22* anonymous_var_nameX1321, unsigned int* anonymous_var_nameX1322, unsigned int* anonymous_var_nameX1323, short short* anonymous_var_nameX1324, void* anonymous_var_nameX1325);
+                                                                                                                                                          ^~~~~
+main.c.c:3967:160: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int setcchar(struct anonymous_typeX22* anonymous_var_nameX1487, const unsigned int* anonymous_var_nameX1488, const unsigned int anonymous_var_nameX1489, short short anonymous_var_nameX1490, const void* anonymous_var_nameX1491);
+                                                                                                                                                               ^~~~~~
+main.c.c:3975:58: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int vid_attr(unsigned int anonymous_var_nameX1496, short short anonymous_var_nameX1497, void* anonymous_var_nameX1498);
+                                                         ^~~~~~
+main.c.c:3977:58: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int vid_puts(unsigned int anonymous_var_nameX1499, short short anonymous_var_nameX1500, void* anonymous_var_nameX1501, int (*anonymous_var_nameX1502)(int));
+                                                         ^~~~~~
+main.c.c:4037:101: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int vid_attr_sp(struct screen* anonymous_var_nameX1574, unsigned int anonymous_var_nameX1575, short short anonymous_var_nameX1576, void* anonymous_var_nameX1577);
+                                                                                                    ^~~~~~
+main.c.c:4039:101: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+int vid_puts_sp(struct screen* anonymous_var_nameX1578, unsigned int anonymous_var_nameX1579, short short anonymous_var_nameX1580, void* anonymous_var_nameX1581, int (*anonymous_var_nameX1582)(struct screen*,int));
+                                                                                                    ^~~~~~
+main.c.c:5336:30: warning: integer literal is too large to be represented in a signed integer type, interpreting as unsigned [-Wimplicitly-unsigned-literal]
+    __result3__ = ((((__bsx)&18374686479671623680)>>56)|(((__bsx)&71776119061217280)>>40)|(((__bsx)&280375465082880)>>24)|(((__bsx)&1095216660480)>>8)|(((__bsx)&4278190080)<<8)|(((__bsx)&16711680)<<24)|(((__bsx)&65280)<<40)|(((__bsx)&255)<<56));
+                             ^
+main.c.c:5505:113: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+    ((struct smart_pointer$1short*)come_null_check(result_2, "/usr/local/include/comelang2.h", 2015))->p=(short short*)((struct buffer*)come_null_check(((struct smart_pointer$1short*)come_null_check(result_2, "/usr/local/include/comelang2.h", 2015))->memory, "/usr/local/include/comelang2.h", 2015))->buf;
+                                                                                                                ^~~~~
+main.c.c:6503:112: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 29),__exception_result_var_b42=ioctl(1,21523,ws_7), come_pop_stackframe(), __exception_result_var_b42);
+                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:6565:112: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 46),__exception_result_var_b43=ioctl(1,21523,ws_9), come_pop_stackframe(), __exception_result_var_b43);
+                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:6660:437: warning: expression result unused [-Wunused-value]
+        (come_push_stackframe("main.c", 69),__exception_result_var_b47=list$1charph_push_back(((struct list$1charph*)come_null_check(((struct sInfo*)come_null_check(info, "main.c", 69))->files, "main.c", 69)),(char*)come_increment_ref_count((come_push_stackframe("main.c", 69),__exception_result_var_b46=((char*)(right_value43=__builtin_string("NO FILES"))), come_pop_stackframe(), __exception_result_var_b46))), come_pop_stackframe(), __exception_result_var_b47);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:6673:492: warning: expression result unused [-Wunused-value]
+        (come_push_stackframe("main.c", 75),__exception_result_var_b50=list$1charph_push_back(((struct list$1charph*)come_null_check(((struct sInfo*)come_null_check(info, "main.c", 75))->files, "main.c", 75)),(char*)come_increment_ref_count((come_push_stackframe("main.c", 75),__exception_result_var_b49=((char*)(right_value44=__builtin_string(((struct dirent*)come_null_check(entry_15, "main.c", 75))->d_name))), come_pop_stackframe(), __exception_result_var_b49))), come_pop_stackframe(), __exception_result_var_b50);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:6680:109: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 78),__exception_result_var_b51=closedir(dir_11), come_pop_stackframe(), __exception_result_var_b51);
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:6938:411: warning: expression result unused [-Wunused-value]
+                (come_push_stackframe("/usr/local/include/comelang2.h", 868),__exception_result_var_b56=list$1charph_push_back(((struct list$1charph*)come_null_check(list1_21, "/usr/local/include/comelang2.h", 868)),(char*)come_increment_ref_count(((char*)(right_value57=string_clone(((struct list_item$1charph*)come_null_check(it_23, "/usr/local/include/comelang2.h", 868))->item))))), come_pop_stackframe(), __exception_result_var_b56);
+                                                                                                                                                                                                                                                                                                                                                                                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:6943:502: warning: expression result unused [-Wunused-value]
+                (come_push_stackframe("/usr/local/include/comelang2.h", 869),__exception_result_var_b57=list$1charph_push_back(((struct list$1charph*)come_null_check(list2_22, "/usr/local/include/comelang2.h", 869)),(char*)come_increment_ref_count(((char*)(right_value58=string_clone(((struct list_item$1charph*)come_null_check(((struct list_item$1charph*)come_null_check(it_23, "/usr/local/include/comelang2.h", 869))->next, "/usr/local/include/comelang2.h", 869))->item))))), come_pop_stackframe(), __exception_result_var_b57);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:6958:415: warning: expression result unused [-Wunused-value]
+                    (come_push_stackframe("/usr/local/include/comelang2.h", 878),__exception_result_var_b58=list$1charph_push_back(((struct list$1charph*)come_null_check(list1_21, "/usr/local/include/comelang2.h", 878)),(char*)come_increment_ref_count(((char*)(right_value59=string_clone(((struct list_item$1charph*)come_null_check(it_23, "/usr/local/include/comelang2.h", 878))->item))))), come_pop_stackframe(), __exception_result_var_b58);
+                                                                                                                                                                                                                                                                                                                                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7040:414: warning: expression result unused [-Wunused-value]
+                        (come_push_stackframe("/usr/local/include/comelang2.h", 194),__exception_result_var_b53=list$1charph_add(((struct list$1charph*)come_null_check(result_16, "/usr/local/include/comelang2.h", 194)),(char*)come_increment_ref_count(((char*)(right_value50=string_clone(((struct list_item$1charph*)come_null_check(it_17, "/usr/local/include/comelang2.h", 194))->item))))), come_pop_stackframe(), __exception_result_var_b53);
+                                                                                                                                                                                                                                                                                                                                                                                                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7229:432: warning: expression result unused [-Wunused-value]
+                                    (come_push_stackframe("/usr/local/include/comelang2.h", 818),__exception_result_var_b62=list$1charph_push_back(((struct list$1charph*)come_null_check(result_26, "/usr/local/include/comelang2.h", 818)),(char*)come_increment_ref_count(((char*)(right_value64=string_clone(((struct list_item$1charph*)come_null_check(it_27, "/usr/local/include/comelang2.h", 818))->item))))), come_pop_stackframe(), __exception_result_var_b62);
+                                                                                                                                                                                                                                                                                                                                                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7238:433: warning: expression result unused [-Wunused-value]
+                                    (come_push_stackframe("/usr/local/include/comelang2.h", 823),__exception_result_var_b63=list$1charph_push_back(((struct list$1charph*)come_null_check(result_26, "/usr/local/include/comelang2.h", 823)),(char*)come_increment_ref_count(((char*)(right_value65=string_clone(((struct list_item$1charph*)come_null_check(it2_28, "/usr/local/include/comelang2.h", 823))->item))))), come_pop_stackframe(), __exception_result_var_b63);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7259:429: warning: expression result unused [-Wunused-value]
+                                (come_push_stackframe("/usr/local/include/comelang2.h", 833),__exception_result_var_b64=list$1charph_push_back(((struct list$1charph*)come_null_check(result_26, "/usr/local/include/comelang2.h", 833)),(char*)come_increment_ref_count(((char*)(right_value66=string_clone(((struct list_item$1charph*)come_null_check(it2_28, "/usr/local/include/comelang2.h", 833))->item))))), come_pop_stackframe(), __exception_result_var_b64);
+                                                                                                                                                                                                                                                                                                                                                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7280:432: warning: expression result unused [-Wunused-value]
+                                    (come_push_stackframe("/usr/local/include/comelang2.h", 843),__exception_result_var_b65=list$1charph_push_back(((struct list$1charph*)come_null_check(result_26, "/usr/local/include/comelang2.h", 843)),(char*)come_increment_ref_count(((char*)(right_value67=string_clone(((struct list_item$1charph*)come_null_check(it_27, "/usr/local/include/comelang2.h", 843))->item))))), come_pop_stackframe(), __exception_result_var_b65);
+                                                                                                                                                                                                                                                                                                                                                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7404:430: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 101),__exception_result_var_b76=list$1charph_push_back(((struct list$1charph*)come_null_check(((struct sInfo*)come_null_check(info, "main.c", 101))->files, "main.c", 101)),(char*)come_increment_ref_count((come_push_stackframe("main.c", 101),__exception_result_var_b75=((char*)(right_value73=__builtin_string("."))), come_pop_stackframe(), __exception_result_var_b75))), come_pop_stackframe(), __exception_result_var_b76);
+                                                                                                                                                                                                                                                                                                                                                                                                                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7409:431: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 102),__exception_result_var_b78=list$1charph_push_back(((struct list$1charph*)come_null_check(((struct sInfo*)come_null_check(info, "main.c", 102))->files, "main.c", 102)),(char*)come_increment_ref_count((come_push_stackframe("main.c", 102),__exception_result_var_b77=((char*)(right_value74=__builtin_string(".."))), come_pop_stackframe(), __exception_result_var_b77))), come_pop_stackframe(), __exception_result_var_b78);
+                                                                                                                                                                                                                                                                                                                                                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7427:636: warning: expression result unused [-Wunused-value]
+        (come_push_stackframe("main.c", 112),__exception_result_var_b82=list$1charph_push_back(((struct list$1charph*)come_null_check(((struct sInfo*)come_null_check(info, "main.c", 112))->files, "main.c", 112)),(char*)come_increment_ref_count((come_push_stackframe("main.c", 112),__exception_result_var_b81=((char*)(right_value76=string_chomp(((char*)come_null_check((come_push_stackframe("main.c", 112),__exception_result_var_b80=((char*)(right_value75=__builtin_string(result_34))), come_pop_stackframe(), __exception_result_var_b80), "main.c", 112))))), come_pop_stackframe(), __exception_result_var_b81))), come_pop_stackframe(), __exception_result_var_b82);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7503:160: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 134),__exception_result_var_b88=chdir(((struct sInfo*)come_null_check(info, "main.c", 134))->path), come_pop_stackframe(), __exception_result_var_b88);
+                                                                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7505:169: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 135),__exception_result_var_b89=setenv("PWD",((struct sInfo*)come_null_check(info, "main.c", 135))->path,1), come_pop_stackframe(), __exception_result_var_b89);
+                                                                                                                                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7569:164: warning: expression result unused [-Wunused-value]
+                (come_push_stackframe("/usr/local/include/comelang2.h", 335),__exception_result_var_b90=memset(&result_39,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b90);
+                                                                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7588:160: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("/usr/local/include/comelang2.h", 345),__exception_result_var_b91=memset(&result_40,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b91);
+                                                                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7633:164: warning: expression result unused [-Wunused-value]
+                (come_push_stackframe("/usr/local/include/comelang2.h", 352),__exception_result_var_b94=memset(&result_42,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b94);
+                                                                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7652:160: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("/usr/local/include/comelang2.h", 363),__exception_result_var_b95=memset(&result_43,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b95);
+                                                                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7749:109: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 178),__exception_result_var_b104=werase(stdscr), come_pop_stackframe(), __exception_result_var_b104);
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7763:529: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 217),__exception_result_var_b122=list$1charph_each(((struct list$1charph*)come_null_check((come_push_stackframe("main.c", 217),__exception_result_var_b107=((struct list$1charph*)(right_value81=list$1charph_sublist(((struct list$1charph*)come_null_check(((struct sInfo*)come_null_check(info, "main.c", 217))->files, "main.c", 217)),head_49,tail_50))), come_pop_stackframe(), __exception_result_var_b107), "main.c", 217)),&__current_stack1__,(void*)method_block1_mainc), come_pop_stackframe(), __exception_result_var_b122);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7772:172: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 217),__exception_result_var_b123=wattr_on(stdscr,(unsigned int)((((unsigned int)((1))<<((10)+8)))),((void*)0)), come_pop_stackframe(), __exception_result_var_b123);
+                                                                                                                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7774:563: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 218),__exception_result_var_b125=mvprintw(maxy_47,0,"%s page %d files %d head %d tail %d press ? for manual",((struct sInfo*)come_null_check(info, "main.c", 218))->path,((struct sInfo*)come_null_check(info, "main.c", 218))->page,(come_push_stackframe("main.c", 218),__exception_result_var_b124=list$1charph_length(((struct list$1charph*)come_null_check(((struct sInfo*)come_null_check(info, "main.c", 218))->files, "main.c", 218))), come_pop_stackframe(), __exception_result_var_b124),head_49,tail_50), come_pop_stackframe(), __exception_result_var_b125);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7776:173: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 219),__exception_result_var_b126=wattr_off(stdscr,(unsigned int)((((unsigned int)((1))<<((10)+8)))),((void*)0)), come_pop_stackframe(), __exception_result_var_b126);
+                                                                                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7778:111: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 221),__exception_result_var_b127=wrefresh(stdscr), come_pop_stackframe(), __exception_result_var_b127);
+                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:7849:374: warning: expression result unused [-Wunused-value]
+                (come_push_stackframe("/usr/local/include/comelang2.h", 713),__exception_result_var_b106=list$1charph_push_back(((struct list$1charph*)come_null_check(result_51, "/usr/local/include/comelang2.h", 713)),(char*)come_increment_ref_count(((struct list_item$1charph*)come_null_check(it_52, "/usr/local/include/comelang2.h", 713))->item)), come_pop_stackframe(), __exception_result_var_b106);
+                                                                                                                                                                                                                                                                                                                                                                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8042:14: warning: address of 'stat__58' will always evaluate to 'true' [-Wpointer-bool-conversion]
+        if((&stat__58) && !__freed_obj__) { come_call_finalizer(stat_finalize,(&stat__58), (void*)0, (void*)0, 1, 0, 0, 0); }
+             ^~~~~~~~  ~~
+main.c.c:8001:180: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 198),__exception_result_var_b112=wattr_on(stdscr,(unsigned int)((((unsigned int)((1))<<((10)+8)))),((void*)0)), come_pop_stackframe(), __exception_result_var_b112);
+                                                                                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8005:348: warning: expression result unused [-Wunused-value]
+                (come_push_stackframe("main.c", 200),__exception_result_var_b114=mvprintw(y_63,x_62,"%s/",(come_push_stackframe("main.c", 200),__exception_result_var_b113=((char*)(right_value85=charp_substring(((char*)come_null_check(it, "main.c", 200)),0,cols_61-1))), come_pop_stackframe(), __exception_result_var_b113)), come_pop_stackframe(), __exception_result_var_b114);
+                                                                                                                                                                                                                                                                                                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8012:345: warning: expression result unused [-Wunused-value]
+                (come_push_stackframe("main.c", 203),__exception_result_var_b116=mvprintw(y_63,x_62,"%s",(come_push_stackframe("main.c", 203),__exception_result_var_b115=((char*)(right_value86=charp_substring(((char*)come_null_check(it, "main.c", 203)),0,cols_61))), come_pop_stackframe(), __exception_result_var_b115)), come_pop_stackframe(), __exception_result_var_b116);
+                                                                                                                                                                                                                                                                                                                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8019:181: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 205),__exception_result_var_b117=wattr_off(stdscr,(unsigned int)((((unsigned int)((1))<<((10)+8)))),((void*)0)), come_pop_stackframe(), __exception_result_var_b117);
+                                                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8025:348: warning: expression result unused [-Wunused-value]
+                (come_push_stackframe("main.c", 209),__exception_result_var_b119=mvprintw(y_63,x_62,"%s/",(come_push_stackframe("main.c", 209),__exception_result_var_b118=((char*)(right_value87=charp_substring(((char*)come_null_check(it, "main.c", 209)),0,cols_61-1))), come_pop_stackframe(), __exception_result_var_b118)), come_pop_stackframe(), __exception_result_var_b119);
+                                                                                                                                                                                                                                                                                                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8032:345: warning: expression result unused [-Wunused-value]
+                (come_push_stackframe("main.c", 212),__exception_result_var_b121=mvprintw(y_63,x_62,"%s",(come_push_stackframe("main.c", 212),__exception_result_var_b120=((char*)(right_value88=charp_substring(((char*)come_null_check(it, "main.c", 212)),0,cols_61))), come_pop_stackframe(), __exception_result_var_b120)), come_pop_stackframe(), __exception_result_var_b121);
+                                                                                                                                                                                                                                                                                                                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8275:109: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 261),__exception_result_var_b139=wclear(stdscr), come_pop_stackframe(), __exception_result_var_b139);
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8277:121: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 262),__exception_result_var_b140=mvprintw(0,0,"q --> quit"), come_pop_stackframe(), __exception_result_var_b140);
+                                                                                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8279:197: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 263),__exception_result_var_b141=mvprintw(1,0,"* --> virtual directory(type shell command, and the result of the command is file list"), come_pop_stackframe(), __exception_result_var_b141);
+                                                                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8281:172: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 264),__exception_result_var_b142=mvprintw(2,0,"ENTER --> run command(type shell command) or insert directory"), come_pop_stackframe(), __exception_result_var_b142);
+                                                                                                                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8283:139: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 265),__exception_result_var_b143=mvprintw(3,0,"~ --> move to home directory"), come_pop_stackframe(), __exception_result_var_b143);
+                                                                                                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8285:157: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 266),__exception_result_var_b144=mvprintw(4,0,"BACK SPACE ^H --> move to the parent directory"), come_pop_stackframe(), __exception_result_var_b144);
+                                                                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8287:128: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 267),__exception_result_var_b145=mvprintw(5,0,"d --> delete file"), come_pop_stackframe(), __exception_result_var_b145);
+                                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8289:126: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 268),__exception_result_var_b146=mvprintw(6,0,"c --> copy file"), come_pop_stackframe(), __exception_result_var_b146);
+                                                                                                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8291:126: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 269),__exception_result_var_b147=mvprintw(7,0,"m --> move file"), come_pop_stackframe(), __exception_result_var_b147);
+                                                                                                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8293:125: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 270),__exception_result_var_b148=mvprintw(8,0,"n --> new file"), come_pop_stackframe(), __exception_result_var_b148);
+                                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8295:128: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 271),__exception_result_var_b149=mvprintw(9,0,"x --> excute file"), come_pop_stackframe(), __exception_result_var_b149);
+                                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8297:127: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 272),__exception_result_var_b150=mvprintw(10,0,"e --> edit file"), come_pop_stackframe(), __exception_result_var_b150);
+                                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8299:139: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 273),__exception_result_var_b151=mvprintw(11,0,"LEFT h --> move cursor left"), come_pop_stackframe(), __exception_result_var_b151);
+                                                                                                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8301:141: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 274),__exception_result_var_b152=mvprintw(12,0,"RIGHT l --> move cursor right"), come_pop_stackframe(), __exception_result_var_b152);
+                                                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8303:139: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 275),__exception_result_var_b153=mvprintw(13,0,"DOWN j --> move cursor down"), come_pop_stackframe(), __exception_result_var_b153);
+                                                                                                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8305:135: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 276),__exception_result_var_b154=mvprintw(14,0,"UP k --> move cursor up"), come_pop_stackframe(), __exception_result_var_b154);
+                                                                                                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8307:162: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 277),__exception_result_var_b155=mvprintw(15,0,"CTRL-L --> reread directory and refresh the window"), come_pop_stackframe(), __exception_result_var_b155);
+                                                                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8309:149: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 278),__exception_result_var_b156=mvprintw(16,0,"/ --> move cursor with searching file"), come_pop_stackframe(), __exception_result_var_b156);
+                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8311:129: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 279),__exception_result_var_b157=mvprintw(17,0,"? --> this manual"), come_pop_stackframe(), __exception_result_var_b157);
+                                                                                                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8313:127: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 280),__exception_result_var_b158=mvprintw(18,0,": --> run shell"), come_pop_stackframe(), __exception_result_var_b158);
+                                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8315:111: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 282),__exception_result_var_b159=wrefresh(stdscr), come_pop_stackframe(), __exception_result_var_b159);
+                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8317:109: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 283),__exception_result_var_b160=wgetch(stdscr), come_pop_stackframe(), __exception_result_var_b160);
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8338:109: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 288),__exception_result_var_b161=werase(stdscr), come_pop_stackframe(), __exception_result_var_b161);
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8340:149: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 289),__exception_result_var_b162=mvprintw(0,0,"Is %s delete OK? (y,Y,ENTER/other",path), come_pop_stackframe(), __exception_result_var_b162);
+                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8342:111: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 290),__exception_result_var_b163=wrefresh(stdscr), come_pop_stackframe(), __exception_result_var_b163);
+                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8350:115: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 296),__exception_result_var_b165=unlink(path), come_pop_stackframe(), __exception_result_var_b165);
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8616:18: warning: address of 'stat__79' will always evaluate to 'true' [-Wpointer-bool-conversion]
+            if((&stat__79) && !__freed_obj__) { come_call_finalizer(stat_finalize,(&stat__79), (void*)0, (void*)0, 1, 0, 0, 0); }
+                 ^~~~~~~~  ~~
+main.c.c:8543:107: warning: expression result unused [-Wunused-value]
+        (come_push_stackframe("main.c", 318),__exception_result_var_b169=endwin(), come_pop_stackframe(), __exception_result_var_b169);
+                                                                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8545:235: warning: expression result unused [-Wunused-value]
+        (come_push_stackframe("main.c", 319),__exception_result_var_b170=list$1charph_reset(((struct list$1charph*)come_null_check(((struct sInfo*)come_null_check(info, "main.c", 319))->files, "main.c", 319))), come_pop_stackframe(), __exception_result_var_b170);
+                                                                                                                                                                                                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8549:108: warning: expression result unused [-Wunused-value]
+        (come_push_stackframe("main.c", 321),__exception_result_var_b171=initscr(), come_pop_stackframe(), __exception_result_var_b171);
+                                                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8551:115: warning: expression result unused [-Wunused-value]
+        (come_push_stackframe("main.c", 322),__exception_result_var_b172=keypad(stdscr,1), come_pop_stackframe(), __exception_result_var_b172);
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8553:104: warning: expression result unused [-Wunused-value]
+        (come_push_stackframe("main.c", 323),__exception_result_var_b173=raw(), come_pop_stackframe(), __exception_result_var_b173);
+                                                                                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8555:107: warning: expression result unused [-Wunused-value]
+        (come_push_stackframe("main.c", 324),__exception_result_var_b174=noecho(), come_pop_stackframe(), __exception_result_var_b174);
+                                                                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8585:148: warning: expression result unused [-Wunused-value]
+                (come_push_stackframe("main.c", 337),__exception_result_var_b180=change_directory(info,path_78,((void*)0)), come_pop_stackframe(), __exception_result_var_b180);
+                                                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8589:115: warning: expression result unused [-Wunused-value]
+                (come_push_stackframe("main.c", 340),__exception_result_var_b181=endwin(), come_pop_stackframe(), __exception_result_var_b181);
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8591:453: warning: expression result unused [-Wunused-value]
+                (come_push_stackframe("main.c", 341),__exception_result_var_b184=system((come_push_stackframe("main.c", 341),__exception_result_var_b183=((char*)(right_value100=xsprintf("shsh -i ' %s' -n 0 -o",(come_push_stackframe("main.c", 341),__exception_result_var_b182=((char*)(right_value99=cursor_file(info))), come_pop_stackframe(), __exception_result_var_b182)))), come_pop_stackframe(), __exception_result_var_b183)), come_pop_stackframe(), __exception_result_var_b184);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8601:126: warning: expression result unused [-Wunused-value]
+                (come_push_stackframe("main.c", 343),__exception_result_var_b185=puts("HIT ANY KEY"), come_pop_stackframe(), __exception_result_var_b185);
+                                                                                                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8603:116: warning: expression result unused [-Wunused-value]
+                (come_push_stackframe("main.c", 344),__exception_result_var_b186=initscr(), come_pop_stackframe(), __exception_result_var_b186);
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8605:123: warning: expression result unused [-Wunused-value]
+                (come_push_stackframe("main.c", 345),__exception_result_var_b187=keypad(stdscr,1), come_pop_stackframe(), __exception_result_var_b187);
+                                                                                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8607:112: warning: expression result unused [-Wunused-value]
+                (come_push_stackframe("main.c", 346),__exception_result_var_b188=raw(), come_pop_stackframe(), __exception_result_var_b188);
+                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8609:115: warning: expression result unused [-Wunused-value]
+                (come_push_stackframe("main.c", 347),__exception_result_var_b189=noecho(), come_pop_stackframe(), __exception_result_var_b189);
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8611:116: warning: expression result unused [-Wunused-value]
+                (come_push_stackframe("main.c", 348),__exception_result_var_b190=getchar(), come_pop_stackframe(), __exception_result_var_b190);
+                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8629:144: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 356),__exception_result_var_b193=change_directory(info,path_81,((void*)0)), come_pop_stackframe(), __exception_result_var_b193);
+                                                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8656:159: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 365),__exception_result_var_b197=change_directory(info,path_83,current_directory_name_82), come_pop_stackframe(), __exception_result_var_b197);
+                                                                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8667:111: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 370),__exception_result_var_b198=endwin(), come_pop_stackframe(), __exception_result_var_b198);
+                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8676:112: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 373),__exception_result_var_b200=initscr(), come_pop_stackframe(), __exception_result_var_b200);
+                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8678:119: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 374),__exception_result_var_b201=keypad(stdscr,1), come_pop_stackframe(), __exception_result_var_b201);
+                                                                                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8680:108: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 375),__exception_result_var_b202=raw(), come_pop_stackframe(), __exception_result_var_b202);
+                                                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8682:111: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 376),__exception_result_var_b203=noecho(), come_pop_stackframe(), __exception_result_var_b203);
+                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8691:111: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 381),__exception_result_var_b204=endwin(), come_pop_stackframe(), __exception_result_var_b204);
+                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8693:451: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 382),__exception_result_var_b207=system((come_push_stackframe("main.c", 382),__exception_result_var_b206=((char*)(right_value107=xsprintf("shsh -i 'cp -r %s ' -o",(come_push_stackframe("main.c", 382),__exception_result_var_b205=((char*)(right_value106=cursor_file(info))), come_pop_stackframe(), __exception_result_var_b205)))), come_pop_stackframe(), __exception_result_var_b206)), come_pop_stackframe(), __exception_result_var_b207);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8703:122: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 384),__exception_result_var_b208=puts("HIT ANY KEY"), come_pop_stackframe(), __exception_result_var_b208);
+                                                                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8705:112: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 385),__exception_result_var_b209=initscr(), come_pop_stackframe(), __exception_result_var_b209);
+                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8707:119: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 386),__exception_result_var_b210=keypad(stdscr,1), come_pop_stackframe(), __exception_result_var_b210);
+                                                                                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8709:108: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 387),__exception_result_var_b211=raw(), come_pop_stackframe(), __exception_result_var_b211);
+                                                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8711:111: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 388),__exception_result_var_b212=noecho(), come_pop_stackframe(), __exception_result_var_b212);
+                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8713:112: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 389),__exception_result_var_b213=getchar(), come_pop_stackframe(), __exception_result_var_b213);
+                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8722:111: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 394),__exception_result_var_b214=endwin(), come_pop_stackframe(), __exception_result_var_b214);
+                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8724:448: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 395),__exception_result_var_b217=system((come_push_stackframe("main.c", 395),__exception_result_var_b216=((char*)(right_value109=xsprintf("shsh -i 'mv %s ' -o",(come_push_stackframe("main.c", 395),__exception_result_var_b215=((char*)(right_value108=cursor_file(info))), come_pop_stackframe(), __exception_result_var_b215)))), come_pop_stackframe(), __exception_result_var_b216)), come_pop_stackframe(), __exception_result_var_b217);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8734:122: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 397),__exception_result_var_b218=puts("HIT ANY KEY"), come_pop_stackframe(), __exception_result_var_b218);
+                                                                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8736:112: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 398),__exception_result_var_b219=initscr(), come_pop_stackframe(), __exception_result_var_b219);
+                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8738:119: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 399),__exception_result_var_b220=keypad(stdscr,1), come_pop_stackframe(), __exception_result_var_b220);
+                                                                                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8740:108: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 400),__exception_result_var_b221=raw(), come_pop_stackframe(), __exception_result_var_b221);
+                                                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8742:111: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 401),__exception_result_var_b222=noecho(), come_pop_stackframe(), __exception_result_var_b222);
+                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8744:112: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 402),__exception_result_var_b223=getchar(), come_pop_stackframe(), __exception_result_var_b223);
+                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8753:111: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 407),__exception_result_var_b224=endwin(), come_pop_stackframe(), __exception_result_var_b224);
+                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8755:283: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 408),__exception_result_var_b226=system((come_push_stackframe("main.c", 408),__exception_result_var_b225=((char*)(right_value110=xsprintf("shsh -i 'touch '"))), come_pop_stackframe(), __exception_result_var_b225)), come_pop_stackframe(), __exception_result_var_b226);
+                                                                                                                                                                                                                                                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8762:112: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 410),__exception_result_var_b227=initscr(), come_pop_stackframe(), __exception_result_var_b227);
+                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8764:119: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 411),__exception_result_var_b228=keypad(stdscr,1), come_pop_stackframe(), __exception_result_var_b228);
+                                                                                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8766:108: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 412),__exception_result_var_b229=raw(), come_pop_stackframe(), __exception_result_var_b229);
+                                                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8768:111: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 413),__exception_result_var_b230=noecho(), come_pop_stackframe(), __exception_result_var_b230);
+                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8777:111: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 418),__exception_result_var_b231=endwin(), come_pop_stackframe(), __exception_result_var_b231);
+                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8779:452: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 419),__exception_result_var_b234=system((come_push_stackframe("main.c", 419),__exception_result_var_b233=((char*)(right_value112=xsprintf("shsh -i ' ./%s' -n 0 -o",(come_push_stackframe("main.c", 419),__exception_result_var_b232=((char*)(right_value111=cursor_file(info))), come_pop_stackframe(), __exception_result_var_b232)))), come_pop_stackframe(), __exception_result_var_b233)), come_pop_stackframe(), __exception_result_var_b234);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8789:122: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 421),__exception_result_var_b235=puts("HIT ANY KEY"), come_pop_stackframe(), __exception_result_var_b235);
+                                                                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8791:112: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 422),__exception_result_var_b236=initscr(), come_pop_stackframe(), __exception_result_var_b236);
+                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8793:119: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 423),__exception_result_var_b237=keypad(stdscr,1), come_pop_stackframe(), __exception_result_var_b237);
+                                                                                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8795:108: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 424),__exception_result_var_b238=raw(), come_pop_stackframe(), __exception_result_var_b238);
+                                                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8797:111: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 425),__exception_result_var_b239=noecho(), come_pop_stackframe(), __exception_result_var_b239);
+                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8799:112: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 426),__exception_result_var_b240=getchar(), come_pop_stackframe(), __exception_result_var_b240);
+                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8808:111: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 431),__exception_result_var_b241=endwin(), come_pop_stackframe(), __exception_result_var_b241);
+                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8810:435: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 432),__exception_result_var_b244=system((come_push_stackframe("main.c", 432),__exception_result_var_b243=((char*)(right_value114=xsprintf("vin %s",(come_push_stackframe("main.c", 432),__exception_result_var_b242=((char*)(right_value113=cursor_file(info))), come_pop_stackframe(), __exception_result_var_b242)))), come_pop_stackframe(), __exception_result_var_b243)), come_pop_stackframe(), __exception_result_var_b244);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8818:112: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 433),__exception_result_var_b245=initscr(), come_pop_stackframe(), __exception_result_var_b245);
+                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8820:119: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 434),__exception_result_var_b246=keypad(stdscr,1), come_pop_stackframe(), __exception_result_var_b246);
+                                                                                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8822:108: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 435),__exception_result_var_b247=raw(), come_pop_stackframe(), __exception_result_var_b247);
+                                                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8824:111: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 436),__exception_result_var_b248=noecho(), come_pop_stackframe(), __exception_result_var_b248);
+                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8872:113: warning: expression result unused [-Wunused-value]
+        (come_push_stackframe("main.c", 466),__exception_result_var_b250=wclear(stdscr), come_pop_stackframe(), __exception_result_var_b250);
+                                                                                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8878:115: warning: expression result unused [-Wunused-value]
+        (come_push_stackframe("main.c", 469),__exception_result_var_b251=wrefresh(stdscr), come_pop_stackframe(), __exception_result_var_b251);
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8888:115: warning: expression result unused [-Wunused-value]
+        (come_push_stackframe("main.c", 475),__exception_result_var_b252=wrefresh(stdscr), come_pop_stackframe(), __exception_result_var_b252);
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8901:111: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 483),__exception_result_var_b253=endwin(), come_pop_stackframe(), __exception_result_var_b253);
+                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8903:117: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 484),__exception_result_var_b254=system("shsh"), come_pop_stackframe(), __exception_result_var_b254);
+                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8907:122: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 486),__exception_result_var_b255=puts("HIT ANY KEY"), come_pop_stackframe(), __exception_result_var_b255);
+                                                                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8909:112: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 487),__exception_result_var_b256=initscr(), come_pop_stackframe(), __exception_result_var_b256);
+                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8911:119: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 488),__exception_result_var_b257=keypad(stdscr,1), come_pop_stackframe(), __exception_result_var_b257);
+                                                                                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8913:108: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 489),__exception_result_var_b258=raw(), come_pop_stackframe(), __exception_result_var_b258);
+                                                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8915:111: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 490),__exception_result_var_b259=noecho(), come_pop_stackframe(), __exception_result_var_b259);
+                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:8917:112: warning: expression result unused [-Wunused-value]
+            (come_push_stackframe("main.c", 491),__exception_result_var_b260=getchar(), come_pop_stackframe(), __exception_result_var_b260);
+                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:9047:10: warning: address of 'info_84' will always evaluate to 'true' [-Wpointer-bool-conversion]
+    if((&info_84) && !__freed_obj__) { come_call_finalizer(sInfo_finalize,(&info_84), (void*)0, (void*)0, 1, 0, 0, 0); }
+         ^~~~~~~  ~~
+main.c.c:9052:10: warning: address of 'info_84' will always evaluate to 'true' [-Wpointer-bool-conversion]
+    if((&info_84) && !__freed_obj__) { come_call_finalizer(sInfo_finalize,(&info_84), (void*)0, (void*)0, 1, 0, 0, 0); }
+         ^~~~~~~  ~~
+main.c.c:9012:110: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 513),__exception_result_var_b261=setlocale(6,""), come_pop_stackframe(), __exception_result_var_b261);
+                                                                                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:9015:134: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 517),__exception_result_var_b262=memset(&info_84,0,sizeof(struct sInfo)), come_pop_stackframe(), __exception_result_var_b262);
+                                                                                                                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:9028:104: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 525),__exception_result_var_b265=initscr(), come_pop_stackframe(), __exception_result_var_b265);
+                                                                                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:9030:111: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 526),__exception_result_var_b266=keypad(stdscr,1), come_pop_stackframe(), __exception_result_var_b266);
+                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:9032:100: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 527),__exception_result_var_b267=raw(), come_pop_stackframe(), __exception_result_var_b267);
+                                                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:9034:103: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 528),__exception_result_var_b268=noecho(), come_pop_stackframe(), __exception_result_var_b268);
+                                                                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c.c:9044:103: warning: expression result unused [-Wunused-value]
+    (come_push_stackframe("main.c", 535),__exception_result_var_b269=endwin(), come_pop_stackframe(), __exception_result_var_b269);
+                                                                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+246 warnings generated.

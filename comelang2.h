@@ -71,7 +71,7 @@ impl optional<T, T2>
     {
         if(!self.v2) {
             puts("Exception: at");
-            stackframe();
+            exception_stackframe();
             puts("abort.");
             exit(2);
         }
@@ -87,6 +87,7 @@ impl optional<T, T2>
 void come_push_stackframe(char* sname, int sline);
 void come_pop_stackframe();
 void stackframe();
+void exception_stackframe();
 
 void* come_null_check(void* mem, char* sname, int sline);
 

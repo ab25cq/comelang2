@@ -59,7 +59,7 @@ void come_save_stackframe(char* sname, int sline)
     }
 }
 
-void come_show_stackframe()
+void exception_stackframe()
 {
     printf("%s", gComeStackFrameBuffer.to_string());
 }
