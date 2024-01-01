@@ -1098,42 +1098,16 @@ void free_objects_on_break(sInfo* info)
 
 string append_exception_value(char* c_value, sType* type, sInfo* info)
 {
-    if(info.without_semicolon) {
-        if(type->mClass->mName === "void" && type->mPointerNum == 0) {
-            if(!info.come_fun.mResultType->mException && !gComeDebug) {
-                return s"(come_clear_stackframe(), come_push_stackframe(\"\{info.sname}\", \{info.sline}),\{c_value}, come_pop_stackframe())";
-            }
-            else {
-                return s"(come_push_stackframe(\"\{info.sname}\", \{info.sline}),\{c_value},come_pop_stackframe())";
-            }
-        }
-        else {
-            if(!info.come_fun.mResultType->mException && !gComeDebug) {
-                static int n = 0;
-                ++n;
-                
-                string var_name = xsprintf("__exception_result_var_a%d", n);
-                add_come_code_at_function_head(info, "%s;\n", make_define_var(type, var_name));
-                return s"(come_clear_stackframe(), come_push_stackframe(\"\{info.sname}\", \{info.sline}),\{var_name}=\{c_value}, come_pop_stackframe(), \{var_name})";
-            }
-            else {
-                static int n = 0;
-                ++n;
-                
-                string var_name = xsprintf("__exception_result_var_b%d", n);
-                add_come_code_at_function_head(info, "%s;\n", make_define_var(type, var_name));
-                return s"(come_push_stackframe(\"\{info.sname}\", \{info.sline}),\{var_name}=\{c_value}, come_pop_stackframe(), \{var_name})";
-            }
-        }
+    if(type->mClass->mName === "void" && type->mPointerNum == 0) {
+        return s"(come_push_stackframe(\"\{info.sname}\", \{info.sline}),\{c_value},come_pop_stackframe())";
     }
     else {
-        if(!info.come_fun.mResultType->mException && !gComeDebug) {
-            add_come_code(info, "come_clear_stackframe();\n");
-        }
-        string result = s"(come_push_stackframe(\"\{info.sname}\", \{info.sline}),\{c_value})";
-        add_come_last_code2(info, "come_pop_stackframe();\n");
+        static int n = 0;
+        ++n;
         
-        return result;
+        string var_name = xsprintf("__exception_result_var_b%d", n);
+        add_come_code_at_function_head(info, "%s;\n", make_define_var(type, var_name));
+        return s"(come_push_stackframe(\"\{info.sname}\", \{info.sline}),\{var_name}=\{c_value}, come_pop_stackframe(), \{var_name})";
     }
     
     return string(c_value);

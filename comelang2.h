@@ -71,7 +71,7 @@ impl optional<T, T2>
     {
         if(!self.v2) {
             puts("Exception: at");
-            come_show_stackframe();
+            stackframe();
             puts("abort.");
             exit(2);
         }
@@ -86,8 +86,6 @@ impl optional<T, T2>
 
 void come_push_stackframe(char* sname, int sline);
 void come_pop_stackframe();
-void come_show_stackframe();
-string come_get_stackframe();
 void stackframe();
 
 void* come_null_check(void* mem, char* sname, int sline);
@@ -102,11 +100,13 @@ int int::value(int self, void* parent, void (*block)(void* parent));
 int int::except(int self, void* parent, void (*block)(void* parent));
 bool bool::except(bool self, void* parent, void (*block)(void* parent));
 
-static inline void die(char* msg)
+static inline bool die(char* msg)
 {
     perror(msg);
     stackframe();
     exit(4);
+    
+    return false;
 }
 
 void xassert(char* msg, bool test);

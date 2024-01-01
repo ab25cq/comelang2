@@ -1609,10 +1609,6 @@ void come_push_stackframe(char* sname, int sline);
 
 void come_pop_stackframe();
 
-void come_show_stackframe();
-
-char* come_get_stackframe();
-
 void stackframe();
 
 void* come_null_check(void* mem, char* sname, int sline);
@@ -2478,22 +2474,24 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
     return __result6__;
     __freed_obj__ = 0;
 }
-static inline void die(char* msg){
+static inline _Bool die(char* msg){
 char* __caller_sname_stack__;
 int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
+_Bool __result7__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-    (come_push_stackframe("./comelang2.h", 107),perror(msg));
-    come_pop_stackframe();
+    (come_push_stackframe("./comelang2.h", 105),perror(msg),come_pop_stackframe());
     __freed_obj__ = 0;
-    (come_push_stackframe("./comelang2.h", 108),stackframe());
-    come_pop_stackframe();
+    (come_push_stackframe("./comelang2.h", 106),stackframe(),come_pop_stackframe());
     __freed_obj__ = 0;
-    (come_push_stackframe("./comelang2.h", 109),exit(4));
-    come_pop_stackframe();
+    (come_push_stackframe("./comelang2.h", 107),exit(4),come_pop_stackframe());
+    __freed_obj__ = 0;
+    __result7__ = (_Bool)0;
+    __freed_obj__ = 0;
+    return __result7__;
     __freed_obj__ = 0;
 }
 static inline struct smart_pointer$1char* buffer_to_pointer(struct buffer* self){
@@ -2506,7 +2504,7 @@ void* right_value0;
 struct smart_pointer$1char* result_0;
 void* right_value1;
 struct buffer* __dec_obj1;
-struct smart_pointer$1char* __result7__;
+struct smart_pointer$1char* __result8__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value0, 0, sizeof(void*));
@@ -2526,10 +2524,10 @@ memset(&right_value1, 0, sizeof(void*));
     __freed_obj__ = 0;
     ((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 1995))->p=((struct buffer*)come_null_check(((struct smart_pointer$1char*)come_null_check(result_0, "./comelang2.h", 1995))->memory, "./comelang2.h", 1995))->buf;
     __freed_obj__ = 0;
-    __result7__ = __result_obj__ = result_0;
+    __result8__ = __result_obj__ = result_0;
     if(result_0 && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,result_0, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    return __result7__;
+    return __result8__;
     __freed_obj__ = 0;
     if(result_0 && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,result_0, (void*)0, (void*)0, 0, 0, 0, 0); }
 }
@@ -2543,7 +2541,7 @@ void* right_value2;
 struct smart_pointer$1char* result_1;
 void* right_value3;
 struct buffer* __dec_obj2;
-struct smart_pointer$1char* __result8__;
+struct smart_pointer$1char* __result9__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value2, 0, sizeof(void*));
@@ -2563,10 +2561,10 @@ memset(&right_value3, 0, sizeof(void*));
     __freed_obj__ = 0;
     ((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2005))->p=(char*)((struct buffer*)come_null_check(((struct smart_pointer$1char*)come_null_check(result_1, "./comelang2.h", 2005))->memory, "./comelang2.h", 2005))->buf;
     __freed_obj__ = 0;
-    __result8__ = __result_obj__ = result_1;
+    __result9__ = __result_obj__ = result_1;
     if(result_1 && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,result_1, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    return __result8__;
+    return __result9__;
     __freed_obj__ = 0;
     if(result_1 && !__freed_obj__) { come_call_finalizer(smart_pointer$1charp_finalize,result_1, (void*)0, (void*)0, 0, 0, 0, 0); }
 }
@@ -2580,7 +2578,7 @@ void* right_value4;
 struct smart_pointer$1short* result_2;
 void* right_value5;
 struct buffer* __dec_obj3;
-struct smart_pointer$1short* __result9__;
+struct smart_pointer$1short* __result10__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value4, 0, sizeof(void*));
@@ -2600,10 +2598,10 @@ memset(&right_value5, 0, sizeof(void*));
     __freed_obj__ = 0;
     ((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2015))->p=(short short*)((struct buffer*)come_null_check(((struct smart_pointer$1short*)come_null_check(result_2, "./comelang2.h", 2015))->memory, "./comelang2.h", 2015))->buf;
     __freed_obj__ = 0;
-    __result9__ = __result_obj__ = result_2;
+    __result10__ = __result_obj__ = result_2;
     if(result_2 && !__freed_obj__) { come_call_finalizer(smart_pointer$1shortp_finalize,result_2, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    return __result9__;
+    return __result10__;
     __freed_obj__ = 0;
     if(result_2 && !__freed_obj__) { come_call_finalizer(smart_pointer$1shortp_finalize,result_2, (void*)0, (void*)0, 0, 0, 0, 0); }
 }
@@ -2617,7 +2615,7 @@ void* right_value6;
 struct smart_pointer$1int* result_3;
 void* right_value7;
 struct buffer* __dec_obj4;
-struct smart_pointer$1int* __result10__;
+struct smart_pointer$1int* __result11__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value6, 0, sizeof(void*));
@@ -2637,10 +2635,10 @@ memset(&right_value7, 0, sizeof(void*));
     __freed_obj__ = 0;
     ((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2025))->p=(int*)((struct buffer*)come_null_check(((struct smart_pointer$1int*)come_null_check(result_3, "./comelang2.h", 2025))->memory, "./comelang2.h", 2025))->buf;
     __freed_obj__ = 0;
-    __result10__ = __result_obj__ = result_3;
+    __result11__ = __result_obj__ = result_3;
     if(result_3 && !__freed_obj__) { come_call_finalizer(smart_pointer$1intp_finalize,result_3, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    return __result10__;
+    return __result11__;
     __freed_obj__ = 0;
     if(result_3 && !__freed_obj__) { come_call_finalizer(smart_pointer$1intp_finalize,result_3, (void*)0, (void*)0, 0, 0, 0, 0); }
 }
@@ -2654,7 +2652,7 @@ void* right_value8;
 struct smart_pointer$1long* result_4;
 void* right_value9;
 struct buffer* __dec_obj5;
-struct smart_pointer$1long* __result11__;
+struct smart_pointer$1long* __result12__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value8, 0, sizeof(void*));
@@ -2674,10 +2672,10 @@ memset(&right_value9, 0, sizeof(void*));
     __freed_obj__ = 0;
     ((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2035))->p=(long*)((struct buffer*)come_null_check(((struct smart_pointer$1long*)come_null_check(result_4, "./comelang2.h", 2035))->memory, "./comelang2.h", 2035))->buf;
     __freed_obj__ = 0;
-    __result11__ = __result_obj__ = result_4;
+    __result12__ = __result_obj__ = result_4;
     if(result_4 && !__freed_obj__) { come_call_finalizer(smart_pointer$1longp_finalize,result_4, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    return __result11__;
+    return __result12__;
     __freed_obj__ = 0;
     if(result_4 && !__freed_obj__) { come_call_finalizer(smart_pointer$1longp_finalize,result_4, (void*)0, (void*)0, 0, 0, 0, 0); }
 }
@@ -2770,24 +2768,25 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 void* right_value10;
+char* __exception_result_var_b1;
 char* __dec_obj6;
-struct sCurrentNode* __result12__;
+struct sCurrentNode* __result13__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value10, 0, sizeof(void*));
     ((struct sCurrentNode*)come_null_check(self, "20method.c", 10))->sline=((struct sInfo*)come_null_check(info, "20method.c", 10))->sline;
     __freed_obj__ = 0;
     __dec_obj6=((struct sCurrentNode*)come_null_check(self, "20method.c", 11))->sname;
-    ((struct sCurrentNode*)come_null_check(self, "20method.c", 11))->sname=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 11),((char*)(right_value10=__builtin_string(((struct sInfo*)come_null_check(info, "20method.c", 11))->sname)))));
+    ((struct sCurrentNode*)come_null_check(self, "20method.c", 11))->sname=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 11),__exception_result_var_b1=((char*)(right_value10=__builtin_string(((struct sInfo*)come_null_check(info, "20method.c", 11))->sname))), come_pop_stackframe(), __exception_result_var_b1));
     if(__dec_obj6) { __dec_obj6 = come_decrement_ref_count(__dec_obj6, (void*)0, (void*)0, 0,0,0); }
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value10);
     if(right_value10 && right_value10 != __result_obj__ && !__freed_obj__) { right_value10 = come_decrement_ref_count(right_value10, (void*)0, (void*)0, 1, 0, 0); }
     __right_value_freed_obj[0] = right_value10;
     __freed_obj__ = 0;
-    __result12__ = __result_obj__ = self;
+    __result13__ = __result_obj__ = self;
     if(self && !__freed_obj__) { come_call_finalizer(sCurrentNode_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    return __result12__;
+    return __result13__;
     __freed_obj__ = 0;
     if(self && !__freed_obj__) { come_call_finalizer(sCurrentNode_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
 }
@@ -2798,12 +2797,12 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-int __result13__;
+int __result14__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-    __result13__ = ((struct sCurrentNode*)come_null_check(self, "20method.c", 18))->sline;
+    __result14__ = ((struct sCurrentNode*)come_null_check(self, "20method.c", 18))->sline;
     __freed_obj__ = 0;
-    return __result13__;
+    return __result14__;
     __freed_obj__ = 0;
 }
 
@@ -2814,17 +2813,17 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 void* right_value11;
-char* __result14__;
+char* __exception_result_var_b2;
+char* __result15__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value11, 0, sizeof(void*));
-    __result14__ = __result_obj__ = (come_push_stackframe("20method.c", 23),((char*)(right_value11=__builtin_string(((struct sCurrentNode*)come_null_check(self, "20method.c", 23))->sname))));
-    come_pop_stackframe();
+    __result15__ = __result_obj__ = (come_push_stackframe("20method.c", 23),__exception_result_var_b2=((char*)(right_value11=__builtin_string(((struct sCurrentNode*)come_null_check(self, "20method.c", 23))->sname))), come_pop_stackframe(), __exception_result_var_b2);
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value11);
     if(right_value11 && right_value11 != __result_obj__ && !__freed_obj__) { right_value11 = come_decrement_ref_count(right_value11, (void*)0, (void*)0, 1, 0, 0); }
     __right_value_freed_obj[0] = right_value11;
     __freed_obj__ = 0;
-    return __result14__;
+    return __result15__;
     __freed_obj__ = 0;
 }
 
@@ -2834,12 +2833,12 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-_Bool __result15__;
+_Bool __result16__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-    __result15__ = (_Bool)0;
+    __result16__ = (_Bool)0;
     __freed_obj__ = 0;
-    return __result15__;
+    return __result16__;
     __freed_obj__ = 0;
 }
 
@@ -2850,17 +2849,17 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 void* right_value12;
-char* __result16__;
+char* __exception_result_var_b3;
+char* __result17__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value12, 0, sizeof(void*));
-    __result16__ = __result_obj__ = (come_push_stackframe("20method.c", 33),((char*)(right_value12=__builtin_string("sCurrentNode"))));
-    come_pop_stackframe();
+    __result17__ = __result_obj__ = (come_push_stackframe("20method.c", 33),__exception_result_var_b3=((char*)(right_value12=__builtin_string("sCurrentNode"))), come_pop_stackframe(), __exception_result_var_b3);
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value12);
     if(right_value12 && right_value12 != __result_obj__ && !__freed_obj__) { right_value12 = come_decrement_ref_count(right_value12, (void*)0, (void*)0, 1, 0, 0); }
     __right_value_freed_obj[0] = right_value12;
     __freed_obj__ = 0;
-    return __result16__;
+    return __result17__;
     __freed_obj__ = 0;
 }
 
@@ -2871,72 +2870,88 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 void* right_value13;
+char* __exception_result_var_b4;
 char* class_name_5;
 void* right_value14;
 void* right_value15;
+struct sClass* __exception_result_var_b5;
 struct sClass* current_stack_6;
 void* right_value16;
 void* right_value17;
 void* right_value18;
+struct sType* __exception_result_var_b6;
 void* right_value19;
 void* right_value60;
 struct tuple2$2charphsTypeph* result_kind_35;
 void* right_value67;
+struct list$1tuple2$2charphsTypephph* __exception_result_var_b13;
 void* right_value68;
 void* right_value69;
 void* right_value70;
+struct sType* __exception_result_var_b14;
 void* right_value71;
 void* right_value72;
 struct tuple2$2charphsTypeph* return_value_40;
 void* right_value73;
+struct list$1tuple2$2charphsTypephph* __exception_result_var_b15;
 struct sVarTable* vtable_41;
 _Bool _while_condtional8;
 struct map$2charphsVarph* o2_saved_42;
+char* __exception_result_var_b18;
 char* it_45;
-_Bool __exception_result_var_b1;
+_Bool __exception_result_var_b19;
 _Bool _for_condtionalA1;
+char* __exception_result_var_b22;
 char* key_48;
 void* right_value83;
+struct optional$2sVarpbool* __exception_result_var_b27;
 struct sVar* value_54;
 void* right_value84;
 struct sType* type2_55;
 void* right_value85;
+char* __exception_result_var_b29;
 void* right_value86;
 void* right_value87;
 struct tuple2$2charphsTypeph* item_56;
 _Bool _if_conditional119;
-long int __exception_result_var_b3;
-int __exception_result_var_b4;
+long int __exception_result_var_b30;
+int __exception_result_var_b31;
 _Bool _if_conditional120;
-long int __exception_result_var_b5;
-int __exception_result_var_b6;
+long int __exception_result_var_b32;
+int __exception_result_var_b33;
 _Bool _if_conditional121;
-long int __exception_result_var_b7;
-int __exception_result_var_b8;
+long int __exception_result_var_b34;
+int __exception_result_var_b35;
 _Bool _if_conditional122;
-_Bool __exception_result_var_b9;
-_Bool __exception_result_var_b10;
+_Bool __exception_result_var_b36;
+_Bool __exception_result_var_b37;
 _Bool _if_conditional123;
-int __exception_result_var_b11;
+int __exception_result_var_b38;
 _Bool _if_conditional124;
 void* right_value88;
 struct sType* type3_57;
+struct list$1sNodeph* __exception_result_var_b39;
 void* right_value89;
+char* __exception_result_var_b40;
 void* right_value90;
 void* right_value91;
 struct tuple2$2charphsTypeph* item2_60;
 void* right_value92;
+struct list$1tuple2$2charphsTypephph* __exception_result_var_b41;
 void* right_value93;
+struct list$1tuple2$2charphsTypephph* __exception_result_var_b42;
+struct map$2charphsClassph* __exception_result_var_b74;
 static int num_current_stack_109=0;
 _Bool _while_condtional20;
 struct map$2charphsVarph* o2_saved_110;
-char* __exception_result_var_b18;
+char* __exception_result_var_b75;
 char* it_111;
-_Bool __exception_result_var_b19;
+_Bool __exception_result_var_b76;
 _Bool _for_condtionalA6;
-char* __exception_result_var_b20;
+char* __exception_result_var_b77;
 char* key_112;
 void* right_value106;
+struct optional$2sVarpbool* __exception_result_var_b78;
 struct sVar* value_113;
 void* right_value107;
 struct sType* type2_114;
@@ -2944,28 +2959,31 @@ void* right_value108;
 void* right_value109;
 struct tuple2$2charphsTypeph* item_115;
 _Bool _if_conditional180;
-long int __exception_result_var_b21;
-int __exception_result_var_b22;
+long int __exception_result_var_b79;
+int __exception_result_var_b80;
 _Bool _if_conditional181;
-long int __exception_result_var_b23;
-int __exception_result_var_b24;
+long int __exception_result_var_b81;
+int __exception_result_var_b82;
 _Bool _if_conditional182;
-long int __exception_result_var_b25;
-int __exception_result_var_b26;
+long int __exception_result_var_b83;
+int __exception_result_var_b84;
 _Bool _if_conditional183;
-_Bool __exception_result_var_b27;
-_Bool __exception_result_var_b28;
+_Bool __exception_result_var_b85;
+_Bool __exception_result_var_b86;
 _Bool _if_conditional184;
-_Bool __exception_result_var_b29;
+_Bool __exception_result_var_b87;
 _Bool _if_conditional185;
 void* right_value110;
 struct CVALUE* come_value_116;
 void* right_value111;
+char* __exception_result_var_b88;
 char* __dec_obj38;
 void* right_value112;
 void* right_value113;
+struct sType* __exception_result_var_b89;
 struct sType* __dec_obj39;
-_Bool __result86__;
+struct list$1CVALUEph* __exception_result_var_b90;
+_Bool __result87__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value13, 0, sizeof(void*));
@@ -3024,14 +3042,12 @@ memset(&right_value112, 0, sizeof(void*));
 memset(&right_value113, 0, sizeof(void*));
     ((struct sInfo*)come_null_check(info, "20method.c", 38))->current_stack_num++;
     __freed_obj__ = 0;
-    class_name_5=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 39),((char*)(right_value13=xsprintf("__current_stack%d__",((struct sInfo*)come_null_check(info, "20method.c", 39))->current_stack_num)))));
-    come_pop_stackframe();
+    class_name_5=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 39),__exception_result_var_b4=((char*)(right_value13=xsprintf("__current_stack%d__",((struct sInfo*)come_null_check(info, "20method.c", 39))->current_stack_num))), come_pop_stackframe(), __exception_result_var_b4));
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value13);
     if(right_value13 && right_value13 != __result_obj__ && !__freed_obj__) { right_value13 = come_decrement_ref_count(right_value13, (void*)0, (void*)0, 1, 0, 0); }
     __right_value_freed_obj[0] = right_value13;
     __freed_obj__ = 0;
-    current_stack_6=(struct sClass*)come_increment_ref_count((come_push_stackframe("20method.c", 40),((struct sClass*)(right_value15=sClass_initialize((struct sClass*)come_increment_ref_count(((struct sClass*)(right_value14=(struct sClass*)come_calloc(1, sizeof(struct sClass)*(1), "20method.c", 40)))),class_name_5,(_Bool)0,(_Bool)0,(_Bool)0,(_Bool)0,(_Bool)0,(_Bool)1,(_Bool)0,-1,-1,(_Bool)0,info)))));
-    come_pop_stackframe();
+    current_stack_6=(struct sClass*)come_increment_ref_count((come_push_stackframe("20method.c", 40),__exception_result_var_b5=((struct sClass*)(right_value15=sClass_initialize((struct sClass*)come_increment_ref_count(((struct sClass*)(right_value14=(struct sClass*)come_calloc(1, sizeof(struct sClass)*(1), "20method.c", 40)))),class_name_5,(_Bool)0,(_Bool)0,(_Bool)0,(_Bool)0,(_Bool)0,(_Bool)1,(_Bool)0,-1,-1,(_Bool)0,info))), come_pop_stackframe(), __exception_result_var_b5));
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value14);
     if(right_value14 && right_value14 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sClass_finalize,right_value14, (void*)0, (void*)0, 0, 1, 0, 0); }
     __right_value_freed_obj[1] = right_value14;
@@ -3039,8 +3055,7 @@ memset(&right_value113, 0, sizeof(void*));
     if(right_value15 && right_value15 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sClass_finalize,right_value15, (void*)0, (void*)0, 0, 1, 0, 0); }
     __right_value_freed_obj[2] = right_value15;
     __freed_obj__ = 0;
-    result_kind_35=(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value60=tuple2$2charphsTypeph_initialize((struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value19=(struct tuple2$2charphsTypeph*)come_calloc(1, sizeof(struct tuple2$2charphsTypeph)*(1), "20method.c", 42)))),(char*)come_increment_ref_count(((char*)(right_value16=xsprintf("__method_block_result_kind__")))),(struct sType*)come_increment_ref_count((come_push_stackframe("20method.c", 42),((struct sType*)(right_value18=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value17=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "20method.c", 42)))),"int",(_Bool)0,info)))))))));
-    come_pop_stackframe();
+    result_kind_35=(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value60=tuple2$2charphsTypeph_initialize((struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value19=(struct tuple2$2charphsTypeph*)come_calloc(1, sizeof(struct tuple2$2charphsTypeph)*(1), "20method.c", 42)))),(char*)come_increment_ref_count(((char*)(right_value16=xsprintf("__method_block_result_kind__")))),(struct sType*)come_increment_ref_count((come_push_stackframe("20method.c", 42),__exception_result_var_b6=((struct sType*)(right_value18=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value17=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "20method.c", 42)))),"int",(_Bool)0,info))), come_pop_stackframe(), __exception_result_var_b6))))));
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value16);
     if(right_value16 && right_value16 != __result_obj__ && !__freed_obj__) { right_value16 = come_decrement_ref_count(right_value16, (void*)0, (void*)0, 1, 0, 0); }
     __right_value_freed_obj[3] = right_value16;
@@ -3057,13 +3072,12 @@ memset(&right_value113, 0, sizeof(void*));
     if(right_value60 && right_value60 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,right_value60, (void*)0, (void*)0, 0, 1, 0, 0); }
     __right_value_freed_obj[7] = right_value60;
     __freed_obj__ = 0;
-    (come_push_stackframe("20method.c", 43),list$1tuple2$2charphsTypephph_push_back(((struct list$1tuple2$2charphsTypephph*)come_null_check(((struct sClass*)come_null_check(current_stack_6, "20method.c", 43))->mFields, "20method.c", 43)),(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value67=tuple2$2charphsTypephp_clone(result_kind_35))))));
-    come_pop_stackframe();
+    (come_push_stackframe("20method.c", 43),__exception_result_var_b13=list$1tuple2$2charphsTypephph_push_back(((struct list$1tuple2$2charphsTypephph*)come_null_check(((struct sClass*)come_null_check(current_stack_6, "20method.c", 43))->mFields, "20method.c", 43)),(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value67=tuple2$2charphsTypephp_clone(result_kind_35))))), come_pop_stackframe(), __exception_result_var_b13);
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 8, right_value67);
     if(right_value67 && right_value67 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,right_value67, (void*)0, (void*)0, 0, 1, 0, 0); }
     __right_value_freed_obj[8] = right_value67;
     __freed_obj__ = 0;
-    return_value_40=(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value72=tuple2$2charphsTypeph_initialize((struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value71=(struct tuple2$2charphsTypeph*)come_calloc(1, sizeof(struct tuple2$2charphsTypeph)*(1), "20method.c", 45)))),(char*)come_increment_ref_count(((char*)(right_value68=xsprintf("__method_block_return_value__")))),(struct sType*)come_increment_ref_count((come_push_stackframe("20method.c", 45),((struct sType*)(right_value70=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value69=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "20method.c", 45)))),"void*",(_Bool)0,info)))))))));
+    return_value_40=(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value72=tuple2$2charphsTypeph_initialize((struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value71=(struct tuple2$2charphsTypeph*)come_calloc(1, sizeof(struct tuple2$2charphsTypeph)*(1), "20method.c", 45)))),(char*)come_increment_ref_count(((char*)(right_value68=xsprintf("__method_block_return_value__")))),(struct sType*)come_increment_ref_count((come_push_stackframe("20method.c", 45),__exception_result_var_b14=((struct sType*)(right_value70=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value69=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "20method.c", 45)))),"void*",(_Bool)0,info))), come_pop_stackframe(), __exception_result_var_b14))))));
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 9, right_value68);
     if(right_value68 && right_value68 != __result_obj__ && !__freed_obj__) { right_value68 = come_decrement_ref_count(right_value68, (void*)0, (void*)0, 1, 0, 0); }
     __right_value_freed_obj[9] = right_value68;
@@ -3080,8 +3094,7 @@ memset(&right_value113, 0, sizeof(void*));
     if(right_value72 && right_value72 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,right_value72, (void*)0, (void*)0, 0, 1, 0, 0); }
     __right_value_freed_obj[13] = right_value72;
     __freed_obj__ = 0;
-    (come_push_stackframe("20method.c", 46),list$1tuple2$2charphsTypephph_push_back(((struct list$1tuple2$2charphsTypephph*)come_null_check(((struct sClass*)come_null_check(current_stack_6, "20method.c", 46))->mFields, "20method.c", 46)),(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value73=tuple2$2charphsTypephp_clone(return_value_40))))));
-    come_pop_stackframe();
+    (come_push_stackframe("20method.c", 46),__exception_result_var_b15=list$1tuple2$2charphsTypephph_push_back(((struct list$1tuple2$2charphsTypephph*)come_null_check(((struct sClass*)come_null_check(current_stack_6, "20method.c", 46))->mFields, "20method.c", 46)),(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value73=tuple2$2charphsTypephp_clone(return_value_40))))), come_pop_stackframe(), __exception_result_var_b15);
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 14, right_value73);
     if(right_value73 && right_value73 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,right_value73, (void*)0, (void*)0, 0, 1, 0, 0); }
     __right_value_freed_obj[14] = right_value73;
@@ -3091,14 +3104,13 @@ memset(&right_value113, 0, sizeof(void*));
     while(_while_condtional8=vtable_41,    __freed_obj__ = 0, 
     _while_condtional8) {
         for(
-        o2_saved_42=(struct map$2charphsVarph*)come_increment_ref_count((((struct sVarTable*)come_null_check(vtable_41, "20method.c", 87))->mVars)),it_45=(come_push_stackframe("20method.c", 87),map$2charphsVarph_begin(((struct map$2charphsVarph*)come_null_check((o2_saved_42), "20method.c", 87)))) ,        come_pop_stackframe() ,        __freed_obj__ = 0, 
-        0;        _for_condtionalA1=        !(come_push_stackframe("20method.c", 87),__exception_result_var_b1=map$2charphsVarph_end(((struct map$2charphsVarph*)come_null_check((o2_saved_42), "20method.c", 87))), come_pop_stackframe(), __exception_result_var_b1) ,        __freed_obj__ = 0, 
-        _for_condtionalA1;        it_45=(come_push_stackframe("20method.c", 87),map$2charphsVarph_next(((struct map$2charphsVarph*)come_null_check((o2_saved_42), "20method.c", 87)))) ,        come_pop_stackframe() ,        __freed_obj__ = 0, 
+        o2_saved_42=(struct map$2charphsVarph*)come_increment_ref_count((((struct sVarTable*)come_null_check(vtable_41, "20method.c", 87))->mVars)),it_45=(come_push_stackframe("20method.c", 87),__exception_result_var_b18=map$2charphsVarph_begin(((struct map$2charphsVarph*)come_null_check((o2_saved_42), "20method.c", 87))), come_pop_stackframe(), __exception_result_var_b18) ,        __freed_obj__ = 0, 
+        0;        _for_condtionalA1=        !(come_push_stackframe("20method.c", 87),__exception_result_var_b19=map$2charphsVarph_end(((struct map$2charphsVarph*)come_null_check((o2_saved_42), "20method.c", 87))), come_pop_stackframe(), __exception_result_var_b19) ,        __freed_obj__ = 0, 
+        _for_condtionalA1;        it_45=(come_push_stackframe("20method.c", 87),__exception_result_var_b22=map$2charphsVarph_next(((struct map$2charphsVarph*)come_null_check((o2_saved_42), "20method.c", 87))), come_pop_stackframe(), __exception_result_var_b22) ,        __freed_obj__ = 0, 
         0        ){
             key_48=it_45;
             __freed_obj__ = 0;
-            value_54=optional$2sVarpbool_value((come_push_stackframe("20method.c", 53),((struct optional$2sVarpbool*)(right_value83=map$2charphsVarphp_operator_load_element(((struct sVarTable*)come_null_check(vtable_41, "20method.c", 53))->mVars,key_48)))));
-            come_pop_stackframe();
+            value_54=optional$2sVarpbool_value((come_push_stackframe("20method.c", 53),__exception_result_var_b27=((struct optional$2sVarpbool*)(right_value83=map$2charphsVarphp_operator_load_element(((struct sVarTable*)come_null_check(vtable_41, "20method.c", 53))->mVars,key_48))), come_pop_stackframe(), __exception_result_var_b27));
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value83);
             if(right_value83 && right_value83 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sVarpboolp_finalize,right_value83, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[0] = right_value83;
@@ -3110,7 +3122,7 @@ memset(&right_value113, 0, sizeof(void*));
             __freed_obj__ = 0;
             ((struct sType*)come_null_check(type2_55, "20method.c", 57))->mPointerNum++;
             __freed_obj__ = 0;
-            item_56=(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value87=tuple2$2charphsTypeph_initialize((struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value86=(struct tuple2$2charphsTypeph*)come_calloc(1, sizeof(struct tuple2$2charphsTypeph)*(1), "20method.c", 59)))),(char*)come_increment_ref_count((come_push_stackframe("20method.c", 59),((char*)(right_value85=__builtin_string(((struct sVar*)come_null_check(value_54, "20method.c", 59))->mCValueName))))),(struct sType*)come_increment_ref_count(type2_55)))));
+            item_56=(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value87=tuple2$2charphsTypeph_initialize((struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value86=(struct tuple2$2charphsTypeph*)come_calloc(1, sizeof(struct tuple2$2charphsTypeph)*(1), "20method.c", 59)))),(char*)come_increment_ref_count((come_push_stackframe("20method.c", 59),__exception_result_var_b29=((char*)(right_value85=__builtin_string(((struct sVar*)come_null_check(value_54, "20method.c", 59))->mCValueName))), come_pop_stackframe(), __exception_result_var_b29)),(struct sType*)come_increment_ref_count(type2_55)))));
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value85);
             if(right_value85 && right_value85 != __result_obj__ && !__freed_obj__) { right_value85 = come_decrement_ref_count(right_value85, (void*)0, (void*)0, 1, 0, 0); }
             __right_value_freed_obj[2] = right_value85;
@@ -3123,35 +3135,34 @@ memset(&right_value113, 0, sizeof(void*));
             __freed_obj__ = 0;
             if(_if_conditional119=((struct sVar*)come_null_check(value_54, "20method.c", 85))->mCValueName!=((void*)0),            __freed_obj__ = 0, 
             _if_conditional119) {
-                if(_if_conditional120=(come_push_stackframe("20method.c", 84),__exception_result_var_b4=memcmp(((struct sVar*)come_null_check(value_54, "20method.c", 84))->mCValueName,"__list_values",(come_push_stackframe("20method.c", 84),__exception_result_var_b3=strlen("__list_values"), come_pop_stackframe(), __exception_result_var_b3)), come_pop_stackframe(), __exception_result_var_b4)==0,                __freed_obj__ = 0, 
+                if(_if_conditional120=(come_push_stackframe("20method.c", 84),__exception_result_var_b31=memcmp(((struct sVar*)come_null_check(value_54, "20method.c", 84))->mCValueName,"__list_values",(come_push_stackframe("20method.c", 84),__exception_result_var_b30=strlen("__list_values"), come_pop_stackframe(), __exception_result_var_b30)), come_pop_stackframe(), __exception_result_var_b31)==0,                __freed_obj__ = 0, 
                 _if_conditional120) {
                 }
                 else {
-                    if(_if_conditional121=(come_push_stackframe("20method.c", 84),__exception_result_var_b6=memcmp(((struct sVar*)come_null_check(value_54, "20method.c", 84))->mCValueName,"__map_keys",(come_push_stackframe("20method.c", 84),__exception_result_var_b5=strlen("__map_keys"), come_pop_stackframe(), __exception_result_var_b5)), come_pop_stackframe(), __exception_result_var_b6)==0,                    __freed_obj__ = 0, 
+                    if(_if_conditional121=(come_push_stackframe("20method.c", 84),__exception_result_var_b33=memcmp(((struct sVar*)come_null_check(value_54, "20method.c", 84))->mCValueName,"__map_keys",(come_push_stackframe("20method.c", 84),__exception_result_var_b32=strlen("__map_keys"), come_pop_stackframe(), __exception_result_var_b32)), come_pop_stackframe(), __exception_result_var_b33)==0,                    __freed_obj__ = 0, 
                     _if_conditional121) {
                     }
                     else {
-                        if(_if_conditional122=(come_push_stackframe("20method.c", 84),__exception_result_var_b8=memcmp(((struct sVar*)come_null_check(value_54, "20method.c", 84))->mCValueName,"__map_element",(come_push_stackframe("20method.c", 84),__exception_result_var_b7=strlen("__map_element"), come_pop_stackframe(), __exception_result_var_b7)), come_pop_stackframe(), __exception_result_var_b8)==0,                        __freed_obj__ = 0, 
+                        if(_if_conditional122=(come_push_stackframe("20method.c", 84),__exception_result_var_b35=memcmp(((struct sVar*)come_null_check(value_54, "20method.c", 84))->mCValueName,"__map_element",(come_push_stackframe("20method.c", 84),__exception_result_var_b34=strlen("__map_element"), come_pop_stackframe(), __exception_result_var_b34)), come_pop_stackframe(), __exception_result_var_b35)==0,                        __freed_obj__ = 0, 
                         _if_conditional122) {
                         }
                         else {
-                            if(_if_conditional123=(come_push_stackframe("20method.c", 84),__exception_result_var_b9=string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(((struct sVar*)come_null_check(value_54, "20method.c", 84))->mType, "20method.c", 84))->mClass, "20method.c", 84))->mName,"va_list"), come_pop_stackframe(), __exception_result_var_b9)||(come_push_stackframe("20method.c", 84),__exception_result_var_b10=string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(((struct sVar*)come_null_check(value_54, "20method.c", 84))->mType, "20method.c", 84))->mClass, "20method.c", 84))->mName,"__builtin_va_list"), come_pop_stackframe(), __exception_result_var_b10),                            __freed_obj__ = 0, 
+                            if(_if_conditional123=(come_push_stackframe("20method.c", 84),__exception_result_var_b36=string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(((struct sVar*)come_null_check(value_54, "20method.c", 84))->mType, "20method.c", 84))->mClass, "20method.c", 84))->mName,"va_list"), come_pop_stackframe(), __exception_result_var_b36)||(come_push_stackframe("20method.c", 84),__exception_result_var_b37=string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(((struct sVar*)come_null_check(value_54, "20method.c", 84))->mType, "20method.c", 84))->mClass, "20method.c", 84))->mName,"__builtin_va_list"), come_pop_stackframe(), __exception_result_var_b37),                            __freed_obj__ = 0, 
                             _if_conditional123) {
                             }
                             else {
-                                if(_if_conditional124=(come_push_stackframe("20method.c", 84),__exception_result_var_b11=list$1sNodeph_length(((struct list$1sNodeph*)come_null_check(((struct sType*)come_null_check(type2_55, "20method.c", 84))->mArrayNum, "20method.c", 84))), come_pop_stackframe(), __exception_result_var_b11)==1,                                __freed_obj__ = 0, 
+                                if(_if_conditional124=(come_push_stackframe("20method.c", 84),__exception_result_var_b38=list$1sNodeph_length(((struct list$1sNodeph*)come_null_check(((struct sType*)come_null_check(type2_55, "20method.c", 84))->mArrayNum, "20method.c", 84))), come_pop_stackframe(), __exception_result_var_b38)==1,                                __freed_obj__ = 0, 
                                 _if_conditional124) {
                                     type3_57=(struct sType*)come_increment_ref_count(((struct sType*)(right_value88=sType_clone(type2_55))));
                                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value88);
                                     if(right_value88 && right_value88 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value88, (void*)0, (void*)0, 0, 1, 0, 0); }
                                     __right_value_freed_obj[0] = right_value88;
                                     __freed_obj__ = 0;
-                                    (come_push_stackframe("20method.c", 76),list$1sNodeph_reset(((struct list$1sNodeph*)come_null_check(((struct sType*)come_null_check(type3_57, "20method.c", 76))->mArrayNum, "20method.c", 76))));
-                                    come_pop_stackframe();
+                                    (come_push_stackframe("20method.c", 76),__exception_result_var_b39=list$1sNodeph_reset(((struct list$1sNodeph*)come_null_check(((struct sType*)come_null_check(type3_57, "20method.c", 76))->mArrayNum, "20method.c", 76))), come_pop_stackframe(), __exception_result_var_b39);
                                     __freed_obj__ = 0;
                                     ((struct sType*)come_null_check(type3_57, "20method.c", 77))->mPointerNum++;
                                     __freed_obj__ = 0;
-                                    item2_60=(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value91=tuple2$2charphsTypeph_initialize((struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value90=(struct tuple2$2charphsTypeph*)come_calloc(1, sizeof(struct tuple2$2charphsTypeph)*(1), "20method.c", 78)))),(char*)come_increment_ref_count((come_push_stackframe("20method.c", 78),((char*)(right_value89=__builtin_string(((struct sVar*)come_null_check(value_54, "20method.c", 78))->mCValueName))))),(struct sType*)come_increment_ref_count(type3_57)))));
+                                    item2_60=(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value91=tuple2$2charphsTypeph_initialize((struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value90=(struct tuple2$2charphsTypeph*)come_calloc(1, sizeof(struct tuple2$2charphsTypeph)*(1), "20method.c", 78)))),(char*)come_increment_ref_count((come_push_stackframe("20method.c", 78),__exception_result_var_b40=((char*)(right_value89=__builtin_string(((struct sVar*)come_null_check(value_54, "20method.c", 78))->mCValueName))), come_pop_stackframe(), __exception_result_var_b40)),(struct sType*)come_increment_ref_count(type3_57)))));
                                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value89);
                                     if(right_value89 && right_value89 != __result_obj__ && !__freed_obj__) { right_value89 = come_decrement_ref_count(right_value89, (void*)0, (void*)0, 1, 0, 0); }
                                     __right_value_freed_obj[1] = right_value89;
@@ -3162,8 +3173,7 @@ memset(&right_value113, 0, sizeof(void*));
                                     if(right_value91 && right_value91 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,right_value91, (void*)0, (void*)0, 0, 1, 0, 0); }
                                     __right_value_freed_obj[3] = right_value91;
                                     __freed_obj__ = 0;
-                                    (come_push_stackframe("20method.c", 79),list$1tuple2$2charphsTypephph_push_back(((struct list$1tuple2$2charphsTypephph*)come_null_check(((struct sClass*)come_null_check(current_stack_6, "20method.c", 79))->mFields, "20method.c", 79)),(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value92=tuple2$2charphsTypephp_clone(item2_60))))));
-                                    come_pop_stackframe();
+                                    (come_push_stackframe("20method.c", 79),__exception_result_var_b41=list$1tuple2$2charphsTypephph_push_back(((struct list$1tuple2$2charphsTypephph*)come_null_check(((struct sClass*)come_null_check(current_stack_6, "20method.c", 79))->mFields, "20method.c", 79)),(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value92=tuple2$2charphsTypephp_clone(item2_60))))), come_pop_stackframe(), __exception_result_var_b41);
                                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 4, right_value92);
                                     if(right_value92 && right_value92 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,right_value92, (void*)0, (void*)0, 0, 1, 0, 0); }
                                     __right_value_freed_obj[4] = right_value92;
@@ -3172,8 +3182,7 @@ memset(&right_value113, 0, sizeof(void*));
                                     if(item2_60 && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,item2_60, (void*)0, (void*)0, 0, 0, 0, 0); }
                                 }
                                 else {
-                                    (come_push_stackframe("20method.c", 82),list$1tuple2$2charphsTypephph_push_back(((struct list$1tuple2$2charphsTypephph*)come_null_check(((struct sClass*)come_null_check(current_stack_6, "20method.c", 82))->mFields, "20method.c", 82)),(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value93=tuple2$2charphsTypephp_clone(item_56))))));
-                                    come_pop_stackframe();
+                                    (come_push_stackframe("20method.c", 82),__exception_result_var_b42=list$1tuple2$2charphsTypephph_push_back(((struct list$1tuple2$2charphsTypephph*)come_null_check(((struct sClass*)come_null_check(current_stack_6, "20method.c", 82))->mFields, "20method.c", 82)),(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value93=tuple2$2charphsTypephp_clone(item_56))))), come_pop_stackframe(), __exception_result_var_b42);
                                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value93);
                                     if(right_value93 && right_value93 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,right_value93, (void*)0, (void*)0, 0, 1, 0, 0); }
                                     __right_value_freed_obj[0] = right_value93;
@@ -3199,33 +3208,29 @@ memset(&right_value113, 0, sizeof(void*));
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    (come_push_stackframe("20method.c", 90),output_struct(current_stack_6,info));
-    come_pop_stackframe();
+    (come_push_stackframe("20method.c", 90),output_struct(current_stack_6,info),come_pop_stackframe());
     __freed_obj__ = 0;
-    (come_push_stackframe("20method.c", 92),map$2charphsClassph_insert(((struct map$2charphsClassph*)come_null_check(((struct sInfo*)come_null_check(info, "20method.c", 92))->classes, "20method.c", 92)),(char*)come_increment_ref_count(class_name_5),(struct sClass*)come_increment_ref_count(current_stack_6)));
-    come_pop_stackframe();
+    (come_push_stackframe("20method.c", 92),__exception_result_var_b74=map$2charphsClassph_insert(((struct map$2charphsClassph*)come_null_check(((struct sInfo*)come_null_check(info, "20method.c", 92))->classes, "20method.c", 92)),(char*)come_increment_ref_count(class_name_5),(struct sClass*)come_increment_ref_count(current_stack_6)), come_pop_stackframe(), __exception_result_var_b74);
     __freed_obj__ = 0;
     __freed_obj__ = 0;
     num_current_stack_109++;
     __freed_obj__ = 0;
-    (come_push_stackframe("20method.c", 96),add_come_code_at_function_head(info,"struct %s __current_stack%d__;\n",class_name_5,num_current_stack_109));
-    come_pop_stackframe();
+    (come_push_stackframe("20method.c", 96),add_come_code_at_function_head(info,"struct %s __current_stack%d__;\n",class_name_5,num_current_stack_109),come_pop_stackframe());
     __freed_obj__ = 0;
-    (come_push_stackframe("20method.c", 97),add_come_code_at_function_head2(info,"memset(&__current_stack%d__, 0, sizeof(struct %s));\n",num_current_stack_109,class_name_5));
-    come_pop_stackframe();
+    (come_push_stackframe("20method.c", 97),add_come_code_at_function_head2(info,"memset(&__current_stack%d__, 0, sizeof(struct %s));\n",num_current_stack_109,class_name_5),come_pop_stackframe());
     __freed_obj__ = 0;
     vtable_41=((struct sInfo*)come_null_check(info, "20method.c", 99))->lv_table;
     __freed_obj__ = 0;
     while(_while_condtional20=vtable_41,    __freed_obj__ = 0, 
     _while_condtional20) {
         for(
-        o2_saved_110=(struct map$2charphsVarph*)come_increment_ref_count((((struct sVarTable*)come_null_check(vtable_41, "20method.c", 134))->mVars)),it_111=(come_push_stackframe("20method.c", 134),__exception_result_var_b18=map$2charphsVarph_begin(((struct map$2charphsVarph*)come_null_check((o2_saved_110), "20method.c", 134))), come_pop_stackframe(), __exception_result_var_b18) ,        __freed_obj__ = 0, 
-        0;        _for_condtionalA6=        !(come_push_stackframe("20method.c", 134),__exception_result_var_b19=map$2charphsVarph_end(((struct map$2charphsVarph*)come_null_check((o2_saved_110), "20method.c", 134))), come_pop_stackframe(), __exception_result_var_b19) ,        __freed_obj__ = 0, 
-        _for_condtionalA6;        it_111=(come_push_stackframe("20method.c", 134),__exception_result_var_b20=map$2charphsVarph_next(((struct map$2charphsVarph*)come_null_check((o2_saved_110), "20method.c", 134))), come_pop_stackframe(), __exception_result_var_b20) ,        __freed_obj__ = 0, 
+        o2_saved_110=(struct map$2charphsVarph*)come_increment_ref_count((((struct sVarTable*)come_null_check(vtable_41, "20method.c", 134))->mVars)),it_111=(come_push_stackframe("20method.c", 134),__exception_result_var_b75=map$2charphsVarph_begin(((struct map$2charphsVarph*)come_null_check((o2_saved_110), "20method.c", 134))), come_pop_stackframe(), __exception_result_var_b75) ,        __freed_obj__ = 0, 
+        0;        _for_condtionalA6=        !(come_push_stackframe("20method.c", 134),__exception_result_var_b76=map$2charphsVarph_end(((struct map$2charphsVarph*)come_null_check((o2_saved_110), "20method.c", 134))), come_pop_stackframe(), __exception_result_var_b76) ,        __freed_obj__ = 0, 
+        _for_condtionalA6;        it_111=(come_push_stackframe("20method.c", 134),__exception_result_var_b77=map$2charphsVarph_next(((struct map$2charphsVarph*)come_null_check((o2_saved_110), "20method.c", 134))), come_pop_stackframe(), __exception_result_var_b77) ,        __freed_obj__ = 0, 
         0        ){
             key_112=it_111;
             __freed_obj__ = 0;
-            value_113=optional$2sVarpbool_value((come_push_stackframe("20method.c", 104),((struct optional$2sVarpbool*)(right_value106=map$2charphsVarphp_operator_load_element(((struct sVarTable*)come_null_check(vtable_41, "20method.c", 104))->mVars,key_112)))));
+            value_113=optional$2sVarpbool_value((come_push_stackframe("20method.c", 104),__exception_result_var_b78=((struct optional$2sVarpbool*)(right_value106=map$2charphsVarphp_operator_load_element(((struct sVarTable*)come_null_check(vtable_41, "20method.c", 104))->mVars,key_112))), come_pop_stackframe(), __exception_result_var_b78));
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value106);
             if(right_value106 && right_value106 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sVarpboolp_finalize,right_value106, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[0] = right_value106;
@@ -3245,31 +3250,29 @@ memset(&right_value113, 0, sizeof(void*));
             __freed_obj__ = 0;
             if(_if_conditional180=((struct sVar*)come_null_check(value_113, "20method.c", 132))->mCValueName!=((void*)0),            __freed_obj__ = 0, 
             _if_conditional180) {
-                if(_if_conditional181=(come_push_stackframe("20method.c", 131),__exception_result_var_b22=memcmp(((struct sVar*)come_null_check(value_113, "20method.c", 131))->mCValueName,"__list_values",(come_push_stackframe("20method.c", 131),__exception_result_var_b21=strlen("__list_values"), come_pop_stackframe(), __exception_result_var_b21)), come_pop_stackframe(), __exception_result_var_b22)==0,                __freed_obj__ = 0, 
+                if(_if_conditional181=(come_push_stackframe("20method.c", 131),__exception_result_var_b80=memcmp(((struct sVar*)come_null_check(value_113, "20method.c", 131))->mCValueName,"__list_values",(come_push_stackframe("20method.c", 131),__exception_result_var_b79=strlen("__list_values"), come_pop_stackframe(), __exception_result_var_b79)), come_pop_stackframe(), __exception_result_var_b80)==0,                __freed_obj__ = 0, 
                 _if_conditional181) {
                 }
                 else {
-                    if(_if_conditional182=(come_push_stackframe("20method.c", 131),__exception_result_var_b24=memcmp(((struct sVar*)come_null_check(value_113, "20method.c", 131))->mCValueName,"__map_keys",(come_push_stackframe("20method.c", 131),__exception_result_var_b23=strlen("__map_keys"), come_pop_stackframe(), __exception_result_var_b23)), come_pop_stackframe(), __exception_result_var_b24)==0,                    __freed_obj__ = 0, 
+                    if(_if_conditional182=(come_push_stackframe("20method.c", 131),__exception_result_var_b82=memcmp(((struct sVar*)come_null_check(value_113, "20method.c", 131))->mCValueName,"__map_keys",(come_push_stackframe("20method.c", 131),__exception_result_var_b81=strlen("__map_keys"), come_pop_stackframe(), __exception_result_var_b81)), come_pop_stackframe(), __exception_result_var_b82)==0,                    __freed_obj__ = 0, 
                     _if_conditional182) {
                     }
                     else {
-                        if(_if_conditional183=(come_push_stackframe("20method.c", 131),__exception_result_var_b26=memcmp(((struct sVar*)come_null_check(value_113, "20method.c", 131))->mCValueName,"__map_element",(come_push_stackframe("20method.c", 131),__exception_result_var_b25=strlen("__map_element"), come_pop_stackframe(), __exception_result_var_b25)), come_pop_stackframe(), __exception_result_var_b26)==0,                        __freed_obj__ = 0, 
+                        if(_if_conditional183=(come_push_stackframe("20method.c", 131),__exception_result_var_b84=memcmp(((struct sVar*)come_null_check(value_113, "20method.c", 131))->mCValueName,"__map_element",(come_push_stackframe("20method.c", 131),__exception_result_var_b83=strlen("__map_element"), come_pop_stackframe(), __exception_result_var_b83)), come_pop_stackframe(), __exception_result_var_b84)==0,                        __freed_obj__ = 0, 
                         _if_conditional183) {
                         }
                         else {
-                            if(_if_conditional184=(come_push_stackframe("20method.c", 131),__exception_result_var_b27=string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(((struct sVar*)come_null_check(value_113, "20method.c", 131))->mType, "20method.c", 131))->mClass, "20method.c", 131))->mName,"va_list"), come_pop_stackframe(), __exception_result_var_b27)||(come_push_stackframe("20method.c", 131),__exception_result_var_b28=string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(((struct sVar*)come_null_check(value_113, "20method.c", 131))->mType, "20method.c", 131))->mClass, "20method.c", 131))->mName,"__builtin_va_list"), come_pop_stackframe(), __exception_result_var_b28),                            __freed_obj__ = 0, 
+                            if(_if_conditional184=(come_push_stackframe("20method.c", 131),__exception_result_var_b85=string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(((struct sVar*)come_null_check(value_113, "20method.c", 131))->mType, "20method.c", 131))->mClass, "20method.c", 131))->mName,"va_list"), come_pop_stackframe(), __exception_result_var_b85)||(come_push_stackframe("20method.c", 131),__exception_result_var_b86=string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(((struct sVar*)come_null_check(value_113, "20method.c", 131))->mType, "20method.c", 131))->mClass, "20method.c", 131))->mName,"__builtin_va_list"), come_pop_stackframe(), __exception_result_var_b86),                            __freed_obj__ = 0, 
                             _if_conditional184) {
                             }
                             else {
-                                if(_if_conditional185=(come_push_stackframe("20method.c", 130),__exception_result_var_b29=string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(type2_114, "20method.c", 130))->mClass, "20method.c", 130))->mName,"lambda"), come_pop_stackframe(), __exception_result_var_b29),                                __freed_obj__ = 0, 
+                                if(_if_conditional185=(come_push_stackframe("20method.c", 130),__exception_result_var_b87=string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(type2_114, "20method.c", 130))->mClass, "20method.c", 130))->mName,"lambda"), come_pop_stackframe(), __exception_result_var_b87),                                __freed_obj__ = 0, 
                                 _if_conditional185) {
-                                    (come_push_stackframe("20method.c", 125),add_come_code(info,"__current_stack%d__.%s = %s;\n",num_current_stack_109,((struct sVar*)come_null_check(value_113, "20method.c", 125))->mCValueName,((struct sVar*)come_null_check(value_113, "20method.c", 125))->mCValueName));
-                                    come_pop_stackframe();
+                                    (come_push_stackframe("20method.c", 125),add_come_code(info,"__current_stack%d__.%s = %s;\n",num_current_stack_109,((struct sVar*)come_null_check(value_113, "20method.c", 125))->mCValueName,((struct sVar*)come_null_check(value_113, "20method.c", 125))->mCValueName),come_pop_stackframe());
                                     __freed_obj__ = 0;
                                 }
                                 else {
-                                    (come_push_stackframe("20method.c", 128),add_come_code(info,"__current_stack%d__.%s = &%s;\n",num_current_stack_109,((struct sVar*)come_null_check(value_113, "20method.c", 128))->mCValueName,((struct sVar*)come_null_check(value_113, "20method.c", 128))->mCValueName));
-                                    come_pop_stackframe();
+                                    (come_push_stackframe("20method.c", 128),add_come_code(info,"__current_stack%d__.%s = &%s;\n",num_current_stack_109,((struct sVar*)come_null_check(value_113, "20method.c", 128))->mCValueName,((struct sVar*)come_null_check(value_113, "20method.c", 128))->mCValueName),come_pop_stackframe());
                                     __freed_obj__ = 0;
                                 }
                                 __freed_obj__ = 0;
@@ -3298,14 +3301,14 @@ memset(&right_value113, 0, sizeof(void*));
     __right_value_freed_obj[15] = right_value110;
     __freed_obj__ = 0;
     __dec_obj38=((struct CVALUE*)come_null_check(come_value_116, "20method.c", 139))->c_value;
-    ((struct CVALUE*)come_null_check(come_value_116, "20method.c", 139))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 139),((char*)(right_value111=xsprintf("&__current_stack%d__",num_current_stack_109)))));
+    ((struct CVALUE*)come_null_check(come_value_116, "20method.c", 139))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 139),__exception_result_var_b88=((char*)(right_value111=xsprintf("&__current_stack%d__",num_current_stack_109))), come_pop_stackframe(), __exception_result_var_b88));
     if(__dec_obj38) { __dec_obj38 = come_decrement_ref_count(__dec_obj38, (void*)0, (void*)0, 0,0,0); }
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 16, right_value111);
     if(right_value111 && right_value111 != __result_obj__ && !__freed_obj__) { right_value111 = come_decrement_ref_count(right_value111, (void*)0, (void*)0, 1, 0, 0); }
     __right_value_freed_obj[16] = right_value111;
     __freed_obj__ = 0;
     __dec_obj39=((struct CVALUE*)come_null_check(come_value_116, "20method.c", 140))->type;
-    ((struct CVALUE*)come_null_check(come_value_116, "20method.c", 140))->type=(struct sType*)come_increment_ref_count((come_push_stackframe("20method.c", 140),((struct sType*)(right_value113=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value112=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "20method.c", 140)))),class_name_5,(_Bool)0,info)))));
+    ((struct CVALUE*)come_null_check(come_value_116, "20method.c", 140))->type=(struct sType*)come_increment_ref_count((come_push_stackframe("20method.c", 140),__exception_result_var_b89=((struct sType*)(right_value113=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value112=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "20method.c", 140)))),class_name_5,(_Bool)0,info))), come_pop_stackframe(), __exception_result_var_b89));
     if(__dec_obj39) { come_call_finalizer(sType_finalize,__dec_obj39, (void*)0, (void*)0, 0, 0, 0, 0); }
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 17, right_value112);
     if(right_value112 && right_value112 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value112, (void*)0, (void*)0, 0, 1, 0, 0); }
@@ -3316,22 +3319,20 @@ memset(&right_value113, 0, sizeof(void*));
     __freed_obj__ = 0;
     ((struct CVALUE*)come_null_check(come_value_116, "20method.c", 141))->var=((void*)0);
     __freed_obj__ = 0;
-    (come_push_stackframe("20method.c", 143),add_come_last_code(info,"%s;\n",((struct CVALUE*)come_null_check(come_value_116, "20method.c", 143))->c_value));
-    come_pop_stackframe();
+    (come_push_stackframe("20method.c", 143),add_come_last_code(info,"%s;\n",((struct CVALUE*)come_null_check(come_value_116, "20method.c", 143))->c_value),come_pop_stackframe());
     __freed_obj__ = 0;
-    (come_push_stackframe("20method.c", 145),list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(((struct sInfo*)come_null_check(info, "20method.c", 145))->stack, "20method.c", 145)),(struct CVALUE*)come_increment_ref_count(come_value_116)));
-    come_pop_stackframe();
+    (come_push_stackframe("20method.c", 145),__exception_result_var_b90=list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(((struct sInfo*)come_null_check(info, "20method.c", 145))->stack, "20method.c", 145)),(struct CVALUE*)come_increment_ref_count(come_value_116)), come_pop_stackframe(), __exception_result_var_b90);
     __freed_obj__ = 0;
     ((struct sInfo*)come_null_check(info, "20method.c", 147))->num_current_stack=num_current_stack_109;
     __freed_obj__ = 0;
-    __result86__ = (_Bool)1;
+    __result87__ = (_Bool)1;
     if(class_name_5 && !__freed_obj__) { class_name_5 = come_decrement_ref_count(class_name_5, (void*)0, (void*)0, 0, 0, 0); }
     if(current_stack_6 && !__freed_obj__) { come_call_finalizer(sClass_finalize,current_stack_6, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(result_kind_35 && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,result_kind_35, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(return_value_40 && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,return_value_40, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(come_value_116 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,come_value_116, (void*)0, (void*)0, 0, 0, 0, 0); }
     __freed_obj__ = 0;
-    return __result86__;
+    return __result87__;
     __freed_obj__ = 0;
     if(class_name_5 && !__freed_obj__) { class_name_5 = come_decrement_ref_count(class_name_5, (void*)0, (void*)0, 0, 0, 0); }
     if(current_stack_6 && !__freed_obj__) { come_call_finalizer(sClass_finalize,current_stack_6, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -3692,7 +3693,7 @@ void* right_value20;
 char* __dec_obj7;
 void* right_value59;
 struct sType* __dec_obj32;
-struct tuple2$2charphsTypeph* __result39__;
+struct tuple2$2charphsTypeph* __result40__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value20, 0, sizeof(void*));
@@ -3711,12 +3712,12 @@ memset(&right_value59, 0, sizeof(void*));
         if(right_value59 && right_value59 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value59, (void*)0, (void*)0, 0, 1, 0, 0); }
         __right_value_freed_obj[1] = right_value59;
         __freed_obj__ = 0;
-        __result39__ = __result_obj__ = self;
+        __result40__ = __result_obj__ = self;
         if(self && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
         if(v1 && !__freed_obj__) { v1 = come_decrement_ref_count(v1, (void*)0, (void*)0, 0, 1, 0); }
         if(v2 && !__freed_obj__) { come_call_finalizer(sType_finalize,v2, (void*)0, (void*)0, 0, 0, 1, 0); }
         __freed_obj__ = 0;
-        return __result39__;
+        return __result40__;
         __freed_obj__ = 0;
         if(self && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
         if(v1 && !__freed_obj__) { v1 = come_decrement_ref_count(v1, (void*)0, (void*)0, 0, 1, 0); }
@@ -3730,7 +3731,7 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional28;
-struct sType* __result17__;
+struct sType* __result18__;
 void* right_value21;
 struct sType* result_15;
 _Bool _if_conditional29;
@@ -3805,7 +3806,7 @@ _Bool _if_conditional100;
 _Bool _if_conditional101;
 void* right_value58;
 char* __dec_obj31;
-struct sType* __result38__;
+struct sType* __result39__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value21, 0, sizeof(void*));
@@ -3824,9 +3825,9 @@ memset(&right_value57, 0, sizeof(void*));
 memset(&right_value58, 0, sizeof(void*));
             if(_if_conditional28=self==(void*)0,            __freed_obj__ = 0, 
             _if_conditional28) {
-                __result17__ = __result_obj__ = (void*)0;
+                __result18__ = __result_obj__ = (void*)0;
                 __freed_obj__ = 0;
-                return __result17__;
+                return __result18__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -4183,10 +4184,10 @@ memset(&right_value58, 0, sizeof(void*));
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-            __result38__ = __result_obj__ = result_15;
+            __result39__ = __result_obj__ = result_15;
             if(result_15 && !__freed_obj__) { come_call_finalizer(sType_finalize,result_15, (void*)0, (void*)0, 0, 0, 1, 0); }
             __freed_obj__ = 0;
-            return __result38__;
+            return __result39__;
             __freed_obj__ = 0;
             if(result_15 && !__freed_obj__) { come_call_finalizer(sType_finalize,result_15, (void*)0, (void*)0, 0, 0, 0, 0); }
 }
@@ -4215,14 +4216,16 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional39;
-struct list$1sTypeph* __result22__;
+struct list$1sTypeph* __result23__;
 void* right_value29;
 void* right_value30;
+struct list$1sTypeph* __exception_result_var_b7;
 struct list$1sTypeph* result_18;
 struct list_item$1sTypeph* it_19;
 _Bool _while_condtional5;
 void* right_value34;
-struct list$1sTypeph* __result25__;
+struct list$1sTypeph* __exception_result_var_b8;
+struct list$1sTypeph* __result26__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value29, 0, sizeof(void*));
@@ -4232,14 +4235,13 @@ memset(&it_19, 0, sizeof(struct list_item$1sTypeph*));
 memset(&right_value34, 0, sizeof(void*));
                     if(_if_conditional39=self==((void*)0),                    __freed_obj__ = 0, 
                     _if_conditional39) {
-                        __result22__ = __result_obj__ = ((void*)0);
+                        __result23__ = __result_obj__ = ((void*)0);
                         __freed_obj__ = 0;
-                        return __result22__;
+                        return __result23__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
-                    result_18=(struct list$1sTypeph*)come_increment_ref_count((come_push_stackframe("./comelang2.h", 190),((struct list$1sTypeph*)(right_value30=list$1sTypeph_initialize((struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)come_null_check(((struct list$1sTypeph*)(right_value29=(struct list$1sTypeph*)come_calloc(1, sizeof(struct list$1sTypeph)*(1), "./comelang2.h", 190))), "./comelang2.h", 190))))))));
-                    come_pop_stackframe();
+                    result_18=(struct list$1sTypeph*)come_increment_ref_count((come_push_stackframe("./comelang2.h", 190),__exception_result_var_b7=((struct list$1sTypeph*)(right_value30=list$1sTypeph_initialize((struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)come_null_check(((struct list$1sTypeph*)(right_value29=(struct list$1sTypeph*)come_calloc(1, sizeof(struct list$1sTypeph)*(1), "./comelang2.h", 190))), "./comelang2.h", 190)))))), come_pop_stackframe(), __exception_result_var_b7));
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value29);
                     if(right_value29 && right_value29 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,right_value29, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __right_value_freed_obj[0] = right_value29;
@@ -4251,8 +4253,7 @@ memset(&right_value34, 0, sizeof(void*));
                     __freed_obj__ = 0;
                     while(_while_condtional5=it_19!=((void*)0),                    __freed_obj__ = 0, 
                     _while_condtional5) {
-                        (come_push_stackframe("./comelang2.h", 194),list$1sTypeph_add(((struct list$1sTypeph*)come_null_check(result_18, "./comelang2.h", 194)),(struct sType*)come_increment_ref_count(((struct sType*)(right_value34=sType_clone(((struct list_item$1sTypeph*)come_null_check(it_19, "./comelang2.h", 194))->item))))));
-                        come_pop_stackframe();
+                        (come_push_stackframe("./comelang2.h", 194),__exception_result_var_b8=list$1sTypeph_add(((struct list$1sTypeph*)come_null_check(result_18, "./comelang2.h", 194)),(struct sType*)come_increment_ref_count(((struct sType*)(right_value34=sType_clone(((struct list_item$1sTypeph*)come_null_check(it_19, "./comelang2.h", 194))->item))))), come_pop_stackframe(), __exception_result_var_b8);
                         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value34);
                         if(right_value34 && right_value34 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value34, (void*)0, (void*)0, 0, 1, 0, 0); }
                         __right_value_freed_obj[0] = right_value34;
@@ -4261,10 +4262,10 @@ memset(&right_value34, 0, sizeof(void*));
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
-                    __result25__ = __result_obj__ = result_18;
+                    __result26__ = __result_obj__ = result_18;
                     if(result_18 && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,result_18, (void*)0, (void*)0, 0, 0, 1, 0); }
                     __freed_obj__ = 0;
-                    return __result25__;
+                    return __result26__;
                     __freed_obj__ = 0;
                     if(result_18 && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,result_18, (void*)0, (void*)0, 0, 0, 0, 0); }
 }
@@ -4275,7 +4276,7 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-struct list$1sTypeph* __result23__;
+struct list$1sTypeph* __result24__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
                         ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 152))->head=((void*)0);
@@ -4284,10 +4285,10 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
                         __freed_obj__ = 0;
                         ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 154))->len=0;
                         __freed_obj__ = 0;
-                        __result23__ = __result_obj__ = self;
+                        __result24__ = __result_obj__ = self;
                         if(self && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
                         __freed_obj__ = 0;
-                        return __result23__;
+                        return __result24__;
                         __freed_obj__ = 0;
                         if(self && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
 }
@@ -4309,7 +4310,7 @@ struct sType* __dec_obj14;
 void* right_value33;
 struct list_item$1sTypeph* litem_22;
 struct sType* __dec_obj15;
-struct list$1sTypeph* __result24__;
+struct list$1sTypeph* __result25__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value31, 0, sizeof(void*));
@@ -4383,10 +4384,10 @@ memset(&litem_22, 0, sizeof(struct list_item$1sTypeph*));
                             __freed_obj__ = 0;
                             ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 234))->len++;
                             __freed_obj__ = 0;
-                            __result24__ = __result_obj__ = self;
+                            __result25__ = __result_obj__ = self;
                             if(item && !__freed_obj__) { come_call_finalizer(sType_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
                             __freed_obj__ = 0;
-                            return __result24__;
+                            return __result25__;
                             __freed_obj__ = 0;
                             if(item && !__freed_obj__) { come_call_finalizer(sType_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
 }
@@ -4408,14 +4409,16 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional43;
-struct list$1sNodeph* __result26__;
+struct list$1sNodeph* __result27__;
 void* right_value36;
 void* right_value37;
+struct list$1sNodeph* __exception_result_var_b9;
 struct list$1sNodeph* result_23;
 struct list_item$1sNodeph* it_24;
 _Bool _while_condtional6;
 void* right_value42;
-struct list$1sNodeph* __result31__;
+struct list$1sNodeph* __exception_result_var_b10;
+struct list$1sNodeph* __result32__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value36, 0, sizeof(void*));
@@ -4425,14 +4428,13 @@ memset(&it_24, 0, sizeof(struct list_item$1sNodeph*));
 memset(&right_value42, 0, sizeof(void*));
                     if(_if_conditional43=self==((void*)0),                    __freed_obj__ = 0, 
                     _if_conditional43) {
-                        __result26__ = __result_obj__ = ((void*)0);
+                        __result27__ = __result_obj__ = ((void*)0);
                         __freed_obj__ = 0;
-                        return __result26__;
+                        return __result27__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
-                    result_23=(struct list$1sNodeph*)come_increment_ref_count((come_push_stackframe("./comelang2.h", 190),((struct list$1sNodeph*)(right_value37=list$1sNodeph_initialize((struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)come_null_check(((struct list$1sNodeph*)(right_value36=(struct list$1sNodeph*)come_calloc(1, sizeof(struct list$1sNodeph)*(1), "./comelang2.h", 190))), "./comelang2.h", 190))))))));
-                    come_pop_stackframe();
+                    result_23=(struct list$1sNodeph*)come_increment_ref_count((come_push_stackframe("./comelang2.h", 190),__exception_result_var_b9=((struct list$1sNodeph*)(right_value37=list$1sNodeph_initialize((struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)come_null_check(((struct list$1sNodeph*)(right_value36=(struct list$1sNodeph*)come_calloc(1, sizeof(struct list$1sNodeph)*(1), "./comelang2.h", 190))), "./comelang2.h", 190)))))), come_pop_stackframe(), __exception_result_var_b9));
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value36);
                     if(right_value36 && right_value36 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sNodephp_finalize,right_value36, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __right_value_freed_obj[0] = right_value36;
@@ -4444,8 +4446,7 @@ memset(&right_value42, 0, sizeof(void*));
                     __freed_obj__ = 0;
                     while(_while_condtional6=it_24!=((void*)0),                    __freed_obj__ = 0, 
                     _while_condtional6) {
-                        (come_push_stackframe("./comelang2.h", 194),list$1sNodeph_add(((struct list$1sNodeph*)come_null_check(result_23, "./comelang2.h", 194)),(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value42=sNode_clone(((struct list_item$1sNodeph*)come_null_check(it_24, "./comelang2.h", 194))->item))))));
-                        come_pop_stackframe();
+                        (come_push_stackframe("./comelang2.h", 194),__exception_result_var_b10=list$1sNodeph_add(((struct list$1sNodeph*)come_null_check(result_23, "./comelang2.h", 194)),(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value42=sNode_clone(((struct list_item$1sNodeph*)come_null_check(it_24, "./comelang2.h", 194))->item))))), come_pop_stackframe(), __exception_result_var_b10);
                         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value42);
                         if(right_value42 && right_value42 != __result_obj__ && !__freed_obj__) { right_value42 = come_decrement_ref_count(right_value42, ((struct sNode*)right_value42)->finalize, ((struct sNode*)right_value42)->_protocol_obj, 1, 0, 0); } 
                         __right_value_freed_obj[0] = right_value42;
@@ -4454,10 +4455,10 @@ memset(&right_value42, 0, sizeof(void*));
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
-                    __result31__ = __result_obj__ = result_23;
+                    __result32__ = __result_obj__ = result_23;
                     if(result_23 && !__freed_obj__) { come_call_finalizer(list$1sNodephp_finalize,result_23, (void*)0, (void*)0, 0, 0, 1, 0); }
                     __freed_obj__ = 0;
-                    return __result31__;
+                    return __result32__;
                     __freed_obj__ = 0;
                     if(result_23 && !__freed_obj__) { come_call_finalizer(list$1sNodephp_finalize,result_23, (void*)0, (void*)0, 0, 0, 0, 0); }
 }
@@ -4468,7 +4469,7 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-struct list$1sNodeph* __result27__;
+struct list$1sNodeph* __result28__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
                         ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 152))->head=((void*)0);
@@ -4477,10 +4478,10 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
                         __freed_obj__ = 0;
                         ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 154))->len=0;
                         __freed_obj__ = 0;
-                        __result27__ = __result_obj__ = self;
+                        __result28__ = __result_obj__ = self;
                         if(self && !__freed_obj__) { come_call_finalizer(list$1sNodephp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
                         __freed_obj__ = 0;
-                        return __result27__;
+                        return __result28__;
                         __freed_obj__ = 0;
                         if(self && !__freed_obj__) { come_call_finalizer(list$1sNodephp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
 }
@@ -4502,7 +4503,7 @@ struct sNode* __dec_obj18;
 void* right_value40;
 struct list_item$1sNodeph* litem_27;
 struct sNode* __dec_obj19;
-struct list$1sNodeph* __result28__;
+struct list$1sNodeph* __result29__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value38, 0, sizeof(void*));
@@ -4576,10 +4577,10 @@ memset(&litem_27, 0, sizeof(struct list_item$1sNodeph*));
                             __freed_obj__ = 0;
                             ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 234))->len++;
                             __freed_obj__ = 0;
-                            __result28__ = __result_obj__ = self;
+                            __result29__ = __result_obj__ = self;
                             if(item && !__freed_obj__) { item = come_decrement_ref_count(item, ((struct sNode*)item)->finalize, ((struct sNode*)item)->_protocol_obj, 0, 1, 0); } 
                             __freed_obj__ = 0;
-                            return __result28__;
+                            return __result29__;
                             __freed_obj__ = 0;
                             if(item && !__freed_obj__) { item = come_decrement_ref_count(item, ((struct sNode*)item)->finalize, ((struct sNode*)item)->_protocol_obj, 0, 1, 0); } 
 }
@@ -4591,7 +4592,7 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional46;
-struct sNode* __result29__;
+struct sNode* __result30__;
 void* right_value41;
 struct sNode* result_28;
 _Bool _if_conditional47;
@@ -4602,16 +4603,16 @@ _Bool _if_conditional51;
 _Bool _if_conditional52;
 _Bool _if_conditional53;
 _Bool _if_conditional54;
-struct sNode* __result30__;
+struct sNode* __result31__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value41, 0, sizeof(void*));
 memset(&result_28, 0, sizeof(struct sNode*));
                             if(_if_conditional46=self==(void*)0,                            __freed_obj__ = 0, 
                             _if_conditional46) {
-                                __result29__ = __result_obj__ = (void*)0;
+                                __result30__ = __result_obj__ = (void*)0;
                                 __freed_obj__ = 0;
-                                return __result29__;
+                                return __result30__;
                                 __freed_obj__ = 0;
                             }
                             __freed_obj__ = 0;
@@ -4668,10 +4669,10 @@ memset(&result_28, 0, sizeof(struct sNode*));
                                 __freed_obj__ = 0;
                             }
                             __freed_obj__ = 0;
-                            __result30__ = __result_obj__ = result_28;
+                            __result31__ = __result_obj__ = result_28;
                             if(result_28 && !__freed_obj__) { result_28 = come_decrement_ref_count(result_28, ((struct sNode*)result_28)->finalize, ((struct sNode*)result_28)->_protocol_obj, 0, 1, 0); } 
                             __freed_obj__ = 0;
-                            return __result30__;
+                            return __result31__;
                             __freed_obj__ = 0;
                             if(result_28 && !__freed_obj__) { result_28 = come_decrement_ref_count(result_28, ((struct sNode*)result_28)->finalize, ((struct sNode*)result_28)->_protocol_obj, 0, 0, 0); } 
 }
@@ -4693,14 +4694,16 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional58;
-struct list$1charph* __result32__;
+struct list$1charph* __result33__;
 void* right_value45;
 void* right_value46;
+struct list$1charph* __exception_result_var_b11;
 struct list$1charph* result_29;
 struct list_item$1charph* it_30;
 _Bool _while_condtional7;
 void* right_value50;
-struct list$1charph* __result35__;
+struct list$1charph* __exception_result_var_b12;
+struct list$1charph* __result36__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value45, 0, sizeof(void*));
@@ -4710,14 +4713,13 @@ memset(&it_30, 0, sizeof(struct list_item$1charph*));
 memset(&right_value50, 0, sizeof(void*));
                     if(_if_conditional58=self==((void*)0),                    __freed_obj__ = 0, 
                     _if_conditional58) {
-                        __result32__ = __result_obj__ = ((void*)0);
+                        __result33__ = __result_obj__ = ((void*)0);
                         __freed_obj__ = 0;
-                        return __result32__;
+                        return __result33__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
-                    result_29=(struct list$1charph*)come_increment_ref_count((come_push_stackframe("./comelang2.h", 190),((struct list$1charph*)(right_value46=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value45=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "./comelang2.h", 190))), "./comelang2.h", 190))))))));
-                    come_pop_stackframe();
+                    result_29=(struct list$1charph*)come_increment_ref_count((come_push_stackframe("./comelang2.h", 190),__exception_result_var_b11=((struct list$1charph*)(right_value46=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)come_null_check(((struct list$1charph*)(right_value45=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "./comelang2.h", 190))), "./comelang2.h", 190)))))), come_pop_stackframe(), __exception_result_var_b11));
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value45);
                     if(right_value45 && right_value45 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,right_value45, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __right_value_freed_obj[0] = right_value45;
@@ -4729,8 +4731,7 @@ memset(&right_value50, 0, sizeof(void*));
                     __freed_obj__ = 0;
                     while(_while_condtional7=it_30!=((void*)0),                    __freed_obj__ = 0, 
                     _while_condtional7) {
-                        (come_push_stackframe("./comelang2.h", 194),list$1charph_add(((struct list$1charph*)come_null_check(result_29, "./comelang2.h", 194)),(char*)come_increment_ref_count(((char*)(right_value50=string_clone(((struct list_item$1charph*)come_null_check(it_30, "./comelang2.h", 194))->item))))));
-                        come_pop_stackframe();
+                        (come_push_stackframe("./comelang2.h", 194),__exception_result_var_b12=list$1charph_add(((struct list$1charph*)come_null_check(result_29, "./comelang2.h", 194)),(char*)come_increment_ref_count(((char*)(right_value50=string_clone(((struct list_item$1charph*)come_null_check(it_30, "./comelang2.h", 194))->item))))), come_pop_stackframe(), __exception_result_var_b12);
                         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value50);
                         if(right_value50 && right_value50 != __result_obj__ && !__freed_obj__) { right_value50 = come_decrement_ref_count(right_value50, (void*)0, (void*)0, 1, 0, 0); }
                         __right_value_freed_obj[0] = right_value50;
@@ -4739,10 +4740,10 @@ memset(&right_value50, 0, sizeof(void*));
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
-                    __result35__ = __result_obj__ = result_29;
+                    __result36__ = __result_obj__ = result_29;
                     if(result_29 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_29, (void*)0, (void*)0, 0, 0, 1, 0); }
                     __freed_obj__ = 0;
-                    return __result35__;
+                    return __result36__;
                     __freed_obj__ = 0;
                     if(result_29 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,result_29, (void*)0, (void*)0, 0, 0, 0, 0); }
 }
@@ -4753,7 +4754,7 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-struct list$1charph* __result33__;
+struct list$1charph* __result34__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
                         ((struct list$1charph*)come_null_check(self, "./comelang2.h", 152))->head=((void*)0);
@@ -4762,10 +4763,10 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
                         __freed_obj__ = 0;
                         ((struct list$1charph*)come_null_check(self, "./comelang2.h", 154))->len=0;
                         __freed_obj__ = 0;
-                        __result33__ = __result_obj__ = self;
+                        __result34__ = __result_obj__ = self;
                         if(self && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
                         __freed_obj__ = 0;
-                        return __result33__;
+                        return __result34__;
                         __freed_obj__ = 0;
                         if(self && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
 }
@@ -4787,7 +4788,7 @@ char* __dec_obj23;
 void* right_value49;
 struct list_item$1charph* litem_33;
 char* __dec_obj24;
-struct list$1charph* __result34__;
+struct list$1charph* __result35__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value47, 0, sizeof(void*));
@@ -4861,10 +4862,10 @@ memset(&litem_33, 0, sizeof(struct list_item$1charph*));
                             __freed_obj__ = 0;
                             ((struct list$1charph*)come_null_check(self, "./comelang2.h", 234))->len++;
                             __freed_obj__ = 0;
-                            __result34__ = __result_obj__ = self;
+                            __result35__ = __result_obj__ = self;
                             if(item && !__freed_obj__) { item = come_decrement_ref_count(item, (void*)0, (void*)0, 0, 1, 0); }
                             __freed_obj__ = 0;
-                            return __result34__;
+                            return __result35__;
                             __freed_obj__ = 0;
                             if(item && !__freed_obj__) { item = come_decrement_ref_count(item, (void*)0, (void*)0, 0, 1, 0); }
 }
@@ -4886,13 +4887,13 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional62;
-struct tuple1$1sTypeph* __result36__;
+struct tuple1$1sTypeph* __result37__;
 void* right_value52;
 struct tuple1$1sTypeph* result_34;
 _Bool _if_conditional63;
 void* right_value53;
 struct sType* __dec_obj26;
-struct tuple1$1sTypeph* __result37__;
+struct tuple1$1sTypeph* __result38__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value52, 0, sizeof(void*));
@@ -4900,9 +4901,9 @@ memset(&result_34, 0, sizeof(struct tuple1$1sTypeph*));
 memset(&right_value53, 0, sizeof(void*));
                     if(_if_conditional62=self==(void*)0,                    __freed_obj__ = 0, 
                     _if_conditional62) {
-                        __result36__ = __result_obj__ = (void*)0;
+                        __result37__ = __result_obj__ = (void*)0;
                         __freed_obj__ = 0;
-                        return __result36__;
+                        return __result37__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
@@ -4922,10 +4923,10 @@ memset(&right_value53, 0, sizeof(void*));
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
-                    __result37__ = __result_obj__ = result_34;
+                    __result38__ = __result_obj__ = result_34;
                     if(result_34 && !__freed_obj__) { come_call_finalizer(tuple1$1sTypeph_finalize,result_34, (void*)0, (void*)0, 0, 0, 1, 0); }
                     __freed_obj__ = 0;
-                    return __result37__;
+                    return __result38__;
                     __freed_obj__ = 0;
                     if(result_34 && !__freed_obj__) { come_call_finalizer(tuple1$1sTypeph_finalize,result_34, (void*)0, (void*)0, 0, 0, 0, 0); }
 }
@@ -4947,7 +4948,7 @@ struct tuple2$2charphsTypeph* __dec_obj34;
 void* right_value63;
 struct list_item$1tuple2$2charphsTypephph* litem_38;
 struct tuple2$2charphsTypeph* __dec_obj35;
-struct list$1tuple2$2charphsTypephph* __result40__;
+struct list$1tuple2$2charphsTypephph* __result41__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value61, 0, sizeof(void*));
@@ -5021,10 +5022,10 @@ memset(&litem_38, 0, sizeof(struct list_item$1tuple2$2charphsTypephph*));
         __freed_obj__ = 0;
         ((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 304))->len++;
         __freed_obj__ = 0;
-        __result40__ = __result_obj__ = self;
+        __result41__ = __result_obj__ = self;
         if(item && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
         __freed_obj__ = 0;
-        return __result40__;
+        return __result41__;
         __freed_obj__ = 0;
         if(item && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypephp_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
 }
@@ -5060,7 +5061,7 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional106;
-struct tuple2$2charphsTypeph* __result41__;
+struct tuple2$2charphsTypeph* __result42__;
 void* right_value64;
 struct tuple2$2charphsTypeph* result_39;
 _Bool _if_conditional107;
@@ -5069,7 +5070,7 @@ char* __dec_obj36;
 _Bool _if_conditional108;
 void* right_value66;
 struct sType* __dec_obj37;
-struct tuple2$2charphsTypeph* __result42__;
+struct tuple2$2charphsTypeph* __result43__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value64, 0, sizeof(void*));
@@ -5078,9 +5079,9 @@ memset(&right_value65, 0, sizeof(void*));
 memset(&right_value66, 0, sizeof(void*));
         if(_if_conditional106=self==(void*)0,        __freed_obj__ = 0, 
         _if_conditional106) {
-            __result41__ = __result_obj__ = (void*)0;
+            __result42__ = __result_obj__ = (void*)0;
             __freed_obj__ = 0;
-            return __result41__;
+            return __result42__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
@@ -5111,10 +5112,10 @@ memset(&right_value66, 0, sizeof(void*));
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-        __result42__ = __result_obj__ = result_39;
+        __result43__ = __result_obj__ = result_39;
         if(result_39 && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypeph_finalize,result_39, (void*)0, (void*)0, 0, 0, 1, 0); }
         __freed_obj__ = 0;
-        return __result42__;
+        return __result43__;
         __freed_obj__ = 0;
         if(result_39 && !__freed_obj__) { come_call_finalizer(tuple2$2charphsTypeph_finalize,result_39, (void*)0, (void*)0, 0, 0, 0, 0); }
 }
@@ -5127,11 +5128,13 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional109;
 char* result_43;
-char* __result43__;
-_Bool _if_conditional110;
+void* __exception_result_var_b16;
 char* __result44__;
-char* result_44;
+_Bool _if_conditional110;
 char* __result45__;
+char* result_44;
+void* __exception_result_var_b17;
+char* __result46__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_43, 0, sizeof(char*));
@@ -5139,12 +5142,11 @@ memset(&result_44, 0, sizeof(char*));
             if(_if_conditional109=self==((void*)0),            __freed_obj__ = 0, 
             _if_conditional109) {
                 __freed_obj__ = 0;
-                (come_push_stackframe("./comelang2.h", 1335),memset(&result_43,0,sizeof(char*)));
-                come_pop_stackframe();
+                (come_push_stackframe("./comelang2.h", 1335),__exception_result_var_b16=memset(&result_43,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b16);
                 __freed_obj__ = 0;
-                __result43__ = __result_obj__ = result_43;
+                __result44__ = __result_obj__ = result_43;
                 __freed_obj__ = 0;
-                return __result43__;
+                return __result44__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -5152,19 +5154,18 @@ memset(&result_44, 0, sizeof(char*));
             __freed_obj__ = 0;
             if(_if_conditional110=((struct list$1charp*)come_null_check(((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1344))->key_list, "./comelang2.h", 1344))->it,            __freed_obj__ = 0, 
             _if_conditional110) {
-                __result44__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1341))->key_list, "./comelang2.h", 1341))->it, "./comelang2.h", 1341))->item;
+                __result45__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1341))->key_list, "./comelang2.h", 1341))->it, "./comelang2.h", 1341))->item;
                 __freed_obj__ = 0;
-                return __result44__;
+                return __result45__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
             __freed_obj__ = 0;
-            (come_push_stackframe("./comelang2.h", 1345),memset(&result_44,0,sizeof(char*)));
-            come_pop_stackframe();
+            (come_push_stackframe("./comelang2.h", 1345),__exception_result_var_b17=memset(&result_44,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b17);
             __freed_obj__ = 0;
-            __result45__ = __result_obj__ = result_44;
+            __result46__ = __result_obj__ = result_44;
             __freed_obj__ = 0;
-            return __result45__;
+            return __result46__;
             __freed_obj__ = 0;
 }
 
@@ -5174,12 +5175,12 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-_Bool __result46__;
+_Bool __result47__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-            __result46__ = self==((void*)0)||((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1367))->key_list==((void*)0)||((struct list$1charp*)come_null_check(((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1367))->key_list, "./comelang2.h", 1367))->it==((void*)0);
+            __result47__ = self==((void*)0)||((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1367))->key_list==((void*)0)||((struct list$1charp*)come_null_check(((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1367))->key_list, "./comelang2.h", 1367))->it==((void*)0);
             __freed_obj__ = 0;
-            return __result46__;
+            return __result47__;
             __freed_obj__ = 0;
 }
 
@@ -5191,11 +5192,13 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional111;
 char* result_46;
-char* __result47__;
-_Bool _if_conditional112;
+void* __exception_result_var_b20;
 char* __result48__;
-char* result_47;
+_Bool _if_conditional112;
 char* __result49__;
+char* result_47;
+void* __exception_result_var_b21;
+char* __result50__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_46, 0, sizeof(char*));
@@ -5203,12 +5206,11 @@ memset(&result_47, 0, sizeof(char*));
             if(_if_conditional111=self==((void*)0),            __freed_obj__ = 0, 
             _if_conditional111) {
                 __freed_obj__ = 0;
-                (come_push_stackframe("./comelang2.h", 1352),memset(&result_46,0,sizeof(char*)));
-                come_pop_stackframe();
+                (come_push_stackframe("./comelang2.h", 1352),__exception_result_var_b20=memset(&result_46,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b20);
                 __freed_obj__ = 0;
-                __result47__ = __result_obj__ = result_46;
+                __result48__ = __result_obj__ = result_46;
                 __freed_obj__ = 0;
-                return __result47__;
+                return __result48__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -5216,19 +5218,18 @@ memset(&result_47, 0, sizeof(char*));
             __freed_obj__ = 0;
             if(_if_conditional112=((struct list$1charp*)come_null_check(((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1361))->key_list, "./comelang2.h", 1361))->it,            __freed_obj__ = 0, 
             _if_conditional112) {
-                __result48__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1358))->key_list, "./comelang2.h", 1358))->it, "./comelang2.h", 1358))->item;
+                __result49__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1358))->key_list, "./comelang2.h", 1358))->it, "./comelang2.h", 1358))->item;
                 __freed_obj__ = 0;
-                return __result48__;
+                return __result49__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
             __freed_obj__ = 0;
-            (come_push_stackframe("./comelang2.h", 1362),memset(&result_47,0,sizeof(char*)));
-            come_pop_stackframe();
+            (come_push_stackframe("./comelang2.h", 1362),__exception_result_var_b21=memset(&result_47,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b21);
             __freed_obj__ = 0;
-            __result49__ = __result_obj__ = result_47;
+            __result50__ = __result_obj__ = result_47;
             __freed_obj__ = 0;
-            return __result49__;
+            return __result50__;
             __freed_obj__ = 0;
 }
 
@@ -5239,27 +5240,29 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 struct sVar* default_value_49;
+void* __exception_result_var_b23;
+unsigned int __exception_result_var_b24;
 unsigned int hash_50;
 unsigned int it_51;
 _Bool _while_condtional9;
 _Bool _if_conditional113;
 void* right_value74;
-struct optional$2boolbool* __exception_result_var_b2;
+struct optional$2boolbool* __exception_result_var_b25;
 _Bool _if_conditional115;
 void* right_value75;
 void* right_value76;
-struct optional$2sVarpbool* __result53__;
+struct optional$2sVarpbool* __result54__;
 _Bool _if_conditional116;
 _Bool _if_conditional117;
 void* right_value77;
 void* right_value78;
-struct optional$2sVarpbool* __result54__;
+struct optional$2sVarpbool* __result55__;
 void* right_value79;
 void* right_value80;
-struct optional$2sVarpbool* __result55__;
+struct optional$2sVarpbool* __result56__;
 void* right_value81;
 void* right_value82;
-struct optional$2sVarpbool* __result56__;
+struct optional$2sVarpbool* __result57__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&default_value_49, 0, sizeof(struct sVar*));
@@ -5275,11 +5278,9 @@ memset(&right_value80, 0, sizeof(void*));
 memset(&right_value81, 0, sizeof(void*));
 memset(&right_value82, 0, sizeof(void*));
                 __freed_obj__ = 0;
-                (come_push_stackframe("./comelang2.h", 1587),memset(&default_value_49,0,sizeof(struct sVar*)));
-                come_pop_stackframe();
+                (come_push_stackframe("./comelang2.h", 1587),__exception_result_var_b23=memset(&default_value_49,0,sizeof(struct sVar*)), come_pop_stackframe(), __exception_result_var_b23);
                 __freed_obj__ = 0;
-                hash_50=(come_push_stackframe("./comelang2.h", 1589),string_get_hash_key(((char*)come_null_check(((char*)key), "./comelang2.h", 1589))))%((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1589))->size;
-                come_pop_stackframe();
+                hash_50=(come_push_stackframe("./comelang2.h", 1589),__exception_result_var_b24=string_get_hash_key(((char*)come_null_check(((char*)key), "./comelang2.h", 1589))), come_pop_stackframe(), __exception_result_var_b24)%((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1589))->size;
                 __freed_obj__ = 0;
                 it_51=hash_50;
                 __freed_obj__ = 0;
@@ -5287,17 +5288,17 @@ memset(&right_value82, 0, sizeof(void*));
                 _while_condtional9) {
                     if(_if_conditional113=((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1612))->item_existance[it_51],                    __freed_obj__ = 0, 
                     _if_conditional113) {
-                        if(_if_conditional115=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1600),__exception_result_var_b2=((struct optional$2boolbool*)(right_value74=string_equals(((char*)come_null_check(((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1600))->keys[it_51], "./comelang2.h", 1600)),key))), come_pop_stackframe(), __exception_result_var_b2)),                        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value74),
+                        if(_if_conditional115=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1600),__exception_result_var_b25=((struct optional$2boolbool*)(right_value74=string_equals(((char*)come_null_check(((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1600))->keys[it_51], "./comelang2.h", 1600)),key))), come_pop_stackframe(), __exception_result_var_b25)),                        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value74),
                         (right_value74 && right_value74 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value74, (void*)0, (void*)0, 0, 1, 0, 0):0,
                         __right_value_freed_obj[0] = right_value74, 
                         __freed_obj__ = 0, 
                         _if_conditional115) {
-                            __result53__ = __result_obj__ = ((struct optional$2sVarpbool*)(right_value76=optional$2sVarpbool_initialize((struct optional$2sVarpbool*)come_increment_ref_count(((struct optional$2sVarpbool*)(right_value75=(struct optional$2sVarpbool*)come_calloc(1, sizeof(struct optional$2sVarpbool)*(1), "./comelang2.h", 1597)))),((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1597))->items[it_51],(_Bool)1)));
+                            __result54__ = __result_obj__ = ((struct optional$2sVarpbool*)(right_value76=optional$2sVarpbool_initialize((struct optional$2sVarpbool*)come_increment_ref_count(((struct optional$2sVarpbool*)(right_value75=(struct optional$2sVarpbool*)come_calloc(1, sizeof(struct optional$2sVarpbool)*(1), "./comelang2.h", 1597)))),((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1597))->items[it_51],(_Bool)1)));
                             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value75);
                             if(right_value75 && right_value75 != __result_obj__ && !__freed_obj__) { right_value75 = come_decrement_ref_count(right_value75, (void*)0, (void*)0, 1, 0, 0); }
                             __right_value_freed_obj[0] = right_value75;
                             __freed_obj__ = 0;
-                            return __result53__;
+                            return __result54__;
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
@@ -5311,7 +5312,7 @@ memset(&right_value82, 0, sizeof(void*));
                         else {
                             if(_if_conditional117=it_51==hash_50,                            __freed_obj__ = 0, 
                             _if_conditional117) {
-                                __result54__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1606), ((struct optional$2sVarpbool*)(right_value78=optional$2sVarpbool_initialize(((struct optional$2sVarpbool*)(right_value77=(struct optional$2sVarpbool*)come_calloc(1, sizeof(struct optional$2sVarpbool)*(1), "./comelang2.h", 1606))),default_value_49,(_Bool)0))));
+                                __result55__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1606), ((struct optional$2sVarpbool*)(right_value78=optional$2sVarpbool_initialize(((struct optional$2sVarpbool*)(right_value77=(struct optional$2sVarpbool*)come_calloc(1, sizeof(struct optional$2sVarpbool)*(1), "./comelang2.h", 1606))),default_value_49,(_Bool)0))));
                                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value77);
                                 if(right_value77 && right_value77 != __result_obj__ && !__freed_obj__) { right_value77 = come_decrement_ref_count(right_value77, (void*)0, (void*)0, 1, 0, 0); }
                                 __right_value_freed_obj[0] = right_value77;
@@ -5319,7 +5320,7 @@ memset(&right_value82, 0, sizeof(void*));
                                 if(right_value78 && right_value78 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sVarpboolp_finalize,right_value78, (void*)0, (void*)0, 0, 1, 0, 0); }
                                 __right_value_freed_obj[1] = right_value78;
                                 __freed_obj__ = 0;
-                                return __result54__;
+                                return __result55__;
                                 __freed_obj__ = 0;
                             }
                             __freed_obj__ = 0;
@@ -5327,7 +5328,7 @@ memset(&right_value82, 0, sizeof(void*));
                         __freed_obj__ = 0;
                     }
                     else {
-                        __result55__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1610), ((struct optional$2sVarpbool*)(right_value80=optional$2sVarpbool_initialize(((struct optional$2sVarpbool*)(right_value79=(struct optional$2sVarpbool*)come_calloc(1, sizeof(struct optional$2sVarpbool)*(1), "./comelang2.h", 1610))),default_value_49,(_Bool)0))));
+                        __result56__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1610), ((struct optional$2sVarpbool*)(right_value80=optional$2sVarpbool_initialize(((struct optional$2sVarpbool*)(right_value79=(struct optional$2sVarpbool*)come_calloc(1, sizeof(struct optional$2sVarpbool)*(1), "./comelang2.h", 1610))),default_value_49,(_Bool)0))));
                         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value79);
                         if(right_value79 && right_value79 != __result_obj__ && !__freed_obj__) { right_value79 = come_decrement_ref_count(right_value79, (void*)0, (void*)0, 1, 0, 0); }
                         __right_value_freed_obj[0] = right_value79;
@@ -5335,13 +5336,13 @@ memset(&right_value82, 0, sizeof(void*));
                         if(right_value80 && right_value80 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sVarpboolp_finalize,right_value80, (void*)0, (void*)0, 0, 1, 0, 0); }
                         __right_value_freed_obj[1] = right_value80;
                         __freed_obj__ = 0;
-                        return __result55__;
+                        return __result56__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                __result56__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1614), ((struct optional$2sVarpbool*)(right_value82=optional$2sVarpbool_initialize(((struct optional$2sVarpbool*)(right_value81=(struct optional$2sVarpbool*)come_calloc(1, sizeof(struct optional$2sVarpbool)*(1), "./comelang2.h", 1614))),default_value_49,(_Bool)0))));
+                __result57__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1614), ((struct optional$2sVarpbool*)(right_value82=optional$2sVarpbool_initialize(((struct optional$2sVarpbool*)(right_value81=(struct optional$2sVarpbool*)come_calloc(1, sizeof(struct optional$2sVarpbool)*(1), "./comelang2.h", 1614))),default_value_49,(_Bool)0))));
                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value81);
                 if(right_value81 && right_value81 != __result_obj__ && !__freed_obj__) { right_value81 = come_decrement_ref_count(right_value81, (void*)0, (void*)0, 1, 0, 0); }
                 __right_value_freed_obj[0] = right_value81;
@@ -5349,7 +5350,7 @@ memset(&right_value82, 0, sizeof(void*));
                 if(right_value82 && right_value82 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sVarpboolp_finalize,right_value82, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __right_value_freed_obj[1] = right_value82;
                 __freed_obj__ = 0;
-                return __result56__;
+                return __result57__;
                 __freed_obj__ = 0;
 }
 
@@ -5361,26 +5362,26 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional114;
 _Bool default_value_52;
-_Bool __result50__;
+void* __exception_result_var_b26;
 _Bool __result51__;
+_Bool __result52__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&default_value_52, 0, sizeof(_Bool));
                             if(_if_conditional114=self==((void*)0),                            __freed_obj__ = 0, 
                             _if_conditional114) {
                                 __freed_obj__ = 0;
-                                (come_push_stackframe("./comelang2.h", 63),memset(&default_value_52,0,sizeof(_Bool)));
-                                come_pop_stackframe();
+                                (come_push_stackframe("./comelang2.h", 63),__exception_result_var_b26=memset(&default_value_52,0,sizeof(_Bool)), come_pop_stackframe(), __exception_result_var_b26);
                                 __freed_obj__ = 0;
-                                __result50__ = default_value_52;
+                                __result51__ = default_value_52;
                                 __freed_obj__ = 0;
-                                return __result50__;
+                                return __result51__;
                                 __freed_obj__ = 0;
                             }
                             else {
-                                __result51__ = ((struct optional$2boolbool*)come_null_check(self, "./comelang2.h", 67))->v1;
+                                __result52__ = ((struct optional$2boolbool*)come_null_check(self, "./comelang2.h", 67))->v1;
                                 __freed_obj__ = 0;
-                                return __result51__;
+                                return __result52__;
                                 __freed_obj__ = 0;
                             }
                             __freed_obj__ = 0;
@@ -5402,17 +5403,17 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-struct optional$2sVarpbool* __result52__;
+struct optional$2sVarpbool* __result53__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
                                 ((struct optional$2sVarpbool*)come_null_check(self, "./comelang2.h", 40))->v1=v1;
                                 __freed_obj__ = 0;
                                 ((struct optional$2sVarpbool*)come_null_check(self, "./comelang2.h", 41))->v2=v2;
                                 __freed_obj__ = 0;
-                                __result52__ = __result_obj__ = self;
+                                __result53__ = __result_obj__ = self;
                                 if(self && !__freed_obj__) { come_call_finalizer(optional$2sVarpboolp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
                                 __freed_obj__ = 0;
-                                return __result52__;
+                                return __result53__;
                                 __freed_obj__ = 0;
                                 if(self && !__freed_obj__) { come_call_finalizer(optional$2sVarpboolp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
 }
@@ -5435,26 +5436,26 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional118;
 struct sVar* default_value_53;
-struct sVar* __result57__;
+void* __exception_result_var_b28;
 struct sVar* __result58__;
+struct sVar* __result59__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&default_value_53, 0, sizeof(struct sVar*));
                 if(_if_conditional118=self==((void*)0),                __freed_obj__ = 0, 
                 _if_conditional118) {
                     __freed_obj__ = 0;
-                    (come_push_stackframe("./comelang2.h", 63),memset(&default_value_53,0,sizeof(struct sVar*)));
-                    come_pop_stackframe();
+                    (come_push_stackframe("./comelang2.h", 63),__exception_result_var_b28=memset(&default_value_53,0,sizeof(struct sVar*)), come_pop_stackframe(), __exception_result_var_b28);
                     __freed_obj__ = 0;
-                    __result57__ = __result_obj__ = default_value_53;
+                    __result58__ = __result_obj__ = default_value_53;
                     __freed_obj__ = 0;
-                    return __result57__;
+                    return __result58__;
                     __freed_obj__ = 0;
                 }
                 else {
-                    __result58__ = __result_obj__ = ((struct optional$2sVarpbool*)come_null_check(self, "./comelang2.h", 67))->v1;
+                    __result59__ = __result_obj__ = ((struct optional$2sVarpbool*)come_null_check(self, "./comelang2.h", 67))->v1;
                     __freed_obj__ = 0;
-                    return __result58__;
+                    return __result59__;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
@@ -5466,12 +5467,12 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-int __result59__;
+int __result60__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                                    __result59__ = ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 412))->len;
+                                    __result60__ = ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 412))->len;
                                     __freed_obj__ = 0;
-                                    return __result59__;
+                                    return __result60__;
                                     __freed_obj__ = 0;
 }
 
@@ -5484,7 +5485,7 @@ void* __right_value_freed_obj[1024];
 struct list_item$1sNodeph* it_58;
 _Bool _while_condtional10;
 struct list_item$1sNodeph* prev_it_59;
-struct list$1sNodeph* __result60__;
+struct list$1sNodeph* __result61__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&it_58, 0, sizeof(struct list_item$1sNodeph*));
@@ -5507,9 +5508,9 @@ memset(&prev_it_59, 0, sizeof(struct list_item$1sNodeph*));
                                         __freed_obj__ = 0;
                                         ((struct list$1sNodeph*)come_null_check(self, "./comelang2.h", 488))->len=0;
                                         __freed_obj__ = 0;
-                                        __result60__ = __result_obj__ = self;
+                                        __result61__ = __result_obj__ = self;
                                         __freed_obj__ = 0;
-                                        return __result60__;
+                                        return __result61__;
                                         __freed_obj__ = 0;
 }
 
@@ -5548,8 +5549,7 @@ memset(&i_62, 0, sizeof(int));
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-            (come_push_stackframe("./comelang2.h", 1174),come_free_object((char*)((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1174))->items));
-            come_pop_stackframe();
+            (come_push_stackframe("./comelang2.h", 1174),come_free_object((char*)((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1174))->items),come_pop_stackframe());
             __freed_obj__ = 0;
             for(
             i_62=0 ,            __freed_obj__ = 0, 
@@ -5568,8 +5568,7 @@ memset(&i_62, 0, sizeof(int));
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-            (come_push_stackframe("./comelang2.h", 1183),come_free_object((char*)((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1183))->keys));
-            come_pop_stackframe();
+            (come_push_stackframe("./comelang2.h", 1183),come_free_object((char*)((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1183))->keys),come_pop_stackframe());
             __freed_obj__ = 0;
             if(((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1185))->key_list && !__freed_obj__) { come_call_finalizer(list$1charpp_finalize,((struct map$2charphsVarph*)come_null_check(self, "./comelang2.h", 1185))->key_list, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
@@ -5659,28 +5658,35 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional133;
+unsigned int __exception_result_var_b57;
 unsigned int hash_82;
 unsigned int it_83;
 _Bool _while_condtional14;
 _Bool _if_conditional145;
 void* right_value100;
-struct optional$2boolbool* __exception_result_var_b14;
+struct optional$2boolbool* __exception_result_var_b58;
 _Bool _if_conditional146;
 _Bool _if_conditional147;
+struct list$1charp* __exception_result_var_b62;
+struct list$1charp* __exception_result_var_b63;
 _Bool _if_conditional167;
 _Bool _if_conditional168;
 _Bool _if_conditional169;
+int __exception_result_var_b64;
 _Bool _if_conditional170;
 _Bool _if_conditional171;
 _Bool same_key_exist_100;
+char* __exception_result_var_b67;
 char* it2_103;
-_Bool __exception_result_var_b16;
+_Bool __exception_result_var_b68;
 _Bool _for_condtionalA5;
+char* __exception_result_var_b71;
 void* right_value102;
-struct optional$2boolbool* __exception_result_var_b17;
+struct optional$2boolbool* __exception_result_var_b72;
 _Bool _if_conditional176;
 _Bool _if_conditional177;
-struct map$2charphsClassph* __result84__;
+struct list$1charp* __exception_result_var_b73;
+struct map$2charphsClassph* __result85__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&hash_82, 0, sizeof(unsigned int));
@@ -5691,13 +5697,11 @@ memset(&it2_103, 0, sizeof(char*));
 memset(&right_value102, 0, sizeof(void*));
         if(_if_conditional133=((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1427))->len*10>=((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1427))->size,        __freed_obj__ = 0, 
         _if_conditional133) {
-            (come_push_stackframe("./comelang2.h", 1425),map$2charphsClassph_rehash(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1425))));
-            come_pop_stackframe();
+            (come_push_stackframe("./comelang2.h", 1425),map$2charphsClassph_rehash(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1425))),come_pop_stackframe());
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-        hash_82=(come_push_stackframe("./comelang2.h", 1427),string_get_hash_key(((char*)come_null_check(key, "./comelang2.h", 1427))))%((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1427))->size;
-        come_pop_stackframe();
+        hash_82=(come_push_stackframe("./comelang2.h", 1427),__exception_result_var_b57=string_get_hash_key(((char*)come_null_check(key, "./comelang2.h", 1427))), come_pop_stackframe(), __exception_result_var_b57)%((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1427))->size;
         __freed_obj__ = 0;
         it_83=hash_82;
         __freed_obj__ = 0;
@@ -5705,15 +5709,14 @@ memset(&right_value102, 0, sizeof(void*));
         _while_condtional14) {
             if(_if_conditional145=((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1484))->item_existance[it_83],            __freed_obj__ = 0, 
             _if_conditional145) {
-                if(_if_conditional146=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1454),__exception_result_var_b14=((struct optional$2boolbool*)(right_value100=string_equals(((char*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1454))->keys[it_83], "./comelang2.h", 1454)),key))), come_pop_stackframe(), __exception_result_var_b14)),                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value100),
+                if(_if_conditional146=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1454),__exception_result_var_b58=((struct optional$2boolbool*)(right_value100=string_equals(((char*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1454))->keys[it_83], "./comelang2.h", 1454)),key))), come_pop_stackframe(), __exception_result_var_b58)),                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value100),
                 (right_value100 && right_value100 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value100, (void*)0, (void*)0, 0, 1, 0, 0):0,
                 __right_value_freed_obj[0] = right_value100, 
                 __freed_obj__ = 0, 
                 _if_conditional146) {
                     if(_if_conditional147=1,                    __freed_obj__ = 0, 
                     _if_conditional147) {
-                        (come_push_stackframe("./comelang2.h", 1436),list$1charp_remove(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1436))->key_list, "./comelang2.h", 1436)),((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1436))->keys[it_83]));
-                        come_pop_stackframe();
+                        (come_push_stackframe("./comelang2.h", 1436),__exception_result_var_b62=list$1charp_remove(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1436))->key_list, "./comelang2.h", 1436)),((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1436))->keys[it_83]), come_pop_stackframe(), __exception_result_var_b62);
                         __freed_obj__ = 0;
                         if(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1437))->keys[it_83] && !__freed_obj__) { ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1437))->keys[it_83] = come_decrement_ref_count(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1437))->keys[it_83], (void*)0, (void*)0, 0, 0, 0); }
                         __freed_obj__ = 0;
@@ -5721,8 +5724,7 @@ memset(&right_value102, 0, sizeof(void*));
                         __freed_obj__ = 0;
                     }
                     else {
-                        (come_push_stackframe("./comelang2.h", 1441),list$1charp_remove(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1441))->key_list, "./comelang2.h", 1441)),((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1441))->keys[it_83]));
-                        come_pop_stackframe();
+                        (come_push_stackframe("./comelang2.h", 1441),__exception_result_var_b63=list$1charp_remove(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1441))->key_list, "./comelang2.h", 1441)),((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1441))->keys[it_83]), come_pop_stackframe(), __exception_result_var_b63);
                         __freed_obj__ = 0;
                         ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1442))->keys[it_83]=key;
                         __freed_obj__ = 0;
@@ -5754,14 +5756,11 @@ memset(&right_value102, 0, sizeof(void*));
                 else {
                     if(_if_conditional169=it_83==hash_82,                    __freed_obj__ = 0, 
                     _if_conditional169) {
-                        (come_push_stackframe("./comelang2.h", 1460),printf("unexpected error in map.insert\n"));
-                        come_pop_stackframe();
+                        (come_push_stackframe("./comelang2.h", 1460),__exception_result_var_b64=printf("unexpected error in map.insert\n"), come_pop_stackframe(), __exception_result_var_b64);
                         __freed_obj__ = 0;
-                        (come_push_stackframe("./comelang2.h", 1461),stackframe());
-                        come_pop_stackframe();
+                        (come_push_stackframe("./comelang2.h", 1461),stackframe(),come_pop_stackframe());
                         __freed_obj__ = 0;
-                        (come_push_stackframe("./comelang2.h", 1462),exit(2));
-                        come_pop_stackframe();
+                        (come_push_stackframe("./comelang2.h", 1462),exit(2),come_pop_stackframe());
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
@@ -5802,11 +5801,11 @@ memset(&right_value102, 0, sizeof(void*));
         same_key_exist_100=(_Bool)0;
         __freed_obj__ = 0;
         for(
-        it2_103=(come_push_stackframe("./comelang2.h", 1494),list$1charp_begin(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1494))->key_list, "./comelang2.h", 1494)))) ,        come_pop_stackframe() ,        __freed_obj__ = 0, 
-        0;        _for_condtionalA5=        !(come_push_stackframe("./comelang2.h", 1494),__exception_result_var_b16=list$1charp_end(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1494))->key_list, "./comelang2.h", 1494))), come_pop_stackframe(), __exception_result_var_b16) ,        __freed_obj__ = 0, 
-        _for_condtionalA5;        it2_103=(come_push_stackframe("./comelang2.h", 1494),list$1charp_next(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1494))->key_list, "./comelang2.h", 1494)))) ,        come_pop_stackframe() ,        __freed_obj__ = 0, 
+        it2_103=(come_push_stackframe("./comelang2.h", 1494),__exception_result_var_b67=list$1charp_begin(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1494))->key_list, "./comelang2.h", 1494))), come_pop_stackframe(), __exception_result_var_b67) ,        __freed_obj__ = 0, 
+        0;        _for_condtionalA5=        !(come_push_stackframe("./comelang2.h", 1494),__exception_result_var_b68=list$1charp_end(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1494))->key_list, "./comelang2.h", 1494))), come_pop_stackframe(), __exception_result_var_b68) ,        __freed_obj__ = 0, 
+        _for_condtionalA5;        it2_103=(come_push_stackframe("./comelang2.h", 1494),__exception_result_var_b71=list$1charp_next(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1494))->key_list, "./comelang2.h", 1494))), come_pop_stackframe(), __exception_result_var_b71) ,        __freed_obj__ = 0, 
         0        ){
-            if(_if_conditional176=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1492),__exception_result_var_b17=((struct optional$2boolbool*)(right_value102=string_equals(((char*)come_null_check(it2_103, "./comelang2.h", 1492)),key))), come_pop_stackframe(), __exception_result_var_b17)),            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value102),
+            if(_if_conditional176=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1492),__exception_result_var_b72=((struct optional$2boolbool*)(right_value102=string_equals(((char*)come_null_check(it2_103, "./comelang2.h", 1492)),key))), come_pop_stackframe(), __exception_result_var_b72)),            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value102),
             (right_value102 && right_value102 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value102, (void*)0, (void*)0, 0, 1, 0, 0):0,
             __right_value_freed_obj[0] = right_value102, 
             __freed_obj__ = 0, 
@@ -5819,16 +5818,15 @@ memset(&right_value102, 0, sizeof(void*));
         __freed_obj__ = 0;
         if(_if_conditional177=!same_key_exist_100,        __freed_obj__ = 0, 
         _if_conditional177) {
-            (come_push_stackframe("./comelang2.h", 1495),list$1charp_push_back(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1495))->key_list, "./comelang2.h", 1495)),key));
-            come_pop_stackframe();
+            (come_push_stackframe("./comelang2.h", 1495),__exception_result_var_b73=list$1charp_push_back(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1495))->key_list, "./comelang2.h", 1495)),key), come_pop_stackframe(), __exception_result_var_b73);
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-        __result84__ = __result_obj__ = self;
+        __result85__ = __result_obj__ = self;
         if(key && !__freed_obj__) { key = come_decrement_ref_count(key, (void*)0, (void*)0, 0, 1, 0); }
         if(item && !__freed_obj__) { come_call_finalizer(sClass_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
         __freed_obj__ = 0;
-        return __result84__;
+        return __result85__;
         __freed_obj__ = 0;
         if(key && !__freed_obj__) { key = come_decrement_ref_count(key, (void*)0, (void*)0, 0, 1, 0); }
         if(item && !__freed_obj__) { come_call_finalizer(sClass_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
@@ -5848,20 +5846,27 @@ struct sClass** items_67;
 void* right_value96;
 _Bool* item_existance_68;
 int len_69;
+char* __exception_result_var_b45;
 char* it_72;
-_Bool __exception_result_var_b12;
+_Bool __exception_result_var_b46;
 _Bool _for_condtionalA4;
+char* __exception_result_var_b49;
 struct sClass* default_value_75;
+void* __exception_result_var_b50;
 void* right_value98;
+struct sClass* __exception_result_var_b53;
 struct sClass* it2_78;
+unsigned int __exception_result_var_b54;
 unsigned int hash_79;
 int n_80;
 _Bool _while_condtional13;
 _Bool _if_conditional142;
 _Bool _if_conditional143;
 _Bool _if_conditional144;
+int __exception_result_var_b55;
 struct sClass* default_value_81;
 void* right_value99;
+struct sClass* __exception_result_var_b56;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&size_65, 0, sizeof(int));
@@ -5900,22 +5905,19 @@ memset(&right_value99, 0, sizeof(void*));
                 len_69=0;
                 __freed_obj__ = 0;
                 for(
-                it_72=(come_push_stackframe("./comelang2.h", 1411),map$2charphsClassph_begin(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1411)))) ,                come_pop_stackframe() ,                __freed_obj__ = 0, 
-                0;                _for_condtionalA4=                !(come_push_stackframe("./comelang2.h", 1411),__exception_result_var_b12=map$2charphsClassph_end(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1411))), come_pop_stackframe(), __exception_result_var_b12) ,                __freed_obj__ = 0, 
-                _for_condtionalA4;                it_72=(come_push_stackframe("./comelang2.h", 1411),map$2charphsClassph_next(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1411)))) ,                come_pop_stackframe() ,                __freed_obj__ = 0, 
+                it_72=(come_push_stackframe("./comelang2.h", 1411),__exception_result_var_b45=map$2charphsClassph_begin(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1411))), come_pop_stackframe(), __exception_result_var_b45) ,                __freed_obj__ = 0, 
+                0;                _for_condtionalA4=                !(come_push_stackframe("./comelang2.h", 1411),__exception_result_var_b46=map$2charphsClassph_end(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1411))), come_pop_stackframe(), __exception_result_var_b46) ,                __freed_obj__ = 0, 
+                _for_condtionalA4;                it_72=(come_push_stackframe("./comelang2.h", 1411),__exception_result_var_b49=map$2charphsClassph_next(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1411))), come_pop_stackframe(), __exception_result_var_b49) ,                __freed_obj__ = 0, 
                 0                ){
                     __freed_obj__ = 0;
-                    (come_push_stackframe("./comelang2.h", 1380),memset(&default_value_75,0,sizeof(struct sClass*)));
-                    come_pop_stackframe();
+                    (come_push_stackframe("./comelang2.h", 1380),__exception_result_var_b50=memset(&default_value_75,0,sizeof(struct sClass*)), come_pop_stackframe(), __exception_result_var_b50);
                     __freed_obj__ = 0;
-                    it2_78=(come_push_stackframe("./comelang2.h", 1381),((struct sClass*)(right_value98=map$2charphsClassph_at(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1381)),it_72,default_value_75))));
-                    come_pop_stackframe();
+                    it2_78=(come_push_stackframe("./comelang2.h", 1381),__exception_result_var_b53=((struct sClass*)(right_value98=map$2charphsClassph_at(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1381)),it_72,default_value_75))), come_pop_stackframe(), __exception_result_var_b53);
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value98);
                     if(right_value98 && right_value98 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sClass_finalize,right_value98, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __right_value_freed_obj[0] = right_value98;
                     __freed_obj__ = 0;
-                    hash_79=(come_push_stackframe("./comelang2.h", 1382),string_get_hash_key(((char*)come_null_check(it_72, "./comelang2.h", 1382))))%size_65;
-                    come_pop_stackframe();
+                    hash_79=(come_push_stackframe("./comelang2.h", 1382),__exception_result_var_b54=string_get_hash_key(((char*)come_null_check(it_72, "./comelang2.h", 1382))), come_pop_stackframe(), __exception_result_var_b54)%size_65;
                     __freed_obj__ = 0;
                     n_80=hash_79;
                     __freed_obj__ = 0;
@@ -5933,14 +5935,11 @@ memset(&right_value99, 0, sizeof(void*));
                             else {
                                 if(_if_conditional144=n_80==hash_79,                                __freed_obj__ = 0, 
                                 _if_conditional144) {
-                                    (come_push_stackframe("./comelang2.h", 1394),printf("unexpected error in map.rehash(1)\n"));
-                                    come_pop_stackframe();
+                                    (come_push_stackframe("./comelang2.h", 1394),__exception_result_var_b55=printf("unexpected error in map.rehash(1)\n"), come_pop_stackframe(), __exception_result_var_b55);
                                     __freed_obj__ = 0;
-                                    (come_push_stackframe("./comelang2.h", 1395),stackframe());
-                                    come_pop_stackframe();
+                                    (come_push_stackframe("./comelang2.h", 1395),stackframe(),come_pop_stackframe());
                                     __freed_obj__ = 0;
-                                    (come_push_stackframe("./comelang2.h", 1396),exit(2));
-                                    come_pop_stackframe();
+                                    (come_push_stackframe("./comelang2.h", 1396),exit(2),come_pop_stackframe());
                                     __freed_obj__ = 0;
                                 }
                                 __freed_obj__ = 0;
@@ -5953,8 +5952,7 @@ memset(&right_value99, 0, sizeof(void*));
                             keys_66[n_80]=it_72;
                             __freed_obj__ = 0;
                             __freed_obj__ = 0;
-                            items_67[n_80]=(come_push_stackframe("./comelang2.h", 1403),((struct sClass*)(right_value99=map$2charphsClassph_at(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1403)),it_72,default_value_81))));
-                            come_pop_stackframe();
+                            items_67[n_80]=(come_push_stackframe("./comelang2.h", 1403),__exception_result_var_b56=((struct sClass*)(right_value99=map$2charphsClassph_at(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1403)),it_72,default_value_81))), come_pop_stackframe(), __exception_result_var_b56);
                             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value99);
                             if(right_value99 && right_value99 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sClass_finalize,right_value99, (void*)0, (void*)0, 0, 1, 0, 0); }
                             __right_value_freed_obj[0] = right_value99;
@@ -5969,13 +5967,11 @@ memset(&right_value99, 0, sizeof(void*));
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                (come_push_stackframe("./comelang2.h", 1411),come_free_object((char*)((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1411))->items));
-                come_pop_stackframe();
+                (come_push_stackframe("./comelang2.h", 1411),come_free_object((char*)((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1411))->items),come_pop_stackframe());
                 __freed_obj__ = 0;
                 if(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1412))->item_existance && !__freed_obj__) { ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1412))->item_existance = come_decrement_ref_count(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1412))->item_existance, (void*)0, (void*)0, 0, 0, 0); }
                 __freed_obj__ = 0;
-                (come_push_stackframe("./comelang2.h", 1413),come_free_object((char*)((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1413))->keys));
-                come_pop_stackframe();
+                (come_push_stackframe("./comelang2.h", 1413),come_free_object((char*)((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1413))->keys),come_pop_stackframe());
                 __freed_obj__ = 0;
                 ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1415))->keys=keys_66;
                 __freed_obj__ = 0;
@@ -5997,11 +5993,13 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional134;
 char* result_70;
-char* __result61__;
-_Bool _if_conditional135;
+void* __exception_result_var_b43;
 char* __result62__;
-char* result_71;
+_Bool _if_conditional135;
 char* __result63__;
+char* result_71;
+void* __exception_result_var_b44;
+char* __result64__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_70, 0, sizeof(char*));
@@ -6009,12 +6007,11 @@ memset(&result_71, 0, sizeof(char*));
                     if(_if_conditional134=self==((void*)0),                    __freed_obj__ = 0, 
                     _if_conditional134) {
                         __freed_obj__ = 0;
-                        (come_push_stackframe("./comelang2.h", 1335),memset(&result_70,0,sizeof(char*)));
-                        come_pop_stackframe();
+                        (come_push_stackframe("./comelang2.h", 1335),__exception_result_var_b43=memset(&result_70,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b43);
                         __freed_obj__ = 0;
-                        __result61__ = __result_obj__ = result_70;
+                        __result62__ = __result_obj__ = result_70;
                         __freed_obj__ = 0;
-                        return __result61__;
+                        return __result62__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
@@ -6022,19 +6019,18 @@ memset(&result_71, 0, sizeof(char*));
                     __freed_obj__ = 0;
                     if(_if_conditional135=((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1344))->key_list, "./comelang2.h", 1344))->it,                    __freed_obj__ = 0, 
                     _if_conditional135) {
-                        __result62__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1341))->key_list, "./comelang2.h", 1341))->it, "./comelang2.h", 1341))->item;
+                        __result63__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1341))->key_list, "./comelang2.h", 1341))->it, "./comelang2.h", 1341))->item;
                         __freed_obj__ = 0;
-                        return __result62__;
+                        return __result63__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
                     __freed_obj__ = 0;
-                    (come_push_stackframe("./comelang2.h", 1345),memset(&result_71,0,sizeof(char*)));
-                    come_pop_stackframe();
+                    (come_push_stackframe("./comelang2.h", 1345),__exception_result_var_b44=memset(&result_71,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b44);
                     __freed_obj__ = 0;
-                    __result63__ = __result_obj__ = result_71;
+                    __result64__ = __result_obj__ = result_71;
                     __freed_obj__ = 0;
-                    return __result63__;
+                    return __result64__;
                     __freed_obj__ = 0;
 }
 
@@ -6044,12 +6040,12 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-_Bool __result64__;
+_Bool __result65__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                    __result64__ = self==((void*)0)||((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1367))->key_list==((void*)0)||((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1367))->key_list, "./comelang2.h", 1367))->it==((void*)0);
+                    __result65__ = self==((void*)0)||((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1367))->key_list==((void*)0)||((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1367))->key_list, "./comelang2.h", 1367))->it==((void*)0);
                     __freed_obj__ = 0;
-                    return __result64__;
+                    return __result65__;
                     __freed_obj__ = 0;
 }
 
@@ -6061,11 +6057,13 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional136;
 char* result_73;
-char* __result65__;
-_Bool _if_conditional137;
+void* __exception_result_var_b47;
 char* __result66__;
-char* result_74;
+_Bool _if_conditional137;
 char* __result67__;
+char* result_74;
+void* __exception_result_var_b48;
+char* __result68__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_73, 0, sizeof(char*));
@@ -6073,12 +6071,11 @@ memset(&result_74, 0, sizeof(char*));
                     if(_if_conditional136=self==((void*)0),                    __freed_obj__ = 0, 
                     _if_conditional136) {
                         __freed_obj__ = 0;
-                        (come_push_stackframe("./comelang2.h", 1352),memset(&result_73,0,sizeof(char*)));
-                        come_pop_stackframe();
+                        (come_push_stackframe("./comelang2.h", 1352),__exception_result_var_b47=memset(&result_73,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b47);
                         __freed_obj__ = 0;
-                        __result65__ = __result_obj__ = result_73;
+                        __result66__ = __result_obj__ = result_73;
                         __freed_obj__ = 0;
-                        return __result65__;
+                        return __result66__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
@@ -6086,19 +6083,18 @@ memset(&result_74, 0, sizeof(char*));
                     __freed_obj__ = 0;
                     if(_if_conditional137=((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1361))->key_list, "./comelang2.h", 1361))->it,                    __freed_obj__ = 0, 
                     _if_conditional137) {
-                        __result66__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1358))->key_list, "./comelang2.h", 1358))->it, "./comelang2.h", 1358))->item;
+                        __result67__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1358))->key_list, "./comelang2.h", 1358))->it, "./comelang2.h", 1358))->item;
                         __freed_obj__ = 0;
-                        return __result66__;
+                        return __result67__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
                     __freed_obj__ = 0;
-                    (come_push_stackframe("./comelang2.h", 1362),memset(&result_74,0,sizeof(char*)));
-                    come_pop_stackframe();
+                    (come_push_stackframe("./comelang2.h", 1362),__exception_result_var_b48=memset(&result_74,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b48);
                     __freed_obj__ = 0;
-                    __result67__ = __result_obj__ = result_74;
+                    __result68__ = __result_obj__ = result_74;
                     __freed_obj__ = 0;
-                    return __result67__;
+                    return __result68__;
                     __freed_obj__ = 0;
 }
 
@@ -6108,26 +6104,26 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
+unsigned int __exception_result_var_b51;
 unsigned int hash_76;
 unsigned int it_77;
 _Bool _while_condtional12;
 _Bool _if_conditional138;
 void* right_value97;
-struct optional$2boolbool* __exception_result_var_b13;
+struct optional$2boolbool* __exception_result_var_b52;
 _Bool _if_conditional139;
-struct sClass* __result68__;
+struct sClass* __result69__;
 _Bool _if_conditional140;
 _Bool _if_conditional141;
-struct sClass* __result69__;
 struct sClass* __result70__;
 struct sClass* __result71__;
+struct sClass* __result72__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&hash_76, 0, sizeof(unsigned int));
 memset(&it_77, 0, sizeof(unsigned int));
 memset(&right_value97, 0, sizeof(void*));
-                        hash_76=(come_push_stackframe("./comelang2.h", 1260),string_get_hash_key(((char*)come_null_check(((char*)key), "./comelang2.h", 1260))))%((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1260))->size;
-                        come_pop_stackframe();
+                        hash_76=(come_push_stackframe("./comelang2.h", 1260),__exception_result_var_b51=string_get_hash_key(((char*)come_null_check(((char*)key), "./comelang2.h", 1260))), come_pop_stackframe(), __exception_result_var_b51)%((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1260))->size;
                         __freed_obj__ = 0;
                         it_77=hash_76;
                         __freed_obj__ = 0;
@@ -6135,14 +6131,14 @@ memset(&right_value97, 0, sizeof(void*));
                         _while_condtional12) {
                             if(_if_conditional138=((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1283))->item_existance[it_77],                            __freed_obj__ = 0, 
                             _if_conditional138) {
-                                if(_if_conditional139=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1271),__exception_result_var_b13=((struct optional$2boolbool*)(right_value97=string_equals(((char*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1271))->keys[it_77], "./comelang2.h", 1271)),key))), come_pop_stackframe(), __exception_result_var_b13)),                                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value97),
+                                if(_if_conditional139=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1271),__exception_result_var_b52=((struct optional$2boolbool*)(right_value97=string_equals(((char*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1271))->keys[it_77], "./comelang2.h", 1271)),key))), come_pop_stackframe(), __exception_result_var_b52)),                                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value97),
                                 (right_value97 && right_value97 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value97, (void*)0, (void*)0, 0, 1, 0, 0):0,
                                 __right_value_freed_obj[0] = right_value97, 
                                 __freed_obj__ = 0, 
                                 _if_conditional139) {
-                                    __result68__ = __result_obj__ = ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1268))->items[it_77];
+                                    __result69__ = __result_obj__ = ((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1268))->items[it_77];
                                     __freed_obj__ = 0;
-                                    return __result68__;
+                                    return __result69__;
                                     __freed_obj__ = 0;
                                 }
                                 __freed_obj__ = 0;
@@ -6156,9 +6152,9 @@ memset(&right_value97, 0, sizeof(void*));
                                 else {
                                     if(_if_conditional141=it_77==hash_76,                                    __freed_obj__ = 0, 
                                     _if_conditional141) {
-                                        __result69__ = __result_obj__ = default_value;
+                                        __result70__ = __result_obj__ = default_value;
                                         __freed_obj__ = 0;
-                                        return __result69__;
+                                        return __result70__;
                                         __freed_obj__ = 0;
                                     }
                                     __freed_obj__ = 0;
@@ -6166,17 +6162,17 @@ memset(&right_value97, 0, sizeof(void*));
                                 __freed_obj__ = 0;
                             }
                             else {
-                                __result70__ = __result_obj__ = default_value;
+                                __result71__ = __result_obj__ = default_value;
                                 __freed_obj__ = 0;
-                                return __result70__;
+                                return __result71__;
                                 __freed_obj__ = 0;
                             }
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
-                        __result71__ = __result_obj__ = default_value;
+                        __result72__ = __result_obj__ = default_value;
                         __freed_obj__ = 0;
-                        return __result71__;
+                        return __result72__;
                         __freed_obj__ = 0;
 }
 
@@ -6190,9 +6186,10 @@ int it2_84;
 struct list_item$1charp* it_85;
 _Bool _while_condtional15;
 void* right_value101;
-struct optional$2boolbool* __exception_result_var_b15;
+struct optional$2boolbool* __exception_result_var_b59;
 _Bool _if_conditional148;
-struct list$1charp* __result75__;
+struct list$1charp* __exception_result_var_b61;
+struct list$1charp* __result76__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&it2_84, 0, sizeof(int));
@@ -6204,13 +6201,12 @@ memset(&right_value101, 0, sizeof(void*));
                             __freed_obj__ = 0;
                             while(_while_condtional15=it_85!=((void*)0),                            __freed_obj__ = 0, 
                             _while_condtional15) {
-                                if(_if_conditional148=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 500),__exception_result_var_b15=((struct optional$2boolbool*)(right_value101=string_equals(((char*)come_null_check(((struct list_item$1charp*)come_null_check(it_85, "./comelang2.h", 500))->item, "./comelang2.h", 500)),item))), come_pop_stackframe(), __exception_result_var_b15)),                                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value101),
+                                if(_if_conditional148=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 500),__exception_result_var_b59=((struct optional$2boolbool*)(right_value101=string_equals(((char*)come_null_check(((struct list_item$1charp*)come_null_check(it_85, "./comelang2.h", 500))->item, "./comelang2.h", 500)),item))), come_pop_stackframe(), __exception_result_var_b59)),                                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value101),
                                 (right_value101 && right_value101 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value101, (void*)0, (void*)0, 0, 1, 0, 0):0,
                                 __right_value_freed_obj[0] = right_value101, 
                                 __freed_obj__ = 0, 
                                 _if_conditional148) {
-                                    (come_push_stackframe("./comelang2.h", 497),list$1charp_delete(((struct list$1charp*)come_null_check(self, "./comelang2.h", 497)),it2_84,it2_84+1));
-                                    come_pop_stackframe();
+                                    (come_push_stackframe("./comelang2.h", 497),__exception_result_var_b61=list$1charp_delete(((struct list$1charp*)come_null_check(self, "./comelang2.h", 497)),it2_84,it2_84+1), come_pop_stackframe(), __exception_result_var_b61);
                                     __freed_obj__ = 0;
                                     break;
                                     __freed_obj__ = 0;
@@ -6222,9 +6218,9 @@ memset(&right_value101, 0, sizeof(void*));
                                 __freed_obj__ = 0;
                             }
                             __freed_obj__ = 0;
-                            __result75__ = __result_obj__ = self;
+                            __result76__ = __result_obj__ = self;
                             __freed_obj__ = 0;
-                            return __result75__;
+                            return __result76__;
                             __freed_obj__ = 0;
 }
 
@@ -6241,8 +6237,9 @@ int tmp_86;
 _Bool _if_conditional152;
 _Bool _if_conditional153;
 _Bool _if_conditional154;
-struct list$1charp* __result72__;
+struct list$1charp* __result73__;
 _Bool _if_conditional155;
+struct list$1charp* __exception_result_var_b60;
 _Bool _if_conditional156;
 struct list_item$1charp* it_89;
 int i_90;
@@ -6268,7 +6265,7 @@ _Bool _if_conditional164;
 struct list_item$1charp* prev_it_99;
 _Bool _if_conditional165;
 _Bool _if_conditional166;
-struct list$1charp* __result74__;
+struct list$1charp* __result75__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&tmp_86, 0, sizeof(int));
@@ -6319,16 +6316,15 @@ memset(&prev_it_99, 0, sizeof(struct list_item$1charp*));
                                         __freed_obj__ = 0;
                                         if(_if_conditional154=head==tail,                                        __freed_obj__ = 0, 
                                         _if_conditional154) {
-                                            __result72__ = __result_obj__ = self;
+                                            __result73__ = __result_obj__ = self;
                                             __freed_obj__ = 0;
-                                            return __result72__;
+                                            return __result73__;
                                             __freed_obj__ = 0;
                                         }
                                         __freed_obj__ = 0;
                                         if(_if_conditional155=head==0&&tail==((struct list$1charp*)come_null_check(self, "./comelang2.h", 629))->len,                                        __freed_obj__ = 0, 
                                         _if_conditional155) {
-                                            (come_push_stackframe("./comelang2.h", 536),list$1charp_reset(((struct list$1charp*)come_null_check(self, "./comelang2.h", 536))));
-                                            come_pop_stackframe();
+                                            (come_push_stackframe("./comelang2.h", 536),__exception_result_var_b60=list$1charp_reset(((struct list$1charp*)come_null_check(self, "./comelang2.h", 536))), come_pop_stackframe(), __exception_result_var_b60);
                                             __freed_obj__ = 0;
                                         }
                                         else {
@@ -6478,9 +6474,9 @@ memset(&prev_it_99, 0, sizeof(struct list_item$1charp*));
                                             __freed_obj__ = 0;
                                         }
                                         __freed_obj__ = 0;
-                                        __result74__ = __result_obj__ = self;
+                                        __result75__ = __result_obj__ = self;
                                         __freed_obj__ = 0;
-                                        return __result74__;
+                                        return __result75__;
                                         __freed_obj__ = 0;
 }
 
@@ -6493,7 +6489,7 @@ void* __right_value_freed_obj[1024];
 struct list_item$1charp* it_87;
 _Bool _while_condtional16;
 struct list_item$1charp* prev_it_88;
-struct list$1charp* __result73__;
+struct list$1charp* __result74__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&it_87, 0, sizeof(struct list_item$1charp*));
@@ -6516,9 +6512,9 @@ memset(&prev_it_88, 0, sizeof(struct list_item$1charp*));
                                                 __freed_obj__ = 0;
                                                 ((struct list$1charp*)come_null_check(self, "./comelang2.h", 488))->len=0;
                                                 __freed_obj__ = 0;
-                                                __result73__ = __result_obj__ = self;
+                                                __result74__ = __result_obj__ = self;
                                                 __freed_obj__ = 0;
-                                                return __result73__;
+                                                return __result74__;
                                                 __freed_obj__ = 0;
 }
 
@@ -6530,11 +6526,13 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional172;
 char* result_101;
-char* __result76__;
-_Bool _if_conditional173;
+void* __exception_result_var_b65;
 char* __result77__;
-char* result_102;
+_Bool _if_conditional173;
 char* __result78__;
+char* result_102;
+void* __exception_result_var_b66;
+char* __result79__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_101, 0, sizeof(char*));
@@ -6542,12 +6540,11 @@ memset(&result_102, 0, sizeof(char*));
             if(_if_conditional172=self==((void*)0),            __freed_obj__ = 0, 
             _if_conditional172) {
                 __freed_obj__ = 0;
-                (come_push_stackframe("./comelang2.h", 335),memset(&result_101,0,sizeof(char*)));
-                come_pop_stackframe();
+                (come_push_stackframe("./comelang2.h", 335),__exception_result_var_b65=memset(&result_101,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b65);
                 __freed_obj__ = 0;
-                __result76__ = __result_obj__ = result_101;
+                __result77__ = __result_obj__ = result_101;
                 __freed_obj__ = 0;
-                return __result76__;
+                return __result77__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -6555,19 +6552,18 @@ memset(&result_102, 0, sizeof(char*));
             __freed_obj__ = 0;
             if(_if_conditional173=((struct list$1charp*)come_null_check(self, "./comelang2.h", 344))->it,            __freed_obj__ = 0, 
             _if_conditional173) {
-                __result77__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(self, "./comelang2.h", 341))->it, "./comelang2.h", 341))->item;
+                __result78__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(self, "./comelang2.h", 341))->it, "./comelang2.h", 341))->item;
                 __freed_obj__ = 0;
-                return __result77__;
+                return __result78__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
             __freed_obj__ = 0;
-            (come_push_stackframe("./comelang2.h", 345),memset(&result_102,0,sizeof(char*)));
-            come_pop_stackframe();
+            (come_push_stackframe("./comelang2.h", 345),__exception_result_var_b66=memset(&result_102,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b66);
             __freed_obj__ = 0;
-            __result78__ = __result_obj__ = result_102;
+            __result79__ = __result_obj__ = result_102;
             __freed_obj__ = 0;
-            return __result78__;
+            return __result79__;
             __freed_obj__ = 0;
 }
 
@@ -6577,12 +6573,12 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-_Bool __result79__;
+_Bool __result80__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-            __result79__ = self==((void*)0)||((struct list$1charp*)come_null_check(self, "./comelang2.h", 368))->it==((void*)0);
+            __result80__ = self==((void*)0)||((struct list$1charp*)come_null_check(self, "./comelang2.h", 368))->it==((void*)0);
             __freed_obj__ = 0;
-            return __result79__;
+            return __result80__;
             __freed_obj__ = 0;
 }
 
@@ -6594,11 +6590,13 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional174;
 char* result_104;
-char* __result80__;
-_Bool _if_conditional175;
+void* __exception_result_var_b69;
 char* __result81__;
-char* result_105;
+_Bool _if_conditional175;
 char* __result82__;
+char* result_105;
+void* __exception_result_var_b70;
+char* __result83__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_104, 0, sizeof(char*));
@@ -6606,12 +6604,11 @@ memset(&result_105, 0, sizeof(char*));
             if(_if_conditional174=self==((void*)0),            __freed_obj__ = 0, 
             _if_conditional174) {
                 __freed_obj__ = 0;
-                (come_push_stackframe("./comelang2.h", 352),memset(&result_104,0,sizeof(char*)));
-                come_pop_stackframe();
+                (come_push_stackframe("./comelang2.h", 352),__exception_result_var_b69=memset(&result_104,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b69);
                 __freed_obj__ = 0;
-                __result80__ = __result_obj__ = result_104;
+                __result81__ = __result_obj__ = result_104;
                 __freed_obj__ = 0;
-                return __result80__;
+                return __result81__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -6619,19 +6616,18 @@ memset(&result_105, 0, sizeof(char*));
             __freed_obj__ = 0;
             if(_if_conditional175=((struct list$1charp*)come_null_check(self, "./comelang2.h", 362))->it,            __freed_obj__ = 0, 
             _if_conditional175) {
-                __result81__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(self, "./comelang2.h", 359))->it, "./comelang2.h", 359))->item;
+                __result82__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(self, "./comelang2.h", 359))->it, "./comelang2.h", 359))->item;
                 __freed_obj__ = 0;
-                return __result81__;
+                return __result82__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
             __freed_obj__ = 0;
-            (come_push_stackframe("./comelang2.h", 363),memset(&result_105,0,sizeof(char*)));
-            come_pop_stackframe();
+            (come_push_stackframe("./comelang2.h", 363),__exception_result_var_b70=memset(&result_105,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b70);
             __freed_obj__ = 0;
-            __result82__ = __result_obj__ = result_105;
+            __result83__ = __result_obj__ = result_105;
             __freed_obj__ = 0;
-            return __result82__;
+            return __result83__;
             __freed_obj__ = 0;
 }
 
@@ -6649,7 +6645,7 @@ void* right_value104;
 struct list_item$1charp* litem_107;
 void* right_value105;
 struct list_item$1charp* litem_108;
-struct list$1charp* __result83__;
+struct list$1charp* __result84__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value103, 0, sizeof(void*));
@@ -6717,9 +6713,9 @@ memset(&litem_108, 0, sizeof(struct list_item$1charp*));
                 __freed_obj__ = 0;
                 ((struct list$1charp*)come_null_check(self, "./comelang2.h", 304))->len++;
                 __freed_obj__ = 0;
-                __result83__ = __result_obj__ = self;
+                __result84__ = __result_obj__ = self;
                 __freed_obj__ = 0;
-                return __result83__;
+                return __result84__;
                 __freed_obj__ = 0;
 }
 
@@ -6764,7 +6760,7 @@ struct CVALUE* __dec_obj41;
 void* right_value116;
 struct list_item$1CVALUEph* litem_119;
 struct CVALUE* __dec_obj42;
-struct list$1CVALUEph* __result85__;
+struct list$1CVALUEph* __result86__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value114, 0, sizeof(void*));
@@ -6838,10 +6834,10 @@ memset(&litem_119, 0, sizeof(struct list_item$1CVALUEph*));
         __freed_obj__ = 0;
         ((struct list$1CVALUEph*)come_null_check(self, "./comelang2.h", 304))->len++;
         __freed_obj__ = 0;
-        __result85__ = __result_obj__ = self;
+        __result86__ = __result_obj__ = self;
         if(item && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
         __freed_obj__ = 0;
-        return __result85__;
+        return __result86__;
         __freed_obj__ = 0;
         if(item && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
 }
@@ -6872,14 +6868,16 @@ void* __right_value_freed_obj[1024];
 void* right_value117;
 struct sNode* __dec_obj43;
 void* right_value118;
+char* __exception_result_var_b91;
 char* __dec_obj44;
 void* right_value128;
 struct list$1tuple2$2charphsNodephph* __dec_obj50;
 void* right_value129;
 struct buffer* __dec_obj51;
 void* right_value130;
+char* __exception_result_var_b94;
 char* __dec_obj52;
-struct sMethodCallNode* __result93__;
+struct sMethodCallNode* __result94__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value117, 0, sizeof(void*));
@@ -6895,7 +6893,7 @@ memset(&right_value130, 0, sizeof(void*));
     __right_value_freed_obj[0] = right_value117;
     __freed_obj__ = 0;
     __dec_obj44=((struct sMethodCallNode*)come_null_check(self, "20method.c", 165))->fun_name;
-    ((struct sMethodCallNode*)come_null_check(self, "20method.c", 165))->fun_name=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 165),((char*)(right_value118=__builtin_string(fun_name)))));
+    ((struct sMethodCallNode*)come_null_check(self, "20method.c", 165))->fun_name=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 165),__exception_result_var_b91=((char*)(right_value118=__builtin_string(fun_name))), come_pop_stackframe(), __exception_result_var_b91));
     if(__dec_obj44) { __dec_obj44 = come_decrement_ref_count(__dec_obj44, (void*)0, (void*)0, 0,0,0); }
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value118);
     if(right_value118 && right_value118 != __result_obj__ && !__freed_obj__) { right_value118 = come_decrement_ref_count(right_value118, (void*)0, (void*)0, 1, 0, 0); }
@@ -6918,7 +6916,7 @@ memset(&right_value130, 0, sizeof(void*));
     ((struct sMethodCallNode*)come_null_check(self, "20method.c", 168))->sline=((struct sInfo*)come_null_check(info, "20method.c", 168))->sline;
     __freed_obj__ = 0;
     __dec_obj52=((struct sMethodCallNode*)come_null_check(self, "20method.c", 169))->sname;
-    ((struct sMethodCallNode*)come_null_check(self, "20method.c", 169))->sname=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 169),((char*)(right_value130=__builtin_string(((struct sInfo*)come_null_check(info, "20method.c", 169))->sname)))));
+    ((struct sMethodCallNode*)come_null_check(self, "20method.c", 169))->sname=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 169),__exception_result_var_b94=((char*)(right_value130=__builtin_string(((struct sInfo*)come_null_check(info, "20method.c", 169))->sname))), come_pop_stackframe(), __exception_result_var_b94));
     if(__dec_obj52) { __dec_obj52 = come_decrement_ref_count(__dec_obj52, (void*)0, (void*)0, 0,0,0); }
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 4, right_value130);
     if(right_value130 && right_value130 != __result_obj__ && !__freed_obj__) { right_value130 = come_decrement_ref_count(right_value130, (void*)0, (void*)0, 1, 0, 0); }
@@ -6926,12 +6924,12 @@ memset(&right_value130, 0, sizeof(void*));
     __freed_obj__ = 0;
     ((struct sMethodCallNode*)come_null_check(self, "20method.c", 170))->method_block_sline=method_block_sline;
     __freed_obj__ = 0;
-    __result93__ = __result_obj__ = self;
+    __result94__ = __result_obj__ = self;
     if(self && !__freed_obj__) { come_call_finalizer(sMethodCallNode_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
     if(obj && !__freed_obj__) { obj = come_decrement_ref_count(obj, ((struct sNode*)obj)->finalize, ((struct sNode*)obj)->_protocol_obj, 0, 1, 0); } 
     if(params && !__freed_obj__) { come_call_finalizer(list$1tuple2$2charphsNodephphp_finalize,params, (void*)0, (void*)0, 0, 0, 1, 0); }
     __freed_obj__ = 0;
-    return __result93__;
+    return __result94__;
     __freed_obj__ = 0;
     if(self && !__freed_obj__) { come_call_finalizer(sMethodCallNode_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
     if(obj && !__freed_obj__) { obj = come_decrement_ref_count(obj, ((struct sNode*)obj)->finalize, ((struct sNode*)obj)->_protocol_obj, 0, 1, 0); } 
@@ -6945,14 +6943,16 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional191;
-struct list$1tuple2$2charphsNodephph* __result87__;
+struct list$1tuple2$2charphsNodephph* __result88__;
 void* right_value119;
 void* right_value120;
+struct list$1tuple2$2charphsNodephph* __exception_result_var_b92;
 struct list$1tuple2$2charphsNodephph* result_122;
 struct list_item$1tuple2$2charphsNodephph* it_123;
 _Bool _while_condtional22;
 void* right_value127;
-struct list$1tuple2$2charphsNodephph* __result92__;
+struct list$1tuple2$2charphsNodephph* __exception_result_var_b93;
+struct list$1tuple2$2charphsNodephph* __result93__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value119, 0, sizeof(void*));
@@ -6962,14 +6962,13 @@ memset(&it_123, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
 memset(&right_value127, 0, sizeof(void*));
         if(_if_conditional191=self==((void*)0),        __freed_obj__ = 0, 
         _if_conditional191) {
-            __result87__ = __result_obj__ = ((void*)0);
+            __result88__ = __result_obj__ = ((void*)0);
             __freed_obj__ = 0;
-            return __result87__;
+            return __result88__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-        result_122=(struct list$1tuple2$2charphsNodephph*)come_increment_ref_count((come_push_stackframe("./comelang2.h", 190),((struct list$1tuple2$2charphsNodephph*)(right_value120=list$1tuple2$2charphsNodephph_initialize((struct list$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list$1tuple2$2charphsNodephph*)come_null_check(((struct list$1tuple2$2charphsNodephph*)(right_value119=(struct list$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list$1tuple2$2charphsNodephph)*(1), "./comelang2.h", 190))), "./comelang2.h", 190))))))));
-        come_pop_stackframe();
+        result_122=(struct list$1tuple2$2charphsNodephph*)come_increment_ref_count((come_push_stackframe("./comelang2.h", 190),__exception_result_var_b92=((struct list$1tuple2$2charphsNodephph*)(right_value120=list$1tuple2$2charphsNodephph_initialize((struct list$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list$1tuple2$2charphsNodephph*)come_null_check(((struct list$1tuple2$2charphsNodephph*)(right_value119=(struct list$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list$1tuple2$2charphsNodephph)*(1), "./comelang2.h", 190))), "./comelang2.h", 190)))))), come_pop_stackframe(), __exception_result_var_b92));
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value119);
         if(right_value119 && right_value119 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1tuple2$2charphsNodephphp_finalize,right_value119, (void*)0, (void*)0, 0, 1, 0, 0); }
         __right_value_freed_obj[0] = right_value119;
@@ -6981,8 +6980,7 @@ memset(&right_value127, 0, sizeof(void*));
         __freed_obj__ = 0;
         while(_while_condtional22=it_123!=((void*)0),        __freed_obj__ = 0, 
         _while_condtional22) {
-            (come_push_stackframe("./comelang2.h", 194),list$1tuple2$2charphsNodephph_add(((struct list$1tuple2$2charphsNodephph*)come_null_check(result_122, "./comelang2.h", 194)),(struct tuple2$2charphsNodeph*)come_increment_ref_count(((struct tuple2$2charphsNodeph*)(right_value127=tuple2$2charphsNodephp_clone(((struct list_item$1tuple2$2charphsNodephph*)come_null_check(it_123, "./comelang2.h", 194))->item))))));
-            come_pop_stackframe();
+            (come_push_stackframe("./comelang2.h", 194),__exception_result_var_b93=list$1tuple2$2charphsNodephph_add(((struct list$1tuple2$2charphsNodephph*)come_null_check(result_122, "./comelang2.h", 194)),(struct tuple2$2charphsNodeph*)come_increment_ref_count(((struct tuple2$2charphsNodeph*)(right_value127=tuple2$2charphsNodephp_clone(((struct list_item$1tuple2$2charphsNodephph*)come_null_check(it_123, "./comelang2.h", 194))->item))))), come_pop_stackframe(), __exception_result_var_b93);
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value127);
             if(right_value127 && right_value127 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2charphsNodephp_finalize,right_value127, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[0] = right_value127;
@@ -6991,10 +6989,10 @@ memset(&right_value127, 0, sizeof(void*));
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-        __result92__ = __result_obj__ = result_122;
+        __result93__ = __result_obj__ = result_122;
         if(result_122 && !__freed_obj__) { come_call_finalizer(list$1tuple2$2charphsNodephphp_finalize,result_122, (void*)0, (void*)0, 0, 0, 1, 0); }
         __freed_obj__ = 0;
-        return __result92__;
+        return __result93__;
         __freed_obj__ = 0;
         if(result_122 && !__freed_obj__) { come_call_finalizer(list$1tuple2$2charphsNodephphp_finalize,result_122, (void*)0, (void*)0, 0, 0, 0, 0); }
 }
@@ -7005,7 +7003,7 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-struct list$1tuple2$2charphsNodephph* __result88__;
+struct list$1tuple2$2charphsNodephph* __result89__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
             ((struct list$1tuple2$2charphsNodephph*)come_null_check(self, "./comelang2.h", 152))->head=((void*)0);
@@ -7014,10 +7012,10 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
             __freed_obj__ = 0;
             ((struct list$1tuple2$2charphsNodephph*)come_null_check(self, "./comelang2.h", 154))->len=0;
             __freed_obj__ = 0;
-            __result88__ = __result_obj__ = self;
+            __result89__ = __result_obj__ = self;
             if(self && !__freed_obj__) { come_call_finalizer(list$1tuple2$2charphsNodephphp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
             __freed_obj__ = 0;
-            return __result88__;
+            return __result89__;
             __freed_obj__ = 0;
             if(self && !__freed_obj__) { come_call_finalizer(list$1tuple2$2charphsNodephphp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
 }
@@ -7107,7 +7105,7 @@ struct tuple2$2charphsNodeph* __dec_obj46;
 void* right_value123;
 struct list_item$1tuple2$2charphsNodephph* litem_126;
 struct tuple2$2charphsNodeph* __dec_obj47;
-struct list$1tuple2$2charphsNodephph* __result89__;
+struct list$1tuple2$2charphsNodephph* __result90__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value121, 0, sizeof(void*));
@@ -7181,10 +7179,10 @@ memset(&litem_126, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
                 __freed_obj__ = 0;
                 ((struct list$1tuple2$2charphsNodephph*)come_null_check(self, "./comelang2.h", 234))->len++;
                 __freed_obj__ = 0;
-                __result89__ = __result_obj__ = self;
+                __result90__ = __result_obj__ = self;
                 if(item && !__freed_obj__) { come_call_finalizer(tuple2$2charphsNodephp_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
                 __freed_obj__ = 0;
-                return __result89__;
+                return __result90__;
                 __freed_obj__ = 0;
                 if(item && !__freed_obj__) { come_call_finalizer(tuple2$2charphsNodephp_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
 }
@@ -7220,7 +7218,7 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional199;
-struct tuple2$2charphsNodeph* __result90__;
+struct tuple2$2charphsNodeph* __result91__;
 void* right_value124;
 struct tuple2$2charphsNodeph* result_127;
 _Bool _if_conditional200;
@@ -7229,7 +7227,7 @@ char* __dec_obj48;
 _Bool _if_conditional201;
 void* right_value126;
 struct sNode* __dec_obj49;
-struct tuple2$2charphsNodeph* __result91__;
+struct tuple2$2charphsNodeph* __result92__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value124, 0, sizeof(void*));
@@ -7238,9 +7236,9 @@ memset(&right_value125, 0, sizeof(void*));
 memset(&right_value126, 0, sizeof(void*));
                 if(_if_conditional199=self==(void*)0,                __freed_obj__ = 0, 
                 _if_conditional199) {
-                    __result90__ = __result_obj__ = (void*)0;
+                    __result91__ = __result_obj__ = (void*)0;
                     __freed_obj__ = 0;
-                    return __result90__;
+                    return __result91__;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
@@ -7271,10 +7269,10 @@ memset(&right_value126, 0, sizeof(void*));
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                __result91__ = __result_obj__ = result_127;
+                __result92__ = __result_obj__ = result_127;
                 if(result_127 && !__freed_obj__) { come_call_finalizer(tuple2$2charphsNodeph_finalize,result_127, (void*)0, (void*)0, 0, 0, 1, 0); }
                 __freed_obj__ = 0;
-                return __result91__;
+                return __result92__;
                 __freed_obj__ = 0;
                 if(result_127 && !__freed_obj__) { come_call_finalizer(tuple2$2charphsNodeph_finalize,result_127, (void*)0, (void*)0, 0, 0, 0, 0); }
 }
@@ -7295,12 +7293,12 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-int __result94__;
+int __result95__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-    __result94__ = ((struct sMethodCallNode*)come_null_check(self, "20method.c", 177))->sline;
+    __result95__ = ((struct sMethodCallNode*)come_null_check(self, "20method.c", 177))->sline;
     __freed_obj__ = 0;
-    return __result94__;
+    return __result95__;
     __freed_obj__ = 0;
 }
 
@@ -7311,17 +7309,17 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 void* right_value131;
-char* __result95__;
+char* __exception_result_var_b95;
+char* __result96__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value131, 0, sizeof(void*));
-    __result95__ = __result_obj__ = (come_push_stackframe("20method.c", 182),((char*)(right_value131=__builtin_string(((struct sMethodCallNode*)come_null_check(self, "20method.c", 182))->sname))));
-    come_pop_stackframe();
+    __result96__ = __result_obj__ = (come_push_stackframe("20method.c", 182),__exception_result_var_b95=((char*)(right_value131=__builtin_string(((struct sMethodCallNode*)come_null_check(self, "20method.c", 182))->sname))), come_pop_stackframe(), __exception_result_var_b95);
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value131);
     if(right_value131 && right_value131 != __result_obj__ && !__freed_obj__) { right_value131 = come_decrement_ref_count(right_value131, (void*)0, (void*)0, 1, 0, 0); }
     __right_value_freed_obj[0] = right_value131;
     __freed_obj__ = 0;
-    return __result95__;
+    return __result96__;
     __freed_obj__ = 0;
 }
 
@@ -7332,21 +7330,26 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 void* right_value132;
+char* __exception_result_var_b96;
 char* none_generics_name_128;
 void* right_value133;
+char* __exception_result_var_b97;
 char* fun_name2_129;
 void* right_value134;
+char* __exception_result_var_b98;
 char* fun_name3_130;
 void* right_value136;
+struct sGenericsFun* __exception_result_var_b101;
 struct sGenericsFun* generics_fun_133;
 _Bool _if_conditional220;
 void* right_value137;
-char* __exception_result_var_b31;
-_Bool __exception_result_var_b32;
+char* __exception_result_var_b102;
+_Bool __exception_result_var_b103;
 _Bool _if_conditional221;
 void* right_value138;
-char* __result100__;
+char* __exception_result_var_b104;
 char* __result101__;
+char* __result102__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value132, 0, sizeof(void*));
@@ -7359,42 +7362,36 @@ memset(&right_value136, 0, sizeof(void*));
 memset(&generics_fun_133, 0, sizeof(struct sGenericsFun*));
 memset(&right_value137, 0, sizeof(void*));
 memset(&right_value138, 0, sizeof(void*));
-    none_generics_name_128=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 191),((char*)(right_value132=get_none_generics_name(((struct sClass*)come_null_check(((struct sType*)come_null_check(type, "20method.c", 191))->mClass, "20method.c", 191))->mName)))));
-    come_pop_stackframe();
+    none_generics_name_128=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 191),__exception_result_var_b96=((char*)(right_value132=get_none_generics_name(((struct sClass*)come_null_check(((struct sType*)come_null_check(type, "20method.c", 191))->mClass, "20method.c", 191))->mName))), come_pop_stackframe(), __exception_result_var_b96));
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value132);
     if(right_value132 && right_value132 != __result_obj__ && !__freed_obj__) { right_value132 = come_decrement_ref_count(right_value132, (void*)0, (void*)0, 1, 0, 0); }
     __right_value_freed_obj[0] = right_value132;
     __freed_obj__ = 0;
-    fun_name2_129=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 192),((char*)(right_value133=create_method_name(type,(_Bool)0,fun_name,info)))));
-    come_pop_stackframe();
+    fun_name2_129=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 192),__exception_result_var_b97=((char*)(right_value133=create_method_name(type,(_Bool)0,fun_name,info))), come_pop_stackframe(), __exception_result_var_b97));
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value133);
     if(right_value133 && right_value133 != __result_obj__ && !__freed_obj__) { right_value133 = come_decrement_ref_count(right_value133, (void*)0, (void*)0, 1, 0, 0); }
     __right_value_freed_obj[1] = right_value133;
     __freed_obj__ = 0;
-    fun_name3_130=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 193),((char*)(right_value134=xsprintf("%s_%s",none_generics_name_128,fun_name)))));
-    come_pop_stackframe();
+    fun_name3_130=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 193),__exception_result_var_b98=((char*)(right_value134=xsprintf("%s_%s",none_generics_name_128,fun_name))), come_pop_stackframe(), __exception_result_var_b98));
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value134);
     if(right_value134 && right_value134 != __result_obj__ && !__freed_obj__) { right_value134 = come_decrement_ref_count(right_value134, (void*)0, (void*)0, 1, 0, 0); }
     __right_value_freed_obj[2] = right_value134;
     __freed_obj__ = 0;
-    generics_fun_133=(come_push_stackframe("20method.c", 195),((struct sGenericsFun*)(right_value136=map$2charphsGenericsFunph_at(((struct map$2charphsGenericsFunph*)come_null_check(((struct sInfo*)come_null_check(info, "20method.c", 195))->generics_funcs, "20method.c", 195)),fun_name3_130,((void*)0)))));
-    come_pop_stackframe();
+    generics_fun_133=(come_push_stackframe("20method.c", 195),__exception_result_var_b101=((struct sGenericsFun*)(right_value136=map$2charphsGenericsFunph_at(((struct map$2charphsGenericsFunph*)come_null_check(((struct sInfo*)come_null_check(info, "20method.c", 195))->generics_funcs, "20method.c", 195)),fun_name3_130,((void*)0)))), come_pop_stackframe(), __exception_result_var_b101);
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value136);
     if(right_value136 && right_value136 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sGenericsFun_finalize,right_value136, (void*)0, (void*)0, 0, 1, 0, 0); }
     __right_value_freed_obj[3] = right_value136;
     __freed_obj__ = 0;
     if(_if_conditional220=generics_fun_133,    __freed_obj__ = 0, 
     _if_conditional220) {
-        if(_if_conditional221=!(come_push_stackframe("20method.c", 202),__exception_result_var_b32=create_generics_fun((char*)come_increment_ref_count((come_push_stackframe("20method.c", 202),__exception_result_var_b31=((char*)(right_value137=__builtin_string(fun_name2_129))), come_pop_stackframe(), __exception_result_var_b31)),generics_fun_133,type,info), come_pop_stackframe(), __exception_result_var_b32),        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value137),
+        if(_if_conditional221=!(come_push_stackframe("20method.c", 202),__exception_result_var_b103=create_generics_fun((char*)come_increment_ref_count((come_push_stackframe("20method.c", 202),__exception_result_var_b102=((char*)(right_value137=__builtin_string(fun_name2_129))), come_pop_stackframe(), __exception_result_var_b102)),generics_fun_133,type,info), come_pop_stackframe(), __exception_result_var_b103),        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value137),
         (right_value137 && right_value137 != __result_obj__ && !__freed_obj__) ? right_value137 = come_decrement_ref_count(right_value137, (void*)0, (void*)0, 1, 0, 0):0,
         __right_value_freed_obj[0] = right_value137, 
         __freed_obj__ = 0, 
         _if_conditional221) {
-            (come_push_stackframe("20method.c", 199),err_msg(info,"%s not found",fun_name3_130));
-            come_pop_stackframe();
+            (come_push_stackframe("20method.c", 199),err_msg(info,"%s not found",fun_name3_130),come_pop_stackframe());
             __freed_obj__ = 0;
-            __result100__ = __result_obj__ = (come_push_stackframe("20method.c", 200),((char*)(right_value138=__builtin_string(""))));
-            come_pop_stackframe();
+            __result101__ = __result_obj__ = (come_push_stackframe("20method.c", 200),__exception_result_var_b104=((char*)(right_value138=__builtin_string(""))), come_pop_stackframe(), __exception_result_var_b104);
             if(fun_name && !__freed_obj__) { fun_name = come_decrement_ref_count(fun_name, (void*)0, (void*)0, 0, 1, 0); }
             if(none_generics_name_128 && !__freed_obj__) { none_generics_name_128 = come_decrement_ref_count(none_generics_name_128, (void*)0, (void*)0, 0, 0, 0); }
             if(fun_name2_129 && !__freed_obj__) { fun_name2_129 = come_decrement_ref_count(fun_name2_129, (void*)0, (void*)0, 0, 0, 0); }
@@ -7403,19 +7400,19 @@ memset(&right_value138, 0, sizeof(void*));
             if(right_value138 && right_value138 != __result_obj__ && !__freed_obj__) { right_value138 = come_decrement_ref_count(right_value138, (void*)0, (void*)0, 1, 0, 0); }
             __right_value_freed_obj[0] = right_value138;
             __freed_obj__ = 0;
-            return __result100__;
+            return __result101__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    __result101__ = __result_obj__ = fun_name2_129;
+    __result102__ = __result_obj__ = fun_name2_129;
     if(fun_name && !__freed_obj__) { fun_name = come_decrement_ref_count(fun_name, (void*)0, (void*)0, 0, 1, 0); }
     if(none_generics_name_128 && !__freed_obj__) { none_generics_name_128 = come_decrement_ref_count(none_generics_name_128, (void*)0, (void*)0, 0, 0, 0); }
     if(fun_name2_129 && !__freed_obj__) { fun_name2_129 = come_decrement_ref_count(fun_name2_129, (void*)0, (void*)0, 0, 1, 0); }
     if(fun_name3_130 && !__freed_obj__) { fun_name3_130 = come_decrement_ref_count(fun_name3_130, (void*)0, (void*)0, 0, 0, 0); }
     __freed_obj__ = 0;
-    return __result101__;
+    return __result102__;
     __freed_obj__ = 0;
     if(fun_name && !__freed_obj__) { fun_name = come_decrement_ref_count(fun_name, (void*)0, (void*)0, 0, 1, 0); }
     if(none_generics_name_128 && !__freed_obj__) { none_generics_name_128 = come_decrement_ref_count(none_generics_name_128, (void*)0, (void*)0, 0, 0, 0); }
@@ -7429,26 +7426,26 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
+unsigned int __exception_result_var_b99;
 unsigned int hash_131;
 unsigned int it_132;
 _Bool _while_condtional23;
 _Bool _if_conditional207;
 void* right_value135;
-struct optional$2boolbool* __exception_result_var_b30;
+struct optional$2boolbool* __exception_result_var_b100;
 _Bool _if_conditional208;
-struct sGenericsFun* __result96__;
+struct sGenericsFun* __result97__;
 _Bool _if_conditional209;
 _Bool _if_conditional210;
-struct sGenericsFun* __result97__;
 struct sGenericsFun* __result98__;
 struct sGenericsFun* __result99__;
+struct sGenericsFun* __result100__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&hash_131, 0, sizeof(unsigned int));
 memset(&it_132, 0, sizeof(unsigned int));
 memset(&right_value135, 0, sizeof(void*));
-        hash_131=(come_push_stackframe("./comelang2.h", 1260),string_get_hash_key(((char*)come_null_check(((char*)key), "./comelang2.h", 1260))))%((struct map$2charphsGenericsFunph*)come_null_check(self, "./comelang2.h", 1260))->size;
-        come_pop_stackframe();
+        hash_131=(come_push_stackframe("./comelang2.h", 1260),__exception_result_var_b99=string_get_hash_key(((char*)come_null_check(((char*)key), "./comelang2.h", 1260))), come_pop_stackframe(), __exception_result_var_b99)%((struct map$2charphsGenericsFunph*)come_null_check(self, "./comelang2.h", 1260))->size;
         __freed_obj__ = 0;
         it_132=hash_131;
         __freed_obj__ = 0;
@@ -7456,14 +7453,14 @@ memset(&right_value135, 0, sizeof(void*));
         _while_condtional23) {
             if(_if_conditional207=((struct map$2charphsGenericsFunph*)come_null_check(self, "./comelang2.h", 1283))->item_existance[it_132],            __freed_obj__ = 0, 
             _if_conditional207) {
-                if(_if_conditional208=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1271),__exception_result_var_b30=((struct optional$2boolbool*)(right_value135=string_equals(((char*)come_null_check(((struct map$2charphsGenericsFunph*)come_null_check(self, "./comelang2.h", 1271))->keys[it_132], "./comelang2.h", 1271)),key))), come_pop_stackframe(), __exception_result_var_b30)),                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value135),
+                if(_if_conditional208=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1271),__exception_result_var_b100=((struct optional$2boolbool*)(right_value135=string_equals(((char*)come_null_check(((struct map$2charphsGenericsFunph*)come_null_check(self, "./comelang2.h", 1271))->keys[it_132], "./comelang2.h", 1271)),key))), come_pop_stackframe(), __exception_result_var_b100)),                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value135),
                 (right_value135 && right_value135 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value135, (void*)0, (void*)0, 0, 1, 0, 0):0,
                 __right_value_freed_obj[0] = right_value135, 
                 __freed_obj__ = 0, 
                 _if_conditional208) {
-                    __result96__ = __result_obj__ = ((struct map$2charphsGenericsFunph*)come_null_check(self, "./comelang2.h", 1268))->items[it_132];
+                    __result97__ = __result_obj__ = ((struct map$2charphsGenericsFunph*)come_null_check(self, "./comelang2.h", 1268))->items[it_132];
                     __freed_obj__ = 0;
-                    return __result96__;
+                    return __result97__;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
@@ -7477,9 +7474,9 @@ memset(&right_value135, 0, sizeof(void*));
                 else {
                     if(_if_conditional210=it_132==hash_131,                    __freed_obj__ = 0, 
                     _if_conditional210) {
-                        __result97__ = __result_obj__ = default_value;
+                        __result98__ = __result_obj__ = default_value;
                         __freed_obj__ = 0;
-                        return __result97__;
+                        return __result98__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
@@ -7487,17 +7484,17 @@ memset(&right_value135, 0, sizeof(void*));
                 __freed_obj__ = 0;
             }
             else {
-                __result98__ = __result_obj__ = default_value;
+                __result99__ = __result_obj__ = default_value;
                 __freed_obj__ = 0;
-                return __result98__;
+                return __result99__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-        __result99__ = __result_obj__ = default_value;
+        __result100__ = __result_obj__ = default_value;
         __freed_obj__ = 0;
-        return __result99__;
+        return __result100__;
         __freed_obj__ = 0;
 }
 
@@ -7581,21 +7578,21 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional222;
-_Bool __result102__;
 _Bool __result103__;
+_Bool __result104__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
     if(_if_conditional222=((struct sMethodCallNode*)come_null_check(self, "20method.c", 215))->method_block,    __freed_obj__ = 0, 
     _if_conditional222) {
-        __result102__ = (_Bool)1;
+        __result103__ = (_Bool)1;
         __freed_obj__ = 0;
-        return __result102__;
+        return __result103__;
         __freed_obj__ = 0;
     }
     else {
-        __result103__ = (_Bool)0;
+        __result104__ = (_Bool)0;
         __freed_obj__ = 0;
-        return __result103__;
+        return __result104__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
@@ -7608,17 +7605,17 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 void* right_value139;
-char* __result104__;
+char* __exception_result_var_b105;
+char* __result105__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value139, 0, sizeof(void*));
-    __result104__ = __result_obj__ = (come_push_stackframe("20method.c", 219),((char*)(right_value139=__builtin_string("sMethodCallNode"))));
-    come_pop_stackframe();
+    __result105__ = __result_obj__ = (come_push_stackframe("20method.c", 219),__exception_result_var_b105=((char*)(right_value139=__builtin_string("sMethodCallNode"))), come_pop_stackframe(), __exception_result_var_b105);
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value139);
     if(right_value139 && right_value139 != __result_obj__ && !__freed_obj__) { right_value139 = come_decrement_ref_count(right_value139, (void*)0, (void*)0, 1, 0, 0); }
     __right_value_freed_obj[0] = right_value139;
     __freed_obj__ = 0;
-    return __result104__;
+    return __result105__;
     __freed_obj__ = 0;
 }
 
@@ -7634,8 +7631,9 @@ struct sNode* obj_136;
 struct buffer* method_block_137;
 int method_block_sline_138;
 _Bool _if_conditional223;
-_Bool __result105__;
+_Bool __result106__;
 void* right_value140;
+struct CVALUE* __exception_result_var_b106;
 struct CVALUE* obj_value_139;
 void* right_value141;
 struct sType* obj_type_140;
@@ -7643,131 +7641,178 @@ struct sClass* klass_141;
 _Bool calling_dynamic_method_142;
 struct sType* lambda_type_143;
 struct list$1tuple2$2charphsTypephph* o2_saved_144;
+struct tuple2$2charphsTypeph* __exception_result_var_b109;
 struct tuple2$2charphsTypeph* it_147;
-_Bool __exception_result_var_b33;
+_Bool __exception_result_var_b110;
 _Bool _for_condtionalA7;
+struct tuple2$2charphsTypeph* __exception_result_var_b113;
 struct tuple2$2charphsTypeph* multiple_assgin_var1;
 char* field_name_150;
 struct sType* field_type_151;
-_Bool __exception_result_var_b34;
-_Bool __exception_result_var_b35;
+_Bool __exception_result_var_b114;
+_Bool __exception_result_var_b115;
 _Bool _if_conditional228;
 _Bool _if_conditional229;
 void* right_value142;
 struct sType* result_type_152;
 void* right_value143;
 void* right_value144;
+struct list$1CVALUEph* __exception_result_var_b116;
 struct list$1CVALUEph* come_params_155;
 int i_156;
 struct list$1tuple2$2charphsNodephph* o2_saved_157;
+struct tuple2$2charphsNodeph* __exception_result_var_b119;
 struct tuple2$2charphsNodeph* it_160;
-_Bool __exception_result_var_b36;
+_Bool __exception_result_var_b120;
 _Bool _for_condtionalA8;
+struct tuple2$2charphsNodeph* __exception_result_var_b123;
 struct tuple2$2charphsNodeph* multiple_assgin_var2;
 char* label_163;
 struct sNode* node_164;
 _Bool _if_conditional234;
+struct list$1CVALUEph* __exception_result_var_b124;
 _Bool _if_conditional235;
-_Bool __result121__;
+_Bool __result122__;
 void* right_value145;
+struct CVALUE* __exception_result_var_b125;
 struct CVALUE* come_value_165;
 void* right_value146;
 void* right_value147;
 void* right_value148;
 void* right_value153;
+struct optional$2sTypephbool* __exception_result_var_b127;
 void* right_value154;
-struct optional$2sTypephbool* __exception_result_var_b37;
+struct optional$2sTypephbool* __exception_result_var_b129;
 _Bool _if_conditional240;
 _Bool _if_conditional241;
 _Bool _if_conditional242;
 char* __dec_obj54;
 _Bool _if_conditional243;
 void* right_value155;
+char* __exception_result_var_b130;
 char* __dec_obj55;
 _Bool _if_conditional244;
 void* right_value156;
+char* __exception_result_var_b131;
 char* __dec_obj56;
 void* right_value157;
+char* __exception_result_var_b132;
 char* __dec_obj57;
 _Bool _if_conditional245;
 void* right_value158;
+char* __exception_result_var_b133;
 char* __dec_obj58;
+struct list$1CVALUEph* __exception_result_var_b134;
 void* right_value159;
 void* right_value160;
+struct buffer* __exception_result_var_b135;
 struct buffer* buf_170;
 void* right_value161;
+char* __exception_result_var_b136;
+struct buffer* __exception_result_var_b137;
+struct buffer* __exception_result_var_b138;
 int j_171;
 struct list$1CVALUEph* o2_saved_172;
+struct CVALUE* __exception_result_var_b141;
 struct CVALUE* it_175;
-_Bool __exception_result_var_b38;
+_Bool __exception_result_var_b142;
 _Bool _for_condtionalA9;
+struct CVALUE* __exception_result_var_b145;
 _Bool _if_conditional250;
 void* right_value162;
+char* __exception_result_var_b146;
 char* __dec_obj59;
-int __exception_result_var_b39;
+struct buffer* __exception_result_var_b147;
+int __exception_result_var_b148;
 _Bool _if_conditional251;
+struct buffer* __exception_result_var_b149;
+struct buffer* __exception_result_var_b150;
 void* right_value163;
 struct CVALUE* come_value2_178;
 void* right_value164;
+char* __exception_result_var_b151;
 char* __dec_obj60;
 void* right_value165;
+struct sType* __exception_result_var_b152;
 struct sType* result_type2_179;
 _Bool _if_conditional252;
 void* right_value166;
+char* __exception_result_var_b153;
 void* right_value167;
+char* __exception_result_var_b154;
 char* __dec_obj61;
 void* right_value168;
 struct sType* __dec_obj62;
+struct list$1CVALUEph* __exception_result_var_b155;
 void* right_value169;
+char* __exception_result_var_b156;
 void* right_value170;
+char* __exception_result_var_b157;
 void* right_value171;
+char* __exception_result_var_b158;
 char* generics_fun_name_180;
 struct sFun* fun_181;
 int i_182;
 _Bool _for_condtionalA10;
 void* right_value172;
+char* __exception_result_var_b159;
 char* new_fun_name_183;
 void* right_value182;
+struct optional$2sFunpbool* __exception_result_var_b163;
 _Bool _if_conditional258;
 void* right_value183;
+char* __exception_result_var_b165;
 char* __dec_obj63;
 _Bool _if_conditional259;
 void* right_value185;
+struct sFun* __exception_result_var_b168;
 _Bool _if_conditional279;
 void* right_value186;
+char* __exception_result_var_b169;
 void* right_value187;
+char* __exception_result_var_b170;
 char* __dec_obj64;
 void* right_value188;
+struct sFun* __exception_result_var_b171;
 _Bool _if_conditional280;
-_Bool __result146__;
+_Bool __result147__;
 void* right_value189;
 struct sType* result_type_190;
 void* right_value190;
+struct sType* __exception_result_var_b172;
 struct sType* result_type2_191;
 void* right_value191;
 void* right_value192;
+struct list$1sTypeph* __exception_result_var_b173;
 struct list$1sTypeph* param_types_192;
 struct list$1sTypeph* o2_saved_193;
+struct sType* __exception_result_var_b176;
 struct sType* it_196;
-_Bool __exception_result_var_b42;
+_Bool __exception_result_var_b177;
 _Bool _for_condtionalA11;
+struct sType* __exception_result_var_b180;
 _Bool _if_conditional285;
+struct list$1sTypeph* __exception_result_var_b181;
 void* right_value196;
+struct sType* __exception_result_var_b182;
 struct sType* it2_202;
 void* right_value197;
+struct list$1sTypeph* __exception_result_var_b183;
 void* right_value198;
 void* right_value199;
+struct list$1CVALUEph* __exception_result_var_b184;
 struct list$1CVALUEph* come_params_203;
 void* right_value200;
 void* right_value206;
+struct map$2charphCVALUEph* __exception_result_var_b186;
 struct map$2charphCVALUEph* label_params_207;
 int i_208;
 struct list$1tuple2$2charphsNodephph* o2_saved_209;
-struct tuple2$2charphsNodeph* __exception_result_var_b43;
+struct tuple2$2charphsNodeph* __exception_result_var_b187;
 struct tuple2$2charphsNodeph* it_210;
-_Bool __exception_result_var_b44;
+_Bool __exception_result_var_b188;
 _Bool _for_condtionalA15;
-struct tuple2$2charphsNodeph* __exception_result_var_b45;
+struct tuple2$2charphsNodeph* __exception_result_var_b189;
 struct tuple2$2charphsNodeph* multiple_assgin_var3;
 char* label_211;
 struct sNode* node_212;
@@ -7776,282 +7821,370 @@ void* right_value207;
 void* right_value208;
 void* right_value209;
 void* right_value210;
+struct optional$2sTypephbool* __exception_result_var_b190;
 void* right_value211;
-struct optional$2sTypephbool* __exception_result_var_b46;
+struct optional$2sTypephbool* __exception_result_var_b191;
 _Bool _if_conditional293;
 _Bool _if_conditional294;
 _Bool _if_conditional295;
 char* __dec_obj69;
 _Bool _if_conditional296;
 void* right_value212;
+char* __exception_result_var_b192;
 char* __dec_obj70;
 _Bool _if_conditional297;
 void* right_value213;
+char* __exception_result_var_b193;
 char* __dec_obj71;
 void* right_value214;
+char* __exception_result_var_b194;
 char* __dec_obj72;
 _Bool _if_conditional298;
 void* right_value215;
+char* __exception_result_var_b195;
 char* __dec_obj73;
 void* right_value216;
-struct optional$2sTypephbool* __exception_result_var_b47;
+struct optional$2sTypephbool* __exception_result_var_b196;
 _Bool _if_conditional299;
 void* right_value221;
+struct optional$2charphbool* __exception_result_var_b198;
+struct list$1CVALUEph* __exception_result_var_b200;
 _Bool _if_conditional304;
-_Bool __result162__;
+_Bool __result163__;
 void* right_value222;
+struct CVALUE* __exception_result_var_b201;
 struct CVALUE* come_value_217;
 _Bool _if_conditional305;
 int n_218;
 struct list$1charph* o2_saved_219;
+char* __exception_result_var_b204;
 char* it_222;
-_Bool __exception_result_var_b48;
+_Bool __exception_result_var_b205;
 _Bool _for_condtionalA16;
-_Bool __exception_result_var_b49;
+char* __exception_result_var_b208;
+_Bool __exception_result_var_b209;
 _Bool _if_conditional310;
 void* right_value223;
-struct optional$2sTypephbool* __exception_result_var_b50;
+struct optional$2sTypephbool* __exception_result_var_b210;
 _Bool _if_conditional311;
 void* right_value224;
 void* right_value225;
 void* right_value226;
 void* right_value227;
+struct optional$2sTypephbool* __exception_result_var_b211;
 void* right_value228;
-struct optional$2sTypephbool* __exception_result_var_b51;
+struct optional$2sTypephbool* __exception_result_var_b212;
 void* right_value229;
-struct optional$2sTypephbool* __exception_result_var_b52;
+struct optional$2sTypephbool* __exception_result_var_b213;
 _Bool _if_conditional312;
 _Bool _if_conditional313;
 _Bool _if_conditional314;
 char* __dec_obj75;
 _Bool _if_conditional315;
 void* right_value230;
+char* __exception_result_var_b214;
 char* __dec_obj76;
 _Bool _if_conditional316;
 void* right_value231;
+char* __exception_result_var_b215;
 char* __dec_obj77;
 void* right_value232;
+char* __exception_result_var_b216;
 char* __dec_obj78;
 _Bool _if_conditional317;
 void* right_value233;
+char* __exception_result_var_b217;
 char* __dec_obj79;
 void* right_value234;
-struct optional$2sTypephbool* __exception_result_var_b53;
+struct optional$2sTypephbool* __exception_result_var_b218;
 _Bool _if_conditional318;
 void* right_value235;
 void* right_value236;
 void* right_value237;
 void* right_value238;
+struct optional$2sTypephbool* __exception_result_var_b219;
 void* right_value239;
-struct optional$2sTypephbool* __exception_result_var_b54;
+struct optional$2sTypephbool* __exception_result_var_b220;
 void* right_value240;
-struct optional$2sTypephbool* __exception_result_var_b55;
+struct optional$2sTypephbool* __exception_result_var_b221;
 _Bool _if_conditional319;
 _Bool _if_conditional320;
 _Bool _if_conditional321;
 char* __dec_obj80;
 _Bool _if_conditional322;
 void* right_value241;
+char* __exception_result_var_b222;
 char* __dec_obj81;
 _Bool _if_conditional323;
 void* right_value242;
+char* __exception_result_var_b223;
 char* __dec_obj82;
 void* right_value243;
+char* __exception_result_var_b224;
 char* __dec_obj83;
 _Bool _if_conditional324;
 void* right_value244;
+char* __exception_result_var_b225;
 char* __dec_obj84;
 _Bool _if_conditional325;
+struct list$1CVALUEph* __exception_result_var_b226;
 void* right_value253;
-int __exception_result_var_b63;
-int __exception_result_var_b64;
+char* __exception_result_var_b251;
+struct map$2charphCVALUEph* __exception_result_var_b252;
+int __exception_result_var_b253;
+int __exception_result_var_b254;
 _Bool _if_conditional348;
-int __exception_result_var_b65;
+int __exception_result_var_b255;
 _Bool _for_condtionalA19;
 void* right_value254;
+struct optional$2charphbool* __exception_result_var_b256;
 void* right_value255;
 char* default_param_246;
 void* right_value256;
+struct optional$2charphbool* __exception_result_var_b257;
 char* param_name_247;
 void* right_value266;
+struct optional$2CVALUEpbool* __exception_result_var_b261;
 struct CVALUE* come_value_252;
-_Bool __exception_result_var_b67;
+_Bool __exception_result_var_b263;
 _Bool _if_conditional354;
 struct buffer* source_253;
 char* p_254;
 char* head_255;
 int sline_256;
 void* right_value267;
+struct buffer* __exception_result_var_b264;
 struct buffer* __dec_obj85;
 void* right_value268;
+struct sNode* __exception_result_var_b265;
 struct sNode* node_257;
 _Bool _if_conditional355;
-_Bool __result191__;
+_Bool __result192__;
 struct buffer* __dec_obj86;
 void* right_value269;
+struct CVALUE* __exception_result_var_b266;
 struct CVALUE* come_value_258;
 void* right_value270;
-struct optional$2sTypephbool* __exception_result_var_b68;
+struct optional$2sTypephbool* __exception_result_var_b267;
 _Bool _if_conditional356;
 void* right_value271;
 void* right_value272;
 void* right_value273;
 void* right_value274;
+struct optional$2sTypephbool* __exception_result_var_b268;
 void* right_value275;
-struct optional$2sTypephbool* __exception_result_var_b69;
+struct optional$2sTypephbool* __exception_result_var_b269;
 void* right_value276;
-struct optional$2sTypephbool* __exception_result_var_b70;
+struct optional$2sTypephbool* __exception_result_var_b270;
 _Bool _if_conditional357;
 _Bool _if_conditional358;
 _Bool _if_conditional359;
 char* __dec_obj87;
 _Bool _if_conditional360;
 void* right_value277;
+char* __exception_result_var_b271;
 char* __dec_obj88;
 _Bool _if_conditional361;
 void* right_value278;
+char* __exception_result_var_b272;
 char* __dec_obj89;
 void* right_value279;
+char* __exception_result_var_b273;
 char* __dec_obj90;
 _Bool _if_conditional362;
 void* right_value280;
+char* __exception_result_var_b274;
 char* __dec_obj91;
+struct list$1CVALUEph* __exception_result_var_b275;
 _Bool _if_conditional363;
-_Bool __result192__;
-int __exception_result_var_b71;
+struct list$1CVALUEph* __exception_result_var_b276;
+_Bool __result193__;
+int __exception_result_var_b277;
 _Bool _if_conditional364;
-int __exception_result_var_b72;
+int __exception_result_var_b278;
 _Bool _for_condtionalA20;
 void* right_value281;
+struct optional$2charphbool* __exception_result_var_b279;
 char* param_name_259;
 void* right_value282;
+struct optional$2CVALUEpbool* __exception_result_var_b280;
 struct CVALUE* come_value_260;
 _Bool _if_conditional365;
 void* right_value286;
+struct list$1CVALUEph* __exception_result_var_b282;
 _Bool _if_conditional373;
 void* right_value287;
 void* right_value288;
+struct sCurrentNode* __exception_result_var_b283;
 struct sNode* _inf_value1;
 struct sCurrentNode* _inf_obj_value1;
 void* right_value291;
 struct sNode* current_stack_frame_node_265;
 _Bool _if_conditional378;
-_Bool __result201__;
+_Bool __result202__;
 void* right_value292;
+struct CVALUE* __exception_result_var_b284;
 struct CVALUE* come_value_266;
+struct list$1CVALUEph* __exception_result_var_b285;
 void* right_value293;
 void* right_value294;
+struct buffer* __exception_result_var_b286;
 struct buffer* method_block2_267;
 void* right_value295;
+struct optional$2sTypephbool* __exception_result_var_b287;
 void* right_value296;
 struct sType* method_block_type_268;
 void* right_value297;
+char* __exception_result_var_b288;
 char* class_name_269;
 void* right_value298;
+struct optional$2sTypephbool* __exception_result_var_b289;
 void* right_value308;
+struct optional$2sClasspbool* __exception_result_var_b293;
 struct sClass* current_stack_frame_struct_274;
 void* right_value309;
-_Bool __exception_result_var_b74;
+struct optional$2sClasspbool* __exception_result_var_b295;
+_Bool __exception_result_var_b296;
 _Bool _if_conditional384;
-_Bool __result209__;
+_Bool __result210__;
 void* right_value310;
 struct sType* result_type_275;
 struct list$1sTypeph* param_types_276;
 struct list$1charph* param_names_277;
 void* right_value311;
 void* right_value312;
+struct buffer* __exception_result_var_b297;
 struct buffer* all_alhabet_sname_278;
 char* p_279;
 _Bool _while_condtional35;
-_Bool __exception_result_var_b75;
+_Bool __exception_result_var_b298;
 _Bool _if_conditional385;
+struct buffer* __exception_result_var_b299;
 void* right_value313;
+struct optional$2charphbool* __exception_result_var_b300;
 void* right_value314;
+char* __exception_result_var_b303;
 void* right_value315;
+char* __exception_result_var_b304;
+struct buffer* __exception_result_var_b305;
 int i_280;
 struct list$1sTypeph* o2_saved_281;
-struct sType* __exception_result_var_b76;
+struct sType* __exception_result_var_b306;
 struct sType* it_282;
-_Bool __exception_result_var_b77;
+_Bool __exception_result_var_b307;
 _Bool _for_condtionalA21;
-struct sType* __exception_result_var_b78;
+struct sType* __exception_result_var_b308;
 struct sType* param_type_283;
 _Bool _if_conditional387;
 void* right_value316;
+char* __exception_result_var_b309;
 char* param_name_284;
 void* right_value317;
+struct optional$2charphbool* __exception_result_var_b310;
 void* right_value318;
+char* __exception_result_var_b311;
+struct buffer* __exception_result_var_b312;
 _Bool _if_conditional388;
 void* right_value319;
+char* __exception_result_var_b313;
 char* param_name_285;
 void* right_value320;
+struct optional$2charphbool* __exception_result_var_b314;
 void* right_value321;
+char* __exception_result_var_b315;
+struct buffer* __exception_result_var_b316;
 void* right_value322;
+char* __exception_result_var_b317;
 char* param_name_286;
 void* right_value323;
+struct optional$2charphbool* __exception_result_var_b318;
 void* right_value324;
-int __exception_result_var_b79;
+char* __exception_result_var_b319;
+struct buffer* __exception_result_var_b320;
+int __exception_result_var_b321;
 _Bool _if_conditional389;
+struct buffer* __exception_result_var_b322;
+struct buffer* __exception_result_var_b323;
 void* right_value325;
+char* __exception_result_var_b324;
+struct buffer* __exception_result_var_b325;
 struct buffer* source3_287;
 char* p_288;
 char* head_289;
 int sline_290;
 struct buffer* __dec_obj96;
 void* right_value326;
+struct sNode* __exception_result_var_b326;
 struct sNode* node_291;
 _Bool _if_conditional390;
-_Bool __result211__;
+_Bool __result212__;
 void* right_value327;
+char* __exception_result_var_b327;
 void* right_value328;
+char* __exception_result_var_b328;
 char* method_block_name_292;
 void* right_value329;
 struct CVALUE* come_value2_293;
 void* right_value330;
+struct sFun* __exception_result_var_b329;
 struct sFun* fun2_294;
 _Bool _if_conditional391;
-_Bool __result212__;
+_Bool __result213__;
 struct sType* method_block_type2_295;
 void* right_value331;
+char* __exception_result_var_b330;
 char* __dec_obj97;
 void* right_value332;
 struct sType* __dec_obj98;
+struct list$1CVALUEph* __exception_result_var_b331;
 struct buffer* __dec_obj99;
 void* right_value333;
 void* right_value334;
+struct buffer* __exception_result_var_b332;
 struct buffer* buf_296;
+struct buffer* __exception_result_var_b333;
+struct buffer* __exception_result_var_b334;
 int j_297;
 struct list$1CVALUEph* o2_saved_298;
-struct CVALUE* __exception_result_var_b80;
+struct CVALUE* __exception_result_var_b335;
 struct CVALUE* it_299;
-_Bool __exception_result_var_b81;
+_Bool __exception_result_var_b336;
 _Bool _for_condtionalA22;
-struct CVALUE* __exception_result_var_b82;
-int __exception_result_var_b83;
+struct CVALUE* __exception_result_var_b337;
+struct buffer* __exception_result_var_b338;
+int __exception_result_var_b339;
 _Bool _if_conditional392;
+struct buffer* __exception_result_var_b340;
+struct buffer* __exception_result_var_b341;
 void* right_value335;
 struct CVALUE* come_value2_300;
 void* right_value336;
+char* __exception_result_var_b342;
 char* __dec_obj100;
 void* right_value337;
 struct sType* __dec_obj101;
 _Bool _if_conditional393;
 void* right_value338;
+char* __exception_result_var_b343;
 char* __dec_obj102;
 _Bool _if_conditional394;
 void* right_value339;
+char* __exception_result_var_b344;
 char* __dec_obj103;
+struct list$1CVALUEph* __exception_result_var_b345;
 _Bool _if_conditional395;
 void* right_value340;
+char* __exception_result_var_b346;
 char* var_name_301;
 void* right_value341;
 struct sType* result_type_302;
 void* right_value342;
+struct sType* __exception_result_var_b347;
 struct sType* result_type2_303;
 struct sType* result_type3_304;
 _Bool _if_conditional396;
 _Bool _if_conditional397;
-_Bool __exception_result_var_b84;
+_Bool __exception_result_var_b348;
 _Bool _if_conditional398;
 void* right_value343;
 void* right_value344;
@@ -8061,19 +8194,21 @@ void* right_value347;
 void* right_value348;
 void* right_value349;
 void* right_value350;
+struct optional$2charphbool* __exception_result_var_b349;
 void* right_value351;
 void* right_value352;
 void* right_value353;
-_Bool __exception_result_var_b85;
+_Bool __exception_result_var_b350;
 _Bool _if_conditional399;
 void* right_value354;
 void* right_value355;
 void* right_value356;
 void* right_value357;
+struct optional$2charphbool* __exception_result_var_b351;
 void* right_value358;
 void* right_value359;
 void* right_value360;
-_Bool __result213__;
+_Bool __result214__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&fun_name_134, 0, sizeof(char*));
@@ -8354,20 +8489,18 @@ memset(&right_value360, 0, sizeof(void*));
     __freed_obj__ = 0;
     if(_if_conditional223=!((struct sNode*)come_null_check(obj_136, "20method.c", 234))->compile(((struct sNode*)come_null_check(obj_136, "20method.c", 234))->_protocol_obj,info),    __freed_obj__ = 0, 
     _if_conditional223) {
-        __result105__ = (_Bool)0;
+        __result106__ = (_Bool)0;
         __freed_obj__ = 0;
-        return __result105__;
+        return __result106__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    obj_value_139=(struct CVALUE*)come_increment_ref_count((come_push_stackframe("20method.c", 234),((struct CVALUE*)(right_value140=get_value_from_stack(-1,info)))));
-    come_pop_stackframe();
+    obj_value_139=(struct CVALUE*)come_increment_ref_count((come_push_stackframe("20method.c", 234),__exception_result_var_b106=((struct CVALUE*)(right_value140=get_value_from_stack(-1,info))), come_pop_stackframe(), __exception_result_var_b106));
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value140);
     if(right_value140 && right_value140 != __result_obj__ && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,right_value140, (void*)0, (void*)0, 0, 1, 0, 0); }
     __right_value_freed_obj[0] = right_value140;
     __freed_obj__ = 0;
-    (come_push_stackframe("20method.c", 235),dec_stack_ptr(1,info));
-    come_pop_stackframe();
+    (come_push_stackframe("20method.c", 235),dec_stack_ptr(1,info),come_pop_stackframe());
     __freed_obj__ = 0;
     obj_type_140=(struct sType*)come_increment_ref_count(((struct sType*)(right_value141=sType_clone(((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 240))->type))));
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value141);
@@ -8381,15 +8514,15 @@ memset(&right_value360, 0, sizeof(void*));
     lambda_type_143=((void*)0);
     __freed_obj__ = 0;
     for(
-    o2_saved_144=(struct list$1tuple2$2charphsTypephph*)come_increment_ref_count((((struct sClass*)come_null_check(klass_141, "20method.c", 256))->mFields)),it_147=(come_push_stackframe("20method.c", 256),list$1tuple2$2charphsTypephph_begin(((struct list$1tuple2$2charphsTypephph*)come_null_check((o2_saved_144), "20method.c", 256)))) ,    come_pop_stackframe() ,    __freed_obj__ = 0, 
-    0;    _for_condtionalA7=    !(come_push_stackframe("20method.c", 256),__exception_result_var_b33=list$1tuple2$2charphsTypephph_end(((struct list$1tuple2$2charphsTypephph*)come_null_check((o2_saved_144), "20method.c", 256))), come_pop_stackframe(), __exception_result_var_b33) ,    __freed_obj__ = 0, 
-    _for_condtionalA7;    it_147=(come_push_stackframe("20method.c", 256),list$1tuple2$2charphsTypephph_next(((struct list$1tuple2$2charphsTypephph*)come_null_check((o2_saved_144), "20method.c", 256)))) ,    come_pop_stackframe() ,    __freed_obj__ = 0, 
+    o2_saved_144=(struct list$1tuple2$2charphsTypephph*)come_increment_ref_count((((struct sClass*)come_null_check(klass_141, "20method.c", 256))->mFields)),it_147=(come_push_stackframe("20method.c", 256),__exception_result_var_b109=list$1tuple2$2charphsTypephph_begin(((struct list$1tuple2$2charphsTypephph*)come_null_check((o2_saved_144), "20method.c", 256))), come_pop_stackframe(), __exception_result_var_b109) ,    __freed_obj__ = 0, 
+    0;    _for_condtionalA7=    !(come_push_stackframe("20method.c", 256),__exception_result_var_b110=list$1tuple2$2charphsTypephph_end(((struct list$1tuple2$2charphsTypephph*)come_null_check((o2_saved_144), "20method.c", 256))), come_pop_stackframe(), __exception_result_var_b110) ,    __freed_obj__ = 0, 
+    _for_condtionalA7;    it_147=(come_push_stackframe("20method.c", 256),__exception_result_var_b113=list$1tuple2$2charphsTypephph_next(((struct list$1tuple2$2charphsTypephph*)come_null_check((o2_saved_144), "20method.c", 256))), come_pop_stackframe(), __exception_result_var_b113) ,    __freed_obj__ = 0, 
     0    ){
         multiple_assgin_var1=it_147;
         field_name_150=(char*)come_increment_ref_count(multiple_assgin_var1->v1);
         field_type_151=(struct sType*)come_increment_ref_count(multiple_assgin_var1->v2);
         __freed_obj__ = 0;
-        if(_if_conditional228=(come_push_stackframe("20method.c", 254),__exception_result_var_b34=string_operator_equals(field_name_150,fun_name_134), come_pop_stackframe(), __exception_result_var_b34)&&(come_push_stackframe("20method.c", 254),__exception_result_var_b35=string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(field_type_151, "20method.c", 254))->mClass, "20method.c", 254))->mName,"lambda"), come_pop_stackframe(), __exception_result_var_b35),        __freed_obj__ = 0, 
+        if(_if_conditional228=(come_push_stackframe("20method.c", 254),__exception_result_var_b114=string_operator_equals(field_name_150,fun_name_134), come_pop_stackframe(), __exception_result_var_b114)&&(come_push_stackframe("20method.c", 254),__exception_result_var_b115=string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(field_type_151, "20method.c", 254))->mClass, "20method.c", 254))->mName,"lambda"), come_pop_stackframe(), __exception_result_var_b115),        __freed_obj__ = 0, 
         _if_conditional228) {
             calling_dynamic_method_142=(_Bool)1;
             __freed_obj__ = 0;
@@ -8415,8 +8548,7 @@ memset(&right_value360, 0, sizeof(void*));
         __freed_obj__ = 0;
         ((struct sType*)come_null_check(result_type_152, "20method.c", 258))->mStatic=(_Bool)0;
         __freed_obj__ = 0;
-        come_params_155=(struct list$1CVALUEph*)come_increment_ref_count((come_push_stackframe("20method.c", 260),((struct list$1CVALUEph*)(right_value144=list$1CVALUEph_initialize((struct list$1CVALUEph*)come_increment_ref_count(((struct list$1CVALUEph*)(right_value143=(struct list$1CVALUEph*)come_calloc(1, sizeof(struct list$1CVALUEph)*(1), "20method.c", 260)))))))));
-        come_pop_stackframe();
+        come_params_155=(struct list$1CVALUEph*)come_increment_ref_count((come_push_stackframe("20method.c", 260),__exception_result_var_b116=((struct list$1CVALUEph*)(right_value144=list$1CVALUEph_initialize((struct list$1CVALUEph*)come_increment_ref_count(((struct list$1CVALUEph*)(right_value143=(struct list$1CVALUEph*)come_calloc(1, sizeof(struct list$1CVALUEph)*(1), "20method.c", 260))))))), come_pop_stackframe(), __exception_result_var_b116));
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value143);
         if(right_value143 && right_value143 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1CVALUEphp_finalize,right_value143, (void*)0, (void*)0, 0, 1, 0, 0); }
         __right_value_freed_obj[1] = right_value143;
@@ -8427,9 +8559,9 @@ memset(&right_value360, 0, sizeof(void*));
         i_156=0;
         __freed_obj__ = 0;
         for(
-        o2_saved_157=(params_135),it_160=(come_push_stackframe("20method.c", 314),list$1tuple2$2charphsNodephph_begin(((struct list$1tuple2$2charphsNodephph*)come_null_check((o2_saved_157), "20method.c", 314)))) ,        come_pop_stackframe() ,        __freed_obj__ = 0, 
-        0;        _for_condtionalA8=        !(come_push_stackframe("20method.c", 314),__exception_result_var_b36=list$1tuple2$2charphsNodephph_end(((struct list$1tuple2$2charphsNodephph*)come_null_check((o2_saved_157), "20method.c", 314))), come_pop_stackframe(), __exception_result_var_b36) ,        __freed_obj__ = 0, 
-        _for_condtionalA8;        it_160=(come_push_stackframe("20method.c", 314),list$1tuple2$2charphsNodephph_next(((struct list$1tuple2$2charphsNodephph*)come_null_check((o2_saved_157), "20method.c", 314)))) ,        come_pop_stackframe() ,        __freed_obj__ = 0, 
+        o2_saved_157=(params_135),it_160=(come_push_stackframe("20method.c", 314),__exception_result_var_b119=list$1tuple2$2charphsNodephph_begin(((struct list$1tuple2$2charphsNodephph*)come_null_check((o2_saved_157), "20method.c", 314))), come_pop_stackframe(), __exception_result_var_b119) ,        __freed_obj__ = 0, 
+        0;        _for_condtionalA8=        !(come_push_stackframe("20method.c", 314),__exception_result_var_b120=list$1tuple2$2charphsNodephph_end(((struct list$1tuple2$2charphsNodephph*)come_null_check((o2_saved_157), "20method.c", 314))), come_pop_stackframe(), __exception_result_var_b120) ,        __freed_obj__ = 0, 
+        _for_condtionalA8;        it_160=(come_push_stackframe("20method.c", 314),__exception_result_var_b123=list$1tuple2$2charphsNodephph_next(((struct list$1tuple2$2charphsNodephph*)come_null_check((o2_saved_157), "20method.c", 314))), come_pop_stackframe(), __exception_result_var_b123) ,        __freed_obj__ = 0, 
         0        ){
             multiple_assgin_var2=it_160;
             label_163=(char*)come_increment_ref_count(multiple_assgin_var2->v1);
@@ -8437,8 +8569,7 @@ memset(&right_value360, 0, sizeof(void*));
             __freed_obj__ = 0;
             if(_if_conditional234=i_156==0,            __freed_obj__ = 0, 
             _if_conditional234) {
-                (come_push_stackframe("20method.c", 267),list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(come_params_155, "20method.c", 267)),(struct CVALUE*)come_increment_ref_count(obj_value_139)));
-                come_pop_stackframe();
+                (come_push_stackframe("20method.c", 267),__exception_result_var_b124=list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(come_params_155, "20method.c", 267)),(struct CVALUE*)come_increment_ref_count(obj_value_139)), come_pop_stackframe(), __exception_result_var_b124);
                 __freed_obj__ = 0;
                 i_156++;
                 __freed_obj__ = 0;
@@ -8446,7 +8577,7 @@ memset(&right_value360, 0, sizeof(void*));
             else {
                 if(_if_conditional235=!((struct sNode*)come_null_check(node_164, "20method.c", 275))->compile(((struct sNode*)come_null_check(node_164, "20method.c", 275))->_protocol_obj,info),                __freed_obj__ = 0, 
                 _if_conditional235) {
-                    __result121__ = (_Bool)0;
+                    __result122__ = (_Bool)0;
                     if(label_163 && !__freed_obj__) { label_163 = come_decrement_ref_count(label_163, (void*)0, (void*)0, 0, 0, 0); }
                     if(node_164 && !__freed_obj__) { node_164 = come_decrement_ref_count(node_164, ((struct sNode*)node_164)->finalize, ((struct sNode*)node_164)->_protocol_obj, 0, 0, 0); } 
                     if(result_type_152 && !__freed_obj__) { come_call_finalizer(sType_finalize,result_type_152, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -8454,18 +8585,16 @@ memset(&right_value360, 0, sizeof(void*));
                     if(obj_value_139 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,obj_value_139, (void*)0, (void*)0, 0, 0, 0, 0); }
                     if(obj_type_140 && !__freed_obj__) { come_call_finalizer(sType_finalize,obj_type_140, (void*)0, (void*)0, 0, 0, 0, 0); }
                     __freed_obj__ = 0;
-                    return __result121__;
+                    return __result122__;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                come_value_165=(struct CVALUE*)come_increment_ref_count((come_push_stackframe("20method.c", 275),((struct CVALUE*)(right_value145=get_value_from_stack(-1,info)))));
-                come_pop_stackframe();
+                come_value_165=(struct CVALUE*)come_increment_ref_count((come_push_stackframe("20method.c", 275),__exception_result_var_b125=((struct CVALUE*)(right_value145=get_value_from_stack(-1,info))), come_pop_stackframe(), __exception_result_var_b125));
                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value145);
                 if(right_value145 && right_value145 != __result_obj__ && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,right_value145, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __right_value_freed_obj[0] = right_value145;
                 __freed_obj__ = 0;
-                (come_push_stackframe("20method.c", 277),check_assign_type(((char*)(right_value148=xsprintf("\%s param num \%s is assinged to",((char*)(right_value146=charp_to_string(fun_name_134))),((char*)(right_value147=int_to_string(i_156)))))),optional$2sTypephbool_value((come_push_stackframe("20method.c", 277),((struct optional$2sTypephbool*)(right_value153=list$1sTypephp_operator_load_element(((struct sType*)come_null_check(lambda_type_143, "20method.c", 277))->mParamTypes,i_156-1))))),((struct CVALUE*)come_null_check(come_value_165, "20method.c", 277))->type,come_value_165,(_Bool)0,info));
-                come_pop_stackframe();
+                (come_push_stackframe("20method.c", 277),check_assign_type(((char*)(right_value148=xsprintf("\%s param num \%s is assinged to",((char*)(right_value146=charp_to_string(fun_name_134))),((char*)(right_value147=int_to_string(i_156)))))),optional$2sTypephbool_value((come_push_stackframe("20method.c", 277),__exception_result_var_b127=((struct optional$2sTypephbool*)(right_value153=list$1sTypephp_operator_load_element(((struct sType*)come_null_check(lambda_type_143, "20method.c", 277))->mParamTypes,i_156-1))), come_pop_stackframe(), __exception_result_var_b127)),((struct CVALUE*)come_null_check(come_value_165, "20method.c", 277))->type,come_value_165,(_Bool)0,info),come_pop_stackframe());
                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value146);
                 if(right_value146 && right_value146 != __result_obj__ && !__freed_obj__) { right_value146 = come_decrement_ref_count(right_value146, (void*)0, (void*)0, 1, 0, 0); }
                 __right_value_freed_obj[1] = right_value146;
@@ -8479,7 +8608,7 @@ memset(&right_value360, 0, sizeof(void*));
                 if(right_value153 && right_value153 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sTypephboolp_finalize,right_value153, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __right_value_freed_obj[4] = right_value153;
                 __freed_obj__ = 0;
-                if(_if_conditional240=((struct sType*)come_null_check(optional$2sTypephbool_value((come_push_stackframe("20method.c", 307),__exception_result_var_b37=((struct optional$2sTypephbool*)(right_value154=list$1sTypephp_operator_load_element(((struct sType*)come_null_check(lambda_type_143, "20method.c", 307))->mParamTypes,i_156-1))), come_pop_stackframe(), __exception_result_var_b37)), "20method.c", 307))->mHeap&&((struct sType*)come_null_check(((struct CVALUE*)come_null_check(come_value_165, "20method.c", 307))->type, "20method.c", 307))->mHeap,                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 5, right_value154),
+                if(_if_conditional240=((struct sType*)come_null_check(optional$2sTypephbool_value((come_push_stackframe("20method.c", 307),__exception_result_var_b129=((struct optional$2sTypephbool*)(right_value154=list$1sTypephp_operator_load_element(((struct sType*)come_null_check(lambda_type_143, "20method.c", 307))->mParamTypes,i_156-1))), come_pop_stackframe(), __exception_result_var_b129)), "20method.c", 307))->mHeap&&((struct sType*)come_null_check(((struct CVALUE*)come_null_check(come_value_165, "20method.c", 307))->type, "20method.c", 307))->mHeap,                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 5, right_value154),
                 (right_value154 && right_value154 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2sTypephboolp_finalize,right_value154, (void*)0, (void*)0, 0, 1, 0, 0):0,
                 __right_value_freed_obj[5] = right_value154, 
                 __freed_obj__ = 0, 
@@ -8497,7 +8626,7 @@ memset(&right_value360, 0, sizeof(void*));
                             if(_if_conditional243=((struct sType*)come_null_check(((struct sVar*)come_null_check(((struct CVALUE*)come_null_check(come_value_165, "20method.c", 297))->var, "20method.c", 297))->mType, "20method.c", 297))->mShare,                            __freed_obj__ = 0, 
                             _if_conditional243) {
                                 __dec_obj55=((struct CVALUE*)come_null_check(come_value_165, "20method.c", 285))->c_value;
-                                ((struct CVALUE*)come_null_check(come_value_165, "20method.c", 285))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 285),((char*)(right_value155=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_165, "20method.c", 285))->type,((struct CVALUE*)come_null_check(come_value_165, "20method.c", 285))->c_value,info)))));
+                                ((struct CVALUE*)come_null_check(come_value_165, "20method.c", 285))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 285),__exception_result_var_b130=((char*)(right_value155=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_165, "20method.c", 285))->type,((struct CVALUE*)come_null_check(come_value_165, "20method.c", 285))->c_value,info))), come_pop_stackframe(), __exception_result_var_b130));
                                 if(__dec_obj55) { __dec_obj55 = come_decrement_ref_count(__dec_obj55, (void*)0, (void*)0, 0,0,0); }
                                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value155);
                                 if(right_value155 && right_value155 != __result_obj__ && !__freed_obj__) { right_value155 = come_decrement_ref_count(right_value155, (void*)0, (void*)0, 1, 0, 0); }
@@ -8508,7 +8637,7 @@ memset(&right_value360, 0, sizeof(void*));
                                 if(_if_conditional244=((struct sType*)come_null_check(((struct sVar*)come_null_check(((struct CVALUE*)come_null_check(come_value_165, "20method.c", 297))->var, "20method.c", 297))->mType, "20method.c", 297))->mClone,                                __freed_obj__ = 0, 
                                 _if_conditional244) {
                                     __dec_obj56=((struct CVALUE*)come_null_check(come_value_165, "20method.c", 288))->c_value;
-                                    ((struct CVALUE*)come_null_check(come_value_165, "20method.c", 288))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 288),((char*)(right_value156=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_165, "20method.c", 288))->type,((struct CVALUE*)come_null_check(come_value_165, "20method.c", 288))->c_value,info)))));
+                                    ((struct CVALUE*)come_null_check(come_value_165, "20method.c", 288))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 288),__exception_result_var_b131=((char*)(right_value156=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_165, "20method.c", 288))->type,((struct CVALUE*)come_null_check(come_value_165, "20method.c", 288))->c_value,info))), come_pop_stackframe(), __exception_result_var_b131));
                                     if(__dec_obj56) { __dec_obj56 = come_decrement_ref_count(__dec_obj56, (void*)0, (void*)0, 0,0,0); }
                                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value156);
                                     if(right_value156 && right_value156 != __result_obj__ && !__freed_obj__) { right_value156 = come_decrement_ref_count(right_value156, (void*)0, (void*)0, 1, 0, 0); }
@@ -8517,7 +8646,7 @@ memset(&right_value360, 0, sizeof(void*));
                                 }
                                 else {
                                     __dec_obj57=((struct CVALUE*)come_null_check(come_value_165, "20method.c", 291))->c_value;
-                                    ((struct CVALUE*)come_null_check(come_value_165, "20method.c", 291))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 291),((char*)(right_value157=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_165, "20method.c", 291))->type,((struct CVALUE*)come_null_check(come_value_165, "20method.c", 291))->c_value,info)))));
+                                    ((struct CVALUE*)come_null_check(come_value_165, "20method.c", 291))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 291),__exception_result_var_b132=((char*)(right_value157=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_165, "20method.c", 291))->type,((struct CVALUE*)come_null_check(come_value_165, "20method.c", 291))->c_value,info))), come_pop_stackframe(), __exception_result_var_b132));
                                     if(__dec_obj57) { __dec_obj57 = come_decrement_ref_count(__dec_obj57, (void*)0, (void*)0, 0,0,0); }
                                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value157);
                                     if(right_value157 && right_value157 != __result_obj__ && !__freed_obj__) { right_value157 = come_decrement_ref_count(right_value157, (void*)0, (void*)0, 1, 0, 0); }
@@ -8536,7 +8665,7 @@ memset(&right_value360, 0, sizeof(void*));
                         }
                         else {
                             __dec_obj58=((struct CVALUE*)come_null_check(come_value_165, "20method.c", 302))->c_value;
-                            ((struct CVALUE*)come_null_check(come_value_165, "20method.c", 302))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 302),((char*)(right_value158=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_165, "20method.c", 302))->type,((struct CVALUE*)come_null_check(come_value_165, "20method.c", 302))->c_value,info)))));
+                            ((struct CVALUE*)come_null_check(come_value_165, "20method.c", 302))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 302),__exception_result_var_b133=((char*)(right_value158=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_165, "20method.c", 302))->type,((struct CVALUE*)come_null_check(come_value_165, "20method.c", 302))->c_value,info))), come_pop_stackframe(), __exception_result_var_b133));
                             if(__dec_obj58) { __dec_obj58 = come_decrement_ref_count(__dec_obj58, (void*)0, (void*)0, 0,0,0); }
                             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value158);
                             if(right_value158 && right_value158 != __result_obj__ && !__freed_obj__) { right_value158 = come_decrement_ref_count(right_value158, (void*)0, (void*)0, 1, 0, 0); }
@@ -8548,13 +8677,11 @@ memset(&right_value360, 0, sizeof(void*));
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                (come_push_stackframe("20method.c", 307),list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(come_params_155, "20method.c", 307)),(struct CVALUE*)come_increment_ref_count(come_value_165)));
-                come_pop_stackframe();
+                (come_push_stackframe("20method.c", 307),__exception_result_var_b134=list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(come_params_155, "20method.c", 307)),(struct CVALUE*)come_increment_ref_count(come_value_165)), come_pop_stackframe(), __exception_result_var_b134);
                 __freed_obj__ = 0;
                 i_156++;
                 __freed_obj__ = 0;
-                (come_push_stackframe("20method.c", 310),dec_stack_ptr(1,info));
-                come_pop_stackframe();
+                (come_push_stackframe("20method.c", 310),dec_stack_ptr(1,info),come_pop_stackframe());
                 __freed_obj__ = 0;
                 if(come_value_165 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,come_value_165, (void*)0, (void*)0, 0, 0, 0, 0); }
             }
@@ -8563,8 +8690,7 @@ memset(&right_value360, 0, sizeof(void*));
             if(node_164 && !__freed_obj__) { node_164 = come_decrement_ref_count(node_164, ((struct sNode*)node_164)->finalize, ((struct sNode*)node_164)->_protocol_obj, 0, 0, 0); } 
         }
         __freed_obj__ = 0;
-        buf_170=(struct buffer*)come_increment_ref_count((come_push_stackframe("20method.c", 314),((struct buffer*)(right_value160=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value159=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 314)))))))));
-        come_pop_stackframe();
+        buf_170=(struct buffer*)come_increment_ref_count((come_push_stackframe("20method.c", 314),__exception_result_var_b135=((struct buffer*)(right_value160=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value159=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 314))))))), come_pop_stackframe(), __exception_result_var_b135));
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value159);
         if(right_value159 && right_value159 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value159, (void*)0, (void*)0, 0, 1, 0, 0); }
         __right_value_freed_obj[3] = right_value159;
@@ -8572,26 +8698,24 @@ memset(&right_value360, 0, sizeof(void*));
         if(right_value160 && right_value160 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value160, (void*)0, (void*)0, 0, 1, 0, 0); }
         __right_value_freed_obj[4] = right_value160;
         __freed_obj__ = 0;
-        (come_push_stackframe("20method.c", 316),buffer_append_str(((struct buffer*)come_null_check(buf_170, "20method.c", 316)),(come_push_stackframe("20method.c", 316),((char*)(right_value161=xsprintf("%s->%s",((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 316))->c_value,fun_name_134))))));
-        come_pop_stackframe();
+        (come_push_stackframe("20method.c", 316),__exception_result_var_b137=buffer_append_str(((struct buffer*)come_null_check(buf_170, "20method.c", 316)),(come_push_stackframe("20method.c", 316),__exception_result_var_b136=((char*)(right_value161=xsprintf("%s->%s",((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 316))->c_value,fun_name_134))), come_pop_stackframe(), __exception_result_var_b136)), come_pop_stackframe(), __exception_result_var_b137);
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 5, right_value161);
         if(right_value161 && right_value161 != __result_obj__ && !__freed_obj__) { right_value161 = come_decrement_ref_count(right_value161, (void*)0, (void*)0, 1, 0, 0); }
         __right_value_freed_obj[5] = right_value161;
         __freed_obj__ = 0;
-        (come_push_stackframe("20method.c", 317),buffer_append_str(((struct buffer*)come_null_check(buf_170, "20method.c", 317)),"("));
-        come_pop_stackframe();
+        (come_push_stackframe("20method.c", 317),__exception_result_var_b138=buffer_append_str(((struct buffer*)come_null_check(buf_170, "20method.c", 317)),"("), come_pop_stackframe(), __exception_result_var_b138);
         __freed_obj__ = 0;
         j_171=0;
         __freed_obj__ = 0;
         for(
-        o2_saved_172=(struct list$1CVALUEph*)come_increment_ref_count((come_params_155)),it_175=(come_push_stackframe("20method.c", 332),list$1CVALUEph_begin(((struct list$1CVALUEph*)come_null_check((o2_saved_172), "20method.c", 332)))) ,        come_pop_stackframe() ,        __freed_obj__ = 0, 
-        0;        _for_condtionalA9=        !(come_push_stackframe("20method.c", 332),__exception_result_var_b38=list$1CVALUEph_end(((struct list$1CVALUEph*)come_null_check((o2_saved_172), "20method.c", 332))), come_pop_stackframe(), __exception_result_var_b38) ,        __freed_obj__ = 0, 
-        _for_condtionalA9;        it_175=(come_push_stackframe("20method.c", 332),list$1CVALUEph_next(((struct list$1CVALUEph*)come_null_check((o2_saved_172), "20method.c", 332)))) ,        come_pop_stackframe() ,        __freed_obj__ = 0, 
+        o2_saved_172=(struct list$1CVALUEph*)come_increment_ref_count((come_params_155)),it_175=(come_push_stackframe("20method.c", 332),__exception_result_var_b141=list$1CVALUEph_begin(((struct list$1CVALUEph*)come_null_check((o2_saved_172), "20method.c", 332))), come_pop_stackframe(), __exception_result_var_b141) ,        __freed_obj__ = 0, 
+        0;        _for_condtionalA9=        !(come_push_stackframe("20method.c", 332),__exception_result_var_b142=list$1CVALUEph_end(((struct list$1CVALUEph*)come_null_check((o2_saved_172), "20method.c", 332))), come_pop_stackframe(), __exception_result_var_b142) ,        __freed_obj__ = 0, 
+        _for_condtionalA9;        it_175=(come_push_stackframe("20method.c", 332),__exception_result_var_b145=list$1CVALUEph_next(((struct list$1CVALUEph*)come_null_check((o2_saved_172), "20method.c", 332))), come_pop_stackframe(), __exception_result_var_b145) ,        __freed_obj__ = 0, 
         0        ){
             if(_if_conditional250=j_171==0,            __freed_obj__ = 0, 
             _if_conditional250) {
                 __dec_obj59=((struct CVALUE*)come_null_check(it_175, "20method.c", 322))->c_value;
-                ((struct CVALUE*)come_null_check(it_175, "20method.c", 322))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 322),((char*)(right_value162=xsprintf("%s->_protocol_obj",((struct CVALUE*)come_null_check(it_175, "20method.c", 322))->c_value)))));
+                ((struct CVALUE*)come_null_check(it_175, "20method.c", 322))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 322),__exception_result_var_b146=((char*)(right_value162=xsprintf("%s->_protocol_obj",((struct CVALUE*)come_null_check(it_175, "20method.c", 322))->c_value))), come_pop_stackframe(), __exception_result_var_b146));
                 if(__dec_obj59) { __dec_obj59 = come_decrement_ref_count(__dec_obj59, (void*)0, (void*)0, 0,0,0); }
                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value162);
                 if(right_value162 && right_value162 != __result_obj__ && !__freed_obj__) { right_value162 = come_decrement_ref_count(right_value162, (void*)0, (void*)0, 1, 0, 0); }
@@ -8599,13 +8723,11 @@ memset(&right_value360, 0, sizeof(void*));
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-            (come_push_stackframe("20method.c", 324),buffer_append_str(((struct buffer*)come_null_check(buf_170, "20method.c", 324)),((struct CVALUE*)come_null_check(it_175, "20method.c", 324))->c_value));
-            come_pop_stackframe();
+            (come_push_stackframe("20method.c", 324),__exception_result_var_b147=buffer_append_str(((struct buffer*)come_null_check(buf_170, "20method.c", 324)),((struct CVALUE*)come_null_check(it_175, "20method.c", 324))->c_value), come_pop_stackframe(), __exception_result_var_b147);
             __freed_obj__ = 0;
-            if(_if_conditional251=j_171!=(come_push_stackframe("20method.c", 330),__exception_result_var_b39=list$1CVALUEph_length(((struct list$1CVALUEph*)come_null_check(come_params_155, "20method.c", 330))), come_pop_stackframe(), __exception_result_var_b39)-1,            __freed_obj__ = 0, 
+            if(_if_conditional251=j_171!=(come_push_stackframe("20method.c", 330),__exception_result_var_b148=list$1CVALUEph_length(((struct list$1CVALUEph*)come_null_check(come_params_155, "20method.c", 330))), come_pop_stackframe(), __exception_result_var_b148)-1,            __freed_obj__ = 0, 
             _if_conditional251) {
-                (come_push_stackframe("20method.c", 327),buffer_append_str(((struct buffer*)come_null_check(buf_170, "20method.c", 327)),","));
-                come_pop_stackframe();
+                (come_push_stackframe("20method.c", 327),__exception_result_var_b149=buffer_append_str(((struct buffer*)come_null_check(buf_170, "20method.c", 327)),","), come_pop_stackframe(), __exception_result_var_b149);
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -8614,8 +8736,7 @@ memset(&right_value360, 0, sizeof(void*));
         }
         if(o2_saved_172 && !__freed_obj__) { come_call_finalizer(list$1CVALUEphp_finalize,o2_saved_172, (void*)0, (void*)0, 0, 0, 0, 0); }
         __freed_obj__ = 0;
-        (come_push_stackframe("20method.c", 332),buffer_append_str(((struct buffer*)come_null_check(buf_170, "20method.c", 332)),")"));
-        come_pop_stackframe();
+        (come_push_stackframe("20method.c", 332),__exception_result_var_b150=buffer_append_str(((struct buffer*)come_null_check(buf_170, "20method.c", 332)),")"), come_pop_stackframe(), __exception_result_var_b150);
         __freed_obj__ = 0;
         come_value2_178=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value163=(struct CVALUE*)come_calloc(1, sizeof(struct CVALUE)*(1), "20method.c", 334))));
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 6, right_value163);
@@ -8623,14 +8744,13 @@ memset(&right_value360, 0, sizeof(void*));
         __right_value_freed_obj[6] = right_value163;
         __freed_obj__ = 0;
         __dec_obj60=((struct CVALUE*)come_null_check(come_value2_178, "20method.c", 336))->c_value;
-        ((struct CVALUE*)come_null_check(come_value2_178, "20method.c", 336))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 336),((char*)(right_value164=buffer_to_string(((struct buffer*)come_null_check(buf_170, "20method.c", 336)))))));
+        ((struct CVALUE*)come_null_check(come_value2_178, "20method.c", 336))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 336),__exception_result_var_b151=((char*)(right_value164=buffer_to_string(((struct buffer*)come_null_check(buf_170, "20method.c", 336))))), come_pop_stackframe(), __exception_result_var_b151));
         if(__dec_obj60) { __dec_obj60 = come_decrement_ref_count(__dec_obj60, (void*)0, (void*)0, 0,0,0); }
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 7, right_value164);
         if(right_value164 && right_value164 != __result_obj__ && !__freed_obj__) { right_value164 = come_decrement_ref_count(right_value164, (void*)0, (void*)0, 1, 0, 0); }
         __right_value_freed_obj[7] = right_value164;
         __freed_obj__ = 0;
-        result_type2_179=(struct sType*)come_increment_ref_count((come_push_stackframe("20method.c", 338),((struct sType*)(right_value165=solve_generics(result_type_152,((struct sInfo*)come_null_check(info, "20method.c", 338))->generics_type,info)))));
-        come_pop_stackframe();
+        result_type2_179=(struct sType*)come_increment_ref_count((come_push_stackframe("20method.c", 338),__exception_result_var_b152=((struct sType*)(right_value165=solve_generics(result_type_152,((struct sInfo*)come_null_check(info, "20method.c", 338))->generics_type,info))), come_pop_stackframe(), __exception_result_var_b152));
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 8, right_value165);
         if(right_value165 && right_value165 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value165, (void*)0, (void*)0, 0, 1, 0, 0); }
         __right_value_freed_obj[8] = right_value165;
@@ -8638,7 +8758,7 @@ memset(&right_value360, 0, sizeof(void*));
         if(_if_conditional252=((struct sType*)come_null_check(result_type2_179, "20method.c", 344))->mHeap,        __freed_obj__ = 0, 
         _if_conditional252) {
             __dec_obj61=((struct CVALUE*)come_null_check(come_value2_178, "20method.c", 341))->c_value;
-            ((struct CVALUE*)come_null_check(come_value2_178, "20method.c", 341))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 341),((char*)(right_value167=append_object_to_right_values((come_push_stackframe("20method.c", 341),((char*)(right_value166=buffer_to_string(((struct buffer*)come_null_check(buf_170, "20method.c", 341)))))),(struct sType*)come_increment_ref_count(result_type2_179),info)))));
+            ((struct CVALUE*)come_null_check(come_value2_178, "20method.c", 341))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 341),__exception_result_var_b154=((char*)(right_value167=append_object_to_right_values((come_push_stackframe("20method.c", 341),__exception_result_var_b153=((char*)(right_value166=buffer_to_string(((struct buffer*)come_null_check(buf_170, "20method.c", 341))))), come_pop_stackframe(), __exception_result_var_b153),(struct sType*)come_increment_ref_count(result_type2_179),info))), come_pop_stackframe(), __exception_result_var_b154));
             if(__dec_obj61) { __dec_obj61 = come_decrement_ref_count(__dec_obj61, (void*)0, (void*)0, 0,0,0); }
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value166);
             if(right_value166 && right_value166 != __result_obj__ && !__freed_obj__) { right_value166 = come_decrement_ref_count(right_value166, (void*)0, (void*)0, 1, 0, 0); }
@@ -8660,11 +8780,9 @@ memset(&right_value360, 0, sizeof(void*));
         __freed_obj__ = 0;
         ((struct CVALUE*)come_null_check(come_value2_178, "20method.c", 346))->var=((void*)0);
         __freed_obj__ = 0;
-        (come_push_stackframe("20method.c", 348),add_come_last_code(info,"%s;\n",((struct CVALUE*)come_null_check(come_value2_178, "20method.c", 348))->c_value));
-        come_pop_stackframe();
+        (come_push_stackframe("20method.c", 348),add_come_last_code(info,"%s;\n",((struct CVALUE*)come_null_check(come_value2_178, "20method.c", 348))->c_value),come_pop_stackframe());
         __freed_obj__ = 0;
-        (come_push_stackframe("20method.c", 350),list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(((struct sInfo*)come_null_check(info, "20method.c", 350))->stack, "20method.c", 350)),(struct CVALUE*)come_increment_ref_count(come_value2_178)));
-        come_pop_stackframe();
+        (come_push_stackframe("20method.c", 350),__exception_result_var_b155=list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(((struct sInfo*)come_null_check(info, "20method.c", 350))->stack, "20method.c", 350)),(struct CVALUE*)come_increment_ref_count(come_value2_178)), come_pop_stackframe(), __exception_result_var_b155);
         __freed_obj__ = 0;
         if(result_type_152 && !__freed_obj__) { come_call_finalizer(sType_finalize,result_type_152, (void*)0, (void*)0, 0, 0, 0, 0); }
         if(come_params_155 && !__freed_obj__) { come_call_finalizer(list$1CVALUEphp_finalize,come_params_155, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -8673,8 +8791,7 @@ memset(&right_value360, 0, sizeof(void*));
         if(result_type2_179 && !__freed_obj__) { come_call_finalizer(sType_finalize,result_type2_179, (void*)0, (void*)0, 0, 0, 0, 0); }
     }
     else {
-        generics_fun_name_180=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 353),((char*)(right_value171=string_to_string(((char*)come_null_check((come_push_stackframe("20method.c", 353),((char*)(right_value170=make_generics_function(obj_type_140,(char*)come_increment_ref_count((come_push_stackframe("20method.c", 353),((char*)(right_value169=__builtin_string(fun_name_134))))),info)))), "20method.c", 353)))))));
-        come_pop_stackframe();
+        generics_fun_name_180=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 353),__exception_result_var_b158=((char*)(right_value171=string_to_string(((char*)come_null_check((come_push_stackframe("20method.c", 353),__exception_result_var_b157=((char*)(right_value170=make_generics_function(obj_type_140,(char*)come_increment_ref_count((come_push_stackframe("20method.c", 353),__exception_result_var_b156=((char*)(right_value169=__builtin_string(fun_name_134))), come_pop_stackframe(), __exception_result_var_b156)),info))), come_pop_stackframe(), __exception_result_var_b157), "20method.c", 353))))), come_pop_stackframe(), __exception_result_var_b158));
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value169);
         if(right_value169 && right_value169 != __result_obj__ && !__freed_obj__) { right_value169 = come_decrement_ref_count(right_value169, (void*)0, (void*)0, 1, 0, 0); }
         __right_value_freed_obj[0] = right_value169;
@@ -8692,14 +8809,12 @@ memset(&right_value360, 0, sizeof(void*));
         0;        _for_condtionalA10=        i_182>=1 ,        __freed_obj__ = 0, 
         _for_condtionalA10;        i_182-- ,        __freed_obj__ = 0, 
         0        ){
-            new_fun_name_183=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 358),((char*)(right_value172=xsprintf("%s_v%d",generics_fun_name_180,i_182)))));
-            come_pop_stackframe();
+            new_fun_name_183=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 358),__exception_result_var_b159=((char*)(right_value172=xsprintf("%s_v%d",generics_fun_name_180,i_182))), come_pop_stackframe(), __exception_result_var_b159));
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value172);
             if(right_value172 && right_value172 != __result_obj__ && !__freed_obj__) { right_value172 = come_decrement_ref_count(right_value172, (void*)0, (void*)0, 1, 0, 0); }
             __right_value_freed_obj[0] = right_value172;
             __freed_obj__ = 0;
-            fun_181=optional$2sFunpbool_value((come_push_stackframe("20method.c", 360),((struct optional$2sFunpbool*)(right_value182=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "20method.c", 360))->funcs,new_fun_name_183)))));
-            come_pop_stackframe();
+            fun_181=optional$2sFunpbool_value((come_push_stackframe("20method.c", 360),__exception_result_var_b163=((struct optional$2sFunpbool*)(right_value182=map$2charphsFunphp_operator_load_element(((struct sInfo*)come_null_check(info, "20method.c", 360))->funcs,new_fun_name_183))), come_pop_stackframe(), __exception_result_var_b163));
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value182);
             if(right_value182 && right_value182 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value182, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[1] = right_value182;
@@ -8707,7 +8822,7 @@ memset(&right_value360, 0, sizeof(void*));
             if(_if_conditional258=fun_181!=((void*)0),            __freed_obj__ = 0, 
             _if_conditional258) {
                 __dec_obj63=generics_fun_name_180;
-                generics_fun_name_180=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 363),((char*)(right_value183=__builtin_string(new_fun_name_183)))));
+                generics_fun_name_180=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 363),__exception_result_var_b165=((char*)(right_value183=__builtin_string(new_fun_name_183))), come_pop_stackframe(), __exception_result_var_b165));
                 if(__dec_obj63) { __dec_obj63 = come_decrement_ref_count(__dec_obj63, (void*)0, (void*)0, 0,0,0); }
                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value183);
                 if(right_value183 && right_value183 != __result_obj__ && !__freed_obj__) { right_value183 = come_decrement_ref_count(right_value183, (void*)0, (void*)0, 1, 0, 0); }
@@ -8723,8 +8838,7 @@ memset(&right_value360, 0, sizeof(void*));
         __freed_obj__ = 0;
         if(_if_conditional259=fun_181==((void*)0),        __freed_obj__ = 0, 
         _if_conditional259) {
-            fun_181=(come_push_stackframe("20method.c", 369),((struct sFun*)(right_value185=map$2charphsFunph_at(((struct map$2charphsFunph*)come_null_check(((struct sInfo*)come_null_check(info, "20method.c", 369))->funcs, "20method.c", 369)),generics_fun_name_180,((void*)0)))));
-            come_pop_stackframe();
+            fun_181=(come_push_stackframe("20method.c", 369),__exception_result_var_b168=((struct sFun*)(right_value185=map$2charphsFunph_at(((struct map$2charphsFunph*)come_null_check(((struct sInfo*)come_null_check(info, "20method.c", 369))->funcs, "20method.c", 369)),generics_fun_name_180,((void*)0)))), come_pop_stackframe(), __exception_result_var_b168);
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value185);
             if(right_value185 && right_value185 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sFun_finalize,right_value185, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[0] = right_value185;
@@ -8732,7 +8846,7 @@ memset(&right_value360, 0, sizeof(void*));
             if(_if_conditional279=fun_181==((void*)0),            __freed_obj__ = 0, 
             _if_conditional279) {
                 __dec_obj64=generics_fun_name_180;
-                generics_fun_name_180=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 372),((char*)(right_value187=create_method_name(obj_type_140,(_Bool)0,(come_push_stackframe("20method.c", 372),((char*)(right_value186=__builtin_string(fun_name_134)))),info)))));
+                generics_fun_name_180=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 372),__exception_result_var_b170=((char*)(right_value187=create_method_name(obj_type_140,(_Bool)0,(come_push_stackframe("20method.c", 372),__exception_result_var_b169=((char*)(right_value186=__builtin_string(fun_name_134))), come_pop_stackframe(), __exception_result_var_b169),info))), come_pop_stackframe(), __exception_result_var_b170));
                 if(__dec_obj64) { __dec_obj64 = come_decrement_ref_count(__dec_obj64, (void*)0, (void*)0, 0,0,0); }
                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value186);
                 if(right_value186 && right_value186 != __result_obj__ && !__freed_obj__) { right_value186 = come_decrement_ref_count(right_value186, (void*)0, (void*)0, 1, 0, 0); }
@@ -8741,23 +8855,21 @@ memset(&right_value360, 0, sizeof(void*));
                 if(right_value187 && right_value187 != __result_obj__ && !__freed_obj__) { right_value187 = come_decrement_ref_count(right_value187, (void*)0, (void*)0, 1, 0, 0); }
                 __right_value_freed_obj[1] = right_value187;
                 __freed_obj__ = 0;
-                fun_181=(come_push_stackframe("20method.c", 374),((struct sFun*)(right_value188=map$2charphsFunph_at(((struct map$2charphsFunph*)come_null_check(((struct sInfo*)come_null_check(info, "20method.c", 374))->funcs, "20method.c", 374)),generics_fun_name_180,((void*)0)))));
-                come_pop_stackframe();
+                fun_181=(come_push_stackframe("20method.c", 374),__exception_result_var_b171=((struct sFun*)(right_value188=map$2charphsFunph_at(((struct map$2charphsFunph*)come_null_check(((struct sInfo*)come_null_check(info, "20method.c", 374))->funcs, "20method.c", 374)),generics_fun_name_180,((void*)0)))), come_pop_stackframe(), __exception_result_var_b171);
                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value188);
                 if(right_value188 && right_value188 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sFun_finalize,right_value188, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __right_value_freed_obj[2] = right_value188;
                 __freed_obj__ = 0;
                 if(_if_conditional280=fun_181==((void*)0),                __freed_obj__ = 0, 
                 _if_conditional280) {
-                    (come_push_stackframe("20method.c", 377),err_msg(info,"function not found(%s) at method(%s)(Z)\n",generics_fun_name_180,((struct sFun*)come_null_check(((struct sInfo*)come_null_check(info, "20method.c", 377))->come_fun, "20method.c", 377))->mName));
-                    come_pop_stackframe();
+                    (come_push_stackframe("20method.c", 377),err_msg(info,"function not found(%s) at method(%s)(Z)\n",generics_fun_name_180,((struct sFun*)come_null_check(((struct sInfo*)come_null_check(info, "20method.c", 377))->come_fun, "20method.c", 377))->mName),come_pop_stackframe());
                     __freed_obj__ = 0;
-                    __result146__ = (_Bool)1;
+                    __result147__ = (_Bool)1;
                     if(generics_fun_name_180 && !__freed_obj__) { generics_fun_name_180 = come_decrement_ref_count(generics_fun_name_180, (void*)0, (void*)0, 0, 0, 0); }
                     if(obj_value_139 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,obj_value_139, (void*)0, (void*)0, 0, 0, 0, 0); }
                     if(obj_type_140 && !__freed_obj__) { come_call_finalizer(sType_finalize,obj_type_140, (void*)0, (void*)0, 0, 0, 0, 0); }
                     __freed_obj__ = 0;
-                    return __result146__;
+                    return __result147__;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
@@ -8772,14 +8884,12 @@ memset(&right_value360, 0, sizeof(void*));
         __freed_obj__ = 0;
         ((struct sType*)come_null_check(result_type_190, "20method.c", 384))->mStatic=(_Bool)0;
         __freed_obj__ = 0;
-        result_type2_191=(struct sType*)come_increment_ref_count((come_push_stackframe("20method.c", 386),((struct sType*)(right_value190=solve_generics(result_type_190,((struct sInfo*)come_null_check(info, "20method.c", 386))->generics_type,info)))));
-        come_pop_stackframe();
+        result_type2_191=(struct sType*)come_increment_ref_count((come_push_stackframe("20method.c", 386),__exception_result_var_b172=((struct sType*)(right_value190=solve_generics(result_type_190,((struct sInfo*)come_null_check(info, "20method.c", 386))->generics_type,info))), come_pop_stackframe(), __exception_result_var_b172));
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 4, right_value190);
         if(right_value190 && right_value190 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value190, (void*)0, (void*)0, 0, 1, 0, 0); }
         __right_value_freed_obj[4] = right_value190;
         __freed_obj__ = 0;
-        param_types_192=(struct list$1sTypeph*)come_increment_ref_count((come_push_stackframe("20method.c", 388),((struct list$1sTypeph*)(right_value192=list$1sTypeph_initialize((struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value191=(struct list$1sTypeph*)come_calloc(1, sizeof(struct list$1sTypeph)*(1), "20method.c", 388)))))))));
-        come_pop_stackframe();
+        param_types_192=(struct list$1sTypeph*)come_increment_ref_count((come_push_stackframe("20method.c", 388),__exception_result_var_b173=((struct list$1sTypeph*)(right_value192=list$1sTypeph_initialize((struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value191=(struct list$1sTypeph*)come_calloc(1, sizeof(struct list$1sTypeph)*(1), "20method.c", 388))))))), come_pop_stackframe(), __exception_result_var_b173));
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 5, right_value191);
         if(right_value191 && right_value191 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,right_value191, (void*)0, (void*)0, 0, 1, 0, 0); }
         __right_value_freed_obj[5] = right_value191;
@@ -8788,25 +8898,22 @@ memset(&right_value360, 0, sizeof(void*));
         __right_value_freed_obj[6] = right_value192;
         __freed_obj__ = 0;
         for(
-        o2_saved_193=(struct list$1sTypeph*)come_increment_ref_count((((struct sFun*)come_null_check(fun_181, "20method.c", 400))->mParamTypes)),it_196=(come_push_stackframe("20method.c", 400),list$1sTypeph_begin(((struct list$1sTypeph*)come_null_check((o2_saved_193), "20method.c", 400)))) ,        come_pop_stackframe() ,        __freed_obj__ = 0, 
-        0;        _for_condtionalA11=        !(come_push_stackframe("20method.c", 400),__exception_result_var_b42=list$1sTypeph_end(((struct list$1sTypeph*)come_null_check((o2_saved_193), "20method.c", 400))), come_pop_stackframe(), __exception_result_var_b42) ,        __freed_obj__ = 0, 
-        _for_condtionalA11;        it_196=(come_push_stackframe("20method.c", 400),list$1sTypeph_next(((struct list$1sTypeph*)come_null_check((o2_saved_193), "20method.c", 400)))) ,        come_pop_stackframe() ,        __freed_obj__ = 0, 
+        o2_saved_193=(struct list$1sTypeph*)come_increment_ref_count((((struct sFun*)come_null_check(fun_181, "20method.c", 400))->mParamTypes)),it_196=(come_push_stackframe("20method.c", 400),__exception_result_var_b176=list$1sTypeph_begin(((struct list$1sTypeph*)come_null_check((o2_saved_193), "20method.c", 400))), come_pop_stackframe(), __exception_result_var_b176) ,        __freed_obj__ = 0, 
+        0;        _for_condtionalA11=        !(come_push_stackframe("20method.c", 400),__exception_result_var_b177=list$1sTypeph_end(((struct list$1sTypeph*)come_null_check((o2_saved_193), "20method.c", 400))), come_pop_stackframe(), __exception_result_var_b177) ,        __freed_obj__ = 0, 
+        _for_condtionalA11;        it_196=(come_push_stackframe("20method.c", 400),__exception_result_var_b180=list$1sTypeph_next(((struct list$1sTypeph*)come_null_check((o2_saved_193), "20method.c", 400))), come_pop_stackframe(), __exception_result_var_b180) ,        __freed_obj__ = 0, 
         0        ){
             if(_if_conditional285=it_196==((void*)0),            __freed_obj__ = 0, 
             _if_conditional285) {
-                (come_push_stackframe("20method.c", 391),list$1sTypeph_push_back(((struct list$1sTypeph*)come_null_check(param_types_192, "20method.c", 391)),it_196));
-                come_pop_stackframe();
+                (come_push_stackframe("20method.c", 391),__exception_result_var_b181=list$1sTypeph_push_back(((struct list$1sTypeph*)come_null_check(param_types_192, "20method.c", 391)),it_196), come_pop_stackframe(), __exception_result_var_b181);
                 __freed_obj__ = 0;
             }
             else {
-                it2_202=(struct sType*)come_increment_ref_count((come_push_stackframe("20method.c", 394),((struct sType*)(right_value196=solve_generics(it_196,((struct sInfo*)come_null_check(info, "20method.c", 394))->generics_type,info)))));
-                come_pop_stackframe();
+                it2_202=(struct sType*)come_increment_ref_count((come_push_stackframe("20method.c", 394),__exception_result_var_b182=((struct sType*)(right_value196=solve_generics(it_196,((struct sInfo*)come_null_check(info, "20method.c", 394))->generics_type,info))), come_pop_stackframe(), __exception_result_var_b182));
                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value196);
                 if(right_value196 && right_value196 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value196, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __right_value_freed_obj[0] = right_value196;
                 __freed_obj__ = 0;
-                (come_push_stackframe("20method.c", 396),list$1sTypeph_push_back(((struct list$1sTypeph*)come_null_check(param_types_192, "20method.c", 396)),(struct sType*)come_increment_ref_count(((struct sType*)(right_value197=sType_clone(it2_202))))));
-                come_pop_stackframe();
+                (come_push_stackframe("20method.c", 396),__exception_result_var_b183=list$1sTypeph_push_back(((struct list$1sTypeph*)come_null_check(param_types_192, "20method.c", 396)),(struct sType*)come_increment_ref_count(((struct sType*)(right_value197=sType_clone(it2_202))))), come_pop_stackframe(), __exception_result_var_b183);
                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value197);
                 if(right_value197 && right_value197 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value197, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __right_value_freed_obj[1] = right_value197;
@@ -8817,8 +8924,7 @@ memset(&right_value360, 0, sizeof(void*));
         }
         if(o2_saved_193 && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,o2_saved_193, (void*)0, (void*)0, 0, 0, 0, 0); }
         __freed_obj__ = 0;
-        come_params_203=(struct list$1CVALUEph*)come_increment_ref_count((come_push_stackframe("20method.c", 400),((struct list$1CVALUEph*)(right_value199=list$1CVALUEph_initialize((struct list$1CVALUEph*)come_increment_ref_count(((struct list$1CVALUEph*)(right_value198=(struct list$1CVALUEph*)come_calloc(1, sizeof(struct list$1CVALUEph)*(1), "20method.c", 400)))))))));
-        come_pop_stackframe();
+        come_params_203=(struct list$1CVALUEph*)come_increment_ref_count((come_push_stackframe("20method.c", 400),__exception_result_var_b184=((struct list$1CVALUEph*)(right_value199=list$1CVALUEph_initialize((struct list$1CVALUEph*)come_increment_ref_count(((struct list$1CVALUEph*)(right_value198=(struct list$1CVALUEph*)come_calloc(1, sizeof(struct list$1CVALUEph)*(1), "20method.c", 400))))))), come_pop_stackframe(), __exception_result_var_b184));
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 7, right_value198);
         if(right_value198 && right_value198 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1CVALUEphp_finalize,right_value198, (void*)0, (void*)0, 0, 1, 0, 0); }
         __right_value_freed_obj[7] = right_value198;
@@ -8826,8 +8932,7 @@ memset(&right_value360, 0, sizeof(void*));
         if(right_value199 && right_value199 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1CVALUEphp_finalize,right_value199, (void*)0, (void*)0, 0, 1, 0, 0); }
         __right_value_freed_obj[8] = right_value199;
         __freed_obj__ = 0;
-        label_params_207=(struct map$2charphCVALUEph*)come_increment_ref_count((come_push_stackframe("20method.c", 402),((struct map$2charphCVALUEph*)(right_value206=map$2charphCVALUEph_initialize((struct map$2charphCVALUEph*)come_increment_ref_count(((struct map$2charphCVALUEph*)(right_value200=(struct map$2charphCVALUEph*)come_calloc(1, sizeof(struct map$2charphCVALUEph)*(1), "20method.c", 402)))))))));
-        come_pop_stackframe();
+        label_params_207=(struct map$2charphCVALUEph*)come_increment_ref_count((come_push_stackframe("20method.c", 402),__exception_result_var_b186=((struct map$2charphCVALUEph*)(right_value206=map$2charphCVALUEph_initialize((struct map$2charphCVALUEph*)come_increment_ref_count(((struct map$2charphCVALUEph*)(right_value200=(struct map$2charphCVALUEph*)come_calloc(1, sizeof(struct map$2charphCVALUEph)*(1), "20method.c", 402))))))), come_pop_stackframe(), __exception_result_var_b186));
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 9, right_value200);
         if(right_value200 && right_value200 != __result_obj__ && !__freed_obj__) { come_call_finalizer(map$2charphCVALUEphp_finalize,right_value200, (void*)0, (void*)0, 0, 1, 0, 0); }
         __right_value_freed_obj[9] = right_value200;
@@ -8838,9 +8943,9 @@ memset(&right_value360, 0, sizeof(void*));
         i_208=0;
         __freed_obj__ = 0;
         for(
-        o2_saved_209=(params_135),it_210=(come_push_stackframe("20method.c", 538),__exception_result_var_b43=list$1tuple2$2charphsNodephph_begin(((struct list$1tuple2$2charphsNodephph*)come_null_check((o2_saved_209), "20method.c", 538))), come_pop_stackframe(), __exception_result_var_b43) ,        __freed_obj__ = 0, 
-        0;        _for_condtionalA15=        !(come_push_stackframe("20method.c", 538),__exception_result_var_b44=list$1tuple2$2charphsNodephph_end(((struct list$1tuple2$2charphsNodephph*)come_null_check((o2_saved_209), "20method.c", 538))), come_pop_stackframe(), __exception_result_var_b44) ,        __freed_obj__ = 0, 
-        _for_condtionalA15;        it_210=(come_push_stackframe("20method.c", 538),__exception_result_var_b45=list$1tuple2$2charphsNodephph_next(((struct list$1tuple2$2charphsNodephph*)come_null_check((o2_saved_209), "20method.c", 538))), come_pop_stackframe(), __exception_result_var_b45) ,        __freed_obj__ = 0, 
+        o2_saved_209=(params_135),it_210=(come_push_stackframe("20method.c", 538),__exception_result_var_b187=list$1tuple2$2charphsNodephph_begin(((struct list$1tuple2$2charphsNodephph*)come_null_check((o2_saved_209), "20method.c", 538))), come_pop_stackframe(), __exception_result_var_b187) ,        __freed_obj__ = 0, 
+        0;        _for_condtionalA15=        !(come_push_stackframe("20method.c", 538),__exception_result_var_b188=list$1tuple2$2charphsNodephph_end(((struct list$1tuple2$2charphsNodephph*)come_null_check((o2_saved_209), "20method.c", 538))), come_pop_stackframe(), __exception_result_var_b188) ,        __freed_obj__ = 0, 
+        _for_condtionalA15;        it_210=(come_push_stackframe("20method.c", 538),__exception_result_var_b189=list$1tuple2$2charphsNodephph_next(((struct list$1tuple2$2charphsNodephph*)come_null_check((o2_saved_209), "20method.c", 538))), come_pop_stackframe(), __exception_result_var_b189) ,        __freed_obj__ = 0, 
         0        ){
             multiple_assgin_var3=it_210;
             label_211=(char*)come_increment_ref_count(multiple_assgin_var3->v1);
@@ -8848,8 +8953,7 @@ memset(&right_value360, 0, sizeof(void*));
             __freed_obj__ = 0;
             if(_if_conditional292=i_208==0,            __freed_obj__ = 0, 
             _if_conditional292) {
-                (come_push_stackframe("20method.c", 409),check_assign_type(((char*)(right_value209=xsprintf("\%s param num \%s is assinged to",((char*)(right_value207=charp_to_string(fun_name_134))),((char*)(right_value208=int_to_string(i_208)))))),optional$2sTypephbool_value((come_push_stackframe("20method.c", 409),((struct optional$2sTypephbool*)(right_value210=list$1sTypephp_operator_load_element(param_types_192,i_208))))),((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 409))->type,obj_value_139,(_Bool)0,info));
-                come_pop_stackframe();
+                (come_push_stackframe("20method.c", 409),check_assign_type(((char*)(right_value209=xsprintf("\%s param num \%s is assinged to",((char*)(right_value207=charp_to_string(fun_name_134))),((char*)(right_value208=int_to_string(i_208)))))),optional$2sTypephbool_value((come_push_stackframe("20method.c", 409),__exception_result_var_b190=((struct optional$2sTypephbool*)(right_value210=list$1sTypephp_operator_load_element(param_types_192,i_208))), come_pop_stackframe(), __exception_result_var_b190)),((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 409))->type,obj_value_139,(_Bool)0,info),come_pop_stackframe());
                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value207);
                 if(right_value207 && right_value207 != __result_obj__ && !__freed_obj__) { right_value207 = come_decrement_ref_count(right_value207, (void*)0, (void*)0, 1, 0, 0); }
                 __right_value_freed_obj[0] = right_value207;
@@ -8863,7 +8967,7 @@ memset(&right_value360, 0, sizeof(void*));
                 if(right_value210 && right_value210 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sTypephboolp_finalize,right_value210, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __right_value_freed_obj[3] = right_value210;
                 __freed_obj__ = 0;
-                if(_if_conditional293=((struct sType*)come_null_check(optional$2sTypephbool_value((come_push_stackframe("20method.c", 441),__exception_result_var_b46=((struct optional$2sTypephbool*)(right_value211=list$1sTypephp_operator_load_element(param_types_192,i_208))), come_pop_stackframe(), __exception_result_var_b46)), "20method.c", 441))->mHeap&&((struct sType*)come_null_check(((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 441))->type, "20method.c", 441))->mHeap,                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 4, right_value211),
+                if(_if_conditional293=((struct sType*)come_null_check(optional$2sTypephbool_value((come_push_stackframe("20method.c", 441),__exception_result_var_b191=((struct optional$2sTypephbool*)(right_value211=list$1sTypephp_operator_load_element(param_types_192,i_208))), come_pop_stackframe(), __exception_result_var_b191)), "20method.c", 441))->mHeap&&((struct sType*)come_null_check(((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 441))->type, "20method.c", 441))->mHeap,                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 4, right_value211),
                 (right_value211 && right_value211 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2sTypephboolp_finalize,right_value211, (void*)0, (void*)0, 0, 1, 0, 0):0,
                 __right_value_freed_obj[4] = right_value211, 
                 __freed_obj__ = 0, 
@@ -8881,7 +8985,7 @@ memset(&right_value360, 0, sizeof(void*));
                             if(_if_conditional296=((struct sType*)come_null_check(((struct sVar*)come_null_check(((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 428))->var, "20method.c", 428))->mType, "20method.c", 428))->mShare,                            __freed_obj__ = 0, 
                             _if_conditional296) {
                                 __dec_obj70=((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 416))->c_value;
-                                ((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 416))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 416),((char*)(right_value212=increment_ref_count_object(((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 416))->type,((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 416))->c_value,info)))));
+                                ((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 416))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 416),__exception_result_var_b192=((char*)(right_value212=increment_ref_count_object(((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 416))->type,((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 416))->c_value,info))), come_pop_stackframe(), __exception_result_var_b192));
                                 if(__dec_obj70) { __dec_obj70 = come_decrement_ref_count(__dec_obj70, (void*)0, (void*)0, 0,0,0); }
                                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value212);
                                 if(right_value212 && right_value212 != __result_obj__ && !__freed_obj__) { right_value212 = come_decrement_ref_count(right_value212, (void*)0, (void*)0, 1, 0, 0); }
@@ -8892,7 +8996,7 @@ memset(&right_value360, 0, sizeof(void*));
                                 if(_if_conditional297=((struct sType*)come_null_check(((struct sVar*)come_null_check(((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 428))->var, "20method.c", 428))->mType, "20method.c", 428))->mClone,                                __freed_obj__ = 0, 
                                 _if_conditional297) {
                                     __dec_obj71=((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 419))->c_value;
-                                    ((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 419))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 419),((char*)(right_value213=increment_ref_count_object(((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 419))->type,((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 419))->c_value,info)))));
+                                    ((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 419))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 419),__exception_result_var_b193=((char*)(right_value213=increment_ref_count_object(((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 419))->type,((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 419))->c_value,info))), come_pop_stackframe(), __exception_result_var_b193));
                                     if(__dec_obj71) { __dec_obj71 = come_decrement_ref_count(__dec_obj71, (void*)0, (void*)0, 0,0,0); }
                                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value213);
                                     if(right_value213 && right_value213 != __result_obj__ && !__freed_obj__) { right_value213 = come_decrement_ref_count(right_value213, (void*)0, (void*)0, 1, 0, 0); }
@@ -8901,7 +9005,7 @@ memset(&right_value360, 0, sizeof(void*));
                                 }
                                 else {
                                     __dec_obj72=((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 422))->c_value;
-                                    ((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 422))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 422),((char*)(right_value214=increment_ref_count_object(((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 422))->type,((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 422))->c_value,info)))));
+                                    ((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 422))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 422),__exception_result_var_b194=((char*)(right_value214=increment_ref_count_object(((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 422))->type,((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 422))->c_value,info))), come_pop_stackframe(), __exception_result_var_b194));
                                     if(__dec_obj72) { __dec_obj72 = come_decrement_ref_count(__dec_obj72, (void*)0, (void*)0, 0,0,0); }
                                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value214);
                                     if(right_value214 && right_value214 != __result_obj__ && !__freed_obj__) { right_value214 = come_decrement_ref_count(right_value214, (void*)0, (void*)0, 1, 0, 0); }
@@ -8920,7 +9024,7 @@ memset(&right_value360, 0, sizeof(void*));
                         }
                         else {
                             __dec_obj73=((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 433))->c_value;
-                            ((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 433))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 433),((char*)(right_value215=increment_ref_count_object(((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 433))->type,((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 433))->c_value,info)))));
+                            ((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 433))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 433),__exception_result_var_b195=((char*)(right_value215=increment_ref_count_object(((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 433))->type,((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 433))->c_value,info))), come_pop_stackframe(), __exception_result_var_b195));
                             if(__dec_obj73) { __dec_obj73 = come_decrement_ref_count(__dec_obj73, (void*)0, (void*)0, 0,0,0); }
                             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value215);
                             if(right_value215 && right_value215 != __result_obj__ && !__freed_obj__) { right_value215 = come_decrement_ref_count(right_value215, (void*)0, (void*)0, 1, 0, 0); }
@@ -8932,26 +9036,23 @@ memset(&right_value360, 0, sizeof(void*));
                     __freed_obj__ = 0;
                 }
                 else {
-                    if(_if_conditional299=((struct sType*)come_null_check(optional$2sTypephbool_value((come_push_stackframe("20method.c", 441),__exception_result_var_b47=((struct optional$2sTypephbool*)(right_value216=list$1sTypephp_operator_load_element(param_types_192,i_208))), come_pop_stackframe(), __exception_result_var_b47)), "20method.c", 441))->mHeap&&!((struct sType*)come_null_check(((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 441))->type, "20method.c", 441))->mHeap,                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value216),
+                    if(_if_conditional299=((struct sType*)come_null_check(optional$2sTypephbool_value((come_push_stackframe("20method.c", 441),__exception_result_var_b196=((struct optional$2sTypephbool*)(right_value216=list$1sTypephp_operator_load_element(param_types_192,i_208))), come_pop_stackframe(), __exception_result_var_b196)), "20method.c", 441))->mHeap&&!((struct sType*)come_null_check(((struct CVALUE*)come_null_check(obj_value_139, "20method.c", 441))->type, "20method.c", 441))->mHeap,                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value216),
                     (right_value216 && right_value216 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2sTypephboolp_finalize,right_value216, (void*)0, (void*)0, 0, 1, 0, 0):0,
                     __right_value_freed_obj[0] = right_value216, 
                     __freed_obj__ = 0, 
                     _if_conditional299) {
-                        (come_push_stackframe("20method.c", 438),err_msg(info,"require heap parametor(%s)",optional$2charphbool_value((come_push_stackframe("20method.c", 438),((struct optional$2charphbool*)(right_value221=list$1charphp_operator_load_element(((struct sFun*)come_null_check(fun_181, "20method.c", 438))->mParamNames,i_208)))))));
-                        come_pop_stackframe();
+                        (come_push_stackframe("20method.c", 438),err_msg(info,"require heap parametor(%s)",optional$2charphbool_value((come_push_stackframe("20method.c", 438),__exception_result_var_b198=((struct optional$2charphbool*)(right_value221=list$1charphp_operator_load_element(((struct sFun*)come_null_check(fun_181, "20method.c", 438))->mParamNames,i_208))), come_pop_stackframe(), __exception_result_var_b198))),come_pop_stackframe());
                         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value221);
                         if(right_value221 && right_value221 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value221, (void*)0, (void*)0, 0, 1, 0, 0); }
                         __right_value_freed_obj[0] = right_value221;
                         __freed_obj__ = 0;
-                        (come_push_stackframe("20method.c", 439),exit(2));
-                        come_pop_stackframe();
+                        (come_push_stackframe("20method.c", 439),exit(2),come_pop_stackframe());
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                (come_push_stackframe("20method.c", 441),list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(come_params_203, "20method.c", 441)),(struct CVALUE*)come_increment_ref_count(obj_value_139)));
-                come_pop_stackframe();
+                (come_push_stackframe("20method.c", 441),__exception_result_var_b200=list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(come_params_203, "20method.c", 441)),(struct CVALUE*)come_increment_ref_count(obj_value_139)), come_pop_stackframe(), __exception_result_var_b200);
                 __freed_obj__ = 0;
                 i_208++;
                 __freed_obj__ = 0;
@@ -8959,7 +9060,7 @@ memset(&right_value360, 0, sizeof(void*));
             else {
                 if(_if_conditional304=!((struct sNode*)come_null_check(node_212, "20method.c", 450))->compile(((struct sNode*)come_null_check(node_212, "20method.c", 450))->_protocol_obj,info),                __freed_obj__ = 0, 
                 _if_conditional304) {
-                    __result162__ = (_Bool)0;
+                    __result163__ = (_Bool)0;
                     if(label_211 && !__freed_obj__) { label_211 = come_decrement_ref_count(label_211, (void*)0, (void*)0, 0, 0, 0); }
                     if(node_212 && !__freed_obj__) { node_212 = come_decrement_ref_count(node_212, ((struct sNode*)node_212)->finalize, ((struct sNode*)node_212)->_protocol_obj, 0, 0, 0); } 
                     if(generics_fun_name_180 && !__freed_obj__) { generics_fun_name_180 = come_decrement_ref_count(generics_fun_name_180, (void*)0, (void*)0, 0, 0, 0); }
@@ -8971,12 +9072,11 @@ memset(&right_value360, 0, sizeof(void*));
                     if(obj_value_139 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,obj_value_139, (void*)0, (void*)0, 0, 0, 0, 0); }
                     if(obj_type_140 && !__freed_obj__) { come_call_finalizer(sType_finalize,obj_type_140, (void*)0, (void*)0, 0, 0, 0, 0); }
                     __freed_obj__ = 0;
-                    return __result162__;
+                    return __result163__;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                come_value_217=(struct CVALUE*)come_increment_ref_count((come_push_stackframe("20method.c", 450),((struct CVALUE*)(right_value222=get_value_from_stack(-1,info)))));
-                come_pop_stackframe();
+                come_value_217=(struct CVALUE*)come_increment_ref_count((come_push_stackframe("20method.c", 450),__exception_result_var_b201=((struct CVALUE*)(right_value222=get_value_from_stack(-1,info))), come_pop_stackframe(), __exception_result_var_b201));
                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value222);
                 if(right_value222 && right_value222 != __result_obj__ && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,right_value222, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __right_value_freed_obj[0] = right_value222;
@@ -8986,11 +9086,11 @@ memset(&right_value360, 0, sizeof(void*));
                     n_218=0;
                     __freed_obj__ = 0;
                     for(
-                    o2_saved_219=(struct list$1charph*)come_increment_ref_count((((struct sFun*)come_null_check(fun_181, "20method.c", 462))->mParamNames)),it_222=(come_push_stackframe("20method.c", 462),list$1charph_begin(((struct list$1charph*)come_null_check((o2_saved_219), "20method.c", 462)))) ,                    come_pop_stackframe() ,                    __freed_obj__ = 0, 
-                    0;                    _for_condtionalA16=                    !(come_push_stackframe("20method.c", 462),__exception_result_var_b48=list$1charph_end(((struct list$1charph*)come_null_check((o2_saved_219), "20method.c", 462))), come_pop_stackframe(), __exception_result_var_b48) ,                    __freed_obj__ = 0, 
-                    _for_condtionalA16;                    it_222=(come_push_stackframe("20method.c", 462),list$1charph_next(((struct list$1charph*)come_null_check((o2_saved_219), "20method.c", 462)))) ,                    come_pop_stackframe() ,                    __freed_obj__ = 0, 
+                    o2_saved_219=(struct list$1charph*)come_increment_ref_count((((struct sFun*)come_null_check(fun_181, "20method.c", 462))->mParamNames)),it_222=(come_push_stackframe("20method.c", 462),__exception_result_var_b204=list$1charph_begin(((struct list$1charph*)come_null_check((o2_saved_219), "20method.c", 462))), come_pop_stackframe(), __exception_result_var_b204) ,                    __freed_obj__ = 0, 
+                    0;                    _for_condtionalA16=                    !(come_push_stackframe("20method.c", 462),__exception_result_var_b205=list$1charph_end(((struct list$1charph*)come_null_check((o2_saved_219), "20method.c", 462))), come_pop_stackframe(), __exception_result_var_b205) ,                    __freed_obj__ = 0, 
+                    _for_condtionalA16;                    it_222=(come_push_stackframe("20method.c", 462),__exception_result_var_b208=list$1charph_next(((struct list$1charph*)come_null_check((o2_saved_219), "20method.c", 462))), come_pop_stackframe(), __exception_result_var_b208) ,                    __freed_obj__ = 0, 
                     0                    ){
-                        if(_if_conditional310=(come_push_stackframe("20method.c", 459),__exception_result_var_b49=string_operator_equals(label_211,it_222), come_pop_stackframe(), __exception_result_var_b49),                        __freed_obj__ = 0, 
+                        if(_if_conditional310=(come_push_stackframe("20method.c", 459),__exception_result_var_b209=string_operator_equals(label_211,it_222), come_pop_stackframe(), __exception_result_var_b209),                        __freed_obj__ = 0, 
                         _if_conditional310) {
                             break;
                             __freed_obj__ = 0;
@@ -9001,13 +9101,12 @@ memset(&right_value360, 0, sizeof(void*));
                     }
                     if(o2_saved_219 && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,o2_saved_219, (void*)0, (void*)0, 0, 0, 0, 0); }
                     __freed_obj__ = 0;
-                    if(_if_conditional311=optional$2sTypephbool_value((come_push_stackframe("20method.c", 465),__exception_result_var_b50=((struct optional$2sTypephbool*)(right_value223=list$1sTypephp_operator_load_element(param_types_192,n_218))), come_pop_stackframe(), __exception_result_var_b50)),                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value223),
+                    if(_if_conditional311=optional$2sTypephbool_value((come_push_stackframe("20method.c", 465),__exception_result_var_b210=((struct optional$2sTypephbool*)(right_value223=list$1sTypephp_operator_load_element(param_types_192,n_218))), come_pop_stackframe(), __exception_result_var_b210)),                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value223),
                     (right_value223 && right_value223 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2sTypephboolp_finalize,right_value223, (void*)0, (void*)0, 0, 1, 0, 0):0,
                     __right_value_freed_obj[0] = right_value223, 
                     __freed_obj__ = 0, 
                     _if_conditional311) {
-                        (come_push_stackframe("20method.c", 463),check_assign_type(((char*)(right_value226=xsprintf("\%s param num \%s is assinged to",((char*)(right_value224=charp_to_string(fun_name_134))),((char*)(right_value225=int_to_string(i_208)))))),optional$2sTypephbool_value((come_push_stackframe("20method.c", 463),((struct optional$2sTypephbool*)(right_value227=list$1sTypephp_operator_load_element(param_types_192,n_218))))),((struct CVALUE*)come_null_check(come_value_217, "20method.c", 463))->type,come_value_217,(_Bool)0,info));
-                        come_pop_stackframe();
+                        (come_push_stackframe("20method.c", 463),check_assign_type(((char*)(right_value226=xsprintf("\%s param num \%s is assinged to",((char*)(right_value224=charp_to_string(fun_name_134))),((char*)(right_value225=int_to_string(i_208)))))),optional$2sTypephbool_value((come_push_stackframe("20method.c", 463),__exception_result_var_b211=((struct optional$2sTypephbool*)(right_value227=list$1sTypephp_operator_load_element(param_types_192,n_218))), come_pop_stackframe(), __exception_result_var_b211)),((struct CVALUE*)come_null_check(come_value_217, "20method.c", 463))->type,come_value_217,(_Bool)0,info),come_pop_stackframe());
                         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value224);
                         if(right_value224 && right_value224 != __result_obj__ && !__freed_obj__) { right_value224 = come_decrement_ref_count(right_value224, (void*)0, (void*)0, 1, 0, 0); }
                         __right_value_freed_obj[0] = right_value224;
@@ -9023,7 +9122,7 @@ memset(&right_value360, 0, sizeof(void*));
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
-                    if(_if_conditional312=optional$2sTypephbool_value((come_push_stackframe("20method.c", 492),__exception_result_var_b51=((struct optional$2sTypephbool*)(right_value228=list$1sTypephp_operator_load_element(param_types_192,n_218))), come_pop_stackframe(), __exception_result_var_b51))&&((struct sType*)come_null_check(optional$2sTypephbool_value((come_push_stackframe("20method.c", 492),__exception_result_var_b52=((struct optional$2sTypephbool*)(right_value229=list$1sTypephp_operator_load_element(param_types_192,n_218))), come_pop_stackframe(), __exception_result_var_b52)), "20method.c", 492))->mHeap&&((struct sType*)come_null_check(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 492))->type, "20method.c", 492))->mHeap,                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value228),
+                    if(_if_conditional312=optional$2sTypephbool_value((come_push_stackframe("20method.c", 492),__exception_result_var_b212=((struct optional$2sTypephbool*)(right_value228=list$1sTypephp_operator_load_element(param_types_192,n_218))), come_pop_stackframe(), __exception_result_var_b212))&&((struct sType*)come_null_check(optional$2sTypephbool_value((come_push_stackframe("20method.c", 492),__exception_result_var_b213=((struct optional$2sTypephbool*)(right_value229=list$1sTypephp_operator_load_element(param_types_192,n_218))), come_pop_stackframe(), __exception_result_var_b213)), "20method.c", 492))->mHeap&&((struct sType*)come_null_check(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 492))->type, "20method.c", 492))->mHeap,                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value228),
                     (right_value228 && right_value228 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2sTypephboolp_finalize,right_value228, (void*)0, (void*)0, 0, 1, 0, 0):0,
                     __right_value_freed_obj[1] = right_value228, 
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value229),
@@ -9044,7 +9143,7 @@ memset(&right_value360, 0, sizeof(void*));
                                 if(_if_conditional315=((struct sType*)come_null_check(((struct sVar*)come_null_check(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 483))->var, "20method.c", 483))->mType, "20method.c", 483))->mShare,                                __freed_obj__ = 0, 
                                 _if_conditional315) {
                                     __dec_obj76=((struct CVALUE*)come_null_check(come_value_217, "20method.c", 471))->c_value;
-                                    ((struct CVALUE*)come_null_check(come_value_217, "20method.c", 471))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 471),((char*)(right_value230=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 471))->type,((struct CVALUE*)come_null_check(come_value_217, "20method.c", 471))->c_value,info)))));
+                                    ((struct CVALUE*)come_null_check(come_value_217, "20method.c", 471))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 471),__exception_result_var_b214=((char*)(right_value230=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 471))->type,((struct CVALUE*)come_null_check(come_value_217, "20method.c", 471))->c_value,info))), come_pop_stackframe(), __exception_result_var_b214));
                                     if(__dec_obj76) { __dec_obj76 = come_decrement_ref_count(__dec_obj76, (void*)0, (void*)0, 0,0,0); }
                                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value230);
                                     if(right_value230 && right_value230 != __result_obj__ && !__freed_obj__) { right_value230 = come_decrement_ref_count(right_value230, (void*)0, (void*)0, 1, 0, 0); }
@@ -9055,7 +9154,7 @@ memset(&right_value360, 0, sizeof(void*));
                                     if(_if_conditional316=((struct sType*)come_null_check(((struct sVar*)come_null_check(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 483))->var, "20method.c", 483))->mType, "20method.c", 483))->mClone,                                    __freed_obj__ = 0, 
                                     _if_conditional316) {
                                         __dec_obj77=((struct CVALUE*)come_null_check(come_value_217, "20method.c", 474))->c_value;
-                                        ((struct CVALUE*)come_null_check(come_value_217, "20method.c", 474))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 474),((char*)(right_value231=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 474))->type,((struct CVALUE*)come_null_check(come_value_217, "20method.c", 474))->c_value,info)))));
+                                        ((struct CVALUE*)come_null_check(come_value_217, "20method.c", 474))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 474),__exception_result_var_b215=((char*)(right_value231=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 474))->type,((struct CVALUE*)come_null_check(come_value_217, "20method.c", 474))->c_value,info))), come_pop_stackframe(), __exception_result_var_b215));
                                         if(__dec_obj77) { __dec_obj77 = come_decrement_ref_count(__dec_obj77, (void*)0, (void*)0, 0,0,0); }
                                         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value231);
                                         if(right_value231 && right_value231 != __result_obj__ && !__freed_obj__) { right_value231 = come_decrement_ref_count(right_value231, (void*)0, (void*)0, 1, 0, 0); }
@@ -9064,7 +9163,7 @@ memset(&right_value360, 0, sizeof(void*));
                                     }
                                     else {
                                         __dec_obj78=((struct CVALUE*)come_null_check(come_value_217, "20method.c", 477))->c_value;
-                                        ((struct CVALUE*)come_null_check(come_value_217, "20method.c", 477))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 477),((char*)(right_value232=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 477))->type,((struct CVALUE*)come_null_check(come_value_217, "20method.c", 477))->c_value,info)))));
+                                        ((struct CVALUE*)come_null_check(come_value_217, "20method.c", 477))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 477),__exception_result_var_b216=((char*)(right_value232=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 477))->type,((struct CVALUE*)come_null_check(come_value_217, "20method.c", 477))->c_value,info))), come_pop_stackframe(), __exception_result_var_b216));
                                         if(__dec_obj78) { __dec_obj78 = come_decrement_ref_count(__dec_obj78, (void*)0, (void*)0, 0,0,0); }
                                         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value232);
                                         if(right_value232 && right_value232 != __result_obj__ && !__freed_obj__) { right_value232 = come_decrement_ref_count(right_value232, (void*)0, (void*)0, 1, 0, 0); }
@@ -9083,7 +9182,7 @@ memset(&right_value360, 0, sizeof(void*));
                             }
                             else {
                                 __dec_obj79=((struct CVALUE*)come_null_check(come_value_217, "20method.c", 488))->c_value;
-                                ((struct CVALUE*)come_null_check(come_value_217, "20method.c", 488))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 488),((char*)(right_value233=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 488))->type,((struct CVALUE*)come_null_check(come_value_217, "20method.c", 488))->c_value,info)))));
+                                ((struct CVALUE*)come_null_check(come_value_217, "20method.c", 488))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 488),__exception_result_var_b217=((char*)(right_value233=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 488))->type,((struct CVALUE*)come_null_check(come_value_217, "20method.c", 488))->c_value,info))), come_pop_stackframe(), __exception_result_var_b217));
                                 if(__dec_obj79) { __dec_obj79 = come_decrement_ref_count(__dec_obj79, (void*)0, (void*)0, 0,0,0); }
                                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value233);
                                 if(right_value233 && right_value233 != __result_obj__ && !__freed_obj__) { right_value233 = come_decrement_ref_count(right_value233, (void*)0, (void*)0, 1, 0, 0); }
@@ -9097,13 +9196,12 @@ memset(&right_value360, 0, sizeof(void*));
                     __freed_obj__ = 0;
                 }
                 else {
-                    if(_if_conditional318=optional$2sTypephbool_value((come_push_stackframe("20method.c", 497),__exception_result_var_b53=((struct optional$2sTypephbool*)(right_value234=list$1sTypephp_operator_load_element(param_types_192,i_208))), come_pop_stackframe(), __exception_result_var_b53)),                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value234),
+                    if(_if_conditional318=optional$2sTypephbool_value((come_push_stackframe("20method.c", 497),__exception_result_var_b218=((struct optional$2sTypephbool*)(right_value234=list$1sTypephp_operator_load_element(param_types_192,i_208))), come_pop_stackframe(), __exception_result_var_b218)),                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value234),
                     (right_value234 && right_value234 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2sTypephboolp_finalize,right_value234, (void*)0, (void*)0, 0, 1, 0, 0):0,
                     __right_value_freed_obj[0] = right_value234, 
                     __freed_obj__ = 0, 
                     _if_conditional318) {
-                        (come_push_stackframe("20method.c", 495),check_assign_type(((char*)(right_value237=xsprintf("\%s param num \%s is assinged to",((char*)(right_value235=charp_to_string(fun_name_134))),((char*)(right_value236=int_to_string(i_208)))))),optional$2sTypephbool_value((come_push_stackframe("20method.c", 495),((struct optional$2sTypephbool*)(right_value238=list$1sTypephp_operator_load_element(param_types_192,i_208))))),((struct CVALUE*)come_null_check(come_value_217, "20method.c", 495))->type,come_value_217,(_Bool)0,info));
-                        come_pop_stackframe();
+                        (come_push_stackframe("20method.c", 495),check_assign_type(((char*)(right_value237=xsprintf("\%s param num \%s is assinged to",((char*)(right_value235=charp_to_string(fun_name_134))),((char*)(right_value236=int_to_string(i_208)))))),optional$2sTypephbool_value((come_push_stackframe("20method.c", 495),__exception_result_var_b219=((struct optional$2sTypephbool*)(right_value238=list$1sTypephp_operator_load_element(param_types_192,i_208))), come_pop_stackframe(), __exception_result_var_b219)),((struct CVALUE*)come_null_check(come_value_217, "20method.c", 495))->type,come_value_217,(_Bool)0,info),come_pop_stackframe());
                         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value235);
                         if(right_value235 && right_value235 != __result_obj__ && !__freed_obj__) { right_value235 = come_decrement_ref_count(right_value235, (void*)0, (void*)0, 1, 0, 0); }
                         __right_value_freed_obj[0] = right_value235;
@@ -9119,7 +9217,7 @@ memset(&right_value360, 0, sizeof(void*));
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
-                    if(_if_conditional319=optional$2sTypephbool_value((come_push_stackframe("20method.c", 524),__exception_result_var_b54=((struct optional$2sTypephbool*)(right_value239=list$1sTypephp_operator_load_element(param_types_192,i_208))), come_pop_stackframe(), __exception_result_var_b54))&&((struct sType*)come_null_check(optional$2sTypephbool_value((come_push_stackframe("20method.c", 524),__exception_result_var_b55=((struct optional$2sTypephbool*)(right_value240=list$1sTypephp_operator_load_element(param_types_192,i_208))), come_pop_stackframe(), __exception_result_var_b55)), "20method.c", 524))->mHeap&&((struct sType*)come_null_check(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 524))->type, "20method.c", 524))->mHeap,                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value239),
+                    if(_if_conditional319=optional$2sTypephbool_value((come_push_stackframe("20method.c", 524),__exception_result_var_b220=((struct optional$2sTypephbool*)(right_value239=list$1sTypephp_operator_load_element(param_types_192,i_208))), come_pop_stackframe(), __exception_result_var_b220))&&((struct sType*)come_null_check(optional$2sTypephbool_value((come_push_stackframe("20method.c", 524),__exception_result_var_b221=((struct optional$2sTypephbool*)(right_value240=list$1sTypephp_operator_load_element(param_types_192,i_208))), come_pop_stackframe(), __exception_result_var_b221)), "20method.c", 524))->mHeap&&((struct sType*)come_null_check(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 524))->type, "20method.c", 524))->mHeap,                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value239),
                     (right_value239 && right_value239 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2sTypephboolp_finalize,right_value239, (void*)0, (void*)0, 0, 1, 0, 0):0,
                     __right_value_freed_obj[1] = right_value239, 
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value240),
@@ -9140,7 +9238,7 @@ memset(&right_value360, 0, sizeof(void*));
                                 if(_if_conditional322=((struct sType*)come_null_check(((struct sVar*)come_null_check(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 515))->var, "20method.c", 515))->mType, "20method.c", 515))->mShare,                                __freed_obj__ = 0, 
                                 _if_conditional322) {
                                     __dec_obj81=((struct CVALUE*)come_null_check(come_value_217, "20method.c", 503))->c_value;
-                                    ((struct CVALUE*)come_null_check(come_value_217, "20method.c", 503))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 503),((char*)(right_value241=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 503))->type,((struct CVALUE*)come_null_check(come_value_217, "20method.c", 503))->c_value,info)))));
+                                    ((struct CVALUE*)come_null_check(come_value_217, "20method.c", 503))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 503),__exception_result_var_b222=((char*)(right_value241=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 503))->type,((struct CVALUE*)come_null_check(come_value_217, "20method.c", 503))->c_value,info))), come_pop_stackframe(), __exception_result_var_b222));
                                     if(__dec_obj81) { __dec_obj81 = come_decrement_ref_count(__dec_obj81, (void*)0, (void*)0, 0,0,0); }
                                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value241);
                                     if(right_value241 && right_value241 != __result_obj__ && !__freed_obj__) { right_value241 = come_decrement_ref_count(right_value241, (void*)0, (void*)0, 1, 0, 0); }
@@ -9151,7 +9249,7 @@ memset(&right_value360, 0, sizeof(void*));
                                     if(_if_conditional323=((struct sType*)come_null_check(((struct sVar*)come_null_check(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 515))->var, "20method.c", 515))->mType, "20method.c", 515))->mClone,                                    __freed_obj__ = 0, 
                                     _if_conditional323) {
                                         __dec_obj82=((struct CVALUE*)come_null_check(come_value_217, "20method.c", 506))->c_value;
-                                        ((struct CVALUE*)come_null_check(come_value_217, "20method.c", 506))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 506),((char*)(right_value242=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 506))->type,((struct CVALUE*)come_null_check(come_value_217, "20method.c", 506))->c_value,info)))));
+                                        ((struct CVALUE*)come_null_check(come_value_217, "20method.c", 506))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 506),__exception_result_var_b223=((char*)(right_value242=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 506))->type,((struct CVALUE*)come_null_check(come_value_217, "20method.c", 506))->c_value,info))), come_pop_stackframe(), __exception_result_var_b223));
                                         if(__dec_obj82) { __dec_obj82 = come_decrement_ref_count(__dec_obj82, (void*)0, (void*)0, 0,0,0); }
                                         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value242);
                                         if(right_value242 && right_value242 != __result_obj__ && !__freed_obj__) { right_value242 = come_decrement_ref_count(right_value242, (void*)0, (void*)0, 1, 0, 0); }
@@ -9160,7 +9258,7 @@ memset(&right_value360, 0, sizeof(void*));
                                     }
                                     else {
                                         __dec_obj83=((struct CVALUE*)come_null_check(come_value_217, "20method.c", 509))->c_value;
-                                        ((struct CVALUE*)come_null_check(come_value_217, "20method.c", 509))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 509),((char*)(right_value243=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 509))->type,((struct CVALUE*)come_null_check(come_value_217, "20method.c", 509))->c_value,info)))));
+                                        ((struct CVALUE*)come_null_check(come_value_217, "20method.c", 509))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 509),__exception_result_var_b224=((char*)(right_value243=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 509))->type,((struct CVALUE*)come_null_check(come_value_217, "20method.c", 509))->c_value,info))), come_pop_stackframe(), __exception_result_var_b224));
                                         if(__dec_obj83) { __dec_obj83 = come_decrement_ref_count(__dec_obj83, (void*)0, (void*)0, 0,0,0); }
                                         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value243);
                                         if(right_value243 && right_value243 != __result_obj__ && !__freed_obj__) { right_value243 = come_decrement_ref_count(right_value243, (void*)0, (void*)0, 1, 0, 0); }
@@ -9179,7 +9277,7 @@ memset(&right_value360, 0, sizeof(void*));
                             }
                             else {
                                 __dec_obj84=((struct CVALUE*)come_null_check(come_value_217, "20method.c", 520))->c_value;
-                                ((struct CVALUE*)come_null_check(come_value_217, "20method.c", 520))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 520),((char*)(right_value244=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 520))->type,((struct CVALUE*)come_null_check(come_value_217, "20method.c", 520))->c_value,info)))));
+                                ((struct CVALUE*)come_null_check(come_value_217, "20method.c", 520))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 520),__exception_result_var_b225=((char*)(right_value244=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_217, "20method.c", 520))->type,((struct CVALUE*)come_null_check(come_value_217, "20method.c", 520))->c_value,info))), come_pop_stackframe(), __exception_result_var_b225));
                                 if(__dec_obj84) { __dec_obj84 = come_decrement_ref_count(__dec_obj84, (void*)0, (void*)0, 0,0,0); }
                                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value244);
                                 if(right_value244 && right_value244 != __result_obj__ && !__freed_obj__) { right_value244 = come_decrement_ref_count(right_value244, (void*)0, (void*)0, 1, 0, 0); }
@@ -9195,23 +9293,20 @@ memset(&right_value360, 0, sizeof(void*));
                 __freed_obj__ = 0;
                 if(_if_conditional325=label_211==((void*)0),                __freed_obj__ = 0, 
                 _if_conditional325) {
-                    (come_push_stackframe("20method.c", 527),list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(come_params_203, "20method.c", 527)),(struct CVALUE*)come_increment_ref_count(come_value_217)));
-                    come_pop_stackframe();
+                    (come_push_stackframe("20method.c", 527),__exception_result_var_b226=list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(come_params_203, "20method.c", 527)),(struct CVALUE*)come_increment_ref_count(come_value_217)), come_pop_stackframe(), __exception_result_var_b226);
                     __freed_obj__ = 0;
                     i_208++;
                     __freed_obj__ = 0;
                 }
                 else {
-                    (come_push_stackframe("20method.c", 532),map$2charphCVALUEph_insert(((struct map$2charphCVALUEph*)come_null_check(label_params_207, "20method.c", 532)),(char*)come_increment_ref_count((come_push_stackframe("20method.c", 532),((char*)(right_value253=__builtin_string(label_211))))),(struct CVALUE*)come_increment_ref_count(come_value_217)));
-                    come_pop_stackframe();
+                    (come_push_stackframe("20method.c", 532),__exception_result_var_b252=map$2charphCVALUEph_insert(((struct map$2charphCVALUEph*)come_null_check(label_params_207, "20method.c", 532)),(char*)come_increment_ref_count((come_push_stackframe("20method.c", 532),__exception_result_var_b251=((char*)(right_value253=__builtin_string(label_211))), come_pop_stackframe(), __exception_result_var_b251)),(struct CVALUE*)come_increment_ref_count(come_value_217)), come_pop_stackframe(), __exception_result_var_b252);
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value253);
                     if(right_value253 && right_value253 != __result_obj__ && !__freed_obj__) { right_value253 = come_decrement_ref_count(right_value253, (void*)0, (void*)0, 1, 0, 0); }
                     __right_value_freed_obj[0] = right_value253;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                (come_push_stackframe("20method.c", 534),dec_stack_ptr(1,info));
-                come_pop_stackframe();
+                (come_push_stackframe("20method.c", 534),dec_stack_ptr(1,info),come_pop_stackframe());
                 __freed_obj__ = 0;
                 if(come_value_217 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,come_value_217, (void*)0, (void*)0, 0, 0, 0, 0); }
             }
@@ -9220,13 +9315,13 @@ memset(&right_value360, 0, sizeof(void*));
             if(node_212 && !__freed_obj__) { node_212 = come_decrement_ref_count(node_212, ((struct sNode*)node_212)->finalize, ((struct sNode*)node_212)->_protocol_obj, 0, 0, 0); } 
         }
         __freed_obj__ = 0;
-        if(_if_conditional348=(come_push_stackframe("20method.c", 615),__exception_result_var_b63=list$1tuple2$2charphsNodephph_length(((struct list$1tuple2$2charphsNodephph*)come_null_check(params_135, "20method.c", 615))), come_pop_stackframe(), __exception_result_var_b63)<(come_push_stackframe("20method.c", 615),__exception_result_var_b64=list$1sTypeph_length(((struct list$1sTypeph*)come_null_check(((struct sFun*)come_null_check(fun_181, "20method.c", 615))->mParamTypes, "20method.c", 615))), come_pop_stackframe(), __exception_result_var_b64)+(method_block_137?-2:0),        __freed_obj__ = 0, 
+        if(_if_conditional348=(come_push_stackframe("20method.c", 615),__exception_result_var_b253=list$1tuple2$2charphsNodephph_length(((struct list$1tuple2$2charphsNodephph*)come_null_check(params_135, "20method.c", 615))), come_pop_stackframe(), __exception_result_var_b253)<(come_push_stackframe("20method.c", 615),__exception_result_var_b254=list$1sTypeph_length(((struct list$1sTypeph*)come_null_check(((struct sFun*)come_null_check(fun_181, "20method.c", 615))->mParamTypes, "20method.c", 615))), come_pop_stackframe(), __exception_result_var_b254)+(method_block_137?-2:0),        __freed_obj__ = 0, 
         _if_conditional348) {
             for(
-            ;            _for_condtionalA19=            i_208<(come_push_stackframe("20method.c", 614),__exception_result_var_b65=list$1sTypeph_length(((struct list$1sTypeph*)come_null_check(((struct sFun*)come_null_check(fun_181, "20method.c", 614))->mParamTypes, "20method.c", 614))), come_pop_stackframe(), __exception_result_var_b65)+(method_block_137?-2:0) ,            __freed_obj__ = 0, 
+            ;            _for_condtionalA19=            i_208<(come_push_stackframe("20method.c", 614),__exception_result_var_b255=list$1sTypeph_length(((struct list$1sTypeph*)come_null_check(((struct sFun*)come_null_check(fun_181, "20method.c", 614))->mParamTypes, "20method.c", 614))), come_pop_stackframe(), __exception_result_var_b255)+(method_block_137?-2:0) ,            __freed_obj__ = 0, 
             _for_condtionalA19;            i_208++ ,            __freed_obj__ = 0, 
             0            ){
-                default_param_246=(char*)come_increment_ref_count(((char*)(right_value255=string_clone(optional$2charphbool_value((come_push_stackframe("20method.c", 541),((struct optional$2charphbool*)(right_value254=list$1charphp_operator_load_element(((struct sFun*)come_null_check(fun_181, "20method.c", 541))->mParamDefaultParametors,i_208)))))))));
+                default_param_246=(char*)come_increment_ref_count(((char*)(right_value255=string_clone(optional$2charphbool_value((come_push_stackframe("20method.c", 541),__exception_result_var_b256=((struct optional$2charphbool*)(right_value254=list$1charphp_operator_load_element(((struct sFun*)come_null_check(fun_181, "20method.c", 541))->mParamDefaultParametors,i_208))), come_pop_stackframe(), __exception_result_var_b256))))));
                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value254);
                 if(right_value254 && right_value254 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value254, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __right_value_freed_obj[0] = right_value254;
@@ -9234,18 +9329,17 @@ memset(&right_value360, 0, sizeof(void*));
                 if(right_value255 && right_value255 != __result_obj__ && !__freed_obj__) { right_value255 = come_decrement_ref_count(right_value255, (void*)0, (void*)0, 1, 0, 0); }
                 __right_value_freed_obj[1] = right_value255;
                 __freed_obj__ = 0;
-                param_name_247=optional$2charphbool_value((come_push_stackframe("20method.c", 543),((struct optional$2charphbool*)(right_value256=list$1charphp_operator_load_element(((struct sFun*)come_null_check(fun_181, "20method.c", 543))->mParamNames,i_208)))));
+                param_name_247=optional$2charphbool_value((come_push_stackframe("20method.c", 543),__exception_result_var_b257=((struct optional$2charphbool*)(right_value256=list$1charphp_operator_load_element(((struct sFun*)come_null_check(fun_181, "20method.c", 543))->mParamNames,i_208))), come_pop_stackframe(), __exception_result_var_b257));
                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value256);
                 if(right_value256 && right_value256 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value256, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __right_value_freed_obj[2] = right_value256;
                 __freed_obj__ = 0;
-                come_value_252=optional$2CVALUEpbool_value((come_push_stackframe("20method.c", 546),((struct optional$2CVALUEpbool*)(right_value266=map$2charphCVALUEphp_operator_load_element(label_params_207,param_name_247)))));
-                come_pop_stackframe();
+                come_value_252=optional$2CVALUEpbool_value((come_push_stackframe("20method.c", 546),__exception_result_var_b261=((struct optional$2CVALUEpbool*)(right_value266=map$2charphCVALUEphp_operator_load_element(label_params_207,param_name_247))), come_pop_stackframe(), __exception_result_var_b261));
                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value266);
                 if(right_value266 && right_value266 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2CVALUEpboolp_finalize,right_value266, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __right_value_freed_obj[3] = right_value266;
                 __freed_obj__ = 0;
-                if(_if_conditional354=default_param_246&&(come_push_stackframe("20method.c", 613),__exception_result_var_b67=string_operator_not_equals(default_param_246,""), come_pop_stackframe(), __exception_result_var_b67),                __freed_obj__ = 0, 
+                if(_if_conditional354=default_param_246&&(come_push_stackframe("20method.c", 613),__exception_result_var_b263=string_operator_not_equals(default_param_246,""), come_pop_stackframe(), __exception_result_var_b263),                __freed_obj__ = 0, 
                 _if_conditional354) {
                     source_253=(struct buffer*)come_increment_ref_count(((struct sInfo*)come_null_check(info, "20method.c", 550))->source);
                     __freed_obj__ = 0;
@@ -9256,7 +9350,7 @@ memset(&right_value360, 0, sizeof(void*));
                     sline_256=((struct sInfo*)come_null_check(info, "20method.c", 553))->sline;
                     __freed_obj__ = 0;
                     __dec_obj85=((struct sInfo*)come_null_check(info, "20method.c", 555))->source;
-                    ((struct sInfo*)come_null_check(info, "20method.c", 555))->source=(struct buffer*)come_increment_ref_count((come_push_stackframe("20method.c", 555),((struct buffer*)(right_value267=string_to_buffer(((char*)come_null_check(default_param_246, "20method.c", 555)))))));
+                    ((struct sInfo*)come_null_check(info, "20method.c", 555))->source=(struct buffer*)come_increment_ref_count((come_push_stackframe("20method.c", 555),__exception_result_var_b264=((struct buffer*)(right_value267=string_to_buffer(((char*)come_null_check(default_param_246, "20method.c", 555))))), come_pop_stackframe(), __exception_result_var_b264));
                     if(__dec_obj85) { come_call_finalizer(buffer_finalize,__dec_obj85, (void*)0, (void*)0, 0, 0, 0, 0); }
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value267);
                     if(right_value267 && right_value267 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value267, (void*)0, (void*)0, 0, 1, 0, 0); }
@@ -9266,15 +9360,14 @@ memset(&right_value360, 0, sizeof(void*));
                     __freed_obj__ = 0;
                     ((struct sInfo*)come_null_check(info, "20method.c", 557))->head=((struct buffer*)come_null_check(((struct sInfo*)come_null_check(info, "20method.c", 557))->source, "20method.c", 557))->buf;
                     __freed_obj__ = 0;
-                    node_257=(struct sNode*)come_increment_ref_count((come_push_stackframe("20method.c", 559),((struct sNode*)(right_value268=expression_v13(info)))));
-                    come_pop_stackframe();
+                    node_257=(struct sNode*)come_increment_ref_count((come_push_stackframe("20method.c", 559),__exception_result_var_b265=((struct sNode*)(right_value268=expression_v13(info))), come_pop_stackframe(), __exception_result_var_b265));
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value268);
                     if(right_value268 && right_value268 != __result_obj__ && !__freed_obj__) { right_value268 = come_decrement_ref_count(right_value268, ((struct sNode*)right_value268)->finalize, ((struct sNode*)right_value268)->_protocol_obj, 1, 0, 0); } 
                     __right_value_freed_obj[1] = right_value268;
                     __freed_obj__ = 0;
                     if(_if_conditional355=!((struct sNode*)come_null_check(node_257, "20method.c", 565))->compile(((struct sNode*)come_null_check(node_257, "20method.c", 565))->_protocol_obj,info),                    __freed_obj__ = 0, 
                     _if_conditional355) {
-                        __result191__ = (_Bool)0;
+                        __result192__ = (_Bool)0;
                         if(source_253 && !__freed_obj__) { come_call_finalizer(buffer_finalize,source_253, (void*)0, (void*)0, 0, 0, 0, 0); }
                         if(node_257 && !__freed_obj__) { node_257 = come_decrement_ref_count(node_257, ((struct sNode*)node_257)->finalize, ((struct sNode*)node_257)->_protocol_obj, 0, 0, 0); } 
                         if(default_param_246 && !__freed_obj__) { default_param_246 = come_decrement_ref_count(default_param_246, (void*)0, (void*)0, 0, 0, 0); }
@@ -9287,7 +9380,7 @@ memset(&right_value360, 0, sizeof(void*));
                         if(obj_value_139 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,obj_value_139, (void*)0, (void*)0, 0, 0, 0, 0); }
                         if(obj_type_140 && !__freed_obj__) { come_call_finalizer(sType_finalize,obj_type_140, (void*)0, (void*)0, 0, 0, 0, 0); }
                         __freed_obj__ = 0;
-                        return __result191__;
+                        return __result192__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
@@ -9301,19 +9394,17 @@ memset(&right_value360, 0, sizeof(void*));
                     __freed_obj__ = 0;
                     ((struct sInfo*)come_null_check(info, "20method.c", 568))->sline=sline_256;
                     __freed_obj__ = 0;
-                    come_value_258=(struct CVALUE*)come_increment_ref_count((come_push_stackframe("20method.c", 570),((struct CVALUE*)(right_value269=get_value_from_stack(-1,info)))));
-                    come_pop_stackframe();
+                    come_value_258=(struct CVALUE*)come_increment_ref_count((come_push_stackframe("20method.c", 570),__exception_result_var_b266=((struct CVALUE*)(right_value269=get_value_from_stack(-1,info))), come_pop_stackframe(), __exception_result_var_b266));
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value269);
                     if(right_value269 && right_value269 != __result_obj__ && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,right_value269, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __right_value_freed_obj[2] = right_value269;
                     __freed_obj__ = 0;
-                    if(_if_conditional356=optional$2sTypephbool_value((come_push_stackframe("20method.c", 574),__exception_result_var_b68=((struct optional$2sTypephbool*)(right_value270=list$1sTypephp_operator_load_element(param_types_192,i_208))), come_pop_stackframe(), __exception_result_var_b68)),                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value270),
+                    if(_if_conditional356=optional$2sTypephbool_value((come_push_stackframe("20method.c", 574),__exception_result_var_b267=((struct optional$2sTypephbool*)(right_value270=list$1sTypephp_operator_load_element(param_types_192,i_208))), come_pop_stackframe(), __exception_result_var_b267)),                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value270),
                     (right_value270 && right_value270 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2sTypephboolp_finalize,right_value270, (void*)0, (void*)0, 0, 1, 0, 0):0,
                     __right_value_freed_obj[3] = right_value270, 
                     __freed_obj__ = 0, 
                     _if_conditional356) {
-                        (come_push_stackframe("20method.c", 572),check_assign_type(((char*)(right_value273=xsprintf("\%s param num \%s is assinged to",((char*)(right_value271=charp_to_string(fun_name_134))),((char*)(right_value272=int_to_string(i_208)))))),optional$2sTypephbool_value((come_push_stackframe("20method.c", 572),((struct optional$2sTypephbool*)(right_value274=list$1sTypephp_operator_load_element(param_types_192,i_208))))),((struct CVALUE*)come_null_check(come_value_258, "20method.c", 572))->type,come_value_258,(_Bool)0,info));
-                        come_pop_stackframe();
+                        (come_push_stackframe("20method.c", 572),check_assign_type(((char*)(right_value273=xsprintf("\%s param num \%s is assinged to",((char*)(right_value271=charp_to_string(fun_name_134))),((char*)(right_value272=int_to_string(i_208)))))),optional$2sTypephbool_value((come_push_stackframe("20method.c", 572),__exception_result_var_b268=((struct optional$2sTypephbool*)(right_value274=list$1sTypephp_operator_load_element(param_types_192,i_208))), come_pop_stackframe(), __exception_result_var_b268)),((struct CVALUE*)come_null_check(come_value_258, "20method.c", 572))->type,come_value_258,(_Bool)0,info),come_pop_stackframe());
                         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value271);
                         if(right_value271 && right_value271 != __result_obj__ && !__freed_obj__) { right_value271 = come_decrement_ref_count(right_value271, (void*)0, (void*)0, 1, 0, 0); }
                         __right_value_freed_obj[0] = right_value271;
@@ -9329,7 +9420,7 @@ memset(&right_value360, 0, sizeof(void*));
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
-                    if(_if_conditional357=optional$2sTypephbool_value((come_push_stackframe("20method.c", 601),__exception_result_var_b69=((struct optional$2sTypephbool*)(right_value275=list$1sTypephp_operator_load_element(param_types_192,i_208))), come_pop_stackframe(), __exception_result_var_b69))&&((struct sType*)come_null_check(optional$2sTypephbool_value((come_push_stackframe("20method.c", 601),__exception_result_var_b70=((struct optional$2sTypephbool*)(right_value276=list$1sTypephp_operator_load_element(param_types_192,i_208))), come_pop_stackframe(), __exception_result_var_b70)), "20method.c", 601))->mHeap&&((struct sType*)come_null_check(((struct CVALUE*)come_null_check(come_value_258, "20method.c", 601))->type, "20method.c", 601))->mHeap,                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 4, right_value275),
+                    if(_if_conditional357=optional$2sTypephbool_value((come_push_stackframe("20method.c", 601),__exception_result_var_b269=((struct optional$2sTypephbool*)(right_value275=list$1sTypephp_operator_load_element(param_types_192,i_208))), come_pop_stackframe(), __exception_result_var_b269))&&((struct sType*)come_null_check(optional$2sTypephbool_value((come_push_stackframe("20method.c", 601),__exception_result_var_b270=((struct optional$2sTypephbool*)(right_value276=list$1sTypephp_operator_load_element(param_types_192,i_208))), come_pop_stackframe(), __exception_result_var_b270)), "20method.c", 601))->mHeap&&((struct sType*)come_null_check(((struct CVALUE*)come_null_check(come_value_258, "20method.c", 601))->type, "20method.c", 601))->mHeap,                    __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 4, right_value275),
                     (right_value275 && right_value275 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2sTypephboolp_finalize,right_value275, (void*)0, (void*)0, 0, 1, 0, 0):0,
                     __right_value_freed_obj[4] = right_value275, 
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 5, right_value276),
@@ -9350,7 +9441,7 @@ memset(&right_value360, 0, sizeof(void*));
                                 if(_if_conditional360=((struct sType*)come_null_check(((struct sVar*)come_null_check(((struct CVALUE*)come_null_check(come_value_258, "20method.c", 592))->var, "20method.c", 592))->mType, "20method.c", 592))->mShare,                                __freed_obj__ = 0, 
                                 _if_conditional360) {
                                     __dec_obj88=((struct CVALUE*)come_null_check(come_value_258, "20method.c", 580))->c_value;
-                                    ((struct CVALUE*)come_null_check(come_value_258, "20method.c", 580))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 580),((char*)(right_value277=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_258, "20method.c", 580))->type,((struct CVALUE*)come_null_check(come_value_258, "20method.c", 580))->c_value,info)))));
+                                    ((struct CVALUE*)come_null_check(come_value_258, "20method.c", 580))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 580),__exception_result_var_b271=((char*)(right_value277=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_258, "20method.c", 580))->type,((struct CVALUE*)come_null_check(come_value_258, "20method.c", 580))->c_value,info))), come_pop_stackframe(), __exception_result_var_b271));
                                     if(__dec_obj88) { __dec_obj88 = come_decrement_ref_count(__dec_obj88, (void*)0, (void*)0, 0,0,0); }
                                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value277);
                                     if(right_value277 && right_value277 != __result_obj__ && !__freed_obj__) { right_value277 = come_decrement_ref_count(right_value277, (void*)0, (void*)0, 1, 0, 0); }
@@ -9361,7 +9452,7 @@ memset(&right_value360, 0, sizeof(void*));
                                     if(_if_conditional361=((struct sType*)come_null_check(((struct sVar*)come_null_check(((struct CVALUE*)come_null_check(come_value_258, "20method.c", 592))->var, "20method.c", 592))->mType, "20method.c", 592))->mClone,                                    __freed_obj__ = 0, 
                                     _if_conditional361) {
                                         __dec_obj89=((struct CVALUE*)come_null_check(come_value_258, "20method.c", 583))->c_value;
-                                        ((struct CVALUE*)come_null_check(come_value_258, "20method.c", 583))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 583),((char*)(right_value278=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_258, "20method.c", 583))->type,((struct CVALUE*)come_null_check(come_value_258, "20method.c", 583))->c_value,info)))));
+                                        ((struct CVALUE*)come_null_check(come_value_258, "20method.c", 583))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 583),__exception_result_var_b272=((char*)(right_value278=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_258, "20method.c", 583))->type,((struct CVALUE*)come_null_check(come_value_258, "20method.c", 583))->c_value,info))), come_pop_stackframe(), __exception_result_var_b272));
                                         if(__dec_obj89) { __dec_obj89 = come_decrement_ref_count(__dec_obj89, (void*)0, (void*)0, 0,0,0); }
                                         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value278);
                                         if(right_value278 && right_value278 != __result_obj__ && !__freed_obj__) { right_value278 = come_decrement_ref_count(right_value278, (void*)0, (void*)0, 1, 0, 0); }
@@ -9370,7 +9461,7 @@ memset(&right_value360, 0, sizeof(void*));
                                     }
                                     else {
                                         __dec_obj90=((struct CVALUE*)come_null_check(come_value_258, "20method.c", 586))->c_value;
-                                        ((struct CVALUE*)come_null_check(come_value_258, "20method.c", 586))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 586),((char*)(right_value279=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_258, "20method.c", 586))->type,((struct CVALUE*)come_null_check(come_value_258, "20method.c", 586))->c_value,info)))));
+                                        ((struct CVALUE*)come_null_check(come_value_258, "20method.c", 586))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 586),__exception_result_var_b273=((char*)(right_value279=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_258, "20method.c", 586))->type,((struct CVALUE*)come_null_check(come_value_258, "20method.c", 586))->c_value,info))), come_pop_stackframe(), __exception_result_var_b273));
                                         if(__dec_obj90) { __dec_obj90 = come_decrement_ref_count(__dec_obj90, (void*)0, (void*)0, 0,0,0); }
                                         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value279);
                                         if(right_value279 && right_value279 != __result_obj__ && !__freed_obj__) { right_value279 = come_decrement_ref_count(right_value279, (void*)0, (void*)0, 1, 0, 0); }
@@ -9389,7 +9480,7 @@ memset(&right_value360, 0, sizeof(void*));
                             }
                             else {
                                 __dec_obj91=((struct CVALUE*)come_null_check(come_value_258, "20method.c", 597))->c_value;
-                                ((struct CVALUE*)come_null_check(come_value_258, "20method.c", 597))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 597),((char*)(right_value280=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_258, "20method.c", 597))->type,((struct CVALUE*)come_null_check(come_value_258, "20method.c", 597))->c_value,info)))));
+                                ((struct CVALUE*)come_null_check(come_value_258, "20method.c", 597))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 597),__exception_result_var_b274=((char*)(right_value280=increment_ref_count_object(((struct CVALUE*)come_null_check(come_value_258, "20method.c", 597))->type,((struct CVALUE*)come_null_check(come_value_258, "20method.c", 597))->c_value,info))), come_pop_stackframe(), __exception_result_var_b274));
                                 if(__dec_obj91) { __dec_obj91 = come_decrement_ref_count(__dec_obj91, (void*)0, (void*)0, 0,0,0); }
                                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value280);
                                 if(right_value280 && right_value280 != __result_obj__ && !__freed_obj__) { right_value280 = come_decrement_ref_count(right_value280, (void*)0, (void*)0, 1, 0, 0); }
@@ -9401,11 +9492,9 @@ memset(&right_value360, 0, sizeof(void*));
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
-                    (come_push_stackframe("20method.c", 601),list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(come_params_203, "20method.c", 601)),(struct CVALUE*)come_increment_ref_count(come_value_258)));
-                    come_pop_stackframe();
+                    (come_push_stackframe("20method.c", 601),__exception_result_var_b275=list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(come_params_203, "20method.c", 601)),(struct CVALUE*)come_increment_ref_count(come_value_258)), come_pop_stackframe(), __exception_result_var_b275);
                     __freed_obj__ = 0;
-                    (come_push_stackframe("20method.c", 602),dec_stack_ptr(1,info));
-                    come_pop_stackframe();
+                    (come_push_stackframe("20method.c", 602),dec_stack_ptr(1,info),come_pop_stackframe());
                     __freed_obj__ = 0;
                     if(source_253 && !__freed_obj__) { come_call_finalizer(buffer_finalize,source_253, (void*)0, (void*)0, 0, 0, 0, 0); }
                     if(node_257 && !__freed_obj__) { node_257 = come_decrement_ref_count(node_257, ((struct sNode*)node_257)->finalize, ((struct sNode*)node_257)->_protocol_obj, 0, 0, 0); } 
@@ -9414,15 +9503,13 @@ memset(&right_value360, 0, sizeof(void*));
                 else {
                     if(_if_conditional363=come_value_252,                    __freed_obj__ = 0, 
                     _if_conditional363) {
-                        (come_push_stackframe("20method.c", 606),list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(come_params_203, "20method.c", 606)),((void*)0)));
-                        come_pop_stackframe();
+                        (come_push_stackframe("20method.c", 606),__exception_result_var_b276=list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(come_params_203, "20method.c", 606)),((void*)0)), come_pop_stackframe(), __exception_result_var_b276);
                         __freed_obj__ = 0;
                     }
                     else {
-                        (come_push_stackframe("20method.c", 609),err_msg(info,"require parametor(%s)",((struct sFun*)come_null_check(fun_181, "20method.c", 609))->mName));
-                        come_pop_stackframe();
+                        (come_push_stackframe("20method.c", 609),err_msg(info,"require parametor(%s)",((struct sFun*)come_null_check(fun_181, "20method.c", 609))->mName),come_pop_stackframe());
                         __freed_obj__ = 0;
-                        __result192__ = (_Bool)0;
+                        __result193__ = (_Bool)0;
                         if(default_param_246 && !__freed_obj__) { default_param_246 = come_decrement_ref_count(default_param_246, (void*)0, (void*)0, 0, 0, 0); }
                         if(generics_fun_name_180 && !__freed_obj__) { generics_fun_name_180 = come_decrement_ref_count(generics_fun_name_180, (void*)0, (void*)0, 0, 0, 0); }
                         if(result_type_190 && !__freed_obj__) { come_call_finalizer(sType_finalize,result_type_190, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -9433,7 +9520,7 @@ memset(&right_value360, 0, sizeof(void*));
                         if(obj_value_139 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,obj_value_139, (void*)0, (void*)0, 0, 0, 0, 0); }
                         if(obj_type_140 && !__freed_obj__) { come_call_finalizer(sType_finalize,obj_type_140, (void*)0, (void*)0, 0, 0, 0, 0); }
                         __freed_obj__ = 0;
-                        return __result192__;
+                        return __result193__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
@@ -9444,27 +9531,26 @@ memset(&right_value360, 0, sizeof(void*));
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-        if(_if_conditional364=(come_push_stackframe("20method.c", 628),__exception_result_var_b71=map$2charphCVALUEph_length(((struct map$2charphCVALUEph*)come_null_check(label_params_207, "20method.c", 628))), come_pop_stackframe(), __exception_result_var_b71)>0,        __freed_obj__ = 0, 
+        if(_if_conditional364=(come_push_stackframe("20method.c", 628),__exception_result_var_b277=map$2charphCVALUEph_length(((struct map$2charphCVALUEph*)come_null_check(label_params_207, "20method.c", 628))), come_pop_stackframe(), __exception_result_var_b277)>0,        __freed_obj__ = 0, 
         _if_conditional364) {
             for(
             i_208=0 ,            __freed_obj__ = 0, 
-            0;            _for_condtionalA20=            i_208<(come_push_stackframe("20method.c", 626),__exception_result_var_b72=list$1charph_length(((struct list$1charph*)come_null_check(((struct sFun*)come_null_check(fun_181, "20method.c", 626))->mParamNames, "20method.c", 626))), come_pop_stackframe(), __exception_result_var_b72)+(method_block_137?-2:0) ,            __freed_obj__ = 0, 
+            0;            _for_condtionalA20=            i_208<(come_push_stackframe("20method.c", 626),__exception_result_var_b278=list$1charph_length(((struct list$1charph*)come_null_check(((struct sFun*)come_null_check(fun_181, "20method.c", 626))->mParamNames, "20method.c", 626))), come_pop_stackframe(), __exception_result_var_b278)+(method_block_137?-2:0) ,            __freed_obj__ = 0, 
             _for_condtionalA20;            i_208++ ,            __freed_obj__ = 0, 
             0            ){
-                param_name_259=optional$2charphbool_value((come_push_stackframe("20method.c", 617),((struct optional$2charphbool*)(right_value281=list$1charphp_operator_load_element(((struct sFun*)come_null_check(fun_181, "20method.c", 617))->mParamNames,i_208)))));
+                param_name_259=optional$2charphbool_value((come_push_stackframe("20method.c", 617),__exception_result_var_b279=((struct optional$2charphbool*)(right_value281=list$1charphp_operator_load_element(((struct sFun*)come_null_check(fun_181, "20method.c", 617))->mParamNames,i_208))), come_pop_stackframe(), __exception_result_var_b279));
                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value281);
                 if(right_value281 && right_value281 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value281, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __right_value_freed_obj[0] = right_value281;
                 __freed_obj__ = 0;
-                come_value_260=optional$2CVALUEpbool_value((come_push_stackframe("20method.c", 620),((struct optional$2CVALUEpbool*)(right_value282=map$2charphCVALUEphp_operator_load_element(label_params_207,param_name_259)))));
+                come_value_260=optional$2CVALUEpbool_value((come_push_stackframe("20method.c", 620),__exception_result_var_b280=((struct optional$2CVALUEpbool*)(right_value282=map$2charphCVALUEphp_operator_load_element(label_params_207,param_name_259))), come_pop_stackframe(), __exception_result_var_b280));
                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value282);
                 if(right_value282 && right_value282 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2CVALUEpboolp_finalize,right_value282, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __right_value_freed_obj[1] = right_value282;
                 __freed_obj__ = 0;
                 if(_if_conditional365=come_value_260,                __freed_obj__ = 0, 
                 _if_conditional365) {
-                    (come_push_stackframe("20method.c", 623),list$1CVALUEph_replace(((struct list$1CVALUEph*)come_null_check(come_params_203, "20method.c", 623)),i_208,(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value286=CVALUE_clone(come_value_260))))));
-                    come_pop_stackframe();
+                    (come_push_stackframe("20method.c", 623),__exception_result_var_b282=list$1CVALUEph_replace(((struct list$1CVALUEph*)come_null_check(come_params_203, "20method.c", 623)),i_208,(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value286=CVALUE_clone(come_value_260))))), come_pop_stackframe(), __exception_result_var_b282);
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value286);
                     if(right_value286 && right_value286 != __result_obj__ && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,right_value286, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __right_value_freed_obj[0] = right_value286;
@@ -9478,7 +9564,7 @@ memset(&right_value360, 0, sizeof(void*));
         if(_if_conditional373=method_block_137,        __freed_obj__ = 0, 
         _if_conditional373) {
             _inf_value1=(struct sNode*)come_calloc(1, sizeof(struct sNode), "20method.c", 629);
-            _inf_obj_value1=come_increment_ref_count((come_push_stackframe("20method.c", 629),((struct sCurrentNode*)(right_value288=sCurrentNode_initialize((struct sCurrentNode*)come_increment_ref_count(((struct sCurrentNode*)(right_value287=(struct sCurrentNode*)come_calloc(1, sizeof(struct sCurrentNode)*(1), "20method.c", 629)))),info)))));
+            _inf_obj_value1=come_increment_ref_count((come_push_stackframe("20method.c", 629),__exception_result_var_b283=((struct sCurrentNode*)(right_value288=sCurrentNode_initialize((struct sCurrentNode*)come_increment_ref_count(((struct sCurrentNode*)(right_value287=(struct sCurrentNode*)come_calloc(1, sizeof(struct sCurrentNode)*(1), "20method.c", 629)))),info))), come_pop_stackframe(), __exception_result_var_b283));
             _inf_value1->_protocol_obj=_inf_obj_value1;
             _inf_value1->finalize=(void*)sCurrentNode_finalize;
             _inf_value1->clone=(void*)sCurrentNode_clone;
@@ -9488,7 +9574,6 @@ memset(&right_value360, 0, sizeof(void*));
             _inf_value1->terminated=(void*)sCurrentNode_terminated;
             _inf_value1->kind=(void*)sCurrentNode_kind;
             current_stack_frame_node_265=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value291=_inf_value1)));
-            come_pop_stackframe();
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value287);
             if(right_value287 && right_value287 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sCurrentNode_finalize,right_value287, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[0] = right_value287;
@@ -9501,7 +9586,7 @@ memset(&right_value360, 0, sizeof(void*));
             __freed_obj__ = 0;
             if(_if_conditional378=!((struct sNode*)come_null_check(current_stack_frame_node_265, "20method.c", 635))->compile(((struct sNode*)come_null_check(current_stack_frame_node_265, "20method.c", 635))->_protocol_obj,info),            __freed_obj__ = 0, 
             _if_conditional378) {
-                __result201__ = (_Bool)0;
+                __result202__ = (_Bool)0;
                 if(current_stack_frame_node_265 && !__freed_obj__) { current_stack_frame_node_265 = come_decrement_ref_count(current_stack_frame_node_265, ((struct sNode*)current_stack_frame_node_265)->finalize, ((struct sNode*)current_stack_frame_node_265)->_protocol_obj, 0, 0, 0); } 
                 if(generics_fun_name_180 && !__freed_obj__) { generics_fun_name_180 = come_decrement_ref_count(generics_fun_name_180, (void*)0, (void*)0, 0, 0, 0); }
                 if(result_type_190 && !__freed_obj__) { come_call_finalizer(sType_finalize,result_type_190, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -9512,24 +9597,20 @@ memset(&right_value360, 0, sizeof(void*));
                 if(obj_value_139 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,obj_value_139, (void*)0, (void*)0, 0, 0, 0, 0); }
                 if(obj_type_140 && !__freed_obj__) { come_call_finalizer(sType_finalize,obj_type_140, (void*)0, (void*)0, 0, 0, 0, 0); }
                 __freed_obj__ = 0;
-                return __result201__;
+                return __result202__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-            come_value_266=(struct CVALUE*)come_increment_ref_count((come_push_stackframe("20method.c", 635),((struct CVALUE*)(right_value292=get_value_from_stack(-1,info)))));
-            come_pop_stackframe();
+            come_value_266=(struct CVALUE*)come_increment_ref_count((come_push_stackframe("20method.c", 635),__exception_result_var_b284=((struct CVALUE*)(right_value292=get_value_from_stack(-1,info))), come_pop_stackframe(), __exception_result_var_b284));
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value292);
             if(right_value292 && right_value292 != __result_obj__ && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,right_value292, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[3] = right_value292;
             __freed_obj__ = 0;
-            (come_push_stackframe("20method.c", 636),list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(come_params_203, "20method.c", 636)),(struct CVALUE*)come_increment_ref_count(come_value_266)));
-            come_pop_stackframe();
+            (come_push_stackframe("20method.c", 636),__exception_result_var_b285=list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(come_params_203, "20method.c", 636)),(struct CVALUE*)come_increment_ref_count(come_value_266)), come_pop_stackframe(), __exception_result_var_b285);
             __freed_obj__ = 0;
-            (come_push_stackframe("20method.c", 637),dec_stack_ptr(1,info));
-            come_pop_stackframe();
+            (come_push_stackframe("20method.c", 637),dec_stack_ptr(1,info),come_pop_stackframe());
             __freed_obj__ = 0;
-            method_block2_267=(struct buffer*)come_increment_ref_count((come_push_stackframe("20method.c", 639),((struct buffer*)(right_value294=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value293=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 639)))))))));
-            come_pop_stackframe();
+            method_block2_267=(struct buffer*)come_increment_ref_count((come_push_stackframe("20method.c", 639),__exception_result_var_b286=((struct buffer*)(right_value294=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value293=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 639))))))), come_pop_stackframe(), __exception_result_var_b286));
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 4, right_value293);
             if(right_value293 && right_value293 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value293, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[4] = right_value293;
@@ -9537,7 +9618,7 @@ memset(&right_value360, 0, sizeof(void*));
             if(right_value294 && right_value294 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value294, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[5] = right_value294;
             __freed_obj__ = 0;
-            method_block_type_268=(struct sType*)come_increment_ref_count(((struct sType*)(right_value296=sType_clone(optional$2sTypephbool_value((come_push_stackframe("20method.c", 640),((struct optional$2sTypephbool*)(right_value295=list$1sTypephp_operator_load_element(((struct sFun*)come_null_check(fun_181, "20method.c", 640))->mParamTypes,-1)))))))));
+            method_block_type_268=(struct sType*)come_increment_ref_count(((struct sType*)(right_value296=sType_clone(optional$2sTypephbool_value((come_push_stackframe("20method.c", 640),__exception_result_var_b287=((struct optional$2sTypephbool*)(right_value295=list$1sTypephp_operator_load_element(((struct sFun*)come_null_check(fun_181, "20method.c", 640))->mParamTypes,-1))), come_pop_stackframe(), __exception_result_var_b287))))));
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 6, right_value295);
             if(right_value295 && right_value295 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sTypephboolp_finalize,right_value295, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[6] = right_value295;
@@ -9545,14 +9626,12 @@ memset(&right_value360, 0, sizeof(void*));
             if(right_value296 && right_value296 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value296, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[7] = right_value296;
             __freed_obj__ = 0;
-            class_name_269=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 642),((char*)(right_value297=xsprintf("__current_stack%d__",((struct sInfo*)come_null_check(info, "20method.c", 642))->current_stack_num)))));
-            come_pop_stackframe();
+            class_name_269=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 642),__exception_result_var_b288=((char*)(right_value297=xsprintf("__current_stack%d__",((struct sInfo*)come_null_check(info, "20method.c", 642))->current_stack_num))), come_pop_stackframe(), __exception_result_var_b288));
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 8, right_value297);
             if(right_value297 && right_value297 != __result_obj__ && !__freed_obj__) { right_value297 = come_decrement_ref_count(right_value297, (void*)0, (void*)0, 1, 0, 0); }
             __right_value_freed_obj[8] = right_value297;
             __freed_obj__ = 0;
-            ((struct sType*)come_null_check(optional$2sTypephbool_value((come_push_stackframe("20method.c", 644),((struct optional$2sTypephbool*)(right_value298=list$1sTypephp_operator_load_element(((struct sType*)come_null_check(method_block_type_268, "20method.c", 644))->mParamTypes,0))))), "20method.c", 644))->mClass=optional$2sClasspbool_value((come_push_stackframe("20method.c", 644),((struct optional$2sClasspbool*)(right_value308=map$2charphsClassphp_operator_load_element(((struct sInfo*)come_null_check(info, "20method.c", 644))->classes,class_name_269)))));
-            come_pop_stackframe();
+            ((struct sType*)come_null_check(optional$2sTypephbool_value((come_push_stackframe("20method.c", 644),__exception_result_var_b289=((struct optional$2sTypephbool*)(right_value298=list$1sTypephp_operator_load_element(((struct sType*)come_null_check(method_block_type_268, "20method.c", 644))->mParamTypes,0))), come_pop_stackframe(), __exception_result_var_b289)), "20method.c", 644))->mClass=optional$2sClasspbool_value((come_push_stackframe("20method.c", 644),__exception_result_var_b293=((struct optional$2sClasspbool*)(right_value308=map$2charphsClassphp_operator_load_element(((struct sInfo*)come_null_check(info, "20method.c", 644))->classes,class_name_269))), come_pop_stackframe(), __exception_result_var_b293));
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 9, right_value298);
             if(right_value298 && right_value298 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sTypephboolp_finalize,right_value298, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[9] = right_value298;
@@ -9562,19 +9641,18 @@ memset(&right_value360, 0, sizeof(void*));
             __freed_obj__ = 0;
             current_stack_frame_struct_274=((struct sInfo*)come_null_check(info, "20method.c", 645))->current_stack_frame_struct;
             __freed_obj__ = 0;
-            ((struct sInfo*)come_null_check(info, "20method.c", 646))->current_stack_frame_struct=optional$2sClasspbool_value((come_push_stackframe("20method.c", 646),((struct optional$2sClasspbool*)(right_value309=map$2charphsClassphp_operator_load_element(((struct sInfo*)come_null_check(info, "20method.c", 646))->classes,class_name_269)))));
+            ((struct sInfo*)come_null_check(info, "20method.c", 646))->current_stack_frame_struct=optional$2sClasspbool_value((come_push_stackframe("20method.c", 646),__exception_result_var_b295=((struct optional$2sClasspbool*)(right_value309=map$2charphsClassphp_operator_load_element(((struct sInfo*)come_null_check(info, "20method.c", 646))->classes,class_name_269))), come_pop_stackframe(), __exception_result_var_b295));
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 11, right_value309);
             if(right_value309 && right_value309 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sClasspboolp_finalize,right_value309, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[11] = right_value309;
             __freed_obj__ = 0;
             ((struct sInfo*)come_null_check(info, "20method.c", 648))->num_method_block++;
             __freed_obj__ = 0;
-            if(_if_conditional384=(come_push_stackframe("20method.c", 655),__exception_result_var_b74=string_operator_not_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(method_block_type_268, "20method.c", 655))->mClass, "20method.c", 655))->mName,"lambda"), come_pop_stackframe(), __exception_result_var_b74),            __freed_obj__ = 0, 
+            if(_if_conditional384=(come_push_stackframe("20method.c", 655),__exception_result_var_b296=string_operator_not_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(method_block_type_268, "20method.c", 655))->mClass, "20method.c", 655))->mName,"lambda"), come_pop_stackframe(), __exception_result_var_b296),            __freed_obj__ = 0, 
             _if_conditional384) {
-                (come_push_stackframe("20method.c", 651),err_msg(info,"This function does not have method block(%s)",fun_name_134));
-                come_pop_stackframe();
+                (come_push_stackframe("20method.c", 651),err_msg(info,"This function does not have method block(%s)",fun_name_134),come_pop_stackframe());
                 __freed_obj__ = 0;
-                __result209__ = (_Bool)0;
+                __result210__ = (_Bool)0;
                 if(current_stack_frame_node_265 && !__freed_obj__) { current_stack_frame_node_265 = come_decrement_ref_count(current_stack_frame_node_265, ((struct sNode*)current_stack_frame_node_265)->finalize, ((struct sNode*)current_stack_frame_node_265)->_protocol_obj, 0, 0, 0); } 
                 if(come_value_266 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,come_value_266, (void*)0, (void*)0, 0, 0, 0, 0); }
                 if(method_block2_267 && !__freed_obj__) { come_call_finalizer(buffer_finalize,method_block2_267, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -9589,7 +9667,7 @@ memset(&right_value360, 0, sizeof(void*));
                 if(obj_value_139 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,obj_value_139, (void*)0, (void*)0, 0, 0, 0, 0); }
                 if(obj_type_140 && !__freed_obj__) { come_call_finalizer(sType_finalize,obj_type_140, (void*)0, (void*)0, 0, 0, 0, 0); }
                 __freed_obj__ = 0;
-                return __result209__;
+                return __result210__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -9604,8 +9682,7 @@ memset(&right_value360, 0, sizeof(void*));
             __freed_obj__ = 0;
             param_names_277=((struct sType*)come_null_check(method_block_type_268, "20method.c", 658))->mParamNames;
             __freed_obj__ = 0;
-            all_alhabet_sname_278=(struct buffer*)come_increment_ref_count((come_push_stackframe("20method.c", 660),((struct buffer*)(right_value312=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value311=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 660)))))))));
-            come_pop_stackframe();
+            all_alhabet_sname_278=(struct buffer*)come_increment_ref_count((come_push_stackframe("20method.c", 660),__exception_result_var_b297=((struct buffer*)(right_value312=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value311=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 660))))))), come_pop_stackframe(), __exception_result_var_b297));
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 13, right_value311);
             if(right_value311 && right_value311 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value311, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[13] = right_value311;
@@ -9618,10 +9695,9 @@ memset(&right_value360, 0, sizeof(void*));
                 __freed_obj__ = 0;
                 while(_while_condtional35=*p_279,                __freed_obj__ = 0, 
                 _while_condtional35) {
-                    if(_if_conditional385=(come_push_stackframe("20method.c", 670),__exception_result_var_b75=xisalnum(*p_279), come_pop_stackframe(), __exception_result_var_b75),                    __freed_obj__ = 0, 
+                    if(_if_conditional385=(come_push_stackframe("20method.c", 670),__exception_result_var_b298=xisalnum(*p_279), come_pop_stackframe(), __exception_result_var_b298),                    __freed_obj__ = 0, 
                     _if_conditional385) {
-                        (come_push_stackframe("20method.c", 665),buffer_append_char(((struct buffer*)come_null_check(all_alhabet_sname_278, "20method.c", 665)),*p_279++));
-                        come_pop_stackframe();
+                        (come_push_stackframe("20method.c", 665),__exception_result_var_b299=buffer_append_char(((struct buffer*)come_null_check(all_alhabet_sname_278, "20method.c", 665)),*p_279++), come_pop_stackframe(), __exception_result_var_b299);
                         __freed_obj__ = 0;
                     }
                     else {
@@ -9633,8 +9709,7 @@ memset(&right_value360, 0, sizeof(void*));
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-            (come_push_stackframe("20method.c", 673),buffer_append_str(((struct buffer*)come_null_check(method_block2_267, "20method.c", 673)),(come_push_stackframe("20method.c", 673),((char*)(right_value315=xsprintf("%s method_block%d_%s(",optional$2charphbool_expect((come_push_stackframe("20method.c", 673),((struct optional$2charphbool*)(right_value313=make_type_name_string(result_type_275,(_Bool)0,(_Bool)0,(_Bool)0,info))))),((struct sInfo*)come_null_check(info, "20method.c", 673))->num_method_block,(come_push_stackframe("20method.c", 673),((char*)(right_value314=buffer_to_string(((struct buffer*)come_null_check(all_alhabet_sname_278, "20method.c", 673))))))))))));
-            come_pop_stackframe();
+            (come_push_stackframe("20method.c", 673),__exception_result_var_b305=buffer_append_str(((struct buffer*)come_null_check(method_block2_267, "20method.c", 673)),(come_push_stackframe("20method.c", 673),__exception_result_var_b304=((char*)(right_value315=xsprintf("%s method_block%d_%s(",optional$2charphbool_expect((come_push_stackframe("20method.c", 673),__exception_result_var_b300=((struct optional$2charphbool*)(right_value313=make_type_name_string(result_type_275,(_Bool)0,(_Bool)0,(_Bool)0,info))), come_pop_stackframe(), __exception_result_var_b300)),((struct sInfo*)come_null_check(info, "20method.c", 673))->num_method_block,(come_push_stackframe("20method.c", 673),__exception_result_var_b303=((char*)(right_value314=buffer_to_string(((struct buffer*)come_null_check(all_alhabet_sname_278, "20method.c", 673))))), come_pop_stackframe(), __exception_result_var_b303)))), come_pop_stackframe(), __exception_result_var_b304)), come_pop_stackframe(), __exception_result_var_b305);
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 15, right_value313);
             if(right_value313 && right_value313 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value313, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[15] = right_value313;
@@ -9648,22 +9723,20 @@ memset(&right_value360, 0, sizeof(void*));
             i_280=0;
             __freed_obj__ = 0;
             for(
-            o2_saved_281=(param_types_276),it_282=(come_push_stackframe("20method.c", 700),__exception_result_var_b76=list$1sTypeph_begin(((struct list$1sTypeph*)come_null_check((o2_saved_281), "20method.c", 700))), come_pop_stackframe(), __exception_result_var_b76) ,            __freed_obj__ = 0, 
-            0;            _for_condtionalA21=            !(come_push_stackframe("20method.c", 700),__exception_result_var_b77=list$1sTypeph_end(((struct list$1sTypeph*)come_null_check((o2_saved_281), "20method.c", 700))), come_pop_stackframe(), __exception_result_var_b77) ,            __freed_obj__ = 0, 
-            _for_condtionalA21;            it_282=(come_push_stackframe("20method.c", 700),__exception_result_var_b78=list$1sTypeph_next(((struct list$1sTypeph*)come_null_check((o2_saved_281), "20method.c", 700))), come_pop_stackframe(), __exception_result_var_b78) ,            __freed_obj__ = 0, 
+            o2_saved_281=(param_types_276),it_282=(come_push_stackframe("20method.c", 700),__exception_result_var_b306=list$1sTypeph_begin(((struct list$1sTypeph*)come_null_check((o2_saved_281), "20method.c", 700))), come_pop_stackframe(), __exception_result_var_b306) ,            __freed_obj__ = 0, 
+            0;            _for_condtionalA21=            !(come_push_stackframe("20method.c", 700),__exception_result_var_b307=list$1sTypeph_end(((struct list$1sTypeph*)come_null_check((o2_saved_281), "20method.c", 700))), come_pop_stackframe(), __exception_result_var_b307) ,            __freed_obj__ = 0, 
+            _for_condtionalA21;            it_282=(come_push_stackframe("20method.c", 700),__exception_result_var_b308=list$1sTypeph_next(((struct list$1sTypeph*)come_null_check((o2_saved_281), "20method.c", 700))), come_pop_stackframe(), __exception_result_var_b308) ,            __freed_obj__ = 0, 
             0            ){
                 param_type_283=it_282;
                 __freed_obj__ = 0;
                 if(_if_conditional387=i_280==0,                __freed_obj__ = 0, 
                 _if_conditional387) {
-                    param_name_284=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 679),((char*)(right_value316=xsprintf("parent")))));
-                    come_pop_stackframe();
+                    param_name_284=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 679),__exception_result_var_b309=((char*)(right_value316=xsprintf("parent"))), come_pop_stackframe(), __exception_result_var_b309));
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value316);
                     if(right_value316 && right_value316 != __result_obj__ && !__freed_obj__) { right_value316 = come_decrement_ref_count(right_value316, (void*)0, (void*)0, 1, 0, 0); }
                     __right_value_freed_obj[0] = right_value316;
                     __freed_obj__ = 0;
-                    (come_push_stackframe("20method.c", 681),buffer_append_str(((struct buffer*)come_null_check(method_block2_267, "20method.c", 681)),(come_push_stackframe("20method.c", 681),((char*)(right_value318=xsprintf("%s",optional$2charphbool_expect((come_push_stackframe("20method.c", 681),((struct optional$2charphbool*)(right_value317=make_define_var(param_type_283,param_name_284,(_Bool)0,info)))))))))));
-                    come_pop_stackframe();
+                    (come_push_stackframe("20method.c", 681),__exception_result_var_b312=buffer_append_str(((struct buffer*)come_null_check(method_block2_267, "20method.c", 681)),(come_push_stackframe("20method.c", 681),__exception_result_var_b311=((char*)(right_value318=xsprintf("%s",optional$2charphbool_expect((come_push_stackframe("20method.c", 681),__exception_result_var_b310=((struct optional$2charphbool*)(right_value317=make_define_var(param_type_283,param_name_284,(_Bool)0,info))), come_pop_stackframe(), __exception_result_var_b310))))), come_pop_stackframe(), __exception_result_var_b311)), come_pop_stackframe(), __exception_result_var_b312);
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value317);
                     if(right_value317 && right_value317 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value317, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __right_value_freed_obj[1] = right_value317;
@@ -9676,14 +9749,12 @@ memset(&right_value360, 0, sizeof(void*));
                 else {
                     if(_if_conditional388=i_280==1,                    __freed_obj__ = 0, 
                     _if_conditional388) {
-                        param_name_285=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 684),((char*)(right_value319=xsprintf("it")))));
-                        come_pop_stackframe();
+                        param_name_285=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 684),__exception_result_var_b313=((char*)(right_value319=xsprintf("it"))), come_pop_stackframe(), __exception_result_var_b313));
                         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value319);
                         if(right_value319 && right_value319 != __result_obj__ && !__freed_obj__) { right_value319 = come_decrement_ref_count(right_value319, (void*)0, (void*)0, 1, 0, 0); }
                         __right_value_freed_obj[0] = right_value319;
                         __freed_obj__ = 0;
-                        (come_push_stackframe("20method.c", 686),buffer_append_str(((struct buffer*)come_null_check(method_block2_267, "20method.c", 686)),(come_push_stackframe("20method.c", 686),((char*)(right_value321=xsprintf("%s",optional$2charphbool_expect((come_push_stackframe("20method.c", 686),((struct optional$2charphbool*)(right_value320=make_define_var(param_type_283,param_name_285,(_Bool)0,info)))))))))));
-                        come_pop_stackframe();
+                        (come_push_stackframe("20method.c", 686),__exception_result_var_b316=buffer_append_str(((struct buffer*)come_null_check(method_block2_267, "20method.c", 686)),(come_push_stackframe("20method.c", 686),__exception_result_var_b315=((char*)(right_value321=xsprintf("%s",optional$2charphbool_expect((come_push_stackframe("20method.c", 686),__exception_result_var_b314=((struct optional$2charphbool*)(right_value320=make_define_var(param_type_283,param_name_285,(_Bool)0,info))), come_pop_stackframe(), __exception_result_var_b314))))), come_pop_stackframe(), __exception_result_var_b315)), come_pop_stackframe(), __exception_result_var_b316);
                         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value320);
                         if(right_value320 && right_value320 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value320, (void*)0, (void*)0, 0, 1, 0, 0); }
                         __right_value_freed_obj[1] = right_value320;
@@ -9694,14 +9765,12 @@ memset(&right_value360, 0, sizeof(void*));
                         if(param_name_285 && !__freed_obj__) { param_name_285 = come_decrement_ref_count(param_name_285, (void*)0, (void*)0, 0, 0, 0); }
                     }
                     else {
-                        param_name_286=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 689),((char*)(right_value322=xsprintf("it%d",i_280)))));
-                        come_pop_stackframe();
+                        param_name_286=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 689),__exception_result_var_b317=((char*)(right_value322=xsprintf("it%d",i_280))), come_pop_stackframe(), __exception_result_var_b317));
                         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value322);
                         if(right_value322 && right_value322 != __result_obj__ && !__freed_obj__) { right_value322 = come_decrement_ref_count(right_value322, (void*)0, (void*)0, 1, 0, 0); }
                         __right_value_freed_obj[0] = right_value322;
                         __freed_obj__ = 0;
-                        (come_push_stackframe("20method.c", 691),buffer_append_str(((struct buffer*)come_null_check(method_block2_267, "20method.c", 691)),(come_push_stackframe("20method.c", 691),((char*)(right_value324=xsprintf("%s",optional$2charphbool_expect((come_push_stackframe("20method.c", 691),((struct optional$2charphbool*)(right_value323=make_define_var(param_type_283,param_name_286,(_Bool)0,info)))))))))));
-                        come_pop_stackframe();
+                        (come_push_stackframe("20method.c", 691),__exception_result_var_b320=buffer_append_str(((struct buffer*)come_null_check(method_block2_267, "20method.c", 691)),(come_push_stackframe("20method.c", 691),__exception_result_var_b319=((char*)(right_value324=xsprintf("%s",optional$2charphbool_expect((come_push_stackframe("20method.c", 691),__exception_result_var_b318=((struct optional$2charphbool*)(right_value323=make_define_var(param_type_283,param_name_286,(_Bool)0,info))), come_pop_stackframe(), __exception_result_var_b318))))), come_pop_stackframe(), __exception_result_var_b319)), come_pop_stackframe(), __exception_result_var_b320);
                         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value323);
                         if(right_value323 && right_value323 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value323, (void*)0, (void*)0, 0, 1, 0, 0); }
                         __right_value_freed_obj[1] = right_value323;
@@ -9714,10 +9783,9 @@ memset(&right_value360, 0, sizeof(void*));
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                if(_if_conditional389=i_280!=(come_push_stackframe("20method.c", 698),__exception_result_var_b79=list$1sTypeph_length(((struct list$1sTypeph*)come_null_check(param_types_276, "20method.c", 698))), come_pop_stackframe(), __exception_result_var_b79)-1,                __freed_obj__ = 0, 
+                if(_if_conditional389=i_280!=(come_push_stackframe("20method.c", 698),__exception_result_var_b321=list$1sTypeph_length(((struct list$1sTypeph*)come_null_check(param_types_276, "20method.c", 698))), come_pop_stackframe(), __exception_result_var_b321)-1,                __freed_obj__ = 0, 
                 _if_conditional389) {
-                    (come_push_stackframe("20method.c", 695),buffer_append_str(((struct buffer*)come_null_check(method_block2_267, "20method.c", 695)),","));
-                    come_pop_stackframe();
+                    (come_push_stackframe("20method.c", 695),__exception_result_var_b322=buffer_append_str(((struct buffer*)come_null_check(method_block2_267, "20method.c", 695)),","), come_pop_stackframe(), __exception_result_var_b322);
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
@@ -9725,11 +9793,9 @@ memset(&right_value360, 0, sizeof(void*));
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-            (come_push_stackframe("20method.c", 700),buffer_append_str(((struct buffer*)come_null_check(method_block2_267, "20method.c", 700)),")\n"));
-            come_pop_stackframe();
+            (come_push_stackframe("20method.c", 700),__exception_result_var_b323=buffer_append_str(((struct buffer*)come_null_check(method_block2_267, "20method.c", 700)),")\n"), come_pop_stackframe(), __exception_result_var_b323);
             __freed_obj__ = 0;
-            (come_push_stackframe("20method.c", 702),buffer_append_str(((struct buffer*)come_null_check(method_block2_267, "20method.c", 702)),(come_push_stackframe("20method.c", 702),((char*)(right_value325=buffer_to_string(((struct buffer*)come_null_check(method_block_137, "20method.c", 702))))))));
-            come_pop_stackframe();
+            (come_push_stackframe("20method.c", 702),__exception_result_var_b325=buffer_append_str(((struct buffer*)come_null_check(method_block2_267, "20method.c", 702)),(come_push_stackframe("20method.c", 702),__exception_result_var_b324=((char*)(right_value325=buffer_to_string(((struct buffer*)come_null_check(method_block_137, "20method.c", 702))))), come_pop_stackframe(), __exception_result_var_b324)), come_pop_stackframe(), __exception_result_var_b325);
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 18, right_value325);
             if(right_value325 && right_value325 != __result_obj__ && !__freed_obj__) { right_value325 = come_decrement_ref_count(right_value325, (void*)0, (void*)0, 1, 0, 0); }
             __right_value_freed_obj[18] = right_value325;
@@ -9752,15 +9818,14 @@ memset(&right_value360, 0, sizeof(void*));
             __freed_obj__ = 0;
             ((struct sInfo*)come_null_check(info, "20method.c", 713))->sline=method_block_sline_138;
             __freed_obj__ = 0;
-            node_291=(struct sNode*)come_increment_ref_count((come_push_stackframe("20method.c", 716),((struct sNode*)(right_value326=parse_function(info)))));
-            come_pop_stackframe();
+            node_291=(struct sNode*)come_increment_ref_count((come_push_stackframe("20method.c", 716),__exception_result_var_b326=((struct sNode*)(right_value326=parse_function(info))), come_pop_stackframe(), __exception_result_var_b326));
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 19, right_value326);
             if(right_value326 && right_value326 != __result_obj__ && !__freed_obj__) { right_value326 = come_decrement_ref_count(right_value326, ((struct sNode*)right_value326)->finalize, ((struct sNode*)right_value326)->_protocol_obj, 1, 0, 0); } 
             __right_value_freed_obj[19] = right_value326;
             __freed_obj__ = 0;
             if(_if_conditional390=!((struct sNode*)come_null_check(node_291, "20method.c", 722))->compile(((struct sNode*)come_null_check(node_291, "20method.c", 722))->_protocol_obj,info),            __freed_obj__ = 0, 
             _if_conditional390) {
-                __result211__ = (_Bool)0;
+                __result212__ = (_Bool)0;
                 if(current_stack_frame_node_265 && !__freed_obj__) { current_stack_frame_node_265 = come_decrement_ref_count(current_stack_frame_node_265, ((struct sNode*)current_stack_frame_node_265)->finalize, ((struct sNode*)current_stack_frame_node_265)->_protocol_obj, 0, 0, 0); } 
                 if(come_value_266 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,come_value_266, (void*)0, (void*)0, 0, 0, 0, 0); }
                 if(method_block2_267 && !__freed_obj__) { come_call_finalizer(buffer_finalize,method_block2_267, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -9779,12 +9844,11 @@ memset(&right_value360, 0, sizeof(void*));
                 if(obj_value_139 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,obj_value_139, (void*)0, (void*)0, 0, 0, 0, 0); }
                 if(obj_type_140 && !__freed_obj__) { come_call_finalizer(sType_finalize,obj_type_140, (void*)0, (void*)0, 0, 0, 0, 0); }
                 __freed_obj__ = 0;
-                return __result211__;
+                return __result212__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-            method_block_name_292=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 722),((char*)(right_value328=xsprintf("method_block%d_%s",((struct sInfo*)come_null_check(info, "20method.c", 722))->num_method_block,(come_push_stackframe("20method.c", 722),((char*)(right_value327=buffer_to_string(((struct buffer*)come_null_check(all_alhabet_sname_278, "20method.c", 722)))))))))));
-            come_pop_stackframe();
+            method_block_name_292=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 722),__exception_result_var_b328=((char*)(right_value328=xsprintf("method_block%d_%s",((struct sInfo*)come_null_check(info, "20method.c", 722))->num_method_block,(come_push_stackframe("20method.c", 722),__exception_result_var_b327=((char*)(right_value327=buffer_to_string(((struct buffer*)come_null_check(all_alhabet_sname_278, "20method.c", 722))))), come_pop_stackframe(), __exception_result_var_b327)))), come_pop_stackframe(), __exception_result_var_b328));
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 20, right_value327);
             if(right_value327 && right_value327 != __result_obj__ && !__freed_obj__) { right_value327 = come_decrement_ref_count(right_value327, (void*)0, (void*)0, 1, 0, 0); }
             __right_value_freed_obj[20] = right_value327;
@@ -9797,18 +9861,16 @@ memset(&right_value360, 0, sizeof(void*));
             if(right_value329 && right_value329 != __result_obj__ && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,right_value329, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[22] = right_value329;
             __freed_obj__ = 0;
-            fun2_294=(come_push_stackframe("20method.c", 726),((struct sFun*)(right_value330=map$2charphsFunph_at(((struct map$2charphsFunph*)come_null_check(((struct sInfo*)come_null_check(info, "20method.c", 726))->funcs, "20method.c", 726)),method_block_name_292,((void*)0)))));
-            come_pop_stackframe();
+            fun2_294=(come_push_stackframe("20method.c", 726),__exception_result_var_b329=((struct sFun*)(right_value330=map$2charphsFunph_at(((struct map$2charphsFunph*)come_null_check(((struct sInfo*)come_null_check(info, "20method.c", 726))->funcs, "20method.c", 726)),method_block_name_292,((void*)0)))), come_pop_stackframe(), __exception_result_var_b329);
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 23, right_value330);
             if(right_value330 && right_value330 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sFun_finalize,right_value330, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[23] = right_value330;
             __freed_obj__ = 0;
             if(_if_conditional391=fun2_294==((void*)0),            __freed_obj__ = 0, 
             _if_conditional391) {
-                (come_push_stackframe("20method.c", 729),err_msg(info,"method block function not found(%s)",method_block_name_292));
-                come_pop_stackframe();
+                (come_push_stackframe("20method.c", 729),err_msg(info,"method block function not found(%s)",method_block_name_292),come_pop_stackframe());
                 __freed_obj__ = 0;
-                __result212__ = (_Bool)1;
+                __result213__ = (_Bool)1;
                 if(current_stack_frame_node_265 && !__freed_obj__) { current_stack_frame_node_265 = come_decrement_ref_count(current_stack_frame_node_265, ((struct sNode*)current_stack_frame_node_265)->finalize, ((struct sNode*)current_stack_frame_node_265)->_protocol_obj, 0, 0, 0); } 
                 if(come_value_266 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,come_value_266, (void*)0, (void*)0, 0, 0, 0, 0); }
                 if(method_block2_267 && !__freed_obj__) { come_call_finalizer(buffer_finalize,method_block2_267, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -9829,14 +9891,14 @@ memset(&right_value360, 0, sizeof(void*));
                 if(obj_value_139 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,obj_value_139, (void*)0, (void*)0, 0, 0, 0, 0); }
                 if(obj_type_140 && !__freed_obj__) { come_call_finalizer(sType_finalize,obj_type_140, (void*)0, (void*)0, 0, 0, 0, 0); }
                 __freed_obj__ = 0;
-                return __result212__;
+                return __result213__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
             method_block_type2_295=((struct sFun*)come_null_check(fun2_294, "20method.c", 733))->mLambdaType;
             __freed_obj__ = 0;
             __dec_obj97=((struct CVALUE*)come_null_check(come_value2_293, "20method.c", 735))->c_value;
-            ((struct CVALUE*)come_null_check(come_value2_293, "20method.c", 735))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 735),((char*)(right_value331=xsprintf("(void*)%s",method_block_name_292)))));
+            ((struct CVALUE*)come_null_check(come_value2_293, "20method.c", 735))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 735),__exception_result_var_b330=((char*)(right_value331=xsprintf("(void*)%s",method_block_name_292))), come_pop_stackframe(), __exception_result_var_b330));
             if(__dec_obj97) { __dec_obj97 = come_decrement_ref_count(__dec_obj97, (void*)0, (void*)0, 0,0,0); }
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 24, right_value331);
             if(right_value331 && right_value331 != __result_obj__ && !__freed_obj__) { right_value331 = come_decrement_ref_count(right_value331, (void*)0, (void*)0, 1, 0, 0); }
@@ -9851,8 +9913,7 @@ memset(&right_value360, 0, sizeof(void*));
             __freed_obj__ = 0;
             ((struct CVALUE*)come_null_check(come_value2_293, "20method.c", 737))->var=((void*)0);
             __freed_obj__ = 0;
-            (come_push_stackframe("20method.c", 739),list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(come_params_203, "20method.c", 739)),(struct CVALUE*)come_increment_ref_count(come_value2_293)));
-            come_pop_stackframe();
+            (come_push_stackframe("20method.c", 739),__exception_result_var_b331=list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(come_params_203, "20method.c", 739)),(struct CVALUE*)come_increment_ref_count(come_value2_293)), come_pop_stackframe(), __exception_result_var_b331);
             __freed_obj__ = 0;
             __dec_obj99=((struct sInfo*)come_null_check(info, "20method.c", 741))->source;
             ((struct sInfo*)come_null_check(info, "20method.c", 741))->source=(struct buffer*)come_increment_ref_count(source3_287);
@@ -9879,8 +9940,7 @@ memset(&right_value360, 0, sizeof(void*));
             if(come_value2_293 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,come_value2_293, (void*)0, (void*)0, 0, 0, 0, 0); }
         }
         __freed_obj__ = 0;
-        buf_296=(struct buffer*)come_increment_ref_count((come_push_stackframe("20method.c", 749),((struct buffer*)(right_value334=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value333=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 749)))))))));
-        come_pop_stackframe();
+        buf_296=(struct buffer*)come_increment_ref_count((come_push_stackframe("20method.c", 749),__exception_result_var_b332=((struct buffer*)(right_value334=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value333=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 749))))))), come_pop_stackframe(), __exception_result_var_b332));
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 11, right_value333);
         if(right_value333 && right_value333 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value333, (void*)0, (void*)0, 0, 1, 0, 0); }
         __right_value_freed_obj[11] = right_value333;
@@ -9888,26 +9948,22 @@ memset(&right_value360, 0, sizeof(void*));
         if(right_value334 && right_value334 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value334, (void*)0, (void*)0, 0, 1, 0, 0); }
         __right_value_freed_obj[12] = right_value334;
         __freed_obj__ = 0;
-        (come_push_stackframe("20method.c", 751),buffer_append_str(((struct buffer*)come_null_check(buf_296, "20method.c", 751)),generics_fun_name_180));
-        come_pop_stackframe();
+        (come_push_stackframe("20method.c", 751),__exception_result_var_b333=buffer_append_str(((struct buffer*)come_null_check(buf_296, "20method.c", 751)),generics_fun_name_180), come_pop_stackframe(), __exception_result_var_b333);
         __freed_obj__ = 0;
-        (come_push_stackframe("20method.c", 752),buffer_append_str(((struct buffer*)come_null_check(buf_296, "20method.c", 752)),"("));
-        come_pop_stackframe();
+        (come_push_stackframe("20method.c", 752),__exception_result_var_b334=buffer_append_str(((struct buffer*)come_null_check(buf_296, "20method.c", 752)),"("), come_pop_stackframe(), __exception_result_var_b334);
         __freed_obj__ = 0;
         j_297=0;
         __freed_obj__ = 0;
         for(
-        o2_saved_298=(struct list$1CVALUEph*)come_increment_ref_count((come_params_203)),it_299=(come_push_stackframe("20method.c", 764),__exception_result_var_b80=list$1CVALUEph_begin(((struct list$1CVALUEph*)come_null_check((o2_saved_298), "20method.c", 764))), come_pop_stackframe(), __exception_result_var_b80) ,        __freed_obj__ = 0, 
-        0;        _for_condtionalA22=        !(come_push_stackframe("20method.c", 764),__exception_result_var_b81=list$1CVALUEph_end(((struct list$1CVALUEph*)come_null_check((o2_saved_298), "20method.c", 764))), come_pop_stackframe(), __exception_result_var_b81) ,        __freed_obj__ = 0, 
-        _for_condtionalA22;        it_299=(come_push_stackframe("20method.c", 764),__exception_result_var_b82=list$1CVALUEph_next(((struct list$1CVALUEph*)come_null_check((o2_saved_298), "20method.c", 764))), come_pop_stackframe(), __exception_result_var_b82) ,        __freed_obj__ = 0, 
+        o2_saved_298=(struct list$1CVALUEph*)come_increment_ref_count((come_params_203)),it_299=(come_push_stackframe("20method.c", 764),__exception_result_var_b335=list$1CVALUEph_begin(((struct list$1CVALUEph*)come_null_check((o2_saved_298), "20method.c", 764))), come_pop_stackframe(), __exception_result_var_b335) ,        __freed_obj__ = 0, 
+        0;        _for_condtionalA22=        !(come_push_stackframe("20method.c", 764),__exception_result_var_b336=list$1CVALUEph_end(((struct list$1CVALUEph*)come_null_check((o2_saved_298), "20method.c", 764))), come_pop_stackframe(), __exception_result_var_b336) ,        __freed_obj__ = 0, 
+        _for_condtionalA22;        it_299=(come_push_stackframe("20method.c", 764),__exception_result_var_b337=list$1CVALUEph_next(((struct list$1CVALUEph*)come_null_check((o2_saved_298), "20method.c", 764))), come_pop_stackframe(), __exception_result_var_b337) ,        __freed_obj__ = 0, 
         0        ){
-            (come_push_stackframe("20method.c", 756),buffer_append_str(((struct buffer*)come_null_check(buf_296, "20method.c", 756)),((struct CVALUE*)come_null_check(it_299, "20method.c", 756))->c_value));
-            come_pop_stackframe();
+            (come_push_stackframe("20method.c", 756),__exception_result_var_b338=buffer_append_str(((struct buffer*)come_null_check(buf_296, "20method.c", 756)),((struct CVALUE*)come_null_check(it_299, "20method.c", 756))->c_value), come_pop_stackframe(), __exception_result_var_b338);
             __freed_obj__ = 0;
-            if(_if_conditional392=j_297!=(come_push_stackframe("20method.c", 762),__exception_result_var_b83=list$1CVALUEph_length(((struct list$1CVALUEph*)come_null_check(come_params_203, "20method.c", 762))), come_pop_stackframe(), __exception_result_var_b83)-1,            __freed_obj__ = 0, 
+            if(_if_conditional392=j_297!=(come_push_stackframe("20method.c", 762),__exception_result_var_b339=list$1CVALUEph_length(((struct list$1CVALUEph*)come_null_check(come_params_203, "20method.c", 762))), come_pop_stackframe(), __exception_result_var_b339)-1,            __freed_obj__ = 0, 
             _if_conditional392) {
-                (come_push_stackframe("20method.c", 759),buffer_append_str(((struct buffer*)come_null_check(buf_296, "20method.c", 759)),","));
-                come_pop_stackframe();
+                (come_push_stackframe("20method.c", 759),__exception_result_var_b340=buffer_append_str(((struct buffer*)come_null_check(buf_296, "20method.c", 759)),","), come_pop_stackframe(), __exception_result_var_b340);
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -9916,8 +9972,7 @@ memset(&right_value360, 0, sizeof(void*));
         }
         if(o2_saved_298 && !__freed_obj__) { come_call_finalizer(list$1CVALUEphp_finalize,o2_saved_298, (void*)0, (void*)0, 0, 0, 0, 0); }
         __freed_obj__ = 0;
-        (come_push_stackframe("20method.c", 764),buffer_append_str(((struct buffer*)come_null_check(buf_296, "20method.c", 764)),")"));
-        come_pop_stackframe();
+        (come_push_stackframe("20method.c", 764),__exception_result_var_b341=buffer_append_str(((struct buffer*)come_null_check(buf_296, "20method.c", 764)),")"), come_pop_stackframe(), __exception_result_var_b341);
         __freed_obj__ = 0;
         come_value2_300=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value335=(struct CVALUE*)come_calloc(1, sizeof(struct CVALUE)*(1), "20method.c", 767))));
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 13, right_value335);
@@ -9925,7 +9980,7 @@ memset(&right_value360, 0, sizeof(void*));
         __right_value_freed_obj[13] = right_value335;
         __freed_obj__ = 0;
         __dec_obj100=((struct CVALUE*)come_null_check(come_value2_300, "20method.c", 769))->c_value;
-        ((struct CVALUE*)come_null_check(come_value2_300, "20method.c", 769))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 769),((char*)(right_value336=buffer_to_string(((struct buffer*)come_null_check(buf_296, "20method.c", 769)))))));
+        ((struct CVALUE*)come_null_check(come_value2_300, "20method.c", 769))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 769),__exception_result_var_b342=((char*)(right_value336=buffer_to_string(((struct buffer*)come_null_check(buf_296, "20method.c", 769))))), come_pop_stackframe(), __exception_result_var_b342));
         if(__dec_obj100) { __dec_obj100 = come_decrement_ref_count(__dec_obj100, (void*)0, (void*)0, 0,0,0); }
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 14, right_value336);
         if(right_value336 && right_value336 != __result_obj__ && !__freed_obj__) { right_value336 = come_decrement_ref_count(right_value336, (void*)0, (void*)0, 1, 0, 0); }
@@ -9945,7 +10000,7 @@ memset(&right_value360, 0, sizeof(void*));
         if(_if_conditional393=((struct sType*)come_null_check(result_type2_191, "20method.c", 778))->mHeap,        __freed_obj__ = 0, 
         _if_conditional393) {
             __dec_obj102=((struct CVALUE*)come_null_check(come_value2_300, "20method.c", 775))->c_value;
-            ((struct CVALUE*)come_null_check(come_value2_300, "20method.c", 775))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 775),((char*)(right_value338=append_object_to_right_values(((struct CVALUE*)come_null_check(come_value2_300, "20method.c", 775))->c_value,(struct sType*)come_increment_ref_count(result_type2_191),info)))));
+            ((struct CVALUE*)come_null_check(come_value2_300, "20method.c", 775))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 775),__exception_result_var_b343=((char*)(right_value338=append_object_to_right_values(((struct CVALUE*)come_null_check(come_value2_300, "20method.c", 775))->c_value,(struct sType*)come_increment_ref_count(result_type2_191),info))), come_pop_stackframe(), __exception_result_var_b343));
             if(__dec_obj102) { __dec_obj102 = come_decrement_ref_count(__dec_obj102, (void*)0, (void*)0, 0,0,0); }
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value338);
             if(right_value338 && right_value338 != __result_obj__ && !__freed_obj__) { right_value338 = come_decrement_ref_count(right_value338, (void*)0, (void*)0, 1, 0, 0); }
@@ -9956,7 +10011,7 @@ memset(&right_value360, 0, sizeof(void*));
         if(_if_conditional394=((struct sType*)come_null_check(((struct sFun*)come_null_check(fun_181, "20method.c", 782))->mResultType, "20method.c", 782))->mException||gComeDebug,        __freed_obj__ = 0, 
         _if_conditional394) {
             __dec_obj103=((struct CVALUE*)come_null_check(come_value2_300, "20method.c", 779))->c_value;
-            ((struct CVALUE*)come_null_check(come_value2_300, "20method.c", 779))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 779),((char*)(right_value339=append_exception_value(((struct CVALUE*)come_null_check(come_value2_300, "20method.c", 779))->c_value,((struct CVALUE*)come_null_check(come_value2_300, "20method.c", 779))->type,info)))));
+            ((struct CVALUE*)come_null_check(come_value2_300, "20method.c", 779))->c_value=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 779),__exception_result_var_b344=((char*)(right_value339=append_exception_value(((struct CVALUE*)come_null_check(come_value2_300, "20method.c", 779))->c_value,((struct CVALUE*)come_null_check(come_value2_300, "20method.c", 779))->type,info))), come_pop_stackframe(), __exception_result_var_b344));
             if(__dec_obj103) { __dec_obj103 = come_decrement_ref_count(__dec_obj103, (void*)0, (void*)0, 0,0,0); }
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value339);
             if(right_value339 && right_value339 != __result_obj__ && !__freed_obj__) { right_value339 = come_decrement_ref_count(right_value339, (void*)0, (void*)0, 1, 0, 0); }
@@ -9964,16 +10019,13 @@ memset(&right_value360, 0, sizeof(void*));
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-        (come_push_stackframe("20method.c", 782),add_come_last_code(info,"%s;\n",((struct CVALUE*)come_null_check(come_value2_300, "20method.c", 782))->c_value));
-        come_pop_stackframe();
+        (come_push_stackframe("20method.c", 782),add_come_last_code(info,"%s;\n",((struct CVALUE*)come_null_check(come_value2_300, "20method.c", 782))->c_value),come_pop_stackframe());
         __freed_obj__ = 0;
-        (come_push_stackframe("20method.c", 784),list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(((struct sInfo*)come_null_check(info, "20method.c", 784))->stack, "20method.c", 784)),(struct CVALUE*)come_increment_ref_count(come_value2_300)));
-        come_pop_stackframe();
+        (come_push_stackframe("20method.c", 784),__exception_result_var_b345=list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(((struct sInfo*)come_null_check(info, "20method.c", 784))->stack, "20method.c", 784)),(struct CVALUE*)come_increment_ref_count(come_value2_300)), come_pop_stackframe(), __exception_result_var_b345);
         __freed_obj__ = 0;
         if(_if_conditional395=method_block_137,        __freed_obj__ = 0, 
         _if_conditional395) {
-            var_name_301=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 787),((char*)(right_value340=xsprintf("__current_stack%d__",((struct sInfo*)come_null_check(info, "20method.c", 787))->num_current_stack)))));
-            come_pop_stackframe();
+            var_name_301=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 787),__exception_result_var_b346=((char*)(right_value340=xsprintf("__current_stack%d__",((struct sInfo*)come_null_check(info, "20method.c", 787))->num_current_stack))), come_pop_stackframe(), __exception_result_var_b346));
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value340);
             if(right_value340 && right_value340 != __result_obj__ && !__freed_obj__) { right_value340 = come_decrement_ref_count(right_value340, (void*)0, (void*)0, 1, 0, 0); }
             __right_value_freed_obj[0] = right_value340;
@@ -9983,8 +10035,7 @@ memset(&right_value360, 0, sizeof(void*));
             if(right_value341 && right_value341 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value341, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[1] = right_value341;
             __freed_obj__ = 0;
-            result_type2_303=(struct sType*)come_increment_ref_count((come_push_stackframe("20method.c", 791),((struct sType*)(right_value342=solve_generics(result_type_302,((struct sInfo*)come_null_check(info, "20method.c", 791))->generics_type,info)))));
-            come_pop_stackframe();
+            result_type2_303=(struct sType*)come_increment_ref_count((come_push_stackframe("20method.c", 791),__exception_result_var_b347=((struct sType*)(right_value342=solve_generics(result_type_302,((struct sInfo*)come_null_check(info, "20method.c", 791))->generics_type,info))), come_pop_stackframe(), __exception_result_var_b347));
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value342);
             if(right_value342 && right_value342 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sType_finalize,right_value342, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[2] = right_value342;
@@ -10003,10 +10054,9 @@ memset(&right_value360, 0, sizeof(void*));
             __freed_obj__ = 0;
             if(_if_conditional397=((struct sInfo*)come_null_check(info, "20method.c", 847))->in_loop,            __freed_obj__ = 0, 
             _if_conditional397) {
-                if(_if_conditional398=(come_push_stackframe("20method.c", 832),__exception_result_var_b84=string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(result_type3_304, "20method.c", 832))->mClass, "20method.c", 832))->mName,"void"), come_pop_stackframe(), __exception_result_var_b84)&&((struct sType*)come_null_check(result_type3_304, "20method.c", 832))->mPointerNum==0,                __freed_obj__ = 0, 
+                if(_if_conditional398=(come_push_stackframe("20method.c", 832),__exception_result_var_b348=string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(result_type3_304, "20method.c", 832))->mClass, "20method.c", 832))->mName,"void"), come_pop_stackframe(), __exception_result_var_b348)&&((struct sType*)come_null_check(result_type3_304, "20method.c", 832))->mPointerNum==0,                __freed_obj__ = 0, 
                 _if_conditional398) {
-                    (come_push_stackframe("20method.c", 815),add_come_last_code3(info,((char*)(right_value346=xsprintf("                        if(\%s.__method_block_result_kind__ == 1)\n                        {\n                            break;\n                        }\n                        else if(\%s.__method_block_result_kind__ == 2)\n                        {\n                            continue;\n                        }\n                        else if(\%s.__method_block_result_kind__ == 4)\n                        {\n                            return;\n                        }\n",((char*)(right_value343=string_to_string(var_name_301))),((char*)(right_value344=string_to_string(var_name_301))),((char*)(right_value345=string_to_string(var_name_301))))))));
-                    come_pop_stackframe();
+                    (come_push_stackframe("20method.c", 815),add_come_last_code3(info,((char*)(right_value346=xsprintf("                        if(\%s.__method_block_result_kind__ == 1)\n                        {\n                            break;\n                        }\n                        else if(\%s.__method_block_result_kind__ == 2)\n                        {\n                            continue;\n                        }\n                        else if(\%s.__method_block_result_kind__ == 4)\n                        {\n                            return;\n                        }\n",((char*)(right_value343=string_to_string(var_name_301))),((char*)(right_value344=string_to_string(var_name_301))),((char*)(right_value345=string_to_string(var_name_301))))))),come_pop_stackframe());
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value343);
                     if(right_value343 && right_value343 != __result_obj__ && !__freed_obj__) { right_value343 = come_decrement_ref_count(right_value343, (void*)0, (void*)0, 1, 0, 0); }
                     __right_value_freed_obj[0] = right_value343;
@@ -10022,8 +10072,7 @@ memset(&right_value360, 0, sizeof(void*));
                     __freed_obj__ = 0;
                 }
                 else {
-                    (come_push_stackframe("20method.c", 830),add_come_last_code3(info,((char*)(right_value353=xsprintf("                        if(\%s.__method_block_result_kind__ == 1)\n                        {\n                            break;\n                        }\n                        else if(\%s.__method_block_result_kind__ == 2)\n                        {\n                            continue;\n                        }\n                        else if(\%s.__method_block_result_kind__ == 3)\n                        {\n                            return (\%s)\%s.__method_block_return_value__;\n                        }\n",((char*)(right_value347=string_to_string(var_name_301))),((char*)(right_value348=string_to_string(var_name_301))),((char*)(right_value349=string_to_string(var_name_301))),((char*)(right_value351=string_to_string(optional$2charphbool_expect((come_push_stackframe("20method.c", 830),((struct optional$2charphbool*)(right_value350=make_type_name_string(result_type2_303,(_Bool)0,(_Bool)0,(_Bool)0,info)))))))),((char*)(right_value352=string_to_string(var_name_301))))))));
-                    come_pop_stackframe();
+                    (come_push_stackframe("20method.c", 830),add_come_last_code3(info,((char*)(right_value353=xsprintf("                        if(\%s.__method_block_result_kind__ == 1)\n                        {\n                            break;\n                        }\n                        else if(\%s.__method_block_result_kind__ == 2)\n                        {\n                            continue;\n                        }\n                        else if(\%s.__method_block_result_kind__ == 3)\n                        {\n                            return (\%s)\%s.__method_block_return_value__;\n                        }\n",((char*)(right_value347=string_to_string(var_name_301))),((char*)(right_value348=string_to_string(var_name_301))),((char*)(right_value349=string_to_string(var_name_301))),((char*)(right_value351=string_to_string(optional$2charphbool_expect((come_push_stackframe("20method.c", 830),__exception_result_var_b349=((struct optional$2charphbool*)(right_value350=make_type_name_string(result_type2_303,(_Bool)0,(_Bool)0,(_Bool)0,info))), come_pop_stackframe(), __exception_result_var_b349))))),((char*)(right_value352=string_to_string(var_name_301))))))),come_pop_stackframe());
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value347);
                     if(right_value347 && right_value347 != __result_obj__ && !__freed_obj__) { right_value347 = come_decrement_ref_count(right_value347, (void*)0, (void*)0, 1, 0, 0); }
                     __right_value_freed_obj[0] = right_value347;
@@ -10050,10 +10099,9 @@ memset(&right_value360, 0, sizeof(void*));
                 __freed_obj__ = 0;
             }
             else {
-                if(_if_conditional399=(come_push_stackframe("20method.c", 847),__exception_result_var_b85=string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(result_type3_304, "20method.c", 847))->mClass, "20method.c", 847))->mName,"void"), come_pop_stackframe(), __exception_result_var_b85)&&((struct sType*)come_null_check(result_type3_304, "20method.c", 847))->mPointerNum==0,                __freed_obj__ = 0, 
+                if(_if_conditional399=(come_push_stackframe("20method.c", 847),__exception_result_var_b350=string_operator_equals(((struct sClass*)come_null_check(((struct sType*)come_null_check(result_type3_304, "20method.c", 847))->mClass, "20method.c", 847))->mName,"void"), come_pop_stackframe(), __exception_result_var_b350)&&((struct sType*)come_null_check(result_type3_304, "20method.c", 847))->mPointerNum==0,                __freed_obj__ = 0, 
                 _if_conditional399) {
-                    (come_push_stackframe("20method.c", 838),add_come_last_code3(info,((char*)(right_value355=xsprintf("                    if(\%s.__method_block_result_kind__ == 4)\n                    {\n                        return;\n                    }\n",((char*)(right_value354=string_to_string(var_name_301))))))));
-                    come_pop_stackframe();
+                    (come_push_stackframe("20method.c", 838),add_come_last_code3(info,((char*)(right_value355=xsprintf("                    if(\%s.__method_block_result_kind__ == 4)\n                    {\n                        return;\n                    }\n",((char*)(right_value354=string_to_string(var_name_301))))))),come_pop_stackframe());
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value354);
                     if(right_value354 && right_value354 != __result_obj__ && !__freed_obj__) { right_value354 = come_decrement_ref_count(right_value354, (void*)0, (void*)0, 1, 0, 0); }
                     __right_value_freed_obj[0] = right_value354;
@@ -10063,8 +10111,7 @@ memset(&right_value360, 0, sizeof(void*));
                     __freed_obj__ = 0;
                 }
                 else {
-                    (come_push_stackframe("20method.c", 845),add_come_last_code3(info,((char*)(right_value360=xsprintf("                    if(\%s.__method_block_result_kind__ == 3)\n                    {\n                        return (\%s)\%s.__method_block_return_value__;\n                    }\n",((char*)(right_value356=string_to_string(var_name_301))),((char*)(right_value358=string_to_string(optional$2charphbool_expect((come_push_stackframe("20method.c", 845),((struct optional$2charphbool*)(right_value357=make_type_name_string(result_type2_303,(_Bool)0,(_Bool)0,(_Bool)0,info)))))))),((char*)(right_value359=string_to_string(var_name_301))))))));
-                    come_pop_stackframe();
+                    (come_push_stackframe("20method.c", 845),add_come_last_code3(info,((char*)(right_value360=xsprintf("                    if(\%s.__method_block_result_kind__ == 3)\n                    {\n                        return (\%s)\%s.__method_block_return_value__;\n                    }\n",((char*)(right_value356=string_to_string(var_name_301))),((char*)(right_value358=string_to_string(optional$2charphbool_expect((come_push_stackframe("20method.c", 845),__exception_result_var_b351=((struct optional$2charphbool*)(right_value357=make_type_name_string(result_type2_303,(_Bool)0,(_Bool)0,(_Bool)0,info))), come_pop_stackframe(), __exception_result_var_b351))))),((char*)(right_value359=string_to_string(var_name_301))))))),come_pop_stackframe());
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value356);
                     if(right_value356 && right_value356 != __result_obj__ && !__freed_obj__) { right_value356 = come_decrement_ref_count(right_value356, (void*)0, (void*)0, 1, 0, 0); }
                     __right_value_freed_obj[0] = right_value356;
@@ -10100,11 +10147,11 @@ memset(&right_value360, 0, sizeof(void*));
         if(come_value2_300 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,come_value2_300, (void*)0, (void*)0, 0, 0, 0, 0); }
     }
     __freed_obj__ = 0;
-    __result213__ = (_Bool)1;
+    __result214__ = (_Bool)1;
     if(obj_value_139 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,obj_value_139, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(obj_type_140 && !__freed_obj__) { come_call_finalizer(sType_finalize,obj_type_140, (void*)0, (void*)0, 0, 0, 0, 0); }
     __freed_obj__ = 0;
-    return __result213__;
+    return __result214__;
     __freed_obj__ = 0;
     if(obj_value_139 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,obj_value_139, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(obj_type_140 && !__freed_obj__) { come_call_finalizer(sType_finalize,obj_type_140, (void*)0, (void*)0, 0, 0, 0, 0); }
@@ -10118,11 +10165,13 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional224;
 struct tuple2$2charphsTypeph* result_145;
-struct tuple2$2charphsTypeph* __result106__;
-_Bool _if_conditional225;
+void* __exception_result_var_b107;
 struct tuple2$2charphsTypeph* __result107__;
-struct tuple2$2charphsTypeph* result_146;
+_Bool _if_conditional225;
 struct tuple2$2charphsTypeph* __result108__;
+struct tuple2$2charphsTypeph* result_146;
+void* __exception_result_var_b108;
+struct tuple2$2charphsTypeph* __result109__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_145, 0, sizeof(struct tuple2$2charphsTypeph*));
@@ -10130,12 +10179,11 @@ memset(&result_146, 0, sizeof(struct tuple2$2charphsTypeph*));
         if(_if_conditional224=self==((void*)0),        __freed_obj__ = 0, 
         _if_conditional224) {
             __freed_obj__ = 0;
-            (come_push_stackframe("./comelang2.h", 335),memset(&result_145,0,sizeof(struct tuple2$2charphsTypeph*)));
-            come_pop_stackframe();
+            (come_push_stackframe("./comelang2.h", 335),__exception_result_var_b107=memset(&result_145,0,sizeof(struct tuple2$2charphsTypeph*)), come_pop_stackframe(), __exception_result_var_b107);
             __freed_obj__ = 0;
-            __result106__ = __result_obj__ = result_145;
+            __result107__ = __result_obj__ = result_145;
             __freed_obj__ = 0;
-            return __result106__;
+            return __result107__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
@@ -10143,19 +10191,18 @@ memset(&result_146, 0, sizeof(struct tuple2$2charphsTypeph*));
         __freed_obj__ = 0;
         if(_if_conditional225=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 344))->it,        __freed_obj__ = 0, 
         _if_conditional225) {
-            __result107__ = __result_obj__ = ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 341))->it, "./comelang2.h", 341))->item;
+            __result108__ = __result_obj__ = ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 341))->it, "./comelang2.h", 341))->item;
             __freed_obj__ = 0;
-            return __result107__;
+            return __result108__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
         __freed_obj__ = 0;
-        (come_push_stackframe("./comelang2.h", 345),memset(&result_146,0,sizeof(struct tuple2$2charphsTypeph*)));
-        come_pop_stackframe();
+        (come_push_stackframe("./comelang2.h", 345),__exception_result_var_b108=memset(&result_146,0,sizeof(struct tuple2$2charphsTypeph*)), come_pop_stackframe(), __exception_result_var_b108);
         __freed_obj__ = 0;
-        __result108__ = __result_obj__ = result_146;
+        __result109__ = __result_obj__ = result_146;
         __freed_obj__ = 0;
-        return __result108__;
+        return __result109__;
         __freed_obj__ = 0;
 }
 
@@ -10165,12 +10212,12 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-_Bool __result109__;
+_Bool __result110__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-        __result109__ = self==((void*)0)||((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 368))->it==((void*)0);
+        __result110__ = self==((void*)0)||((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 368))->it==((void*)0);
         __freed_obj__ = 0;
-        return __result109__;
+        return __result110__;
         __freed_obj__ = 0;
 }
 
@@ -10182,11 +10229,13 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional226;
 struct tuple2$2charphsTypeph* result_148;
-struct tuple2$2charphsTypeph* __result110__;
-_Bool _if_conditional227;
+void* __exception_result_var_b111;
 struct tuple2$2charphsTypeph* __result111__;
-struct tuple2$2charphsTypeph* result_149;
+_Bool _if_conditional227;
 struct tuple2$2charphsTypeph* __result112__;
+struct tuple2$2charphsTypeph* result_149;
+void* __exception_result_var_b112;
+struct tuple2$2charphsTypeph* __result113__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_148, 0, sizeof(struct tuple2$2charphsTypeph*));
@@ -10194,12 +10243,11 @@ memset(&result_149, 0, sizeof(struct tuple2$2charphsTypeph*));
         if(_if_conditional226=self==((void*)0),        __freed_obj__ = 0, 
         _if_conditional226) {
             __freed_obj__ = 0;
-            (come_push_stackframe("./comelang2.h", 352),memset(&result_148,0,sizeof(struct tuple2$2charphsTypeph*)));
-            come_pop_stackframe();
+            (come_push_stackframe("./comelang2.h", 352),__exception_result_var_b111=memset(&result_148,0,sizeof(struct tuple2$2charphsTypeph*)), come_pop_stackframe(), __exception_result_var_b111);
             __freed_obj__ = 0;
-            __result110__ = __result_obj__ = result_148;
+            __result111__ = __result_obj__ = result_148;
             __freed_obj__ = 0;
-            return __result110__;
+            return __result111__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
@@ -10207,19 +10255,18 @@ memset(&result_149, 0, sizeof(struct tuple2$2charphsTypeph*));
         __freed_obj__ = 0;
         if(_if_conditional227=((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 362))->it,        __freed_obj__ = 0, 
         _if_conditional227) {
-            __result111__ = __result_obj__ = ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 359))->it, "./comelang2.h", 359))->item;
+            __result112__ = __result_obj__ = ((struct list_item$1tuple2$2charphsTypephph*)come_null_check(((struct list$1tuple2$2charphsTypephph*)come_null_check(self, "./comelang2.h", 359))->it, "./comelang2.h", 359))->item;
             __freed_obj__ = 0;
-            return __result111__;
+            return __result112__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
         __freed_obj__ = 0;
-        (come_push_stackframe("./comelang2.h", 363),memset(&result_149,0,sizeof(struct tuple2$2charphsTypeph*)));
-        come_pop_stackframe();
+        (come_push_stackframe("./comelang2.h", 363),__exception_result_var_b112=memset(&result_149,0,sizeof(struct tuple2$2charphsTypeph*)), come_pop_stackframe(), __exception_result_var_b112);
         __freed_obj__ = 0;
-        __result112__ = __result_obj__ = result_149;
+        __result113__ = __result_obj__ = result_149;
         __freed_obj__ = 0;
-        return __result112__;
+        return __result113__;
         __freed_obj__ = 0;
 }
 
@@ -10229,7 +10276,7 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-struct list$1CVALUEph* __result113__;
+struct list$1CVALUEph* __result114__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
             ((struct list$1CVALUEph*)come_null_check(self, "./comelang2.h", 152))->head=((void*)0);
@@ -10238,10 +10285,10 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
             __freed_obj__ = 0;
             ((struct list$1CVALUEph*)come_null_check(self, "./comelang2.h", 154))->len=0;
             __freed_obj__ = 0;
-            __result113__ = __result_obj__ = self;
+            __result114__ = __result_obj__ = self;
             if(self && !__freed_obj__) { come_call_finalizer(list$1CVALUEphp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
             __freed_obj__ = 0;
-            return __result113__;
+            return __result114__;
             __freed_obj__ = 0;
             if(self && !__freed_obj__) { come_call_finalizer(list$1CVALUEphp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
 }
@@ -10281,11 +10328,13 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional230;
 struct tuple2$2charphsNodeph* result_158;
-struct tuple2$2charphsNodeph* __result114__;
-_Bool _if_conditional231;
+void* __exception_result_var_b117;
 struct tuple2$2charphsNodeph* __result115__;
-struct tuple2$2charphsNodeph* result_159;
+_Bool _if_conditional231;
 struct tuple2$2charphsNodeph* __result116__;
+struct tuple2$2charphsNodeph* result_159;
+void* __exception_result_var_b118;
+struct tuple2$2charphsNodeph* __result117__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_158, 0, sizeof(struct tuple2$2charphsNodeph*));
@@ -10293,12 +10342,11 @@ memset(&result_159, 0, sizeof(struct tuple2$2charphsNodeph*));
             if(_if_conditional230=self==((void*)0),            __freed_obj__ = 0, 
             _if_conditional230) {
                 __freed_obj__ = 0;
-                (come_push_stackframe("./comelang2.h", 335),memset(&result_158,0,sizeof(struct tuple2$2charphsNodeph*)));
-                come_pop_stackframe();
+                (come_push_stackframe("./comelang2.h", 335),__exception_result_var_b117=memset(&result_158,0,sizeof(struct tuple2$2charphsNodeph*)), come_pop_stackframe(), __exception_result_var_b117);
                 __freed_obj__ = 0;
-                __result114__ = __result_obj__ = result_158;
+                __result115__ = __result_obj__ = result_158;
                 __freed_obj__ = 0;
-                return __result114__;
+                return __result115__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -10306,19 +10354,18 @@ memset(&result_159, 0, sizeof(struct tuple2$2charphsNodeph*));
             __freed_obj__ = 0;
             if(_if_conditional231=((struct list$1tuple2$2charphsNodephph*)come_null_check(self, "./comelang2.h", 344))->it,            __freed_obj__ = 0, 
             _if_conditional231) {
-                __result115__ = __result_obj__ = ((struct list_item$1tuple2$2charphsNodephph*)come_null_check(((struct list$1tuple2$2charphsNodephph*)come_null_check(self, "./comelang2.h", 341))->it, "./comelang2.h", 341))->item;
+                __result116__ = __result_obj__ = ((struct list_item$1tuple2$2charphsNodephph*)come_null_check(((struct list$1tuple2$2charphsNodephph*)come_null_check(self, "./comelang2.h", 341))->it, "./comelang2.h", 341))->item;
                 __freed_obj__ = 0;
-                return __result115__;
+                return __result116__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
             __freed_obj__ = 0;
-            (come_push_stackframe("./comelang2.h", 345),memset(&result_159,0,sizeof(struct tuple2$2charphsNodeph*)));
-            come_pop_stackframe();
+            (come_push_stackframe("./comelang2.h", 345),__exception_result_var_b118=memset(&result_159,0,sizeof(struct tuple2$2charphsNodeph*)), come_pop_stackframe(), __exception_result_var_b118);
             __freed_obj__ = 0;
-            __result116__ = __result_obj__ = result_159;
+            __result117__ = __result_obj__ = result_159;
             __freed_obj__ = 0;
-            return __result116__;
+            return __result117__;
             __freed_obj__ = 0;
 }
 
@@ -10328,12 +10375,12 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-_Bool __result117__;
+_Bool __result118__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-            __result117__ = self==((void*)0)||((struct list$1tuple2$2charphsNodephph*)come_null_check(self, "./comelang2.h", 368))->it==((void*)0);
+            __result118__ = self==((void*)0)||((struct list$1tuple2$2charphsNodephph*)come_null_check(self, "./comelang2.h", 368))->it==((void*)0);
             __freed_obj__ = 0;
-            return __result117__;
+            return __result118__;
             __freed_obj__ = 0;
 }
 
@@ -10345,11 +10392,13 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional232;
 struct tuple2$2charphsNodeph* result_161;
-struct tuple2$2charphsNodeph* __result118__;
-_Bool _if_conditional233;
+void* __exception_result_var_b121;
 struct tuple2$2charphsNodeph* __result119__;
-struct tuple2$2charphsNodeph* result_162;
+_Bool _if_conditional233;
 struct tuple2$2charphsNodeph* __result120__;
+struct tuple2$2charphsNodeph* result_162;
+void* __exception_result_var_b122;
+struct tuple2$2charphsNodeph* __result121__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_161, 0, sizeof(struct tuple2$2charphsNodeph*));
@@ -10357,12 +10406,11 @@ memset(&result_162, 0, sizeof(struct tuple2$2charphsNodeph*));
             if(_if_conditional232=self==((void*)0),            __freed_obj__ = 0, 
             _if_conditional232) {
                 __freed_obj__ = 0;
-                (come_push_stackframe("./comelang2.h", 352),memset(&result_161,0,sizeof(struct tuple2$2charphsNodeph*)));
-                come_pop_stackframe();
+                (come_push_stackframe("./comelang2.h", 352),__exception_result_var_b121=memset(&result_161,0,sizeof(struct tuple2$2charphsNodeph*)), come_pop_stackframe(), __exception_result_var_b121);
                 __freed_obj__ = 0;
-                __result118__ = __result_obj__ = result_161;
+                __result119__ = __result_obj__ = result_161;
                 __freed_obj__ = 0;
-                return __result118__;
+                return __result119__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -10370,19 +10418,18 @@ memset(&result_162, 0, sizeof(struct tuple2$2charphsNodeph*));
             __freed_obj__ = 0;
             if(_if_conditional233=((struct list$1tuple2$2charphsNodephph*)come_null_check(self, "./comelang2.h", 362))->it,            __freed_obj__ = 0, 
             _if_conditional233) {
-                __result119__ = __result_obj__ = ((struct list_item$1tuple2$2charphsNodephph*)come_null_check(((struct list$1tuple2$2charphsNodephph*)come_null_check(self, "./comelang2.h", 359))->it, "./comelang2.h", 359))->item;
+                __result120__ = __result_obj__ = ((struct list_item$1tuple2$2charphsNodephph*)come_null_check(((struct list$1tuple2$2charphsNodephph*)come_null_check(self, "./comelang2.h", 359))->it, "./comelang2.h", 359))->item;
                 __freed_obj__ = 0;
-                return __result119__;
+                return __result120__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
             __freed_obj__ = 0;
-            (come_push_stackframe("./comelang2.h", 363),memset(&result_162,0,sizeof(struct tuple2$2charphsNodeph*)));
-            come_pop_stackframe();
+            (come_push_stackframe("./comelang2.h", 363),__exception_result_var_b122=memset(&result_162,0,sizeof(struct tuple2$2charphsNodeph*)), come_pop_stackframe(), __exception_result_var_b122);
             __freed_obj__ = 0;
-            __result120__ = __result_obj__ = result_162;
+            __result121__ = __result_obj__ = result_162;
             __freed_obj__ = 0;
-            return __result120__;
+            return __result121__;
             __freed_obj__ = 0;
 }
 
@@ -10399,11 +10446,12 @@ _Bool _while_condtional25;
 _Bool _if_conditional237;
 void* right_value149;
 void* right_value150;
-struct optional$2sTypephbool* __result123__;
+struct optional$2sTypephbool* __result124__;
 struct sType* default_value_168;
+void* __exception_result_var_b126;
 void* right_value151;
 void* right_value152;
-struct optional$2sTypephbool* __result124__;
+struct optional$2sTypephbool* __result125__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&it_166, 0, sizeof(struct list_item$1sTypeph*));
@@ -10427,12 +10475,12 @@ memset(&right_value152, 0, sizeof(void*));
                     _while_condtional25) {
                         if(_if_conditional237=position==i_167,                        __freed_obj__ = 0, 
                         _if_conditional237) {
-                            __result123__ = __result_obj__ = ((struct optional$2sTypephbool*)(right_value150=optional$2sTypephbool_initialize((struct optional$2sTypephbool*)come_increment_ref_count(((struct optional$2sTypephbool*)(right_value149=(struct optional$2sTypephbool*)come_calloc(1, sizeof(struct optional$2sTypephbool)*(1), "./comelang2.h", 744)))),(struct sType*)come_increment_ref_count(((struct list_item$1sTypeph*)come_null_check(it_166, "./comelang2.h", 744))->item),(_Bool)1)));
+                            __result124__ = __result_obj__ = ((struct optional$2sTypephbool*)(right_value150=optional$2sTypephbool_initialize((struct optional$2sTypephbool*)come_increment_ref_count(((struct optional$2sTypephbool*)(right_value149=(struct optional$2sTypephbool*)come_calloc(1, sizeof(struct optional$2sTypephbool)*(1), "./comelang2.h", 744)))),(struct sType*)come_increment_ref_count(((struct list_item$1sTypeph*)come_null_check(it_166, "./comelang2.h", 744))->item),(_Bool)1)));
                             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value149);
                             if(right_value149 && right_value149 != __result_obj__ && !__freed_obj__) { right_value149 = come_decrement_ref_count(right_value149, (void*)0, (void*)0, 1, 0, 0); }
                             __right_value_freed_obj[0] = right_value149;
                             __freed_obj__ = 0;
-                            return __result123__;
+                            return __result124__;
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
@@ -10443,10 +10491,9 @@ memset(&right_value152, 0, sizeof(void*));
                     }
                     __freed_obj__ = 0;
                     __freed_obj__ = 0;
-                    (come_push_stackframe("./comelang2.h", 751),memset(&default_value_168,0,sizeof(struct sType*)));
-                    come_pop_stackframe();
+                    (come_push_stackframe("./comelang2.h", 751),__exception_result_var_b126=memset(&default_value_168,0,sizeof(struct sType*)), come_pop_stackframe(), __exception_result_var_b126);
                     __freed_obj__ = 0;
-                    __result124__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 752), ((struct optional$2sTypephbool*)(right_value152=optional$2sTypephbool_initialize(((struct optional$2sTypephbool*)(right_value151=(struct optional$2sTypephbool*)come_calloc(1, sizeof(struct optional$2sTypephbool)*(1), "./comelang2.h", 752))),(struct sType*)come_increment_ref_count(default_value_168),(_Bool)0))));
+                    __result125__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 752), ((struct optional$2sTypephbool*)(right_value152=optional$2sTypephbool_initialize(((struct optional$2sTypephbool*)(right_value151=(struct optional$2sTypephbool*)come_calloc(1, sizeof(struct optional$2sTypephbool)*(1), "./comelang2.h", 752))),(struct sType*)come_increment_ref_count(default_value_168),(_Bool)0))));
                     if(default_value_168 && !__freed_obj__) { come_call_finalizer(sType_finalize,default_value_168, (void*)0, (void*)0, 0, 0, 0, 0); }
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value151);
                     if(right_value151 && right_value151 != __result_obj__ && !__freed_obj__) { right_value151 = come_decrement_ref_count(right_value151, (void*)0, (void*)0, 1, 0, 0); }
@@ -10455,7 +10502,7 @@ memset(&right_value152, 0, sizeof(void*));
                     if(right_value152 && right_value152 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sTypephboolp_finalize,right_value152, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __right_value_freed_obj[1] = right_value152;
                     __freed_obj__ = 0;
-                    return __result124__;
+                    return __result125__;
                     __freed_obj__ = 0;
                     if(default_value_168 && !__freed_obj__) { come_call_finalizer(sType_finalize,default_value_168, (void*)0, (void*)0, 0, 0, 0, 0); }
 }
@@ -10467,7 +10514,7 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 struct sType* __dec_obj53;
-struct optional$2sTypephbool* __result122__;
+struct optional$2sTypephbool* __result123__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
                                 __dec_obj53=((struct optional$2sTypephbool*)come_null_check(self, "./comelang2.h", 40))->v1;
@@ -10476,11 +10523,11 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
                                 __freed_obj__ = 0;
                                 ((struct optional$2sTypephbool*)come_null_check(self, "./comelang2.h", 41))->v2=v2;
                                 __freed_obj__ = 0;
-                                __result122__ = __result_obj__ = self;
+                                __result123__ = __result_obj__ = self;
                                 if(self && !__freed_obj__) { come_call_finalizer(optional$2sTypephboolp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
                                 if(v1 && !__freed_obj__) { come_call_finalizer(sType_finalize,v1, (void*)0, (void*)0, 0, 0, 1, 0); }
                                 __freed_obj__ = 0;
-                                return __result122__;
+                                return __result123__;
                                 __freed_obj__ = 0;
                                 if(self && !__freed_obj__) { come_call_finalizer(optional$2sTypephboolp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
                                 if(v1 && !__freed_obj__) { come_call_finalizer(sType_finalize,v1, (void*)0, (void*)0, 0, 0, 1, 0); }
@@ -10511,26 +10558,26 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional239;
 struct sType* default_value_169;
-struct sType* __result125__;
+void* __exception_result_var_b128;
 struct sType* __result126__;
+struct sType* __result127__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&default_value_169, 0, sizeof(struct sType*));
                     if(_if_conditional239=self==((void*)0),                    __freed_obj__ = 0, 
                     _if_conditional239) {
                         __freed_obj__ = 0;
-                        (come_push_stackframe("./comelang2.h", 63),memset(&default_value_169,0,sizeof(struct sType*)));
-                        come_pop_stackframe();
+                        (come_push_stackframe("./comelang2.h", 63),__exception_result_var_b128=memset(&default_value_169,0,sizeof(struct sType*)), come_pop_stackframe(), __exception_result_var_b128);
                         __freed_obj__ = 0;
-                        __result125__ = __result_obj__ = default_value_169;
+                        __result126__ = __result_obj__ = default_value_169;
                         __freed_obj__ = 0;
-                        return __result125__;
+                        return __result126__;
                         __freed_obj__ = 0;
                     }
                     else {
-                        __result126__ = __result_obj__ = ((struct optional$2sTypephbool*)come_null_check(self, "./comelang2.h", 67))->v1;
+                        __result127__ = __result_obj__ = ((struct optional$2sTypephbool*)come_null_check(self, "./comelang2.h", 67))->v1;
                         __freed_obj__ = 0;
-                        return __result126__;
+                        return __result127__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
@@ -10544,11 +10591,13 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional246;
 struct CVALUE* result_173;
-struct CVALUE* __result127__;
-_Bool _if_conditional247;
+void* __exception_result_var_b139;
 struct CVALUE* __result128__;
-struct CVALUE* result_174;
+_Bool _if_conditional247;
 struct CVALUE* __result129__;
+struct CVALUE* result_174;
+void* __exception_result_var_b140;
+struct CVALUE* __result130__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_173, 0, sizeof(struct CVALUE*));
@@ -10556,12 +10605,11 @@ memset(&result_174, 0, sizeof(struct CVALUE*));
             if(_if_conditional246=self==((void*)0),            __freed_obj__ = 0, 
             _if_conditional246) {
                 __freed_obj__ = 0;
-                (come_push_stackframe("./comelang2.h", 335),memset(&result_173,0,sizeof(struct CVALUE*)));
-                come_pop_stackframe();
+                (come_push_stackframe("./comelang2.h", 335),__exception_result_var_b139=memset(&result_173,0,sizeof(struct CVALUE*)), come_pop_stackframe(), __exception_result_var_b139);
                 __freed_obj__ = 0;
-                __result127__ = __result_obj__ = result_173;
+                __result128__ = __result_obj__ = result_173;
                 __freed_obj__ = 0;
-                return __result127__;
+                return __result128__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -10569,19 +10617,18 @@ memset(&result_174, 0, sizeof(struct CVALUE*));
             __freed_obj__ = 0;
             if(_if_conditional247=((struct list$1CVALUEph*)come_null_check(self, "./comelang2.h", 344))->it,            __freed_obj__ = 0, 
             _if_conditional247) {
-                __result128__ = __result_obj__ = ((struct list_item$1CVALUEph*)come_null_check(((struct list$1CVALUEph*)come_null_check(self, "./comelang2.h", 341))->it, "./comelang2.h", 341))->item;
+                __result129__ = __result_obj__ = ((struct list_item$1CVALUEph*)come_null_check(((struct list$1CVALUEph*)come_null_check(self, "./comelang2.h", 341))->it, "./comelang2.h", 341))->item;
                 __freed_obj__ = 0;
-                return __result128__;
+                return __result129__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
             __freed_obj__ = 0;
-            (come_push_stackframe("./comelang2.h", 345),memset(&result_174,0,sizeof(struct CVALUE*)));
-            come_pop_stackframe();
+            (come_push_stackframe("./comelang2.h", 345),__exception_result_var_b140=memset(&result_174,0,sizeof(struct CVALUE*)), come_pop_stackframe(), __exception_result_var_b140);
             __freed_obj__ = 0;
-            __result129__ = __result_obj__ = result_174;
+            __result130__ = __result_obj__ = result_174;
             __freed_obj__ = 0;
-            return __result129__;
+            return __result130__;
             __freed_obj__ = 0;
 }
 
@@ -10591,12 +10638,12 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-_Bool __result130__;
+_Bool __result131__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-            __result130__ = self==((void*)0)||((struct list$1CVALUEph*)come_null_check(self, "./comelang2.h", 368))->it==((void*)0);
+            __result131__ = self==((void*)0)||((struct list$1CVALUEph*)come_null_check(self, "./comelang2.h", 368))->it==((void*)0);
             __freed_obj__ = 0;
-            return __result130__;
+            return __result131__;
             __freed_obj__ = 0;
 }
 
@@ -10608,11 +10655,13 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional248;
 struct CVALUE* result_176;
-struct CVALUE* __result131__;
-_Bool _if_conditional249;
+void* __exception_result_var_b143;
 struct CVALUE* __result132__;
-struct CVALUE* result_177;
+_Bool _if_conditional249;
 struct CVALUE* __result133__;
+struct CVALUE* result_177;
+void* __exception_result_var_b144;
+struct CVALUE* __result134__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_176, 0, sizeof(struct CVALUE*));
@@ -10620,12 +10669,11 @@ memset(&result_177, 0, sizeof(struct CVALUE*));
             if(_if_conditional248=self==((void*)0),            __freed_obj__ = 0, 
             _if_conditional248) {
                 __freed_obj__ = 0;
-                (come_push_stackframe("./comelang2.h", 352),memset(&result_176,0,sizeof(struct CVALUE*)));
-                come_pop_stackframe();
+                (come_push_stackframe("./comelang2.h", 352),__exception_result_var_b143=memset(&result_176,0,sizeof(struct CVALUE*)), come_pop_stackframe(), __exception_result_var_b143);
                 __freed_obj__ = 0;
-                __result131__ = __result_obj__ = result_176;
+                __result132__ = __result_obj__ = result_176;
                 __freed_obj__ = 0;
-                return __result131__;
+                return __result132__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -10633,19 +10681,18 @@ memset(&result_177, 0, sizeof(struct CVALUE*));
             __freed_obj__ = 0;
             if(_if_conditional249=((struct list$1CVALUEph*)come_null_check(self, "./comelang2.h", 362))->it,            __freed_obj__ = 0, 
             _if_conditional249) {
-                __result132__ = __result_obj__ = ((struct list_item$1CVALUEph*)come_null_check(((struct list$1CVALUEph*)come_null_check(self, "./comelang2.h", 359))->it, "./comelang2.h", 359))->item;
+                __result133__ = __result_obj__ = ((struct list_item$1CVALUEph*)come_null_check(((struct list$1CVALUEph*)come_null_check(self, "./comelang2.h", 359))->it, "./comelang2.h", 359))->item;
                 __freed_obj__ = 0;
-                return __result132__;
+                return __result133__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
             __freed_obj__ = 0;
-            (come_push_stackframe("./comelang2.h", 363),memset(&result_177,0,sizeof(struct CVALUE*)));
-            come_pop_stackframe();
+            (come_push_stackframe("./comelang2.h", 363),__exception_result_var_b144=memset(&result_177,0,sizeof(struct CVALUE*)), come_pop_stackframe(), __exception_result_var_b144);
             __freed_obj__ = 0;
-            __result133__ = __result_obj__ = result_177;
+            __result134__ = __result_obj__ = result_177;
             __freed_obj__ = 0;
-            return __result133__;
+            return __result134__;
             __freed_obj__ = 0;
 }
 
@@ -10655,12 +10702,12 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-int __result134__;
+int __result135__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                __result134__ = ((struct list$1CVALUEph*)come_null_check(self, "./comelang2.h", 412))->len;
+                __result135__ = ((struct list$1CVALUEph*)come_null_check(self, "./comelang2.h", 412))->len;
                 __freed_obj__ = 0;
-                return __result134__;
+                return __result135__;
                 __freed_obj__ = 0;
 }
 
@@ -10671,27 +10718,29 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 struct sFun* default_value_184;
+void* __exception_result_var_b160;
+unsigned int __exception_result_var_b161;
 unsigned int hash_185;
 unsigned int it_186;
 _Bool _while_condtional26;
 _Bool _if_conditional253;
 void* right_value173;
-struct optional$2boolbool* __exception_result_var_b40;
+struct optional$2boolbool* __exception_result_var_b162;
 _Bool _if_conditional254;
 void* right_value174;
 void* right_value175;
-struct optional$2sFunpbool* __result136__;
+struct optional$2sFunpbool* __result137__;
 _Bool _if_conditional255;
 _Bool _if_conditional256;
 void* right_value176;
 void* right_value177;
-struct optional$2sFunpbool* __result137__;
+struct optional$2sFunpbool* __result138__;
 void* right_value178;
 void* right_value179;
-struct optional$2sFunpbool* __result138__;
+struct optional$2sFunpbool* __result139__;
 void* right_value180;
 void* right_value181;
-struct optional$2sFunpbool* __result139__;
+struct optional$2sFunpbool* __result140__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&default_value_184, 0, sizeof(struct sFun*));
@@ -10707,11 +10756,9 @@ memset(&right_value179, 0, sizeof(void*));
 memset(&right_value180, 0, sizeof(void*));
 memset(&right_value181, 0, sizeof(void*));
                 __freed_obj__ = 0;
-                (come_push_stackframe("./comelang2.h", 1587),memset(&default_value_184,0,sizeof(struct sFun*)));
-                come_pop_stackframe();
+                (come_push_stackframe("./comelang2.h", 1587),__exception_result_var_b160=memset(&default_value_184,0,sizeof(struct sFun*)), come_pop_stackframe(), __exception_result_var_b160);
                 __freed_obj__ = 0;
-                hash_185=(come_push_stackframe("./comelang2.h", 1589),string_get_hash_key(((char*)come_null_check(((char*)key), "./comelang2.h", 1589))))%((struct map$2charphsFunph*)come_null_check(self, "./comelang2.h", 1589))->size;
-                come_pop_stackframe();
+                hash_185=(come_push_stackframe("./comelang2.h", 1589),__exception_result_var_b161=string_get_hash_key(((char*)come_null_check(((char*)key), "./comelang2.h", 1589))), come_pop_stackframe(), __exception_result_var_b161)%((struct map$2charphsFunph*)come_null_check(self, "./comelang2.h", 1589))->size;
                 __freed_obj__ = 0;
                 it_186=hash_185;
                 __freed_obj__ = 0;
@@ -10719,17 +10766,17 @@ memset(&right_value181, 0, sizeof(void*));
                 _while_condtional26) {
                     if(_if_conditional253=((struct map$2charphsFunph*)come_null_check(self, "./comelang2.h", 1612))->item_existance[it_186],                    __freed_obj__ = 0, 
                     _if_conditional253) {
-                        if(_if_conditional254=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1600),__exception_result_var_b40=((struct optional$2boolbool*)(right_value173=string_equals(((char*)come_null_check(((struct map$2charphsFunph*)come_null_check(self, "./comelang2.h", 1600))->keys[it_186], "./comelang2.h", 1600)),key))), come_pop_stackframe(), __exception_result_var_b40)),                        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value173),
+                        if(_if_conditional254=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1600),__exception_result_var_b162=((struct optional$2boolbool*)(right_value173=string_equals(((char*)come_null_check(((struct map$2charphsFunph*)come_null_check(self, "./comelang2.h", 1600))->keys[it_186], "./comelang2.h", 1600)),key))), come_pop_stackframe(), __exception_result_var_b162)),                        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value173),
                         (right_value173 && right_value173 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value173, (void*)0, (void*)0, 0, 1, 0, 0):0,
                         __right_value_freed_obj[0] = right_value173, 
                         __freed_obj__ = 0, 
                         _if_conditional254) {
-                            __result136__ = __result_obj__ = ((struct optional$2sFunpbool*)(right_value175=optional$2sFunpbool_initialize((struct optional$2sFunpbool*)come_increment_ref_count(((struct optional$2sFunpbool*)(right_value174=(struct optional$2sFunpbool*)come_calloc(1, sizeof(struct optional$2sFunpbool)*(1), "./comelang2.h", 1597)))),((struct map$2charphsFunph*)come_null_check(self, "./comelang2.h", 1597))->items[it_186],(_Bool)1)));
+                            __result137__ = __result_obj__ = ((struct optional$2sFunpbool*)(right_value175=optional$2sFunpbool_initialize((struct optional$2sFunpbool*)come_increment_ref_count(((struct optional$2sFunpbool*)(right_value174=(struct optional$2sFunpbool*)come_calloc(1, sizeof(struct optional$2sFunpbool)*(1), "./comelang2.h", 1597)))),((struct map$2charphsFunph*)come_null_check(self, "./comelang2.h", 1597))->items[it_186],(_Bool)1)));
                             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value174);
                             if(right_value174 && right_value174 != __result_obj__ && !__freed_obj__) { right_value174 = come_decrement_ref_count(right_value174, (void*)0, (void*)0, 1, 0, 0); }
                             __right_value_freed_obj[0] = right_value174;
                             __freed_obj__ = 0;
-                            return __result136__;
+                            return __result137__;
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
@@ -10743,7 +10790,7 @@ memset(&right_value181, 0, sizeof(void*));
                         else {
                             if(_if_conditional256=it_186==hash_185,                            __freed_obj__ = 0, 
                             _if_conditional256) {
-                                __result137__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1606), ((struct optional$2sFunpbool*)(right_value177=optional$2sFunpbool_initialize(((struct optional$2sFunpbool*)(right_value176=(struct optional$2sFunpbool*)come_calloc(1, sizeof(struct optional$2sFunpbool)*(1), "./comelang2.h", 1606))),default_value_184,(_Bool)0))));
+                                __result138__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1606), ((struct optional$2sFunpbool*)(right_value177=optional$2sFunpbool_initialize(((struct optional$2sFunpbool*)(right_value176=(struct optional$2sFunpbool*)come_calloc(1, sizeof(struct optional$2sFunpbool)*(1), "./comelang2.h", 1606))),default_value_184,(_Bool)0))));
                                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value176);
                                 if(right_value176 && right_value176 != __result_obj__ && !__freed_obj__) { right_value176 = come_decrement_ref_count(right_value176, (void*)0, (void*)0, 1, 0, 0); }
                                 __right_value_freed_obj[0] = right_value176;
@@ -10751,7 +10798,7 @@ memset(&right_value181, 0, sizeof(void*));
                                 if(right_value177 && right_value177 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value177, (void*)0, (void*)0, 0, 1, 0, 0); }
                                 __right_value_freed_obj[1] = right_value177;
                                 __freed_obj__ = 0;
-                                return __result137__;
+                                return __result138__;
                                 __freed_obj__ = 0;
                             }
                             __freed_obj__ = 0;
@@ -10759,7 +10806,7 @@ memset(&right_value181, 0, sizeof(void*));
                         __freed_obj__ = 0;
                     }
                     else {
-                        __result138__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1610), ((struct optional$2sFunpbool*)(right_value179=optional$2sFunpbool_initialize(((struct optional$2sFunpbool*)(right_value178=(struct optional$2sFunpbool*)come_calloc(1, sizeof(struct optional$2sFunpbool)*(1), "./comelang2.h", 1610))),default_value_184,(_Bool)0))));
+                        __result139__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1610), ((struct optional$2sFunpbool*)(right_value179=optional$2sFunpbool_initialize(((struct optional$2sFunpbool*)(right_value178=(struct optional$2sFunpbool*)come_calloc(1, sizeof(struct optional$2sFunpbool)*(1), "./comelang2.h", 1610))),default_value_184,(_Bool)0))));
                         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value178);
                         if(right_value178 && right_value178 != __result_obj__ && !__freed_obj__) { right_value178 = come_decrement_ref_count(right_value178, (void*)0, (void*)0, 1, 0, 0); }
                         __right_value_freed_obj[0] = right_value178;
@@ -10767,13 +10814,13 @@ memset(&right_value181, 0, sizeof(void*));
                         if(right_value179 && right_value179 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value179, (void*)0, (void*)0, 0, 1, 0, 0); }
                         __right_value_freed_obj[1] = right_value179;
                         __freed_obj__ = 0;
-                        return __result138__;
+                        return __result139__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                __result139__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1614), ((struct optional$2sFunpbool*)(right_value181=optional$2sFunpbool_initialize(((struct optional$2sFunpbool*)(right_value180=(struct optional$2sFunpbool*)come_calloc(1, sizeof(struct optional$2sFunpbool)*(1), "./comelang2.h", 1614))),default_value_184,(_Bool)0))));
+                __result140__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1614), ((struct optional$2sFunpbool*)(right_value181=optional$2sFunpbool_initialize(((struct optional$2sFunpbool*)(right_value180=(struct optional$2sFunpbool*)come_calloc(1, sizeof(struct optional$2sFunpbool)*(1), "./comelang2.h", 1614))),default_value_184,(_Bool)0))));
                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value180);
                 if(right_value180 && right_value180 != __result_obj__ && !__freed_obj__) { right_value180 = come_decrement_ref_count(right_value180, (void*)0, (void*)0, 1, 0, 0); }
                 __right_value_freed_obj[0] = right_value180;
@@ -10781,7 +10828,7 @@ memset(&right_value181, 0, sizeof(void*));
                 if(right_value181 && right_value181 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,right_value181, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __right_value_freed_obj[1] = right_value181;
                 __freed_obj__ = 0;
-                return __result139__;
+                return __result140__;
                 __freed_obj__ = 0;
 }
 
@@ -10791,17 +10838,17 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-struct optional$2sFunpbool* __result135__;
+struct optional$2sFunpbool* __result136__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
                                 ((struct optional$2sFunpbool*)come_null_check(self, "./comelang2.h", 40))->v1=v1;
                                 __freed_obj__ = 0;
                                 ((struct optional$2sFunpbool*)come_null_check(self, "./comelang2.h", 41))->v2=v2;
                                 __freed_obj__ = 0;
-                                __result135__ = __result_obj__ = self;
+                                __result136__ = __result_obj__ = self;
                                 if(self && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
                                 __freed_obj__ = 0;
-                                return __result135__;
+                                return __result136__;
                                 __freed_obj__ = 0;
                                 if(self && !__freed_obj__) { come_call_finalizer(optional$2sFunpboolp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
 }
@@ -10824,26 +10871,26 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional257;
 struct sFun* default_value_187;
-struct sFun* __result140__;
+void* __exception_result_var_b164;
 struct sFun* __result141__;
+struct sFun* __result142__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&default_value_187, 0, sizeof(struct sFun*));
                 if(_if_conditional257=self==((void*)0),                __freed_obj__ = 0, 
                 _if_conditional257) {
                     __freed_obj__ = 0;
-                    (come_push_stackframe("./comelang2.h", 63),memset(&default_value_187,0,sizeof(struct sFun*)));
-                    come_pop_stackframe();
+                    (come_push_stackframe("./comelang2.h", 63),__exception_result_var_b164=memset(&default_value_187,0,sizeof(struct sFun*)), come_pop_stackframe(), __exception_result_var_b164);
                     __freed_obj__ = 0;
-                    __result140__ = __result_obj__ = default_value_187;
+                    __result141__ = __result_obj__ = default_value_187;
                     __freed_obj__ = 0;
-                    return __result140__;
+                    return __result141__;
                     __freed_obj__ = 0;
                 }
                 else {
-                    __result141__ = __result_obj__ = ((struct optional$2sFunpbool*)come_null_check(self, "./comelang2.h", 67))->v1;
+                    __result142__ = __result_obj__ = ((struct optional$2sFunpbool*)come_null_check(self, "./comelang2.h", 67))->v1;
                     __freed_obj__ = 0;
-                    return __result141__;
+                    return __result142__;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
@@ -10855,26 +10902,26 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
+unsigned int __exception_result_var_b166;
 unsigned int hash_188;
 unsigned int it_189;
 _Bool _while_condtional27;
 _Bool _if_conditional260;
 void* right_value184;
-struct optional$2boolbool* __exception_result_var_b41;
+struct optional$2boolbool* __exception_result_var_b167;
 _Bool _if_conditional261;
-struct sFun* __result142__;
+struct sFun* __result143__;
 _Bool _if_conditional262;
 _Bool _if_conditional263;
-struct sFun* __result143__;
 struct sFun* __result144__;
 struct sFun* __result145__;
+struct sFun* __result146__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&hash_188, 0, sizeof(unsigned int));
 memset(&it_189, 0, sizeof(unsigned int));
 memset(&right_value184, 0, sizeof(void*));
-                hash_188=(come_push_stackframe("./comelang2.h", 1260),string_get_hash_key(((char*)come_null_check(((char*)key), "./comelang2.h", 1260))))%((struct map$2charphsFunph*)come_null_check(self, "./comelang2.h", 1260))->size;
-                come_pop_stackframe();
+                hash_188=(come_push_stackframe("./comelang2.h", 1260),__exception_result_var_b166=string_get_hash_key(((char*)come_null_check(((char*)key), "./comelang2.h", 1260))), come_pop_stackframe(), __exception_result_var_b166)%((struct map$2charphsFunph*)come_null_check(self, "./comelang2.h", 1260))->size;
                 __freed_obj__ = 0;
                 it_189=hash_188;
                 __freed_obj__ = 0;
@@ -10882,14 +10929,14 @@ memset(&right_value184, 0, sizeof(void*));
                 _while_condtional27) {
                     if(_if_conditional260=((struct map$2charphsFunph*)come_null_check(self, "./comelang2.h", 1283))->item_existance[it_189],                    __freed_obj__ = 0, 
                     _if_conditional260) {
-                        if(_if_conditional261=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1271),__exception_result_var_b41=((struct optional$2boolbool*)(right_value184=string_equals(((char*)come_null_check(((struct map$2charphsFunph*)come_null_check(self, "./comelang2.h", 1271))->keys[it_189], "./comelang2.h", 1271)),key))), come_pop_stackframe(), __exception_result_var_b41)),                        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value184),
+                        if(_if_conditional261=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1271),__exception_result_var_b167=((struct optional$2boolbool*)(right_value184=string_equals(((char*)come_null_check(((struct map$2charphsFunph*)come_null_check(self, "./comelang2.h", 1271))->keys[it_189], "./comelang2.h", 1271)),key))), come_pop_stackframe(), __exception_result_var_b167)),                        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value184),
                         (right_value184 && right_value184 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value184, (void*)0, (void*)0, 0, 1, 0, 0):0,
                         __right_value_freed_obj[0] = right_value184, 
                         __freed_obj__ = 0, 
                         _if_conditional261) {
-                            __result142__ = __result_obj__ = ((struct map$2charphsFunph*)come_null_check(self, "./comelang2.h", 1268))->items[it_189];
+                            __result143__ = __result_obj__ = ((struct map$2charphsFunph*)come_null_check(self, "./comelang2.h", 1268))->items[it_189];
                             __freed_obj__ = 0;
-                            return __result142__;
+                            return __result143__;
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
@@ -10903,9 +10950,9 @@ memset(&right_value184, 0, sizeof(void*));
                         else {
                             if(_if_conditional263=it_189==hash_188,                            __freed_obj__ = 0, 
                             _if_conditional263) {
-                                __result143__ = __result_obj__ = default_value;
+                                __result144__ = __result_obj__ = default_value;
                                 __freed_obj__ = 0;
-                                return __result143__;
+                                return __result144__;
                                 __freed_obj__ = 0;
                             }
                             __freed_obj__ = 0;
@@ -10913,17 +10960,17 @@ memset(&right_value184, 0, sizeof(void*));
                         __freed_obj__ = 0;
                     }
                     else {
-                        __result144__ = __result_obj__ = default_value;
+                        __result145__ = __result_obj__ = default_value;
                         __freed_obj__ = 0;
-                        return __result144__;
+                        return __result145__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                __result145__ = __result_obj__ = default_value;
+                __result146__ = __result_obj__ = default_value;
                 __freed_obj__ = 0;
-                return __result145__;
+                return __result146__;
                 __freed_obj__ = 0;
 }
 
@@ -11060,11 +11107,13 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional281;
 struct sType* result_194;
-struct sType* __result147__;
-_Bool _if_conditional282;
+void* __exception_result_var_b174;
 struct sType* __result148__;
-struct sType* result_195;
+_Bool _if_conditional282;
 struct sType* __result149__;
+struct sType* result_195;
+void* __exception_result_var_b175;
+struct sType* __result150__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_194, 0, sizeof(struct sType*));
@@ -11072,12 +11121,11 @@ memset(&result_195, 0, sizeof(struct sType*));
             if(_if_conditional281=self==((void*)0),            __freed_obj__ = 0, 
             _if_conditional281) {
                 __freed_obj__ = 0;
-                (come_push_stackframe("./comelang2.h", 335),memset(&result_194,0,sizeof(struct sType*)));
-                come_pop_stackframe();
+                (come_push_stackframe("./comelang2.h", 335),__exception_result_var_b174=memset(&result_194,0,sizeof(struct sType*)), come_pop_stackframe(), __exception_result_var_b174);
                 __freed_obj__ = 0;
-                __result147__ = __result_obj__ = result_194;
+                __result148__ = __result_obj__ = result_194;
                 __freed_obj__ = 0;
-                return __result147__;
+                return __result148__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -11085,19 +11133,18 @@ memset(&result_195, 0, sizeof(struct sType*));
             __freed_obj__ = 0;
             if(_if_conditional282=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 344))->it,            __freed_obj__ = 0, 
             _if_conditional282) {
-                __result148__ = __result_obj__ = ((struct list_item$1sTypeph*)come_null_check(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 341))->it, "./comelang2.h", 341))->item;
+                __result149__ = __result_obj__ = ((struct list_item$1sTypeph*)come_null_check(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 341))->it, "./comelang2.h", 341))->item;
                 __freed_obj__ = 0;
-                return __result148__;
+                return __result149__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
             __freed_obj__ = 0;
-            (come_push_stackframe("./comelang2.h", 345),memset(&result_195,0,sizeof(struct sType*)));
-            come_pop_stackframe();
+            (come_push_stackframe("./comelang2.h", 345),__exception_result_var_b175=memset(&result_195,0,sizeof(struct sType*)), come_pop_stackframe(), __exception_result_var_b175);
             __freed_obj__ = 0;
-            __result149__ = __result_obj__ = result_195;
+            __result150__ = __result_obj__ = result_195;
             __freed_obj__ = 0;
-            return __result149__;
+            return __result150__;
             __freed_obj__ = 0;
 }
 
@@ -11107,12 +11154,12 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-_Bool __result150__;
+_Bool __result151__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-            __result150__ = self==((void*)0)||((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 368))->it==((void*)0);
+            __result151__ = self==((void*)0)||((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 368))->it==((void*)0);
             __freed_obj__ = 0;
-            return __result150__;
+            return __result151__;
             __freed_obj__ = 0;
 }
 
@@ -11124,11 +11171,13 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional283;
 struct sType* result_197;
-struct sType* __result151__;
-_Bool _if_conditional284;
+void* __exception_result_var_b178;
 struct sType* __result152__;
-struct sType* result_198;
+_Bool _if_conditional284;
 struct sType* __result153__;
+struct sType* result_198;
+void* __exception_result_var_b179;
+struct sType* __result154__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_197, 0, sizeof(struct sType*));
@@ -11136,12 +11185,11 @@ memset(&result_198, 0, sizeof(struct sType*));
             if(_if_conditional283=self==((void*)0),            __freed_obj__ = 0, 
             _if_conditional283) {
                 __freed_obj__ = 0;
-                (come_push_stackframe("./comelang2.h", 352),memset(&result_197,0,sizeof(struct sType*)));
-                come_pop_stackframe();
+                (come_push_stackframe("./comelang2.h", 352),__exception_result_var_b178=memset(&result_197,0,sizeof(struct sType*)), come_pop_stackframe(), __exception_result_var_b178);
                 __freed_obj__ = 0;
-                __result151__ = __result_obj__ = result_197;
+                __result152__ = __result_obj__ = result_197;
                 __freed_obj__ = 0;
-                return __result151__;
+                return __result152__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -11149,19 +11197,18 @@ memset(&result_198, 0, sizeof(struct sType*));
             __freed_obj__ = 0;
             if(_if_conditional284=((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 362))->it,            __freed_obj__ = 0, 
             _if_conditional284) {
-                __result152__ = __result_obj__ = ((struct list_item$1sTypeph*)come_null_check(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 359))->it, "./comelang2.h", 359))->item;
+                __result153__ = __result_obj__ = ((struct list_item$1sTypeph*)come_null_check(((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 359))->it, "./comelang2.h", 359))->item;
                 __freed_obj__ = 0;
-                return __result152__;
+                return __result153__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
             __freed_obj__ = 0;
-            (come_push_stackframe("./comelang2.h", 363),memset(&result_198,0,sizeof(struct sType*)));
-            come_pop_stackframe();
+            (come_push_stackframe("./comelang2.h", 363),__exception_result_var_b179=memset(&result_198,0,sizeof(struct sType*)), come_pop_stackframe(), __exception_result_var_b179);
             __freed_obj__ = 0;
-            __result153__ = __result_obj__ = result_198;
+            __result154__ = __result_obj__ = result_198;
             __freed_obj__ = 0;
-            return __result153__;
+            return __result154__;
             __freed_obj__ = 0;
 }
 
@@ -11182,7 +11229,7 @@ struct sType* __dec_obj66;
 void* right_value195;
 struct list_item$1sTypeph* litem_201;
 struct sType* __dec_obj67;
-struct list$1sTypeph* __result154__;
+struct list$1sTypeph* __result155__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value193, 0, sizeof(void*));
@@ -11256,10 +11303,10 @@ memset(&litem_201, 0, sizeof(struct list_item$1sTypeph*));
                     __freed_obj__ = 0;
                     ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 304))->len++;
                     __freed_obj__ = 0;
-                    __result154__ = __result_obj__ = self;
+                    __result155__ = __result_obj__ = self;
                     if(item && !__freed_obj__) { come_call_finalizer(sType_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
                     __freed_obj__ = 0;
-                    return __result154__;
+                    return __result155__;
                     __freed_obj__ = 0;
                     if(item && !__freed_obj__) { come_call_finalizer(sType_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
 }
@@ -11277,8 +11324,9 @@ int i_204;
 _Bool _for_condtionalA12;
 void* right_value204;
 void* right_value205;
+struct list$1charp* __exception_result_var_b185;
 struct list$1charp* __dec_obj68;
-struct map$2charphCVALUEph* __result156__;
+struct map$2charphCVALUEph* __result157__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value201, 0, sizeof(void*));
@@ -11316,7 +11364,7 @@ memset(&right_value205, 0, sizeof(void*));
             ((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1134))->len=0;
             __freed_obj__ = 0;
             __dec_obj68=((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1136))->key_list;
-            ((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1136))->key_list=(struct list$1charp*)come_increment_ref_count((come_push_stackframe("./comelang2.h", 1136),((struct list$1charp*)(right_value205=list$1charp_initialize((struct list$1charp*)come_increment_ref_count(((struct list$1charp*)(right_value204=(struct list$1charp*)come_calloc(1, sizeof(struct list$1charp)*(1), "./comelang2.h", 1136)))))))));
+            ((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1136))->key_list=(struct list$1charp*)come_increment_ref_count((come_push_stackframe("./comelang2.h", 1136),__exception_result_var_b185=((struct list$1charp*)(right_value205=list$1charp_initialize((struct list$1charp*)come_increment_ref_count(((struct list$1charp*)(right_value204=(struct list$1charp*)come_calloc(1, sizeof(struct list$1charp)*(1), "./comelang2.h", 1136))))))), come_pop_stackframe(), __exception_result_var_b185));
             if(__dec_obj68) { come_call_finalizer(list$1charp_finalize,__dec_obj68, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value204);
             if(right_value204 && right_value204 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1charpp_finalize,right_value204, (void*)0, (void*)0, 0, 1, 0, 0); }
@@ -11327,10 +11375,10 @@ memset(&right_value205, 0, sizeof(void*));
             __freed_obj__ = 0;
             ((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1138))->it=0;
             __freed_obj__ = 0;
-            __result156__ = __result_obj__ = self;
+            __result157__ = __result_obj__ = self;
             if(self && !__freed_obj__) { come_call_finalizer(map$2charphCVALUEphp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
             __freed_obj__ = 0;
-            return __result156__;
+            return __result157__;
             __freed_obj__ = 0;
             if(self && !__freed_obj__) { come_call_finalizer(map$2charphCVALUEphp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
 }
@@ -11341,7 +11389,7 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-struct list$1charp* __result155__;
+struct list$1charp* __result156__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
                 ((struct list$1charp*)come_null_check(self, "./comelang2.h", 152))->head=((void*)0);
@@ -11350,10 +11398,10 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
                 __freed_obj__ = 0;
                 ((struct list$1charp*)come_null_check(self, "./comelang2.h", 154))->len=0;
                 __freed_obj__ = 0;
-                __result155__ = __result_obj__ = self;
+                __result156__ = __result_obj__ = self;
                 if(self && !__freed_obj__) { come_call_finalizer(list$1charpp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
                 __freed_obj__ = 0;
-                return __result155__;
+                return __result156__;
                 __freed_obj__ = 0;
                 if(self && !__freed_obj__) { come_call_finalizer(list$1charpp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
 }
@@ -11403,8 +11451,7 @@ memset(&i_206, 0, sizeof(int));
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                (come_push_stackframe("./comelang2.h", 1174),come_free_object((char*)((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1174))->items));
-                come_pop_stackframe();
+                (come_push_stackframe("./comelang2.h", 1174),come_free_object((char*)((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1174))->items),come_pop_stackframe());
                 __freed_obj__ = 0;
                 for(
                 i_206=0 ,                __freed_obj__ = 0, 
@@ -11423,8 +11470,7 @@ memset(&i_206, 0, sizeof(int));
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                (come_push_stackframe("./comelang2.h", 1183),come_free_object((char*)((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1183))->keys));
-                come_pop_stackframe();
+                (come_push_stackframe("./comelang2.h", 1183),come_free_object((char*)((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1183))->keys),come_pop_stackframe());
                 __freed_obj__ = 0;
                 if(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1185))->key_list && !__freed_obj__) { come_call_finalizer(list$1charpp_finalize,((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1185))->key_list, (void*)0, (void*)0, 0, 0, 0, 0); }
                 __freed_obj__ = 0;
@@ -11445,11 +11491,12 @@ _Bool _while_condtional28;
 _Bool _if_conditional301;
 void* right_value217;
 void* right_value218;
-struct optional$2charphbool* __result158__;
+struct optional$2charphbool* __result159__;
 char* default_value_215;
+void* __exception_result_var_b197;
 void* right_value219;
 void* right_value220;
-struct optional$2charphbool* __result159__;
+struct optional$2charphbool* __result160__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&it_213, 0, sizeof(struct list_item$1charph*));
@@ -11473,12 +11520,12 @@ memset(&right_value220, 0, sizeof(void*));
                             _while_condtional28) {
                                 if(_if_conditional301=position==i_214,                                __freed_obj__ = 0, 
                                 _if_conditional301) {
-                                    __result158__ = __result_obj__ = ((struct optional$2charphbool*)(right_value218=optional$2charphbool_initialize((struct optional$2charphbool*)come_increment_ref_count(((struct optional$2charphbool*)(right_value217=(struct optional$2charphbool*)come_calloc(1, sizeof(struct optional$2charphbool)*(1), "./comelang2.h", 744)))),(char*)come_increment_ref_count(((struct list_item$1charph*)come_null_check(it_213, "./comelang2.h", 744))->item),(_Bool)1)));
+                                    __result159__ = __result_obj__ = ((struct optional$2charphbool*)(right_value218=optional$2charphbool_initialize((struct optional$2charphbool*)come_increment_ref_count(((struct optional$2charphbool*)(right_value217=(struct optional$2charphbool*)come_calloc(1, sizeof(struct optional$2charphbool)*(1), "./comelang2.h", 744)))),(char*)come_increment_ref_count(((struct list_item$1charph*)come_null_check(it_213, "./comelang2.h", 744))->item),(_Bool)1)));
                                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value217);
                                     if(right_value217 && right_value217 != __result_obj__ && !__freed_obj__) { right_value217 = come_decrement_ref_count(right_value217, (void*)0, (void*)0, 1, 0, 0); }
                                     __right_value_freed_obj[0] = right_value217;
                                     __freed_obj__ = 0;
-                                    return __result158__;
+                                    return __result159__;
                                     __freed_obj__ = 0;
                                 }
                                 __freed_obj__ = 0;
@@ -11489,10 +11536,9 @@ memset(&right_value220, 0, sizeof(void*));
                             }
                             __freed_obj__ = 0;
                             __freed_obj__ = 0;
-                            (come_push_stackframe("./comelang2.h", 751),memset(&default_value_215,0,sizeof(char*)));
-                            come_pop_stackframe();
+                            (come_push_stackframe("./comelang2.h", 751),__exception_result_var_b197=memset(&default_value_215,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b197);
                             __freed_obj__ = 0;
-                            __result159__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 752), ((struct optional$2charphbool*)(right_value220=optional$2charphbool_initialize(((struct optional$2charphbool*)(right_value219=(struct optional$2charphbool*)come_calloc(1, sizeof(struct optional$2charphbool)*(1), "./comelang2.h", 752))),(char*)come_increment_ref_count(default_value_215),(_Bool)0))));
+                            __result160__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 752), ((struct optional$2charphbool*)(right_value220=optional$2charphbool_initialize(((struct optional$2charphbool*)(right_value219=(struct optional$2charphbool*)come_calloc(1, sizeof(struct optional$2charphbool)*(1), "./comelang2.h", 752))),(char*)come_increment_ref_count(default_value_215),(_Bool)0))));
                             if(default_value_215 && !__freed_obj__) { default_value_215 = come_decrement_ref_count(default_value_215, (void*)0, (void*)0, 0, 0, 0); }
                             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value219);
                             if(right_value219 && right_value219 != __result_obj__ && !__freed_obj__) { right_value219 = come_decrement_ref_count(right_value219, (void*)0, (void*)0, 1, 0, 0); }
@@ -11501,7 +11547,7 @@ memset(&right_value220, 0, sizeof(void*));
                             if(right_value220 && right_value220 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value220, (void*)0, (void*)0, 0, 1, 0, 0); }
                             __right_value_freed_obj[1] = right_value220;
                             __freed_obj__ = 0;
-                            return __result159__;
+                            return __result160__;
                             __freed_obj__ = 0;
                             if(default_value_215 && !__freed_obj__) { default_value_215 = come_decrement_ref_count(default_value_215, (void*)0, (void*)0, 0, 0, 0); }
 }
@@ -11513,7 +11559,7 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 char* __dec_obj74;
-struct optional$2charphbool* __result157__;
+struct optional$2charphbool* __result158__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
                                         __dec_obj74=((struct optional$2charphbool*)come_null_check(self, "./comelang2.h", 40))->v1;
@@ -11522,11 +11568,11 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
                                         __freed_obj__ = 0;
                                         ((struct optional$2charphbool*)come_null_check(self, "./comelang2.h", 41))->v2=v2;
                                         __freed_obj__ = 0;
-                                        __result157__ = __result_obj__ = self;
+                                        __result158__ = __result_obj__ = self;
                                         if(self && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
                                         if(v1 && !__freed_obj__) { v1 = come_decrement_ref_count(v1, (void*)0, (void*)0, 0, 1, 0); }
                                         __freed_obj__ = 0;
-                                        return __result157__;
+                                        return __result158__;
                                         __freed_obj__ = 0;
                                         if(self && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
                                         if(v1 && !__freed_obj__) { v1 = come_decrement_ref_count(v1, (void*)0, (void*)0, 0, 1, 0); }
@@ -11557,26 +11603,26 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional303;
 char* default_value_216;
-char* __result160__;
+void* __exception_result_var_b199;
 char* __result161__;
+char* __result162__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&default_value_216, 0, sizeof(char*));
                             if(_if_conditional303=self==((void*)0),                            __freed_obj__ = 0, 
                             _if_conditional303) {
                                 __freed_obj__ = 0;
-                                (come_push_stackframe("./comelang2.h", 63),memset(&default_value_216,0,sizeof(char*)));
-                                come_pop_stackframe();
+                                (come_push_stackframe("./comelang2.h", 63),__exception_result_var_b199=memset(&default_value_216,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b199);
                                 __freed_obj__ = 0;
-                                __result160__ = __result_obj__ = default_value_216;
+                                __result161__ = __result_obj__ = default_value_216;
                                 __freed_obj__ = 0;
-                                return __result160__;
+                                return __result161__;
                                 __freed_obj__ = 0;
                             }
                             else {
-                                __result161__ = __result_obj__ = ((struct optional$2charphbool*)come_null_check(self, "./comelang2.h", 67))->v1;
+                                __result162__ = __result_obj__ = ((struct optional$2charphbool*)come_null_check(self, "./comelang2.h", 67))->v1;
                                 __freed_obj__ = 0;
-                                return __result161__;
+                                return __result162__;
                                 __freed_obj__ = 0;
                             }
                             __freed_obj__ = 0;
@@ -11590,11 +11636,13 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional306;
 char* result_220;
-char* __result163__;
-_Bool _if_conditional307;
+void* __exception_result_var_b202;
 char* __result164__;
-char* result_221;
+_Bool _if_conditional307;
 char* __result165__;
+char* result_221;
+void* __exception_result_var_b203;
+char* __result166__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_220, 0, sizeof(char*));
@@ -11602,12 +11650,11 @@ memset(&result_221, 0, sizeof(char*));
                         if(_if_conditional306=self==((void*)0),                        __freed_obj__ = 0, 
                         _if_conditional306) {
                             __freed_obj__ = 0;
-                            (come_push_stackframe("./comelang2.h", 335),memset(&result_220,0,sizeof(char*)));
-                            come_pop_stackframe();
+                            (come_push_stackframe("./comelang2.h", 335),__exception_result_var_b202=memset(&result_220,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b202);
                             __freed_obj__ = 0;
-                            __result163__ = __result_obj__ = result_220;
+                            __result164__ = __result_obj__ = result_220;
                             __freed_obj__ = 0;
-                            return __result163__;
+                            return __result164__;
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
@@ -11615,19 +11662,18 @@ memset(&result_221, 0, sizeof(char*));
                         __freed_obj__ = 0;
                         if(_if_conditional307=((struct list$1charph*)come_null_check(self, "./comelang2.h", 344))->it,                        __freed_obj__ = 0, 
                         _if_conditional307) {
-                            __result164__ = __result_obj__ = ((struct list_item$1charph*)come_null_check(((struct list$1charph*)come_null_check(self, "./comelang2.h", 341))->it, "./comelang2.h", 341))->item;
+                            __result165__ = __result_obj__ = ((struct list_item$1charph*)come_null_check(((struct list$1charph*)come_null_check(self, "./comelang2.h", 341))->it, "./comelang2.h", 341))->item;
                             __freed_obj__ = 0;
-                            return __result164__;
+                            return __result165__;
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
                         __freed_obj__ = 0;
-                        (come_push_stackframe("./comelang2.h", 345),memset(&result_221,0,sizeof(char*)));
-                        come_pop_stackframe();
+                        (come_push_stackframe("./comelang2.h", 345),__exception_result_var_b203=memset(&result_221,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b203);
                         __freed_obj__ = 0;
-                        __result165__ = __result_obj__ = result_221;
+                        __result166__ = __result_obj__ = result_221;
                         __freed_obj__ = 0;
-                        return __result165__;
+                        return __result166__;
                         __freed_obj__ = 0;
 }
 
@@ -11637,12 +11683,12 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-_Bool __result166__;
+_Bool __result167__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                        __result166__ = self==((void*)0)||((struct list$1charph*)come_null_check(self, "./comelang2.h", 368))->it==((void*)0);
+                        __result167__ = self==((void*)0)||((struct list$1charph*)come_null_check(self, "./comelang2.h", 368))->it==((void*)0);
                         __freed_obj__ = 0;
-                        return __result166__;
+                        return __result167__;
                         __freed_obj__ = 0;
 }
 
@@ -11654,11 +11700,13 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional308;
 char* result_223;
-char* __result167__;
-_Bool _if_conditional309;
+void* __exception_result_var_b206;
 char* __result168__;
-char* result_224;
+_Bool _if_conditional309;
 char* __result169__;
+char* result_224;
+void* __exception_result_var_b207;
+char* __result170__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_223, 0, sizeof(char*));
@@ -11666,12 +11714,11 @@ memset(&result_224, 0, sizeof(char*));
                         if(_if_conditional308=self==((void*)0),                        __freed_obj__ = 0, 
                         _if_conditional308) {
                             __freed_obj__ = 0;
-                            (come_push_stackframe("./comelang2.h", 352),memset(&result_223,0,sizeof(char*)));
-                            come_pop_stackframe();
+                            (come_push_stackframe("./comelang2.h", 352),__exception_result_var_b206=memset(&result_223,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b206);
                             __freed_obj__ = 0;
-                            __result167__ = __result_obj__ = result_223;
+                            __result168__ = __result_obj__ = result_223;
                             __freed_obj__ = 0;
-                            return __result167__;
+                            return __result168__;
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
@@ -11679,19 +11726,18 @@ memset(&result_224, 0, sizeof(char*));
                         __freed_obj__ = 0;
                         if(_if_conditional309=((struct list$1charph*)come_null_check(self, "./comelang2.h", 362))->it,                        __freed_obj__ = 0, 
                         _if_conditional309) {
-                            __result168__ = __result_obj__ = ((struct list_item$1charph*)come_null_check(((struct list$1charph*)come_null_check(self, "./comelang2.h", 359))->it, "./comelang2.h", 359))->item;
+                            __result169__ = __result_obj__ = ((struct list_item$1charph*)come_null_check(((struct list$1charph*)come_null_check(self, "./comelang2.h", 359))->it, "./comelang2.h", 359))->item;
                             __freed_obj__ = 0;
-                            return __result168__;
+                            return __result169__;
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
                         __freed_obj__ = 0;
-                        (come_push_stackframe("./comelang2.h", 363),memset(&result_224,0,sizeof(char*)));
-                        come_pop_stackframe();
+                        (come_push_stackframe("./comelang2.h", 363),__exception_result_var_b207=memset(&result_224,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b207);
                         __freed_obj__ = 0;
-                        __result169__ = __result_obj__ = result_224;
+                        __result170__ = __result_obj__ = result_224;
                         __freed_obj__ = 0;
-                        return __result169__;
+                        return __result170__;
                         __freed_obj__ = 0;
 }
 
@@ -11702,30 +11748,35 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional326;
+unsigned int __exception_result_var_b241;
 unsigned int hash_242;
 unsigned int it_243;
 _Bool _while_condtional31;
 _Bool _if_conditional338;
 void* right_value251;
-struct optional$2boolbool* __exception_result_var_b58;
+struct optional$2boolbool* __exception_result_var_b242;
 _Bool _if_conditional339;
 _Bool _if_conditional340;
+struct list$1charp* __exception_result_var_b243;
+struct list$1charp* __exception_result_var_b244;
 _Bool _if_conditional341;
 _Bool _if_conditional342;
 _Bool _if_conditional343;
+int __exception_result_var_b245;
 _Bool _if_conditional344;
 _Bool _if_conditional345;
 _Bool same_key_exist_244;
-char* __exception_result_var_b59;
+char* __exception_result_var_b246;
 char* it2_245;
-_Bool __exception_result_var_b60;
+_Bool __exception_result_var_b247;
 _Bool _for_condtionalA18;
-char* __exception_result_var_b61;
+char* __exception_result_var_b248;
 void* right_value252;
-struct optional$2boolbool* __exception_result_var_b62;
+struct optional$2boolbool* __exception_result_var_b249;
 _Bool _if_conditional346;
 _Bool _if_conditional347;
-struct map$2charphCVALUEph* __result181__;
+struct list$1charp* __exception_result_var_b250;
+struct map$2charphCVALUEph* __result182__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&hash_242, 0, sizeof(unsigned int));
@@ -11736,13 +11787,11 @@ memset(&it2_245, 0, sizeof(char*));
 memset(&right_value252, 0, sizeof(void*));
                         if(_if_conditional326=((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1427))->len*10>=((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1427))->size,                        __freed_obj__ = 0, 
                         _if_conditional326) {
-                            (come_push_stackframe("./comelang2.h", 1425),map$2charphCVALUEph_rehash(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1425))));
-                            come_pop_stackframe();
+                            (come_push_stackframe("./comelang2.h", 1425),map$2charphCVALUEph_rehash(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1425))),come_pop_stackframe());
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
-                        hash_242=(come_push_stackframe("./comelang2.h", 1427),string_get_hash_key(((char*)come_null_check(key, "./comelang2.h", 1427))))%((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1427))->size;
-                        come_pop_stackframe();
+                        hash_242=(come_push_stackframe("./comelang2.h", 1427),__exception_result_var_b241=string_get_hash_key(((char*)come_null_check(key, "./comelang2.h", 1427))), come_pop_stackframe(), __exception_result_var_b241)%((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1427))->size;
                         __freed_obj__ = 0;
                         it_243=hash_242;
                         __freed_obj__ = 0;
@@ -11750,15 +11799,14 @@ memset(&right_value252, 0, sizeof(void*));
                         _while_condtional31) {
                             if(_if_conditional338=((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1484))->item_existance[it_243],                            __freed_obj__ = 0, 
                             _if_conditional338) {
-                                if(_if_conditional339=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1454),__exception_result_var_b58=((struct optional$2boolbool*)(right_value251=string_equals(((char*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1454))->keys[it_243], "./comelang2.h", 1454)),key))), come_pop_stackframe(), __exception_result_var_b58)),                                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value251),
+                                if(_if_conditional339=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1454),__exception_result_var_b242=((struct optional$2boolbool*)(right_value251=string_equals(((char*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1454))->keys[it_243], "./comelang2.h", 1454)),key))), come_pop_stackframe(), __exception_result_var_b242)),                                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value251),
                                 (right_value251 && right_value251 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value251, (void*)0, (void*)0, 0, 1, 0, 0):0,
                                 __right_value_freed_obj[0] = right_value251, 
                                 __freed_obj__ = 0, 
                                 _if_conditional339) {
                                     if(_if_conditional340=1,                                    __freed_obj__ = 0, 
                                     _if_conditional340) {
-                                        (come_push_stackframe("./comelang2.h", 1436),list$1charp_remove(((struct list$1charp*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1436))->key_list, "./comelang2.h", 1436)),((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1436))->keys[it_243]));
-                                        come_pop_stackframe();
+                                        (come_push_stackframe("./comelang2.h", 1436),__exception_result_var_b243=list$1charp_remove(((struct list$1charp*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1436))->key_list, "./comelang2.h", 1436)),((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1436))->keys[it_243]), come_pop_stackframe(), __exception_result_var_b243);
                                         __freed_obj__ = 0;
                                         if(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1437))->keys[it_243] && !__freed_obj__) { ((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1437))->keys[it_243] = come_decrement_ref_count(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1437))->keys[it_243], (void*)0, (void*)0, 0, 0, 0); }
                                         __freed_obj__ = 0;
@@ -11766,8 +11814,7 @@ memset(&right_value252, 0, sizeof(void*));
                                         __freed_obj__ = 0;
                                     }
                                     else {
-                                        (come_push_stackframe("./comelang2.h", 1441),list$1charp_remove(((struct list$1charp*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1441))->key_list, "./comelang2.h", 1441)),((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1441))->keys[it_243]));
-                                        come_pop_stackframe();
+                                        (come_push_stackframe("./comelang2.h", 1441),__exception_result_var_b244=list$1charp_remove(((struct list$1charp*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1441))->key_list, "./comelang2.h", 1441)),((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1441))->keys[it_243]), come_pop_stackframe(), __exception_result_var_b244);
                                         __freed_obj__ = 0;
                                         ((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1442))->keys[it_243]=key;
                                         __freed_obj__ = 0;
@@ -11799,14 +11846,11 @@ memset(&right_value252, 0, sizeof(void*));
                                 else {
                                     if(_if_conditional343=it_243==hash_242,                                    __freed_obj__ = 0, 
                                     _if_conditional343) {
-                                        (come_push_stackframe("./comelang2.h", 1460),printf("unexpected error in map.insert\n"));
-                                        come_pop_stackframe();
+                                        (come_push_stackframe("./comelang2.h", 1460),__exception_result_var_b245=printf("unexpected error in map.insert\n"), come_pop_stackframe(), __exception_result_var_b245);
                                         __freed_obj__ = 0;
-                                        (come_push_stackframe("./comelang2.h", 1461),stackframe());
-                                        come_pop_stackframe();
+                                        (come_push_stackframe("./comelang2.h", 1461),stackframe(),come_pop_stackframe());
                                         __freed_obj__ = 0;
-                                        (come_push_stackframe("./comelang2.h", 1462),exit(2));
-                                        come_pop_stackframe();
+                                        (come_push_stackframe("./comelang2.h", 1462),exit(2),come_pop_stackframe());
                                         __freed_obj__ = 0;
                                     }
                                     __freed_obj__ = 0;
@@ -11847,11 +11891,11 @@ memset(&right_value252, 0, sizeof(void*));
                         same_key_exist_244=(_Bool)0;
                         __freed_obj__ = 0;
                         for(
-                        it2_245=(come_push_stackframe("./comelang2.h", 1494),__exception_result_var_b59=list$1charp_begin(((struct list$1charp*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1494))->key_list, "./comelang2.h", 1494))), come_pop_stackframe(), __exception_result_var_b59) ,                        __freed_obj__ = 0, 
-                        0;                        _for_condtionalA18=                        !(come_push_stackframe("./comelang2.h", 1494),__exception_result_var_b60=list$1charp_end(((struct list$1charp*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1494))->key_list, "./comelang2.h", 1494))), come_pop_stackframe(), __exception_result_var_b60) ,                        __freed_obj__ = 0, 
-                        _for_condtionalA18;                        it2_245=(come_push_stackframe("./comelang2.h", 1494),__exception_result_var_b61=list$1charp_next(((struct list$1charp*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1494))->key_list, "./comelang2.h", 1494))), come_pop_stackframe(), __exception_result_var_b61) ,                        __freed_obj__ = 0, 
+                        it2_245=(come_push_stackframe("./comelang2.h", 1494),__exception_result_var_b246=list$1charp_begin(((struct list$1charp*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1494))->key_list, "./comelang2.h", 1494))), come_pop_stackframe(), __exception_result_var_b246) ,                        __freed_obj__ = 0, 
+                        0;                        _for_condtionalA18=                        !(come_push_stackframe("./comelang2.h", 1494),__exception_result_var_b247=list$1charp_end(((struct list$1charp*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1494))->key_list, "./comelang2.h", 1494))), come_pop_stackframe(), __exception_result_var_b247) ,                        __freed_obj__ = 0, 
+                        _for_condtionalA18;                        it2_245=(come_push_stackframe("./comelang2.h", 1494),__exception_result_var_b248=list$1charp_next(((struct list$1charp*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1494))->key_list, "./comelang2.h", 1494))), come_pop_stackframe(), __exception_result_var_b248) ,                        __freed_obj__ = 0, 
                         0                        ){
-                            if(_if_conditional346=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1492),__exception_result_var_b62=((struct optional$2boolbool*)(right_value252=string_equals(((char*)come_null_check(it2_245, "./comelang2.h", 1492)),key))), come_pop_stackframe(), __exception_result_var_b62)),                            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value252),
+                            if(_if_conditional346=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1492),__exception_result_var_b249=((struct optional$2boolbool*)(right_value252=string_equals(((char*)come_null_check(it2_245, "./comelang2.h", 1492)),key))), come_pop_stackframe(), __exception_result_var_b249)),                            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value252),
                             (right_value252 && right_value252 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value252, (void*)0, (void*)0, 0, 1, 0, 0):0,
                             __right_value_freed_obj[0] = right_value252, 
                             __freed_obj__ = 0, 
@@ -11864,16 +11908,15 @@ memset(&right_value252, 0, sizeof(void*));
                         __freed_obj__ = 0;
                         if(_if_conditional347=!same_key_exist_244,                        __freed_obj__ = 0, 
                         _if_conditional347) {
-                            (come_push_stackframe("./comelang2.h", 1495),list$1charp_push_back(((struct list$1charp*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1495))->key_list, "./comelang2.h", 1495)),key));
-                            come_pop_stackframe();
+                            (come_push_stackframe("./comelang2.h", 1495),__exception_result_var_b250=list$1charp_push_back(((struct list$1charp*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1495))->key_list, "./comelang2.h", 1495)),key), come_pop_stackframe(), __exception_result_var_b250);
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
-                        __result181__ = __result_obj__ = self;
+                        __result182__ = __result_obj__ = self;
                         if(key && !__freed_obj__) { key = come_decrement_ref_count(key, (void*)0, (void*)0, 0, 1, 0); }
                         if(item && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
                         __freed_obj__ = 0;
-                        return __result181__;
+                        return __result182__;
                         __freed_obj__ = 0;
                         if(key && !__freed_obj__) { key = come_decrement_ref_count(key, (void*)0, (void*)0, 0, 1, 0); }
                         if(item && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
@@ -11893,20 +11936,27 @@ struct CVALUE** items_227;
 void* right_value247;
 _Bool* item_existance_228;
 int len_229;
+char* __exception_result_var_b229;
 char* it_232;
-_Bool __exception_result_var_b56;
+_Bool __exception_result_var_b230;
 _Bool _for_condtionalA17;
+char* __exception_result_var_b233;
 struct CVALUE* default_value_235;
+void* __exception_result_var_b234;
 void* right_value249;
+struct CVALUE* __exception_result_var_b237;
 struct CVALUE* it2_238;
+unsigned int __exception_result_var_b238;
 unsigned int hash_239;
 int n_240;
 _Bool _while_condtional30;
 _Bool _if_conditional335;
 _Bool _if_conditional336;
 _Bool _if_conditional337;
+int __exception_result_var_b239;
 struct CVALUE* default_value_241;
 void* right_value250;
+struct CVALUE* __exception_result_var_b240;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&size_225, 0, sizeof(int));
@@ -11945,22 +11995,19 @@ memset(&right_value250, 0, sizeof(void*));
                                 len_229=0;
                                 __freed_obj__ = 0;
                                 for(
-                                it_232=(come_push_stackframe("./comelang2.h", 1411),map$2charphCVALUEph_begin(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1411)))) ,                                come_pop_stackframe() ,                                __freed_obj__ = 0, 
-                                0;                                _for_condtionalA17=                                !(come_push_stackframe("./comelang2.h", 1411),__exception_result_var_b56=map$2charphCVALUEph_end(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1411))), come_pop_stackframe(), __exception_result_var_b56) ,                                __freed_obj__ = 0, 
-                                _for_condtionalA17;                                it_232=(come_push_stackframe("./comelang2.h", 1411),map$2charphCVALUEph_next(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1411)))) ,                                come_pop_stackframe() ,                                __freed_obj__ = 0, 
+                                it_232=(come_push_stackframe("./comelang2.h", 1411),__exception_result_var_b229=map$2charphCVALUEph_begin(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1411))), come_pop_stackframe(), __exception_result_var_b229) ,                                __freed_obj__ = 0, 
+                                0;                                _for_condtionalA17=                                !(come_push_stackframe("./comelang2.h", 1411),__exception_result_var_b230=map$2charphCVALUEph_end(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1411))), come_pop_stackframe(), __exception_result_var_b230) ,                                __freed_obj__ = 0, 
+                                _for_condtionalA17;                                it_232=(come_push_stackframe("./comelang2.h", 1411),__exception_result_var_b233=map$2charphCVALUEph_next(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1411))), come_pop_stackframe(), __exception_result_var_b233) ,                                __freed_obj__ = 0, 
                                 0                                ){
                                     __freed_obj__ = 0;
-                                    (come_push_stackframe("./comelang2.h", 1380),memset(&default_value_235,0,sizeof(struct CVALUE*)));
-                                    come_pop_stackframe();
+                                    (come_push_stackframe("./comelang2.h", 1380),__exception_result_var_b234=memset(&default_value_235,0,sizeof(struct CVALUE*)), come_pop_stackframe(), __exception_result_var_b234);
                                     __freed_obj__ = 0;
-                                    it2_238=(come_push_stackframe("./comelang2.h", 1381),((struct CVALUE*)(right_value249=map$2charphCVALUEph_at(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1381)),it_232,default_value_235))));
-                                    come_pop_stackframe();
+                                    it2_238=(come_push_stackframe("./comelang2.h", 1381),__exception_result_var_b237=((struct CVALUE*)(right_value249=map$2charphCVALUEph_at(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1381)),it_232,default_value_235))), come_pop_stackframe(), __exception_result_var_b237);
                                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value249);
                                     if(right_value249 && right_value249 != __result_obj__ && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,right_value249, (void*)0, (void*)0, 0, 1, 0, 0); }
                                     __right_value_freed_obj[0] = right_value249;
                                     __freed_obj__ = 0;
-                                    hash_239=(come_push_stackframe("./comelang2.h", 1382),string_get_hash_key(((char*)come_null_check(it_232, "./comelang2.h", 1382))))%size_225;
-                                    come_pop_stackframe();
+                                    hash_239=(come_push_stackframe("./comelang2.h", 1382),__exception_result_var_b238=string_get_hash_key(((char*)come_null_check(it_232, "./comelang2.h", 1382))), come_pop_stackframe(), __exception_result_var_b238)%size_225;
                                     __freed_obj__ = 0;
                                     n_240=hash_239;
                                     __freed_obj__ = 0;
@@ -11978,14 +12025,11 @@ memset(&right_value250, 0, sizeof(void*));
                                             else {
                                                 if(_if_conditional337=n_240==hash_239,                                                __freed_obj__ = 0, 
                                                 _if_conditional337) {
-                                                    (come_push_stackframe("./comelang2.h", 1394),printf("unexpected error in map.rehash(1)\n"));
-                                                    come_pop_stackframe();
+                                                    (come_push_stackframe("./comelang2.h", 1394),__exception_result_var_b239=printf("unexpected error in map.rehash(1)\n"), come_pop_stackframe(), __exception_result_var_b239);
                                                     __freed_obj__ = 0;
-                                                    (come_push_stackframe("./comelang2.h", 1395),stackframe());
-                                                    come_pop_stackframe();
+                                                    (come_push_stackframe("./comelang2.h", 1395),stackframe(),come_pop_stackframe());
                                                     __freed_obj__ = 0;
-                                                    (come_push_stackframe("./comelang2.h", 1396),exit(2));
-                                                    come_pop_stackframe();
+                                                    (come_push_stackframe("./comelang2.h", 1396),exit(2),come_pop_stackframe());
                                                     __freed_obj__ = 0;
                                                 }
                                                 __freed_obj__ = 0;
@@ -11998,8 +12042,7 @@ memset(&right_value250, 0, sizeof(void*));
                                             keys_226[n_240]=it_232;
                                             __freed_obj__ = 0;
                                             __freed_obj__ = 0;
-                                            items_227[n_240]=(come_push_stackframe("./comelang2.h", 1403),((struct CVALUE*)(right_value250=map$2charphCVALUEph_at(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1403)),it_232,default_value_241))));
-                                            come_pop_stackframe();
+                                            items_227[n_240]=(come_push_stackframe("./comelang2.h", 1403),__exception_result_var_b240=((struct CVALUE*)(right_value250=map$2charphCVALUEph_at(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1403)),it_232,default_value_241))), come_pop_stackframe(), __exception_result_var_b240);
                                             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value250);
                                             if(right_value250 && right_value250 != __result_obj__ && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,right_value250, (void*)0, (void*)0, 0, 1, 0, 0); }
                                             __right_value_freed_obj[0] = right_value250;
@@ -12014,13 +12057,11 @@ memset(&right_value250, 0, sizeof(void*));
                                     __freed_obj__ = 0;
                                 }
                                 __freed_obj__ = 0;
-                                (come_push_stackframe("./comelang2.h", 1411),come_free_object((char*)((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1411))->items));
-                                come_pop_stackframe();
+                                (come_push_stackframe("./comelang2.h", 1411),come_free_object((char*)((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1411))->items),come_pop_stackframe());
                                 __freed_obj__ = 0;
                                 if(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1412))->item_existance && !__freed_obj__) { ((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1412))->item_existance = come_decrement_ref_count(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1412))->item_existance, (void*)0, (void*)0, 0, 0, 0); }
                                 __freed_obj__ = 0;
-                                (come_push_stackframe("./comelang2.h", 1413),come_free_object((char*)((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1413))->keys));
-                                come_pop_stackframe();
+                                (come_push_stackframe("./comelang2.h", 1413),come_free_object((char*)((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1413))->keys),come_pop_stackframe());
                                 __freed_obj__ = 0;
                                 ((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1415))->keys=keys_226;
                                 __freed_obj__ = 0;
@@ -12042,11 +12083,13 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional327;
 char* result_230;
-char* __result170__;
-_Bool _if_conditional328;
+void* __exception_result_var_b227;
 char* __result171__;
-char* result_231;
+_Bool _if_conditional328;
 char* __result172__;
+char* result_231;
+void* __exception_result_var_b228;
+char* __result173__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_230, 0, sizeof(char*));
@@ -12054,12 +12097,11 @@ memset(&result_231, 0, sizeof(char*));
                                     if(_if_conditional327=self==((void*)0),                                    __freed_obj__ = 0, 
                                     _if_conditional327) {
                                         __freed_obj__ = 0;
-                                        (come_push_stackframe("./comelang2.h", 1335),memset(&result_230,0,sizeof(char*)));
-                                        come_pop_stackframe();
+                                        (come_push_stackframe("./comelang2.h", 1335),__exception_result_var_b227=memset(&result_230,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b227);
                                         __freed_obj__ = 0;
-                                        __result170__ = __result_obj__ = result_230;
+                                        __result171__ = __result_obj__ = result_230;
                                         __freed_obj__ = 0;
-                                        return __result170__;
+                                        return __result171__;
                                         __freed_obj__ = 0;
                                     }
                                     __freed_obj__ = 0;
@@ -12067,19 +12109,18 @@ memset(&result_231, 0, sizeof(char*));
                                     __freed_obj__ = 0;
                                     if(_if_conditional328=((struct list$1charp*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1344))->key_list, "./comelang2.h", 1344))->it,                                    __freed_obj__ = 0, 
                                     _if_conditional328) {
-                                        __result171__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1341))->key_list, "./comelang2.h", 1341))->it, "./comelang2.h", 1341))->item;
+                                        __result172__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1341))->key_list, "./comelang2.h", 1341))->it, "./comelang2.h", 1341))->item;
                                         __freed_obj__ = 0;
-                                        return __result171__;
+                                        return __result172__;
                                         __freed_obj__ = 0;
                                     }
                                     __freed_obj__ = 0;
                                     __freed_obj__ = 0;
-                                    (come_push_stackframe("./comelang2.h", 1345),memset(&result_231,0,sizeof(char*)));
-                                    come_pop_stackframe();
+                                    (come_push_stackframe("./comelang2.h", 1345),__exception_result_var_b228=memset(&result_231,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b228);
                                     __freed_obj__ = 0;
-                                    __result172__ = __result_obj__ = result_231;
+                                    __result173__ = __result_obj__ = result_231;
                                     __freed_obj__ = 0;
-                                    return __result172__;
+                                    return __result173__;
                                     __freed_obj__ = 0;
 }
 
@@ -12089,12 +12130,12 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-_Bool __result173__;
+_Bool __result174__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                                    __result173__ = self==((void*)0)||((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1367))->key_list==((void*)0)||((struct list$1charp*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1367))->key_list, "./comelang2.h", 1367))->it==((void*)0);
+                                    __result174__ = self==((void*)0)||((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1367))->key_list==((void*)0)||((struct list$1charp*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1367))->key_list, "./comelang2.h", 1367))->it==((void*)0);
                                     __freed_obj__ = 0;
-                                    return __result173__;
+                                    return __result174__;
                                     __freed_obj__ = 0;
 }
 
@@ -12106,11 +12147,13 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional329;
 char* result_233;
-char* __result174__;
-_Bool _if_conditional330;
+void* __exception_result_var_b231;
 char* __result175__;
-char* result_234;
+_Bool _if_conditional330;
 char* __result176__;
+char* result_234;
+void* __exception_result_var_b232;
+char* __result177__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&result_233, 0, sizeof(char*));
@@ -12118,12 +12161,11 @@ memset(&result_234, 0, sizeof(char*));
                                     if(_if_conditional329=self==((void*)0),                                    __freed_obj__ = 0, 
                                     _if_conditional329) {
                                         __freed_obj__ = 0;
-                                        (come_push_stackframe("./comelang2.h", 1352),memset(&result_233,0,sizeof(char*)));
-                                        come_pop_stackframe();
+                                        (come_push_stackframe("./comelang2.h", 1352),__exception_result_var_b231=memset(&result_233,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b231);
                                         __freed_obj__ = 0;
-                                        __result174__ = __result_obj__ = result_233;
+                                        __result175__ = __result_obj__ = result_233;
                                         __freed_obj__ = 0;
-                                        return __result174__;
+                                        return __result175__;
                                         __freed_obj__ = 0;
                                     }
                                     __freed_obj__ = 0;
@@ -12131,19 +12173,18 @@ memset(&result_234, 0, sizeof(char*));
                                     __freed_obj__ = 0;
                                     if(_if_conditional330=((struct list$1charp*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1361))->key_list, "./comelang2.h", 1361))->it,                                    __freed_obj__ = 0, 
                                     _if_conditional330) {
-                                        __result175__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1358))->key_list, "./comelang2.h", 1358))->it, "./comelang2.h", 1358))->item;
+                                        __result176__ = __result_obj__ = ((struct list_item$1charp*)come_null_check(((struct list$1charp*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1358))->key_list, "./comelang2.h", 1358))->it, "./comelang2.h", 1358))->item;
                                         __freed_obj__ = 0;
-                                        return __result175__;
+                                        return __result176__;
                                         __freed_obj__ = 0;
                                     }
                                     __freed_obj__ = 0;
                                     __freed_obj__ = 0;
-                                    (come_push_stackframe("./comelang2.h", 1362),memset(&result_234,0,sizeof(char*)));
-                                    come_pop_stackframe();
+                                    (come_push_stackframe("./comelang2.h", 1362),__exception_result_var_b232=memset(&result_234,0,sizeof(char*)), come_pop_stackframe(), __exception_result_var_b232);
                                     __freed_obj__ = 0;
-                                    __result176__ = __result_obj__ = result_234;
+                                    __result177__ = __result_obj__ = result_234;
                                     __freed_obj__ = 0;
-                                    return __result176__;
+                                    return __result177__;
                                     __freed_obj__ = 0;
 }
 
@@ -12153,26 +12194,26 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
+unsigned int __exception_result_var_b235;
 unsigned int hash_236;
 unsigned int it_237;
 _Bool _while_condtional29;
 _Bool _if_conditional331;
 void* right_value248;
-struct optional$2boolbool* __exception_result_var_b57;
+struct optional$2boolbool* __exception_result_var_b236;
 _Bool _if_conditional332;
-struct CVALUE* __result177__;
+struct CVALUE* __result178__;
 _Bool _if_conditional333;
 _Bool _if_conditional334;
-struct CVALUE* __result178__;
 struct CVALUE* __result179__;
 struct CVALUE* __result180__;
+struct CVALUE* __result181__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&hash_236, 0, sizeof(unsigned int));
 memset(&it_237, 0, sizeof(unsigned int));
 memset(&right_value248, 0, sizeof(void*));
-                                        hash_236=(come_push_stackframe("./comelang2.h", 1260),string_get_hash_key(((char*)come_null_check(((char*)key), "./comelang2.h", 1260))))%((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1260))->size;
-                                        come_pop_stackframe();
+                                        hash_236=(come_push_stackframe("./comelang2.h", 1260),__exception_result_var_b235=string_get_hash_key(((char*)come_null_check(((char*)key), "./comelang2.h", 1260))), come_pop_stackframe(), __exception_result_var_b235)%((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1260))->size;
                                         __freed_obj__ = 0;
                                         it_237=hash_236;
                                         __freed_obj__ = 0;
@@ -12180,14 +12221,14 @@ memset(&right_value248, 0, sizeof(void*));
                                         _while_condtional29) {
                                             if(_if_conditional331=((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1283))->item_existance[it_237],                                            __freed_obj__ = 0, 
                                             _if_conditional331) {
-                                                if(_if_conditional332=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1271),__exception_result_var_b57=((struct optional$2boolbool*)(right_value248=string_equals(((char*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1271))->keys[it_237], "./comelang2.h", 1271)),key))), come_pop_stackframe(), __exception_result_var_b57)),                                                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value248),
+                                                if(_if_conditional332=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1271),__exception_result_var_b236=((struct optional$2boolbool*)(right_value248=string_equals(((char*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1271))->keys[it_237], "./comelang2.h", 1271)),key))), come_pop_stackframe(), __exception_result_var_b236)),                                                __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value248),
                                                 (right_value248 && right_value248 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value248, (void*)0, (void*)0, 0, 1, 0, 0):0,
                                                 __right_value_freed_obj[0] = right_value248, 
                                                 __freed_obj__ = 0, 
                                                 _if_conditional332) {
-                                                    __result177__ = __result_obj__ = ((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1268))->items[it_237];
+                                                    __result178__ = __result_obj__ = ((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1268))->items[it_237];
                                                     __freed_obj__ = 0;
-                                                    return __result177__;
+                                                    return __result178__;
                                                     __freed_obj__ = 0;
                                                 }
                                                 __freed_obj__ = 0;
@@ -12201,9 +12242,9 @@ memset(&right_value248, 0, sizeof(void*));
                                                 else {
                                                     if(_if_conditional334=it_237==hash_236,                                                    __freed_obj__ = 0, 
                                                     _if_conditional334) {
-                                                        __result178__ = __result_obj__ = default_value;
+                                                        __result179__ = __result_obj__ = default_value;
                                                         __freed_obj__ = 0;
-                                                        return __result178__;
+                                                        return __result179__;
                                                         __freed_obj__ = 0;
                                                     }
                                                     __freed_obj__ = 0;
@@ -12211,17 +12252,17 @@ memset(&right_value248, 0, sizeof(void*));
                                                 __freed_obj__ = 0;
                                             }
                                             else {
-                                                __result179__ = __result_obj__ = default_value;
+                                                __result180__ = __result_obj__ = default_value;
                                                 __freed_obj__ = 0;
-                                                return __result179__;
+                                                return __result180__;
                                                 __freed_obj__ = 0;
                                             }
                                             __freed_obj__ = 0;
                                         }
                                         __freed_obj__ = 0;
-                                        __result180__ = __result_obj__ = default_value;
+                                        __result181__ = __result_obj__ = default_value;
                                         __freed_obj__ = 0;
-                                        return __result180__;
+                                        return __result181__;
                                         __freed_obj__ = 0;
 }
 
@@ -12231,12 +12272,12 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-int __result182__;
+int __result183__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-            __result182__ = ((struct list$1tuple2$2charphsNodephph*)come_null_check(self, "./comelang2.h", 412))->len;
+            __result183__ = ((struct list$1tuple2$2charphsNodephph*)come_null_check(self, "./comelang2.h", 412))->len;
             __freed_obj__ = 0;
-            return __result182__;
+            return __result183__;
             __freed_obj__ = 0;
 }
 
@@ -12246,12 +12287,12 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-int __result183__;
+int __result184__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-            __result183__ = ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 412))->len;
+            __result184__ = ((struct list$1sTypeph*)come_null_check(self, "./comelang2.h", 412))->len;
             __freed_obj__ = 0;
-            return __result183__;
+            return __result184__;
             __freed_obj__ = 0;
 }
 
@@ -12262,27 +12303,29 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 struct CVALUE* default_value_248;
+void* __exception_result_var_b258;
+unsigned int __exception_result_var_b259;
 unsigned int hash_249;
 unsigned int it_250;
 _Bool _while_condtional32;
 _Bool _if_conditional349;
 void* right_value257;
-struct optional$2boolbool* __exception_result_var_b66;
+struct optional$2boolbool* __exception_result_var_b260;
 _Bool _if_conditional350;
 void* right_value258;
 void* right_value259;
-struct optional$2CVALUEpbool* __result185__;
+struct optional$2CVALUEpbool* __result186__;
 _Bool _if_conditional351;
 _Bool _if_conditional352;
 void* right_value260;
 void* right_value261;
-struct optional$2CVALUEpbool* __result186__;
+struct optional$2CVALUEpbool* __result187__;
 void* right_value262;
 void* right_value263;
-struct optional$2CVALUEpbool* __result187__;
+struct optional$2CVALUEpbool* __result188__;
 void* right_value264;
 void* right_value265;
-struct optional$2CVALUEpbool* __result188__;
+struct optional$2CVALUEpbool* __result189__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&default_value_248, 0, sizeof(struct CVALUE*));
@@ -12298,11 +12341,9 @@ memset(&right_value263, 0, sizeof(void*));
 memset(&right_value264, 0, sizeof(void*));
 memset(&right_value265, 0, sizeof(void*));
                     __freed_obj__ = 0;
-                    (come_push_stackframe("./comelang2.h", 1587),memset(&default_value_248,0,sizeof(struct CVALUE*)));
-                    come_pop_stackframe();
+                    (come_push_stackframe("./comelang2.h", 1587),__exception_result_var_b258=memset(&default_value_248,0,sizeof(struct CVALUE*)), come_pop_stackframe(), __exception_result_var_b258);
                     __freed_obj__ = 0;
-                    hash_249=(come_push_stackframe("./comelang2.h", 1589),string_get_hash_key(((char*)come_null_check(((char*)key), "./comelang2.h", 1589))))%((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1589))->size;
-                    come_pop_stackframe();
+                    hash_249=(come_push_stackframe("./comelang2.h", 1589),__exception_result_var_b259=string_get_hash_key(((char*)come_null_check(((char*)key), "./comelang2.h", 1589))), come_pop_stackframe(), __exception_result_var_b259)%((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1589))->size;
                     __freed_obj__ = 0;
                     it_250=hash_249;
                     __freed_obj__ = 0;
@@ -12310,17 +12351,17 @@ memset(&right_value265, 0, sizeof(void*));
                     _while_condtional32) {
                         if(_if_conditional349=((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1612))->item_existance[it_250],                        __freed_obj__ = 0, 
                         _if_conditional349) {
-                            if(_if_conditional350=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1600),__exception_result_var_b66=((struct optional$2boolbool*)(right_value257=string_equals(((char*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1600))->keys[it_250], "./comelang2.h", 1600)),key))), come_pop_stackframe(), __exception_result_var_b66)),                            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value257),
+                            if(_if_conditional350=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1600),__exception_result_var_b260=((struct optional$2boolbool*)(right_value257=string_equals(((char*)come_null_check(((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1600))->keys[it_250], "./comelang2.h", 1600)),key))), come_pop_stackframe(), __exception_result_var_b260)),                            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value257),
                             (right_value257 && right_value257 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value257, (void*)0, (void*)0, 0, 1, 0, 0):0,
                             __right_value_freed_obj[0] = right_value257, 
                             __freed_obj__ = 0, 
                             _if_conditional350) {
-                                __result185__ = __result_obj__ = ((struct optional$2CVALUEpbool*)(right_value259=optional$2CVALUEpbool_initialize((struct optional$2CVALUEpbool*)come_increment_ref_count(((struct optional$2CVALUEpbool*)(right_value258=(struct optional$2CVALUEpbool*)come_calloc(1, sizeof(struct optional$2CVALUEpbool)*(1), "./comelang2.h", 1597)))),((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1597))->items[it_250],(_Bool)1)));
+                                __result186__ = __result_obj__ = ((struct optional$2CVALUEpbool*)(right_value259=optional$2CVALUEpbool_initialize((struct optional$2CVALUEpbool*)come_increment_ref_count(((struct optional$2CVALUEpbool*)(right_value258=(struct optional$2CVALUEpbool*)come_calloc(1, sizeof(struct optional$2CVALUEpbool)*(1), "./comelang2.h", 1597)))),((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1597))->items[it_250],(_Bool)1)));
                                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value258);
                                 if(right_value258 && right_value258 != __result_obj__ && !__freed_obj__) { right_value258 = come_decrement_ref_count(right_value258, (void*)0, (void*)0, 1, 0, 0); }
                                 __right_value_freed_obj[0] = right_value258;
                                 __freed_obj__ = 0;
-                                return __result185__;
+                                return __result186__;
                                 __freed_obj__ = 0;
                             }
                             __freed_obj__ = 0;
@@ -12334,7 +12375,7 @@ memset(&right_value265, 0, sizeof(void*));
                             else {
                                 if(_if_conditional352=it_250==hash_249,                                __freed_obj__ = 0, 
                                 _if_conditional352) {
-                                    __result186__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1606), ((struct optional$2CVALUEpbool*)(right_value261=optional$2CVALUEpbool_initialize(((struct optional$2CVALUEpbool*)(right_value260=(struct optional$2CVALUEpbool*)come_calloc(1, sizeof(struct optional$2CVALUEpbool)*(1), "./comelang2.h", 1606))),default_value_248,(_Bool)0))));
+                                    __result187__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1606), ((struct optional$2CVALUEpbool*)(right_value261=optional$2CVALUEpbool_initialize(((struct optional$2CVALUEpbool*)(right_value260=(struct optional$2CVALUEpbool*)come_calloc(1, sizeof(struct optional$2CVALUEpbool)*(1), "./comelang2.h", 1606))),default_value_248,(_Bool)0))));
                                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value260);
                                     if(right_value260 && right_value260 != __result_obj__ && !__freed_obj__) { right_value260 = come_decrement_ref_count(right_value260, (void*)0, (void*)0, 1, 0, 0); }
                                     __right_value_freed_obj[0] = right_value260;
@@ -12342,7 +12383,7 @@ memset(&right_value265, 0, sizeof(void*));
                                     if(right_value261 && right_value261 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2CVALUEpboolp_finalize,right_value261, (void*)0, (void*)0, 0, 1, 0, 0); }
                                     __right_value_freed_obj[1] = right_value261;
                                     __freed_obj__ = 0;
-                                    return __result186__;
+                                    return __result187__;
                                     __freed_obj__ = 0;
                                 }
                                 __freed_obj__ = 0;
@@ -12350,7 +12391,7 @@ memset(&right_value265, 0, sizeof(void*));
                             __freed_obj__ = 0;
                         }
                         else {
-                            __result187__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1610), ((struct optional$2CVALUEpbool*)(right_value263=optional$2CVALUEpbool_initialize(((struct optional$2CVALUEpbool*)(right_value262=(struct optional$2CVALUEpbool*)come_calloc(1, sizeof(struct optional$2CVALUEpbool)*(1), "./comelang2.h", 1610))),default_value_248,(_Bool)0))));
+                            __result188__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1610), ((struct optional$2CVALUEpbool*)(right_value263=optional$2CVALUEpbool_initialize(((struct optional$2CVALUEpbool*)(right_value262=(struct optional$2CVALUEpbool*)come_calloc(1, sizeof(struct optional$2CVALUEpbool)*(1), "./comelang2.h", 1610))),default_value_248,(_Bool)0))));
                             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value262);
                             if(right_value262 && right_value262 != __result_obj__ && !__freed_obj__) { right_value262 = come_decrement_ref_count(right_value262, (void*)0, (void*)0, 1, 0, 0); }
                             __right_value_freed_obj[0] = right_value262;
@@ -12358,13 +12399,13 @@ memset(&right_value265, 0, sizeof(void*));
                             if(right_value263 && right_value263 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2CVALUEpboolp_finalize,right_value263, (void*)0, (void*)0, 0, 1, 0, 0); }
                             __right_value_freed_obj[1] = right_value263;
                             __freed_obj__ = 0;
-                            return __result187__;
+                            return __result188__;
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
-                    __result188__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1614), ((struct optional$2CVALUEpbool*)(right_value265=optional$2CVALUEpbool_initialize(((struct optional$2CVALUEpbool*)(right_value264=(struct optional$2CVALUEpbool*)come_calloc(1, sizeof(struct optional$2CVALUEpbool)*(1), "./comelang2.h", 1614))),default_value_248,(_Bool)0))));
+                    __result189__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1614), ((struct optional$2CVALUEpbool*)(right_value265=optional$2CVALUEpbool_initialize(((struct optional$2CVALUEpbool*)(right_value264=(struct optional$2CVALUEpbool*)come_calloc(1, sizeof(struct optional$2CVALUEpbool)*(1), "./comelang2.h", 1614))),default_value_248,(_Bool)0))));
                     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value264);
                     if(right_value264 && right_value264 != __result_obj__ && !__freed_obj__) { right_value264 = come_decrement_ref_count(right_value264, (void*)0, (void*)0, 1, 0, 0); }
                     __right_value_freed_obj[0] = right_value264;
@@ -12372,7 +12413,7 @@ memset(&right_value265, 0, sizeof(void*));
                     if(right_value265 && right_value265 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2CVALUEpboolp_finalize,right_value265, (void*)0, (void*)0, 0, 1, 0, 0); }
                     __right_value_freed_obj[1] = right_value265;
                     __freed_obj__ = 0;
-                    return __result188__;
+                    return __result189__;
                     __freed_obj__ = 0;
 }
 
@@ -12382,17 +12423,17 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-struct optional$2CVALUEpbool* __result184__;
+struct optional$2CVALUEpbool* __result185__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
                                     ((struct optional$2CVALUEpbool*)come_null_check(self, "./comelang2.h", 40))->v1=v1;
                                     __freed_obj__ = 0;
                                     ((struct optional$2CVALUEpbool*)come_null_check(self, "./comelang2.h", 41))->v2=v2;
                                     __freed_obj__ = 0;
-                                    __result184__ = __result_obj__ = self;
+                                    __result185__ = __result_obj__ = self;
                                     if(self && !__freed_obj__) { come_call_finalizer(optional$2CVALUEpboolp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
                                     __freed_obj__ = 0;
-                                    return __result184__;
+                                    return __result185__;
                                     __freed_obj__ = 0;
                                     if(self && !__freed_obj__) { come_call_finalizer(optional$2CVALUEpboolp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
 }
@@ -12415,26 +12456,26 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional353;
 struct CVALUE* default_value_251;
-struct CVALUE* __result189__;
+void* __exception_result_var_b262;
 struct CVALUE* __result190__;
+struct CVALUE* __result191__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&default_value_251, 0, sizeof(struct CVALUE*));
                     if(_if_conditional353=self==((void*)0),                    __freed_obj__ = 0, 
                     _if_conditional353) {
                         __freed_obj__ = 0;
-                        (come_push_stackframe("./comelang2.h", 63),memset(&default_value_251,0,sizeof(struct CVALUE*)));
-                        come_pop_stackframe();
+                        (come_push_stackframe("./comelang2.h", 63),__exception_result_var_b262=memset(&default_value_251,0,sizeof(struct CVALUE*)), come_pop_stackframe(), __exception_result_var_b262);
                         __freed_obj__ = 0;
-                        __result189__ = __result_obj__ = default_value_251;
+                        __result190__ = __result_obj__ = default_value_251;
                         __freed_obj__ = 0;
-                        return __result189__;
+                        return __result190__;
                         __freed_obj__ = 0;
                     }
                     else {
-                        __result190__ = __result_obj__ = ((struct optional$2CVALUEpbool*)come_null_check(self, "./comelang2.h", 67))->v1;
+                        __result191__ = __result_obj__ = ((struct optional$2CVALUEpbool*)come_null_check(self, "./comelang2.h", 67))->v1;
                         __freed_obj__ = 0;
-                        return __result190__;
+                        return __result191__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
@@ -12446,12 +12487,12 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-int __result193__;
+int __result194__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-            __result193__ = ((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1329))->len;
+            __result194__ = ((struct map$2charphCVALUEph*)come_null_check(self, "./comelang2.h", 1329))->len;
             __freed_obj__ = 0;
-            return __result193__;
+            return __result194__;
             __freed_obj__ = 0;
 }
 
@@ -12461,12 +12502,12 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-int __result194__;
+int __result195__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                __result194__ = ((struct list$1charph*)come_null_check(self, "./comelang2.h", 412))->len;
+                __result195__ = ((struct list$1charph*)come_null_check(self, "./comelang2.h", 412))->len;
                 __freed_obj__ = 0;
-                return __result194__;
+                return __result195__;
                 __freed_obj__ = 0;
 }
 
@@ -12478,13 +12519,14 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional366;
 _Bool _if_conditional367;
-struct list$1CVALUEph* __result195__;
+struct list$1CVALUEph* __exception_result_var_b281;
+struct list$1CVALUEph* __result196__;
 struct list_item$1CVALUEph* it_261;
 int i_262;
 _Bool _while_condtional33;
 _Bool _if_conditional368;
 struct CVALUE* __dec_obj92;
-struct list$1CVALUEph* __result196__;
+struct list$1CVALUEph* __result197__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&it_261, 0, sizeof(struct list_item$1CVALUEph*));
@@ -12497,13 +12539,12 @@ memset(&i_262, 0, sizeof(int));
                         __freed_obj__ = 0;
                         if(_if_conditional367=position>=((struct list$1CVALUEph*)come_null_check(self, "./comelang2.h", 642))->len,                        __freed_obj__ = 0, 
                         _if_conditional367) {
-                            (come_push_stackframe("./comelang2.h", 638),list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(self, "./comelang2.h", 638)),(struct CVALUE*)come_increment_ref_count(item)));
-                            come_pop_stackframe();
+                            (come_push_stackframe("./comelang2.h", 638),__exception_result_var_b281=list$1CVALUEph_push_back(((struct list$1CVALUEph*)come_null_check(self, "./comelang2.h", 638)),(struct CVALUE*)come_increment_ref_count(item)), come_pop_stackframe(), __exception_result_var_b281);
                             __freed_obj__ = 0;
-                            __result195__ = __result_obj__ = self;
+                            __result196__ = __result_obj__ = self;
                             if(item && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
                             __freed_obj__ = 0;
-                            return __result195__;
+                            return __result196__;
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
@@ -12529,10 +12570,10 @@ memset(&i_262, 0, sizeof(int));
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
-                        __result196__ = __result_obj__ = self;
+                        __result197__ = __result_obj__ = self;
                         if(item && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
                         __freed_obj__ = 0;
-                        return __result196__;
+                        return __result197__;
                         __freed_obj__ = 0;
                         if(item && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
 }
@@ -12544,7 +12585,7 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional369;
-struct CVALUE* __result197__;
+struct CVALUE* __result198__;
 void* right_value283;
 struct CVALUE* result_263;
 _Bool _if_conditional370;
@@ -12554,7 +12595,7 @@ _Bool _if_conditional371;
 void* right_value285;
 struct sType* __dec_obj94;
 _Bool _if_conditional372;
-struct CVALUE* __result198__;
+struct CVALUE* __result199__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value283, 0, sizeof(void*));
@@ -12563,9 +12604,9 @@ memset(&right_value284, 0, sizeof(void*));
 memset(&right_value285, 0, sizeof(void*));
                         if(_if_conditional369=self==(void*)0,                        __freed_obj__ = 0, 
                         _if_conditional369) {
-                            __result197__ = __result_obj__ = (void*)0;
+                            __result198__ = __result_obj__ = (void*)0;
                             __freed_obj__ = 0;
-                            return __result197__;
+                            return __result198__;
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
@@ -12602,10 +12643,10 @@ memset(&right_value285, 0, sizeof(void*));
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
-                        __result198__ = __result_obj__ = result_263;
+                        __result199__ = __result_obj__ = result_263;
                         if(result_263 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,result_263, (void*)0, (void*)0, 0, 0, 1, 0); }
                         __freed_obj__ = 0;
-                        return __result198__;
+                        return __result199__;
                         __freed_obj__ = 0;
                         if(result_263 && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,result_263, (void*)0, (void*)0, 0, 0, 0, 0); }
 }
@@ -12617,27 +12658,29 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 struct sClass* default_value_270;
+void* __exception_result_var_b290;
+unsigned int __exception_result_var_b291;
 unsigned int hash_271;
 unsigned int it_272;
 _Bool _while_condtional34;
 _Bool _if_conditional379;
 void* right_value299;
-struct optional$2boolbool* __exception_result_var_b73;
+struct optional$2boolbool* __exception_result_var_b292;
 _Bool _if_conditional380;
 void* right_value300;
 void* right_value301;
-struct optional$2sClasspbool* __result203__;
+struct optional$2sClasspbool* __result204__;
 _Bool _if_conditional381;
 _Bool _if_conditional382;
 void* right_value302;
 void* right_value303;
-struct optional$2sClasspbool* __result204__;
+struct optional$2sClasspbool* __result205__;
 void* right_value304;
 void* right_value305;
-struct optional$2sClasspbool* __result205__;
+struct optional$2sClasspbool* __result206__;
 void* right_value306;
 void* right_value307;
-struct optional$2sClasspbool* __result206__;
+struct optional$2sClasspbool* __result207__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&default_value_270, 0, sizeof(struct sClass*));
@@ -12653,11 +12696,9 @@ memset(&right_value305, 0, sizeof(void*));
 memset(&right_value306, 0, sizeof(void*));
 memset(&right_value307, 0, sizeof(void*));
                 __freed_obj__ = 0;
-                (come_push_stackframe("./comelang2.h", 1587),memset(&default_value_270,0,sizeof(struct sClass*)));
-                come_pop_stackframe();
+                (come_push_stackframe("./comelang2.h", 1587),__exception_result_var_b290=memset(&default_value_270,0,sizeof(struct sClass*)), come_pop_stackframe(), __exception_result_var_b290);
                 __freed_obj__ = 0;
-                hash_271=(come_push_stackframe("./comelang2.h", 1589),string_get_hash_key(((char*)come_null_check(((char*)key), "./comelang2.h", 1589))))%((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1589))->size;
-                come_pop_stackframe();
+                hash_271=(come_push_stackframe("./comelang2.h", 1589),__exception_result_var_b291=string_get_hash_key(((char*)come_null_check(((char*)key), "./comelang2.h", 1589))), come_pop_stackframe(), __exception_result_var_b291)%((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1589))->size;
                 __freed_obj__ = 0;
                 it_272=hash_271;
                 __freed_obj__ = 0;
@@ -12665,17 +12706,17 @@ memset(&right_value307, 0, sizeof(void*));
                 _while_condtional34) {
                     if(_if_conditional379=((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1612))->item_existance[it_272],                    __freed_obj__ = 0, 
                     _if_conditional379) {
-                        if(_if_conditional380=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1600),__exception_result_var_b73=((struct optional$2boolbool*)(right_value299=string_equals(((char*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1600))->keys[it_272], "./comelang2.h", 1600)),key))), come_pop_stackframe(), __exception_result_var_b73)),                        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value299),
+                        if(_if_conditional380=optional$2boolbool_value((come_push_stackframe("./comelang2.h", 1600),__exception_result_var_b292=((struct optional$2boolbool*)(right_value299=string_equals(((char*)come_null_check(((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1600))->keys[it_272], "./comelang2.h", 1600)),key))), come_pop_stackframe(), __exception_result_var_b292)),                        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value299),
                         (right_value299 && right_value299 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2boolboolp_finalize,right_value299, (void*)0, (void*)0, 0, 1, 0, 0):0,
                         __right_value_freed_obj[0] = right_value299, 
                         __freed_obj__ = 0, 
                         _if_conditional380) {
-                            __result203__ = __result_obj__ = ((struct optional$2sClasspbool*)(right_value301=optional$2sClasspbool_initialize((struct optional$2sClasspbool*)come_increment_ref_count(((struct optional$2sClasspbool*)(right_value300=(struct optional$2sClasspbool*)come_calloc(1, sizeof(struct optional$2sClasspbool)*(1), "./comelang2.h", 1597)))),((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1597))->items[it_272],(_Bool)1)));
+                            __result204__ = __result_obj__ = ((struct optional$2sClasspbool*)(right_value301=optional$2sClasspbool_initialize((struct optional$2sClasspbool*)come_increment_ref_count(((struct optional$2sClasspbool*)(right_value300=(struct optional$2sClasspbool*)come_calloc(1, sizeof(struct optional$2sClasspbool)*(1), "./comelang2.h", 1597)))),((struct map$2charphsClassph*)come_null_check(self, "./comelang2.h", 1597))->items[it_272],(_Bool)1)));
                             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value300);
                             if(right_value300 && right_value300 != __result_obj__ && !__freed_obj__) { right_value300 = come_decrement_ref_count(right_value300, (void*)0, (void*)0, 1, 0, 0); }
                             __right_value_freed_obj[0] = right_value300;
                             __freed_obj__ = 0;
-                            return __result203__;
+                            return __result204__;
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
@@ -12689,7 +12730,7 @@ memset(&right_value307, 0, sizeof(void*));
                         else {
                             if(_if_conditional382=it_272==hash_271,                            __freed_obj__ = 0, 
                             _if_conditional382) {
-                                __result204__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1606), ((struct optional$2sClasspbool*)(right_value303=optional$2sClasspbool_initialize(((struct optional$2sClasspbool*)(right_value302=(struct optional$2sClasspbool*)come_calloc(1, sizeof(struct optional$2sClasspbool)*(1), "./comelang2.h", 1606))),default_value_270,(_Bool)0))));
+                                __result205__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1606), ((struct optional$2sClasspbool*)(right_value303=optional$2sClasspbool_initialize(((struct optional$2sClasspbool*)(right_value302=(struct optional$2sClasspbool*)come_calloc(1, sizeof(struct optional$2sClasspbool)*(1), "./comelang2.h", 1606))),default_value_270,(_Bool)0))));
                                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value302);
                                 if(right_value302 && right_value302 != __result_obj__ && !__freed_obj__) { right_value302 = come_decrement_ref_count(right_value302, (void*)0, (void*)0, 1, 0, 0); }
                                 __right_value_freed_obj[0] = right_value302;
@@ -12697,7 +12738,7 @@ memset(&right_value307, 0, sizeof(void*));
                                 if(right_value303 && right_value303 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sClasspboolp_finalize,right_value303, (void*)0, (void*)0, 0, 1, 0, 0); }
                                 __right_value_freed_obj[1] = right_value303;
                                 __freed_obj__ = 0;
-                                return __result204__;
+                                return __result205__;
                                 __freed_obj__ = 0;
                             }
                             __freed_obj__ = 0;
@@ -12705,7 +12746,7 @@ memset(&right_value307, 0, sizeof(void*));
                         __freed_obj__ = 0;
                     }
                     else {
-                        __result205__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1610), ((struct optional$2sClasspbool*)(right_value305=optional$2sClasspbool_initialize(((struct optional$2sClasspbool*)(right_value304=(struct optional$2sClasspbool*)come_calloc(1, sizeof(struct optional$2sClasspbool)*(1), "./comelang2.h", 1610))),default_value_270,(_Bool)0))));
+                        __result206__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1610), ((struct optional$2sClasspbool*)(right_value305=optional$2sClasspbool_initialize(((struct optional$2sClasspbool*)(right_value304=(struct optional$2sClasspbool*)come_calloc(1, sizeof(struct optional$2sClasspbool)*(1), "./comelang2.h", 1610))),default_value_270,(_Bool)0))));
                         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value304);
                         if(right_value304 && right_value304 != __result_obj__ && !__freed_obj__) { right_value304 = come_decrement_ref_count(right_value304, (void*)0, (void*)0, 1, 0, 0); }
                         __right_value_freed_obj[0] = right_value304;
@@ -12713,13 +12754,13 @@ memset(&right_value307, 0, sizeof(void*));
                         if(right_value305 && right_value305 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sClasspboolp_finalize,right_value305, (void*)0, (void*)0, 0, 1, 0, 0); }
                         __right_value_freed_obj[1] = right_value305;
                         __freed_obj__ = 0;
-                        return __result205__;
+                        return __result206__;
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                __result206__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1614), ((struct optional$2sClasspbool*)(right_value307=optional$2sClasspbool_initialize(((struct optional$2sClasspbool*)(right_value306=(struct optional$2sClasspbool*)come_calloc(1, sizeof(struct optional$2sClasspbool)*(1), "./comelang2.h", 1614))),default_value_270,(_Bool)0))));
+                __result207__ = __result_obj__ = (come_save_stackframe("./comelang2.h", 1614), ((struct optional$2sClasspbool*)(right_value307=optional$2sClasspbool_initialize(((struct optional$2sClasspbool*)(right_value306=(struct optional$2sClasspbool*)come_calloc(1, sizeof(struct optional$2sClasspbool)*(1), "./comelang2.h", 1614))),default_value_270,(_Bool)0))));
                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value306);
                 if(right_value306 && right_value306 != __result_obj__ && !__freed_obj__) { right_value306 = come_decrement_ref_count(right_value306, (void*)0, (void*)0, 1, 0, 0); }
                 __right_value_freed_obj[0] = right_value306;
@@ -12727,7 +12768,7 @@ memset(&right_value307, 0, sizeof(void*));
                 if(right_value307 && right_value307 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2sClasspboolp_finalize,right_value307, (void*)0, (void*)0, 0, 1, 0, 0); }
                 __right_value_freed_obj[1] = right_value307;
                 __freed_obj__ = 0;
-                return __result206__;
+                return __result207__;
                 __freed_obj__ = 0;
 }
 
@@ -12737,17 +12778,17 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-struct optional$2sClasspbool* __result202__;
+struct optional$2sClasspbool* __result203__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
                                 ((struct optional$2sClasspbool*)come_null_check(self, "./comelang2.h", 40))->v1=v1;
                                 __freed_obj__ = 0;
                                 ((struct optional$2sClasspbool*)come_null_check(self, "./comelang2.h", 41))->v2=v2;
                                 __freed_obj__ = 0;
-                                __result202__ = __result_obj__ = self;
+                                __result203__ = __result_obj__ = self;
                                 if(self && !__freed_obj__) { come_call_finalizer(optional$2sClasspboolp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
                                 __freed_obj__ = 0;
-                                return __result202__;
+                                return __result203__;
                                 __freed_obj__ = 0;
                                 if(self && !__freed_obj__) { come_call_finalizer(optional$2sClasspboolp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
 }
@@ -12770,26 +12811,26 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional383;
 struct sClass* default_value_273;
-struct sClass* __result207__;
+void* __exception_result_var_b294;
 struct sClass* __result208__;
+struct sClass* __result209__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&default_value_273, 0, sizeof(struct sClass*));
                 if(_if_conditional383=self==((void*)0),                __freed_obj__ = 0, 
                 _if_conditional383) {
                     __freed_obj__ = 0;
-                    (come_push_stackframe("./comelang2.h", 63),memset(&default_value_273,0,sizeof(struct sClass*)));
-                    come_pop_stackframe();
+                    (come_push_stackframe("./comelang2.h", 63),__exception_result_var_b294=memset(&default_value_273,0,sizeof(struct sClass*)), come_pop_stackframe(), __exception_result_var_b294);
                     __freed_obj__ = 0;
-                    __result207__ = __result_obj__ = default_value_273;
+                    __result208__ = __result_obj__ = default_value_273;
                     __freed_obj__ = 0;
-                    return __result207__;
+                    return __result208__;
                     __freed_obj__ = 0;
                 }
                 else {
-                    __result208__ = __result_obj__ = ((struct optional$2sClasspbool*)come_null_check(self, "./comelang2.h", 67))->v1;
+                    __result209__ = __result_obj__ = ((struct optional$2sClasspbool*)come_null_check(self, "./comelang2.h", 67))->v1;
                     __freed_obj__ = 0;
-                    return __result208__;
+                    return __result209__;
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
@@ -12802,28 +12843,26 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional386;
-char* __result210__;
+int __exception_result_var_b301;
+int __exception_result_var_b302;
+char* __result211__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
                 if(_if_conditional386=!((struct optional$2charphbool*)come_null_check(self, "./comelang2.h", 78))->v2,                __freed_obj__ = 0, 
                 _if_conditional386) {
-                    (come_push_stackframe("./comelang2.h", 73),puts("Exception: at"));
-                    come_pop_stackframe();
+                    (come_push_stackframe("./comelang2.h", 73),__exception_result_var_b301=puts("Exception: at"), come_pop_stackframe(), __exception_result_var_b301);
                     __freed_obj__ = 0;
-                    (come_push_stackframe("./comelang2.h", 74),come_show_stackframe());
-                    come_pop_stackframe();
+                    (come_push_stackframe("./comelang2.h", 74),stackframe(),come_pop_stackframe());
                     __freed_obj__ = 0;
-                    (come_push_stackframe("./comelang2.h", 75),puts("abort."));
-                    come_pop_stackframe();
+                    (come_push_stackframe("./comelang2.h", 75),__exception_result_var_b302=puts("abort."), come_pop_stackframe(), __exception_result_var_b302);
                     __freed_obj__ = 0;
-                    (come_push_stackframe("./comelang2.h", 76),exit(2));
-                    come_pop_stackframe();
+                    (come_push_stackframe("./comelang2.h", 76),exit(2),come_pop_stackframe());
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                __result210__ = __result_obj__ = ((struct optional$2charphbool*)come_null_check(self, "./comelang2.h", 78))->v1;
+                __result211__ = __result_obj__ = ((struct optional$2charphbool*)come_null_check(self, "./comelang2.h", 78))->v1;
                 __freed_obj__ = 0;
-                return __result210__;
+                return __result211__;
                 __freed_obj__ = 0;
 }
 
@@ -12835,33 +12874,43 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 void* right_value361;
 void* right_value362;
+struct list$1tuple2$2charphsNodephph* __exception_result_var_b352;
 struct list$1tuple2$2charphsNodephph* params_305;
 void* right_value366;
 void* right_value369;
 void* right_value370;
+struct tuple2$2charphsNodeph* __exception_result_var_b353;
+struct list$1tuple2$2charphsNodephph* __exception_result_var_b354;
 _Bool _if_conditional402;
 _Bool _if_conditional403;
 void* right_value371;
+struct optional$2intbool* __exception_result_var_b355;
 _Bool _while_condtional36;
 _Bool _if_conditional405;
 char* p_310;
 int sline_311;
 _Bool err_flag_312;
 void* right_value372;
+char* __exception_result_var_b357;
 char* label_313;
-_Bool __exception_result_var_b86;
+_Bool __exception_result_var_b358;
 _Bool _if_conditional406;
 void* right_value373;
+struct optional$2charphbool* __exception_result_var_b359;
 char* __dec_obj109;
 _Bool _if_conditional407;
 char* __dec_obj110;
 _Bool no_comma_314;
 void* right_value374;
+struct sNode* __exception_result_var_b360;
 struct sNode* node_315;
 void* right_value375;
+struct sNode* __exception_result_var_b361;
 struct sNode* __dec_obj111;
 void* right_value376;
 void* right_value377;
+struct tuple2$2charphsNodeph* __exception_result_var_b362;
+struct list$1tuple2$2charphsNodephph* __exception_result_var_b363;
 _Bool _if_conditional408;
 _Bool _if_conditional409;
 struct buffer* method_block_316;
@@ -12869,24 +12918,31 @@ int method_block_sline_317;
 _Bool _if_conditional410;
 char* head_318;
 void* right_value378;
+char* __exception_result_var_b364;
 char* tail_319;
 void* right_value379;
 void* right_value380;
+struct buffer* __exception_result_var_b365;
 struct buffer* __dec_obj112;
 int len_320;
 void* right_value381;
 char* mem_321;
+void* __exception_result_var_b366;
+struct buffer* __exception_result_var_b367;
+struct buffer* __exception_result_var_b368;
 void* right_value382;
 void* right_value383;
 void* right_value384;
 void* right_value385;
+struct sMethodCallNode* __exception_result_var_b369;
 struct sNode* _inf_value2;
 struct sMethodCallNode* _inf_obj_value2;
 void* right_value392;
 struct sNode* node_323;
 void* right_value393;
+struct sNode* __exception_result_var_b370;
 struct sNode* __dec_obj118;
-struct sNode* __result220__;
+struct sNode* __result221__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value361, 0, sizeof(void*));
@@ -12925,8 +12981,7 @@ memset(&right_value385, 0, sizeof(void*));
 memset(&right_value392, 0, sizeof(void*));
 memset(&node_323, 0, sizeof(struct sNode*));
 memset(&right_value393, 0, sizeof(void*));
-    params_305=(struct list$1tuple2$2charphsNodephph*)come_increment_ref_count((come_push_stackframe("20method.c", 855),((struct list$1tuple2$2charphsNodephph*)(right_value362=list$1tuple2$2charphsNodephph_initialize((struct list$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list$1tuple2$2charphsNodephph*)(right_value361=(struct list$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list$1tuple2$2charphsNodephph)*(1), "20method.c", 855)))))))));
-    come_pop_stackframe();
+    params_305=(struct list$1tuple2$2charphsNodephph*)come_increment_ref_count((come_push_stackframe("20method.c", 855),__exception_result_var_b352=((struct list$1tuple2$2charphsNodephph*)(right_value362=list$1tuple2$2charphsNodephph_initialize((struct list$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list$1tuple2$2charphsNodephph*)(right_value361=(struct list$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list$1tuple2$2charphsNodephph)*(1), "20method.c", 855))))))), come_pop_stackframe(), __exception_result_var_b352));
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value361);
     if(right_value361 && right_value361 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1tuple2$2charphsNodephphp_finalize,right_value361, (void*)0, (void*)0, 0, 1, 0, 0); }
     __right_value_freed_obj[0] = right_value361;
@@ -12934,8 +12989,7 @@ memset(&right_value393, 0, sizeof(void*));
     if(right_value362 && right_value362 != __result_obj__ && !__freed_obj__) { come_call_finalizer(list$1tuple2$2charphsNodephphp_finalize,right_value362, (void*)0, (void*)0, 0, 1, 0, 0); }
     __right_value_freed_obj[1] = right_value362;
     __freed_obj__ = 0;
-    (come_push_stackframe("20method.c", 856),list$1tuple2$2charphsNodephph_push_back(((struct list$1tuple2$2charphsNodephph*)come_null_check(params_305, "20method.c", 856)),(struct tuple2$2charphsNodeph*)come_increment_ref_count((come_push_stackframe("20method.c", 856),((struct tuple2$2charphsNodeph*)(right_value370=tuple2$2charphsNodeph_initialize((struct tuple2$2charphsNodeph*)come_increment_ref_count(((struct tuple2$2charphsNodeph*)(right_value366=(struct tuple2$2charphsNodeph*)come_calloc(1, sizeof(struct tuple2$2charphsNodeph)*(1), "20method.c", 856)))),((void*)0),(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value369=sNode_clone(obj)))))))))));
-    come_pop_stackframe();
+    (come_push_stackframe("20method.c", 856),__exception_result_var_b354=list$1tuple2$2charphsNodephph_push_back(((struct list$1tuple2$2charphsNodephph*)come_null_check(params_305, "20method.c", 856)),(struct tuple2$2charphsNodeph*)come_increment_ref_count((come_push_stackframe("20method.c", 856),__exception_result_var_b353=((struct tuple2$2charphsNodeph*)(right_value370=tuple2$2charphsNodeph_initialize((struct tuple2$2charphsNodeph*)come_increment_ref_count(((struct tuple2$2charphsNodeph*)(right_value366=(struct tuple2$2charphsNodeph*)come_calloc(1, sizeof(struct tuple2$2charphsNodeph)*(1), "20method.c", 856)))),((void*)0),(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value369=sNode_clone(obj))))))), come_pop_stackframe(), __exception_result_var_b353))), come_pop_stackframe(), __exception_result_var_b354);
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value366);
     if(right_value366 && right_value366 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2charphsNodephp_finalize,right_value366, (void*)0, (void*)0, 0, 1, 0, 0); }
     __right_value_freed_obj[2] = right_value366;
@@ -12950,15 +13004,13 @@ memset(&right_value393, 0, sizeof(void*));
     _if_conditional402) {
         ((struct sInfo*)come_null_check(info, "20method.c", 859))->p+=2;
         __freed_obj__ = 0;
-        (come_push_stackframe("20method.c", 860),skip_spaces_and_lf(info));
-        come_pop_stackframe();
+        (come_push_stackframe("20method.c", 860),skip_spaces_and_lf(info),come_pop_stackframe());
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
     if(_if_conditional403=*((struct sInfo*)come_null_check(info, "20method.c", 917))->p!=123,    __freed_obj__ = 0, 
     _if_conditional403) {
-        optional$2intbool_value((come_push_stackframe("20method.c", 864),((struct optional$2intbool*)(right_value371=expected_next_character(40,info)))));
-        come_pop_stackframe();
+        optional$2intbool_value((come_push_stackframe("20method.c", 864),__exception_result_var_b355=((struct optional$2intbool*)(right_value371=expected_next_character(40,info))), come_pop_stackframe(), __exception_result_var_b355));
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value371);
         if(right_value371 && right_value371 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2intboolp_finalize,right_value371, (void*)0, (void*)0, 0, 1, 0, 0); }
         __right_value_freed_obj[0] = right_value371;
@@ -12969,8 +13021,7 @@ memset(&right_value393, 0, sizeof(void*));
             _if_conditional405) {
                 ((struct sInfo*)come_null_check(info, "20method.c", 868))->p++;
                 __freed_obj__ = 0;
-                (come_push_stackframe("20method.c", 869),skip_spaces_and_lf(info));
-                come_pop_stackframe();
+                (come_push_stackframe("20method.c", 869),skip_spaces_and_lf(info),come_pop_stackframe());
                 __freed_obj__ = 0;
                 break;
                 __freed_obj__ = 0;
@@ -12982,16 +13033,15 @@ memset(&right_value393, 0, sizeof(void*));
             __freed_obj__ = 0;
             err_flag_312=(_Bool)0;
             __freed_obj__ = 0;
-            label_313=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 877),((char*)(right_value372=__builtin_string("")))));
-            come_pop_stackframe();
+            label_313=(char*)come_increment_ref_count((come_push_stackframe("20method.c", 877),__exception_result_var_b357=((char*)(right_value372=__builtin_string(""))), come_pop_stackframe(), __exception_result_var_b357));
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value372);
             if(right_value372 && right_value372 != __result_obj__ && !__freed_obj__) { right_value372 = come_decrement_ref_count(right_value372, (void*)0, (void*)0, 1, 0, 0); }
             __right_value_freed_obj[0] = right_value372;
             __freed_obj__ = 0;
-            if(_if_conditional406=(come_push_stackframe("20method.c", 881),__exception_result_var_b86=xisalpha(*((struct sInfo*)come_null_check(info, "20method.c", 881))->p), come_pop_stackframe(), __exception_result_var_b86)||*((struct sInfo*)come_null_check(info, "20method.c", 881))->p==95,            __freed_obj__ = 0, 
+            if(_if_conditional406=(come_push_stackframe("20method.c", 881),__exception_result_var_b358=xisalpha(*((struct sInfo*)come_null_check(info, "20method.c", 881))->p), come_pop_stackframe(), __exception_result_var_b358)||*((struct sInfo*)come_null_check(info, "20method.c", 881))->p==95,            __freed_obj__ = 0, 
             _if_conditional406) {
                 __dec_obj109=label_313;
-                label_313=(char*)come_increment_ref_count(optional$2charphbool_expect((come_push_stackframe("20method.c", 879),((struct optional$2charphbool*)(right_value373=parse_word(info))))));
+                label_313=(char*)come_increment_ref_count(optional$2charphbool_expect((come_push_stackframe("20method.c", 879),__exception_result_var_b359=((struct optional$2charphbool*)(right_value373=parse_word(info))), come_pop_stackframe(), __exception_result_var_b359)));
                 if(__dec_obj109) { __dec_obj109 = come_decrement_ref_count(__dec_obj109, (void*)0, (void*)0, 0,0,0); }
                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value373);
                 if(right_value373 && right_value373 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2charphboolp_finalize,right_value373, (void*)0, (void*)0, 0, 1, 0, 0); }
@@ -13005,8 +13055,7 @@ memset(&right_value393, 0, sizeof(void*));
             _if_conditional407) {
                 ((struct sInfo*)come_null_check(info, "20method.c", 884))->p++;
                 __freed_obj__ = 0;
-                (come_push_stackframe("20method.c", 885),skip_spaces_and_lf(info));
-                come_pop_stackframe();
+                (come_push_stackframe("20method.c", 885),skip_spaces_and_lf(info),come_pop_stackframe());
                 __freed_obj__ = 0;
             }
             else {
@@ -13024,14 +13073,13 @@ memset(&right_value393, 0, sizeof(void*));
             __freed_obj__ = 0;
             ((struct sInfo*)come_null_check(info, "20method.c", 895))->no_comma=(_Bool)1;
             __freed_obj__ = 0;
-            node_315=(struct sNode*)come_increment_ref_count((come_push_stackframe("20method.c", 897),((struct sNode*)(right_value374=expression_v13(info)))));
-            come_pop_stackframe();
+            node_315=(struct sNode*)come_increment_ref_count((come_push_stackframe("20method.c", 897),__exception_result_var_b360=((struct sNode*)(right_value374=expression_v13(info))), come_pop_stackframe(), __exception_result_var_b360));
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value374);
             if(right_value374 && right_value374 != __result_obj__ && !__freed_obj__) { right_value374 = come_decrement_ref_count(right_value374, ((struct sNode*)right_value374)->finalize, ((struct sNode*)right_value374)->_protocol_obj, 1, 0, 0); } 
             __right_value_freed_obj[1] = right_value374;
             __freed_obj__ = 0;
             __dec_obj111=node_315;
-            node_315=(struct sNode*)come_increment_ref_count((come_push_stackframe("20method.c", 899),((struct sNode*)(right_value375=post_position_operator3_v21((struct sNode*)come_increment_ref_count(node_315),info)))));
+            node_315=(struct sNode*)come_increment_ref_count((come_push_stackframe("20method.c", 899),__exception_result_var_b361=((struct sNode*)(right_value375=post_position_operator3_v21((struct sNode*)come_increment_ref_count(node_315),info))), come_pop_stackframe(), __exception_result_var_b361));
             if(__dec_obj111) { __dec_obj111 = come_decrement_ref_count(__dec_obj111, ((struct sNode*)__dec_obj111)->finalize, ((struct sNode*)__dec_obj111)->_protocol_obj, 0,0,0); }
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value375);
             if(right_value375 && right_value375 != __result_obj__ && !__freed_obj__) { right_value375 = come_decrement_ref_count(right_value375, ((struct sNode*)right_value375)->finalize, ((struct sNode*)right_value375)->_protocol_obj, 1, 0, 0); } 
@@ -13039,8 +13087,7 @@ memset(&right_value393, 0, sizeof(void*));
             __freed_obj__ = 0;
             ((struct sInfo*)come_null_check(info, "20method.c", 901))->no_comma=no_comma_314;
             __freed_obj__ = 0;
-            (come_push_stackframe("20method.c", 903),list$1tuple2$2charphsNodephph_push_back(((struct list$1tuple2$2charphsNodephph*)come_null_check(params_305, "20method.c", 903)),(struct tuple2$2charphsNodeph*)come_increment_ref_count((come_push_stackframe("20method.c", 903),((struct tuple2$2charphsNodeph*)(right_value377=tuple2$2charphsNodeph_initialize((struct tuple2$2charphsNodeph*)come_increment_ref_count(((struct tuple2$2charphsNodeph*)(right_value376=(struct tuple2$2charphsNodeph*)come_calloc(1, sizeof(struct tuple2$2charphsNodeph)*(1), "20method.c", 903)))),(char*)come_increment_ref_count(label_313),(struct sNode*)come_increment_ref_count(node_315))))))));
-            come_pop_stackframe();
+            (come_push_stackframe("20method.c", 903),__exception_result_var_b363=list$1tuple2$2charphsNodephph_push_back(((struct list$1tuple2$2charphsNodephph*)come_null_check(params_305, "20method.c", 903)),(struct tuple2$2charphsNodeph*)come_increment_ref_count((come_push_stackframe("20method.c", 903),__exception_result_var_b362=((struct tuple2$2charphsNodeph*)(right_value377=tuple2$2charphsNodeph_initialize((struct tuple2$2charphsNodeph*)come_increment_ref_count(((struct tuple2$2charphsNodeph*)(right_value376=(struct tuple2$2charphsNodeph*)come_calloc(1, sizeof(struct tuple2$2charphsNodeph)*(1), "20method.c", 903)))),(char*)come_increment_ref_count(label_313),(struct sNode*)come_increment_ref_count(node_315)))), come_pop_stackframe(), __exception_result_var_b362))), come_pop_stackframe(), __exception_result_var_b363);
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 3, right_value376);
             if(right_value376 && right_value376 != __result_obj__ && !__freed_obj__) { come_call_finalizer(tuple2$2charphsNodephp_finalize,right_value376, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[3] = right_value376;
@@ -13052,8 +13099,7 @@ memset(&right_value393, 0, sizeof(void*));
             _if_conditional408) {
                 ((struct sInfo*)come_null_check(info, "20method.c", 906))->p++;
                 __freed_obj__ = 0;
-                (come_push_stackframe("20method.c", 907),skip_spaces_and_lf(info));
-                come_pop_stackframe();
+                (come_push_stackframe("20method.c", 907),skip_spaces_and_lf(info),come_pop_stackframe());
                 __freed_obj__ = 0;
             }
             else {
@@ -13061,8 +13107,7 @@ memset(&right_value393, 0, sizeof(void*));
                 _if_conditional409) {
                     ((struct sInfo*)come_null_check(info, "20method.c", 910))->p++;
                     __freed_obj__ = 0;
-                    (come_push_stackframe("20method.c", 911),skip_spaces_and_lf(info));
-                    come_pop_stackframe();
+                    (come_push_stackframe("20method.c", 911),skip_spaces_and_lf(info),come_pop_stackframe());
                     __freed_obj__ = 0;
                     if(label_313 && !__freed_obj__) { label_313 = come_decrement_ref_count(label_313, (void*)0, (void*)0, 0, 0, 0); }
                     if(node_315 && !__freed_obj__) { node_315 = come_decrement_ref_count(node_315, ((struct sNode*)node_315)->finalize, ((struct sNode*)node_315)->_protocol_obj, 0, 0, 0); } 
@@ -13078,8 +13123,7 @@ memset(&right_value393, 0, sizeof(void*));
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    (come_push_stackframe("20method.c", 917),parse_sharp_v5(info));
-    come_pop_stackframe();
+    (come_push_stackframe("20method.c", 917),parse_sharp_v5(info),come_pop_stackframe());
     __freed_obj__ = 0;
     method_block_316=((void*)0);
     __freed_obj__ = 0;
@@ -13091,8 +13135,7 @@ memset(&right_value393, 0, sizeof(void*));
         __freed_obj__ = 0;
         method_block_sline_317=((struct sInfo*)come_null_check(info, "20method.c", 923))->sline;
         __freed_obj__ = 0;
-        (come_push_stackframe("20method.c", 925),((char*)(right_value378=skip_block(info))));
-        come_pop_stackframe();
+        (come_push_stackframe("20method.c", 925),__exception_result_var_b364=((char*)(right_value378=skip_block(info))), come_pop_stackframe(), __exception_result_var_b364);
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value378);
         if(right_value378 && right_value378 != __result_obj__ && !__freed_obj__) { right_value378 = come_decrement_ref_count(right_value378, (void*)0, (void*)0, 1, 0, 0); }
         __right_value_freed_obj[0] = right_value378;
@@ -13100,7 +13143,7 @@ memset(&right_value393, 0, sizeof(void*));
         tail_319=((struct sInfo*)come_null_check(info, "20method.c", 927))->p;
         __freed_obj__ = 0;
         __dec_obj112=method_block_316;
-        method_block_316=(struct buffer*)come_increment_ref_count((come_push_stackframe("20method.c", 929),((struct buffer*)(right_value380=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value379=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 929)))))))));
+        method_block_316=(struct buffer*)come_increment_ref_count((come_push_stackframe("20method.c", 929),__exception_result_var_b365=((struct buffer*)(right_value380=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value379=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 929))))))), come_pop_stackframe(), __exception_result_var_b365));
         if(__dec_obj112) { come_call_finalizer(buffer_finalize,__dec_obj112, (void*)0, (void*)0, 0, 0, 0, 0); }
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value379);
         if(right_value379 && right_value379 != __result_obj__ && !__freed_obj__) { come_call_finalizer(buffer_finalize,right_value379, (void*)0, (void*)0, 0, 1, 0, 0); }
@@ -13116,25 +13159,21 @@ memset(&right_value393, 0, sizeof(void*));
         if(right_value381 && right_value381 != __result_obj__ && !__freed_obj__) { right_value381 = come_decrement_ref_count(right_value381, (void*)0, (void*)0, 1, 0, 0); }
         __right_value_freed_obj[3] = right_value381;
         __freed_obj__ = 0;
-        (come_push_stackframe("20method.c", 933),memcpy(mem_321,head_318,len_320));
-        come_pop_stackframe();
+        (come_push_stackframe("20method.c", 933),__exception_result_var_b366=memcpy(mem_321,head_318,len_320), come_pop_stackframe(), __exception_result_var_b366);
         __freed_obj__ = 0;
         mem_321[len_320]=0;
         __freed_obj__ = 0;
-        (come_push_stackframe("20method.c", 936),buffer_append_str(((struct buffer*)come_null_check(method_block_316, "20method.c", 936)),mem_321));
-        come_pop_stackframe();
+        (come_push_stackframe("20method.c", 936),__exception_result_var_b367=buffer_append_str(((struct buffer*)come_null_check(method_block_316, "20method.c", 936)),mem_321), come_pop_stackframe(), __exception_result_var_b367);
         __freed_obj__ = 0;
-        (come_push_stackframe("20method.c", 937),buffer_append_str(((struct buffer*)come_null_check(method_block_316, "20method.c", 937)),"\n"));
-        come_pop_stackframe();
+        (come_push_stackframe("20method.c", 937),__exception_result_var_b368=buffer_append_str(((struct buffer*)come_null_check(method_block_316, "20method.c", 937)),"\n"), come_pop_stackframe(), __exception_result_var_b368);
         __freed_obj__ = 0;
         if(mem_321 && !__freed_obj__) { mem_321 = come_decrement_ref_count(mem_321, (void*)0, (void*)0, 0, 0, 0); }
     }
     __freed_obj__ = 0;
-    (come_push_stackframe("20method.c", 940),parse_sharp_v5(info));
-    come_pop_stackframe();
+    (come_push_stackframe("20method.c", 940),parse_sharp_v5(info),come_pop_stackframe());
     __freed_obj__ = 0;
     _inf_value2=(struct sNode*)come_calloc(1, sizeof(struct sNode), "20method.c", 942);
-    _inf_obj_value2=come_increment_ref_count((come_push_stackframe("20method.c", 942),((struct sMethodCallNode*)(right_value385=sMethodCallNode_initialize((struct sMethodCallNode*)come_increment_ref_count(((struct sMethodCallNode*)(right_value382=(struct sMethodCallNode*)come_calloc(1, sizeof(struct sMethodCallNode)*(1), "20method.c", 942)))),fun_name,(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value383=sNode_clone(obj)))),(struct list$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list$1tuple2$2charphsNodephph*)(right_value384=list$1tuple2$2charphsNodephphp_clone(params_305)))),method_block_316,method_block_sline_317,info)))));
+    _inf_obj_value2=come_increment_ref_count((come_push_stackframe("20method.c", 942),__exception_result_var_b369=((struct sMethodCallNode*)(right_value385=sMethodCallNode_initialize((struct sMethodCallNode*)come_increment_ref_count(((struct sMethodCallNode*)(right_value382=(struct sMethodCallNode*)come_calloc(1, sizeof(struct sMethodCallNode)*(1), "20method.c", 942)))),fun_name,(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value383=sNode_clone(obj)))),(struct list$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list$1tuple2$2charphsNodephph*)(right_value384=list$1tuple2$2charphsNodephphp_clone(params_305)))),method_block_316,method_block_sline_317,info))), come_pop_stackframe(), __exception_result_var_b369));
     _inf_value2->_protocol_obj=_inf_obj_value2;
     _inf_value2->finalize=(void*)sMethodCallNode_finalize;
     _inf_value2->clone=(void*)sMethodCallNode_clone;
@@ -13144,7 +13183,6 @@ memset(&right_value393, 0, sizeof(void*));
     _inf_value2->terminated=(void*)sMethodCallNode_terminated;
     _inf_value2->kind=(void*)sMethodCallNode_kind;
     node_323=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value392=_inf_value2)));
-    come_pop_stackframe();
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 5, right_value382);
     if(right_value382 && right_value382 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sMethodCallNode_finalize,right_value382, (void*)0, (void*)0, 0, 1, 0, 0); }
     __right_value_freed_obj[5] = right_value382;
@@ -13162,20 +13200,20 @@ memset(&right_value393, 0, sizeof(void*));
     __right_value_freed_obj[9] = right_value392;
     __freed_obj__ = 0;
     __dec_obj118=node_323;
-    node_323=(struct sNode*)come_increment_ref_count((come_push_stackframe("20method.c", 945),((struct sNode*)(right_value393=exception_get_value((struct sNode*)come_increment_ref_count(node_323),info)))));
+    node_323=(struct sNode*)come_increment_ref_count((come_push_stackframe("20method.c", 945),__exception_result_var_b370=((struct sNode*)(right_value393=exception_get_value((struct sNode*)come_increment_ref_count(node_323),info))), come_pop_stackframe(), __exception_result_var_b370));
     if(__dec_obj118) { __dec_obj118 = come_decrement_ref_count(__dec_obj118, ((struct sNode*)__dec_obj118)->finalize, ((struct sNode*)__dec_obj118)->_protocol_obj, 0,0,0); }
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 10, right_value393);
     if(right_value393 && right_value393 != __result_obj__ && !__freed_obj__) { right_value393 = come_decrement_ref_count(right_value393, ((struct sNode*)right_value393)->finalize, ((struct sNode*)right_value393)->_protocol_obj, 1, 0, 0); } 
     __right_value_freed_obj[10] = right_value393;
     __freed_obj__ = 0;
-    __result220__ = __result_obj__ = node_323;
+    __result221__ = __result_obj__ = node_323;
     if(obj && !__freed_obj__) { obj = come_decrement_ref_count(obj, ((struct sNode*)obj)->finalize, ((struct sNode*)obj)->_protocol_obj, 0, 1, 0); } 
     if(fun_name && !__freed_obj__) { fun_name = come_decrement_ref_count(fun_name, (void*)0, (void*)0, 0, 1, 0); }
     if(params_305 && !__freed_obj__) { come_call_finalizer(list$1tuple2$2charphsNodephphp_finalize,params_305, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(method_block_316 && !__freed_obj__) { come_call_finalizer(buffer_finalize,method_block_316, (void*)0, (void*)0, 0, 0, 0, 0); }
     if(node_323 && !__freed_obj__) { node_323 = come_decrement_ref_count(node_323, ((struct sNode*)node_323)->finalize, ((struct sNode*)node_323)->_protocol_obj, 0, 1, 0); } 
     __freed_obj__ = 0;
-    return __result220__;
+    return __result221__;
     __freed_obj__ = 0;
     if(obj && !__freed_obj__) { obj = come_decrement_ref_count(obj, ((struct sNode*)obj)->finalize, ((struct sNode*)obj)->_protocol_obj, 0, 1, 0); } 
     if(fun_name && !__freed_obj__) { fun_name = come_decrement_ref_count(fun_name, (void*)0, (void*)0, 0, 1, 0); }
@@ -13201,7 +13239,7 @@ struct tuple2$2charphsNodeph* __dec_obj105;
 void* right_value365;
 struct list_item$1tuple2$2charphsNodephph* litem_308;
 struct tuple2$2charphsNodeph* __dec_obj106;
-struct list$1tuple2$2charphsNodephph* __result214__;
+struct list$1tuple2$2charphsNodephph* __result215__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value363, 0, sizeof(void*));
@@ -13275,10 +13313,10 @@ memset(&litem_308, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
         __freed_obj__ = 0;
         ((struct list$1tuple2$2charphsNodephph*)come_null_check(self, "./comelang2.h", 304))->len++;
         __freed_obj__ = 0;
-        __result214__ = __result_obj__ = self;
+        __result215__ = __result_obj__ = self;
         if(item && !__freed_obj__) { come_call_finalizer(tuple2$2charphsNodephp_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
         __freed_obj__ = 0;
-        return __result214__;
+        return __result215__;
         __freed_obj__ = 0;
         if(item && !__freed_obj__) { come_call_finalizer(tuple2$2charphsNodephp_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0); }
 }
@@ -13293,7 +13331,7 @@ void* right_value367;
 char* __dec_obj107;
 void* right_value368;
 struct sNode* __dec_obj108;
-struct tuple2$2charphsNodeph* __result215__;
+struct tuple2$2charphsNodeph* __result216__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value367, 0, sizeof(void*));
@@ -13312,12 +13350,12 @@ memset(&right_value368, 0, sizeof(void*));
         if(right_value368 && right_value368 != __result_obj__ && !__freed_obj__) { right_value368 = come_decrement_ref_count(right_value368, ((struct sNode*)right_value368)->finalize, ((struct sNode*)right_value368)->_protocol_obj, 1, 0, 0); } 
         __right_value_freed_obj[1] = right_value368;
         __freed_obj__ = 0;
-        __result215__ = __result_obj__ = self;
+        __result216__ = __result_obj__ = self;
         if(self && !__freed_obj__) { come_call_finalizer(tuple2$2charphsNodephp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
         if(v1 && !__freed_obj__) { v1 = come_decrement_ref_count(v1, (void*)0, (void*)0, 0, 1, 0); }
         if(v2 && !__freed_obj__) { v2 = come_decrement_ref_count(v2, ((struct sNode*)v2)->finalize, ((struct sNode*)v2)->_protocol_obj, 0, 1, 0); } 
         __freed_obj__ = 0;
-        return __result215__;
+        return __result216__;
         __freed_obj__ = 0;
         if(self && !__freed_obj__) { come_call_finalizer(tuple2$2charphsNodephp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
         if(v1 && !__freed_obj__) { v1 = come_decrement_ref_count(v1, (void*)0, (void*)0, 0, 1, 0); }
@@ -13332,26 +13370,26 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional404;
 int default_value_309;
-int __result216__;
+void* __exception_result_var_b356;
 int __result217__;
+int __result218__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&default_value_309, 0, sizeof(int));
             if(_if_conditional404=self==((void*)0),            __freed_obj__ = 0, 
             _if_conditional404) {
                 __freed_obj__ = 0;
-                (come_push_stackframe("./comelang2.h", 63),memset(&default_value_309,0,sizeof(int)));
-                come_pop_stackframe();
+                (come_push_stackframe("./comelang2.h", 63),__exception_result_var_b356=memset(&default_value_309,0,sizeof(int)), come_pop_stackframe(), __exception_result_var_b356);
                 __freed_obj__ = 0;
-                __result216__ = default_value_309;
+                __result217__ = default_value_309;
                 __freed_obj__ = 0;
-                return __result216__;
+                return __result217__;
                 __freed_obj__ = 0;
             }
             else {
-                __result217__ = ((struct optional$2intbool*)come_null_check(self, "./comelang2.h", 67))->v1;
+                __result218__ = ((struct optional$2intbool*)come_null_check(self, "./comelang2.h", 67))->v1;
                 __freed_obj__ = 0;
-                return __result217__;
+                return __result218__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -13419,7 +13457,7 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional416;
-struct sMethodCallNode* __result218__;
+struct sMethodCallNode* __result219__;
 void* right_value386;
 struct sMethodCallNode* result_322;
 _Bool _if_conditional417;
@@ -13439,7 +13477,7 @@ _Bool _if_conditional422;
 void* right_value391;
 char* __dec_obj117;
 _Bool _if_conditional423;
-struct sMethodCallNode* __result219__;
+struct sMethodCallNode* __result220__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value386, 0, sizeof(void*));
@@ -13451,9 +13489,9 @@ memset(&right_value390, 0, sizeof(void*));
 memset(&right_value391, 0, sizeof(void*));
         if(_if_conditional416=self==(void*)0,        __freed_obj__ = 0, 
         _if_conditional416) {
-            __result218__ = __result_obj__ = (void*)0;
+            __result219__ = __result_obj__ = (void*)0;
             __freed_obj__ = 0;
-            return __result218__;
+            return __result219__;
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
@@ -13529,10 +13567,10 @@ memset(&right_value391, 0, sizeof(void*));
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-        __result219__ = __result_obj__ = result_322;
+        __result220__ = __result_obj__ = result_322;
         if(result_322 && !__freed_obj__) { come_call_finalizer(sMethodCallNode_finalize,result_322, (void*)0, (void*)0, 0, 0, 1, 0); }
         __freed_obj__ = 0;
-        return __result219__;
+        return __result220__;
         __freed_obj__ = 0;
         if(result_322 && !__freed_obj__) { come_call_finalizer(sMethodCallNode_finalize,result_322, (void*)0, (void*)0, 0, 0, 0, 0); }
 }
@@ -13543,23 +13581,26 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-_Bool __exception_result_var_b87;
+_Bool __exception_result_var_b371;
 _Bool _if_conditional424;
 void* right_value394;
 void* right_value395;
+struct sCurrentNode* __exception_result_var_b372;
 struct sNode* _inf_value3;
 struct sCurrentNode* _inf_obj_value3;
 void* right_value398;
 void* right_value399;
 void* right_value400;
-struct sNode* __result224__;
+struct sNode* __result225__;
 void* right_value401;
+struct optional$2sNodephbool* __exception_result_var_b373;
 struct __current_stack1__ __current_stack1__;
 void* right_value404;
+struct sNode* __exception_result_var_b374;
 struct sNode* result_325;
 void* right_value405;
 void* right_value406;
-struct sNode* __result228__;
+struct sNode* __result229__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value394, 0, sizeof(void*));
@@ -13573,10 +13614,10 @@ memset(&right_value404, 0, sizeof(void*));
 memset(&result_325, 0, sizeof(struct sNode*));
 memset(&right_value405, 0, sizeof(void*));
 memset(&right_value406, 0, sizeof(void*));
-    if(_if_conditional424=(come_push_stackframe("20method.c", 954),__exception_result_var_b87=charp_operator_equals(buf,"__current__"), come_pop_stackframe(), __exception_result_var_b87),    __freed_obj__ = 0, 
+    if(_if_conditional424=(come_push_stackframe("20method.c", 954),__exception_result_var_b371=charp_operator_equals(buf,"__current__"), come_pop_stackframe(), __exception_result_var_b371),    __freed_obj__ = 0, 
     _if_conditional424) {
         _inf_value3=(struct sNode*)come_calloc(1, sizeof(struct sNode), "20method.c", 951);
-        _inf_obj_value3=come_increment_ref_count((come_push_stackframe("20method.c", 951),((struct sCurrentNode*)(right_value395=sCurrentNode_initialize((struct sCurrentNode*)come_increment_ref_count(((struct sCurrentNode*)(right_value394=(struct sCurrentNode*)come_calloc(1, sizeof(struct sCurrentNode)*(1), "20method.c", 951)))),info)))));
+        _inf_obj_value3=come_increment_ref_count((come_push_stackframe("20method.c", 951),__exception_result_var_b372=((struct sCurrentNode*)(right_value395=sCurrentNode_initialize((struct sCurrentNode*)come_increment_ref_count(((struct sCurrentNode*)(right_value394=(struct sCurrentNode*)come_calloc(1, sizeof(struct sCurrentNode)*(1), "20method.c", 951)))),info))), come_pop_stackframe(), __exception_result_var_b372));
         _inf_value3->_protocol_obj=_inf_obj_value3;
         _inf_value3->finalize=(void*)sCurrentNode_finalize;
         _inf_value3->clone=(void*)sCurrentNode_clone;
@@ -13585,8 +13626,7 @@ memset(&right_value406, 0, sizeof(void*));
         _inf_value3->sname=(void*)sCurrentNode_sname;
         _inf_value3->terminated=(void*)sCurrentNode_terminated;
         _inf_value3->kind=(void*)sCurrentNode_kind;
-        __result224__ = __result_obj__ = ((struct optional$2sNodephbool*)(right_value400=optional$2sNodephbool_initialize((struct optional$2sNodephbool*)come_increment_ref_count(((struct optional$2sNodephbool*)(right_value399=(struct optional$2sNodephbool*)come_calloc(1, sizeof(struct optional$2sNodephbool)*(1), "20method.c", 951)))),(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value398=_inf_value3))),(_Bool)1)));
-        come_pop_stackframe();
+        __result225__ = __result_obj__ = ((struct optional$2sNodephbool*)(right_value400=optional$2sNodephbool_initialize((struct optional$2sNodephbool*)come_increment_ref_count(((struct optional$2sNodephbool*)(right_value399=(struct optional$2sNodephbool*)come_calloc(1, sizeof(struct optional$2sNodephbool)*(1), "20method.c", 951)))),(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value398=_inf_value3))),(_Bool)1)));
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value394);
         if(right_value394 && right_value394 != __result_obj__ && !__freed_obj__) { come_call_finalizer(sCurrentNode_finalize,right_value394, (void*)0, (void*)0, 0, 1, 0, 0); }
         __right_value_freed_obj[0] = right_value394;
@@ -13600,7 +13640,7 @@ memset(&right_value406, 0, sizeof(void*));
         if(right_value399 && right_value399 != __result_obj__ && !__freed_obj__) { right_value399 = come_decrement_ref_count(right_value399, (void*)0, (void*)0, 1, 0, 0); }
         __right_value_freed_obj[3] = right_value399;
         __freed_obj__ = 0;
-        return __result224__;
+        return __result225__;
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
@@ -13608,8 +13648,7 @@ memset(&right_value406, 0, sizeof(void*));
     __current_stack1__.head = &head;
     __current_stack1__.head_sline = &head_sline;
     __current_stack1__.info = &info;
-    result_325=(struct sNode*)come_increment_ref_count((come_push_stackframe("20method.c", 958),((struct sNode*)(right_value404=optional$2sNodephbool_catch(((struct optional$2sNodephbool*)come_null_check((come_push_stackframe("20method.c", 958),((struct optional$2sNodephbool*)(right_value401=string_node_v15(buf,head,head_sline,info)))), "20method.c", 958)),&__current_stack1__,(void*)method_block1_20methodc)))));
-    come_pop_stackframe();
+    result_325=(struct sNode*)come_increment_ref_count((come_push_stackframe("20method.c", 958),__exception_result_var_b374=((struct sNode*)(right_value404=optional$2sNodephbool_catch(((struct optional$2sNodephbool*)come_null_check((come_push_stackframe("20method.c", 958),__exception_result_var_b373=((struct optional$2sNodephbool*)(right_value401=string_node_v15(buf,head,head_sline,info))), come_pop_stackframe(), __exception_result_var_b373), "20method.c", 958)),&__current_stack1__,(void*)method_block1_20methodc))), come_pop_stackframe(), __exception_result_var_b374));
                         if(__current_stack1__.__method_block_result_kind__ == 3)
                     {
                         return (struct sNode*)__current_stack1__.__method_block_return_value__;
@@ -13621,13 +13660,13 @@ memset(&right_value406, 0, sizeof(void*));
     if(right_value404 && right_value404 != __result_obj__ && !__freed_obj__) { right_value404 = come_decrement_ref_count(right_value404, ((struct sNode*)right_value404)->finalize, ((struct sNode*)right_value404)->_protocol_obj, 1, 0, 0); } 
     __right_value_freed_obj[1] = right_value404;
     __freed_obj__ = 0;
-    __result228__ = __result_obj__ = ((struct optional$2sNodephbool*)(right_value406=optional$2sNodephbool_initialize((struct optional$2sNodephbool*)come_increment_ref_count(((struct optional$2sNodephbool*)(right_value405=(struct optional$2sNodephbool*)come_calloc(1, sizeof(struct optional$2sNodephbool)*(1), "20method.c", 958)))),(struct sNode*)come_increment_ref_count(result_325),(_Bool)1)));
+    __result229__ = __result_obj__ = ((struct optional$2sNodephbool*)(right_value406=optional$2sNodephbool_initialize((struct optional$2sNodephbool*)come_increment_ref_count(((struct optional$2sNodephbool*)(right_value405=(struct optional$2sNodephbool*)come_calloc(1, sizeof(struct optional$2sNodephbool)*(1), "20method.c", 958)))),(struct sNode*)come_increment_ref_count(result_325),(_Bool)1)));
     if(result_325 && !__freed_obj__) { result_325 = come_decrement_ref_count(result_325, ((struct sNode*)result_325)->finalize, ((struct sNode*)result_325)->_protocol_obj, 0, 0, 0); } 
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 2, right_value405);
     if(right_value405 && right_value405 != __result_obj__ && !__freed_obj__) { right_value405 = come_decrement_ref_count(right_value405, (void*)0, (void*)0, 1, 0, 0); }
     __right_value_freed_obj[2] = right_value405;
     __freed_obj__ = 0;
-    return __result228__;
+    return __result229__;
     __freed_obj__ = 0;
     if(result_325 && !__freed_obj__) { result_325 = come_decrement_ref_count(result_325, ((struct sNode*)result_325)->finalize, ((struct sNode*)result_325)->_protocol_obj, 0, 0, 0); } 
 }
@@ -13656,14 +13695,14 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional426;
-struct sCurrentNode* __result221__;
+struct sCurrentNode* __result222__;
 void* right_value396;
 struct sCurrentNode* result_324;
 _Bool _if_conditional427;
 _Bool _if_conditional428;
 void* right_value397;
 char* __dec_obj119;
-struct sCurrentNode* __result222__;
+struct sCurrentNode* __result223__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value396, 0, sizeof(void*));
@@ -13671,9 +13710,9 @@ memset(&result_324, 0, sizeof(struct sCurrentNode*));
 memset(&right_value397, 0, sizeof(void*));
             if(_if_conditional426=self==(void*)0,            __freed_obj__ = 0, 
             _if_conditional426) {
-                __result221__ = __result_obj__ = (void*)0;
+                __result222__ = __result_obj__ = (void*)0;
                 __freed_obj__ = 0;
-                return __result221__;
+                return __result222__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
@@ -13699,10 +13738,10 @@ memset(&right_value397, 0, sizeof(void*));
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-            __result222__ = __result_obj__ = result_324;
+            __result223__ = __result_obj__ = result_324;
             if(result_324 && !__freed_obj__) { come_call_finalizer(sCurrentNode_finalize,result_324, (void*)0, (void*)0, 0, 0, 1, 0); }
             __freed_obj__ = 0;
-            return __result222__;
+            return __result223__;
             __freed_obj__ = 0;
             if(result_324 && !__freed_obj__) { come_call_finalizer(sCurrentNode_finalize,result_324, (void*)0, (void*)0, 0, 0, 0, 0); }
 }
@@ -13714,7 +13753,7 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 struct sNode* __dec_obj120;
-struct optional$2sNodephbool* __result223__;
+struct optional$2sNodephbool* __result224__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
             __dec_obj120=((struct optional$2sNodephbool*)come_null_check(self, "./comelang2.h", 40))->v1;
@@ -13723,11 +13762,11 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
             __freed_obj__ = 0;
             ((struct optional$2sNodephbool*)come_null_check(self, "./comelang2.h", 41))->v2=v2;
             __freed_obj__ = 0;
-            __result223__ = __result_obj__ = self;
+            __result224__ = __result_obj__ = self;
             if(self && !__freed_obj__) { come_call_finalizer(optional$2sNodephboolp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
             if(v1 && !__freed_obj__) { v1 = come_decrement_ref_count(v1, ((struct sNode*)v1)->finalize, ((struct sNode*)v1)->_protocol_obj, 0, 1, 0); } 
             __freed_obj__ = 0;
-            return __result223__;
+            return __result224__;
             __freed_obj__ = 0;
             if(self && !__freed_obj__) { come_call_finalizer(optional$2sNodephboolp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
             if(v1 && !__freed_obj__) { v1 = come_decrement_ref_count(v1, ((struct sNode*)v1)->finalize, ((struct sNode*)v1)->_protocol_obj, 0, 1, 0); } 
@@ -13758,8 +13797,8 @@ _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 _Bool _if_conditional430;
 _Bool _if_conditional431;
-struct sNode* __result225__;
 struct sNode* __result226__;
+struct sNode* __result227__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
         if(_if_conditional430=!((struct optional$2sNodephbool*)come_null_check(self, "./comelang2.h", 56))->v2,        __freed_obj__ = 0, 
@@ -13768,17 +13807,17 @@ memset(&__freed_obj__, 0, sizeof(_Bool));
             __freed_obj__ = 0;
             if(_if_conditional431=((struct sDummyCurrentStack*)come_null_check(((struct sDummyCurrentStack*)parent), "./comelang2.h", 54))->__method_block_result_kind__!=0,            __freed_obj__ = 0, 
             _if_conditional431) {
-                __result225__ = __result_obj__ = ((struct optional$2sNodephbool*)come_null_check(self, "./comelang2.h", 52))->v1;
+                __result226__ = __result_obj__ = ((struct optional$2sNodephbool*)come_null_check(self, "./comelang2.h", 52))->v1;
                 __freed_obj__ = 0;
-                return __result225__;
+                return __result226__;
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-        __result226__ = __result_obj__ = ((struct optional$2sNodephbool*)come_null_check(self, "./comelang2.h", 56))->v1;
+        __result227__ = __result_obj__ = ((struct optional$2sNodephbool*)come_null_check(self, "./comelang2.h", 56))->v1;
         __freed_obj__ = 0;
-        return __result226__;
+        return __result227__;
         __freed_obj__ = 0;
 }
 
@@ -13812,17 +13851,17 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-struct optional$2voidpbool* __result227__;
+struct optional$2voidpbool* __result228__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
             ((struct optional$2voidpbool*)come_null_check(self, "./comelang2.h", 40))->v1=v1;
             __freed_obj__ = 0;
             ((struct optional$2voidpbool*)come_null_check(self, "./comelang2.h", 41))->v2=v2;
             __freed_obj__ = 0;
-            __result227__ = __result_obj__ = self;
+            __result228__ = __result_obj__ = self;
             if(self && !__freed_obj__) { come_call_finalizer(optional$2voidpboolp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
             __freed_obj__ = 0;
-            return __result227__;
+            return __result228__;
             __freed_obj__ = 0;
             if(self && !__freed_obj__) { come_call_finalizer(optional$2voidpboolp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0); }
 }
@@ -13844,18 +13883,18 @@ void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
 void* right_value407;
-struct sNode* __result229__;
+struct sNode* __exception_result_var_b375;
+struct sNode* __result230__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
 memset(&right_value407, 0, sizeof(void*));
-    __result229__ = __result_obj__ = (come_push_stackframe("20method.c", 965),((struct sNode*)(right_value407=post_position_operator3_v5((struct sNode*)come_increment_ref_count(node),info))));
-    come_pop_stackframe();
+    __result230__ = __result_obj__ = (come_push_stackframe("20method.c", 965),__exception_result_var_b375=((struct sNode*)(right_value407=post_position_operator3_v5((struct sNode*)come_increment_ref_count(node),info))), come_pop_stackframe(), __exception_result_var_b375);
     if(node && !__freed_obj__) { node = come_decrement_ref_count(node, ((struct sNode*)node)->finalize, ((struct sNode*)node)->_protocol_obj, 0, 1, 0); } 
     __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value407);
     if(right_value407 && right_value407 != __result_obj__ && !__freed_obj__) { right_value407 = come_decrement_ref_count(right_value407, ((struct sNode*)right_value407)->finalize, ((struct sNode*)right_value407)->_protocol_obj, 1, 0, 0); } 
     __right_value_freed_obj[0] = right_value407;
     __freed_obj__ = 0;
-    return __result229__;
+    return __result230__;
     __freed_obj__ = 0;
     if(node && !__freed_obj__) { node = come_decrement_ref_count(node, ((struct sNode*)node)->finalize, ((struct sNode*)node)->_protocol_obj, 0, 1, 0); } 
 }

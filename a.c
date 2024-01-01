@@ -2,7 +2,9 @@
 
 int fun()
 {
-    stackframe();
+    FILE* f = fopen("SEX", "r") and die("NO SEX");
+    printf("%p\n", f);
+    
     return 0;
 }
 

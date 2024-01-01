@@ -38,6 +38,7 @@ void come_pop_stackframe()
     }
 }
 
+/*
 void come_clear_stackframe()
 {
     if(gComeStackFrameBuffer) {
@@ -45,6 +46,7 @@ void come_clear_stackframe()
     }
     gNumComeStackFrame = 0;
 }
+*/
 
 void come_save_stackframe(char* sname, int sline)
 {
