@@ -1,1 +1,17 @@
-exception list::operator_load_element
+
+char** argv = { "AAA", "BBB" };
+
+argv[0][0..2]
+
+
+debug-mode optimize mode
+
+comelang2 debug
+
+memory leak detector
+
+comelang2 method block memory leak fixed
+
+char a[3];
+
+a[9]!->{a, a + 3} array range checker
