@@ -89,7 +89,7 @@ bool sNewNode*::compile(sNewNode* self, sInfo* info)
     num_string.append_str("1");
     
     foreach(it, type->mArrayNum) {
-        if(!it.compile->(info)) {
+        if(!node_compile(it)) {
             return false;
         }
         
@@ -180,7 +180,7 @@ bool sImplementsNode*::compile(sImplementsNode* self, sInfo* info)
     sNode*% obj_exp = clone self.obj_exp;
     sType*% inf_type = clone self.inf_type;
     
-    if(!obj_exp.compile->(info)) {
+    if(!node_compile(obj_exp)) {
         return false;
     }
     
@@ -447,7 +447,7 @@ bool sSizeOfExpNode*::compile(sSizeOfExpNode* self, sInfo* info)
 {
     sNode*% exp = self.exp;
     
-    if(!exp->compile(info)) {
+    if(!node_compile(exp)) {
         return false;
     }
     
@@ -566,7 +566,7 @@ bool sAlignOfExpNode*::compile(sAlignOfExpNode* self, sInfo* info)
 {
     sNode*% exp = self.exp;
     
-    if(!exp->compile(info)) {
+    if(!node_compile(exp)) {
         return false;
     }
     
@@ -685,7 +685,7 @@ bool sAlignOfExpNode2*::compile(sAlignOfExpNode2* self, sInfo* info)
 {
     sNode*% exp = self.exp;
     
-    if(!exp->compile(info)) {
+    if(!node_compile(exp)) {
         return false;
     }
     
@@ -805,7 +805,7 @@ bool sAlignAsExpNode*::compile(sAlignAsExpNode* self, sInfo* info)
 {
     sNode*% exp = self.exp;
     
-    if(!exp->compile(info)) {
+    if(!node_compile(exp)) {
         return false;
     }
     
@@ -866,7 +866,7 @@ bool sDeleteNode*::compile(sDeleteNode* self, sInfo* info)
 {
     sNode* node = self.node;
     
-    if(!node.compile->(info)) {
+    if(!node_compile(node)) {
         return false;
     }
     
@@ -918,7 +918,7 @@ bool sForceDeleteNode*::compile(sDeleteNode* self, sInfo* info)
 {
     sNode* node = self.node;
     
-    if(!node.compile->(info)) {
+    if(!node_compile(node)) {
         return false;
     }
     
@@ -970,7 +970,7 @@ bool sDelegateNode*::compile(sDelegateNode* self, sInfo* info)
 {
     sNode* node = self.node;
     
-    if(!node.compile->(info)) {
+    if(!node_compile(node)) {
         return false;
     }
     
@@ -1033,7 +1033,7 @@ bool sShareNode*::compile(sShareNode* self, sInfo* info)
 {
     sNode* node = self.node;
     
-    if(!node.compile->(info)) {
+    if(!node_compile(node)) {
         return false;
     }
     
@@ -1091,7 +1091,7 @@ bool sBorrowNode*::compile(sBorrowNode* self, sInfo* info)
 {
     sNode* node = self.node;
     
-    if(!node.compile->(info)) {
+    if(!node_compile(node)) {
         return false;
     }
     
@@ -1151,7 +1151,7 @@ bool sCloneNode*::compile(sCloneNode* self, sInfo* info)
 {
     sNode* node = self.node;
     
-    if(!node.compile->(info)) {
+    if(!node_compile(node)) {
         return false;
     }
     
@@ -1226,7 +1226,7 @@ bool sDupeNode*::compile(sDupeNode* self, sInfo* info)
 {
     sNode* node = self.node;
     
-    if(!node.compile->(info)) {
+    if(!node_compile(node)) {
         return false;
     }
     
@@ -1298,7 +1298,7 @@ bool sDummyHeapNode*::compile(sDummyHeapNode* self, sInfo* info)
 {
     sNode* node = self.node;
     
-    if(!node.compile->(info)) {
+    if(!node_compile(node)) {
         return false;
     }
     
@@ -1352,7 +1352,7 @@ bool sGCIncNode*::compile(sGCIncNode* self, sInfo* info)
 {
     sNode* node = self.node;
     
-    if(!node.compile->(info)) {
+    if(!node_compile(node)) {
         return false;
     }
     
@@ -1411,7 +1411,7 @@ bool sGCDecNode*::compile(sGCDecNode* self, sInfo* info)
 {
     sNode* node = self.node;
     
-    if(!node.compile->(info)) {
+    if(!node_compile(node)) {
         return false;
     }
     

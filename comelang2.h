@@ -20,7 +20,7 @@ void __builtin_va_end(char*);
 //////////////////////////////
 /// exception
 //////////////////////////////
-#define COME_STACKFRAME_MAX 7
+#define COME_STACKFRAME_MAX 10
 
 struct optional<T, T2>
 {

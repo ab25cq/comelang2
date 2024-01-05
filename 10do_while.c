@@ -46,7 +46,7 @@ bool sDoWhileNode*::compile(sDoWhileNode* self, sInfo* info)
     sNode* expression_node = self.mExpressionNode;
 
     info.without_semicolon = true;
-    if(!expression_node.compile->(info)) {
+    if(!node_compile(expression_node)) {
         return false;
     }
     info.without_semicolon = false;

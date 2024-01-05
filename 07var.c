@@ -116,7 +116,7 @@ bool sStoreNode*::compile(sStoreNode* self, sInfo* info)
                 add_come_code_at_function_head(info, "%s;\n", make_define_var(left_type, var_->mCValueName));
                 
                 if(right_value) {
-                    if(!right_value.compile(info)) {
+                    if(!node_compile(right_value)) {
                         return false;
                     }
                     CVALUE*% come_value = get_value_from_stack(-1, info);
@@ -132,7 +132,7 @@ bool sStoreNode*::compile(sStoreNode* self, sInfo* info)
                     if(left_type2->mArrayNum.length() > 0) {
                         add_come_code(info, "memset(&%s, 0, sizeof(%s)", var_->mCValueName, make_type_name_string(left_type2)!);
                         foreach(it, left_type2->mArrayNum) {
-                            if(!it.compile(info)) {
+                            if(!node_compile(it)) {
                                 err_msg(info, "invalid array num");
                                 exit(1);
                             }
@@ -170,7 +170,7 @@ bool sStoreNode*::compile(sStoreNode* self, sInfo* info)
                     if(left_type->mArrayNum.length() > 0) {
                         add_come_code(info, "memset(&%s, 0, sizeof(%s)", var_->mCValueName, make_type_name_string(left_type)!);
                         foreach(it, left_type->mArrayNum) {
-                            if(!it.compile(info)) {
+                            if(!node_compile(it)) {
                                 err_msg(info, "invalid array num");
                                 exit(1);
                             }
@@ -196,7 +196,7 @@ bool sStoreNode*::compile(sStoreNode* self, sInfo* info)
                     if(left_type2->mArrayNum.length() > 0) {
                         add_come_code(info, "memset(&%s, 0, sizeof(%s)", var_->mCValueName, make_type_name_string(left_type2)!);
                         foreach(it, left_type2->mArrayNum) {
-                            if(!it.compile(info)) {
+                            if(!node_compile(it)) {
                                 err_msg(info, "invalid array num");
                                 exit(1);
                             }
@@ -227,7 +227,7 @@ bool sStoreNode*::compile(sStoreNode* self, sInfo* info)
         }
     }
     else {
-        if(!self.right_value.compile->(info)) {
+        if(!node_compile(self.right_value)) {
             return false;
         }
         
@@ -266,7 +266,7 @@ bool sStoreNode*::compile(sStoreNode* self, sInfo* info)
                             if(var_type->mArrayNum.length() > 0) {
                                 add_come_code(info, "memset(&%s, 0, sizeof(%s)", var_->mCValueName, make_type_name_string(var_type)!);
                                 foreach(it, var_type->mArrayNum) {
-                                    if(!it.compile(info)) {
+                                    if(!node_compile(it)) {
                                         err_msg(info, "invalid array num");
                                         exit(1);
                                     }
@@ -307,7 +307,7 @@ bool sStoreNode*::compile(sStoreNode* self, sInfo* info)
                     if(var_type->mArrayNum.length() > 0) {
                         add_come_code(info, "memset(&%s, 0, sizeof(%s)", var_->mCValueName, make_type_name_string(var_type)!);
                         foreach(it, var_type->mArrayNum) {
-                            if(!it.compile(info)) {
+                            if(!node_compile(it)) {
                                 err_msg(info, "invalid array num");
                                 exit(1);
                             }
@@ -420,7 +420,7 @@ bool sStoreNode*::compile(sStoreNode* self, sInfo* info)
                         if(var_type->mArrayNum.length() > 0) {
                             add_come_code(info, "memset(&%s, 0, sizeof(%s)", var_->mCValueName, make_type_name_string(var_type)!);
                             foreach(it, var_type->mArrayNum) {
-                                if(!it.compile(info)) {
+                                if(!node_compile(it)) {
                                     err_msg(info, "invalid array num");
                                     exit(1);
                                 }

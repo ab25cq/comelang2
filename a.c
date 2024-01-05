@@ -1,6 +1,5 @@
 #include <comelang2.h>
 
-/*
 int fun(int argc)
 {
     list<string>*% l = [s"AAA", s"BBB"];
@@ -15,7 +14,6 @@ int fun(int argc)
     
     return 0;
 }
-*/
 
 int main(int argc, char** argv) 
 {

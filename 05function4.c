@@ -154,7 +154,7 @@ exception string parse_word(sInfo* info=info)
     
     if(buf.to_string().length() == 0) {
         err_msg(info, "unexpected character(%c). expected word character", *info->p);
-        return none(string(""));
+        return string("");
     }
     
     return some(buf.to_string());
@@ -1240,7 +1240,7 @@ exception tuple3<sType*%,string,bool>*% parse_type(sInfo* info=info, bool parse_
             
             sNode*% node = parse_struct(type_name, info);
             
-            if(!node.compile->(info)) {
+            if(!node_compile(node)) {
                 err_msg(info, "parse_struct is failed");
                 return none(new tuple3<sType*%,string,bool>((sType*%)null, (string)null, false));
             }
@@ -1264,7 +1264,7 @@ exception tuple3<sType*%,string,bool>*% parse_type(sInfo* info=info, bool parse_
             sNode*% node = parse_enum(type_name, info);
             
             if(!info.no_output_err) {
-                if(!node.compile->(info)) {
+                if(!node_compile(node)) {
                     printf("%s %d: compiling is failed(X)\n", info->sname, info->sline);
                     return none(new tuple3<sType*%,string,bool>((sType*%)null, (string)null, false));
                 }
@@ -1280,7 +1280,7 @@ exception tuple3<sType*%,string,bool>*% parse_type(sInfo* info=info, bool parse_
             sNode*% node = parse_union(type_name, info);
             
 //            if(!info.no_output_err) {
-                if(!node.compile->(info)) {
+                if(!node_compile(node)) {
                     printf("%s %d: compiling is failed(X)\n", info->sname, info->sline);
                     return none(new tuple3<sType*%,string,bool>((sType*%)null, (string)null, false));
                 }
@@ -1462,7 +1462,7 @@ exception tuple3<sType*%,string,bool>*% parse_type(sInfo* info=info, bool parse_
         
         expected_next_character(')');
         
-        if(!exp.compile(info)) {
+        if(!node_compile(exp)) {
             err_msg(info, "invalid __typeof__ expression");
             return none((null,null,false));
         }

@@ -41,7 +41,7 @@ bool sSwitchNode*::compile(sSwitchNode* self, sInfo* info)
     /// compile expression ///
     sNode* expression_node = self.mExpressionNode;
 
-    if(!expression_node.compile->(info)) {
+    if(!node_compile(expression_node)) {
         return false;
     }
     
@@ -104,7 +104,7 @@ bool sCaseNode*::compile(sCaseNode* self, sInfo* info)
 {
     sNode* node = self.mNode;
     
-    if(!node.compile->(info)) {
+    if(!node_compile(node)) {
         return false;
     }
     

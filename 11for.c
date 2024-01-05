@@ -69,7 +69,7 @@ bool sForNode*::compile(sForNode* self, sInfo* info)
     CVALUE*% conditional_value = null;
     if(expression_node) {
         info.without_semicolon = true;
-        if(!expression_node.compile->(info)) {
+        if(!node_compile(expression_node)) {
             return false;
         }
         info.without_semicolon = false;
@@ -92,7 +92,7 @@ bool sForNode*::compile(sForNode* self, sInfo* info)
     CVALUE*% conditional_value2 = null;
     if(expression_node2) {
         info.without_semicolon = true;
-        if(!expression_node2.compile->(info)) {
+        if(!node_compile(expression_node2)) {
             return false;
         }
         info.without_semicolon = false;
@@ -121,7 +121,7 @@ bool sForNode*::compile(sForNode* self, sInfo* info)
     CVALUE*% conditional_value3;
     if(expression_node3) {
         info.without_semicolon = true;
-        if(!expression_node3.compile->(info)) {
+        if(!node_compile(expression_node3)) {
             return false;
         }
         info.without_semicolon = false;

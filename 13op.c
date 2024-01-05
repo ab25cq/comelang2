@@ -320,7 +320,7 @@ bool sAddNode*::compile(sAddNode* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -329,7 +329,7 @@ bool sAddNode*::compile(sAddNode* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -411,7 +411,7 @@ bool sSubNode*::compile(sSubNode* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -420,7 +420,7 @@ bool sSubNode*::compile(sSubNode* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -502,7 +502,7 @@ bool sMultNode*::compile(sMultNode* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -511,7 +511,7 @@ bool sMultNode*::compile(sMultNode* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -593,7 +593,7 @@ bool sDivNode*::compile(sDivNode* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -602,7 +602,7 @@ bool sDivNode*::compile(sDivNode* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -684,7 +684,7 @@ bool sModNode*::compile(sModNode* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -693,7 +693,7 @@ bool sModNode*::compile(sModNode* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -775,7 +775,7 @@ bool sLShiftNode*::compile(sLShiftNode* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -784,7 +784,7 @@ bool sLShiftNode*::compile(sLShiftNode* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -866,7 +866,7 @@ bool sRShiftNode*::compile(sRShiftNode* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -875,7 +875,7 @@ bool sRShiftNode*::compile(sRShiftNode* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -957,7 +957,7 @@ bool sGtEqNode*::compile(sGtEqNode* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -966,7 +966,7 @@ bool sGtEqNode*::compile(sGtEqNode* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -1048,7 +1048,7 @@ bool sLtEqNode*::compile(sLtEqNode* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -1057,7 +1057,7 @@ bool sLtEqNode*::compile(sLtEqNode* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -1139,7 +1139,7 @@ bool sLtNode*::compile(sLtNode* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -1148,7 +1148,7 @@ bool sLtNode*::compile(sLtNode* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -1230,7 +1230,7 @@ bool sGtNode*::compile(sGtNode* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -1239,7 +1239,7 @@ bool sGtNode*::compile(sGtNode* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -1331,7 +1331,7 @@ bool sEqNode*::compile(sEqNode* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -1340,7 +1340,7 @@ bool sEqNode*::compile(sEqNode* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -1399,7 +1399,7 @@ bool sNotEqNode*::compile(sNotEqNode* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -1408,7 +1408,7 @@ bool sNotEqNode*::compile(sNotEqNode* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -1478,7 +1478,7 @@ bool sEq2Node*::compile(sEqNode* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -1487,7 +1487,7 @@ bool sEq2Node*::compile(sEqNode* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -1569,7 +1569,7 @@ bool sNotEq2Node*::compile(sNotEq2Node* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -1578,7 +1578,7 @@ bool sNotEq2Node*::compile(sNotEq2Node* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -1660,7 +1660,7 @@ bool sAndNode*::compile(sAndNode* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -1669,7 +1669,7 @@ bool sAndNode*::compile(sAndNode* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -1752,7 +1752,7 @@ bool sXOrNode*::compile(sXOrNode* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -1761,7 +1761,7 @@ bool sXOrNode*::compile(sXOrNode* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -1842,7 +1842,7 @@ bool sOrNode*::compile(sOrNode* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -1851,7 +1851,7 @@ bool sOrNode*::compile(sOrNode* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -1933,7 +1933,7 @@ bool sAndAndNode*::compile(sAndAndNode* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -1942,7 +1942,7 @@ bool sAndAndNode*::compile(sAndAndNode* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -2024,7 +2024,7 @@ bool sOrOrNode*::compile(sOrOrNode* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -2033,7 +2033,7 @@ bool sOrOrNode*::compile(sOrOrNode* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -2113,7 +2113,7 @@ bool sCommaNode*::compile(sCommaNode* self, sInfo* info)
     /// compile expression ///
     sNode* left_node = self.mLeft;
 
-    if(!left_node.compile->(info)) {
+    if(!node_compile(left_node)) {
         return false;
     }
     
@@ -2122,7 +2122,7 @@ bool sCommaNode*::compile(sCommaNode* self, sInfo* info)
     
     sNode* right_node = self.mRight;
 
-    if(!right_node.compile->(info)) {
+    if(!node_compile(right_node)) {
         return false;
     }
     
@@ -2190,7 +2190,7 @@ bool sConditionalNode*::compile(sConditionalNode* self, sInfo* info)
     /// compile expression ///
     sNode* value1 = self.mValue1;
 
-    if(!value1.compile->(info)) {
+    if(!node_compile(value1)) {
         return false;
     }
     
@@ -2199,7 +2199,7 @@ bool sConditionalNode*::compile(sConditionalNode* self, sInfo* info)
     
     sNode* value2 = self.mValue2;
 
-    if(!value2.compile->(info)) {
+    if(!node_compile(value2)) {
         return false;
     }
     
@@ -2208,7 +2208,7 @@ bool sConditionalNode*::compile(sConditionalNode* self, sInfo* info)
     
     sNode* value3 = self.mValue3;
 
-    if(!value3.compile->(info)) {
+    if(!node_compile(value3)) {
         return false;
     }
     

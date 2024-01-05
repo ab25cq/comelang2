@@ -52,13 +52,15 @@ bool sIfNode*::compile(sIfNode* self, sInfo* info)
     
     /// compile expression ///
     sNode* expression_node = self.mExpressionNode;
+    
+    int sline = info.sline;
+    char* sname = info.sname;
 
     info.without_semicolon = true;
-    if(!expression_node.compile->(info)) {
+    if(!node_compile(expression_node)) {
         return false;
     }
     info.without_semicolon = false;
-    
 
     CVALUE*% conditional_value = get_value_from_stack(-1, info);
     dec_stack_ptr(1, info);
@@ -84,7 +86,7 @@ bool sIfNode*::compile(sIfNode* self, sInfo* info)
             sNode* expression_node2 = self.mElifExpressionNodes[i];
 
             info.without_semicolon = true;
-            if(!expression_node2.compile->(info)) {
+            if(!node_compile(expression_node2)) {
                 return false;
             }
             info.without_semicolon = false;
@@ -169,7 +171,7 @@ bool sOrStatmentNode*::compile(sOrStatmentNode* self, sInfo* info)
     sNode* expression_node = self.mExpressionNode;
 
     info.without_semicolon = true;
-    if(!expression_node.compile->(info)) {
+    if(!node_compile(expression_node)) {
         return false;
     }
     info.without_semicolon = false;
@@ -248,7 +250,7 @@ bool sAndStatmentNode*::compile(sAndStatmentNode* self, sInfo* info)
     sNode* expression_node = self.mExpressionNode;
 
     info.without_semicolon = true;
-    if(!expression_node.compile->(info)) {
+    if(!node_compile(expression_node)) {
         return false;
     }
     info.without_semicolon = false;

@@ -34,7 +34,7 @@ bool sPlusPlusNode*::compile(sPlusPlusNode* self, sInfo* info)
 {
     sNode* left = self.mLeft;
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -112,7 +112,7 @@ bool sMinusMinusNode*::compile(sMinusMinusNode* self, sInfo* info)
 {
     sNode* left = self.mLeft;
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -192,7 +192,7 @@ bool sPlusEqualNode*::compile(sPlusEqualNode* self, sInfo* info)
 {
     sNode* left = self.mLeft;
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -201,7 +201,7 @@ bool sPlusEqualNode*::compile(sPlusEqualNode* self, sInfo* info)
     
     sNode* right = self.mRight;
     
-    if(!right.compile->(info)) {
+    if(!node_compile(right)) {
         return false;
     }
     
@@ -280,7 +280,7 @@ bool sMinusEqualNode*::compile(sMinusEqualNode* self, sInfo* info)
 {
     sNode* left = self.mLeft;
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -289,7 +289,7 @@ bool sMinusEqualNode*::compile(sMinusEqualNode* self, sInfo* info)
     
     sNode* right = self.mRight;
     
-    if(!right.compile->(info)) {
+    if(!node_compile(right)) {
         return false;
     }
     
@@ -368,7 +368,7 @@ bool sMultEqualNode*::compile(sMultEqualNode* self, sInfo* info)
 {
     sNode* left = self.mLeft;
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -377,7 +377,7 @@ bool sMultEqualNode*::compile(sMultEqualNode* self, sInfo* info)
     
     sNode* right = self.mRight;
     
-    if(!right.compile->(info)) {
+    if(!node_compile(right)) {
         return false;
     }
     
@@ -456,7 +456,7 @@ bool sDivEqualNode*::compile(sDivEqualNode* self, sInfo* info)
 {
     sNode* left = self.mLeft;
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -465,7 +465,7 @@ bool sDivEqualNode*::compile(sDivEqualNode* self, sInfo* info)
     
     sNode* right = self.mRight;
     
-    if(!right.compile->(info)) {
+    if(!node_compile(right)) {
         return false;
     }
     
@@ -544,7 +544,7 @@ bool sModEqualNode*::compile(sModEqualNode* self, sInfo* info)
 {
     sNode* left = self.mLeft;
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -553,7 +553,7 @@ bool sModEqualNode*::compile(sModEqualNode* self, sInfo* info)
     
     sNode* right = self.mRight;
     
-    if(!right.compile->(info)) {
+    if(!node_compile(right)) {
         return false;
     }
     
@@ -633,7 +633,7 @@ bool sLShifEqualNode*::compile(sLShifEqualNode* self, sInfo* info)
 {
     sNode* left = self.mLeft;
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -642,7 +642,7 @@ bool sLShifEqualNode*::compile(sLShifEqualNode* self, sInfo* info)
     
     sNode* right = self.mRight;
     
-    if(!right.compile->(info)) {
+    if(!node_compile(right)) {
         return false;
     }
     
@@ -721,7 +721,7 @@ bool sRShiftEqualNode*::compile(sRShiftEqualNode* self, sInfo* info)
 {
     sNode* left = self.mLeft;
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -730,7 +730,7 @@ bool sRShiftEqualNode*::compile(sRShiftEqualNode* self, sInfo* info)
     
     sNode* right = self.mRight;
     
-    if(!right.compile->(info)) {
+    if(!node_compile(right)) {
         return false;
     }
     
@@ -809,7 +809,7 @@ bool sXorEqualNode*::compile(sXorEqualNode* self, sInfo* info)
 {
     sNode* left = self.mLeft;
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -818,7 +818,7 @@ bool sXorEqualNode*::compile(sXorEqualNode* self, sInfo* info)
     
     sNode* right = self.mRight;
     
-    if(!right.compile->(info)) {
+    if(!node_compile(right)) {
         return false;
     }
     
@@ -897,7 +897,7 @@ bool sOrEqualNode*::compile(sOrEqualNode* self, sInfo* info)
 {
     sNode* left = self.mLeft;
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -906,7 +906,7 @@ bool sOrEqualNode*::compile(sOrEqualNode* self, sInfo* info)
     
     sNode* right = self.mRight;
     
-    if(!right.compile->(info)) {
+    if(!node_compile(right)) {
         return false;
     }
     
@@ -985,7 +985,7 @@ bool sAndEqualNode*::compile(sAndEqualNode* self, sInfo* info)
 {
     sNode* left = self.mLeft;
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -994,7 +994,7 @@ bool sAndEqualNode*::compile(sAndEqualNode* self, sInfo* info)
     
     sNode* right = self.mRight;
     
-    if(!right.compile->(info)) {
+    if(!node_compile(right)) {
         return false;
     }
     
@@ -1073,7 +1073,7 @@ bool sExpEqualNode*::compile(sExpEqualNode* self, sInfo* info)
 {
     sNode* left = self.mLeft;
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -1082,7 +1082,7 @@ bool sExpEqualNode*::compile(sExpEqualNode* self, sInfo* info)
     
     sNode* right = self.mRight;
     
-    if(!right.compile->(info)) {
+    if(!node_compile(right)) {
         return false;
     }
     

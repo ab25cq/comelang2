@@ -224,14 +224,14 @@ bool sStoreFieldNode*::compile(sStoreFieldNode* self, sInfo* info)
     sNode* right = self.mRight;
     string name = string(self.mName);
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
     CVALUE*% left_value = get_value_from_stack(-1, info);
     dec_stack_ptr(1, info);
     
-    if(!right.compile->(info)) {
+    if(!node_compile(right)) {
         return false;
     }
     
@@ -539,7 +539,7 @@ bool sNullCheckNode*::compile(sNullCheckNode* self, sInfo* info)
 {
     sNode* left = self.mLeft;
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -690,7 +690,7 @@ bool sExceptionGetValueNode*::compile(sExceptionGetValueNode* self, sInfo* info)
 {
     sNode* left = self.mLeft;
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -747,7 +747,7 @@ bool sLoadFieldNode*::compile(sLoadFieldNode* self, sInfo* info)
     sNode* left = self.mLeft;
     string name = string(self.mName);
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -895,7 +895,7 @@ bool sStoreArrayNode*::compile(sStoreArrayNode* self, sInfo* info)
     sNode* right = self.mRight;
     list<sNode*%>* array_num_nodes = self.mArrayNum;
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -907,7 +907,7 @@ bool sStoreArrayNode*::compile(sStoreArrayNode* self, sInfo* info)
     list<CVALUE*%>*% array_num = new list<CVALUE*%>();
     
     foreach(it, array_num_nodes) {
-        if(!it.compile->(info)) {
+        if(!node_compile(it)) {
             return false;
         }
         
@@ -917,7 +917,7 @@ bool sStoreArrayNode*::compile(sStoreArrayNode* self, sInfo* info)
         array_num.push_back(c_value);
     }
     
-    if(!right.compile->(info)) {
+    if(!node_compile(right)) {
         return false;
     }
     
@@ -1115,7 +1115,7 @@ bool sLoadArrayNode*::compile(sLoadArrayNode* self, sInfo* info)
     sNode* left = self.mLeft;
     list<sNode*%>* array_num_nodes = self.mArrayNum;
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -1127,7 +1127,7 @@ bool sLoadArrayNode*::compile(sLoadArrayNode* self, sInfo* info)
     list<CVALUE*%>*% array_num = new list<CVALUE*%>();
     
     foreach(it, array_num_nodes) {
-        if(!it.compile->(info)) {
+        if(!node_compile(it)) {
             return false;
         }
         
@@ -1262,7 +1262,7 @@ bool sLoadRangeArrayNode*::compile(sLoadRangeArrayNode* self, sInfo* info)
     sNode* left = self.mLeft;
     list<sNode*%>* array_num_nodes = self.mArrayNum;
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -1274,7 +1274,7 @@ bool sLoadRangeArrayNode*::compile(sLoadRangeArrayNode* self, sInfo* info)
     list<CVALUE*%>*% array_num = new list<CVALUE*%>();
     
     foreach(it, array_num_nodes) {
-        if(!it.compile->(info)) {
+        if(!node_compile(it)) {
             return false;
         }
         

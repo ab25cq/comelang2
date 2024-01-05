@@ -1855,6 +1855,8 @@ void int_times(int self, void* parent, void (*block)(void*,int));
 
 int come_main_v1(int argc, char** argv);
 
+_Bool node_compile(struct sNode* node, struct sInfo* info);
+
 int come_main_v2(int argc, char** argv);
 
 void come_init_v2();
@@ -2577,7 +2579,7 @@ void* __right_value_freed_obj[1024];
 _Bool _if_conditional1;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-        if(_if_conditional1=self!=((void*)0)&&((struct smart_pointer$1char*)come_null_check(self, "smart_pointer$1charp_finalize", 1))->memory!=((void*)0),        __freed_obj__ = 0, 
+        if(_if_conditional1=self!=((void*)0)&&((struct smart_pointer$1char*)come_null_check(self, "smart_pointer$1charp_finalize", 0))->memory!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional1) {
             if(((struct smart_pointer$1char*)come_null_check(self, "smart_pointer$1charp_finalize", 0))->memory && !__freed_obj__) { come_call_finalizer(buffer_finalize,((struct smart_pointer$1char*)come_null_check(self, "smart_pointer$1charp_finalize", 0))->memory, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
@@ -2596,7 +2598,7 @@ void* __right_value_freed_obj[1024];
 _Bool _if_conditional2;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-        if(_if_conditional2=self!=((void*)0)&&((struct smart_pointer$1short*)come_null_check(self, "smart_pointer$1shortp_finalize", 1))->memory!=((void*)0),        __freed_obj__ = 0, 
+        if(_if_conditional2=self!=((void*)0)&&((struct smart_pointer$1short*)come_null_check(self, "smart_pointer$1shortp_finalize", 0))->memory!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional2) {
             if(((struct smart_pointer$1short*)come_null_check(self, "smart_pointer$1shortp_finalize", 0))->memory && !__freed_obj__) { come_call_finalizer(buffer_finalize,((struct smart_pointer$1short*)come_null_check(self, "smart_pointer$1shortp_finalize", 0))->memory, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
@@ -2614,7 +2616,7 @@ void* __right_value_freed_obj[1024];
 _Bool _if_conditional3;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-        if(_if_conditional3=self!=((void*)0)&&((struct smart_pointer$1int*)come_null_check(self, "smart_pointer$1intp_finalize", 1))->memory!=((void*)0),        __freed_obj__ = 0, 
+        if(_if_conditional3=self!=((void*)0)&&((struct smart_pointer$1int*)come_null_check(self, "smart_pointer$1intp_finalize", 0))->memory!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional3) {
             if(((struct smart_pointer$1int*)come_null_check(self, "smart_pointer$1intp_finalize", 0))->memory && !__freed_obj__) { come_call_finalizer(buffer_finalize,((struct smart_pointer$1int*)come_null_check(self, "smart_pointer$1intp_finalize", 0))->memory, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
@@ -2632,7 +2634,7 @@ void* __right_value_freed_obj[1024];
 _Bool _if_conditional4;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-        if(_if_conditional4=self!=((void*)0)&&((struct smart_pointer$1long*)come_null_check(self, "smart_pointer$1longp_finalize", 1))->memory!=((void*)0),        __freed_obj__ = 0, 
+        if(_if_conditional4=self!=((void*)0)&&((struct smart_pointer$1long*)come_null_check(self, "smart_pointer$1longp_finalize", 0))->memory!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional4) {
             if(((struct smart_pointer$1long*)come_null_check(self, "smart_pointer$1longp_finalize", 0))->memory && !__freed_obj__) { come_call_finalizer(buffer_finalize,((struct smart_pointer$1long*)come_null_check(self, "smart_pointer$1longp_finalize", 0))->memory, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
@@ -2763,13 +2765,13 @@ _Bool _if_conditional6;
 _Bool _if_conditional7;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-        if(_if_conditional6=self!=((void*)0)&&((struct CVALUE*)come_null_check(self, "CVALUE_finalize", 1))->c_value!=((void*)0),        __freed_obj__ = 0, 
+        if(_if_conditional6=self!=((void*)0)&&((struct CVALUE*)come_null_check(self, "CVALUE_finalize", 0))->c_value!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional6) {
             if(((struct CVALUE*)come_null_check(self, "CVALUE_finalize", 0))->c_value && !__freed_obj__) { ((struct CVALUE*)come_null_check(self, "CVALUE_finalize", 0))->c_value = come_decrement_ref_count(((struct CVALUE*)come_null_check(self, "CVALUE_finalize", 0))->c_value, (void*)0, (void*)0, 0, 0, 0); }
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-        if(_if_conditional7=self!=((void*)0)&&((struct CVALUE*)come_null_check(self, "CVALUE_finalize", 2))->type!=((void*)0),        __freed_obj__ = 0, 
+        if(_if_conditional7=self!=((void*)0)&&((struct CVALUE*)come_null_check(self, "CVALUE_finalize", 1))->type!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional7) {
             if(((struct CVALUE*)come_null_check(self, "CVALUE_finalize", 1))->type && !__freed_obj__) { come_call_finalizer(sType_finalize,((struct CVALUE*)come_null_check(self, "CVALUE_finalize", 1))->type, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
@@ -2797,73 +2799,73 @@ _Bool _if_conditional22;
 _Bool _if_conditional23;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                if(_if_conditional8=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 1))->mNoSolvedGenericsType!=((void*)0),                __freed_obj__ = 0, 
+                if(_if_conditional8=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 0))->mNoSolvedGenericsType!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional8) {
                     if(((struct sType*)come_null_check(self, "sType_finalize", 0))->mNoSolvedGenericsType && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,((struct sType*)come_null_check(self, "sType_finalize", 0))->mNoSolvedGenericsType, (void*)0, (void*)0, 0, 0, 0, 0); }
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                if(_if_conditional10=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 2))->mOriginalLoadVarType!=((void*)0),                __freed_obj__ = 0, 
+                if(_if_conditional10=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 1))->mOriginalLoadVarType!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional10) {
                     if(((struct sType*)come_null_check(self, "sType_finalize", 1))->mOriginalLoadVarType && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,((struct sType*)come_null_check(self, "sType_finalize", 1))->mOriginalLoadVarType, (void*)0, (void*)0, 0, 0, 0, 0); }
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                if(_if_conditional11=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 3))->mGenericsName!=((void*)0),                __freed_obj__ = 0, 
+                if(_if_conditional11=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 2))->mGenericsName!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional11) {
                     if(((struct sType*)come_null_check(self, "sType_finalize", 2))->mGenericsName && !__freed_obj__) { ((struct sType*)come_null_check(self, "sType_finalize", 2))->mGenericsName = come_decrement_ref_count(((struct sType*)come_null_check(self, "sType_finalize", 2))->mGenericsName, (void*)0, (void*)0, 0, 0, 0); }
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                if(_if_conditional12=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 4))->mGenericsTypes!=((void*)0),                __freed_obj__ = 0, 
+                if(_if_conditional12=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 3))->mGenericsTypes!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional12) {
                     if(((struct sType*)come_null_check(self, "sType_finalize", 3))->mGenericsTypes && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,((struct sType*)come_null_check(self, "sType_finalize", 3))->mGenericsTypes, (void*)0, (void*)0, 0, 0, 0, 0); }
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                if(_if_conditional14=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 5))->mArrayNum!=((void*)0),                __freed_obj__ = 0, 
+                if(_if_conditional14=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 4))->mArrayNum!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional14) {
                     if(((struct sType*)come_null_check(self, "sType_finalize", 4))->mArrayNum && !__freed_obj__) { come_call_finalizer(list$1sNodephp_finalize,((struct sType*)come_null_check(self, "sType_finalize", 4))->mArrayNum, (void*)0, (void*)0, 0, 0, 0, 0); }
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                if(_if_conditional16=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 6))->mParamTypes!=((void*)0),                __freed_obj__ = 0, 
+                if(_if_conditional16=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 5))->mParamTypes!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional16) {
                     if(((struct sType*)come_null_check(self, "sType_finalize", 5))->mParamTypes && !__freed_obj__) { come_call_finalizer(list$1sTypephp_finalize,((struct sType*)come_null_check(self, "sType_finalize", 5))->mParamTypes, (void*)0, (void*)0, 0, 0, 0, 0); }
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                if(_if_conditional17=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 7))->mParamNames!=((void*)0),                __freed_obj__ = 0, 
+                if(_if_conditional17=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 6))->mParamNames!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional17) {
                     if(((struct sType*)come_null_check(self, "sType_finalize", 6))->mParamNames && !__freed_obj__) { come_call_finalizer(list$1charphp_finalize,((struct sType*)come_null_check(self, "sType_finalize", 6))->mParamNames, (void*)0, (void*)0, 0, 0, 0, 0); }
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                if(_if_conditional19=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 8))->mResultType!=((void*)0),                __freed_obj__ = 0, 
+                if(_if_conditional19=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 7))->mResultType!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional19) {
                     if(((struct sType*)come_null_check(self, "sType_finalize", 7))->mResultType && !__freed_obj__) { come_call_finalizer(tuple1$1sTypephp_finalize,((struct sType*)come_null_check(self, "sType_finalize", 7))->mResultType, (void*)0, (void*)0, 0, 0, 0, 0); }
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                if(_if_conditional20=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 9))->mAlignas!=((void*)0),                __freed_obj__ = 0, 
+                if(_if_conditional20=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 8))->mAlignas!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional20) {
                     if(((struct sType*)come_null_check(self, "sType_finalize", 8))->mAlignas && !__freed_obj__) { ((struct sType*)come_null_check(self, "sType_finalize", 8))->mAlignas = come_decrement_ref_count(((struct sType*)come_null_check(self, "sType_finalize", 8))->mAlignas, ((struct sNode*)((struct sType*)come_null_check(self, "sType_finalize", 8))->mAlignas)->finalize, ((struct sNode*)((struct sType*)come_null_check(self, "sType_finalize", 8))->mAlignas)->_protocol_obj, 0, 0, 0); } 
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                if(_if_conditional21=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 10))->mSizeNum!=((void*)0),                __freed_obj__ = 0, 
+                if(_if_conditional21=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 9))->mSizeNum!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional21) {
                     if(((struct sType*)come_null_check(self, "sType_finalize", 9))->mSizeNum && !__freed_obj__) { ((struct sType*)come_null_check(self, "sType_finalize", 9))->mSizeNum = come_decrement_ref_count(((struct sType*)come_null_check(self, "sType_finalize", 9))->mSizeNum, ((struct sNode*)((struct sType*)come_null_check(self, "sType_finalize", 9))->mSizeNum)->finalize, ((struct sNode*)((struct sType*)come_null_check(self, "sType_finalize", 9))->mSizeNum)->_protocol_obj, 0, 0, 0); } 
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                if(_if_conditional22=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 11))->mOriginalTypeName!=((void*)0),                __freed_obj__ = 0, 
+                if(_if_conditional22=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 10))->mOriginalTypeName!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional22) {
                     if(((struct sType*)come_null_check(self, "sType_finalize", 10))->mOriginalTypeName && !__freed_obj__) { ((struct sType*)come_null_check(self, "sType_finalize", 10))->mOriginalTypeName = come_decrement_ref_count(((struct sType*)come_null_check(self, "sType_finalize", 10))->mOriginalTypeName, (void*)0, (void*)0, 0, 0, 0); }
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                if(_if_conditional23=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 12))->mAsmName!=((void*)0),                __freed_obj__ = 0, 
+                if(_if_conditional23=self!=((void*)0)&&((struct sType*)come_null_check(self, "sType_finalize", 11))->mAsmName!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional23) {
                     if(((struct sType*)come_null_check(self, "sType_finalize", 11))->mAsmName && !__freed_obj__) { ((struct sType*)come_null_check(self, "sType_finalize", 11))->mAsmName = come_decrement_ref_count(((struct sType*)come_null_check(self, "sType_finalize", 11))->mAsmName, (void*)0, (void*)0, 0, 0, 0); }
                     __freed_obj__ = 0;
@@ -2880,7 +2882,7 @@ void* __right_value_freed_obj[1024];
 _Bool _if_conditional9;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                        if(_if_conditional9=self!=((void*)0)&&((struct tuple1$1sTypeph*)come_null_check(self, "tuple1$1sTypephp_finalize", 1))->v1!=((void*)0),                        __freed_obj__ = 0, 
+                        if(_if_conditional9=self!=((void*)0)&&((struct tuple1$1sTypeph*)come_null_check(self, "tuple1$1sTypephp_finalize", 0))->v1!=((void*)0),                        __freed_obj__ = 0, 
                         _if_conditional9) {
                             if(((struct tuple1$1sTypeph*)come_null_check(self, "tuple1$1sTypephp_finalize", 0))->v1 && !__freed_obj__) { come_call_finalizer(sType_finalize,((struct tuple1$1sTypeph*)come_null_check(self, "tuple1$1sTypephp_finalize", 0))->v1, (void*)0, (void*)0, 0, 0, 0, 0); }
                             __freed_obj__ = 0;
@@ -2924,7 +2926,7 @@ void* __right_value_freed_obj[1024];
 _Bool _if_conditional13;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                                if(_if_conditional13=self!=((void*)0)&&((struct list_item$1sTypeph*)come_null_check(self, "list_item$1sTypephp_finalize", 1))->item!=((void*)0),                                __freed_obj__ = 0, 
+                                if(_if_conditional13=self!=((void*)0)&&((struct list_item$1sTypeph*)come_null_check(self, "list_item$1sTypephp_finalize", 0))->item!=((void*)0),                                __freed_obj__ = 0, 
                                 _if_conditional13) {
                                     if(((struct list_item$1sTypeph*)come_null_check(self, "list_item$1sTypephp_finalize", 0))->item && !__freed_obj__) { come_call_finalizer(sType_finalize,((struct list_item$1sTypeph*)come_null_check(self, "list_item$1sTypephp_finalize", 0))->item, (void*)0, (void*)0, 0, 0, 0, 0); }
                                     __freed_obj__ = 0;
@@ -2968,7 +2970,7 @@ void* __right_value_freed_obj[1024];
 _Bool _if_conditional15;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                                if(_if_conditional15=self!=((void*)0)&&((struct list_item$1sNodeph*)come_null_check(self, "list_item$1sNodephp_finalize", 1))->item!=((void*)0),                                __freed_obj__ = 0, 
+                                if(_if_conditional15=self!=((void*)0)&&((struct list_item$1sNodeph*)come_null_check(self, "list_item$1sNodephp_finalize", 0))->item!=((void*)0),                                __freed_obj__ = 0, 
                                 _if_conditional15) {
                                     if(((struct list_item$1sNodeph*)come_null_check(self, "list_item$1sNodephp_finalize", 0))->item && !__freed_obj__) { ((struct list_item$1sNodeph*)come_null_check(self, "list_item$1sNodephp_finalize", 0))->item = come_decrement_ref_count(((struct list_item$1sNodeph*)come_null_check(self, "list_item$1sNodephp_finalize", 0))->item, ((struct sNode*)((struct list_item$1sNodeph*)come_null_check(self, "list_item$1sNodephp_finalize", 0))->item)->finalize, ((struct sNode*)((struct list_item$1sNodeph*)come_null_check(self, "list_item$1sNodephp_finalize", 0))->item)->_protocol_obj, 0, 0, 0); } 
                                     __freed_obj__ = 0;
@@ -3012,7 +3014,7 @@ void* __right_value_freed_obj[1024];
 _Bool _if_conditional18;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                                if(_if_conditional18=self!=((void*)0)&&((struct list_item$1charph*)come_null_check(self, "list_item$1charphp_finalize", 1))->item!=((void*)0),                                __freed_obj__ = 0, 
+                                if(_if_conditional18=self!=((void*)0)&&((struct list_item$1charph*)come_null_check(self, "list_item$1charphp_finalize", 0))->item!=((void*)0),                                __freed_obj__ = 0, 
                                 _if_conditional18) {
                                     if(((struct list_item$1charph*)come_null_check(self, "list_item$1charphp_finalize", 0))->item && !__freed_obj__) { ((struct list_item$1charph*)come_null_check(self, "list_item$1charphp_finalize", 0))->item = come_decrement_ref_count(((struct list_item$1charph*)come_null_check(self, "list_item$1charphp_finalize", 0))->item, (void*)0, (void*)0, 0, 0, 0); }
                                     __freed_obj__ = 0;
@@ -3046,7 +3048,7 @@ memset(&right_value17, 0, sizeof(void*));
 memset(&litem_13, 0, sizeof(struct list_item$1CVALUEph*));
 memset(&right_value18, 0, sizeof(void*));
 memset(&litem_14, 0, sizeof(struct list_item$1CVALUEph*));
-        if(_if_conditional24=((struct list$1CVALUEph*)come_null_check(self, "./comelang2.h", 305))->len==0,        __freed_obj__ = 0, 
+        if(_if_conditional24=((struct list$1CVALUEph*)come_null_check(self, "./comelang2.h", 274))->len==0,        __freed_obj__ = 0, 
         _if_conditional24) {
             litem_12=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value16=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./comelang2.h", 275))));
             __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value16);
@@ -3067,7 +3069,7 @@ memset(&litem_14, 0, sizeof(struct list_item$1CVALUEph*));
             __freed_obj__ = 0;
         }
         else {
-            if(_if_conditional26=((struct list$1CVALUEph*)come_null_check(self, "./comelang2.h", 305))->len==1,            __freed_obj__ = 0, 
+            if(_if_conditional26=((struct list$1CVALUEph*)come_null_check(self, "./comelang2.h", 284))->len==1,            __freed_obj__ = 0, 
             _if_conditional26) {
                 litem_13=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value17=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./comelang2.h", 285))));
                 __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value17);
@@ -3128,7 +3130,7 @@ void* __right_value_freed_obj[1024];
 _Bool _if_conditional25;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                if(_if_conditional25=self!=((void*)0)&&((struct list_item$1CVALUEph*)come_null_check(self, "list_item$1CVALUEphp_finalize", 1))->item!=((void*)0),                __freed_obj__ = 0, 
+                if(_if_conditional25=self!=((void*)0)&&((struct list_item$1CVALUEph*)come_null_check(self, "list_item$1CVALUEphp_finalize", 0))->item!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional25) {
                     if(((struct list_item$1CVALUEph*)come_null_check(self, "list_item$1CVALUEphp_finalize", 0))->item && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,((struct list_item$1CVALUEph*)come_null_check(self, "list_item$1CVALUEphp_finalize", 0))->item, (void*)0, (void*)0, 0, 0, 0, 0); }
                     __freed_obj__ = 0;
@@ -4199,11 +4201,11 @@ memset(&right_value104, 0, sizeof(void*));
         __freed_obj__ = 0;
     }
     __freed_obj__ = 0;
-    if(_if_conditional33=(come_push_stackframe("05function3.c", 504),__exception_result_var_b37=xisdigit(*((struct sInfo*)come_null_check(info, "05function3.c", 504))->p), come_pop_stackframe(), __exception_result_var_b37),    __freed_obj__ = 0, 
+    if(_if_conditional33=(come_push_stackframe("05function3.c", 326),__exception_result_var_b37=xisdigit(*((struct sInfo*)come_null_check(info, "05function3.c", 326))->p), come_pop_stackframe(), __exception_result_var_b37),    __freed_obj__ = 0, 
     _if_conditional33) {
-        while(_while_condtional4=(come_push_stackframe("05function3.c", 340),__exception_result_var_b38=xisdigit(*((struct sInfo*)come_null_check(info, "05function3.c", 340))->p), come_pop_stackframe(), __exception_result_var_b38)||*((struct sInfo*)come_null_check(info, "05function3.c", 340))->p==95,        __freed_obj__ = 0, 
+        while(_while_condtional4=(come_push_stackframe("05function3.c", 327),__exception_result_var_b38=xisdigit(*((struct sInfo*)come_null_check(info, "05function3.c", 327))->p), come_pop_stackframe(), __exception_result_var_b38)||*((struct sInfo*)come_null_check(info, "05function3.c", 327))->p==95,        __freed_obj__ = 0, 
         _while_condtional4) {
-            if(_if_conditional34=*((struct sInfo*)come_null_check(info, "05function3.c", 336))->p==95,            __freed_obj__ = 0, 
+            if(_if_conditional34=*((struct sInfo*)come_null_check(info, "05function3.c", 328))->p==95,            __freed_obj__ = 0, 
             _if_conditional34) {
                 ((struct sInfo*)come_null_check(info, "05function3.c", 329))->p++;
                 __freed_obj__ = 0;
@@ -4231,7 +4233,7 @@ memset(&right_value104, 0, sizeof(void*));
         __freed_obj__ = 0;
         c_23=*(((struct sInfo*)come_null_check(info, "05function3.c", 344))->p+1);
         __freed_obj__ = 0;
-        if(_if_conditional36=*((struct sInfo*)come_null_check(info, "05function3.c", 498))->p==46&&(come_push_stackframe("05function3.c", 498),__exception_result_var_b40=xisdigit(c_23), come_pop_stackframe(), __exception_result_var_b40),        __freed_obj__ = 0, 
+        if(_if_conditional36=*((struct sInfo*)come_null_check(info, "05function3.c", 346))->p==46&&(come_push_stackframe("05function3.c", 346),__exception_result_var_b40=xisdigit(c_23), come_pop_stackframe(), __exception_result_var_b40),        __freed_obj__ = 0, 
         _if_conditional36) {
             *p2_22++=*((struct sInfo*)come_null_check(info, "05function3.c", 347))->p;
             __freed_obj__ = 0;
@@ -4247,9 +4249,9 @@ memset(&right_value104, 0, sizeof(void*));
             __freed_obj__ = 0;
             (come_push_stackframe("05function3.c", 355),skip_spaces_and_lf(info),come_pop_stackframe());
             __freed_obj__ = 0;
-            while(_while_condtional5=(come_push_stackframe("05function3.c", 372),__exception_result_var_b42=xisdigit(*((struct sInfo*)come_null_check(info, "05function3.c", 372))->p), come_pop_stackframe(), __exception_result_var_b42)||*((struct sInfo*)come_null_check(info, "05function3.c", 372))->p==95,            __freed_obj__ = 0, 
+            while(_while_condtional5=(come_push_stackframe("05function3.c", 357),__exception_result_var_b42=xisdigit(*((struct sInfo*)come_null_check(info, "05function3.c", 357))->p), come_pop_stackframe(), __exception_result_var_b42)||*((struct sInfo*)come_null_check(info, "05function3.c", 357))->p==95,            __freed_obj__ = 0, 
             _while_condtional5) {
-                if(_if_conditional38=*((struct sInfo*)come_null_check(info, "05function3.c", 366))->p==95,                __freed_obj__ = 0, 
+                if(_if_conditional38=*((struct sInfo*)come_null_check(info, "05function3.c", 358))->p==95,                __freed_obj__ = 0, 
                 _if_conditional38) {
                     ((struct sInfo*)come_null_check(info, "05function3.c", 359))->p++;
                     __freed_obj__ = 0;
@@ -4271,7 +4273,7 @@ memset(&right_value104, 0, sizeof(void*));
                 __freed_obj__ = 0;
             }
             __freed_obj__ = 0;
-            if(_if_conditional40=*((struct sInfo*)come_null_check(info, "05function3.c", 419))->p==101,            __freed_obj__ = 0, 
+            if(_if_conditional40=*((struct sInfo*)come_null_check(info, "05function3.c", 372))->p==101,            __freed_obj__ = 0, 
             _if_conditional40) {
                 *p2_22++=*((struct sInfo*)come_null_check(info, "05function3.c", 373))->p;
                 __freed_obj__ = 0;
@@ -4285,7 +4287,7 @@ memset(&right_value104, 0, sizeof(void*));
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                if(_if_conditional42=*((struct sInfo*)come_null_check(info, "05function3.c", 404))->p==43,                __freed_obj__ = 0, 
+                if(_if_conditional42=*((struct sInfo*)come_null_check(info, "05function3.c", 381))->p==43,                __freed_obj__ = 0, 
                 _if_conditional42) {
                     *p2_22++=*((struct sInfo*)come_null_check(info, "05function3.c", 382))->p;
                     __freed_obj__ = 0;
@@ -4301,7 +4303,7 @@ memset(&right_value104, 0, sizeof(void*));
                     __freed_obj__ = 0;
                 }
                 else {
-                    if(_if_conditional44=*((struct sInfo*)come_null_check(info, "05function3.c", 404))->p==45,                    __freed_obj__ = 0, 
+                    if(_if_conditional44=*((struct sInfo*)come_null_check(info, "05function3.c", 390))->p==45,                    __freed_obj__ = 0, 
                     _if_conditional44) {
                         *p2_22++=*((struct sInfo*)come_null_check(info, "05function3.c", 391))->p;
                         __freed_obj__ = 0;
@@ -4325,9 +4327,9 @@ memset(&right_value104, 0, sizeof(void*));
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                while(_while_condtional6=(come_push_stackframe("05function3.c", 417),__exception_result_var_b43=xisdigit(*((struct sInfo*)come_null_check(info, "05function3.c", 417))->p), come_pop_stackframe(), __exception_result_var_b43)||*((struct sInfo*)come_null_check(info, "05function3.c", 417))->p==95,                __freed_obj__ = 0, 
+                while(_while_condtional6=(come_push_stackframe("05function3.c", 404),__exception_result_var_b43=xisdigit(*((struct sInfo*)come_null_check(info, "05function3.c", 404))->p), come_pop_stackframe(), __exception_result_var_b43)||*((struct sInfo*)come_null_check(info, "05function3.c", 404))->p==95,                __freed_obj__ = 0, 
                 _while_condtional6) {
-                    if(_if_conditional46=*((struct sInfo*)come_null_check(info, "05function3.c", 413))->p==95,                    __freed_obj__ = 0, 
+                    if(_if_conditional46=*((struct sInfo*)come_null_check(info, "05function3.c", 405))->p==95,                    __freed_obj__ = 0, 
                     _if_conditional46) {
                         ((struct sInfo*)come_null_check(info, "05function3.c", 406))->p++;
                         __freed_obj__ = 0;
@@ -4355,7 +4357,7 @@ memset(&right_value104, 0, sizeof(void*));
             __freed_obj__ = 0;
             (come_push_stackframe("05function3.c", 420),skip_spaces_and_lf(info),come_pop_stackframe());
             __freed_obj__ = 0;
-            if(_if_conditional48=*((struct sInfo*)come_null_check(info, "05function3.c", 437))->p==102||*((struct sInfo*)come_null_check(info, "05function3.c", 437))->p==70,            __freed_obj__ = 0, 
+            if(_if_conditional48=*((struct sInfo*)come_null_check(info, "05function3.c", 422))->p==102||*((struct sInfo*)come_null_check(info, "05function3.c", 422))->p==70,            __freed_obj__ = 0, 
             _if_conditional48) {
                 ((struct sInfo*)come_null_check(info, "05function3.c", 423))->p++;
                 __freed_obj__ = 0;
@@ -4383,7 +4385,7 @@ memset(&right_value104, 0, sizeof(void*));
                 __freed_obj__ = 0;
             }
             else {
-                if(_if_conditional54=*((struct sInfo*)come_null_check(info, "05function3.c", 437))->p==108||*((struct sInfo*)come_null_check(info, "05function3.c", 437))->p==76,                __freed_obj__ = 0, 
+                if(_if_conditional54=*((struct sInfo*)come_null_check(info, "05function3.c", 428))->p==108||*((struct sInfo*)come_null_check(info, "05function3.c", 428))->p==76,                __freed_obj__ = 0, 
                 _if_conditional54) {
                     ((struct sInfo*)come_null_check(info, "05function3.c", 429))->p++;
                     __freed_obj__ = 0;
@@ -4437,19 +4439,19 @@ memset(&right_value104, 0, sizeof(void*));
             __freed_obj__ = 0;
         }
         else {
-            if(_if_conditional65=*((struct sInfo*)come_null_check(info, "05function3.c", 498))->p==117||*((struct sInfo*)come_null_check(info, "05function3.c", 498))->p==85,            __freed_obj__ = 0, 
+            if(_if_conditional65=*((struct sInfo*)come_null_check(info, "05function3.c", 438))->p==117||*((struct sInfo*)come_null_check(info, "05function3.c", 438))->p==85,            __freed_obj__ = 0, 
             _if_conditional65) {
                 ((struct sInfo*)come_null_check(info, "05function3.c", 440))->p++;
                 __freed_obj__ = 0;
                 (come_push_stackframe("05function3.c", 441),skip_spaces_and_lf(info),come_pop_stackframe());
                 __freed_obj__ = 0;
-                if(_if_conditional66=*((struct sInfo*)come_null_check(info, "05function3.c", 466))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 466))->p==108,                __freed_obj__ = 0, 
+                if(_if_conditional66=*((struct sInfo*)come_null_check(info, "05function3.c", 443))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 443))->p==108,                __freed_obj__ = 0, 
                 _if_conditional66) {
                     ((struct sInfo*)come_null_check(info, "05function3.c", 445))->p++;
                     __freed_obj__ = 0;
                     (come_push_stackframe("05function3.c", 446),skip_spaces_and_lf(info),come_pop_stackframe());
                     __freed_obj__ = 0;
-                    if(_if_conditional67=*((struct sInfo*)come_null_check(info, "05function3.c", 461))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 461))->p==108,                    __freed_obj__ = 0, 
+                    if(_if_conditional67=*((struct sInfo*)come_null_check(info, "05function3.c", 448))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 448))->p==108,                    __freed_obj__ = 0, 
                     _if_conditional67) {
                         ((struct sInfo*)come_null_check(info, "05function3.c", 450))->p++;
                         __freed_obj__ = 0;
@@ -4533,13 +4535,13 @@ memset(&right_value104, 0, sizeof(void*));
                 __freed_obj__ = 0;
             }
             else {
-                if(_if_conditional83=*((struct sInfo*)come_null_check(info, "05function3.c", 498))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 498))->p==108,                __freed_obj__ = 0, 
+                if(_if_conditional83=*((struct sInfo*)come_null_check(info, "05function3.c", 467))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 467))->p==108,                __freed_obj__ = 0, 
                 _if_conditional83) {
                     ((struct sInfo*)come_null_check(info, "05function3.c", 468))->p++;
                     __freed_obj__ = 0;
                     (come_push_stackframe("05function3.c", 469),skip_spaces_and_lf(info),come_pop_stackframe());
                     __freed_obj__ = 0;
-                    if(_if_conditional84=*((struct sInfo*)come_null_check(info, "05function3.c", 493))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 493))->p==108,                    __freed_obj__ = 0, 
+                    if(_if_conditional84=*((struct sInfo*)come_null_check(info, "05function3.c", 471))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 471))->p==108,                    __freed_obj__ = 0, 
                     _if_conditional84) {
                         ((struct sInfo*)come_null_check(info, "05function3.c", 473))->p++;
                         __freed_obj__ = 0;
@@ -4569,7 +4571,7 @@ memset(&right_value104, 0, sizeof(void*));
                         __freed_obj__ = 0;
                     }
                     else {
-                        if(_if_conditional90=*((struct sInfo*)come_null_check(info, "05function3.c", 493))->p==85||*((struct sInfo*)come_null_check(info, "05function3.c", 493))->p==117,                        __freed_obj__ = 0, 
+                        if(_if_conditional90=*((struct sInfo*)come_null_check(info, "05function3.c", 480))->p==85||*((struct sInfo*)come_null_check(info, "05function3.c", 480))->p==117,                        __freed_obj__ = 0, 
                         _if_conditional90) {
                             ((struct sInfo*)come_null_check(info, "05function3.c", 482))->p++;
                             __freed_obj__ = 0;
@@ -4679,7 +4681,7 @@ void* __right_value_freed_obj[1024];
 _Bool _if_conditional49;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                    if(_if_conditional49=self!=((void*)0)&&((struct sFloatNode*)come_null_check(self, "sFloatNode_finalize", 1))->sname!=((void*)0),                    __freed_obj__ = 0, 
+                    if(_if_conditional49=self!=((void*)0)&&((struct sFloatNode*)come_null_check(self, "sFloatNode_finalize", 0))->sname!=((void*)0),                    __freed_obj__ = 0, 
                     _if_conditional49) {
                         if(((struct sFloatNode*)come_null_check(self, "sFloatNode_finalize", 0))->sname && !__freed_obj__) { ((struct sFloatNode*)come_null_check(self, "sFloatNode_finalize", 0))->sname = come_decrement_ref_count(((struct sFloatNode*)come_null_check(self, "sFloatNode_finalize", 0))->sname, (void*)0, (void*)0, 0, 0, 0); }
                         __freed_obj__ = 0;
@@ -4733,7 +4735,7 @@ memset(&right_value58, 0, sizeof(void*));
                         __freed_obj__ = 0;
                     }
                     __freed_obj__ = 0;
-                    if(_if_conditional53=self!=((void*)0)&&((struct sFloatNode*)come_null_check(self, "sFloatNode_clone", 7))->sname!=((void*)0),                    __freed_obj__ = 0, 
+                    if(_if_conditional53=self!=((void*)0)&&((struct sFloatNode*)come_null_check(self, "sFloatNode_clone", 6))->sname!=((void*)0),                    __freed_obj__ = 0, 
                     _if_conditional53) {
                         __dec_obj27=((struct sFloatNode*)come_null_check(result_24, "sFloatNode_clone", 6))->sname;
                         ((struct sFloatNode*)come_null_check(result_24, "sFloatNode_clone", 6))->sname=(char*)come_increment_ref_count(((char*)(right_value58=string_clone(((struct sFloatNode*)come_null_check(self, "sFloatNode_clone", 6))->sname))));
@@ -4761,7 +4763,7 @@ void* __right_value_freed_obj[1024];
 _Bool _if_conditional60;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                        if(_if_conditional60=self!=((void*)0)&&((struct sDoubleNode*)come_null_check(self, "sDoubleNode_finalize", 1))->sname!=((void*)0),                        __freed_obj__ = 0, 
+                        if(_if_conditional60=self!=((void*)0)&&((struct sDoubleNode*)come_null_check(self, "sDoubleNode_finalize", 0))->sname!=((void*)0),                        __freed_obj__ = 0, 
                         _if_conditional60) {
                             if(((struct sDoubleNode*)come_null_check(self, "sDoubleNode_finalize", 0))->sname && !__freed_obj__) { ((struct sDoubleNode*)come_null_check(self, "sDoubleNode_finalize", 0))->sname = come_decrement_ref_count(((struct sDoubleNode*)come_null_check(self, "sDoubleNode_finalize", 0))->sname, (void*)0, (void*)0, 0, 0, 0); }
                             __freed_obj__ = 0;
@@ -4815,7 +4817,7 @@ memset(&right_value68, 0, sizeof(void*));
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
-                        if(_if_conditional64=self!=((void*)0)&&((struct sDoubleNode*)come_null_check(self, "sDoubleNode_clone", 7))->sname!=((void*)0),                        __freed_obj__ = 0, 
+                        if(_if_conditional64=self!=((void*)0)&&((struct sDoubleNode*)come_null_check(self, "sDoubleNode_clone", 6))->sname!=((void*)0),                        __freed_obj__ = 0, 
                         _if_conditional64) {
                             __dec_obj29=((struct sDoubleNode*)come_null_check(result_26, "sDoubleNode_clone", 6))->sname;
                             ((struct sDoubleNode*)come_null_check(result_26, "sDoubleNode_clone", 6))->sname=(char*)come_increment_ref_count(((char*)(right_value68=string_clone(((struct sDoubleNode*)come_null_check(self, "sDoubleNode_clone", 6))->sname))));
@@ -5075,9 +5077,9 @@ memset(&right_value179, 0, sizeof(void*));
     __freed_obj__ = 0;
     *p_47++=120;
     __freed_obj__ = 0;
-    while(_while_condtional7=(*((struct sInfo*)come_null_check(info, "05function3.c", 535))->p>=48&&*((struct sInfo*)come_null_check(info, "05function3.c", 535))->p<=57)||(*((struct sInfo*)come_null_check(info, "05function3.c", 535))->p>=97&&*((struct sInfo*)come_null_check(info, "05function3.c", 535))->p<=102)||(*((struct sInfo*)come_null_check(info, "05function3.c", 535))->p>=65&&*((struct sInfo*)come_null_check(info, "05function3.c", 535))->p<=70)||*((struct sInfo*)come_null_check(info, "05function3.c", 535))->p==95,    __freed_obj__ = 0, 
+    while(_while_condtional7=(*((struct sInfo*)come_null_check(info, "05function3.c", 521))->p>=48&&*((struct sInfo*)come_null_check(info, "05function3.c", 521))->p<=57)||(*((struct sInfo*)come_null_check(info, "05function3.c", 521))->p>=97&&*((struct sInfo*)come_null_check(info, "05function3.c", 521))->p<=102)||(*((struct sInfo*)come_null_check(info, "05function3.c", 521))->p>=65&&*((struct sInfo*)come_null_check(info, "05function3.c", 521))->p<=70)||*((struct sInfo*)come_null_check(info, "05function3.c", 521))->p==95,    __freed_obj__ = 0, 
     _while_condtional7) {
-        if(_if_conditional111=*((struct sInfo*)come_null_check(info, "05function3.c", 531))->p==95,        __freed_obj__ = 0, 
+        if(_if_conditional111=*((struct sInfo*)come_null_check(info, "05function3.c", 523))->p==95,        __freed_obj__ = 0, 
         _if_conditional111) {
             ((struct sInfo*)come_null_check(info, "05function3.c", 524))->p++;
             __freed_obj__ = 0;
@@ -5103,19 +5105,19 @@ memset(&right_value179, 0, sizeof(void*));
     __freed_obj__ = 0;
     (come_push_stackframe("05function3.c", 537),skip_spaces_and_lf(info),come_pop_stackframe());
     __freed_obj__ = 0;
-    if(_if_conditional113=*((struct sInfo*)come_null_check(info, "05function3.c", 635))->p==117||*((struct sInfo*)come_null_check(info, "05function3.c", 635))->p==85,    __freed_obj__ = 0, 
+    if(_if_conditional113=*((struct sInfo*)come_null_check(info, "05function3.c", 539))->p==117||*((struct sInfo*)come_null_check(info, "05function3.c", 539))->p==85,    __freed_obj__ = 0, 
     _if_conditional113) {
         ((struct sInfo*)come_null_check(info, "05function3.c", 541))->p++;
         __freed_obj__ = 0;
         (come_push_stackframe("05function3.c", 542),skip_spaces_and_lf(info),come_pop_stackframe());
         __freed_obj__ = 0;
-        if(_if_conditional114=*((struct sInfo*)come_null_check(info, "05function3.c", 584))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 584))->p==108,        __freed_obj__ = 0, 
+        if(_if_conditional114=*((struct sInfo*)come_null_check(info, "05function3.c", 544))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 544))->p==108,        __freed_obj__ = 0, 
         _if_conditional114) {
             ((struct sInfo*)come_null_check(info, "05function3.c", 546))->p++;
             __freed_obj__ = 0;
             (come_push_stackframe("05function3.c", 547),skip_spaces_and_lf(info),come_pop_stackframe());
             __freed_obj__ = 0;
-            if(_if_conditional115=*((struct sInfo*)come_null_check(info, "05function3.c", 573))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 573))->p==108,            __freed_obj__ = 0, 
+            if(_if_conditional115=*((struct sInfo*)come_null_check(info, "05function3.c", 549))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 549))->p==108,            __freed_obj__ = 0, 
             _if_conditional115) {
                 ((struct sInfo*)come_null_check(info, "05function3.c", 551))->p++;
                 __freed_obj__ = 0;
@@ -5275,13 +5277,13 @@ memset(&right_value179, 0, sizeof(void*));
         __freed_obj__ = 0;
     }
     else {
-        if(_if_conditional149=*((struct sInfo*)come_null_check(info, "05function3.c", 635))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 635))->p==108,        __freed_obj__ = 0, 
+        if(_if_conditional149=*((struct sInfo*)come_null_check(info, "05function3.c", 585))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 585))->p==108,        __freed_obj__ = 0, 
         _if_conditional149) {
             ((struct sInfo*)come_null_check(info, "05function3.c", 586))->p++;
             __freed_obj__ = 0;
             (come_push_stackframe("05function3.c", 587),skip_spaces_and_lf(info),come_pop_stackframe());
             __freed_obj__ = 0;
-            if(_if_conditional150=*((struct sInfo*)come_null_check(info, "05function3.c", 624))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 624))->p==108,            __freed_obj__ = 0, 
+            if(_if_conditional150=*((struct sInfo*)come_null_check(info, "05function3.c", 589))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 589))->p==108,            __freed_obj__ = 0, 
             _if_conditional150) {
                 ((struct sInfo*)come_null_check(info, "05function3.c", 591))->p++;
                 __freed_obj__ = 0;
@@ -5337,7 +5339,7 @@ memset(&right_value179, 0, sizeof(void*));
                 __freed_obj__ = 0;
             }
             else {
-                if(_if_conditional162=*((struct sInfo*)come_null_check(info, "05function3.c", 624))->p==85||*((struct sInfo*)come_null_check(info, "05function3.c", 624))->p==117,                __freed_obj__ = 0, 
+                if(_if_conditional162=*((struct sInfo*)come_null_check(info, "05function3.c", 602))->p==85||*((struct sInfo*)come_null_check(info, "05function3.c", 602))->p==117,                __freed_obj__ = 0, 
                 _if_conditional162) {
                     ((struct sInfo*)come_null_check(info, "05function3.c", 604))->p++;
                     __freed_obj__ = 0;
@@ -5627,9 +5629,9 @@ memset(&right_value214, 0, sizeof(void*));
     __freed_obj__ = 0;
     *p_71++=48;
     __freed_obj__ = 0;
-    while(_while_condtional8=(*((struct sInfo*)come_null_check(info, "05function3.c", 660))->p>=48&&*((struct sInfo*)come_null_check(info, "05function3.c", 660))->p<=55)||*((struct sInfo*)come_null_check(info, "05function3.c", 660))->p==95,    __freed_obj__ = 0, 
+    while(_while_condtional8=(*((struct sInfo*)come_null_check(info, "05function3.c", 646))->p>=48&&*((struct sInfo*)come_null_check(info, "05function3.c", 646))->p<=55)||*((struct sInfo*)come_null_check(info, "05function3.c", 646))->p==95,    __freed_obj__ = 0, 
     _while_condtional8) {
-        if(_if_conditional196=*((struct sInfo*)come_null_check(info, "05function3.c", 656))->p==95,        __freed_obj__ = 0, 
+        if(_if_conditional196=*((struct sInfo*)come_null_check(info, "05function3.c", 647))->p==95,        __freed_obj__ = 0, 
         _if_conditional196) {
             ((struct sInfo*)come_null_check(info, "05function3.c", 648))->p++;
             __freed_obj__ = 0;
@@ -5657,19 +5659,19 @@ memset(&right_value214, 0, sizeof(void*));
     __freed_obj__ = 0;
     (come_push_stackframe("05function3.c", 663),skip_spaces_and_lf(info),come_pop_stackframe());
     __freed_obj__ = 0;
-    if(_if_conditional198=*((struct sInfo*)come_null_check(info, "05function3.c", 724))->p==117||*((struct sInfo*)come_null_check(info, "05function3.c", 724))->p==85,    __freed_obj__ = 0, 
+    if(_if_conditional198=*((struct sInfo*)come_null_check(info, "05function3.c", 665))->p==117||*((struct sInfo*)come_null_check(info, "05function3.c", 665))->p==85,    __freed_obj__ = 0, 
     _if_conditional198) {
         ((struct sInfo*)come_null_check(info, "05function3.c", 667))->p++;
         __freed_obj__ = 0;
         (come_push_stackframe("05function3.c", 668),skip_spaces_and_lf(info),come_pop_stackframe());
         __freed_obj__ = 0;
-        if(_if_conditional199=*((struct sInfo*)come_null_check(info, "05function3.c", 693))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 693))->p==108,        __freed_obj__ = 0, 
+        if(_if_conditional199=*((struct sInfo*)come_null_check(info, "05function3.c", 670))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 670))->p==108,        __freed_obj__ = 0, 
         _if_conditional199) {
             ((struct sInfo*)come_null_check(info, "05function3.c", 672))->p++;
             __freed_obj__ = 0;
             (come_push_stackframe("05function3.c", 673),skip_spaces_and_lf(info),come_pop_stackframe());
             __freed_obj__ = 0;
-            if(_if_conditional200=*((struct sInfo*)come_null_check(info, "05function3.c", 688))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 688))->p==108,            __freed_obj__ = 0, 
+            if(_if_conditional200=*((struct sInfo*)come_null_check(info, "05function3.c", 675))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 675))->p==108,            __freed_obj__ = 0, 
             _if_conditional200) {
                 ((struct sInfo*)come_null_check(info, "05function3.c", 677))->p++;
                 __freed_obj__ = 0;
@@ -5751,13 +5753,13 @@ memset(&right_value214, 0, sizeof(void*));
         __freed_obj__ = 0;
     }
     else {
-        if(_if_conditional216=*((struct sInfo*)come_null_check(info, "05function3.c", 724))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 724))->p==108,        __freed_obj__ = 0, 
+        if(_if_conditional216=*((struct sInfo*)come_null_check(info, "05function3.c", 694))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 694))->p==108,        __freed_obj__ = 0, 
         _if_conditional216) {
             ((struct sInfo*)come_null_check(info, "05function3.c", 695))->p++;
             __freed_obj__ = 0;
             (come_push_stackframe("05function3.c", 696),skip_spaces_and_lf(info),come_pop_stackframe());
             __freed_obj__ = 0;
-            if(_if_conditional217=*((struct sInfo*)come_null_check(info, "05function3.c", 718))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 718))->p==108,            __freed_obj__ = 0, 
+            if(_if_conditional217=*((struct sInfo*)come_null_check(info, "05function3.c", 698))->p==76||*((struct sInfo*)come_null_check(info, "05function3.c", 698))->p==108,            __freed_obj__ = 0, 
             _if_conditional217) {
                 ((struct sInfo*)come_null_check(info, "05function3.c", 700))->p++;
                 __freed_obj__ = 0;
@@ -5787,7 +5789,7 @@ memset(&right_value214, 0, sizeof(void*));
                 __freed_obj__ = 0;
             }
             else {
-                if(_if_conditional223=*((struct sInfo*)come_null_check(info, "05function3.c", 718))->p==85||*((struct sInfo*)come_null_check(info, "05function3.c", 718))->p==117,                __freed_obj__ = 0, 
+                if(_if_conditional223=*((struct sInfo*)come_null_check(info, "05function3.c", 706))->p==85||*((struct sInfo*)come_null_check(info, "05function3.c", 706))->p==117,                __freed_obj__ = 0, 
                 _if_conditional223) {
                     ((struct sInfo*)come_null_check(info, "05function3.c", 708))->p++;
                     __freed_obj__ = 0;
@@ -5886,7 +5888,7 @@ void* __right_value_freed_obj[1024];
 _Bool _if_conditional211;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                if(_if_conditional211=self!=((void*)0)&&((struct sUIntNode*)come_null_check(self, "sUIntNode_finalize", 1))->sname!=((void*)0),                __freed_obj__ = 0, 
+                if(_if_conditional211=self!=((void*)0)&&((struct sUIntNode*)come_null_check(self, "sUIntNode_finalize", 0))->sname!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional211) {
                     if(((struct sUIntNode*)come_null_check(self, "sUIntNode_finalize", 0))->sname && !__freed_obj__) { ((struct sUIntNode*)come_null_check(self, "sUIntNode_finalize", 0))->sname = come_decrement_ref_count(((struct sUIntNode*)come_null_check(self, "sUIntNode_finalize", 0))->sname, (void*)0, (void*)0, 0, 0, 0); }
                     __freed_obj__ = 0;
@@ -5940,7 +5942,7 @@ memset(&right_value193, 0, sizeof(void*));
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                if(_if_conditional215=self!=((void*)0)&&((struct sUIntNode*)come_null_check(self, "sUIntNode_clone", 7))->sname!=((void*)0),                __freed_obj__ = 0, 
+                if(_if_conditional215=self!=((void*)0)&&((struct sUIntNode*)come_null_check(self, "sUIntNode_clone", 6))->sname!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional215) {
                     __dec_obj54=((struct sUIntNode*)come_null_check(result_77, "sUIntNode_clone", 6))->sname;
                     ((struct sUIntNode*)come_null_check(result_77, "sUIntNode_clone", 6))->sname=(char*)come_increment_ref_count(((char*)(right_value193=string_clone(((struct sUIntNode*)come_null_check(self, "sUIntNode_clone", 6))->sname))));
@@ -5968,7 +5970,7 @@ void* __right_value_freed_obj[1024];
 _Bool _if_conditional224;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                        if(_if_conditional224=self!=((void*)0)&&((struct sULongNode*)come_null_check(self, "sULongNode_finalize", 1))->sname!=((void*)0),                        __freed_obj__ = 0, 
+                        if(_if_conditional224=self!=((void*)0)&&((struct sULongNode*)come_null_check(self, "sULongNode_finalize", 0))->sname!=((void*)0),                        __freed_obj__ = 0, 
                         _if_conditional224) {
                             if(((struct sULongNode*)come_null_check(self, "sULongNode_finalize", 0))->sname && !__freed_obj__) { ((struct sULongNode*)come_null_check(self, "sULongNode_finalize", 0))->sname = come_decrement_ref_count(((struct sULongNode*)come_null_check(self, "sULongNode_finalize", 0))->sname, (void*)0, (void*)0, 0, 0, 0); }
                             __freed_obj__ = 0;
@@ -6022,7 +6024,7 @@ memset(&right_value203, 0, sizeof(void*));
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
-                        if(_if_conditional228=self!=((void*)0)&&((struct sULongNode*)come_null_check(self, "sULongNode_clone", 7))->sname!=((void*)0),                        __freed_obj__ = 0, 
+                        if(_if_conditional228=self!=((void*)0)&&((struct sULongNode*)come_null_check(self, "sULongNode_clone", 6))->sname!=((void*)0),                        __freed_obj__ = 0, 
                         _if_conditional228) {
                             __dec_obj56=((struct sULongNode*)come_null_check(result_81, "sULongNode_clone", 6))->sname;
                             ((struct sULongNode*)come_null_check(result_81, "sULongNode_clone", 6))->sname=(char*)come_increment_ref_count(((char*)(right_value203=string_clone(((struct sULongNode*)come_null_check(self, "sULongNode_clone", 6))->sname))));
@@ -6050,7 +6052,7 @@ void* __right_value_freed_obj[1024];
 _Bool _if_conditional229;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                        if(_if_conditional229=self!=((void*)0)&&((struct sLongNode*)come_null_check(self, "sLongNode_finalize", 1))->sname!=((void*)0),                        __freed_obj__ = 0, 
+                        if(_if_conditional229=self!=((void*)0)&&((struct sLongNode*)come_null_check(self, "sLongNode_finalize", 0))->sname!=((void*)0),                        __freed_obj__ = 0, 
                         _if_conditional229) {
                             if(((struct sLongNode*)come_null_check(self, "sLongNode_finalize", 0))->sname && !__freed_obj__) { ((struct sLongNode*)come_null_check(self, "sLongNode_finalize", 0))->sname = come_decrement_ref_count(((struct sLongNode*)come_null_check(self, "sLongNode_finalize", 0))->sname, (void*)0, (void*)0, 0, 0, 0); }
                             __freed_obj__ = 0;
@@ -6104,7 +6106,7 @@ memset(&right_value208, 0, sizeof(void*));
                             __freed_obj__ = 0;
                         }
                         __freed_obj__ = 0;
-                        if(_if_conditional233=self!=((void*)0)&&((struct sLongNode*)come_null_check(self, "sLongNode_clone", 7))->sname!=((void*)0),                        __freed_obj__ = 0, 
+                        if(_if_conditional233=self!=((void*)0)&&((struct sLongNode*)come_null_check(self, "sLongNode_clone", 6))->sname!=((void*)0),                        __freed_obj__ = 0, 
                         _if_conditional233) {
                             __dec_obj57=((struct sLongNode*)come_null_check(result_83, "sLongNode_clone", 6))->sname;
                             ((struct sLongNode*)come_null_check(result_83, "sLongNode_clone", 6))->sname=(char*)come_increment_ref_count(((char*)(right_value208=string_clone(((struct sLongNode*)come_null_check(self, "sLongNode_clone", 6))->sname))));
@@ -6132,7 +6134,7 @@ void* __right_value_freed_obj[1024];
 _Bool _if_conditional234;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-                if(_if_conditional234=self!=((void*)0)&&((struct sIntNode*)come_null_check(self, "sIntNode_finalize", 1))->sname!=((void*)0),                __freed_obj__ = 0, 
+                if(_if_conditional234=self!=((void*)0)&&((struct sIntNode*)come_null_check(self, "sIntNode_finalize", 0))->sname!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional234) {
                     if(((struct sIntNode*)come_null_check(self, "sIntNode_finalize", 0))->sname && !__freed_obj__) { ((struct sIntNode*)come_null_check(self, "sIntNode_finalize", 0))->sname = come_decrement_ref_count(((struct sIntNode*)come_null_check(self, "sIntNode_finalize", 0))->sname, (void*)0, (void*)0, 0, 0, 0); }
                     __freed_obj__ = 0;
@@ -6186,7 +6188,7 @@ memset(&right_value213, 0, sizeof(void*));
                     __freed_obj__ = 0;
                 }
                 __freed_obj__ = 0;
-                if(_if_conditional238=self!=((void*)0)&&((struct sIntNode*)come_null_check(self, "sIntNode_clone", 7))->sname!=((void*)0),                __freed_obj__ = 0, 
+                if(_if_conditional238=self!=((void*)0)&&((struct sIntNode*)come_null_check(self, "sIntNode_clone", 6))->sname!=((void*)0),                __freed_obj__ = 0, 
                 _if_conditional238) {
                     __dec_obj58=((struct sIntNode*)come_null_check(result_85, "sIntNode_clone", 6))->sname;
                     ((struct sIntNode*)come_null_check(result_85, "sIntNode_clone", 6))->sname=(char*)come_increment_ref_count(((char*)(right_value213=string_clone(((struct sIntNode*)come_null_check(self, "sIntNode_clone", 6))->sname))));

@@ -116,7 +116,7 @@ bool sSStringNode*::compile(sSStringNode* self, sInfo* info)
     
     if(self.exps.length() > 0) {
         foreach(it, self.exps) {
-            if(!it.compile(info)) {
+            if(!node_compile(it)) {
                 return false;
             }
             
@@ -433,7 +433,7 @@ bool sListNode*::compile(sListNode* self, sInfo* info)
     sType*% list_element_type;
     
     foreach(it, list_elements) {
-        if(!it.compile->(info)) {
+        if(!node_compile(it)) {
             return false;
         }
         
@@ -651,7 +651,7 @@ bool sTupleNode*::compile(sTupleNode* self, sInfo* info)
     list<CVALUE*%>*% tuple_values = new list<CVALUE*%>();
     
     foreach(it, tuple_elements) {
-        if(!it.compile->(info)) {
+        if(!node_compile(it)) {
             return false;
         }
         
@@ -860,7 +860,7 @@ bool sNoneNode*::compile(sNoneNode* self, sInfo* info)
     list<sType*%>*% tuple_types = new list<sType*%>();
     list<CVALUE*%>*% tuple_values = new list<CVALUE*%>();
     
-    if(!self.value.compile->(info)) {
+    if(!node_compile(self.value)) {
         return false;
     }
     
@@ -876,7 +876,7 @@ bool sNoneNode*::compile(sNoneNode* self, sInfo* info)
         
         sNode*% false_node = create_false_object(info);
         
-        if(!false_node.compile(info)) {
+        if(!node_compile(false_node)) {
             return false;
         }
         
@@ -1088,7 +1088,7 @@ bool sSomeNode*::compile(sSomeNode* self, sInfo* info)
     list<sType*%>*% tuple_types = new list<sType*%>();
     list<CVALUE*%>*% tuple_values = new list<CVALUE*%>();
     
-    if(!self.value.compile->(info)) {
+    if(!node_compile(self.value)) {
         return false;
     }
     
@@ -1106,7 +1106,7 @@ bool sSomeNode*::compile(sSomeNode* self, sInfo* info)
         
         sNode*% true_node = create_true_object(info);
         
-        if(!true_node.compile(info)) {
+        if(!node_compile(true_node)) {
             return false;
         }
         
@@ -1323,7 +1323,7 @@ bool sMapNode*::compile(sMapNode* self, sInfo* info)
         sNode* key_elements = map_key_elements[i];
         sNode* elements = map_elements[i];
         
-        if(!key_elements.compile->(info)) {
+        if(!node_compile(key_elements)) {
             return false;
         }
         
@@ -1332,7 +1332,7 @@ bool sMapNode*::compile(sMapNode* self, sInfo* info)
         
         key_params.push_back(come_value);
         
-        if(!elements.compile->(info)) {
+        if(!node_compile(elements)) {
             return false;
         }
         
@@ -1552,6 +1552,7 @@ sNode*% expression_node(sInfo* info) version 98
     /// here document ///
     if(*info->p == '"' && *(info->p+1) == '"' && *(info->p+2) == '"' && *(info->p+3) == '\n') {
         info->p +=4;
+        info->sline++;
 
         int sline = info->sline;
 

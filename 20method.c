@@ -227,7 +227,7 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
     buffer* method_block = self.method_block;
     int method_block_sline = self.method_block_sline;
     
-    if(!obj.compile->(info)) {
+    if(!node_compile(obj)) {
         return false;
     }
     
@@ -268,7 +268,7 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
                 i++;
             }
             else {
-                if(!node.compile->(info)) {
+                if(!node_compile(node)) {
                     return false;
                 }
                 
@@ -443,7 +443,7 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
                 i++;
             }
             else {
-                if(!node.compile->(info)) {
+                if(!node_compile(node)) {
                     return false;
                 }
                 
@@ -558,7 +558,7 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
                     
                     sNode*% node = expression();
                     
-                    if(!node.compile->(info)) {
+                    if(!node_compile(node)) {
                         return false;
                     }
                     
@@ -628,7 +628,7 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
         if(method_block) {
             sNode*% current_stack_frame_node = new sCurrentNode(info) implements sNode;
             
-            if(!current_stack_frame_node.compile->(info)) {
+            if(!node_compile(current_stack_frame_node)) {
                 return false;
             }
             
@@ -715,7 +715,7 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
            
             sNode*% node = parse_function(info);
             
-            if(!node.compile->(info)) {
+            if(!node_compile(node)) {
                 return false;
             }
             

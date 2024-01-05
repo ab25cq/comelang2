@@ -17,7 +17,7 @@ exception string make_type_name_string(sType* type, bool in_header=false, bool a
     char* class_name = type->mClass->mName;
     
     if(type->mAlignas) {
-        if(!type->mAlignas.compile(info)) {
+        if(!node_compile(type->mAlignas)) {
             printf("_Alignas error\n");
             return none(string(""));
         }
@@ -247,7 +247,7 @@ exception string make_define_var(sType* type, char* name, bool in_header=false, 
         buf.append_str(str);
     }
     else if(type->mSizeNum != null) {
-        if(!type->mSizeNum.compile->(info)) {
+        if(!node_compile(type->mSizeNum)) {
             err_msg(info, "invalid bit field number");
             return none(string(""));
         }
@@ -296,7 +296,7 @@ exception string make_define_var(sType* type, char* name, bool in_header=false, 
         }
         
         foreach(it, type->mArrayNum) {
-            if(!it.compile->(info)) {
+            if(!node_compile(it)) {
                 err_msg(info, "invalid array number");
                 return none(string(""));
             }
@@ -407,7 +407,7 @@ string output_function(sFun* fun, sInfo* info)
         
         sNode* node = fun->mResultType->mArrayNum[0];
         
-        if(!node.compile->(info)) {
+        if(!node_compile(node)) {
             err_msg(info, "invalid array number");
             return none(string(""));
         }
@@ -523,7 +523,7 @@ string header_function(sFun* fun, sInfo* info)
         }
         
         sNode* node = fun->mResultType->mArrayNum[0];
-        if(!node.compile->(info)) {
+        if(!node_compile(node)) {
             err_msg(info, "invalid array number");
             return none(string(""));
         }

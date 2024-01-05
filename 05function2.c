@@ -213,9 +213,14 @@ sBlock*% parse_block(sInfo* info=info, bool no_block_level=false)
             int sline = info.sline;
             char* sname = info.sname;
             
+            
 //            add_come_code(info, xsprintf("# %d \"%s\"\n", info->sline, info->sname));
             
             sNode*% node = statment();
+            
+info->sname = node.sname();
+info->sline = node.sline();
+            
             
             if(node == null) {
                 err_msg(info, "Invalid expression");
@@ -322,7 +327,7 @@ int transpile_block(sBlock* block, list<sType*%>* param_types, list<string>* par
             info.sline = node.sline->();
             info.sname = node.sname->();
             
-            if(!node.compile->(info)) {
+            if(!node_compile(node)) {
                 printf("%s %d: compiling is failed(5)\n", info->sname, info->sline);
                 exit(2);
             }
@@ -641,7 +646,7 @@ void transpile_toplevel(bool block=false, sInfo* info=info)
         parse_sharp();
         
         if(node != null) {
-            if(!node.compile->(info)) {
+            if(!node_compile(node)) {
                 printf("%s %d: compiling is failed(X)\n", info->sname, info->sline);
                 exit(2);
             }
@@ -1286,7 +1291,7 @@ bool create_generics_fun(string fun_name, sGenericsFun* generics_fun, sType* gen
     
     sNode*% node = new sFunNode(fun, info) implements sNode;
     
-    if(!node.compile->(info)) {
+    if(!node_compile(node)) {
         return false
     }
     
@@ -1645,7 +1650,7 @@ sFun*,string create_finalizer_automatically(sType* type, char* fun_name, sInfo* 
         
         sNode*% node = new sFunNode(fun, info) implements sNode;
         
-        if(!node.compile->(info)) {
+        if(!node_compile(node)) {
             printf("%s %d: compiling is failed(X)\n", info->sname, info->sline);
             exit(2);
         }
@@ -1782,7 +1787,7 @@ sFun*,string create_force_finalizer_automatically(sType* type, char* fun_name, s
         
         sNode*% node = new sFunNode(fun, info) implements sNode;
         
-        if(!node.compile->(info)) {
+        if(!node_compile(node)) {
             printf("%s %d: compiling is failed(X)\n", info->sname, info->sline);
             exit(2);
         }
@@ -1924,7 +1929,7 @@ sFun*,string create_equals_automatically(sType* type, char* fun_name, sInfo* inf
         
         sNode*% node = new sFunNode(fun, info) implements sNode;
         
-        if(!node.compile->(info)) {
+        if(!node_compile(node)) {
             err_msg(info, "compiling error");
             exit(2);
         }
@@ -2083,7 +2088,7 @@ sFun*,string create_operator_not_equals_automatically(sType* type, char* fun_nam
         
         sNode*% node = new sFunNode(fun, info) implements sNode;
         
-        if(!node.compile->(info)) {
+        if(!node_compile(node)) {
             err_msg(info, "compiling error");
             exit(2);
         }
@@ -2225,7 +2230,7 @@ sFun*,string create_operator_equals_automatically(sType* type, char* fun_name, s
         
         sNode*% node = new sFunNode(fun, info) implements sNode;
         
-        if(!node.compile->(info)) {
+        if(!node_compile(node)) {
             err_msg(info, "compiling error(X)");
             exit(2);
         }
@@ -2409,7 +2414,7 @@ sFun*,string create_cloner_automatically(sType* type, char* fun_name, sInfo* inf
         
         sNode*% node = new sFunNode(fun, info) implements sNode;
         
-        if(!node.compile->(info)) {
+        if(!node_compile(node)) {
             err_msg(info, "compiling error(Y)");
             exit(2);
         }

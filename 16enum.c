@@ -70,7 +70,7 @@ bool sEnumNode*::compile(sEnumNode* self, sInfo* info)
             add_variable_to_global_table_with_int_value(name, new sType("int"), c_value, info);
         }
         else {
-            if(!value.compile->(info)) {
+            if(!node_compile(value)) {
                 return false;
             }
             

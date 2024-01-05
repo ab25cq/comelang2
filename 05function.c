@@ -199,12 +199,12 @@ bool sReturnNode*::compile(sReturnNode* self, sInfo* info)
         if(result_type3->mException) {
             sNode*% node = create_some_object(self.value, info);
             
-            if(!node.compile(info)) {
+            if(!node_compile(node)) {
                 return false;
             }
         }
         else {
-            if(!self.value->compile->(info)) {
+            if(!node_compile(self.value)) {
                 return false;
             }
         }
@@ -641,7 +641,7 @@ bool sParentReturnNode*::compile(sParentReturnNode* self, sInfo* info)
     }
     
     if(self.value) {
-        if(!self.value->compile->(info)) {
+        if(!node_compile(self.value)) {
             return false;
         }
         
@@ -896,7 +896,7 @@ bool sDerefferenceNode*::compile(sDerefferenceNode* self, sInfo* info)
 {
     sNode* value = self.value;
     
-    if(!value->compile->(info)) {
+    if(!node_compile(value)) {
         return false;
     }
     
@@ -972,7 +972,7 @@ bool sRefferenceNode*::compile(sRefferenceNode* self, sInfo* info)
 {
     sNode* value = self.value;
     
-    if(!value->compile->(info)) {
+    if(!node_compile(value)) {
         return false;
     }
     
@@ -1035,7 +1035,7 @@ bool sReverseNode*::compile(sReverseNode* self, sInfo* info)
 {
     sNode* value = self.value;
     
-    if(!value->compile->(info)) {
+    if(!node_compile(value)) {
         return false;
     }
     
@@ -1062,6 +1062,7 @@ sNode*% expression_node(sInfo* info=info) version 1
     parse_sharp();
     
     err_msg(info, "invalid character(%c)(1)\n", *info->p);
+    stackframe();
     exit(3);
     return (sNode*%)null;
 }
@@ -1132,7 +1133,7 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
         foreach(it, params) {
             var label, node = it;
             
-            if(!node.compile->(info)) {
+            if(!node_compile(node)) {
                 return false;
             }
             
@@ -1215,7 +1216,7 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
             foreach(it, params) {
                 var label, node = it;
                 
-                if(!node.compile->(info)) {
+                if(!node_compile(node)) {
                     return false;
                 }
                 
@@ -1355,7 +1356,7 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
         foreach(it, params) {
             var label, node = it;
             
-            if(!node.compile->(info)) {
+            if(!node_compile(node)) {
                 return false;
             }
             
@@ -1471,7 +1472,7 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
                     
                     sNode*% node = expression();
                     
-                    if(!node.compile->(info)) {
+                    if(!node_compile(node)) {
                         return false;
                     }
                     
@@ -1624,7 +1625,7 @@ bool sCastNode*::compile(sCastNode* self, sInfo* info)
     sType* type = self.mType;
     sNode* left = self.mLeft;
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -1685,7 +1686,7 @@ bool sParenNode*::compile(sParenNode* self, sInfo* info)
 {
     sNode* left = self.mLeft;
     
-    if(!left.compile->(info)) {
+    if(!node_compile(left)) {
         return false;
     }
     
@@ -1816,7 +1817,7 @@ string sLogicalDenial*::kind()
 
 bool sLogicalDenial*::compile(sLogicalDenial* self, sInfo* info)
 {
-    if(!self.value.compile->(info)) {
+    if(!node_compile(self.value)) {
         return false;
     }
     
@@ -1875,7 +1876,7 @@ string sMinusNode2*::kind()
 
 bool sMinusNode2*::compile(sMinusNode2* self, sInfo* info)
 {
-    if(!self.value.compile->(info)) {
+    if(!node_compile(self.value)) {
         return false;
     }
     
@@ -1934,7 +1935,7 @@ string sPlusPlusNode2*::kind()
 
 bool sPlusPlusNode2*::compile(sPlusPlusNode2* self, sInfo* info)
 {
-    if(!self.value.compile->(info)) {
+    if(!node_compile(self.value)) {
         return false;
     }
     
@@ -1993,7 +1994,7 @@ string sMinusMinusNode2*::kind()
 
 bool sMinusMinusNode2*::compile(sMinusMinusNode2* self, sInfo* info)
 {
-    if(!self.value.compile->(info)) {
+    if(!node_compile(self.value)) {
         return false;
     }
     
@@ -2052,7 +2053,7 @@ string sComplement*::kind()
 
 bool sComplement*::compile(sComplement* self, sInfo* info)
 {
-    if(!self.value.compile->(info)) {
+    if(!node_compile(self.value)) {
         return false;
     }
     
@@ -2840,7 +2841,7 @@ bool sGlobalVariable*::compile(sGlobalVariable* self, sInfo* info)
             }
         }
         else if(right_node) {
-            if(!right_node.compile->(info)) {
+            if(!node_compile(right_node)) {
                 return false;
             }
             

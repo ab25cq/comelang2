@@ -314,6 +314,7 @@ int come_main(int argc, char** argv) version 1;
 /////////////////////////////////////////////////////////////////////
 /// 02transpile.c ///
 /////////////////////////////////////////////////////////////////////
+bool node_compile(sNode* node, sInfo* info=info);
 int come_main(int argc, char** argv) version 2;
 void come_init() version 2;
 void come_final() version 2;

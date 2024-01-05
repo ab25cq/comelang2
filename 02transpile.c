@@ -22,6 +22,22 @@ void come_final() version 2
 {
 }
 
+bool node_compile(sNode* node, sInfo* info=info)
+{
+    string sname = string(info->sname);
+    int sline = info->sline;
+    
+    info->sname = string(node->sname());
+    info->sline = node->sline();
+    
+    bool result = node->compile(info);
+    
+    info->sname = string(sname);
+    info->sline = sline;
+    
+    return result;
+}
+
 void err_msg(sInfo* info, char* msg, ...)
 {
     if(!info.no_output_err) {
@@ -34,6 +50,7 @@ void err_msg(sInfo* info, char* msg, ...)
         
         printf("%s %d: %s\n", info.sname, info.sline, msg2);
         info.err_num++;
+        stackframe();
         
         if(info.come_fun) {
             int n = info->sline-5;
