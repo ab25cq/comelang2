@@ -1,21 +1,32 @@
 #include <comelang2.h>
 
-int fun()
+/*
+int fun(int argc)
 {
-    FILE* f = fopen("SEX", "r") and die("NO SEX");
-    printf("%p\n", f);
+    list<string>*% l = [s"AAA", s"BBB"];
+    
+    int aaa = 123;
+    int bbb = 243;
+    int ccc = 333;
+    
+    l.each {
+        puts("AAA");
+    }
     
     return 0;
 }
+*/
 
-int fun2()
+int main(int argc, char** argv) 
 {
-    return fun();
-}
-
-int main(int argc, char** argv)
-{
-    fun2();
+    char** a[2] = { "-O2", "-I3" };
+    
+//    puts(a[0]);
+    
+    int a = 111;
+    int b = 222;
+    
+    puts(s"\{1+1} $b");
     
     return 0;
 }
