@@ -971,16 +971,21 @@ exception sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info
             
             parse_sharp();
             
-            info->no_output_err = true;
-            info->no_comma = true;
-            info->no_output_come_code = true;
-            sNode*% exp = expression();
-            info->no_comma = false;
-            info->no_output_err = false;
-            info->no_output_come_code = false;
-            
-            if(*info->p == ',') {
-                multiple_declare2 = true;
+            if(*info->p == '{') {
+            }
+            else {
+                
+                info->no_output_err = true;
+                info->no_comma = true;
+                info->no_output_come_code = true;
+                sNode*% exp = expression();
+                info->no_comma = false;
+                info->no_output_err = false;
+                info->no_output_come_code = false;
+                
+                if(*info->p == ',') {
+                    multiple_declare2 = true;
+                }
             }
         }
         
