@@ -88,6 +88,7 @@ void come_push_stackframe(char* sname, int sline);
 void come_pop_stackframe();
 void stackframe();
 void exception_stackframe();
+void come_save_stackframe(char* sname, int sline);
 
 void* come_null_check(void* mem, char* sname, int sline);
 
