@@ -463,12 +463,14 @@ void init_module(sInfo* info)
 bool new_project(int argc, char** argv)
 {
     string project_name = string(argv[2]);
+    string project_name_debug = string(argv[2]) + string("-debug");
     string cc = string("comelang2");
     string install = string("install");
     string libs = string("-lpcre");
     string os = string("linux");
     string prefix = string("/usr/local/");
-    string cflags = string(" -common-header ");
+    string cflags = string(" -common-header -O2 ");
+    string cflags_debug = string(" -common-header -gdwarf-4 ");
     
     mkdir(project_name, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH) or die("mkdir error");
     
@@ -494,6 +496,7 @@ libdir=${exec_prefix}/lib
 CC=\{cc}
 INSTALL=\{install}
 CFLAGS=\{cflags}
+CFLAGS_DEBUG=\{cflags_debug}
 LIBS=\{libs}
 OS=\{os}
 DESTDIR=\{prefix}
@@ -501,6 +504,7 @@ SRCS=$(wildcard *.c)
 SINGLE_SRCS=$(filter-out %.c.c, $(SRCS))
 OBJS=$(SINGLE_SRCS:.c=.o)
 TARGET=\{project_name}
+TARGET_DEBUG=\{project_name_debug}
 
 \#########################################
 \# main
@@ -509,6 +513,9 @@ all: common.h \{project_name}
 
 $(TARGET): $(OBJS)
 \t$(CC) $(CFLAGS) $^ -o $@
+
+$(TARGET_DEBUG): $(OBJS)
+\t$(CC) $(CFLAGS_DEBUG) $^ -o $@
 
 %.o: %.c header
 \t$(CC) $(CFLAGS) -c $< -o $@
@@ -519,8 +526,6 @@ $(TARGET): $(OBJS)
 
 header: 
 \tcomelang2 header $(SINGLE_SRCS)
-
-
 
 common.h: *.c
 \tbash -c 'shopt -s extglob; comelang2 header !(*.c).c'
@@ -540,10 +545,7 @@ install:
 \# clean
 \#########################################
 clean:
-\trm -fR *.o *.c.i *.c.out *.c.c \{project_name}
-
-distclean: clean
-\trm -fR  config.h Makefile autom4te.cache 
+\trm -fR *.o *.c.i *.c.out *.c.c \{project_name} *.log *.out
 
 \#########################################
 \# uninstall
@@ -553,7 +555,12 @@ uninstall:
 \trm -f "$(DESTDIR)/share/doc/\{project_name}/README.md"
 
 run: \{project_name}
+\trm *.log
 \t./\{project_name}
+
+debug: \{project_name_debug}
+\trm *.log
+\t./\{project_name_debug}
     """.write(s"\{project_name}/Makefile", append:false);
     
     return true;
@@ -562,6 +569,27 @@ run: \{project_name}
 bool run_project(int argc, char** argv)
 {
     system("make run") or die("system");
+    
+    return true;
+}
+
+bool debug_run_project(int argc, char** argv)
+{
+    system("make debug") or die("system");
+    
+    return true;
+}
+
+bool clean_project(int argc, char** argv)
+{
+    system("make clean") or die("system");
+    
+    return true;
+}
+
+bool install_project(int argc, char** argv, char* prefix="/usr/local")
+{
+    system(s"make install DESTDIR=\{prefix}") or die("system");
     
     return true;
 }
@@ -594,6 +622,7 @@ int come_main(int argc, char** argv) version 2
             else if(argv[i] === "-g") {
                 clang_option.append_str("-g ");
                 come_debug = true;
+                come_malloc = true;
             }
             else if(argv[i] === "-common-header") {
                 gCommonHeader = true;
@@ -618,6 +647,7 @@ int come_main(int argc, char** argv) version 2
             else if(argv[i] === "-gdwarf-4") {
                 clang_option.append_str("-gdwarf-4 ");
                 come_debug = true;
+                come_malloc = true;
             }
             else if(argv[i] === "-gc") {
                 gComeGC = true;
@@ -722,6 +752,28 @@ int come_main(int argc, char** argv) version 2
             return false;
         }
     }
+    else if(argv[1] === "debug" && argc == 2) {
+        if(!debug_run_project(argc, argv)) {
+            return false;
+        }
+    }
+    else if(argv[1] === "clean" && argc == 2) {
+        if(!clean_project(argc, argv)) {
+            return false;
+        }
+    }
+    else if(argv[1] === "install" && argc >= 2) {
+        if(argc == 2) {
+            if(!install_project(argc, argv)) {
+                return false;
+            }
+        }
+        else if(argc >= 3) {
+            if(!install_project(argc, argv, argv[2])) {
+                return false;
+            }
+        }
+    }
     else {
         gProgramName = argv[0];
         
@@ -756,10 +808,12 @@ int come_main(int argc, char** argv) version 2
             else if(argv[i][0..2] === "-O") {
                 clang_option.append_str(s" \{argv[i]} ");
                 come_debug = false;
+                come_malloc = false;
             }
             else if(argv[i] === "-g") {
                 clang_option.append_str("-g ");
                 come_debug = true;
+                come_malloc = true;
             }
             else if(argv[i] === "-v") {
                 clang_option.append_str("-v ");
@@ -771,6 +825,7 @@ int come_main(int argc, char** argv) version 2
             else if(argv[i] === "-gdwarf-4") {
                 clang_option.append_str("-gdwarf-4 ");
                 come_debug = true;
+                come_malloc = true;
             }
             else if(argv[i] === "-gc") {
                 gComeGC = true;

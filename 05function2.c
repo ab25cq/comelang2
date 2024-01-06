@@ -790,7 +790,7 @@ int transpile(sInfo* info) version 5
         var main_fun = new sFun(name, result_type, param_types, param_names
             , param_default_parametors, true@external, false@var_args
             , null@block, false@static_
-            , string("come_heap_init(int come_malloc, int come_debug)")
+            , string("come_heap_init(int come_malloc, int come_debug, char* come_sname)")
             , string("")
             , info);
         

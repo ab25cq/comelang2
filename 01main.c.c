@@ -2543,7 +2543,7 @@ int __exception_result_var_b2;
 int __result14__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-come_heap_init(0, 1);
+come_heap_init(1, 1);
     __result14__ = (come_push_stackframe("01main.c", 12),__exception_result_var_b2=come_main_v2(argc,argv), come_pop_stackframe(), __exception_result_var_b2);
     __freed_obj__ = 0;
     come_heap_final();

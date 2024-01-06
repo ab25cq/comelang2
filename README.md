@@ -7,7 +7,7 @@ Yet another modern compiler. It has a collection library with reffrence count gc
 
 もう一つのモダンなコンパイラ。オリジナルのリファレンスカウントGCを持ったコレクションライブラリがあります。C言語と互換性があります。
 
-version 5.0.0
+version 5.0.1
 
 ``` C
 #include <comelang2.h>
@@ -373,6 +373,7 @@ bash self-host.sh
 3.5.0 stackframe() function bug has been fixed. 
 3.5.1 Source file line number bug was fixed.
 5.0.0 stackframe() function and exception require -g option
+5.0.1 project manager improved. Test at termux, userland, alpine linux, raspberry pi.
 
 # Language specifications
 
@@ -1384,8 +1385,16 @@ int fun(int a, int b)
 EOS
 > comelang2 run
 (make header file named common.h)
-(compile)
+(compile with -O2 option)
 (run)
+> comelang2 debug
+(make header file named common.h)
+(compile with -g option)
+(run)
+> comelang2 clean
+(clean up tmp files)
+> comelang2 install (target-directory:default is /usr/local)
+(install command file to target-directory)
 ```
 
 auto included common.h

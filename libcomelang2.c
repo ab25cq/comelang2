@@ -217,24 +217,28 @@ void come_heap_final()
     delete borrow gComeStackFrameBuffer;
     
     if(gComeMallocLib) {
+        FILE* f = fopen(s"memleak.log", "a") and die("fopen");
+        
         sMemHeader* it = gMemHeaderTable;
         while(it < gMemHeaderTable + gSizeMemHeaders) {
             if(it->mem) {
                 for(int i=0; i<COME_STACKFRAME_MAX ; i++) {
                     if(it->caller_sname[i]) {
-                        printf("%s %d", it->caller_sname[i], it->caller_sline[i]);
+                        fprintf(f, "%s %d", it->caller_sname[i], it->caller_sline[i]);
                         if(i == COME_STACKFRAME_MAX-1) {
                         }
                         else {
-                            printf(", ");
+                            fprintf(f, ", ");
                         }
                     }
                 }
-                printf(": detecting memory leak(%p)\n", (char*)it->mem);
+                fprintf(f, ": detecting memory leak(%p)\n", (char*)it->mem);
             }
             
             it++;
         }
+        
+        fclose(f);
     }
 }
 
