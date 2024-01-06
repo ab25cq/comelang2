@@ -77,6 +77,13 @@ bool output_source_file(sInfo* info) version 2
     return true;
 }
 
+static void clear_tmp_file(sInfo* info)
+{
+    string input_file_name = info.sname;
+    
+    system(s"rm -f \{input_file_name}.*");
+}
+
 static bool cpp(sInfo* info)
 {
     string input_file_name = info.sname;
@@ -670,6 +677,8 @@ int come_main(int argc, char** argv) version 2
             init_classes(&info);
             init_module(&info);
             
+            clear_tmp_file(&info);
+            
             if(!cpp(&info)) {
                 printf("%s %d: transpile failed\n", info.sname, info.sline);
                 exit(2);
@@ -796,6 +805,8 @@ int come_main(int argc, char** argv) version 2
             
             init_classes(&info);
             init_module(&info);
+            
+            clear_tmp_file(&info);
             
             if(!cpp(&info)) {
                 printf("%s %d: transpile failed\n", info.sname, info.sline);

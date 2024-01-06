@@ -1428,7 +1428,69 @@ sNode*% exception_get_value(sNode*% node, sInfo* info)
 sNode*% post_position_operator(sNode*% node, sInfo* info) version 18
 {
     while(true){
-        if(*info->p == '\\' && *(info->p+1) == '[' || *info->p == '[') {
+        bool range_array = false;
+        {
+            char* p = info.p;
+            int sline = info.sline;
+            
+            if(*info->p == '[') {
+                info->p++;
+                skip_spaces_and_lf();
+                
+                bool no_comma = info.no_comma;
+                bool no_output_err = info.no_output_err;
+                bool no_output_come_code = info.no_output_come_code;
+                info->no_output_err = true;
+                info->no_comma = true;
+                info->no_output_come_code = true;
+                sNode*% exp = expression();
+                info->no_comma = no_comma;
+                info->no_output_err = no_output_err;
+                info->no_output_come_code = no_output_come_code;
+                
+                if(*info->p == '.' && *(info->p+1) == '.') {
+                    range_array = true;
+                }
+            }
+            
+            info.p = p;
+            info.sline = sline;
+        }
+        
+        if(range_array && (*info->p == '\\' && *(info->p+1) == '[' || *info->p == '[')) {
+            bool quote = *info->p == '\\';
+            if(quote) {
+                info->p++;
+            }
+            info->p++;
+            skip_spaces_and_lf();
+            
+            list<sNode*%>*% array_num = new list<sNode*%>();
+            
+            skip_pointer_attribute();
+            
+            sNode*% node2 = expression();
+            
+            array_num.push_back(node2);
+            
+            if(*info->p == '.' && *(info->p+1) == '.') {
+                info->p += 2;
+                skip_spaces_and_lf(info);
+                
+                skip_pointer_attribute();
+                
+                sNode*% node3 = expression();
+                
+                array_num.push_back(node3);
+                
+                expected_next_character(']');
+            }
+            
+            node = new sLoadRangeArrayNode(node, array_num, quote, info) implements sNode;
+            
+//            node = exception_get_value(node, info)
+        }
+        else if(!range_array && (*info->p == '\\' && *(info->p+1) == '[' || *info->p == '[')) {
             bool quote = *info->p == '\\';
             if(quote) {
                 info->p++;
@@ -1437,41 +1499,55 @@ sNode*% post_position_operator(sNode*% node, sInfo* info) version 18
             bool range = false;
             list<sNode*%>*% array_num = new list<sNode*%>();
             while(1) {
-                if(*info->p == '[') {
+                bool range_array2 = false;
+                {
+                    char* p = info.p;
+                    int sline = info.sline;
+                    
+                    if(*info->p == '[') {
+                        info->p++;
+                        skip_spaces_and_lf();
+                        
+                        bool no_comma = info.no_comma;
+                        bool no_output_err = info.no_output_err;
+                        bool no_output_come_code = info.no_output_come_code;
+                        info->no_output_err = true;
+                        info->no_comma = true;
+                        info->no_output_come_code = true;
+                        sNode*% exp = expression();
+                        info->no_comma = no_comma;
+                        info->no_output_err = no_output_err;
+                        info->no_output_come_code = no_output_come_code;
+                        
+                        if(*info->p == '.' && *(info->p+1) == '.') {
+                            range_array2 = true;
+                        }
+                    }
+                    
+                    info.p = p;
+                    info.sline = sline;
+                }
+                
+                if(range_array2) {
+                    break;
+                }
+                else if(*info->p == '[') {
                     info->p++;
                     skip_spaces_and_lf();
                     
                     skip_pointer_attribute();
                     
-                    sNode*% node = expression();
+                    sNode*% node2 = expression();
                     
-                    array_num.push_back(node);
+                    array_num.push_back(node2);
                     
-                    if(*info->p == '.' && *(info->p+1) == '.') {
-                        info->p += 2;
-                        skip_spaces_and_lf(info);
-                        
-                        skip_pointer_attribute();
-                        
-                        sNode*% node2 = expression();
-                        
-                        array_num.push_back(node2);
-                        
-                        expected_next_character(']');
-                        
-                        range = true;
-                        
-                        break;
+                    if(*info->p == ']') {
+                        info->p++;
+                        skip_spaces_and_lf();
                     }
                     else {
-                        if(*info->p == ']') {
-                            info->p++;
-                            skip_spaces_and_lf();
-                        }
-                        else {
-                            err_msg(info, "require ] character");
-                            exit(2);
-                        }
+                        err_msg(info, "require ] character");
+                        exit(2);
                     }
                 }
                 else {
@@ -1479,12 +1555,7 @@ sNode*% post_position_operator(sNode*% node, sInfo* info) version 18
                 }
             }
             
-            if(range) {
-                node = new sLoadRangeArrayNode(node, array_num, quote, info) implements sNode;
-                
-//                node = exception_get_value(node, info)
-            }
-            else if(*info->p == '=' && *(info->p+1) != '=') {
+            if(*info->p == '=' && *(info->p+1) != '=') {
                 info->p++;
                 skip_spaces_and_lf();
                 

@@ -10665,7 +10665,7 @@ memset(&right_value368, 0, sizeof(void*));
             if(right_value290 && right_value290 != __result_obj__ && !__freed_obj__) { come_call_finalizer(CVALUE_finalize,right_value290, (void*)0, (void*)0, 0, 1, 0, 0); }
             __right_value_freed_obj[0] = right_value290;
             __freed_obj__ = 0;
-            if(_if_conditional284=((struct sFun*)come_null_check(fun_174, "05function.c", 1364))->mVarArgs&&optional$2sTypephbool_value((come_push_stackframe("05function.c", 1364),__exception_result_var_b270=((struct optional$2sTypephbool*)(right_value291=list$1sTypephp_operator_load_element(((struct sFun*)come_null_check(fun_174, "05function.c", 1364))->mParamTypes,i_194))), come_pop_stackframe(), __exception_result_var_b270))==((void*)0),            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value291),
+            if(_if_conditional284=((struct sFun*)come_null_check(fun_174, "05function.c", 1365))->mVarArgs&&optional$2sTypephbool_value((come_push_stackframe("05function.c", 1365),__exception_result_var_b270=((struct optional$2sTypephbool*)(right_value291=list$1sTypephp_operator_load_element(((struct sFun*)come_null_check(fun_174, "05function.c", 1365))->mParamTypes,i_194))), come_pop_stackframe(), __exception_result_var_b270))==((void*)0),            __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value291),
             (right_value291 && right_value291 != __result_obj__ && !__freed_obj__) ? come_call_finalizer(optional$2sTypephboolp_finalize,right_value291, (void*)0, (void*)0, 0, 1, 0, 0):0,
             __right_value_freed_obj[1] = right_value291, 
             __freed_obj__ = 0, 

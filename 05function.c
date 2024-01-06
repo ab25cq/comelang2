@@ -1361,8 +1361,8 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
             }
             
             CVALUE*% come_value = get_value_from_stack(-1, info);
+            
             if(fun.mVarArgs && fun.mParamTypes[i] == null) {
-            //if(fun.mVarArgs && fun.mParamTypes[i].value() == null) {
             }
             else {
                 if(label != null) {

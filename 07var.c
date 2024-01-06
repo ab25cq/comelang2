@@ -974,14 +974,19 @@ exception sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info
             if(*info->p == '{') {
             }
             else {
+                bool no_output_err = info->no_output_err;
+                bool no_comma = info->no_comma;
+                bool no_output_come_code = info->no_output_come_code;
                 
                 info->no_output_err = true;
                 info->no_comma = true;
                 info->no_output_come_code = true;
+                
                 sNode*% exp = expression();
-                info->no_comma = false;
-                info->no_output_err = false;
-                info->no_output_come_code = false;
+                
+                info->no_comma = no_comma;
+                info->no_output_err = no_output_err;
+                info->no_output_come_code = no_output_come_code;
                 
                 if(*info->p == ',') {
                     multiple_declare2 = true;
@@ -1025,9 +1030,10 @@ exception sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info
             skip_spaces_and_lf();
             
             parse_sharp();
+            bool no_comma = info->no_comma
             info.no_comma = true;
             sNode*% right_value = expression();
-            info.no_comma = false;
+            info.no_comma = no_comma;
             parse_sharp();
             
             right_value = post_position_operator3(right_value, info);
@@ -1093,9 +1099,10 @@ exception sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info
             
             parse_sharp();
             
+            bool no_comma = info->no_comma;
             info->no_comma = true;
             sNode*% exp = expression();
-            info->no_comma = false;
+            info->no_comma = no_comma;
             
             tuple3<sType*%, string, sNode*%>*% variable_name2 = (variable_name.v1, variable_name.v2, exp);
             
@@ -1116,9 +1123,10 @@ exception sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info
                 
                 parse_sharp();
                 
+                bool no_comma = info->no_comma;
                 info->no_comma = true;
                 sNode*% exp = expression();
-                info->no_comma = false;
+                info->no_comma = no_comma;
             
                 tuple3<sType*%, string, sNode*%>*% variable_name2 = (variable_name.v1, variable_name.v2, exp);
                 

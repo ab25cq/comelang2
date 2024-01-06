@@ -19,9 +19,13 @@ int fun(int argc)
 
 int main(int argc, char** argv) 
 {
-    char* a[2] = { "-O2", "-I3" };
+    char* argv2[3] = { "comelang2", "-O2", "aaa" };
     
-    puts(a[0]);
+    for(int i=0; i<3; i++) {
+        if(argv2[i][0..2] === "-O") {
+            puts("OK");
+        }
+    }
     
     return 0;
 }

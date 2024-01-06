@@ -1414,10 +1414,6 @@ struct optional$2charphbool* charp_print(char* self);
 
 void int_times(int self, void* parent, void (*block)(void*,int));
 
-int fun();
-
-int fun2();
-
 int main(int argc, char** argv);
 
 // inline function
@@ -1729,7 +1725,7 @@ void* __right_value_freed_obj[1024];
 _Bool _if_conditional1;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-        if(_if_conditional1=self!=((void*)0)&&((struct smart_pointer$1char*)come_null_check(self, "smart_pointer$1charp_finalize", 1))->memory!=((void*)0),        __freed_obj__ = 0, 
+        if(_if_conditional1=self!=((void*)0)&&((struct smart_pointer$1char*)come_null_check(self, "smart_pointer$1charp_finalize", 0))->memory!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional1) {
             if(((struct smart_pointer$1char*)come_null_check(self, "smart_pointer$1charp_finalize", 0))->memory && !__freed_obj__) { come_call_finalizer(buffer_finalize,((struct smart_pointer$1char*)come_null_check(self, "smart_pointer$1charp_finalize", 0))->memory, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
@@ -1748,7 +1744,7 @@ void* __right_value_freed_obj[1024];
 _Bool _if_conditional2;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-        if(_if_conditional2=self!=((void*)0)&&((struct smart_pointer$1short*)come_null_check(self, "smart_pointer$1shortp_finalize", 1))->memory!=((void*)0),        __freed_obj__ = 0, 
+        if(_if_conditional2=self!=((void*)0)&&((struct smart_pointer$1short*)come_null_check(self, "smart_pointer$1shortp_finalize", 0))->memory!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional2) {
             if(((struct smart_pointer$1short*)come_null_check(self, "smart_pointer$1shortp_finalize", 0))->memory && !__freed_obj__) { come_call_finalizer(buffer_finalize,((struct smart_pointer$1short*)come_null_check(self, "smart_pointer$1shortp_finalize", 0))->memory, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
@@ -1766,7 +1762,7 @@ void* __right_value_freed_obj[1024];
 _Bool _if_conditional3;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-        if(_if_conditional3=self!=((void*)0)&&((struct smart_pointer$1int*)come_null_check(self, "smart_pointer$1intp_finalize", 1))->memory!=((void*)0),        __freed_obj__ = 0, 
+        if(_if_conditional3=self!=((void*)0)&&((struct smart_pointer$1int*)come_null_check(self, "smart_pointer$1intp_finalize", 0))->memory!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional3) {
             if(((struct smart_pointer$1int*)come_null_check(self, "smart_pointer$1intp_finalize", 0))->memory && !__freed_obj__) { come_call_finalizer(buffer_finalize,((struct smart_pointer$1int*)come_null_check(self, "smart_pointer$1intp_finalize", 0))->memory, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
@@ -1784,57 +1780,12 @@ void* __right_value_freed_obj[1024];
 _Bool _if_conditional4;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
-        if(_if_conditional4=self!=((void*)0)&&((struct smart_pointer$1long*)come_null_check(self, "smart_pointer$1longp_finalize", 1))->memory!=((void*)0),        __freed_obj__ = 0, 
+        if(_if_conditional4=self!=((void*)0)&&((struct smart_pointer$1long*)come_null_check(self, "smart_pointer$1longp_finalize", 0))->memory!=((void*)0),        __freed_obj__ = 0, 
         _if_conditional4) {
             if(((struct smart_pointer$1long*)come_null_check(self, "smart_pointer$1longp_finalize", 0))->memory && !__freed_obj__) { come_call_finalizer(buffer_finalize,((struct smart_pointer$1long*)come_null_check(self, "smart_pointer$1longp_finalize", 0))->memory, (void*)0, (void*)0, 0, 0, 0, 0); }
             __freed_obj__ = 0;
         }
         __freed_obj__ = 0;
-}
-
-int fun(){
-char* __caller_sname_stack__;
-int __caller_sline_stack__;
-void* __result_obj__;
-_Bool __freed_obj__;
-void* __right_value_freed_obj[1024];
-struct _IO_FILE* __exception_result_var_b1;
-struct _IO_FILE* f_5;
-_Bool _and_conditional1;
-_Bool __exception_result_var_b2;
-int __exception_result_var_b3;
-int __result13__;
-memset(&__result_obj__, 0, sizeof(void*));
-memset(&__freed_obj__, 0, sizeof(_Bool));
-memset(&f_5, 0, sizeof(struct _IO_FILE*));
-    if(_and_conditional1=f_5=(come_push_stackframe("a.c", 5),__exception_result_var_b1=fopen("SEX","r"), come_pop_stackframe(), __exception_result_var_b1),    __freed_obj__ = 0, 
-    _and_conditional1 == 0) {
-        (come_push_stackframe("a.c", 5),__exception_result_var_b2=die("NO SEX"), come_pop_stackframe(), __exception_result_var_b2);
-        __freed_obj__ = 0;
-    }
-    __freed_obj__ = 0;
-    (come_push_stackframe("a.c", 6),__exception_result_var_b3=printf("%p\n",f_5), come_pop_stackframe(), __exception_result_var_b3);
-    __freed_obj__ = 0;
-    __result13__ = 0;
-    __freed_obj__ = 0;
-    return __result13__;
-    __freed_obj__ = 0;
-}
-
-int fun2(){
-char* __caller_sname_stack__;
-int __caller_sline_stack__;
-void* __result_obj__;
-_Bool __freed_obj__;
-void* __right_value_freed_obj[1024];
-int __exception_result_var_b4;
-int __result14__;
-memset(&__result_obj__, 0, sizeof(void*));
-memset(&__freed_obj__, 0, sizeof(_Bool));
-    __result14__ = (come_push_stackframe("a.c", 13),__exception_result_var_b4=fun(), come_pop_stackframe(), __exception_result_var_b4);
-    __freed_obj__ = 0;
-    return __result14__;
-    __freed_obj__ = 0;
 }
 
 int main(int argc, char** argv){
@@ -1843,17 +1794,41 @@ int __caller_sline_stack__;
 void* __result_obj__;
 _Bool __freed_obj__;
 void* __right_value_freed_obj[1024];
-int __exception_result_var_b5;
-int __result15__;
+int i_6;
+_Bool _for_condtionalA1;
+void* right_value10;
+char* __exception_result_var_b1;
+_Bool __exception_result_var_b2;
+_Bool _if_conditional5;
+int __exception_result_var_b3;
+int __result13__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&__freed_obj__, 0, sizeof(_Bool));
+memset(&i_6, 0, sizeof(int));
+memset(&right_value10, 0, sizeof(void*));
 come_heap_init(0, 1);
-    (come_push_stackframe("a.c", 18),__exception_result_var_b5=fun2(), come_pop_stackframe(), __exception_result_var_b5);
+    char* argv2_5[3]={ "comelang2", "-O2", "aaa" };
     __freed_obj__ = 0;
-    __result15__ = 0;
+    for(
+    i_6=0 ,    __freed_obj__ = 0, 
+    0;    _for_condtionalA1=    i_6<3 ,    __freed_obj__ = 0, 
+    _for_condtionalA1;    i_6++ ,    __freed_obj__ = 0, 
+    0    ){
+        if(_if_conditional5=(come_push_stackframe("a.c", 25),__exception_result_var_b2=string_operator_equals((come_push_stackframe("a.c", 25),__exception_result_var_b1=((char*)(right_value10=charp_operator_load_range_element(argv2_5[i_6],0,2))), come_pop_stackframe(), __exception_result_var_b1),"-O"), come_pop_stackframe(), __exception_result_var_b2),        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value10),
+        (right_value10 && right_value10 != __result_obj__ && !__freed_obj__) ? right_value10 = come_decrement_ref_count(right_value10, (void*)0, (void*)0, 1, 0, 0):0,
+        __right_value_freed_obj[0] = right_value10, 
+        __freed_obj__ = 0, 
+        _if_conditional5) {
+            (come_push_stackframe("a.c", 26),__exception_result_var_b3=puts("OK"), come_pop_stackframe(), __exception_result_var_b3);
+            __freed_obj__ = 0;
+        }
+        __freed_obj__ = 0;
+    }
+    __freed_obj__ = 0;
+    __result13__ = 0;
     __freed_obj__ = 0;
     come_heap_final();
-    return __result15__;
+    return __result13__;
     __freed_obj__ = 0;
 come_heap_final();
 }
