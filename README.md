@@ -7,7 +7,7 @@ Yet another modern compiler. It has a collection library with reffrence count gc
 
 もう一つのモダンなコンパイラ。オリジナルのリファレンスカウントGCを持ったコレクションライブラリがあります。C言語と互換性があります。
 
-version 3.5.1
+version 5.0.0
 
 ``` C
 #include <comelang2.h>
@@ -372,6 +372,7 @@ bash self-host.sh
 3.2.2 stackframe() function has been added
 3.5.0 stackframe() function bug has been fixed. 
 3.5.1 Source file line number bug was fixed.
+5.0.0 stackframe() function and exception require -g option
 
 # Language specifications
 
@@ -1248,6 +1249,8 @@ int main(int argc, char** argv)
 }
 ```
 
+require -g option
+
 # System call errro handling like perl
 
 ```
@@ -1547,6 +1550,7 @@ a.c 16
 ```
 
 for debug
+require -g option.
 
 # afterword
 

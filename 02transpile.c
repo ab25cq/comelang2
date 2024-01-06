@@ -581,6 +581,8 @@ int come_main(int argc, char** argv) version 2
         string output_file_name = string("common.h");
         bool verbose = false;
         bool prohibit_common_header = false;
+        bool come_debug = false;
+        bool come_malloc = false;
         for(int i=2; i<argc; i++) {
             if(argv[i] === "-o" && i+1 < argc) {
                 output_file_name = string(argv[i+1]);
@@ -591,20 +593,20 @@ int come_main(int argc, char** argv) version 2
             }
             else if(argv[i] === "-g") {
                 clang_option.append_str("-g ");
+                come_debug = true;
             }
             else if(argv[i] === "-common-header") {
                 gCommonHeader = true;
             }
             else if(argv[i] === "-come-debug") {
-                gComeDebug = true;
+                come_debug = true;
             }
-/*
+            else if(argv[i] === "-come-malloc") {
+                come_malloc = true;
+            }
             else if(argv[i][0..2] === "-O") {
                 clang_option.append_str(s" \{argv[i]} ");
-            }
-*/
-            else if(argv[i] === "-come-malloc") {
-                gComeMalloc = true;
+                come_debug = false;
             }
             else if(argv[i] === "-v") {
                 clang_option.append_str("-v ");
@@ -615,6 +617,7 @@ int come_main(int argc, char** argv) version 2
             }
             else if(argv[i] === "-gdwarf-4") {
                 clang_option.append_str("-gdwarf-4 ");
+                come_debug = true;
             }
             else if(argv[i] === "-gc") {
                 gComeGC = true;
@@ -638,6 +641,9 @@ int come_main(int argc, char** argv) version 2
                 files.push_back(string(argv[i]));
             }
         }
+        
+        gComeDebug = come_debug;
+        gComeMalloc = come_malloc;
         
         FILE* f = fopen(output_file_name, "w") and die("fopen");
         fclose(f);
@@ -728,6 +734,8 @@ int come_main(int argc, char** argv) version 2
         bool output_source_file_flag = false;
         string output_file_name = null;
         bool verbose = false;
+        bool come_debug = false;
+        bool come_malloc = false;
         for(int i=1; i<argc; i++) {
             if(argv[i] === "-o" && i+1 < argc) {
                 output_file_name = string(argv[i+1]);
@@ -737,21 +745,21 @@ int come_main(int argc, char** argv) version 2
                 clang_option.append_str(" -lcomelang2-str -lpcre ");
             }
             else if(argv[i] === "-come-debug") {
-                gComeDebug = true;
+                come_debug = true;
             }
             else if(argv[i] === "-come-malloc") {
-                gComeMalloc = true;
+                come_malloc = true;
             }
             else if(argv[i] === "-common-header") {
                 gCommonHeader = true;
             }
-/*
             else if(argv[i][0..2] === "-O") {
                 clang_option.append_str(s" \{argv[i]} ");
+                come_debug = false;
             }
-*/
             else if(argv[i] === "-g") {
                 clang_option.append_str("-g ");
+                come_debug = true;
             }
             else if(argv[i] === "-v") {
                 clang_option.append_str("-v ");
@@ -762,6 +770,7 @@ int come_main(int argc, char** argv) version 2
             }
             else if(argv[i] === "-gdwarf-4") {
                 clang_option.append_str("-gdwarf-4 ");
+                come_debug = true;
             }
             else if(argv[i] === "-gc") {
                 gComeGC = true;
@@ -785,6 +794,9 @@ int come_main(int argc, char** argv) version 2
                 files.push_back(clone string(argv[i]));
             }
         }
+        
+        gComeDebug = come_debug;
+        gComeMalloc = come_malloc;
         
         come_init();
         
