@@ -580,6 +580,9 @@ bool sNullCheckNode*::compile(sNullCheckNode* self, sInfo* info)
         
         add_come_last_code(info, "%s;\n", come_value.c_value);
     }
+    else if(!gComeDebug) {
+        info.stack.push_back(left_value);
+    }
     else if(left_value.type->mPointerNum > 0) {
         CVALUE*% come_value = new CVALUE;
         

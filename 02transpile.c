@@ -12,7 +12,7 @@ bool gComeC = false;
 char* gProgramName = NULL;
 bool gCommonHeader = false;
 bool gComeMalloc = false;
-bool gComeDebug = true;
+bool gComeDebug = false;
 
 void come_init() version 2
 {
@@ -595,9 +595,14 @@ int come_main(int argc, char** argv) version 2
             else if(argv[i] === "-common-header") {
                 gCommonHeader = true;
             }
-            else if(argv[i] === "-come-no-debug") {
-                gComeDebug = false;
+            else if(argv[i] === "-come-debug") {
+                gComeDebug = true;
             }
+/*
+            else if(argv[i][0..2] === "-O") {
+                clang_option.append_str(s" \{argv[i]} ");
+            }
+*/
             else if(argv[i] === "-come-malloc") {
                 gComeMalloc = true;
             }
@@ -731,8 +736,8 @@ int come_main(int argc, char** argv) version 2
             else if(argv[i] === "-str") {
                 clang_option.append_str(" -lcomelang2-str -lpcre ");
             }
-            else if(argv[i] === "-come-no-debug") {
-                gComeDebug = false;
+            else if(argv[i] === "-come-debug") {
+                gComeDebug = true;
             }
             else if(argv[i] === "-come-malloc") {
                 gComeMalloc = true;
@@ -740,6 +745,11 @@ int come_main(int argc, char** argv) version 2
             else if(argv[i] === "-common-header") {
                 gCommonHeader = true;
             }
+/*
+            else if(argv[i][0..2] === "-O") {
+                clang_option.append_str(s" \{argv[i]} ");
+            }
+*/
             else if(argv[i] === "-g") {
                 clang_option.append_str("-g ");
             }

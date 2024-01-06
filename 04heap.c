@@ -1095,9 +1095,11 @@ void free_objects_on_break(sInfo* info)
 string append_exception_value(char* c_value, sType* type, sInfo* info)
 {
     if(type->mClass->mName === "void" && type->mPointerNum == 0) {
-        return s"(come_push_stackframe(\"\{info.sname}\", \{info.sline}),\{c_value},come_pop_stackframe())";
+        if(gComeDebug) {
+            return s"(come_push_stackframe(\"\{info.sname}\", \{info.sline}),\{c_value},come_pop_stackframe())";
+        }
     }
-    else {
+    else if(gComeDebug) {
         static int n = 0;
         ++n;
         
