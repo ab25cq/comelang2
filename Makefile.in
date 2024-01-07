@@ -230,7 +230,7 @@ install:
 # clean
 #########################################
 clean:
-	rm -fR *.log *.c.o comelang2 libcomelang2.a libcomelang2-str.a *.o a *.tmp comelang2-val comelang2-sh comelang2-inf *.i *.val *.out *.log
+	rm -fR *.log *.c.o comelang2 libcomelang2.a libcomelang2-str.a *.o a *.tmp comelang2-val comelang2-sh comelang2-inf *.i *.val *.out *.log a.c.c b.c.c b c c.c.c
 
 distclean: clean
 	rm -fR  config.h Makefile autom4te.cache 
