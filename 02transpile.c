@@ -636,6 +636,7 @@ int come_main(int argc, char** argv) version 2
             else if(argv[i][0..2] === "-O") {
                 clang_option.append_str(s" \{argv[i]} ");
                 come_debug = false;
+                come_malloc = false;
             }
             else if(argv[i] === "-v") {
                 clang_option.append_str("-v ");
@@ -808,7 +809,6 @@ int come_main(int argc, char** argv) version 2
             else if(argv[i][0..2] === "-O") {
                 clang_option.append_str(s" \{argv[i]} ");
                 come_debug = false;
-                come_malloc = false;
             }
             else if(argv[i] === "-g") {
                 clang_option.append_str("-g ");
