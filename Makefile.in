@@ -57,7 +57,7 @@ comelang2: 01main.c.o 02transpile.c.o 03transpile2.c.o 04heap.c.o 05function.c.o
 	comelang2 -o 05function3.c.o -c 05function3.c $(CFLAGS) $(COME_CFLAGS)
 
 05function4.c.o: 05function4.c
-	comelang2 -o 05function4.c.o -g -c 05function4.c $(CFLAGS) $(COME_CFLAGS)
+	comelang2 -o 05function4.c.o -c 05function4.c $(CFLAGS) $(COME_CFLAGS)
 
 06str.c.o: 06str.c
 	comelang2 -o 06str.c.o -c 06str.c $(CFLAGS) $(COME_CFLAGS)
@@ -147,7 +147,7 @@ comelang2-sh: 01main.c.o.tmp 02transpile.c.o.tmp 03transpile2.c.o.tmp 04heap.c.o
 	clang -o 05function3.c.o.tmp -c 05function3.c.c $(CFLAGS)
 
 05function4.c.o.tmp: 05function4.c.c
-	clang -o 05function4.c.o.tmp -g -c 05function4.c.c $(CFLAGS)
+	clang -o 05function4.c.o.tmp -c 05function4.c.c $(CFLAGS)
 
 06str.c.o.tmp: 06str.c.c
 	clang  -o 06str.c.o.tmp -c 06str.c.c $(CFLAGS)

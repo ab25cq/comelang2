@@ -1026,7 +1026,9 @@ bool sNoneNode*::compile(sNoneNode* self, sInfo* info)
             come_value3.c_value = append_object_to_right_values(buf.to_string(), result_type, info);
         }
         
-        come_value3.c_value = s"(come_save_stackframe(\"\{info->sname}\", \{info->sline}), \{come_value3.c_value})"
+        if(!gComeDebug) {
+            come_value3.c_value = s"(come_save_stackframe(\"\{info->sname}\", \{info->sline}), \{come_value3.c_value})"
+        }
         
         come_value3.type = clone result_type;
         come_value3.type->mStatic = false;
