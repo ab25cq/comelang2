@@ -611,6 +611,111 @@ string sNullCheckNode*::sname(sNullCheckNode* self, sInfo* info)
     return string(self.sname);
 }
 
+struct sRangeCheckNode
+{
+    sNode*% mLeft;
+    sNode*% mBegin;
+    sNode*% mEnd;
+  
+    int sline;
+    string sname;
+};
+
+sRangeCheckNode*% sRangeCheckNode*::initialize(sRangeCheckNode*% self, sNode* left, sNode* begin, sNode* end, sInfo* info)
+{
+    self.sline = info.sline;
+    self.sname = string(info.sname);
+
+    self.mLeft = clone left;
+    self.mBegin = clone begin;
+    self.mEnd = clone end;
+    
+    return self;
+}
+
+bool sRangeCheckNode*::terminated()
+{
+    return false;
+}
+
+string sRangeCheckNode*::kind()
+{
+    return string("sRangeCheckNode");
+}
+
+bool sRangeCheckNode*::compile(sRangeCheckNode* self, sInfo* info)
+{
+    sNode* left = self.mLeft;
+    
+    if(!node_compile(left)) {
+        return false;
+    }
+    
+    CVALUE*% left_value = get_value_from_stack(-1, info);
+    dec_stack_ptr(1, info);
+    
+    sNode* begin = self.mBegin;
+    
+    if(!node_compile(begin)) {
+        return false;
+    }
+    
+    CVALUE*% begin_value = get_value_from_stack(-1, info);
+    dec_stack_ptr(1, info);
+    
+    sNode* end = self.mEnd;
+    
+    if(!node_compile(end)) {
+        return false;
+    }
+    
+    CVALUE*% end_value = get_value_from_stack(-1, info);
+    dec_stack_ptr(1, info);
+    
+    if(left_value.type->mPointerNum > 0) {
+        if(!gComeDebug) {
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = xsprintf("(*((%s)%s))", make_type_name_string(left_value.type)!, left_value.c_value);
+            
+            left_value.type->mPointerNum--;
+            come_value.type = clone left_value.type;
+            come_value.var = null;
+            
+            info.stack.push_back(come_value);
+            
+            add_come_last_code(info, "%s;\n", come_value.c_value);
+        }
+        else {
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = xsprintf("(*((%s)come_range_check(%s, %s, %s, \"%s\", %d)))", make_type_name_string(left_value.type)!, left_value.c_value, begin_value.c_value, end_value.c_value, info->sname, info->sline);
+            left_value.type->mPointerNum--;
+            come_value.type = clone left_value.type;
+            come_value.var = null;
+            
+            info.stack.push_back(come_value);
+            
+            add_come_last_code(info, "%s;\n", come_value.c_value);
+        }
+    }
+    else {
+        info.stack.push_back(left_value);
+    }
+
+    return true;
+}
+
+int sRangeCheckNode*::sline(sRangeCheckNode* self, sInfo* info)
+{
+    return self.sline;
+}
+
+string sRangeCheckNode*::sname(sRangeCheckNode* self, sInfo* info)
+{
+    return string(self.sname);
+}
+
 struct sExceptionGetValueNode
 {
     sNode*% mLeft;
@@ -1417,7 +1522,7 @@ sNode*% exception_get_value(sNode*% node, sInfo* info)
             node = new sExceptionGetValueNode(node, info) implements sNode;
         }
     }
-    else if(*info->p == '!' && *(info->p+1) != '=') {
+    else if(*info->p == '!' && *(info->p+1) != '=' && *(info->p+1) != '{') {
     }
     else if(node == null) {
     }
@@ -1575,6 +1680,25 @@ sNode*% post_position_operator(sNode*% node, sInfo* info) version 18
                 
                 node = exception_get_value(node, info)
             }
+        }
+        else if(*info->p == '!' && *(info->p+1) == '{') {
+            info->p+=2;
+            skip_spaces_and_lf();
+            
+            bool no_comma = info.no_comma;
+            info.no_comma = true;
+            sNode*% begin = expression();
+            info.no_comma = no_comma
+            
+            expected_next_character(',');
+            
+            sNode*% end = expression();
+            
+            expected_next_character('}');
+            
+            parse_sharp();
+            
+            node = new sRangeCheckNode(node, begin ,end, info) implements sNode;
         }
         else if(*info->p == '!' && *(info->p+1) != '=') {
             info->p++;

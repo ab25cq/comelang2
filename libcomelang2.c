@@ -77,6 +77,29 @@ void* come_null_check(void* mem, char* sname, int sline)
     return mem;
 }
 
+void* come_range_check(void* mem, void* begin, void* end, char* sname, int sline)
+{
+    if(mem == null) {
+        printf("%s %d: null check error\n", sname, sline);
+        stackframe();
+        exit(2);
+    }
+    
+    if(mem < begin) {
+        printf("%s %d: range check error\n", sname, sline);
+        stackframe();
+        exit(2);
+    }
+    
+    if(mem >= end) {
+        printf("%s %d: range check error\n", sname, sline);
+        stackframe();
+        exit(2);
+    }
+    
+    return mem;
+}
+
 bool bool::expect(bool self, void* parent, void (*block)(void* parent)) 
 {
     if(!self) {

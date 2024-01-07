@@ -1,5 +1,6 @@
 #include <comelang2.h>
 
+/*
 int fun(int argc)
 {
     list<string>*% l = [s"AAA", s"BBB"];
@@ -14,17 +15,17 @@ int fun(int argc)
     
     return 0;
 }
+*/
+
+int gArray[3][2] = { 1, 2, 3, 4,5,6 };
 
 int main(int argc, char** argv) 
 {
-//    fun(1);
-    char* argv2[3] = { "comelang2", "-O2", "aaa" };
+    printf("%p\n", &gArray[0][0]);
+    printf("%p\n", &gArray[1][0]);
+    printf("%p\n", &gArray[2][2]);
     
-    for(int i=0; i<3; i++) {
-        if(argv2[i][0..2] === "-O") {
-            puts("OK");
-        }
-    }
+    printf("%d\n", (&gArray[2][2])!{&gArray[0][0], &gArray[2][2]});
     
     return 0;
 }

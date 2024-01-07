@@ -1561,6 +1561,39 @@ a.c 16
 for debug
 require -g option.
 
+# range check
+
+> vin a.c
+#include <comelang2.h>
+
+int main(int argc, char** argv) 
+{
+    int a[3] = { 1, 2, 3 };
+    
+    printf("%d\n", (a + 1)!{a, a + 3});
+    
+    return 0;
+}
+> comelang2 -g a.c
+> ./a
+2
+> vin a.c
+#include <comelang2.h>
+
+int main(int argc, char** argv) 
+{
+    int a[3] = { 1, 2, 3 };
+    
+    printf("%d\n", (a + 5)!{a, a + 3});
+    
+    return 0;
+}
+> comelang2 -g a.c
+> ./a
+a.c 7: range check error
+libcomelang2.c 96
+a.c 7
+
 # afterword
 
 親友DIO、僕はついに天の国を見てきたよ。

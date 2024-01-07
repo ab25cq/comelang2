@@ -91,6 +91,7 @@ void exception_stackframe();
 void come_save_stackframe(char* sname, int sline);
 
 void* come_null_check(void* mem, char* sname, int sline);
+void* come_range_check(void* mem, void* begin, void* end, char* sname, int sline);
 
 bool bool::expect(bool self, void* parent, void (*block)(void* parent)) ;
 bool bool::catch(bool self, void* parent, void (*block)(void* parent));
