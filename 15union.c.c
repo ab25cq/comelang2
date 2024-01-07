@@ -7623,12 +7623,9 @@ memset(&right_value142, 0, sizeof(void*));
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value141);
         if(right_value141 && right_value141 != __result_obj__ && !__freed_obj__) { right_value141 = come_decrement_ref_count(right_value141, (void*)0, (void*)0, 1, 0, 0); }
         __right_value_freed_obj[0] = right_value141;
-        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value142);
-        if(right_value142 && right_value142 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2voidpboolp_finalize,right_value142, (void*)0, (void*)0, 0, 1, 0, 0); }
-        __right_value_freed_obj[1] = right_value142;
         __freed_obj__ = 0;
                     ((struct __current_stack1__*) parent)->__method_block_result_kind__ = 3;
-            ((struct __current_stack1__*) parent)->__method_block_return_value__ = (struct optional$2voidpbool*)come_increment_ref_count((come_save_stackframe("15union.c", 193), ((struct optional$2voidpbool*)(right_value142=optional$2voidpbool_initialize(((struct optional$2voidpbool*)(right_value141=(struct optional$2voidpbool*)come_calloc(1, sizeof(struct optional$2voidpbool)*(1), "15union.c", 193))),((void*)0),(_Bool)0)))));
+            ((struct __current_stack1__*) parent)->__method_block_return_value__ = (struct optional$2voidpbool*)come_increment_ref_count(((struct optional$2voidpbool*)(right_value142=optional$2voidpbool_initialize(((struct optional$2voidpbool*)(right_value141=(struct optional$2voidpbool*)come_calloc(1, sizeof(struct optional$2voidpbool)*(1), "15union.c", 193))),((void*)0),(_Bool)0))));
         return;        __freed_obj__ = 0;
 }
 

@@ -6432,12 +6432,9 @@ memset(&right_value104, 0, sizeof(void*));
         __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 0, right_value103);
         if(right_value103 && right_value103 != __result_obj__ && !__freed_obj__) { right_value103 = come_decrement_ref_count(right_value103, (void*)0, (void*)0, 1, 0, 0); }
         __right_value_freed_obj[0] = right_value103;
-        __freed_obj__ = come_is_contained_element(__right_value_freed_obj, 1, right_value104);
-        if(right_value104 && right_value104 != __result_obj__ && !__freed_obj__) { come_call_finalizer(optional$2voidpboolp_finalize,right_value104, (void*)0, (void*)0, 0, 1, 0, 0); }
-        __right_value_freed_obj[1] = right_value104;
         __freed_obj__ = 0;
                     ((struct __current_stack1__*) parent)->__method_block_result_kind__ = 3;
-            ((struct __current_stack1__*) parent)->__method_block_return_value__ = (struct optional$2voidpbool*)come_increment_ref_count((come_save_stackframe("09while.c", 103), ((struct optional$2voidpbool*)(right_value104=optional$2voidpbool_initialize(((struct optional$2voidpbool*)(right_value103=(struct optional$2voidpbool*)come_calloc(1, sizeof(struct optional$2voidpbool)*(1), "09while.c", 103))),((void*)0),(_Bool)0)))));
+            ((struct __current_stack1__*) parent)->__method_block_return_value__ = (struct optional$2voidpbool*)come_increment_ref_count(((struct optional$2voidpbool*)(right_value104=optional$2voidpbool_initialize(((struct optional$2voidpbool*)(right_value103=(struct optional$2voidpbool*)come_calloc(1, sizeof(struct optional$2voidpbool)*(1), "09while.c", 103))),((void*)0),(_Bool)0))));
         return;        __freed_obj__ = 0;
 }
 

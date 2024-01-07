@@ -775,9 +775,7 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
             come_value2.c_value = append_object_to_right_values(come_value2.c_value, result_type2, info);
         }
         
-        if(fun.mResultType->mException || gComeDebug) {
-            come_value2.c_value = append_exception_value(come_value2.c_value, come_value2.type, info);
-        }
+        come_value2.c_value = append_exception_value(come_value2.c_value, come_value2.type, info);
         
         add_come_last_code(info, "%s;\n", come_value2.c_value);
         

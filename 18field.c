@@ -172,9 +172,7 @@ bool operator_overload_fun2(sType* type, char* fun_name, CVALUE* left_value, CVA
             come_value.c_value = append_object_to_right_values(come_value.c_value, result_type2, info);
         }
         
-        if(operator_fun.mResultType->mException || gComeDebug) {
-            come_value.c_value = append_exception_value(come_value.c_value, come_value.type, info);
-        }
+        come_value.c_value = append_exception_value(come_value.c_value, come_value.type, info);
         
         add_come_last_code(info, "%s;\n", come_value.c_value);
         

@@ -126,9 +126,7 @@ bool operator_overload_fun_self(sType* type, char* fun_name, CVALUE* left_value,
             come_value.c_value = append_object_to_right_values(come_value.c_value, type3, info);
         }
         
-        if(operator_fun.mResultType->mException || gComeDebug) {
-            come_value.c_value = append_exception_value(come_value.c_value, come_value.type, info);
-        }
+        come_value.c_value = append_exception_value(come_value.c_value, come_value.type, info);
         
         add_come_last_code(info, "%s;\n", come_value.c_value);
         
@@ -1571,7 +1569,7 @@ bool sFunCallNode*::compile(sFunCallNode* self, sInfo* info)
             come_value.c_value = append_object_to_right_values(come_value.c_value, result_type, info);
         }
         
-        if((fun.mResultType->mException || gComeDebug) && fun_name !== "come_alloc_mem_from_heap_pool" && fun_name !== "null_check" && fun_name !== "come_push_stackframe" && fun_name !== "come_pop_stackframe") {
+        if(fun_name !== "come_alloc_mem_from_heap_pool" && fun_name !== "null_check" && fun_name !== "come_push_stackframe" && fun_name !== "come_pop_stackframe") {
             come_value.c_value = append_exception_value(come_value.c_value, come_value.type, info);
         }
         
