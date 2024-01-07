@@ -12146,7 +12146,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
         __freed_obj__ = 0;
         come_debug_244=(_Bool)0;
         __freed_obj__ = 0;
-        come_malloc_245=(_Bool)1;
+        come_malloc_245=(_Bool)0;
         __freed_obj__ = 0;
         for(
         i_246=2 ,        __freed_obj__ = 0, 
@@ -12214,6 +12214,8 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                         __right_value_freed_obj[1] = right_value350;
                                         __freed_obj__ = 0;
                                         come_debug_244=(_Bool)0;
+                                        __freed_obj__ = 0;
+                                        come_malloc_245=(_Bool)0;
                                         __freed_obj__ = 0;
                                     }
                                     else {
@@ -12712,7 +12714,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                             __freed_obj__ = 0;
                             come_debug_278=(_Bool)0;
                             __freed_obj__ = 0;
-                            come_malloc_279=(_Bool)1;
+                            come_malloc_279=(_Bool)0;
                             __freed_obj__ = 0;
                             for(
                             i_280=1 ,                            __freed_obj__ = 0, 
@@ -12770,6 +12772,8 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                                         __right_value_freed_obj[1] = right_value420;
                                                         __freed_obj__ = 0;
                                                         come_debug_278=(_Bool)0;
+                                                        __freed_obj__ = 0;
+                                                        come_malloc_279=(_Bool)0;
                                                         __freed_obj__ = 0;
                                                     }
                                                     else {

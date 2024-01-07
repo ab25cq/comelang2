@@ -610,7 +610,7 @@ int come_main(int argc, char** argv) version 2
         bool verbose = false;
         bool prohibit_common_header = false;
         bool come_debug = false;
-        bool come_malloc = true;
+        bool come_malloc = false;
         for(int i=2; i<argc; i++) {
             if(argv[i] === "-o" && i+1 < argc) {
                 output_file_name = string(argv[i+1]);
@@ -636,7 +636,7 @@ int come_main(int argc, char** argv) version 2
             else if(argv[i][0..2] === "-O") {
                 clang_option.append_str(s" \{argv[i]} ");
                 come_debug = false;
-                //come_malloc = false;
+                come_malloc = false;
             }
             else if(argv[i] === "-v") {
                 clang_option.append_str("-v ");
@@ -788,7 +788,7 @@ int come_main(int argc, char** argv) version 2
         string output_file_name = null;
         bool verbose = false;
         bool come_debug = false;
-        bool come_malloc = true;
+        bool come_malloc = false;
         for(int i=1; i<argc; i++) {
             if(argv[i] === "-o" && i+1 < argc) {
                 output_file_name = string(argv[i+1]);
@@ -809,7 +809,7 @@ int come_main(int argc, char** argv) version 2
             else if(argv[i][0..2] === "-O") {
                 clang_option.append_str(s" \{argv[i]} ");
                 come_debug = false;
-                //come_malloc = false;
+                come_malloc = false;
             }
             else if(argv[i] === "-g") {
                 clang_option.append_str("-g ");
