@@ -610,7 +610,7 @@ int come_main(int argc, char** argv) version 2
         bool verbose = false;
         bool prohibit_common_header = false;
         bool come_debug = false;
-        bool come_malloc = true;
+        bool come_malloc = false;
         for(int i=2; i<argc; i++) {
             if(argv[i] === "-o" && i+1 < argc) {
                 output_file_name = string(argv[i+1]);

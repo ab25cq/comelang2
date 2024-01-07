@@ -12146,7 +12146,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
         __freed_obj__ = 0;
         come_debug_244=(_Bool)0;
         __freed_obj__ = 0;
-        come_malloc_245=(_Bool)1;
+        come_malloc_245=(_Bool)0;
         __freed_obj__ = 0;
         for(
         i_246=2 ,        __freed_obj__ = 0, 
