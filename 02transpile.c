@@ -622,7 +622,7 @@ int come_main(int argc, char** argv) version 2
             else if(argv[i] === "-g") {
                 clang_option.append_str("-g ");
                 come_debug = true;
-                come_malloc = true;
+                come_malloc = false;
             }
             else if(argv[i] === "-common-header") {
                 gCommonHeader = true;
@@ -648,7 +648,7 @@ int come_main(int argc, char** argv) version 2
             else if(argv[i] === "-gdwarf-4") {
                 clang_option.append_str("-gdwarf-4 ");
                 come_debug = true;
-                come_malloc = true;
+                come_malloc = false;
             }
             else if(argv[i] === "-gc") {
                 gComeGC = true;
@@ -814,7 +814,7 @@ int come_main(int argc, char** argv) version 2
             else if(argv[i] === "-g") {
                 clang_option.append_str("-g ");
                 come_debug = true;
-                come_malloc = true;
+                come_malloc = false;
             }
             else if(argv[i] === "-v") {
                 clang_option.append_str("-v ");
@@ -826,7 +826,7 @@ int come_main(int argc, char** argv) version 2
             else if(argv[i] === "-gdwarf-4") {
                 clang_option.append_str("-gdwarf-4 ");
                 come_debug = true;
-                come_malloc = true;
+                come_malloc = false;
             }
             else if(argv[i] === "-gc") {
                 gComeGC = true;
