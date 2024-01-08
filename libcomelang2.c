@@ -395,6 +395,43 @@ static void come_free_mem_of_heap_pool(char* mem)
     }
 }
 
+static bool is_valid_object(char* mem) 
+{
+    if(mem) {
+        if(!gComeMallocLib) {
+            return true;
+        }
+        else {
+            char* mem2 = mem - sizeof(size_t) - sizeof(size_t);
+            
+            size_t key = (size_t)mem2 % gSizeMemHeaders;
+            
+            sMemHeader* it = gMemHeaderTable + key;
+            
+            while(true) {
+                if(it->mem == null) {
+                    return false;
+                }
+                else if(it->mem == mem) {
+                    return true;
+                }
+                else {
+                    it++;
+                    
+                    if(it == gMemHeaderTable + gSizeMemHeaders) {
+                        it = gMemHeaderTable;
+                    }
+                    else if(it == gMemHeaderTable + key) {
+                        return false;
+                    }
+                }
+            }
+        }
+    }
+    
+    return false;
+}
+
 void* come_calloc(size_t count, size_t size, char* sname=null, int sline=0)
 {
     char* mem = come_alloc_mem_from_heap_pool(sizeof(size_t)+sizeof(size_t)+count*size, sname, sline);
