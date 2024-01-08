@@ -412,7 +412,7 @@ static bool is_valid_object(char* mem)
                 if(it->mem == null) {
                     return false;
                 }
-                else if(it->mem == mem) {
+                else if(it->mem == mem2) {
                     return true;
                 }
                 else {
@@ -452,6 +452,11 @@ void come_free_object(void* mem)
     if(mem == NULL) {
         return;
     }
+    if(gComeMallocLib) {
+        if(!is_valid_object(mem)) {
+            return;
+        }
+    }
     
     size_t* ref_count = (size_t*)((char*)mem - sizeof(size_t) - sizeof(size_t));
     
@@ -462,6 +467,11 @@ void* come_memdup(void* block, char* sname=null, int sline=0)
 {
     if(!block) {
         return null;
+    }
+    if(gComeMallocLib) {
+        if(!is_valid_object(block)) {
+            return null;
+        }
     }
 
     char* mem = (char*)block - sizeof(size_t) - sizeof(size_t);
@@ -482,6 +492,11 @@ void* come_increment_ref_count(void* mem)
     if(mem == NULL) {
         return mem;
     }
+    if(gComeMallocLib) {
+        if(!is_valid_object(mem)) {
+            return null;
+        }
+    }
     
     size_t* ref_count = (size_t*)((char*)mem - sizeof(size_t) - sizeof(size_t));
     
@@ -495,6 +510,11 @@ void* come_print_ref_count(void* mem)
     if(mem == NULL) {
         return mem;
     }
+    if(gComeMallocLib) {
+        if(!is_valid_object(mem)) {
+            return mem;
+        }
+    }
     
     size_t* ref_count = (size_t*)((char*)mem - sizeof(size_t) - sizeof(size_t));
     
@@ -507,6 +527,11 @@ void* come_decrement_ref_count(void* mem, void* protocol_fun, void* protocol_obj
 {
     if(mem == NULL) {
         return NULL;
+    }
+    if(gComeMallocLib) {
+        if(!is_valid_object(mem)) {
+            return NULL;
+        }
     }
     
     size_t* ref_count = (size_t*)((char*)mem - sizeof(size_t) - sizeof(size_t));
@@ -534,6 +559,11 @@ void come_call_finalizer(void* fun, void* mem, void* protocol_fun, void* protoco
 {
     if(mem == NULL) {
         return;
+    }
+    if(gComeMallocLib) {
+        if(!is_valid_object(mem)) {
+            return;
+        }
     }
     
     if(call_finalizer_only) {
