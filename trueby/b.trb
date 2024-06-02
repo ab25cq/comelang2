@@ -1,0 +1,17 @@
+
+class sDataA
+{
+    def initialize() {
+        @a:= 123;
+        @b:= 234;
+    }
+    
+    def show() {
+        puts(@a);
+        puts(@b);
+    }
+}
+
+data := sDataA.new();
+
+data.show();

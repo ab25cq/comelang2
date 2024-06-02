@@ -1,0 +1,10 @@
+ls | cat > AAA
+
+ls | .split(/\n/).join("+") | cat > AAA
+
+for in
+
+CTRL-Z
+
+
+bash update.sh
