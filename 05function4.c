@@ -347,6 +347,19 @@ bool check_assign_type(char* msg, sType* left_type, sType* right_type, CVALUE* c
     sType* left_no_solved_generics_type = left_type->mNoSolvedGenericsType.v1;
     sType* right_no_solved_generics_type = right_type2->mNoSolvedGenericsType.v1;
     
+    sClass* left_class = left_type->mClass;
+    sClass* right_class = right_type2->mClass;
+    
+    bool parent_class = false;
+    if(left_class->mName !== right_class->mName) {
+        while(left_class && right_class) {
+            if(left_class->mName === right_class->mName) {
+                parent_class = true;
+            }
+            right_class = right_class->mParent;
+        }
+    }
+    
     if(left_no_solved_generics_type && right_no_solved_generics_type) {
         if(left_type->mClass->mName === right_type2->mClass->mName && left_type->mPointerNum == right_type2->mPointerNum) {
         }
@@ -380,6 +393,13 @@ bool check_assign_type(char* msg, sType* left_type, sType* right_type, CVALUE* c
                 check_assign_type(msg, left_no_solved_generics_type, right_no_solved_generics_type, come_value);
             }
         }
+    }
+    else if(parent_class && left_type->mPointerNum == 1 && right_type->mPointerNum == 1) {
+        come_value.c_value = xsprintf("(struct %s*)%s", left_type->mClass->mName, come_value.c_value);
+        come_value.type = clone left_type;
+        come_value.var = null;
+        
+        right_type2 = clone left_type;
     }
     else if(check_no_pointer) {
         if(left_type->mPointerNum > 0) {

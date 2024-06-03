@@ -384,6 +384,20 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
                     fun = info.funcs.at(generics_fun_name, null);
                     
                     if(fun == null) {
+                        sClass* klass = obj_type->mClass;
+                        while(klass->mParent) {
+                            klass = klass->mParent;
+                            generics_fun_name = create_method_name_using_class(klass, false@no_pointer_name, fun_name, info);
+                            
+                            fun = info.funcs.at(generics_fun_name, null);
+                            
+                            if(fun) {
+                                break;
+                            }
+                        }
+                    }
+                    
+                    if(fun == null) {
                         err_msg(info, "function not found(%s) at method(%s)(Z2n)\n", generics_fun_name, info.come_fun.mName);
                         return true;
                     }
@@ -517,124 +531,124 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
         
         sType* obj_array_type = obj_type->mOriginalLoadVarType.v1;
         if(obj_array_type && obj_array_type.mArrayNum.length() > 0) {
-	    string array_method_name = create_method_name(obj_array_type, false@no_pointer_name, fun_name, info, false@array_equal_pointer);
-	    if(generics_fun_name === array_method_name) {
-		    if(fun_name === "to_pointer") {
-			buffer*% buf = new buffer();
-			
-			int i=0;
-			foreach(it, obj_array_type.mArrayNum) {
-			    if(!node_compile(it)) {
-				err_msg(info, "invalid array num");
-				exit(1);
-			    }
-			    
-			    CVALUE*% come_value = get_value_from_stack(-1, info);
-			    dec_stack_ptr(1, info);
-			
-			    buf.append_str(xsprintf("%s", come_value.c_value));
-			    if(i != obj_array_type.mArrayNum.length()-1) {
-				buf.append_str("*");
-			    }
-			    i++;
-			}
-			
-			CVALUE*% come_value = new CVALUE;
-			
-			come_value.c_value = buf.to_string();
-			come_value.var = null;
-			come_value.type = new sType("long");
-			
-			come_params.replace(1, come_value);
-			params.push_back((s"len", null));
-		    }
-		    else if(fun_name === "length") {
-			buffer*% buf = new buffer();
-			
-			int i=0;
-			foreach(it, obj_array_type.mArrayNum) {
-			    if(!node_compile(it)) {
-				err_msg(info, "invalid array num");
-				exit(1);
-			    }
-			    
-			    CVALUE*% come_value = get_value_from_stack(-1, info);
-			    dec_stack_ptr(1, info);
-			
-			    buf.append_str(xsprintf("%s", come_value.c_value));
-			    if(i != obj_array_type.mArrayNum.length()-1) {
-				buf.append_str("*");
-			    }
-			    i++;
-			}
-			
-			CVALUE*% come_value = new CVALUE;
-			
-			come_value.c_value = buf.to_string();
-			come_value.var = null;
-			come_value.type = new sType("long");
-			
-			come_params.replace(1, come_value);
-			params.push_back((s"len", null));
-		    }
-		    else if(fun_name === "to_buffer") {
-			buffer*% buf = new buffer();
-			
-			int i=0;
-			foreach(it, obj_array_type.mArrayNum) {
-			    if(!node_compile(it)) {
-				err_msg(info, "invalid array num");
-				exit(1);
-			    }
-			    
-			    CVALUE*% come_value = get_value_from_stack(-1, info);
-			    dec_stack_ptr(1, info);
-			
-			    buf.append_str(xsprintf("%s", come_value.c_value));
-			    if(i != obj_array_type.mArrayNum.length()-1) {
-				buf.append_str("*");
-			    }
-			    i++;
-			}
-			
-			CVALUE*% come_value = new CVALUE;
-			
-			come_value.c_value = buf.to_string();
-			come_value.var = null;
-			come_value.type = new sType("long");
-			
-			come_params.replace(1, come_value);
-			params.push_back((s"len", null));
-		    }
-		    else if(fun_name === "to_list") {
-			buffer*% buf = new buffer();
-			
-			int i=0;
-			foreach(it, obj_array_type.mArrayNum) {
-			    if(!node_compile(it)) {
-				err_msg(info, "invalid array num");
-				exit(1);
-			    }
-			    
-			    CVALUE*% come_value = get_value_from_stack(-1, info);
-			    dec_stack_ptr(1, info);
-			
-			    buf.append_str(xsprintf("%s", come_value.c_value));
-			    if(i != obj_array_type.mArrayNum.length()-1) {
-				buf.append_str("*");
-			    }
-			    i++;
-			}
-			
-			CVALUE*% come_value = new CVALUE;
-			
-			come_value.c_value = buf.to_string();
-			come_value.var = null;
-			come_value.type = new sType("long");
-			
-			come_params.replace(1, come_value);
-			params.push_back((s"len", null));
-		    }
+        string array_method_name = create_method_name(obj_array_type, false@no_pointer_name, fun_name, info, false@array_equal_pointer);
+        if(generics_fun_name === array_method_name) {
+            if(fun_name === "to_pointer") {
+            buffer*% buf = new buffer();
+            
+            int i=0;
+            foreach(it, obj_array_type.mArrayNum) {
+                if(!node_compile(it)) {
+                err_msg(info, "invalid array num");
+                exit(1);
+                }
+                
+                CVALUE*% come_value = get_value_from_stack(-1, info);
+                dec_stack_ptr(1, info);
+            
+                buf.append_str(xsprintf("%s", come_value.c_value));
+                if(i != obj_array_type.mArrayNum.length()-1) {
+                buf.append_str("*");
+                }
+                i++;
+            }
+            
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = buf.to_string();
+            come_value.var = null;
+            come_value.type = new sType("long");
+            
+            come_params.replace(1, come_value);
+            params.push_back((s"len", null));
+            }
+            else if(fun_name === "length") {
+            buffer*% buf = new buffer();
+            
+            int i=0;
+            foreach(it, obj_array_type.mArrayNum) {
+                if(!node_compile(it)) {
+                err_msg(info, "invalid array num");
+                exit(1);
+                }
+                
+                CVALUE*% come_value = get_value_from_stack(-1, info);
+                dec_stack_ptr(1, info);
+            
+                buf.append_str(xsprintf("%s", come_value.c_value));
+                if(i != obj_array_type.mArrayNum.length()-1) {
+                buf.append_str("*");
+                }
+                i++;
+            }
+            
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = buf.to_string();
+            come_value.var = null;
+            come_value.type = new sType("long");
+            
+            come_params.replace(1, come_value);
+            params.push_back((s"len", null));
+            }
+            else if(fun_name === "to_buffer") {
+            buffer*% buf = new buffer();
+            
+            int i=0;
+            foreach(it, obj_array_type.mArrayNum) {
+                if(!node_compile(it)) {
+                err_msg(info, "invalid array num");
+                exit(1);
+                }
+                
+                CVALUE*% come_value = get_value_from_stack(-1, info);
+                dec_stack_ptr(1, info);
+            
+                buf.append_str(xsprintf("%s", come_value.c_value));
+                if(i != obj_array_type.mArrayNum.length()-1) {
+                buf.append_str("*");
+                }
+                i++;
+            }
+            
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = buf.to_string();
+            come_value.var = null;
+            come_value.type = new sType("long");
+            
+            come_params.replace(1, come_value);
+            params.push_back((s"len", null));
+            }
+            else if(fun_name === "to_list") {
+            buffer*% buf = new buffer();
+            
+            int i=0;
+            foreach(it, obj_array_type.mArrayNum) {
+                if(!node_compile(it)) {
+                err_msg(info, "invalid array num");
+                exit(1);
+                }
+                
+                CVALUE*% come_value = get_value_from_stack(-1, info);
+                dec_stack_ptr(1, info);
+            
+                buf.append_str(xsprintf("%s", come_value.c_value));
+                if(i != obj_array_type.mArrayNum.length()-1) {
+                buf.append_str("*");
+                }
+                i++;
+            }
+            
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = buf.to_string();
+            come_value.var = null;
+            come_value.type = new sType("long");
+            
+            come_params.replace(1, come_value);
+            params.push_back((s"len", null));
+            }
             }
         }
         

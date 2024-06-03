@@ -24,6 +24,8 @@ extern int gComeDebugStackFrameID;
 
 struct sType;
 
+struct sClass;
+
 struct sClass {
     bool mStruct;
     bool mFloat;
@@ -44,6 +46,8 @@ struct sClass {
     bool mOutputed;
     string mDeclareSName;
     bool mNobodyStruct;
+    
+    sClass* mParent;
 };
 
 struct sInfo;
@@ -459,6 +463,7 @@ void parse_sharp(sInfo* info=info) version 5;
 sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 5;
 sNode*% post_position_operator(sNode*% node, sInfo* info) version 5;
 string create_method_name(sType* obj_type, bool no_pointer_name, char* fun_name, sInfo* info, bool array_equal_pointer=true);
+string create_method_name_using_class(sClass* obj_class, bool no_pointer_name, char* fun_name, sInfo* info, bool array_equal_pointer=true);
 
 /////////////////////////////////////////////////////////////////////
 /// 06str.c ///

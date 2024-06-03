@@ -207,6 +207,7 @@ extern _Bool gComeMalloc;
 extern _Bool gCommonHeader;
 extern int gComeDebugStackFrameID;
 struct sType;
+struct sClass;
 struct tuple2$2charphsTypeph
 {
     char* v1;
@@ -242,6 +243,7 @@ struct sClass
     _Bool mOutputed;
     char* mDeclareSName;
     _Bool mNobodyStruct;
+    struct sClass* mParent;
 };
 struct sInfo;
 struct sNode
@@ -1692,6 +1694,8 @@ struct sNode* string_node_v5(char* buf, char* head, int head_sline, struct sInfo
 struct sNode* post_position_operator_v5(struct sNode* node, struct sInfo* info);
 
 char* create_method_name(struct sType* obj_type, _Bool no_pointer_name, char* fun_name, struct sInfo* info, _Bool array_equal_pointer);
+
+char* create_method_name_using_class(struct sClass* obj_class, _Bool no_pointer_name, char* fun_name, struct sInfo* info, _Bool array_equal_pointer);
 
 struct sNode* expression_node_v98(struct sInfo* info);
 

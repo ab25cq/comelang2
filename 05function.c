@@ -3018,6 +3018,13 @@ string create_method_name(sType* obj_type, bool no_pointer_name, char* fun_name,
     return xsprintf("%s%s_%s", struct_name, buf.to_string(), fun_name);
 }
 
+string create_method_name_using_class(sClass* obj_class, bool no_pointer_name, char* fun_name, sInfo* info, bool array_equal_pointer=true)
+{
+    string struct_name = string(obj_class->mName);
+    
+    return xsprintf("%s_%s", struct_name, fun_name);
+}
+
 sNode*% parse_global_variable(sInfo* info)
 {
     bool multiple_declare = false;

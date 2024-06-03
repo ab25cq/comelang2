@@ -207,6 +207,7 @@ extern _Bool gComeMalloc;
 extern _Bool gCommonHeader;
 extern int gComeDebugStackFrameID;
 struct sType;
+struct sClass;
 struct tuple2$2charphsTypeph
 {
     char* v1;
@@ -242,6 +243,7 @@ struct sClass
     _Bool mOutputed;
     char* mDeclareSName;
     _Bool mNobodyStruct;
+    struct sClass* mParent;
 };
 struct sInfo;
 struct sNode
@@ -1863,6 +1865,8 @@ struct sNode* string_node_v5(char* buf, char* head, int head_sline, struct sInfo
 struct sNode* post_position_operator_v5(struct sNode* node, struct sInfo* info);
 
 char* create_method_name(struct sType* obj_type, _Bool no_pointer_name, char* fun_name, struct sInfo* info, _Bool array_equal_pointer);
+
+char* create_method_name_using_class(struct sClass* obj_class, _Bool no_pointer_name, char* fun_name, struct sInfo* info, _Bool array_equal_pointer);
 
 struct sNode* expression_node_v98(struct sInfo* info);
 
@@ -10230,6 +10234,7 @@ _Bool _if_conditional334;
 void* right_value344;
 char* __dec_obj103;
 _Bool _if_conditional335;
+_Bool _if_conditional336;
 struct sClass* __result188__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value332 = (void*)0;
@@ -10346,7 +10351,13 @@ right_value344 = (void*)0;
                 # 18 "sClass_clone"
                 result_261->mNobodyStruct=self->mNobodyStruct;
             }
+            # 20 "sClass_clone"
             # 19 "sClass_clone"
+            if(_if_conditional336=self!=((void*)0),            _if_conditional336) {
+                # 19 "sClass_clone"
+                result_261->mParent=self->mParent;
+            }
+            # 20 "sClass_clone"
             __result188__ = __result_obj__ = result_261;
             come_call_finalizer2(sClass_finalize,result_261, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
             return __result188__;
@@ -10807,7 +10818,7 @@ right_value387 = (void*)0;
 
 int come_main_v2(int argc, char** argv){
 void* __result_obj__;
-_Bool _if_conditional336;
+_Bool _if_conditional337;
 void* right_value388;
 void* right_value389;
 struct buffer* clang_option_277;
@@ -10831,41 +10842,41 @@ _Bool come_debug_287;
 _Bool come_malloc_288;
 _Bool come_str_289;
 int i_290;
-_Bool _if_conditional337;
+_Bool _if_conditional338;
 void* right_value397;
 char* __dec_obj104;
-_Bool _if_conditional338;
 _Bool _if_conditional339;
 _Bool _if_conditional340;
 _Bool _if_conditional341;
 _Bool _if_conditional342;
 _Bool _if_conditional343;
 _Bool _if_conditional344;
-void* right_value398;
 _Bool _if_conditional345;
+void* right_value398;
+_Bool _if_conditional346;
 void* right_value399;
 void* right_value400;
 void* right_value401;
-_Bool _if_conditional346;
+_Bool _if_conditional347;
 void* right_value402;
 void* right_value403;
 void* right_value404;
 void* right_value405;
-_Bool _if_conditional347;
 _Bool _if_conditional348;
+_Bool _if_conditional349;
 void* right_value406;
 void* right_value407;
-_Bool _if_conditional349;
 _Bool _if_conditional350;
 _Bool _if_conditional351;
 _Bool _if_conditional352;
 _Bool _if_conditional353;
-void* right_value408;
 _Bool _if_conditional354;
+void* right_value408;
+_Bool _if_conditional355;
 void* right_value409;
 void* right_value410;
-_Bool _if_conditional355;
 _Bool _if_conditional356;
+_Bool _if_conditional357;
 struct _IO_FILE* f_291;
 _Bool _and_conditional1;
 _Bool __exception_result_var_b6;
@@ -10925,7 +10936,7 @@ struct map$2charphsClassph* __dec_obj123;
 static int n_314=0;
 void* right_value467;
 char* __dec_obj124;
-_Bool _if_conditional396;
+_Bool _if_conditional397;
 void* right_value468;
 void* right_value469;
 void* right_value470;
@@ -10934,28 +10945,28 @@ void* right_value471;
 void* right_value472;
 void* right_value473;
 struct buffer* __dec_obj126;
-_Bool _if_conditional397;
 _Bool _if_conditional398;
+_Bool _if_conditional399;
 void* right_value474;
 void* right_value475;
-_Bool _if_conditional425;
 _Bool _if_conditional426;
-int __result203__;
 _Bool _if_conditional427;
+int __result203__;
 _Bool _if_conditional428;
-int __result204__;
 _Bool _if_conditional429;
+int __result204__;
 _Bool _if_conditional430;
-int __result205__;
 _Bool _if_conditional431;
+int __result205__;
 _Bool _if_conditional432;
-int __result206__;
 _Bool _if_conditional433;
+int __result206__;
 _Bool _if_conditional434;
 _Bool _if_conditional435;
-int __result207__;
 _Bool _if_conditional436;
+int __result207__;
 _Bool _if_conditional437;
+_Bool _if_conditional438;
 int __result208__;
 void* right_value476;
 void* right_value477;
@@ -10978,42 +10989,42 @@ _Bool come_debug_324;
 _Bool come_malloc_325;
 _Bool come_str_326;
 int i_327;
-_Bool _if_conditional438;
+_Bool _if_conditional439;
 void* right_value484;
 char* __dec_obj127;
-_Bool _if_conditional439;
 _Bool _if_conditional440;
 _Bool _if_conditional441;
 _Bool _if_conditional442;
 _Bool _if_conditional443;
 _Bool _if_conditional444;
-void* right_value485;
 _Bool _if_conditional445;
+void* right_value485;
+_Bool _if_conditional446;
 void* right_value486;
 void* right_value487;
 void* right_value488;
-_Bool _if_conditional446;
+_Bool _if_conditional447;
 void* right_value489;
 void* right_value490;
 void* right_value491;
 void* right_value492;
-_Bool _if_conditional447;
 _Bool _if_conditional448;
 _Bool _if_conditional449;
+_Bool _if_conditional450;
 void* right_value493;
 void* right_value494;
-_Bool _if_conditional450;
 _Bool _if_conditional451;
 _Bool _if_conditional452;
 _Bool _if_conditional453;
 _Bool _if_conditional454;
-void* right_value495;
 _Bool _if_conditional455;
+void* right_value495;
+_Bool _if_conditional456;
 void* right_value496;
 void* right_value497;
 void* right_value498;
-_Bool _if_conditional456;
 _Bool _if_conditional457;
+_Bool _if_conditional458;
 struct list$1charph* o2_saved_328;
 char* it_329;
 struct sInfo info_330;
@@ -11059,7 +11070,7 @@ struct list$1charph* __dec_obj140;
 void* right_value524;
 void* right_value525;
 struct map$2charphsClassph* __dec_obj141;
-_Bool _if_conditional458;
+_Bool _if_conditional459;
 void* right_value526;
 void* right_value527;
 void* right_value528;
@@ -11068,21 +11079,21 @@ void* right_value529;
 void* right_value530;
 void* right_value531;
 struct buffer* __dec_obj143;
-_Bool _if_conditional459;
+_Bool _if_conditional460;
 void* right_value532;
 char* __dec_obj144;
 char* __dec_obj145;
-_Bool _if_conditional460;
 _Bool _if_conditional461;
 _Bool _if_conditional462;
 _Bool _if_conditional463;
 _Bool _if_conditional464;
+_Bool _if_conditional465;
 struct sInfo info_332;
 void* right_value533;
 char* __dec_obj146;
 void* right_value534;
 char* __dec_obj147;
-_Bool _if_conditional467;
+_Bool _if_conditional468;
 void* right_value535;
 char* __dec_obj148;
 char* __dec_obj149;
@@ -11253,7 +11264,7 @@ right_value535 = (void*)0;
 memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
     # 1016 "02transpile.c"
     # 627 "02transpile.c"
-    if(_if_conditional336=charp_operator_equals(argv[1],"header")&&argc>=3,    _if_conditional336) {
+    if(_if_conditional337=charp_operator_equals(argv[1],"header")&&argc>=3,    _if_conditional337) {
         # 628 "02transpile.c"
         gProgramName=argv[0];
         # 630 "02transpile.c"
@@ -11295,7 +11306,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
         for(        i_290=2;        i_290<argc;        i_290++        ){
             # 706 "02transpile.c"
             # 644 "02transpile.c"
-            if(_if_conditional337=charp_operator_equals(argv[i_290],"-o")&&i_290+1<argc,            _if_conditional337) {
+            if(_if_conditional338=charp_operator_equals(argv[i_290],"-o")&&i_290+1<argc,            _if_conditional338) {
                 # 645 "02transpile.c"
                 __dec_obj104=output_file_name_284;
                 output_file_name_284=(char*)come_increment_ref_count(((char*)(right_value397=__builtin_string(argv[i_290+1]))));
@@ -11307,35 +11318,35 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
             else {
                 # 706 "02transpile.c"
                 # 648 "02transpile.c"
-                if(_if_conditional338=charp_operator_equals(argv[i_290],"-str"),                _if_conditional338) {
+                if(_if_conditional339=charp_operator_equals(argv[i_290],"-str"),                _if_conditional339) {
                     # 649 "02transpile.c"
                     come_str_289=(_Bool)1;
                 }
                 else {
                     # 706 "02transpile.c"
                     # 651 "02transpile.c"
-                    if(_if_conditional339=charp_operator_equals(argv[i_290],"-leak"),                    _if_conditional339) {
+                    if(_if_conditional340=charp_operator_equals(argv[i_290],"-leak"),                    _if_conditional340) {
                         # 652 "02transpile.c"
                         come_malloc_288=(_Bool)1;
                     }
                     else {
                         # 706 "02transpile.c"
                         # 654 "02transpile.c"
-                        if(_if_conditional340=charp_operator_equals(argv[i_290],"-gc"),                        _if_conditional340) {
+                        if(_if_conditional341=charp_operator_equals(argv[i_290],"-gc"),                        _if_conditional341) {
                             # 655 "02transpile.c"
                             gComeGC=(_Bool)1;
                         }
                         else {
                             # 706 "02transpile.c"
                             # 657 "02transpile.c"
-                            if(_if_conditional341=charp_operator_equals(argv[i_290],"-g"),                            _if_conditional341) {
+                            if(_if_conditional342=charp_operator_equals(argv[i_290],"-g"),                            _if_conditional342) {
                                 # 658 "02transpile.c"
                                 buffer_append_str(clang_option_277,"-g ");
                             }
                             else {
                                 # 706 "02transpile.c"
                                 # 660 "02transpile.c"
-                                if(_if_conditional342=charp_operator_equals(argv[i_290],"-cg"),                                _if_conditional342) {
+                                if(_if_conditional343=charp_operator_equals(argv[i_290],"-cg"),                                _if_conditional343) {
                                     # 661 "02transpile.c"
                                     buffer_append_str(clang_option_277,"-g ");
                                     # 662 "02transpile.c"
@@ -11344,22 +11355,22 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                 else {
                                     # 706 "02transpile.c"
                                     # 664 "02transpile.c"
-                                    if(_if_conditional343=charp_operator_equals(argv[i_290],"-common-header"),                                    _if_conditional343) {
+                                    if(_if_conditional344=charp_operator_equals(argv[i_290],"-common-header"),                                    _if_conditional344) {
                                         # 665 "02transpile.c"
                                         gCommonHeader=(_Bool)1;
                                     }
                                     else {
                                         # 706 "02transpile.c"
                                         # 667 "02transpile.c"
-                                        if(_if_conditional344=charp_operator_equals(argv[i_290],"-original-position"),                                        _if_conditional344) {
+                                        if(_if_conditional345=charp_operator_equals(argv[i_290],"-original-position"),                                        _if_conditional345) {
                                             # 668 "02transpile.c"
                                             gComeOriginalSourcePosition=(_Bool)0;
                                         }
                                         else {
                                             # 706 "02transpile.c"
                                             # 670 "02transpile.c"
-                                            if(_if_conditional345=string_operator_equals(((char*)(right_value398=charp_operator_load_range_element(argv[i_290],0,2))),"-O"),                                            right_value398 = come_decrement_ref_count2(right_value398, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
-                                            _if_conditional345) {
+                                            if(_if_conditional346=string_operator_equals(((char*)(right_value398=charp_operator_load_range_element(argv[i_290],0,2))),"-O"),                                            right_value398 = come_decrement_ref_count2(right_value398, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
+                                            _if_conditional346) {
                                                 # 671 "02transpile.c"
                                                 buffer_append_str(clang_option_277,((char*)(right_value400=xsprintf(" \%s ",((char*)(right_value399=charp_to_string(argv[i_290])))))));
                                                 right_value399 = come_decrement_ref_count2(right_value399, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -11370,8 +11381,8 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                             else {
                                                 # 706 "02transpile.c"
                                                 # 674 "02transpile.c"
-                                                if(_if_conditional346=string_operator_equals(((char*)(right_value401=charp_operator_load_range_element(argv[i_290],0,2))),"-D"),                                                right_value401 = come_decrement_ref_count2(right_value401, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
-                                                _if_conditional346) {
+                                                if(_if_conditional347=string_operator_equals(((char*)(right_value401=charp_operator_load_range_element(argv[i_290],0,2))),"-D"),                                                right_value401 = come_decrement_ref_count2(right_value401, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
+                                                _if_conditional347) {
                                                     # 675 "02transpile.c"
                                                     buffer_append_str(cpp_option_278,((char*)(right_value403=xsprintf(" \%s ",((char*)(right_value402=charp_to_string(argv[i_290])))))));
                                                     right_value402 = come_decrement_ref_count2(right_value402, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -11384,7 +11395,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                                 else {
                                                     # 706 "02transpile.c"
                                                     # 678 "02transpile.c"
-                                                    if(_if_conditional347=charp_operator_equals(argv[i_290],"-v"),                                                    _if_conditional347) {
+                                                    if(_if_conditional348=charp_operator_equals(argv[i_290],"-v"),                                                    _if_conditional348) {
                                                         # 679 "02transpile.c"
                                                         buffer_append_str(clang_option_277,"-v ");
                                                         # 680 "02transpile.c"
@@ -11393,7 +11404,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                                     else {
                                                         # 706 "02transpile.c"
                                                         # 682 "02transpile.c"
-                                                        if(_if_conditional348=strlen(argv[i_290])>=2&&memcmp(argv[i_290],"-I",strlen("-I"))==0,                                                        _if_conditional348) {
+                                                        if(_if_conditional349=strlen(argv[i_290])>=2&&memcmp(argv[i_290],"-I",strlen("-I"))==0,                                                        _if_conditional349) {
                                                             # 683 "02transpile.c"
                                                             buffer_append_str(cpp_option_278,((char*)(right_value407=charp_operator_add(" ",((char*)(right_value406=charp_operator_add(argv[i_290]," ")))))));
                                                             right_value406 = come_decrement_ref_count2(right_value406, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -11402,35 +11413,35 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                                         else {
                                                             # 706 "02transpile.c"
                                                             # 685 "02transpile.c"
-                                                            if(_if_conditional349=charp_operator_equals(argv[i_290],"-gdwarf-4"),                                                            _if_conditional349) {
+                                                            if(_if_conditional350=charp_operator_equals(argv[i_290],"-gdwarf-4"),                                                            _if_conditional350) {
                                                                 # 686 "02transpile.c"
                                                                 buffer_append_str(clang_option_277,"-gdwarf-4 ");
                                                             }
                                                             else {
                                                                 # 706 "02transpile.c"
                                                                 # 688 "02transpile.c"
-                                                                if(_if_conditional350=charp_operator_equals(argv[i_290],"-s")||charp_operator_equals(argv[i_290],"-S"),                                                                _if_conditional350) {
+                                                                if(_if_conditional351=charp_operator_equals(argv[i_290],"-s")||charp_operator_equals(argv[i_290],"-S"),                                                                _if_conditional351) {
                                                                     # 689 "02transpile.c"
                                                                     output_source_file_flag_283=(_Bool)1;
                                                                 }
                                                                 else {
                                                                     # 706 "02transpile.c"
                                                                     # 691 "02transpile.c"
-                                                                    if(_if_conditional351=charp_operator_equals(argv[i_290],"-c"),                                                                    _if_conditional351) {
+                                                                    if(_if_conditional352=charp_operator_equals(argv[i_290],"-c"),                                                                    _if_conditional352) {
                                                                         # 692 "02transpile.c"
                                                                         output_object_file_281=(_Bool)1;
                                                                     }
                                                                     else {
                                                                         # 706 "02transpile.c"
                                                                         # 694 "02transpile.c"
-                                                                        if(_if_conditional352=charp_operator_equals(argv[i_290],"-E"),                                                                        _if_conditional352) {
+                                                                        if(_if_conditional353=charp_operator_equals(argv[i_290],"-E"),                                                                        _if_conditional353) {
                                                                             # 695 "02transpile.c"
                                                                             output_cpp_file_282=(_Bool)1;
                                                                         }
                                                                         else {
                                                                             # 706 "02transpile.c"
                                                                             # 697 "02transpile.c"
-                                                                            if(_if_conditional353=argv[i_290][0]==45,                                                                            _if_conditional353) {
+                                                                            if(_if_conditional354=argv[i_290][0]==45,                                                                            _if_conditional354) {
                                                                                 # 698 "02transpile.c"
                                                                                 buffer_append_str(clang_option_277,((char*)(right_value408=charp_operator_add(argv[i_290]," "))));
                                                                                 right_value408 = come_decrement_ref_count2(right_value408, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -11438,7 +11449,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                                                             else {
                                                                                 # 706 "02transpile.c"
                                                                                 # 700 "02transpile.c"
-                                                                                if(_if_conditional354=strlen(argv[i_290])>2&&memcmp(argv[i_290]+strlen(argv[i_290])-2,".o",2)==0,                                                                                _if_conditional354) {
+                                                                                if(_if_conditional355=strlen(argv[i_290])>2&&memcmp(argv[i_290]+strlen(argv[i_290])-2,".o",2)==0,                                                                                _if_conditional355) {
                                                                                     # 701 "02transpile.c"
                                                                                     list$1charph_push_back(object_files_280,(char*)come_increment_ref_count(((char*)(right_value409=__builtin_string(argv[i_290])))));
                                                                                     right_value409 = come_decrement_ref_count2(right_value409, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -11630,7 +11641,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
         clear_tmp_file(&info_296);
         # 774 "02transpile.c"
         # 769 "02transpile.c"
-        if(_if_conditional396=!cpp(&info_296),        _if_conditional396) {
+        if(_if_conditional397=!cpp(&info_296),        _if_conditional397) {
             # 770 "02transpile.c"
             printf("%s %d: transpile failed\n",info_296.sname,info_296.sline);
             # 771 "02transpile.c"
@@ -11656,12 +11667,12 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
         info_296.head=info_296.source->buf;
         # 788 "02transpile.c"
         # 779 "02transpile.c"
-        if(_if_conditional397=!output_cpp_file_282,        _if_conditional397) {
+        if(_if_conditional398=!output_cpp_file_282,        _if_conditional398) {
             # 780 "02transpile.c"
             transpile_v5(&info_296);
             # 786 "02transpile.c"
             # 782 "02transpile.c"
-            if(_if_conditional398=!output_header_file(&info_296),            _if_conditional398) {
+            if(_if_conditional399=!output_header_file(&info_296),            _if_conditional399) {
                 # 783 "02transpile.c"
                 printf("%s %d: output source file faield\n",info_296.sname,info_296.sline);
                 # 784 "02transpile.c"
@@ -11686,10 +11697,10 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
     else {
         # 1016 "02transpile.c"
         # 792 "02transpile.c"
-        if(_if_conditional425=charp_operator_equals(argv[1],"new")&&argc==3,        _if_conditional425) {
+        if(_if_conditional426=charp_operator_equals(argv[1],"new")&&argc==3,        _if_conditional426) {
             # 796 "02transpile.c"
             # 793 "02transpile.c"
-            if(_if_conditional426=!new_project(argc,argv),            _if_conditional426) {
+            if(_if_conditional427=!new_project(argc,argv),            _if_conditional427) {
                 # 794 "02transpile.c"
                 __result203__ = (_Bool)0;
                 return __result203__;
@@ -11698,10 +11709,10 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
         else {
             # 1016 "02transpile.c"
             # 797 "02transpile.c"
-            if(_if_conditional427=charp_operator_equals(argv[1],"run")&&argc==2,            _if_conditional427) {
+            if(_if_conditional428=charp_operator_equals(argv[1],"run")&&argc==2,            _if_conditional428) {
                 # 801 "02transpile.c"
                 # 798 "02transpile.c"
-                if(_if_conditional428=!run_project(argc,argv),                _if_conditional428) {
+                if(_if_conditional429=!run_project(argc,argv),                _if_conditional429) {
                     # 799 "02transpile.c"
                     __result204__ = (_Bool)0;
                     return __result204__;
@@ -11710,10 +11721,10 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
             else {
                 # 1016 "02transpile.c"
                 # 802 "02transpile.c"
-                if(_if_conditional429=charp_operator_equals(argv[1],"debug")&&argc==2,                _if_conditional429) {
+                if(_if_conditional430=charp_operator_equals(argv[1],"debug")&&argc==2,                _if_conditional430) {
                     # 806 "02transpile.c"
                     # 803 "02transpile.c"
-                    if(_if_conditional430=!debug_run_project(argc,argv),                    _if_conditional430) {
+                    if(_if_conditional431=!debug_run_project(argc,argv),                    _if_conditional431) {
                         # 804 "02transpile.c"
                         __result205__ = (_Bool)0;
                         return __result205__;
@@ -11722,10 +11733,10 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                 else {
                     # 1016 "02transpile.c"
                     # 807 "02transpile.c"
-                    if(_if_conditional431=charp_operator_equals(argv[1],"clean")&&argc==2,                    _if_conditional431) {
+                    if(_if_conditional432=charp_operator_equals(argv[1],"clean")&&argc==2,                    _if_conditional432) {
                         # 811 "02transpile.c"
                         # 808 "02transpile.c"
-                        if(_if_conditional432=!clean_project(argc,argv),                        _if_conditional432) {
+                        if(_if_conditional433=!clean_project(argc,argv),                        _if_conditional433) {
                             # 809 "02transpile.c"
                             __result206__ = (_Bool)0;
                             return __result206__;
@@ -11734,13 +11745,13 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                     else {
                         # 1016 "02transpile.c"
                         # 812 "02transpile.c"
-                        if(_if_conditional433=charp_operator_equals(argv[1],"install")&&argc>=2,                        _if_conditional433) {
+                        if(_if_conditional434=charp_operator_equals(argv[1],"install")&&argc>=2,                        _if_conditional434) {
                             # 823 "02transpile.c"
                             # 813 "02transpile.c"
-                            if(_if_conditional434=argc==2,                            _if_conditional434) {
+                            if(_if_conditional435=argc==2,                            _if_conditional435) {
                                 # 817 "02transpile.c"
                                 # 814 "02transpile.c"
-                                if(_if_conditional435=!install_project(argc,argv,"/usr/local"),                                _if_conditional435) {
+                                if(_if_conditional436=!install_project(argc,argv,"/usr/local"),                                _if_conditional436) {
                                     # 815 "02transpile.c"
                                     __result207__ = (_Bool)0;
                                     return __result207__;
@@ -11749,10 +11760,10 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                             else {
                                 # 823 "02transpile.c"
                                 # 818 "02transpile.c"
-                                if(_if_conditional436=argc>=3,                                _if_conditional436) {
+                                if(_if_conditional437=argc>=3,                                _if_conditional437) {
                                     # 822 "02transpile.c"
                                     # 819 "02transpile.c"
-                                    if(_if_conditional437=!install_project(argc,argv,argv[2]),                                    _if_conditional437) {
+                                    if(_if_conditional438=!install_project(argc,argv,argv[2]),                                    _if_conditional438) {
                                         # 820 "02transpile.c"
                                         __result208__ = (_Bool)0;
                                         return __result208__;
@@ -11799,7 +11810,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                             for(                            i_327=1;                            i_327<argc;                            i_327++                            ){
                                 # 902 "02transpile.c"
                                 # 840 "02transpile.c"
-                                if(_if_conditional438=charp_operator_equals(argv[i_327],"-o")&&i_327+1<argc,                                _if_conditional438) {
+                                if(_if_conditional439=charp_operator_equals(argv[i_327],"-o")&&i_327+1<argc,                                _if_conditional439) {
                                     # 841 "02transpile.c"
                                     __dec_obj127=output_file_name_322;
                                     output_file_name_322=(char*)come_increment_ref_count(((char*)(right_value484=__builtin_string(argv[i_327+1]))));
@@ -11811,28 +11822,28 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                 else {
                                     # 902 "02transpile.c"
                                     # 844 "02transpile.c"
-                                    if(_if_conditional439=charp_operator_equals(argv[i_327],"-str"),                                    _if_conditional439) {
+                                    if(_if_conditional440=charp_operator_equals(argv[i_327],"-str"),                                    _if_conditional440) {
                                         # 845 "02transpile.c"
                                         come_str_326=(_Bool)1;
                                     }
                                     else {
                                         # 902 "02transpile.c"
                                         # 847 "02transpile.c"
-                                        if(_if_conditional440=charp_operator_equals(argv[i_327],"-leak"),                                        _if_conditional440) {
+                                        if(_if_conditional441=charp_operator_equals(argv[i_327],"-leak"),                                        _if_conditional441) {
                                             # 848 "02transpile.c"
                                             come_malloc_325=(_Bool)1;
                                         }
                                         else {
                                             # 902 "02transpile.c"
                                             # 850 "02transpile.c"
-                                            if(_if_conditional441=charp_operator_equals(argv[i_327],"-gc"),                                            _if_conditional441) {
+                                            if(_if_conditional442=charp_operator_equals(argv[i_327],"-gc"),                                            _if_conditional442) {
                                                 # 851 "02transpile.c"
                                                 gComeGC=(_Bool)1;
                                             }
                                             else {
                                                 # 902 "02transpile.c"
                                                 # 853 "02transpile.c"
-                                                if(_if_conditional442=charp_operator_equals(argv[i_327],"-cg"),                                                _if_conditional442) {
+                                                if(_if_conditional443=charp_operator_equals(argv[i_327],"-cg"),                                                _if_conditional443) {
                                                     # 854 "02transpile.c"
                                                     come_debug_324=(_Bool)1;
                                                     # 855 "02transpile.c"
@@ -11841,22 +11852,22 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                                 else {
                                                     # 902 "02transpile.c"
                                                     # 857 "02transpile.c"
-                                                    if(_if_conditional443=charp_operator_equals(argv[i_327],"-common-header"),                                                    _if_conditional443) {
+                                                    if(_if_conditional444=charp_operator_equals(argv[i_327],"-common-header"),                                                    _if_conditional444) {
                                                         # 858 "02transpile.c"
                                                         gCommonHeader=(_Bool)1;
                                                     }
                                                     else {
                                                         # 902 "02transpile.c"
                                                         # 860 "02transpile.c"
-                                                        if(_if_conditional444=charp_operator_equals(argv[i_327],"-original-position"),                                                        _if_conditional444) {
+                                                        if(_if_conditional445=charp_operator_equals(argv[i_327],"-original-position"),                                                        _if_conditional445) {
                                                             # 861 "02transpile.c"
                                                             gComeOriginalSourcePosition=(_Bool)0;
                                                         }
                                                         else {
                                                             # 902 "02transpile.c"
                                                             # 863 "02transpile.c"
-                                                            if(_if_conditional445=string_operator_equals(((char*)(right_value485=charp_operator_load_range_element(argv[i_327],0,2))),"-O"),                                                            right_value485 = come_decrement_ref_count2(right_value485, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
-                                                            _if_conditional445) {
+                                                            if(_if_conditional446=string_operator_equals(((char*)(right_value485=charp_operator_load_range_element(argv[i_327],0,2))),"-O"),                                                            right_value485 = come_decrement_ref_count2(right_value485, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
+                                                            _if_conditional446) {
                                                                 # 864 "02transpile.c"
                                                                 buffer_append_str(clang_option_315,((char*)(right_value487=xsprintf(" \%s ",((char*)(right_value486=charp_to_string(argv[i_327])))))));
                                                                 right_value486 = come_decrement_ref_count2(right_value486, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -11867,8 +11878,8 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                                             else {
                                                                 # 902 "02transpile.c"
                                                                 # 867 "02transpile.c"
-                                                                if(_if_conditional446=string_operator_equals(((char*)(right_value488=charp_operator_load_range_element(argv[i_327],0,2))),"-D"),                                                                right_value488 = come_decrement_ref_count2(right_value488, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
-                                                                _if_conditional446) {
+                                                                if(_if_conditional447=string_operator_equals(((char*)(right_value488=charp_operator_load_range_element(argv[i_327],0,2))),"-D"),                                                                right_value488 = come_decrement_ref_count2(right_value488, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
+                                                                _if_conditional447) {
                                                                     # 868 "02transpile.c"
                                                                     buffer_append_str(cpp_option_316,((char*)(right_value490=xsprintf(" \%s ",((char*)(right_value489=charp_to_string(argv[i_327])))))));
                                                                     right_value489 = come_decrement_ref_count2(right_value489, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -11881,14 +11892,14 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                                                 else {
                                                                     # 902 "02transpile.c"
                                                                     # 871 "02transpile.c"
-                                                                    if(_if_conditional447=charp_operator_equals(argv[i_327],"-g"),                                                                    _if_conditional447) {
+                                                                    if(_if_conditional448=charp_operator_equals(argv[i_327],"-g"),                                                                    _if_conditional448) {
                                                                         # 872 "02transpile.c"
                                                                         buffer_append_str(clang_option_315,"-g ");
                                                                     }
                                                                     else {
                                                                         # 902 "02transpile.c"
                                                                         # 874 "02transpile.c"
-                                                                        if(_if_conditional448=charp_operator_equals(argv[i_327],"-v"),                                                                        _if_conditional448) {
+                                                                        if(_if_conditional449=charp_operator_equals(argv[i_327],"-v"),                                                                        _if_conditional449) {
                                                                             # 875 "02transpile.c"
                                                                             buffer_append_str(clang_option_315,"-v ");
                                                                             # 876 "02transpile.c"
@@ -11897,7 +11908,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                                                         else {
                                                                             # 902 "02transpile.c"
                                                                             # 878 "02transpile.c"
-                                                                            if(_if_conditional449=strlen(argv[i_327])>=2&&memcmp(argv[i_327],"-I",strlen("-I"))==0,                                                                            _if_conditional449) {
+                                                                            if(_if_conditional450=strlen(argv[i_327])>=2&&memcmp(argv[i_327],"-I",strlen("-I"))==0,                                                                            _if_conditional450) {
                                                                                 # 879 "02transpile.c"
                                                                                 buffer_append_str(cpp_option_316,((char*)(right_value494=charp_operator_add(" ",((char*)(right_value493=charp_operator_add(argv[i_327]," ")))))));
                                                                                 right_value493 = come_decrement_ref_count2(right_value493, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -11906,35 +11917,35 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                                                             else {
                                                                                 # 902 "02transpile.c"
                                                                                 # 881 "02transpile.c"
-                                                                                if(_if_conditional450=charp_operator_equals(argv[i_327],"-gdwarf-4"),                                                                                _if_conditional450) {
+                                                                                if(_if_conditional451=charp_operator_equals(argv[i_327],"-gdwarf-4"),                                                                                _if_conditional451) {
                                                                                     # 882 "02transpile.c"
                                                                                     buffer_append_str(clang_option_315,"-gdwarf-4 ");
                                                                                 }
                                                                                 else {
                                                                                     # 902 "02transpile.c"
                                                                                     # 884 "02transpile.c"
-                                                                                    if(_if_conditional451=charp_operator_equals(argv[i_327],"-s")||charp_operator_equals(argv[i_327],"-S"),                                                                                    _if_conditional451) {
+                                                                                    if(_if_conditional452=charp_operator_equals(argv[i_327],"-s")||charp_operator_equals(argv[i_327],"-S"),                                                                                    _if_conditional452) {
                                                                                         # 885 "02transpile.c"
                                                                                         output_source_file_flag_321=(_Bool)1;
                                                                                     }
                                                                                     else {
                                                                                         # 902 "02transpile.c"
                                                                                         # 887 "02transpile.c"
-                                                                                        if(_if_conditional452=charp_operator_equals(argv[i_327],"-c"),                                                                                        _if_conditional452) {
+                                                                                        if(_if_conditional453=charp_operator_equals(argv[i_327],"-c"),                                                                                        _if_conditional453) {
                                                                                             # 888 "02transpile.c"
                                                                                             output_object_file_319=(_Bool)1;
                                                                                         }
                                                                                         else {
                                                                                             # 902 "02transpile.c"
                                                                                             # 890 "02transpile.c"
-                                                                                            if(_if_conditional453=charp_operator_equals(argv[i_327],"-E"),                                                                                            _if_conditional453) {
+                                                                                            if(_if_conditional454=charp_operator_equals(argv[i_327],"-E"),                                                                                            _if_conditional454) {
                                                                                                 # 891 "02transpile.c"
                                                                                                 output_cpp_file_320=(_Bool)1;
                                                                                             }
                                                                                             else {
                                                                                                 # 902 "02transpile.c"
                                                                                                 # 893 "02transpile.c"
-                                                                                                if(_if_conditional454=argv[i_327][0]==45,                                                                                                _if_conditional454) {
+                                                                                                if(_if_conditional455=argv[i_327][0]==45,                                                                                                _if_conditional455) {
                                                                                                     # 894 "02transpile.c"
                                                                                                     buffer_append_str(clang_option_315,((char*)(right_value495=charp_operator_add(argv[i_327]," "))));
                                                                                                     right_value495 = come_decrement_ref_count2(right_value495, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -11942,7 +11953,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                                                                                 else {
                                                                                                     # 902 "02transpile.c"
                                                                                                     # 896 "02transpile.c"
-                                                                                                    if(_if_conditional455=strlen(argv[i_327])>2&&memcmp(argv[i_327]+strlen(argv[i_327])-2,".o",2)==0,                                                                                                    _if_conditional455) {
+                                                                                                    if(_if_conditional456=strlen(argv[i_327])>2&&memcmp(argv[i_327]+strlen(argv[i_327])-2,".o",2)==0,                                                                                                    _if_conditional456) {
                                                                                                         # 897 "02transpile.c"
                                                                                                         list$1charph_push_back(object_files_318,(char*)come_increment_ref_count(((char*)(right_value496=__builtin_string(argv[i_327])))));
                                                                                                         right_value496 = come_decrement_ref_count2(right_value496, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -12099,7 +12110,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                 clear_tmp_file(&info_330);
                                 # 954 "02transpile.c"
                                 # 949 "02transpile.c"
-                                if(_if_conditional458=!cpp(&info_330),                                _if_conditional458) {
+                                if(_if_conditional459=!cpp(&info_330),                                _if_conditional459) {
                                     # 950 "02transpile.c"
                                     printf("%s %d: transpile failed\n",info_330.sname,info_330.sline);
                                     # 951 "02transpile.c"
@@ -12140,12 +12151,12 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                 }
                                 # 988 "02transpile.c"
                                 # 966 "02transpile.c"
-                                if(_if_conditional460=!output_cpp_file_320,                                _if_conditional460) {
+                                if(_if_conditional461=!output_cpp_file_320,                                _if_conditional461) {
                                     # 967 "02transpile.c"
                                     transpile_v5(&info_330);
                                     # 974 "02transpile.c"
                                     # 969 "02transpile.c"
-                                    if(_if_conditional461=!output_source_file_v3(&info_330),                                    _if_conditional461) {
+                                    if(_if_conditional462=!output_source_file_v3(&info_330),                                    _if_conditional462) {
                                         # 970 "02transpile.c"
                                         printf("%s %d: output source file faield\n",info_330.sname,info_330.sline);
                                         # 971 "02transpile.c"
@@ -12153,7 +12164,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                     }
                                     # 987 "02transpile.c"
                                     # 974 "02transpile.c"
-                                    if(_if_conditional462=info_330.err_num>0,                                    _if_conditional462) {
+                                    if(_if_conditional463=info_330.err_num>0,                                    _if_conditional463) {
                                         # 975 "02transpile.c"
                                         printf("transpile error. err num %d\n",info_330.err_num);
                                         # 977 "02transpile.c"
@@ -12162,7 +12173,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                     else {
                                         # 985 "02transpile.c"
                                         # 980 "02transpile.c"
-                                        if(_if_conditional463=!compile(&info_330,output_object_file_319,object_files_318),                                        _if_conditional463) {
+                                        if(_if_conditional464=!compile(&info_330,output_object_file_319,object_files_318),                                        _if_conditional464) {
                                             # 981 "02transpile.c"
                                             printf("%s %d: compile faield\n",info_330.sname,info_330.sline);
                                             # 982 "02transpile.c"
@@ -12176,7 +12187,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                             come_call_finalizer2(list$1charphp_finalize,o2_saved_328, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                             # 1012 "02transpile.c"
                             # 990 "02transpile.c"
-                            if(_if_conditional464=!output_object_file_319&&!output_cpp_file_320&&(list$1charph_length(files_317)>0||list$1charph_length(object_files_318)>0),                            _if_conditional464) {
+                            if(_if_conditional465=!output_object_file_319&&!output_cpp_file_320&&(list$1charph_length(files_317)>0||list$1charph_length(object_files_318)>0),                            _if_conditional465) {
                                 # 991 "02transpile.c"
                                 # 993 "02transpile.c"
                                 memset(&info_332,0,sizeof(struct sInfo));
@@ -12255,7 +12266,7 @@ void* right_value413;
 struct buffer* buf_293;
 int n_294;
 char* it_295;
-_Bool _if_conditional358;
+_Bool _if_conditional359;
 void* right_value414;
 char* __result196__;
 memset(&__result_obj__, 0, sizeof(void*));
@@ -12277,7 +12288,7 @@ right_value414 = (void*)0;
                 buffer_append_str(buf_293,it_295);
                 # 1057 "./neo-c.h"
                 # 1053 "./neo-c.h"
-                if(_if_conditional358=n_294<list$1charph_length(self)-1,                _if_conditional358) {
+                if(_if_conditional359=n_294<list$1charph_length(self)-1,                _if_conditional359) {
                     # 1054 "./neo-c.h"
                     buffer_append_str(buf_293,sep);
                 }
@@ -12294,13 +12305,13 @@ right_value414 = (void*)0;
 
 static int list$1charph_length(struct list$1charph* self){
 void* __result_obj__;
-_Bool _if_conditional357;
+_Bool _if_conditional358;
 int __result194__;
 int __result195__;
 memset(&__result_obj__, 0, sizeof(void*));
                     # 367 "./neo-c.h"
                     # 364 "./neo-c.h"
-                    if(_if_conditional357=self==((void*)0),                    _if_conditional357) {
+                    if(_if_conditional358=self==((void*)0),                    _if_conditional358) {
                         # 365 "./neo-c.h"
                         __result194__ = 0;
                         return __result194__;
@@ -12363,11 +12374,11 @@ right_value428 = (void*)0;
 static void map$2charphsFunphp_finalize(struct map$2charphsFunph* self){
 void* __result_obj__;
 int i_298;
-_Bool _if_conditional359;
 _Bool _if_conditional360;
-int i_299;
 _Bool _if_conditional361;
+int i_299;
 _Bool _if_conditional362;
+_Bool _if_conditional363;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_298, 0, sizeof(int));
 memset(&i_299, 0, sizeof(int));
@@ -12375,10 +12386,10 @@ memset(&i_299, 0, sizeof(int));
                 for(                i_298=0;                i_298<self->size;                i_298++                ){
                     # 1136 "./neo-c.h"
                     # 1131 "./neo-c.h"
-                    if(_if_conditional359=self->item_existance[i_298],                    _if_conditional359) {
+                    if(_if_conditional360=self->item_existance[i_298],                    _if_conditional360) {
                         # 1135 "./neo-c.h"
                         # 1132 "./neo-c.h"
-                        if(_if_conditional360=1,                        _if_conditional360) {
+                        if(_if_conditional361=1,                        _if_conditional361) {
                             # 1133 "./neo-c.h"
                             come_call_finalizer2(sFun_finalize,self->items[i_298], (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         }
@@ -12390,10 +12401,10 @@ memset(&i_299, 0, sizeof(int));
                 for(                i_299=0;                i_299<self->size;                i_299++                ){
                     # 1145 "./neo-c.h"
                     # 1140 "./neo-c.h"
-                    if(_if_conditional361=self->item_existance[i_299],                    _if_conditional361) {
+                    if(_if_conditional362=self->item_existance[i_299],                    _if_conditional362) {
                         # 1144 "./neo-c.h"
                         # 1141 "./neo-c.h"
-                        if(_if_conditional362=1,                        _if_conditional362) {
+                        if(_if_conditional363=1,                        _if_conditional363) {
                             # 1142 "./neo-c.h"
                             self->keys[i_299] = come_decrement_ref_count2(self->keys[i_299], (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         }
@@ -12409,11 +12420,11 @@ memset(&i_299, 0, sizeof(int));
 
 static void map$2charphsFunph_finalize(struct map$2charphsFunph* self){
 void* __result_obj__;
-_Bool _if_conditional363;
+_Bool _if_conditional364;
 memset(&__result_obj__, 0, sizeof(void*));
             # 1 "map$2charphsFunph_finalize"
             # 0 "map$2charphsFunph_finalize"
-            if(_if_conditional363=self!=((void*)0)&&self->key_list!=((void*)0),            _if_conditional363) {
+            if(_if_conditional364=self!=((void*)0)&&self->key_list!=((void*)0),            _if_conditional364) {
                 # 0 "map$2charphsFunph_finalize"
                 come_call_finalizer2(list$1charpp_finalize,self->key_list, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
@@ -12471,7 +12482,6 @@ right_value435 = (void*)0;
 
 static void sGenericsFun_finalize(struct sGenericsFun* self){
 void* __result_obj__;
-_Bool _if_conditional364;
 _Bool _if_conditional365;
 _Bool _if_conditional366;
 _Bool _if_conditional367;
@@ -12481,64 +12491,65 @@ _Bool _if_conditional370;
 _Bool _if_conditional371;
 _Bool _if_conditional372;
 _Bool _if_conditional373;
+_Bool _if_conditional374;
 memset(&__result_obj__, 0, sizeof(void*));
                 # 1 "sGenericsFun_finalize"
                 # 0 "sGenericsFun_finalize"
-                if(_if_conditional364=self!=((void*)0)&&self->mImplType!=((void*)0),                _if_conditional364) {
+                if(_if_conditional365=self!=((void*)0)&&self->mImplType!=((void*)0),                _if_conditional365) {
                     # 0 "sGenericsFun_finalize"
                     come_call_finalizer2(sType_finalize,self->mImplType, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 }
                 # 2 "sGenericsFun_finalize"
                 # 1 "sGenericsFun_finalize"
-                if(_if_conditional365=self!=((void*)0)&&self->mGenericsTypeNames!=((void*)0),                _if_conditional365) {
+                if(_if_conditional366=self!=((void*)0)&&self->mGenericsTypeNames!=((void*)0),                _if_conditional366) {
                     # 1 "sGenericsFun_finalize"
                     come_call_finalizer2(list$1charphp_finalize,self->mGenericsTypeNames, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 }
                 # 3 "sGenericsFun_finalize"
                 # 2 "sGenericsFun_finalize"
-                if(_if_conditional366=self!=((void*)0)&&self->mMethodGenericsTypeNames!=((void*)0),                _if_conditional366) {
+                if(_if_conditional367=self!=((void*)0)&&self->mMethodGenericsTypeNames!=((void*)0),                _if_conditional367) {
                     # 2 "sGenericsFun_finalize"
                     come_call_finalizer2(list$1charphp_finalize,self->mMethodGenericsTypeNames, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 }
                 # 4 "sGenericsFun_finalize"
                 # 3 "sGenericsFun_finalize"
-                if(_if_conditional367=self!=((void*)0)&&self->mName!=((void*)0),                _if_conditional367) {
+                if(_if_conditional368=self!=((void*)0)&&self->mName!=((void*)0),                _if_conditional368) {
                     # 3 "sGenericsFun_finalize"
                     self->mName = come_decrement_ref_count2(self->mName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 }
                 # 5 "sGenericsFun_finalize"
                 # 4 "sGenericsFun_finalize"
-                if(_if_conditional368=self!=((void*)0)&&self->mResultType!=((void*)0),                _if_conditional368) {
+                if(_if_conditional369=self!=((void*)0)&&self->mResultType!=((void*)0),                _if_conditional369) {
                     # 4 "sGenericsFun_finalize"
                     come_call_finalizer2(sType_finalize,self->mResultType, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 }
                 # 6 "sGenericsFun_finalize"
                 # 5 "sGenericsFun_finalize"
-                if(_if_conditional369=self!=((void*)0)&&self->mParamTypes!=((void*)0),                _if_conditional369) {
+                if(_if_conditional370=self!=((void*)0)&&self->mParamTypes!=((void*)0),                _if_conditional370) {
                     # 5 "sGenericsFun_finalize"
                     come_call_finalizer2(list$1sTypephp_finalize,self->mParamTypes, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 }
                 # 7 "sGenericsFun_finalize"
                 # 6 "sGenericsFun_finalize"
-                if(_if_conditional370=self!=((void*)0)&&self->mParamNames!=((void*)0),                _if_conditional370) {
+                if(_if_conditional371=self!=((void*)0)&&self->mParamNames!=((void*)0),                _if_conditional371) {
                     # 6 "sGenericsFun_finalize"
                     come_call_finalizer2(list$1charphp_finalize,self->mParamNames, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 }
                 # 8 "sGenericsFun_finalize"
                 # 7 "sGenericsFun_finalize"
-                if(_if_conditional371=self!=((void*)0)&&self->mParamDefaultParametors!=((void*)0),                _if_conditional371) {
+                if(_if_conditional372=self!=((void*)0)&&self->mParamDefaultParametors!=((void*)0),                _if_conditional372) {
                     # 7 "sGenericsFun_finalize"
                     come_call_finalizer2(list$1charphp_finalize,self->mParamDefaultParametors, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 }
                 # 9 "sGenericsFun_finalize"
                 # 8 "sGenericsFun_finalize"
-                if(_if_conditional372=self!=((void*)0)&&self->mBlock!=((void*)0),                _if_conditional372) {
+                if(_if_conditional373=self!=((void*)0)&&self->mBlock!=((void*)0),                _if_conditional373) {
                     # 8 "sGenericsFun_finalize"
                     self->mBlock = come_decrement_ref_count2(self->mBlock, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 }
                 # 10 "sGenericsFun_finalize"
                 # 9 "sGenericsFun_finalize"
-                if(_if_conditional373=self!=((void*)0)&&self->mGenericsSName!=((void*)0),                _if_conditional373) {
+                if(_if_conditional374=self!=((void*)0)&&self->mGenericsSName!=((void*)0),                _if_conditional374) {
                     # 9 "sGenericsFun_finalize"
                     self->mGenericsSName = come_decrement_ref_count2(self->mGenericsSName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 }
@@ -12547,11 +12558,11 @@ memset(&__result_obj__, 0, sizeof(void*));
 static void map$2charphsGenericsFunphp_finalize(struct map$2charphsGenericsFunph* self){
 void* __result_obj__;
 int i_301;
-_Bool _if_conditional374;
 _Bool _if_conditional375;
-int i_302;
 _Bool _if_conditional376;
+int i_302;
 _Bool _if_conditional377;
+_Bool _if_conditional378;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_301, 0, sizeof(int));
 memset(&i_302, 0, sizeof(int));
@@ -12559,10 +12570,10 @@ memset(&i_302, 0, sizeof(int));
                 for(                i_301=0;                i_301<self->size;                i_301++                ){
                     # 1136 "./neo-c.h"
                     # 1131 "./neo-c.h"
-                    if(_if_conditional374=self->item_existance[i_301],                    _if_conditional374) {
+                    if(_if_conditional375=self->item_existance[i_301],                    _if_conditional375) {
                         # 1135 "./neo-c.h"
                         # 1132 "./neo-c.h"
-                        if(_if_conditional375=1,                        _if_conditional375) {
+                        if(_if_conditional376=1,                        _if_conditional376) {
                             # 1133 "./neo-c.h"
                             come_call_finalizer2(sGenericsFun_finalize,self->items[i_301], (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         }
@@ -12574,10 +12585,10 @@ memset(&i_302, 0, sizeof(int));
                 for(                i_302=0;                i_302<self->size;                i_302++                ){
                     # 1145 "./neo-c.h"
                     # 1140 "./neo-c.h"
-                    if(_if_conditional376=self->item_existance[i_302],                    _if_conditional376) {
+                    if(_if_conditional377=self->item_existance[i_302],                    _if_conditional377) {
                         # 1144 "./neo-c.h"
                         # 1141 "./neo-c.h"
-                        if(_if_conditional377=1,                        _if_conditional377) {
+                        if(_if_conditional378=1,                        _if_conditional378) {
                             # 1142 "./neo-c.h"
                             self->keys[i_302] = come_decrement_ref_count2(self->keys[i_302], (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         }
@@ -12593,11 +12604,11 @@ memset(&i_302, 0, sizeof(int));
 
 static void map$2charphsGenericsFunph_finalize(struct map$2charphsGenericsFunph* self){
 void* __result_obj__;
-_Bool _if_conditional378;
+_Bool _if_conditional379;
 memset(&__result_obj__, 0, sizeof(void*));
             # 1 "map$2charphsGenericsFunph_finalize"
             # 0 "map$2charphsGenericsFunph_finalize"
-            if(_if_conditional378=self!=((void*)0)&&self->key_list!=((void*)0),            _if_conditional378) {
+            if(_if_conditional379=self!=((void*)0)&&self->key_list!=((void*)0),            _if_conditional379) {
                 # 0 "map$2charphsGenericsFunph_finalize"
                 come_call_finalizer2(list$1charpp_finalize,self->key_list, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
@@ -12656,11 +12667,11 @@ right_value442 = (void*)0;
 static void map$2charphsClassphp_finalize(struct map$2charphsClassph* self){
 void* __result_obj__;
 int i_304;
-_Bool _if_conditional379;
 _Bool _if_conditional380;
-int i_305;
 _Bool _if_conditional381;
+int i_305;
 _Bool _if_conditional382;
+_Bool _if_conditional383;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_304, 0, sizeof(int));
 memset(&i_305, 0, sizeof(int));
@@ -12668,10 +12679,10 @@ memset(&i_305, 0, sizeof(int));
                 for(                i_304=0;                i_304<self->size;                i_304++                ){
                     # 1136 "./neo-c.h"
                     # 1131 "./neo-c.h"
-                    if(_if_conditional379=self->item_existance[i_304],                    _if_conditional379) {
+                    if(_if_conditional380=self->item_existance[i_304],                    _if_conditional380) {
                         # 1135 "./neo-c.h"
                         # 1132 "./neo-c.h"
-                        if(_if_conditional380=1,                        _if_conditional380) {
+                        if(_if_conditional381=1,                        _if_conditional381) {
                             # 1133 "./neo-c.h"
                             come_call_finalizer2(sClass_finalize,self->items[i_304], (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         }
@@ -12683,10 +12694,10 @@ memset(&i_305, 0, sizeof(int));
                 for(                i_305=0;                i_305<self->size;                i_305++                ){
                     # 1145 "./neo-c.h"
                     # 1140 "./neo-c.h"
-                    if(_if_conditional381=self->item_existance[i_305],                    _if_conditional381) {
+                    if(_if_conditional382=self->item_existance[i_305],                    _if_conditional382) {
                         # 1144 "./neo-c.h"
                         # 1141 "./neo-c.h"
-                        if(_if_conditional382=1,                        _if_conditional382) {
+                        if(_if_conditional383=1,                        _if_conditional383) {
                             # 1142 "./neo-c.h"
                             self->keys[i_305] = come_decrement_ref_count2(self->keys[i_305], (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         }
@@ -12702,11 +12713,11 @@ memset(&i_305, 0, sizeof(int));
 
 static void map$2charphsClassph_finalize(struct map$2charphsClassph* self){
 void* __result_obj__;
-_Bool _if_conditional383;
+_Bool _if_conditional384;
 memset(&__result_obj__, 0, sizeof(void*));
             # 1 "map$2charphsClassph_finalize"
             # 0 "map$2charphsClassph_finalize"
-            if(_if_conditional383=self!=((void*)0)&&self->key_list!=((void*)0),            _if_conditional383) {
+            if(_if_conditional384=self!=((void*)0)&&self->key_list!=((void*)0),            _if_conditional384) {
                 # 0 "map$2charphsClassph_finalize"
                 come_call_finalizer2(list$1charpp_finalize,self->key_list, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
@@ -12765,11 +12776,11 @@ right_value449 = (void*)0;
 static void map$2charphsTypephp_finalize(struct map$2charphsTypeph* self){
 void* __result_obj__;
 int i_307;
-_Bool _if_conditional384;
 _Bool _if_conditional385;
-int i_308;
 _Bool _if_conditional386;
+int i_308;
 _Bool _if_conditional387;
+_Bool _if_conditional388;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_307, 0, sizeof(int));
 memset(&i_308, 0, sizeof(int));
@@ -12777,10 +12788,10 @@ memset(&i_308, 0, sizeof(int));
                 for(                i_307=0;                i_307<self->size;                i_307++                ){
                     # 1136 "./neo-c.h"
                     # 1131 "./neo-c.h"
-                    if(_if_conditional384=self->item_existance[i_307],                    _if_conditional384) {
+                    if(_if_conditional385=self->item_existance[i_307],                    _if_conditional385) {
                         # 1135 "./neo-c.h"
                         # 1132 "./neo-c.h"
-                        if(_if_conditional385=1,                        _if_conditional385) {
+                        if(_if_conditional386=1,                        _if_conditional386) {
                             # 1133 "./neo-c.h"
                             come_call_finalizer2(sType_finalize,self->items[i_307], (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         }
@@ -12792,10 +12803,10 @@ memset(&i_308, 0, sizeof(int));
                 for(                i_308=0;                i_308<self->size;                i_308++                ){
                     # 1145 "./neo-c.h"
                     # 1140 "./neo-c.h"
-                    if(_if_conditional386=self->item_existance[i_308],                    _if_conditional386) {
+                    if(_if_conditional387=self->item_existance[i_308],                    _if_conditional387) {
                         # 1144 "./neo-c.h"
                         # 1141 "./neo-c.h"
-                        if(_if_conditional387=1,                        _if_conditional387) {
+                        if(_if_conditional388=1,                        _if_conditional388) {
                             # 1142 "./neo-c.h"
                             self->keys[i_308] = come_decrement_ref_count2(self->keys[i_308], (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         }
@@ -12811,11 +12822,11 @@ memset(&i_308, 0, sizeof(int));
 
 static void map$2charphsTypeph_finalize(struct map$2charphsTypeph* self){
 void* __result_obj__;
-_Bool _if_conditional388;
+_Bool _if_conditional389;
 memset(&__result_obj__, 0, sizeof(void*));
             # 1 "map$2charphsTypeph_finalize"
             # 0 "map$2charphsTypeph_finalize"
-            if(_if_conditional388=self!=((void*)0)&&self->key_list!=((void*)0),            _if_conditional388) {
+            if(_if_conditional389=self!=((void*)0)&&self->key_list!=((void*)0),            _if_conditional389) {
                 # 0 "map$2charphsTypeph_finalize"
                 come_call_finalizer2(list$1charpp_finalize,self->key_list, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
@@ -12861,11 +12872,11 @@ memset(&prev_it_310, 0, sizeof(struct list_item$1sRightValueObjectph*));
 
 static void list_item$1sRightValueObjectphp_finalize(struct list_item$1sRightValueObjectph* self){
 void* __result_obj__;
-_Bool _if_conditional389;
+_Bool _if_conditional390;
 memset(&__result_obj__, 0, sizeof(void*));
                         # 1 "list_item$1sRightValueObjectphp_finalize"
                         # 0 "list_item$1sRightValueObjectphp_finalize"
-                        if(_if_conditional389=self!=((void*)0)&&self->item!=((void*)0),                        _if_conditional389) {
+                        if(_if_conditional390=self!=((void*)0)&&self->item!=((void*)0),                        _if_conditional390) {
                             # 0 "list_item$1sRightValueObjectphp_finalize"
                             come_call_finalizer2(sRightValueObject_finalize,self->item, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         }
@@ -12873,25 +12884,25 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static void sRightValueObject_finalize(struct sRightValueObject* self){
 void* __result_obj__;
-_Bool _if_conditional390;
 _Bool _if_conditional391;
 _Bool _if_conditional392;
+_Bool _if_conditional393;
 memset(&__result_obj__, 0, sizeof(void*));
                                 # 1 "sRightValueObject_finalize"
                                 # 0 "sRightValueObject_finalize"
-                                if(_if_conditional390=self!=((void*)0)&&self->mType!=((void*)0),                                _if_conditional390) {
+                                if(_if_conditional391=self!=((void*)0)&&self->mType!=((void*)0),                                _if_conditional391) {
                                     # 0 "sRightValueObject_finalize"
                                     come_call_finalizer2(sType_finalize,self->mType, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 }
                                 # 2 "sRightValueObject_finalize"
                                 # 1 "sRightValueObject_finalize"
-                                if(_if_conditional391=self!=((void*)0)&&self->mVarName!=((void*)0),                                _if_conditional391) {
+                                if(_if_conditional392=self!=((void*)0)&&self->mVarName!=((void*)0),                                _if_conditional392) {
                                     # 1 "sRightValueObject_finalize"
                                     self->mVarName = come_decrement_ref_count2(self->mVarName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                 }
                                 # 3 "sRightValueObject_finalize"
                                 # 2 "sRightValueObject_finalize"
-                                if(_if_conditional392=self!=((void*)0)&&self->mFunName!=((void*)0),                                _if_conditional392) {
+                                if(_if_conditional393=self!=((void*)0)&&self->mFunName!=((void*)0),                                _if_conditional393) {
                                     # 2 "sRightValueObject_finalize"
                                     self->mFunName = come_decrement_ref_count2(self->mFunName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                 }
@@ -12942,11 +12953,11 @@ memset(&prev_it_312, 0, sizeof(struct list_item$1CVALUEph*));
 
 static void list_item$1CVALUEphp_finalize(struct list_item$1CVALUEph* self){
 void* __result_obj__;
-_Bool _if_conditional393;
+_Bool _if_conditional394;
 memset(&__result_obj__, 0, sizeof(void*));
                         # 1 "list_item$1CVALUEphp_finalize"
                         # 0 "list_item$1CVALUEphp_finalize"
-                        if(_if_conditional393=self!=((void*)0)&&self->item!=((void*)0),                        _if_conditional393) {
+                        if(_if_conditional394=self!=((void*)0)&&self->item!=((void*)0),                        _if_conditional394) {
                             # 0 "list_item$1CVALUEphp_finalize"
                             come_call_finalizer2(CVALUE_finalize,self->item, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         }
@@ -12954,18 +12965,18 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static void CVALUE_finalize(struct CVALUE* self){
 void* __result_obj__;
-_Bool _if_conditional394;
 _Bool _if_conditional395;
+_Bool _if_conditional396;
 memset(&__result_obj__, 0, sizeof(void*));
                                 # 1 "CVALUE_finalize"
                                 # 0 "CVALUE_finalize"
-                                if(_if_conditional394=self!=((void*)0)&&self->c_value!=((void*)0),                                _if_conditional394) {
+                                if(_if_conditional395=self!=((void*)0)&&self->c_value!=((void*)0),                                _if_conditional395) {
                                     # 0 "CVALUE_finalize"
                                     self->c_value = come_decrement_ref_count2(self->c_value, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                 }
                                 # 2 "CVALUE_finalize"
                                 # 1 "CVALUE_finalize"
-                                if(_if_conditional395=self!=((void*)0)&&self->type!=((void*)0),                                _if_conditional395) {
+                                if(_if_conditional396=self!=((void*)0)&&self->type!=((void*)0),                                _if_conditional396) {
                                     # 1 "CVALUE_finalize"
                                     come_call_finalizer2(sType_finalize,self->type, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 }
@@ -12978,7 +12989,6 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static void sInfo_finalize(struct sInfo* self){
 void* __result_obj__;
-_Bool _if_conditional399;
 _Bool _if_conditional400;
 _Bool _if_conditional401;
 _Bool _if_conditional402;
@@ -13004,160 +13014,161 @@ _Bool _if_conditional421;
 _Bool _if_conditional422;
 _Bool _if_conditional423;
 _Bool _if_conditional424;
+_Bool _if_conditional425;
 memset(&__result_obj__, 0, sizeof(void*));
             # 1 "sInfo_finalize"
             # 0 "sInfo_finalize"
-            if(_if_conditional399=self!=((void*)0)&&self->original_source!=((void*)0),            _if_conditional399) {
+            if(_if_conditional400=self!=((void*)0)&&self->original_source!=((void*)0),            _if_conditional400) {
                 # 0 "sInfo_finalize"
                 come_call_finalizer2(buffer_finalize,self->original_source, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
             # 2 "sInfo_finalize"
             # 1 "sInfo_finalize"
-            if(_if_conditional400=self!=((void*)0)&&self->source!=((void*)0),            _if_conditional400) {
+            if(_if_conditional401=self!=((void*)0)&&self->source!=((void*)0),            _if_conditional401) {
                 # 1 "sInfo_finalize"
                 come_call_finalizer2(buffer_finalize,self->source, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
             # 3 "sInfo_finalize"
             # 2 "sInfo_finalize"
-            if(_if_conditional401=self!=((void*)0)&&self->sname!=((void*)0),            _if_conditional401) {
+            if(_if_conditional402=self!=((void*)0)&&self->sname!=((void*)0),            _if_conditional402) {
                 # 2 "sInfo_finalize"
                 self->sname = come_decrement_ref_count2(self->sname, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
             # 4 "sInfo_finalize"
             # 3 "sInfo_finalize"
-            if(_if_conditional402=self!=((void*)0)&&self->base_sname!=((void*)0),            _if_conditional402) {
+            if(_if_conditional403=self!=((void*)0)&&self->base_sname!=((void*)0),            _if_conditional403) {
                 # 3 "sInfo_finalize"
                 self->base_sname = come_decrement_ref_count2(self->base_sname, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
             # 5 "sInfo_finalize"
             # 4 "sInfo_finalize"
-            if(_if_conditional403=self!=((void*)0)&&self->err_line!=((void*)0),            _if_conditional403) {
+            if(_if_conditional404=self!=((void*)0)&&self->err_line!=((void*)0),            _if_conditional404) {
                 # 4 "sInfo_finalize"
                 self->err_line = come_decrement_ref_count2(self->err_line, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
             # 6 "sInfo_finalize"
             # 5 "sInfo_finalize"
-            if(_if_conditional404=self!=((void*)0)&&self->clang_option!=((void*)0),            _if_conditional404) {
+            if(_if_conditional405=self!=((void*)0)&&self->clang_option!=((void*)0),            _if_conditional405) {
                 # 5 "sInfo_finalize"
                 self->clang_option = come_decrement_ref_count2(self->clang_option, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
             # 7 "sInfo_finalize"
             # 6 "sInfo_finalize"
-            if(_if_conditional405=self!=((void*)0)&&self->cpp_option!=((void*)0),            _if_conditional405) {
+            if(_if_conditional406=self!=((void*)0)&&self->cpp_option!=((void*)0),            _if_conditional406) {
                 # 6 "sInfo_finalize"
                 self->cpp_option = come_decrement_ref_count2(self->cpp_option, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
             # 8 "sInfo_finalize"
             # 7 "sInfo_finalize"
-            if(_if_conditional406=self!=((void*)0)&&self->come_fun_name!=((void*)0),            _if_conditional406) {
+            if(_if_conditional407=self!=((void*)0)&&self->come_fun_name!=((void*)0),            _if_conditional407) {
                 # 7 "sInfo_finalize"
                 self->come_fun_name = come_decrement_ref_count2(self->come_fun_name, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
             # 9 "sInfo_finalize"
             # 8 "sInfo_finalize"
-            if(_if_conditional407=self!=((void*)0)&&self->funcs!=((void*)0),            _if_conditional407) {
+            if(_if_conditional408=self!=((void*)0)&&self->funcs!=((void*)0),            _if_conditional408) {
                 # 8 "sInfo_finalize"
                 come_call_finalizer2(map$2charphsFunphp_finalize,self->funcs, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
             # 10 "sInfo_finalize"
             # 9 "sInfo_finalize"
-            if(_if_conditional408=self!=((void*)0)&&self->generics_funcs!=((void*)0),            _if_conditional408) {
+            if(_if_conditional409=self!=((void*)0)&&self->generics_funcs!=((void*)0),            _if_conditional409) {
                 # 9 "sInfo_finalize"
                 come_call_finalizer2(map$2charphsGenericsFunphp_finalize,self->generics_funcs, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
             # 11 "sInfo_finalize"
             # 10 "sInfo_finalize"
-            if(_if_conditional409=self!=((void*)0)&&self->classes!=((void*)0),            _if_conditional409) {
+            if(_if_conditional410=self!=((void*)0)&&self->classes!=((void*)0),            _if_conditional410) {
                 # 10 "sInfo_finalize"
                 come_call_finalizer2(map$2charphsClassphp_finalize,self->classes, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
             # 12 "sInfo_finalize"
             # 11 "sInfo_finalize"
-            if(_if_conditional410=self!=((void*)0)&&self->types!=((void*)0),            _if_conditional410) {
+            if(_if_conditional411=self!=((void*)0)&&self->types!=((void*)0),            _if_conditional411) {
                 # 11 "sInfo_finalize"
                 come_call_finalizer2(map$2charphsTypephp_finalize,self->types, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
             # 13 "sInfo_finalize"
             # 12 "sInfo_finalize"
-            if(_if_conditional411=self!=((void*)0)&&self->generics_classes!=((void*)0),            _if_conditional411) {
+            if(_if_conditional412=self!=((void*)0)&&self->generics_classes!=((void*)0),            _if_conditional412) {
                 # 12 "sInfo_finalize"
                 come_call_finalizer2(map$2charphsClassphp_finalize,self->generics_classes, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
             # 14 "sInfo_finalize"
             # 13 "sInfo_finalize"
-            if(_if_conditional412=self!=((void*)0)&&self->module!=((void*)0),            _if_conditional412) {
+            if(_if_conditional413=self!=((void*)0)&&self->module!=((void*)0),            _if_conditional413) {
                 # 13 "sInfo_finalize"
                 come_call_finalizer2(sModule_finalize,self->module, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
             # 15 "sInfo_finalize"
             # 14 "sInfo_finalize"
-            if(_if_conditional413=self!=((void*)0)&&self->type!=((void*)0),            _if_conditional413) {
+            if(_if_conditional414=self!=((void*)0)&&self->type!=((void*)0),            _if_conditional414) {
                 # 14 "sInfo_finalize"
                 come_call_finalizer2(sType_finalize,self->type, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
             # 16 "sInfo_finalize"
             # 15 "sInfo_finalize"
-            if(_if_conditional414=self!=((void*)0)&&self->right_value_objects!=((void*)0),            _if_conditional414) {
+            if(_if_conditional415=self!=((void*)0)&&self->right_value_objects!=((void*)0),            _if_conditional415) {
                 # 15 "sInfo_finalize"
                 come_call_finalizer2(list$1sRightValueObjectphp_finalize,self->right_value_objects, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
             # 17 "sInfo_finalize"
             # 16 "sInfo_finalize"
-            if(_if_conditional415=self!=((void*)0)&&self->generics_type!=((void*)0),            _if_conditional415) {
+            if(_if_conditional416=self!=((void*)0)&&self->generics_type!=((void*)0),            _if_conditional416) {
                 # 16 "sInfo_finalize"
                 come_call_finalizer2(sType_finalize,self->generics_type, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
             # 18 "sInfo_finalize"
             # 17 "sInfo_finalize"
-            if(_if_conditional416=self!=((void*)0)&&self->method_generics_types!=((void*)0),            _if_conditional416) {
+            if(_if_conditional417=self!=((void*)0)&&self->method_generics_types!=((void*)0),            _if_conditional417) {
                 # 17 "sInfo_finalize"
                 come_call_finalizer2(list$1sTypephp_finalize,self->method_generics_types, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
             # 19 "sInfo_finalize"
             # 18 "sInfo_finalize"
-            if(_if_conditional417=self!=((void*)0)&&self->stack!=((void*)0),            _if_conditional417) {
+            if(_if_conditional418=self!=((void*)0)&&self->stack!=((void*)0),            _if_conditional418) {
                 # 18 "sInfo_finalize"
                 come_call_finalizer2(list$1CVALUEphp_finalize,self->stack, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
             # 20 "sInfo_finalize"
             # 19 "sInfo_finalize"
-            if(_if_conditional418=self!=((void*)0)&&self->come_function_result_type!=((void*)0),            _if_conditional418) {
+            if(_if_conditional419=self!=((void*)0)&&self->come_function_result_type!=((void*)0),            _if_conditional419) {
                 # 19 "sInfo_finalize"
                 come_call_finalizer2(sType_finalize,self->come_function_result_type, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
             # 21 "sInfo_finalize"
             # 20 "sInfo_finalize"
-            if(_if_conditional419=self!=((void*)0)&&self->gv_table!=((void*)0),            _if_conditional419) {
+            if(_if_conditional420=self!=((void*)0)&&self->gv_table!=((void*)0),            _if_conditional420) {
                 # 20 "sInfo_finalize"
                 come_call_finalizer2(sVarTable_finalize,self->gv_table, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
             # 22 "sInfo_finalize"
             # 21 "sInfo_finalize"
-            if(_if_conditional420=self!=((void*)0)&&self->generics_type_names!=((void*)0),            _if_conditional420) {
+            if(_if_conditional421=self!=((void*)0)&&self->generics_type_names!=((void*)0),            _if_conditional421) {
                 # 21 "sInfo_finalize"
                 come_call_finalizer2(list$1charphp_finalize,self->generics_type_names, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
             # 23 "sInfo_finalize"
             # 22 "sInfo_finalize"
-            if(_if_conditional421=self!=((void*)0)&&self->method_generics_type_names!=((void*)0),            _if_conditional421) {
+            if(_if_conditional422=self!=((void*)0)&&self->method_generics_type_names!=((void*)0),            _if_conditional422) {
                 # 22 "sInfo_finalize"
                 come_call_finalizer2(list$1charphp_finalize,self->method_generics_type_names, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
             # 24 "sInfo_finalize"
             # 23 "sInfo_finalize"
-            if(_if_conditional422=self!=((void*)0)&&self->impl_type!=((void*)0),            _if_conditional422) {
+            if(_if_conditional423=self!=((void*)0)&&self->impl_type!=((void*)0),            _if_conditional423) {
                 # 23 "sInfo_finalize"
                 come_call_finalizer2(sType_finalize,self->impl_type, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
             # 25 "sInfo_finalize"
             # 24 "sInfo_finalize"
-            if(_if_conditional423=self!=((void*)0)&&self->output_file_name!=((void*)0),            _if_conditional423) {
+            if(_if_conditional424=self!=((void*)0)&&self->output_file_name!=((void*)0),            _if_conditional424) {
                 # 24 "sInfo_finalize"
                 self->output_file_name = come_decrement_ref_count2(self->output_file_name, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
             # 26 "sInfo_finalize"
             # 25 "sInfo_finalize"
-            if(_if_conditional424=self!=((void*)0)&&self->function_result_type!=((void*)0),            _if_conditional424) {
+            if(_if_conditional425=self!=((void*)0)&&self->function_result_type!=((void*)0),            _if_conditional425) {
                 # 25 "sInfo_finalize"
                 come_call_finalizer2(sType_finalize,self->function_result_type, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
@@ -13165,11 +13176,11 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static char* list$1charphp_operator_load_element(struct list$1charph* self, int position){
 void* __result_obj__;
-_Bool _if_conditional465;
+_Bool _if_conditional466;
 struct list_item$1charph* it_333;
 int i_334;
 _Bool _while_condtional38;
-_Bool _if_conditional466;
+_Bool _if_conditional467;
 char* __result209__;
 char* default_value_335;
 char* __result210__;
@@ -13179,7 +13190,7 @@ memset(&i_334, 0, sizeof(int));
 memset(&default_value_335, 0, sizeof(char*));
                                     # 686 "./neo-c.h"
                                     # 682 "./neo-c.h"
-                                    if(_if_conditional465=position<0,                                    _if_conditional465) {
+                                    if(_if_conditional466=position<0,                                    _if_conditional466) {
                                         # 683 "./neo-c.h"
                                         position+=self->len;
                                     }
@@ -13191,7 +13202,7 @@ memset(&default_value_335, 0, sizeof(char*));
                                     while(_while_condtional38=it_333!=((void*)0),                                    _while_condtional38) {
                                         # 692 "./neo-c.h"
                                         # 689 "./neo-c.h"
-                                        if(_if_conditional466=position==i_334,                                        _if_conditional466) {
+                                        if(_if_conditional467=position==i_334,                                        _if_conditional467) {
                                             # 690 "./neo-c.h"
                                             __result209__ = __result_obj__ = it_333->item;
                                             return __result209__;

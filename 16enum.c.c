@@ -207,6 +207,7 @@ extern _Bool gComeMalloc;
 extern _Bool gCommonHeader;
 extern int gComeDebugStackFrameID;
 struct sType;
+struct sClass;
 struct tuple2$2charphsTypeph
 {
     char* v1;
@@ -242,6 +243,7 @@ struct sClass
     _Bool mOutputed;
     char* mDeclareSName;
     _Bool mNobodyStruct;
+    struct sClass* mParent;
 };
 struct sInfo;
 struct sNode
@@ -1710,6 +1712,8 @@ struct sNode* string_node_v5(char* buf, char* head, int head_sline, struct sInfo
 struct sNode* post_position_operator_v5(struct sNode* node, struct sInfo* info);
 
 char* create_method_name(struct sType* obj_type, _Bool no_pointer_name, char* fun_name, struct sInfo* info, _Bool array_equal_pointer);
+
+char* create_method_name_using_class(struct sClass* obj_class, _Bool no_pointer_name, char* fun_name, struct sInfo* info, _Bool array_equal_pointer);
 
 struct sNode* expression_node_v98(struct sInfo* info);
 
@@ -4539,18 +4543,18 @@ struct list$1tuple2$2charphsNodephph* elements_153;
 _Bool _while_condtional26;
 void* right_value171;
 char* element_name_154;
-_Bool _if_conditional230;
+_Bool _if_conditional231;
 _Bool no_comma_155;
 void* right_value172;
 struct sNode* element_value_156;
-_Bool _if_conditional231;
+_Bool _if_conditional232;
 void* right_value176;
 void* right_value177;
-_Bool _if_conditional234;
+_Bool _if_conditional235;
 void* right_value178;
 void* right_value179;
-_Bool _if_conditional235;
 _Bool _if_conditional236;
+_Bool _if_conditional237;
 void* right_value180;
 void* right_value181;
 struct sNode* _inf_value1;
@@ -4620,7 +4624,7 @@ right_value187 = (void*)0;
         parse_sharp_v5(info);
         # 168 "16enum.c"
         # 148 "16enum.c"
-        if(_if_conditional230=*info->p==61,        _if_conditional230) {
+        if(_if_conditional231=*info->p==61,        _if_conditional231) {
             # 149 "16enum.c"
             info->p++;
             # 150 "16enum.c"
@@ -4636,7 +4640,7 @@ right_value187 = (void*)0;
             info->no_comma=no_comma_155;
             # 161 "16enum.c"
             # 158 "16enum.c"
-            if(_if_conditional231=!info->no_output_err,            _if_conditional231) {
+            if(_if_conditional232=!info->no_output_err,            _if_conditional232) {
                 # 159 "16enum.c"
                 list$1tuple2$2charphsNodephph_push_back(elements_153,(struct tuple2$2charphsNodeph*)come_increment_ref_count(((struct tuple2$2charphsNodeph*)(right_value177=tuple2$2charphsNodeph_initialize((struct tuple2$2charphsNodeph*)come_increment_ref_count(((struct tuple2$2charphsNodeph*)(right_value176=(struct tuple2$2charphsNodeph*)come_calloc(1, sizeof(struct tuple2$2charphsNodeph)*(1), "16enum.c", 159, "tuple2$2charphsNodeph")))),(char*)come_increment_ref_count(element_name_154),(struct sNode*)come_increment_ref_count(element_value_156))))));
                 come_call_finalizer2(tuple2$2charphsNodephp_finalize,right_value176, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -4647,7 +4651,7 @@ right_value187 = (void*)0;
         else {
             # 166 "16enum.c"
             # 163 "16enum.c"
-            if(_if_conditional234=!info->no_output_err,            _if_conditional234) {
+            if(_if_conditional235=!info->no_output_err,            _if_conditional235) {
                 # 164 "16enum.c"
                 list$1tuple2$2charphsNodephph_push_back(elements_153,(struct tuple2$2charphsNodeph*)come_increment_ref_count(((struct tuple2$2charphsNodeph*)(right_value179=tuple2$2charphsNodeph_initialize((struct tuple2$2charphsNodeph*)come_increment_ref_count(((struct tuple2$2charphsNodeph*)(right_value178=(struct tuple2$2charphsNodeph*)come_calloc(1, sizeof(struct tuple2$2charphsNodeph)*(1), "16enum.c", 164, "tuple2$2charphsNodeph")))),(char*)come_increment_ref_count(element_name_154),((void*)0))))));
                 come_call_finalizer2(tuple2$2charphsNodephp_finalize,right_value178, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -4658,7 +4662,7 @@ right_value187 = (void*)0;
         parse_sharp_v5(info);
         # 175 "16enum.c"
         # 170 "16enum.c"
-        if(_if_conditional235=*info->p==44,        _if_conditional235) {
+        if(_if_conditional236=*info->p==44,        _if_conditional236) {
             # 171 "16enum.c"
             info->p++;
             # 172 "16enum.c"
@@ -4668,7 +4672,7 @@ right_value187 = (void*)0;
         parse_sharp_v5(info);
         # 182 "16enum.c"
         # 177 "16enum.c"
-        if(_if_conditional236=*info->p==125,        _if_conditional236) {
+        if(_if_conditional237=*info->p==125,        _if_conditional237) {
             # 178 "16enum.c"
             info->p++;
             # 179 "16enum.c"
@@ -5706,6 +5710,7 @@ _Bool _if_conditional228;
 void* right_value167;
 char* __dec_obj54;
 _Bool _if_conditional229;
+_Bool _if_conditional230;
 struct sClass* __result131__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value117 = (void*)0;
@@ -5822,7 +5827,13 @@ right_value167 = (void*)0;
                 # 18 "sClass_clone"
                 result_127->mNobodyStruct=self->mNobodyStruct;
             }
+            # 20 "sClass_clone"
             # 19 "sClass_clone"
+            if(_if_conditional230=self!=((void*)0),            _if_conditional230) {
+                # 19 "sClass_clone"
+                result_127->mParent=self->mParent;
+            }
+            # 20 "sClass_clone"
             __result131__ = __result_obj__ = result_127;
             come_call_finalizer2(sClass_finalize,result_127, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
             return __result131__;
@@ -7040,11 +7051,11 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct list$1tuple2$2charphsNodephph* list$1tuple2$2charphsNodephph_push_back(struct list$1tuple2$2charphsNodephph* self, struct tuple2$2charphsNodeph* item){
 void* __result_obj__;
-_Bool _if_conditional232;
+_Bool _if_conditional233;
 void* right_value173;
 struct list_item$1tuple2$2charphsNodephph* litem_157;
 struct tuple2$2charphsNodeph* __dec_obj56;
-_Bool _if_conditional233;
+_Bool _if_conditional234;
 void* right_value174;
 struct list_item$1tuple2$2charphsNodephph* litem_158;
 struct tuple2$2charphsNodeph* __dec_obj57;
@@ -7061,7 +7072,7 @@ right_value175 = (void*)0;
 memset(&litem_159, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
                     # 256 "./neo-c.h"
                     # 225 "./neo-c.h"
-                    if(_if_conditional232=self->len==0,                    _if_conditional232) {
+                    if(_if_conditional233=self->len==0,                    _if_conditional233) {
                         # 226 "./neo-c.h"
                         litem_157=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value173=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 226, "list_item$1tuple2$2charphsNodephph"))));
                         come_call_finalizer2(list_item$1tuple2$2charphsNodephphp_finalize,right_value173, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -7081,7 +7092,7 @@ memset(&litem_159, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
                     else {
                         # 256 "./neo-c.h"
                         # 235 "./neo-c.h"
-                        if(_if_conditional233=self->len==1,                        _if_conditional233) {
+                        if(_if_conditional234=self->len==1,                        _if_conditional234) {
                             # 236 "./neo-c.h"
                             litem_158=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value174=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 236, "list_item$1tuple2$2charphsNodephph"))));
                             come_call_finalizer2(list_item$1tuple2$2charphsNodephphp_finalize,right_value174, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -7152,14 +7163,14 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 struct sNode* top_level_v96(char* buf, char* head, int head_sline, struct sInfo* info){
 void* __result_obj__;
-_Bool _if_conditional248;
+_Bool _if_conditional249;
 char* source_head_161;
 _Bool output_162;
 char* type_name_163;
-_Bool _if_conditional249;
+_Bool _if_conditional250;
 void* right_value188;
 char* __dec_obj65;
-_Bool _if_conditional250;
+_Bool _if_conditional251;
 void* right_value189;
 char* __dec_obj66;
 void* right_value190;
@@ -7170,7 +7181,7 @@ struct list$1tuple2$2charphsNodephph* elements_164;
 _Bool _while_condtional27;
 void* right_value194;
 char* element_name_165;
-_Bool _if_conditional251;
+_Bool _if_conditional252;
 _Bool no_comma_166;
 void* right_value195;
 struct sNode* element_value_167;
@@ -7178,8 +7189,8 @@ void* right_value196;
 void* right_value197;
 void* right_value198;
 void* right_value199;
-_Bool _if_conditional252;
 _Bool _if_conditional253;
+_Bool _if_conditional254;
 char* source_tail_168;
 void* right_value200;
 void* right_value201;
@@ -7224,7 +7235,7 @@ right_value210 = (void*)0;
 right_value211 = (void*)0;
     # 260 "16enum.c"
     # 189 "16enum.c"
-    if(_if_conditional248=charp_operator_equals(buf,"enum"),    _if_conditional248) {
+    if(_if_conditional249=charp_operator_equals(buf,"enum"),    _if_conditional249) {
         # 190 "16enum.c"
         source_head_161=info->p;
         # 192 "16enum.c"
@@ -7233,7 +7244,7 @@ right_value211 = (void*)0;
         type_name_163=((void*)0);
         # 210 "16enum.c"
         # 195 "16enum.c"
-        if(_if_conditional249=*info->p==123,        _if_conditional249) {
+        if(_if_conditional250=*info->p==123,        _if_conditional250) {
             # 196 "16enum.c"
             __dec_obj65=type_name_163;
             type_name_163=(char*)come_increment_ref_count(((char*)(right_value188=__builtin_string(""))));
@@ -7243,7 +7254,7 @@ right_value211 = (void*)0;
         else {
             # 205 "16enum.c"
             # 199 "16enum.c"
-            if(_if_conditional250=map$2charphsClassph_at(info->classes,type_name_163,((void*)0))==((void*)0),            _if_conditional250) {
+            if(_if_conditional251=map$2charphsClassph_at(info->classes,type_name_163,((void*)0))==((void*)0),            _if_conditional251) {
             }
             else {
                 # 202 "16enum.c"
@@ -7276,7 +7287,7 @@ right_value211 = (void*)0;
             parse_sharp_v5(info);
             # 234 "16enum.c"
             # 219 "16enum.c"
-            if(_if_conditional251=*info->p==61,            _if_conditional251) {
+            if(_if_conditional252=*info->p==61,            _if_conditional252) {
                 # 220 "16enum.c"
                 info->p++;
                 # 221 "16enum.c"
@@ -7306,7 +7317,7 @@ right_value211 = (void*)0;
             parse_sharp_v5(info);
             # 240 "16enum.c"
             # 236 "16enum.c"
-            if(_if_conditional252=*info->p==44,            _if_conditional252) {
+            if(_if_conditional253=*info->p==44,            _if_conditional253) {
                 # 237 "16enum.c"
                 info->p++;
                 # 238 "16enum.c"
@@ -7316,7 +7327,7 @@ right_value211 = (void*)0;
             parse_sharp_v5(info);
             # 247 "16enum.c"
             # 242 "16enum.c"
-            if(_if_conditional253=*info->p==125,            _if_conditional253) {
+            if(_if_conditional254=*info->p==125,            _if_conditional254) {
                 # 243 "16enum.c"
                 info->p++;
                 # 244 "16enum.c"
@@ -7371,32 +7382,32 @@ right_value211 = (void*)0;
 
 static void sEnumNode_finalize(struct sEnumNode* self){
 void* __result_obj__;
-_Bool _if_conditional254;
 _Bool _if_conditional255;
 _Bool _if_conditional256;
 _Bool _if_conditional257;
+_Bool _if_conditional258;
 memset(&__result_obj__, 0, sizeof(void*));
             # 1 "sEnumNode_finalize"
             # 0 "sEnumNode_finalize"
-            if(_if_conditional254=self!=((void*)0)&&self->mTypeName!=((void*)0),            _if_conditional254) {
+            if(_if_conditional255=self!=((void*)0)&&self->mTypeName!=((void*)0),            _if_conditional255) {
                 # 0 "sEnumNode_finalize"
                 self->mTypeName = come_decrement_ref_count2(self->mTypeName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
             # 2 "sEnumNode_finalize"
             # 1 "sEnumNode_finalize"
-            if(_if_conditional255=self!=((void*)0)&&self->mElements!=((void*)0),            _if_conditional255) {
+            if(_if_conditional256=self!=((void*)0)&&self->mElements!=((void*)0),            _if_conditional256) {
                 # 1 "sEnumNode_finalize"
                 come_call_finalizer2(list$1tuple2$2charphsNodephphp_finalize,self->mElements, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
             # 3 "sEnumNode_finalize"
             # 2 "sEnumNode_finalize"
-            if(_if_conditional256=self!=((void*)0)&&self->sname!=((void*)0),            _if_conditional256) {
+            if(_if_conditional257=self!=((void*)0)&&self->sname!=((void*)0),            _if_conditional257) {
                 # 2 "sEnumNode_finalize"
                 self->sname = come_decrement_ref_count2(self->sname, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
             # 4 "sEnumNode_finalize"
             # 3 "sEnumNode_finalize"
-            if(_if_conditional257=self!=((void*)0)&&self->mDeclareSName!=((void*)0),            _if_conditional257) {
+            if(_if_conditional258=self!=((void*)0)&&self->mDeclareSName!=((void*)0),            _if_conditional258) {
                 # 3 "sEnumNode_finalize"
                 self->mDeclareSName = come_decrement_ref_count2(self->mDeclareSName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
@@ -7404,22 +7415,22 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct sEnumNode* sEnumNode_clone(struct sEnumNode* self){
 void* __result_obj__;
-_Bool _if_conditional258;
+_Bool _if_conditional259;
 struct sEnumNode* __result137__;
 void* right_value205;
 struct sEnumNode* result_170;
-_Bool _if_conditional259;
+_Bool _if_conditional260;
 void* right_value206;
 char* __dec_obj67;
-_Bool _if_conditional260;
+_Bool _if_conditional261;
 void* right_value207;
 struct list$1tuple2$2charphsNodephph* __dec_obj68;
-_Bool _if_conditional261;
 _Bool _if_conditional262;
+_Bool _if_conditional263;
 void* right_value208;
 char* __dec_obj69;
-_Bool _if_conditional263;
 _Bool _if_conditional264;
+_Bool _if_conditional265;
 void* right_value209;
 char* __dec_obj70;
 struct sEnumNode* __result138__;
@@ -7432,7 +7443,7 @@ right_value208 = (void*)0;
 right_value209 = (void*)0;
             # 3 "sEnumNode_clone"
             # 2 "sEnumNode_clone"
-            if(_if_conditional258=self==(void*)0,            _if_conditional258) {
+            if(_if_conditional259=self==(void*)0,            _if_conditional259) {
                 # 2 "sEnumNode_clone"
                 __result137__ = __result_obj__ = (void*)0;
                 return __result137__;
@@ -7442,7 +7453,7 @@ right_value209 = (void*)0;
             come_call_finalizer2(sEnumNode_finalize,right_value205, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
             # 5 "sEnumNode_clone"
             # 4 "sEnumNode_clone"
-            if(_if_conditional259=self!=((void*)0)&&self->mTypeName!=((void*)0),            _if_conditional259) {
+            if(_if_conditional260=self!=((void*)0)&&self->mTypeName!=((void*)0),            _if_conditional260) {
                 # 4 "sEnumNode_clone"
                 __dec_obj67=result_170->mTypeName;
                 result_170->mTypeName=(char*)come_increment_ref_count(((char*)(right_value206=string_clone(self->mTypeName))));
@@ -7451,7 +7462,7 @@ right_value209 = (void*)0;
             }
             # 6 "sEnumNode_clone"
             # 5 "sEnumNode_clone"
-            if(_if_conditional260=self!=((void*)0)&&self->mElements!=((void*)0),            _if_conditional260) {
+            if(_if_conditional261=self!=((void*)0)&&self->mElements!=((void*)0),            _if_conditional261) {
                 # 5 "sEnumNode_clone"
                 __dec_obj68=result_170->mElements;
                 result_170->mElements=(struct list$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list$1tuple2$2charphsNodephph*)(right_value207=list$1tuple2$2charphsNodephphp_clone(self->mElements))));
@@ -7460,13 +7471,13 @@ right_value209 = (void*)0;
             }
             # 7 "sEnumNode_clone"
             # 6 "sEnumNode_clone"
-            if(_if_conditional261=self!=((void*)0),            _if_conditional261) {
+            if(_if_conditional262=self!=((void*)0),            _if_conditional262) {
                 # 6 "sEnumNode_clone"
                 result_170->sline=self->sline;
             }
             # 8 "sEnumNode_clone"
             # 7 "sEnumNode_clone"
-            if(_if_conditional262=self!=((void*)0)&&self->sname!=((void*)0),            _if_conditional262) {
+            if(_if_conditional263=self!=((void*)0)&&self->sname!=((void*)0),            _if_conditional263) {
                 # 7 "sEnumNode_clone"
                 __dec_obj69=result_170->sname;
                 result_170->sname=(char*)come_increment_ref_count(((char*)(right_value208=string_clone(self->sname))));
@@ -7475,13 +7486,13 @@ right_value209 = (void*)0;
             }
             # 9 "sEnumNode_clone"
             # 8 "sEnumNode_clone"
-            if(_if_conditional263=self!=((void*)0),            _if_conditional263) {
+            if(_if_conditional264=self!=((void*)0),            _if_conditional264) {
                 # 8 "sEnumNode_clone"
                 result_170->mOutput=self->mOutput;
             }
             # 10 "sEnumNode_clone"
             # 9 "sEnumNode_clone"
-            if(_if_conditional264=self!=((void*)0)&&self->mDeclareSName!=((void*)0),            _if_conditional264) {
+            if(_if_conditional265=self!=((void*)0)&&self->mDeclareSName!=((void*)0),            _if_conditional265) {
                 # 9 "sEnumNode_clone"
                 __dec_obj70=result_170->mDeclareSName;
                 result_170->mDeclareSName=(char*)come_increment_ref_count(((char*)(right_value209=string_clone(self->mDeclareSName))));

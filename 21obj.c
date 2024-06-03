@@ -223,7 +223,27 @@ bool sImplementsNode*::compile(sImplementsNode* self, sInfo* info)
         
         string method_name = create_method_name(type, false@no_pointer_name, name, info);
         
-        add_come_code(info, "_inf_value%d->%s=(void*)%s;\n", inf_num, name, method_name);
+        sFun* fun = info.funcs.at(method_name, null);
+        
+        if(fun == null) {
+            sClass* klass2 = type->mClass;
+            while(klass2->mParent) {
+                klass2 = klass2->mParent;
+                
+                method_name = create_method_name_using_class(klass2, false@no_pointer_name, name, info);
+                
+                fun = info.funcs.at(method_name, null);
+                
+                if(fun) {
+                    break;
+                }
+            }
+            
+            add_come_code(info, "_inf_value%d->%s=(void*)%s;\n", inf_num, name, method_name);
+        }
+        else {
+            add_come_code(info, "_inf_value%d->%s=(void*)%s;\n", inf_num, name, method_name);
+        }
     }
     
     come_value2.c_value = xsprintf("_inf_value%d", inf_num);

@@ -782,6 +782,29 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
         
         string type_name = parse_word();
         
+        sClass* parent_class = null;
+        if(strmemcmp(info->p, "extends")) {
+            parse_word();
+            
+            string parent_class_name = parse_word();
+            
+            parent_class = info.classes[parent_class_name]??;
+            
+            if(parent_class == null) {
+                err_msg(info, "invalid class name(%s)", parent_class_name);
+                return null;
+            }
+        }
+        
+        
+        list<sClass*>*% parent_classes = new list<sClass*>();
+        
+        sClass* parent_class2 = parent_class;
+        while(parent_class2) {
+            parent_classes.add(parent_class2);
+            parent_class2 = parent_class->mParent;
+        }
+        
         bool output = true;
         
         sClass*% struct_class;
@@ -796,11 +819,32 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
         }
         
         if(info.classes.at(type_name, null) == null) {
+            if(parent_class) {
+                struct_class->mParent = parent_class;
+            }
             info.classes.insert(type_name, clone struct_class);
+            
+            foreach(parent, parent_classes.reverse()) {
+                foreach(it, parent.mFields) {
+                    struct_class->mFields.add(it);
+                }
+            }
         }
         else if(info.classes.at(type_name, null).mFields.length() == 0 && struct_class->mFields.length() > 0) {
             sClass* klass2 = info.classes.at(type_name, null);
-            klass2.mFields = clone struct_class.mFields;
+            
+            if(parent_class) {
+                klass2->mParent = parent_class;
+            }
+            
+            foreach(parent, parent_classes.reverse()) {
+                foreach(it, parent.mFields) {
+                    klass2->mFields.add(it);
+                }
+            }
+            foreach(it, struct_class.mFields) {
+                klass2.mFields.add(it);
+            }
         }
         
         expected_next_character('{') ;
