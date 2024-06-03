@@ -325,6 +325,8 @@ struct sInfo
     bool writing_source_file_position;
     
     sType*% function_result_type;
+    
+    bool in_class;
 };
 
 /////////////////////////////////////////////////////////////////////
@@ -427,7 +429,7 @@ sNode*% get_oct_number(sInfo* info);
 sNode*% get_hex_number(bool minus, sInfo* info);
 sNode*% create_int_node(int value, sInfo* info);
 sNode*% post_position_operator3(sNode*% node, sInfo* info) version 5;
-list<sType*%>*%, list<string>*%, list<string>*%, bool parse_params(sInfo* info);
+list<sType*%>*%, list<string>*%, list<string>*%, bool parse_params(sInfo* info, bool in_constructor_=false);
 sFun*,string create_finalizer_automatically(sType* type, char* fun_name, sInfo* info);
 sFun*,string create_force_finalizer_automatically(sType* type, char* fun_name, sInfo* info);
 sFun*,string create_cloner_automatically(sType* type, char* fun_name, sInfo* info);
@@ -446,7 +448,7 @@ bool create_generics_fun(string fun_name, sGenericsFun* generics_fun, sType* gen
 
 tuple3<sType*%,string,bool>*% parse_type(sInfo* info=info, bool parse_variable_name=false, bool parse_multiple_type=true, bool in_function_parametor=false);
 tuple2<sType*%, string>*% parse_variable_name(sType*% base_type_name, bool first, sInfo* info);
-sBlock*% parse_block(sInfo* info=info, bool no_block_level=false);
+sBlock*% parse_block(sInfo* info=info, bool no_block_level=false, bool return_self_at_last=false);
 int transpile_block(sBlock* block, list<sType*%>* param_types, list<string>* param_names, sInfo* info, bool no_var_table=false, bool loop_block=false);
 void arrange_stack(sInfo* info, int top);
 sNode*% parse_function(sInfo* info);

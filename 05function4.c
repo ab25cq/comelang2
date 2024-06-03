@@ -199,12 +199,25 @@ bool is_contained_generics_class(sType* type, sInfo* info)
     return false;
 }
 
-list<sType*%>*%, list<string>*%, list<string>*%, bool parse_params(sInfo* info)
+list<sType*%>*%, list<string>*%, list<string>*%, bool parse_params(sInfo* info, bool in_constructor_=false)
 {
     var param_types = new list<sType*%>();
     var param_names = new list<string>();
     var param_default_parametors = new list<string>();
     bool var_args = false;
+    
+    if(in_constructor_) {
+        param_names.add(s"self");
+        sType*% type_ = clone info->impl_type;
+        type_->mHeap = true;
+        param_types.add(type_);
+        param_default_parametors.add(null);
+    }
+    else if(info.in_class) {
+        param_names.add(s"self");
+        param_types.add(clone info->impl_type);
+        param_default_parametors.add(null);
+    }
     
     expected_next_character('(');
     

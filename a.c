@@ -5,15 +5,13 @@ class sData
     int x;
     int y;
     
-    sData*% initialize(sData*% self, int x, int y)
+    new(int x, int y)
     {
         self.x = x;
         self.y = y;
-        
-        return self;
     }
     
-    void show(sData* self)
+    void show()
     {
         printf("x %d y %d\n", self.x, self.y);
     }
@@ -22,14 +20,12 @@ class sData
 class sData2 extends sData
 {
     int z;
-    
-    sData2*% initialize(sData2*% self, int x, int y, int z)
+   
+    new(int x, int y, int z)
     {
         self.x = x;
         self.y = y;
         self.z = z;
-        
-        return self;
     }
 };
 

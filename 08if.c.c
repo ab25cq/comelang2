@@ -578,6 +578,7 @@ struct sInfo
     _Bool without_semicolon;
     _Bool writing_source_file_position;
     struct sType* function_result_type;
+    _Bool in_class;
 };
 struct tuple2$2sTypephcharph
 {
@@ -1659,7 +1660,7 @@ struct sNode* create_int_node(int value, struct sInfo* info);
 
 struct sNode* post_position_operator3_v5(struct sNode* node, struct sInfo* info);
 
-struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool* parse_params(struct sInfo* info);
+struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool* parse_params(struct sInfo* info, _Bool in_constructor_);
 
 struct tuple2$2sFunpcharph* create_finalizer_automatically(struct sType* type, char* fun_name, struct sInfo* info);
 
@@ -1695,7 +1696,7 @@ struct tuple3$3sTypephcharphbool* parse_type(struct sInfo* info, _Bool parse_var
 
 struct tuple2$2sTypephcharph* parse_variable_name(struct sType* base_type_name, _Bool first, struct sInfo* info);
 
-struct sBlock* parse_block(struct sInfo* info, _Bool no_block_level);
+struct sBlock* parse_block(struct sInfo* info, _Bool no_block_level, _Bool return_self_at_last);
 
 int transpile_block(struct sBlock* block, struct list$1sTypeph* param_types, struct list$1charph* param_names, struct sInfo* info, _Bool no_var_table, _Bool loop_block);
 
@@ -6231,7 +6232,7 @@ memset(&result_178, 0, sizeof(struct sNode*));
     # 355 "08if.c"
     parse_sharp_v5(info);
     # 357 "08if.c"
-    if_block_161=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value137=parse_block(info,(_Bool)0))));
+    if_block_161=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value137=parse_block(info,(_Bool)0,(_Bool)0))));
     come_call_finalizer2(sBlock_finalize,right_value137, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
     # 359 "08if.c"
     elif_expression_nodes_162=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value139=list$1sNodeph_initialize((struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value138=(struct list$1sNodeph*)come_calloc(1, sizeof(struct list$1sNodeph)*(1), "08if.c", 359, "list$1sNodeph"))))))));
@@ -6292,7 +6293,7 @@ memset(&result_178, 0, sizeof(struct sNode*));
                 # 395 "08if.c"
                 parse_sharp_v5(info);
                 # 398 "08if.c"
-                elif_block_173=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value147=parse_block(info,(_Bool)0))));
+                elif_block_173=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value147=parse_block(info,(_Bool)0,(_Bool)0))));
                 come_call_finalizer2(sBlock_finalize,right_value147, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                 # 400 "08if.c"
                 list$1sBlockph_push_back(elif_blocks_163,(struct sBlock*)come_increment_ref_count(elif_block_173));
@@ -6304,7 +6305,7 @@ memset(&result_178, 0, sizeof(struct sNode*));
             else {
                 # 405 "08if.c"
                 __dec_obj42=else_block_165;
-                else_block_165=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value151=parse_block(info,(_Bool)0))));
+                else_block_165=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value151=parse_block(info,(_Bool)0,(_Bool)0))));
                 come_call_finalizer2(sBlock_finalize,__dec_obj42, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(sBlock_finalize,right_value151, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                 # 406 "08if.c"
@@ -6609,7 +6610,7 @@ memset(&result_193, 0, sizeof(struct sNode*));
     expression_node2_181=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value163=craete_logical_denial((struct sNode*)come_increment_ref_count(expression_node),info))));
     if(right_value163) { right_value163 = come_decrement_ref_count2(right_value163, ((struct sNode*)right_value163)->finalize, ((struct sNode*)right_value163)->_protocol_obj, 1, 0, 0, __result_obj__); } 
     # 430 "08if.c"
-    if_block_182=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value164=parse_block(info,(_Bool)0))));
+    if_block_182=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value164=parse_block(info,(_Bool)0,(_Bool)0))));
     come_call_finalizer2(sBlock_finalize,right_value164, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
     # 432 "08if.c"
     elif_expression_nodes_183=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value166=list$1sNodeph_initialize((struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value165=(struct list$1sNodeph*)come_calloc(1, sizeof(struct list$1sNodeph)*(1), "08if.c", 432, "list$1sNodeph"))))))));
@@ -6670,7 +6671,7 @@ memset(&result_193, 0, sizeof(struct sNode*));
                 # 468 "08if.c"
                 parse_sharp_v5(info);
                 # 471 "08if.c"
-                elif_block_191=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value171=parse_block(info,(_Bool)0))));
+                elif_block_191=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value171=parse_block(info,(_Bool)0,(_Bool)0))));
                 come_call_finalizer2(sBlock_finalize,right_value171, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                 # 473 "08if.c"
                 list$1sBlockph_push_back(elif_blocks_184,(struct sBlock*)come_increment_ref_count(elif_block_191));
@@ -6682,7 +6683,7 @@ memset(&result_193, 0, sizeof(struct sNode*));
             else {
                 # 478 "08if.c"
                 __dec_obj49=else_block_186;
-                else_block_186=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value172=parse_block(info,(_Bool)0))));
+                else_block_186=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value172=parse_block(info,(_Bool)0,(_Bool)0))));
                 come_call_finalizer2(sBlock_finalize,__dec_obj49, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(sBlock_finalize,right_value172, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                 # 479 "08if.c"
@@ -6828,7 +6829,7 @@ right_value204 = (void*)0;
         # 508 "08if.c"
         parse_sharp_v5(info);
         # 510 "08if.c"
-        if_block_197=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value185=parse_block(info,(_Bool)0))));
+        if_block_197=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value185=parse_block(info,(_Bool)0,(_Bool)0))));
         come_call_finalizer2(sBlock_finalize,right_value185, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         # 512 "08if.c"
         elif_expression_nodes_198=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value187=list$1sNodeph_initialize((struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value186=(struct list$1sNodeph*)come_calloc(1, sizeof(struct list$1sNodeph)*(1), "08if.c", 512, "list$1sNodeph"))))))));
@@ -6889,7 +6890,7 @@ right_value204 = (void*)0;
                     # 548 "08if.c"
                     parse_sharp_v5(info);
                     # 551 "08if.c"
-                    elif_block_206=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value192=parse_block(info,(_Bool)0))));
+                    elif_block_206=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value192=parse_block(info,(_Bool)0,(_Bool)0))));
                     come_call_finalizer2(sBlock_finalize,right_value192, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                     # 553 "08if.c"
                     list$1sBlockph_push_back(elif_blocks_199,(struct sBlock*)come_increment_ref_count(elif_block_206));
@@ -6901,7 +6902,7 @@ right_value204 = (void*)0;
                 else {
                     # 558 "08if.c"
                     __dec_obj56=else_block_201;
-                    else_block_201=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value193=parse_block(info,(_Bool)0))));
+                    else_block_201=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value193=parse_block(info,(_Bool)0,(_Bool)0))));
                     come_call_finalizer2(sBlock_finalize,__dec_obj56, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                     come_call_finalizer2(sBlock_finalize,right_value193, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                     # 559 "08if.c"
@@ -7162,7 +7163,7 @@ right_value213 = (void*)0;
     # 661 "08if.c"
     parse_sharp_v5(info);
     # 663 "08if.c"
-    if_block_211=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value206=parse_block(info,(_Bool)0))));
+    if_block_211=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value206=parse_block(info,(_Bool)0,(_Bool)0))));
     come_call_finalizer2(sBlock_finalize,right_value206, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
     # 665 "08if.c"
     _inf_value4=(struct sNode*)come_calloc(1, sizeof(struct sNode), "08if.c", 665, "struct sNode");
@@ -7317,7 +7318,7 @@ right_value222 = (void*)0;
     # 673 "08if.c"
     parse_sharp_v5(info);
     # 675 "08if.c"
-    if_block_215=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value215=parse_block(info,(_Bool)0))));
+    if_block_215=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value215=parse_block(info,(_Bool)0,(_Bool)0))));
     come_call_finalizer2(sBlock_finalize,right_value215, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
     # 677 "08if.c"
     _inf_value5=(struct sNode*)come_calloc(1, sizeof(struct sNode), "08if.c", 677, "struct sNode");

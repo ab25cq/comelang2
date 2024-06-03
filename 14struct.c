@@ -858,13 +858,15 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
                 char* p = info.p;
                 int sline = info.sline;
                 
-                bool no_output_err = info.no_output_err;
-                info.no_output_err = true;
-                var type, name, err = parse_type(parse_variable_name:true);
-                info.no_output_err = no_output_err;
-                
-                if(err && *info->p == ',') {
-                    multiple_declare = true;
+                if(memcmp(info.p, "new(", 4) != 0) {
+                    bool no_output_err = info.no_output_err;
+                    info.no_output_err = true;
+                    var type, name, err = parse_type(parse_variable_name:true);
+                    info.no_output_err = no_output_err;
+                    
+                    if(err && *info->p == ',') {
+                        multiple_declare = true;
+                    }
                 }
                     
                 info.p = p;
@@ -875,52 +877,57 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
                 char* p = info.p;
                 int sline = info.sline;
                 
-                bool invalid_type = false;
-                info.no_output_err = true;
-                if(xisalpha(*info->p) || *info->p == '_') {
-                    var result_type, fun_name, err = parse_type();
-                }
-                info.no_output_err = false;
-                
-                string word = null;
-                if(xisalnum(*info.p) || *info->p == '_') {
-                    word = parse_word();
-                    
-                    if(word === "extern") {
-                        word = parse_word();
-                    }
+                if(memcmp(info.p, "new(", 4) == 0) {
+                    define_function_flag = true;
                 }
                 else {
-                    word = null;
-                }
-                info.no_output_err = false;
-                
-                if(word) {
-                    if(is_type_name(word)) {
-                        while(*info->p == '*') {
-                            info->p++;
-                            skip_spaces_and_lf();
-                        }
-                        if(*info->p == '[' && *(info->p+1) == ']') {
-                            info->p += 2;
-                            skip_spaces_and_lf();
-                        }
-                        if(*info->p == ':') {
-                            info->p++;
-                            skip_spaces_and_lf();
-                        }
-                        if(*info->p == ':') {
-                            info->p++;
-                            skip_spaces_and_lf();
-                        }
-                        if(xisalnum(*info.p) || *info->p == '_') {
+                    bool invalid_type = false;
+                    info.no_output_err = true;
+                    if(xisalpha(*info->p) || *info->p == '_') {
+                        var result_type, fun_name, err = parse_type();
+                    }
+                    info.no_output_err = false;
+                    
+                    string word = null;
+                    if(xisalnum(*info.p) || *info->p == '_') {
+                        word = parse_word();
+                        
+                        if(word === "extern") {
                             word = parse_word();
                         }
                     }
+                    else {
+                        word = null;
+                    }
+                    info.no_output_err = false;
                     
-                    /// fun name ///
-                    if(strlen(word) > 0 && (*info->p == '(' || (*info->p == ':' && *(info->p+1) == ':'))) {
-                        define_function_flag = true;
+                    if(word) {
+                        if(is_type_name(word)) {
+                            while(*info->p == '*') {
+                                info->p++;
+                                skip_spaces_and_lf();
+                            }
+                            if(*info->p == '[' && *(info->p+1) == ']') {
+                                info->p += 2;
+                                skip_spaces_and_lf();
+                            }
+                            if(*info->p == ':') {
+                                info->p++;
+                                skip_spaces_and_lf();
+                            }
+                            if(*info->p == ':') {
+                                info->p++;
+                                skip_spaces_and_lf();
+                            }
+                            if(xisalnum(*info.p) || *info->p == '_') {
+                                word = parse_word();
+                            }
+                        }
+                        
+                        /// fun name ///
+                        if(strlen(word) > 0 && (*info->p == '(' || (*info->p == ':' && *(info->p+1) == ':'))) {
+                            define_function_flag = true;
+                        }
                     }
                 }
                 
@@ -934,9 +941,12 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
                 info->impl_type = new sType(type_name);
                 info->impl_type->mPointerNum = pointer_num;
                 
+                info->in_class = true;
+                
                 sNode*% method = parse_function(info);
                 
                 info->impl_type = null;
+                info->in_class = false;
                 
                 methods.push_back(method);
             }

@@ -578,6 +578,7 @@ struct sInfo
     _Bool without_semicolon;
     _Bool writing_source_file_position;
     struct sType* function_result_type;
+    _Bool in_class;
 };
 struct tuple2$2sTypephcharph
 {
@@ -1628,7 +1629,7 @@ struct sNode* create_int_node(int value, struct sInfo* info);
 
 struct sNode* post_position_operator3_v5(struct sNode* node, struct sInfo* info);
 
-struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool* parse_params(struct sInfo* info);
+struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool* parse_params(struct sInfo* info, _Bool in_constructor_);
 
 struct tuple2$2sFunpcharph* create_finalizer_automatically(struct sType* type, char* fun_name, struct sInfo* info);
 
@@ -1664,7 +1665,7 @@ struct tuple3$3sTypephcharphbool* parse_type(struct sInfo* info, _Bool parse_var
 
 struct tuple2$2sTypephcharph* parse_variable_name(struct sType* base_type_name, _Bool first, struct sInfo* info);
 
-struct sBlock* parse_block(struct sInfo* info, _Bool no_block_level);
+struct sBlock* parse_block(struct sInfo* info, _Bool no_block_level, _Bool return_self_at_last);
 
 int transpile_block(struct sBlock* block, struct list$1sTypeph* param_types, struct list$1charph* param_names, struct sInfo* info, _Bool no_var_table, _Bool loop_block);
 
@@ -6414,7 +6415,7 @@ right_value182 = (void*)0;
     fun_name_140=(char*)come_increment_ref_count(((char*)(right_value151=parse_word(info))));
     right_value151 = come_decrement_ref_count2(right_value151, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
     # 84 "23interface.c"
-    multiple_assign_var3=((struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool*)(right_value152=parse_params(info)));
+    multiple_assign_var3=((struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool*)(right_value152=parse_params(info,(_Bool)0)));
     param_types_141=(struct list$1sTypeph*)come_increment_ref_count(multiple_assign_var3->v1);
     param_names_142=(struct list$1charph*)come_increment_ref_count(multiple_assign_var3->v2);
     param_default_parametors_143=(struct list$1charph*)come_increment_ref_count(multiple_assign_var3->v3);

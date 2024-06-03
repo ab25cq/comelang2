@@ -5,7 +5,7 @@ Another modern C compiler. It has a heap system that is a cross between an autom
 
 もう一つのモダンなCコンパイラ。automatically-free-systemとリファレンスカウントGCの間をとったようなヒープシステムがありコレクションライブラリ、文字列ライブラリを備えてます。デバッグモードではC言語にできる限りのメモリセーフの機能を加えてます。
 
-version 0.9.9.1
+version 0.9.9.2
 
 ``` C
 #include <neo-c.h>
@@ -296,6 +296,7 @@ bash all_build.sh
 
 # Histories
 
+0.9.9.2 real class definition added
 0.9.9.1 Class and inheritance added
 0.9.0 project starts.
 
@@ -3157,15 +3158,13 @@ class sData
     int x;
     int y;
     
-    sData*% initialize(sData*% self, int x, int y)
+    new(int x, int y)
     {
         self.x = x;
         self.y = y;
-        
-        return self;
     }
     
-    void show(sData* self)
+    void show()
     {
         printf("x %d y %d\n", self.x, self.y);
     }
@@ -3189,15 +3188,13 @@ class sData
     int x;
     int y;
     
-    sData*% initialize(sData*% self, int x, int y)
+    new(int x, int y)
     {
         self.x = x;
         self.y = y;
-        
-        return self;
     }
     
-    void show(sData* self)
+    void show()
     {
         printf("x %d y %d\n", self.x, self.y);
     }
@@ -3206,14 +3203,12 @@ class sData
 class sData2 extends sData
 {
     int z;
-    
-    sData2*% initialize(sData2*% self, int x, int y, int z)
+   
+    new(int x, int y, int z)
     {
         self.x = x;
         self.y = y;
         self.z = z;
-        
-        return self;
     }
 };
 
@@ -3238,6 +3233,7 @@ int main(int argc, char** argv)
     
     return 0;
 }
+
 ```
 
 

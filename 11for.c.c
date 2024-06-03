@@ -578,6 +578,7 @@ struct sInfo
     _Bool without_semicolon;
     _Bool writing_source_file_position;
     struct sType* function_result_type;
+    _Bool in_class;
 };
 struct tuple2$2sTypephcharph
 {
@@ -1629,7 +1630,7 @@ struct sNode* create_int_node(int value, struct sInfo* info);
 
 struct sNode* post_position_operator3_v5(struct sNode* node, struct sInfo* info);
 
-struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool* parse_params(struct sInfo* info);
+struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool* parse_params(struct sInfo* info, _Bool in_constructor_);
 
 struct tuple2$2sFunpcharph* create_finalizer_automatically(struct sType* type, char* fun_name, struct sInfo* info);
 
@@ -1665,7 +1666,7 @@ struct tuple3$3sTypephcharphbool* parse_type(struct sInfo* info, _Bool parse_var
 
 struct tuple2$2sTypephcharph* parse_variable_name(struct sType* base_type_name, _Bool first, struct sInfo* info);
 
-struct sBlock* parse_block(struct sInfo* info, _Bool no_block_level);
+struct sBlock* parse_block(struct sInfo* info, _Bool no_block_level, _Bool return_self_at_last);
 
 int transpile_block(struct sBlock* block, struct list$1sTypeph* param_types, struct list$1charph* param_names, struct sInfo* info, _Bool no_var_table, _Bool loop_block);
 
@@ -5689,7 +5690,7 @@ right_value134 = (void*)0;
         # 477 "11for.c"
         parse_sharp_v5(info);
         # 479 "11for.c"
-        block_134=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value124=parse_block(info,(_Bool)0))));
+        block_134=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value124=parse_block(info,(_Bool)0,(_Bool)0))));
         come_call_finalizer2(sBlock_finalize,right_value124, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         # 481 "11for.c"
         _inf_value1=(struct sNode*)come_calloc(1, sizeof(struct sNode), "11for.c", 481, "struct sNode");

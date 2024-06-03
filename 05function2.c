@@ -179,7 +179,7 @@ sGenericsFun*% sGenericsFun*::initialize(sGenericsFun*% self, sType*% impl_type,
 }
 
 
-sBlock*% parse_block(sInfo* info=info, bool no_block_level=false)
+sBlock*% parse_block(sInfo* info=info, bool no_block_level=false, bool return_self_at_last=false)
 {
     var result = new sBlock(info);
     
@@ -250,6 +250,28 @@ info->sline = node.sline();
         }
         
         result.mNodes.push_back(node);
+    }
+    
+    if(return_self_at_last) {
+        char* p = info.p;
+        char* head = info.head;
+        
+        string source = string("return self;");
+        
+        info.p = source;
+        info.head = source;
+        
+        sNode*% node = expression();
+        
+        if(node == null) {
+            err_msg(info, "Invalid expression");
+            exit(1);
+        }
+        
+        result.mNodes.push_back(node);
+        
+        info.p = p;
+        info.head = head;
     }
     
     info->block_level = block_level;
@@ -1532,11 +1554,27 @@ sNode*% parse_function(sInfo* info)
 {
     char* header_head = info.p;
     char* source_head = info.p;
-    var result_type, var_name, err = parse_type();
     
-    if(!err) {
-        printf("%s %d: parse_type failed\n", info->sname, info->sline);
-        exit(2);
+    sType*% result_type = null;
+    string var_name = null;
+    bool constructor_ = false;
+    
+    if(info.in_class && memcmp(info.p, "new(", 4) == 0) {
+        parse_word();
+        result_type = clone info.impl_type;
+        result_type.mHeap = true;
+        constructor_ = true;
+    }
+    else {
+        var result_type2, var_name2, err = parse_type();
+        
+        result_type = result_type2;
+        var_name = var_name2;
+        
+        if(!err) {
+            printf("%s %d: parse_type failed\n", info->sname, info->sline);
+            exit(2);
+        }
     }
     
     /// backtrace ///
@@ -1575,7 +1613,11 @@ sNode*% parse_function(sInfo* info)
     
     string fun_name;
     char* base_fun_name = null;
-    if(method_definition) {
+    if(constructor_) {
+        base_fun_name = borrow gc_inc(string("initialize"));
+        fun_name = create_method_name(info->impl_type, false@no_pointer_name, base_fun_name, info);
+    }
+    else if(method_definition) {
         var obj_type, name, err = parse_type();
         
         if(!err) {
@@ -1599,8 +1641,14 @@ sNode*% parse_function(sInfo* info)
         base_fun_name = borrow gc_inc(string(fun_name));
     }
     
-    var param_types, param_names, param_default_parametors, var_args = parse_params(info);
+    if(info.in_class && base_fun_name === "initialize") {
+        info.in_class = false;
+    }
+    var param_types, param_names, param_default_parametors, var_args = parse_params(info, constructor_);
     char* header_tail = info.p;
+    if(info.in_class && base_fun_name === "initialize") {
+        info.in_class = true;
+    }
     
     buffer*% header_buf = new buffer();
     
@@ -1689,8 +1737,7 @@ sNode*% parse_function(sInfo* info)
         
         add_come_code_at_come_header(info, "%s", header.to_string());
         
-        sBlock*% block = parse_block();
-    
+        sBlock*% block = parse_block(return_self_at_last:constructor_);
         
         bool static_ = false;
         if(result_type->mStatic) {
