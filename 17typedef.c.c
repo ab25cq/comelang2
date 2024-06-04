@@ -241,9 +241,10 @@ struct sClass
     int mMethodGenericsNum;
     struct list$1tuple2$2charphsTypephph* mFields;
     _Bool mOutputed;
+    _Bool mOutputed2;
     char* mDeclareSName;
     _Bool mNobodyStruct;
-    struct sClass* mParent;
+    char* mParentClassName;
 };
 struct sInfo;
 struct sNode
@@ -1515,9 +1516,13 @@ char* make_type_name_string(struct sType* type, _Bool in_header, _Bool array_cas
 
 char* make_come_type_name_string(struct sType* type, struct sInfo* info);
 
+char* make_come_type_name_string_no_solved(struct sType* type, struct sInfo* info);
+
 void come_init_v3();
 
 void come_final_v3();
+
+char* make_define_var_no_solved(struct sType* type, char* name, _Bool in_header, struct sInfo* info);
 
 char* header_function(struct sFun* fun, struct sInfo* info);
 
@@ -5090,28 +5095,28 @@ void* right_value141;
 char* __dec_obj45;
 void* right_value145;
 void* right_value146;
-_Bool _if_conditional202;
 _Bool _if_conditional203;
+_Bool _if_conditional204;
 struct list$1tuple2$2sTypephcharphph* o2_saved_148;
 struct tuple2$2sTypephcharph* it_151;
 struct tuple2$2sTypephcharph* multiple_assign_var1;
 struct sType* type_154;
 char* type_name_155;
-_Bool _if_conditional208;
+_Bool _if_conditional209;
 void* right_value147;
 char* __dec_obj46;
 void* right_value148;
 void* right_value149;
-_Bool _if_conditional209;
+_Bool _if_conditional210;
 void* right_value150;
 void* right_value151;
 struct sType* type_156;
-_Bool _if_conditional210;
+_Bool _if_conditional211;
 void* right_value152;
 char* __dec_obj47;
 void* right_value153;
 void* right_value154;
-_Bool _if_conditional211;
+_Bool _if_conditional212;
 void* right_value155;
 _Bool __result122__;
 memset(&__result_obj__, 0, sizeof(void*));
@@ -5168,7 +5173,7 @@ right_value155 = (void*)0;
         come_call_finalizer2(sType_finalize,right_value146, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         # 58 "17typedef.c"
         # 53 "17typedef.c"
-        if(_if_conditional202=info->output_header_file&&string_operator_not_equals(self->mDeclareSName,info->base_sname),        _if_conditional202) {
+        if(_if_conditional203=info->output_header_file&&string_operator_not_equals(self->mDeclareSName,info->base_sname),        _if_conditional203) {
         }
         else {
             # 56 "17typedef.c"
@@ -5188,7 +5193,7 @@ right_value155 = (void*)0;
                 type_name_155=(char*)come_increment_ref_count(multiple_assign_var1->v2);
                 # 67 "17typedef.c"
                 # 63 "17typedef.c"
-                if(_if_conditional208=string_operator_not_equals(type_name_155,"va_list"),                _if_conditional208) {
+                if(_if_conditional209=string_operator_not_equals(type_name_155,"va_list"),                _if_conditional209) {
                     # 64 "17typedef.c"
                     __dec_obj46=type_154->mOriginalTypeName;
                     type_154->mOriginalTypeName=(char*)come_increment_ref_count(((char*)(right_value147=__builtin_string(type_name_155))));
@@ -5201,7 +5206,7 @@ right_value155 = (void*)0;
                 come_call_finalizer2(sType_finalize,right_value149, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                 # 75 "17typedef.c"
                 # 70 "17typedef.c"
-                if(_if_conditional209=info->output_header_file&&string_operator_not_equals(self->mDeclareSName,info->base_sname),                _if_conditional209) {
+                if(_if_conditional210=info->output_header_file&&string_operator_not_equals(self->mDeclareSName,info->base_sname),                _if_conditional210) {
                 }
                 else {
                     # 73 "17typedef.c"
@@ -5219,7 +5224,7 @@ right_value155 = (void*)0;
             come_call_finalizer2(sType_finalize,right_value151, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
             # 84 "17typedef.c"
             # 80 "17typedef.c"
-            if(_if_conditional210=string_operator_not_equals(type_name_79,"va_list"),            _if_conditional210) {
+            if(_if_conditional211=string_operator_not_equals(type_name_79,"va_list"),            _if_conditional211) {
                 # 81 "17typedef.c"
                 __dec_obj47=type_156->mOriginalTypeName;
                 type_156->mOriginalTypeName=(char*)come_increment_ref_count(((char*)(right_value152=__builtin_string(type_name_79))));
@@ -5232,7 +5237,7 @@ right_value155 = (void*)0;
             come_call_finalizer2(sType_finalize,right_value154, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
             # 91 "17typedef.c"
             # 86 "17typedef.c"
-            if(_if_conditional211=info->output_header_file&&string_operator_not_equals(self->mDeclareSName,info->base_sname),            _if_conditional211) {
+            if(_if_conditional212=info->output_header_file&&string_operator_not_equals(self->mDeclareSName,info->base_sname),            _if_conditional212) {
             }
             else {
                 # 89 "17typedef.c"
@@ -5255,18 +5260,18 @@ _Bool _if_conditional127;
 unsigned int hash_99;
 unsigned int it_100;
 _Bool _while_condtional18;
-_Bool _if_conditional145;
 _Bool _if_conditional146;
 _Bool _if_conditional147;
-_Bool _if_conditional167;
+_Bool _if_conditional148;
 _Bool _if_conditional168;
 _Bool _if_conditional169;
 _Bool _if_conditional170;
 _Bool _if_conditional171;
+_Bool _if_conditional172;
 _Bool same_key_exist_117;
 char* it2_120;
-_Bool _if_conditional176;
 _Bool _if_conditional177;
+_Bool _if_conditional178;
 struct map$2charphsClassph* __result102__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&hash_99, 0, sizeof(unsigned int));
@@ -5287,13 +5292,13 @@ memset(&it2_120, 0, sizeof(char*));
             while(_while_condtional18=(_Bool)1,            _while_condtional18) {
                 # 1450 "./neo-c.h"
                 # 1397 "./neo-c.h"
-                if(_if_conditional145=self->item_existance[it_100],                _if_conditional145) {
+                if(_if_conditional146=self->item_existance[it_100],                _if_conditional146) {
                     # 1420 "./neo-c.h"
                     # 1399 "./neo-c.h"
-                    if(_if_conditional146=string_equals(self->keys[it_100],key),                    _if_conditional146) {
+                    if(_if_conditional147=string_equals(self->keys[it_100],key),                    _if_conditional147) {
                         # 1410 "./neo-c.h"
                         # 1401 "./neo-c.h"
-                        if(_if_conditional147=1,                        _if_conditional147) {
+                        if(_if_conditional148=1,                        _if_conditional148) {
                             # 1402 "./neo-c.h"
                             list$1charp_remove(self->key_list,self->keys[it_100]);
                             # 1403 "./neo-c.h"
@@ -5309,7 +5314,7 @@ memset(&it2_120, 0, sizeof(char*));
                         }
                         # 1417 "./neo-c.h"
                         # 1410 "./neo-c.h"
-                        if(_if_conditional167=1,                        _if_conditional167) {
+                        if(_if_conditional168=1,                        _if_conditional168) {
                             # 1411 "./neo-c.h"
                             come_call_finalizer2(sClass_finalize,self->items[it_100], (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                             # 1412 "./neo-c.h"
@@ -5326,14 +5331,14 @@ memset(&it2_120, 0, sizeof(char*));
                     it_100++;
                     # 1430 "./neo-c.h"
                     # 1422 "./neo-c.h"
-                    if(_if_conditional168=it_100>=self->size,                    _if_conditional168) {
+                    if(_if_conditional169=it_100>=self->size,                    _if_conditional169) {
                         # 1423 "./neo-c.h"
                         it_100=0;
                     }
                     else {
                         # 1430 "./neo-c.h"
                         # 1425 "./neo-c.h"
-                        if(_if_conditional169=it_100==hash_99,                        _if_conditional169) {
+                        if(_if_conditional170=it_100==hash_99,                        _if_conditional170) {
                             # 1426 "./neo-c.h"
                             printf("unexpected error in map.insert\n");
                             # 1427 "./neo-c.h"
@@ -5348,7 +5353,7 @@ memset(&it2_120, 0, sizeof(char*));
                     self->item_existance[it_100]=(_Bool)1;
                     # 1439 "./neo-c.h"
                     # 1433 "./neo-c.h"
-                    if(_if_conditional170=1,                    _if_conditional170) {
+                    if(_if_conditional171=1,                    _if_conditional171) {
                         # 1434 "./neo-c.h"
                         self->keys[it_100]=(char*)come_increment_ref_count(key);
                     }
@@ -5358,7 +5363,7 @@ memset(&it2_120, 0, sizeof(char*));
                     }
                     # 1446 "./neo-c.h"
                     # 1439 "./neo-c.h"
-                    if(_if_conditional171=1,                    _if_conditional171) {
+                    if(_if_conditional172=1,                    _if_conditional172) {
                         # 1440 "./neo-c.h"
                         self->items[it_100]=(struct sClass*)come_increment_ref_count(item);
                     }
@@ -5378,14 +5383,14 @@ memset(&it2_120, 0, sizeof(char*));
             for(            it2_120=list$1charp_begin(self->key_list);            !list$1charp_end(self->key_list);            it2_120=list$1charp_next(self->key_list)            ){
                 # 1458 "./neo-c.h"
                 # 1455 "./neo-c.h"
-                if(_if_conditional176=string_equals(it2_120,key),                _if_conditional176) {
+                if(_if_conditional177=string_equals(it2_120,key),                _if_conditional177) {
                     # 1456 "./neo-c.h"
                     same_key_exist_117=(_Bool)1;
                 }
             }
             # 1464 "./neo-c.h"
             # 1460 "./neo-c.h"
-            if(_if_conditional177=!same_key_exist_117,            _if_conditional177) {
+            if(_if_conditional178=!same_key_exist_117,            _if_conditional178) {
                 # 1461 "./neo-c.h"
                 list$1charp_push_back(self->key_list,key);
             }
@@ -5414,9 +5419,9 @@ struct sClass* it2_95;
 unsigned int hash_96;
 int n_97;
 _Bool _while_condtional17;
-_Bool _if_conditional142;
 _Bool _if_conditional143;
 _Bool _if_conditional144;
+_Bool _if_conditional145;
 struct sClass* default_value_98;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&size_80, 0, sizeof(int));
@@ -5461,19 +5466,19 @@ memset(&default_value_98, 0, sizeof(struct sClass*));
                         while(_while_condtional17=(_Bool)1,                        _while_condtional17) {
                             # 1374 "./neo-c.h"
                             # 1352 "./neo-c.h"
-                            if(_if_conditional142=item_existance_85[n_97],                            _if_conditional142) {
+                            if(_if_conditional143=item_existance_85[n_97],                            _if_conditional143) {
                                 # 1354 "./neo-c.h"
                                 n_97++;
                                 # 1364 "./neo-c.h"
                                 # 1356 "./neo-c.h"
-                                if(_if_conditional143=n_97>=size_80,                                _if_conditional143) {
+                                if(_if_conditional144=n_97>=size_80,                                _if_conditional144) {
                                     # 1357 "./neo-c.h"
                                     n_97=0;
                                 }
                                 else {
                                     # 1364 "./neo-c.h"
                                     # 1359 "./neo-c.h"
-                                    if(_if_conditional144=n_97==hash_96,                                    _if_conditional144) {
+                                    if(_if_conditional145=n_97==hash_96,                                    _if_conditional145) {
                                         # 1360 "./neo-c.h"
                                         printf("unexpected error in map.rehash(1)\n");
                                         # 1361 "./neo-c.h"
@@ -5521,6 +5526,7 @@ void* __result_obj__;
 _Bool _if_conditional128;
 _Bool _if_conditional129;
 _Bool _if_conditional133;
+_Bool _if_conditional134;
 memset(&__result_obj__, 0, sizeof(void*));
                         # 1 "sClass_finalize"
                         # 0 "sClass_finalize"
@@ -5539,6 +5545,12 @@ memset(&__result_obj__, 0, sizeof(void*));
                         if(_if_conditional133=self!=((void*)0)&&self->mDeclareSName!=((void*)0),                        _if_conditional133) {
                             # 2 "sClass_finalize"
                             self->mDeclareSName = come_decrement_ref_count2(self->mDeclareSName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
+                        }
+                        # 4 "sClass_finalize"
+                        # 3 "sClass_finalize"
+                        if(_if_conditional134=self!=((void*)0)&&self->mParentClassName!=((void*)0),                        _if_conditional134) {
+                            # 3 "sClass_finalize"
+                            self->mParentClassName = come_decrement_ref_count2(self->mParentClassName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         }
 }
 
@@ -5596,10 +5608,10 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static char* map$2charphsClassph_begin(struct map$2charphsClassph* self){
 void* __result_obj__;
-_Bool _if_conditional134;
+_Bool _if_conditional135;
 char* result_87;
 char* __result79__;
-_Bool _if_conditional135;
+_Bool _if_conditional136;
 char* __result80__;
 char* result_88;
 char* __result81__;
@@ -5608,7 +5620,7 @@ memset(&result_87, 0, sizeof(char*));
 memset(&result_88, 0, sizeof(char*));
                         # 1304 "./neo-c.h"
                         # 1299 "./neo-c.h"
-                        if(_if_conditional134=self==((void*)0),                        _if_conditional134) {
+                        if(_if_conditional135=self==((void*)0),                        _if_conditional135) {
                             # 1300 "./neo-c.h"
                             # 1301 "./neo-c.h"
                             memset(&result_87,0,sizeof(char*));
@@ -5644,10 +5656,10 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static char* map$2charphsClassph_next(struct map$2charphsClassph* self){
 void* __result_obj__;
-_Bool _if_conditional136;
+_Bool _if_conditional137;
 char* result_90;
 char* __result83__;
-_Bool _if_conditional137;
+_Bool _if_conditional138;
 char* __result84__;
 char* result_91;
 char* __result85__;
@@ -5656,7 +5668,7 @@ memset(&result_90, 0, sizeof(char*));
 memset(&result_91, 0, sizeof(char*));
                         # 1321 "./neo-c.h"
                         # 1316 "./neo-c.h"
-                        if(_if_conditional136=self==((void*)0)||self->key_list->it==((void*)0),                        _if_conditional136) {
+                        if(_if_conditional137=self==((void*)0)||self->key_list->it==((void*)0),                        _if_conditional137) {
                             # 1317 "./neo-c.h"
                             # 1318 "./neo-c.h"
                             memset(&result_90,0,sizeof(char*));
@@ -5686,11 +5698,11 @@ void* __result_obj__;
 unsigned int hash_93;
 unsigned int it_94;
 _Bool _while_condtional16;
-_Bool _if_conditional138;
 _Bool _if_conditional139;
-struct sClass* __result86__;
 _Bool _if_conditional140;
+struct sClass* __result86__;
 _Bool _if_conditional141;
+_Bool _if_conditional142;
 struct sClass* __result87__;
 struct sClass* __result88__;
 struct sClass* __result89__;
@@ -5705,10 +5717,10 @@ memset(&it_94, 0, sizeof(unsigned int));
                             while(_while_condtional16=(_Bool)1,                            _while_condtional16) {
                                 # 1249 "./neo-c.h"
                                 # 1230 "./neo-c.h"
-                                if(_if_conditional138=self->item_existance[it_94],                                _if_conditional138) {
+                                if(_if_conditional139=self->item_existance[it_94],                                _if_conditional139) {
                                     # 1237 "./neo-c.h"
                                     # 1232 "./neo-c.h"
-                                    if(_if_conditional139=string_equals(self->keys[it_94],key),                                    _if_conditional139) {
+                                    if(_if_conditional140=string_equals(self->keys[it_94],key),                                    _if_conditional140) {
                                         # 1234 "./neo-c.h"
                                         __result86__ = __result_obj__ = self->items[it_94];
                                         come_call_finalizer2(sClass_finalize,default_value, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
@@ -5718,14 +5730,14 @@ memset(&it_94, 0, sizeof(unsigned int));
                                     it_94++;
                                     # 1245 "./neo-c.h"
                                     # 1239 "./neo-c.h"
-                                    if(_if_conditional140=it_94>=self->size,                                    _if_conditional140) {
+                                    if(_if_conditional141=it_94>=self->size,                                    _if_conditional141) {
                                         # 1240 "./neo-c.h"
                                         it_94=0;
                                     }
                                     else {
                                         # 1245 "./neo-c.h"
                                         # 1242 "./neo-c.h"
-                                        if(_if_conditional141=it_94==hash_93,                                        _if_conditional141) {
+                                        if(_if_conditional142=it_94==hash_93,                                        _if_conditional142) {
                                             # 1243 "./neo-c.h"
                                             __result87__ = __result_obj__ = default_value;
                                             come_call_finalizer2(sClass_finalize,default_value, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
@@ -5752,7 +5764,7 @@ void* __result_obj__;
 int it2_101;
 struct list_item$1charp* it_102;
 _Bool _while_condtional19;
-_Bool _if_conditional148;
+_Bool _if_conditional149;
 struct list$1charp* __result93__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it2_101, 0, sizeof(int));
@@ -5765,7 +5777,7 @@ memset(&it_102, 0, sizeof(struct list_item$1charp*));
                                 while(_while_condtional19=it_102!=((void*)0),                                _while_condtional19) {
                                     # 455 "./neo-c.h"
                                     # 451 "./neo-c.h"
-                                    if(_if_conditional148=string_equals(it_102->item,item),                                    _if_conditional148) {
+                                    if(_if_conditional149=string_equals(it_102->item,item),                                    _if_conditional149) {
                                         # 452 "./neo-c.h"
                                         list$1charp_delete(self,it2_101,it2_101+1);
                                         # 453 "./neo-c.h"
@@ -5783,40 +5795,40 @@ memset(&it_102, 0, sizeof(struct list_item$1charp*));
 
 static struct list$1charp* list$1charp_delete(struct list$1charp* self, int head, int tail){
 void* __result_obj__;
-_Bool _if_conditional149;
 _Bool _if_conditional150;
 _Bool _if_conditional151;
-int tmp_103;
 _Bool _if_conditional152;
+int tmp_103;
 _Bool _if_conditional153;
 _Bool _if_conditional154;
-struct list$1charp* __result90__;
 _Bool _if_conditional155;
+struct list$1charp* __result90__;
 _Bool _if_conditional156;
+_Bool _if_conditional157;
 struct list_item$1charp* it_106;
 int i_107;
 _Bool _while_condtional21;
-_Bool _if_conditional157;
-struct list_item$1charp* prev_it_108;
 _Bool _if_conditional158;
+struct list_item$1charp* prev_it_108;
 _Bool _if_conditional159;
+_Bool _if_conditional160;
 struct list_item$1charp* it_109;
 int i_110;
 _Bool _while_condtional22;
-_Bool _if_conditional160;
 _Bool _if_conditional161;
+_Bool _if_conditional162;
 struct list_item$1charp* prev_it_111;
 struct list_item$1charp* it_112;
 struct list_item$1charp* head_prev_it_113;
 struct list_item$1charp* tail_it_114;
 int i_115;
 _Bool _while_condtional23;
-_Bool _if_conditional162;
 _Bool _if_conditional163;
 _Bool _if_conditional164;
-struct list_item$1charp* prev_it_116;
 _Bool _if_conditional165;
+struct list_item$1charp* prev_it_116;
 _Bool _if_conditional166;
+_Bool _if_conditional167;
 struct list$1charp* __result92__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&tmp_103, 0, sizeof(int));
@@ -5833,19 +5845,19 @@ memset(&i_115, 0, sizeof(int));
 memset(&prev_it_116, 0, sizeof(struct list_item$1charp*));
                                             # 467 "./neo-c.h"
                                             # 464 "./neo-c.h"
-                                            if(_if_conditional149=head<0,                                            _if_conditional149) {
+                                            if(_if_conditional150=head<0,                                            _if_conditional150) {
                                                 # 465 "./neo-c.h"
                                                 head+=self->len;
                                             }
                                             # 471 "./neo-c.h"
                                             # 467 "./neo-c.h"
-                                            if(_if_conditional150=tail<0,                                            _if_conditional150) {
+                                            if(_if_conditional151=tail<0,                                            _if_conditional151) {
                                                 # 468 "./neo-c.h"
                                                 tail+=self->len+1;
                                             }
                                             # 477 "./neo-c.h"
                                             # 471 "./neo-c.h"
-                                            if(_if_conditional151=head>tail,                                            _if_conditional151) {
+                                            if(_if_conditional152=head>tail,                                            _if_conditional152) {
                                                 # 472 "./neo-c.h"
                                                 tmp_103=tail;
                                                 # 473 "./neo-c.h"
@@ -5855,33 +5867,33 @@ memset(&prev_it_116, 0, sizeof(struct list_item$1charp*));
                                             }
                                             # 481 "./neo-c.h"
                                             # 477 "./neo-c.h"
-                                            if(_if_conditional152=head<0,                                            _if_conditional152) {
+                                            if(_if_conditional153=head<0,                                            _if_conditional153) {
                                                 # 478 "./neo-c.h"
                                                 head=0;
                                             }
                                             # 485 "./neo-c.h"
                                             # 481 "./neo-c.h"
-                                            if(_if_conditional153=tail>self->len,                                            _if_conditional153) {
+                                            if(_if_conditional154=tail>self->len,                                            _if_conditional154) {
                                                 # 482 "./neo-c.h"
                                                 tail=self->len;
                                             }
                                             # 489 "./neo-c.h"
                                             # 485 "./neo-c.h"
-                                            if(_if_conditional154=head==tail,                                            _if_conditional154) {
+                                            if(_if_conditional155=head==tail,                                            _if_conditional155) {
                                                 # 486 "./neo-c.h"
                                                 __result90__ = __result_obj__ = self;
                                                 return __result90__;
                                             }
                                             # 584 "./neo-c.h"
                                             # 489 "./neo-c.h"
-                                            if(_if_conditional155=head==0&&tail==self->len,                                            _if_conditional155) {
+                                            if(_if_conditional156=head==0&&tail==self->len,                                            _if_conditional156) {
                                                 # 491 "./neo-c.h"
                                                 list$1charp_reset(self);
                                             }
                                             else {
                                                 # 584 "./neo-c.h"
                                                 # 493 "./neo-c.h"
-                                                if(_if_conditional156=head==0,                                                _if_conditional156) {
+                                                if(_if_conditional157=head==0,                                                _if_conditional157) {
                                                     # 494 "./neo-c.h"
                                                     it_106=self->head;
                                                     # 495 "./neo-c.h"
@@ -5890,7 +5902,7 @@ memset(&prev_it_116, 0, sizeof(struct list_item$1charp*));
                                                     while(_while_condtional21=it_106!=((void*)0),                                                    _while_condtional21) {
                                                         # 516 "./neo-c.h"
                                                         # 497 "./neo-c.h"
-                                                        if(_if_conditional157=i_107<tail,                                                        _if_conditional157) {
+                                                        if(_if_conditional158=i_107<tail,                                                        _if_conditional158) {
                                                             # 498 "./neo-c.h"
                                                             prev_it_108=it_106;
                                                             # 500 "./neo-c.h"
@@ -5905,7 +5917,7 @@ memset(&prev_it_116, 0, sizeof(struct list_item$1charp*));
                                                         else {
                                                             # 516 "./neo-c.h"
                                                             # 507 "./neo-c.h"
-                                                            if(_if_conditional158=i_107==tail,                                                            _if_conditional158) {
+                                                            if(_if_conditional159=i_107==tail,                                                            _if_conditional159) {
                                                                 # 508 "./neo-c.h"
                                                                 self->head=it_106;
                                                                 # 509 "./neo-c.h"
@@ -5925,7 +5937,7 @@ memset(&prev_it_116, 0, sizeof(struct list_item$1charp*));
                                                 else {
                                                     # 584 "./neo-c.h"
                                                     # 518 "./neo-c.h"
-                                                    if(_if_conditional159=tail==self->len,                                                    _if_conditional159) {
+                                                    if(_if_conditional160=tail==self->len,                                                    _if_conditional160) {
                                                         # 519 "./neo-c.h"
                                                         it_109=self->head;
                                                         # 520 "./neo-c.h"
@@ -5934,7 +5946,7 @@ memset(&prev_it_116, 0, sizeof(struct list_item$1charp*));
                                                         while(_while_condtional22=it_109!=((void*)0),                                                        _while_condtional22) {
                                                             # 527 "./neo-c.h"
                                                             # 522 "./neo-c.h"
-                                                            if(_if_conditional160=i_110==head,                                                            _if_conditional160) {
+                                                            if(_if_conditional161=i_110==head,                                                            _if_conditional161) {
                                                                 # 523 "./neo-c.h"
                                                                 self->tail=it_109->prev;
                                                                 # 524 "./neo-c.h"
@@ -5942,7 +5954,7 @@ memset(&prev_it_116, 0, sizeof(struct list_item$1charp*));
                                                             }
                                                             # 541 "./neo-c.h"
                                                             # 527 "./neo-c.h"
-                                                            if(_if_conditional161=i_110>=head,                                                            _if_conditional161) {
+                                                            if(_if_conditional162=i_110>=head,                                                            _if_conditional162) {
                                                                 # 528 "./neo-c.h"
                                                                 prev_it_111=it_109;
                                                                 # 530 "./neo-c.h"
@@ -5975,19 +5987,19 @@ memset(&prev_it_116, 0, sizeof(struct list_item$1charp*));
                                                         while(_while_condtional23=it_112!=((void*)0),                                                        _while_condtional23) {
                                                             # 555 "./neo-c.h"
                                                             # 552 "./neo-c.h"
-                                                            if(_if_conditional162=i_115==head,                                                            _if_conditional162) {
+                                                            if(_if_conditional163=i_115==head,                                                            _if_conditional163) {
                                                                 # 553 "./neo-c.h"
                                                                 head_prev_it_113=it_112->prev;
                                                             }
                                                             # 559 "./neo-c.h"
                                                             # 555 "./neo-c.h"
-                                                            if(_if_conditional163=i_115==tail,                                                            _if_conditional163) {
+                                                            if(_if_conditional164=i_115==tail,                                                            _if_conditional164) {
                                                                 # 556 "./neo-c.h"
                                                                 tail_it_114=it_112;
                                                             }
                                                             # 574 "./neo-c.h"
                                                             # 559 "./neo-c.h"
-                                                            if(_if_conditional164=i_115>=head&&i_115<tail,                                                            _if_conditional164) {
+                                                            if(_if_conditional165=i_115>=head&&i_115<tail,                                                            _if_conditional165) {
                                                                 # 561 "./neo-c.h"
                                                                 prev_it_116=it_112;
                                                                 # 563 "./neo-c.h"
@@ -6008,13 +6020,13 @@ memset(&prev_it_116, 0, sizeof(struct list_item$1charp*));
                                                         }
                                                         # 579 "./neo-c.h"
                                                         # 576 "./neo-c.h"
-                                                        if(_if_conditional165=head_prev_it_113!=((void*)0),                                                        _if_conditional165) {
+                                                        if(_if_conditional166=head_prev_it_113!=((void*)0),                                                        _if_conditional166) {
                                                             # 577 "./neo-c.h"
                                                             head_prev_it_113->next=tail_it_114;
                                                         }
                                                         # 582 "./neo-c.h"
                                                         # 579 "./neo-c.h"
-                                                        if(_if_conditional166=tail_it_114!=((void*)0),                                                        _if_conditional166) {
+                                                        if(_if_conditional167=tail_it_114!=((void*)0),                                                        _if_conditional167) {
                                                             # 580 "./neo-c.h"
                                                             tail_it_114->prev=head_prev_it_113;
                                                         }
@@ -6064,10 +6076,10 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static char* list$1charp_begin(struct list$1charp* self){
 void* __result_obj__;
-_Bool _if_conditional172;
+_Bool _if_conditional173;
 char* result_118;
 char* __result94__;
-_Bool _if_conditional173;
+_Bool _if_conditional174;
 char* __result95__;
 char* result_119;
 char* __result96__;
@@ -6076,7 +6088,7 @@ memset(&result_118, 0, sizeof(char*));
 memset(&result_119, 0, sizeof(char*));
                 # 290 "./neo-c.h"
                 # 285 "./neo-c.h"
-                if(_if_conditional172=self==((void*)0),                _if_conditional172) {
+                if(_if_conditional173=self==((void*)0),                _if_conditional173) {
                     # 286 "./neo-c.h"
                     # 287 "./neo-c.h"
                     memset(&result_118,0,sizeof(char*));
@@ -6112,10 +6124,10 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static char* list$1charp_next(struct list$1charp* self){
 void* __result_obj__;
-_Bool _if_conditional174;
+_Bool _if_conditional175;
 char* result_121;
 char* __result98__;
-_Bool _if_conditional175;
+_Bool _if_conditional176;
 char* __result99__;
 char* result_122;
 char* __result100__;
@@ -6124,7 +6136,7 @@ memset(&result_121, 0, sizeof(char*));
 memset(&result_122, 0, sizeof(char*));
                 # 308 "./neo-c.h"
                 # 302 "./neo-c.h"
-                if(_if_conditional174=self==((void*)0)||self->it==((void*)0),                _if_conditional174) {
+                if(_if_conditional175=self==((void*)0)||self->it==((void*)0),                _if_conditional175) {
                     # 303 "./neo-c.h"
                     # 304 "./neo-c.h"
                     memset(&result_121,0,sizeof(char*));
@@ -6151,10 +6163,10 @@ memset(&result_122, 0, sizeof(char*));
 
 static struct list$1charp* list$1charp_push_back(struct list$1charp* self, char* item){
 void* __result_obj__;
-_Bool _if_conditional178;
+_Bool _if_conditional179;
 void* right_value133;
 struct list_item$1charp* litem_123;
-_Bool _if_conditional179;
+_Bool _if_conditional180;
 void* right_value134;
 struct list_item$1charp* litem_124;
 void* right_value135;
@@ -6169,7 +6181,7 @@ right_value135 = (void*)0;
 memset(&litem_125, 0, sizeof(struct list_item$1charp*));
                     # 256 "./neo-c.h"
                     # 225 "./neo-c.h"
-                    if(_if_conditional178=self->len==0,                    _if_conditional178) {
+                    if(_if_conditional179=self->len==0,                    _if_conditional179) {
                         # 226 "./neo-c.h"
                         litem_123=(struct list_item$1charp*)come_increment_ref_count(((struct list_item$1charp*)(right_value133=(struct list_item$1charp*)come_calloc(1, sizeof(struct list_item$1charp)*(1), "./neo-c.h", 226, "list_item$1charp"))));
                         come_call_finalizer2(list_item$1charpp_finalize,right_value133, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -6187,7 +6199,7 @@ memset(&litem_125, 0, sizeof(struct list_item$1charp*));
                     else {
                         # 256 "./neo-c.h"
                         # 235 "./neo-c.h"
-                        if(_if_conditional179=self->len==1,                        _if_conditional179) {
+                        if(_if_conditional180=self->len==1,                        _if_conditional180) {
                             # 236 "./neo-c.h"
                             litem_124=(struct list_item$1charp*)come_increment_ref_count(((struct list_item$1charp*)(right_value134=(struct list_item$1charp*)come_calloc(1, sizeof(struct list_item$1charp)*(1), "./neo-c.h", 236, "list_item$1charp"))));
                             come_call_finalizer2(list_item$1charpp_finalize,right_value134, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -6227,11 +6239,10 @@ memset(&litem_125, 0, sizeof(struct list_item$1charp*));
 
 static struct map$2charphsTypeph* map$2charphsTypeph_insert(struct map$2charphsTypeph* self, char* key, struct sType* item){
 void* __result_obj__;
-_Bool _if_conditional180;
+_Bool _if_conditional181;
 unsigned int hash_144;
 unsigned int it_145;
 _Bool _while_condtional26;
-_Bool _if_conditional192;
 _Bool _if_conditional193;
 _Bool _if_conditional194;
 _Bool _if_conditional195;
@@ -6239,10 +6250,11 @@ _Bool _if_conditional196;
 _Bool _if_conditional197;
 _Bool _if_conditional198;
 _Bool _if_conditional199;
+_Bool _if_conditional200;
 _Bool same_key_exist_146;
 char* it2_147;
-_Bool _if_conditional200;
 _Bool _if_conditional201;
+_Bool _if_conditional202;
 struct map$2charphsTypeph* __result114__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&hash_144, 0, sizeof(unsigned int));
@@ -6251,7 +6263,7 @@ memset(&same_key_exist_146, 0, sizeof(_Bool));
 memset(&it2_147, 0, sizeof(char*));
             # 1393 "./neo-c.h"
             # 1390 "./neo-c.h"
-            if(_if_conditional180=self->len*10>=self->size,            _if_conditional180) {
+            if(_if_conditional181=self->len*10>=self->size,            _if_conditional181) {
                 # 1391 "./neo-c.h"
                 map$2charphsTypeph_rehash(self);
             }
@@ -6263,13 +6275,13 @@ memset(&it2_147, 0, sizeof(char*));
             while(_while_condtional26=(_Bool)1,            _while_condtional26) {
                 # 1450 "./neo-c.h"
                 # 1397 "./neo-c.h"
-                if(_if_conditional192=self->item_existance[it_145],                _if_conditional192) {
+                if(_if_conditional193=self->item_existance[it_145],                _if_conditional193) {
                     # 1420 "./neo-c.h"
                     # 1399 "./neo-c.h"
-                    if(_if_conditional193=string_equals(self->keys[it_145],key),                    _if_conditional193) {
+                    if(_if_conditional194=string_equals(self->keys[it_145],key),                    _if_conditional194) {
                         # 1410 "./neo-c.h"
                         # 1401 "./neo-c.h"
-                        if(_if_conditional194=1,                        _if_conditional194) {
+                        if(_if_conditional195=1,                        _if_conditional195) {
                             # 1402 "./neo-c.h"
                             list$1charp_remove(self->key_list,self->keys[it_145]);
                             # 1403 "./neo-c.h"
@@ -6285,7 +6297,7 @@ memset(&it2_147, 0, sizeof(char*));
                         }
                         # 1417 "./neo-c.h"
                         # 1410 "./neo-c.h"
-                        if(_if_conditional195=1,                        _if_conditional195) {
+                        if(_if_conditional196=1,                        _if_conditional196) {
                             # 1411 "./neo-c.h"
                             come_call_finalizer2(sType_finalize,self->items[it_145], (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                             # 1412 "./neo-c.h"
@@ -6302,14 +6314,14 @@ memset(&it2_147, 0, sizeof(char*));
                     it_145++;
                     # 1430 "./neo-c.h"
                     # 1422 "./neo-c.h"
-                    if(_if_conditional196=it_145>=self->size,                    _if_conditional196) {
+                    if(_if_conditional197=it_145>=self->size,                    _if_conditional197) {
                         # 1423 "./neo-c.h"
                         it_145=0;
                     }
                     else {
                         # 1430 "./neo-c.h"
                         # 1425 "./neo-c.h"
-                        if(_if_conditional197=it_145==hash_144,                        _if_conditional197) {
+                        if(_if_conditional198=it_145==hash_144,                        _if_conditional198) {
                             # 1426 "./neo-c.h"
                             printf("unexpected error in map.insert\n");
                             # 1427 "./neo-c.h"
@@ -6324,7 +6336,7 @@ memset(&it2_147, 0, sizeof(char*));
                     self->item_existance[it_145]=(_Bool)1;
                     # 1439 "./neo-c.h"
                     # 1433 "./neo-c.h"
-                    if(_if_conditional198=1,                    _if_conditional198) {
+                    if(_if_conditional199=1,                    _if_conditional199) {
                         # 1434 "./neo-c.h"
                         self->keys[it_145]=(char*)come_increment_ref_count(key);
                     }
@@ -6334,7 +6346,7 @@ memset(&it2_147, 0, sizeof(char*));
                     }
                     # 1446 "./neo-c.h"
                     # 1439 "./neo-c.h"
-                    if(_if_conditional199=1,                    _if_conditional199) {
+                    if(_if_conditional200=1,                    _if_conditional200) {
                         # 1440 "./neo-c.h"
                         self->items[it_145]=(struct sType*)come_increment_ref_count(item);
                     }
@@ -6354,14 +6366,14 @@ memset(&it2_147, 0, sizeof(char*));
             for(            it2_147=list$1charp_begin(self->key_list);            !list$1charp_end(self->key_list);            it2_147=list$1charp_next(self->key_list)            ){
                 # 1458 "./neo-c.h"
                 # 1455 "./neo-c.h"
-                if(_if_conditional200=string_equals(it2_147,key),                _if_conditional200) {
+                if(_if_conditional201=string_equals(it2_147,key),                _if_conditional201) {
                     # 1456 "./neo-c.h"
                     same_key_exist_146=(_Bool)1;
                 }
             }
             # 1464 "./neo-c.h"
             # 1460 "./neo-c.h"
-            if(_if_conditional201=!same_key_exist_146,            _if_conditional201) {
+            if(_if_conditional202=!same_key_exist_146,            _if_conditional202) {
                 # 1461 "./neo-c.h"
                 list$1charp_push_back(self->key_list,key);
             }
@@ -6390,9 +6402,9 @@ struct sType* it2_140;
 unsigned int hash_141;
 int n_142;
 _Bool _while_condtional25;
-_Bool _if_conditional189;
 _Bool _if_conditional190;
 _Bool _if_conditional191;
+_Bool _if_conditional192;
 struct sType* default_value_143;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&size_127, 0, sizeof(int));
@@ -6437,19 +6449,19 @@ memset(&default_value_143, 0, sizeof(struct sType*));
                         while(_while_condtional25=(_Bool)1,                        _while_condtional25) {
                             # 1374 "./neo-c.h"
                             # 1352 "./neo-c.h"
-                            if(_if_conditional189=item_existance_130[n_142],                            _if_conditional189) {
+                            if(_if_conditional190=item_existance_130[n_142],                            _if_conditional190) {
                                 # 1354 "./neo-c.h"
                                 n_142++;
                                 # 1364 "./neo-c.h"
                                 # 1356 "./neo-c.h"
-                                if(_if_conditional190=n_142>=size_127,                                _if_conditional190) {
+                                if(_if_conditional191=n_142>=size_127,                                _if_conditional191) {
                                     # 1357 "./neo-c.h"
                                     n_142=0;
                                 }
                                 else {
                                     # 1364 "./neo-c.h"
                                     # 1359 "./neo-c.h"
-                                    if(_if_conditional191=n_142==hash_141,                                    _if_conditional191) {
+                                    if(_if_conditional192=n_142==hash_141,                                    _if_conditional192) {
                                         # 1360 "./neo-c.h"
                                         printf("unexpected error in map.rehash(1)\n");
                                         # 1361 "./neo-c.h"
@@ -6494,10 +6506,10 @@ memset(&default_value_143, 0, sizeof(struct sType*));
 
 static char* map$2charphsTypeph_begin(struct map$2charphsTypeph* self){
 void* __result_obj__;
-_Bool _if_conditional181;
+_Bool _if_conditional182;
 char* result_132;
 char* __result103__;
-_Bool _if_conditional182;
+_Bool _if_conditional183;
 char* __result104__;
 char* result_133;
 char* __result105__;
@@ -6506,7 +6518,7 @@ memset(&result_132, 0, sizeof(char*));
 memset(&result_133, 0, sizeof(char*));
                         # 1304 "./neo-c.h"
                         # 1299 "./neo-c.h"
-                        if(_if_conditional181=self==((void*)0),                        _if_conditional181) {
+                        if(_if_conditional182=self==((void*)0),                        _if_conditional182) {
                             # 1300 "./neo-c.h"
                             # 1301 "./neo-c.h"
                             memset(&result_132,0,sizeof(char*));
@@ -6542,10 +6554,10 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static char* map$2charphsTypeph_next(struct map$2charphsTypeph* self){
 void* __result_obj__;
-_Bool _if_conditional183;
+_Bool _if_conditional184;
 char* result_135;
 char* __result107__;
-_Bool _if_conditional184;
+_Bool _if_conditional185;
 char* __result108__;
 char* result_136;
 char* __result109__;
@@ -6554,7 +6566,7 @@ memset(&result_135, 0, sizeof(char*));
 memset(&result_136, 0, sizeof(char*));
                         # 1321 "./neo-c.h"
                         # 1316 "./neo-c.h"
-                        if(_if_conditional183=self==((void*)0)||self->key_list->it==((void*)0),                        _if_conditional183) {
+                        if(_if_conditional184=self==((void*)0)||self->key_list->it==((void*)0),                        _if_conditional184) {
                             # 1317 "./neo-c.h"
                             # 1318 "./neo-c.h"
                             memset(&result_135,0,sizeof(char*));
@@ -6584,11 +6596,11 @@ void* __result_obj__;
 unsigned int hash_138;
 unsigned int it_139;
 _Bool _while_condtional24;
-_Bool _if_conditional185;
 _Bool _if_conditional186;
-struct sType* __result110__;
 _Bool _if_conditional187;
+struct sType* __result110__;
 _Bool _if_conditional188;
+_Bool _if_conditional189;
 struct sType* __result111__;
 struct sType* __result112__;
 struct sType* __result113__;
@@ -6603,10 +6615,10 @@ memset(&it_139, 0, sizeof(unsigned int));
                             while(_while_condtional24=(_Bool)1,                            _while_condtional24) {
                                 # 1249 "./neo-c.h"
                                 # 1230 "./neo-c.h"
-                                if(_if_conditional185=self->item_existance[it_139],                                _if_conditional185) {
+                                if(_if_conditional186=self->item_existance[it_139],                                _if_conditional186) {
                                     # 1237 "./neo-c.h"
                                     # 1232 "./neo-c.h"
-                                    if(_if_conditional186=string_equals(self->keys[it_139],key),                                    _if_conditional186) {
+                                    if(_if_conditional187=string_equals(self->keys[it_139],key),                                    _if_conditional187) {
                                         # 1234 "./neo-c.h"
                                         __result110__ = __result_obj__ = self->items[it_139];
                                         come_call_finalizer2(sType_finalize,default_value, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
@@ -6616,14 +6628,14 @@ memset(&it_139, 0, sizeof(unsigned int));
                                     it_139++;
                                     # 1245 "./neo-c.h"
                                     # 1239 "./neo-c.h"
-                                    if(_if_conditional187=it_139>=self->size,                                    _if_conditional187) {
+                                    if(_if_conditional188=it_139>=self->size,                                    _if_conditional188) {
                                         # 1240 "./neo-c.h"
                                         it_139=0;
                                     }
                                     else {
                                         # 1245 "./neo-c.h"
                                         # 1242 "./neo-c.h"
-                                        if(_if_conditional188=it_139==hash_138,                                        _if_conditional188) {
+                                        if(_if_conditional189=it_139==hash_138,                                        _if_conditional189) {
                                             # 1243 "./neo-c.h"
                                             __result111__ = __result_obj__ = default_value;
                                             come_call_finalizer2(sType_finalize,default_value, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
@@ -6647,10 +6659,10 @@ memset(&it_139, 0, sizeof(unsigned int));
 
 static struct tuple2$2sTypephcharph* list$1tuple2$2sTypephcharphph_begin(struct list$1tuple2$2sTypephcharphph* self){
 void* __result_obj__;
-_Bool _if_conditional204;
+_Bool _if_conditional205;
 struct tuple2$2sTypephcharph* result_149;
 struct tuple2$2sTypephcharph* __result115__;
-_Bool _if_conditional205;
+_Bool _if_conditional206;
 struct tuple2$2sTypephcharph* __result116__;
 struct tuple2$2sTypephcharph* result_150;
 struct tuple2$2sTypephcharph* __result117__;
@@ -6659,7 +6671,7 @@ memset(&result_149, 0, sizeof(struct tuple2$2sTypephcharph*));
 memset(&result_150, 0, sizeof(struct tuple2$2sTypephcharph*));
                 # 290 "./neo-c.h"
                 # 285 "./neo-c.h"
-                if(_if_conditional204=self==((void*)0),                _if_conditional204) {
+                if(_if_conditional205=self==((void*)0),                _if_conditional205) {
                     # 286 "./neo-c.h"
                     # 287 "./neo-c.h"
                     memset(&result_149,0,sizeof(struct tuple2$2sTypephcharph*));
@@ -6695,10 +6707,10 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct tuple2$2sTypephcharph* list$1tuple2$2sTypephcharphph_next(struct list$1tuple2$2sTypephcharphph* self){
 void* __result_obj__;
-_Bool _if_conditional206;
+_Bool _if_conditional207;
 struct tuple2$2sTypephcharph* result_152;
 struct tuple2$2sTypephcharph* __result119__;
-_Bool _if_conditional207;
+_Bool _if_conditional208;
 struct tuple2$2sTypephcharph* __result120__;
 struct tuple2$2sTypephcharph* result_153;
 struct tuple2$2sTypephcharph* __result121__;
@@ -6707,7 +6719,7 @@ memset(&result_152, 0, sizeof(struct tuple2$2sTypephcharph*));
 memset(&result_153, 0, sizeof(struct tuple2$2sTypephcharph*));
                 # 308 "./neo-c.h"
                 # 302 "./neo-c.h"
-                if(_if_conditional206=self==((void*)0)||self->it==((void*)0),                _if_conditional206) {
+                if(_if_conditional207=self==((void*)0)||self->it==((void*)0),                _if_conditional207) {
                     # 303 "./neo-c.h"
                     # 304 "./neo-c.h"
                     memset(&result_152,0,sizeof(struct tuple2$2sTypephcharph*));
@@ -6756,15 +6768,15 @@ right_value156 = (void*)0;
 struct sNode* top_level_v95(char* buf, char* head, int head_sline, struct sInfo* info){
 void* __result_obj__;
 char* source_head_157;
-_Bool _if_conditional212;
+_Bool _if_conditional213;
 _Bool in_typedef_158;
 void* right_value157;
 struct tuple3$3sTypephcharphbool* multiple_assign_var2;
 struct sType* type_159;
 char* type_name_160;
 _Bool err_161;
-_Bool _if_conditional215;
 _Bool _if_conditional216;
+_Bool _if_conditional217;
 void* right_value158;
 struct sType* base_type_162;
 void* right_value159;
@@ -6845,7 +6857,7 @@ right_value192 = (void*)0;
     source_head_157=info->p;
     # 167 "17typedef.c"
     # 110 "17typedef.c"
-    if(_if_conditional212=charp_operator_equals(buf,"typedef"),    _if_conditional212) {
+    if(_if_conditional213=charp_operator_equals(buf,"typedef"),    _if_conditional213) {
         # 111 "17typedef.c"
         in_typedef_158=info->in_typedef;
         # 112 "17typedef.c"
@@ -6858,7 +6870,7 @@ right_value192 = (void*)0;
         come_call_finalizer2(tuple3$3sTypephcharphboolp_finalize,right_value157, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         # 118 "17typedef.c"
         # 114 "17typedef.c"
-        if(_if_conditional215=!err_161,        _if_conditional215) {
+        if(_if_conditional216=!err_161,        _if_conditional216) {
             # 115 "17typedef.c"
             printf("%s %d: parse_type failed\n",info->sname,info->sline);
             # 116 "17typedef.c"
@@ -6870,7 +6882,7 @@ right_value192 = (void*)0;
         info->in_typedef=in_typedef_158;
         # 165 "17typedef.c"
         # 121 "17typedef.c"
-        if(_if_conditional216=*info->p==44,        _if_conditional216) {
+        if(_if_conditional217=*info->p==44,        _if_conditional217) {
             # 122 "17typedef.c"
             info->p++;
             # 123 "17typedef.c"
@@ -6994,18 +7006,18 @@ right_value192 = (void*)0;
 
 static void tuple3$3sTypephcharphboolp_finalize(struct tuple3$3sTypephcharphbool* self){
 void* __result_obj__;
-_Bool _if_conditional213;
 _Bool _if_conditional214;
+_Bool _if_conditional215;
 memset(&__result_obj__, 0, sizeof(void*));
             # 1 "tuple3$3sTypephcharphboolp_finalize"
             # 0 "tuple3$3sTypephcharphboolp_finalize"
-            if(_if_conditional213=self!=((void*)0)&&self->v1!=((void*)0),            _if_conditional213) {
+            if(_if_conditional214=self!=((void*)0)&&self->v1!=((void*)0),            _if_conditional214) {
                 # 0 "tuple3$3sTypephcharphboolp_finalize"
                 come_call_finalizer2(sType_finalize,self->v1, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
             # 2 "tuple3$3sTypephcharphboolp_finalize"
             # 1 "tuple3$3sTypephcharphboolp_finalize"
-            if(_if_conditional214=self!=((void*)0)&&self->v2!=((void*)0),            _if_conditional214) {
+            if(_if_conditional215=self!=((void*)0)&&self->v2!=((void*)0),            _if_conditional215) {
                 # 1 "tuple3$3sTypephcharphboolp_finalize"
                 self->v2 = come_decrement_ref_count2(self->v2, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
@@ -7038,11 +7050,11 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct list$1tuple2$2sTypephcharphph* list$1tuple2$2sTypephcharphph_push_back(struct list$1tuple2$2sTypephcharphph* self, struct tuple2$2sTypephcharph* item){
 void* __result_obj__;
-_Bool _if_conditional217;
+_Bool _if_conditional218;
 void* right_value163;
 struct list_item$1tuple2$2sTypephcharphph* litem_165;
 struct tuple2$2sTypephcharph* __dec_obj50;
-_Bool _if_conditional218;
+_Bool _if_conditional219;
 void* right_value164;
 struct list_item$1tuple2$2sTypephcharphph* litem_166;
 struct tuple2$2sTypephcharph* __dec_obj51;
@@ -7059,7 +7071,7 @@ right_value165 = (void*)0;
 memset(&litem_167, 0, sizeof(struct list_item$1tuple2$2sTypephcharphph*));
                 # 256 "./neo-c.h"
                 # 225 "./neo-c.h"
-                if(_if_conditional217=self->len==0,                _if_conditional217) {
+                if(_if_conditional218=self->len==0,                _if_conditional218) {
                     # 226 "./neo-c.h"
                     litem_165=(struct list_item$1tuple2$2sTypephcharphph*)come_increment_ref_count(((struct list_item$1tuple2$2sTypephcharphph*)(right_value163=(struct list_item$1tuple2$2sTypephcharphph*)come_calloc(1, sizeof(struct list_item$1tuple2$2sTypephcharphph)*(1), "./neo-c.h", 226, "list_item$1tuple2$2sTypephcharphph"))));
                     come_call_finalizer2(list_item$1tuple2$2sTypephcharphphp_finalize,right_value163, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -7079,7 +7091,7 @@ memset(&litem_167, 0, sizeof(struct list_item$1tuple2$2sTypephcharphph*));
                 else {
                     # 256 "./neo-c.h"
                     # 235 "./neo-c.h"
-                    if(_if_conditional218=self->len==1,                    _if_conditional218) {
+                    if(_if_conditional219=self->len==1,                    _if_conditional219) {
                         # 236 "./neo-c.h"
                         litem_166=(struct list_item$1tuple2$2sTypephcharphph*)come_increment_ref_count(((struct list_item$1tuple2$2sTypephcharphph*)(right_value164=(struct list_item$1tuple2$2sTypephcharphph*)come_calloc(1, sizeof(struct list_item$1tuple2$2sTypephcharphph)*(1), "./neo-c.h", 236, "list_item$1tuple2$2sTypephcharphph"))));
                         come_call_finalizer2(list_item$1tuple2$2sTypephcharphphp_finalize,right_value164, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -7125,39 +7137,39 @@ memset(&litem_167, 0, sizeof(struct list_item$1tuple2$2sTypephcharphph*));
 
 static void sTypedefNode_finalize(struct sTypedefNode* self){
 void* __result_obj__;
-_Bool _if_conditional231;
 _Bool _if_conditional232;
 _Bool _if_conditional233;
 _Bool _if_conditional234;
 _Bool _if_conditional235;
+_Bool _if_conditional236;
 memset(&__result_obj__, 0, sizeof(void*));
                 # 1 "sTypedefNode_finalize"
                 # 0 "sTypedefNode_finalize"
-                if(_if_conditional231=self!=((void*)0)&&self->mTypeName!=((void*)0),                _if_conditional231) {
+                if(_if_conditional232=self!=((void*)0)&&self->mTypeName!=((void*)0),                _if_conditional232) {
                     # 0 "sTypedefNode_finalize"
                     self->mTypeName = come_decrement_ref_count2(self->mTypeName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 }
                 # 2 "sTypedefNode_finalize"
                 # 1 "sTypedefNode_finalize"
-                if(_if_conditional232=self!=((void*)0)&&self->mType!=((void*)0),                _if_conditional232) {
+                if(_if_conditional233=self!=((void*)0)&&self->mType!=((void*)0),                _if_conditional233) {
                     # 1 "sTypedefNode_finalize"
                     come_call_finalizer2(sType_finalize,self->mType, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 }
                 # 3 "sTypedefNode_finalize"
                 # 2 "sTypedefNode_finalize"
-                if(_if_conditional233=self!=((void*)0)&&self->multiple_declare!=((void*)0),                _if_conditional233) {
+                if(_if_conditional234=self!=((void*)0)&&self->multiple_declare!=((void*)0),                _if_conditional234) {
                     # 2 "sTypedefNode_finalize"
                     come_call_finalizer2(list$1tuple2$2sTypephcharphphp_finalize,self->multiple_declare, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 }
                 # 4 "sTypedefNode_finalize"
                 # 3 "sTypedefNode_finalize"
-                if(_if_conditional234=self!=((void*)0)&&self->mDeclareSName!=((void*)0),                _if_conditional234) {
+                if(_if_conditional235=self!=((void*)0)&&self->mDeclareSName!=((void*)0),                _if_conditional235) {
                     # 3 "sTypedefNode_finalize"
                     self->mDeclareSName = come_decrement_ref_count2(self->mDeclareSName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 }
                 # 5 "sTypedefNode_finalize"
                 # 4 "sTypedefNode_finalize"
-                if(_if_conditional235=self!=((void*)0)&&self->sname!=((void*)0),                _if_conditional235) {
+                if(_if_conditional236=self!=((void*)0)&&self->sname!=((void*)0),                _if_conditional236) {
                     # 4 "sTypedefNode_finalize"
                     self->sname = come_decrement_ref_count2(self->sname, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 }
@@ -7165,24 +7177,24 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct sTypedefNode* sTypedefNode_clone(struct sTypedefNode* self){
 void* __result_obj__;
-_Bool _if_conditional236;
+_Bool _if_conditional237;
 struct sTypedefNode* __result130__;
 void* right_value185;
 struct sTypedefNode* result_175;
-_Bool _if_conditional237;
+_Bool _if_conditional238;
 void* right_value186;
 char* __dec_obj58;
-_Bool _if_conditional238;
+_Bool _if_conditional239;
 void* right_value187;
 struct sType* __dec_obj59;
-_Bool _if_conditional239;
+_Bool _if_conditional240;
 void* right_value188;
 struct list$1tuple2$2sTypephcharphph* __dec_obj60;
-_Bool _if_conditional240;
+_Bool _if_conditional241;
 void* right_value189;
 char* __dec_obj61;
-_Bool _if_conditional241;
 _Bool _if_conditional242;
+_Bool _if_conditional243;
 void* right_value190;
 char* __dec_obj62;
 struct sTypedefNode* __result131__;
@@ -7196,7 +7208,7 @@ right_value189 = (void*)0;
 right_value190 = (void*)0;
                 # 3 "sTypedefNode_clone"
                 # 2 "sTypedefNode_clone"
-                if(_if_conditional236=self==(void*)0,                _if_conditional236) {
+                if(_if_conditional237=self==(void*)0,                _if_conditional237) {
                     # 2 "sTypedefNode_clone"
                     __result130__ = __result_obj__ = (void*)0;
                     return __result130__;
@@ -7206,7 +7218,7 @@ right_value190 = (void*)0;
                 come_call_finalizer2(sTypedefNode_finalize,right_value185, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                 # 5 "sTypedefNode_clone"
                 # 4 "sTypedefNode_clone"
-                if(_if_conditional237=self!=((void*)0)&&self->mTypeName!=((void*)0),                _if_conditional237) {
+                if(_if_conditional238=self!=((void*)0)&&self->mTypeName!=((void*)0),                _if_conditional238) {
                     # 4 "sTypedefNode_clone"
                     __dec_obj58=result_175->mTypeName;
                     result_175->mTypeName=(char*)come_increment_ref_count(((char*)(right_value186=string_clone(self->mTypeName))));
@@ -7215,7 +7227,7 @@ right_value190 = (void*)0;
                 }
                 # 6 "sTypedefNode_clone"
                 # 5 "sTypedefNode_clone"
-                if(_if_conditional238=self!=((void*)0)&&self->mType!=((void*)0),                _if_conditional238) {
+                if(_if_conditional239=self!=((void*)0)&&self->mType!=((void*)0),                _if_conditional239) {
                     # 5 "sTypedefNode_clone"
                     __dec_obj59=result_175->mType;
                     result_175->mType=(struct sType*)come_increment_ref_count(((struct sType*)(right_value187=sType_clone(self->mType))));
@@ -7224,7 +7236,7 @@ right_value190 = (void*)0;
                 }
                 # 7 "sTypedefNode_clone"
                 # 6 "sTypedefNode_clone"
-                if(_if_conditional239=self!=((void*)0)&&self->multiple_declare!=((void*)0),                _if_conditional239) {
+                if(_if_conditional240=self!=((void*)0)&&self->multiple_declare!=((void*)0),                _if_conditional240) {
                     # 6 "sTypedefNode_clone"
                     __dec_obj60=result_175->multiple_declare;
                     result_175->multiple_declare=(struct list$1tuple2$2sTypephcharphph*)come_increment_ref_count(((struct list$1tuple2$2sTypephcharphph*)(right_value188=list$1tuple2$2sTypephcharphphp_clone(self->multiple_declare))));
@@ -7233,7 +7245,7 @@ right_value190 = (void*)0;
                 }
                 # 8 "sTypedefNode_clone"
                 # 7 "sTypedefNode_clone"
-                if(_if_conditional240=self!=((void*)0)&&self->mDeclareSName!=((void*)0),                _if_conditional240) {
+                if(_if_conditional241=self!=((void*)0)&&self->mDeclareSName!=((void*)0),                _if_conditional241) {
                     # 7 "sTypedefNode_clone"
                     __dec_obj61=result_175->mDeclareSName;
                     result_175->mDeclareSName=(char*)come_increment_ref_count(((char*)(right_value189=string_clone(self->mDeclareSName))));
@@ -7242,13 +7254,13 @@ right_value190 = (void*)0;
                 }
                 # 9 "sTypedefNode_clone"
                 # 8 "sTypedefNode_clone"
-                if(_if_conditional241=self!=((void*)0),                _if_conditional241) {
+                if(_if_conditional242=self!=((void*)0),                _if_conditional242) {
                     # 8 "sTypedefNode_clone"
                     result_175->sline=self->sline;
                 }
                 # 10 "sTypedefNode_clone"
                 # 9 "sTypedefNode_clone"
-                if(_if_conditional242=self!=((void*)0)&&self->sname!=((void*)0),                _if_conditional242) {
+                if(_if_conditional243=self!=((void*)0)&&self->sname!=((void*)0),                _if_conditional243) {
                     # 9 "sTypedefNode_clone"
                     __dec_obj62=result_175->sname;
                     result_175->sname=(char*)come_increment_ref_count(((char*)(right_value190=string_clone(self->sname))));

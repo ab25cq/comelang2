@@ -52,7 +52,7 @@ bool node_compile(sNode* node, sInfo* info=info)
     return result;
 }
 
-void err_msg(sInfo* info, char* msg, ...)
+record void err_msg(sInfo* info, char* msg, ...)
 {
     if(!info.no_output_err) {
         char* msg2;
@@ -316,6 +316,7 @@ sType*% sType*::initialize(sType*% self, char* name, bool heap=false, sInfo* inf
     if(klass == null && generics_class == null) {
         printf("%s %d: class not found(%s)(1)\n", info->sname, info->sline, name2);
     }
+    
     if(klass) {
         self.mClass = klass;
     }

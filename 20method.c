@@ -385,8 +385,8 @@ bool sMethodCallNode*::compile(sMethodCallNode* self, sInfo* info)
                     
                     if(fun == null) {
                         sClass* klass = obj_type->mClass;
-                        while(klass->mParent) {
-                            klass = klass->mParent;
+                        while(info.classes[klass->mParentClassName]??) {
+                            klass = info.classes[klass->mParentClassName]??;
                             generics_fun_name = create_method_name_using_class(klass, false@no_pointer_name, fun_name, info);
                             
                             fun = info.funcs.at(generics_fun_name, null);

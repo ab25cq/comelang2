@@ -85,6 +85,45 @@ void output_struct(sClass* klass, sInfo* info)
     }
 }
 
+void output_struct_header(sClass* klass, sInfo* info)
+{
+/*
+    if(info->no_output_come_code) {
+        return;
+    }
+*/
+    if(!klass->mOutputed2) {
+        klass->mOutputed2 = true;
+        
+        buffer*% buf = new buffer();
+        
+//        if(klass.mFields.length() > 0) {
+            if(klass.mParentClassName) {
+                buf.append_str(xsprintf("struct %s extends %s\n{\n", klass.mName, klass.mParentClassName));
+            }
+            else {
+                buf.append_str(xsprintf("struct %s\n{\n", klass.mName));
+            }
+            foreach(it, klass.mFields) {
+                var name, type = it;
+                
+                type->mStatic = false;
+                
+                buf.append_str("    ");
+                buf.append_str(make_define_var_no_solved(type, name));
+                buf.append_str(";\n");
+            }
+            buf.append_str("};\n");
+            
+            if(info.output_header_file && klass.mDeclareSName !== info->base_sname) {
+            }
+            else {
+                add_come_code_at_come_header(info, "%s", buf.to_string());
+            }
+//        }
+    }
+}
+
 bool is_no_contained_generics_types(sType* type, sInfo* info)
 {
     sType* type2 = type->mNoSolvedGenericsType.v1;
@@ -442,12 +481,13 @@ bool sClassNode*::compile(sClassNode* self, sInfo* info)
     info.types.insert(name, clone type);
     
     if(self.mOutput) {
-        foreach(it, self.mMethods) {
-            if(!node_compile(it)) {
-                return false;
-            }
-        }
         output_struct(klass, info);
+    }
+    
+    foreach(it, self.mMethods) {
+        if(!node_compile(it)) {
+            return false;
+        }
     }
 
     return true;
@@ -480,6 +520,20 @@ sNode*% parse_struct(string type_name, sInfo* info)
     }
     
     klass.mFields.reset();
+    
+    sClass* parent_class = null;
+    if(strmemcmp(info->p, "extends")) {
+        parse_word();
+        
+        string parent_class_name = parse_word();
+        
+        parent_class = info.classes[parent_class_name]??;
+        
+        if(parent_class == null) {
+            err_msg(info, "invalid class name(%s)", parent_class_name);
+            return null;
+        }
+    }
     
     expected_next_character('{');
     
@@ -544,6 +598,10 @@ sNode*% parse_struct(string type_name, sInfo* info)
             break;
         }
         parse_sharp();
+    }
+    if(parent_class) {
+        klass->mParentClassName = clone parent_class->mName;
+        info.classes.insert(klass->mName, clone klass);
     }
     
     return new sStructNode(string(type_name), klass, output, info) implements sNode;
@@ -698,6 +756,20 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
                     }
                 }
                 
+                sClass* parent_class = null;
+                if(strmemcmp(info->p, "extends")) {
+                    parse_word();
+                    
+                    string parent_class_name = parse_word();
+                    
+                    parent_class = info.classes[parent_class_name]??;
+                    
+                    if(parent_class == null) {
+                        err_msg(info, "invalid class name(%s)", parent_class_name);
+                        return null;
+                    }
+                }
+                
                 expected_next_character('{') ;
                
                 while(true) {
@@ -773,6 +845,11 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
                     add_come_code_at_come_header(info, "%s;\n", header.to_string());
                 }
                 
+                if(parent_class) {
+                    struct_class->mParentClassName = clone parent_class->mName;
+                    info.classes.insert(struct_class->mName, clone struct_class);
+                }
+                
                 return new sStructNode(string(type_name), clone struct_class, output, info) implements sNode;
             }
         }
@@ -802,7 +879,7 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
         sClass* parent_class2 = parent_class;
         while(parent_class2) {
             parent_classes.add(parent_class2);
-            parent_class2 = parent_class->mParent;
+            parent_class2 = info.classes[parent_class->mParentClassName]??;
         }
         
         bool output = true;
@@ -820,13 +897,13 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
         
         if(info.classes.at(type_name, null) == null) {
             if(parent_class) {
-                struct_class->mParent = parent_class;
+                struct_class->mParentClassName = clone parent_class->mName;
             }
             info.classes.insert(type_name, clone struct_class);
             
             foreach(parent, parent_classes.reverse()) {
                 foreach(it, parent.mFields) {
-                    struct_class->mFields.add(it);
+                    struct_class->mFields.add(clone it);
                 }
             }
         }
@@ -834,20 +911,23 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
             sClass* klass2 = info.classes.at(type_name, null);
             
             if(parent_class) {
-                klass2->mParent = parent_class;
+                klass2->mParentClassName = clone parent_class->mName;
             }
+            info.classes.insert(type_name, clone klass2);
             
             foreach(parent, parent_classes.reverse()) {
                 foreach(it, parent.mFields) {
-                    klass2->mFields.add(it);
+                    klass2->mFields.add(clone it);
                 }
             }
             foreach(it, struct_class.mFields) {
-                klass2.mFields.add(it);
+                klass2.mFields.add(clone it);
             }
         }
         
         expected_next_character('{') ;
+        
+        char* head = info.p;
        
         list<sNode*%>*% methods = new list<sNode*%>();
         while(true) {
@@ -936,10 +1016,14 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
             }
             
             if(define_function_flag) {
+                char* tail = info.p;
+                
                 int pointer_num = 1;
         
                 info->impl_type = new sType(type_name);
                 info->impl_type->mPointerNum = pointer_num;
+                
+                output_struct_header(struct_class, info);
                 
                 info->in_class = true;
                 
@@ -990,18 +1074,6 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
         
         info.generics_type_names.reset();
         
-        sClass* klass2 = info.classes.at(type_name, null);
-        
-        if(klass2 == null || klass2->mNobodyStruct) {
-            if(klass2) klass2->mNobodyStruct = false;
-            char* source_tail = info.p;
-            
-            buffer*% header = new buffer();
-            header.append(source_head, source_tail - source_head);
-            
-            add_come_code_at_come_header(info, "%s;\n", header.to_string());
-        }
-        
         return new sClassNode(string(type_name), clone struct_class, methods, output, info) implements sNode;
     }
     
@@ -1017,6 +1089,11 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
         
         if(buf === "struct") {
             string type_name = parse_word();
+            
+            if(strmemcmp(info->p, "extends")) {
+                parse_word();
+                parse_word();
+            }
             
             if(*info->p == '{') {
                 skip_block();

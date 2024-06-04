@@ -5,137 +5,83 @@ void dec_stack_ptr(int value, sInfo* info=info)
     info.stack.delete(-value, -1);
 }
 
-struct sBlock
+class sBlock
 {
     list<sNode*%>*% nodes;
     list<int>*% line_fields;
+    
+    new(list<sNode*%>*% nodes, list<int>*% line_fields, sInfo* info=info)
+    {
+        self.nodes = nodes;
+        self.line_fields = line_fields;
+    }
 };
 
-sBlock*% sBlock*::initialize(sBlock*% self, list<sNode*%>*% nodes, list<int>*% line_fields, sInfo* info=info)
-{
-    self.nodes = nodes;
-    self.line_fields = line_fields;
-    
-    return self;
-}
-
-struct sClassNode
+class sClassNode extends sNodeBase
 {
     string name;
     sBlock*% block;
     bool native_;
     bool override_;
     
-    int sline;
-    string sname;
-};
-
-sClassNode*% sClassNode*::initialize(sClassNode*% self, string name, sBlock*% block, bool native_, bool override_, sInfo* info=info)
-{
-    self.name = name;
-    self.block = block;
-    self.native_ = native_;
-    self.override_ = override_;
-    
-    self.sline = info->sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-string sClassNode*::kind()
-{
-    return string("sClassNode");
-}
-
-bool sClassNode*::compile(sClassNode* self, sInfo* info)
-{
-    if(!self.override_) {
-        add_come_code(info, s"if Object.const_defined?(\"\{self.name}\") then puts(\"\{self.name} is already defined. require override class.\"); exit(2); end\n");
-    }
-    
-    if(!self.native_) {
-        add_come_code(info, s"class \{self.name}\n");
-    }
-    
-    if(self.name[0] >= 'A' && self.name[0] <= 'Z') {
-    }
-    else {
-        err_msg(info, "inalid class name");
-        return false;
-    }
-    
-    
-    sClass* klass = null;
-    if(info.classes[self.name]??) {
-        klass = info.classes[self.name];
-    }
-    else {
-        info.classes[string(self.name)] = new sClass(self.name);
+    new(string name, sBlock*% block, bool native_, bool override_, sInfo* info=info)
+    {
+        self.name = name;
+        self.block = block;
+        self.native_ = native_;
+        self.override_ = override_;
         
-        klass = info.classes[self.name];
+        self.sline = info->sline;
+        self.sname = string(info->sname);
     }
     
-    sClass* current_class = info.current_class;
-    info->current_class = klass;
-    
-    compile_block(self.block);
-    
-    if(!self.native_) {
-        add_come_code(info, s"end\n");
+    string sClassNode*::kind()
+    {
+        return string("sClassNode");
     }
     
-    info->current_class = current_class;
-    
-    return true;
-}
-
-bool sClassNode*::terminated()
-{
-    return false;
-}
-
-int sClassNode*::sline(sClassNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sClassNode*::sname(sClassNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sFunNode
-{
-    string name;
-    sBlock*% block;
-    list<tuple2<string,sType*%>*%>*% params;
-    sType*% result_type;
-    
-    bool native_;
-    
-    int sline;
-    string sname;
+    bool compile(sInfo* info)
+    {
+        if(!self.override_) {
+            add_come_code(info, s"if Object.const_defined?(\"\{self.name}\") then puts(\"\{self.name} is already defined. require override class.\"); exit(2); end\n");
+        }
+        
+        if(!self.native_) {
+            add_come_code(info, s"class \{self.name}\n");
+        }
+        
+        if(self.name[0] >= 'A' && self.name[0] <= 'Z') {
+        }
+        else {
+            err_msg(info, "inalid class name");
+            return false;
+        }
+        
+        
+        sClass* klass = null;
+        if(info.classes[self.name]??) {
+            klass = info.classes[self.name];
+        }
+        else {
+            info.classes[string(self.name)] = new sClass(self.name);
+            
+            klass = info.classes[self.name];
+        }
+        
+        sClass* current_class = info.current_class;
+        info->current_class = klass;
+        
+        compile_block(self.block);
+        
+        if(!self.native_) {
+            add_come_code(info, s"end\n");
+        }
+        
+        info->current_class = current_class;
+        
+        return true;
+    }
 };
-
-sFunNode*% sFunNode*::initialize(sFunNode*% self, string name, list<tuple2<string,sType*%>*%>*% params, sType*% result_type, sBlock*% block, bool native_=false, sInfo* info=info)
-{
-    self.name = name;
-    self.block = block;
-    self.params = params;
-    self.native_ = native_;
-    self.result_type = result_type;
-    
-    self.sline = info->sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-string sFunNode*::kind()
-{
-    return string("sFunNode");
-}
 
 void compile_block(sBlock*% block, sInfo* info=info)
 {
@@ -163,87 +109,72 @@ void compile_block(sBlock*% block, sInfo* info=info)
     info->nest--;
 }
 
-bool sFunNode*::compile(sFunNode* self, sInfo* info)
-{
-    if(self.name === "initialize") {
-        self.result_type = new sType(info.current_class.mName);
-    }
-    
-    sMethod*% method = new sMethod(self.name, self.params, self.result_type, self.native_);
-    
-    if(info.current_class) {
-        info.current_class.mMethods[string(self.name)] = method;
-    }
-    else {
-        info.methods[string(self.name)] = method;
-    }
-    
-    if(self.native_) {
-    }
-    else {
-        add_come_code(info, s"def \{self.name}(");
-        int n = 0;
-        foreach(it, self.params) {
-            add_come_code_without_nest(info, s"\{self.params[n].v1}");
-            
-            n++;
-            if(n == self.params.length()) {
-            }
-            else {
-                add_come_code_without_nest(info, ",");
-            }
-        }
-        add_come_code_without_nest(info, ")\n");
-        
-        compile_block(self.block);
-        
-        add_come_code(info, s"end");
-    }
-    
-    return true;
-}
-
-bool sFunNode*::terminated()
-{
-    return false;
-}
-
-int sFunNode*::sline(sFunNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sFunNode*::sname(sFunNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sKernelMethodCall
+class sFunNode extends sNodeBase
 {
     string name;
-    list<sNode*%>*% params;
-    list<sNode*%>*% block;
+    sBlock*% block;
+    list<tuple2<string,sType*%>*%>*% params;
+    sType*% result_type;
     
-    int sline;
-    string sname;
+    bool native_;
+    
+    new(string name, list<tuple2<string,sType*%>*%>*% params, sType*% result_type, sBlock*% block, bool native_=false, sInfo* info=info)
+    {
+        self.name = name;
+        self.block = block;
+        self.params = params;
+        self.native_ = native_;
+        self.result_type = result_type;
+        
+        self.sline = info->sline;
+        self.sname = string(info->sname);
+    }
+    
+    string kind()
+    {
+        return string("sFunNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        if(self.name === "initialize") {
+            self.result_type = new sType(info.current_class.mName);
+        }
+        
+        sMethod*% method = new sMethod(self.name, self.params, self.result_type, self.native_);
+        
+        if(info.current_class) {
+            info.current_class.mMethods[string(self.name)] = method;
+        }
+        else {
+            info.methods[string(self.name)] = method;
+        }
+        
+        if(self.native_) {
+        }
+        else {
+            add_come_code(info, s"def \{self.name}(");
+            int n = 0;
+            foreach(it, self.params) {
+                add_come_code_without_nest(info, s"\{self.params[n].v1}");
+                
+                n++;
+                if(n == self.params.length()) {
+                }
+                else {
+                    add_come_code_without_nest(info, ",");
+                }
+            }
+            add_come_code_without_nest(info, ")\n");
+            
+            compile_block(self.block);
+            
+            add_come_code(info, s"end");
+        }
+        
+        return true;
+    }
 };
-
-sKernelMethodCall*% sKernelMethodCall*::initialize(sKernelMethodCall*% self, string name, list<sNode*%>*% params, list<sNode*%>*% block, sInfo* info=info)
-{
-    self.name = clone name;
-    self.params = params;
-    self.block = block
-    
-    self.sline = info->sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-string sKernelMethodCall*::kind()
-{
-    return string("sKernelMethodCall");
-}
 
 void check_assign_type(sType* left_type, sType* right_type, CVALUE* come_value, sInfo* info=info)
 {
@@ -255,64 +186,47 @@ void check_assign_type(sType* left_type, sType* right_type, CVALUE* come_value, 
     }
 }
 
-bool sKernelMethodCall*::compile(sKernelMethodCall* self, sInfo* info)
+class sKernelMethodCall extends sNodeBase
 {
-    sClass* kernel_class = info.classes["Kernel"]??;
+    string name;
+    list<sNode*%>*% params;
+    list<sNode*%>*% block;
     
-    if(kernel_class == null) {
-        err_msg(info, "require Kernel class");
-        return false;
+    new(string name, list<sNode*%>*% params, list<sNode*%>*% block, sInfo* info=info)
+    {
+        self.name = clone name;
+        self.params = params;
+        self.block = block
+        
+        self.sline = info->sline;
+        self.sname = string(info->sname);
     }
     
-    sMethod* method = kernel_class.mMethods[self.name]??;
-    
-    bool no_check_type = false;
-    if(method == null) {
-        no_check_type = true;
+    string kind()
+    {
+        return string("sKernelMethodCall");
     }
     
-    buffer*% buf = new buffer();
-    buf.append_str(s"\{self.name}(");
-    int n = 0;
-    foreach(it, self.params) {
-        it.compile(info).catch {
-            puts("compile error");
-            exit(2);
-        }
-        CVALUE*% come_value = get_value_from_stack();
-        dec_stack_ptr(1);
+    bool compile(sInfo* info)
+    {
+        sClass* kernel_class = info.classes["Kernel"]??;
         
-        sType* left_type = null;
-        if(method) {
-            left_type  = method->mParams[n].v2;
+        if(kernel_class == null) {
+            err_msg(info, "require Kernel class");
+            return false;
         }
         
-        if(!no_check_type && left_type == null) {
-            err_msg(info, "invalid params number(%s)", self.name);
-            exit(2);
+        sMethod* method = kernel_class.mMethods[self.name]??;
+        
+        bool no_check_type = false;
+        if(method == null) {
+            no_check_type = true;
         }
         
-        if(!no_check_type && come_value.type) {
-            check_assign_type(left_type, come_value.type, come_value);
-        }
-        
-        buf.append_str(s"\{come_value.c_value}");
-        
-        n++;
-        
-        if(n != self.params.length()) {
-            buf.append_str(s",");
-        }
-    }
-    buf.append_str(s")");
-    
-    if(self.block.length() > 0) {
-        buf.append_str(s" do\n");
-        
-        foreach(it, self.block) {
-            for(int i=0; i<info->nest+1; i++) {
-                buf.append_str("    ");
-            }
+        buffer*% buf = new buffer();
+        buf.append_str(s"\{self.name}(");
+        int n = 0;
+        foreach(it, self.params) {
             it.compile(info).catch {
                 puts("compile error");
                 exit(2);
@@ -320,142 +234,121 @@ bool sKernelMethodCall*::compile(sKernelMethodCall* self, sInfo* info)
             CVALUE*% come_value = get_value_from_stack();
             dec_stack_ptr(1);
             
-            buf.append_str(s"\{come_value.c_value}\n");
+            sType* left_type = null;
+            if(method) {
+                left_type  = method->mParams[n].v2;
+            }
+            
+            if(!no_check_type && left_type == null) {
+                err_msg(info, "invalid params number(%s)", self.name);
+                exit(2);
+            }
+            
+            if(!no_check_type && come_value.type) {
+                check_assign_type(left_type, come_value.type, come_value);
+            }
+            
+            buf.append_str(s"\{come_value.c_value}");
+            
+            n++;
+            
+            if(n != self.params.length()) {
+                buf.append_str(s",");
+            }
+        }
+        buf.append_str(s")");
+        
+        if(self.block.length() > 0) {
+            buf.append_str(s" do\n");
+            
+            foreach(it, self.block) {
+                for(int i=0; i<info->nest+1; i++) {
+                    buf.append_str("    ");
+                }
+                it.compile(info).catch {
+                    puts("compile error");
+                    exit(2);
+                }
+                CVALUE*% come_value = get_value_from_stack();
+                dec_stack_ptr(1);
+                
+                buf.append_str(s"\{come_value.c_value}\n");
+            }
+            
+            buf.append_str(s"end\n");
         }
         
-        buf.append_str(s"end\n");
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = buf.to_string();
+        if(method) {
+            come_value.type = method->mResultType;
+        }
+        else {
+            come_value.type = null;
+        }
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s", come_value.c_value);
+        
+        return true;
     }
-    
-    CVALUE*% come_value = new CVALUE;
-    
-    come_value.c_value = buf.to_string();
-    if(method) {
-        come_value.type = method->mResultType;
-    }
-    else {
-        come_value.type = null;
-    }
-    come_value.var = null;
-    
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s", come_value.c_value);
-    
-    return true;
-}
+};
 
-bool sKernelMethodCall*::terminated()
-{
-    return false;
-}
-
-int sKernelMethodCall*::sline(sKernelMethodCall* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sKernelMethodCall*::sname(sKernelMethodCall* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-
-struct sClassMethodCall
+class sClassMethodCall extends sNodeBase
 {
     string name;
     string method_name;
     list<sNode*%>*% params;
     list<sNode*%>*% block;
-    
-    int sline;
-    string sname;
-};
 
-sClassMethodCall*% sClassMethodCall*::initialize(sClassMethodCall*% self, string name, string method_name, list<sNode*%>*% params, list<sNode*%>*% block, sInfo* info=info)
-{
-    self.name = name;
-    self.method_name = method_name;
-    self.params = params;
-    self.block = block;
-    
-    self.sline = info->sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-string sClassMethodCall*::kind()
-{
-    return string("sClassMethodCall");
-}
-
-bool sClassMethodCall*::compile(sClassMethodCall* self, sInfo* info)
-{
-    sClass* klass = info.classes[self.name]??;
-    
-    if(klass == null) {
-        err_msg(info, "require Kernel class");
-        return false;
+    new(string name, string method_name, list<sNode*%>*% params, list<sNode*%>*% block, sInfo* info=info)
+    {
+        self.name = name;
+        self.method_name = method_name;
+        self.params = params;
+        self.block = block;
+        
+        self.sline = info->sline;
+        self.sname = string(info->sname);
     }
     
-    sMethod* method = klass.mMethods[self.method_name]??;
-    sMethod* initialize_method = klass.mMethods["initialize"]??;
+    string kind()
+    {
+        return string("sClassMethodCall");
+    }
     
-    bool no_check_type = false;
-    if(self.method_name === "new") {
-        if(initialize_method == null) {
+    bool compile(sInfo* info)
+    {
+        sClass* klass = info.classes[self.name]??;
+        
+        if(klass == null) {
+            err_msg(info, "require Kernel class");
+            return false;
+        }
+        
+        sMethod* method = klass.mMethods[self.method_name]??;
+        sMethod* initialize_method = klass.mMethods["initialize"]??;
+        
+        bool no_check_type = false;
+        if(self.method_name === "new") {
+            if(initialize_method == null) {
+                no_check_type = true;
+            }
+            
+            method = initialize_method;
+        }
+        
+        if(method == null) {
             no_check_type = true;
         }
         
-        method = initialize_method;
-    }
-    
-    if(method == null) {
-        no_check_type = true;
-    }
-    
-    buffer*% buf = new buffer();
-    buf.append_str(s"\{self.name}.\{self.method_name}(");
-    int n = 0;
-    foreach(it, self.params) {
-        it.compile(info).catch {
-            puts("compile error");
-            exit(2);
-        }
-        CVALUE*% come_value = get_value_from_stack();
-        dec_stack_ptr(1);
-        
-        sType* left_type = null;
-        if(method) {
-            left_type = method->mParams[n].v2;
-        }
-        
-        if(!no_check_type && left_type == null) {
-            err_msg(info, "invalid params number(%s)", self.method_name);
-            exit(2);
-        }
-        
-        if(!no_check_type && come_value.type) {
-            check_assign_type(left_type, come_value.type, come_value);
-        }
-        
-        buf.append_str(s"\{come_value.c_value}");
-        
-        n++;
-        
-        if(n != self.params.length()) {
-            buf.append_str(s",");
-        }
-    }
-    buf.append_str(s")");
-    
-    if(self.block.length() > 0) {
-        buf.append_str(s" do\n");
-        
-        foreach(it, self.block) {
-            for(int i=0; i<info->nest+1; i++) {
-                buf.append_str("    ");
-            }
+        buffer*% buf = new buffer();
+        buf.append_str(s"\{self.name}.\{self.method_name}(");
+        int n = 0;
+        foreach(it, self.params) {
             it.compile(info).catch {
                 puts("compile error");
                 exit(2);
@@ -463,44 +356,68 @@ bool sClassMethodCall*::compile(sClassMethodCall* self, sInfo* info)
             CVALUE*% come_value = get_value_from_stack();
             dec_stack_ptr(1);
             
-            buf.append_str(s"\{come_value.c_value}\n");
+            sType* left_type = null;
+            if(method) {
+                left_type = method->mParams[n].v2;
+            }
+            
+            if(!no_check_type && left_type == null) {
+                err_msg(info, "invalid params number(%s)", self.method_name);
+                exit(2);
+            }
+            
+            if(!no_check_type && come_value.type) {
+                check_assign_type(left_type, come_value.type, come_value);
+            }
+            
+            buf.append_str(s"\{come_value.c_value}");
+            
+            n++;
+            
+            if(n != self.params.length()) {
+                buf.append_str(s",");
+            }
+        }
+        buf.append_str(s")");
+        
+        if(self.block.length() > 0) {
+            buf.append_str(s" do\n");
+            
+            foreach(it, self.block) {
+                for(int i=0; i<info->nest+1; i++) {
+                    buf.append_str("    ");
+                }
+                it.compile(info).catch {
+                    puts("compile error");
+                    exit(2);
+                }
+                CVALUE*% come_value = get_value_from_stack();
+                dec_stack_ptr(1);
+                
+                buf.append_str(s"\{come_value.c_value}\n");
+            }
+            
+            buf.append_str(s"end\n");
         }
         
-        buf.append_str(s"end\n");
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = buf.to_string();
+        if(method) {
+            come_value.type = method->mResultType;
+        }
+        else {
+            come_value.type = null;
+        }
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s", come_value.c_value);
+        
+        return true;
     }
-    
-    CVALUE*% come_value = new CVALUE;
-    
-    come_value.c_value = buf.to_string();
-    if(method) {
-        come_value.type = method->mResultType;
-    }
-    else {
-        come_value.type = null;
-    }
-    come_value.var = null;
-    
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s", come_value.c_value);
-    
-    return true;
-}
-
-bool sClassMethodCall*::terminated()
-{
-    return false;
-}
-
-int sClassMethodCall*::sline(sClassMethodCall* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sClassMethodCall*::sname(sClassMethodCall* self, sInfo* info)
-{
-    return string(self.sname);
-}
+};
 
 string parse_word(sInfo* info=info)
 {

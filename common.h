@@ -44,10 +44,11 @@ struct sClass {
     list<tuple2<string, sType*%>*%>*% mFields;
     
     bool mOutputed;
+    bool mOutputed2;
     string mDeclareSName;
     bool mNobodyStruct;
     
-    sClass* mParent;
+    string mParentClassName;
 };
 
 struct sInfo;
@@ -325,7 +326,6 @@ struct sInfo
     bool writing_source_file_position;
     
     sType*% function_result_type;
-    
     bool in_class;
 };
 
@@ -352,6 +352,7 @@ sClass*% sClass*::initialize(sClass*% self, char* name, bool number=false, bool 
 sFun*% sFun*::initialize(sFun*% self, string name, sType*% result_type, list<sType*%>*% param_types, list<string>*% param_names, list<string>*% param_default_parametors, bool external, bool var_args, sBlock*% block, bool static_, string come_header, string declare_sname, sInfo* info);
 string make_type_name_string(sType* type, bool in_header=false, bool array_cast_pointer=false, bool no_pointer=false, sInfo* info=info);
 string make_come_type_name_string(sType* type, sInfo* info=info);
+string make_come_type_name_string_no_solved(sType* type, sInfo* info=info);
 
 /////////////////////////////////////////////////////////////////////
 /// 03transpile2.c ///
@@ -359,6 +360,7 @@ string make_come_type_name_string(sType* type, sInfo* info=info);
 void come_init() version 3;
 void come_final() version 3;
 
+string make_define_var_no_solved(sType* type, char* name, bool in_header=false, sInfo* info=info);
 string header_function(sFun* fun, sInfo* info);
 int transpile(sInfo* info) version 3;
 bool output_source_file(sInfo* info) version 3;

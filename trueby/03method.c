@@ -1,105 +1,61 @@
 #include <neo-c.h>
 
-struct sMethodCall
+class sMethodCall extends sNodeBase
 {
     sNode*% obj;
     string name;
     list<sNode*%>*% params;
     list<sNode*%>*% block;
     
-    int sline;
-    string sname;
-};
-
-sMethodCall*% sMethodCall*::initialize(sMethodCall*% self, sNode*% obj, string name, list<sNode*%>*% params, list<sNode*%>*% block, sInfo* info=info)
-{
-    self.obj = obj;
-    self.name = name;
-    self.params = params;
-    self.block = block;
-    
-    self.sline = info->sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-string sMethodCall*::kind()
-{
-    return string("sMethodCall");
-}
-
-bool sMethodCall*::compile(sMethodCall* self, sInfo* info)
-{
-    if(!self.obj.compile(info)) {
-        return false;
+    new(sNode*% obj, string name, list<sNode*%>*% params, list<sNode*%>*% block, sInfo* info=info)
+    {
+        self.obj = obj;
+        self.name = name;
+        self.params = params;
+        self.block = block;
+        
+        self.sline = info->sline;
+        self.sname = string(info->sname);
     }
     
-    CVALUE*% come_value = clone get_value_from_stack();
-    dec_stack_ptr(1);
-    
-    sType* type = come_value.type;
-    
-    bool no_check_type = false;
-    if(type == null) {
-        no_check_type = true;
+    string kind()
+    {
+        return string("sMethodCall");
     }
     
-    sClass* klass = type.mClass;
-    
-    if(klass == null) {
-        err_msg(info, "require class");
-        return false;
-    }
-    
-    sMethod* method = klass.mMethods[self.name]??;
-    
-    if(method == null) {
-        no_check_type = true;
-    }
-    
-    buffer*% buf = new buffer();
-    buf.append_str(s"\{come_value.c_value}.\{self.name}(");
-    int n = 0;
-    foreach(it, self.params) {
-        it.compile(info).catch {
-            puts("compile error");
-            exit(2);
+    bool compile(sInfo* info)
+    {
+        if(!self.obj.compile(info)) {
+            return false;
         }
-        CVALUE*% come_value = get_value_from_stack();
+        
+        CVALUE*% come_value = clone get_value_from_stack();
         dec_stack_ptr(1);
         
-        sType* left_type = null;
-        if(method) {
-            left_type = method->mParams[n].v2;
+        sType* type = come_value.type;
+        
+        bool no_check_type = false;
+        if(type == null) {
+            no_check_type = true;
         }
         
-        if(!no_check_type && left_type == null) {
-            err_msg(info, "invalid params number(%s)", self.name);
-            exit(2);
+        sClass* klass = type.mClass;
+        
+        if(klass == null) {
+            err_msg(info, "require class");
+            return false;
         }
         
-        if(!no_check_type && come_value.type) {
-            check_assign_type(left_type, come_value.type, come_value);
+        sMethod* method = klass.mMethods[self.name]??;
+        
+        if(method == null) {
+            no_check_type = true;
         }
         
-        buf.append_str(s"\{come_value.c_value}");
-        
-        n++;
-        
-        if(n != self.params.length()) {
-            buf.append_str(s",");
-        }
-    }
-    buf.append_str(s")");
-    
-    if(self.block.length() > 0) {
-        buf.append_str(s" do\n");
-        
-        foreach(it, self.block) {
-            for(int i=0; i<info->nest+1; i++) {
-                buf.append_str("    ");
-            }
+        buffer*% buf = new buffer();
+        buf.append_str(s"\{come_value.c_value}.\{self.name}(");
+        int n = 0;
+        foreach(it, self.params) {
             it.compile(info).catch {
                 puts("compile error");
                 exit(2);
@@ -107,104 +63,108 @@ bool sMethodCall*::compile(sMethodCall* self, sInfo* info)
             CVALUE*% come_value = get_value_from_stack();
             dec_stack_ptr(1);
             
-            buf.append_str(s"\{come_value.c_value}\n");
+            sType* left_type = null;
+            if(method) {
+                left_type = method->mParams[n].v2;
+            }
+            
+            if(!no_check_type && left_type == null) {
+                err_msg(info, "invalid params number(%s)", self.name);
+                exit(2);
+            }
+            
+            if(!no_check_type && come_value.type) {
+                check_assign_type(left_type, come_value.type, come_value);
+            }
+            
+            buf.append_str(s"\{come_value.c_value}");
+            
+            n++;
+            
+            if(n != self.params.length()) {
+                buf.append_str(s",");
+            }
+        }
+        buf.append_str(s")");
+        
+        if(self.block.length() > 0) {
+            buf.append_str(s" do\n");
+            
+            foreach(it, self.block) {
+                for(int i=0; i<info->nest+1; i++) {
+                    buf.append_str("    ");
+                }
+                it.compile(info).catch {
+                    puts("compile error");
+                    exit(2);
+                }
+                CVALUE*% come_value = get_value_from_stack();
+                dec_stack_ptr(1);
+                
+                buf.append_str(s"\{come_value.c_value}\n");
+            }
+            
+            buf.append_str(s"end\n");
         }
         
-        buf.append_str(s"end\n");
+        CVALUE*% come_value2 = new CVALUE;
+        
+        come_value2.c_value = buf.to_string();
+        if(method) {
+            come_value2.type = method->mResultType;
+        }
+        else {
+            come_value2.type = null;
+        }
+        come_value2.var = null;
+        
+        info.stack.push_back(come_value2);
+        
+        add_come_last_code(info, "%s", come_value2.c_value);
+        
+        return true;
     }
-    
-    CVALUE*% come_value2 = new CVALUE;
-    
-    come_value2.c_value = buf.to_string();
-    if(method) {
-        come_value2.type = method->mResultType;
-    }
-    else {
-        come_value2.type = null;
-    }
-    come_value2.var = null;
-    
-    info.stack.push_back(come_value2);
-    
-    add_come_last_code(info, "%s", come_value2.c_value);
-    
-    return true;
-}
+};
 
-bool sMethodCall*::terminated()
-{
-    return false;
-}
-
-int sMethodCall*::sline(sMethodCall* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sMethodCall*::sname(sMethodCall* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sCastType
+class sCastType extends sNodeBase
 {
     sType*% type;
     sNode*% node;
     
-    int sline;
-    string sname;
-};
-
-sCastType*% sCastType*::initialize(sCastType*% self, sNode*% node, sType*% type, sInfo* info=info)
-{
-    self.node = node;
-    self.type = type;
-    
-    self.sline = info->sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-string sCastType*::kind()
-{
-    return string("sCastType");
-}
-
-bool sCastType*::compile(sCastType* self, sInfo* info)
-{
-    if(!self.node.compile(info)) {
-        return false;
+    new(sNode*% node, sType*% type, sInfo* info=info)
+    {
+        self.node = node;
+        self.type = type;
+        
+        self.sline = info->sline;
+        self.sname = string(info->sname);
     }
     
-    CVALUE*% come_value = get_value_from_stack();
-    dec_stack_ptr(1);
+    string kind()
+    {
+        return string("sCastType");
+    }
     
-    CVALUE*% come_value2 = new CVALUE;
-
-    come_value2.c_value = clone come_value.c_value;
-    come_value2.type = clone self.type;
-    come_value2.var = null;
+    bool compile(sInfo* info)
+    {
+        if(!self.node.compile(info)) {
+            return false;
+        }
+        
+        CVALUE*% come_value = get_value_from_stack();
+        dec_stack_ptr(1);
+        
+        CVALUE*% come_value2 = new CVALUE;
     
-    info.stack.push_back(come_value2);
-    
-    return true;
-}
-
-bool sCastType*::terminated()
-{
-    return false;
-}
-
-int sCastType*::sline(sCastType* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sCastType*::sname(sCastType* self, sInfo* info)
-{
-    return string(self.sname);
-}
+        come_value2.c_value = clone come_value.c_value;
+        come_value2.type = clone self.type;
+        come_value2.var = null;
+        
+        info.stack.push_back(come_value2);
+        
+        return true;
+    }
+};
 
 sNode*% post_expression(sNode*% node, sInfo* info=info)
 {
@@ -242,7 +202,7 @@ sNode*% post_expression(sNode*% node, sInfo* info=info)
     return node;
 }
 
-sNode*% expression(sInfo* info=info) version 3
+sNode*% expression(sInfo* info=info) version 2
 {
     sNode*% node = inherit(info);
     

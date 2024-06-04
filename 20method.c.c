@@ -241,9 +241,10 @@ struct sClass
     int mMethodGenericsNum;
     struct list$1tuple2$2charphsTypephph* mFields;
     _Bool mOutputed;
+    _Bool mOutputed2;
     char* mDeclareSName;
     _Bool mNobodyStruct;
-    struct sClass* mParent;
+    char* mParentClassName;
 };
 struct sInfo;
 struct sNode
@@ -1532,9 +1533,13 @@ char* make_type_name_string(struct sType* type, _Bool in_header, _Bool array_cas
 
 char* make_come_type_name_string(struct sType* type, struct sInfo* info);
 
+char* make_come_type_name_string_no_solved(struct sType* type, struct sInfo* info);
+
 void come_init_v3();
 
 void come_final_v3();
+
+char* make_define_var_no_solved(struct sType* type, char* name, _Bool in_header, struct sInfo* info);
 
 char* header_function(struct sFun* fun, struct sInfo* info);
 
@@ -1938,6 +1943,7 @@ static struct sFun* map$2charphsFunphp_operator_load_element(struct map$2charphs
 static void sFun_finalize(struct sFun* self);
 static void sBlock_finalize(struct sBlock* self);
 static struct sFun* map$2charphsFunph_at(struct map$2charphsFunph* self, char* key, struct sFun* default_value);
+static struct sClass* map$2charphsClassphp_operator_load_element(struct map$2charphsClassph* self, char* key);
 static int list$1sTypeph_length(struct list$1sTypeph* self);
 static struct sType* list$1sTypeph_begin(struct list$1sTypeph* self);
 static _Bool list$1sTypeph_end(struct list$1sTypeph* self);
@@ -1957,7 +1963,6 @@ static struct list$1tuple2$2charphsNodephph* list$1tuple2$2charphsNodephph_push_
 static struct tuple2$2charphvoidp* tuple2$2charphvoidp_initialize(struct tuple2$2charphvoidp* self, char* v1, void* v2);
 static void tuple2$2charphvoidpp_finalize(struct tuple2$2charphvoidp* self);
 static int list$1tuple2$2charphsNodephph_length(struct list$1tuple2$2charphsNodephph* self);
-static struct sClass* map$2charphsClassphp_operator_load_element(struct map$2charphsClassph* self, char* key);
 struct sNode* parse_method_call_v20(struct sNode* obj, char* fun_name, struct sInfo* info);
 
 static struct tuple2$2charphsNodeph* tuple2$2charphsNodeph_initialize(struct tuple2$2charphsNodeph* self, char* v1, struct sNode* v2);
@@ -3615,12 +3620,12 @@ void* right_value139;
 void* right_value140;
 void* right_value141;
 struct tuple2$2charphsTypeph* item_94;
-_Bool _if_conditional136;
 _Bool _if_conditional137;
 _Bool _if_conditional138;
 _Bool _if_conditional139;
 _Bool _if_conditional140;
-_Bool _if_conditional142;
+_Bool _if_conditional141;
+_Bool _if_conditional143;
 void* right_value142;
 struct sType* type3_95;
 void* right_value143;
@@ -3639,12 +3644,12 @@ struct sType* type2_152;
 void* right_value155;
 void* right_value156;
 struct tuple2$2charphsTypeph* item_153;
-_Bool _if_conditional194;
 _Bool _if_conditional195;
 _Bool _if_conditional196;
 _Bool _if_conditional197;
 _Bool _if_conditional198;
 _Bool _if_conditional199;
+_Bool _if_conditional200;
 void* right_value157;
 struct CVALUE* come_value_154;
 void* right_value158;
@@ -3757,30 +3762,30 @@ right_value160 = (void*)0;
             come_call_finalizer2(tuple2$2charphsTypephp_finalize,right_value141, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
             # 85 "20method.c"
             # 61 "20method.c"
-            if(_if_conditional136=value_92->mCValueName!=((void*)0),            _if_conditional136) {
+            if(_if_conditional137=value_92->mCValueName!=((void*)0),            _if_conditional137) {
                 # 84 "20method.c"
                 # 62 "20method.c"
-                if(_if_conditional137=strcmp(value_92->mCValueName,"__list_values")==0,                _if_conditional137) {
+                if(_if_conditional138=strcmp(value_92->mCValueName,"__list_values")==0,                _if_conditional138) {
                 }
                 else {
                     # 84 "20method.c"
                     # 65 "20method.c"
-                    if(_if_conditional138=strcmp(value_92->mCValueName,"__map_keys")==0,                    _if_conditional138) {
+                    if(_if_conditional139=strcmp(value_92->mCValueName,"__map_keys")==0,                    _if_conditional139) {
                     }
                     else {
                         # 84 "20method.c"
                         # 68 "20method.c"
-                        if(_if_conditional139=strcmp(value_92->mCValueName,"__map_element")==0,                        _if_conditional139) {
+                        if(_if_conditional140=strcmp(value_92->mCValueName,"__map_element")==0,                        _if_conditional140) {
                         }
                         else {
                             # 84 "20method.c"
                             # 71 "20method.c"
-                            if(_if_conditional140=string_operator_equals(value_92->mType->mClass->mName,"va_list")||string_operator_equals(value_92->mType->mClass->mName,"__builtin_va_list"),                            _if_conditional140) {
+                            if(_if_conditional141=string_operator_equals(value_92->mType->mClass->mName,"va_list")||string_operator_equals(value_92->mType->mClass->mName,"__builtin_va_list"),                            _if_conditional141) {
                             }
                             else {
                                 # 84 "20method.c"
                                 # 74 "20method.c"
-                                if(_if_conditional142=list$1sNodeph_length(type2_93->mArrayNum)==1,                                _if_conditional142) {
+                                if(_if_conditional143=list$1sNodeph_length(type2_93->mArrayNum)==1,                                _if_conditional143) {
                                     # 75 "20method.c"
                                     type3_95=(struct sType*)come_increment_ref_count(((struct sType*)(right_value142=sType_clone(type2_93))));
                                     come_call_finalizer2(sType_finalize,right_value142, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -3846,30 +3851,30 @@ right_value160 = (void*)0;
             come_call_finalizer2(tuple2$2charphsTypephp_finalize,right_value156, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
             # 132 "20method.c"
             # 110 "20method.c"
-            if(_if_conditional194=value_151->mCValueName!=((void*)0),            _if_conditional194) {
+            if(_if_conditional195=value_151->mCValueName!=((void*)0),            _if_conditional195) {
                 # 131 "20method.c"
                 # 111 "20method.c"
-                if(_if_conditional195=strcmp(value_151->mCValueName,"__list_values")==0,                _if_conditional195) {
+                if(_if_conditional196=strcmp(value_151->mCValueName,"__list_values")==0,                _if_conditional196) {
                 }
                 else {
                     # 131 "20method.c"
                     # 114 "20method.c"
-                    if(_if_conditional196=strcmp(value_151->mCValueName,"__map_keys")==0,                    _if_conditional196) {
+                    if(_if_conditional197=strcmp(value_151->mCValueName,"__map_keys")==0,                    _if_conditional197) {
                     }
                     else {
                         # 131 "20method.c"
                         # 117 "20method.c"
-                        if(_if_conditional197=strcmp(value_151->mCValueName,"__map_element")==0,                        _if_conditional197) {
+                        if(_if_conditional198=strcmp(value_151->mCValueName,"__map_element")==0,                        _if_conditional198) {
                         }
                         else {
                             # 131 "20method.c"
                             # 120 "20method.c"
-                            if(_if_conditional198=string_operator_equals(value_151->mType->mClass->mName,"va_list")||string_operator_equals(value_151->mType->mClass->mName,"__builtin_va_list"),                            _if_conditional198) {
+                            if(_if_conditional199=string_operator_equals(value_151->mType->mClass->mName,"va_list")||string_operator_equals(value_151->mType->mClass->mName,"__builtin_va_list"),                            _if_conditional199) {
                             }
                             else {
                                 # 130 "20method.c"
                                 # 124 "20method.c"
-                                if(_if_conditional199=string_operator_equals(type2_152->mClass->mName,"lambda"),                                _if_conditional199) {
+                                if(_if_conditional200=string_operator_equals(type2_152->mClass->mName,"lambda"),                                _if_conditional200) {
                                     # 125 "20method.c"
                                     add_come_code(info,"__current_stack%d__.%s = %s;\n",num_current_stack_147,value_151->mCValueName,value_151->mCValueName);
                                 }
@@ -3931,6 +3936,7 @@ void* __result_obj__;
 _Bool _if_conditional20;
 _Bool _if_conditional21;
 _Bool _if_conditional42;
+_Bool _if_conditional43;
 memset(&__result_obj__, 0, sizeof(void*));
         # 1 "sClass_finalize"
         # 0 "sClass_finalize"
@@ -3949,6 +3955,12 @@ memset(&__result_obj__, 0, sizeof(void*));
         if(_if_conditional42=self!=((void*)0)&&self->mDeclareSName!=((void*)0),        _if_conditional42) {
             # 2 "sClass_finalize"
             self->mDeclareSName = come_decrement_ref_count2(self->mDeclareSName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
+        }
+        # 4 "sClass_finalize"
+        # 3 "sClass_finalize"
+        if(_if_conditional43=self!=((void*)0)&&self->mParentClassName!=((void*)0),        _if_conditional43) {
+            # 3 "sClass_finalize"
+            self->mParentClassName = come_decrement_ref_count2(self->mParentClassName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
 }
 
@@ -4238,11 +4250,11 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct list$1tuple2$2charphsTypephph* list$1tuple2$2charphsTypephph_push_back(struct list$1tuple2$2charphsTypephph* self, struct tuple2$2charphsTypeph* item){
 void* __result_obj__;
-_Bool _if_conditional43;
+_Bool _if_conditional44;
 void* right_value90;
 struct list_item$1tuple2$2charphsTypephph* litem_58;
 struct tuple2$2charphsTypeph* __dec_obj15;
-_Bool _if_conditional46;
+_Bool _if_conditional47;
 void* right_value91;
 struct list_item$1tuple2$2charphsTypephph* litem_59;
 struct tuple2$2charphsTypeph* __dec_obj16;
@@ -4259,7 +4271,7 @@ right_value92 = (void*)0;
 memset(&litem_60, 0, sizeof(struct list_item$1tuple2$2charphsTypephph*));
         # 256 "./neo-c.h"
         # 225 "./neo-c.h"
-        if(_if_conditional43=self->len==0,        _if_conditional43) {
+        if(_if_conditional44=self->len==0,        _if_conditional44) {
             # 226 "./neo-c.h"
             litem_58=(struct list_item$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsTypephph*)(right_value90=(struct list_item$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsTypephph)*(1), "./neo-c.h", 226, "list_item$1tuple2$2charphsTypephph"))));
             come_call_finalizer2(list_item$1tuple2$2charphsTypephphp_finalize,right_value90, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -4279,7 +4291,7 @@ memset(&litem_60, 0, sizeof(struct list_item$1tuple2$2charphsTypephph*));
         else {
             # 256 "./neo-c.h"
             # 235 "./neo-c.h"
-            if(_if_conditional46=self->len==1,            _if_conditional46) {
+            if(_if_conditional47=self->len==1,            _if_conditional47) {
                 # 236 "./neo-c.h"
                 litem_59=(struct list_item$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsTypephph*)(right_value91=(struct list_item$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsTypephph)*(1), "./neo-c.h", 236, "list_item$1tuple2$2charphsTypephph"))));
                 come_call_finalizer2(list_item$1tuple2$2charphsTypephphp_finalize,right_value91, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -4325,18 +4337,18 @@ memset(&litem_60, 0, sizeof(struct list_item$1tuple2$2charphsTypephph*));
 
 static void tuple2$2charphsTypeph_finalize(struct tuple2$2charphsTypeph* self){
 void* __result_obj__;
-_Bool _if_conditional44;
 _Bool _if_conditional45;
+_Bool _if_conditional46;
 memset(&__result_obj__, 0, sizeof(void*));
                 # 1 "tuple2$2charphsTypeph_finalize"
                 # 0 "tuple2$2charphsTypeph_finalize"
-                if(_if_conditional44=self!=((void*)0)&&self->v1!=((void*)0),                _if_conditional44) {
+                if(_if_conditional45=self!=((void*)0)&&self->v1!=((void*)0),                _if_conditional45) {
                     # 0 "tuple2$2charphsTypeph_finalize"
                     self->v1 = come_decrement_ref_count2(self->v1, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 }
                 # 2 "tuple2$2charphsTypeph_finalize"
                 # 1 "tuple2$2charphsTypeph_finalize"
-                if(_if_conditional45=self!=((void*)0)&&self->v2!=((void*)0),                _if_conditional45) {
+                if(_if_conditional46=self!=((void*)0)&&self->v2!=((void*)0),                _if_conditional46) {
                     # 1 "tuple2$2charphsTypeph_finalize"
                     come_call_finalizer2(sType_finalize,self->v2, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 }
@@ -4344,14 +4356,14 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct tuple2$2charphsTypeph* tuple2$2charphsTypephp_clone(struct tuple2$2charphsTypeph* self){
 void* __result_obj__;
-_Bool _if_conditional47;
+_Bool _if_conditional48;
 struct tuple2$2charphsTypeph* __result59__;
 void* right_value93;
 struct tuple2$2charphsTypeph* result_61;
-_Bool _if_conditional48;
+_Bool _if_conditional49;
 void* right_value94;
 char* __dec_obj18;
-_Bool _if_conditional49;
+_Bool _if_conditional50;
 void* right_value130;
 struct sType* __dec_obj42;
 struct tuple2$2charphsTypeph* __result78__;
@@ -4362,7 +4374,7 @@ right_value94 = (void*)0;
 right_value130 = (void*)0;
         # 3 "tuple2$2charphsTypephp_clone"
         # 2 "tuple2$2charphsTypephp_clone"
-        if(_if_conditional47=self==(void*)0,        _if_conditional47) {
+        if(_if_conditional48=self==(void*)0,        _if_conditional48) {
             # 2 "tuple2$2charphsTypephp_clone"
             __result59__ = __result_obj__ = (void*)0;
             return __result59__;
@@ -4372,7 +4384,7 @@ right_value130 = (void*)0;
         come_call_finalizer2(tuple2$2charphsTypeph_finalize,right_value93, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         # 5 "tuple2$2charphsTypephp_clone"
         # 4 "tuple2$2charphsTypephp_clone"
-        if(_if_conditional48=self!=((void*)0)&&self->v1!=((void*)0),        _if_conditional48) {
+        if(_if_conditional49=self!=((void*)0)&&self->v1!=((void*)0),        _if_conditional49) {
             # 4 "tuple2$2charphsTypephp_clone"
             __dec_obj18=result_61->v1;
             result_61->v1=(char*)come_increment_ref_count(((char*)(right_value94=string_clone(self->v1))));
@@ -4381,7 +4393,7 @@ right_value130 = (void*)0;
         }
         # 6 "tuple2$2charphsTypephp_clone"
         # 5 "tuple2$2charphsTypephp_clone"
-        if(_if_conditional49=self!=((void*)0)&&self->v2!=((void*)0),        _if_conditional49) {
+        if(_if_conditional50=self!=((void*)0)&&self->v2!=((void*)0),        _if_conditional50) {
             # 5 "tuple2$2charphsTypephp_clone"
             __dec_obj42=result_61->v2;
             result_61->v2=(struct sType*)come_increment_ref_count(((struct sType*)(right_value130=sType_clone(self->v2))));
@@ -4397,44 +4409,43 @@ right_value130 = (void*)0;
 
 static struct sType* sType_clone(struct sType* self){
 void* __result_obj__;
-_Bool _if_conditional50;
+_Bool _if_conditional51;
 struct sType* __result60__;
 void* right_value95;
 struct sType* result_62;
-_Bool _if_conditional51;
 _Bool _if_conditional52;
+_Bool _if_conditional53;
 void* right_value102;
 struct list$1sTypeph* __dec_obj22;
-_Bool _if_conditional56;
+_Bool _if_conditional57;
 void* right_value105;
 struct tuple1$1sTypeph* __dec_obj24;
-_Bool _if_conditional60;
+_Bool _if_conditional61;
 void* right_value106;
 struct tuple1$1sTypeph* __dec_obj25;
-_Bool _if_conditional61;
+_Bool _if_conditional62;
 void* right_value107;
 char* __dec_obj26;
-_Bool _if_conditional62;
+_Bool _if_conditional63;
 void* right_value108;
 struct list$1sTypeph* __dec_obj27;
-_Bool _if_conditional63;
+_Bool _if_conditional64;
 void* right_value116;
 struct list$1sNodeph* __dec_obj31;
-_Bool _if_conditional76;
 _Bool _if_conditional77;
+_Bool _if_conditional78;
 void* right_value117;
 struct list$1sTypeph* __dec_obj32;
-_Bool _if_conditional78;
+_Bool _if_conditional79;
 void* right_value124;
 struct list$1charph* __dec_obj36;
-_Bool _if_conditional82;
+_Bool _if_conditional83;
 void* right_value125;
 struct tuple1$1sTypeph* __dec_obj37;
-_Bool _if_conditional83;
 _Bool _if_conditional84;
+_Bool _if_conditional85;
 void* right_value126;
 struct sNode* __dec_obj38;
-_Bool _if_conditional85;
 _Bool _if_conditional86;
 _Bool _if_conditional87;
 _Bool _if_conditional88;
@@ -4459,14 +4470,14 @@ _Bool _if_conditional106;
 _Bool _if_conditional107;
 _Bool _if_conditional108;
 _Bool _if_conditional109;
+_Bool _if_conditional110;
 void* right_value127;
 struct sNode* __dec_obj39;
-_Bool _if_conditional110;
 _Bool _if_conditional111;
 _Bool _if_conditional112;
+_Bool _if_conditional113;
 void* right_value128;
 char* __dec_obj40;
-_Bool _if_conditional113;
 _Bool _if_conditional114;
 _Bool _if_conditional115;
 _Bool _if_conditional116;
@@ -4476,9 +4487,10 @@ _Bool _if_conditional119;
 _Bool _if_conditional120;
 _Bool _if_conditional121;
 _Bool _if_conditional122;
+_Bool _if_conditional123;
 void* right_value129;
 char* __dec_obj41;
-_Bool _if_conditional123;
+_Bool _if_conditional124;
 struct sType* __result77__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value95 = (void*)0;
@@ -4498,7 +4510,7 @@ right_value128 = (void*)0;
 right_value129 = (void*)0;
                 # 3 "sType_clone"
                 # 2 "sType_clone"
-                if(_if_conditional50=self==(void*)0,                _if_conditional50) {
+                if(_if_conditional51=self==(void*)0,                _if_conditional51) {
                     # 2 "sType_clone"
                     __result60__ = __result_obj__ = (void*)0;
                     return __result60__;
@@ -4508,13 +4520,13 @@ right_value129 = (void*)0;
                 come_call_finalizer2(sType_finalize,right_value95, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                 # 5 "sType_clone"
                 # 4 "sType_clone"
-                if(_if_conditional51=self!=((void*)0),                _if_conditional51) {
+                if(_if_conditional52=self!=((void*)0),                _if_conditional52) {
                     # 4 "sType_clone"
                     result_62->mClass=self->mClass;
                 }
                 # 6 "sType_clone"
                 # 5 "sType_clone"
-                if(_if_conditional52=self!=((void*)0)&&self->mMultipleTypes!=((void*)0),                _if_conditional52) {
+                if(_if_conditional53=self!=((void*)0)&&self->mMultipleTypes!=((void*)0),                _if_conditional53) {
                     # 5 "sType_clone"
                     __dec_obj22=result_62->mMultipleTypes;
                     result_62->mMultipleTypes=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value102=list$1sTypephp_clone(self->mMultipleTypes))));
@@ -4523,7 +4535,7 @@ right_value129 = (void*)0;
                 }
                 # 7 "sType_clone"
                 # 6 "sType_clone"
-                if(_if_conditional56=self!=((void*)0)&&self->mNoSolvedGenericsType!=((void*)0),                _if_conditional56) {
+                if(_if_conditional57=self!=((void*)0)&&self->mNoSolvedGenericsType!=((void*)0),                _if_conditional57) {
                     # 6 "sType_clone"
                     __dec_obj24=result_62->mNoSolvedGenericsType;
                     result_62->mNoSolvedGenericsType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value105=tuple1$1sTypephp_clone(self->mNoSolvedGenericsType))));
@@ -4532,7 +4544,7 @@ right_value129 = (void*)0;
                 }
                 # 8 "sType_clone"
                 # 7 "sType_clone"
-                if(_if_conditional60=self!=((void*)0)&&self->mOriginalLoadVarType!=((void*)0),                _if_conditional60) {
+                if(_if_conditional61=self!=((void*)0)&&self->mOriginalLoadVarType!=((void*)0),                _if_conditional61) {
                     # 7 "sType_clone"
                     __dec_obj25=result_62->mOriginalLoadVarType;
                     result_62->mOriginalLoadVarType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value106=tuple1$1sTypephp_clone(self->mOriginalLoadVarType))));
@@ -4541,7 +4553,7 @@ right_value129 = (void*)0;
                 }
                 # 9 "sType_clone"
                 # 8 "sType_clone"
-                if(_if_conditional61=self!=((void*)0)&&self->mGenericsName!=((void*)0),                _if_conditional61) {
+                if(_if_conditional62=self!=((void*)0)&&self->mGenericsName!=((void*)0),                _if_conditional62) {
                     # 8 "sType_clone"
                     __dec_obj26=result_62->mGenericsName;
                     result_62->mGenericsName=(char*)come_increment_ref_count(((char*)(right_value107=string_clone(self->mGenericsName))));
@@ -4550,7 +4562,7 @@ right_value129 = (void*)0;
                 }
                 # 10 "sType_clone"
                 # 9 "sType_clone"
-                if(_if_conditional62=self!=((void*)0)&&self->mGenericsTypes!=((void*)0),                _if_conditional62) {
+                if(_if_conditional63=self!=((void*)0)&&self->mGenericsTypes!=((void*)0),                _if_conditional63) {
                     # 9 "sType_clone"
                     __dec_obj27=result_62->mGenericsTypes;
                     result_62->mGenericsTypes=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value108=list$1sTypephp_clone(self->mGenericsTypes))));
@@ -4559,7 +4571,7 @@ right_value129 = (void*)0;
                 }
                 # 11 "sType_clone"
                 # 10 "sType_clone"
-                if(_if_conditional63=self!=((void*)0)&&self->mArrayNum!=((void*)0),                _if_conditional63) {
+                if(_if_conditional64=self!=((void*)0)&&self->mArrayNum!=((void*)0),                _if_conditional64) {
                     # 10 "sType_clone"
                     __dec_obj31=result_62->mArrayNum;
                     result_62->mArrayNum=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value116=list$1sNodephp_clone(self->mArrayNum))));
@@ -4568,13 +4580,13 @@ right_value129 = (void*)0;
                 }
                 # 12 "sType_clone"
                 # 11 "sType_clone"
-                if(_if_conditional76=self!=((void*)0),                _if_conditional76) {
+                if(_if_conditional77=self!=((void*)0),                _if_conditional77) {
                     # 11 "sType_clone"
                     result_62->mOmitArrayNum=self->mOmitArrayNum;
                 }
                 # 13 "sType_clone"
                 # 12 "sType_clone"
-                if(_if_conditional77=self!=((void*)0)&&self->mParamTypes!=((void*)0),                _if_conditional77) {
+                if(_if_conditional78=self!=((void*)0)&&self->mParamTypes!=((void*)0),                _if_conditional78) {
                     # 12 "sType_clone"
                     __dec_obj32=result_62->mParamTypes;
                     result_62->mParamTypes=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value117=list$1sTypephp_clone(self->mParamTypes))));
@@ -4583,7 +4595,7 @@ right_value129 = (void*)0;
                 }
                 # 14 "sType_clone"
                 # 13 "sType_clone"
-                if(_if_conditional78=self!=((void*)0)&&self->mParamNames!=((void*)0),                _if_conditional78) {
+                if(_if_conditional79=self!=((void*)0)&&self->mParamNames!=((void*)0),                _if_conditional79) {
                     # 13 "sType_clone"
                     __dec_obj36=result_62->mParamNames;
                     result_62->mParamNames=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value124=list$1charphp_clone(self->mParamNames))));
@@ -4592,7 +4604,7 @@ right_value129 = (void*)0;
                 }
                 # 15 "sType_clone"
                 # 14 "sType_clone"
-                if(_if_conditional82=self!=((void*)0)&&self->mResultType!=((void*)0),                _if_conditional82) {
+                if(_if_conditional83=self!=((void*)0)&&self->mResultType!=((void*)0),                _if_conditional83) {
                     # 14 "sType_clone"
                     __dec_obj37=result_62->mResultType;
                     result_62->mResultType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value125=tuple1$1sTypephp_clone(self->mResultType))));
@@ -4601,13 +4613,13 @@ right_value129 = (void*)0;
                 }
                 # 16 "sType_clone"
                 # 15 "sType_clone"
-                if(_if_conditional83=self!=((void*)0),                _if_conditional83) {
+                if(_if_conditional84=self!=((void*)0),                _if_conditional84) {
                     # 15 "sType_clone"
                     result_62->mVarArgs=self->mVarArgs;
                 }
                 # 17 "sType_clone"
                 # 16 "sType_clone"
-                if(_if_conditional84=self!=((void*)0)&&self->mAlignas!=((void*)0),                _if_conditional84) {
+                if(_if_conditional85=self!=((void*)0)&&self->mAlignas!=((void*)0),                _if_conditional85) {
                     # 16 "sType_clone"
                     __dec_obj38=result_62->mAlignas;
                     result_62->mAlignas=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value126=sNode_clone(self->mAlignas))));
@@ -4616,151 +4628,151 @@ right_value129 = (void*)0;
                 }
                 # 18 "sType_clone"
                 # 17 "sType_clone"
-                if(_if_conditional85=self!=((void*)0),                _if_conditional85) {
+                if(_if_conditional86=self!=((void*)0),                _if_conditional86) {
                     # 17 "sType_clone"
                     result_62->mUnsigned=self->mUnsigned;
                 }
                 # 19 "sType_clone"
                 # 18 "sType_clone"
-                if(_if_conditional86=self!=((void*)0),                _if_conditional86) {
+                if(_if_conditional87=self!=((void*)0),                _if_conditional87) {
                     # 18 "sType_clone"
                     result_62->mShort=self->mShort;
                 }
                 # 20 "sType_clone"
                 # 19 "sType_clone"
-                if(_if_conditional87=self!=((void*)0),                _if_conditional87) {
+                if(_if_conditional88=self!=((void*)0),                _if_conditional88) {
                     # 19 "sType_clone"
                     result_62->mLong=self->mLong;
                 }
                 # 21 "sType_clone"
                 # 20 "sType_clone"
-                if(_if_conditional88=self!=((void*)0),                _if_conditional88) {
+                if(_if_conditional89=self!=((void*)0),                _if_conditional89) {
                     # 20 "sType_clone"
                     result_62->mLongLong=self->mLongLong;
                 }
                 # 22 "sType_clone"
                 # 21 "sType_clone"
-                if(_if_conditional89=self!=((void*)0),                _if_conditional89) {
+                if(_if_conditional90=self!=((void*)0),                _if_conditional90) {
                     # 21 "sType_clone"
                     result_62->mConstant=self->mConstant;
                 }
                 # 23 "sType_clone"
                 # 22 "sType_clone"
-                if(_if_conditional90=self!=((void*)0),                _if_conditional90) {
+                if(_if_conditional91=self!=((void*)0),                _if_conditional91) {
                     # 22 "sType_clone"
                     result_62->mRegister=self->mRegister;
                 }
                 # 24 "sType_clone"
                 # 23 "sType_clone"
-                if(_if_conditional91=self!=((void*)0),                _if_conditional91) {
+                if(_if_conditional92=self!=((void*)0),                _if_conditional92) {
                     # 23 "sType_clone"
                     result_62->mVolatile=self->mVolatile;
                 }
                 # 25 "sType_clone"
                 # 24 "sType_clone"
-                if(_if_conditional92=self!=((void*)0),                _if_conditional92) {
+                if(_if_conditional93=self!=((void*)0),                _if_conditional93) {
                     # 24 "sType_clone"
                     result_62->mStatic=self->mStatic;
                 }
                 # 26 "sType_clone"
                 # 25 "sType_clone"
-                if(_if_conditional93=self!=((void*)0),                _if_conditional93) {
+                if(_if_conditional94=self!=((void*)0),                _if_conditional94) {
                     # 25 "sType_clone"
                     result_62->mRecord=self->mRecord;
                 }
                 # 27 "sType_clone"
                 # 26 "sType_clone"
-                if(_if_conditional94=self!=((void*)0),                _if_conditional94) {
+                if(_if_conditional95=self!=((void*)0),                _if_conditional95) {
                     # 26 "sType_clone"
                     result_62->mExtern=self->mExtern;
                 }
                 # 28 "sType_clone"
                 # 27 "sType_clone"
-                if(_if_conditional95=self!=((void*)0),                _if_conditional95) {
+                if(_if_conditional96=self!=((void*)0),                _if_conditional96) {
                     # 27 "sType_clone"
                     result_62->mRestrict=self->mRestrict;
                 }
                 # 29 "sType_clone"
                 # 28 "sType_clone"
-                if(_if_conditional96=self!=((void*)0),                _if_conditional96) {
+                if(_if_conditional97=self!=((void*)0),                _if_conditional97) {
                     # 28 "sType_clone"
                     result_62->mImmutable=self->mImmutable;
                 }
                 # 30 "sType_clone"
                 # 29 "sType_clone"
-                if(_if_conditional97=self!=((void*)0),                _if_conditional97) {
+                if(_if_conditional98=self!=((void*)0),                _if_conditional98) {
                     # 29 "sType_clone"
                     result_62->mHeap=self->mHeap;
                 }
                 # 31 "sType_clone"
                 # 30 "sType_clone"
-                if(_if_conditional98=self!=((void*)0),                _if_conditional98) {
+                if(_if_conditional99=self!=((void*)0),                _if_conditional99) {
                     # 30 "sType_clone"
                     result_62->mDummyHeap=self->mDummyHeap;
                 }
                 # 32 "sType_clone"
                 # 31 "sType_clone"
-                if(_if_conditional99=self!=((void*)0),                _if_conditional99) {
+                if(_if_conditional100=self!=((void*)0),                _if_conditional100) {
                     # 31 "sType_clone"
                     result_62->mDelegate=self->mDelegate;
                 }
                 # 33 "sType_clone"
                 # 32 "sType_clone"
-                if(_if_conditional100=self!=((void*)0),                _if_conditional100) {
+                if(_if_conditional101=self!=((void*)0),                _if_conditional101) {
                     # 32 "sType_clone"
                     result_62->mShare=self->mShare;
                 }
                 # 34 "sType_clone"
                 # 33 "sType_clone"
-                if(_if_conditional101=self!=((void*)0),                _if_conditional101) {
+                if(_if_conditional102=self!=((void*)0),                _if_conditional102) {
                     # 33 "sType_clone"
                     result_62->mClone=self->mClone;
                 }
                 # 35 "sType_clone"
                 # 34 "sType_clone"
-                if(_if_conditional102=self!=((void*)0),                _if_conditional102) {
+                if(_if_conditional103=self!=((void*)0),                _if_conditional103) {
                     # 34 "sType_clone"
                     result_62->mNoHeap=self->mNoHeap;
                 }
                 # 36 "sType_clone"
                 # 35 "sType_clone"
-                if(_if_conditional103=self!=((void*)0),                _if_conditional103) {
+                if(_if_conditional104=self!=((void*)0),                _if_conditional104) {
                     # 35 "sType_clone"
                     result_62->mNoCallingDestructor=self->mNoCallingDestructor;
                 }
                 # 37 "sType_clone"
                 # 36 "sType_clone"
-                if(_if_conditional104=self!=((void*)0),                _if_conditional104) {
+                if(_if_conditional105=self!=((void*)0),                _if_conditional105) {
                     # 36 "sType_clone"
                     result_62->mRefference=self->mRefference;
                 }
                 # 38 "sType_clone"
                 # 37 "sType_clone"
-                if(_if_conditional105=self!=((void*)0),                _if_conditional105) {
+                if(_if_conditional106=self!=((void*)0),                _if_conditional106) {
                     # 37 "sType_clone"
                     result_62->mException=self->mException;
                 }
                 # 39 "sType_clone"
                 # 38 "sType_clone"
-                if(_if_conditional106=self!=((void*)0),                _if_conditional106) {
+                if(_if_conditional107=self!=((void*)0),                _if_conditional107) {
                     # 38 "sType_clone"
                     result_62->mPointerNum=self->mPointerNum;
                 }
                 # 40 "sType_clone"
                 # 39 "sType_clone"
-                if(_if_conditional107=self!=((void*)0),                _if_conditional107) {
+                if(_if_conditional108=self!=((void*)0),                _if_conditional108) {
                     # 39 "sType_clone"
                     result_62->mOriginalTypeNamePointerNum=self->mOriginalTypeNamePointerNum;
                 }
                 # 41 "sType_clone"
                 # 40 "sType_clone"
-                if(_if_conditional108=self!=((void*)0),                _if_conditional108) {
+                if(_if_conditional109=self!=((void*)0),                _if_conditional109) {
                     # 40 "sType_clone"
                     result_62->mNoArrayPointerNum=self->mNoArrayPointerNum;
                 }
                 # 42 "sType_clone"
                 # 41 "sType_clone"
-                if(_if_conditional109=self!=((void*)0)&&self->mSizeNum!=((void*)0),                _if_conditional109) {
+                if(_if_conditional110=self!=((void*)0)&&self->mSizeNum!=((void*)0),                _if_conditional110) {
                     # 41 "sType_clone"
                     __dec_obj39=result_62->mSizeNum;
                     result_62->mSizeNum=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value127=sNode_clone(self->mSizeNum))));
@@ -4769,19 +4781,19 @@ right_value129 = (void*)0;
                 }
                 # 43 "sType_clone"
                 # 42 "sType_clone"
-                if(_if_conditional110=self!=((void*)0),                _if_conditional110) {
+                if(_if_conditional111=self!=((void*)0),                _if_conditional111) {
                     # 42 "sType_clone"
                     result_62->mDynamicArrayNum=self->mDynamicArrayNum;
                 }
                 # 44 "sType_clone"
                 # 43 "sType_clone"
-                if(_if_conditional111=self!=((void*)0),                _if_conditional111) {
+                if(_if_conditional112=self!=((void*)0),                _if_conditional112) {
                     # 43 "sType_clone"
                     result_62->mTypeOfExpression=self->mTypeOfExpression;
                 }
                 # 45 "sType_clone"
                 # 44 "sType_clone"
-                if(_if_conditional112=self!=((void*)0)&&self->mOriginalTypeName!=((void*)0),                _if_conditional112) {
+                if(_if_conditional113=self!=((void*)0)&&self->mOriginalTypeName!=((void*)0),                _if_conditional113) {
                     # 44 "sType_clone"
                     __dec_obj40=result_62->mOriginalTypeName;
                     result_62->mOriginalTypeName=(char*)come_increment_ref_count(((char*)(right_value128=string_clone(self->mOriginalTypeName))));
@@ -4790,61 +4802,61 @@ right_value129 = (void*)0;
                 }
                 # 46 "sType_clone"
                 # 45 "sType_clone"
-                if(_if_conditional113=self!=((void*)0),                _if_conditional113) {
+                if(_if_conditional114=self!=((void*)0),                _if_conditional114) {
                     # 45 "sType_clone"
                     result_62->mOriginalPointerNum=self->mOriginalPointerNum;
                 }
                 # 47 "sType_clone"
                 # 46 "sType_clone"
-                if(_if_conditional114=self!=((void*)0),                _if_conditional114) {
+                if(_if_conditional115=self!=((void*)0),                _if_conditional115) {
                     # 46 "sType_clone"
                     result_62->mFunctionParam=self->mFunctionParam;
                 }
                 # 48 "sType_clone"
                 # 47 "sType_clone"
-                if(_if_conditional115=self!=((void*)0),                _if_conditional115) {
+                if(_if_conditional116=self!=((void*)0),                _if_conditional116) {
                     # 47 "sType_clone"
                     result_62->mAllocaValue=self->mAllocaValue;
                 }
                 # 49 "sType_clone"
                 # 48 "sType_clone"
-                if(_if_conditional116=self!=((void*)0),                _if_conditional116) {
+                if(_if_conditional117=self!=((void*)0),                _if_conditional117) {
                     # 48 "sType_clone"
                     result_62->mGenericsStruct=self->mGenericsStruct;
                 }
                 # 50 "sType_clone"
                 # 49 "sType_clone"
-                if(_if_conditional117=self!=((void*)0),                _if_conditional117) {
+                if(_if_conditional118=self!=((void*)0),                _if_conditional118) {
                     # 49 "sType_clone"
                     result_62->mSolvedGenericsName=self->mSolvedGenericsName;
                 }
                 # 51 "sType_clone"
                 # 50 "sType_clone"
-                if(_if_conditional118=self!=((void*)0),                _if_conditional118) {
+                if(_if_conditional119=self!=((void*)0),                _if_conditional119) {
                     # 50 "sType_clone"
                     result_62->mComeMemCore=self->mComeMemCore;
                 }
                 # 52 "sType_clone"
                 # 51 "sType_clone"
-                if(_if_conditional119=self!=((void*)0),                _if_conditional119) {
+                if(_if_conditional120=self!=((void*)0),                _if_conditional120) {
                     # 51 "sType_clone"
                     result_62->mInline=self->mInline;
                 }
                 # 53 "sType_clone"
                 # 52 "sType_clone"
-                if(_if_conditional120=self!=((void*)0),                _if_conditional120) {
+                if(_if_conditional121=self!=((void*)0),                _if_conditional121) {
                     # 52 "sType_clone"
                     result_62->mNullValue=self->mNullValue;
                 }
                 # 54 "sType_clone"
                 # 53 "sType_clone"
-                if(_if_conditional121=self!=((void*)0),                _if_conditional121) {
+                if(_if_conditional122=self!=((void*)0),                _if_conditional122) {
                     # 53 "sType_clone"
                     result_62->mGuardValue=self->mGuardValue;
                 }
                 # 55 "sType_clone"
                 # 54 "sType_clone"
-                if(_if_conditional122=self!=((void*)0)&&self->mAsmName!=((void*)0),                _if_conditional122) {
+                if(_if_conditional123=self!=((void*)0)&&self->mAsmName!=((void*)0),                _if_conditional123) {
                     # 54 "sType_clone"
                     __dec_obj41=result_62->mAsmName;
                     result_62->mAsmName=(char*)come_increment_ref_count(((char*)(right_value129=string_clone(self->mAsmName))));
@@ -4853,7 +4865,7 @@ right_value129 = (void*)0;
                 }
                 # 56 "sType_clone"
                 # 55 "sType_clone"
-                if(_if_conditional123=self!=((void*)0),                _if_conditional123) {
+                if(_if_conditional124=self!=((void*)0),                _if_conditional124) {
                     # 55 "sType_clone"
                     result_62->mArrayPointerType=self->mArrayPointerType;
                 }
@@ -4866,7 +4878,7 @@ right_value129 = (void*)0;
 
 static struct list$1sTypeph* list$1sTypephp_clone(struct list$1sTypeph* self){
 void* __result_obj__;
-_Bool _if_conditional53;
+_Bool _if_conditional54;
 struct list$1sTypeph* __result61__;
 void* right_value96;
 void* right_value97;
@@ -4883,7 +4895,7 @@ memset(&it_64, 0, sizeof(struct list_item$1sTypeph*));
 right_value101 = (void*)0;
                         # 142 "./neo-c.h"
                         # 139 "./neo-c.h"
-                        if(_if_conditional53=self==((void*)0),                        _if_conditional53) {
+                        if(_if_conditional54=self==((void*)0),                        _if_conditional54) {
                             # 140 "./neo-c.h"
                             __result61__ = __result_obj__ = ((void*)0);
                             return __result61__;
@@ -4928,11 +4940,11 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct list$1sTypeph* list$1sTypeph_add(struct list$1sTypeph* self, struct sType* item){
 void* __result_obj__;
-_Bool _if_conditional54;
+_Bool _if_conditional55;
 void* right_value98;
 struct list_item$1sTypeph* litem_65;
 struct sType* __dec_obj19;
-_Bool _if_conditional55;
+_Bool _if_conditional56;
 void* right_value99;
 struct list_item$1sTypeph* litem_66;
 struct sType* __dec_obj20;
@@ -4949,7 +4961,7 @@ right_value100 = (void*)0;
 memset(&litem_67, 0, sizeof(struct list_item$1sTypeph*));
                                 # 186 "./neo-c.h"
                                 # 155 "./neo-c.h"
-                                if(_if_conditional54=self->len==0,                                _if_conditional54) {
+                                if(_if_conditional55=self->len==0,                                _if_conditional55) {
                                     # 156 "./neo-c.h"
                                     litem_65=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value98=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./neo-c.h", 156, "list_item$1sTypeph"))));
                                     come_call_finalizer2(list_item$1sTypephp_finalize,right_value98, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -4969,7 +4981,7 @@ memset(&litem_67, 0, sizeof(struct list_item$1sTypeph*));
                                 else {
                                     # 186 "./neo-c.h"
                                     # 165 "./neo-c.h"
-                                    if(_if_conditional55=self->len==1,                                    _if_conditional55) {
+                                    if(_if_conditional56=self->len==1,                                    _if_conditional56) {
                                         # 166 "./neo-c.h"
                                         litem_66=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value99=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./neo-c.h", 166, "list_item$1sTypeph"))));
                                         come_call_finalizer2(list_item$1sTypephp_finalize,right_value99, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -5020,11 +5032,11 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct tuple1$1sTypeph* tuple1$1sTypephp_clone(struct tuple1$1sTypeph* self){
 void* __result_obj__;
-_Bool _if_conditional57;
+_Bool _if_conditional58;
 struct tuple1$1sTypeph* __result65__;
 void* right_value103;
 struct tuple1$1sTypeph* result_68;
-_Bool _if_conditional59;
+_Bool _if_conditional60;
 void* right_value104;
 struct sType* __dec_obj23;
 struct tuple1$1sTypeph* __result66__;
@@ -5034,7 +5046,7 @@ memset(&result_68, 0, sizeof(struct tuple1$1sTypeph*));
 right_value104 = (void*)0;
                         # 3 "tuple1$1sTypephp_clone"
                         # 2 "tuple1$1sTypephp_clone"
-                        if(_if_conditional57=self==(void*)0,                        _if_conditional57) {
+                        if(_if_conditional58=self==(void*)0,                        _if_conditional58) {
                             # 2 "tuple1$1sTypephp_clone"
                             __result65__ = __result_obj__ = (void*)0;
                             return __result65__;
@@ -5044,7 +5056,7 @@ right_value104 = (void*)0;
                         come_call_finalizer2(tuple1$1sTypeph_finalize,right_value103, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                         # 5 "tuple1$1sTypephp_clone"
                         # 4 "tuple1$1sTypephp_clone"
-                        if(_if_conditional59=self!=((void*)0)&&self->v1!=((void*)0),                        _if_conditional59) {
+                        if(_if_conditional60=self!=((void*)0)&&self->v1!=((void*)0),                        _if_conditional60) {
                             # 4 "tuple1$1sTypephp_clone"
                             __dec_obj23=result_68->v1;
                             result_68->v1=(struct sType*)come_increment_ref_count(((struct sType*)(right_value104=sType_clone(self->v1))));
@@ -5060,11 +5072,11 @@ right_value104 = (void*)0;
 
 static void tuple1$1sTypeph_finalize(struct tuple1$1sTypeph* self){
 void* __result_obj__;
-_Bool _if_conditional58;
+_Bool _if_conditional59;
 memset(&__result_obj__, 0, sizeof(void*));
                             # 1 "tuple1$1sTypeph_finalize"
                             # 0 "tuple1$1sTypeph_finalize"
-                            if(_if_conditional58=self!=((void*)0)&&self->v1!=((void*)0),                            _if_conditional58) {
+                            if(_if_conditional59=self!=((void*)0)&&self->v1!=((void*)0),                            _if_conditional59) {
                                 # 0 "tuple1$1sTypeph_finalize"
                                 come_call_finalizer2(sType_finalize,self->v1, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                             }
@@ -5072,7 +5084,7 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct list$1sNodeph* list$1sNodephp_clone(struct list$1sNodeph* self){
 void* __result_obj__;
-_Bool _if_conditional64;
+_Bool _if_conditional65;
 struct list$1sNodeph* __result67__;
 void* right_value109;
 void* right_value110;
@@ -5089,7 +5101,7 @@ memset(&it_70, 0, sizeof(struct list_item$1sNodeph*));
 right_value115 = (void*)0;
                         # 142 "./neo-c.h"
                         # 139 "./neo-c.h"
-                        if(_if_conditional64=self==((void*)0),                        _if_conditional64) {
+                        if(_if_conditional65=self==((void*)0),                        _if_conditional65) {
                             # 140 "./neo-c.h"
                             __result67__ = __result_obj__ = ((void*)0);
                             return __result67__;
@@ -5134,11 +5146,11 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct list$1sNodeph* list$1sNodeph_add(struct list$1sNodeph* self, struct sNode* item){
 void* __result_obj__;
-_Bool _if_conditional65;
+_Bool _if_conditional66;
 void* right_value111;
 struct list_item$1sNodeph* litem_71;
 struct sNode* __dec_obj28;
-_Bool _if_conditional66;
+_Bool _if_conditional67;
 void* right_value112;
 struct list_item$1sNodeph* litem_72;
 struct sNode* __dec_obj29;
@@ -5155,7 +5167,7 @@ right_value113 = (void*)0;
 memset(&litem_73, 0, sizeof(struct list_item$1sNodeph*));
                                 # 186 "./neo-c.h"
                                 # 155 "./neo-c.h"
-                                if(_if_conditional65=self->len==0,                                _if_conditional65) {
+                                if(_if_conditional66=self->len==0,                                _if_conditional66) {
                                     # 156 "./neo-c.h"
                                     litem_71=(struct list_item$1sNodeph*)come_increment_ref_count(((struct list_item$1sNodeph*)(right_value111=(struct list_item$1sNodeph*)come_calloc(1, sizeof(struct list_item$1sNodeph)*(1), "./neo-c.h", 156, "list_item$1sNodeph"))));
                                     come_call_finalizer2(list_item$1sNodephp_finalize,right_value111, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -5175,7 +5187,7 @@ memset(&litem_73, 0, sizeof(struct list_item$1sNodeph*));
                                 else {
                                     # 186 "./neo-c.h"
                                     # 165 "./neo-c.h"
-                                    if(_if_conditional66=self->len==1,                                    _if_conditional66) {
+                                    if(_if_conditional67=self->len==1,                                    _if_conditional67) {
                                         # 166 "./neo-c.h"
                                         litem_72=(struct list_item$1sNodeph*)come_increment_ref_count(((struct list_item$1sNodeph*)(right_value112=(struct list_item$1sNodeph*)come_calloc(1, sizeof(struct list_item$1sNodeph)*(1), "./neo-c.h", 166, "list_item$1sNodeph"))));
                                         come_call_finalizer2(list_item$1sNodephp_finalize,right_value112, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -5221,11 +5233,10 @@ memset(&litem_73, 0, sizeof(struct list_item$1sNodeph*));
 
 static struct sNode* sNode_clone(struct sNode* self){
 void* __result_obj__;
-_Bool _if_conditional67;
+_Bool _if_conditional68;
 struct sNode* __result70__;
 void* right_value114;
 struct sNode* result_74;
-_Bool _if_conditional68;
 _Bool _if_conditional69;
 _Bool _if_conditional70;
 _Bool _if_conditional71;
@@ -5233,13 +5244,14 @@ _Bool _if_conditional72;
 _Bool _if_conditional73;
 _Bool _if_conditional74;
 _Bool _if_conditional75;
+_Bool _if_conditional76;
 struct sNode* __result71__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value114 = (void*)0;
 memset(&result_74, 0, sizeof(struct sNode*));
                                 # 3 "sNode_clone"
                                 # 2 "sNode_clone"
-                                if(_if_conditional67=self==(void*)0,                                _if_conditional67) {
+                                if(_if_conditional68=self==(void*)0,                                _if_conditional68) {
                                     # 2 "sNode_clone"
                                     __result70__ = __result_obj__ = (void*)0;
                                     return __result70__;
@@ -5249,49 +5261,49 @@ memset(&result_74, 0, sizeof(struct sNode*));
                                 if(right_value114) { right_value114 = come_decrement_ref_count2(right_value114, ((struct sNode*)right_value114)->finalize, ((struct sNode*)right_value114)->_protocol_obj, 1, 0, 0, __result_obj__); } 
                                 # 5 "sNode_clone"
                                 # 4 "sNode_clone"
-                                if(_if_conditional68=self!=((void*)0)&&self->clone!=((void*)0),                                _if_conditional68) {
+                                if(_if_conditional69=self!=((void*)0)&&self->clone!=((void*)0),                                _if_conditional69) {
                                     # 4 "sNode_clone"
                                     result_74->_protocol_obj=self->clone(self->_protocol_obj);
                                 }
                                 # 6 "sNode_clone"
                                 # 5 "sNode_clone"
-                                if(_if_conditional69=self!=((void*)0),                                _if_conditional69) {
+                                if(_if_conditional70=self!=((void*)0),                                _if_conditional70) {
                                     # 5 "sNode_clone"
                                     result_74->finalize=self->finalize;
                                 }
                                 # 7 "sNode_clone"
                                 # 6 "sNode_clone"
-                                if(_if_conditional70=self!=((void*)0),                                _if_conditional70) {
+                                if(_if_conditional71=self!=((void*)0),                                _if_conditional71) {
                                     # 6 "sNode_clone"
                                     result_74->clone=self->clone;
                                 }
                                 # 8 "sNode_clone"
                                 # 7 "sNode_clone"
-                                if(_if_conditional71=self!=((void*)0),                                _if_conditional71) {
+                                if(_if_conditional72=self!=((void*)0),                                _if_conditional72) {
                                     # 7 "sNode_clone"
                                     result_74->compile=self->compile;
                                 }
                                 # 9 "sNode_clone"
                                 # 8 "sNode_clone"
-                                if(_if_conditional72=self!=((void*)0),                                _if_conditional72) {
+                                if(_if_conditional73=self!=((void*)0),                                _if_conditional73) {
                                     # 8 "sNode_clone"
                                     result_74->sline=self->sline;
                                 }
                                 # 10 "sNode_clone"
                                 # 9 "sNode_clone"
-                                if(_if_conditional73=self!=((void*)0),                                _if_conditional73) {
+                                if(_if_conditional74=self!=((void*)0),                                _if_conditional74) {
                                     # 9 "sNode_clone"
                                     result_74->sname=self->sname;
                                 }
                                 # 11 "sNode_clone"
                                 # 10 "sNode_clone"
-                                if(_if_conditional74=self!=((void*)0),                                _if_conditional74) {
+                                if(_if_conditional75=self!=((void*)0),                                _if_conditional75) {
                                     # 10 "sNode_clone"
                                     result_74->terminated=self->terminated;
                                 }
                                 # 12 "sNode_clone"
                                 # 11 "sNode_clone"
-                                if(_if_conditional75=self!=((void*)0),                                _if_conditional75) {
+                                if(_if_conditional76=self!=((void*)0),                                _if_conditional76) {
                                     # 11 "sNode_clone"
                                     result_74->kind=self->kind;
                                 }
@@ -5309,7 +5321,7 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct list$1charph* list$1charphp_clone(struct list$1charph* self){
 void* __result_obj__;
-_Bool _if_conditional79;
+_Bool _if_conditional80;
 struct list$1charph* __result73__;
 void* right_value118;
 void* right_value119;
@@ -5326,7 +5338,7 @@ memset(&it_76, 0, sizeof(struct list_item$1charph*));
 right_value123 = (void*)0;
                         # 142 "./neo-c.h"
                         # 139 "./neo-c.h"
-                        if(_if_conditional79=self==((void*)0),                        _if_conditional79) {
+                        if(_if_conditional80=self==((void*)0),                        _if_conditional80) {
                             # 140 "./neo-c.h"
                             __result73__ = __result_obj__ = ((void*)0);
                             return __result73__;
@@ -5371,11 +5383,11 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct list$1charph* list$1charph_add(struct list$1charph* self, char* item){
 void* __result_obj__;
-_Bool _if_conditional80;
+_Bool _if_conditional81;
 void* right_value120;
 struct list_item$1charph* litem_77;
 char* __dec_obj33;
-_Bool _if_conditional81;
+_Bool _if_conditional82;
 void* right_value121;
 struct list_item$1charph* litem_78;
 char* __dec_obj34;
@@ -5392,7 +5404,7 @@ right_value122 = (void*)0;
 memset(&litem_79, 0, sizeof(struct list_item$1charph*));
                                 # 186 "./neo-c.h"
                                 # 155 "./neo-c.h"
-                                if(_if_conditional80=self->len==0,                                _if_conditional80) {
+                                if(_if_conditional81=self->len==0,                                _if_conditional81) {
                                     # 156 "./neo-c.h"
                                     litem_77=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value120=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 156, "list_item$1charph"))));
                                     come_call_finalizer2(list_item$1charphp_finalize,right_value120, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -5412,7 +5424,7 @@ memset(&litem_79, 0, sizeof(struct list_item$1charph*));
                                 else {
                                     # 186 "./neo-c.h"
                                     # 165 "./neo-c.h"
-                                    if(_if_conditional81=self->len==1,                                    _if_conditional81) {
+                                    if(_if_conditional82=self->len==1,                                    _if_conditional82) {
                                         # 166 "./neo-c.h"
                                         litem_78=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value121=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 166, "list_item$1charph"))));
                                         come_call_finalizer2(list_item$1charphp_finalize,right_value121, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -5463,10 +5475,10 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static char* map$2charphsVarph_begin(struct map$2charphsVarph* self){
 void* __result_obj__;
-_Bool _if_conditional124;
+_Bool _if_conditional125;
 char* result_83;
 char* __result79__;
-_Bool _if_conditional125;
+_Bool _if_conditional126;
 char* __result80__;
 char* result_84;
 char* __result81__;
@@ -5475,7 +5487,7 @@ memset(&result_83, 0, sizeof(char*));
 memset(&result_84, 0, sizeof(char*));
             # 1304 "./neo-c.h"
             # 1299 "./neo-c.h"
-            if(_if_conditional124=self==((void*)0),            _if_conditional124) {
+            if(_if_conditional125=self==((void*)0),            _if_conditional125) {
                 # 1300 "./neo-c.h"
                 # 1301 "./neo-c.h"
                 memset(&result_83,0,sizeof(char*));
@@ -5511,10 +5523,10 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static char* map$2charphsVarph_next(struct map$2charphsVarph* self){
 void* __result_obj__;
-_Bool _if_conditional126;
+_Bool _if_conditional127;
 char* result_86;
 char* __result83__;
-_Bool _if_conditional127;
+_Bool _if_conditional128;
 char* __result84__;
 char* result_87;
 char* __result85__;
@@ -5523,7 +5535,7 @@ memset(&result_86, 0, sizeof(char*));
 memset(&result_87, 0, sizeof(char*));
             # 1321 "./neo-c.h"
             # 1316 "./neo-c.h"
-            if(_if_conditional126=self==((void*)0)||self->key_list->it==((void*)0),            _if_conditional126) {
+            if(_if_conditional127=self==((void*)0)||self->key_list->it==((void*)0),            _if_conditional127) {
                 # 1317 "./neo-c.h"
                 # 1318 "./neo-c.h"
                 memset(&result_86,0,sizeof(char*));
@@ -5554,11 +5566,11 @@ struct sVar* default_value_89;
 unsigned int hash_90;
 unsigned int it_91;
 _Bool _while_condtional14;
-_Bool _if_conditional128;
 _Bool _if_conditional129;
+_Bool _if_conditional130;
 struct sVar* __result86__;
-_Bool _if_conditional134;
 _Bool _if_conditional135;
+_Bool _if_conditional136;
 struct sVar* __result87__;
 struct sVar* __result88__;
 struct sVar* __result89__;
@@ -5577,10 +5589,10 @@ memset(&it_91, 0, sizeof(unsigned int));
                 while(_while_condtional14=(_Bool)1,                _while_condtional14) {
                     # 1570 "./neo-c.h"
                     # 1551 "./neo-c.h"
-                    if(_if_conditional128=self->item_existance[it_91],                    _if_conditional128) {
+                    if(_if_conditional129=self->item_existance[it_91],                    _if_conditional129) {
                         # 1558 "./neo-c.h"
                         # 1553 "./neo-c.h"
-                        if(_if_conditional129=string_equals(self->keys[it_91],key),                        _if_conditional129) {
+                        if(_if_conditional130=string_equals(self->keys[it_91],key),                        _if_conditional130) {
                             # 1555 "./neo-c.h"
                             __result86__ = __result_obj__ = self->items[it_91];
                             come_call_finalizer2(sVar_finalize,default_value_89, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
@@ -5590,14 +5602,14 @@ memset(&it_91, 0, sizeof(unsigned int));
                         it_91++;
                         # 1566 "./neo-c.h"
                         # 1560 "./neo-c.h"
-                        if(_if_conditional134=it_91>=self->size,                        _if_conditional134) {
+                        if(_if_conditional135=it_91>=self->size,                        _if_conditional135) {
                             # 1561 "./neo-c.h"
                             it_91=0;
                         }
                         else {
                             # 1566 "./neo-c.h"
                             # 1563 "./neo-c.h"
-                            if(_if_conditional135=it_91==hash_90,                            _if_conditional135) {
+                            if(_if_conditional136=it_91==hash_90,                            _if_conditional136) {
                                 # 1564 "./neo-c.h"
                                 __result87__ = __result_obj__ = default_value_89;
                                 come_call_finalizer2(sVar_finalize,default_value_89, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
@@ -5621,32 +5633,32 @@ memset(&it_91, 0, sizeof(unsigned int));
 
 static void sVar_finalize(struct sVar* self){
 void* __result_obj__;
-_Bool _if_conditional130;
 _Bool _if_conditional131;
 _Bool _if_conditional132;
 _Bool _if_conditional133;
+_Bool _if_conditional134;
 memset(&__result_obj__, 0, sizeof(void*));
                                 # 1 "sVar_finalize"
                                 # 0 "sVar_finalize"
-                                if(_if_conditional130=self!=((void*)0)&&self->mName!=((void*)0),                                _if_conditional130) {
+                                if(_if_conditional131=self!=((void*)0)&&self->mName!=((void*)0),                                _if_conditional131) {
                                     # 0 "sVar_finalize"
                                     self->mName = come_decrement_ref_count2(self->mName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                 }
                                 # 2 "sVar_finalize"
                                 # 1 "sVar_finalize"
-                                if(_if_conditional131=self!=((void*)0)&&self->mCValueName!=((void*)0),                                _if_conditional131) {
+                                if(_if_conditional132=self!=((void*)0)&&self->mCValueName!=((void*)0),                                _if_conditional132) {
                                     # 1 "sVar_finalize"
                                     self->mCValueName = come_decrement_ref_count2(self->mCValueName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                 }
                                 # 3 "sVar_finalize"
                                 # 2 "sVar_finalize"
-                                if(_if_conditional132=self!=((void*)0)&&self->mType!=((void*)0),                                _if_conditional132) {
+                                if(_if_conditional133=self!=((void*)0)&&self->mType!=((void*)0),                                _if_conditional133) {
                                     # 2 "sVar_finalize"
                                     come_call_finalizer2(sType_finalize,self->mType, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 }
                                 # 4 "sVar_finalize"
                                 # 3 "sVar_finalize"
-                                if(_if_conditional133=self!=((void*)0)&&self->mFunName!=((void*)0),                                _if_conditional133) {
+                                if(_if_conditional134=self!=((void*)0)&&self->mFunName!=((void*)0),                                _if_conditional134) {
                                     # 3 "sVar_finalize"
                                     self->mFunName = come_decrement_ref_count2(self->mFunName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                 }
@@ -5654,13 +5666,13 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static int list$1sNodeph_length(struct list$1sNodeph* self){
 void* __result_obj__;
-_Bool _if_conditional141;
+_Bool _if_conditional142;
 int __result90__;
 int __result91__;
 memset(&__result_obj__, 0, sizeof(void*));
                                     # 367 "./neo-c.h"
                                     # 364 "./neo-c.h"
-                                    if(_if_conditional141=self==((void*)0),                                    _if_conditional141) {
+                                    if(_if_conditional142=self==((void*)0),                                    _if_conditional142) {
                                         # 365 "./neo-c.h"
                                         __result90__ = 0;
                                         return __result90__;
@@ -5704,11 +5716,11 @@ memset(&prev_it_97, 0, sizeof(struct list_item$1sNodeph*));
 static void map$2charphsVarphp_finalize(struct map$2charphsVarph* self){
 void* __result_obj__;
 int i_99;
-_Bool _if_conditional143;
 _Bool _if_conditional144;
-int i_100;
 _Bool _if_conditional145;
+int i_100;
 _Bool _if_conditional146;
+_Bool _if_conditional147;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_99, 0, sizeof(int));
 memset(&i_100, 0, sizeof(int));
@@ -5716,10 +5728,10 @@ memset(&i_100, 0, sizeof(int));
             for(            i_99=0;            i_99<self->size;            i_99++            ){
                 # 1136 "./neo-c.h"
                 # 1131 "./neo-c.h"
-                if(_if_conditional143=self->item_existance[i_99],                _if_conditional143) {
+                if(_if_conditional144=self->item_existance[i_99],                _if_conditional144) {
                     # 1135 "./neo-c.h"
                     # 1132 "./neo-c.h"
-                    if(_if_conditional144=1,                    _if_conditional144) {
+                    if(_if_conditional145=1,                    _if_conditional145) {
                         # 1133 "./neo-c.h"
                         come_call_finalizer2(sVar_finalize,self->items[i_99], (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                     }
@@ -5731,10 +5743,10 @@ memset(&i_100, 0, sizeof(int));
             for(            i_100=0;            i_100<self->size;            i_100++            ){
                 # 1145 "./neo-c.h"
                 # 1140 "./neo-c.h"
-                if(_if_conditional145=self->item_existance[i_100],                _if_conditional145) {
+                if(_if_conditional146=self->item_existance[i_100],                _if_conditional146) {
                     # 1144 "./neo-c.h"
                     # 1141 "./neo-c.h"
-                    if(_if_conditional146=1,                    _if_conditional146) {
+                    if(_if_conditional147=1,                    _if_conditional147) {
                         # 1142 "./neo-c.h"
                         self->keys[i_100] = come_decrement_ref_count2(self->keys[i_100], (void*)0, (void*)0, 0, 0, 0, (void*)0);
                     }
@@ -5776,22 +5788,22 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct map$2charphsClassph* map$2charphsClassph_insert(struct map$2charphsClassph* self, char* key, struct sClass* item){
 void* __result_obj__;
-_Bool _if_conditional147;
+_Bool _if_conditional148;
 unsigned int hash_120;
 unsigned int it_121;
 _Bool _while_condtional19;
-_Bool _if_conditional159;
 _Bool _if_conditional160;
 _Bool _if_conditional161;
-_Bool _if_conditional181;
+_Bool _if_conditional162;
 _Bool _if_conditional182;
 _Bool _if_conditional183;
 _Bool _if_conditional184;
 _Bool _if_conditional185;
+_Bool _if_conditional186;
 _Bool same_key_exist_138;
 char* it2_141;
-_Bool _if_conditional190;
 _Bool _if_conditional191;
+_Bool _if_conditional192;
 struct map$2charphsClassph* __result116__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&hash_120, 0, sizeof(unsigned int));
@@ -5800,7 +5812,7 @@ memset(&same_key_exist_138, 0, sizeof(_Bool));
 memset(&it2_141, 0, sizeof(char*));
         # 1393 "./neo-c.h"
         # 1390 "./neo-c.h"
-        if(_if_conditional147=self->len*10>=self->size,        _if_conditional147) {
+        if(_if_conditional148=self->len*10>=self->size,        _if_conditional148) {
             # 1391 "./neo-c.h"
             map$2charphsClassph_rehash(self);
         }
@@ -5812,13 +5824,13 @@ memset(&it2_141, 0, sizeof(char*));
         while(_while_condtional19=(_Bool)1,        _while_condtional19) {
             # 1450 "./neo-c.h"
             # 1397 "./neo-c.h"
-            if(_if_conditional159=self->item_existance[it_121],            _if_conditional159) {
+            if(_if_conditional160=self->item_existance[it_121],            _if_conditional160) {
                 # 1420 "./neo-c.h"
                 # 1399 "./neo-c.h"
-                if(_if_conditional160=string_equals(self->keys[it_121],key),                _if_conditional160) {
+                if(_if_conditional161=string_equals(self->keys[it_121],key),                _if_conditional161) {
                     # 1410 "./neo-c.h"
                     # 1401 "./neo-c.h"
-                    if(_if_conditional161=1,                    _if_conditional161) {
+                    if(_if_conditional162=1,                    _if_conditional162) {
                         # 1402 "./neo-c.h"
                         list$1charp_remove(self->key_list,self->keys[it_121]);
                         # 1403 "./neo-c.h"
@@ -5834,7 +5846,7 @@ memset(&it2_141, 0, sizeof(char*));
                     }
                     # 1417 "./neo-c.h"
                     # 1410 "./neo-c.h"
-                    if(_if_conditional181=1,                    _if_conditional181) {
+                    if(_if_conditional182=1,                    _if_conditional182) {
                         # 1411 "./neo-c.h"
                         come_call_finalizer2(sClass_finalize,self->items[it_121], (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         # 1412 "./neo-c.h"
@@ -5851,14 +5863,14 @@ memset(&it2_141, 0, sizeof(char*));
                 it_121++;
                 # 1430 "./neo-c.h"
                 # 1422 "./neo-c.h"
-                if(_if_conditional182=it_121>=self->size,                _if_conditional182) {
+                if(_if_conditional183=it_121>=self->size,                _if_conditional183) {
                     # 1423 "./neo-c.h"
                     it_121=0;
                 }
                 else {
                     # 1430 "./neo-c.h"
                     # 1425 "./neo-c.h"
-                    if(_if_conditional183=it_121==hash_120,                    _if_conditional183) {
+                    if(_if_conditional184=it_121==hash_120,                    _if_conditional184) {
                         # 1426 "./neo-c.h"
                         printf("unexpected error in map.insert\n");
                         # 1427 "./neo-c.h"
@@ -5873,7 +5885,7 @@ memset(&it2_141, 0, sizeof(char*));
                 self->item_existance[it_121]=(_Bool)1;
                 # 1439 "./neo-c.h"
                 # 1433 "./neo-c.h"
-                if(_if_conditional184=1,                _if_conditional184) {
+                if(_if_conditional185=1,                _if_conditional185) {
                     # 1434 "./neo-c.h"
                     self->keys[it_121]=(char*)come_increment_ref_count(key);
                 }
@@ -5883,7 +5895,7 @@ memset(&it2_141, 0, sizeof(char*));
                 }
                 # 1446 "./neo-c.h"
                 # 1439 "./neo-c.h"
-                if(_if_conditional185=1,                _if_conditional185) {
+                if(_if_conditional186=1,                _if_conditional186) {
                     # 1440 "./neo-c.h"
                     self->items[it_121]=(struct sClass*)come_increment_ref_count(item);
                 }
@@ -5903,14 +5915,14 @@ memset(&it2_141, 0, sizeof(char*));
         for(        it2_141=list$1charp_begin(self->key_list);        !list$1charp_end(self->key_list);        it2_141=list$1charp_next(self->key_list)        ){
             # 1458 "./neo-c.h"
             # 1455 "./neo-c.h"
-            if(_if_conditional190=string_equals(it2_141,key),            _if_conditional190) {
+            if(_if_conditional191=string_equals(it2_141,key),            _if_conditional191) {
                 # 1456 "./neo-c.h"
                 same_key_exist_138=(_Bool)1;
             }
         }
         # 1464 "./neo-c.h"
         # 1460 "./neo-c.h"
-        if(_if_conditional191=!same_key_exist_138,        _if_conditional191) {
+        if(_if_conditional192=!same_key_exist_138,        _if_conditional192) {
             # 1461 "./neo-c.h"
             list$1charp_push_back(self->key_list,key);
         }
@@ -5939,9 +5951,9 @@ struct sClass* it2_116;
 unsigned int hash_117;
 int n_118;
 _Bool _while_condtional18;
-_Bool _if_conditional156;
 _Bool _if_conditional157;
 _Bool _if_conditional158;
+_Bool _if_conditional159;
 struct sClass* default_value_119;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&size_103, 0, sizeof(int));
@@ -5986,19 +5998,19 @@ memset(&default_value_119, 0, sizeof(struct sClass*));
                     while(_while_condtional18=(_Bool)1,                    _while_condtional18) {
                         # 1374 "./neo-c.h"
                         # 1352 "./neo-c.h"
-                        if(_if_conditional156=item_existance_106[n_118],                        _if_conditional156) {
+                        if(_if_conditional157=item_existance_106[n_118],                        _if_conditional157) {
                             # 1354 "./neo-c.h"
                             n_118++;
                             # 1364 "./neo-c.h"
                             # 1356 "./neo-c.h"
-                            if(_if_conditional157=n_118>=size_103,                            _if_conditional157) {
+                            if(_if_conditional158=n_118>=size_103,                            _if_conditional158) {
                                 # 1357 "./neo-c.h"
                                 n_118=0;
                             }
                             else {
                                 # 1364 "./neo-c.h"
                                 # 1359 "./neo-c.h"
-                                if(_if_conditional158=n_118==hash_117,                                _if_conditional158) {
+                                if(_if_conditional159=n_118==hash_117,                                _if_conditional159) {
                                     # 1360 "./neo-c.h"
                                     printf("unexpected error in map.rehash(1)\n");
                                     # 1361 "./neo-c.h"
@@ -6043,10 +6055,10 @@ memset(&default_value_119, 0, sizeof(struct sClass*));
 
 static char* map$2charphsClassph_begin(struct map$2charphsClassph* self){
 void* __result_obj__;
-_Bool _if_conditional148;
+_Bool _if_conditional149;
 char* result_108;
 char* __result93__;
-_Bool _if_conditional149;
+_Bool _if_conditional150;
 char* __result94__;
 char* result_109;
 char* __result95__;
@@ -6055,7 +6067,7 @@ memset(&result_108, 0, sizeof(char*));
 memset(&result_109, 0, sizeof(char*));
                     # 1304 "./neo-c.h"
                     # 1299 "./neo-c.h"
-                    if(_if_conditional148=self==((void*)0),                    _if_conditional148) {
+                    if(_if_conditional149=self==((void*)0),                    _if_conditional149) {
                         # 1300 "./neo-c.h"
                         # 1301 "./neo-c.h"
                         memset(&result_108,0,sizeof(char*));
@@ -6091,10 +6103,10 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static char* map$2charphsClassph_next(struct map$2charphsClassph* self){
 void* __result_obj__;
-_Bool _if_conditional150;
+_Bool _if_conditional151;
 char* result_111;
 char* __result97__;
-_Bool _if_conditional151;
+_Bool _if_conditional152;
 char* __result98__;
 char* result_112;
 char* __result99__;
@@ -6103,7 +6115,7 @@ memset(&result_111, 0, sizeof(char*));
 memset(&result_112, 0, sizeof(char*));
                     # 1321 "./neo-c.h"
                     # 1316 "./neo-c.h"
-                    if(_if_conditional150=self==((void*)0)||self->key_list->it==((void*)0),                    _if_conditional150) {
+                    if(_if_conditional151=self==((void*)0)||self->key_list->it==((void*)0),                    _if_conditional151) {
                         # 1317 "./neo-c.h"
                         # 1318 "./neo-c.h"
                         memset(&result_111,0,sizeof(char*));
@@ -6133,11 +6145,11 @@ void* __result_obj__;
 unsigned int hash_114;
 unsigned int it_115;
 _Bool _while_condtional17;
-_Bool _if_conditional152;
 _Bool _if_conditional153;
-struct sClass* __result100__;
 _Bool _if_conditional154;
+struct sClass* __result100__;
 _Bool _if_conditional155;
+_Bool _if_conditional156;
 struct sClass* __result101__;
 struct sClass* __result102__;
 struct sClass* __result103__;
@@ -6152,10 +6164,10 @@ memset(&it_115, 0, sizeof(unsigned int));
                         while(_while_condtional17=(_Bool)1,                        _while_condtional17) {
                             # 1249 "./neo-c.h"
                             # 1230 "./neo-c.h"
-                            if(_if_conditional152=self->item_existance[it_115],                            _if_conditional152) {
+                            if(_if_conditional153=self->item_existance[it_115],                            _if_conditional153) {
                                 # 1237 "./neo-c.h"
                                 # 1232 "./neo-c.h"
-                                if(_if_conditional153=string_equals(self->keys[it_115],key),                                _if_conditional153) {
+                                if(_if_conditional154=string_equals(self->keys[it_115],key),                                _if_conditional154) {
                                     # 1234 "./neo-c.h"
                                     __result100__ = __result_obj__ = self->items[it_115];
                                     come_call_finalizer2(sClass_finalize,default_value, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
@@ -6165,14 +6177,14 @@ memset(&it_115, 0, sizeof(unsigned int));
                                 it_115++;
                                 # 1245 "./neo-c.h"
                                 # 1239 "./neo-c.h"
-                                if(_if_conditional154=it_115>=self->size,                                _if_conditional154) {
+                                if(_if_conditional155=it_115>=self->size,                                _if_conditional155) {
                                     # 1240 "./neo-c.h"
                                     it_115=0;
                                 }
                                 else {
                                     # 1245 "./neo-c.h"
                                     # 1242 "./neo-c.h"
-                                    if(_if_conditional155=it_115==hash_114,                                    _if_conditional155) {
+                                    if(_if_conditional156=it_115==hash_114,                                    _if_conditional156) {
                                         # 1243 "./neo-c.h"
                                         __result101__ = __result_obj__ = default_value;
                                         come_call_finalizer2(sClass_finalize,default_value, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
@@ -6199,7 +6211,7 @@ void* __result_obj__;
 int it2_122;
 struct list_item$1charp* it_123;
 _Bool _while_condtional20;
-_Bool _if_conditional162;
+_Bool _if_conditional163;
 struct list$1charp* __result107__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it2_122, 0, sizeof(int));
@@ -6212,7 +6224,7 @@ memset(&it_123, 0, sizeof(struct list_item$1charp*));
                             while(_while_condtional20=it_123!=((void*)0),                            _while_condtional20) {
                                 # 455 "./neo-c.h"
                                 # 451 "./neo-c.h"
-                                if(_if_conditional162=string_equals(it_123->item,item),                                _if_conditional162) {
+                                if(_if_conditional163=string_equals(it_123->item,item),                                _if_conditional163) {
                                     # 452 "./neo-c.h"
                                     list$1charp_delete(self,it2_122,it2_122+1);
                                     # 453 "./neo-c.h"
@@ -6230,40 +6242,40 @@ memset(&it_123, 0, sizeof(struct list_item$1charp*));
 
 static struct list$1charp* list$1charp_delete(struct list$1charp* self, int head, int tail){
 void* __result_obj__;
-_Bool _if_conditional163;
 _Bool _if_conditional164;
 _Bool _if_conditional165;
-int tmp_124;
 _Bool _if_conditional166;
+int tmp_124;
 _Bool _if_conditional167;
 _Bool _if_conditional168;
-struct list$1charp* __result104__;
 _Bool _if_conditional169;
+struct list$1charp* __result104__;
 _Bool _if_conditional170;
+_Bool _if_conditional171;
 struct list_item$1charp* it_127;
 int i_128;
 _Bool _while_condtional22;
-_Bool _if_conditional171;
-struct list_item$1charp* prev_it_129;
 _Bool _if_conditional172;
+struct list_item$1charp* prev_it_129;
 _Bool _if_conditional173;
+_Bool _if_conditional174;
 struct list_item$1charp* it_130;
 int i_131;
 _Bool _while_condtional23;
-_Bool _if_conditional174;
 _Bool _if_conditional175;
+_Bool _if_conditional176;
 struct list_item$1charp* prev_it_132;
 struct list_item$1charp* it_133;
 struct list_item$1charp* head_prev_it_134;
 struct list_item$1charp* tail_it_135;
 int i_136;
 _Bool _while_condtional24;
-_Bool _if_conditional176;
 _Bool _if_conditional177;
 _Bool _if_conditional178;
-struct list_item$1charp* prev_it_137;
 _Bool _if_conditional179;
+struct list_item$1charp* prev_it_137;
 _Bool _if_conditional180;
+_Bool _if_conditional181;
 struct list$1charp* __result106__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&tmp_124, 0, sizeof(int));
@@ -6280,19 +6292,19 @@ memset(&i_136, 0, sizeof(int));
 memset(&prev_it_137, 0, sizeof(struct list_item$1charp*));
                                         # 467 "./neo-c.h"
                                         # 464 "./neo-c.h"
-                                        if(_if_conditional163=head<0,                                        _if_conditional163) {
+                                        if(_if_conditional164=head<0,                                        _if_conditional164) {
                                             # 465 "./neo-c.h"
                                             head+=self->len;
                                         }
                                         # 471 "./neo-c.h"
                                         # 467 "./neo-c.h"
-                                        if(_if_conditional164=tail<0,                                        _if_conditional164) {
+                                        if(_if_conditional165=tail<0,                                        _if_conditional165) {
                                             # 468 "./neo-c.h"
                                             tail+=self->len+1;
                                         }
                                         # 477 "./neo-c.h"
                                         # 471 "./neo-c.h"
-                                        if(_if_conditional165=head>tail,                                        _if_conditional165) {
+                                        if(_if_conditional166=head>tail,                                        _if_conditional166) {
                                             # 472 "./neo-c.h"
                                             tmp_124=tail;
                                             # 473 "./neo-c.h"
@@ -6302,33 +6314,33 @@ memset(&prev_it_137, 0, sizeof(struct list_item$1charp*));
                                         }
                                         # 481 "./neo-c.h"
                                         # 477 "./neo-c.h"
-                                        if(_if_conditional166=head<0,                                        _if_conditional166) {
+                                        if(_if_conditional167=head<0,                                        _if_conditional167) {
                                             # 478 "./neo-c.h"
                                             head=0;
                                         }
                                         # 485 "./neo-c.h"
                                         # 481 "./neo-c.h"
-                                        if(_if_conditional167=tail>self->len,                                        _if_conditional167) {
+                                        if(_if_conditional168=tail>self->len,                                        _if_conditional168) {
                                             # 482 "./neo-c.h"
                                             tail=self->len;
                                         }
                                         # 489 "./neo-c.h"
                                         # 485 "./neo-c.h"
-                                        if(_if_conditional168=head==tail,                                        _if_conditional168) {
+                                        if(_if_conditional169=head==tail,                                        _if_conditional169) {
                                             # 486 "./neo-c.h"
                                             __result104__ = __result_obj__ = self;
                                             return __result104__;
                                         }
                                         # 584 "./neo-c.h"
                                         # 489 "./neo-c.h"
-                                        if(_if_conditional169=head==0&&tail==self->len,                                        _if_conditional169) {
+                                        if(_if_conditional170=head==0&&tail==self->len,                                        _if_conditional170) {
                                             # 491 "./neo-c.h"
                                             list$1charp_reset(self);
                                         }
                                         else {
                                             # 584 "./neo-c.h"
                                             # 493 "./neo-c.h"
-                                            if(_if_conditional170=head==0,                                            _if_conditional170) {
+                                            if(_if_conditional171=head==0,                                            _if_conditional171) {
                                                 # 494 "./neo-c.h"
                                                 it_127=self->head;
                                                 # 495 "./neo-c.h"
@@ -6337,7 +6349,7 @@ memset(&prev_it_137, 0, sizeof(struct list_item$1charp*));
                                                 while(_while_condtional22=it_127!=((void*)0),                                                _while_condtional22) {
                                                     # 516 "./neo-c.h"
                                                     # 497 "./neo-c.h"
-                                                    if(_if_conditional171=i_128<tail,                                                    _if_conditional171) {
+                                                    if(_if_conditional172=i_128<tail,                                                    _if_conditional172) {
                                                         # 498 "./neo-c.h"
                                                         prev_it_129=it_127;
                                                         # 500 "./neo-c.h"
@@ -6352,7 +6364,7 @@ memset(&prev_it_137, 0, sizeof(struct list_item$1charp*));
                                                     else {
                                                         # 516 "./neo-c.h"
                                                         # 507 "./neo-c.h"
-                                                        if(_if_conditional172=i_128==tail,                                                        _if_conditional172) {
+                                                        if(_if_conditional173=i_128==tail,                                                        _if_conditional173) {
                                                             # 508 "./neo-c.h"
                                                             self->head=it_127;
                                                             # 509 "./neo-c.h"
@@ -6372,7 +6384,7 @@ memset(&prev_it_137, 0, sizeof(struct list_item$1charp*));
                                             else {
                                                 # 584 "./neo-c.h"
                                                 # 518 "./neo-c.h"
-                                                if(_if_conditional173=tail==self->len,                                                _if_conditional173) {
+                                                if(_if_conditional174=tail==self->len,                                                _if_conditional174) {
                                                     # 519 "./neo-c.h"
                                                     it_130=self->head;
                                                     # 520 "./neo-c.h"
@@ -6381,7 +6393,7 @@ memset(&prev_it_137, 0, sizeof(struct list_item$1charp*));
                                                     while(_while_condtional23=it_130!=((void*)0),                                                    _while_condtional23) {
                                                         # 527 "./neo-c.h"
                                                         # 522 "./neo-c.h"
-                                                        if(_if_conditional174=i_131==head,                                                        _if_conditional174) {
+                                                        if(_if_conditional175=i_131==head,                                                        _if_conditional175) {
                                                             # 523 "./neo-c.h"
                                                             self->tail=it_130->prev;
                                                             # 524 "./neo-c.h"
@@ -6389,7 +6401,7 @@ memset(&prev_it_137, 0, sizeof(struct list_item$1charp*));
                                                         }
                                                         # 541 "./neo-c.h"
                                                         # 527 "./neo-c.h"
-                                                        if(_if_conditional175=i_131>=head,                                                        _if_conditional175) {
+                                                        if(_if_conditional176=i_131>=head,                                                        _if_conditional176) {
                                                             # 528 "./neo-c.h"
                                                             prev_it_132=it_130;
                                                             # 530 "./neo-c.h"
@@ -6422,19 +6434,19 @@ memset(&prev_it_137, 0, sizeof(struct list_item$1charp*));
                                                     while(_while_condtional24=it_133!=((void*)0),                                                    _while_condtional24) {
                                                         # 555 "./neo-c.h"
                                                         # 552 "./neo-c.h"
-                                                        if(_if_conditional176=i_136==head,                                                        _if_conditional176) {
+                                                        if(_if_conditional177=i_136==head,                                                        _if_conditional177) {
                                                             # 553 "./neo-c.h"
                                                             head_prev_it_134=it_133->prev;
                                                         }
                                                         # 559 "./neo-c.h"
                                                         # 555 "./neo-c.h"
-                                                        if(_if_conditional177=i_136==tail,                                                        _if_conditional177) {
+                                                        if(_if_conditional178=i_136==tail,                                                        _if_conditional178) {
                                                             # 556 "./neo-c.h"
                                                             tail_it_135=it_133;
                                                         }
                                                         # 574 "./neo-c.h"
                                                         # 559 "./neo-c.h"
-                                                        if(_if_conditional178=i_136>=head&&i_136<tail,                                                        _if_conditional178) {
+                                                        if(_if_conditional179=i_136>=head&&i_136<tail,                                                        _if_conditional179) {
                                                             # 561 "./neo-c.h"
                                                             prev_it_137=it_133;
                                                             # 563 "./neo-c.h"
@@ -6455,13 +6467,13 @@ memset(&prev_it_137, 0, sizeof(struct list_item$1charp*));
                                                     }
                                                     # 579 "./neo-c.h"
                                                     # 576 "./neo-c.h"
-                                                    if(_if_conditional179=head_prev_it_134!=((void*)0),                                                    _if_conditional179) {
+                                                    if(_if_conditional180=head_prev_it_134!=((void*)0),                                                    _if_conditional180) {
                                                         # 577 "./neo-c.h"
                                                         head_prev_it_134->next=tail_it_135;
                                                     }
                                                     # 582 "./neo-c.h"
                                                     # 579 "./neo-c.h"
-                                                    if(_if_conditional180=tail_it_135!=((void*)0),                                                    _if_conditional180) {
+                                                    if(_if_conditional181=tail_it_135!=((void*)0),                                                    _if_conditional181) {
                                                         # 580 "./neo-c.h"
                                                         tail_it_135->prev=head_prev_it_134;
                                                     }
@@ -6506,10 +6518,10 @@ memset(&prev_it_126, 0, sizeof(struct list_item$1charp*));
 
 static char* list$1charp_begin(struct list$1charp* self){
 void* __result_obj__;
-_Bool _if_conditional186;
+_Bool _if_conditional187;
 char* result_139;
 char* __result108__;
-_Bool _if_conditional187;
+_Bool _if_conditional188;
 char* __result109__;
 char* result_140;
 char* __result110__;
@@ -6518,7 +6530,7 @@ memset(&result_139, 0, sizeof(char*));
 memset(&result_140, 0, sizeof(char*));
             # 290 "./neo-c.h"
             # 285 "./neo-c.h"
-            if(_if_conditional186=self==((void*)0),            _if_conditional186) {
+            if(_if_conditional187=self==((void*)0),            _if_conditional187) {
                 # 286 "./neo-c.h"
                 # 287 "./neo-c.h"
                 memset(&result_139,0,sizeof(char*));
@@ -6554,10 +6566,10 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static char* list$1charp_next(struct list$1charp* self){
 void* __result_obj__;
-_Bool _if_conditional188;
+_Bool _if_conditional189;
 char* result_142;
 char* __result112__;
-_Bool _if_conditional189;
+_Bool _if_conditional190;
 char* __result113__;
 char* result_143;
 char* __result114__;
@@ -6566,7 +6578,7 @@ memset(&result_142, 0, sizeof(char*));
 memset(&result_143, 0, sizeof(char*));
             # 308 "./neo-c.h"
             # 302 "./neo-c.h"
-            if(_if_conditional188=self==((void*)0)||self->it==((void*)0),            _if_conditional188) {
+            if(_if_conditional189=self==((void*)0)||self->it==((void*)0),            _if_conditional189) {
                 # 303 "./neo-c.h"
                 # 304 "./neo-c.h"
                 memset(&result_142,0,sizeof(char*));
@@ -6593,10 +6605,10 @@ memset(&result_143, 0, sizeof(char*));
 
 static struct list$1charp* list$1charp_push_back(struct list$1charp* self, char* item){
 void* __result_obj__;
-_Bool _if_conditional192;
+_Bool _if_conditional193;
 void* right_value151;
 struct list_item$1charp* litem_144;
-_Bool _if_conditional193;
+_Bool _if_conditional194;
 void* right_value152;
 struct list_item$1charp* litem_145;
 void* right_value153;
@@ -6611,7 +6623,7 @@ right_value153 = (void*)0;
 memset(&litem_146, 0, sizeof(struct list_item$1charp*));
                 # 256 "./neo-c.h"
                 # 225 "./neo-c.h"
-                if(_if_conditional192=self->len==0,                _if_conditional192) {
+                if(_if_conditional193=self->len==0,                _if_conditional193) {
                     # 226 "./neo-c.h"
                     litem_144=(struct list_item$1charp*)come_increment_ref_count(((struct list_item$1charp*)(right_value151=(struct list_item$1charp*)come_calloc(1, sizeof(struct list_item$1charp)*(1), "./neo-c.h", 226, "list_item$1charp"))));
                     come_call_finalizer2(list_item$1charpp_finalize,right_value151, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -6629,7 +6641,7 @@ memset(&litem_146, 0, sizeof(struct list_item$1charp*));
                 else {
                     # 256 "./neo-c.h"
                     # 235 "./neo-c.h"
-                    if(_if_conditional193=self->len==1,                    _if_conditional193) {
+                    if(_if_conditional194=self->len==1,                    _if_conditional194) {
                         # 236 "./neo-c.h"
                         litem_145=(struct list_item$1charp*)come_increment_ref_count(((struct list_item$1charp*)(right_value152=(struct list_item$1charp*)come_calloc(1, sizeof(struct list_item$1charp)*(1), "./neo-c.h", 236, "list_item$1charp"))));
                         come_call_finalizer2(list_item$1charpp_finalize,right_value152, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -6669,18 +6681,18 @@ memset(&litem_146, 0, sizeof(struct list_item$1charp*));
 
 static void CVALUE_finalize(struct CVALUE* self){
 void* __result_obj__;
-_Bool _if_conditional200;
 _Bool _if_conditional201;
+_Bool _if_conditional202;
 memset(&__result_obj__, 0, sizeof(void*));
         # 1 "CVALUE_finalize"
         # 0 "CVALUE_finalize"
-        if(_if_conditional200=self!=((void*)0)&&self->c_value!=((void*)0),        _if_conditional200) {
+        if(_if_conditional201=self!=((void*)0)&&self->c_value!=((void*)0),        _if_conditional201) {
             # 0 "CVALUE_finalize"
             self->c_value = come_decrement_ref_count2(self->c_value, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
         # 2 "CVALUE_finalize"
         # 1 "CVALUE_finalize"
-        if(_if_conditional201=self!=((void*)0)&&self->type!=((void*)0),        _if_conditional201) {
+        if(_if_conditional202=self!=((void*)0)&&self->type!=((void*)0),        _if_conditional202) {
             # 1 "CVALUE_finalize"
             come_call_finalizer2(sType_finalize,self->type, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         }
@@ -6688,11 +6700,11 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct list$1CVALUEph* list$1CVALUEph_push_back(struct list$1CVALUEph* self, struct CVALUE* item){
 void* __result_obj__;
-_Bool _if_conditional202;
+_Bool _if_conditional203;
 void* right_value161;
 struct list_item$1CVALUEph* litem_155;
 struct CVALUE* __dec_obj45;
-_Bool _if_conditional204;
+_Bool _if_conditional205;
 void* right_value162;
 struct list_item$1CVALUEph* litem_156;
 struct CVALUE* __dec_obj46;
@@ -6709,7 +6721,7 @@ right_value163 = (void*)0;
 memset(&litem_157, 0, sizeof(struct list_item$1CVALUEph*));
         # 256 "./neo-c.h"
         # 225 "./neo-c.h"
-        if(_if_conditional202=self->len==0,        _if_conditional202) {
+        if(_if_conditional203=self->len==0,        _if_conditional203) {
             # 226 "./neo-c.h"
             litem_155=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value161=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./neo-c.h", 226, "list_item$1CVALUEph"))));
             come_call_finalizer2(list_item$1CVALUEphp_finalize,right_value161, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -6729,7 +6741,7 @@ memset(&litem_157, 0, sizeof(struct list_item$1CVALUEph*));
         else {
             # 256 "./neo-c.h"
             # 235 "./neo-c.h"
-            if(_if_conditional204=self->len==1,            _if_conditional204) {
+            if(_if_conditional205=self->len==1,            _if_conditional205) {
                 # 236 "./neo-c.h"
                 litem_156=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value162=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./neo-c.h", 236, "list_item$1CVALUEph"))));
                 come_call_finalizer2(list_item$1CVALUEphp_finalize,right_value162, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -6775,11 +6787,11 @@ memset(&litem_157, 0, sizeof(struct list_item$1CVALUEph*));
 
 static void list_item$1CVALUEphp_finalize(struct list_item$1CVALUEph* self){
 void* __result_obj__;
-_Bool _if_conditional203;
+_Bool _if_conditional204;
 memset(&__result_obj__, 0, sizeof(void*));
                 # 1 "list_item$1CVALUEphp_finalize"
                 # 0 "list_item$1CVALUEphp_finalize"
-                if(_if_conditional203=self!=((void*)0)&&self->item!=((void*)0),                _if_conditional203) {
+                if(_if_conditional204=self!=((void*)0)&&self->item!=((void*)0),                _if_conditional204) {
                     # 0 "list_item$1CVALUEphp_finalize"
                     come_call_finalizer2(CVALUE_finalize,self->item, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 }
@@ -6854,7 +6866,7 @@ right_value178 = (void*)0;
 
 static struct list$1tuple2$2charphsNodephph* list$1tuple2$2charphsNodephphp_clone(struct list$1tuple2$2charphsNodephph* self){
 void* __result_obj__;
-_Bool _if_conditional205;
+_Bool _if_conditional206;
 struct list$1tuple2$2charphsNodephph* __result119__;
 void* right_value166;
 void* right_value167;
@@ -6871,7 +6883,7 @@ memset(&it_161, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
 right_value174 = (void*)0;
         # 142 "./neo-c.h"
         # 139 "./neo-c.h"
-        if(_if_conditional205=self==((void*)0),        _if_conditional205) {
+        if(_if_conditional206=self==((void*)0),        _if_conditional206) {
             # 140 "./neo-c.h"
             __result119__ = __result_obj__ = ((void*)0);
             return __result119__;
@@ -6937,11 +6949,11 @@ memset(&prev_it_159, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
 
 static void list_item$1tuple2$2charphsNodephphp_finalize(struct list_item$1tuple2$2charphsNodephph* self){
 void* __result_obj__;
-_Bool _if_conditional206;
+_Bool _if_conditional207;
 memset(&__result_obj__, 0, sizeof(void*));
                         # 1 "list_item$1tuple2$2charphsNodephphp_finalize"
                         # 0 "list_item$1tuple2$2charphsNodephphp_finalize"
-                        if(_if_conditional206=self!=((void*)0)&&self->item!=((void*)0),                        _if_conditional206) {
+                        if(_if_conditional207=self!=((void*)0)&&self->item!=((void*)0),                        _if_conditional207) {
                             # 0 "list_item$1tuple2$2charphsNodephphp_finalize"
                             come_call_finalizer2(tuple2$2charphsNodephp_finalize,self->item, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         }
@@ -6949,18 +6961,18 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static void tuple2$2charphsNodephp_finalize(struct tuple2$2charphsNodeph* self){
 void* __result_obj__;
-_Bool _if_conditional207;
 _Bool _if_conditional208;
+_Bool _if_conditional209;
 memset(&__result_obj__, 0, sizeof(void*));
                                 # 1 "tuple2$2charphsNodephp_finalize"
                                 # 0 "tuple2$2charphsNodephp_finalize"
-                                if(_if_conditional207=self!=((void*)0)&&self->v1!=((void*)0),                                _if_conditional207) {
+                                if(_if_conditional208=self!=((void*)0)&&self->v1!=((void*)0),                                _if_conditional208) {
                                     # 0 "tuple2$2charphsNodephp_finalize"
                                     self->v1 = come_decrement_ref_count2(self->v1, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                 }
                                 # 2 "tuple2$2charphsNodephp_finalize"
                                 # 1 "tuple2$2charphsNodephp_finalize"
-                                if(_if_conditional208=self!=((void*)0)&&self->v2!=((void*)0),                                _if_conditional208) {
+                                if(_if_conditional209=self!=((void*)0)&&self->v2!=((void*)0),                                _if_conditional209) {
                                     # 1 "tuple2$2charphsNodephp_finalize"
                                     if(self->v2) { self->v2 = come_decrement_ref_count2(self->v2, ((struct sNode*)self->v2)->finalize, ((struct sNode*)self->v2)->_protocol_obj, 0, 0, 0, (void*)0); } 
                                 }
@@ -6968,11 +6980,11 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct list$1tuple2$2charphsNodephph* list$1tuple2$2charphsNodephph_add(struct list$1tuple2$2charphsNodephph* self, struct tuple2$2charphsNodeph* item){
 void* __result_obj__;
-_Bool _if_conditional209;
+_Bool _if_conditional210;
 void* right_value168;
 struct list_item$1tuple2$2charphsNodephph* litem_162;
 struct tuple2$2charphsNodeph* __dec_obj50;
-_Bool _if_conditional212;
+_Bool _if_conditional213;
 void* right_value169;
 struct list_item$1tuple2$2charphsNodephph* litem_163;
 struct tuple2$2charphsNodeph* __dec_obj51;
@@ -6989,7 +7001,7 @@ right_value170 = (void*)0;
 memset(&litem_164, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
                 # 186 "./neo-c.h"
                 # 155 "./neo-c.h"
-                if(_if_conditional209=self->len==0,                _if_conditional209) {
+                if(_if_conditional210=self->len==0,                _if_conditional210) {
                     # 156 "./neo-c.h"
                     litem_162=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value168=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 156, "list_item$1tuple2$2charphsNodephph"))));
                     come_call_finalizer2(list_item$1tuple2$2charphsNodephphp_finalize,right_value168, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -7009,7 +7021,7 @@ memset(&litem_164, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
                 else {
                     # 186 "./neo-c.h"
                     # 165 "./neo-c.h"
-                    if(_if_conditional212=self->len==1,                    _if_conditional212) {
+                    if(_if_conditional213=self->len==1,                    _if_conditional213) {
                         # 166 "./neo-c.h"
                         litem_163=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value169=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 166, "list_item$1tuple2$2charphsNodephph"))));
                         come_call_finalizer2(list_item$1tuple2$2charphsNodephphp_finalize,right_value169, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -7055,18 +7067,18 @@ memset(&litem_164, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
 
 static void tuple2$2charphsNodeph_finalize(struct tuple2$2charphsNodeph* self){
 void* __result_obj__;
-_Bool _if_conditional210;
 _Bool _if_conditional211;
+_Bool _if_conditional212;
 memset(&__result_obj__, 0, sizeof(void*));
                         # 1 "tuple2$2charphsNodeph_finalize"
                         # 0 "tuple2$2charphsNodeph_finalize"
-                        if(_if_conditional210=self!=((void*)0)&&self->v1!=((void*)0),                        _if_conditional210) {
+                        if(_if_conditional211=self!=((void*)0)&&self->v1!=((void*)0),                        _if_conditional211) {
                             # 0 "tuple2$2charphsNodeph_finalize"
                             self->v1 = come_decrement_ref_count2(self->v1, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         }
                         # 2 "tuple2$2charphsNodeph_finalize"
                         # 1 "tuple2$2charphsNodeph_finalize"
-                        if(_if_conditional211=self!=((void*)0)&&self->v2!=((void*)0),                        _if_conditional211) {
+                        if(_if_conditional212=self!=((void*)0)&&self->v2!=((void*)0),                        _if_conditional212) {
                             # 1 "tuple2$2charphsNodeph_finalize"
                             if(self->v2) { self->v2 = come_decrement_ref_count2(self->v2, ((struct sNode*)self->v2)->finalize, ((struct sNode*)self->v2)->_protocol_obj, 0, 0, 0, (void*)0); } 
                         }
@@ -7074,14 +7086,14 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct tuple2$2charphsNodeph* tuple2$2charphsNodephp_clone(struct tuple2$2charphsNodeph* self){
 void* __result_obj__;
-_Bool _if_conditional213;
+_Bool _if_conditional214;
 struct tuple2$2charphsNodeph* __result122__;
 void* right_value171;
 struct tuple2$2charphsNodeph* result_165;
-_Bool _if_conditional214;
+_Bool _if_conditional215;
 void* right_value172;
 char* __dec_obj53;
-_Bool _if_conditional215;
+_Bool _if_conditional216;
 void* right_value173;
 struct sNode* __dec_obj54;
 struct tuple2$2charphsNodeph* __result123__;
@@ -7092,7 +7104,7 @@ right_value172 = (void*)0;
 right_value173 = (void*)0;
                 # 3 "tuple2$2charphsNodephp_clone"
                 # 2 "tuple2$2charphsNodephp_clone"
-                if(_if_conditional213=self==(void*)0,                _if_conditional213) {
+                if(_if_conditional214=self==(void*)0,                _if_conditional214) {
                     # 2 "tuple2$2charphsNodephp_clone"
                     __result122__ = __result_obj__ = (void*)0;
                     return __result122__;
@@ -7102,7 +7114,7 @@ right_value173 = (void*)0;
                 come_call_finalizer2(tuple2$2charphsNodeph_finalize,right_value171, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                 # 5 "tuple2$2charphsNodephp_clone"
                 # 4 "tuple2$2charphsNodephp_clone"
-                if(_if_conditional214=self!=((void*)0)&&self->v1!=((void*)0),                _if_conditional214) {
+                if(_if_conditional215=self!=((void*)0)&&self->v1!=((void*)0),                _if_conditional215) {
                     # 4 "tuple2$2charphsNodephp_clone"
                     __dec_obj53=result_165->v1;
                     result_165->v1=(char*)come_increment_ref_count(((char*)(right_value172=string_clone(self->v1))));
@@ -7111,7 +7123,7 @@ right_value173 = (void*)0;
                 }
                 # 6 "tuple2$2charphsNodephp_clone"
                 # 5 "tuple2$2charphsNodephp_clone"
-                if(_if_conditional215=self!=((void*)0)&&self->v2!=((void*)0),                _if_conditional215) {
+                if(_if_conditional216=self!=((void*)0)&&self->v2!=((void*)0),                _if_conditional216) {
                     # 5 "tuple2$2charphsNodephp_clone"
                     __dec_obj54=result_165->v2;
                     result_165->v2=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value173=sNode_clone(self->v2))));
@@ -7160,9 +7172,9 @@ char* fun_name2_167;
 void* right_value182;
 char* fun_name3_168;
 struct sGenericsFun* generics_fun_171;
-_Bool _if_conditional236;
-void* right_value183;
 _Bool _if_conditional237;
+void* right_value183;
+_Bool _if_conditional238;
 void* right_value184;
 char* __result132__;
 char* __result133__;
@@ -7192,8 +7204,8 @@ right_value184 = (void*)0;
     if(generics_fun_171) {
         # 204 "20method.c"
         # 200 "20method.c"
-        if(_if_conditional237=!create_generics_fun((char*)come_increment_ref_count(((char*)(right_value183=__builtin_string(fun_name2_167)))),generics_fun_171,type,info),        right_value183 = come_decrement_ref_count2(right_value183, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
-        _if_conditional237) {
+        if(_if_conditional238=!create_generics_fun((char*)come_increment_ref_count(((char*)(right_value183=__builtin_string(fun_name2_167)))),generics_fun_171,type,info),        right_value183 = come_decrement_ref_count2(right_value183, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
+        _if_conditional238) {
             # 201 "20method.c"
             err_msg(info,"%s not found",fun_name3_168);
             # 202 "20method.c"
@@ -7224,11 +7236,11 @@ void* __result_obj__;
 unsigned int hash_169;
 unsigned int it_170;
 _Bool _while_condtional27;
-_Bool _if_conditional222;
 _Bool _if_conditional223;
+_Bool _if_conditional224;
 struct sGenericsFun* __result128__;
-_Bool _if_conditional234;
 _Bool _if_conditional235;
+_Bool _if_conditional236;
 struct sGenericsFun* __result129__;
 struct sGenericsFun* __result130__;
 struct sGenericsFun* __result131__;
@@ -7243,10 +7255,10 @@ memset(&it_170, 0, sizeof(unsigned int));
         while(_while_condtional27=(_Bool)1,        _while_condtional27) {
             # 1249 "./neo-c.h"
             # 1230 "./neo-c.h"
-            if(_if_conditional222=self->item_existance[it_170],            _if_conditional222) {
+            if(_if_conditional223=self->item_existance[it_170],            _if_conditional223) {
                 # 1237 "./neo-c.h"
                 # 1232 "./neo-c.h"
-                if(_if_conditional223=string_equals(self->keys[it_170],key),                _if_conditional223) {
+                if(_if_conditional224=string_equals(self->keys[it_170],key),                _if_conditional224) {
                     # 1234 "./neo-c.h"
                     __result128__ = __result_obj__ = self->items[it_170];
                     come_call_finalizer2(sGenericsFun_finalize,default_value, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
@@ -7256,14 +7268,14 @@ memset(&it_170, 0, sizeof(unsigned int));
                 it_170++;
                 # 1245 "./neo-c.h"
                 # 1239 "./neo-c.h"
-                if(_if_conditional234=it_170>=self->size,                _if_conditional234) {
+                if(_if_conditional235=it_170>=self->size,                _if_conditional235) {
                     # 1240 "./neo-c.h"
                     it_170=0;
                 }
                 else {
                     # 1245 "./neo-c.h"
                     # 1242 "./neo-c.h"
-                    if(_if_conditional235=it_170==hash_169,                    _if_conditional235) {
+                    if(_if_conditional236=it_170==hash_169,                    _if_conditional236) {
                         # 1243 "./neo-c.h"
                         __result129__ = __result_obj__ = default_value;
                         come_call_finalizer2(sGenericsFun_finalize,default_value, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
@@ -7287,7 +7299,6 @@ memset(&it_170, 0, sizeof(unsigned int));
 
 static void sGenericsFun_finalize(struct sGenericsFun* self){
 void* __result_obj__;
-_Bool _if_conditional224;
 _Bool _if_conditional225;
 _Bool _if_conditional226;
 _Bool _if_conditional227;
@@ -7297,64 +7308,65 @@ _Bool _if_conditional230;
 _Bool _if_conditional231;
 _Bool _if_conditional232;
 _Bool _if_conditional233;
+_Bool _if_conditional234;
 memset(&__result_obj__, 0, sizeof(void*));
                         # 1 "sGenericsFun_finalize"
                         # 0 "sGenericsFun_finalize"
-                        if(_if_conditional224=self!=((void*)0)&&self->mImplType!=((void*)0),                        _if_conditional224) {
+                        if(_if_conditional225=self!=((void*)0)&&self->mImplType!=((void*)0),                        _if_conditional225) {
                             # 0 "sGenericsFun_finalize"
                             come_call_finalizer2(sType_finalize,self->mImplType, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         }
                         # 2 "sGenericsFun_finalize"
                         # 1 "sGenericsFun_finalize"
-                        if(_if_conditional225=self!=((void*)0)&&self->mGenericsTypeNames!=((void*)0),                        _if_conditional225) {
+                        if(_if_conditional226=self!=((void*)0)&&self->mGenericsTypeNames!=((void*)0),                        _if_conditional226) {
                             # 1 "sGenericsFun_finalize"
                             come_call_finalizer2(list$1charphp_finalize,self->mGenericsTypeNames, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         }
                         # 3 "sGenericsFun_finalize"
                         # 2 "sGenericsFun_finalize"
-                        if(_if_conditional226=self!=((void*)0)&&self->mMethodGenericsTypeNames!=((void*)0),                        _if_conditional226) {
+                        if(_if_conditional227=self!=((void*)0)&&self->mMethodGenericsTypeNames!=((void*)0),                        _if_conditional227) {
                             # 2 "sGenericsFun_finalize"
                             come_call_finalizer2(list$1charphp_finalize,self->mMethodGenericsTypeNames, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         }
                         # 4 "sGenericsFun_finalize"
                         # 3 "sGenericsFun_finalize"
-                        if(_if_conditional227=self!=((void*)0)&&self->mName!=((void*)0),                        _if_conditional227) {
+                        if(_if_conditional228=self!=((void*)0)&&self->mName!=((void*)0),                        _if_conditional228) {
                             # 3 "sGenericsFun_finalize"
                             self->mName = come_decrement_ref_count2(self->mName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         }
                         # 5 "sGenericsFun_finalize"
                         # 4 "sGenericsFun_finalize"
-                        if(_if_conditional228=self!=((void*)0)&&self->mResultType!=((void*)0),                        _if_conditional228) {
+                        if(_if_conditional229=self!=((void*)0)&&self->mResultType!=((void*)0),                        _if_conditional229) {
                             # 4 "sGenericsFun_finalize"
                             come_call_finalizer2(sType_finalize,self->mResultType, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         }
                         # 6 "sGenericsFun_finalize"
                         # 5 "sGenericsFun_finalize"
-                        if(_if_conditional229=self!=((void*)0)&&self->mParamTypes!=((void*)0),                        _if_conditional229) {
+                        if(_if_conditional230=self!=((void*)0)&&self->mParamTypes!=((void*)0),                        _if_conditional230) {
                             # 5 "sGenericsFun_finalize"
                             come_call_finalizer2(list$1sTypephp_finalize,self->mParamTypes, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         }
                         # 7 "sGenericsFun_finalize"
                         # 6 "sGenericsFun_finalize"
-                        if(_if_conditional230=self!=((void*)0)&&self->mParamNames!=((void*)0),                        _if_conditional230) {
+                        if(_if_conditional231=self!=((void*)0)&&self->mParamNames!=((void*)0),                        _if_conditional231) {
                             # 6 "sGenericsFun_finalize"
                             come_call_finalizer2(list$1charphp_finalize,self->mParamNames, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         }
                         # 8 "sGenericsFun_finalize"
                         # 7 "sGenericsFun_finalize"
-                        if(_if_conditional231=self!=((void*)0)&&self->mParamDefaultParametors!=((void*)0),                        _if_conditional231) {
+                        if(_if_conditional232=self!=((void*)0)&&self->mParamDefaultParametors!=((void*)0),                        _if_conditional232) {
                             # 7 "sGenericsFun_finalize"
                             come_call_finalizer2(list$1charphp_finalize,self->mParamDefaultParametors, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         }
                         # 9 "sGenericsFun_finalize"
                         # 8 "sGenericsFun_finalize"
-                        if(_if_conditional232=self!=((void*)0)&&self->mBlock!=((void*)0),                        _if_conditional232) {
+                        if(_if_conditional233=self!=((void*)0)&&self->mBlock!=((void*)0),                        _if_conditional233) {
                             # 8 "sGenericsFun_finalize"
                             self->mBlock = come_decrement_ref_count2(self->mBlock, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         }
                         # 10 "sGenericsFun_finalize"
                         # 9 "sGenericsFun_finalize"
-                        if(_if_conditional233=self!=((void*)0)&&self->mGenericsSName!=((void*)0),                        _if_conditional233) {
+                        if(_if_conditional234=self!=((void*)0)&&self->mGenericsSName!=((void*)0),                        _if_conditional234) {
                             # 9 "sGenericsFun_finalize"
                             self->mGenericsSName = come_decrement_ref_count2(self->mGenericsSName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         }
@@ -7362,7 +7374,7 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 _Bool sMethodCallNode_terminated(struct sMethodCallNode* self){
 void* __result_obj__;
-_Bool _if_conditional238;
+_Bool _if_conditional239;
 _Bool __result134__;
 _Bool __result135__;
 memset(&__result_obj__, 0, sizeof(void*));
@@ -7402,11 +7414,11 @@ int method_block_sline_176;
 struct list$1sTypeph* method_generics_types_177;
 void* right_value186;
 struct list$1sTypeph* __dec_obj59;
-_Bool _if_conditional239;
+_Bool _if_conditional240;
 _Bool __result137__;
 void* right_value187;
 struct CVALUE* obj_value_178;
-_Bool _if_conditional240;
+_Bool _if_conditional241;
 void* right_value188;
 void* right_value189;
 char* __dec_obj60;
@@ -7420,8 +7432,8 @@ struct tuple2$2charphsTypeph* it_186;
 struct tuple2$2charphsTypeph* multiple_assign_var1;
 char* field_name_189;
 struct sType* field_type_190;
-_Bool _if_conditional245;
 _Bool _if_conditional246;
+_Bool _if_conditional247;
 void* right_value191;
 struct sType* result_type_191;
 void* right_value192;
@@ -7433,15 +7445,15 @@ struct tuple2$2charphsNodeph* it_199;
 struct tuple2$2charphsNodeph* multiple_assign_var2;
 char* label_202;
 struct sNode* node_203;
-_Bool _if_conditional251;
 _Bool _if_conditional252;
+_Bool _if_conditional253;
 _Bool __result153__;
 void* right_value194;
 struct CVALUE* come_value_204;
 void* right_value195;
 void* right_value196;
 void* right_value197;
-_Bool _if_conditional255;
+_Bool _if_conditional256;
 void* right_value198;
 void* right_value199;
 struct buffer* buf_208;
@@ -7449,17 +7461,17 @@ void* right_value200;
 int j_209;
 struct list$1CVALUEph* o2_saved_210;
 struct CVALUE* it_213;
-_Bool _if_conditional260;
+_Bool _if_conditional261;
 void* right_value201;
 char* __dec_obj61;
-_Bool _if_conditional262;
+_Bool _if_conditional263;
 void* right_value202;
 struct CVALUE* come_value2_216;
 void* right_value203;
 char* __dec_obj62;
 void* right_value204;
 struct sType* result_type2_217;
-_Bool _if_conditional263;
+_Bool _if_conditional264;
 void* right_value205;
 void* right_value206;
 char* __dec_obj63;
@@ -7473,121 +7485,122 @@ struct sFun* fun_219;
 int i_220;
 void* right_value211;
 char* new_fun_name_221;
-_Bool _if_conditional283;
+_Bool _if_conditional284;
 void* right_value212;
 char* __dec_obj65;
-_Bool _if_conditional284;
-struct sType* obj_array_type_225;
 _Bool _if_conditional285;
+struct sType* obj_array_type_225;
+_Bool _if_conditional286;
 void* right_value213;
 char* array_method_name_226;
-_Bool _if_conditional290;
+_Bool _if_conditional291;
 void* right_value214;
 char* __dec_obj66;
-_Bool _if_conditional291;
+_Bool _if_conditional292;
 void* right_value215;
 void* right_value216;
 char* __dec_obj67;
-_Bool _if_conditional292;
-_Bool __result173__;
 _Bool _if_conditional293;
+_Bool __result173__;
+_Bool _if_conditional294;
 void* right_value217;
 void* right_value218;
 char* __dec_obj68;
-_Bool _if_conditional294;
+_Bool _if_conditional295;
 struct sClass* klass_229;
+_Bool _while_condtional33;
 void* right_value219;
 char* __dec_obj69;
-_Bool _if_conditional295;
-_Bool _if_conditional296;
-_Bool __result174__;
-_Bool _if_conditional297;
-_Bool __result175__;
-_Bool _if_conditional299;
+_Bool _if_conditional300;
+_Bool _if_conditional301;
 _Bool __result178__;
+_Bool _if_conditional302;
+_Bool __result179__;
+_Bool _if_conditional304;
+_Bool __result182__;
 void* right_value220;
-struct sType* result_type_230;
+struct sType* result_type_233;
 void* right_value221;
-struct sType* result_type2_231;
+struct sType* result_type2_234;
 void* right_value222;
 void* right_value223;
-struct list$1sTypeph* param_types_232;
-struct list$1sTypeph* o2_saved_233;
-struct sType* it_236;
-_Bool _if_conditional304;
+struct list$1sTypeph* param_types_235;
+struct list$1sTypeph* o2_saved_236;
+struct sType* it_239;
+_Bool _if_conditional309;
 void* right_value227;
-struct sType* it2_242;
+struct sType* it2_245;
 void* right_value228;
 void* right_value229;
 void* right_value230;
-struct list$1CVALUEph* come_params_243;
-int i_244;
-_Bool first_param_248;
-struct list$1tuple2$2charphsNodephph* o2_saved_249;
-struct tuple2$2charphsNodeph* it_250;
+struct list$1CVALUEph* come_params_246;
+int i_247;
+_Bool first_param_251;
+struct list$1tuple2$2charphsNodephph* o2_saved_252;
+struct tuple2$2charphsNodeph* it_253;
 struct tuple2$2charphsNodeph* multiple_assign_var3;
-char* label_251;
-struct sNode* node_252;
-_Bool _if_conditional309;
-_Bool _if_conditional310;
-_Bool _if_conditional311;
-_Bool __result188__;
-void* right_value234;
-struct CVALUE* come_value_253;
-int n_254;
-struct list$1charph* o2_saved_255;
-char* it_258;
+char* label_254;
+struct sNode* node_255;
+_Bool _if_conditional314;
+_Bool _if_conditional315;
 _Bool _if_conditional316;
-_Bool _if_conditional317;
+_Bool __result192__;
+void* right_value234;
+struct CVALUE* come_value_256;
+int n_257;
+struct list$1charph* o2_saved_258;
+char* it_261;
+_Bool _if_conditional321;
+_Bool _if_conditional322;
 void* right_value235;
 void* right_value236;
 void* right_value237;
-_Bool _if_conditional318;
-int i_263;
-struct list$1tuple2$2charphsNodephph* o2_saved_264;
-struct tuple2$2charphsNodeph* it_265;
+_Bool _if_conditional323;
+int i_266;
+struct list$1tuple2$2charphsNodephph* o2_saved_267;
+struct tuple2$2charphsNodeph* it_268;
 struct tuple2$2charphsNodeph* multiple_assign_var4;
-char* label_266;
-struct sNode* node_267;
-_Bool _if_conditional322;
+char* label_269;
+struct sNode* node_270;
+_Bool _if_conditional327;
 void* right_value238;
 void* right_value239;
 void* right_value240;
-_Bool _if_conditional323;
-_Bool _if_conditional324;
-_Bool _if_conditional327;
 _Bool _if_conditional328;
-_Bool __result200__;
-void* right_value241;
-struct CVALUE* come_value_271;
-_Bool _while_condtional34;
-_Bool _if_conditional331;
+_Bool _if_conditional329;
 _Bool _if_conditional332;
+_Bool _if_conditional333;
+_Bool __result204__;
+void* right_value241;
+struct CVALUE* come_value_274;
+_Bool _while_condtional36;
+_Bool _if_conditional336;
+_Bool _if_conditional337;
 void* right_value242;
 void* right_value243;
 void* right_value244;
-_Bool _if_conditional333;
-_Bool _while_condtional36;
-_Bool _if_conditional334;
-struct sType* obj_array_type_275;
-_Bool _if_conditional335;
+_Bool _if_conditional338;
+_Bool _while_condtional38;
+_Bool _if_conditional339;
+struct sType* obj_array_type_278;
+_Bool _if_conditional340;
 void* right_value245;
-char* array_method_name_276;
-_Bool _if_conditional336;
-_Bool _if_conditional337;
+char* array_method_name_279;
+_Bool _if_conditional341;
+_Bool _if_conditional342;
 void* right_value246;
 void* right_value247;
-struct buffer* buf_277;
-int i_278;
-struct list$1sNodeph* o2_saved_279;
-struct sNode* it_282;
-_Bool _if_conditional342;
+struct buffer* buf_280;
+int i_281;
+struct list$1sNodeph* o2_saved_282;
+struct sNode* it_285;
+_Bool _if_conditional347;
 void* right_value248;
-struct CVALUE* come_value_285;
+struct CVALUE* come_value_288;
 void* right_value249;
-_Bool _if_conditional343;
+_Bool _if_conditional348;
 void* right_value250;
-struct CVALUE* come_value_286;
+struct CVALUE* come_value_289;
 void* right_value251;
 char* __dec_obj77;
 void* right_value252;
@@ -7596,20 +7609,20 @@ struct sType* __dec_obj78;
 void* right_value257;
 void* right_value258;
 void* right_value259;
-_Bool _if_conditional347;
+_Bool _if_conditional352;
 void* right_value260;
 void* right_value261;
-struct buffer* buf_290;
-int i_291;
-struct list$1sNodeph* o2_saved_292;
-struct sNode* it_293;
-_Bool _if_conditional348;
+struct buffer* buf_293;
+int i_294;
+struct list$1sNodeph* o2_saved_295;
+struct sNode* it_296;
+_Bool _if_conditional353;
 void* right_value262;
-struct CVALUE* come_value_294;
+struct CVALUE* come_value_297;
 void* right_value263;
-_Bool _if_conditional349;
+_Bool _if_conditional354;
 void* right_value264;
-struct CVALUE* come_value_295;
+struct CVALUE* come_value_298;
 void* right_value265;
 char* __dec_obj83;
 void* right_value266;
@@ -7618,20 +7631,20 @@ struct sType* __dec_obj84;
 void* right_value268;
 void* right_value269;
 void* right_value270;
-_Bool _if_conditional350;
+_Bool _if_conditional355;
 void* right_value271;
 void* right_value272;
-struct buffer* buf_296;
-int i_297;
-struct list$1sNodeph* o2_saved_298;
-struct sNode* it_299;
-_Bool _if_conditional351;
+struct buffer* buf_299;
+int i_300;
+struct list$1sNodeph* o2_saved_301;
+struct sNode* it_302;
+_Bool _if_conditional356;
 void* right_value273;
-struct CVALUE* come_value_300;
+struct CVALUE* come_value_303;
 void* right_value274;
-_Bool _if_conditional352;
+_Bool _if_conditional357;
 void* right_value275;
-struct CVALUE* come_value_301;
+struct CVALUE* come_value_304;
 void* right_value276;
 char* __dec_obj85;
 void* right_value277;
@@ -7640,20 +7653,20 @@ struct sType* __dec_obj86;
 void* right_value279;
 void* right_value280;
 void* right_value281;
-_Bool _if_conditional353;
+_Bool _if_conditional358;
 void* right_value282;
 void* right_value283;
-struct buffer* buf_302;
-int i_303;
-struct list$1sNodeph* o2_saved_304;
-struct sNode* it_305;
-_Bool _if_conditional354;
+struct buffer* buf_305;
+int i_306;
+struct list$1sNodeph* o2_saved_307;
+struct sNode* it_308;
+_Bool _if_conditional359;
 void* right_value284;
-struct CVALUE* come_value_306;
+struct CVALUE* come_value_309;
 void* right_value285;
-_Bool _if_conditional355;
+_Bool _if_conditional360;
 void* right_value286;
-struct CVALUE* come_value_307;
+struct CVALUE* come_value_310;
 void* right_value287;
 char* __dec_obj87;
 void* right_value288;
@@ -7662,51 +7675,51 @@ struct sType* __dec_obj88;
 void* right_value290;
 void* right_value291;
 void* right_value292;
-_Bool _if_conditional357;
+_Bool _if_conditional362;
 void* right_value293;
-char* default_param_308;
-char* param_name_309;
-_Bool _if_conditional358;
-struct buffer* source_310;
-char* p_311;
-char* head_312;
-int sline_313;
+char* default_param_311;
+char* param_name_312;
+_Bool _if_conditional363;
+struct buffer* source_313;
+char* p_314;
+char* head_315;
+int sline_316;
 void* right_value294;
 struct buffer* __dec_obj89;
 void* right_value295;
-struct sNode* node_314;
-_Bool _if_conditional359;
-_Bool __result214__;
+struct sNode* node_317;
+_Bool _if_conditional364;
+_Bool __result218__;
 struct buffer* __dec_obj90;
 void* right_value296;
-struct CVALUE* come_value_315;
-_Bool _if_conditional360;
+struct CVALUE* come_value_318;
+_Bool _if_conditional365;
 void* right_value297;
 void* right_value298;
 void* right_value299;
-_Bool _if_conditional361;
-_Bool _if_conditional362;
-_Bool __result215__;
-_Bool _if_conditional363;
+_Bool _if_conditional366;
+_Bool _if_conditional367;
+_Bool __result219__;
+_Bool _if_conditional368;
 void* right_value300;
 void* right_value301;
 struct sNode* _inf_value1;
 struct sCurrentNode* _inf_obj_value1;
 void* right_value304;
-struct sNode* current_stack_frame_node_317;
-_Bool _if_conditional368;
-_Bool __result218__;
+struct sNode* current_stack_frame_node_320;
+_Bool _if_conditional373;
+_Bool __result222__;
 void* right_value305;
-struct CVALUE* come_value_318;
+struct CVALUE* come_value_321;
 void* right_value306;
 void* right_value307;
-struct buffer* method_block2_319;
+struct buffer* method_block2_322;
 void* right_value308;
-struct sType* method_block_type_320;
+struct sType* method_block_type_323;
 void* right_value309;
-char* class_name_321;
+char* class_name_324;
 struct sClass* current_stack_frame_struct_325;
-_Bool _if_conditional373;
+_Bool _if_conditional374;
 _Bool __result223__;
 void* right_value310;
 struct sType* result_type_326;
@@ -7716,8 +7729,8 @@ void* right_value311;
 void* right_value312;
 struct buffer* all_alhabet_sname_329;
 char* p_330;
-_Bool _while_condtional38;
-_Bool _if_conditional374;
+_Bool _while_condtional39;
+_Bool _if_conditional375;
 void* right_value313;
 void* right_value314;
 void* right_value315;
@@ -7725,12 +7738,12 @@ int i_331;
 struct list$1sTypeph* o2_saved_332;
 struct sType* it_333;
 struct sType* param_type_334;
-_Bool _if_conditional375;
+_Bool _if_conditional376;
 void* right_value316;
 char* param_name_335;
 void* right_value317;
 void* right_value318;
-_Bool _if_conditional376;
+_Bool _if_conditional377;
 void* right_value319;
 char* param_name_336;
 void* right_value320;
@@ -7739,7 +7752,7 @@ void* right_value322;
 char* param_name_337;
 void* right_value323;
 void* right_value324;
-_Bool _if_conditional377;
+_Bool _if_conditional378;
 void* right_value325;
 struct buffer* source3_338;
 char* p_339;
@@ -7748,7 +7761,7 @@ int sline_341;
 struct buffer* __dec_obj92;
 void* right_value326;
 struct sNode* node_342;
-_Bool _if_conditional378;
+_Bool _if_conditional379;
 _Bool __result224__;
 void* right_value327;
 void* right_value328;
@@ -7756,7 +7769,7 @@ char* method_block_name_343;
 void* right_value329;
 struct CVALUE* come_value2_344;
 struct sFun* fun2_345;
-_Bool _if_conditional379;
+_Bool _if_conditional380;
 _Bool __result225__;
 struct sType* method_block_type2_346;
 void* right_value330;
@@ -7770,19 +7783,19 @@ struct buffer* buf_347;
 int j_348;
 struct list$1CVALUEph* o2_saved_349;
 struct CVALUE* it_350;
-_Bool _if_conditional380;
+_Bool _if_conditional381;
 void* right_value334;
 struct CVALUE* come_value2_351;
 void* right_value335;
 char* __dec_obj96;
 void* right_value336;
 struct sType* __dec_obj97;
-_Bool _if_conditional381;
+_Bool _if_conditional382;
 void* right_value337;
 char* __dec_obj98;
 void* right_value338;
 char* __dec_obj99;
-_Bool _if_conditional382;
+_Bool _if_conditional383;
 void* right_value339;
 char* var_name_352;
 void* right_value340;
@@ -7790,9 +7803,9 @@ struct sType* result_type_353;
 void* right_value341;
 struct sType* result_type2_354;
 struct sType* result_type3_355;
-_Bool _if_conditional383;
 _Bool _if_conditional384;
 _Bool _if_conditional385;
+_Bool _if_conditional386;
 void* right_value342;
 void* right_value343;
 void* right_value344;
@@ -7804,7 +7817,7 @@ void* right_value349;
 void* right_value350;
 void* right_value351;
 void* right_value352;
-_Bool _if_conditional386;
+_Bool _if_conditional387;
 void* right_value353;
 void* right_value354;
 void* right_value355;
@@ -7890,65 +7903,65 @@ right_value218 = (void*)0;
 memset(&klass_229, 0, sizeof(struct sClass*));
 right_value219 = (void*)0;
 right_value220 = (void*)0;
-memset(&result_type_230, 0, sizeof(struct sType*));
+memset(&result_type_233, 0, sizeof(struct sType*));
 right_value221 = (void*)0;
-memset(&result_type2_231, 0, sizeof(struct sType*));
+memset(&result_type2_234, 0, sizeof(struct sType*));
 right_value222 = (void*)0;
 right_value223 = (void*)0;
-memset(&param_types_232, 0, sizeof(struct list$1sTypeph*));
-memset(&o2_saved_233, 0, sizeof(struct list$1sTypeph*));
-memset(&it_236, 0, sizeof(struct sType*));
+memset(&param_types_235, 0, sizeof(struct list$1sTypeph*));
+memset(&o2_saved_236, 0, sizeof(struct list$1sTypeph*));
+memset(&it_239, 0, sizeof(struct sType*));
 right_value227 = (void*)0;
-memset(&it2_242, 0, sizeof(struct sType*));
+memset(&it2_245, 0, sizeof(struct sType*));
 right_value228 = (void*)0;
 right_value229 = (void*)0;
 right_value230 = (void*)0;
-memset(&come_params_243, 0, sizeof(struct list$1CVALUEph*));
-memset(&i_244, 0, sizeof(int));
-memset(&first_param_248, 0, sizeof(_Bool));
-memset(&o2_saved_249, 0, sizeof(struct list$1tuple2$2charphsNodephph*));
-memset(&it_250, 0, sizeof(struct tuple2$2charphsNodeph*));
-memset(&label_251, 0, sizeof(char*));
-memset(&node_252, 0, sizeof(struct sNode*));
-memset(&label_251, 0, sizeof(char*));
-memset(&node_252, 0, sizeof(struct sNode*));
+memset(&come_params_246, 0, sizeof(struct list$1CVALUEph*));
+memset(&i_247, 0, sizeof(int));
+memset(&first_param_251, 0, sizeof(_Bool));
+memset(&o2_saved_252, 0, sizeof(struct list$1tuple2$2charphsNodephph*));
+memset(&it_253, 0, sizeof(struct tuple2$2charphsNodeph*));
+memset(&label_254, 0, sizeof(char*));
+memset(&node_255, 0, sizeof(struct sNode*));
+memset(&label_254, 0, sizeof(char*));
+memset(&node_255, 0, sizeof(struct sNode*));
 right_value234 = (void*)0;
-memset(&come_value_253, 0, sizeof(struct CVALUE*));
-memset(&n_254, 0, sizeof(int));
-memset(&o2_saved_255, 0, sizeof(struct list$1charph*));
-memset(&it_258, 0, sizeof(char*));
+memset(&come_value_256, 0, sizeof(struct CVALUE*));
+memset(&n_257, 0, sizeof(int));
+memset(&o2_saved_258, 0, sizeof(struct list$1charph*));
+memset(&it_261, 0, sizeof(char*));
 right_value235 = (void*)0;
 right_value236 = (void*)0;
 right_value237 = (void*)0;
-memset(&i_263, 0, sizeof(int));
-memset(&o2_saved_264, 0, sizeof(struct list$1tuple2$2charphsNodephph*));
-memset(&it_265, 0, sizeof(struct tuple2$2charphsNodeph*));
-memset(&label_266, 0, sizeof(char*));
-memset(&node_267, 0, sizeof(struct sNode*));
-memset(&label_266, 0, sizeof(char*));
-memset(&node_267, 0, sizeof(struct sNode*));
+memset(&i_266, 0, sizeof(int));
+memset(&o2_saved_267, 0, sizeof(struct list$1tuple2$2charphsNodephph*));
+memset(&it_268, 0, sizeof(struct tuple2$2charphsNodeph*));
+memset(&label_269, 0, sizeof(char*));
+memset(&node_270, 0, sizeof(struct sNode*));
+memset(&label_269, 0, sizeof(char*));
+memset(&node_270, 0, sizeof(struct sNode*));
 right_value238 = (void*)0;
 right_value239 = (void*)0;
 right_value240 = (void*)0;
 right_value241 = (void*)0;
-memset(&come_value_271, 0, sizeof(struct CVALUE*));
+memset(&come_value_274, 0, sizeof(struct CVALUE*));
 right_value242 = (void*)0;
 right_value243 = (void*)0;
 right_value244 = (void*)0;
-memset(&obj_array_type_275, 0, sizeof(struct sType*));
+memset(&obj_array_type_278, 0, sizeof(struct sType*));
 right_value245 = (void*)0;
-memset(&array_method_name_276, 0, sizeof(char*));
+memset(&array_method_name_279, 0, sizeof(char*));
 right_value246 = (void*)0;
 right_value247 = (void*)0;
-memset(&buf_277, 0, sizeof(struct buffer*));
-memset(&i_278, 0, sizeof(int));
-memset(&o2_saved_279, 0, sizeof(struct list$1sNodeph*));
-memset(&it_282, 0, sizeof(struct sNode*));
+memset(&buf_280, 0, sizeof(struct buffer*));
+memset(&i_281, 0, sizeof(int));
+memset(&o2_saved_282, 0, sizeof(struct list$1sNodeph*));
+memset(&it_285, 0, sizeof(struct sNode*));
 right_value248 = (void*)0;
-memset(&come_value_285, 0, sizeof(struct CVALUE*));
+memset(&come_value_288, 0, sizeof(struct CVALUE*));
 right_value249 = (void*)0;
 right_value250 = (void*)0;
-memset(&come_value_286, 0, sizeof(struct CVALUE*));
+memset(&come_value_289, 0, sizeof(struct CVALUE*));
 right_value251 = (void*)0;
 right_value252 = (void*)0;
 right_value253 = (void*)0;
@@ -7957,15 +7970,15 @@ right_value258 = (void*)0;
 right_value259 = (void*)0;
 right_value260 = (void*)0;
 right_value261 = (void*)0;
-memset(&buf_290, 0, sizeof(struct buffer*));
-memset(&i_291, 0, sizeof(int));
-memset(&o2_saved_292, 0, sizeof(struct list$1sNodeph*));
-memset(&it_293, 0, sizeof(struct sNode*));
+memset(&buf_293, 0, sizeof(struct buffer*));
+memset(&i_294, 0, sizeof(int));
+memset(&o2_saved_295, 0, sizeof(struct list$1sNodeph*));
+memset(&it_296, 0, sizeof(struct sNode*));
 right_value262 = (void*)0;
-memset(&come_value_294, 0, sizeof(struct CVALUE*));
+memset(&come_value_297, 0, sizeof(struct CVALUE*));
 right_value263 = (void*)0;
 right_value264 = (void*)0;
-memset(&come_value_295, 0, sizeof(struct CVALUE*));
+memset(&come_value_298, 0, sizeof(struct CVALUE*));
 right_value265 = (void*)0;
 right_value266 = (void*)0;
 right_value267 = (void*)0;
@@ -7974,15 +7987,15 @@ right_value269 = (void*)0;
 right_value270 = (void*)0;
 right_value271 = (void*)0;
 right_value272 = (void*)0;
-memset(&buf_296, 0, sizeof(struct buffer*));
-memset(&i_297, 0, sizeof(int));
-memset(&o2_saved_298, 0, sizeof(struct list$1sNodeph*));
-memset(&it_299, 0, sizeof(struct sNode*));
+memset(&buf_299, 0, sizeof(struct buffer*));
+memset(&i_300, 0, sizeof(int));
+memset(&o2_saved_301, 0, sizeof(struct list$1sNodeph*));
+memset(&it_302, 0, sizeof(struct sNode*));
 right_value273 = (void*)0;
-memset(&come_value_300, 0, sizeof(struct CVALUE*));
+memset(&come_value_303, 0, sizeof(struct CVALUE*));
 right_value274 = (void*)0;
 right_value275 = (void*)0;
-memset(&come_value_301, 0, sizeof(struct CVALUE*));
+memset(&come_value_304, 0, sizeof(struct CVALUE*));
 right_value276 = (void*)0;
 right_value277 = (void*)0;
 right_value278 = (void*)0;
@@ -7991,15 +8004,15 @@ right_value280 = (void*)0;
 right_value281 = (void*)0;
 right_value282 = (void*)0;
 right_value283 = (void*)0;
-memset(&buf_302, 0, sizeof(struct buffer*));
-memset(&i_303, 0, sizeof(int));
-memset(&o2_saved_304, 0, sizeof(struct list$1sNodeph*));
-memset(&it_305, 0, sizeof(struct sNode*));
+memset(&buf_305, 0, sizeof(struct buffer*));
+memset(&i_306, 0, sizeof(int));
+memset(&o2_saved_307, 0, sizeof(struct list$1sNodeph*));
+memset(&it_308, 0, sizeof(struct sNode*));
 right_value284 = (void*)0;
-memset(&come_value_306, 0, sizeof(struct CVALUE*));
+memset(&come_value_309, 0, sizeof(struct CVALUE*));
 right_value285 = (void*)0;
 right_value286 = (void*)0;
-memset(&come_value_307, 0, sizeof(struct CVALUE*));
+memset(&come_value_310, 0, sizeof(struct CVALUE*));
 right_value287 = (void*)0;
 right_value288 = (void*)0;
 right_value289 = (void*)0;
@@ -8007,33 +8020,33 @@ right_value290 = (void*)0;
 right_value291 = (void*)0;
 right_value292 = (void*)0;
 right_value293 = (void*)0;
-memset(&default_param_308, 0, sizeof(char*));
-memset(&param_name_309, 0, sizeof(char*));
-memset(&source_310, 0, sizeof(struct buffer*));
-memset(&p_311, 0, sizeof(char*));
-memset(&head_312, 0, sizeof(char*));
-memset(&sline_313, 0, sizeof(int));
+memset(&default_param_311, 0, sizeof(char*));
+memset(&param_name_312, 0, sizeof(char*));
+memset(&source_313, 0, sizeof(struct buffer*));
+memset(&p_314, 0, sizeof(char*));
+memset(&head_315, 0, sizeof(char*));
+memset(&sline_316, 0, sizeof(int));
 right_value294 = (void*)0;
 right_value295 = (void*)0;
-memset(&node_314, 0, sizeof(struct sNode*));
+memset(&node_317, 0, sizeof(struct sNode*));
 right_value296 = (void*)0;
-memset(&come_value_315, 0, sizeof(struct CVALUE*));
+memset(&come_value_318, 0, sizeof(struct CVALUE*));
 right_value297 = (void*)0;
 right_value298 = (void*)0;
 right_value299 = (void*)0;
 right_value300 = (void*)0;
 right_value301 = (void*)0;
 right_value304 = (void*)0;
-memset(&current_stack_frame_node_317, 0, sizeof(struct sNode*));
+memset(&current_stack_frame_node_320, 0, sizeof(struct sNode*));
 right_value305 = (void*)0;
-memset(&come_value_318, 0, sizeof(struct CVALUE*));
+memset(&come_value_321, 0, sizeof(struct CVALUE*));
 right_value306 = (void*)0;
 right_value307 = (void*)0;
-memset(&method_block2_319, 0, sizeof(struct buffer*));
+memset(&method_block2_322, 0, sizeof(struct buffer*));
 right_value308 = (void*)0;
-memset(&method_block_type_320, 0, sizeof(struct sType*));
+memset(&method_block_type_323, 0, sizeof(struct sType*));
 right_value309 = (void*)0;
-memset(&class_name_321, 0, sizeof(char*));
+memset(&class_name_324, 0, sizeof(char*));
 memset(&current_stack_frame_struct_325, 0, sizeof(struct sClass*));
 right_value310 = (void*)0;
 memset(&result_type_326, 0, sizeof(struct sType*));
@@ -8134,7 +8147,7 @@ right_value359 = (void*)0;
     come_call_finalizer2(list$1sTypephp_finalize,right_value186, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
     # 240 "20method.c"
     # 236 "20method.c"
-    if(_if_conditional239=!node_compile(obj_174,info),    _if_conditional239) {
+    if(_if_conditional240=!node_compile(obj_174,info),    _if_conditional240) {
         # 237 "20method.c"
         __result137__ = (_Bool)0;
         come_call_finalizer2(list$1sTypephp_finalize,method_generics_types_177, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
@@ -8147,7 +8160,7 @@ right_value359 = (void*)0;
     dec_stack_ptr(1,info);
     # 250 "20method.c"
     # 243 "20method.c"
-    if(_if_conditional240=gComeDebug&&obj_value_178->type->mPointerNum>0,    _if_conditional240) {
+    if(_if_conditional241=gComeDebug&&obj_value_178->type->mPointerNum>0,    _if_conditional241) {
         # 244 "20method.c"
         __dec_obj60=obj_value_178->c_value;
         obj_value_178->c_value=(char*)come_increment_ref_count(((char*)(right_value189=xsprintf("((%s)come_null_check(%s, \"%s\", %d, %d))",((char*)(right_value188=make_type_name_string(obj_value_178->type,(_Bool)0,(_Bool)0,(_Bool)0,info))),obj_value_178->c_value,info->sname,info->sline,gComeDebugStackFrameID++))));
@@ -8172,7 +8185,7 @@ right_value359 = (void*)0;
         field_type_190=(struct sType*)come_increment_ref_count(multiple_assign_var1->v2);
         # 264 "20method.c"
         # 259 "20method.c"
-        if(_if_conditional245=string_operator_equals(field_name_189,fun_name_172)&&string_operator_equals(field_type_190->mClass->mName,"lambda"),        _if_conditional245) {
+        if(_if_conditional246=string_operator_equals(field_name_189,fun_name_172)&&string_operator_equals(field_type_190->mClass->mName,"lambda"),        _if_conditional246) {
             # 260 "20method.c"
             calling_dynamic_method_181=(_Bool)1;
             # 261 "20method.c"
@@ -8208,7 +8221,7 @@ right_value359 = (void*)0;
             node_203=(struct sNode*)come_increment_ref_count(multiple_assign_var2->v2);
             # 298 "20method.c"
             # 276 "20method.c"
-            if(_if_conditional251=i_195==0,            _if_conditional251) {
+            if(_if_conditional252=i_195==0,            _if_conditional252) {
                 # 277 "20method.c"
                 list$1CVALUEph_push_back(come_params_194,(struct CVALUE*)come_increment_ref_count(obj_value_178));
                 # 278 "20method.c"
@@ -8217,7 +8230,7 @@ right_value359 = (void*)0;
             else {
                 # 285 "20method.c"
                 # 281 "20method.c"
-                if(_if_conditional252=!node_compile(node_203,info),                _if_conditional252) {
+                if(_if_conditional253=!node_compile(node_203,info),                _if_conditional253) {
                     # 282 "20method.c"
                     __result153__ = (_Bool)0;
                     label_202 = come_decrement_ref_count2(label_202, (void*)0, (void*)0, 0, 0, 0, (void*)0);
@@ -8239,7 +8252,7 @@ right_value359 = (void*)0;
                 right_value197 = come_decrement_ref_count2(right_value197, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                 # 293 "20method.c"
                 # 288 "20method.c"
-                if(_if_conditional255=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(lambda_type_182->mParamTypes,i_195-1), "20method.c", 288, 3))->mHeap&&come_value_204->type->mHeap,                _if_conditional255) {
+                if(_if_conditional256=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(lambda_type_182->mParamTypes,i_195-1), "20method.c", 288, 3))->mHeap&&come_value_204->type->mHeap,                _if_conditional256) {
                     # 290 "20method.c"
                     std_move(((struct sType*)come_null_check(list$1sTypephp_operator_load_element(lambda_type_182->mParamTypes,i_195-1), "20method.c", 290, 4)),come_value_204->type,come_value_204,info);
                 }
@@ -8269,7 +8282,7 @@ right_value359 = (void*)0;
         for(        o2_saved_210=(struct list$1CVALUEph*)come_increment_ref_count((come_params_194)),it_213=list$1CVALUEph_begin((o2_saved_210));        !list$1CVALUEph_end((o2_saved_210));        it_213=list$1CVALUEph_next((o2_saved_210))        ){
             # 310 "20method.c"
             # 307 "20method.c"
-            if(_if_conditional260=j_209==0,            _if_conditional260) {
+            if(_if_conditional261=j_209==0,            _if_conditional261) {
                 # 308 "20method.c"
                 __dec_obj61=it_213->c_value;
                 it_213->c_value=(char*)come_increment_ref_count(((char*)(right_value201=xsprintf("%s->_protocol_obj",it_213->c_value))));
@@ -8280,7 +8293,7 @@ right_value359 = (void*)0;
             buffer_append_str(buf_208,it_213->c_value);
             # 316 "20method.c"
             # 312 "20method.c"
-            if(_if_conditional262=j_209!=list$1CVALUEph_length(come_params_194)-1,            _if_conditional262) {
+            if(_if_conditional263=j_209!=list$1CVALUEph_length(come_params_194)-1,            _if_conditional263) {
                 # 313 "20method.c"
                 buffer_append_str(buf_208,",");
             }
@@ -8347,7 +8360,7 @@ right_value359 = (void*)0;
             fun_219=map$2charphsFunphp_operator_load_element(info->funcs,new_fun_name_221);
             # 352 "20method.c"
             # 348 "20method.c"
-            if(_if_conditional283=fun_219!=((void*)0),            _if_conditional283) {
+            if(_if_conditional284=fun_219!=((void*)0),            _if_conditional284) {
                 # 349 "20method.c"
                 __dec_obj65=generics_fun_name_218;
                 generics_fun_name_218=(char*)come_increment_ref_count(((char*)(right_value212=__builtin_string(new_fun_name_221))));
@@ -8361,12 +8374,12 @@ right_value359 = (void*)0;
         }
         # 407 "20method.c"
         # 354 "20method.c"
-        if(_if_conditional284=fun_219==((void*)0),        _if_conditional284) {
+        if(_if_conditional285=fun_219==((void*)0),        _if_conditional285) {
             # 355 "20method.c"
             obj_array_type_225=obj_type_179->mOriginalLoadVarType->v1;
             # 406 "20method.c"
             # 357 "20method.c"
-            if(_if_conditional285=obj_array_type_225&&list$1sNodeph_length(obj_array_type_225->mArrayNum)>0,            _if_conditional285) {
+            if(_if_conditional286=obj_array_type_225&&list$1sNodeph_length(obj_array_type_225->mArrayNum)>0,            _if_conditional286) {
                 # 358 "20method.c"
                 array_method_name_226=(char*)come_increment_ref_count(((char*)(right_value213=create_method_name(obj_array_type_225,(_Bool)0,fun_name_172,info,(_Bool)0))));
                 right_value213 = come_decrement_ref_count2(right_value213, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -8386,7 +8399,7 @@ right_value359 = (void*)0;
                     fun_219=map$2charphsFunph_at(info->funcs,generics_fun_name_218,((void*)0));
                     # 376 "20method.c"
                     # 368 "20method.c"
-                    if(_if_conditional291=fun_219==((void*)0),                    _if_conditional291) {
+                    if(_if_conditional292=fun_219==((void*)0),                    _if_conditional292) {
                         # 369 "20method.c"
                         __dec_obj67=generics_fun_name_218;
                         generics_fun_name_218=(char*)come_increment_ref_count(((char*)(right_value216=create_method_name(obj_type_179,(_Bool)0,((char*)(right_value215=__builtin_string(fun_name_172))),info,(_Bool)1))));
@@ -8397,7 +8410,7 @@ right_value359 = (void*)0;
                         fun_219=map$2charphsFunph_at(info->funcs,generics_fun_name_218,((void*)0));
                         # 375 "20method.c"
                         # 371 "20method.c"
-                        if(_if_conditional292=fun_219==((void*)0),                        _if_conditional292) {
+                        if(_if_conditional293=fun_219==((void*)0),                        _if_conditional293) {
                             # 372 "20method.c"
                             err_msg(info,"function not found(%s) at method(%s)(Z1)\n",generics_fun_name_218,info->come_fun->mName);
                             # 373 "20method.c"
@@ -8418,7 +8431,7 @@ right_value359 = (void*)0;
                 fun_219=map$2charphsFunph_at(info->funcs,generics_fun_name_218,((void*)0));
                 # 405 "20method.c"
                 # 381 "20method.c"
-                if(_if_conditional293=fun_219==((void*)0),                _if_conditional293) {
+                if(_if_conditional294=fun_219==((void*)0),                _if_conditional294) {
                     # 382 "20method.c"
                     __dec_obj68=generics_fun_name_218;
                     generics_fun_name_218=(char*)come_increment_ref_count(((char*)(right_value218=create_method_name(obj_type_179,(_Bool)0,((char*)(right_value217=__builtin_string(fun_name_172))),info,(_Bool)1))));
@@ -8429,13 +8442,13 @@ right_value359 = (void*)0;
                     fun_219=map$2charphsFunph_at(info->funcs,generics_fun_name_218,((void*)0));
                     # 400 "20method.c"
                     # 386 "20method.c"
-                    if(_if_conditional294=fun_219==((void*)0),                    _if_conditional294) {
+                    if(_if_conditional295=fun_219==((void*)0),                    _if_conditional295) {
                         # 387 "20method.c"
                         klass_229=obj_type_179->mClass;
                         # 398 "20method.c"
-                        while(klass_229->mParent) {
+                        while(_while_condtional33=map$2charphsClassphp_operator_load_element(info->classes,klass_229->mParentClassName),                        _while_condtional33) {
                             # 389 "20method.c"
-                            klass_229=klass_229->mParent;
+                            klass_229=map$2charphsClassphp_operator_load_element(info->classes,klass_229->mParentClassName);
                             # 390 "20method.c"
                             __dec_obj69=generics_fun_name_218;
                             generics_fun_name_218=(char*)come_increment_ref_count(((char*)(right_value219=create_method_name_using_class(klass_229,(_Bool)0,fun_name_172,info,(_Bool)1))));
@@ -8453,579 +8466,579 @@ right_value359 = (void*)0;
                     }
                     # 404 "20method.c"
                     # 400 "20method.c"
-                    if(_if_conditional296=fun_219==((void*)0),                    _if_conditional296) {
+                    if(_if_conditional301=fun_219==((void*)0),                    _if_conditional301) {
                         # 401 "20method.c"
                         err_msg(info,"function not found(%s) at method(%s)(Z2n)\n",generics_fun_name_218,info->come_fun->mName);
                         # 402 "20method.c"
-                        __result174__ = (_Bool)1;
+                        __result178__ = (_Bool)1;
                         generics_fun_name_218 = come_decrement_ref_count2(generics_fun_name_218, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         come_call_finalizer2(list$1sTypephp_finalize,method_generics_types_177, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         come_call_finalizer2(CVALUE_finalize,obj_value_178, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         come_call_finalizer2(sType_finalize,obj_type_179, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                        return __result174__;
+                        return __result178__;
                     }
                 }
             }
         }
         # 412 "20method.c"
         # 407 "20method.c"
-        if(_if_conditional297=fun_219==((void*)0),        _if_conditional297) {
+        if(_if_conditional302=fun_219==((void*)0),        _if_conditional302) {
             # 408 "20method.c"
             err_msg(info,"function not found(%s) at method(%s)(ZY)\n",generics_fun_name_218,info->come_fun->mName);
             # 409 "20method.c"
-            __result175__ = (_Bool)1;
+            __result179__ = (_Bool)1;
             generics_fun_name_218 = come_decrement_ref_count2(generics_fun_name_218, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             come_call_finalizer2(list$1sTypephp_finalize,method_generics_types_177, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             come_call_finalizer2(CVALUE_finalize,obj_value_178, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             come_call_finalizer2(sType_finalize,obj_type_179, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-            return __result175__;
+            return __result179__;
         }
         # 417 "20method.c"
         # 412 "20method.c"
-        if(_if_conditional299=list$1sTypeph_length(fun_219->mParamTypes)==0,        _if_conditional299) {
+        if(_if_conditional304=list$1sTypeph_length(fun_219->mParamTypes)==0,        _if_conditional304) {
             # 413 "20method.c"
             err_msg(info,"Method require function parametor");
             # 414 "20method.c"
-            __result178__ = (_Bool)1;
+            __result182__ = (_Bool)1;
             generics_fun_name_218 = come_decrement_ref_count2(generics_fun_name_218, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             come_call_finalizer2(list$1sTypephp_finalize,method_generics_types_177, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             come_call_finalizer2(CVALUE_finalize,obj_value_178, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             come_call_finalizer2(sType_finalize,obj_type_179, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-            return __result178__;
+            return __result182__;
         }
         # 417 "20method.c"
-        result_type_230=(struct sType*)come_increment_ref_count(((struct sType*)(right_value220=sType_clone(fun_219->mResultType))));
+        result_type_233=(struct sType*)come_increment_ref_count(((struct sType*)(right_value220=sType_clone(fun_219->mResultType))));
         come_call_finalizer2(sType_finalize,right_value220, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         # 418 "20method.c"
-        result_type_230->mStatic=(_Bool)0;
+        result_type_233->mStatic=(_Bool)0;
         # 420 "20method.c"
-        result_type2_231=(struct sType*)come_increment_ref_count(((struct sType*)(right_value221=solve_generics(result_type_230,info->generics_type,info))));
+        result_type2_234=(struct sType*)come_increment_ref_count(((struct sType*)(right_value221=solve_generics(result_type_233,info->generics_type,info))));
         come_call_finalizer2(sType_finalize,right_value221, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         # 422 "20method.c"
-        param_types_232=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value223=list$1sTypeph_initialize((struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value222=(struct list$1sTypeph*)come_calloc(1, sizeof(struct list$1sTypeph)*(1), "20method.c", 422, "list$1sTypeph"))))))));
+        param_types_235=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value223=list$1sTypeph_initialize((struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value222=(struct list$1sTypeph*)come_calloc(1, sizeof(struct list$1sTypeph)*(1), "20method.c", 422, "list$1sTypeph"))))))));
         come_call_finalizer2(list$1sTypephp_finalize,right_value222, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(list$1sTypephp_finalize,right_value223, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         # 434 "20method.c"
-        for(        o2_saved_233=(struct list$1sTypeph*)come_increment_ref_count((fun_219->mParamTypes)),it_236=list$1sTypeph_begin((o2_saved_233));        !list$1sTypeph_end((o2_saved_233));        it_236=list$1sTypeph_next((o2_saved_233))        ){
+        for(        o2_saved_236=(struct list$1sTypeph*)come_increment_ref_count((fun_219->mParamTypes)),it_239=list$1sTypeph_begin((o2_saved_236));        !list$1sTypeph_end((o2_saved_236));        it_239=list$1sTypeph_next((o2_saved_236))        ){
             # 432 "20method.c"
             # 424 "20method.c"
-            if(_if_conditional304=it_236==((void*)0),            _if_conditional304) {
+            if(_if_conditional309=it_239==((void*)0),            _if_conditional309) {
                 # 425 "20method.c"
-                list$1sTypeph_push_back(param_types_232,it_236);
+                list$1sTypeph_push_back(param_types_235,it_239);
             }
             else {
                 # 428 "20method.c"
-                it2_242=(struct sType*)come_increment_ref_count(((struct sType*)(right_value227=solve_generics(it_236,info->generics_type,info))));
+                it2_245=(struct sType*)come_increment_ref_count(((struct sType*)(right_value227=solve_generics(it_239,info->generics_type,info))));
                 come_call_finalizer2(sType_finalize,right_value227, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                 # 430 "20method.c"
-                list$1sTypeph_push_back(param_types_232,(struct sType*)come_increment_ref_count(((struct sType*)(right_value228=sType_clone(it2_242)))));
+                list$1sTypeph_push_back(param_types_235,(struct sType*)come_increment_ref_count(((struct sType*)(right_value228=sType_clone(it2_245)))));
                 come_call_finalizer2(sType_finalize,right_value228, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                come_call_finalizer2(sType_finalize,it2_242, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(sType_finalize,it2_245, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             }
         }
-        come_call_finalizer2(list$1sTypephp_finalize,o2_saved_233, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+        come_call_finalizer2(list$1sTypephp_finalize,o2_saved_236, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         # 434 "20method.c"
-        come_params_243=(struct list$1CVALUEph*)come_increment_ref_count(((struct list$1CVALUEph*)(right_value230=list$1CVALUEph_initialize((struct list$1CVALUEph*)come_increment_ref_count(((struct list$1CVALUEph*)(right_value229=(struct list$1CVALUEph*)come_calloc(1, sizeof(struct list$1CVALUEph)*(1), "20method.c", 434, "list$1CVALUEph"))))))));
+        come_params_246=(struct list$1CVALUEph*)come_increment_ref_count(((struct list$1CVALUEph*)(right_value230=list$1CVALUEph_initialize((struct list$1CVALUEph*)come_increment_ref_count(((struct list$1CVALUEph*)(right_value229=(struct list$1CVALUEph*)come_calloc(1, sizeof(struct list$1CVALUEph)*(1), "20method.c", 434, "list$1CVALUEph"))))))));
         come_call_finalizer2(list$1CVALUEphp_finalize,right_value229, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(list$1CVALUEphp_finalize,right_value230, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         # 440 "20method.c"
-        for(        i_244=0;        i_244<list$1sTypeph_length(fun_219->mParamTypes)-(method_block_175?2:0);        i_244++        ){
+        for(        i_247=0;        i_247<list$1sTypeph_length(fun_219->mParamTypes)-(method_block_175?2:0);        i_247++        ){
             # 437 "20method.c"
-            list$1CVALUEph_add(come_params_243,((void*)0));
+            list$1CVALUEph_add(come_params_246,((void*)0));
         }
         # 440 "20method.c"
-        first_param_248=(_Bool)1;
+        first_param_251=(_Bool)1;
         # 475 "20method.c"
-        for(        o2_saved_249=(params_173),it_250=list$1tuple2$2charphsNodephph_begin((o2_saved_249));        !list$1tuple2$2charphsNodephph_end((o2_saved_249));        it_250=list$1tuple2$2charphsNodephph_next((o2_saved_249))        ){
+        for(        o2_saved_252=(params_173),it_253=list$1tuple2$2charphsNodephph_begin((o2_saved_252));        !list$1tuple2$2charphsNodephph_end((o2_saved_252));        it_253=list$1tuple2$2charphsNodephph_next((o2_saved_252))        ){
             # 442 "20method.c"
-            multiple_assign_var3=it_250;
-            label_251=(char*)come_increment_ref_count(multiple_assign_var3->v1);
-            node_252=(struct sNode*)come_increment_ref_count(multiple_assign_var3->v2);
+            multiple_assign_var3=it_253;
+            label_254=(char*)come_increment_ref_count(multiple_assign_var3->v1);
+            node_255=(struct sNode*)come_increment_ref_count(multiple_assign_var3->v2);
             # 473 "20method.c"
             # 444 "20method.c"
-            if(first_param_248) {
+            if(first_param_251) {
                 # 445 "20method.c"
-                first_param_248=(_Bool)0;
+                first_param_251=(_Bool)0;
             }
             else {
                 # 473 "20method.c"
                 # 447 "20method.c"
-                if(label_251) {
+                if(label_254) {
                     # 452 "20method.c"
                     # 448 "20method.c"
-                    if(_if_conditional311=!node_compile(node_252,info),                    _if_conditional311) {
+                    if(_if_conditional316=!node_compile(node_255,info),                    _if_conditional316) {
                         # 449 "20method.c"
-                        __result188__ = (_Bool)0;
-                        label_251 = come_decrement_ref_count2(label_251, (void*)0, (void*)0, 0, 0, 0, (void*)0);
-                        if(node_252) { node_252 = come_decrement_ref_count2(node_252, ((struct sNode*)node_252)->finalize, ((struct sNode*)node_252)->_protocol_obj, 0, 0, 0, (void*)0); } 
+                        __result192__ = (_Bool)0;
+                        label_254 = come_decrement_ref_count2(label_254, (void*)0, (void*)0, 0, 0, 0, (void*)0);
+                        if(node_255) { node_255 = come_decrement_ref_count2(node_255, ((struct sNode*)node_255)->finalize, ((struct sNode*)node_255)->_protocol_obj, 0, 0, 0, (void*)0); } 
                         generics_fun_name_218 = come_decrement_ref_count2(generics_fun_name_218, (void*)0, (void*)0, 0, 0, 0, (void*)0);
-                        come_call_finalizer2(sType_finalize,result_type_230, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                        come_call_finalizer2(sType_finalize,result_type2_231, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                        come_call_finalizer2(list$1sTypephp_finalize,param_types_232, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                        come_call_finalizer2(list$1CVALUEphp_finalize,come_params_243, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        come_call_finalizer2(sType_finalize,result_type_233, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        come_call_finalizer2(sType_finalize,result_type2_234, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        come_call_finalizer2(list$1sTypephp_finalize,param_types_235, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        come_call_finalizer2(list$1CVALUEphp_finalize,come_params_246, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         come_call_finalizer2(list$1sTypephp_finalize,method_generics_types_177, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         come_call_finalizer2(CVALUE_finalize,obj_value_178, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         come_call_finalizer2(sType_finalize,obj_type_179, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                        return __result188__;
+                        return __result192__;
                     }
                     # 452 "20method.c"
-                    come_value_253=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value234=get_value_from_stack(-1,info))));
+                    come_value_256=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value234=get_value_from_stack(-1,info))));
                     come_call_finalizer2(CVALUE_finalize,right_value234, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                     # 453 "20method.c"
                     dec_stack_ptr(1,info);
                     # 455 "20method.c"
-                    n_254=0;
+                    n_257=0;
                     # 464 "20method.c"
-                    for(                    o2_saved_255=(struct list$1charph*)come_increment_ref_count((fun_219->mParamNames)),it_258=list$1charph_begin((o2_saved_255));                    !list$1charph_end((o2_saved_255));                    it_258=list$1charph_next((o2_saved_255))                    ){
+                    for(                    o2_saved_258=(struct list$1charph*)come_increment_ref_count((fun_219->mParamNames)),it_261=list$1charph_begin((o2_saved_258));                    !list$1charph_end((o2_saved_258));                    it_261=list$1charph_next((o2_saved_258))                    ){
                         # 461 "20method.c"
                         # 457 "20method.c"
-                        if(_if_conditional316=string_operator_equals(label_251,it_258),                        _if_conditional316) {
+                        if(_if_conditional321=string_operator_equals(label_254,it_261),                        _if_conditional321) {
                             # 458 "20method.c"
                             break;
                         }
                         # 461 "20method.c"
-                        n_254++;
+                        n_257++;
                     }
-                    come_call_finalizer2(list$1charphp_finalize,o2_saved_255, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                    come_call_finalizer2(list$1charphp_finalize,o2_saved_258, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                     # 467 "20method.c"
                     # 464 "20method.c"
-                    if(_if_conditional317=list$1sTypephp_operator_load_element(param_types_232,n_254),                    _if_conditional317) {
+                    if(_if_conditional322=list$1sTypephp_operator_load_element(param_types_235,n_257),                    _if_conditional322) {
                         # 465 "20method.c"
-                        check_assign_type(((char*)(right_value237=xsprintf("\%s param num \%s is assinged to",((char*)(right_value235=charp_to_string(fun_name_172))),((char*)(right_value236=int_to_string(n_254)))))),((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_232,n_254), "20method.c", 465, 5)),come_value_253->type,come_value_253,(_Bool)0,(_Bool)1,info);
+                        check_assign_type(((char*)(right_value237=xsprintf("\%s param num \%s is assinged to",((char*)(right_value235=charp_to_string(fun_name_172))),((char*)(right_value236=int_to_string(n_257)))))),((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_235,n_257), "20method.c", 465, 5)),come_value_256->type,come_value_256,(_Bool)0,(_Bool)1,info);
                         right_value235 = come_decrement_ref_count2(right_value235, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         right_value236 = come_decrement_ref_count2(right_value236, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         right_value237 = come_decrement_ref_count2(right_value237, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                     }
                     # 471 "20method.c"
                     # 467 "20method.c"
-                    if(_if_conditional318=list$1sTypephp_operator_load_element(param_types_232,n_254)&&((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_232,n_254), "20method.c", 467, 6))->mHeap&&come_value_253->type->mHeap,                    _if_conditional318) {
+                    if(_if_conditional323=list$1sTypephp_operator_load_element(param_types_235,n_257)&&((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_235,n_257), "20method.c", 467, 6))->mHeap&&come_value_256->type->mHeap,                    _if_conditional323) {
                         # 468 "20method.c"
-                        std_move(((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_232,n_254), "20method.c", 468, 7)),come_value_253->type,come_value_253,info);
+                        std_move(((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_235,n_257), "20method.c", 468, 7)),come_value_256->type,come_value_256,info);
                     }
                     # 471 "20method.c"
-                    list$1CVALUEph_replace(come_params_243,n_254,(struct CVALUE*)come_increment_ref_count(come_value_253));
-                    come_call_finalizer2(CVALUE_finalize,come_value_253, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                    list$1CVALUEph_replace(come_params_246,n_257,(struct CVALUE*)come_increment_ref_count(come_value_256));
+                    come_call_finalizer2(CVALUE_finalize,come_value_256, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 }
             }
-            label_251 = come_decrement_ref_count2(label_251, (void*)0, (void*)0, 0, 0, 0, (void*)0);
-            if(node_252) { node_252 = come_decrement_ref_count2(node_252, ((struct sNode*)node_252)->finalize, ((struct sNode*)node_252)->_protocol_obj, 0, 0, 0, (void*)0); } 
+            label_254 = come_decrement_ref_count2(label_254, (void*)0, (void*)0, 0, 0, 0, (void*)0);
+            if(node_255) { node_255 = come_decrement_ref_count2(node_255, ((struct sNode*)node_255)->finalize, ((struct sNode*)node_255)->_protocol_obj, 0, 0, 0, (void*)0); } 
         }
         # 475 "20method.c"
-        i_263=0;
+        i_266=0;
         # 523 "20method.c"
-        for(        o2_saved_264=(params_173),it_265=list$1tuple2$2charphsNodephph_begin((o2_saved_264));        !list$1tuple2$2charphsNodephph_end((o2_saved_264));        it_265=list$1tuple2$2charphsNodephph_next((o2_saved_264))        ){
+        for(        o2_saved_267=(params_173),it_268=list$1tuple2$2charphsNodephph_begin((o2_saved_267));        !list$1tuple2$2charphsNodephph_end((o2_saved_267));        it_268=list$1tuple2$2charphsNodephph_next((o2_saved_267))        ){
             # 477 "20method.c"
-            multiple_assign_var4=it_265;
-            label_266=(char*)come_increment_ref_count(multiple_assign_var4->v1);
-            node_267=(struct sNode*)come_increment_ref_count(multiple_assign_var4->v2);
+            multiple_assign_var4=it_268;
+            label_269=(char*)come_increment_ref_count(multiple_assign_var4->v1);
+            node_270=(struct sNode*)come_increment_ref_count(multiple_assign_var4->v2);
             # 521 "20method.c"
             # 479 "20method.c"
-            if(_if_conditional322=i_263==0,            _if_conditional322) {
+            if(_if_conditional327=i_266==0,            _if_conditional327) {
                 # 480 "20method.c"
-                check_assign_type(((char*)(right_value240=xsprintf("\%s param num \%s is assinged to",((char*)(right_value238=charp_to_string(fun_name_172))),((char*)(right_value239=int_to_string(i_263)))))),((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_232,i_263), "20method.c", 480, 8)),obj_value_178->type,obj_value_178,(_Bool)0,(_Bool)1,info);
+                check_assign_type(((char*)(right_value240=xsprintf("\%s param num \%s is assinged to",((char*)(right_value238=charp_to_string(fun_name_172))),((char*)(right_value239=int_to_string(i_266)))))),((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_235,i_266), "20method.c", 480, 8)),obj_value_178->type,obj_value_178,(_Bool)0,(_Bool)1,info);
                 right_value238 = come_decrement_ref_count2(right_value238, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                 right_value239 = come_decrement_ref_count2(right_value239, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                 right_value240 = come_decrement_ref_count2(right_value240, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                 # 488 "20method.c"
                 # 481 "20method.c"
-                if(_if_conditional323=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_232,i_263), "20method.c", 481, 9))->mHeap&&obj_value_178->type->mHeap,                _if_conditional323) {
+                if(_if_conditional328=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_235,i_266), "20method.c", 481, 9))->mHeap&&obj_value_178->type->mHeap,                _if_conditional328) {
                     # 482 "20method.c"
-                    std_move(((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_232,i_263), "20method.c", 482, 10)),obj_value_178->type,obj_value_178,info);
+                    std_move(((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_235,i_266), "20method.c", 482, 10)),obj_value_178->type,obj_value_178,info);
                 }
                 else {
                     # 488 "20method.c"
                     # 484 "20method.c"
-                    if(_if_conditional324=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_232,i_263), "20method.c", 484, 11))->mHeap&&!obj_value_178->type->mHeap&&!gComeGC,                    _if_conditional324) {
+                    if(_if_conditional329=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_235,i_266), "20method.c", 484, 11))->mHeap&&!obj_value_178->type->mHeap&&!gComeGC,                    _if_conditional329) {
                         # 485 "20method.c"
-                        err_msg(info,"require heap parametor(%s)",((char*)come_null_check(list$1charphp_operator_load_element(fun_219->mParamNames,i_263), "20method.c", 485, 12)));
+                        err_msg(info,"require heap parametor(%s)",((char*)come_null_check(list$1charphp_operator_load_element(fun_219->mParamNames,i_266), "20method.c", 485, 12)));
                         # 486 "20method.c"
                         exit(2);
                     }
                 }
                 # 488 "20method.c"
-                list$1CVALUEph_replace(come_params_243,i_263,(struct CVALUE*)come_increment_ref_count(obj_value_178));
+                list$1CVALUEph_replace(come_params_246,i_266,(struct CVALUE*)come_increment_ref_count(obj_value_178));
                 # 490 "20method.c"
-                i_263++;
+                i_266++;
             }
             else {
                 # 521 "20method.c"
                 # 492 "20method.c"
-                if(label_266) {
+                if(label_269) {
                 }
                 else {
                     # 499 "20method.c"
                     # 495 "20method.c"
-                    if(_if_conditional328=!node_compile(node_267,info),                    _if_conditional328) {
+                    if(_if_conditional333=!node_compile(node_270,info),                    _if_conditional333) {
                         # 496 "20method.c"
-                        __result200__ = (_Bool)0;
-                        label_266 = come_decrement_ref_count2(label_266, (void*)0, (void*)0, 0, 0, 0, (void*)0);
-                        if(node_267) { node_267 = come_decrement_ref_count2(node_267, ((struct sNode*)node_267)->finalize, ((struct sNode*)node_267)->_protocol_obj, 0, 0, 0, (void*)0); } 
+                        __result204__ = (_Bool)0;
+                        label_269 = come_decrement_ref_count2(label_269, (void*)0, (void*)0, 0, 0, 0, (void*)0);
+                        if(node_270) { node_270 = come_decrement_ref_count2(node_270, ((struct sNode*)node_270)->finalize, ((struct sNode*)node_270)->_protocol_obj, 0, 0, 0, (void*)0); } 
                         generics_fun_name_218 = come_decrement_ref_count2(generics_fun_name_218, (void*)0, (void*)0, 0, 0, 0, (void*)0);
-                        come_call_finalizer2(sType_finalize,result_type_230, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                        come_call_finalizer2(sType_finalize,result_type2_231, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                        come_call_finalizer2(list$1sTypephp_finalize,param_types_232, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                        come_call_finalizer2(list$1CVALUEphp_finalize,come_params_243, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        come_call_finalizer2(sType_finalize,result_type_233, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        come_call_finalizer2(sType_finalize,result_type2_234, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        come_call_finalizer2(list$1sTypephp_finalize,param_types_235, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        come_call_finalizer2(list$1CVALUEphp_finalize,come_params_246, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         come_call_finalizer2(list$1sTypephp_finalize,method_generics_types_177, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         come_call_finalizer2(CVALUE_finalize,obj_value_178, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         come_call_finalizer2(sType_finalize,obj_type_179, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                        return __result200__;
+                        return __result204__;
                     }
                     # 499 "20method.c"
-                    come_value_271=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value241=get_value_from_stack(-1,info))));
+                    come_value_274=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value241=get_value_from_stack(-1,info))));
                     come_call_finalizer2(CVALUE_finalize,right_value241, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                     # 500 "20method.c"
                     dec_stack_ptr(1,info);
                     # 511 "20method.c"
-                    while(_while_condtional34=(_Bool)1,                    _while_condtional34) {
+                    while(_while_condtional36=(_Bool)1,                    _while_condtional36) {
                         # 509 "20method.c"
                         # 503 "20method.c"
-                        if(_if_conditional331=list$1CVALUEphp_operator_load_element(come_params_243,i_263)==((void*)0),                        _if_conditional331) {
+                        if(_if_conditional336=list$1CVALUEphp_operator_load_element(come_params_246,i_266)==((void*)0),                        _if_conditional336) {
                             # 504 "20method.c"
                             break;
                         }
                         else {
                             # 507 "20method.c"
-                            i_263++;
+                            i_266++;
                         }
                     }
                     # 514 "20method.c"
                     # 511 "20method.c"
-                    if(_if_conditional332=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_232,i_263), "20method.c", 511, 13)),                    _if_conditional332) {
+                    if(_if_conditional337=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_235,i_266), "20method.c", 511, 13)),                    _if_conditional337) {
                         # 512 "20method.c"
-                        check_assign_type(((char*)(right_value244=xsprintf("\%s param num \%s is assinged to",((char*)(right_value242=charp_to_string(fun_name_172))),((char*)(right_value243=int_to_string(i_263)))))),((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_232,i_263), "20method.c", 512, 14)),come_value_271->type,come_value_271,(_Bool)0,(_Bool)1,info);
+                        check_assign_type(((char*)(right_value244=xsprintf("\%s param num \%s is assinged to",((char*)(right_value242=charp_to_string(fun_name_172))),((char*)(right_value243=int_to_string(i_266)))))),((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_235,i_266), "20method.c", 512, 14)),come_value_274->type,come_value_274,(_Bool)0,(_Bool)1,info);
                         right_value242 = come_decrement_ref_count2(right_value242, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         right_value243 = come_decrement_ref_count2(right_value243, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         right_value244 = come_decrement_ref_count2(right_value244, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                     }
                     # 518 "20method.c"
                     # 514 "20method.c"
-                    if(_if_conditional333=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_232,i_263), "20method.c", 514, 15))&&((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_232,i_263), "20method.c", 514, 16))->mHeap&&come_value_271->type->mHeap,                    _if_conditional333) {
+                    if(_if_conditional338=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_235,i_266), "20method.c", 514, 15))&&((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_235,i_266), "20method.c", 514, 16))->mHeap&&come_value_274->type->mHeap,                    _if_conditional338) {
                         # 515 "20method.c"
-                        std_move(((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_232,i_263), "20method.c", 515, 17)),come_value_271->type,come_value_271,info);
+                        std_move(((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_235,i_266), "20method.c", 515, 17)),come_value_274->type,come_value_274,info);
                     }
                     # 518 "20method.c"
-                    list$1CVALUEph_replace(come_params_243,i_263,(struct CVALUE*)come_increment_ref_count(come_value_271));
+                    list$1CVALUEph_replace(come_params_246,i_266,(struct CVALUE*)come_increment_ref_count(come_value_274));
                     # 519 "20method.c"
-                    i_263++;
-                    come_call_finalizer2(CVALUE_finalize,come_value_271, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                    i_266++;
+                    come_call_finalizer2(CVALUE_finalize,come_value_274, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 }
             }
-            label_266 = come_decrement_ref_count2(label_266, (void*)0, (void*)0, 0, 0, 0, (void*)0);
-            if(node_267) { node_267 = come_decrement_ref_count2(node_267, ((struct sNode*)node_267)->finalize, ((struct sNode*)node_267)->_protocol_obj, 0, 0, 0, (void*)0); } 
+            label_269 = come_decrement_ref_count2(label_269, (void*)0, (void*)0, 0, 0, 0, (void*)0);
+            if(node_270) { node_270 = come_decrement_ref_count2(node_270, ((struct sNode*)node_270)->finalize, ((struct sNode*)node_270)->_protocol_obj, 0, 0, 0, (void*)0); } 
         }
         # 532 "20method.c"
-        while(_while_condtional36=(_Bool)1,        _while_condtional36) {
+        while(_while_condtional38=(_Bool)1,        _while_condtional38) {
             # 530 "20method.c"
             # 524 "20method.c"
-            if(_if_conditional334=list$1CVALUEphp_operator_load_element(come_params_243,i_263)==((void*)0),            _if_conditional334) {
+            if(_if_conditional339=list$1CVALUEphp_operator_load_element(come_params_246,i_266)==((void*)0),            _if_conditional339) {
                 # 525 "20method.c"
                 break;
             }
             else {
                 # 528 "20method.c"
-                i_263++;
+                i_266++;
             }
         }
         # 532 "20method.c"
-        obj_array_type_275=obj_type_179->mOriginalLoadVarType->v1;
+        obj_array_type_278=obj_type_179->mOriginalLoadVarType->v1;
         # 655 "20method.c"
         # 533 "20method.c"
-        if(_if_conditional335=obj_array_type_275&&list$1sNodeph_length(obj_array_type_275->mArrayNum)>0,        _if_conditional335) {
+        if(_if_conditional340=obj_array_type_278&&list$1sNodeph_length(obj_array_type_278->mArrayNum)>0,        _if_conditional340) {
             # 534 "20method.c"
-            array_method_name_276=(char*)come_increment_ref_count(((char*)(right_value245=create_method_name(obj_array_type_275,(_Bool)0,fun_name_172,info,(_Bool)0))));
+            array_method_name_279=(char*)come_increment_ref_count(((char*)(right_value245=create_method_name(obj_array_type_278,(_Bool)0,fun_name_172,info,(_Bool)0))));
             right_value245 = come_decrement_ref_count2(right_value245, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
             # 653 "20method.c"
             # 535 "20method.c"
-            if(_if_conditional336=string_operator_equals(generics_fun_name_218,array_method_name_276),            _if_conditional336) {
+            if(_if_conditional341=string_operator_equals(generics_fun_name_218,array_method_name_279),            _if_conditional341) {
                 # 652 "20method.c"
                 # 536 "20method.c"
-                if(_if_conditional337=charp_operator_equals(fun_name_172,"to_pointer"),                _if_conditional337) {
+                if(_if_conditional342=charp_operator_equals(fun_name_172,"to_pointer"),                _if_conditional342) {
                     # 537 "20method.c"
-                    buf_277=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value247=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value246=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 537, "buffer"))))))));
+                    buf_280=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value247=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value246=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 537, "buffer"))))))));
                     come_call_finalizer2(buffer_finalize,right_value246, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                     come_call_finalizer2(buffer_finalize,right_value247, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                     # 539 "20method.c"
-                    i_278=0;
+                    i_281=0;
                     # 556 "20method.c"
-                    for(                    o2_saved_279=(struct list$1sNodeph*)come_increment_ref_count((obj_array_type_275->mArrayNum)),it_282=list$1sNodeph_begin((o2_saved_279));                    !list$1sNodeph_end((o2_saved_279));                    it_282=list$1sNodeph_next((o2_saved_279))                    ){
+                    for(                    o2_saved_282=(struct list$1sNodeph*)come_increment_ref_count((obj_array_type_278->mArrayNum)),it_285=list$1sNodeph_begin((o2_saved_282));                    !list$1sNodeph_end((o2_saved_282));                    it_285=list$1sNodeph_next((o2_saved_282))                    ){
                         # 546 "20method.c"
                         # 541 "20method.c"
-                        if(_if_conditional342=!node_compile(it_282,info),                        _if_conditional342) {
+                        if(_if_conditional347=!node_compile(it_285,info),                        _if_conditional347) {
                             # 542 "20method.c"
                             err_msg(info,"invalid array num");
                             # 543 "20method.c"
                             exit(1);
                         }
                         # 546 "20method.c"
-                        come_value_285=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value248=get_value_from_stack(-1,info))));
+                        come_value_288=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value248=get_value_from_stack(-1,info))));
                         come_call_finalizer2(CVALUE_finalize,right_value248, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                         # 547 "20method.c"
                         dec_stack_ptr(1,info);
                         # 549 "20method.c"
-                        buffer_append_str(buf_277,((char*)(right_value249=xsprintf("%s",come_value_285->c_value))));
+                        buffer_append_str(buf_280,((char*)(right_value249=xsprintf("%s",come_value_288->c_value))));
                         right_value249 = come_decrement_ref_count2(right_value249, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         # 553 "20method.c"
                         # 550 "20method.c"
-                        if(_if_conditional343=i_278!=list$1sNodeph_length(obj_array_type_275->mArrayNum)-1,                        _if_conditional343) {
+                        if(_if_conditional348=i_281!=list$1sNodeph_length(obj_array_type_278->mArrayNum)-1,                        _if_conditional348) {
                             # 551 "20method.c"
-                            buffer_append_str(buf_277,"*");
+                            buffer_append_str(buf_280,"*");
                         }
                         # 553 "20method.c"
-                        i_278++;
-                        come_call_finalizer2(CVALUE_finalize,come_value_285, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        i_281++;
+                        come_call_finalizer2(CVALUE_finalize,come_value_288, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                     }
-                    come_call_finalizer2(list$1sNodephp_finalize,o2_saved_279, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                    come_call_finalizer2(list$1sNodephp_finalize,o2_saved_282, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                     # 556 "20method.c"
-                    come_value_286=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value250=(struct CVALUE*)come_calloc(1, sizeof(struct CVALUE)*(1), "20method.c", 556, "CVALUE"))));
+                    come_value_289=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value250=(struct CVALUE*)come_calloc(1, sizeof(struct CVALUE)*(1), "20method.c", 556, "CVALUE"))));
                     come_call_finalizer2(CVALUE_finalize,right_value250, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                     # 558 "20method.c"
-                    __dec_obj77=come_value_286->c_value;
-                    come_value_286->c_value=(char*)come_increment_ref_count(((char*)(right_value251=buffer_to_string(buf_277))));
+                    __dec_obj77=come_value_289->c_value;
+                    come_value_289->c_value=(char*)come_increment_ref_count(((char*)(right_value251=buffer_to_string(buf_280))));
                     __dec_obj77 = come_decrement_ref_count2(__dec_obj77, (void*)0, (void*)0, 0,0,0, (void*)0);
                     right_value251 = come_decrement_ref_count2(right_value251, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                     # 559 "20method.c"
-                    come_value_286->var=((void*)0);
+                    come_value_289->var=((void*)0);
                     # 560 "20method.c"
-                    __dec_obj78=come_value_286->type;
-                    come_value_286->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value253=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value252=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "20method.c", 560, "sType")))),"long",(_Bool)0,info))));
+                    __dec_obj78=come_value_289->type;
+                    come_value_289->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value253=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value252=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "20method.c", 560, "sType")))),"long",(_Bool)0,info))));
                     come_call_finalizer2(sType_finalize,__dec_obj78, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                     come_call_finalizer2(sType_finalize,right_value252, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                     come_call_finalizer2(sType_finalize,right_value253, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                     # 562 "20method.c"
-                    list$1CVALUEph_replace(come_params_243,1,(struct CVALUE*)come_increment_ref_count(come_value_286));
+                    list$1CVALUEph_replace(come_params_246,1,(struct CVALUE*)come_increment_ref_count(come_value_289));
                     # 563 "20method.c"
                     list$1tuple2$2charphsNodephph_push_back(params_173,(struct tuple2$2charphvoidp*)come_increment_ref_count(((struct tuple2$2charphvoidp*)(right_value259=tuple2$2charphvoidp_initialize((struct tuple2$2charphvoidp*)come_increment_ref_count(((struct tuple2$2charphvoidp*)(right_value258=(struct tuple2$2charphvoidp*)come_calloc(1, sizeof(struct tuple2$2charphvoidp)*(1), "20method.c", 563, "struct tuple2$2charphvoidp")))),(char*)come_increment_ref_count(((char*)(right_value257=xsprintf("len")))),((void*)0))))));
                     right_value257 = come_decrement_ref_count2(right_value257, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                     right_value258 = come_decrement_ref_count2(right_value258, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                     come_call_finalizer2(tuple2$2charphvoidpp_finalize,right_value259, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                    come_call_finalizer2(buffer_finalize,buf_277, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                    come_call_finalizer2(CVALUE_finalize,come_value_286, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                    come_call_finalizer2(buffer_finalize,buf_280, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                    come_call_finalizer2(CVALUE_finalize,come_value_289, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 }
                 else {
                     # 652 "20method.c"
                     # 565 "20method.c"
-                    if(_if_conditional347=charp_operator_equals(fun_name_172,"length"),                    _if_conditional347) {
+                    if(_if_conditional352=charp_operator_equals(fun_name_172,"length"),                    _if_conditional352) {
                         # 566 "20method.c"
-                        buf_290=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value261=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value260=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 566, "buffer"))))))));
+                        buf_293=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value261=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value260=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 566, "buffer"))))))));
                         come_call_finalizer2(buffer_finalize,right_value260, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                         come_call_finalizer2(buffer_finalize,right_value261, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                         # 568 "20method.c"
-                        i_291=0;
+                        i_294=0;
                         # 585 "20method.c"
-                        for(                        o2_saved_292=(struct list$1sNodeph*)come_increment_ref_count((obj_array_type_275->mArrayNum)),it_293=list$1sNodeph_begin((o2_saved_292));                        !list$1sNodeph_end((o2_saved_292));                        it_293=list$1sNodeph_next((o2_saved_292))                        ){
+                        for(                        o2_saved_295=(struct list$1sNodeph*)come_increment_ref_count((obj_array_type_278->mArrayNum)),it_296=list$1sNodeph_begin((o2_saved_295));                        !list$1sNodeph_end((o2_saved_295));                        it_296=list$1sNodeph_next((o2_saved_295))                        ){
                             # 575 "20method.c"
                             # 570 "20method.c"
-                            if(_if_conditional348=!node_compile(it_293,info),                            _if_conditional348) {
+                            if(_if_conditional353=!node_compile(it_296,info),                            _if_conditional353) {
                                 # 571 "20method.c"
                                 err_msg(info,"invalid array num");
                                 # 572 "20method.c"
                                 exit(1);
                             }
                             # 575 "20method.c"
-                            come_value_294=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value262=get_value_from_stack(-1,info))));
+                            come_value_297=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value262=get_value_from_stack(-1,info))));
                             come_call_finalizer2(CVALUE_finalize,right_value262, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                             # 576 "20method.c"
                             dec_stack_ptr(1,info);
                             # 578 "20method.c"
-                            buffer_append_str(buf_290,((char*)(right_value263=xsprintf("%s",come_value_294->c_value))));
+                            buffer_append_str(buf_293,((char*)(right_value263=xsprintf("%s",come_value_297->c_value))));
                             right_value263 = come_decrement_ref_count2(right_value263, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                             # 582 "20method.c"
                             # 579 "20method.c"
-                            if(_if_conditional349=i_291!=list$1sNodeph_length(obj_array_type_275->mArrayNum)-1,                            _if_conditional349) {
+                            if(_if_conditional354=i_294!=list$1sNodeph_length(obj_array_type_278->mArrayNum)-1,                            _if_conditional354) {
                                 # 580 "20method.c"
-                                buffer_append_str(buf_290,"*");
+                                buffer_append_str(buf_293,"*");
                             }
                             # 582 "20method.c"
-                            i_291++;
-                            come_call_finalizer2(CVALUE_finalize,come_value_294, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                            i_294++;
+                            come_call_finalizer2(CVALUE_finalize,come_value_297, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         }
-                        come_call_finalizer2(list$1sNodephp_finalize,o2_saved_292, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        come_call_finalizer2(list$1sNodephp_finalize,o2_saved_295, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         # 585 "20method.c"
-                        come_value_295=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value264=(struct CVALUE*)come_calloc(1, sizeof(struct CVALUE)*(1), "20method.c", 585, "CVALUE"))));
+                        come_value_298=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value264=(struct CVALUE*)come_calloc(1, sizeof(struct CVALUE)*(1), "20method.c", 585, "CVALUE"))));
                         come_call_finalizer2(CVALUE_finalize,right_value264, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                         # 587 "20method.c"
-                        __dec_obj83=come_value_295->c_value;
-                        come_value_295->c_value=(char*)come_increment_ref_count(((char*)(right_value265=buffer_to_string(buf_290))));
+                        __dec_obj83=come_value_298->c_value;
+                        come_value_298->c_value=(char*)come_increment_ref_count(((char*)(right_value265=buffer_to_string(buf_293))));
                         __dec_obj83 = come_decrement_ref_count2(__dec_obj83, (void*)0, (void*)0, 0,0,0, (void*)0);
                         right_value265 = come_decrement_ref_count2(right_value265, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         # 588 "20method.c"
-                        come_value_295->var=((void*)0);
+                        come_value_298->var=((void*)0);
                         # 589 "20method.c"
-                        __dec_obj84=come_value_295->type;
-                        come_value_295->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value267=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value266=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "20method.c", 589, "sType")))),"long",(_Bool)0,info))));
+                        __dec_obj84=come_value_298->type;
+                        come_value_298->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value267=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value266=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "20method.c", 589, "sType")))),"long",(_Bool)0,info))));
                         come_call_finalizer2(sType_finalize,__dec_obj84, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         come_call_finalizer2(sType_finalize,right_value266, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                         come_call_finalizer2(sType_finalize,right_value267, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                         # 591 "20method.c"
-                        list$1CVALUEph_replace(come_params_243,1,(struct CVALUE*)come_increment_ref_count(come_value_295));
+                        list$1CVALUEph_replace(come_params_246,1,(struct CVALUE*)come_increment_ref_count(come_value_298));
                         # 592 "20method.c"
                         list$1tuple2$2charphsNodephph_push_back(params_173,(struct tuple2$2charphvoidp*)come_increment_ref_count(((struct tuple2$2charphvoidp*)(right_value270=tuple2$2charphvoidp_initialize((struct tuple2$2charphvoidp*)come_increment_ref_count(((struct tuple2$2charphvoidp*)(right_value269=(struct tuple2$2charphvoidp*)come_calloc(1, sizeof(struct tuple2$2charphvoidp)*(1), "20method.c", 592, "struct tuple2$2charphvoidp")))),(char*)come_increment_ref_count(((char*)(right_value268=xsprintf("len")))),((void*)0))))));
                         right_value268 = come_decrement_ref_count2(right_value268, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         right_value269 = come_decrement_ref_count2(right_value269, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         come_call_finalizer2(tuple2$2charphvoidpp_finalize,right_value270, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                        come_call_finalizer2(buffer_finalize,buf_290, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                        come_call_finalizer2(CVALUE_finalize,come_value_295, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        come_call_finalizer2(buffer_finalize,buf_293, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        come_call_finalizer2(CVALUE_finalize,come_value_298, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                     }
                     else {
                         # 652 "20method.c"
                         # 594 "20method.c"
-                        if(_if_conditional350=charp_operator_equals(fun_name_172,"to_buffer"),                        _if_conditional350) {
+                        if(_if_conditional355=charp_operator_equals(fun_name_172,"to_buffer"),                        _if_conditional355) {
                             # 595 "20method.c"
-                            buf_296=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value272=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value271=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 595, "buffer"))))))));
+                            buf_299=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value272=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value271=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 595, "buffer"))))))));
                             come_call_finalizer2(buffer_finalize,right_value271, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                             come_call_finalizer2(buffer_finalize,right_value272, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                             # 597 "20method.c"
-                            i_297=0;
+                            i_300=0;
                             # 614 "20method.c"
-                            for(                            o2_saved_298=(struct list$1sNodeph*)come_increment_ref_count((obj_array_type_275->mArrayNum)),it_299=list$1sNodeph_begin((o2_saved_298));                            !list$1sNodeph_end((o2_saved_298));                            it_299=list$1sNodeph_next((o2_saved_298))                            ){
+                            for(                            o2_saved_301=(struct list$1sNodeph*)come_increment_ref_count((obj_array_type_278->mArrayNum)),it_302=list$1sNodeph_begin((o2_saved_301));                            !list$1sNodeph_end((o2_saved_301));                            it_302=list$1sNodeph_next((o2_saved_301))                            ){
                                 # 604 "20method.c"
                                 # 599 "20method.c"
-                                if(_if_conditional351=!node_compile(it_299,info),                                _if_conditional351) {
+                                if(_if_conditional356=!node_compile(it_302,info),                                _if_conditional356) {
                                     # 600 "20method.c"
                                     err_msg(info,"invalid array num");
                                     # 601 "20method.c"
                                     exit(1);
                                 }
                                 # 604 "20method.c"
-                                come_value_300=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value273=get_value_from_stack(-1,info))));
+                                come_value_303=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value273=get_value_from_stack(-1,info))));
                                 come_call_finalizer2(CVALUE_finalize,right_value273, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                 # 605 "20method.c"
                                 dec_stack_ptr(1,info);
                                 # 607 "20method.c"
-                                buffer_append_str(buf_296,((char*)(right_value274=xsprintf("%s",come_value_300->c_value))));
+                                buffer_append_str(buf_299,((char*)(right_value274=xsprintf("%s",come_value_303->c_value))));
                                 right_value274 = come_decrement_ref_count2(right_value274, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 # 611 "20method.c"
                                 # 608 "20method.c"
-                                if(_if_conditional352=i_297!=list$1sNodeph_length(obj_array_type_275->mArrayNum)-1,                                _if_conditional352) {
+                                if(_if_conditional357=i_300!=list$1sNodeph_length(obj_array_type_278->mArrayNum)-1,                                _if_conditional357) {
                                     # 609 "20method.c"
-                                    buffer_append_str(buf_296,"*");
+                                    buffer_append_str(buf_299,"*");
                                 }
                                 # 611 "20method.c"
-                                i_297++;
-                                come_call_finalizer2(CVALUE_finalize,come_value_300, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                                i_300++;
+                                come_call_finalizer2(CVALUE_finalize,come_value_303, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                             }
-                            come_call_finalizer2(list$1sNodephp_finalize,o2_saved_298, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                            come_call_finalizer2(list$1sNodephp_finalize,o2_saved_301, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                             # 614 "20method.c"
-                            come_value_301=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value275=(struct CVALUE*)come_calloc(1, sizeof(struct CVALUE)*(1), "20method.c", 614, "CVALUE"))));
+                            come_value_304=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value275=(struct CVALUE*)come_calloc(1, sizeof(struct CVALUE)*(1), "20method.c", 614, "CVALUE"))));
                             come_call_finalizer2(CVALUE_finalize,right_value275, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                             # 616 "20method.c"
-                            __dec_obj85=come_value_301->c_value;
-                            come_value_301->c_value=(char*)come_increment_ref_count(((char*)(right_value276=buffer_to_string(buf_296))));
+                            __dec_obj85=come_value_304->c_value;
+                            come_value_304->c_value=(char*)come_increment_ref_count(((char*)(right_value276=buffer_to_string(buf_299))));
                             __dec_obj85 = come_decrement_ref_count2(__dec_obj85, (void*)0, (void*)0, 0,0,0, (void*)0);
                             right_value276 = come_decrement_ref_count2(right_value276, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                             # 617 "20method.c"
-                            come_value_301->var=((void*)0);
+                            come_value_304->var=((void*)0);
                             # 618 "20method.c"
-                            __dec_obj86=come_value_301->type;
-                            come_value_301->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value278=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value277=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "20method.c", 618, "sType")))),"long",(_Bool)0,info))));
+                            __dec_obj86=come_value_304->type;
+                            come_value_304->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value278=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value277=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "20method.c", 618, "sType")))),"long",(_Bool)0,info))));
                             come_call_finalizer2(sType_finalize,__dec_obj86, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                             come_call_finalizer2(sType_finalize,right_value277, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                             come_call_finalizer2(sType_finalize,right_value278, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                             # 620 "20method.c"
-                            list$1CVALUEph_replace(come_params_243,1,(struct CVALUE*)come_increment_ref_count(come_value_301));
+                            list$1CVALUEph_replace(come_params_246,1,(struct CVALUE*)come_increment_ref_count(come_value_304));
                             # 621 "20method.c"
                             list$1tuple2$2charphsNodephph_push_back(params_173,(struct tuple2$2charphvoidp*)come_increment_ref_count(((struct tuple2$2charphvoidp*)(right_value281=tuple2$2charphvoidp_initialize((struct tuple2$2charphvoidp*)come_increment_ref_count(((struct tuple2$2charphvoidp*)(right_value280=(struct tuple2$2charphvoidp*)come_calloc(1, sizeof(struct tuple2$2charphvoidp)*(1), "20method.c", 621, "struct tuple2$2charphvoidp")))),(char*)come_increment_ref_count(((char*)(right_value279=xsprintf("len")))),((void*)0))))));
                             right_value279 = come_decrement_ref_count2(right_value279, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                             right_value280 = come_decrement_ref_count2(right_value280, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                             come_call_finalizer2(tuple2$2charphvoidpp_finalize,right_value281, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                            come_call_finalizer2(buffer_finalize,buf_296, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                            come_call_finalizer2(CVALUE_finalize,come_value_301, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                            come_call_finalizer2(buffer_finalize,buf_299, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                            come_call_finalizer2(CVALUE_finalize,come_value_304, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         }
                         else {
                             # 652 "20method.c"
                             # 623 "20method.c"
-                            if(_if_conditional353=charp_operator_equals(fun_name_172,"to_list"),                            _if_conditional353) {
+                            if(_if_conditional358=charp_operator_equals(fun_name_172,"to_list"),                            _if_conditional358) {
                                 # 624 "20method.c"
-                                buf_302=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value283=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value282=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 624, "buffer"))))))));
+                                buf_305=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value283=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value282=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 624, "buffer"))))))));
                                 come_call_finalizer2(buffer_finalize,right_value282, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                 come_call_finalizer2(buffer_finalize,right_value283, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                 # 626 "20method.c"
-                                i_303=0;
+                                i_306=0;
                                 # 643 "20method.c"
-                                for(                                o2_saved_304=(struct list$1sNodeph*)come_increment_ref_count((obj_array_type_275->mArrayNum)),it_305=list$1sNodeph_begin((o2_saved_304));                                !list$1sNodeph_end((o2_saved_304));                                it_305=list$1sNodeph_next((o2_saved_304))                                ){
+                                for(                                o2_saved_307=(struct list$1sNodeph*)come_increment_ref_count((obj_array_type_278->mArrayNum)),it_308=list$1sNodeph_begin((o2_saved_307));                                !list$1sNodeph_end((o2_saved_307));                                it_308=list$1sNodeph_next((o2_saved_307))                                ){
                                     # 633 "20method.c"
                                     # 628 "20method.c"
-                                    if(_if_conditional354=!node_compile(it_305,info),                                    _if_conditional354) {
+                                    if(_if_conditional359=!node_compile(it_308,info),                                    _if_conditional359) {
                                         # 629 "20method.c"
                                         err_msg(info,"invalid array num");
                                         # 630 "20method.c"
                                         exit(1);
                                     }
                                     # 633 "20method.c"
-                                    come_value_306=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value284=get_value_from_stack(-1,info))));
+                                    come_value_309=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value284=get_value_from_stack(-1,info))));
                                     come_call_finalizer2(CVALUE_finalize,right_value284, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                     # 634 "20method.c"
                                     dec_stack_ptr(1,info);
                                     # 636 "20method.c"
-                                    buffer_append_str(buf_302,((char*)(right_value285=xsprintf("%s",come_value_306->c_value))));
+                                    buffer_append_str(buf_305,((char*)(right_value285=xsprintf("%s",come_value_309->c_value))));
                                     right_value285 = come_decrement_ref_count2(right_value285, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                     # 640 "20method.c"
                                     # 637 "20method.c"
-                                    if(_if_conditional355=i_303!=list$1sNodeph_length(obj_array_type_275->mArrayNum)-1,                                    _if_conditional355) {
+                                    if(_if_conditional360=i_306!=list$1sNodeph_length(obj_array_type_278->mArrayNum)-1,                                    _if_conditional360) {
                                         # 638 "20method.c"
-                                        buffer_append_str(buf_302,"*");
+                                        buffer_append_str(buf_305,"*");
                                     }
                                     # 640 "20method.c"
-                                    i_303++;
-                                    come_call_finalizer2(CVALUE_finalize,come_value_306, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                                    i_306++;
+                                    come_call_finalizer2(CVALUE_finalize,come_value_309, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 }
-                                come_call_finalizer2(list$1sNodephp_finalize,o2_saved_304, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                                come_call_finalizer2(list$1sNodephp_finalize,o2_saved_307, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 # 643 "20method.c"
-                                come_value_307=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value286=(struct CVALUE*)come_calloc(1, sizeof(struct CVALUE)*(1), "20method.c", 643, "CVALUE"))));
+                                come_value_310=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value286=(struct CVALUE*)come_calloc(1, sizeof(struct CVALUE)*(1), "20method.c", 643, "CVALUE"))));
                                 come_call_finalizer2(CVALUE_finalize,right_value286, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                 # 645 "20method.c"
-                                __dec_obj87=come_value_307->c_value;
-                                come_value_307->c_value=(char*)come_increment_ref_count(((char*)(right_value287=buffer_to_string(buf_302))));
+                                __dec_obj87=come_value_310->c_value;
+                                come_value_310->c_value=(char*)come_increment_ref_count(((char*)(right_value287=buffer_to_string(buf_305))));
                                 __dec_obj87 = come_decrement_ref_count2(__dec_obj87, (void*)0, (void*)0, 0,0,0, (void*)0);
                                 right_value287 = come_decrement_ref_count2(right_value287, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 # 646 "20method.c"
-                                come_value_307->var=((void*)0);
+                                come_value_310->var=((void*)0);
                                 # 647 "20method.c"
-                                __dec_obj88=come_value_307->type;
-                                come_value_307->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value289=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value288=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "20method.c", 647, "sType")))),"long",(_Bool)0,info))));
+                                __dec_obj88=come_value_310->type;
+                                come_value_310->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value289=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value288=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "20method.c", 647, "sType")))),"long",(_Bool)0,info))));
                                 come_call_finalizer2(sType_finalize,__dec_obj88, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 come_call_finalizer2(sType_finalize,right_value288, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                 come_call_finalizer2(sType_finalize,right_value289, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                 # 649 "20method.c"
-                                list$1CVALUEph_replace(come_params_243,1,(struct CVALUE*)come_increment_ref_count(come_value_307));
+                                list$1CVALUEph_replace(come_params_246,1,(struct CVALUE*)come_increment_ref_count(come_value_310));
                                 # 650 "20method.c"
                                 list$1tuple2$2charphsNodephph_push_back(params_173,(struct tuple2$2charphvoidp*)come_increment_ref_count(((struct tuple2$2charphvoidp*)(right_value292=tuple2$2charphvoidp_initialize((struct tuple2$2charphvoidp*)come_increment_ref_count(((struct tuple2$2charphvoidp*)(right_value291=(struct tuple2$2charphvoidp*)come_calloc(1, sizeof(struct tuple2$2charphvoidp)*(1), "20method.c", 650, "struct tuple2$2charphvoidp")))),(char*)come_increment_ref_count(((char*)(right_value290=xsprintf("len")))),((void*)0))))));
                                 right_value290 = come_decrement_ref_count2(right_value290, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 right_value291 = come_decrement_ref_count2(right_value291, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 come_call_finalizer2(tuple2$2charphvoidpp_finalize,right_value292, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                                come_call_finalizer2(buffer_finalize,buf_302, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                                come_call_finalizer2(CVALUE_finalize,come_value_307, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                                come_call_finalizer2(buffer_finalize,buf_305, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                                come_call_finalizer2(CVALUE_finalize,come_value_310, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                             }
                         }
                     }
                 }
             }
-            array_method_name_276 = come_decrement_ref_count2(array_method_name_276, (void*)0, (void*)0, 0, 0, 0, (void*)0);
+            array_method_name_279 = come_decrement_ref_count2(array_method_name_279, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
         # 701 "20method.c"
         # 655 "20method.c"
-        if(_if_conditional357=list$1tuple2$2charphsNodephph_length(params_173)<list$1sTypeph_length(fun_219->mParamTypes)+(method_block_175?-2:0),        _if_conditional357) {
+        if(_if_conditional362=list$1tuple2$2charphsNodephph_length(params_173)<list$1sTypeph_length(fun_219->mParamTypes)+(method_block_175?-2:0),        _if_conditional362) {
             # 699 "20method.c"
-            for(            ;            i_263<list$1sTypeph_length(fun_219->mParamTypes)+(method_block_175?-2:0);            i_263++            ){
+            for(            ;            i_266<list$1sTypeph_length(fun_219->mParamTypes)+(method_block_175?-2:0);            i_266++            ){
                 # 658 "20method.c"
-                default_param_308=(char*)come_increment_ref_count(((char*)(right_value293=string_clone(list$1charphp_operator_load_element(fun_219->mParamDefaultParametors,i_263)))));
+                default_param_311=(char*)come_increment_ref_count(((char*)(right_value293=string_clone(list$1charphp_operator_load_element(fun_219->mParamDefaultParametors,i_266)))));
                 right_value293 = come_decrement_ref_count2(right_value293, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                 # 659 "20method.c"
-                param_name_309=((char*)come_null_check(list$1charphp_operator_load_element(fun_219->mParamNames,i_263), "20method.c", 659, 18));
+                param_name_312=((char*)come_null_check(list$1charphp_operator_load_element(fun_219->mParamNames,i_266), "20method.c", 659, 18));
                 # 698 "20method.c"
                 # 661 "20method.c"
-                if(_if_conditional358=default_param_308&&string_operator_not_equals(default_param_308,"")&&list$1CVALUEphp_operator_load_element(come_params_243,i_263)==((void*)0),                _if_conditional358) {
+                if(_if_conditional363=default_param_311&&string_operator_not_equals(default_param_311,"")&&list$1CVALUEphp_operator_load_element(come_params_246,i_266)==((void*)0),                _if_conditional363) {
                     # 662 "20method.c"
-                    source_310=(struct buffer*)come_increment_ref_count(info->source);
+                    source_313=(struct buffer*)come_increment_ref_count(info->source);
                     # 663 "20method.c"
-                    p_311=info->p;
+                    p_314=info->p;
                     # 664 "20method.c"
-                    head_312=info->head;
+                    head_315=info->head;
                     # 665 "20method.c"
-                    sline_313=info->sline;
+                    sline_316=info->sline;
                     # 667 "20method.c"
                     __dec_obj89=info->source;
-                    info->source=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value294=string_to_buffer(default_param_308))));
+                    info->source=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value294=string_to_buffer(default_param_311))));
                     come_call_finalizer2(buffer_finalize,__dec_obj89, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                     come_call_finalizer2(buffer_finalize,right_value294, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                     # 668 "20method.c"
@@ -9033,83 +9046,83 @@ right_value359 = (void*)0;
                     # 669 "20method.c"
                     info->head=info->source->buf;
                     # 671 "20method.c"
-                    node_314=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value295=expression_v13(info))));
+                    node_317=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value295=expression_v13(info))));
                     if(right_value295) { right_value295 = come_decrement_ref_count2(right_value295, ((struct sNode*)right_value295)->finalize, ((struct sNode*)right_value295)->_protocol_obj, 1, 0, 0, __result_obj__); } 
                     # 677 "20method.c"
                     # 673 "20method.c"
-                    if(_if_conditional359=!node_compile(node_314,info),                    _if_conditional359) {
+                    if(_if_conditional364=!node_compile(node_317,info),                    _if_conditional364) {
                         # 674 "20method.c"
-                        __result214__ = (_Bool)0;
-                        come_call_finalizer2(buffer_finalize,source_310, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                        if(node_314) { node_314 = come_decrement_ref_count2(node_314, ((struct sNode*)node_314)->finalize, ((struct sNode*)node_314)->_protocol_obj, 0, 0, 0, (void*)0); } 
-                        default_param_308 = come_decrement_ref_count2(default_param_308, (void*)0, (void*)0, 0, 0, 0, (void*)0);
+                        __result218__ = (_Bool)0;
+                        come_call_finalizer2(buffer_finalize,source_313, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        if(node_317) { node_317 = come_decrement_ref_count2(node_317, ((struct sNode*)node_317)->finalize, ((struct sNode*)node_317)->_protocol_obj, 0, 0, 0, (void*)0); } 
+                        default_param_311 = come_decrement_ref_count2(default_param_311, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         generics_fun_name_218 = come_decrement_ref_count2(generics_fun_name_218, (void*)0, (void*)0, 0, 0, 0, (void*)0);
-                        come_call_finalizer2(sType_finalize,result_type_230, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                        come_call_finalizer2(sType_finalize,result_type2_231, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                        come_call_finalizer2(list$1sTypephp_finalize,param_types_232, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                        come_call_finalizer2(list$1CVALUEphp_finalize,come_params_243, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        come_call_finalizer2(sType_finalize,result_type_233, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        come_call_finalizer2(sType_finalize,result_type2_234, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        come_call_finalizer2(list$1sTypephp_finalize,param_types_235, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        come_call_finalizer2(list$1CVALUEphp_finalize,come_params_246, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         come_call_finalizer2(list$1sTypephp_finalize,method_generics_types_177, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         come_call_finalizer2(CVALUE_finalize,obj_value_178, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         come_call_finalizer2(sType_finalize,obj_type_179, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                        return __result214__;
+                        return __result218__;
                     }
                     # 677 "20method.c"
                     __dec_obj90=info->source;
-                    info->source=(struct buffer*)come_increment_ref_count(source_310);
+                    info->source=(struct buffer*)come_increment_ref_count(source_313);
                     come_call_finalizer2(buffer_finalize,__dec_obj90, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                     # 678 "20method.c"
-                    info->p=p_311;
+                    info->p=p_314;
                     # 679 "20method.c"
-                    info->head=head_312;
+                    info->head=head_315;
                     # 680 "20method.c"
-                    info->sline=sline_313;
+                    info->sline=sline_316;
                     # 682 "20method.c"
-                    come_value_315=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value296=get_value_from_stack(-1,info))));
+                    come_value_318=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value296=get_value_from_stack(-1,info))));
                     come_call_finalizer2(CVALUE_finalize,right_value296, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                     # 686 "20method.c"
                     # 683 "20method.c"
-                    if(_if_conditional360=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_232,i_263), "20method.c", 683, 19)),                    _if_conditional360) {
+                    if(_if_conditional365=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_235,i_266), "20method.c", 683, 19)),                    _if_conditional365) {
                         # 684 "20method.c"
-                        check_assign_type(((char*)(right_value299=xsprintf("\%s param num \%s is assinged to",((char*)(right_value297=charp_to_string(fun_name_172))),((char*)(right_value298=int_to_string(i_263)))))),((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_232,i_263), "20method.c", 684, 20)),come_value_315->type,come_value_315,(_Bool)0,(_Bool)1,info);
+                        check_assign_type(((char*)(right_value299=xsprintf("\%s param num \%s is assinged to",((char*)(right_value297=charp_to_string(fun_name_172))),((char*)(right_value298=int_to_string(i_266)))))),((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_235,i_266), "20method.c", 684, 20)),come_value_318->type,come_value_318,(_Bool)0,(_Bool)1,info);
                         right_value297 = come_decrement_ref_count2(right_value297, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         right_value298 = come_decrement_ref_count2(right_value298, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         right_value299 = come_decrement_ref_count2(right_value299, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                     }
                     # 689 "20method.c"
                     # 686 "20method.c"
-                    if(_if_conditional361=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_232,i_263), "20method.c", 686, 21))&&((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_232,i_263), "20method.c", 686, 22))->mHeap&&come_value_315->type->mHeap,                    _if_conditional361) {
+                    if(_if_conditional366=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_235,i_266), "20method.c", 686, 21))&&((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_235,i_266), "20method.c", 686, 22))->mHeap&&come_value_318->type->mHeap,                    _if_conditional366) {
                         # 687 "20method.c"
-                        std_move(((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_232,i_263), "20method.c", 687, 23)),come_value_315->type,come_value_315,info);
+                        std_move(((struct sType*)come_null_check(list$1sTypephp_operator_load_element(param_types_235,i_266), "20method.c", 687, 23)),come_value_318->type,come_value_318,info);
                     }
                     # 689 "20method.c"
-                    list$1CVALUEph_replace(come_params_243,i_263,(struct CVALUE*)come_increment_ref_count(come_value_315));
+                    list$1CVALUEph_replace(come_params_246,i_266,(struct CVALUE*)come_increment_ref_count(come_value_318));
                     # 690 "20method.c"
                     dec_stack_ptr(1,info);
-                    come_call_finalizer2(buffer_finalize,source_310, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                    if(node_314) { node_314 = come_decrement_ref_count2(node_314, ((struct sNode*)node_314)->finalize, ((struct sNode*)node_314)->_protocol_obj, 0, 0, 0, (void*)0); } 
-                    come_call_finalizer2(CVALUE_finalize,come_value_315, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                    come_call_finalizer2(buffer_finalize,source_313, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                    if(node_317) { node_317 = come_decrement_ref_count2(node_317, ((struct sNode*)node_317)->finalize, ((struct sNode*)node_317)->_protocol_obj, 0, 0, 0, (void*)0); } 
+                    come_call_finalizer2(CVALUE_finalize,come_value_318, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 }
                 else {
                     # 697 "20method.c"
                     # 693 "20method.c"
-                    if(_if_conditional362=list$1CVALUEphp_operator_load_element(come_params_243,i_263)==((void*)0),                    _if_conditional362) {
+                    if(_if_conditional367=list$1CVALUEphp_operator_load_element(come_params_246,i_266)==((void*)0),                    _if_conditional367) {
                         # 694 "20method.c"
-                        err_msg(info,"require parametor(%s) %d",fun_219->mName,i_263);
+                        err_msg(info,"require parametor(%s) %d",fun_219->mName,i_266);
                         # 695 "20method.c"
-                        __result215__ = (_Bool)0;
-                        default_param_308 = come_decrement_ref_count2(default_param_308, (void*)0, (void*)0, 0, 0, 0, (void*)0);
+                        __result219__ = (_Bool)0;
+                        default_param_311 = come_decrement_ref_count2(default_param_311, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         generics_fun_name_218 = come_decrement_ref_count2(generics_fun_name_218, (void*)0, (void*)0, 0, 0, 0, (void*)0);
-                        come_call_finalizer2(sType_finalize,result_type_230, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                        come_call_finalizer2(sType_finalize,result_type2_231, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                        come_call_finalizer2(list$1sTypephp_finalize,param_types_232, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                        come_call_finalizer2(list$1CVALUEphp_finalize,come_params_243, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        come_call_finalizer2(sType_finalize,result_type_233, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        come_call_finalizer2(sType_finalize,result_type2_234, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        come_call_finalizer2(list$1sTypephp_finalize,param_types_235, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                        come_call_finalizer2(list$1CVALUEphp_finalize,come_params_246, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         come_call_finalizer2(list$1sTypephp_finalize,method_generics_types_177, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         come_call_finalizer2(CVALUE_finalize,obj_value_178, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         come_call_finalizer2(sType_finalize,obj_type_179, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                        return __result215__;
+                        return __result219__;
                     }
                 }
-                default_param_308 = come_decrement_ref_count2(default_param_308, (void*)0, (void*)0, 0, 0, 0, (void*)0);
+                default_param_311 = come_decrement_ref_count2(default_param_311, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
         }
         # 822 "20method.c"
@@ -9126,82 +9139,82 @@ right_value359 = (void*)0;
             _inf_value1->sname=(void*)sCurrentNode_sname;
             _inf_value1->terminated=(void*)sCurrentNode_terminated;
             _inf_value1->kind=(void*)sCurrentNode_kind;
-            current_stack_frame_node_317=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value304=_inf_value1)));
+            current_stack_frame_node_320=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value304=_inf_value1)));
             come_call_finalizer2(sCurrentNode_finalize,right_value300, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
             come_call_finalizer2(sCurrentNode_finalize,right_value301, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
             if(right_value304) { right_value304 = come_decrement_ref_count2(right_value304, ((struct sNode*)right_value304)->finalize, ((struct sNode*)right_value304)->_protocol_obj, 1, 0, 0, __result_obj__); } 
             # 708 "20method.c"
             # 704 "20method.c"
-            if(_if_conditional368=!node_compile(current_stack_frame_node_317,info),            _if_conditional368) {
+            if(_if_conditional373=!node_compile(current_stack_frame_node_320,info),            _if_conditional373) {
                 # 705 "20method.c"
-                __result218__ = (_Bool)0;
-                if(current_stack_frame_node_317) { current_stack_frame_node_317 = come_decrement_ref_count2(current_stack_frame_node_317, ((struct sNode*)current_stack_frame_node_317)->finalize, ((struct sNode*)current_stack_frame_node_317)->_protocol_obj, 0, 0, 0, (void*)0); } 
+                __result222__ = (_Bool)0;
+                if(current_stack_frame_node_320) { current_stack_frame_node_320 = come_decrement_ref_count2(current_stack_frame_node_320, ((struct sNode*)current_stack_frame_node_320)->finalize, ((struct sNode*)current_stack_frame_node_320)->_protocol_obj, 0, 0, 0, (void*)0); } 
                 generics_fun_name_218 = come_decrement_ref_count2(generics_fun_name_218, (void*)0, (void*)0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(sType_finalize,result_type_230, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(sType_finalize,result_type2_231, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(list$1sTypephp_finalize,param_types_232, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(list$1CVALUEphp_finalize,come_params_243, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(sType_finalize,result_type_233, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(sType_finalize,result_type2_234, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(list$1sTypephp_finalize,param_types_235, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(list$1CVALUEphp_finalize,come_params_246, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(list$1sTypephp_finalize,method_generics_types_177, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(CVALUE_finalize,obj_value_178, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(sType_finalize,obj_type_179, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                return __result218__;
+                return __result222__;
             }
             # 708 "20method.c"
-            come_value_318=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value305=get_value_from_stack(-1,info))));
+            come_value_321=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value305=get_value_from_stack(-1,info))));
             come_call_finalizer2(CVALUE_finalize,right_value305, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
             # 709 "20method.c"
-            list$1CVALUEph_push_back(come_params_243,(struct CVALUE*)come_increment_ref_count(come_value_318));
+            list$1CVALUEph_push_back(come_params_246,(struct CVALUE*)come_increment_ref_count(come_value_321));
             # 710 "20method.c"
             dec_stack_ptr(1,info);
             # 712 "20method.c"
-            method_block2_319=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value307=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value306=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 712, "buffer"))))))));
+            method_block2_322=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value307=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value306=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 712, "buffer"))))))));
             come_call_finalizer2(buffer_finalize,right_value306, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
             come_call_finalizer2(buffer_finalize,right_value307, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
             # 713 "20method.c"
-            method_block_type_320=(struct sType*)come_increment_ref_count(((struct sType*)(right_value308=sType_clone(((struct sType*)come_null_check(list$1sTypephp_operator_load_element(fun_219->mParamTypes,-1), "20method.c", 713, 24))))));
+            method_block_type_323=(struct sType*)come_increment_ref_count(((struct sType*)(right_value308=sType_clone(((struct sType*)come_null_check(list$1sTypephp_operator_load_element(fun_219->mParamTypes,-1), "20method.c", 713, 24))))));
             come_call_finalizer2(sType_finalize,right_value308, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
             # 715 "20method.c"
-            class_name_321=(char*)come_increment_ref_count(((char*)(right_value309=xsprintf("__current_stack%d__",info->current_stack_num))));
+            class_name_324=(char*)come_increment_ref_count(((char*)(right_value309=xsprintf("__current_stack%d__",info->current_stack_num))));
             right_value309 = come_decrement_ref_count2(right_value309, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
             # 717 "20method.c"
-            ((struct sType*)come_null_check(list$1sTypephp_operator_load_element(method_block_type_320->mParamTypes,0), "20method.c", 717, 25))->mClass=map$2charphsClassphp_operator_load_element(info->classes,class_name_321);
+            ((struct sType*)come_null_check(list$1sTypephp_operator_load_element(method_block_type_323->mParamTypes,0), "20method.c", 717, 25))->mClass=map$2charphsClassphp_operator_load_element(info->classes,class_name_324);
             # 718 "20method.c"
             current_stack_frame_struct_325=info->current_stack_frame_struct;
             # 719 "20method.c"
-            info->current_stack_frame_struct=map$2charphsClassphp_operator_load_element(info->classes,class_name_321);
+            info->current_stack_frame_struct=map$2charphsClassphp_operator_load_element(info->classes,class_name_324);
             # 721 "20method.c"
             info->num_method_block++;
             # 728 "20method.c"
             # 723 "20method.c"
-            if(_if_conditional373=string_operator_not_equals(method_block_type_320->mClass->mName,"lambda"),            _if_conditional373) {
+            if(_if_conditional374=string_operator_not_equals(method_block_type_323->mClass->mName,"lambda"),            _if_conditional374) {
                 # 724 "20method.c"
                 err_msg(info,"This function does not have method block(%s)",fun_name_172);
                 # 725 "20method.c"
                 __result223__ = (_Bool)0;
-                if(current_stack_frame_node_317) { current_stack_frame_node_317 = come_decrement_ref_count2(current_stack_frame_node_317, ((struct sNode*)current_stack_frame_node_317)->finalize, ((struct sNode*)current_stack_frame_node_317)->_protocol_obj, 0, 0, 0, (void*)0); } 
-                come_call_finalizer2(CVALUE_finalize,come_value_318, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(buffer_finalize,method_block2_319, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(sType_finalize,method_block_type_320, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                class_name_321 = come_decrement_ref_count2(class_name_321, (void*)0, (void*)0, 0, 0, 0, (void*)0);
+                if(current_stack_frame_node_320) { current_stack_frame_node_320 = come_decrement_ref_count2(current_stack_frame_node_320, ((struct sNode*)current_stack_frame_node_320)->finalize, ((struct sNode*)current_stack_frame_node_320)->_protocol_obj, 0, 0, 0, (void*)0); } 
+                come_call_finalizer2(CVALUE_finalize,come_value_321, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(buffer_finalize,method_block2_322, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(sType_finalize,method_block_type_323, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                class_name_324 = come_decrement_ref_count2(class_name_324, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 generics_fun_name_218 = come_decrement_ref_count2(generics_fun_name_218, (void*)0, (void*)0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(sType_finalize,result_type_230, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(sType_finalize,result_type2_231, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(list$1sTypephp_finalize,param_types_232, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(list$1CVALUEphp_finalize,come_params_243, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(sType_finalize,result_type_233, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(sType_finalize,result_type2_234, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(list$1sTypephp_finalize,param_types_235, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(list$1CVALUEphp_finalize,come_params_246, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(list$1sTypephp_finalize,method_generics_types_177, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(CVALUE_finalize,obj_value_178, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(sType_finalize,obj_type_179, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 return __result223__;
             }
             # 728 "20method.c"
-            result_type_326=(struct sType*)come_increment_ref_count(((struct sType*)(right_value310=sType_clone(method_block_type_320->mResultType->v1))));
+            result_type_326=(struct sType*)come_increment_ref_count(((struct sType*)(right_value310=sType_clone(method_block_type_323->mResultType->v1))));
             come_call_finalizer2(sType_finalize,right_value310, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
             # 729 "20method.c"
             result_type_326->mStatic=(_Bool)0;
             # 730 "20method.c"
-            param_types_327=method_block_type_320->mParamTypes;
+            param_types_327=method_block_type_323->mParamTypes;
             # 731 "20method.c"
-            param_names_328=method_block_type_320->mParamNames;
+            param_names_328=method_block_type_323->mParamNames;
             # 733 "20method.c"
             all_alhabet_sname_329=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value312=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value311=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "20method.c", 733, "buffer"))))))));
             come_call_finalizer2(buffer_finalize,right_value311, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
@@ -9211,10 +9224,10 @@ right_value359 = (void*)0;
                 # 735 "20method.c"
                 p_330=info->sname;
                 # 744 "20method.c"
-                while(_while_condtional38=*p_330,                _while_condtional38) {
+                while(_while_condtional39=*p_330,                _while_condtional39) {
                     # 743 "20method.c"
                     # 737 "20method.c"
-                    if(_if_conditional374=xisalnum(*p_330),                    _if_conditional374) {
+                    if(_if_conditional375=xisalnum(*p_330),                    _if_conditional375) {
                         # 738 "20method.c"
                         buffer_append_char(all_alhabet_sname_329,*p_330++);
                     }
@@ -9225,7 +9238,7 @@ right_value359 = (void*)0;
                 }
             }
             # 746 "20method.c"
-            buffer_append_str(method_block2_319,((char*)(right_value315=xsprintf("%s method_block%d_%s(",((char*)(right_value313=make_type_name_string(result_type_326,(_Bool)0,(_Bool)0,(_Bool)0,info))),info->num_method_block,((char*)(right_value314=buffer_to_string(all_alhabet_sname_329)))))));
+            buffer_append_str(method_block2_322,((char*)(right_value315=xsprintf("%s method_block%d_%s(",((char*)(right_value313=make_type_name_string(result_type_326,(_Bool)0,(_Bool)0,(_Bool)0,info))),info->num_method_block,((char*)(right_value314=buffer_to_string(all_alhabet_sname_329)))))));
             right_value313 = come_decrement_ref_count2(right_value313, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
             right_value314 = come_decrement_ref_count2(right_value314, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
             right_value315 = come_decrement_ref_count2(right_value315, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -9237,12 +9250,12 @@ right_value359 = (void*)0;
                 param_type_334=it_333;
                 # 767 "20method.c"
                 # 751 "20method.c"
-                if(_if_conditional375=i_331==0,                _if_conditional375) {
+                if(_if_conditional376=i_331==0,                _if_conditional376) {
                     # 752 "20method.c"
                     param_name_335=(char*)come_increment_ref_count(((char*)(right_value316=xsprintf("parent"))));
                     right_value316 = come_decrement_ref_count2(right_value316, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                     # 754 "20method.c"
-                    buffer_append_str(method_block2_319,((char*)(right_value318=xsprintf("%s",((char*)(right_value317=make_define_var(param_type_334,param_name_335,(_Bool)0,info)))))));
+                    buffer_append_str(method_block2_322,((char*)(right_value318=xsprintf("%s",((char*)(right_value317=make_define_var(param_type_334,param_name_335,(_Bool)0,info)))))));
                     right_value317 = come_decrement_ref_count2(right_value317, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                     right_value318 = come_decrement_ref_count2(right_value318, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                     param_name_335 = come_decrement_ref_count2(param_name_335, (void*)0, (void*)0, 0, 0, 0, (void*)0);
@@ -9250,12 +9263,12 @@ right_value359 = (void*)0;
                 else {
                     # 767 "20method.c"
                     # 756 "20method.c"
-                    if(_if_conditional376=i_331==1,                    _if_conditional376) {
+                    if(_if_conditional377=i_331==1,                    _if_conditional377) {
                         # 757 "20method.c"
                         param_name_336=(char*)come_increment_ref_count(((char*)(right_value319=xsprintf("it"))));
                         right_value319 = come_decrement_ref_count2(right_value319, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         # 759 "20method.c"
-                        buffer_append_str(method_block2_319,((char*)(right_value321=xsprintf("%s",((char*)(right_value320=make_define_var(param_type_334,param_name_336,(_Bool)0,info)))))));
+                        buffer_append_str(method_block2_322,((char*)(right_value321=xsprintf("%s",((char*)(right_value320=make_define_var(param_type_334,param_name_336,(_Bool)0,info)))))));
                         right_value320 = come_decrement_ref_count2(right_value320, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         right_value321 = come_decrement_ref_count2(right_value321, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         param_name_336 = come_decrement_ref_count2(param_name_336, (void*)0, (void*)0, 0, 0, 0, (void*)0);
@@ -9265,7 +9278,7 @@ right_value359 = (void*)0;
                         param_name_337=(char*)come_increment_ref_count(((char*)(right_value322=xsprintf("it%d",i_331))));
                         right_value322 = come_decrement_ref_count2(right_value322, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         # 764 "20method.c"
-                        buffer_append_str(method_block2_319,((char*)(right_value324=xsprintf("%s",((char*)(right_value323=make_define_var(param_type_334,param_name_337,(_Bool)0,info)))))));
+                        buffer_append_str(method_block2_322,((char*)(right_value324=xsprintf("%s",((char*)(right_value323=make_define_var(param_type_334,param_name_337,(_Bool)0,info)))))));
                         right_value323 = come_decrement_ref_count2(right_value323, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         right_value324 = come_decrement_ref_count2(right_value324, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         param_name_337 = come_decrement_ref_count2(param_name_337, (void*)0, (void*)0, 0, 0, 0, (void*)0);
@@ -9273,17 +9286,17 @@ right_value359 = (void*)0;
                 }
                 # 771 "20method.c"
                 # 767 "20method.c"
-                if(_if_conditional377=i_331!=list$1sTypeph_length(param_types_327)-1,                _if_conditional377) {
+                if(_if_conditional378=i_331!=list$1sTypeph_length(param_types_327)-1,                _if_conditional378) {
                     # 768 "20method.c"
-                    buffer_append_str(method_block2_319,",");
+                    buffer_append_str(method_block2_322,",");
                 }
                 # 771 "20method.c"
                 i_331++;
             }
             # 773 "20method.c"
-            buffer_append_str(method_block2_319,")\n");
+            buffer_append_str(method_block2_322,")\n");
             # 775 "20method.c"
-            buffer_append_str(method_block2_319,((char*)(right_value325=buffer_to_string(method_block_175))));
+            buffer_append_str(method_block2_322,((char*)(right_value325=buffer_to_string(method_block_175))));
             right_value325 = come_decrement_ref_count2(right_value325, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
             # 777 "20method.c"
             source3_338=(struct buffer*)come_increment_ref_count(info->source);
@@ -9295,7 +9308,7 @@ right_value359 = (void*)0;
             sline_341=info->sline;
             # 783 "20method.c"
             __dec_obj92=info->source;
-            info->source=(struct buffer*)come_increment_ref_count(method_block2_319);
+            info->source=(struct buffer*)come_increment_ref_count(method_block2_322);
             come_call_finalizer2(buffer_finalize,__dec_obj92, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             # 784 "20method.c"
             info->p=info->source->buf;
@@ -9308,23 +9321,23 @@ right_value359 = (void*)0;
             if(right_value326) { right_value326 = come_decrement_ref_count2(right_value326, ((struct sNode*)right_value326)->finalize, ((struct sNode*)right_value326)->_protocol_obj, 1, 0, 0, __result_obj__); } 
             # 795 "20method.c"
             # 791 "20method.c"
-            if(_if_conditional378=!node_compile(node_342,info),            _if_conditional378) {
+            if(_if_conditional379=!node_compile(node_342,info),            _if_conditional379) {
                 # 792 "20method.c"
                 __result224__ = (_Bool)0;
-                if(current_stack_frame_node_317) { current_stack_frame_node_317 = come_decrement_ref_count2(current_stack_frame_node_317, ((struct sNode*)current_stack_frame_node_317)->finalize, ((struct sNode*)current_stack_frame_node_317)->_protocol_obj, 0, 0, 0, (void*)0); } 
-                come_call_finalizer2(CVALUE_finalize,come_value_318, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(buffer_finalize,method_block2_319, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(sType_finalize,method_block_type_320, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                class_name_321 = come_decrement_ref_count2(class_name_321, (void*)0, (void*)0, 0, 0, 0, (void*)0);
+                if(current_stack_frame_node_320) { current_stack_frame_node_320 = come_decrement_ref_count2(current_stack_frame_node_320, ((struct sNode*)current_stack_frame_node_320)->finalize, ((struct sNode*)current_stack_frame_node_320)->_protocol_obj, 0, 0, 0, (void*)0); } 
+                come_call_finalizer2(CVALUE_finalize,come_value_321, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(buffer_finalize,method_block2_322, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(sType_finalize,method_block_type_323, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                class_name_324 = come_decrement_ref_count2(class_name_324, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(sType_finalize,result_type_326, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(buffer_finalize,all_alhabet_sname_329, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(buffer_finalize,source3_338, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 if(node_342) { node_342 = come_decrement_ref_count2(node_342, ((struct sNode*)node_342)->finalize, ((struct sNode*)node_342)->_protocol_obj, 0, 0, 0, (void*)0); } 
                 generics_fun_name_218 = come_decrement_ref_count2(generics_fun_name_218, (void*)0, (void*)0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(sType_finalize,result_type_230, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(sType_finalize,result_type2_231, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(list$1sTypephp_finalize,param_types_232, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(list$1CVALUEphp_finalize,come_params_243, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(sType_finalize,result_type_233, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(sType_finalize,result_type2_234, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(list$1sTypephp_finalize,param_types_235, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(list$1CVALUEphp_finalize,come_params_246, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(list$1sTypephp_finalize,method_generics_types_177, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(CVALUE_finalize,obj_value_178, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(sType_finalize,obj_type_179, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
@@ -9341,16 +9354,16 @@ right_value359 = (void*)0;
             fun2_345=map$2charphsFunph_at(info->funcs,method_block_name_343,((void*)0));
             # 806 "20method.c"
             # 801 "20method.c"
-            if(_if_conditional379=fun2_345==((void*)0),            _if_conditional379) {
+            if(_if_conditional380=fun2_345==((void*)0),            _if_conditional380) {
                 # 802 "20method.c"
                 err_msg(info,"method block function not found(%s)",method_block_name_343);
                 # 803 "20method.c"
                 __result225__ = (_Bool)1;
-                if(current_stack_frame_node_317) { current_stack_frame_node_317 = come_decrement_ref_count2(current_stack_frame_node_317, ((struct sNode*)current_stack_frame_node_317)->finalize, ((struct sNode*)current_stack_frame_node_317)->_protocol_obj, 0, 0, 0, (void*)0); } 
-                come_call_finalizer2(CVALUE_finalize,come_value_318, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(buffer_finalize,method_block2_319, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(sType_finalize,method_block_type_320, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                class_name_321 = come_decrement_ref_count2(class_name_321, (void*)0, (void*)0, 0, 0, 0, (void*)0);
+                if(current_stack_frame_node_320) { current_stack_frame_node_320 = come_decrement_ref_count2(current_stack_frame_node_320, ((struct sNode*)current_stack_frame_node_320)->finalize, ((struct sNode*)current_stack_frame_node_320)->_protocol_obj, 0, 0, 0, (void*)0); } 
+                come_call_finalizer2(CVALUE_finalize,come_value_321, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(buffer_finalize,method_block2_322, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(sType_finalize,method_block_type_323, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                class_name_324 = come_decrement_ref_count2(class_name_324, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(sType_finalize,result_type_326, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(buffer_finalize,all_alhabet_sname_329, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(buffer_finalize,source3_338, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
@@ -9358,10 +9371,10 @@ right_value359 = (void*)0;
                 method_block_name_343 = come_decrement_ref_count2(method_block_name_343, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(CVALUE_finalize,come_value2_344, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 generics_fun_name_218 = come_decrement_ref_count2(generics_fun_name_218, (void*)0, (void*)0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(sType_finalize,result_type_230, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(sType_finalize,result_type2_231, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(list$1sTypephp_finalize,param_types_232, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                come_call_finalizer2(list$1CVALUEphp_finalize,come_params_243, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(sType_finalize,result_type_233, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(sType_finalize,result_type2_234, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(list$1sTypephp_finalize,param_types_235, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                come_call_finalizer2(list$1CVALUEphp_finalize,come_params_246, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(list$1sTypephp_finalize,method_generics_types_177, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(CVALUE_finalize,obj_value_178, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer2(sType_finalize,obj_type_179, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
@@ -9382,7 +9395,7 @@ right_value359 = (void*)0;
             # 810 "20method.c"
             come_value2_344->var=((void*)0);
             # 812 "20method.c"
-            list$1CVALUEph_push_back(come_params_243,(struct CVALUE*)come_increment_ref_count(come_value2_344));
+            list$1CVALUEph_push_back(come_params_246,(struct CVALUE*)come_increment_ref_count(come_value2_344));
             # 814 "20method.c"
             __dec_obj95=info->source;
             info->source=(struct buffer*)come_increment_ref_count(source3_338);
@@ -9395,11 +9408,11 @@ right_value359 = (void*)0;
             info->sline=sline_341;
             # 819 "20method.c"
             info->current_stack_frame_struct=current_stack_frame_struct_325;
-            if(current_stack_frame_node_317) { current_stack_frame_node_317 = come_decrement_ref_count2(current_stack_frame_node_317, ((struct sNode*)current_stack_frame_node_317)->finalize, ((struct sNode*)current_stack_frame_node_317)->_protocol_obj, 0, 0, 0, (void*)0); } 
-            come_call_finalizer2(CVALUE_finalize,come_value_318, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-            come_call_finalizer2(buffer_finalize,method_block2_319, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-            come_call_finalizer2(sType_finalize,method_block_type_320, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-            class_name_321 = come_decrement_ref_count2(class_name_321, (void*)0, (void*)0, 0, 0, 0, (void*)0);
+            if(current_stack_frame_node_320) { current_stack_frame_node_320 = come_decrement_ref_count2(current_stack_frame_node_320, ((struct sNode*)current_stack_frame_node_320)->finalize, ((struct sNode*)current_stack_frame_node_320)->_protocol_obj, 0, 0, 0, (void*)0); } 
+            come_call_finalizer2(CVALUE_finalize,come_value_321, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+            come_call_finalizer2(buffer_finalize,method_block2_322, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+            come_call_finalizer2(sType_finalize,method_block_type_323, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+            class_name_324 = come_decrement_ref_count2(class_name_324, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             come_call_finalizer2(sType_finalize,result_type_326, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             come_call_finalizer2(buffer_finalize,all_alhabet_sname_329, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
             come_call_finalizer2(buffer_finalize,source3_338, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
@@ -9418,12 +9431,12 @@ right_value359 = (void*)0;
         # 828 "20method.c"
         j_348=0;
         # 838 "20method.c"
-        for(        o2_saved_349=(struct list$1CVALUEph*)come_increment_ref_count((come_params_243)),it_350=list$1CVALUEph_begin((o2_saved_349));        !list$1CVALUEph_end((o2_saved_349));        it_350=list$1CVALUEph_next((o2_saved_349))        ){
+        for(        o2_saved_349=(struct list$1CVALUEph*)come_increment_ref_count((come_params_246)),it_350=list$1CVALUEph_begin((o2_saved_349));        !list$1CVALUEph_end((o2_saved_349));        it_350=list$1CVALUEph_next((o2_saved_349))        ){
             # 830 "20method.c"
             buffer_append_str(buf_347,it_350->c_value);
             # 836 "20method.c"
             # 832 "20method.c"
-            if(_if_conditional380=j_348!=list$1CVALUEph_length(come_params_243)-1,            _if_conditional380) {
+            if(_if_conditional381=j_348!=list$1CVALUEph_length(come_params_246)-1,            _if_conditional381) {
                 # 833 "20method.c"
                 buffer_append_str(buf_347,",");
             }
@@ -9443,7 +9456,7 @@ right_value359 = (void*)0;
         right_value335 = come_decrement_ref_count2(right_value335, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         # 844 "20method.c"
         __dec_obj97=come_value2_351->type;
-        come_value2_351->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value336=sType_clone(result_type2_231))));
+        come_value2_351->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value336=sType_clone(result_type2_234))));
         come_call_finalizer2(sType_finalize,__dec_obj97, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         come_call_finalizer2(sType_finalize,right_value336, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         # 845 "20method.c"
@@ -9452,10 +9465,10 @@ right_value359 = (void*)0;
         come_value2_351->var=((void*)0);
         # 852 "20method.c"
         # 848 "20method.c"
-        if(result_type2_231->mHeap) {
+        if(result_type2_234->mHeap) {
             # 849 "20method.c"
             __dec_obj98=come_value2_351->c_value;
-            come_value2_351->c_value=(char*)come_increment_ref_count(((char*)(right_value337=append_object_to_right_values(come_value2_351->c_value,(struct sType*)come_increment_ref_count(result_type2_231),info))));
+            come_value2_351->c_value=(char*)come_increment_ref_count(((char*)(right_value337=append_object_to_right_values(come_value2_351->c_value,(struct sType*)come_increment_ref_count(result_type2_234),info))));
             __dec_obj98 = come_decrement_ref_count2(__dec_obj98, (void*)0, (void*)0, 0,0,0, (void*)0);
             right_value337 = come_decrement_ref_count2(right_value337, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         }
@@ -9497,7 +9510,7 @@ right_value359 = (void*)0;
             if(info->in_loop) {
                 # 906 "20method.c"
                 # 874 "20method.c"
-                if(_if_conditional385=string_operator_equals(result_type3_355->mClass->mName,"void")&&result_type3_355->mPointerNum==0,                _if_conditional385) {
+                if(_if_conditional386=string_operator_equals(result_type3_355->mClass->mName,"void")&&result_type3_355->mPointerNum==0,                _if_conditional386) {
                     # 888 "20method.c"
                     add_come_last_code3(info,((char*)(right_value345=xsprintf("                        if(\%s.__method_block_result_kind__ == 1)\n                        {\n                            break;\n                        }\n                        else if(\%s.__method_block_result_kind__ == 2)\n                        {\n                            continue;\n                        }\n                        else if(\%s.__method_block_result_kind__ == 4)\n                        {\n                            return;\n                        }\n",((char*)(right_value342=string_to_string(var_name_352))),((char*)(right_value343=string_to_string(var_name_352))),((char*)(right_value344=string_to_string(var_name_352)))))));
                     right_value342 = come_decrement_ref_count2(right_value342, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -9520,7 +9533,7 @@ right_value359 = (void*)0;
             else {
                 # 923 "20method.c"
                 # 907 "20method.c"
-                if(_if_conditional386=string_operator_equals(result_type3_355->mClass->mName,"void")&&result_type3_355->mPointerNum==0,                _if_conditional386) {
+                if(_if_conditional387=string_operator_equals(result_type3_355->mClass->mName,"void")&&result_type3_355->mPointerNum==0,                _if_conditional387) {
                     # 913 "20method.c"
                     add_come_last_code3(info,((char*)(right_value354=xsprintf("                    if(\%s.__method_block_result_kind__ == 4)\n                    {\n                        return;\n                    }\n",((char*)(right_value353=string_to_string(var_name_352)))))));
                     right_value353 = come_decrement_ref_count2(right_value353, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -9541,10 +9554,10 @@ right_value359 = (void*)0;
             come_call_finalizer2(sType_finalize,result_type2_354, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         }
         generics_fun_name_218 = come_decrement_ref_count2(generics_fun_name_218, (void*)0, (void*)0, 0, 0, 0, (void*)0);
-        come_call_finalizer2(sType_finalize,result_type_230, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-        come_call_finalizer2(sType_finalize,result_type2_231, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-        come_call_finalizer2(list$1sTypephp_finalize,param_types_232, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-        come_call_finalizer2(list$1CVALUEphp_finalize,come_params_243, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+        come_call_finalizer2(sType_finalize,result_type_233, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+        come_call_finalizer2(sType_finalize,result_type2_234, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+        come_call_finalizer2(list$1sTypephp_finalize,param_types_235, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+        come_call_finalizer2(list$1CVALUEphp_finalize,come_params_246, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         come_call_finalizer2(buffer_finalize,buf_347, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         come_call_finalizer2(CVALUE_finalize,come_value2_351, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
     }
@@ -9567,10 +9580,10 @@ right_value359 = (void*)0;
 
 static struct tuple2$2charphsTypeph* list$1tuple2$2charphsTypephph_begin(struct list$1tuple2$2charphsTypephph* self){
 void* __result_obj__;
-_Bool _if_conditional241;
+_Bool _if_conditional242;
 struct tuple2$2charphsTypeph* result_184;
 struct tuple2$2charphsTypeph* __result138__;
-_Bool _if_conditional242;
+_Bool _if_conditional243;
 struct tuple2$2charphsTypeph* __result139__;
 struct tuple2$2charphsTypeph* result_185;
 struct tuple2$2charphsTypeph* __result140__;
@@ -9579,7 +9592,7 @@ memset(&result_184, 0, sizeof(struct tuple2$2charphsTypeph*));
 memset(&result_185, 0, sizeof(struct tuple2$2charphsTypeph*));
         # 290 "./neo-c.h"
         # 285 "./neo-c.h"
-        if(_if_conditional241=self==((void*)0),        _if_conditional241) {
+        if(_if_conditional242=self==((void*)0),        _if_conditional242) {
             # 286 "./neo-c.h"
             # 287 "./neo-c.h"
             memset(&result_184,0,sizeof(struct tuple2$2charphsTypeph*));
@@ -9615,10 +9628,10 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct tuple2$2charphsTypeph* list$1tuple2$2charphsTypephph_next(struct list$1tuple2$2charphsTypephph* self){
 void* __result_obj__;
-_Bool _if_conditional243;
+_Bool _if_conditional244;
 struct tuple2$2charphsTypeph* result_187;
 struct tuple2$2charphsTypeph* __result142__;
-_Bool _if_conditional244;
+_Bool _if_conditional245;
 struct tuple2$2charphsTypeph* __result143__;
 struct tuple2$2charphsTypeph* result_188;
 struct tuple2$2charphsTypeph* __result144__;
@@ -9627,7 +9640,7 @@ memset(&result_187, 0, sizeof(struct tuple2$2charphsTypeph*));
 memset(&result_188, 0, sizeof(struct tuple2$2charphsTypeph*));
         # 308 "./neo-c.h"
         # 302 "./neo-c.h"
-        if(_if_conditional243=self==((void*)0)||self->it==((void*)0),        _if_conditional243) {
+        if(_if_conditional244=self==((void*)0)||self->it==((void*)0),        _if_conditional244) {
             # 303 "./neo-c.h"
             # 304 "./neo-c.h"
             memset(&result_187,0,sizeof(struct tuple2$2charphsTypeph*));
@@ -9692,10 +9705,10 @@ memset(&prev_it_193, 0, sizeof(struct list_item$1CVALUEph*));
 
 static struct tuple2$2charphsNodeph* list$1tuple2$2charphsNodephph_begin(struct list$1tuple2$2charphsNodephph* self){
 void* __result_obj__;
-_Bool _if_conditional247;
+_Bool _if_conditional248;
 struct tuple2$2charphsNodeph* result_197;
 struct tuple2$2charphsNodeph* __result146__;
-_Bool _if_conditional248;
+_Bool _if_conditional249;
 struct tuple2$2charphsNodeph* __result147__;
 struct tuple2$2charphsNodeph* result_198;
 struct tuple2$2charphsNodeph* __result148__;
@@ -9704,7 +9717,7 @@ memset(&result_197, 0, sizeof(struct tuple2$2charphsNodeph*));
 memset(&result_198, 0, sizeof(struct tuple2$2charphsNodeph*));
             # 290 "./neo-c.h"
             # 285 "./neo-c.h"
-            if(_if_conditional247=self==((void*)0),            _if_conditional247) {
+            if(_if_conditional248=self==((void*)0),            _if_conditional248) {
                 # 286 "./neo-c.h"
                 # 287 "./neo-c.h"
                 memset(&result_197,0,sizeof(struct tuple2$2charphsNodeph*));
@@ -9740,10 +9753,10 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct tuple2$2charphsNodeph* list$1tuple2$2charphsNodephph_next(struct list$1tuple2$2charphsNodephph* self){
 void* __result_obj__;
-_Bool _if_conditional249;
+_Bool _if_conditional250;
 struct tuple2$2charphsNodeph* result_200;
 struct tuple2$2charphsNodeph* __result150__;
-_Bool _if_conditional250;
+_Bool _if_conditional251;
 struct tuple2$2charphsNodeph* __result151__;
 struct tuple2$2charphsNodeph* result_201;
 struct tuple2$2charphsNodeph* __result152__;
@@ -9752,7 +9765,7 @@ memset(&result_200, 0, sizeof(struct tuple2$2charphsNodeph*));
 memset(&result_201, 0, sizeof(struct tuple2$2charphsNodeph*));
             # 308 "./neo-c.h"
             # 302 "./neo-c.h"
-            if(_if_conditional249=self==((void*)0)||self->it==((void*)0),            _if_conditional249) {
+            if(_if_conditional250=self==((void*)0)||self->it==((void*)0),            _if_conditional250) {
                 # 303 "./neo-c.h"
                 # 304 "./neo-c.h"
                 memset(&result_200,0,sizeof(struct tuple2$2charphsNodeph*));
@@ -9779,11 +9792,11 @@ memset(&result_201, 0, sizeof(struct tuple2$2charphsNodeph*));
 
 static struct sType* list$1sTypephp_operator_load_element(struct list$1sTypeph* self, int position){
 void* __result_obj__;
-_Bool _if_conditional253;
+_Bool _if_conditional254;
 struct list_item$1sTypeph* it_205;
 int i_206;
 _Bool _while_condtional29;
-_Bool _if_conditional254;
+_Bool _if_conditional255;
 struct sType* __result154__;
 struct sType* default_value_207;
 struct sType* __result155__;
@@ -9793,7 +9806,7 @@ memset(&i_206, 0, sizeof(int));
 memset(&default_value_207, 0, sizeof(struct sType*));
                     # 686 "./neo-c.h"
                     # 682 "./neo-c.h"
-                    if(_if_conditional253=position<0,                    _if_conditional253) {
+                    if(_if_conditional254=position<0,                    _if_conditional254) {
                         # 683 "./neo-c.h"
                         position+=self->len;
                     }
@@ -9805,7 +9818,7 @@ memset(&default_value_207, 0, sizeof(struct sType*));
                     while(_while_condtional29=it_205!=((void*)0),                    _while_condtional29) {
                         # 692 "./neo-c.h"
                         # 689 "./neo-c.h"
-                        if(_if_conditional254=position==i_206,                        _if_conditional254) {
+                        if(_if_conditional255=position==i_206,                        _if_conditional255) {
                             # 690 "./neo-c.h"
                             __result154__ = __result_obj__ = it_205->item;
                             return __result154__;
@@ -9827,10 +9840,10 @@ memset(&default_value_207, 0, sizeof(struct sType*));
 
 static struct CVALUE* list$1CVALUEph_begin(struct list$1CVALUEph* self){
 void* __result_obj__;
-_Bool _if_conditional256;
+_Bool _if_conditional257;
 struct CVALUE* result_211;
 struct CVALUE* __result156__;
-_Bool _if_conditional257;
+_Bool _if_conditional258;
 struct CVALUE* __result157__;
 struct CVALUE* result_212;
 struct CVALUE* __result158__;
@@ -9839,7 +9852,7 @@ memset(&result_211, 0, sizeof(struct CVALUE*));
 memset(&result_212, 0, sizeof(struct CVALUE*));
             # 290 "./neo-c.h"
             # 285 "./neo-c.h"
-            if(_if_conditional256=self==((void*)0),            _if_conditional256) {
+            if(_if_conditional257=self==((void*)0),            _if_conditional257) {
                 # 286 "./neo-c.h"
                 # 287 "./neo-c.h"
                 memset(&result_211,0,sizeof(struct CVALUE*));
@@ -9875,10 +9888,10 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct CVALUE* list$1CVALUEph_next(struct list$1CVALUEph* self){
 void* __result_obj__;
-_Bool _if_conditional258;
+_Bool _if_conditional259;
 struct CVALUE* result_214;
 struct CVALUE* __result160__;
-_Bool _if_conditional259;
+_Bool _if_conditional260;
 struct CVALUE* __result161__;
 struct CVALUE* result_215;
 struct CVALUE* __result162__;
@@ -9887,7 +9900,7 @@ memset(&result_214, 0, sizeof(struct CVALUE*));
 memset(&result_215, 0, sizeof(struct CVALUE*));
             # 308 "./neo-c.h"
             # 302 "./neo-c.h"
-            if(_if_conditional258=self==((void*)0)||self->it==((void*)0),            _if_conditional258) {
+            if(_if_conditional259=self==((void*)0)||self->it==((void*)0),            _if_conditional259) {
                 # 303 "./neo-c.h"
                 # 304 "./neo-c.h"
                 memset(&result_214,0,sizeof(struct CVALUE*));
@@ -9914,13 +9927,13 @@ memset(&result_215, 0, sizeof(struct CVALUE*));
 
 static int list$1CVALUEph_length(struct list$1CVALUEph* self){
 void* __result_obj__;
-_Bool _if_conditional261;
+_Bool _if_conditional262;
 int __result163__;
 int __result164__;
 memset(&__result_obj__, 0, sizeof(void*));
                 # 367 "./neo-c.h"
                 # 364 "./neo-c.h"
-                if(_if_conditional261=self==((void*)0),                _if_conditional261) {
+                if(_if_conditional262=self==((void*)0),                _if_conditional262) {
                     # 365 "./neo-c.h"
                     __result163__ = 0;
                     return __result163__;
@@ -9936,11 +9949,11 @@ struct sFun* default_value_222;
 unsigned int hash_223;
 unsigned int it_224;
 _Bool _while_condtional30;
-_Bool _if_conditional264;
 _Bool _if_conditional265;
+_Bool _if_conditional266;
 struct sFun* __result165__;
-_Bool _if_conditional281;
 _Bool _if_conditional282;
+_Bool _if_conditional283;
 struct sFun* __result166__;
 struct sFun* __result167__;
 struct sFun* __result168__;
@@ -9959,10 +9972,10 @@ memset(&it_224, 0, sizeof(unsigned int));
                 while(_while_condtional30=(_Bool)1,                _while_condtional30) {
                     # 1570 "./neo-c.h"
                     # 1551 "./neo-c.h"
-                    if(_if_conditional264=self->item_existance[it_224],                    _if_conditional264) {
+                    if(_if_conditional265=self->item_existance[it_224],                    _if_conditional265) {
                         # 1558 "./neo-c.h"
                         # 1553 "./neo-c.h"
-                        if(_if_conditional265=string_equals(self->keys[it_224],key),                        _if_conditional265) {
+                        if(_if_conditional266=string_equals(self->keys[it_224],key),                        _if_conditional266) {
                             # 1555 "./neo-c.h"
                             __result165__ = __result_obj__ = self->items[it_224];
                             come_call_finalizer2(sFun_finalize,default_value_222, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
@@ -9972,14 +9985,14 @@ memset(&it_224, 0, sizeof(unsigned int));
                         it_224++;
                         # 1566 "./neo-c.h"
                         # 1560 "./neo-c.h"
-                        if(_if_conditional281=it_224>=self->size,                        _if_conditional281) {
+                        if(_if_conditional282=it_224>=self->size,                        _if_conditional282) {
                             # 1561 "./neo-c.h"
                             it_224=0;
                         }
                         else {
                             # 1566 "./neo-c.h"
                             # 1563 "./neo-c.h"
-                            if(_if_conditional282=it_224==hash_223,                            _if_conditional282) {
+                            if(_if_conditional283=it_224==hash_223,                            _if_conditional283) {
                                 # 1564 "./neo-c.h"
                                 __result166__ = __result_obj__ = default_value_222;
                                 come_call_finalizer2(sFun_finalize,default_value_222, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
@@ -10003,95 +10016,95 @@ memset(&it_224, 0, sizeof(unsigned int));
 
 static void sFun_finalize(struct sFun* self){
 void* __result_obj__;
-_Bool _if_conditional266;
 _Bool _if_conditional267;
 _Bool _if_conditional268;
 _Bool _if_conditional269;
 _Bool _if_conditional270;
 _Bool _if_conditional271;
 _Bool _if_conditional272;
-_Bool _if_conditional275;
+_Bool _if_conditional273;
 _Bool _if_conditional276;
 _Bool _if_conditional277;
 _Bool _if_conditional278;
 _Bool _if_conditional279;
 _Bool _if_conditional280;
+_Bool _if_conditional281;
 memset(&__result_obj__, 0, sizeof(void*));
                                 # 1 "sFun_finalize"
                                 # 0 "sFun_finalize"
-                                if(_if_conditional266=self!=((void*)0)&&self->mName!=((void*)0),                                _if_conditional266) {
+                                if(_if_conditional267=self!=((void*)0)&&self->mName!=((void*)0),                                _if_conditional267) {
                                     # 0 "sFun_finalize"
                                     self->mName = come_decrement_ref_count2(self->mName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                 }
                                 # 2 "sFun_finalize"
                                 # 1 "sFun_finalize"
-                                if(_if_conditional267=self!=((void*)0)&&self->mResultType!=((void*)0),                                _if_conditional267) {
+                                if(_if_conditional268=self!=((void*)0)&&self->mResultType!=((void*)0),                                _if_conditional268) {
                                     # 1 "sFun_finalize"
                                     come_call_finalizer2(sType_finalize,self->mResultType, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 }
                                 # 3 "sFun_finalize"
                                 # 2 "sFun_finalize"
-                                if(_if_conditional268=self!=((void*)0)&&self->mParamTypes!=((void*)0),                                _if_conditional268) {
+                                if(_if_conditional269=self!=((void*)0)&&self->mParamTypes!=((void*)0),                                _if_conditional269) {
                                     # 2 "sFun_finalize"
                                     come_call_finalizer2(list$1sTypephp_finalize,self->mParamTypes, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 }
                                 # 4 "sFun_finalize"
                                 # 3 "sFun_finalize"
-                                if(_if_conditional269=self!=((void*)0)&&self->mParamNames!=((void*)0),                                _if_conditional269) {
+                                if(_if_conditional270=self!=((void*)0)&&self->mParamNames!=((void*)0),                                _if_conditional270) {
                                     # 3 "sFun_finalize"
                                     come_call_finalizer2(list$1charphp_finalize,self->mParamNames, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 }
                                 # 5 "sFun_finalize"
                                 # 4 "sFun_finalize"
-                                if(_if_conditional270=self!=((void*)0)&&self->mParamDefaultParametors!=((void*)0),                                _if_conditional270) {
+                                if(_if_conditional271=self!=((void*)0)&&self->mParamDefaultParametors!=((void*)0),                                _if_conditional271) {
                                     # 4 "sFun_finalize"
                                     come_call_finalizer2(list$1charphp_finalize,self->mParamDefaultParametors, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 }
                                 # 6 "sFun_finalize"
                                 # 5 "sFun_finalize"
-                                if(_if_conditional271=self!=((void*)0)&&self->mLambdaType!=((void*)0),                                _if_conditional271) {
+                                if(_if_conditional272=self!=((void*)0)&&self->mLambdaType!=((void*)0),                                _if_conditional272) {
                                     # 5 "sFun_finalize"
                                     come_call_finalizer2(sType_finalize,self->mLambdaType, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 }
                                 # 7 "sFun_finalize"
                                 # 6 "sFun_finalize"
-                                if(_if_conditional272=self!=((void*)0)&&self->mBlock!=((void*)0),                                _if_conditional272) {
+                                if(_if_conditional273=self!=((void*)0)&&self->mBlock!=((void*)0),                                _if_conditional273) {
                                     # 6 "sFun_finalize"
                                     come_call_finalizer2(sBlock_finalize,self->mBlock, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 }
                                 # 8 "sFun_finalize"
                                 # 7 "sFun_finalize"
-                                if(_if_conditional275=self!=((void*)0)&&self->mSource!=((void*)0),                                _if_conditional275) {
+                                if(_if_conditional276=self!=((void*)0)&&self->mSource!=((void*)0),                                _if_conditional276) {
                                     # 7 "sFun_finalize"
                                     come_call_finalizer2(buffer_finalize,self->mSource, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 }
                                 # 9 "sFun_finalize"
                                 # 8 "sFun_finalize"
-                                if(_if_conditional276=self!=((void*)0)&&self->mSourceHead!=((void*)0),                                _if_conditional276) {
+                                if(_if_conditional277=self!=((void*)0)&&self->mSourceHead!=((void*)0),                                _if_conditional277) {
                                     # 8 "sFun_finalize"
                                     come_call_finalizer2(buffer_finalize,self->mSourceHead, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 }
                                 # 10 "sFun_finalize"
                                 # 9 "sFun_finalize"
-                                if(_if_conditional277=self!=((void*)0)&&self->mSourceHead2!=((void*)0),                                _if_conditional277) {
+                                if(_if_conditional278=self!=((void*)0)&&self->mSourceHead2!=((void*)0),                                _if_conditional278) {
                                     # 9 "sFun_finalize"
                                     come_call_finalizer2(buffer_finalize,self->mSourceHead2, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 }
                                 # 11 "sFun_finalize"
                                 # 10 "sFun_finalize"
-                                if(_if_conditional278=self!=((void*)0)&&self->mSourceDefer!=((void*)0),                                _if_conditional278) {
+                                if(_if_conditional279=self!=((void*)0)&&self->mSourceDefer!=((void*)0),                                _if_conditional279) {
                                     # 10 "sFun_finalize"
                                     come_call_finalizer2(buffer_finalize,self->mSourceDefer, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 }
                                 # 12 "sFun_finalize"
                                 # 11 "sFun_finalize"
-                                if(_if_conditional279=self!=((void*)0)&&self->mComeHeader!=((void*)0),                                _if_conditional279) {
+                                if(_if_conditional280=self!=((void*)0)&&self->mComeHeader!=((void*)0),                                _if_conditional280) {
                                     # 11 "sFun_finalize"
                                     self->mComeHeader = come_decrement_ref_count2(self->mComeHeader, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                 }
                                 # 13 "sFun_finalize"
                                 # 12 "sFun_finalize"
-                                if(_if_conditional280=self!=((void*)0)&&self->mDeclareSName!=((void*)0),                                _if_conditional280) {
+                                if(_if_conditional281=self!=((void*)0)&&self->mDeclareSName!=((void*)0),                                _if_conditional281) {
                                     # 12 "sFun_finalize"
                                     self->mDeclareSName = come_decrement_ref_count2(self->mDeclareSName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                 }
@@ -10099,18 +10112,18 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static void sBlock_finalize(struct sBlock* self){
 void* __result_obj__;
-_Bool _if_conditional273;
 _Bool _if_conditional274;
+_Bool _if_conditional275;
 memset(&__result_obj__, 0, sizeof(void*));
                                         # 1 "sBlock_finalize"
                                         # 0 "sBlock_finalize"
-                                        if(_if_conditional273=self!=((void*)0)&&self->mNodes!=((void*)0),                                        _if_conditional273) {
+                                        if(_if_conditional274=self!=((void*)0)&&self->mNodes!=((void*)0),                                        _if_conditional274) {
                                             # 0 "sBlock_finalize"
                                             come_call_finalizer2(list$1sNodephp_finalize,self->mNodes, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                         }
                                         # 2 "sBlock_finalize"
                                         # 1 "sBlock_finalize"
-                                        if(_if_conditional274=self!=((void*)0)&&self->mVarTable!=((void*)0),                                        _if_conditional274) {
+                                        if(_if_conditional275=self!=((void*)0)&&self->mVarTable!=((void*)0),                                        _if_conditional275) {
                                             # 1 "sBlock_finalize"
                                             come_call_finalizer2(sVarTable_finalize,self->mVarTable, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                         }
@@ -10121,11 +10134,11 @@ void* __result_obj__;
 unsigned int hash_227;
 unsigned int it_228;
 _Bool _while_condtional31;
-_Bool _if_conditional286;
 _Bool _if_conditional287;
-struct sFun* __result169__;
 _Bool _if_conditional288;
+struct sFun* __result169__;
 _Bool _if_conditional289;
+_Bool _if_conditional290;
 struct sFun* __result170__;
 struct sFun* __result171__;
 struct sFun* __result172__;
@@ -10140,10 +10153,10 @@ memset(&it_228, 0, sizeof(unsigned int));
                     while(_while_condtional31=(_Bool)1,                    _while_condtional31) {
                         # 1249 "./neo-c.h"
                         # 1230 "./neo-c.h"
-                        if(_if_conditional286=self->item_existance[it_228],                        _if_conditional286) {
+                        if(_if_conditional287=self->item_existance[it_228],                        _if_conditional287) {
                             # 1237 "./neo-c.h"
                             # 1232 "./neo-c.h"
-                            if(_if_conditional287=string_equals(self->keys[it_228],key),                            _if_conditional287) {
+                            if(_if_conditional288=string_equals(self->keys[it_228],key),                            _if_conditional288) {
                                 # 1234 "./neo-c.h"
                                 __result169__ = __result_obj__ = self->items[it_228];
                                 come_call_finalizer2(sFun_finalize,default_value, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
@@ -10153,14 +10166,14 @@ memset(&it_228, 0, sizeof(unsigned int));
                             it_228++;
                             # 1245 "./neo-c.h"
                             # 1239 "./neo-c.h"
-                            if(_if_conditional288=it_228>=self->size,                            _if_conditional288) {
+                            if(_if_conditional289=it_228>=self->size,                            _if_conditional289) {
                                 # 1240 "./neo-c.h"
                                 it_228=0;
                             }
                             else {
                                 # 1245 "./neo-c.h"
                                 # 1242 "./neo-c.h"
-                                if(_if_conditional289=it_228==hash_227,                                _if_conditional289) {
+                                if(_if_conditional290=it_228==hash_227,                                _if_conditional290) {
                                     # 1243 "./neo-c.h"
                                     __result170__ = __result_obj__ = default_value;
                                     come_call_finalizer2(sFun_finalize,default_value, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
@@ -10182,45 +10195,116 @@ memset(&it_228, 0, sizeof(unsigned int));
                     come_call_finalizer2(sFun_finalize,default_value, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
 }
 
+static struct sClass* map$2charphsClassphp_operator_load_element(struct map$2charphsClassph* self, char* key){
+void* __result_obj__;
+struct sClass* default_value_230;
+unsigned int hash_231;
+unsigned int it_232;
+_Bool _while_condtional32;
+_Bool _if_conditional296;
+_Bool _if_conditional297;
+struct sClass* __result174__;
+_Bool _if_conditional298;
+_Bool _if_conditional299;
+struct sClass* __result175__;
+struct sClass* __result176__;
+struct sClass* __result177__;
+memset(&__result_obj__, 0, sizeof(void*));
+memset(&default_value_230, 0, sizeof(struct sClass*));
+memset(&hash_231, 0, sizeof(unsigned int));
+memset(&it_232, 0, sizeof(unsigned int));
+                            # 1544 "./neo-c.h"
+                            # 1545 "./neo-c.h"
+                            memset(&default_value_230,0,sizeof(struct sClass*));
+                            # 1547 "./neo-c.h"
+                            hash_231=string_get_hash_key(((char*)key))%self->size;
+                            # 1548 "./neo-c.h"
+                            it_232=hash_231;
+                            # 1572 "./neo-c.h"
+                            while(_while_condtional32=(_Bool)1,                            _while_condtional32) {
+                                # 1570 "./neo-c.h"
+                                # 1551 "./neo-c.h"
+                                if(_if_conditional296=self->item_existance[it_232],                                _if_conditional296) {
+                                    # 1558 "./neo-c.h"
+                                    # 1553 "./neo-c.h"
+                                    if(_if_conditional297=string_equals(self->keys[it_232],key),                                    _if_conditional297) {
+                                        # 1555 "./neo-c.h"
+                                        __result174__ = __result_obj__ = self->items[it_232];
+                                        come_call_finalizer2(sClass_finalize,default_value_230, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                                        return __result174__;
+                                    }
+                                    # 1558 "./neo-c.h"
+                                    it_232++;
+                                    # 1566 "./neo-c.h"
+                                    # 1560 "./neo-c.h"
+                                    if(_if_conditional298=it_232>=self->size,                                    _if_conditional298) {
+                                        # 1561 "./neo-c.h"
+                                        it_232=0;
+                                    }
+                                    else {
+                                        # 1566 "./neo-c.h"
+                                        # 1563 "./neo-c.h"
+                                        if(_if_conditional299=it_232==hash_231,                                        _if_conditional299) {
+                                            # 1564 "./neo-c.h"
+                                            __result175__ = __result_obj__ = default_value_230;
+                                            come_call_finalizer2(sClass_finalize,default_value_230, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
+                                            return __result175__;
+                                        }
+                                    }
+                                }
+                                else {
+                                    # 1568 "./neo-c.h"
+                                    __result176__ = __result_obj__ = default_value_230;
+                                    come_call_finalizer2(sClass_finalize,default_value_230, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
+                                    return __result176__;
+                                }
+                            }
+                            # 1572 "./neo-c.h"
+                            __result177__ = __result_obj__ = default_value_230;
+                            come_call_finalizer2(sClass_finalize,default_value_230, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
+                            return __result177__;
+                            come_call_finalizer2(sClass_finalize,default_value_230, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+}
+
 static int list$1sTypeph_length(struct list$1sTypeph* self){
 void* __result_obj__;
-_Bool _if_conditional298;
-int __result176__;
-int __result177__;
+_Bool _if_conditional303;
+int __result180__;
+int __result181__;
 memset(&__result_obj__, 0, sizeof(void*));
             # 367 "./neo-c.h"
             # 364 "./neo-c.h"
-            if(_if_conditional298=self==((void*)0),            _if_conditional298) {
+            if(_if_conditional303=self==((void*)0),            _if_conditional303) {
                 # 365 "./neo-c.h"
-                __result176__ = 0;
-                return __result176__;
+                __result180__ = 0;
+                return __result180__;
             }
             # 367 "./neo-c.h"
-            __result177__ = self->len;
-            return __result177__;
+            __result181__ = self->len;
+            return __result181__;
 }
 
 static struct sType* list$1sTypeph_begin(struct list$1sTypeph* self){
 void* __result_obj__;
-_Bool _if_conditional300;
-struct sType* result_234;
-struct sType* __result179__;
-_Bool _if_conditional301;
-struct sType* __result180__;
-struct sType* result_235;
-struct sType* __result181__;
+_Bool _if_conditional305;
+struct sType* result_237;
+struct sType* __result183__;
+_Bool _if_conditional306;
+struct sType* __result184__;
+struct sType* result_238;
+struct sType* __result185__;
 memset(&__result_obj__, 0, sizeof(void*));
-memset(&result_234, 0, sizeof(struct sType*));
-memset(&result_235, 0, sizeof(struct sType*));
+memset(&result_237, 0, sizeof(struct sType*));
+memset(&result_238, 0, sizeof(struct sType*));
             # 290 "./neo-c.h"
             # 285 "./neo-c.h"
-            if(_if_conditional300=self==((void*)0),            _if_conditional300) {
+            if(_if_conditional305=self==((void*)0),            _if_conditional305) {
                 # 286 "./neo-c.h"
                 # 287 "./neo-c.h"
-                memset(&result_234,0,sizeof(struct sType*));
+                memset(&result_237,0,sizeof(struct sType*));
                 # 288 "./neo-c.h"
-                __result179__ = __result_obj__ = result_234;
-                return __result179__;
+                __result183__ = __result_obj__ = result_237;
+                return __result183__;
             }
             # 290 "./neo-c.h"
             self->it=self->head;
@@ -10228,47 +10312,47 @@ memset(&result_235, 0, sizeof(struct sType*));
             # 292 "./neo-c.h"
             if(self->it) {
                 # 293 "./neo-c.h"
-                __result180__ = __result_obj__ = self->it->item;
-                return __result180__;
+                __result184__ = __result_obj__ = self->it->item;
+                return __result184__;
             }
             # 296 "./neo-c.h"
             # 297 "./neo-c.h"
-            memset(&result_235,0,sizeof(struct sType*));
+            memset(&result_238,0,sizeof(struct sType*));
             # 298 "./neo-c.h"
-            __result181__ = __result_obj__ = result_235;
-            return __result181__;
+            __result185__ = __result_obj__ = result_238;
+            return __result185__;
 }
 
 static _Bool list$1sTypeph_end(struct list$1sTypeph* self){
 void* __result_obj__;
-_Bool __result182__;
+_Bool __result186__;
 memset(&__result_obj__, 0, sizeof(void*));
             # 320 "./neo-c.h"
-            __result182__ = self==((void*)0)||self->it==((void*)0);
-            return __result182__;
+            __result186__ = self==((void*)0)||self->it==((void*)0);
+            return __result186__;
 }
 
 static struct sType* list$1sTypeph_next(struct list$1sTypeph* self){
 void* __result_obj__;
-_Bool _if_conditional302;
-struct sType* result_237;
-struct sType* __result183__;
-_Bool _if_conditional303;
-struct sType* __result184__;
-struct sType* result_238;
-struct sType* __result185__;
+_Bool _if_conditional307;
+struct sType* result_240;
+struct sType* __result187__;
+_Bool _if_conditional308;
+struct sType* __result188__;
+struct sType* result_241;
+struct sType* __result189__;
 memset(&__result_obj__, 0, sizeof(void*));
-memset(&result_237, 0, sizeof(struct sType*));
-memset(&result_238, 0, sizeof(struct sType*));
+memset(&result_240, 0, sizeof(struct sType*));
+memset(&result_241, 0, sizeof(struct sType*));
             # 308 "./neo-c.h"
             # 302 "./neo-c.h"
-            if(_if_conditional302=self==((void*)0)||self->it==((void*)0),            _if_conditional302) {
+            if(_if_conditional307=self==((void*)0)||self->it==((void*)0),            _if_conditional307) {
                 # 303 "./neo-c.h"
                 # 304 "./neo-c.h"
-                memset(&result_237,0,sizeof(struct sType*));
+                memset(&result_240,0,sizeof(struct sType*));
                 # 305 "./neo-c.h"
-                __result183__ = __result_obj__ = result_237;
-                return __result183__;
+                __result187__ = __result_obj__ = result_240;
+                return __result187__;
             }
             # 308 "./neo-c.h"
             self->it=self->it->next;
@@ -10276,453 +10360,212 @@ memset(&result_238, 0, sizeof(struct sType*));
             # 310 "./neo-c.h"
             if(self->it) {
                 # 311 "./neo-c.h"
-                __result184__ = __result_obj__ = self->it->item;
-                return __result184__;
+                __result188__ = __result_obj__ = self->it->item;
+                return __result188__;
             }
             # 314 "./neo-c.h"
             # 315 "./neo-c.h"
-            memset(&result_238,0,sizeof(struct sType*));
+            memset(&result_241,0,sizeof(struct sType*));
             # 316 "./neo-c.h"
-            __result185__ = __result_obj__ = result_238;
-            return __result185__;
+            __result189__ = __result_obj__ = result_241;
+            return __result189__;
 }
 
 static struct list$1sTypeph* list$1sTypeph_push_back(struct list$1sTypeph* self, struct sType* item){
 void* __result_obj__;
-_Bool _if_conditional305;
+_Bool _if_conditional310;
 void* right_value224;
-struct list_item$1sTypeph* litem_239;
+struct list_item$1sTypeph* litem_242;
 struct sType* __dec_obj70;
-_Bool _if_conditional306;
+_Bool _if_conditional311;
 void* right_value225;
-struct list_item$1sTypeph* litem_240;
+struct list_item$1sTypeph* litem_243;
 struct sType* __dec_obj71;
 void* right_value226;
-struct list_item$1sTypeph* litem_241;
+struct list_item$1sTypeph* litem_244;
 struct sType* __dec_obj72;
-struct list$1sTypeph* __result186__;
+struct list$1sTypeph* __result190__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value224 = (void*)0;
-memset(&litem_239, 0, sizeof(struct list_item$1sTypeph*));
+memset(&litem_242, 0, sizeof(struct list_item$1sTypeph*));
 right_value225 = (void*)0;
-memset(&litem_240, 0, sizeof(struct list_item$1sTypeph*));
+memset(&litem_243, 0, sizeof(struct list_item$1sTypeph*));
 right_value226 = (void*)0;
-memset(&litem_241, 0, sizeof(struct list_item$1sTypeph*));
+memset(&litem_244, 0, sizeof(struct list_item$1sTypeph*));
                     # 256 "./neo-c.h"
                     # 225 "./neo-c.h"
-                    if(_if_conditional305=self->len==0,                    _if_conditional305) {
+                    if(_if_conditional310=self->len==0,                    _if_conditional310) {
                         # 226 "./neo-c.h"
-                        litem_239=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value224=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./neo-c.h", 226, "list_item$1sTypeph"))));
+                        litem_242=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value224=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./neo-c.h", 226, "list_item$1sTypeph"))));
                         come_call_finalizer2(list_item$1sTypephp_finalize,right_value224, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                         # 228 "./neo-c.h"
-                        litem_239->prev=((void*)0);
+                        litem_242->prev=((void*)0);
                         # 229 "./neo-c.h"
-                        litem_239->next=((void*)0);
+                        litem_242->next=((void*)0);
                         # 230 "./neo-c.h"
-                        __dec_obj70=litem_239->item;
-                        litem_239->item=(struct sType*)come_increment_ref_count(item);
+                        __dec_obj70=litem_242->item;
+                        litem_242->item=(struct sType*)come_increment_ref_count(item);
                         come_call_finalizer2(sType_finalize,__dec_obj70, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         # 232 "./neo-c.h"
-                        self->tail=litem_239;
+                        self->tail=litem_242;
                         # 233 "./neo-c.h"
-                        self->head=litem_239;
+                        self->head=litem_242;
                     }
                     else {
                         # 256 "./neo-c.h"
                         # 235 "./neo-c.h"
-                        if(_if_conditional306=self->len==1,                        _if_conditional306) {
+                        if(_if_conditional311=self->len==1,                        _if_conditional311) {
                             # 236 "./neo-c.h"
-                            litem_240=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value225=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./neo-c.h", 236, "list_item$1sTypeph"))));
+                            litem_243=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value225=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./neo-c.h", 236, "list_item$1sTypeph"))));
                             come_call_finalizer2(list_item$1sTypephp_finalize,right_value225, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                             # 238 "./neo-c.h"
-                            litem_240->prev=self->head;
+                            litem_243->prev=self->head;
                             # 239 "./neo-c.h"
-                            litem_240->next=((void*)0);
+                            litem_243->next=((void*)0);
                             # 240 "./neo-c.h"
-                            __dec_obj71=litem_240->item;
-                            litem_240->item=(struct sType*)come_increment_ref_count(item);
+                            __dec_obj71=litem_243->item;
+                            litem_243->item=(struct sType*)come_increment_ref_count(item);
                             come_call_finalizer2(sType_finalize,__dec_obj71, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                             # 242 "./neo-c.h"
-                            self->tail=litem_240;
+                            self->tail=litem_243;
                             # 243 "./neo-c.h"
-                            self->head->next=litem_240;
+                            self->head->next=litem_243;
                         }
                         else {
                             # 246 "./neo-c.h"
-                            litem_241=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value226=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./neo-c.h", 246, "list_item$1sTypeph"))));
+                            litem_244=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value226=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./neo-c.h", 246, "list_item$1sTypeph"))));
                             come_call_finalizer2(list_item$1sTypephp_finalize,right_value226, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                             # 248 "./neo-c.h"
-                            litem_241->prev=self->tail;
+                            litem_244->prev=self->tail;
                             # 249 "./neo-c.h"
-                            litem_241->next=((void*)0);
+                            litem_244->next=((void*)0);
                             # 250 "./neo-c.h"
-                            __dec_obj72=litem_241->item;
-                            litem_241->item=(struct sType*)come_increment_ref_count(item);
+                            __dec_obj72=litem_244->item;
+                            litem_244->item=(struct sType*)come_increment_ref_count(item);
                             come_call_finalizer2(sType_finalize,__dec_obj72, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                             # 252 "./neo-c.h"
-                            self->tail->next=litem_241;
+                            self->tail->next=litem_244;
                             # 253 "./neo-c.h"
-                            self->tail=litem_241;
+                            self->tail=litem_244;
                         }
                     }
                     # 256 "./neo-c.h"
                     self->len++;
                     # 258 "./neo-c.h"
-                    __result186__ = __result_obj__ = self;
+                    __result190__ = __result_obj__ = self;
                     come_call_finalizer2(sType_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
-                    return __result186__;
+                    return __result190__;
                     come_call_finalizer2(sType_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
 }
 
 static struct list$1CVALUEph* list$1CVALUEph_add(struct list$1CVALUEph* self, struct CVALUE* item){
 void* __result_obj__;
-_Bool _if_conditional307;
+_Bool _if_conditional312;
 void* right_value231;
-struct list_item$1CVALUEph* litem_245;
+struct list_item$1CVALUEph* litem_248;
 struct CVALUE* __dec_obj73;
-_Bool _if_conditional308;
+_Bool _if_conditional313;
 void* right_value232;
-struct list_item$1CVALUEph* litem_246;
+struct list_item$1CVALUEph* litem_249;
 struct CVALUE* __dec_obj74;
 void* right_value233;
-struct list_item$1CVALUEph* litem_247;
+struct list_item$1CVALUEph* litem_250;
 struct CVALUE* __dec_obj75;
-struct list$1CVALUEph* __result187__;
+struct list$1CVALUEph* __result191__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value231 = (void*)0;
-memset(&litem_245, 0, sizeof(struct list_item$1CVALUEph*));
+memset(&litem_248, 0, sizeof(struct list_item$1CVALUEph*));
 right_value232 = (void*)0;
-memset(&litem_246, 0, sizeof(struct list_item$1CVALUEph*));
+memset(&litem_249, 0, sizeof(struct list_item$1CVALUEph*));
 right_value233 = (void*)0;
-memset(&litem_247, 0, sizeof(struct list_item$1CVALUEph*));
+memset(&litem_250, 0, sizeof(struct list_item$1CVALUEph*));
                 # 186 "./neo-c.h"
                 # 155 "./neo-c.h"
-                if(_if_conditional307=self->len==0,                _if_conditional307) {
+                if(_if_conditional312=self->len==0,                _if_conditional312) {
                     # 156 "./neo-c.h"
-                    litem_245=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value231=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./neo-c.h", 156, "list_item$1CVALUEph"))));
+                    litem_248=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value231=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./neo-c.h", 156, "list_item$1CVALUEph"))));
                     come_call_finalizer2(list_item$1CVALUEphp_finalize,right_value231, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                     # 158 "./neo-c.h"
-                    litem_245->prev=((void*)0);
+                    litem_248->prev=((void*)0);
                     # 159 "./neo-c.h"
-                    litem_245->next=((void*)0);
+                    litem_248->next=((void*)0);
                     # 160 "./neo-c.h"
-                    __dec_obj73=litem_245->item;
-                    litem_245->item=(struct CVALUE*)come_increment_ref_count(item);
+                    __dec_obj73=litem_248->item;
+                    litem_248->item=(struct CVALUE*)come_increment_ref_count(item);
                     come_call_finalizer2(CVALUE_finalize,__dec_obj73, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                     # 162 "./neo-c.h"
-                    self->tail=litem_245;
+                    self->tail=litem_248;
                     # 163 "./neo-c.h"
-                    self->head=litem_245;
+                    self->head=litem_248;
                 }
                 else {
                     # 186 "./neo-c.h"
                     # 165 "./neo-c.h"
-                    if(_if_conditional308=self->len==1,                    _if_conditional308) {
+                    if(_if_conditional313=self->len==1,                    _if_conditional313) {
                         # 166 "./neo-c.h"
-                        litem_246=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value232=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./neo-c.h", 166, "list_item$1CVALUEph"))));
+                        litem_249=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value232=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./neo-c.h", 166, "list_item$1CVALUEph"))));
                         come_call_finalizer2(list_item$1CVALUEphp_finalize,right_value232, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                         # 168 "./neo-c.h"
-                        litem_246->prev=self->head;
+                        litem_249->prev=self->head;
                         # 169 "./neo-c.h"
-                        litem_246->next=((void*)0);
+                        litem_249->next=((void*)0);
                         # 170 "./neo-c.h"
-                        __dec_obj74=litem_246->item;
-                        litem_246->item=(struct CVALUE*)come_increment_ref_count(item);
+                        __dec_obj74=litem_249->item;
+                        litem_249->item=(struct CVALUE*)come_increment_ref_count(item);
                         come_call_finalizer2(CVALUE_finalize,__dec_obj74, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         # 172 "./neo-c.h"
-                        self->tail=litem_246;
+                        self->tail=litem_249;
                         # 173 "./neo-c.h"
-                        self->head->next=litem_246;
+                        self->head->next=litem_249;
                     }
                     else {
                         # 176 "./neo-c.h"
-                        litem_247=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value233=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./neo-c.h", 176, "list_item$1CVALUEph"))));
+                        litem_250=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value233=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./neo-c.h", 176, "list_item$1CVALUEph"))));
                         come_call_finalizer2(list_item$1CVALUEphp_finalize,right_value233, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                         # 178 "./neo-c.h"
-                        litem_247->prev=self->tail;
+                        litem_250->prev=self->tail;
                         # 179 "./neo-c.h"
-                        litem_247->next=((void*)0);
+                        litem_250->next=((void*)0);
                         # 180 "./neo-c.h"
-                        __dec_obj75=litem_247->item;
-                        litem_247->item=(struct CVALUE*)come_increment_ref_count(item);
+                        __dec_obj75=litem_250->item;
+                        litem_250->item=(struct CVALUE*)come_increment_ref_count(item);
                         come_call_finalizer2(CVALUE_finalize,__dec_obj75, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                         # 182 "./neo-c.h"
-                        self->tail->next=litem_247;
+                        self->tail->next=litem_250;
                         # 183 "./neo-c.h"
-                        self->tail=litem_247;
+                        self->tail=litem_250;
                     }
                 }
                 # 186 "./neo-c.h"
                 self->len++;
                 # 188 "./neo-c.h"
-                __result187__ = __result_obj__ = self;
+                __result191__ = __result_obj__ = self;
                 come_call_finalizer2(CVALUE_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
-                return __result187__;
+                return __result191__;
                 come_call_finalizer2(CVALUE_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
 }
 
 static char* list$1charph_begin(struct list$1charph* self){
 void* __result_obj__;
-_Bool _if_conditional312;
-char* result_256;
-char* __result189__;
-_Bool _if_conditional313;
-char* __result190__;
-char* result_257;
-char* __result191__;
-memset(&__result_obj__, 0, sizeof(void*));
-memset(&result_256, 0, sizeof(char*));
-memset(&result_257, 0, sizeof(char*));
-                        # 290 "./neo-c.h"
-                        # 285 "./neo-c.h"
-                        if(_if_conditional312=self==((void*)0),                        _if_conditional312) {
-                            # 286 "./neo-c.h"
-                            # 287 "./neo-c.h"
-                            memset(&result_256,0,sizeof(char*));
-                            # 288 "./neo-c.h"
-                            __result189__ = __result_obj__ = result_256;
-                            return __result189__;
-                        }
-                        # 290 "./neo-c.h"
-                        self->it=self->head;
-                        # 296 "./neo-c.h"
-                        # 292 "./neo-c.h"
-                        if(self->it) {
-                            # 293 "./neo-c.h"
-                            __result190__ = __result_obj__ = self->it->item;
-                            return __result190__;
-                        }
-                        # 296 "./neo-c.h"
-                        # 297 "./neo-c.h"
-                        memset(&result_257,0,sizeof(char*));
-                        # 298 "./neo-c.h"
-                        __result191__ = __result_obj__ = result_257;
-                        return __result191__;
-}
-
-static _Bool list$1charph_end(struct list$1charph* self){
-void* __result_obj__;
-_Bool __result192__;
-memset(&__result_obj__, 0, sizeof(void*));
-                        # 320 "./neo-c.h"
-                        __result192__ = self==((void*)0)||self->it==((void*)0);
-                        return __result192__;
-}
-
-static char* list$1charph_next(struct list$1charph* self){
-void* __result_obj__;
-_Bool _if_conditional314;
+_Bool _if_conditional317;
 char* result_259;
 char* __result193__;
-_Bool _if_conditional315;
+_Bool _if_conditional318;
 char* __result194__;
 char* result_260;
 char* __result195__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_259, 0, sizeof(char*));
 memset(&result_260, 0, sizeof(char*));
-                        # 308 "./neo-c.h"
-                        # 302 "./neo-c.h"
-                        if(_if_conditional314=self==((void*)0)||self->it==((void*)0),                        _if_conditional314) {
-                            # 303 "./neo-c.h"
-                            # 304 "./neo-c.h"
-                            memset(&result_259,0,sizeof(char*));
-                            # 305 "./neo-c.h"
-                            __result193__ = __result_obj__ = result_259;
-                            return __result193__;
-                        }
-                        # 308 "./neo-c.h"
-                        self->it=self->it->next;
-                        # 314 "./neo-c.h"
-                        # 310 "./neo-c.h"
-                        if(self->it) {
-                            # 311 "./neo-c.h"
-                            __result194__ = __result_obj__ = self->it->item;
-                            return __result194__;
-                        }
-                        # 314 "./neo-c.h"
-                        # 315 "./neo-c.h"
-                        memset(&result_260,0,sizeof(char*));
-                        # 316 "./neo-c.h"
-                        __result195__ = __result_obj__ = result_260;
-                        return __result195__;
-}
-
-static struct list$1CVALUEph* list$1CVALUEph_replace(struct list$1CVALUEph* self, int position, struct CVALUE* item){
-void* __result_obj__;
-_Bool _if_conditional319;
-_Bool _if_conditional320;
-struct list$1CVALUEph* __result196__;
-struct list_item$1CVALUEph* it_261;
-int i_262;
-_Bool _while_condtional32;
-_Bool _if_conditional321;
-struct CVALUE* __dec_obj76;
-struct list$1CVALUEph* __result197__;
-memset(&__result_obj__, 0, sizeof(void*));
-memset(&it_261, 0, sizeof(struct list_item$1CVALUEph*));
-memset(&i_262, 0, sizeof(int));
-                        # 592 "./neo-c.h"
-                        # 588 "./neo-c.h"
-                        if(_if_conditional319=position<0,                        _if_conditional319) {
-                            # 589 "./neo-c.h"
-                            position+=self->len;
-                        }
-                        # 597 "./neo-c.h"
-                        # 592 "./neo-c.h"
-                        if(_if_conditional320=position>=self->len,                        _if_conditional320) {
-                            # 593 "./neo-c.h"
-                            list$1CVALUEph_push_back(self,(struct CVALUE*)come_increment_ref_count(item));
-                            # 594 "./neo-c.h"
-                            __result196__ = __result_obj__ = self;
-                            come_call_finalizer2(CVALUE_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
-                            return __result196__;
-                        }
-                        # 597 "./neo-c.h"
-                        it_261=self->head;
-                        # 598 "./neo-c.h"
-                        i_262=0;
-                        # 608 "./neo-c.h"
-                        while(_while_condtional32=it_261!=((void*)0),                        _while_condtional32) {
-                            # 604 "./neo-c.h"
-                            # 600 "./neo-c.h"
-                            if(_if_conditional321=position==i_262,                            _if_conditional321) {
-                                # 601 "./neo-c.h"
-                                __dec_obj76=it_261->item;
-                                it_261->item=(struct CVALUE*)come_increment_ref_count(item);
-                                come_call_finalizer2(CVALUE_finalize,__dec_obj76, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                                # 602 "./neo-c.h"
-                                break;
-                            }
-                            # 604 "./neo-c.h"
-                            it_261=it_261->next;
-                            # 605 "./neo-c.h"
-                            i_262++;
-                        }
-                        # 608 "./neo-c.h"
-                        __result197__ = __result_obj__ = self;
-                        come_call_finalizer2(CVALUE_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
-                        return __result197__;
-                        come_call_finalizer2(CVALUE_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
-}
-
-static char* list$1charphp_operator_load_element(struct list$1charph* self, int position){
-void* __result_obj__;
-_Bool _if_conditional325;
-struct list_item$1charph* it_268;
-int i_269;
-_Bool _while_condtional33;
-_Bool _if_conditional326;
-char* __result198__;
-char* default_value_270;
-char* __result199__;
-memset(&__result_obj__, 0, sizeof(void*));
-memset(&it_268, 0, sizeof(struct list_item$1charph*));
-memset(&i_269, 0, sizeof(int));
-memset(&default_value_270, 0, sizeof(char*));
-                            # 686 "./neo-c.h"
-                            # 682 "./neo-c.h"
-                            if(_if_conditional325=position<0,                            _if_conditional325) {
-                                # 683 "./neo-c.h"
-                                position+=self->len;
-                            }
-                            # 686 "./neo-c.h"
-                            it_268=self->head;
-                            # 687 "./neo-c.h"
-                            i_269=0;
-                            # 694 "./neo-c.h"
-                            while(_while_condtional33=it_268!=((void*)0),                            _while_condtional33) {
-                                # 692 "./neo-c.h"
-                                # 689 "./neo-c.h"
-                                if(_if_conditional326=position==i_269,                                _if_conditional326) {
-                                    # 690 "./neo-c.h"
-                                    __result198__ = __result_obj__ = it_268->item;
-                                    return __result198__;
-                                }
-                                # 692 "./neo-c.h"
-                                it_268=it_268->next;
-                                # 693 "./neo-c.h"
-                                i_269++;
-                            }
-                            # 696 "./neo-c.h"
-                            # 697 "./neo-c.h"
-                            memset(&default_value_270,0,sizeof(char*));
-                            # 698 "./neo-c.h"
-                            __result199__ = __result_obj__ = default_value_270;
-                            default_value_270 = come_decrement_ref_count2(default_value_270, (void*)0, (void*)0, 0, 1, 0, (void*)0);
-                            return __result199__;
-                            default_value_270 = come_decrement_ref_count2(default_value_270, (void*)0, (void*)0, 0, 0, 0, (void*)0);
-}
-
-static struct CVALUE* list$1CVALUEphp_operator_load_element(struct list$1CVALUEph* self, int position){
-void* __result_obj__;
-_Bool _if_conditional329;
-struct list_item$1CVALUEph* it_272;
-int i_273;
-_Bool _while_condtional35;
-_Bool _if_conditional330;
-struct CVALUE* __result201__;
-struct CVALUE* default_value_274;
-struct CVALUE* __result202__;
-memset(&__result_obj__, 0, sizeof(void*));
-memset(&it_272, 0, sizeof(struct list_item$1CVALUEph*));
-memset(&i_273, 0, sizeof(int));
-memset(&default_value_274, 0, sizeof(struct CVALUE*));
-                            # 686 "./neo-c.h"
-                            # 682 "./neo-c.h"
-                            if(_if_conditional329=position<0,                            _if_conditional329) {
-                                # 683 "./neo-c.h"
-                                position+=self->len;
-                            }
-                            # 686 "./neo-c.h"
-                            it_272=self->head;
-                            # 687 "./neo-c.h"
-                            i_273=0;
-                            # 694 "./neo-c.h"
-                            while(_while_condtional35=it_272!=((void*)0),                            _while_condtional35) {
-                                # 692 "./neo-c.h"
-                                # 689 "./neo-c.h"
-                                if(_if_conditional330=position==i_273,                                _if_conditional330) {
-                                    # 690 "./neo-c.h"
-                                    __result201__ = __result_obj__ = it_272->item;
-                                    return __result201__;
-                                }
-                                # 692 "./neo-c.h"
-                                it_272=it_272->next;
-                                # 693 "./neo-c.h"
-                                i_273++;
-                            }
-                            # 696 "./neo-c.h"
-                            # 697 "./neo-c.h"
-                            memset(&default_value_274,0,sizeof(struct CVALUE*));
-                            # 698 "./neo-c.h"
-                            __result202__ = __result_obj__ = default_value_274;
-                            come_call_finalizer2(CVALUE_finalize,default_value_274, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
-                            return __result202__;
-                            come_call_finalizer2(CVALUE_finalize,default_value_274, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-}
-
-static struct sNode* list$1sNodeph_begin(struct list$1sNodeph* self){
-void* __result_obj__;
-_Bool _if_conditional338;
-struct sNode* result_280;
-struct sNode* __result203__;
-_Bool _if_conditional339;
-struct sNode* __result204__;
-struct sNode* result_281;
-struct sNode* __result205__;
-memset(&__result_obj__, 0, sizeof(void*));
-memset(&result_280, 0, sizeof(struct sNode*));
-memset(&result_281, 0, sizeof(struct sNode*));
                         # 290 "./neo-c.h"
                         # 285 "./neo-c.h"
-                        if(_if_conditional338=self==((void*)0),                        _if_conditional338) {
+                        if(_if_conditional317=self==((void*)0),                        _if_conditional317) {
                             # 286 "./neo-c.h"
                             # 287 "./neo-c.h"
-                            memset(&result_280,0,sizeof(struct sNode*));
+                            memset(&result_259,0,sizeof(char*));
                             # 288 "./neo-c.h"
-                            __result203__ = __result_obj__ = result_280;
-                            return __result203__;
+                            __result193__ = __result_obj__ = result_259;
+                            return __result193__;
                         }
                         # 290 "./neo-c.h"
                         self->it=self->head;
@@ -10730,47 +10573,47 @@ memset(&result_281, 0, sizeof(struct sNode*));
                         # 292 "./neo-c.h"
                         if(self->it) {
                             # 293 "./neo-c.h"
-                            __result204__ = __result_obj__ = self->it->item;
-                            return __result204__;
+                            __result194__ = __result_obj__ = self->it->item;
+                            return __result194__;
                         }
                         # 296 "./neo-c.h"
                         # 297 "./neo-c.h"
-                        memset(&result_281,0,sizeof(struct sNode*));
+                        memset(&result_260,0,sizeof(char*));
                         # 298 "./neo-c.h"
-                        __result205__ = __result_obj__ = result_281;
-                        return __result205__;
+                        __result195__ = __result_obj__ = result_260;
+                        return __result195__;
 }
 
-static _Bool list$1sNodeph_end(struct list$1sNodeph* self){
+static _Bool list$1charph_end(struct list$1charph* self){
 void* __result_obj__;
-_Bool __result206__;
+_Bool __result196__;
 memset(&__result_obj__, 0, sizeof(void*));
                         # 320 "./neo-c.h"
-                        __result206__ = self==((void*)0)||self->it==((void*)0);
-                        return __result206__;
+                        __result196__ = self==((void*)0)||self->it==((void*)0);
+                        return __result196__;
 }
 
-static struct sNode* list$1sNodeph_next(struct list$1sNodeph* self){
+static char* list$1charph_next(struct list$1charph* self){
 void* __result_obj__;
-_Bool _if_conditional340;
-struct sNode* result_283;
-struct sNode* __result207__;
-_Bool _if_conditional341;
-struct sNode* __result208__;
-struct sNode* result_284;
-struct sNode* __result209__;
+_Bool _if_conditional319;
+char* result_262;
+char* __result197__;
+_Bool _if_conditional320;
+char* __result198__;
+char* result_263;
+char* __result199__;
 memset(&__result_obj__, 0, sizeof(void*));
-memset(&result_283, 0, sizeof(struct sNode*));
-memset(&result_284, 0, sizeof(struct sNode*));
+memset(&result_262, 0, sizeof(char*));
+memset(&result_263, 0, sizeof(char*));
                         # 308 "./neo-c.h"
                         # 302 "./neo-c.h"
-                        if(_if_conditional340=self==((void*)0)||self->it==((void*)0),                        _if_conditional340) {
+                        if(_if_conditional319=self==((void*)0)||self->it==((void*)0),                        _if_conditional319) {
                             # 303 "./neo-c.h"
                             # 304 "./neo-c.h"
-                            memset(&result_283,0,sizeof(struct sNode*));
+                            memset(&result_262,0,sizeof(char*));
                             # 305 "./neo-c.h"
-                            __result207__ = __result_obj__ = result_283;
-                            return __result207__;
+                            __result197__ = __result_obj__ = result_262;
+                            return __result197__;
                         }
                         # 308 "./neo-c.h"
                         self->it=self->it->next;
@@ -10778,108 +10621,349 @@ memset(&result_284, 0, sizeof(struct sNode*));
                         # 310 "./neo-c.h"
                         if(self->it) {
                             # 311 "./neo-c.h"
-                            __result208__ = __result_obj__ = self->it->item;
-                            return __result208__;
+                            __result198__ = __result_obj__ = self->it->item;
+                            return __result198__;
                         }
                         # 314 "./neo-c.h"
                         # 315 "./neo-c.h"
-                        memset(&result_284,0,sizeof(struct sNode*));
+                        memset(&result_263,0,sizeof(char*));
                         # 316 "./neo-c.h"
+                        __result199__ = __result_obj__ = result_263;
+                        return __result199__;
+}
+
+static struct list$1CVALUEph* list$1CVALUEph_replace(struct list$1CVALUEph* self, int position, struct CVALUE* item){
+void* __result_obj__;
+_Bool _if_conditional324;
+_Bool _if_conditional325;
+struct list$1CVALUEph* __result200__;
+struct list_item$1CVALUEph* it_264;
+int i_265;
+_Bool _while_condtional34;
+_Bool _if_conditional326;
+struct CVALUE* __dec_obj76;
+struct list$1CVALUEph* __result201__;
+memset(&__result_obj__, 0, sizeof(void*));
+memset(&it_264, 0, sizeof(struct list_item$1CVALUEph*));
+memset(&i_265, 0, sizeof(int));
+                        # 592 "./neo-c.h"
+                        # 588 "./neo-c.h"
+                        if(_if_conditional324=position<0,                        _if_conditional324) {
+                            # 589 "./neo-c.h"
+                            position+=self->len;
+                        }
+                        # 597 "./neo-c.h"
+                        # 592 "./neo-c.h"
+                        if(_if_conditional325=position>=self->len,                        _if_conditional325) {
+                            # 593 "./neo-c.h"
+                            list$1CVALUEph_push_back(self,(struct CVALUE*)come_increment_ref_count(item));
+                            # 594 "./neo-c.h"
+                            __result200__ = __result_obj__ = self;
+                            come_call_finalizer2(CVALUE_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
+                            return __result200__;
+                        }
+                        # 597 "./neo-c.h"
+                        it_264=self->head;
+                        # 598 "./neo-c.h"
+                        i_265=0;
+                        # 608 "./neo-c.h"
+                        while(_while_condtional34=it_264!=((void*)0),                        _while_condtional34) {
+                            # 604 "./neo-c.h"
+                            # 600 "./neo-c.h"
+                            if(_if_conditional326=position==i_265,                            _if_conditional326) {
+                                # 601 "./neo-c.h"
+                                __dec_obj76=it_264->item;
+                                it_264->item=(struct CVALUE*)come_increment_ref_count(item);
+                                come_call_finalizer2(CVALUE_finalize,__dec_obj76, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+                                # 602 "./neo-c.h"
+                                break;
+                            }
+                            # 604 "./neo-c.h"
+                            it_264=it_264->next;
+                            # 605 "./neo-c.h"
+                            i_265++;
+                        }
+                        # 608 "./neo-c.h"
+                        __result201__ = __result_obj__ = self;
+                        come_call_finalizer2(CVALUE_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
+                        return __result201__;
+                        come_call_finalizer2(CVALUE_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
+}
+
+static char* list$1charphp_operator_load_element(struct list$1charph* self, int position){
+void* __result_obj__;
+_Bool _if_conditional330;
+struct list_item$1charph* it_271;
+int i_272;
+_Bool _while_condtional35;
+_Bool _if_conditional331;
+char* __result202__;
+char* default_value_273;
+char* __result203__;
+memset(&__result_obj__, 0, sizeof(void*));
+memset(&it_271, 0, sizeof(struct list_item$1charph*));
+memset(&i_272, 0, sizeof(int));
+memset(&default_value_273, 0, sizeof(char*));
+                            # 686 "./neo-c.h"
+                            # 682 "./neo-c.h"
+                            if(_if_conditional330=position<0,                            _if_conditional330) {
+                                # 683 "./neo-c.h"
+                                position+=self->len;
+                            }
+                            # 686 "./neo-c.h"
+                            it_271=self->head;
+                            # 687 "./neo-c.h"
+                            i_272=0;
+                            # 694 "./neo-c.h"
+                            while(_while_condtional35=it_271!=((void*)0),                            _while_condtional35) {
+                                # 692 "./neo-c.h"
+                                # 689 "./neo-c.h"
+                                if(_if_conditional331=position==i_272,                                _if_conditional331) {
+                                    # 690 "./neo-c.h"
+                                    __result202__ = __result_obj__ = it_271->item;
+                                    return __result202__;
+                                }
+                                # 692 "./neo-c.h"
+                                it_271=it_271->next;
+                                # 693 "./neo-c.h"
+                                i_272++;
+                            }
+                            # 696 "./neo-c.h"
+                            # 697 "./neo-c.h"
+                            memset(&default_value_273,0,sizeof(char*));
+                            # 698 "./neo-c.h"
+                            __result203__ = __result_obj__ = default_value_273;
+                            default_value_273 = come_decrement_ref_count2(default_value_273, (void*)0, (void*)0, 0, 1, 0, (void*)0);
+                            return __result203__;
+                            default_value_273 = come_decrement_ref_count2(default_value_273, (void*)0, (void*)0, 0, 0, 0, (void*)0);
+}
+
+static struct CVALUE* list$1CVALUEphp_operator_load_element(struct list$1CVALUEph* self, int position){
+void* __result_obj__;
+_Bool _if_conditional334;
+struct list_item$1CVALUEph* it_275;
+int i_276;
+_Bool _while_condtional37;
+_Bool _if_conditional335;
+struct CVALUE* __result205__;
+struct CVALUE* default_value_277;
+struct CVALUE* __result206__;
+memset(&__result_obj__, 0, sizeof(void*));
+memset(&it_275, 0, sizeof(struct list_item$1CVALUEph*));
+memset(&i_276, 0, sizeof(int));
+memset(&default_value_277, 0, sizeof(struct CVALUE*));
+                            # 686 "./neo-c.h"
+                            # 682 "./neo-c.h"
+                            if(_if_conditional334=position<0,                            _if_conditional334) {
+                                # 683 "./neo-c.h"
+                                position+=self->len;
+                            }
+                            # 686 "./neo-c.h"
+                            it_275=self->head;
+                            # 687 "./neo-c.h"
+                            i_276=0;
+                            # 694 "./neo-c.h"
+                            while(_while_condtional37=it_275!=((void*)0),                            _while_condtional37) {
+                                # 692 "./neo-c.h"
+                                # 689 "./neo-c.h"
+                                if(_if_conditional335=position==i_276,                                _if_conditional335) {
+                                    # 690 "./neo-c.h"
+                                    __result205__ = __result_obj__ = it_275->item;
+                                    return __result205__;
+                                }
+                                # 692 "./neo-c.h"
+                                it_275=it_275->next;
+                                # 693 "./neo-c.h"
+                                i_276++;
+                            }
+                            # 696 "./neo-c.h"
+                            # 697 "./neo-c.h"
+                            memset(&default_value_277,0,sizeof(struct CVALUE*));
+                            # 698 "./neo-c.h"
+                            __result206__ = __result_obj__ = default_value_277;
+                            come_call_finalizer2(CVALUE_finalize,default_value_277, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
+                            return __result206__;
+                            come_call_finalizer2(CVALUE_finalize,default_value_277, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+}
+
+static struct sNode* list$1sNodeph_begin(struct list$1sNodeph* self){
+void* __result_obj__;
+_Bool _if_conditional343;
+struct sNode* result_283;
+struct sNode* __result207__;
+_Bool _if_conditional344;
+struct sNode* __result208__;
+struct sNode* result_284;
+struct sNode* __result209__;
+memset(&__result_obj__, 0, sizeof(void*));
+memset(&result_283, 0, sizeof(struct sNode*));
+memset(&result_284, 0, sizeof(struct sNode*));
+                        # 290 "./neo-c.h"
+                        # 285 "./neo-c.h"
+                        if(_if_conditional343=self==((void*)0),                        _if_conditional343) {
+                            # 286 "./neo-c.h"
+                            # 287 "./neo-c.h"
+                            memset(&result_283,0,sizeof(struct sNode*));
+                            # 288 "./neo-c.h"
+                            __result207__ = __result_obj__ = result_283;
+                            return __result207__;
+                        }
+                        # 290 "./neo-c.h"
+                        self->it=self->head;
+                        # 296 "./neo-c.h"
+                        # 292 "./neo-c.h"
+                        if(self->it) {
+                            # 293 "./neo-c.h"
+                            __result208__ = __result_obj__ = self->it->item;
+                            return __result208__;
+                        }
+                        # 296 "./neo-c.h"
+                        # 297 "./neo-c.h"
+                        memset(&result_284,0,sizeof(struct sNode*));
+                        # 298 "./neo-c.h"
                         __result209__ = __result_obj__ = result_284;
                         return __result209__;
 }
 
+static _Bool list$1sNodeph_end(struct list$1sNodeph* self){
+void* __result_obj__;
+_Bool __result210__;
+memset(&__result_obj__, 0, sizeof(void*));
+                        # 320 "./neo-c.h"
+                        __result210__ = self==((void*)0)||self->it==((void*)0);
+                        return __result210__;
+}
+
+static struct sNode* list$1sNodeph_next(struct list$1sNodeph* self){
+void* __result_obj__;
+_Bool _if_conditional345;
+struct sNode* result_286;
+struct sNode* __result211__;
+_Bool _if_conditional346;
+struct sNode* __result212__;
+struct sNode* result_287;
+struct sNode* __result213__;
+memset(&__result_obj__, 0, sizeof(void*));
+memset(&result_286, 0, sizeof(struct sNode*));
+memset(&result_287, 0, sizeof(struct sNode*));
+                        # 308 "./neo-c.h"
+                        # 302 "./neo-c.h"
+                        if(_if_conditional345=self==((void*)0)||self->it==((void*)0),                        _if_conditional345) {
+                            # 303 "./neo-c.h"
+                            # 304 "./neo-c.h"
+                            memset(&result_286,0,sizeof(struct sNode*));
+                            # 305 "./neo-c.h"
+                            __result211__ = __result_obj__ = result_286;
+                            return __result211__;
+                        }
+                        # 308 "./neo-c.h"
+                        self->it=self->it->next;
+                        # 314 "./neo-c.h"
+                        # 310 "./neo-c.h"
+                        if(self->it) {
+                            # 311 "./neo-c.h"
+                            __result212__ = __result_obj__ = self->it->item;
+                            return __result212__;
+                        }
+                        # 314 "./neo-c.h"
+                        # 315 "./neo-c.h"
+                        memset(&result_287,0,sizeof(struct sNode*));
+                        # 316 "./neo-c.h"
+                        __result213__ = __result_obj__ = result_287;
+                        return __result213__;
+}
+
 static struct list$1tuple2$2charphsNodephph* list$1tuple2$2charphsNodephph_push_back(struct list$1tuple2$2charphsNodephph* self, struct tuple2$2charphsNodeph* item){
 void* __result_obj__;
-_Bool _if_conditional344;
+_Bool _if_conditional349;
 void* right_value254;
-struct list_item$1tuple2$2charphsNodephph* litem_287;
+struct list_item$1tuple2$2charphsNodephph* litem_290;
 struct tuple2$2charphsNodeph* __dec_obj79;
-_Bool _if_conditional345;
+_Bool _if_conditional350;
 void* right_value255;
-struct list_item$1tuple2$2charphsNodephph* litem_288;
+struct list_item$1tuple2$2charphsNodephph* litem_291;
 struct tuple2$2charphsNodeph* __dec_obj80;
 void* right_value256;
-struct list_item$1tuple2$2charphsNodephph* litem_289;
+struct list_item$1tuple2$2charphsNodephph* litem_292;
 struct tuple2$2charphsNodeph* __dec_obj81;
-struct list$1tuple2$2charphsNodephph* __result210__;
+struct list$1tuple2$2charphsNodephph* __result214__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value254 = (void*)0;
-memset(&litem_287, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
+memset(&litem_290, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
 right_value255 = (void*)0;
-memset(&litem_288, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
+memset(&litem_291, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
 right_value256 = (void*)0;
-memset(&litem_289, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
+memset(&litem_292, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
                         # 256 "./neo-c.h"
                         # 225 "./neo-c.h"
-                        if(_if_conditional344=self->len==0,                        _if_conditional344) {
+                        if(_if_conditional349=self->len==0,                        _if_conditional349) {
                             # 226 "./neo-c.h"
-                            litem_287=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value254=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 226, "list_item$1tuple2$2charphsNodephph"))));
+                            litem_290=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value254=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 226, "list_item$1tuple2$2charphsNodephph"))));
                             come_call_finalizer2(list_item$1tuple2$2charphsNodephphp_finalize,right_value254, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                             # 228 "./neo-c.h"
-                            litem_287->prev=((void*)0);
+                            litem_290->prev=((void*)0);
                             # 229 "./neo-c.h"
-                            litem_287->next=((void*)0);
+                            litem_290->next=((void*)0);
                             # 230 "./neo-c.h"
-                            __dec_obj79=litem_287->item;
-                            litem_287->item=(struct tuple2$2charphsNodeph*)come_increment_ref_count(item);
+                            __dec_obj79=litem_290->item;
+                            litem_290->item=(struct tuple2$2charphsNodeph*)come_increment_ref_count(item);
                             come_call_finalizer2(tuple2$2charphsNodeph_finalize,__dec_obj79, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                             # 232 "./neo-c.h"
-                            self->tail=litem_287;
+                            self->tail=litem_290;
                             # 233 "./neo-c.h"
-                            self->head=litem_287;
+                            self->head=litem_290;
                         }
                         else {
                             # 256 "./neo-c.h"
                             # 235 "./neo-c.h"
-                            if(_if_conditional345=self->len==1,                            _if_conditional345) {
+                            if(_if_conditional350=self->len==1,                            _if_conditional350) {
                                 # 236 "./neo-c.h"
-                                litem_288=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value255=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 236, "list_item$1tuple2$2charphsNodephph"))));
+                                litem_291=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value255=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 236, "list_item$1tuple2$2charphsNodephph"))));
                                 come_call_finalizer2(list_item$1tuple2$2charphsNodephphp_finalize,right_value255, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                 # 238 "./neo-c.h"
-                                litem_288->prev=self->head;
+                                litem_291->prev=self->head;
                                 # 239 "./neo-c.h"
-                                litem_288->next=((void*)0);
+                                litem_291->next=((void*)0);
                                 # 240 "./neo-c.h"
-                                __dec_obj80=litem_288->item;
-                                litem_288->item=(struct tuple2$2charphsNodeph*)come_increment_ref_count(item);
+                                __dec_obj80=litem_291->item;
+                                litem_291->item=(struct tuple2$2charphsNodeph*)come_increment_ref_count(item);
                                 come_call_finalizer2(tuple2$2charphsNodeph_finalize,__dec_obj80, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 # 242 "./neo-c.h"
-                                self->tail=litem_288;
+                                self->tail=litem_291;
                                 # 243 "./neo-c.h"
-                                self->head->next=litem_288;
+                                self->head->next=litem_291;
                             }
                             else {
                                 # 246 "./neo-c.h"
-                                litem_289=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value256=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 246, "list_item$1tuple2$2charphsNodephph"))));
+                                litem_292=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value256=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 246, "list_item$1tuple2$2charphsNodephph"))));
                                 come_call_finalizer2(list_item$1tuple2$2charphsNodephphp_finalize,right_value256, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                 # 248 "./neo-c.h"
-                                litem_289->prev=self->tail;
+                                litem_292->prev=self->tail;
                                 # 249 "./neo-c.h"
-                                litem_289->next=((void*)0);
+                                litem_292->next=((void*)0);
                                 # 250 "./neo-c.h"
-                                __dec_obj81=litem_289->item;
-                                litem_289->item=(struct tuple2$2charphsNodeph*)come_increment_ref_count(item);
+                                __dec_obj81=litem_292->item;
+                                litem_292->item=(struct tuple2$2charphsNodeph*)come_increment_ref_count(item);
                                 come_call_finalizer2(tuple2$2charphsNodeph_finalize,__dec_obj81, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 # 252 "./neo-c.h"
-                                self->tail->next=litem_289;
+                                self->tail->next=litem_292;
                                 # 253 "./neo-c.h"
-                                self->tail=litem_289;
+                                self->tail=litem_292;
                             }
                         }
                         # 256 "./neo-c.h"
                         self->len++;
                         # 258 "./neo-c.h"
-                        __result210__ = __result_obj__ = self;
+                        __result214__ = __result_obj__ = self;
                         come_call_finalizer2(tuple2$2charphsNodephp_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
-                        return __result210__;
+                        return __result214__;
                         come_call_finalizer2(tuple2$2charphsNodephp_finalize,item, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
 }
 
 static struct tuple2$2charphvoidp* tuple2$2charphvoidp_initialize(struct tuple2$2charphvoidp* self, char* v1, void* v2){
 void* __result_obj__;
 char* __dec_obj82;
-struct tuple2$2charphvoidp* __result211__;
+struct tuple2$2charphvoidp* __result215__;
 memset(&__result_obj__, 0, sizeof(void*));
                         # 1767 "./neo-c.h"
                         __dec_obj82=self->v1;
@@ -10888,21 +10972,21 @@ memset(&__result_obj__, 0, sizeof(void*));
                         # 1768 "./neo-c.h"
                         self->v2=v2;
                         # 1770 "./neo-c.h"
-                        __result211__ = __result_obj__ = self;
+                        __result215__ = __result_obj__ = self;
                         come_call_finalizer2(tuple2$2charphvoidpp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
                         v1 = come_decrement_ref_count2(v1, (void*)0, (void*)0, 0, 1, 0, (void*)0);
-                        return __result211__;
+                        return __result215__;
                         come_call_finalizer2(tuple2$2charphvoidpp_finalize,self, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
                         v1 = come_decrement_ref_count2(v1, (void*)0, (void*)0, 0, 1, 0, (void*)0);
 }
 
 static void tuple2$2charphvoidpp_finalize(struct tuple2$2charphvoidp* self){
 void* __result_obj__;
-_Bool _if_conditional346;
+_Bool _if_conditional351;
 memset(&__result_obj__, 0, sizeof(void*));
                             # 1 "tuple2$2charphvoidpp_finalize"
                             # 0 "tuple2$2charphvoidpp_finalize"
-                            if(_if_conditional346=self!=((void*)0)&&self->v1!=((void*)0),                            _if_conditional346) {
+                            if(_if_conditional351=self!=((void*)0)&&self->v1!=((void*)0),                            _if_conditional351) {
                                 # 0 "tuple2$2charphvoidpp_finalize"
                                 self->v1 = come_decrement_ref_count2(self->v1, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                             }
@@ -10910,91 +10994,20 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static int list$1tuple2$2charphsNodephph_length(struct list$1tuple2$2charphsNodephph* self){
 void* __result_obj__;
-_Bool _if_conditional356;
-int __result212__;
-int __result213__;
+_Bool _if_conditional361;
+int __result216__;
+int __result217__;
 memset(&__result_obj__, 0, sizeof(void*));
             # 367 "./neo-c.h"
             # 364 "./neo-c.h"
-            if(_if_conditional356=self==((void*)0),            _if_conditional356) {
+            if(_if_conditional361=self==((void*)0),            _if_conditional361) {
                 # 365 "./neo-c.h"
-                __result212__ = 0;
-                return __result212__;
+                __result216__ = 0;
+                return __result216__;
             }
             # 367 "./neo-c.h"
-            __result213__ = self->len;
-            return __result213__;
-}
-
-static struct sClass* map$2charphsClassphp_operator_load_element(struct map$2charphsClassph* self, char* key){
-void* __result_obj__;
-struct sClass* default_value_322;
-unsigned int hash_323;
-unsigned int it_324;
-_Bool _while_condtional37;
-_Bool _if_conditional369;
-_Bool _if_conditional370;
-struct sClass* __result219__;
-_Bool _if_conditional371;
-_Bool _if_conditional372;
-struct sClass* __result220__;
-struct sClass* __result221__;
-struct sClass* __result222__;
-memset(&__result_obj__, 0, sizeof(void*));
-memset(&default_value_322, 0, sizeof(struct sClass*));
-memset(&hash_323, 0, sizeof(unsigned int));
-memset(&it_324, 0, sizeof(unsigned int));
-                # 1544 "./neo-c.h"
-                # 1545 "./neo-c.h"
-                memset(&default_value_322,0,sizeof(struct sClass*));
-                # 1547 "./neo-c.h"
-                hash_323=string_get_hash_key(((char*)key))%self->size;
-                # 1548 "./neo-c.h"
-                it_324=hash_323;
-                # 1572 "./neo-c.h"
-                while(_while_condtional37=(_Bool)1,                _while_condtional37) {
-                    # 1570 "./neo-c.h"
-                    # 1551 "./neo-c.h"
-                    if(_if_conditional369=self->item_existance[it_324],                    _if_conditional369) {
-                        # 1558 "./neo-c.h"
-                        # 1553 "./neo-c.h"
-                        if(_if_conditional370=string_equals(self->keys[it_324],key),                        _if_conditional370) {
-                            # 1555 "./neo-c.h"
-                            __result219__ = __result_obj__ = self->items[it_324];
-                            come_call_finalizer2(sClass_finalize,default_value_322, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                            return __result219__;
-                        }
-                        # 1558 "./neo-c.h"
-                        it_324++;
-                        # 1566 "./neo-c.h"
-                        # 1560 "./neo-c.h"
-                        if(_if_conditional371=it_324>=self->size,                        _if_conditional371) {
-                            # 1561 "./neo-c.h"
-                            it_324=0;
-                        }
-                        else {
-                            # 1566 "./neo-c.h"
-                            # 1563 "./neo-c.h"
-                            if(_if_conditional372=it_324==hash_323,                            _if_conditional372) {
-                                # 1564 "./neo-c.h"
-                                __result220__ = __result_obj__ = default_value_322;
-                                come_call_finalizer2(sClass_finalize,default_value_322, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
-                                return __result220__;
-                            }
-                        }
-                    }
-                    else {
-                        # 1568 "./neo-c.h"
-                        __result221__ = __result_obj__ = default_value_322;
-                        come_call_finalizer2(sClass_finalize,default_value_322, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
-                        return __result221__;
-                    }
-                }
-                # 1572 "./neo-c.h"
-                __result222__ = __result_obj__ = default_value_322;
-                come_call_finalizer2(sClass_finalize,default_value_322, (void*)0, (void*)0, 0, 0, 1, 0, (void*)0);
-                return __result222__;
-                come_call_finalizer2(sClass_finalize,default_value_322, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
+            __result217__ = self->len;
+            return __result217__;
 }
 
 struct sNode* parse_method_call_v20(struct sNode* obj, char* fun_name, struct sInfo* info){
@@ -11005,42 +11018,42 @@ struct list$1tuple2$2charphsNodephph* params_356;
 void* right_value362;
 void* right_value363;
 void* right_value364;
-_Bool _if_conditional387;
+_Bool _if_conditional388;
 _Bool parse_method_generics_type_357;
 char* p_358;
 int sline_359;
-_Bool _if_conditional388;
 _Bool _if_conditional389;
+_Bool _if_conditional390;
 void* right_value365;
 char* word_360;
-_Bool _if_conditional390;
+_Bool _if_conditional391;
 void* right_value366;
 void* right_value367;
 struct list$1sTypeph* method_generics_types_361;
-_Bool _if_conditional391;
-_Bool _while_condtional39;
 _Bool _if_conditional392;
+_Bool _while_condtional40;
 _Bool _if_conditional393;
 _Bool _if_conditional394;
+_Bool _if_conditional395;
 void* right_value368;
 struct tuple3$3sTypephcharphbool* multiple_assign_var5;
 struct sType* type_362;
 char* name_363;
 _Bool err_364;
-_Bool _if_conditional397;
-void* right_value369;
 _Bool _if_conditional398;
-_Bool _while_condtional40;
+void* right_value369;
 _Bool _if_conditional399;
+_Bool _while_condtional41;
+_Bool _if_conditional400;
 char* p_365;
 int sline_366;
 _Bool err_flag_367;
 void* right_value370;
 char* label_368;
-_Bool _if_conditional400;
+_Bool _if_conditional401;
 void* right_value371;
 char* __dec_obj103;
-_Bool _if_conditional401;
+_Bool _if_conditional402;
 char* __dec_obj104;
 _Bool no_comma_369;
 void* right_value372;
@@ -11049,11 +11062,11 @@ void* right_value373;
 struct sNode* __dec_obj105;
 void* right_value374;
 void* right_value375;
-_Bool _if_conditional402;
 _Bool _if_conditional403;
+_Bool _if_conditional404;
 struct buffer* method_block_371;
 int method_block_sline_372;
-_Bool _if_conditional404;
+_Bool _if_conditional405;
 char* head_373;
 void* right_value376;
 char* tail_374;
@@ -11063,7 +11076,7 @@ struct buffer* __dec_obj106;
 int len_375;
 void* right_value379;
 char* mem_376;
-_Bool _if_conditional405;
+_Bool _if_conditional406;
 void* right_value380;
 void* right_value381;
 void* right_value382;
@@ -11133,7 +11146,7 @@ memset(&node_378, 0, sizeof(struct sNode*));
     come_call_finalizer2(tuple2$2charphsNodephp_finalize,right_value364, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
     # 942 "20method.c"
     # 937 "20method.c"
-    if(_if_conditional387=*info->p==45&&*(info->p+1)==62,    _if_conditional387) {
+    if(_if_conditional388=*info->p==45&&*(info->p+1)==62,    _if_conditional388) {
         # 938 "20method.c"
         info->p+=2;
         # 939 "20method.c"
@@ -11149,20 +11162,20 @@ memset(&node_378, 0, sizeof(struct sNode*));
         sline_359=info->sline;
         # 960 "20method.c"
         # 947 "20method.c"
-        if(_if_conditional388=*info->p==60,        _if_conditional388) {
+        if(_if_conditional389=*info->p==60,        _if_conditional389) {
             # 948 "20method.c"
             info->p++;
             # 949 "20method.c"
             skip_spaces_and_lf(info);
             # 958 "20method.c"
             # 951 "20method.c"
-            if(_if_conditional389=xisalpha(*info->p)||*info->p==95,            _if_conditional389) {
+            if(_if_conditional390=xisalpha(*info->p)||*info->p==95,            _if_conditional390) {
                 # 952 "20method.c"
                 word_360=(char*)come_increment_ref_count(((char*)(right_value365=parse_word(info))));
                 right_value365 = come_decrement_ref_count2(right_value365, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                 # 957 "20method.c"
                 # 954 "20method.c"
-                if(_if_conditional390=is_type_name(word_360,info),                _if_conditional390) {
+                if(_if_conditional391=is_type_name(word_360,info),                _if_conditional391) {
                     # 955 "20method.c"
                     parse_method_generics_type_357=(_Bool)1;
                 }
@@ -11180,16 +11193,16 @@ memset(&node_378, 0, sizeof(struct sNode*));
     come_call_finalizer2(list$1sTypephp_finalize,right_value367, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
     # 996 "20method.c"
     # 965 "20method.c"
-    if(_if_conditional391=parse_method_generics_type_357&&*info->p==60,    _if_conditional391) {
+    if(_if_conditional392=parse_method_generics_type_357&&*info->p==60,    _if_conditional392) {
         # 966 "20method.c"
         info->p++;
         # 967 "20method.c"
         skip_spaces_and_lf(info);
         # 994 "20method.c"
-        while(_while_condtional39=(_Bool)1,        _while_condtional39) {
+        while(_while_condtional40=(_Bool)1,        _while_condtional40) {
             # 993 "20method.c"
             # 970 "20method.c"
-            if(_if_conditional392=*info->p==0,            _if_conditional392) {
+            if(_if_conditional393=*info->p==0,            _if_conditional393) {
                 # 971 "20method.c"
                 err_msg(info,"unexpected source end");
                 # 972 "20method.c"
@@ -11198,7 +11211,7 @@ memset(&node_378, 0, sizeof(struct sNode*));
             else {
                 # 993 "20method.c"
                 # 974 "20method.c"
-                if(_if_conditional393=*info->p==62,                _if_conditional393) {
+                if(_if_conditional394=*info->p==62,                _if_conditional394) {
                     # 975 "20method.c"
                     info->p++;
                     # 976 "20method.c"
@@ -11209,7 +11222,7 @@ memset(&node_378, 0, sizeof(struct sNode*));
                 else {
                     # 993 "20method.c"
                     # 979 "20method.c"
-                    if(_if_conditional394=*info->p==44,                    _if_conditional394) {
+                    if(_if_conditional395=*info->p==44,                    _if_conditional395) {
                         # 980 "20method.c"
                         info->p++;
                         # 981 "20method.c"
@@ -11224,7 +11237,7 @@ memset(&node_378, 0, sizeof(struct sNode*));
                         come_call_finalizer2(tuple3$3sTypephcharphboolp_finalize,right_value368, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                         # 991 "20method.c"
                         # 986 "20method.c"
-                        if(_if_conditional397=!err_364,                        _if_conditional397) {
+                        if(_if_conditional398=!err_364,                        _if_conditional398) {
                             # 987 "20method.c"
                             err_msg(info,"invalid method generics paramtor type");
                             # 988 "20method.c"
@@ -11242,14 +11255,14 @@ memset(&node_378, 0, sizeof(struct sNode*));
     }
     # 1050 "20method.c"
     # 996 "20method.c"
-    if(_if_conditional398=*info->p!=123,    _if_conditional398) {
+    if(_if_conditional399=*info->p!=123,    _if_conditional399) {
         # 997 "20method.c"
         expected_next_character(40,info);
         # 1048 "20method.c"
-        while(_while_condtional40=(_Bool)1,        _while_condtional40) {
+        while(_while_condtional41=(_Bool)1,        _while_condtional41) {
             # 1006 "20method.c"
             # 1000 "20method.c"
-            if(_if_conditional399=*info->p==41,            _if_conditional399) {
+            if(_if_conditional400=*info->p==41,            _if_conditional400) {
                 # 1001 "20method.c"
                 info->p++;
                 # 1002 "20method.c"
@@ -11268,7 +11281,7 @@ memset(&node_378, 0, sizeof(struct sNode*));
             right_value370 = come_decrement_ref_count2(right_value370, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
             # 1014 "20method.c"
             # 1011 "20method.c"
-            if(_if_conditional400=xisalpha(*info->p)||*info->p==95,            _if_conditional400) {
+            if(_if_conditional401=xisalpha(*info->p)||*info->p==95,            _if_conditional401) {
                 # 1012 "20method.c"
                 __dec_obj103=label_368;
                 label_368=(char*)come_increment_ref_count(((char*)(right_value371=parse_word(info))));
@@ -11279,7 +11292,7 @@ memset(&node_378, 0, sizeof(struct sNode*));
             }
             # 1027 "20method.c"
             # 1016 "20method.c"
-            if(_if_conditional401=err_flag_367==(_Bool)1&&*info->p==58,            _if_conditional401) {
+            if(_if_conditional402=err_flag_367==(_Bool)1&&*info->p==58,            _if_conditional402) {
                 # 1017 "20method.c"
                 info->p++;
                 # 1018 "20method.c"
@@ -11315,7 +11328,7 @@ memset(&node_378, 0, sizeof(struct sNode*));
             come_call_finalizer2(tuple2$2charphsNodephp_finalize,right_value375, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
             # 1047 "20method.c"
             # 1038 "20method.c"
-            if(_if_conditional402=*info->p==44,            _if_conditional402) {
+            if(_if_conditional403=*info->p==44,            _if_conditional403) {
                 # 1039 "20method.c"
                 info->p++;
                 # 1040 "20method.c"
@@ -11324,7 +11337,7 @@ memset(&node_378, 0, sizeof(struct sNode*));
             else {
                 # 1047 "20method.c"
                 # 1042 "20method.c"
-                if(_if_conditional403=*info->p==41,                _if_conditional403) {
+                if(_if_conditional404=*info->p==41,                _if_conditional404) {
                     # 1043 "20method.c"
                     info->p++;
                     # 1044 "20method.c"
@@ -11345,7 +11358,7 @@ memset(&node_378, 0, sizeof(struct sNode*));
     method_block_sline_372=0;
     # 1071 "20method.c"
     # 1052 "20method.c"
-    if(_if_conditional404=*info->p==123,    _if_conditional404) {
+    if(_if_conditional405=*info->p==123,    _if_conditional405) {
         # 1053 "20method.c"
         head_373=info->p;
         # 1054 "20method.c"
@@ -11380,7 +11393,7 @@ memset(&node_378, 0, sizeof(struct sNode*));
     parse_sharp_v5(info);
     # 1076 "20method.c"
     # 1073 "20method.c"
-    if(_if_conditional405=*info->p==60,    _if_conditional405) {
+    if(_if_conditional406=*info->p==60,    _if_conditional406) {
     }
     # 1076 "20method.c"
     parse_sharp_v5(info);
@@ -11444,18 +11457,18 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static void tuple3$3sTypephcharphboolp_finalize(struct tuple3$3sTypephcharphbool* self){
 void* __result_obj__;
-_Bool _if_conditional395;
 _Bool _if_conditional396;
+_Bool _if_conditional397;
 memset(&__result_obj__, 0, sizeof(void*));
                             # 1 "tuple3$3sTypephcharphboolp_finalize"
                             # 0 "tuple3$3sTypephcharphboolp_finalize"
-                            if(_if_conditional395=self!=((void*)0)&&self->v1!=((void*)0),                            _if_conditional395) {
+                            if(_if_conditional396=self!=((void*)0)&&self->v1!=((void*)0),                            _if_conditional396) {
                                 # 0 "tuple3$3sTypephcharphboolp_finalize"
                                 come_call_finalizer2(sType_finalize,self->v1, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                             }
                             # 2 "tuple3$3sTypephcharphboolp_finalize"
                             # 1 "tuple3$3sTypephcharphboolp_finalize"
-                            if(_if_conditional396=self!=((void*)0)&&self->v2!=((void*)0),                            _if_conditional396) {
+                            if(_if_conditional397=self!=((void*)0)&&self->v2!=((void*)0),                            _if_conditional397) {
                                 # 1 "tuple3$3sTypephcharphboolp_finalize"
                                 self->v2 = come_decrement_ref_count2(self->v2, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                             }
@@ -11463,46 +11476,46 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static void sMethodCallNode_finalize(struct sMethodCallNode* self){
 void* __result_obj__;
-_Bool _if_conditional406;
 _Bool _if_conditional407;
 _Bool _if_conditional408;
 _Bool _if_conditional409;
 _Bool _if_conditional410;
 _Bool _if_conditional411;
+_Bool _if_conditional412;
 memset(&__result_obj__, 0, sizeof(void*));
         # 1 "sMethodCallNode_finalize"
         # 0 "sMethodCallNode_finalize"
-        if(_if_conditional406=self!=((void*)0)&&self->obj!=((void*)0),        _if_conditional406) {
+        if(_if_conditional407=self!=((void*)0)&&self->obj!=((void*)0),        _if_conditional407) {
             # 0 "sMethodCallNode_finalize"
             if(self->obj) { self->obj = come_decrement_ref_count2(self->obj, ((struct sNode*)self->obj)->finalize, ((struct sNode*)self->obj)->_protocol_obj, 0, 0, 0, (void*)0); } 
         }
         # 2 "sMethodCallNode_finalize"
         # 1 "sMethodCallNode_finalize"
-        if(_if_conditional407=self!=((void*)0)&&self->fun_name!=((void*)0),        _if_conditional407) {
+        if(_if_conditional408=self!=((void*)0)&&self->fun_name!=((void*)0),        _if_conditional408) {
             # 1 "sMethodCallNode_finalize"
             self->fun_name = come_decrement_ref_count2(self->fun_name, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
         # 3 "sMethodCallNode_finalize"
         # 2 "sMethodCallNode_finalize"
-        if(_if_conditional408=self!=((void*)0)&&self->params!=((void*)0),        _if_conditional408) {
+        if(_if_conditional409=self!=((void*)0)&&self->params!=((void*)0),        _if_conditional409) {
             # 2 "sMethodCallNode_finalize"
             come_call_finalizer2(list$1tuple2$2charphsNodephphp_finalize,self->params, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         }
         # 4 "sMethodCallNode_finalize"
         # 3 "sMethodCallNode_finalize"
-        if(_if_conditional409=self!=((void*)0)&&self->method_block!=((void*)0),        _if_conditional409) {
+        if(_if_conditional410=self!=((void*)0)&&self->method_block!=((void*)0),        _if_conditional410) {
             # 3 "sMethodCallNode_finalize"
             come_call_finalizer2(buffer_finalize,self->method_block, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         }
         # 5 "sMethodCallNode_finalize"
         # 4 "sMethodCallNode_finalize"
-        if(_if_conditional410=self!=((void*)0)&&self->sname!=((void*)0),        _if_conditional410) {
+        if(_if_conditional411=self!=((void*)0)&&self->sname!=((void*)0),        _if_conditional411) {
             # 4 "sMethodCallNode_finalize"
             self->sname = come_decrement_ref_count2(self->sname, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
         # 6 "sMethodCallNode_finalize"
         # 5 "sMethodCallNode_finalize"
-        if(_if_conditional411=self!=((void*)0)&&self->method_generics_types!=((void*)0),        _if_conditional411) {
+        if(_if_conditional412=self!=((void*)0)&&self->method_generics_types!=((void*)0),        _if_conditional412) {
             # 5 "sMethodCallNode_finalize"
             come_call_finalizer2(list$1sTypephp_finalize,self->method_generics_types, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         }
@@ -11510,28 +11523,28 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct sMethodCallNode* sMethodCallNode_clone(struct sMethodCallNode* self){
 void* __result_obj__;
-_Bool _if_conditional412;
+_Bool _if_conditional413;
 struct sMethodCallNode* __result228__;
 void* right_value383;
 struct sMethodCallNode* result_377;
-_Bool _if_conditional413;
+_Bool _if_conditional414;
 void* right_value384;
 struct sNode* __dec_obj107;
-_Bool _if_conditional414;
+_Bool _if_conditional415;
 void* right_value385;
 char* __dec_obj108;
-_Bool _if_conditional415;
+_Bool _if_conditional416;
 void* right_value386;
 struct list$1tuple2$2charphsNodephph* __dec_obj109;
-_Bool _if_conditional416;
+_Bool _if_conditional417;
 void* right_value387;
 struct buffer* __dec_obj110;
-_Bool _if_conditional417;
 _Bool _if_conditional418;
+_Bool _if_conditional419;
 void* right_value388;
 char* __dec_obj111;
-_Bool _if_conditional419;
 _Bool _if_conditional420;
+_Bool _if_conditional421;
 void* right_value389;
 struct list$1sTypeph* __dec_obj112;
 struct sMethodCallNode* __result229__;
@@ -11546,7 +11559,7 @@ right_value388 = (void*)0;
 right_value389 = (void*)0;
         # 3 "sMethodCallNode_clone"
         # 2 "sMethodCallNode_clone"
-        if(_if_conditional412=self==(void*)0,        _if_conditional412) {
+        if(_if_conditional413=self==(void*)0,        _if_conditional413) {
             # 2 "sMethodCallNode_clone"
             __result228__ = __result_obj__ = (void*)0;
             return __result228__;
@@ -11556,7 +11569,7 @@ right_value389 = (void*)0;
         come_call_finalizer2(sMethodCallNode_finalize,right_value383, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         # 5 "sMethodCallNode_clone"
         # 4 "sMethodCallNode_clone"
-        if(_if_conditional413=self!=((void*)0)&&self->obj!=((void*)0),        _if_conditional413) {
+        if(_if_conditional414=self!=((void*)0)&&self->obj!=((void*)0),        _if_conditional414) {
             # 4 "sMethodCallNode_clone"
             __dec_obj107=result_377->obj;
             result_377->obj=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value384=sNode_clone(self->obj))));
@@ -11565,7 +11578,7 @@ right_value389 = (void*)0;
         }
         # 6 "sMethodCallNode_clone"
         # 5 "sMethodCallNode_clone"
-        if(_if_conditional414=self!=((void*)0)&&self->fun_name!=((void*)0),        _if_conditional414) {
+        if(_if_conditional415=self!=((void*)0)&&self->fun_name!=((void*)0),        _if_conditional415) {
             # 5 "sMethodCallNode_clone"
             __dec_obj108=result_377->fun_name;
             result_377->fun_name=(char*)come_increment_ref_count(((char*)(right_value385=string_clone(self->fun_name))));
@@ -11574,7 +11587,7 @@ right_value389 = (void*)0;
         }
         # 7 "sMethodCallNode_clone"
         # 6 "sMethodCallNode_clone"
-        if(_if_conditional415=self!=((void*)0)&&self->params!=((void*)0),        _if_conditional415) {
+        if(_if_conditional416=self!=((void*)0)&&self->params!=((void*)0),        _if_conditional416) {
             # 6 "sMethodCallNode_clone"
             __dec_obj109=result_377->params;
             result_377->params=(struct list$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list$1tuple2$2charphsNodephph*)(right_value386=list$1tuple2$2charphsNodephphp_clone(self->params))));
@@ -11583,7 +11596,7 @@ right_value389 = (void*)0;
         }
         # 8 "sMethodCallNode_clone"
         # 7 "sMethodCallNode_clone"
-        if(_if_conditional416=self!=((void*)0)&&self->method_block!=((void*)0),        _if_conditional416) {
+        if(_if_conditional417=self!=((void*)0)&&self->method_block!=((void*)0),        _if_conditional417) {
             # 7 "sMethodCallNode_clone"
             __dec_obj110=result_377->method_block;
             result_377->method_block=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value387=buffer_clone(self->method_block))));
@@ -11592,13 +11605,13 @@ right_value389 = (void*)0;
         }
         # 9 "sMethodCallNode_clone"
         # 8 "sMethodCallNode_clone"
-        if(_if_conditional417=self!=((void*)0),        _if_conditional417) {
+        if(_if_conditional418=self!=((void*)0),        _if_conditional418) {
             # 8 "sMethodCallNode_clone"
             result_377->sline=self->sline;
         }
         # 10 "sMethodCallNode_clone"
         # 9 "sMethodCallNode_clone"
-        if(_if_conditional418=self!=((void*)0)&&self->sname!=((void*)0),        _if_conditional418) {
+        if(_if_conditional419=self!=((void*)0)&&self->sname!=((void*)0),        _if_conditional419) {
             # 9 "sMethodCallNode_clone"
             __dec_obj111=result_377->sname;
             result_377->sname=(char*)come_increment_ref_count(((char*)(right_value388=string_clone(self->sname))));
@@ -11607,13 +11620,13 @@ right_value389 = (void*)0;
         }
         # 11 "sMethodCallNode_clone"
         # 10 "sMethodCallNode_clone"
-        if(_if_conditional419=self!=((void*)0),        _if_conditional419) {
+        if(_if_conditional420=self!=((void*)0),        _if_conditional420) {
             # 10 "sMethodCallNode_clone"
             result_377->method_block_sline=self->method_block_sline;
         }
         # 12 "sMethodCallNode_clone"
         # 11 "sMethodCallNode_clone"
-        if(_if_conditional420=self!=((void*)0)&&self->method_generics_types!=((void*)0),        _if_conditional420) {
+        if(_if_conditional421=self!=((void*)0)&&self->method_generics_types!=((void*)0),        _if_conditional421) {
             # 11 "sMethodCallNode_clone"
             __dec_obj112=result_377->method_generics_types;
             result_377->method_generics_types=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value389=list$1sTypephp_clone(self->method_generics_types))));
@@ -11629,7 +11642,7 @@ right_value389 = (void*)0;
 
 struct sNode* string_node_v20(char* buf, char* head, int head_sline, struct sInfo* info){
 void* __result_obj__;
-_Bool _if_conditional421;
+_Bool _if_conditional422;
 void* right_value391;
 void* right_value392;
 struct sNode* _inf_value3;
@@ -11645,7 +11658,7 @@ right_value395 = (void*)0;
 right_value396 = (void*)0;
     # 1089 "20method.c"
     # 1085 "20method.c"
-    if(_if_conditional421=charp_operator_equals(buf,"__current__"),    _if_conditional421) {
+    if(_if_conditional422=charp_operator_equals(buf,"__current__"),    _if_conditional422) {
         # 1086 "20method.c"
         _inf_value3=(struct sNode*)come_calloc(1, sizeof(struct sNode), "20method.c", 1086, "struct sNode");
         _inf_obj_value3=come_increment_ref_count(((struct sCurrentNode*)(right_value392=sCurrentNode_initialize((struct sCurrentNode*)come_increment_ref_count(((struct sCurrentNode*)(right_value391=(struct sCurrentNode*)come_calloc(1, sizeof(struct sCurrentNode)*(1), "20method.c", 1086, "sCurrentNode")))),info))));
@@ -11671,11 +11684,11 @@ right_value396 = (void*)0;
 
 static void sCurrentNode_finalize(struct sCurrentNode* self){
 void* __result_obj__;
-_Bool _if_conditional422;
+_Bool _if_conditional423;
 memset(&__result_obj__, 0, sizeof(void*));
             # 1 "sCurrentNode_finalize"
             # 0 "sCurrentNode_finalize"
-            if(_if_conditional422=self!=((void*)0)&&self->sname!=((void*)0),            _if_conditional422) {
+            if(_if_conditional423=self!=((void*)0)&&self->sname!=((void*)0),            _if_conditional423) {
                 # 0 "sCurrentNode_finalize"
                 self->sname = come_decrement_ref_count2(self->sname, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
@@ -11683,12 +11696,12 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct sCurrentNode* sCurrentNode_clone(struct sCurrentNode* self){
 void* __result_obj__;
-_Bool _if_conditional423;
+_Bool _if_conditional424;
 struct sCurrentNode* __result231__;
 void* right_value393;
 struct sCurrentNode* result_379;
-_Bool _if_conditional424;
 _Bool _if_conditional425;
+_Bool _if_conditional426;
 void* right_value394;
 char* __dec_obj113;
 struct sCurrentNode* __result232__;
@@ -11698,7 +11711,7 @@ memset(&result_379, 0, sizeof(struct sCurrentNode*));
 right_value394 = (void*)0;
             # 3 "sCurrentNode_clone"
             # 2 "sCurrentNode_clone"
-            if(_if_conditional423=self==(void*)0,            _if_conditional423) {
+            if(_if_conditional424=self==(void*)0,            _if_conditional424) {
                 # 2 "sCurrentNode_clone"
                 __result231__ = __result_obj__ = (void*)0;
                 return __result231__;
@@ -11708,13 +11721,13 @@ right_value394 = (void*)0;
             come_call_finalizer2(sCurrentNode_finalize,right_value393, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
             # 5 "sCurrentNode_clone"
             # 4 "sCurrentNode_clone"
-            if(_if_conditional424=self!=((void*)0),            _if_conditional424) {
+            if(_if_conditional425=self!=((void*)0),            _if_conditional425) {
                 # 4 "sCurrentNode_clone"
                 result_379->sline=self->sline;
             }
             # 6 "sCurrentNode_clone"
             # 5 "sCurrentNode_clone"
-            if(_if_conditional425=self!=((void*)0)&&self->sname!=((void*)0),            _if_conditional425) {
+            if(_if_conditional426=self!=((void*)0)&&self->sname!=((void*)0),            _if_conditional426) {
                 # 5 "sCurrentNode_clone"
                 __dec_obj113=result_379->sname;
                 result_379->sname=(char*)come_increment_ref_count(((char*)(right_value394=string_clone(self->sname))));

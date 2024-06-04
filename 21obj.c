@@ -226,9 +226,9 @@ bool sImplementsNode*::compile(sImplementsNode* self, sInfo* info)
         sFun* fun = info.funcs.at(method_name, null);
         
         if(fun == null) {
-            sClass* klass2 = type->mClass;
-            while(klass2->mParent) {
-                klass2 = klass2->mParent;
+            sClass* klass2 = info->classes[type->mClass->mName];
+            while(info->classes[klass2->mParentClassName]??) {
+                klass2 = info->classes[klass2->mParentClassName]??;
                 
                 method_name = create_method_name_using_class(klass2, false@no_pointer_name, name, info);
                 

@@ -342,6 +342,76 @@ string make_define_var(sType* type, char* name, bool in_header=false, sInfo* inf
     return buf.to_string();
 }
 
+sType*% get_no_solved_type(sType* type)
+{
+    sType*% result;
+    if(type->mNoSolvedGenericsType.v1) {
+        result = clone type->mNoSolvedGenericsType.v1;
+    }
+    else {
+        result = clone type;
+    }
+    
+    int i = 0;
+    foreach(it, type->mGenericsTypes) {
+        result.mGenericsTypes[i] = get_no_solved_type(it);
+        i++;
+    }
+    
+    return result;
+}
+
+string make_come_type_name_string_no_solved(sType* type, sInfo* info=info)
+{
+    sType*% no_solved_type = get_no_solved_type(type);
+    
+    var buf = new buffer();
+    
+    char* class_name = no_solved_type->mClass->mName;
+    
+    buf.append_str(class_name);
+    
+    if(no_solved_type->mGenericsTypes.length() > 0) {
+        buf.append_str("<");
+        for(int i=0; i<no_solved_type->mGenericsTypes.length(); i++) {
+            sType* gtype = no_solved_type->mGenericsTypes[i];
+            
+            buf.append_str(make_come_type_name_string_no_solved(gtype));
+            
+            if(i != no_solved_type->mGenericsTypes.length() -1) {
+                buf.append_str(",");
+            }
+        }
+        
+        buf.append_str(">");
+    }
+    
+    if(no_solved_type->mNoArrayPointerNum == 0 && class_name !== "lambda") {
+        for(int i=0; i<no_solved_type->mPointerNum; i++) {
+            buf.append_str("*");
+        }
+    }
+    
+    if(no_solved_type->mArrayNum.length() > 0) {
+        for(int i=0; i<no_solved_type->mArrayNum.length(); i++) {
+            buf.append_str("[]");
+        }
+    }
+    
+    if(no_solved_type->mHeap) {
+        buf.append_str("%");
+    }
+    
+    return buf.to_string();
+}
+
+string make_define_var_no_solved(sType* type, char* name, bool in_header=false, sInfo* info=info)
+{
+    string type_name = make_come_type_name_string_no_solved(type);
+    
+    return xsprintf("%s %s", type_name, name);
+}
+
 string output_function(sFun* fun, sInfo* info)
 {
     var output = new buffer();

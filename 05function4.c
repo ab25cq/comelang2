@@ -140,7 +140,7 @@ bool parsecmp(char* str, sInfo* info)
     return strmemcmp(info.p, str) && (c == ';' || c == ' ' || c == '\t' || c == '\n' || c == '\n');
 }
 
-string parse_word(sInfo* info=info)
+record string parse_word(sInfo* info=info)
 {
     var buf = new buffer();
     parse_sharp();
@@ -369,7 +369,7 @@ bool check_assign_type(char* msg, sType* left_type, sType* right_type, CVALUE* c
             if(left_class->mName === right_class->mName) {
                 parent_class = true;
             }
-            right_class = right_class->mParent;
+            right_class = info.classes[right_class->mParentClassName]??;
         }
     }
     
@@ -1063,57 +1063,59 @@ tuple3<sType*%,string,bool>*% parse_type(sInfo* info=info, bool parse_variable_n
 
             parse_sharp();
             
-            type_name = parse_word();
-
-            parse_sharp();
-            
-            if(*info->p == '<') {
-                char* p = info.p;
-                int sline = info.sline;
+            if(*info->p != '>') {
+                type_name = parse_word();
                 
-                info->p++;
-                skip_spaces_and_lf();
+                parse_sharp();
                 
-                while(true) {
-                    if(*info->p == '>') {
-                        info->p++;
-                        skip_spaces_and_lf();
-                        
-                        if(*info->p == '{') {
+                if(*info->p == '<') {
+                    char* p = info.p;
+                    int sline = info.sline;
+                    
+                    info->p++;
+                    skip_spaces_and_lf();
+                    
+                    while(true) {
+                        if(*info->p == '>') {
+                            info->p++;
+                            skip_spaces_and_lf();
+                            
+                            if(*info->p == '{') {
+                            }
+                            else {
+                                info.p = p;
+                                info.sline = sline;
+                            }
+                            break;
+                        }
+                        else if(*info->p == '\0') {
+                            err_msg(info, "invalid struct definition");
+                            return new tuple3<sType*%,string,bool>((sType*%)null, (string)null, false);
                         }
                         else {
-                            info.p = p;
-                            info.sline = sline;
+                            info->p++;
                         }
-                        break;
                     }
-                    else if(*info->p == '\0') {
-                        err_msg(info, "invalid struct definition");
+                }
+                
+                if(*info->p == '{') {
+                    char* p = info.p;
+                    int sline = info.sline;
+                    
+                    skip_block(info);
+                    
+                    if(*info->p == ';') {
+                        info.p = head;
+                        info.sline = head_sline;
+                        info.define_struct = true;
                         return new tuple3<sType*%,string,bool>((sType*%)null, (string)null, false);
                     }
                     else {
-                        info->p++;
+                        anonymous_type = true;
+                        info.p = p;
+                        info.sline = sline;
+                        break;
                     }
-                }
-            }
-            
-            if(*info->p == '{') {
-                char* p = info.p;
-                int sline = info.sline;
-                
-                skip_block(info);
-                
-                if(*info->p == ';') {
-                    info.p = head;
-                    info.sline = head_sline;
-                    info.define_struct = true;
-                    return new tuple3<sType*%,string,bool>((sType*%)null, (string)null, false);
-                }
-                else {
-                    anonymous_type = true;
-                    info.p = p;
-                    info.sline = sline;
-                    break;
                 }
             }
         }
@@ -1691,6 +1693,7 @@ tuple3<sType*%,string,bool>*% parse_type(sInfo* info=info, bool parse_variable_n
         sType*% result_type;
         if(info.types[type_name]??) {
             result_type = clone info.types[type_name]??;
+            result_type->mClass = info.classes[result_type->mClass->mName];
         }
         else if(info.generics_type_names.contained(type_name)) {
             for(int i=0; i<info.generics_type_names.length(); i++) {
@@ -1755,6 +1758,7 @@ tuple3<sType*%,string,bool>*% parse_type(sInfo* info=info, bool parse_variable_n
         sType*% result_type;
         if(info.types[type_name]??) {
             result_type = clone info.types[type_name]??;
+            result_type->mClass = info.classes[result_type->mClass->mName];
             //type.mOriginalTypeName = string(type_name);
         }
         else if(info.generics_type_names.contained(type_name)) {
@@ -1879,6 +1883,7 @@ tuple3<sType*%,string,bool>*% parse_type(sInfo* info=info, bool parse_variable_n
     else {
         if(info.types[type_name]??) {
             type = clone info.types[type_name]??;
+            type->mClass = info.classes[type->mClass->mName];
             type.mOriginalTypeName = string(type_name);
             type.mOriginalTypeNamePointerNum = pointer_num;
             

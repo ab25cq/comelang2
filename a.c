@@ -3,51 +3,51 @@
 class sData
 {
     int x;
-    int y;
     
-    new(int x, int y)
-    {
+    new(int x) {
         self.x = x;
-        self.y = y;
     }
     
-    void show()
-    {
-        printf("x %d y %d\n", self.x, self.y);
+    void show() {
+        printf("%d\n", self.x);
     }
+    
+    void call() {
+        puts("CALL");
+    }
+}
+
+struct sData2 extends sData
+{
+    int x;
+    int y;
 };
 
 class sData2 extends sData
 {
-    int z;
-   
-    new(int x, int y, int z)
-    {
+    new(int x, int y) {
         self.x = x;
         self.y = y;
-        self.z = z;
     }
-};
+    
+    void show() {
+        printf("%d %d\n", self.x, self.y);
+    }
+}
 
-interface sDataRun
+interface Inf
 {
     void show();
-};
+    void call();
+}
+
 
 int main(int argc, char** argv)
 {
-    sData*% data = new sData(111, 222);
-    
-    data.show();
-    
-    sData2*% data2 = new sData2(1, 2, 3);
-    
-    data2.show();
-    
-    sDataRun*% inf = new sData2(1,2,3) implements sDataRun;
+    var inf = new sData2(111, 222) implements Inf;
     
     inf.show();
+    inf.call();
     
     return 0;
 }
-

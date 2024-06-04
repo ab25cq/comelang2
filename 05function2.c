@@ -648,7 +648,7 @@ string parse_attribute(sInfo* info=info)
     return asm_fun_name.to_string();
 }
 
-void transpile_toplevel(bool block=false, sInfo* info=info)
+record void transpile_toplevel(bool block=false, sInfo* info=info)
 {
     while(*info->p) {
         parse_sharp();
@@ -1095,6 +1095,52 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 99
     }
     else {
         define_variable = false;
+    }
+    
+    
+    {
+        char* p = info.p;
+        info.p = head;
+        
+        if(buf === "struct") {
+            if(xisalpha(*info->p) || *info->p == '_') {
+                parse_word();
+                if(xisalpha(*info->p) || *info->p == '_') {
+                    string word = parse_word();
+                    if(xisalpha(*info->p) || *info->p == '_') {
+                        word = parse_word();
+                        
+                        if(word === "extends") {
+                            define_variable = false;
+                        }
+                    }
+                }
+            }
+        }
+        
+        if(info.define_struct) {
+            info.define_struct = false;
+            define_variable = false;
+        }
+        else if(define_variable) {
+        }
+        else {
+            if(!(xisalpha(*info->p) || *info->p == '_')) {
+                define_variable = false;
+            }
+            
+            while(xisalpha(*info->p) || *info->p == '_') {
+                info->p++;
+            }
+            skip_spaces_and_lf();
+            
+            if(*info->p == '(' || *info->p == ':') {
+                define_variable = false;
+            }
+        }
+        
+        info.p = p;
+        info.sline = sline;
     }
     
     if(buf === "template") {
@@ -1563,6 +1609,7 @@ sNode*% parse_function(sInfo* info)
         parse_word();
         result_type = clone info.impl_type;
         result_type.mHeap = true;
+//        result_type.mExtern = true;
         constructor_ = true;
     }
     else {
@@ -1570,6 +1617,10 @@ sNode*% parse_function(sInfo* info)
         
         result_type = result_type2;
         var_name = var_name2;
+        
+        if(info.in_class) {
+//            result_type.mExtern = true;
+        }
         
         if(!err) {
             printf("%s %d: parse_type failed\n", info->sname, info->sline);
@@ -1732,12 +1783,75 @@ sNode*% parse_function(sInfo* info)
         char* source_tail = info.p -1;
         
         buffer*% header = new buffer();
-        header.append(source_head, source_tail - source_head);
-        header.append_str(";\n");
+        
+        if(constructor_) {
+            if(param_types.length() == 1) {
+                string name = clone info.impl_type->mClass->mName;
+                header.append_str(xsprintf("extern %s*%% %s*::initialize(%s*%% self);\n", name, name, name));
+            }
+            else {
+                string name = clone info.impl_type->mClass->mName;
+                header.append_str(xsprintf("extern %s*%% %s*::initialize(%s*%% self, ", name, name, name));
+                
+                for(int i=1; i<param_types.length(); i++) {
+                    var param_type = param_types[i];
+                    var param_name = param_names[i];
+                    var default_parametor = param_default_parametors[i]??;
+                    
+                    if(default_parametor) {
+                        header.append_str(xsprintf("extern %s %s=%s", make_come_type_name_string_no_solved(param_type), param_name, default_parametor));
+                    }
+                    else {
+                        header.append_str(xsprintf("extern %s %s", make_come_type_name_string_no_solved(param_type), param_name));
+                    }
+                    
+                    if(i != param_types.length()-1) {
+                        header.append_str(",");
+                    }
+                }
+                
+                header.append_str(");\n");
+            }
+        }
+        else if(info.in_class && info.impl_type) {
+            if(param_types.length() == 1) {
+                string impl_name = clone info.impl_type->mClass->mName;
+                string result_type_name = make_come_type_name_string_no_solved(result_type);
+                header.append_str(xsprintf("extern %s %s*::%s(%s* self);\n", result_type_name, impl_name, base_fun_name, impl_name));
+            }
+            else {
+                string impl_name = clone info.impl_type->mClass->mName;
+                string result_type_name = make_come_type_name_string_no_solved(result_type);
+                header.append_str(xsprintf("extern %s %s*::%s(%s* self, ", result_type_name, impl_name, base_fun_name, impl_name));
+                
+                for(int i=1; i<param_types.length(); i++) {
+                    var param_type = param_types[i];
+                    var param_name = param_names[i];
+                    var default_parametor = param_default_parametors[i]??;
+                    
+                    if(default_parametor) {
+                        header.append_str(xsprintf("extern %s %s=%s", make_come_type_name_string_no_solved(param_type), param_name, default_parametor));
+                    }
+                    else {
+                        header.append_str(xsprintf("extern %s %s", make_come_type_name_string_no_solved(param_type), param_name));
+                    }
+                    
+                    if(i != param_types.length()-1) {
+                        header.append_str(",");
+                    }
+                }
+                
+                header.append_str(");\n");
+            }
+        }
+        else {
+            header.append(source_head, source_tail - source_head);
+            header.append_str(";\n");
+        }
         
         add_come_code_at_come_header(info, "%s", header.to_string());
         
-        sBlock*% block = parse_block(return_self_at_last:constructor_);
+        sBlock*% block = parse_block(info, false, constructor_);
         
         bool static_ = false;
         if(result_type->mStatic) {
@@ -1759,10 +1873,15 @@ sNode*% parse_function(sInfo* info)
                                 , string(info->sname)
                                 , info);
     
-        var fun2 = info.funcs[string(fun_name)]??;
-        if(fun2 == null || fun2.mExternal) {
-    
+        if(info.in_class) {
             info.funcs.insert(clone fun_name, fun);
+        }
+        else {
+            var fun2 = info.funcs[string(fun_name)]??;
+            if(fun2 == null || fun2.mExternal) {
+        
+                info.funcs.insert(clone fun_name, fun);
+            }
         }
     
         

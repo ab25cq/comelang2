@@ -2,52 +2,46 @@
 
 struct sType;
 
-struct sMethod 
+class sMethod 
 {
     string mName;
     list<tuple2<string,sType*%>*%>*% mParams;
     bool mNative;
     
     sType*% mResultType;
-};
 
-sMethod*% sMethod*::initialize(sMethod*% self, char* name, list<tuple2<string,sType*%>*%>*% params, sType*% result_type, bool native_=false)
-{
-    self.mName = string(name);
-    self.mParams = clone params;
-    self.mNative = native_;
-    self.mResultType = result_type;
-    
-    return self;
-}
+    new(char* name, list<tuple2<string,sType*%>*%>*% params, sType*% result_type, bool native_=false)
+    {
+        self.mName = string(name);
+        self.mParams = clone params;
+        self.mNative = native_;
+        self.mResultType = result_type;
+    }
+};
 
 struct sVar;
 
-struct sClass {
+class sClass {
     string mName;
     map<string, sMethod*%>*% mMethods;
     map<string, sMethod*%>*% mClassMethods;
     map<string, sVar*%>*% mFields;
-};
-
-sClass*% sClass*::initialize(sClass*% self, char* name)
-{
-    self.mName = string(name);
-    self.mMethods = new map<string, sMethod*%>();
-    self.mClassMethods = new map<string, sMethod*%>();
-    self.mFields = new map<string, sVar*%>();
     
-    return self;
-}
+    new(char* name)
+    {
+        self.mName = string(name);
+        self.mMethods = new map<string, sMethod*%>();
+        self.mClassMethods = new map<string, sMethod*%>();
+        self.mFields = new map<string, sVar*%>();
+    }
+};
 
 struct sType;
 
 struct sType
 {
     sClass* mClass;
-    
     list<sType*%>*% mMultipleTypes;
-    
     list<sType*%>*% mGenericsTypes;
 };
 
@@ -63,10 +57,16 @@ struct CVALUE {
     sVar* var;
 };
 
-struct sModule
+class sModule
 {
     string mLastCode;
     buffer*% mSource;
+    
+    new()
+    {
+        self.mLastCode = null;
+        self.mSource = new buffer();
+    }
 };
 
 struct sInfo
@@ -97,14 +97,6 @@ struct sInfo
     
     int line_field;
 };
-
-sModule*% sModule*::initialize(sModule*% self)
-{
-    self.mLastCode = null;
-    self.mSource = new buffer();
-    
-    return self;
-}
 
 sType*% sType*::initialize(sType*% self, char* name, sInfo* info=info)
 {
@@ -235,673 +227,498 @@ interface sNode {
     string kind();
 };
 
-struct sIntNode
+class sNodeBase
+{
+    int sline;
+    string sname;
+    
+    bool terminated()
+    {
+        return false;
+    }
+    
+    int sline(sInfo* info)
+    {
+        return self.sline;
+    }
+    
+    string sname(sInfo* info)
+    {
+        return string(self.sname);
+    }
+};
+
+class sIntNode extends sNodeBase
 {
     int value;
-    int sline;
-    string sname;
+    
+    new(int value, sInfo* info=info)
+    {
+        self.value = value;
+        
+        self.sline = info->sline;
+        self.sname = string(info->sname);
+    }
+    
+    string sIntNode*::kind()
+    {
+        return string("sIntNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%d", self.value);
+        come_value.type = new sType("Integer");
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s", come_value.c_value);
+        
+        return true;
+    }
 };
 
-sIntNode*% sIntNode*::initialize(sIntNode*% self, int value, sInfo* info)
-{
-    self.value = value;
-    
-    self.sline = info->sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-string sIntNode*::kind()
-{
-    return string("sIntNode");
-}
-
-bool sIntNode*::compile(sIntNode* self, sInfo* info)
-{
-    CVALUE*% come_value = new CVALUE;
-    
-    come_value.c_value = xsprintf("%d", self.value);
-    come_value.type = new sType("Integer");
-    come_value.var = null;
-    
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s", come_value.c_value);
-    
-    return true;
-}
-
-bool sIntNode*::terminated()
-{
-    return false;
-}
-
-int sIntNode*::sline(sIntNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sIntNode*::sname(sIntNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sAddNode
+class sAddNode extends sNodeBase
 {
     sNode*% left_node;
     sNode*% right_node;
     
-    int sline;
-    string sname;
+    new(sNode*% left_node, sNode*% right_node, sInfo* info=info)
+    {
+        self.left_node = left_node;
+        self.right_node = right_node;
+        
+        self.sline = info->sline;
+        self.sname = string(info->sname);
+    }
+    
+    string sAddNode*::kind()
+    {
+        return string("sAddNode");
+    }
+    
+    bool sAddNode*::compile(sInfo* info)
+    {
+        sNode*% left_node = self.left_node;
+        if(!left_node.compile(info)) {
+            puts("compile error");
+            exit(2);
+        }
+        
+        CVALUE*% left_value = get_value_from_stack();
+        
+        sNode*% right_node = self.right_node;
+        if(!right_node.compile(info)) {
+            puts("compile error");
+            exit(2);
+        }
+        
+        CVALUE*% right_value = get_value_from_stack();
+        
+        CVALUE*% come_value = new CVALUE;
+        
+        if(left_value.type.mClass.mName !== right_value.type.mClass.mName) {
+            err_msg(info, "invalid type +");
+            return false;
+        }
+        
+        come_value.c_value = xsprintf("%s+%s", left_value.c_value, right_value.c_value);
+        come_value.type = clone left_value.type;
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s", come_value.c_value);
+        
+        return true;
+    }
 };
 
-sAddNode*% sAddNode*::initialize(sAddNode*% self, sNode*% left_node, sNode*% right_node, sInfo* info=info)
-{
-    self.left_node = left_node;
-    self.right_node = right_node;
-    
-    self.sline = info->sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-string sAddNode*::kind()
-{
-    return string("sAddNode");
-}
-
-bool sAddNode*::compile(sAddNode* self, sInfo* info)
-{
-    sNode*% left_node = self.left_node;
-    if(!left_node.compile(info)) {
-        puts("compile error");
-        exit(2);
-    }
-    
-    CVALUE*% left_value = get_value_from_stack();
-    
-    sNode*% right_node = self.right_node;
-    if(!right_node.compile(info)) {
-        puts("compile error");
-        exit(2);
-    }
-    
-    CVALUE*% right_value = get_value_from_stack();
-    
-    CVALUE*% come_value = new CVALUE;
-    
-    if(left_value.type.mClass.mName !== right_value.type.mClass.mName) {
-        err_msg(info, "invalid type +");
-        return false;
-    }
-    
-    come_value.c_value = xsprintf("%s+%s", left_value.c_value, right_value.c_value);
-    come_value.type = clone left_value.type;
-    come_value.var = null;
-    
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s", come_value.c_value);
-    
-    return true;
-}
-
-bool sAddNode*::terminated()
-{
-    return false;
-}
-
-int sAddNode*::sline(sAddNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sAddNode*::sname(sAddNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sSubNode
+class sSubNode extends sNodeBase
 {
     sNode*% left_node;
     sNode*% right_node;
     
-    int sline;
-    string sname;
+    new(sNode*% left_node, sNode*% right_node, sInfo* info=info)
+    {
+        self.left_node = left_node;
+        self.right_node = right_node;
+        
+        self.sline = info->sline;
+        self.sname = string(info->sname);
+    }
+    
+    string sSubNode*::kind()
+    {
+        return string("sSubNode");
+    }
+    
+    bool sSubNode*::compile(sInfo* info)
+    {
+        sNode*% left_node = self.left_node;
+        if(!left_node.compile(info)) {
+            puts("compile error");
+            exit(2);
+        }
+        
+        CVALUE*% left_value = get_value_from_stack();
+        
+        sNode*% right_node = self.right_node;
+        if(!right_node.compile(info)) {
+            puts("compile error");
+            exit(2);
+        }
+        
+        CVALUE*% right_value = get_value_from_stack();
+        
+        if(left_value.type.mClass.mName !== right_value.type.mClass.mName) {
+            err_msg(info, "invalid type +");
+            return false;
+        }
+        
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%s-%s", left_value.c_value, right_value.c_value);
+        come_value.type = clone left_value.type;
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s", come_value.c_value);
+        
+        return true;
+    }
 };
 
-sSubNode*% sSubNode*::initialize(sSubNode*% self, sNode*% left_node, sNode*% right_node, sInfo* info=info)
-{
-    self.left_node = left_node;
-    self.right_node = right_node;
-    
-    self.sline = info->sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-string sSubNode*::kind()
-{
-    return string("sSubNode");
-}
-
-bool sSubNode*::compile(sSubNode* self, sInfo* info)
-{
-    sNode*% left_node = self.left_node;
-    if(!left_node.compile(info)) {
-        puts("compile error");
-        exit(2);
-    }
-    
-    CVALUE*% left_value = get_value_from_stack();
-    
-    sNode*% right_node = self.right_node;
-    if(!right_node.compile(info)) {
-        puts("compile error");
-        exit(2);
-    }
-    
-    CVALUE*% right_value = get_value_from_stack();
-    
-    if(left_value.type.mClass.mName !== right_value.type.mClass.mName) {
-        err_msg(info, "invalid type +");
-        return false;
-    }
-    
-    CVALUE*% come_value = new CVALUE;
-    
-    come_value.c_value = xsprintf("%s-%s", left_value.c_value, right_value.c_value);
-    come_value.type = clone left_value.type;
-    come_value.var = null;
-    
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s", come_value.c_value);
-    
-    return true;
-}
-
-bool sSubNode*::terminated()
-{
-    return false;
-}
-
-int sSubNode*::sline(sSubNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sSubNode*::sname(sSubNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sGtNode
+class sGtNode extends sNodeBase
 {
     sNode*% left_node;
     sNode*% right_node;
     
-    int sline;
-    string sname;
+    new(sNode*% left_node, sNode*% right_node, sInfo* info=info)
+    {
+        self.left_node = left_node;
+        self.right_node = right_node;
+        
+        self.sline = info->sline;
+        self.sname = string(info->sname);
+    }
+    
+    string sGtNode*::kind()
+    {
+        return string("sGtNode");
+    }
+    
+    bool sGtNode*::compile(sInfo* info)
+    {
+        sNode*% left_node = self.left_node;
+        if(!left_node.compile(info)) {
+            puts("compile error");
+            exit(2);
+        }
+        
+        CVALUE*% left_value = get_value_from_stack();
+        
+        sNode*% right_node = self.right_node;
+        if(!right_node.compile(info)) {
+            puts("compile error");
+            exit(2);
+        }
+        
+        CVALUE*% right_value = get_value_from_stack();
+        
+        CVALUE*% come_value = new CVALUE;
+        
+        if(left_value.type.mClass.mName !== right_value.type.mClass.mName) {
+            err_msg(info, "invalid type <");
+            return false;
+        }
+        
+        come_value.c_value = xsprintf("%s<%s", left_value.c_value, right_value.c_value);
+        come_value.type = new sType("bool");
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s", come_value.c_value);
+        
+        return true;
+    }
 };
 
-sGtNode*% sGtNode*::initialize(sGtNode*% self, sNode*% left_node, sNode*% right_node, sInfo* info=info)
-{
-    self.left_node = left_node;
-    self.right_node = right_node;
-    
-    self.sline = info->sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-string sGtNode*::kind()
-{
-    return string("sGtNode");
-}
-
-bool sGtNode*::compile(sGtNode* self, sInfo* info)
-{
-    sNode*% left_node = self.left_node;
-    if(!left_node.compile(info)) {
-        puts("compile error");
-        exit(2);
-    }
-    
-    CVALUE*% left_value = get_value_from_stack();
-    
-    sNode*% right_node = self.right_node;
-    if(!right_node.compile(info)) {
-        puts("compile error");
-        exit(2);
-    }
-    
-    CVALUE*% right_value = get_value_from_stack();
-    
-    CVALUE*% come_value = new CVALUE;
-    
-    if(left_value.type.mClass.mName !== right_value.type.mClass.mName) {
-        err_msg(info, "invalid type <");
-        return false;
-    }
-    
-    come_value.c_value = xsprintf("%s<%s", left_value.c_value, right_value.c_value);
-    come_value.type = new sType("bool");
-    come_value.var = null;
-    
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s", come_value.c_value);
-    
-    return true;
-}
-
-bool sGtNode*::terminated()
-{
-    return false;
-}
-
-int sGtNode*::sline(sGtNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sGtNode*::sname(sGtNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sLtNode
+class sLtNode extends sNodeBase
 {
     sNode*% left_node;
     sNode*% right_node;
     
-    int sline;
-    string sname;
+    new(sNode*% left_node, sNode*% right_node, sInfo* info=info)
+    {
+        self.left_node = left_node;
+        self.right_node = right_node;
+        
+        self.sline = info->sline;
+        self.sname = string(info->sname);
+    }
+    
+    string sLtNode*::kind()
+    {
+        return string("sLtNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        sNode*% left_node = self.left_node;
+        if(!left_node.compile(info)) {
+            puts("compile error");
+            exit(2);
+        }
+        
+        CVALUE*% left_value = get_value_from_stack();
+        
+        sNode*% right_node = self.right_node;
+        if(!right_node.compile(info)) {
+            puts("compile error");
+            exit(2);
+        }
+        
+        CVALUE*% right_value = get_value_from_stack();
+        
+        CVALUE*% come_value = new CVALUE;
+        
+        if(left_value.type.mClass.mName !== right_value.type.mClass.mName) {
+            err_msg(info, "invalid type >");
+            return false;
+        }
+        
+        come_value.c_value = xsprintf("%s<%s", left_value.c_value, right_value.c_value);
+        come_value.type = new sType("bool");
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s", come_value.c_value);
+        
+        return true;
+    }
 };
 
-sLtNode*% sLtNode*::initialize(sLtNode*% self, sNode*% left_node, sNode*% right_node, sInfo* info=info)
-{
-    self.left_node = left_node;
-    self.right_node = right_node;
-    
-    self.sline = info->sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
 
-string sLtNode*::kind()
-{
-    return string("sLtNode");
-}
-
-bool sLtNode*::compile(sLtNode* self, sInfo* info)
-{
-    sNode*% left_node = self.left_node;
-    if(!left_node.compile(info)) {
-        puts("compile error");
-        exit(2);
-    }
-    
-    CVALUE*% left_value = get_value_from_stack();
-    
-    sNode*% right_node = self.right_node;
-    if(!right_node.compile(info)) {
-        puts("compile error");
-        exit(2);
-    }
-    
-    CVALUE*% right_value = get_value_from_stack();
-    
-    CVALUE*% come_value = new CVALUE;
-    
-    if(left_value.type.mClass.mName !== right_value.type.mClass.mName) {
-        err_msg(info, "invalid type >");
-        return false;
-    }
-    
-    come_value.c_value = xsprintf("%s<%s", left_value.c_value, right_value.c_value);
-    come_value.type = new sType("bool");
-    come_value.var = null;
-    
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s", come_value.c_value);
-    
-    return true;
-}
-
-bool sLtNode*::terminated()
-{
-    return false;
-}
-
-int sLtNode*::sline(sLtNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sLtNode*::sname(sLtNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sGtEqNode
+class sGtEqNode extends sNodeBase
 {
     sNode*% left_node;
     sNode*% right_node;
     
-    int sline;
-    string sname;
+    new(sNode*% left_node, sNode*% right_node, sInfo* info=info)
+    {
+        self.left_node = left_node;
+        self.right_node = right_node;
+        
+        self.sline = info->sline;
+        self.sname = string(info->sname);
+    }
+    
+    string kind()
+    {
+        return string("sGtEqNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        sNode*% left_node = self.left_node;
+        if(!left_node.compile(info)) {
+            puts("compile error");
+            exit(2);
+        }
+        
+        CVALUE*% left_value = get_value_from_stack();
+        
+        sNode*% right_node = self.right_node;
+        if(!right_node.compile(info)) {
+            puts("compile error");
+            exit(2);
+        }
+        
+        CVALUE*% right_value = get_value_from_stack();
+        
+        CVALUE*% come_value = new CVALUE;
+        
+        if(left_value.type.mClass.mName !== right_value.type.mClass.mName) {
+            err_msg(info, "invalid type >=");
+            return false;
+        }
+        
+        come_value.c_value = xsprintf("%s>=%s", left_value.c_value, right_value.c_value);
+        come_value.type = new sType("bool");
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s", come_value.c_value);
+        
+        return true;
+    }
 };
 
-sGtEqNode*% sGtEqNode*::initialize(sGtEqNode*% self, sNode*% left_node, sNode*% right_node, sInfo* info=info)
-{
-    self.left_node = left_node;
-    self.right_node = right_node;
-    
-    self.sline = info->sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-string sGtEqNode*::kind()
-{
-    return string("sGtEqNode");
-}
-
-bool sGtEqNode*::compile(sGtEqNode* self, sInfo* info)
-{
-    sNode*% left_node = self.left_node;
-    if(!left_node.compile(info)) {
-        puts("compile error");
-        exit(2);
-    }
-    
-    CVALUE*% left_value = get_value_from_stack();
-    
-    sNode*% right_node = self.right_node;
-    if(!right_node.compile(info)) {
-        puts("compile error");
-        exit(2);
-    }
-    
-    CVALUE*% right_value = get_value_from_stack();
-    
-    CVALUE*% come_value = new CVALUE;
-    
-    if(left_value.type.mClass.mName !== right_value.type.mClass.mName) {
-        err_msg(info, "invalid type >=");
-        return false;
-    }
-    
-    come_value.c_value = xsprintf("%s>=%s", left_value.c_value, right_value.c_value);
-    come_value.type = new sType("bool");
-    come_value.var = null;
-    
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s", come_value.c_value);
-    
-    return true;
-}
-
-bool sGtEqNode*::terminated()
-{
-    return false;
-}
-
-int sGtEqNode*::sline(sGtEqNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sGtEqNode*::sname(sGtEqNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sLtEqNode
+class sLtEqNode extends sNodeBase
 {
     sNode*% left_node;
     sNode*% right_node;
     
-    int sline;
-    string sname;
+    new(sNode*% left_node, sNode*% right_node, sInfo* info=info)
+    {
+        self.left_node = left_node;
+        self.right_node = right_node;
+        
+        self.sline = info->sline;
+        self.sname = string(info->sname);
+    }
+    
+    string kind()
+    {
+        return string("sLtEqNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        sNode*% left_node = self.left_node;
+        if(!left_node.compile(info)) {
+            puts("compile error");
+            exit(2);
+        }
+        
+        CVALUE*% left_value = get_value_from_stack();
+        
+        sNode*% right_node = self.right_node;
+        if(!right_node.compile(info)) {
+            puts("compile error");
+            exit(2);
+        }
+        
+        CVALUE*% right_value = get_value_from_stack();
+        
+        CVALUE*% come_value = new CVALUE;
+        
+        if(left_value.type.mClass.mName !== right_value.type.mClass.mName) {
+            err_msg(info, "invalid type <=");
+            return false;
+        }
+        
+        come_value.c_value = xsprintf("%s<=%s", left_value.c_value, right_value.c_value);
+        come_value.type = new sType("bool");
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s", come_value.c_value);
+        
+        return true;
+    }
 };
 
-sLtEqNode*% sLtEqNode*::initialize(sLtEqNode*% self, sNode*% left_node, sNode*% right_node, sInfo* info=info)
-{
-    self.left_node = left_node;
-    self.right_node = right_node;
-    
-    self.sline = info->sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-string sLtEqNode*::kind()
-{
-    return string("sLtEqNode");
-}
-
-bool sLtEqNode*::compile(sLtEqNode* self, sInfo* info)
-{
-    sNode*% left_node = self.left_node;
-    if(!left_node.compile(info)) {
-        puts("compile error");
-        exit(2);
-    }
-    
-    CVALUE*% left_value = get_value_from_stack();
-    
-    sNode*% right_node = self.right_node;
-    if(!right_node.compile(info)) {
-        puts("compile error");
-        exit(2);
-    }
-    
-    CVALUE*% right_value = get_value_from_stack();
-    
-    CVALUE*% come_value = new CVALUE;
-    
-    if(left_value.type.mClass.mName !== right_value.type.mClass.mName) {
-        err_msg(info, "invalid type <=");
-        return false;
-    }
-    
-    come_value.c_value = xsprintf("%s<=%s", left_value.c_value, right_value.c_value);
-    come_value.type = new sType("bool");
-    come_value.var = null;
-    
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s", come_value.c_value);
-    
-    return true;
-}
-
-bool sLtEqNode*::terminated()
-{
-    return false;
-}
-
-int sLtEqNode*::sline(sLtEqNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sLtEqNode*::sname(sLtEqNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sStrNode
+class sStrNode extends sNodeBase
 {
     string value;
-    int sline;
-    string sname;
+    
+    new(string value, int sline, sInfo* info)
+    {
+        self.value = string(value);
+        
+        self.sline = sline;
+        self.sname = string(info->sname);
+    }
+    
+    string kind()
+    {
+        return string("sStrNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("\"%s\"", self.value);
+        come_value.type = new sType("String");
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+    
+        add_come_last_code(info, "%s", come_value.c_value);
+        
+        return true;
+    }
 };
 
-sStrNode*% sStrNode*::initialize(sStrNode*% self, string value, int sline, sInfo* info)
-{
-    self.value = string(value);
-    
-    self.sline = sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-bool sStrNode*::terminated()
-{
-    return false;
-}
-
-
-string sStrNode*::kind()
-{
-    return string("sStrNode");
-}
-
-bool sStrNode*::compile(sStrNode* self, sInfo* info)
-{
-    CVALUE*% come_value = new CVALUE;
-    
-    come_value.c_value = xsprintf("\"%s\"", self.value);
-    come_value.type = new sType("String");
-    come_value.var = null;
-    
-    info.stack.push_back(come_value);
-
-    add_come_last_code(info, "%s", come_value.c_value);
-    
-    return true;
-}
-
-int sStrNode*::sline(sStrNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sStrNode*::sname(sStrNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sRegexNode
+class sRegexNode extends sNodeBase
 {
     string value;
     bool ignore_case;
     bool meta;
     bool free_format;
     bool o;
-    int sline;
-    string sname;
+    
+    new(string value, int sline, bool ignore_case=false, bool meta=false, bool free_format=false, bool o=false, sInfo* info=info)
+    {
+        self.value = string(value);
+        
+        self.ignore_case = ignore_case;
+        self.meta = meta;
+        self.free_format = free_format;
+        self.o = o;
+        
+        self.sline = sline;
+        self.sname = string(info->sname);
+    }
+    
+    string kind()
+    {
+        return string("sRegexNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("/%s/%s%s%s%s", self.value, self.ignore_case ? "i":"", self.meta ? "m":"", self.free_format ? "x":"", self.o ? "o":"");
+        come_value.type = new sType("Regex");
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+    
+        add_come_last_code(info, "%s", come_value.c_value);
+        
+        return true;
+    }
 };
 
-sRegexNode*% sRegexNode*::initialize(sRegexNode*% self, string value, int sline, bool ignore_case=false, bool meta=false, bool free_format=false, bool o=false, sInfo* info=info)
-{
-    self.value = string(value);
-    
-    self.ignore_case = ignore_case;
-    self.meta = meta;
-    self.free_format = free_format;
-    self.o = o;
-    
-    self.sline = sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-bool sRegexNode*::terminated()
-{
-    return false;
-}
-
-
-string sRegexNode*::kind()
-{
-    return string("sRegexNode");
-}
-
-bool sRegexNode*::compile(sRegexNode* self, sInfo* info)
-{
-    CVALUE*% come_value = new CVALUE;
-    
-    come_value.c_value = xsprintf("/%s/%s%s%s%s", self.value, self.ignore_case ? "i":"", self.meta ? "m":"", self.free_format ? "x":"", self.o ? "o":"");
-    come_value.type = new sType("Regex");
-    come_value.var = null;
-    
-    info.stack.push_back(come_value);
-
-    add_come_last_code(info, "%s", come_value.c_value);
-    
-    return true;
-}
-
-int sRegexNode*::sline(sRegexNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sRegexNode*::sname(sRegexNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sCommentNode
+class sCommentNode extends sNodeBase
 {
     string value;
-    int sline;
-    string sname;
+    
+    new(string value, sInfo* info=info)
+    {
+        self.value = string(value);
+        
+        self.sline = info.sline;
+        self.sname = string(info->sname);
+        
+        return self;
+    }
+    
+    string kind()
+    {
+        return string("sCommentNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        add_come_code(info, self.value);
+        
+        return true;
+    }
 };
-
-sCommentNode*% sCommentNode*::initialize(sCommentNode*% self, string value, sInfo* info=info)
-{
-    self.value = string(value);
-    
-    self.sline = info.sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-bool sCommentNode*::terminated()
-{
-    return false;
-}
-
-
-string sCommentNode*::kind()
-{
-    return string("sCommentNode");
-}
-
-bool sCommentNode*::compile(sCommentNode* self, sInfo* info)
-{
-    add_come_code(info, self.value);
-    
-    return true;
-}
-
-int sCommentNode*::sline(sCommentNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sCommentNode*::sname(sCommentNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
 
 sNode*% expression_node(sInfo* info=info)
 {
