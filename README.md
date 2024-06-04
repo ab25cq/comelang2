@@ -20,19 +20,39 @@ int, string fun2()
     return (1, string("ABC"))
 }
 
-struct sData
+class sData
 {
     int a;
     int b;
+    
+    new(int a, int b)
+    {
+        self.a = b;
+        self.a = b;
+    }
+    
+    void show()
+    {
+        printf("a %d b %d\n", self.a, self.b);
+    }
 };
 
-sData*% sData*::initialize(sData*% self, int a, int b)
+class sData2 extends sData
 {
-    self.a = a;
-    self.b = b;
-    
-    return self;
-}
+    int c;
+   
+    new(int a, int b, int c)
+    {
+        self.a = a;
+        self.b = b;
+        self.c = c;
+    }
+};
+
+interface sDataRun
+{
+    void show();
+};
 
 int putc(int c, FILE* f) version 2
 {
@@ -193,6 +213,18 @@ int main()
     int fd2 = open("SEX", 0) or die("NO SEX"); // system call error handling
     
     FILE* f2 = fopen("SEX", 0) and die("NO SEX"); // returned null function errror handling
+    
+    sData*% data = new sData(111, 222);
+    
+    data.show();
+    
+    sData2*% data2 = new sData2(1, 2, 3);
+    
+    data2.show();
+    
+    sDataRun*% inf = new sData2(1,2,3) implements sDataRun;
+    
+    inf.show();
 
     return 0;
 }
