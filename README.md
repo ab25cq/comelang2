@@ -28,7 +28,7 @@ class sData
     new(int a, int b)
     {
         self.a = b;
-        self.a = b;
+        self.b = b;
     }
     
     void show()
