@@ -10718,8 +10718,8 @@ right_value386 = (void*)0;
         # 500 "02transpile.c"
         (come_push_stackframe("02transpile.c", 500, 0),__exception_result_var_b1=die("mkdir error"), come_pop_stackframe(), __exception_result_var_b1);
     }
-    # 593 "02transpile.c"
-    charp_write(((char*)(right_value384=xsprintf("\#########################################\n\# istalled directories\n\#########################################\nprefix=\%s\nexec_prefix=${prefix}\nbindir=${exec_prefix}/bin\ndatadir=${datarootdir}\nmandir=${datarootdir}/man\nsharedstatedir=${prefix}/\%s\nsysconfdir=${prefix}/etc/\%s\nincludedir=${prefix}/include/\%s\ndatarootdir=${prefix}/share/\%s\ndocdir=${datarootdir}/doc\nlibdir=${exec_prefix}/lib\n\n\#########################################\n\# environmnet variables\n\#########################################\nCC=\%s\nINSTALL=\%s\nCFLAGS=\%s\nCFLAGS_DEBUG=\%s\nLIBS=\%s\nOS=\%s\nDESTDIR=\%s\nSRCS=$(wildcard *.c)\nSINGLE_SRCS=$(filter-out %%.c.c, $(SRCS))\nOBJS=$(SINGLE_SRCS:.c=.o)\nDEBUG_OBJS=$(SINGLE_SRCS:.c=.debug.o)\nTARGET=\%s\nTARGET_DEBUG=\%s\n\n\#########################################\n\# main\n\#########################################\nall: common.h \%s\n\n$(TARGET): $(OBJS)\n\t$(CC) $(CFLAGS) $^ -o $@\n\n$(TARGET_DEBUG): $(DEBUG_OBJS)\n\t$(CC) $(CFLAGS_DEBUG) $^ -o $@\n\n%%.o: %%.c header\n\t$(CC) $(CFLAGS) -c $< -o $@\n\n%%.debug.o: %%.c header\n\t$(CC) $(CFLAGS_DEBUG) -c $< -o $@\n\n\#########################################\n\# header\n\#########################################\n\nheader:\n\tneo-c header -common-header $(SINGLE_SRCS)\n\ncommon.h: *.c\n\tbash -c 'shopt -s extglob; neo-c header !(*.c).c'\n\n\#########################################\n\# install\n\#########################################\ninstall:\n\tmkdir -p \"$(DESTDIR)/bin\"\n\t$(INSTALL) -m 755 ./\%s \"$(DESTDIR)/bin\"\n\tmkdir -p \"$(DESTDIR)/include\"\n\tmkdir -p \"$(DESTDIR)/lib\"\n\tmkdir -p \"$(DESTDIR)/share/doc/\%s\"\n\t$(INSTALL) -m 644 README.md \"$(DESTDIR)/share/doc/\%s/README.md\"\n\n\#########################################\n\# clean\n\#########################################\nclean:\n\trm -fR *.o *.c.i *.c.out *.c.c \%s *.log *.out common.h \%s\n\n\#########################################\n\# uninstall\n\#########################################\nuninstall:\n\trm -f \"$(DESTDIR)\"/bin/\%s\n\trm -f \"$(DESTDIR)/share/doc/\%s/README.md\"\n\nrun: \%s\n\trm -f *.log\n\t./\%s\n\ndebug: \%s\n\trm -f *.log\n\t./\%s\n",((char*)(right_value358=string_to_string(prefix_274))),((char*)(right_value359=string_to_string(project_name_268))),((char*)(right_value360=string_to_string(project_name_268))),((char*)(right_value361=string_to_string(project_name_268))),((char*)(right_value362=string_to_string(project_name_268))),((char*)(right_value363=string_to_string(cc_270))),((char*)(right_value364=string_to_string(install_271))),((char*)(right_value365=string_to_string(cflags_275))),((char*)(right_value366=string_to_string(cflags_debug_276))),((char*)(right_value367=string_to_string(libs_272))),((char*)(right_value368=string_to_string(os_273))),((char*)(right_value369=string_to_string(prefix_274))),((char*)(right_value370=string_to_string(project_name_268))),((char*)(right_value371=string_to_string(project_name_debug_269))),((char*)(right_value372=string_to_string(project_name_268))),((char*)(right_value373=string_to_string(project_name_268))),((char*)(right_value374=string_to_string(project_name_268))),((char*)(right_value375=string_to_string(project_name_268))),((char*)(right_value376=string_to_string(project_name_268))),((char*)(right_value377=string_to_string(project_name_debug_269))),((char*)(right_value378=string_to_string(project_name_268))),((char*)(right_value379=string_to_string(project_name_268))),((char*)(right_value380=string_to_string(project_name_268))),((char*)(right_value381=string_to_string(project_name_268))),((char*)(right_value382=string_to_string(project_name_debug_269))),((char*)(right_value383=string_to_string(project_name_debug_269)))))),((char*)(right_value386=xsprintf("\%s/Makefile",((char*)(right_value385=string_to_string(project_name_268)))))),(_Bool)0);
+    # 590 "02transpile.c"
+    charp_write(((char*)(right_value384=xsprintf("\#########################################\n\# istalled directories\n\#########################################\nprefix=\%s\nexec_prefix=${prefix}\nbindir=${exec_prefix}/bin\ndatadir=${datarootdir}\nmandir=${datarootdir}/man\nsharedstatedir=${prefix}/\%s\nsysconfdir=${prefix}/etc/\%s\nincludedir=${prefix}/include/\%s\ndatarootdir=${prefix}/share/\%s\ndocdir=${datarootdir}/doc\nlibdir=${exec_prefix}/lib\n\n\#########################################\n\# environmnet variables\n\#########################################\nCC=\%s\nINSTALL=\%s\nCFLAGS=\%s\nCFLAGS_DEBUG=\%s\nLIBS=\%s\nOS=\%s\nDESTDIR=\%s\nSRCS=$(wildcard *.c)\nSINGLE_SRCS=$(filter-out %%.c.c, $(SRCS))\nOBJS=$(SINGLE_SRCS:.c=.o)\nDEBUG_OBJS=$(SINGLE_SRCS:.c=.debug.o)\nTARGET=\%s\nTARGET_DEBUG=\%s\n\n\#########################################\n\# main\n\#########################################\nall: common.h \%s\n\n$(TARGET): $(OBJS)\n\t$(CC) $(CFLAGS) $^ -o $@\n\n$(TARGET_DEBUG): $(DEBUG_OBJS)\n\t$(CC) $(CFLAGS_DEBUG) $^ -o $@\n\n%%.o: %%.c common.h\n\t$(CC) $(CFLAGS) -c $< -o $@\n\n%%.debug.o: %%.c common.h\n\t$(CC) $(CFLAGS_DEBUG) -c $< -o $@\n\n\#########################################\n\# header\n\#########################################\n\ncommon.h: $(SINGLE_SRCS)\n\tneo-c header -common-header $(SINGLE_SRCS)\n\n\#########################################\n\# install\n\#########################################\ninstall:\n\tmkdir -p \"$(DESTDIR)/bin\"\n\t$(INSTALL) -m 755 ./\%s \"$(DESTDIR)/bin\"\n\tmkdir -p \"$(DESTDIR)/include\"\n\tmkdir -p \"$(DESTDIR)/lib\"\n\tmkdir -p \"$(DESTDIR)/share/doc/\%s\"\n\t$(INSTALL) -m 644 README.md \"$(DESTDIR)/share/doc/\%s/README.md\"\n\n\#########################################\n\# clean\n\#########################################\nclean:\n\trm -fR *.o *.c.i *.c.out *.c.c \%s *.log *.out common.h \%s\n\n\#########################################\n\# uninstall\n\#########################################\nuninstall:\n\trm -f \"$(DESTDIR)\"/bin/\%s\n\trm -f \"$(DESTDIR)/share/doc/\%s/README.md\"\n\nrun: \%s\n\trm -f *.log\n\t./\%s\n\ndebug: \%s\n\trm -f *.log\n\t./\%s\n",((char*)(right_value358=string_to_string(prefix_274))),((char*)(right_value359=string_to_string(project_name_268))),((char*)(right_value360=string_to_string(project_name_268))),((char*)(right_value361=string_to_string(project_name_268))),((char*)(right_value362=string_to_string(project_name_268))),((char*)(right_value363=string_to_string(cc_270))),((char*)(right_value364=string_to_string(install_271))),((char*)(right_value365=string_to_string(cflags_275))),((char*)(right_value366=string_to_string(cflags_debug_276))),((char*)(right_value367=string_to_string(libs_272))),((char*)(right_value368=string_to_string(os_273))),((char*)(right_value369=string_to_string(prefix_274))),((char*)(right_value370=string_to_string(project_name_268))),((char*)(right_value371=string_to_string(project_name_debug_269))),((char*)(right_value372=string_to_string(project_name_268))),((char*)(right_value373=string_to_string(project_name_268))),((char*)(right_value374=string_to_string(project_name_268))),((char*)(right_value375=string_to_string(project_name_268))),((char*)(right_value376=string_to_string(project_name_268))),((char*)(right_value377=string_to_string(project_name_debug_269))),((char*)(right_value378=string_to_string(project_name_268))),((char*)(right_value379=string_to_string(project_name_268))),((char*)(right_value380=string_to_string(project_name_268))),((char*)(right_value381=string_to_string(project_name_268))),((char*)(right_value382=string_to_string(project_name_debug_269))),((char*)(right_value383=string_to_string(project_name_debug_269)))))),((char*)(right_value386=xsprintf("\%s/Makefile",((char*)(right_value385=string_to_string(project_name_268)))))),(_Bool)0);
     right_value358 = come_decrement_ref_count2(right_value358, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
     right_value359 = come_decrement_ref_count2(right_value359, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
     right_value360 = come_decrement_ref_count2(right_value360, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -10749,7 +10749,7 @@ right_value386 = (void*)0;
     right_value384 = come_decrement_ref_count2(right_value384, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
     right_value385 = come_decrement_ref_count2(right_value385, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
     right_value386 = come_decrement_ref_count2(right_value386, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 595 "02transpile.c"
+    # 592 "02transpile.c"
     __result189__ = (_Bool)1;
     project_name_268 = come_decrement_ref_count2(project_name_268, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     project_name_debug_269 = come_decrement_ref_count2(project_name_debug_269, (void*)0, (void*)0, 0, 0, 0, (void*)0);
@@ -10778,12 +10778,12 @@ _Bool _or_conditional2;
 _Bool __exception_result_var_b2;
 _Bool __result190__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 600 "02transpile.c"
+    # 597 "02transpile.c"
     if(_or_conditional2=system("make run"),    _or_conditional2 != 0) {
-        # 600 "02transpile.c"
-        (come_push_stackframe("02transpile.c", 600, 1),__exception_result_var_b2=die("system"), come_pop_stackframe(), __exception_result_var_b2);
+        # 597 "02transpile.c"
+        (come_push_stackframe("02transpile.c", 597, 1),__exception_result_var_b2=die("system"), come_pop_stackframe(), __exception_result_var_b2);
     }
-    # 602 "02transpile.c"
+    # 599 "02transpile.c"
     __result190__ = (_Bool)1;
     return __result190__;
 }
@@ -10794,12 +10794,12 @@ _Bool _or_conditional3;
 _Bool __exception_result_var_b3;
 _Bool __result191__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 607 "02transpile.c"
+    # 604 "02transpile.c"
     if(_or_conditional3=system("make debug"),    _or_conditional3 != 0) {
-        # 607 "02transpile.c"
-        (come_push_stackframe("02transpile.c", 607, 2),__exception_result_var_b3=die("system"), come_pop_stackframe(), __exception_result_var_b3);
+        # 604 "02transpile.c"
+        (come_push_stackframe("02transpile.c", 604, 2),__exception_result_var_b3=die("system"), come_pop_stackframe(), __exception_result_var_b3);
     }
-    # 609 "02transpile.c"
+    # 606 "02transpile.c"
     __result191__ = (_Bool)1;
     return __result191__;
 }
@@ -10810,12 +10810,12 @@ _Bool _or_conditional4;
 _Bool __exception_result_var_b4;
 _Bool __result192__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 614 "02transpile.c"
+    # 611 "02transpile.c"
     if(_or_conditional4=system("make clean"),    _or_conditional4 != 0) {
-        # 614 "02transpile.c"
-        (come_push_stackframe("02transpile.c", 614, 3),__exception_result_var_b4=die("system"), come_pop_stackframe(), __exception_result_var_b4);
+        # 611 "02transpile.c"
+        (come_push_stackframe("02transpile.c", 611, 3),__exception_result_var_b4=die("system"), come_pop_stackframe(), __exception_result_var_b4);
     }
-    # 616 "02transpile.c"
+    # 613 "02transpile.c"
     __result192__ = (_Bool)1;
     return __result192__;
 }
@@ -10830,14 +10830,14 @@ _Bool __result193__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value387 = (void*)0;
 right_value388 = (void*)0;
-    # 621 "02transpile.c"
+    # 618 "02transpile.c"
     if(_or_conditional5=system(((char*)(right_value388=xsprintf("make install DESTDIR=\%s",((char*)(right_value387=charp_to_string(prefix))))))),    right_value387 = come_decrement_ref_count2(right_value387, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
     right_value388 = come_decrement_ref_count2(right_value388, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
     _or_conditional5 != 0) {
-        # 621 "02transpile.c"
-        (come_push_stackframe("02transpile.c", 621, 4),__exception_result_var_b5=die("system"), come_pop_stackframe(), __exception_result_var_b5);
+        # 618 "02transpile.c"
+        (come_push_stackframe("02transpile.c", 618, 4),__exception_result_var_b5=die("system"), come_pop_stackframe(), __exception_result_var_b5);
     }
-    # 623 "02transpile.c"
+    # 620 "02transpile.c"
     __result193__ = (_Bool)1;
     return __result193__;
 }
@@ -11288,200 +11288,200 @@ right_value534 = (void*)0;
 right_value535 = (void*)0;
 right_value536 = (void*)0;
 memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
-    # 1017 "02transpile.c"
-    # 628 "02transpile.c"
+    # 1014 "02transpile.c"
+    # 625 "02transpile.c"
     if(_if_conditional339=charp_operator_equals(argv[1],"header")&&argc>=3,    _if_conditional339) {
-        # 629 "02transpile.c"
+        # 626 "02transpile.c"
         gProgramName=argv[0];
-        # 631 "02transpile.c"
-        clang_option_277=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value390=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value389=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "02transpile.c", 631, "buffer"))))))));
+        # 628 "02transpile.c"
+        clang_option_277=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value390=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value389=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "02transpile.c", 628, "buffer"))))))));
         come_call_finalizer2(buffer_finalize,right_value389, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(buffer_finalize,right_value390, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-        # 632 "02transpile.c"
-        cpp_option_278=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value392=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value391=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "02transpile.c", 632, "buffer"))))))));
+        # 629 "02transpile.c"
+        cpp_option_278=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value392=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value391=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "02transpile.c", 629, "buffer"))))))));
         come_call_finalizer2(buffer_finalize,right_value391, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(buffer_finalize,right_value392, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-        # 633 "02transpile.c"
-        files_279=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value394=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value393=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "02transpile.c", 633, "list$1charph"))))))));
+        # 630 "02transpile.c"
+        files_279=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value394=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value393=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "02transpile.c", 630, "list$1charph"))))))));
         come_call_finalizer2(list$1charphp_finalize,right_value393, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(list$1charphp_finalize,right_value394, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-        # 634 "02transpile.c"
-        object_files_280=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value396=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value395=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "02transpile.c", 634, "list$1charph"))))))));
+        # 631 "02transpile.c"
+        object_files_280=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value396=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value395=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "02transpile.c", 631, "list$1charph"))))))));
         come_call_finalizer2(list$1charphp_finalize,right_value395, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(list$1charphp_finalize,right_value396, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-        # 635 "02transpile.c"
+        # 632 "02transpile.c"
         output_object_file_281=(_Bool)0;
-        # 636 "02transpile.c"
+        # 633 "02transpile.c"
         output_cpp_file_282=(_Bool)0;
-        # 637 "02transpile.c"
+        # 634 "02transpile.c"
         output_source_file_flag_283=(_Bool)0;
-        # 638 "02transpile.c"
+        # 635 "02transpile.c"
         output_file_name_284=(char*)come_increment_ref_count(((char*)(right_value397=__builtin_string("common.h"))));
         right_value397 = come_decrement_ref_count2(right_value397, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 639 "02transpile.c"
+        # 636 "02transpile.c"
         verbose_285=(_Bool)0;
-        # 640 "02transpile.c"
+        # 637 "02transpile.c"
         prohibit_common_header_286=(_Bool)0;
-        # 641 "02transpile.c"
+        # 638 "02transpile.c"
         come_debug_287=(_Bool)0;
-        # 642 "02transpile.c"
+        # 639 "02transpile.c"
         come_malloc_288=(_Bool)0;
-        # 643 "02transpile.c"
+        # 640 "02transpile.c"
         come_str_289=(_Bool)0;
-        # 709 "02transpile.c"
+        # 706 "02transpile.c"
         for(        i_290=2;        i_290<argc;        i_290++        ){
-            # 707 "02transpile.c"
-            # 645 "02transpile.c"
+            # 704 "02transpile.c"
+            # 642 "02transpile.c"
             if(_if_conditional340=charp_operator_equals(argv[i_290],"-o")&&i_290+1<argc,            _if_conditional340) {
-                # 646 "02transpile.c"
+                # 643 "02transpile.c"
                 __dec_obj105=output_file_name_284;
                 output_file_name_284=(char*)come_increment_ref_count(((char*)(right_value398=__builtin_string(argv[i_290+1]))));
                 __dec_obj105 = come_decrement_ref_count2(__dec_obj105, (void*)0, (void*)0, 0,0,0, (void*)0);
                 right_value398 = come_decrement_ref_count2(right_value398, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 647 "02transpile.c"
+                # 644 "02transpile.c"
                 i_290++;
             }
             else {
-                # 707 "02transpile.c"
-                # 649 "02transpile.c"
+                # 704 "02transpile.c"
+                # 646 "02transpile.c"
                 if(_if_conditional341=charp_operator_equals(argv[i_290],"-str"),                _if_conditional341) {
-                    # 650 "02transpile.c"
+                    # 647 "02transpile.c"
                     come_str_289=(_Bool)1;
                 }
                 else {
-                    # 707 "02transpile.c"
-                    # 652 "02transpile.c"
+                    # 704 "02transpile.c"
+                    # 649 "02transpile.c"
                     if(_if_conditional342=charp_operator_equals(argv[i_290],"-leak"),                    _if_conditional342) {
-                        # 653 "02transpile.c"
+                        # 650 "02transpile.c"
                         come_malloc_288=(_Bool)1;
                     }
                     else {
-                        # 707 "02transpile.c"
-                        # 655 "02transpile.c"
+                        # 704 "02transpile.c"
+                        # 652 "02transpile.c"
                         if(_if_conditional343=charp_operator_equals(argv[i_290],"-gc"),                        _if_conditional343) {
-                            # 656 "02transpile.c"
+                            # 653 "02transpile.c"
                             gComeGC=(_Bool)1;
                         }
                         else {
-                            # 707 "02transpile.c"
-                            # 658 "02transpile.c"
+                            # 704 "02transpile.c"
+                            # 655 "02transpile.c"
                             if(_if_conditional344=charp_operator_equals(argv[i_290],"-g"),                            _if_conditional344) {
-                                # 659 "02transpile.c"
+                                # 656 "02transpile.c"
                                 buffer_append_str(clang_option_277,"-g ");
                             }
                             else {
-                                # 707 "02transpile.c"
-                                # 661 "02transpile.c"
+                                # 704 "02transpile.c"
+                                # 658 "02transpile.c"
                                 if(_if_conditional345=charp_operator_equals(argv[i_290],"-cg"),                                _if_conditional345) {
-                                    # 662 "02transpile.c"
+                                    # 659 "02transpile.c"
                                     buffer_append_str(clang_option_277,"-g ");
-                                    # 663 "02transpile.c"
+                                    # 660 "02transpile.c"
                                     come_debug_287=(_Bool)1;
                                 }
                                 else {
-                                    # 707 "02transpile.c"
-                                    # 665 "02transpile.c"
+                                    # 704 "02transpile.c"
+                                    # 662 "02transpile.c"
                                     if(_if_conditional346=charp_operator_equals(argv[i_290],"-common-header"),                                    _if_conditional346) {
-                                        # 666 "02transpile.c"
+                                        # 663 "02transpile.c"
                                         gCommonHeader=(_Bool)1;
                                     }
                                     else {
-                                        # 707 "02transpile.c"
-                                        # 668 "02transpile.c"
+                                        # 704 "02transpile.c"
+                                        # 665 "02transpile.c"
                                         if(_if_conditional347=charp_operator_equals(argv[i_290],"-original-position"),                                        _if_conditional347) {
-                                            # 669 "02transpile.c"
+                                            # 666 "02transpile.c"
                                             gComeOriginalSourcePosition=(_Bool)0;
                                         }
                                         else {
-                                            # 707 "02transpile.c"
-                                            # 671 "02transpile.c"
+                                            # 704 "02transpile.c"
+                                            # 668 "02transpile.c"
                                             if(_if_conditional348=string_operator_equals(((char*)(right_value399=charp_operator_load_range_element(argv[i_290],0,2))),"-O"),                                            right_value399 = come_decrement_ref_count2(right_value399, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
                                             _if_conditional348) {
-                                                # 672 "02transpile.c"
+                                                # 669 "02transpile.c"
                                                 buffer_append_str(clang_option_277,((char*)(right_value401=xsprintf(" \%s ",((char*)(right_value400=charp_to_string(argv[i_290])))))));
                                                 right_value400 = come_decrement_ref_count2(right_value400, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                 right_value401 = come_decrement_ref_count2(right_value401, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                # 673 "02transpile.c"
+                                                # 670 "02transpile.c"
                                                 come_debug_287=(_Bool)0;
                                             }
                                             else {
-                                                # 707 "02transpile.c"
-                                                # 675 "02transpile.c"
+                                                # 704 "02transpile.c"
+                                                # 672 "02transpile.c"
                                                 if(_if_conditional349=string_operator_equals(((char*)(right_value402=charp_operator_load_range_element(argv[i_290],0,2))),"-D"),                                                right_value402 = come_decrement_ref_count2(right_value402, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
                                                 _if_conditional349) {
-                                                    # 676 "02transpile.c"
+                                                    # 673 "02transpile.c"
                                                     buffer_append_str(cpp_option_278,((char*)(right_value404=xsprintf(" \%s ",((char*)(right_value403=charp_to_string(argv[i_290])))))));
                                                     right_value403 = come_decrement_ref_count2(right_value403, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                     right_value404 = come_decrement_ref_count2(right_value404, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                    # 677 "02transpile.c"
+                                                    # 674 "02transpile.c"
                                                     buffer_append_str(clang_option_277,((char*)(right_value406=xsprintf(" \%s ",((char*)(right_value405=charp_to_string(argv[i_290])))))));
                                                     right_value405 = come_decrement_ref_count2(right_value405, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                     right_value406 = come_decrement_ref_count2(right_value406, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                 }
                                                 else {
-                                                    # 707 "02transpile.c"
-                                                    # 679 "02transpile.c"
+                                                    # 704 "02transpile.c"
+                                                    # 676 "02transpile.c"
                                                     if(_if_conditional350=charp_operator_equals(argv[i_290],"-v"),                                                    _if_conditional350) {
-                                                        # 680 "02transpile.c"
+                                                        # 677 "02transpile.c"
                                                         buffer_append_str(clang_option_277,"-v ");
-                                                        # 681 "02transpile.c"
+                                                        # 678 "02transpile.c"
                                                         verbose_285=(_Bool)1;
                                                     }
                                                     else {
-                                                        # 707 "02transpile.c"
-                                                        # 683 "02transpile.c"
+                                                        # 704 "02transpile.c"
+                                                        # 680 "02transpile.c"
                                                         if(_if_conditional351=strlen(argv[i_290])>=2&&memcmp(argv[i_290],"-I",strlen("-I"))==0,                                                        _if_conditional351) {
-                                                            # 684 "02transpile.c"
+                                                            # 681 "02transpile.c"
                                                             buffer_append_str(cpp_option_278,((char*)(right_value408=charp_operator_add(" ",((char*)(right_value407=charp_operator_add(argv[i_290]," ")))))));
                                                             right_value407 = come_decrement_ref_count2(right_value407, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                             right_value408 = come_decrement_ref_count2(right_value408, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                         }
                                                         else {
-                                                            # 707 "02transpile.c"
-                                                            # 686 "02transpile.c"
+                                                            # 704 "02transpile.c"
+                                                            # 683 "02transpile.c"
                                                             if(_if_conditional352=charp_operator_equals(argv[i_290],"-gdwarf-4"),                                                            _if_conditional352) {
-                                                                # 687 "02transpile.c"
+                                                                # 684 "02transpile.c"
                                                                 buffer_append_str(clang_option_277,"-gdwarf-4 ");
                                                             }
                                                             else {
-                                                                # 707 "02transpile.c"
-                                                                # 689 "02transpile.c"
+                                                                # 704 "02transpile.c"
+                                                                # 686 "02transpile.c"
                                                                 if(_if_conditional353=charp_operator_equals(argv[i_290],"-s")||charp_operator_equals(argv[i_290],"-S"),                                                                _if_conditional353) {
-                                                                    # 690 "02transpile.c"
+                                                                    # 687 "02transpile.c"
                                                                     output_source_file_flag_283=(_Bool)1;
                                                                 }
                                                                 else {
-                                                                    # 707 "02transpile.c"
-                                                                    # 692 "02transpile.c"
+                                                                    # 704 "02transpile.c"
+                                                                    # 689 "02transpile.c"
                                                                     if(_if_conditional354=charp_operator_equals(argv[i_290],"-c"),                                                                    _if_conditional354) {
-                                                                        # 693 "02transpile.c"
+                                                                        # 690 "02transpile.c"
                                                                         output_object_file_281=(_Bool)1;
                                                                     }
                                                                     else {
-                                                                        # 707 "02transpile.c"
-                                                                        # 695 "02transpile.c"
+                                                                        # 704 "02transpile.c"
+                                                                        # 692 "02transpile.c"
                                                                         if(_if_conditional355=charp_operator_equals(argv[i_290],"-E"),                                                                        _if_conditional355) {
-                                                                            # 696 "02transpile.c"
+                                                                            # 693 "02transpile.c"
                                                                             output_cpp_file_282=(_Bool)1;
                                                                         }
                                                                         else {
-                                                                            # 707 "02transpile.c"
-                                                                            # 698 "02transpile.c"
+                                                                            # 704 "02transpile.c"
+                                                                            # 695 "02transpile.c"
                                                                             if(_if_conditional356=argv[i_290][0]==45,                                                                            _if_conditional356) {
-                                                                                # 699 "02transpile.c"
+                                                                                # 696 "02transpile.c"
                                                                                 buffer_append_str(clang_option_277,((char*)(right_value409=charp_operator_add(argv[i_290]," "))));
                                                                                 right_value409 = come_decrement_ref_count2(right_value409, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                                             }
                                                                             else {
-                                                                                # 707 "02transpile.c"
-                                                                                # 701 "02transpile.c"
+                                                                                # 704 "02transpile.c"
+                                                                                # 698 "02transpile.c"
                                                                                 if(_if_conditional357=strlen(argv[i_290])>2&&memcmp(argv[i_290]+strlen(argv[i_290])-2,".o",2)==0,                                                                                _if_conditional357) {
-                                                                                    # 702 "02transpile.c"
+                                                                                    # 699 "02transpile.c"
                                                                                     list$1charph_push_back(object_files_280,(char*)come_increment_ref_count(((char*)(right_value410=__builtin_string(argv[i_290])))));
                                                                                     right_value410 = come_decrement_ref_count2(right_value410, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                                                 }
                                                                                 else {
-                                                                                    # 705 "02transpile.c"
+                                                                                    # 702 "02transpile.c"
                                                                                     list$1charph_push_back(files_279,(char*)come_increment_ref_count(((char*)(right_value411=__builtin_string(argv[i_290])))));
                                                                                     right_value411 = come_decrement_ref_count2(right_value411, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                                                 }
@@ -11503,213 +11503,213 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                 }
             }
         }
-        # 709 "02transpile.c"
+        # 706 "02transpile.c"
         gComeDebug=come_debug_287;
-        # 710 "02transpile.c"
+        # 707 "02transpile.c"
         gComeMalloc=come_malloc_288;
-        # 721 "02transpile.c"
-        # 712 "02transpile.c"
+        # 718 "02transpile.c"
+        # 709 "02transpile.c"
         if(come_str_289) {
-            # 719 "02transpile.c"
-            # 713 "02transpile.c"
+            # 716 "02transpile.c"
+            # 710 "02transpile.c"
             if(gComeGC) {
-                # 714 "02transpile.c"
+                # 711 "02transpile.c"
                 buffer_append_str(clang_option_277," -lneo-c-str-gc -lpcre ");
             }
             else {
-                # 717 "02transpile.c"
+                # 714 "02transpile.c"
                 buffer_append_str(clang_option_277," -lneo-c-str -lpcre ");
             }
         }
-        # 721 "02transpile.c"
+        # 718 "02transpile.c"
         if(_and_conditional1=f_291=fopen(output_file_name_284,"w"),        _and_conditional1 == 0) {
-            # 721 "02transpile.c"
-            (come_push_stackframe("02transpile.c", 721, 5),__exception_result_var_b6=die("fopen"), come_pop_stackframe(), __exception_result_var_b6);
+            # 718 "02transpile.c"
+            (come_push_stackframe("02transpile.c", 718, 5),__exception_result_var_b6=die("fopen"), come_pop_stackframe(), __exception_result_var_b6);
         }
-        # 722 "02transpile.c"
+        # 719 "02transpile.c"
         fclose(f_291);
-        # 724 "02transpile.c"
+        # 721 "02transpile.c"
         if(_or_conditional6=truncate(output_file_name_284,0),        _or_conditional6 != 0) {
-            # 724 "02transpile.c"
-            (come_push_stackframe("02transpile.c", 724, 6),__exception_result_var_b7=die("truncate"), come_pop_stackframe(), __exception_result_var_b7);
+            # 721 "02transpile.c"
+            (come_push_stackframe("02transpile.c", 721, 6),__exception_result_var_b7=die("truncate"), come_pop_stackframe(), __exception_result_var_b7);
         }
-        # 726 "02transpile.c"
+        # 723 "02transpile.c"
         come_init_v5();
-        # 728 "02transpile.c"
+        # 725 "02transpile.c"
         tmp_file_292=(char*)come_increment_ref_count(((char*)(right_value412=__builtin_string("tmp-common-header"))));
         right_value412 = come_decrement_ref_count2(right_value412, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 730 "02transpile.c"
+        # 727 "02transpile.c"
         system(((char*)(right_value419=xsprintf("cat \%s > \%s",((char*)(right_value417=string_to_string(((char*)(right_value416=list$1charph_join(files_279," ")))))),((char*)(right_value418=string_to_string(tmp_file_292)))))));
         right_value416 = come_decrement_ref_count2(right_value416, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         right_value417 = come_decrement_ref_count2(right_value417, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         right_value418 = come_decrement_ref_count2(right_value418, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         right_value419 = come_decrement_ref_count2(right_value419, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 732 "02transpile.c"
-        # 734 "02transpile.c"
+        # 729 "02transpile.c"
+        # 731 "02transpile.c"
         memset(&info_296,0,sizeof(struct sInfo));
-        # 736 "02transpile.c"
+        # 733 "02transpile.c"
         __dec_obj106=info_296.base_sname;
         info_296.base_sname=(char*)come_increment_ref_count(((char*)(right_value420=__builtin_string(tmp_file_292))));
         __dec_obj106 = come_decrement_ref_count2(__dec_obj106, (void*)0, (void*)0, 0,0,0, (void*)0);
         right_value420 = come_decrement_ref_count2(right_value420, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 737 "02transpile.c"
+        # 734 "02transpile.c"
         __dec_obj107=info_296.sname;
         info_296.sname=(char*)come_increment_ref_count(((char*)(right_value421=__builtin_string(tmp_file_292))));
         __dec_obj107 = come_decrement_ref_count2(__dec_obj107, (void*)0, (void*)0, 0,0,0, (void*)0);
         right_value421 = come_decrement_ref_count2(right_value421, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 738 "02transpile.c"
+        # 735 "02transpile.c"
         info_296.sline=1;
-        # 739 "02transpile.c"
+        # 736 "02transpile.c"
         info_296.err_num=0;
-        # 740 "02transpile.c"
+        # 737 "02transpile.c"
         __dec_obj108=info_296.clang_option;
         info_296.clang_option=(char*)come_increment_ref_count(((char*)(right_value422=buffer_to_string(clang_option_277))));
         __dec_obj108 = come_decrement_ref_count2(__dec_obj108, (void*)0, (void*)0, 0,0,0, (void*)0);
         right_value422 = come_decrement_ref_count2(right_value422, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 741 "02transpile.c"
+        # 738 "02transpile.c"
         __dec_obj109=info_296.cpp_option;
         info_296.cpp_option=(char*)come_increment_ref_count(((char*)(right_value423=buffer_to_string(cpp_option_278))));
         __dec_obj109 = come_decrement_ref_count2(__dec_obj109, (void*)0, (void*)0, 0,0,0, (void*)0);
         right_value423 = come_decrement_ref_count2(right_value423, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 742 "02transpile.c"
+        # 739 "02transpile.c"
         info_296.no_output_err=(_Bool)0;
-        # 743 "02transpile.c"
+        # 740 "02transpile.c"
         __dec_obj111=info_296.funcs;
-        info_296.funcs=(struct map$2charphsFunph*)come_increment_ref_count(((struct map$2charphsFunph*)(right_value430=map$2charphsFunph_initialize((struct map$2charphsFunph*)come_increment_ref_count(((struct map$2charphsFunph*)(right_value424=(struct map$2charphsFunph*)come_calloc(1, sizeof(struct map$2charphsFunph)*(1), "02transpile.c", 743, "map$2charphsFunph"))))))));
+        info_296.funcs=(struct map$2charphsFunph*)come_increment_ref_count(((struct map$2charphsFunph*)(right_value430=map$2charphsFunph_initialize((struct map$2charphsFunph*)come_increment_ref_count(((struct map$2charphsFunph*)(right_value424=(struct map$2charphsFunph*)come_calloc(1, sizeof(struct map$2charphsFunph)*(1), "02transpile.c", 740, "map$2charphsFunph"))))))));
         come_call_finalizer2(map$2charphsFunph_finalize,__dec_obj111, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         come_call_finalizer2(map$2charphsFunphp_finalize,right_value424, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(map$2charphsFunphp_finalize,right_value430, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-        # 744 "02transpile.c"
+        # 741 "02transpile.c"
         __dec_obj113=info_296.generics_funcs;
-        info_296.generics_funcs=(struct map$2charphsGenericsFunph*)come_increment_ref_count(((struct map$2charphsGenericsFunph*)(right_value437=map$2charphsGenericsFunph_initialize((struct map$2charphsGenericsFunph*)come_increment_ref_count(((struct map$2charphsGenericsFunph*)(right_value431=(struct map$2charphsGenericsFunph*)come_calloc(1, sizeof(struct map$2charphsGenericsFunph)*(1), "02transpile.c", 744, "map$2charphsGenericsFunph"))))))));
+        info_296.generics_funcs=(struct map$2charphsGenericsFunph*)come_increment_ref_count(((struct map$2charphsGenericsFunph*)(right_value437=map$2charphsGenericsFunph_initialize((struct map$2charphsGenericsFunph*)come_increment_ref_count(((struct map$2charphsGenericsFunph*)(right_value431=(struct map$2charphsGenericsFunph*)come_calloc(1, sizeof(struct map$2charphsGenericsFunph)*(1), "02transpile.c", 741, "map$2charphsGenericsFunph"))))))));
         come_call_finalizer2(map$2charphsGenericsFunph_finalize,__dec_obj113, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         come_call_finalizer2(map$2charphsGenericsFunphp_finalize,right_value431, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(map$2charphsGenericsFunphp_finalize,right_value437, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-        # 745 "02transpile.c"
+        # 742 "02transpile.c"
         __dec_obj115=info_296.classes;
-        info_296.classes=(struct map$2charphsClassph*)come_increment_ref_count(((struct map$2charphsClassph*)(right_value444=map$2charphsClassph_initialize((struct map$2charphsClassph*)come_increment_ref_count(((struct map$2charphsClassph*)(right_value438=(struct map$2charphsClassph*)come_calloc(1, sizeof(struct map$2charphsClassph)*(1), "02transpile.c", 745, "map$2charphsClassph"))))))));
+        info_296.classes=(struct map$2charphsClassph*)come_increment_ref_count(((struct map$2charphsClassph*)(right_value444=map$2charphsClassph_initialize((struct map$2charphsClassph*)come_increment_ref_count(((struct map$2charphsClassph*)(right_value438=(struct map$2charphsClassph*)come_calloc(1, sizeof(struct map$2charphsClassph)*(1), "02transpile.c", 742, "map$2charphsClassph"))))))));
         come_call_finalizer2(map$2charphsClassph_finalize,__dec_obj115, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         come_call_finalizer2(map$2charphsClassphp_finalize,right_value438, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(map$2charphsClassphp_finalize,right_value444, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-        # 746 "02transpile.c"
+        # 743 "02transpile.c"
         __dec_obj117=info_296.types;
-        info_296.types=(struct map$2charphsTypeph*)come_increment_ref_count(((struct map$2charphsTypeph*)(right_value451=map$2charphsTypeph_initialize((struct map$2charphsTypeph*)come_increment_ref_count(((struct map$2charphsTypeph*)(right_value445=(struct map$2charphsTypeph*)come_calloc(1, sizeof(struct map$2charphsTypeph)*(1), "02transpile.c", 746, "map$2charphsTypeph"))))))));
+        info_296.types=(struct map$2charphsTypeph*)come_increment_ref_count(((struct map$2charphsTypeph*)(right_value451=map$2charphsTypeph_initialize((struct map$2charphsTypeph*)come_increment_ref_count(((struct map$2charphsTypeph*)(right_value445=(struct map$2charphsTypeph*)come_calloc(1, sizeof(struct map$2charphsTypeph)*(1), "02transpile.c", 743, "map$2charphsTypeph"))))))));
         come_call_finalizer2(map$2charphsTypeph_finalize,__dec_obj117, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         come_call_finalizer2(map$2charphsTypephp_finalize,right_value445, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(map$2charphsTypephp_finalize,right_value451, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-        # 747 "02transpile.c"
+        # 744 "02transpile.c"
         __dec_obj118=info_296.module;
-        info_296.module=(struct sModule*)come_increment_ref_count(((struct sModule*)(right_value453=sModule_initialize((struct sModule*)come_increment_ref_count(((struct sModule*)(right_value452=(struct sModule*)come_calloc(1, sizeof(struct sModule)*(1), "02transpile.c", 747, "sModule"))))))));
+        info_296.module=(struct sModule*)come_increment_ref_count(((struct sModule*)(right_value453=sModule_initialize((struct sModule*)come_increment_ref_count(((struct sModule*)(right_value452=(struct sModule*)come_calloc(1, sizeof(struct sModule)*(1), "02transpile.c", 744, "sModule"))))))));
         come_call_finalizer2(sModule_finalize,__dec_obj118, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         come_call_finalizer2(sModule_finalize,right_value452, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(sModule_finalize,right_value453, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-        # 748 "02transpile.c"
+        # 745 "02transpile.c"
         __dec_obj119=info_296.right_value_objects;
-        info_296.right_value_objects=(struct list$1sRightValueObjectph*)come_increment_ref_count(((struct list$1sRightValueObjectph*)(right_value455=list$1sRightValueObjectph_initialize((struct list$1sRightValueObjectph*)come_increment_ref_count(((struct list$1sRightValueObjectph*)(right_value454=(struct list$1sRightValueObjectph*)come_calloc(1, sizeof(struct list$1sRightValueObjectph)*(1), "02transpile.c", 748, "list$1sRightValueObjectph"))))))));
+        info_296.right_value_objects=(struct list$1sRightValueObjectph*)come_increment_ref_count(((struct list$1sRightValueObjectph*)(right_value455=list$1sRightValueObjectph_initialize((struct list$1sRightValueObjectph*)come_increment_ref_count(((struct list$1sRightValueObjectph*)(right_value454=(struct list$1sRightValueObjectph*)come_calloc(1, sizeof(struct list$1sRightValueObjectph)*(1), "02transpile.c", 745, "list$1sRightValueObjectph"))))))));
         come_call_finalizer2(list$1sRightValueObjectph_finalize,__dec_obj119, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         come_call_finalizer2(list$1sRightValueObjectphp_finalize,right_value454, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(list$1sRightValueObjectphp_finalize,right_value455, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-        # 749 "02transpile.c"
+        # 746 "02transpile.c"
         __dec_obj120=info_296.stack;
-        info_296.stack=(struct list$1CVALUEph*)come_increment_ref_count(((struct list$1CVALUEph*)(right_value457=list$1CVALUEph_initialize((struct list$1CVALUEph*)come_increment_ref_count(((struct list$1CVALUEph*)(right_value456=(struct list$1CVALUEph*)come_calloc(1, sizeof(struct list$1CVALUEph)*(1), "02transpile.c", 749, "list$1CVALUEph"))))))));
+        info_296.stack=(struct list$1CVALUEph*)come_increment_ref_count(((struct list$1CVALUEph*)(right_value457=list$1CVALUEph_initialize((struct list$1CVALUEph*)come_increment_ref_count(((struct list$1CVALUEph*)(right_value456=(struct list$1CVALUEph*)come_calloc(1, sizeof(struct list$1CVALUEph)*(1), "02transpile.c", 746, "list$1CVALUEph"))))))));
         come_call_finalizer2(list$1CVALUEph_finalize,__dec_obj120, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         come_call_finalizer2(list$1CVALUEphp_finalize,right_value456, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(list$1CVALUEphp_finalize,right_value457, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-        # 750 "02transpile.c"
+        # 747 "02transpile.c"
         __dec_obj121=info_296.gv_table;
-        info_296.gv_table=(struct sVarTable*)come_increment_ref_count(((struct sVarTable*)(right_value459=sVarTable_initialize((struct sVarTable*)come_increment_ref_count(((struct sVarTable*)(right_value458=(struct sVarTable*)come_calloc(1, sizeof(struct sVarTable)*(1), "02transpile.c", 750, "sVarTable")))),(_Bool)1,((void*)0)))));
+        info_296.gv_table=(struct sVarTable*)come_increment_ref_count(((struct sVarTable*)(right_value459=sVarTable_initialize((struct sVarTable*)come_increment_ref_count(((struct sVarTable*)(right_value458=(struct sVarTable*)come_calloc(1, sizeof(struct sVarTable)*(1), "02transpile.c", 747, "sVarTable")))),(_Bool)1,((void*)0)))));
         come_call_finalizer2(sVarTable_finalize,__dec_obj121, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         come_call_finalizer2(sVarTable_finalize,right_value458, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(sVarTable_finalize,right_value459, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-        # 751 "02transpile.c"
-        lv_table_313=(struct sVarTable*)come_increment_ref_count(((struct sVarTable*)(right_value461=sVarTable_initialize((struct sVarTable*)come_increment_ref_count(((struct sVarTable*)(right_value460=(struct sVarTable*)come_calloc(1, sizeof(struct sVarTable)*(1), "02transpile.c", 751, "sVarTable")))),(_Bool)0,((void*)0)))));
+        # 748 "02transpile.c"
+        lv_table_313=(struct sVarTable*)come_increment_ref_count(((struct sVarTable*)(right_value461=sVarTable_initialize((struct sVarTable*)come_increment_ref_count(((struct sVarTable*)(right_value460=(struct sVarTable*)come_calloc(1, sizeof(struct sVarTable)*(1), "02transpile.c", 748, "sVarTable")))),(_Bool)0,((void*)0)))));
         come_call_finalizer2(sVarTable_finalize,right_value460, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(sVarTable_finalize,right_value461, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-        # 752 "02transpile.c"
+        # 749 "02transpile.c"
         info_296.lv_table=lv_table_313;
-        # 753 "02transpile.c"
+        # 750 "02transpile.c"
         __dec_obj122=info_296.generics_type_names;
-        info_296.generics_type_names=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value463=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value462=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "02transpile.c", 753, "list$1charph"))))))));
+        info_296.generics_type_names=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value463=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value462=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "02transpile.c", 750, "list$1charph"))))))));
         come_call_finalizer2(list$1charph_finalize,__dec_obj122, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         come_call_finalizer2(list$1charphp_finalize,right_value462, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(list$1charphp_finalize,right_value463, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-        # 754 "02transpile.c"
+        # 751 "02transpile.c"
         __dec_obj123=info_296.method_generics_type_names;
-        info_296.method_generics_type_names=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value465=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value464=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "02transpile.c", 754, "list$1charph"))))))));
+        info_296.method_generics_type_names=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value465=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value464=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "02transpile.c", 751, "list$1charph"))))))));
         come_call_finalizer2(list$1charph_finalize,__dec_obj123, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         come_call_finalizer2(list$1charphp_finalize,right_value464, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(list$1charphp_finalize,right_value465, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-        # 755 "02transpile.c"
+        # 752 "02transpile.c"
         __dec_obj124=info_296.generics_classes;
-        info_296.generics_classes=(struct map$2charphsClassph*)come_increment_ref_count(((struct map$2charphsClassph*)(right_value467=map$2charphsClassph_initialize((struct map$2charphsClassph*)come_increment_ref_count(((struct map$2charphsClassph*)(right_value466=(struct map$2charphsClassph*)come_calloc(1, sizeof(struct map$2charphsClassph)*(1), "02transpile.c", 755, "map$2charphsClassph"))))))));
+        info_296.generics_classes=(struct map$2charphsClassph*)come_increment_ref_count(((struct map$2charphsClassph*)(right_value467=map$2charphsClassph_initialize((struct map$2charphsClassph*)come_increment_ref_count(((struct map$2charphsClassph*)(right_value466=(struct map$2charphsClassph*)come_calloc(1, sizeof(struct map$2charphsClassph)*(1), "02transpile.c", 752, "map$2charphsClassph"))))))));
         come_call_finalizer2(map$2charphsClassph_finalize,__dec_obj124, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         come_call_finalizer2(map$2charphsClassphp_finalize,right_value466, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(map$2charphsClassphp_finalize,right_value467, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-        # 756 "02transpile.c"
+        # 753 "02transpile.c"
         info_296.verbose=verbose_285;
-        # 757 "02transpile.c"
+        # 754 "02transpile.c"
         info_296.output_header_file=(_Bool)1;
-        # 759 "02transpile.c"
-        # 760 "02transpile.c"
+        # 756 "02transpile.c"
+        # 757 "02transpile.c"
         info_296.num_source_files=n_314++;
-        # 761 "02transpile.c"
+        # 758 "02transpile.c"
         info_296.max_source_files=list$1charph_length(files_279);
-        # 763 "02transpile.c"
+        # 760 "02transpile.c"
         __dec_obj125=info_296.output_file_name;
         info_296.output_file_name=(char*)come_increment_ref_count(((char*)(right_value468=__builtin_string(output_file_name_284))));
         __dec_obj125 = come_decrement_ref_count2(__dec_obj125, (void*)0, (void*)0, 0,0,0, (void*)0);
         right_value468 = come_decrement_ref_count2(right_value468, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 765 "02transpile.c"
+        # 762 "02transpile.c"
         init_classes(&info_296);
-        # 766 "02transpile.c"
+        # 763 "02transpile.c"
         init_module(&info_296);
-        # 768 "02transpile.c"
+        # 765 "02transpile.c"
         clear_tmp_file(&info_296);
-        # 775 "02transpile.c"
-        # 770 "02transpile.c"
+        # 772 "02transpile.c"
+        # 767 "02transpile.c"
         if(_if_conditional399=!cpp(&info_296),        _if_conditional399) {
-            # 771 "02transpile.c"
+            # 768 "02transpile.c"
             printf("%s %d: transpile failed\n",info_296.sname,info_296.sline);
-            # 772 "02transpile.c"
+            # 769 "02transpile.c"
             exit(2);
         }
-        # 775 "02transpile.c"
+        # 772 "02transpile.c"
         __dec_obj126=info_296.original_source;
         info_296.original_source=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value471=string_to_buffer(((char*)(right_value470=string_read(((char*)(right_value469=xsprintf("%s",tmp_file_292))))))))));
         come_call_finalizer2(buffer_finalize,__dec_obj126, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         right_value469 = come_decrement_ref_count2(right_value469, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         right_value470 = come_decrement_ref_count2(right_value470, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(buffer_finalize,right_value471, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-        # 776 "02transpile.c"
+        # 773 "02transpile.c"
         __dec_obj127=info_296.source;
         info_296.source=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value474=string_to_buffer(((char*)(right_value473=string_read(((char*)(right_value472=xsprintf("%s.i",tmp_file_292))))))))));
         come_call_finalizer2(buffer_finalize,__dec_obj127, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         right_value472 = come_decrement_ref_count2(right_value472, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         right_value473 = come_decrement_ref_count2(right_value473, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(buffer_finalize,right_value474, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-        # 777 "02transpile.c"
+        # 774 "02transpile.c"
         info_296.p=info_296.source->buf;
-        # 778 "02transpile.c"
+        # 775 "02transpile.c"
         info_296.head=info_296.source->buf;
-        # 789 "02transpile.c"
-        # 780 "02transpile.c"
+        # 786 "02transpile.c"
+        # 777 "02transpile.c"
         if(_if_conditional400=!output_cpp_file_282,        _if_conditional400) {
-            # 781 "02transpile.c"
+            # 778 "02transpile.c"
             transpile_v5(&info_296);
-            # 787 "02transpile.c"
-            # 783 "02transpile.c"
+            # 784 "02transpile.c"
+            # 780 "02transpile.c"
             if(_if_conditional401=!output_header_file(&info_296),            _if_conditional401) {
-                # 784 "02transpile.c"
+                # 781 "02transpile.c"
                 printf("%s %d: output source file faield\n",info_296.sname,info_296.sline);
-                # 785 "02transpile.c"
+                # 782 "02transpile.c"
                 exit(2);
             }
         }
-        # 789 "02transpile.c"
+        # 786 "02transpile.c"
         system(((char*)(right_value476=xsprintf("rm -rf \%s*",((char*)(right_value475=string_to_string(tmp_file_292)))))));
         right_value475 = come_decrement_ref_count2(right_value475, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         right_value476 = come_decrement_ref_count2(right_value476, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 791 "02transpile.c"
+        # 788 "02transpile.c"
         come_final_v5();
         come_call_finalizer2(buffer_finalize,clang_option_277, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
         come_call_finalizer2(buffer_finalize,cpp_option_278, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
@@ -11721,76 +11721,76 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
         come_call_finalizer2(sVarTable_finalize,lv_table_313, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
     }
     else {
-        # 1017 "02transpile.c"
-        # 793 "02transpile.c"
+        # 1014 "02transpile.c"
+        # 790 "02transpile.c"
         if(_if_conditional428=charp_operator_equals(argv[1],"new")&&argc==3,        _if_conditional428) {
-            # 797 "02transpile.c"
             # 794 "02transpile.c"
+            # 791 "02transpile.c"
             if(_if_conditional429=!new_project(argc,argv),            _if_conditional429) {
-                # 795 "02transpile.c"
+                # 792 "02transpile.c"
                 __result203__ = (_Bool)0;
                 return __result203__;
             }
         }
         else {
-            # 1017 "02transpile.c"
-            # 798 "02transpile.c"
+            # 1014 "02transpile.c"
+            # 795 "02transpile.c"
             if(_if_conditional430=charp_operator_equals(argv[1],"run")&&argc==2,            _if_conditional430) {
-                # 802 "02transpile.c"
                 # 799 "02transpile.c"
+                # 796 "02transpile.c"
                 if(_if_conditional431=!run_project(argc,argv),                _if_conditional431) {
-                    # 800 "02transpile.c"
+                    # 797 "02transpile.c"
                     __result204__ = (_Bool)0;
                     return __result204__;
                 }
             }
             else {
-                # 1017 "02transpile.c"
-                # 803 "02transpile.c"
+                # 1014 "02transpile.c"
+                # 800 "02transpile.c"
                 if(_if_conditional432=charp_operator_equals(argv[1],"debug")&&argc==2,                _if_conditional432) {
-                    # 807 "02transpile.c"
                     # 804 "02transpile.c"
+                    # 801 "02transpile.c"
                     if(_if_conditional433=!debug_run_project(argc,argv),                    _if_conditional433) {
-                        # 805 "02transpile.c"
+                        # 802 "02transpile.c"
                         __result205__ = (_Bool)0;
                         return __result205__;
                     }
                 }
                 else {
-                    # 1017 "02transpile.c"
-                    # 808 "02transpile.c"
+                    # 1014 "02transpile.c"
+                    # 805 "02transpile.c"
                     if(_if_conditional434=charp_operator_equals(argv[1],"clean")&&argc==2,                    _if_conditional434) {
-                        # 812 "02transpile.c"
                         # 809 "02transpile.c"
+                        # 806 "02transpile.c"
                         if(_if_conditional435=!clean_project(argc,argv),                        _if_conditional435) {
-                            # 810 "02transpile.c"
+                            # 807 "02transpile.c"
                             __result206__ = (_Bool)0;
                             return __result206__;
                         }
                     }
                     else {
-                        # 1017 "02transpile.c"
-                        # 813 "02transpile.c"
+                        # 1014 "02transpile.c"
+                        # 810 "02transpile.c"
                         if(_if_conditional436=charp_operator_equals(argv[1],"install")&&argc>=2,                        _if_conditional436) {
-                            # 824 "02transpile.c"
-                            # 814 "02transpile.c"
+                            # 821 "02transpile.c"
+                            # 811 "02transpile.c"
                             if(_if_conditional437=argc==2,                            _if_conditional437) {
-                                # 818 "02transpile.c"
                                 # 815 "02transpile.c"
+                                # 812 "02transpile.c"
                                 if(_if_conditional438=!install_project(argc,argv,"/usr/local"),                                _if_conditional438) {
-                                    # 816 "02transpile.c"
+                                    # 813 "02transpile.c"
                                     __result207__ = (_Bool)0;
                                     return __result207__;
                                 }
                             }
                             else {
-                                # 824 "02transpile.c"
-                                # 819 "02transpile.c"
+                                # 821 "02transpile.c"
+                                # 816 "02transpile.c"
                                 if(_if_conditional439=argc>=3,                                _if_conditional439) {
-                                    # 823 "02transpile.c"
                                     # 820 "02transpile.c"
+                                    # 817 "02transpile.c"
                                     if(_if_conditional440=!install_project(argc,argv,argv[2]),                                    _if_conditional440) {
-                                        # 821 "02transpile.c"
+                                        # 818 "02transpile.c"
                                         __result208__ = (_Bool)0;
                                         return __result208__;
                                     }
@@ -11798,194 +11798,194 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                             }
                         }
                         else {
-                            # 826 "02transpile.c"
+                            # 823 "02transpile.c"
                             gProgramName=argv[0];
-                            # 828 "02transpile.c"
-                            clang_option_315=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value478=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value477=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "02transpile.c", 828, "buffer"))))))));
+                            # 825 "02transpile.c"
+                            clang_option_315=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value478=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value477=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "02transpile.c", 825, "buffer"))))))));
                             come_call_finalizer2(buffer_finalize,right_value477, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                             come_call_finalizer2(buffer_finalize,right_value478, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                            # 829 "02transpile.c"
-                            cpp_option_316=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value480=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value479=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "02transpile.c", 829, "buffer"))))))));
+                            # 826 "02transpile.c"
+                            cpp_option_316=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value480=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value479=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "02transpile.c", 826, "buffer"))))))));
                             come_call_finalizer2(buffer_finalize,right_value479, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                             come_call_finalizer2(buffer_finalize,right_value480, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                            # 830 "02transpile.c"
-                            files_317=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value482=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value481=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "02transpile.c", 830, "list$1charph"))))))));
+                            # 827 "02transpile.c"
+                            files_317=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value482=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value481=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "02transpile.c", 827, "list$1charph"))))))));
                             come_call_finalizer2(list$1charphp_finalize,right_value481, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                             come_call_finalizer2(list$1charphp_finalize,right_value482, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                            # 831 "02transpile.c"
-                            object_files_318=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value484=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value483=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "02transpile.c", 831, "list$1charph"))))))));
+                            # 828 "02transpile.c"
+                            object_files_318=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value484=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value483=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "02transpile.c", 828, "list$1charph"))))))));
                             come_call_finalizer2(list$1charphp_finalize,right_value483, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                             come_call_finalizer2(list$1charphp_finalize,right_value484, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                            # 832 "02transpile.c"
+                            # 829 "02transpile.c"
                             output_object_file_319=(_Bool)0;
-                            # 833 "02transpile.c"
+                            # 830 "02transpile.c"
                             output_cpp_file_320=(_Bool)0;
-                            # 834 "02transpile.c"
+                            # 831 "02transpile.c"
                             output_source_file_flag_321=(_Bool)0;
-                            # 835 "02transpile.c"
+                            # 832 "02transpile.c"
                             output_file_name_322=((void*)0);
-                            # 836 "02transpile.c"
+                            # 833 "02transpile.c"
                             verbose_323=(_Bool)0;
-                            # 837 "02transpile.c"
+                            # 834 "02transpile.c"
                             come_debug_324=(_Bool)0;
-                            # 838 "02transpile.c"
+                            # 835 "02transpile.c"
                             come_malloc_325=(_Bool)0;
-                            # 839 "02transpile.c"
+                            # 836 "02transpile.c"
                             come_str_326=(_Bool)0;
-                            # 905 "02transpile.c"
+                            # 902 "02transpile.c"
                             for(                            i_327=1;                            i_327<argc;                            i_327++                            ){
-                                # 903 "02transpile.c"
-                                # 841 "02transpile.c"
+                                # 900 "02transpile.c"
+                                # 838 "02transpile.c"
                                 if(_if_conditional441=charp_operator_equals(argv[i_327],"-o")&&i_327+1<argc,                                _if_conditional441) {
-                                    # 842 "02transpile.c"
+                                    # 839 "02transpile.c"
                                     __dec_obj128=output_file_name_322;
                                     output_file_name_322=(char*)come_increment_ref_count(((char*)(right_value485=__builtin_string(argv[i_327+1]))));
                                     __dec_obj128 = come_decrement_ref_count2(__dec_obj128, (void*)0, (void*)0, 0,0,0, (void*)0);
                                     right_value485 = come_decrement_ref_count2(right_value485, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                    # 843 "02transpile.c"
+                                    # 840 "02transpile.c"
                                     i_327++;
                                 }
                                 else {
-                                    # 903 "02transpile.c"
-                                    # 845 "02transpile.c"
+                                    # 900 "02transpile.c"
+                                    # 842 "02transpile.c"
                                     if(_if_conditional442=charp_operator_equals(argv[i_327],"-str"),                                    _if_conditional442) {
-                                        # 846 "02transpile.c"
+                                        # 843 "02transpile.c"
                                         come_str_326=(_Bool)1;
                                     }
                                     else {
-                                        # 903 "02transpile.c"
-                                        # 848 "02transpile.c"
+                                        # 900 "02transpile.c"
+                                        # 845 "02transpile.c"
                                         if(_if_conditional443=charp_operator_equals(argv[i_327],"-leak"),                                        _if_conditional443) {
-                                            # 849 "02transpile.c"
+                                            # 846 "02transpile.c"
                                             come_malloc_325=(_Bool)1;
                                         }
                                         else {
-                                            # 903 "02transpile.c"
-                                            # 851 "02transpile.c"
+                                            # 900 "02transpile.c"
+                                            # 848 "02transpile.c"
                                             if(_if_conditional444=charp_operator_equals(argv[i_327],"-gc"),                                            _if_conditional444) {
-                                                # 852 "02transpile.c"
+                                                # 849 "02transpile.c"
                                                 gComeGC=(_Bool)1;
                                             }
                                             else {
-                                                # 903 "02transpile.c"
-                                                # 854 "02transpile.c"
+                                                # 900 "02transpile.c"
+                                                # 851 "02transpile.c"
                                                 if(_if_conditional445=charp_operator_equals(argv[i_327],"-cg"),                                                _if_conditional445) {
-                                                    # 855 "02transpile.c"
+                                                    # 852 "02transpile.c"
                                                     come_debug_324=(_Bool)1;
-                                                    # 856 "02transpile.c"
+                                                    # 853 "02transpile.c"
                                                     buffer_append_str(clang_option_315,"-g ");
                                                 }
                                                 else {
-                                                    # 903 "02transpile.c"
-                                                    # 858 "02transpile.c"
+                                                    # 900 "02transpile.c"
+                                                    # 855 "02transpile.c"
                                                     if(_if_conditional446=charp_operator_equals(argv[i_327],"-common-header"),                                                    _if_conditional446) {
-                                                        # 859 "02transpile.c"
+                                                        # 856 "02transpile.c"
                                                         gCommonHeader=(_Bool)1;
                                                     }
                                                     else {
-                                                        # 903 "02transpile.c"
-                                                        # 861 "02transpile.c"
+                                                        # 900 "02transpile.c"
+                                                        # 858 "02transpile.c"
                                                         if(_if_conditional447=charp_operator_equals(argv[i_327],"-original-position"),                                                        _if_conditional447) {
-                                                            # 862 "02transpile.c"
+                                                            # 859 "02transpile.c"
                                                             gComeOriginalSourcePosition=(_Bool)0;
                                                         }
                                                         else {
-                                                            # 903 "02transpile.c"
-                                                            # 864 "02transpile.c"
+                                                            # 900 "02transpile.c"
+                                                            # 861 "02transpile.c"
                                                             if(_if_conditional448=string_operator_equals(((char*)(right_value486=charp_operator_load_range_element(argv[i_327],0,2))),"-O"),                                                            right_value486 = come_decrement_ref_count2(right_value486, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
                                                             _if_conditional448) {
-                                                                # 865 "02transpile.c"
+                                                                # 862 "02transpile.c"
                                                                 buffer_append_str(clang_option_315,((char*)(right_value488=xsprintf(" \%s ",((char*)(right_value487=charp_to_string(argv[i_327])))))));
                                                                 right_value487 = come_decrement_ref_count2(right_value487, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                                 right_value488 = come_decrement_ref_count2(right_value488, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                                # 866 "02transpile.c"
+                                                                # 863 "02transpile.c"
                                                                 come_debug_324=(_Bool)0;
                                                             }
                                                             else {
-                                                                # 903 "02transpile.c"
-                                                                # 868 "02transpile.c"
+                                                                # 900 "02transpile.c"
+                                                                # 865 "02transpile.c"
                                                                 if(_if_conditional449=string_operator_equals(((char*)(right_value489=charp_operator_load_range_element(argv[i_327],0,2))),"-D"),                                                                right_value489 = come_decrement_ref_count2(right_value489, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
                                                                 _if_conditional449) {
-                                                                    # 869 "02transpile.c"
+                                                                    # 866 "02transpile.c"
                                                                     buffer_append_str(cpp_option_316,((char*)(right_value491=xsprintf(" \%s ",((char*)(right_value490=charp_to_string(argv[i_327])))))));
                                                                     right_value490 = come_decrement_ref_count2(right_value490, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                                     right_value491 = come_decrement_ref_count2(right_value491, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                                    # 870 "02transpile.c"
+                                                                    # 867 "02transpile.c"
                                                                     buffer_append_str(clang_option_315,((char*)(right_value493=xsprintf(" \%s ",((char*)(right_value492=charp_to_string(argv[i_327])))))));
                                                                     right_value492 = come_decrement_ref_count2(right_value492, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                                     right_value493 = come_decrement_ref_count2(right_value493, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                                 }
                                                                 else {
-                                                                    # 903 "02transpile.c"
-                                                                    # 872 "02transpile.c"
+                                                                    # 900 "02transpile.c"
+                                                                    # 869 "02transpile.c"
                                                                     if(_if_conditional450=charp_operator_equals(argv[i_327],"-g"),                                                                    _if_conditional450) {
-                                                                        # 873 "02transpile.c"
+                                                                        # 870 "02transpile.c"
                                                                         buffer_append_str(clang_option_315,"-g ");
                                                                     }
                                                                     else {
-                                                                        # 903 "02transpile.c"
-                                                                        # 875 "02transpile.c"
+                                                                        # 900 "02transpile.c"
+                                                                        # 872 "02transpile.c"
                                                                         if(_if_conditional451=charp_operator_equals(argv[i_327],"-v"),                                                                        _if_conditional451) {
-                                                                            # 876 "02transpile.c"
+                                                                            # 873 "02transpile.c"
                                                                             buffer_append_str(clang_option_315,"-v ");
-                                                                            # 877 "02transpile.c"
+                                                                            # 874 "02transpile.c"
                                                                             verbose_323=(_Bool)1;
                                                                         }
                                                                         else {
-                                                                            # 903 "02transpile.c"
-                                                                            # 879 "02transpile.c"
+                                                                            # 900 "02transpile.c"
+                                                                            # 876 "02transpile.c"
                                                                             if(_if_conditional452=strlen(argv[i_327])>=2&&memcmp(argv[i_327],"-I",strlen("-I"))==0,                                                                            _if_conditional452) {
-                                                                                # 880 "02transpile.c"
+                                                                                # 877 "02transpile.c"
                                                                                 buffer_append_str(cpp_option_316,((char*)(right_value495=charp_operator_add(" ",((char*)(right_value494=charp_operator_add(argv[i_327]," ")))))));
                                                                                 right_value494 = come_decrement_ref_count2(right_value494, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                                                 right_value495 = come_decrement_ref_count2(right_value495, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                                             }
                                                                             else {
-                                                                                # 903 "02transpile.c"
-                                                                                # 882 "02transpile.c"
+                                                                                # 900 "02transpile.c"
+                                                                                # 879 "02transpile.c"
                                                                                 if(_if_conditional453=charp_operator_equals(argv[i_327],"-gdwarf-4"),                                                                                _if_conditional453) {
-                                                                                    # 883 "02transpile.c"
+                                                                                    # 880 "02transpile.c"
                                                                                     buffer_append_str(clang_option_315,"-gdwarf-4 ");
                                                                                 }
                                                                                 else {
-                                                                                    # 903 "02transpile.c"
-                                                                                    # 885 "02transpile.c"
+                                                                                    # 900 "02transpile.c"
+                                                                                    # 882 "02transpile.c"
                                                                                     if(_if_conditional454=charp_operator_equals(argv[i_327],"-s")||charp_operator_equals(argv[i_327],"-S"),                                                                                    _if_conditional454) {
-                                                                                        # 886 "02transpile.c"
+                                                                                        # 883 "02transpile.c"
                                                                                         output_source_file_flag_321=(_Bool)1;
                                                                                     }
                                                                                     else {
-                                                                                        # 903 "02transpile.c"
-                                                                                        # 888 "02transpile.c"
+                                                                                        # 900 "02transpile.c"
+                                                                                        # 885 "02transpile.c"
                                                                                         if(_if_conditional455=charp_operator_equals(argv[i_327],"-c"),                                                                                        _if_conditional455) {
-                                                                                            # 889 "02transpile.c"
+                                                                                            # 886 "02transpile.c"
                                                                                             output_object_file_319=(_Bool)1;
                                                                                         }
                                                                                         else {
-                                                                                            # 903 "02transpile.c"
-                                                                                            # 891 "02transpile.c"
+                                                                                            # 900 "02transpile.c"
+                                                                                            # 888 "02transpile.c"
                                                                                             if(_if_conditional456=charp_operator_equals(argv[i_327],"-E"),                                                                                            _if_conditional456) {
-                                                                                                # 892 "02transpile.c"
+                                                                                                # 889 "02transpile.c"
                                                                                                 output_cpp_file_320=(_Bool)1;
                                                                                             }
                                                                                             else {
-                                                                                                # 903 "02transpile.c"
-                                                                                                # 894 "02transpile.c"
+                                                                                                # 900 "02transpile.c"
+                                                                                                # 891 "02transpile.c"
                                                                                                 if(_if_conditional457=argv[i_327][0]==45,                                                                                                _if_conditional457) {
-                                                                                                    # 895 "02transpile.c"
+                                                                                                    # 892 "02transpile.c"
                                                                                                     buffer_append_str(clang_option_315,((char*)(right_value496=charp_operator_add(argv[i_327]," "))));
                                                                                                     right_value496 = come_decrement_ref_count2(right_value496, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                                                                 }
                                                                                                 else {
-                                                                                                    # 903 "02transpile.c"
-                                                                                                    # 897 "02transpile.c"
+                                                                                                    # 900 "02transpile.c"
+                                                                                                    # 894 "02transpile.c"
                                                                                                     if(_if_conditional458=strlen(argv[i_327])>2&&memcmp(argv[i_327]+strlen(argv[i_327])-2,".o",2)==0,                                                                                                    _if_conditional458) {
-                                                                                                        # 898 "02transpile.c"
+                                                                                                        # 895 "02transpile.c"
                                                                                                         list$1charph_push_back(object_files_318,(char*)come_increment_ref_count(((char*)(right_value497=__builtin_string(argv[i_327])))));
                                                                                                         right_value497 = come_decrement_ref_count2(right_value497, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                                                                     }
                                                                                                     else {
-                                                                                                        # 901 "02transpile.c"
+                                                                                                        # 898 "02transpile.c"
                                                                                                         list$1charph_push_back(files_317,(char*)come_increment_ref_count(((char*)(right_value499=string_clone(((char*)(right_value498=__builtin_string(argv[i_327]))))))));
                                                                                                         right_value498 = come_decrement_ref_count2(right_value498, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                                                                         right_value499 = come_decrement_ref_count2(right_value499, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -12008,201 +12008,201 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                     }
                                 }
                             }
-                            # 905 "02transpile.c"
+                            # 902 "02transpile.c"
                             gComeDebug=come_debug_324;
-                            # 906 "02transpile.c"
+                            # 903 "02transpile.c"
                             gComeMalloc=come_malloc_325;
-                            # 917 "02transpile.c"
-                            # 908 "02transpile.c"
+                            # 914 "02transpile.c"
+                            # 905 "02transpile.c"
                             if(come_str_326) {
-                                # 915 "02transpile.c"
-                                # 909 "02transpile.c"
+                                # 912 "02transpile.c"
+                                # 906 "02transpile.c"
                                 if(gComeGC) {
-                                    # 910 "02transpile.c"
+                                    # 907 "02transpile.c"
                                     buffer_append_str(clang_option_315," -lneo-c-str-gc -lpcre ");
                                 }
                                 else {
-                                    # 913 "02transpile.c"
+                                    # 910 "02transpile.c"
                                     buffer_append_str(clang_option_315," -lneo-c-str -lpcre ");
                                 }
                             }
-                            # 917 "02transpile.c"
+                            # 914 "02transpile.c"
                             come_init_v5();
-                            # 991 "02transpile.c"
+                            # 988 "02transpile.c"
                             for(                            o2_saved_328=(struct list$1charph*)come_increment_ref_count((files_317)),it_329=list$1charph_begin((o2_saved_328));                            !list$1charph_end((o2_saved_328));                            it_329=list$1charph_next((o2_saved_328))                            ){
-                                # 920 "02transpile.c"
-                                # 922 "02transpile.c"
+                                # 917 "02transpile.c"
+                                # 919 "02transpile.c"
                                 memset(&info_330,0,sizeof(struct sInfo));
-                                # 924 "02transpile.c"
+                                # 921 "02transpile.c"
                                 __dec_obj129=info_330.sname;
                                 info_330.sname=(char*)come_increment_ref_count(((char*)(right_value500=__builtin_string(it_329))));
                                 __dec_obj129 = come_decrement_ref_count2(__dec_obj129, (void*)0, (void*)0, 0,0,0, (void*)0);
                                 right_value500 = come_decrement_ref_count2(right_value500, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                # 925 "02transpile.c"
+                                # 922 "02transpile.c"
                                 info_330.sline=1;
-                                # 926 "02transpile.c"
+                                # 923 "02transpile.c"
                                 info_330.err_num=0;
-                                # 927 "02transpile.c"
+                                # 924 "02transpile.c"
                                 __dec_obj130=info_330.clang_option;
                                 info_330.clang_option=(char*)come_increment_ref_count(((char*)(right_value501=buffer_to_string(clang_option_315))));
                                 __dec_obj130 = come_decrement_ref_count2(__dec_obj130, (void*)0, (void*)0, 0,0,0, (void*)0);
                                 right_value501 = come_decrement_ref_count2(right_value501, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                # 928 "02transpile.c"
+                                # 925 "02transpile.c"
                                 __dec_obj131=info_330.cpp_option;
                                 info_330.cpp_option=(char*)come_increment_ref_count(((char*)(right_value502=buffer_to_string(cpp_option_316))));
                                 __dec_obj131 = come_decrement_ref_count2(__dec_obj131, (void*)0, (void*)0, 0,0,0, (void*)0);
                                 right_value502 = come_decrement_ref_count2(right_value502, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                # 929 "02transpile.c"
+                                # 926 "02transpile.c"
                                 info_330.no_output_err=(_Bool)0;
-                                # 930 "02transpile.c"
+                                # 927 "02transpile.c"
                                 __dec_obj132=info_330.funcs;
-                                info_330.funcs=(struct map$2charphsFunph*)come_increment_ref_count(((struct map$2charphsFunph*)(right_value504=map$2charphsFunph_initialize((struct map$2charphsFunph*)come_increment_ref_count(((struct map$2charphsFunph*)(right_value503=(struct map$2charphsFunph*)come_calloc(1, sizeof(struct map$2charphsFunph)*(1), "02transpile.c", 930, "map$2charphsFunph"))))))));
+                                info_330.funcs=(struct map$2charphsFunph*)come_increment_ref_count(((struct map$2charphsFunph*)(right_value504=map$2charphsFunph_initialize((struct map$2charphsFunph*)come_increment_ref_count(((struct map$2charphsFunph*)(right_value503=(struct map$2charphsFunph*)come_calloc(1, sizeof(struct map$2charphsFunph)*(1), "02transpile.c", 927, "map$2charphsFunph"))))))));
                                 come_call_finalizer2(map$2charphsFunph_finalize,__dec_obj132, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 come_call_finalizer2(map$2charphsFunphp_finalize,right_value503, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                 come_call_finalizer2(map$2charphsFunphp_finalize,right_value504, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                                # 931 "02transpile.c"
+                                # 928 "02transpile.c"
                                 __dec_obj133=info_330.generics_funcs;
-                                info_330.generics_funcs=(struct map$2charphsGenericsFunph*)come_increment_ref_count(((struct map$2charphsGenericsFunph*)(right_value506=map$2charphsGenericsFunph_initialize((struct map$2charphsGenericsFunph*)come_increment_ref_count(((struct map$2charphsGenericsFunph*)(right_value505=(struct map$2charphsGenericsFunph*)come_calloc(1, sizeof(struct map$2charphsGenericsFunph)*(1), "02transpile.c", 931, "map$2charphsGenericsFunph"))))))));
+                                info_330.generics_funcs=(struct map$2charphsGenericsFunph*)come_increment_ref_count(((struct map$2charphsGenericsFunph*)(right_value506=map$2charphsGenericsFunph_initialize((struct map$2charphsGenericsFunph*)come_increment_ref_count(((struct map$2charphsGenericsFunph*)(right_value505=(struct map$2charphsGenericsFunph*)come_calloc(1, sizeof(struct map$2charphsGenericsFunph)*(1), "02transpile.c", 928, "map$2charphsGenericsFunph"))))))));
                                 come_call_finalizer2(map$2charphsGenericsFunph_finalize,__dec_obj133, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 come_call_finalizer2(map$2charphsGenericsFunphp_finalize,right_value505, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                 come_call_finalizer2(map$2charphsGenericsFunphp_finalize,right_value506, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                                # 932 "02transpile.c"
+                                # 929 "02transpile.c"
                                 __dec_obj134=info_330.classes;
-                                info_330.classes=(struct map$2charphsClassph*)come_increment_ref_count(((struct map$2charphsClassph*)(right_value508=map$2charphsClassph_initialize((struct map$2charphsClassph*)come_increment_ref_count(((struct map$2charphsClassph*)(right_value507=(struct map$2charphsClassph*)come_calloc(1, sizeof(struct map$2charphsClassph)*(1), "02transpile.c", 932, "map$2charphsClassph"))))))));
+                                info_330.classes=(struct map$2charphsClassph*)come_increment_ref_count(((struct map$2charphsClassph*)(right_value508=map$2charphsClassph_initialize((struct map$2charphsClassph*)come_increment_ref_count(((struct map$2charphsClassph*)(right_value507=(struct map$2charphsClassph*)come_calloc(1, sizeof(struct map$2charphsClassph)*(1), "02transpile.c", 929, "map$2charphsClassph"))))))));
                                 come_call_finalizer2(map$2charphsClassph_finalize,__dec_obj134, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 come_call_finalizer2(map$2charphsClassphp_finalize,right_value507, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                 come_call_finalizer2(map$2charphsClassphp_finalize,right_value508, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                                # 933 "02transpile.c"
+                                # 930 "02transpile.c"
                                 __dec_obj135=info_330.types;
-                                info_330.types=(struct map$2charphsTypeph*)come_increment_ref_count(((struct map$2charphsTypeph*)(right_value510=map$2charphsTypeph_initialize((struct map$2charphsTypeph*)come_increment_ref_count(((struct map$2charphsTypeph*)(right_value509=(struct map$2charphsTypeph*)come_calloc(1, sizeof(struct map$2charphsTypeph)*(1), "02transpile.c", 933, "map$2charphsTypeph"))))))));
+                                info_330.types=(struct map$2charphsTypeph*)come_increment_ref_count(((struct map$2charphsTypeph*)(right_value510=map$2charphsTypeph_initialize((struct map$2charphsTypeph*)come_increment_ref_count(((struct map$2charphsTypeph*)(right_value509=(struct map$2charphsTypeph*)come_calloc(1, sizeof(struct map$2charphsTypeph)*(1), "02transpile.c", 930, "map$2charphsTypeph"))))))));
                                 come_call_finalizer2(map$2charphsTypeph_finalize,__dec_obj135, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 come_call_finalizer2(map$2charphsTypephp_finalize,right_value509, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                 come_call_finalizer2(map$2charphsTypephp_finalize,right_value510, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                                # 934 "02transpile.c"
+                                # 931 "02transpile.c"
                                 __dec_obj136=info_330.module;
-                                info_330.module=(struct sModule*)come_increment_ref_count(((struct sModule*)(right_value512=sModule_initialize((struct sModule*)come_increment_ref_count(((struct sModule*)(right_value511=(struct sModule*)come_calloc(1, sizeof(struct sModule)*(1), "02transpile.c", 934, "sModule"))))))));
+                                info_330.module=(struct sModule*)come_increment_ref_count(((struct sModule*)(right_value512=sModule_initialize((struct sModule*)come_increment_ref_count(((struct sModule*)(right_value511=(struct sModule*)come_calloc(1, sizeof(struct sModule)*(1), "02transpile.c", 931, "sModule"))))))));
                                 come_call_finalizer2(sModule_finalize,__dec_obj136, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 come_call_finalizer2(sModule_finalize,right_value511, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                 come_call_finalizer2(sModule_finalize,right_value512, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                                # 935 "02transpile.c"
+                                # 932 "02transpile.c"
                                 __dec_obj137=info_330.right_value_objects;
-                                info_330.right_value_objects=(struct list$1sRightValueObjectph*)come_increment_ref_count(((struct list$1sRightValueObjectph*)(right_value514=list$1sRightValueObjectph_initialize((struct list$1sRightValueObjectph*)come_increment_ref_count(((struct list$1sRightValueObjectph*)(right_value513=(struct list$1sRightValueObjectph*)come_calloc(1, sizeof(struct list$1sRightValueObjectph)*(1), "02transpile.c", 935, "list$1sRightValueObjectph"))))))));
+                                info_330.right_value_objects=(struct list$1sRightValueObjectph*)come_increment_ref_count(((struct list$1sRightValueObjectph*)(right_value514=list$1sRightValueObjectph_initialize((struct list$1sRightValueObjectph*)come_increment_ref_count(((struct list$1sRightValueObjectph*)(right_value513=(struct list$1sRightValueObjectph*)come_calloc(1, sizeof(struct list$1sRightValueObjectph)*(1), "02transpile.c", 932, "list$1sRightValueObjectph"))))))));
                                 come_call_finalizer2(list$1sRightValueObjectph_finalize,__dec_obj137, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 come_call_finalizer2(list$1sRightValueObjectphp_finalize,right_value513, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                 come_call_finalizer2(list$1sRightValueObjectphp_finalize,right_value514, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                                # 936 "02transpile.c"
+                                # 933 "02transpile.c"
                                 __dec_obj138=info_330.stack;
-                                info_330.stack=(struct list$1CVALUEph*)come_increment_ref_count(((struct list$1CVALUEph*)(right_value516=list$1CVALUEph_initialize((struct list$1CVALUEph*)come_increment_ref_count(((struct list$1CVALUEph*)(right_value515=(struct list$1CVALUEph*)come_calloc(1, sizeof(struct list$1CVALUEph)*(1), "02transpile.c", 936, "list$1CVALUEph"))))))));
+                                info_330.stack=(struct list$1CVALUEph*)come_increment_ref_count(((struct list$1CVALUEph*)(right_value516=list$1CVALUEph_initialize((struct list$1CVALUEph*)come_increment_ref_count(((struct list$1CVALUEph*)(right_value515=(struct list$1CVALUEph*)come_calloc(1, sizeof(struct list$1CVALUEph)*(1), "02transpile.c", 933, "list$1CVALUEph"))))))));
                                 come_call_finalizer2(list$1CVALUEph_finalize,__dec_obj138, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 come_call_finalizer2(list$1CVALUEphp_finalize,right_value515, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                 come_call_finalizer2(list$1CVALUEphp_finalize,right_value516, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                                # 937 "02transpile.c"
+                                # 934 "02transpile.c"
                                 __dec_obj139=info_330.gv_table;
-                                info_330.gv_table=(struct sVarTable*)come_increment_ref_count(((struct sVarTable*)(right_value518=sVarTable_initialize((struct sVarTable*)come_increment_ref_count(((struct sVarTable*)(right_value517=(struct sVarTable*)come_calloc(1, sizeof(struct sVarTable)*(1), "02transpile.c", 937, "sVarTable")))),(_Bool)1,((void*)0)))));
+                                info_330.gv_table=(struct sVarTable*)come_increment_ref_count(((struct sVarTable*)(right_value518=sVarTable_initialize((struct sVarTable*)come_increment_ref_count(((struct sVarTable*)(right_value517=(struct sVarTable*)come_calloc(1, sizeof(struct sVarTable)*(1), "02transpile.c", 934, "sVarTable")))),(_Bool)1,((void*)0)))));
                                 come_call_finalizer2(sVarTable_finalize,__dec_obj139, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 come_call_finalizer2(sVarTable_finalize,right_value517, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                 come_call_finalizer2(sVarTable_finalize,right_value518, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                                # 938 "02transpile.c"
-                                lv_table_331=(struct sVarTable*)come_increment_ref_count(((struct sVarTable*)(right_value520=sVarTable_initialize((struct sVarTable*)come_increment_ref_count(((struct sVarTable*)(right_value519=(struct sVarTable*)come_calloc(1, sizeof(struct sVarTable)*(1), "02transpile.c", 938, "sVarTable")))),(_Bool)0,((void*)0)))));
+                                # 935 "02transpile.c"
+                                lv_table_331=(struct sVarTable*)come_increment_ref_count(((struct sVarTable*)(right_value520=sVarTable_initialize((struct sVarTable*)come_increment_ref_count(((struct sVarTable*)(right_value519=(struct sVarTable*)come_calloc(1, sizeof(struct sVarTable)*(1), "02transpile.c", 935, "sVarTable")))),(_Bool)0,((void*)0)))));
                                 come_call_finalizer2(sVarTable_finalize,right_value519, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                 come_call_finalizer2(sVarTable_finalize,right_value520, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                                # 939 "02transpile.c"
+                                # 936 "02transpile.c"
                                 info_330.lv_table=lv_table_331;
-                                # 940 "02transpile.c"
+                                # 937 "02transpile.c"
                                 __dec_obj140=info_330.generics_type_names;
-                                info_330.generics_type_names=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value522=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value521=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "02transpile.c", 940, "list$1charph"))))))));
+                                info_330.generics_type_names=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value522=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value521=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "02transpile.c", 937, "list$1charph"))))))));
                                 come_call_finalizer2(list$1charph_finalize,__dec_obj140, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 come_call_finalizer2(list$1charphp_finalize,right_value521, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                 come_call_finalizer2(list$1charphp_finalize,right_value522, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                                # 941 "02transpile.c"
+                                # 938 "02transpile.c"
                                 __dec_obj141=info_330.method_generics_type_names;
-                                info_330.method_generics_type_names=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value524=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value523=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "02transpile.c", 941, "list$1charph"))))))));
+                                info_330.method_generics_type_names=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value524=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value523=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "02transpile.c", 938, "list$1charph"))))))));
                                 come_call_finalizer2(list$1charph_finalize,__dec_obj141, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 come_call_finalizer2(list$1charphp_finalize,right_value523, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                 come_call_finalizer2(list$1charphp_finalize,right_value524, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                                # 942 "02transpile.c"
+                                # 939 "02transpile.c"
                                 __dec_obj142=info_330.generics_classes;
-                                info_330.generics_classes=(struct map$2charphsClassph*)come_increment_ref_count(((struct map$2charphsClassph*)(right_value526=map$2charphsClassph_initialize((struct map$2charphsClassph*)come_increment_ref_count(((struct map$2charphsClassph*)(right_value525=(struct map$2charphsClassph*)come_calloc(1, sizeof(struct map$2charphsClassph)*(1), "02transpile.c", 942, "map$2charphsClassph"))))))));
+                                info_330.generics_classes=(struct map$2charphsClassph*)come_increment_ref_count(((struct map$2charphsClassph*)(right_value526=map$2charphsClassph_initialize((struct map$2charphsClassph*)come_increment_ref_count(((struct map$2charphsClassph*)(right_value525=(struct map$2charphsClassph*)come_calloc(1, sizeof(struct map$2charphsClassph)*(1), "02transpile.c", 939, "map$2charphsClassph"))))))));
                                 come_call_finalizer2(map$2charphsClassph_finalize,__dec_obj142, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 come_call_finalizer2(map$2charphsClassphp_finalize,right_value525, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
                                 come_call_finalizer2(map$2charphsClassphp_finalize,right_value526, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                                # 943 "02transpile.c"
+                                # 940 "02transpile.c"
                                 info_330.verbose=verbose_323;
-                                # 945 "02transpile.c"
+                                # 942 "02transpile.c"
                                 init_classes(&info_330);
-                                # 946 "02transpile.c"
+                                # 943 "02transpile.c"
                                 init_module(&info_330);
-                                # 948 "02transpile.c"
+                                # 945 "02transpile.c"
                                 clear_tmp_file(&info_330);
-                                # 955 "02transpile.c"
-                                # 950 "02transpile.c"
+                                # 952 "02transpile.c"
+                                # 947 "02transpile.c"
                                 if(_if_conditional461=!cpp(&info_330),                                _if_conditional461) {
-                                    # 951 "02transpile.c"
+                                    # 948 "02transpile.c"
                                     printf("%s %d: transpile failed\n",info_330.sname,info_330.sline);
-                                    # 952 "02transpile.c"
+                                    # 949 "02transpile.c"
                                     exit(2);
                                 }
-                                # 955 "02transpile.c"
+                                # 952 "02transpile.c"
                                 __dec_obj143=info_330.original_source;
                                 info_330.original_source=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value529=string_to_buffer(((char*)(right_value528=string_read(((char*)(right_value527=xsprintf("%s",it_329))))))))));
                                 come_call_finalizer2(buffer_finalize,__dec_obj143, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 right_value527 = come_decrement_ref_count2(right_value527, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 right_value528 = come_decrement_ref_count2(right_value528, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 come_call_finalizer2(buffer_finalize,right_value529, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                                # 956 "02transpile.c"
+                                # 953 "02transpile.c"
                                 __dec_obj144=info_330.source;
                                 info_330.source=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value532=string_to_buffer(((char*)(right_value531=string_read(((char*)(right_value530=xsprintf("%s.i",it_329))))))))));
                                 come_call_finalizer2(buffer_finalize,__dec_obj144, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                                 right_value530 = come_decrement_ref_count2(right_value530, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 right_value531 = come_decrement_ref_count2(right_value531, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 come_call_finalizer2(buffer_finalize,right_value532, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
-                                # 957 "02transpile.c"
+                                # 954 "02transpile.c"
                                 info_330.p=info_330.source->buf;
-                                # 958 "02transpile.c"
+                                # 955 "02transpile.c"
                                 info_330.head=info_330.source->buf;
-                                # 967 "02transpile.c"
-                                # 960 "02transpile.c"
+                                # 964 "02transpile.c"
+                                # 957 "02transpile.c"
                                 if(output_file_name_322) {
-                                    # 961 "02transpile.c"
+                                    # 958 "02transpile.c"
                                     __dec_obj145=info_330.output_file_name;
                                     info_330.output_file_name=(char*)come_increment_ref_count(((char*)(right_value533=__builtin_string(output_file_name_322))));
                                     __dec_obj145 = come_decrement_ref_count2(__dec_obj145, (void*)0, (void*)0, 0,0,0, (void*)0);
                                     right_value533 = come_decrement_ref_count2(right_value533, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 }
                                 else {
-                                    # 964 "02transpile.c"
+                                    # 961 "02transpile.c"
                                     __dec_obj146=info_330.output_file_name;
                                     info_330.output_file_name=((void*)0);
                                     __dec_obj146 = come_decrement_ref_count2(__dec_obj146, (void*)0, (void*)0, 0,0,0, (void*)0);
                                 }
-                                # 989 "02transpile.c"
-                                # 967 "02transpile.c"
+                                # 986 "02transpile.c"
+                                # 964 "02transpile.c"
                                 if(_if_conditional463=!output_cpp_file_320,                                _if_conditional463) {
-                                    # 968 "02transpile.c"
+                                    # 965 "02transpile.c"
                                     transpile_v5(&info_330);
-                                    # 975 "02transpile.c"
-                                    # 970 "02transpile.c"
+                                    # 972 "02transpile.c"
+                                    # 967 "02transpile.c"
                                     if(_if_conditional464=!output_source_file_v3(&info_330),                                    _if_conditional464) {
-                                        # 971 "02transpile.c"
+                                        # 968 "02transpile.c"
                                         printf("%s %d: output source file faield\n",info_330.sname,info_330.sline);
-                                        # 972 "02transpile.c"
+                                        # 969 "02transpile.c"
                                         exit(2);
                                     }
-                                    # 988 "02transpile.c"
-                                    # 975 "02transpile.c"
+                                    # 985 "02transpile.c"
+                                    # 972 "02transpile.c"
                                     if(_if_conditional465=info_330.err_num>0,                                    _if_conditional465) {
-                                        # 976 "02transpile.c"
+                                        # 973 "02transpile.c"
                                         printf("transpile error. err num %d\n",info_330.err_num);
-                                        # 978 "02transpile.c"
+                                        # 975 "02transpile.c"
                                         exit(2);
                                     }
                                     else {
-                                        # 986 "02transpile.c"
-                                        # 981 "02transpile.c"
+                                        # 983 "02transpile.c"
+                                        # 978 "02transpile.c"
                                         if(_if_conditional466=!compile(&info_330,output_object_file_319,object_files_318),                                        _if_conditional466) {
-                                            # 982 "02transpile.c"
+                                            # 979 "02transpile.c"
                                             printf("%s %d: compile faield\n",info_330.sname,info_330.sline);
-                                            # 983 "02transpile.c"
+                                            # 980 "02transpile.c"
                                             exit(27);
                                         }
                                     }
@@ -12211,40 +12211,40 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                 come_call_finalizer2(sVarTable_finalize,lv_table_331, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                             }
                             come_call_finalizer2(list$1charphp_finalize,o2_saved_328, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
-                            # 1013 "02transpile.c"
-                            # 991 "02transpile.c"
+                            # 1010 "02transpile.c"
+                            # 988 "02transpile.c"
                             if(_if_conditional467=!output_object_file_319&&!output_cpp_file_320&&(list$1charph_length(files_317)>0||list$1charph_length(object_files_318)>0),                            _if_conditional467) {
-                                # 992 "02transpile.c"
-                                # 994 "02transpile.c"
+                                # 989 "02transpile.c"
+                                # 991 "02transpile.c"
                                 memset(&info_332,0,sizeof(struct sInfo));
-                                # 996 "02transpile.c"
+                                # 993 "02transpile.c"
                                 __dec_obj147=info_332.sname;
                                 info_332.sname=(char*)come_increment_ref_count(((char*)(right_value534=string_clone(list$1charphp_operator_load_element(files_317,0)))));
                                 __dec_obj147 = come_decrement_ref_count2(__dec_obj147, (void*)0, (void*)0, 0,0,0, (void*)0);
                                 right_value534 = come_decrement_ref_count2(right_value534, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                # 997 "02transpile.c"
+                                # 994 "02transpile.c"
                                 __dec_obj148=info_332.clang_option;
                                 info_332.clang_option=(char*)come_increment_ref_count(((char*)(right_value535=buffer_to_string(clang_option_315))));
                                 __dec_obj148 = come_decrement_ref_count2(__dec_obj148, (void*)0, (void*)0, 0,0,0, (void*)0);
                                 right_value535 = come_decrement_ref_count2(right_value535, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                # 998 "02transpile.c"
+                                # 995 "02transpile.c"
                                 info_332.verbose=verbose_323;
-                                # 1007 "02transpile.c"
-                                # 1000 "02transpile.c"
+                                # 1004 "02transpile.c"
+                                # 997 "02transpile.c"
                                 if(output_file_name_322) {
-                                    # 1001 "02transpile.c"
+                                    # 998 "02transpile.c"
                                     __dec_obj149=info_332.output_file_name;
                                     info_332.output_file_name=(char*)come_increment_ref_count(((char*)(right_value536=__builtin_string(output_file_name_322))));
                                     __dec_obj149 = come_decrement_ref_count2(__dec_obj149, (void*)0, (void*)0, 0,0,0, (void*)0);
                                     right_value536 = come_decrement_ref_count2(right_value536, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 }
                                 else {
-                                    # 1004 "02transpile.c"
+                                    # 1001 "02transpile.c"
                                     __dec_obj150=info_332.output_file_name;
                                     info_332.output_file_name=((void*)0);
                                     __dec_obj150 = come_decrement_ref_count2(__dec_obj150, (void*)0, (void*)0, 0,0,0, (void*)0);
                                 }
-                                # 1011 "02transpile.c"
+                                # 1008 "02transpile.c"
                                 __current_stack2__.info_332 = &info_332;
                                 __current_stack2__.clang_option_315 = &clang_option_315;
                                 __current_stack2__.cpp_option_316 = &cpp_option_316;
@@ -12267,7 +12267,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                     }
                                 come_call_finalizer2(sInfo_finalize,(&info_332), (void*)0, (void*)0, 1, 0, 0, 0, (void*)0);
                             }
-                            # 1013 "02transpile.c"
+                            # 1010 "02transpile.c"
                             come_final_v5();
                             come_call_finalizer2(buffer_finalize,clang_option_315, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
                             come_call_finalizer2(buffer_finalize,cpp_option_316, (void*)0, (void*)0, 0, 0, 0, 0, (void*)0);
@@ -12280,7 +12280,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
             }
         }
     }
-    # 1017 "02transpile.c"
+    # 1014 "02transpile.c"
     __result211__ = 0;
     return __result211__;
 }
@@ -13251,9 +13251,9 @@ memset(&default_value_335, 0, sizeof(char*));
 void method_block2_02transpilec(struct __current_stack2__* parent){
 void* __result_obj__;
 memset(&__result_obj__, 0, sizeof(void*));
-                                    # 1009 "02transpile.c"
+                                    # 1006 "02transpile.c"
                                     printf("%s %d: linker faield\n",(*(parent->info_332)).sname,(*(parent->info_332)).sline);
-                                    # 1010 "02transpile.c"
+                                    # 1007 "02transpile.c"
                                     exit(13);
 }
 

@@ -41,21 +41,18 @@ $(TARGET): $(OBJS)
 $(TARGET_DEBUG): $(DEBUG_OBJS)
 	$(CC) $(CFLAGS_DEBUG) $^ -o $@
 
-%.o: %.c header
+%.o: %.c common.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
-%.debug.o: %.c header
+%.debug.o: %.c common.h
 	$(CC) $(CFLAGS_DEBUG) -c $< -o $@
 
 #########################################
 # header
 #########################################
 
-header:
+common.h: $(SINGLE_SRCS)
 	neo-c header -common-header $(SINGLE_SRCS)
-
-common.h: *.c
-	bash -c 'shopt -s extglob; neo-c header !(*.c).c'
 
 #########################################
 # install
@@ -89,4 +86,4 @@ run: trueby
 debug: trueby-debug
 	rm -f *.log
 	./trueby-debug a.trb
-
+	ruby a.rb

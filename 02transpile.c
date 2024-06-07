@@ -543,21 +543,18 @@ $(TARGET): $(OBJS)
 $(TARGET_DEBUG): $(DEBUG_OBJS)
 \t$(CC) $(CFLAGS_DEBUG) $^ -o $@
 
-%.o: %.c header
+%.o: %.c common.h
 \t$(CC) $(CFLAGS) -c $< -o $@
 
-%.debug.o: %.c header
+%.debug.o: %.c common.h
 \t$(CC) $(CFLAGS_DEBUG) -c $< -o $@
 
 \#########################################
 \# header
 \#########################################
 
-header: 
+common.h: $(SINGLE_SRCS)
 \tneo-c header -common-header $(SINGLE_SRCS)
-
-common.h: *.c
-\tbash -c 'shopt -s extglob; neo-c header !(*.c).c'
 
 \#########################################
 \# install
