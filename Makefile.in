@@ -130,101 +130,101 @@ libneo-c-str-gc.a: libneo-c-str-gc.c
 	ar r libneo-c-str-gc.a libneo-c-str-gc.c.o
 
 neo-c-sh: 01main.c.o.tmp 02transpile.c.o.tmp 03transpile2.c.o.tmp 04heap.c.o.tmp 05function.c.o.tmp 05function2.c.o.tmp 05function3.c.o.tmp 05function4.c.o.tmp 06str.c.o.tmp 07var.c.o.tmp 08if.c.o.tmp 09while.c.o.tmp 10do_while.c.o.tmp 11for.c.o.tmp 12switch.c.o.tmp 13op.c.o.tmp 14struct.c.o.tmp 15union.c.o.tmp 16enum.c.o.tmp 17typedef.c.o.tmp 18field.c.o.tmp 19eq.c.o.tmp 20method.c.o.tmp 21obj.c.o.tmp 22impl.c.o.tmp 23interface.c.o.tmp libneo-c.c.o.tmp libneo-c-str.c.o.tmp libneo-c-gc.c.o.tmp libneo-c-str-gc.c.o.tmp
-	clang -o neo-c-sh  01main.c.o.tmp 02transpile.c.o.tmp 03transpile2.c.o.tmp 04heap.c.o.tmp 05function.c.o.tmp 05function2.c.o.tmp 05function3.c.o.tmp 05function4.c.o.tmp 06str.c.o.tmp 07var.c.o.tmp 08if.c.o.tmp 09while.c.o.tmp 10do_while.c.o.tmp 11for.c.o.tmp 12switch.c.o.tmp 13op.c.o.tmp 14struct.c.o.tmp 15union.c.o.tmp 16enum.c.o.tmp 17typedef.c.o.tmp 18field.c.o.tmp 19eq.c.o.tmp 20method.c.o.tmp 21obj.c.o.tmp 22impl.c.o.tmp 23interface.c.o.tmp libneo-c.c.o.tmp #-gc -L /opt/homebrew/opt/boehmgc/lib/
+	clang -o neo-c-sh  01main.c.o.tmp 02transpile.c.o.tmp 03transpile2.c.o.tmp 04heap.c.o.tmp 05function.c.o.tmp 05function2.c.o.tmp 05function3.c.o.tmp 05function4.c.o.tmp 06str.c.o.tmp 07var.c.o.tmp 08if.c.o.tmp 09while.c.o.tmp 10do_while.c.o.tmp 11for.c.o.tmp 12switch.c.o.tmp 13op.c.o.tmp 14struct.c.o.tmp 15union.c.o.tmp 16enum.c.o.tmp 17typedef.c.o.tmp 18field.c.o.tmp 19eq.c.o.tmp 20method.c.o.tmp 21obj.c.o.tmp 22impl.c.o.tmp 23interface.c.o.tmp libneo-c.c.o.tmp #-gc -L /opt/homebrew/opt/boehmgc/lib/ 2> /dev/null
 	cp -p neo-c-sh neo-c
 
 01main.c.o.tmp: 01main.c.c
-	clang -o 01main.c.o.tmp -c 01main.c.c $(CFLAGS)
+	clang -o 01main.c.o.tmp -c 01main.c.c $(CFLAGS) 2> /dev/null
 
 02transpile.c.o.tmp: 02transpile.c.c
-	clang -o 02transpile.c.o.tmp -c 02transpile.c.c $(CFLAGS)
+	clang -o 02transpile.c.o.tmp -c 02transpile.c.c $(CFLAGS) 2> /dev/null
 
 03transpile2.c.o.tmp: 03transpile2.c.c
-	clang -o 03transpile2.c.o.tmp -c 03transpile2.c.c $(CFLAGS)
+	clang -o 03transpile2.c.o.tmp -c 03transpile2.c.c $(CFLAGS) 2> /dev/null
 
 04heap.c.o.tmp: 04heap.c.c
-	clang -o 04heap.c.o.tmp -c 04heap.c.c $(CFLAGS)
+	clang -o 04heap.c.o.tmp -c 04heap.c.c $(CFLAGS) 2> /dev/null
 
 05function.c.o.tmp: 05function.c.c
-	clang -o 05function.c.o.tmp -c 05function.c.c $(CFLAGS)
+	clang -o 05function.c.o.tmp -c 05function.c.c $(CFLAGS) 2> /dev/null
 
 05function2.c.o.tmp: 05function2.c.c
-	clang -o 05function2.c.o.tmp -c 05function2.c.c $(CFLAGS)
+	clang -o 05function2.c.o.tmp -c 05function2.c.c $(CFLAGS) 2> /dev/null
 
 05function3.c.o.tmp: 05function3.c.c
-	clang -o 05function3.c.o.tmp -c 05function3.c.c $(CFLAGS)
+	clang -o 05function3.c.o.tmp -c 05function3.c.c $(CFLAGS) 2> /dev/null
 
 05function4.c.o.tmp: 05function4.c.c
-	clang -o 05function4.c.o.tmp -c 05function4.c.c $(CFLAGS)
+	clang -o 05function4.c.o.tmp -c 05function4.c.c $(CFLAGS) 2> /dev/null
 
 06str.c.o.tmp: 06str.c.c
-	clang  -o 06str.c.o.tmp -c 06str.c.c $(CFLAGS)
+	clang  -o 06str.c.o.tmp -c 06str.c.c $(CFLAGS) 2> /dev/null
 
 07var.c.o.tmp: 07var.c.c
-	clang -o 07var.c.o.tmp -c 07var.c.c $(CFLAGS)
+	clang -o 07var.c.o.tmp -c 07var.c.c $(CFLAGS) 2> /dev/null
 
 08if.c.o.tmp: 08if.c.c
-	clang -o 08if.c.o.tmp -c 08if.c.c $(CFLAGS)
+	clang -o 08if.c.o.tmp -c 08if.c.c $(CFLAGS) 2> /dev/null
 
 09while.c.o.tmp: 09while.c.c
-	clang -o 09while.c.o.tmp -c 09while.c.c $(CFLAGS)
+	clang -o 09while.c.o.tmp -c 09while.c.c $(CFLAGS) 2> /dev/null
 
 10do_while.c.o.tmp: 10do_while.c.c
-	clang -o 10do_while.c.o.tmp -c 10do_while.c.c $(CFLAGS)
+	clang -o 10do_while.c.o.tmp -c 10do_while.c.c $(CFLAGS) 2> /dev/null
 
 11for.c.o.tmp: 11for.c.c
-	clang -o 11for.c.o.tmp -c 11for.c.c $(CFLAGS)
+	clang -o 11for.c.o.tmp -c 11for.c.c $(CFLAGS) 2> /dev/null
 
 12switch.c.o.tmp: 12switch.c.c
-	clang -o 12switch.c.o.tmp -c 12switch.c.c $(CFLAGS)
+	clang -o 12switch.c.o.tmp -c 12switch.c.c $(CFLAGS) 2> /dev/null
 
 13op.c.o.tmp: 13op.c.c
-	clang -o 13op.c.o.tmp -c 13op.c.c $(CFLAGS)
+	clang -o 13op.c.o.tmp -c 13op.c.c $(CFLAGS) 2> /dev/null
 
 14struct.c.o.tmp: 14struct.c.c
-	clang -o 14struct.c.o.tmp -c 14struct.c.c $(CFLAGS)
+	clang -o 14struct.c.o.tmp -c 14struct.c.c $(CFLAGS) 2> /dev/null
 
 15union.c.o.tmp: 15union.c.c
-	clang -o 15union.c.o.tmp -c 15union.c.c $(CFLAGS)
+	clang -o 15union.c.o.tmp -c 15union.c.c $(CFLAGS) 2> /dev/null
 
 16enum.c.o.tmp: 16enum.c.c
-	clang -o 16enum.c.o.tmp -c 16enum.c.c $(CFLAGS)
+	clang -o 16enum.c.o.tmp -c 16enum.c.c $(CFLAGS) 2> /dev/null
 
 17typedef.c.o.tmp: 17typedef.c.c
-	clang -o 17typedef.c.o.tmp -c 17typedef.c.c $(CFLAGS)
+	clang -o 17typedef.c.o.tmp -c 17typedef.c.c $(CFLAGS) 2> /dev/null
 
 18field.c.o.tmp: 18field.c.c
-	clang -o 18field.c.o.tmp -c 18field.c.c $(CFLAGS)
+	clang -o 18field.c.o.tmp -c 18field.c.c $(CFLAGS) 2> /dev/null
 
 19eq.c.o.tmp: 19eq.c.c
-	clang -o 19eq.c.o.tmp -c 19eq.c.c $(CFLAGS)
+	clang -o 19eq.c.o.tmp -c 19eq.c.c $(CFLAGS) 2> /dev/null
 
 20method.c.o.tmp: 20method.c.c
-	clang -o 20method.c.o.tmp -c 20method.c.c $(CFLAGS)
+	clang -o 20method.c.o.tmp -c 20method.c.c $(CFLAGS) 2> /dev/null
 
 21obj.c.o.tmp: 21obj.c.c
-	clang -o 21obj.c.o.tmp -c 21obj.c.c $(CFLAGS)
+	clang -o 21obj.c.o.tmp -c 21obj.c.c $(CFLAGS) 2> /dev/null
 
 22impl.c.o.tmp: 22impl.c.c
-	clang -o 22impl.c.o.tmp -c 22impl.c.c $(CFLAGS)
+	clang -o 22impl.c.o.tmp -c 22impl.c.c $(CFLAGS) 2> /dev/null
 
 23interface.c.o.tmp: 23interface.c.c
-	clang -o 23interface.c.o.tmp -c 23interface.c.c $(CFLAGS)
+	clang -o 23interface.c.o.tmp -c 23interface.c.c $(CFLAGS) 2> /dev/null
 
 libneo-c.c.o.tmp: libneo-c.c.c
-	clang -o libneo-c.c.o.tmp -c libneo-c.c.c $(CFLAGS)
+	clang -o libneo-c.c.o.tmp -c libneo-c.c.c $(CFLAGS) 2> /dev/null
 	ar r libneo-c.a libneo-c.c.o.tmp
 
 libneo-c-str.c.o.tmp: libneo-c-str.c.c
-	clang -o libneo-c-str.c.o.tmp -c libneo-c-str.c.c $(CFLAGS)
+	clang -o libneo-c-str.c.o.tmp -c libneo-c-str.c.c $(CFLAGS) 2> /dev/null
 	ar r libneo-c-str.a libneo-c-str.c.o.tmp
 
 libneo-c-gc.c.o.tmp: libneo-c-gc.c.c
-	clang -o libneo-c-gc.c.o.tmp -c libneo-c-gc.c.c $(CFLAGS)
+	clang -o libneo-c-gc.c.o.tmp -c libneo-c-gc.c.c $(CFLAGS) 2> /dev/null
 	ar r libneo-c-gc.a libneo-c-gc.c.o.tmp
 
 libneo-c-str-gc.c.o.tmp: libneo-c-str-gc.c.c
-	clang -o libneo-c-str-gc.c.o.tmp -c libneo-c-str-gc.c.c $(CFLAGS)
+	clang -o libneo-c-str-gc.c.o.tmp -c libneo-c-str-gc.c.c $(CFLAGS) 2> /dev/null
 	ar r libneo-c-str-gc.a libneo-c-str-gc.c.o.tmp
 
 #########################################
