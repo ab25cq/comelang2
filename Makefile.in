@@ -32,8 +32,8 @@ SELF_HOST_OBJS=@SELF_HOST_OBJS@
 #########################################
 all: neo-c-sh
 
-neo-c: 01main.c.o 02transpile.c.o 03transpile2.c.o 04heap.c.o 05function.c.o 05function2.c.o 05function3.c.o 05function4.c.o 06str.c.o 07var.c.o 08if.c.o 09while.c.o 10do_while.c.o 11for.c.o 12switch.c.o 13op.c.o 14struct.c.o 15union.c.o 16enum.c.o 17typedef.c.o 18field.c.o 19eq.c.o 20method.c.o 21obj.c.o 22impl.c.o 23interface.c.o libneo-c.a libneo-c-gc.a libneo-c-str.a libneo-c-str-gc.a
-	neo-c -o neo-c  01main.c.o 02transpile.c.o 03transpile2.c.o 04heap.c.o 05function.c.o 05function2.c.o 05function3.c.o 05function4.c.o 06str.c.o 07var.c.o 08if.c.o 09while.c.o 10do_while.c.o 11for.c.o 12switch.c.o 13op.c.o 14struct.c.o 15union.c.o 16enum.c.o 17typedef.c.o 18field.c.o 19eq.c.o 20method.c.o 21obj.c.o 22impl.c.o 23interface.c.o $(CFLAGS) $(COME_CFLAGS)
+neo-c: 01main.c.o 02transpile.c.o 03transpile2.c.o 04heap.c.o 05function.c.o 05function2.c.o 05function3.c.o 05function4.c.o 06str.c.o 07var.c.o 08if.c.o 09while.c.o 10do_while.c.o 11for.c.o 12switch.c.o 13op.c.o 14struct.c.o 15union.c.o 16enum.c.o 17typedef.c.o 18field.c.o 19eq.c.o 20method.c.o 21obj.c.o 22impl.c.o 23interface.c.o 24module.c.o libneo-c.a libneo-c-gc.a libneo-c-str.a libneo-c-str-gc.a
+	neo-c -o neo-c  01main.c.o 02transpile.c.o 03transpile2.c.o 04heap.c.o 05function.c.o 05function2.c.o 05function3.c.o 05function4.c.o 06str.c.o 07var.c.o 08if.c.o 09while.c.o 10do_while.c.o 11for.c.o 12switch.c.o 13op.c.o 14struct.c.o 15union.c.o 16enum.c.o 17typedef.c.o 18field.c.o 19eq.c.o 20method.c.o 21obj.c.o 22impl.c.o 23interface.c.o 24module.c.o $(CFLAGS) $(COME_CFLAGS)
 
 01main.c.o: 01main.c
 	neo-c -o 01main.c.o -c 01main.c $(CFLAGS) $(COME_CFLAGS)
@@ -113,6 +113,9 @@ neo-c: 01main.c.o 02transpile.c.o 03transpile2.c.o 04heap.c.o 05function.c.o 05f
 23interface.c.o: 23interface.c
 	neo-c -o 23interface.c.o -c 23interface.c $(CFLAGS) $(COME_CFLAGS)
 
+24module.c.o: 24module.c
+	neo-c -o 24module.c.o -c 24module.c $(CFLAGS) $(COME_CFLAGS)
+
 libneo-c.a: libneo-c.c
 	neo-c -c libneo-c.c $(CFLAGS) $(COME_CFLAGS)
 	ar r libneo-c.a libneo-c.c.o
@@ -129,8 +132,8 @@ libneo-c-str-gc.a: libneo-c-str-gc.c
 	neo-c -o libneo-c-str-gc.c.o -gc -c libneo-c-str-gc.c $(CFLAGS) $(COME_CFLAGS) -I/opt/homebrew/opt/boehmgc/include/
 	ar r libneo-c-str-gc.a libneo-c-str-gc.c.o
 
-neo-c-sh: 01main.c.o.tmp 02transpile.c.o.tmp 03transpile2.c.o.tmp 04heap.c.o.tmp 05function.c.o.tmp 05function2.c.o.tmp 05function3.c.o.tmp 05function4.c.o.tmp 06str.c.o.tmp 07var.c.o.tmp 08if.c.o.tmp 09while.c.o.tmp 10do_while.c.o.tmp 11for.c.o.tmp 12switch.c.o.tmp 13op.c.o.tmp 14struct.c.o.tmp 15union.c.o.tmp 16enum.c.o.tmp 17typedef.c.o.tmp 18field.c.o.tmp 19eq.c.o.tmp 20method.c.o.tmp 21obj.c.o.tmp 22impl.c.o.tmp 23interface.c.o.tmp libneo-c.c.o.tmp libneo-c-str.c.o.tmp libneo-c-gc.c.o.tmp libneo-c-str-gc.c.o.tmp
-	clang -o neo-c-sh  01main.c.o.tmp 02transpile.c.o.tmp 03transpile2.c.o.tmp 04heap.c.o.tmp 05function.c.o.tmp 05function2.c.o.tmp 05function3.c.o.tmp 05function4.c.o.tmp 06str.c.o.tmp 07var.c.o.tmp 08if.c.o.tmp 09while.c.o.tmp 10do_while.c.o.tmp 11for.c.o.tmp 12switch.c.o.tmp 13op.c.o.tmp 14struct.c.o.tmp 15union.c.o.tmp 16enum.c.o.tmp 17typedef.c.o.tmp 18field.c.o.tmp 19eq.c.o.tmp 20method.c.o.tmp 21obj.c.o.tmp 22impl.c.o.tmp 23interface.c.o.tmp libneo-c.c.o.tmp #-gc -L /opt/homebrew/opt/boehmgc/lib/ 2> /dev/null
+neo-c-sh: 01main.c.o.tmp 02transpile.c.o.tmp 03transpile2.c.o.tmp 04heap.c.o.tmp 05function.c.o.tmp 05function2.c.o.tmp 05function3.c.o.tmp 05function4.c.o.tmp 06str.c.o.tmp 07var.c.o.tmp 08if.c.o.tmp 09while.c.o.tmp 10do_while.c.o.tmp 11for.c.o.tmp 12switch.c.o.tmp 13op.c.o.tmp 14struct.c.o.tmp 15union.c.o.tmp 16enum.c.o.tmp 17typedef.c.o.tmp 18field.c.o.tmp 19eq.c.o.tmp 20method.c.o.tmp 21obj.c.o.tmp 22impl.c.o.tmp 23interface.c.o.tmp 24module.c.o libneo-c.c.o.tmp libneo-c-str.c.o.tmp libneo-c-gc.c.o.tmp libneo-c-str-gc.c.o.tmp
+	clang -o neo-c-sh  01main.c.o.tmp 02transpile.c.o.tmp 03transpile2.c.o.tmp 04heap.c.o.tmp 05function.c.o.tmp 05function2.c.o.tmp 05function3.c.o.tmp 05function4.c.o.tmp 06str.c.o.tmp 07var.c.o.tmp 08if.c.o.tmp 09while.c.o.tmp 10do_while.c.o.tmp 11for.c.o.tmp 12switch.c.o.tmp 13op.c.o.tmp 14struct.c.o.tmp 15union.c.o.tmp 16enum.c.o.tmp 17typedef.c.o.tmp 18field.c.o.tmp 19eq.c.o.tmp 20method.c.o.tmp 21obj.c.o.tmp 22impl.c.o.tmp 23interface.c.o.tmp 24module.c.o libneo-c.c.o.tmp #-gc -L /opt/homebrew/opt/boehmgc/lib/ 2> /dev/null
 	cp -p neo-c-sh neo-c
 
 01main.c.o.tmp: 01main.c.c
@@ -210,6 +213,9 @@ neo-c-sh: 01main.c.o.tmp 02transpile.c.o.tmp 03transpile2.c.o.tmp 04heap.c.o.tmp
 
 23interface.c.o.tmp: 23interface.c.c
 	clang -o 23interface.c.o.tmp -c 23interface.c.c $(CFLAGS) 2> /dev/null
+
+24module.c.o.tmp: 24module.c.c
+	clang -o 24module.c.o.tmp -c 24module.c.c $(CFLAGS) 2> /dev/null
 
 libneo-c.c.o.tmp: libneo-c.c.c
 	clang -o libneo-c.c.o.tmp -c libneo-c.c.c $(CFLAGS) 2> /dev/null

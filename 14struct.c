@@ -929,11 +929,27 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
         
         char* head = info.p;
        
+        char* p_saved = null;
+        int sline_saved = 0;
+        
         list<sNode*%>*% methods = new list<sNode*%>();
         while(true) {
+            if(p_saved) {
+                if(*info.p == '\0') {
+                    info.p = p_saved;
+                    info.sline = sline_saved;
+                    
+                    p_saved = null;
+                    sline_saved = 0;
+                }
+            }
+            
             parse_sharp();
+            
+            bool include_ = strmemcmp(info->p, "include");
                 
             bool multiple_declare = false;
+            if(include_ == false)
             {
                 char* p = info.p;
                 int sline = info.sline;
@@ -953,6 +969,7 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
                 info.sline = sline;
             }
             bool define_function_flag = false;
+            if(include_ == false)
             {
                 char* p = info.p;
                 int sline = info.sline;
@@ -1051,6 +1068,26 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
                 }
                 expected_next_character(';') ;
             }
+            else if(strmemcmp(info->p, "include")) {
+                parse_word();
+                
+                string module_name = parse_word();
+                
+                if(*info->p == ';') { info->p++; skip_spaces_and_lf(); }
+                
+                if(info.modules[module_name]?? == null) {
+                    err_msg(info, "module not found");
+                    return null;
+                }
+                
+                sClassModule* module = info.modules[module_name];
+                
+                p_saved = info.p;
+                sline_saved = info.sline;
+                
+                info.p = module.mText;
+                info.sline = 0;
+            }
             else {
                 var type2, name, err = parse_type(parse_variable_name:true);
                 if(!err) {
@@ -1070,6 +1107,16 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
                 break;
             }
             parse_sharp();
+        }
+        
+        if(p_saved) {
+            if(info.p == '\0') {
+                info.p = p_saved;
+                info.sline = sline_saved;
+                
+                p_saved = null;
+                sline_saved = 0;
+            }
         }
         
         info.generics_type_names.reset();

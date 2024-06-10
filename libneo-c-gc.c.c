@@ -454,6 +454,11 @@ struct sRightValueObject
     int mID;
     int mBlockLevel;
 };
+struct sClassModule
+{
+    char* mName;
+    char* mText;
+};
 struct map$2charphsFunph
 {
     char** keys;
@@ -479,6 +484,16 @@ struct map$2charphsClassph
     char** keys;
     _Bool* item_existance;
     struct sClass** items;
+    int size;
+    int len;
+    struct list$1charp* key_list;
+    int it;
+};
+struct map$2charphsClassModuleph
+{
+    char** keys;
+    _Bool* item_existance;
+    struct sClassModule** items;
     int size;
     int len;
     struct list$1charp* key_list;
@@ -544,6 +559,7 @@ struct sInfo
     struct map$2charphsFunph* funcs;
     struct map$2charphsGenericsFunph* generics_funcs;
     struct map$2charphsClassph* classes;
+    struct map$2charphsClassModuleph* modules;
     struct map$2charphsTypeph* types;
     struct map$2charphsClassph* generics_classes;
     struct sModule* module;
@@ -1236,6 +1252,8 @@ void sVarTable_finalize(struct sVarTable* self);
 
 struct sClass* sClass_initialize(struct sClass* self, char* name, _Bool number, _Bool union_, _Bool generics, _Bool method_generics, _Bool protocol_, _Bool struct_, _Bool float_, int generics_num, int method_generics_num, _Bool enum_, struct sInfo* info);
 
+struct sClassModule* sClassModule_initialize(struct sClassModule* self, char* name, char* text, struct sInfo* info);
+
 struct sFun* sFun_initialize(struct sFun* self, char* name, struct sType* result_type, struct list$1sTypeph* param_types, struct list$1charph* param_names, struct list$1charph* param_default_parametors, _Bool external, _Bool var_args, struct sBlock* block, _Bool static_, char* come_header, char* declare_sname, struct sInfo* info);
 
 char* make_type_name_string(struct sType* type, _Bool in_header, _Bool array_cast_pointer, _Bool no_pointer, struct sInfo* info);
@@ -1547,6 +1565,8 @@ struct sNode* post_position_operator3_v21(struct sNode* node, struct sInfo* info
 struct sNode* top_level_v93(char* buf, char* head, int head_sline, struct sInfo* info);
 
 struct sNode* top_level_v92(char* buf, char* head, int head_sline, struct sInfo* info);
+
+struct sNode* top_level_v91(char* buf, char* head, int head_sline, struct sInfo* info);
 
 char* dirname(char* anonymous_var_nameX525);
 

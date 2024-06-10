@@ -392,6 +392,14 @@ sClass*% sClass*::initialize(sClass*% self, char* name, bool number=false, bool 
     return self;
 };
 
+sClassModule*% sClassModule*::initialize(sClassModule*% self, char* name, string text, sInfo* info)
+{
+    self.mName = clone name;
+    self.mText = clone text;
+    
+    return self;
+};
+
 sFun*% sFun*::initialize(sFun*% self, string name, sType*% result_type, list<sType*%>*% param_types, list<string>*% param_names, list<string>%* param_default_parametors, bool external, bool var_args, sBlock*% block, bool static_, string come_header, string declare_sname, sInfo* info)
 {
     self.mName = name;
@@ -740,6 +748,7 @@ int come_main(int argc, char** argv) version 2
         info.funcs = new map<string, sFun*%>();
         info.generics_funcs = new map<string, sGenericsFun*%>();
         info.classes = new map<string, sClass*%>();
+        info.modules = new map<string, sClassModule*%>();
         info.types = new map<string, sType*%>();
         info.module = new sModule();
         info.right_value_objects = new list<sRightValueObject*%>();
@@ -927,6 +936,7 @@ int come_main(int argc, char** argv) version 2
             info.funcs = new map<string, sFun*%>();
             info.generics_funcs = new map<string, sGenericsFun*%>();
             info.classes = new map<string, sClass*%>();
+            info.modules = new map<string, sClassModule*%>();
             info.types = new map<string, sType*%>();
             info.module = new sModule();
             info.right_value_objects = new list<sRightValueObject*%>();

@@ -1,53 +1,30 @@
 #include <neo-c.h>
 
+module MModule
+{
+    int a;
+    int b;
+}
+
 class sData
 {
-    int x;
+    include MModule;
     
-    new(int x) {
-        self.x = x;
-    }
-    
-    void show() {
-        printf("%d\n", self.x);
-    }
-    
-    void call() {
-        puts("CALL");
-    }
-}
-
-struct sData2 extends sData
-{
-    int x;
-    int y;
-};
-
-class sData2 extends sData
-{
-    new(int x, int y) {
-        self.x = x;
-        self.y = y;
+    new(int a, int b) {
+        self.a = a;
+        self.b = b;
     }
     
     void show() {
-        printf("%d %d\n", self.x, self.y);
+        printf("%d %d\n", self.a, self.b);
     }
 }
-
-interface Inf
-{
-    void show();
-    void call();
-}
-
 
 int main(int argc, char** argv)
 {
-    var inf = new sData2(111, 222) implements Inf;
+    var data = new sData(111, 222);
     
-    inf.show();
-    inf.call();
+    data.show();
     
     return 0;
 }
