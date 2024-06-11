@@ -941,6 +941,8 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
                     
                     p_saved = null;
                     sline_saved = 0;
+                    delete dummy_heap info->module_params;
+                    info->module_params = null;
                 }
             }
             
@@ -1073,6 +1075,37 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
                 
                 string module_name = parse_word();
                 
+                list<string>*% params = new list<string>();
+                
+                if(*info->p == '<') {
+                    info->p++;
+                    skip_spaces_and_lf();
+                    
+                    while(true) {
+                        string word = parse_word();
+                        
+                        params.add(word);
+                        
+                        if(*info->p == ',') {
+                            info->p++;
+                            skip_spaces_and_lf();
+                        }
+                        else if(*info->p == '\0') {
+                            err_msg(info, "invalid source end");
+                            exit(2);
+                        }
+                        else if(*info->p == '>') {
+                            info->p++;
+                            skip_spaces_and_lf();
+                            break;
+                        }
+                        else {
+                            err_msg(info, "invalid charactor(%c)", *info->p);
+                            exit(2);
+                        }
+                    }
+                }
+                
                 if(*info->p == ';') { info->p++; skip_spaces_and_lf(); }
                 
                 if(info.modules[module_name]?? == null) {
@@ -1081,6 +1114,18 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
                 }
                 
                 sClassModule* module = info.modules[module_name];
+                
+                if(module.mParams.length() != params.length()) {
+                    err_msg(info, "invalid parametor number");
+                    exit(1);
+                }
+                
+                info->module_params = borrow gc_inc(new map<string,string>());
+                
+                int i = 0;
+                foreach(it, module->mParams) {
+                    info->module_params[it] = params[i];
+                }
                 
                 p_saved = info.p;
                 sline_saved = info.sline;

@@ -1,14 +1,14 @@
 #include <neo-c.h>
 
-module MModule
+module MModule<T>
 {
-    int a;
-    int b;
+    T a;
+    T b;
 }
 
 class sData
 {
-    include MModule;
+    include MModule<int>;
     
     new(int a, int b) {
         self.a = a;

@@ -458,6 +458,7 @@ struct sClassModule
 {
     char* mName;
     char* mText;
+    struct list$1charph* mParams;
 };
 struct map$2charphsFunph
 {
@@ -535,6 +536,16 @@ struct list$1CVALUEph
     int len;
     struct list_item$1CVALUEph* it;
 };
+struct map$2charphcharph
+{
+    char** keys;
+    _Bool* item_existance;
+    char** items;
+    int size;
+    int len;
+    struct list$1charp* key_list;
+    int it;
+};
 struct sInfo
 {
     char* p;
@@ -596,6 +607,7 @@ struct sInfo
     _Bool writing_source_file_position;
     struct sType* function_result_type;
     _Bool in_class;
+    struct map$2charphcharph* module_params;
 };
 struct tuple2$2sTypephcharph
 {

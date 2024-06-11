@@ -157,7 +157,13 @@ record string parse_word(sInfo* info=info)
         return string("");
     }
     
-    return buf.to_string();
+    string result = buf.to_string();
+    
+    if(info->module_params && info->module_params[result]??) {
+        return string(info->module_params[result]);
+    }
+    
+    return result;
 }
 
 void skip_spaces_and_lf(sInfo* info=info)
@@ -369,7 +375,12 @@ bool check_assign_type(char* msg, sType* left_type, sType* right_type, CVALUE* c
             if(left_class->mName === right_class->mName) {
                 parent_class = true;
             }
-            right_class = info.classes[right_class->mParentClassName]??;
+            if(right_class->mParentClassName) {
+                right_class = info.classes[right_class->mParentClassName]??;
+            }
+            else {
+                right_class = null;
+            }
         }
     }
     

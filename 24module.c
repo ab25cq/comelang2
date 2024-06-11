@@ -53,6 +53,37 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 91
     if(buf === "module") {
         var type_name = parse_word();
         
+        list<string>*% params = new list<string>();
+        
+        if(*info->p == '<') {
+            info->p++;
+            skip_spaces_and_lf();
+            
+            while(true) {
+                string word = parse_word();
+                
+                params.add(word);
+                
+                if(*info->p == ',') {
+                    info->p++;
+                    skip_spaces_and_lf();
+                }
+                else if(*info->p == '\0') {
+                    err_msg(info, "invalid source end");
+                    exit(2);
+                }
+                else if(*info->p == '>') {
+                    info->p++;
+                    skip_spaces_and_lf();
+                    break;
+                }
+                else {
+                    err_msg(info, "invalid charactor(%c)", *info->p);
+                    exit(2);
+                }
+            }
+        }
+        
         expected_next_character('{');
         
         char* source_head = info.p;
@@ -113,7 +144,7 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 91
         }
         
         buffer*% header = new buffer();
-        header.append_str("interface ");
+        header.append_str(s"module \{type_name}");
         header.append_str("{\n");
         header.append(source_head, source_tail - source_head);
         header.append_str("}\n");
@@ -121,6 +152,8 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 91
         add_come_code_at_come_header(info, "%s\n", header.to_string());
         
         sClassModule*% module = new sClassModule(type_name, buf.to_string(), info);
+        
+        module.mParams = clone params;
         
         info.modules[string(type_name)] = module;
         

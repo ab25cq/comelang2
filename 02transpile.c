@@ -396,6 +396,7 @@ sClassModule*% sClassModule*::initialize(sClassModule*% self, char* name, string
 {
     self.mName = clone name;
     self.mText = clone text;
+    self.mParams = new list<string>();
     
     return self;
 };

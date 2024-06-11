@@ -249,6 +249,7 @@ struct sClassModule
 {
     string mName;
     string mText;
+    list<string>*% mParams;
 };
 
 struct sInfo
@@ -334,6 +335,8 @@ struct sInfo
     
     sType*% function_result_type;
     bool in_class;
+    
+    map<string,string>* module_params;
 };
 
 /////////////////////////////////////////////////////////////////////
