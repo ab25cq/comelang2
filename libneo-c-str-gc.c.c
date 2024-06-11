@@ -2142,13 +2142,13 @@ static inline _Bool die(char* msg){
 void* __result_obj__;
 _Bool __result1__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 50 "/usr/local/include/comelang2.h"
+    # 50 "./neo-c.h"
     perror(msg);
-    # 51 "/usr/local/include/comelang2.h"
+    # 51 "./neo-c.h"
     stackframe();
-    # 52 "/usr/local/include/comelang2.h"
+    # 52 "./neo-c.h"
     exit(4);
-    # 54 "/usr/local/include/comelang2.h"
+    # 54 "./neo-c.h"
     __result1__ = (_Bool)0;
     return __result1__;
 }
@@ -2158,11 +2158,11 @@ struct buffer* result_0;
 struct buffer* __result2__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_0, 0, sizeof(struct buffer*));
-    # 1942 "/usr/local/include/comelang2.h"
-    result_0=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "/usr/local/include/comelang2.h", 1942, "buffer"));
-    # 1943 "/usr/local/include/comelang2.h"
+    # 1942 "./neo-c.h"
+    result_0=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1942, "buffer"));
+    # 1943 "./neo-c.h"
     buffer_append(result_0,self,sizeof(char)*len);
-    # 1944 "/usr/local/include/comelang2.h"
+    # 1944 "./neo-c.h"
     __result2__ = __result_obj__ = result_0;
     return __result2__;
 }
@@ -2172,11 +2172,11 @@ struct buffer* result_1;
 struct buffer* __result3__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_1, 0, sizeof(struct buffer*));
-    # 1949 "/usr/local/include/comelang2.h"
-    result_1=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "/usr/local/include/comelang2.h", 1949, "buffer"));
-    # 1950 "/usr/local/include/comelang2.h"
+    # 1949 "./neo-c.h"
+    result_1=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1949, "buffer"));
+    # 1950 "./neo-c.h"
     buffer_append(result_1,(char*)self,sizeof(short short)*len);
-    # 1951 "/usr/local/include/comelang2.h"
+    # 1951 "./neo-c.h"
     __result3__ = __result_obj__ = result_1;
     return __result3__;
 }
@@ -2186,11 +2186,11 @@ struct buffer* result_2;
 struct buffer* __result4__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_2, 0, sizeof(struct buffer*));
-    # 1956 "/usr/local/include/comelang2.h"
-    result_2=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "/usr/local/include/comelang2.h", 1956, "buffer"));
-    # 1957 "/usr/local/include/comelang2.h"
+    # 1956 "./neo-c.h"
+    result_2=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1956, "buffer"));
+    # 1957 "./neo-c.h"
     buffer_append(result_2,(char*)self,sizeof(int)*len);
-    # 1958 "/usr/local/include/comelang2.h"
+    # 1958 "./neo-c.h"
     __result4__ = __result_obj__ = result_2;
     return __result4__;
 }
@@ -2200,11 +2200,11 @@ struct buffer* result_3;
 struct buffer* __result5__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_3, 0, sizeof(struct buffer*));
-    # 1963 "/usr/local/include/comelang2.h"
-    result_3=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "/usr/local/include/comelang2.h", 1963, "buffer"));
-    # 1964 "/usr/local/include/comelang2.h"
+    # 1963 "./neo-c.h"
+    result_3=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1963, "buffer"));
+    # 1964 "./neo-c.h"
     buffer_append(result_3,(char*)self,sizeof(long)*len);
-    # 1965 "/usr/local/include/comelang2.h"
+    # 1965 "./neo-c.h"
     __result5__ = __result_obj__ = result_3;
     return __result5__;
 }
@@ -2214,11 +2214,11 @@ struct buffer* result_4;
 struct buffer* __result6__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_4, 0, sizeof(struct buffer*));
-    # 1970 "/usr/local/include/comelang2.h"
-    result_4=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "/usr/local/include/comelang2.h", 1970, "buffer"));
-    # 1971 "/usr/local/include/comelang2.h"
+    # 1970 "./neo-c.h"
+    result_4=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1970, "buffer"));
+    # 1971 "./neo-c.h"
     buffer_append(result_4,(char*)self,sizeof(float)*len);
-    # 1972 "/usr/local/include/comelang2.h"
+    # 1972 "./neo-c.h"
     __result6__ = __result_obj__ = result_4;
     return __result6__;
 }
@@ -2228,11 +2228,11 @@ struct buffer* result_5;
 struct buffer* __result7__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_5, 0, sizeof(struct buffer*));
-    # 1977 "/usr/local/include/comelang2.h"
-    result_5=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "/usr/local/include/comelang2.h", 1977, "buffer"));
-    # 1978 "/usr/local/include/comelang2.h"
+    # 1977 "./neo-c.h"
+    result_5=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1977, "buffer"));
+    # 1978 "./neo-c.h"
     buffer_append(result_5,(char*)self,sizeof(double)*len);
-    # 1979 "/usr/local/include/comelang2.h"
+    # 1979 "./neo-c.h"
     __result7__ = __result_obj__ = result_5;
     return __result7__;
 }
@@ -2242,13 +2242,13 @@ struct smart_pointer$1char* result_6;
 struct smart_pointer$1char* __result8__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_6, 0, sizeof(struct smart_pointer$1char*));
-    # 1992 "/usr/local/include/comelang2.h"
-    result_6=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "/usr/local/include/comelang2.h", 1992, "smart_pointer$1char");
-    # 1994 "/usr/local/include/comelang2.h"
+    # 1992 "./neo-c.h"
+    result_6=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 1992, "smart_pointer$1char");
+    # 1994 "./neo-c.h"
     result_6->memory=buffer_clone(self);
-    # 1995 "/usr/local/include/comelang2.h"
+    # 1995 "./neo-c.h"
     result_6->p=result_6->memory->buf;
-    # 1997 "/usr/local/include/comelang2.h"
+    # 1997 "./neo-c.h"
     __result8__ = __result_obj__ = result_6;
     return __result8__;
 }
@@ -2258,13 +2258,13 @@ struct smart_pointer$1char* result_7;
 struct smart_pointer$1char* __result9__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_7, 0, sizeof(struct smart_pointer$1char*));
-    # 2002 "/usr/local/include/comelang2.h"
-    result_7=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "/usr/local/include/comelang2.h", 2002, "smart_pointer$1char");
-    # 2004 "/usr/local/include/comelang2.h"
+    # 2002 "./neo-c.h"
+    result_7=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 2002, "smart_pointer$1char");
+    # 2004 "./neo-c.h"
     result_7->memory=buffer_clone(self);
-    # 2005 "/usr/local/include/comelang2.h"
+    # 2005 "./neo-c.h"
     result_7->p=(char*)result_7->memory->buf;
-    # 2007 "/usr/local/include/comelang2.h"
+    # 2007 "./neo-c.h"
     __result9__ = __result_obj__ = result_7;
     return __result9__;
 }
@@ -2274,13 +2274,13 @@ struct smart_pointer$1short* result_8;
 struct smart_pointer$1short* __result10__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_8, 0, sizeof(struct smart_pointer$1short*));
-    # 2012 "/usr/local/include/comelang2.h"
-    result_8=(struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "/usr/local/include/comelang2.h", 2012, "smart_pointer$1short");
-    # 2014 "/usr/local/include/comelang2.h"
+    # 2012 "./neo-c.h"
+    result_8=(struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 2012, "smart_pointer$1short");
+    # 2014 "./neo-c.h"
     result_8->memory=buffer_clone(self);
-    # 2015 "/usr/local/include/comelang2.h"
+    # 2015 "./neo-c.h"
     result_8->p=(short short*)result_8->memory->buf;
-    # 2017 "/usr/local/include/comelang2.h"
+    # 2017 "./neo-c.h"
     __result10__ = __result_obj__ = result_8;
     return __result10__;
 }
@@ -2290,13 +2290,13 @@ struct smart_pointer$1int* result_9;
 struct smart_pointer$1int* __result11__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_9, 0, sizeof(struct smart_pointer$1int*));
-    # 2022 "/usr/local/include/comelang2.h"
-    result_9=(struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "/usr/local/include/comelang2.h", 2022, "smart_pointer$1int");
-    # 2024 "/usr/local/include/comelang2.h"
+    # 2022 "./neo-c.h"
+    result_9=(struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 2022, "smart_pointer$1int");
+    # 2024 "./neo-c.h"
     result_9->memory=buffer_clone(self);
-    # 2025 "/usr/local/include/comelang2.h"
+    # 2025 "./neo-c.h"
     result_9->p=(int*)result_9->memory->buf;
-    # 2027 "/usr/local/include/comelang2.h"
+    # 2027 "./neo-c.h"
     __result11__ = __result_obj__ = result_9;
     return __result11__;
 }
@@ -2306,13 +2306,13 @@ struct smart_pointer$1long* result_10;
 struct smart_pointer$1long* __result12__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_10, 0, sizeof(struct smart_pointer$1long*));
-    # 2032 "/usr/local/include/comelang2.h"
-    result_10=(struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "/usr/local/include/comelang2.h", 2032, "smart_pointer$1long");
-    # 2034 "/usr/local/include/comelang2.h"
+    # 2032 "./neo-c.h"
+    result_10=(struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 2032, "smart_pointer$1long");
+    # 2034 "./neo-c.h"
     result_10->memory=buffer_clone(self);
-    # 2035 "/usr/local/include/comelang2.h"
+    # 2035 "./neo-c.h"
     result_10->p=(long*)result_10->memory->buf;
-    # 2037 "/usr/local/include/comelang2.h"
+    # 2037 "./neo-c.h"
     __result12__ = __result_obj__ = result_10;
     return __result12__;
 }
@@ -2320,103 +2320,103 @@ static inline struct smart_pointer$1char* charpa_to_pointer(char* self, unsigned
 void* __result_obj__;
 struct smart_pointer$1char* __result14__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2203 "/usr/local/include/comelang2.h"
-    __result14__ = __result_obj__ = smart_pointer$1char_initialize((struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "/usr/local/include/comelang2.h", 2203, "smart_pointer$1char"),self,len);
+    # 2203 "./neo-c.h"
+    __result14__ = __result_obj__ = smart_pointer$1char_initialize((struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 2203, "smart_pointer$1char"),self,len);
     return __result14__;
 }
 static inline struct smart_pointer$1short* shortpa_to_pointer(short short* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1short* __result16__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2208 "/usr/local/include/comelang2.h"
-    __result16__ = __result_obj__ = smart_pointer$1short_initialize((struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "/usr/local/include/comelang2.h", 2208, "smart_pointer$1short"),self,len);
+    # 2208 "./neo-c.h"
+    __result16__ = __result_obj__ = smart_pointer$1short_initialize((struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 2208, "smart_pointer$1short"),self,len);
     return __result16__;
 }
 static inline struct smart_pointer$1int* intpa_to_pointer(int* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1int* __result18__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2213 "/usr/local/include/comelang2.h"
-    __result18__ = __result_obj__ = smart_pointer$1int_initialize((struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "/usr/local/include/comelang2.h", 2213, "smart_pointer$1int"),self,len);
+    # 2213 "./neo-c.h"
+    __result18__ = __result_obj__ = smart_pointer$1int_initialize((struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 2213, "smart_pointer$1int"),self,len);
     return __result18__;
 }
 static inline struct smart_pointer$1long* longpa_to_pointer(long* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1long* __result20__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2218 "/usr/local/include/comelang2.h"
-    __result20__ = __result_obj__ = smart_pointer$1long_initialize((struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "/usr/local/include/comelang2.h", 2218, "smart_pointer$1long"),self,len);
+    # 2218 "./neo-c.h"
+    __result20__ = __result_obj__ = smart_pointer$1long_initialize((struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 2218, "smart_pointer$1long"),self,len);
     return __result20__;
 }
 static inline struct smart_pointer$1float* floatpa_to_pointer(float* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1float* __result22__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2223 "/usr/local/include/comelang2.h"
-    __result22__ = __result_obj__ = smart_pointer$1float_initialize((struct smart_pointer$1float*)come_calloc(1, sizeof(struct smart_pointer$1float)*(1), "/usr/local/include/comelang2.h", 2223, "smart_pointer$1float"),self,len);
+    # 2223 "./neo-c.h"
+    __result22__ = __result_obj__ = smart_pointer$1float_initialize((struct smart_pointer$1float*)come_calloc(1, sizeof(struct smart_pointer$1float)*(1), "./neo-c.h", 2223, "smart_pointer$1float"),self,len);
     return __result22__;
 }
 static inline struct smart_pointer$1double* doublepa_to_pointer(double* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1double* __result24__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2228 "/usr/local/include/comelang2.h"
-    __result24__ = __result_obj__ = smart_pointer$1double_initialize((struct smart_pointer$1double*)come_calloc(1, sizeof(struct smart_pointer$1double)*(1), "/usr/local/include/comelang2.h", 2228, "smart_pointer$1double"),self,len);
+    # 2228 "./neo-c.h"
+    __result24__ = __result_obj__ = smart_pointer$1double_initialize((struct smart_pointer$1double*)come_calloc(1, sizeof(struct smart_pointer$1double)*(1), "./neo-c.h", 2228, "smart_pointer$1double"),self,len);
     return __result24__;
 }
 static inline struct list$1char* charpa_to_list(char* self, unsigned long int len){
 void* __result_obj__;
 struct list$1char* __result27__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2233 "/usr/local/include/comelang2.h"
-    __result27__ = __result_obj__ = list$1char_initialize_with_values((struct list$1char*)come_calloc(1, sizeof(struct list$1char)*(1), "/usr/local/include/comelang2.h", 2233, "list$1char"),len,self);
+    # 2233 "./neo-c.h"
+    __result27__ = __result_obj__ = list$1char_initialize_with_values((struct list$1char*)come_calloc(1, sizeof(struct list$1char)*(1), "./neo-c.h", 2233, "list$1char"),len,self);
     return __result27__;
 }
 static inline struct list$1short* shortpa_to_list(short short* self, unsigned long int len){
 void* __result_obj__;
 struct list$1short* __result30__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2238 "/usr/local/include/comelang2.h"
-    __result30__ = __result_obj__ = list$1short_initialize_with_values((struct list$1short*)come_calloc(1, sizeof(struct list$1short)*(1), "/usr/local/include/comelang2.h", 2238, "list$1short"),len,self);
+    # 2238 "./neo-c.h"
+    __result30__ = __result_obj__ = list$1short_initialize_with_values((struct list$1short*)come_calloc(1, sizeof(struct list$1short)*(1), "./neo-c.h", 2238, "list$1short"),len,self);
     return __result30__;
 }
 static inline struct list$1int* intpa_to_list(int* self, unsigned long int len){
 void* __result_obj__;
 struct list$1int* __result33__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2243 "/usr/local/include/comelang2.h"
-    __result33__ = __result_obj__ = list$1int_initialize_with_values((struct list$1int*)come_calloc(1, sizeof(struct list$1int)*(1), "/usr/local/include/comelang2.h", 2243, "list$1int"),len,self);
+    # 2243 "./neo-c.h"
+    __result33__ = __result_obj__ = list$1int_initialize_with_values((struct list$1int*)come_calloc(1, sizeof(struct list$1int)*(1), "./neo-c.h", 2243, "list$1int"),len,self);
     return __result33__;
 }
 static inline struct list$1long* longpa_to_list(long* self, unsigned long int len){
 void* __result_obj__;
 struct list$1long* __result36__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2248 "/usr/local/include/comelang2.h"
-    __result36__ = __result_obj__ = list$1long_initialize_with_values((struct list$1long*)come_calloc(1, sizeof(struct list$1long)*(1), "/usr/local/include/comelang2.h", 2248, "list$1long"),len,self);
+    # 2248 "./neo-c.h"
+    __result36__ = __result_obj__ = list$1long_initialize_with_values((struct list$1long*)come_calloc(1, sizeof(struct list$1long)*(1), "./neo-c.h", 2248, "list$1long"),len,self);
     return __result36__;
 }
 static inline struct list$1float* floatpa_to_list(float* self, unsigned long int len){
 void* __result_obj__;
 struct list$1float* __result39__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2253 "/usr/local/include/comelang2.h"
-    __result39__ = __result_obj__ = list$1float_initialize_with_values((struct list$1float*)come_calloc(1, sizeof(struct list$1float)*(1), "/usr/local/include/comelang2.h", 2253, "list$1float"),len,self);
+    # 2253 "./neo-c.h"
+    __result39__ = __result_obj__ = list$1float_initialize_with_values((struct list$1float*)come_calloc(1, sizeof(struct list$1float)*(1), "./neo-c.h", 2253, "list$1float"),len,self);
     return __result39__;
 }
 static inline struct list$1double* doublepa_to_list(double* self, unsigned long int len){
 void* __result_obj__;
 struct list$1double* __result42__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2258 "/usr/local/include/comelang2.h"
-    __result42__ = __result_obj__ = list$1double_initialize_with_values((struct list$1double*)come_calloc(1, sizeof(struct list$1double)*(1), "/usr/local/include/comelang2.h", 2258, "list$1double"),len,self);
+    # 2258 "./neo-c.h"
+    __result42__ = __result_obj__ = list$1double_initialize_with_values((struct list$1double*)come_calloc(1, sizeof(struct list$1double)*(1), "./neo-c.h", 2258, "list$1double"),len,self);
     return __result42__;
 }
 static inline unsigned long int charpa_length(char* self, unsigned long int len){
 void* __result_obj__;
 unsigned long int __result43__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2288 "/usr/local/include/comelang2.h"
+    # 2288 "./neo-c.h"
     __result43__ = len;
     return __result43__;
 }
@@ -2424,7 +2424,7 @@ static inline unsigned long int shortpa_length(short short* self, unsigned long 
 void* __result_obj__;
 unsigned long int __result44__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2293 "/usr/local/include/comelang2.h"
+    # 2293 "./neo-c.h"
     __result44__ = len;
     return __result44__;
 }
@@ -2432,7 +2432,7 @@ static inline unsigned long int intpa_length(int* self, unsigned long int len){
 void* __result_obj__;
 unsigned long int __result45__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2298 "/usr/local/include/comelang2.h"
+    # 2298 "./neo-c.h"
     __result45__ = len;
     return __result45__;
 }
@@ -2440,7 +2440,7 @@ static inline unsigned long int longpa_length(long* self, unsigned long int len)
 void* __result_obj__;
 unsigned long int __result46__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2303 "/usr/local/include/comelang2.h"
+    # 2303 "./neo-c.h"
     __result46__ = len;
     return __result46__;
 }
@@ -2448,7 +2448,7 @@ static inline unsigned long int floatpa_length(float* self, unsigned long int le
 void* __result_obj__;
 unsigned long int __result47__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2308 "/usr/local/include/comelang2.h"
+    # 2308 "./neo-c.h"
     __result47__ = len;
     return __result47__;
 }
@@ -2456,7 +2456,7 @@ static inline unsigned long int doublepa_length(double* self, unsigned long int 
 void* __result_obj__;
 unsigned long int __result48__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2313 "/usr/local/include/comelang2.h"
+    # 2313 "./neo-c.h"
     __result48__ = len;
     return __result48__;
 }
@@ -2464,7 +2464,7 @@ static inline char* string_xsprintf(char* self, char* msg, ...){
 void* __result_obj__;
 char* __result49__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2374 "/usr/local/include/comelang2.h"
+    # 2374 "./neo-c.h"
     __result49__ = __result_obj__ = xsprintf(msg,self);
     return __result49__;
 }
@@ -2472,7 +2472,7 @@ static inline char* charp_xsprintf(char* self, char* msg, ...){
 void* __result_obj__;
 char* __result50__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2379 "/usr/local/include/comelang2.h"
+    # 2379 "./neo-c.h"
     __result50__ = __result_obj__ = xsprintf(msg,self);
     return __result50__;
 }
@@ -2480,7 +2480,7 @@ static inline char* int_xsprintf(int self, char* msg, ...){
 void* __result_obj__;
 char* __result51__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2384 "/usr/local/include/comelang2.h"
+    # 2384 "./neo-c.h"
     __result51__ = __result_obj__ = xsprintf(msg,self);
     return __result51__;
 }
@@ -2488,7 +2488,7 @@ static inline unsigned int* wstring_substring(unsigned int* str, int head, int t
 void* __result_obj__;
 unsigned int* __result52__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 47 "/usr/local/include/comelang2-str.h"
+    # 47 "./neo-c-str.h"
     __result52__ = __result_obj__ = wchar_tp_substring(str,head,tail);
     return __result52__;
 }
@@ -2496,7 +2496,7 @@ static inline int string_index_count(char* str, char* search_str, int count, int
 void* __result_obj__;
 int __result53__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 53 "/usr/local/include/comelang2-str.h"
+    # 53 "./neo-c-str.h"
     __result53__ = charp_index_count(str,search_str,count,default_value);
     return __result53__;
 }
@@ -2504,7 +2504,7 @@ static inline int string_index_regex_count(char* self, struct come_regex* reg, i
 void* __result_obj__;
 int __result54__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 59 "/usr/local/include/comelang2-str.h"
+    # 59 "./neo-c-str.h"
     __result54__ = charp_index_regex_count(self,reg,count,default_value);
     return __result54__;
 }
@@ -2512,7 +2512,7 @@ static inline int string_rindex(char* str, char* search_str, int default_value){
 void* __result_obj__;
 int __result55__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 65 "/usr/local/include/comelang2-str.h"
+    # 65 "./neo-c-str.h"
     __result55__ = charp_rindex(str,search_str,default_value);
     return __result55__;
 }
@@ -2520,7 +2520,7 @@ static inline int string_rindex_regex(char* self, struct come_regex* reg, int de
 void* __result_obj__;
 int __result56__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 71 "/usr/local/include/comelang2-str.h"
+    # 71 "./neo-c-str.h"
     __result56__ = charp_rindex_regex(self,reg,default_value);
     return __result56__;
 }
@@ -2528,7 +2528,7 @@ static inline int string_rindex_count(char* str, char* search_str, int count, in
 void* __result_obj__;
 int __result57__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 77 "/usr/local/include/comelang2-str.h"
+    # 77 "./neo-c-str.h"
     __result57__ = charp_rindex_count(str,search_str,default_value,-1);
     return __result57__;
 }
@@ -2536,7 +2536,7 @@ static inline struct list$1charph* string_scan_block(char* self, struct come_reg
 void* __result_obj__;
 struct list$1charph* __result58__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 83 "/usr/local/include/comelang2-str.h"
+    # 83 "./neo-c-str.h"
     __result58__ = __result_obj__ = charp_scan_block(self,reg,parent,block);
     return __result58__;
 }
@@ -2544,7 +2544,7 @@ static inline struct list$1charph* string_scan_block_count(char* self, struct co
 void* __result_obj__;
 struct list$1charph* __result59__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 89 "/usr/local/include/comelang2-str.h"
+    # 89 "./neo-c-str.h"
     __result59__ = __result_obj__ = charp_scan_block_count(self,reg,count,parent,block);
     return __result59__;
 }
@@ -2552,7 +2552,7 @@ static inline struct list$1charph* string_split_block(char* self, struct come_re
 void* __result_obj__;
 struct list$1charph* __result60__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 95 "/usr/local/include/comelang2-str.h"
+    # 95 "./neo-c-str.h"
     __result60__ = __result_obj__ = charp_split_block(self,reg,parent,block);
     return __result60__;
 }
@@ -2560,7 +2560,7 @@ static inline struct list$1charph* string_split_block_count(char* self, struct c
 void* __result_obj__;
 struct list$1charph* __result61__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 101 "/usr/local/include/comelang2-str.h"
+    # 101 "./neo-c-str.h"
     __result61__ = __result_obj__ = charp_split_block_count(self,reg,count,parent,block);
     return __result61__;
 }
@@ -2568,7 +2568,7 @@ static inline struct list$1charph* string_scan_group_strings(char* self, struct 
 void* __result_obj__;
 struct list$1charph* __result62__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 107 "/usr/local/include/comelang2-str.h"
+    # 107 "./neo-c-str.h"
     __result62__ = __result_obj__ = charp_scan_group_strings(self,reg,group_strings,num_group_string_in_regex);
     return __result62__;
 }
@@ -2576,7 +2576,7 @@ static inline char* string_strip(char* self){
 void* __result_obj__;
 char* __result63__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 113 "/usr/local/include/comelang2-str.h"
+    # 113 "./neo-c-str.h"
     __result63__ = __result_obj__ = charp_strip(self);
     return __result63__;
 }
@@ -2584,7 +2584,7 @@ static inline char* string_printable(char* str){
 void* __result_obj__;
 char* __result64__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 119 "/usr/local/include/comelang2-str.h"
+    # 119 "./neo-c-str.h"
     __result64__ = __result_obj__ = string_printable(str);
     return __result64__;
 }
@@ -2592,7 +2592,7 @@ static inline unsigned int* string_to_wstring(char* str){
 void* __result_obj__;
 unsigned int* __result65__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 125 "/usr/local/include/comelang2-str.h"
+    # 125 "./neo-c-str.h"
     __result65__ = __result_obj__ = charp_to_wstring(str);
     return __result65__;
 }
@@ -2600,7 +2600,7 @@ static inline char* wstring_to_string(unsigned int* wstr){
 void* __result_obj__;
 char* __result66__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 133 "/usr/local/include/comelang2-str.h"
+    # 133 "./neo-c-str.h"
     __result66__ = __result_obj__ = wchar_tp_to_string(wstr);
     return __result66__;
 }
@@ -2608,7 +2608,7 @@ static inline unsigned int* int_to_wstring(int self){
 void* __result_obj__;
 unsigned int* __result67__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 138 "/usr/local/include/comelang2-str.h"
+    # 138 "./neo-c-str.h"
     __result67__ = __result_obj__ = string_to_wstring(xsprintf("%d",self));
     return __result67__;
 }
@@ -2616,7 +2616,7 @@ static inline int wstring_length(unsigned int* str){
 void* __result_obj__;
 int __result68__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 144 "/usr/local/include/comelang2-str.h"
+    # 144 "./neo-c-str.h"
     __result68__ = wchar_tp_length(str);
     return __result68__;
 }
@@ -2624,7 +2624,7 @@ static inline unsigned int* wstring_delete(unsigned int* str, int head, int tail
 void* __result_obj__;
 unsigned int* __result69__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 150 "/usr/local/include/comelang2-str.h"
+    # 150 "./neo-c-str.h"
     __result69__ = __result_obj__ = wchar_tp_delete(str,head,tail);
     return __result69__;
 }
@@ -2632,7 +2632,7 @@ static inline int wstring_index(unsigned int* str, unsigned int* search_str, int
 void* __result_obj__;
 int __result70__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 156 "/usr/local/include/comelang2-str.h"
+    # 156 "./neo-c-str.h"
     __result70__ = wchar_tp_index(str,search_str,default_value);
     return __result70__;
 }
@@ -2640,7 +2640,7 @@ static inline int wstring_rindex(unsigned int* str, unsigned int* search_str, in
 void* __result_obj__;
 int __result71__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 162 "/usr/local/include/comelang2-str.h"
+    # 162 "./neo-c-str.h"
     __result71__ = wchar_tp_rindex(str,search_str,default_value);
     return __result71__;
 }
@@ -2648,7 +2648,7 @@ static inline unsigned int* wstring_reverse(unsigned int* str){
 void* __result_obj__;
 unsigned int* __result72__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 168 "/usr/local/include/comelang2-str.h"
+    # 168 "./neo-c-str.h"
     __result72__ = __result_obj__ = wchar_tp_reverse(str);
     return __result72__;
 }
@@ -2656,7 +2656,7 @@ static inline unsigned int* wstring_multiply(unsigned int* str, int n){
 void* __result_obj__;
 unsigned int* __result73__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 174 "/usr/local/include/comelang2-str.h"
+    # 174 "./neo-c-str.h"
     __result73__ = __result_obj__ = wchar_tp_multiply(str,n);
     return __result73__;
 }
@@ -2664,7 +2664,7 @@ static inline unsigned int* wstring_printable(unsigned int* str){
 void* __result_obj__;
 unsigned int* __result74__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 180 "/usr/local/include/comelang2-str.h"
+    # 180 "./neo-c-str.h"
     __result74__ = __result_obj__ = wchar_tp_printable(str);
     return __result74__;
 }
@@ -2672,7 +2672,7 @@ static inline unsigned int wstring_get_hash_key(unsigned int* value){
 void* __result_obj__;
 unsigned int __result75__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 202 "/usr/local/include/comelang2-str.h"
+    # 202 "./neo-c-str.h"
     __result75__ = wchar_tp_get_hash_key(value);
     return __result75__;
 }
@@ -2680,7 +2680,7 @@ static inline _Bool string_match_group_strings(char* self, struct come_regex* re
 void* __result_obj__;
 _Bool __result76__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 214 "/usr/local/include/comelang2-str.h"
+    # 214 "./neo-c-str.h"
     __result76__ = charp_match_group_strings(self,reg,count,group_strings);
     return __result76__;
 }
@@ -2688,7 +2688,7 @@ static inline int string_index(char* str, char* search_str, int default_value){
 void* __result_obj__;
 int __result77__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 220 "/usr/local/include/comelang2-str.h"
+    # 220 "./neo-c-str.h"
     __result77__ = charp_index(str,search_str,default_value);
     return __result77__;
 }
@@ -2696,7 +2696,7 @@ static inline int string_index_regex(char* self, struct come_regex* reg, int def
 void* __result_obj__;
 int __result78__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 226 "/usr/local/include/comelang2-str.h"
+    # 226 "./neo-c-str.h"
     __result78__ = charp_index_regex(self,reg,default_value);
     return __result78__;
 }
@@ -2704,7 +2704,7 @@ static inline char* string_replace(char* self, int index, char c){
 void* __result_obj__;
 char* __result79__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 233 "/usr/local/include/comelang2-str.h"
+    # 233 "./neo-c-str.h"
     __result79__ = __result_obj__ = charp_replace(self,index,c);
     return __result79__;
 }
@@ -2712,7 +2712,7 @@ static inline char* string_multiply(char* str, int n){
 void* __result_obj__;
 char* __result80__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 239 "/usr/local/include/comelang2-str.h"
+    # 239 "./neo-c-str.h"
     __result80__ = __result_obj__ = charp_multiply(str,n);
     return __result80__;
 }
@@ -2720,7 +2720,7 @@ static inline char* string_sub(char* self, struct come_regex* reg, char* replace
 void* __result_obj__;
 char* __result81__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 245 "/usr/local/include/comelang2-str.h"
+    # 245 "./neo-c-str.h"
     __result81__ = __result_obj__ = charp_sub(self,reg,replace);
     return __result81__;
 }
@@ -2728,7 +2728,7 @@ static inline char* string_sub_count(char* self, struct come_regex* reg, char* r
 void* __result_obj__;
 char* __result82__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 251 "/usr/local/include/comelang2-str.h"
+    # 251 "./neo-c-str.h"
     __result82__ = __result_obj__ = charp_sub_count(self,reg,replace,count);
     return __result82__;
 }
@@ -2736,7 +2736,7 @@ static inline struct list$1charph* string_split_str(char* self, char* str){
 void* __result_obj__;
 struct list$1charph* __result83__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 257 "/usr/local/include/comelang2-str.h"
+    # 257 "./neo-c-str.h"
     __result83__ = __result_obj__ = charp_split_str(self,str);
     return __result83__;
 }
@@ -2744,7 +2744,7 @@ static inline struct list$1charph* string_scan(char* self, struct come_regex* re
 void* __result_obj__;
 struct list$1charph* __result84__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 263 "/usr/local/include/comelang2-str.h"
+    # 263 "./neo-c-str.h"
     __result84__ = __result_obj__ = charp_scan(self,reg);
     return __result84__;
 }
@@ -2752,7 +2752,7 @@ static inline struct list$1charph* string_split(char* self, struct come_regex* r
 void* __result_obj__;
 struct list$1charph* __result85__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 269 "/usr/local/include/comelang2-str.h"
+    # 269 "./neo-c-str.h"
     __result85__ = __result_obj__ = charp_split(self,reg);
     return __result85__;
 }
@@ -2760,7 +2760,7 @@ static inline _Bool string_match(char* self, struct come_regex* reg){
 void* __result_obj__;
 _Bool __result86__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 275 "/usr/local/include/comelang2-str.h"
+    # 275 "./neo-c-str.h"
     __result86__ = charp_match(self,reg);
     return __result86__;
 }
@@ -2768,7 +2768,7 @@ static inline struct list$1charph* string_split_maxsplit(char* self, struct come
 void* __result_obj__;
 struct list$1charph* __result87__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 281 "/usr/local/include/comelang2-str.h"
+    # 281 "./neo-c-str.h"
     __result87__ = __result_obj__ = charp_split_maxsplit(self,reg,maxsplit);
     return __result87__;
 }
@@ -2776,7 +2776,7 @@ static inline int string_rindex_regex_count(char* self, struct come_regex* reg, 
 void* __result_obj__;
 int __result88__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 287 "/usr/local/include/comelang2-str.h"
+    # 287 "./neo-c-str.h"
     __result88__ = charp_rindex_regex_count(self,reg,count,default_value);
     return __result88__;
 }
@@ -2784,7 +2784,7 @@ static inline _Bool string_match_count(char* self, struct come_regex* reg, int c
 void* __result_obj__;
 _Bool __result89__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 293 "/usr/local/include/comelang2-str.h"
+    # 293 "./neo-c-str.h"
     __result89__ = charp_match_count(self,reg,count);
     return __result89__;
 }
@@ -2792,7 +2792,7 @@ static inline char* string_sub_block(char* self, struct come_regex* reg, void* p
 void* __result_obj__;
 char* __result90__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 299 "/usr/local/include/comelang2-str.h"
+    # 299 "./neo-c-str.h"
     __result90__ = __result_obj__ = charp_sub_block(self,reg,parent,block);
     return __result90__;
 }
@@ -2800,7 +2800,7 @@ static inline char* string_sub_block_count(char* self, struct come_regex* reg, i
 void* __result_obj__;
 char* __result91__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 305 "/usr/local/include/comelang2-str.h"
+    # 305 "./neo-c-str.h"
     __result91__ = __result_obj__ = charp_sub_block_count(self,reg,count,parent,block);
     return __result91__;
 }
@@ -2808,7 +2808,7 @@ static inline char* charp_chomp(char* str){
 void* __result_obj__;
 char* __result93__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 323 "/usr/local/include/comelang2-str.h"
+    # 323 "./neo-c-str.h"
     __result93__ = __result_obj__ = string_chomp(str);
     return __result93__;
 }
@@ -2831,13 +2831,13 @@ static struct smart_pointer$1char* smart_pointer$1char_initialize(struct smart_p
 void* __result_obj__;
 struct smart_pointer$1char* __result13__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2044 "/usr/local/include/comelang2.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "/usr/local/include/comelang2.h", 2044, "buffer"));
-        # 2046 "/usr/local/include/comelang2.h"
+        # 2044 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2044, "buffer"));
+        # 2046 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(char)*size);
-        # 2048 "/usr/local/include/comelang2.h"
+        # 2048 "./neo-c.h"
         self->p=(char*)self->memory->buf;
-        # 2050 "/usr/local/include/comelang2.h"
+        # 2050 "./neo-c.h"
         __result13__ = __result_obj__ = self;
         return __result13__;
 }
@@ -2847,13 +2847,13 @@ static struct smart_pointer$1short* smart_pointer$1short_initialize(struct smart
 void* __result_obj__;
 struct smart_pointer$1short* __result15__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2044 "/usr/local/include/comelang2.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "/usr/local/include/comelang2.h", 2044, "buffer"));
-        # 2046 "/usr/local/include/comelang2.h"
+        # 2044 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2044, "buffer"));
+        # 2046 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(short short)*size);
-        # 2048 "/usr/local/include/comelang2.h"
+        # 2048 "./neo-c.h"
         self->p=(short short*)self->memory->buf;
-        # 2050 "/usr/local/include/comelang2.h"
+        # 2050 "./neo-c.h"
         __result15__ = __result_obj__ = self;
         return __result15__;
 }
@@ -2863,13 +2863,13 @@ static struct smart_pointer$1int* smart_pointer$1int_initialize(struct smart_poi
 void* __result_obj__;
 struct smart_pointer$1int* __result17__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2044 "/usr/local/include/comelang2.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "/usr/local/include/comelang2.h", 2044, "buffer"));
-        # 2046 "/usr/local/include/comelang2.h"
+        # 2044 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2044, "buffer"));
+        # 2046 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(int)*size);
-        # 2048 "/usr/local/include/comelang2.h"
+        # 2048 "./neo-c.h"
         self->p=(int*)self->memory->buf;
-        # 2050 "/usr/local/include/comelang2.h"
+        # 2050 "./neo-c.h"
         __result17__ = __result_obj__ = self;
         return __result17__;
 }
@@ -2879,13 +2879,13 @@ static struct smart_pointer$1long* smart_pointer$1long_initialize(struct smart_p
 void* __result_obj__;
 struct smart_pointer$1long* __result19__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2044 "/usr/local/include/comelang2.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "/usr/local/include/comelang2.h", 2044, "buffer"));
-        # 2046 "/usr/local/include/comelang2.h"
+        # 2044 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2044, "buffer"));
+        # 2046 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(long)*size);
-        # 2048 "/usr/local/include/comelang2.h"
+        # 2048 "./neo-c.h"
         self->p=(long*)self->memory->buf;
-        # 2050 "/usr/local/include/comelang2.h"
+        # 2050 "./neo-c.h"
         __result19__ = __result_obj__ = self;
         return __result19__;
 }
@@ -2895,13 +2895,13 @@ static struct smart_pointer$1float* smart_pointer$1float_initialize(struct smart
 void* __result_obj__;
 struct smart_pointer$1float* __result21__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2044 "/usr/local/include/comelang2.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "/usr/local/include/comelang2.h", 2044, "buffer"));
-        # 2046 "/usr/local/include/comelang2.h"
+        # 2044 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2044, "buffer"));
+        # 2046 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(float)*size);
-        # 2048 "/usr/local/include/comelang2.h"
+        # 2048 "./neo-c.h"
         self->p=(float*)self->memory->buf;
-        # 2050 "/usr/local/include/comelang2.h"
+        # 2050 "./neo-c.h"
         __result21__ = __result_obj__ = self;
         return __result21__;
 }
@@ -2911,13 +2911,13 @@ static struct smart_pointer$1double* smart_pointer$1double_initialize(struct sma
 void* __result_obj__;
 struct smart_pointer$1double* __result23__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2044 "/usr/local/include/comelang2.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "/usr/local/include/comelang2.h", 2044, "buffer"));
-        # 2046 "/usr/local/include/comelang2.h"
+        # 2044 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2044, "buffer"));
+        # 2046 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(double)*size);
-        # 2048 "/usr/local/include/comelang2.h"
+        # 2048 "./neo-c.h"
         self->p=(double*)self->memory->buf;
-        # 2050 "/usr/local/include/comelang2.h"
+        # 2050 "./neo-c.h"
         __result23__ = __result_obj__ = self;
         return __result23__;
 }
@@ -2929,18 +2929,18 @@ int i_11;
 struct list$1char* __result26__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_11, 0, sizeof(int));
-        # 112 "/usr/local/include/comelang2.h"
+        # 112 "./neo-c.h"
         self->head=((void*)0);
-        # 113 "/usr/local/include/comelang2.h"
+        # 113 "./neo-c.h"
         self->tail=((void*)0);
-        # 114 "/usr/local/include/comelang2.h"
+        # 114 "./neo-c.h"
         self->len=0;
-        # 120 "/usr/local/include/comelang2.h"
+        # 120 "./neo-c.h"
         for(        i_11=0;        i_11<num_value;        i_11++        ){
-            # 117 "/usr/local/include/comelang2.h"
+            # 117 "./neo-c.h"
             list$1char_push_back(self,values[i_11]);
         }
-        # 120 "/usr/local/include/comelang2.h"
+        # 120 "./neo-c.h"
         __result26__ = __result_obj__ = self;
         return __result26__;
 }
@@ -2957,57 +2957,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_12, 0, sizeof(struct list_item$1char*));
 memset(&litem_13, 0, sizeof(struct list_item$1char*));
 memset(&litem_14, 0, sizeof(struct list_item$1char*));
-                # 256 "/usr/local/include/comelang2.h"
-                # 225 "/usr/local/include/comelang2.h"
+                # 256 "./neo-c.h"
+                # 225 "./neo-c.h"
                 if(_if_conditional1=self->len==0,                _if_conditional1) {
-                    # 226 "/usr/local/include/comelang2.h"
-                    litem_12=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "/usr/local/include/comelang2.h", 226, "list_item$1char");
-                    # 228 "/usr/local/include/comelang2.h"
+                    # 226 "./neo-c.h"
+                    litem_12=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 226, "list_item$1char");
+                    # 228 "./neo-c.h"
                     litem_12->prev=((void*)0);
-                    # 229 "/usr/local/include/comelang2.h"
+                    # 229 "./neo-c.h"
                     litem_12->next=((void*)0);
-                    # 230 "/usr/local/include/comelang2.h"
+                    # 230 "./neo-c.h"
                     litem_12->item=item;
-                    # 232 "/usr/local/include/comelang2.h"
+                    # 232 "./neo-c.h"
                     self->tail=litem_12;
-                    # 233 "/usr/local/include/comelang2.h"
+                    # 233 "./neo-c.h"
                     self->head=litem_12;
                 }
                 else {
-                    # 256 "/usr/local/include/comelang2.h"
-                    # 235 "/usr/local/include/comelang2.h"
+                    # 256 "./neo-c.h"
+                    # 235 "./neo-c.h"
                     if(_if_conditional2=self->len==1,                    _if_conditional2) {
-                        # 236 "/usr/local/include/comelang2.h"
-                        litem_13=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "/usr/local/include/comelang2.h", 236, "list_item$1char");
-                        # 238 "/usr/local/include/comelang2.h"
+                        # 236 "./neo-c.h"
+                        litem_13=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 236, "list_item$1char");
+                        # 238 "./neo-c.h"
                         litem_13->prev=self->head;
-                        # 239 "/usr/local/include/comelang2.h"
+                        # 239 "./neo-c.h"
                         litem_13->next=((void*)0);
-                        # 240 "/usr/local/include/comelang2.h"
+                        # 240 "./neo-c.h"
                         litem_13->item=item;
-                        # 242 "/usr/local/include/comelang2.h"
+                        # 242 "./neo-c.h"
                         self->tail=litem_13;
-                        # 243 "/usr/local/include/comelang2.h"
+                        # 243 "./neo-c.h"
                         self->head->next=litem_13;
                     }
                     else {
-                        # 246 "/usr/local/include/comelang2.h"
-                        litem_14=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "/usr/local/include/comelang2.h", 246, "list_item$1char");
-                        # 248 "/usr/local/include/comelang2.h"
+                        # 246 "./neo-c.h"
+                        litem_14=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 246, "list_item$1char");
+                        # 248 "./neo-c.h"
                         litem_14->prev=self->tail;
-                        # 249 "/usr/local/include/comelang2.h"
+                        # 249 "./neo-c.h"
                         litem_14->next=((void*)0);
-                        # 250 "/usr/local/include/comelang2.h"
+                        # 250 "./neo-c.h"
                         litem_14->item=item;
-                        # 252 "/usr/local/include/comelang2.h"
+                        # 252 "./neo-c.h"
                         self->tail->next=litem_14;
-                        # 253 "/usr/local/include/comelang2.h"
+                        # 253 "./neo-c.h"
                         self->tail=litem_14;
                     }
                 }
-                # 256 "/usr/local/include/comelang2.h"
+                # 256 "./neo-c.h"
                 self->len++;
-                # 258 "/usr/local/include/comelang2.h"
+                # 258 "./neo-c.h"
                 __result25__ = __result_obj__ = self;
                 return __result25__;
 }
@@ -3019,18 +3019,18 @@ int i_15;
 struct list$1short* __result29__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_15, 0, sizeof(int));
-        # 112 "/usr/local/include/comelang2.h"
+        # 112 "./neo-c.h"
         self->head=((void*)0);
-        # 113 "/usr/local/include/comelang2.h"
+        # 113 "./neo-c.h"
         self->tail=((void*)0);
-        # 114 "/usr/local/include/comelang2.h"
+        # 114 "./neo-c.h"
         self->len=0;
-        # 120 "/usr/local/include/comelang2.h"
+        # 120 "./neo-c.h"
         for(        i_15=0;        i_15<num_value;        i_15++        ){
-            # 117 "/usr/local/include/comelang2.h"
+            # 117 "./neo-c.h"
             list$1short_push_back(self,values[i_15]);
         }
-        # 120 "/usr/local/include/comelang2.h"
+        # 120 "./neo-c.h"
         __result29__ = __result_obj__ = self;
         return __result29__;
 }
@@ -3047,57 +3047,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_16, 0, sizeof(struct list_item$1short*));
 memset(&litem_17, 0, sizeof(struct list_item$1short*));
 memset(&litem_18, 0, sizeof(struct list_item$1short*));
-                # 256 "/usr/local/include/comelang2.h"
-                # 225 "/usr/local/include/comelang2.h"
+                # 256 "./neo-c.h"
+                # 225 "./neo-c.h"
                 if(_if_conditional3=self->len==0,                _if_conditional3) {
-                    # 226 "/usr/local/include/comelang2.h"
-                    litem_16=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "/usr/local/include/comelang2.h", 226, "list_item$1short");
-                    # 228 "/usr/local/include/comelang2.h"
+                    # 226 "./neo-c.h"
+                    litem_16=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 226, "list_item$1short");
+                    # 228 "./neo-c.h"
                     litem_16->prev=((void*)0);
-                    # 229 "/usr/local/include/comelang2.h"
+                    # 229 "./neo-c.h"
                     litem_16->next=((void*)0);
-                    # 230 "/usr/local/include/comelang2.h"
+                    # 230 "./neo-c.h"
                     litem_16->item=item;
-                    # 232 "/usr/local/include/comelang2.h"
+                    # 232 "./neo-c.h"
                     self->tail=litem_16;
-                    # 233 "/usr/local/include/comelang2.h"
+                    # 233 "./neo-c.h"
                     self->head=litem_16;
                 }
                 else {
-                    # 256 "/usr/local/include/comelang2.h"
-                    # 235 "/usr/local/include/comelang2.h"
+                    # 256 "./neo-c.h"
+                    # 235 "./neo-c.h"
                     if(_if_conditional4=self->len==1,                    _if_conditional4) {
-                        # 236 "/usr/local/include/comelang2.h"
-                        litem_17=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "/usr/local/include/comelang2.h", 236, "list_item$1short");
-                        # 238 "/usr/local/include/comelang2.h"
+                        # 236 "./neo-c.h"
+                        litem_17=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 236, "list_item$1short");
+                        # 238 "./neo-c.h"
                         litem_17->prev=self->head;
-                        # 239 "/usr/local/include/comelang2.h"
+                        # 239 "./neo-c.h"
                         litem_17->next=((void*)0);
-                        # 240 "/usr/local/include/comelang2.h"
+                        # 240 "./neo-c.h"
                         litem_17->item=item;
-                        # 242 "/usr/local/include/comelang2.h"
+                        # 242 "./neo-c.h"
                         self->tail=litem_17;
-                        # 243 "/usr/local/include/comelang2.h"
+                        # 243 "./neo-c.h"
                         self->head->next=litem_17;
                     }
                     else {
-                        # 246 "/usr/local/include/comelang2.h"
-                        litem_18=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "/usr/local/include/comelang2.h", 246, "list_item$1short");
-                        # 248 "/usr/local/include/comelang2.h"
+                        # 246 "./neo-c.h"
+                        litem_18=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 246, "list_item$1short");
+                        # 248 "./neo-c.h"
                         litem_18->prev=self->tail;
-                        # 249 "/usr/local/include/comelang2.h"
+                        # 249 "./neo-c.h"
                         litem_18->next=((void*)0);
-                        # 250 "/usr/local/include/comelang2.h"
+                        # 250 "./neo-c.h"
                         litem_18->item=item;
-                        # 252 "/usr/local/include/comelang2.h"
+                        # 252 "./neo-c.h"
                         self->tail->next=litem_18;
-                        # 253 "/usr/local/include/comelang2.h"
+                        # 253 "./neo-c.h"
                         self->tail=litem_18;
                     }
                 }
-                # 256 "/usr/local/include/comelang2.h"
+                # 256 "./neo-c.h"
                 self->len++;
-                # 258 "/usr/local/include/comelang2.h"
+                # 258 "./neo-c.h"
                 __result28__ = __result_obj__ = self;
                 return __result28__;
 }
@@ -3109,18 +3109,18 @@ int i_19;
 struct list$1int* __result32__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_19, 0, sizeof(int));
-        # 112 "/usr/local/include/comelang2.h"
+        # 112 "./neo-c.h"
         self->head=((void*)0);
-        # 113 "/usr/local/include/comelang2.h"
+        # 113 "./neo-c.h"
         self->tail=((void*)0);
-        # 114 "/usr/local/include/comelang2.h"
+        # 114 "./neo-c.h"
         self->len=0;
-        # 120 "/usr/local/include/comelang2.h"
+        # 120 "./neo-c.h"
         for(        i_19=0;        i_19<num_value;        i_19++        ){
-            # 117 "/usr/local/include/comelang2.h"
+            # 117 "./neo-c.h"
             list$1int_push_back(self,values[i_19]);
         }
-        # 120 "/usr/local/include/comelang2.h"
+        # 120 "./neo-c.h"
         __result32__ = __result_obj__ = self;
         return __result32__;
 }
@@ -3137,57 +3137,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_20, 0, sizeof(struct list_item$1int*));
 memset(&litem_21, 0, sizeof(struct list_item$1int*));
 memset(&litem_22, 0, sizeof(struct list_item$1int*));
-                # 256 "/usr/local/include/comelang2.h"
-                # 225 "/usr/local/include/comelang2.h"
+                # 256 "./neo-c.h"
+                # 225 "./neo-c.h"
                 if(_if_conditional5=self->len==0,                _if_conditional5) {
-                    # 226 "/usr/local/include/comelang2.h"
-                    litem_20=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "/usr/local/include/comelang2.h", 226, "list_item$1int");
-                    # 228 "/usr/local/include/comelang2.h"
+                    # 226 "./neo-c.h"
+                    litem_20=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 226, "list_item$1int");
+                    # 228 "./neo-c.h"
                     litem_20->prev=((void*)0);
-                    # 229 "/usr/local/include/comelang2.h"
+                    # 229 "./neo-c.h"
                     litem_20->next=((void*)0);
-                    # 230 "/usr/local/include/comelang2.h"
+                    # 230 "./neo-c.h"
                     litem_20->item=item;
-                    # 232 "/usr/local/include/comelang2.h"
+                    # 232 "./neo-c.h"
                     self->tail=litem_20;
-                    # 233 "/usr/local/include/comelang2.h"
+                    # 233 "./neo-c.h"
                     self->head=litem_20;
                 }
                 else {
-                    # 256 "/usr/local/include/comelang2.h"
-                    # 235 "/usr/local/include/comelang2.h"
+                    # 256 "./neo-c.h"
+                    # 235 "./neo-c.h"
                     if(_if_conditional6=self->len==1,                    _if_conditional6) {
-                        # 236 "/usr/local/include/comelang2.h"
-                        litem_21=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "/usr/local/include/comelang2.h", 236, "list_item$1int");
-                        # 238 "/usr/local/include/comelang2.h"
+                        # 236 "./neo-c.h"
+                        litem_21=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 236, "list_item$1int");
+                        # 238 "./neo-c.h"
                         litem_21->prev=self->head;
-                        # 239 "/usr/local/include/comelang2.h"
+                        # 239 "./neo-c.h"
                         litem_21->next=((void*)0);
-                        # 240 "/usr/local/include/comelang2.h"
+                        # 240 "./neo-c.h"
                         litem_21->item=item;
-                        # 242 "/usr/local/include/comelang2.h"
+                        # 242 "./neo-c.h"
                         self->tail=litem_21;
-                        # 243 "/usr/local/include/comelang2.h"
+                        # 243 "./neo-c.h"
                         self->head->next=litem_21;
                     }
                     else {
-                        # 246 "/usr/local/include/comelang2.h"
-                        litem_22=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "/usr/local/include/comelang2.h", 246, "list_item$1int");
-                        # 248 "/usr/local/include/comelang2.h"
+                        # 246 "./neo-c.h"
+                        litem_22=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 246, "list_item$1int");
+                        # 248 "./neo-c.h"
                         litem_22->prev=self->tail;
-                        # 249 "/usr/local/include/comelang2.h"
+                        # 249 "./neo-c.h"
                         litem_22->next=((void*)0);
-                        # 250 "/usr/local/include/comelang2.h"
+                        # 250 "./neo-c.h"
                         litem_22->item=item;
-                        # 252 "/usr/local/include/comelang2.h"
+                        # 252 "./neo-c.h"
                         self->tail->next=litem_22;
-                        # 253 "/usr/local/include/comelang2.h"
+                        # 253 "./neo-c.h"
                         self->tail=litem_22;
                     }
                 }
-                # 256 "/usr/local/include/comelang2.h"
+                # 256 "./neo-c.h"
                 self->len++;
-                # 258 "/usr/local/include/comelang2.h"
+                # 258 "./neo-c.h"
                 __result31__ = __result_obj__ = self;
                 return __result31__;
 }
@@ -3199,18 +3199,18 @@ int i_23;
 struct list$1long* __result35__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_23, 0, sizeof(int));
-        # 112 "/usr/local/include/comelang2.h"
+        # 112 "./neo-c.h"
         self->head=((void*)0);
-        # 113 "/usr/local/include/comelang2.h"
+        # 113 "./neo-c.h"
         self->tail=((void*)0);
-        # 114 "/usr/local/include/comelang2.h"
+        # 114 "./neo-c.h"
         self->len=0;
-        # 120 "/usr/local/include/comelang2.h"
+        # 120 "./neo-c.h"
         for(        i_23=0;        i_23<num_value;        i_23++        ){
-            # 117 "/usr/local/include/comelang2.h"
+            # 117 "./neo-c.h"
             list$1long_push_back(self,values[i_23]);
         }
-        # 120 "/usr/local/include/comelang2.h"
+        # 120 "./neo-c.h"
         __result35__ = __result_obj__ = self;
         return __result35__;
 }
@@ -3227,57 +3227,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_24, 0, sizeof(struct list_item$1long*));
 memset(&litem_25, 0, sizeof(struct list_item$1long*));
 memset(&litem_26, 0, sizeof(struct list_item$1long*));
-                # 256 "/usr/local/include/comelang2.h"
-                # 225 "/usr/local/include/comelang2.h"
+                # 256 "./neo-c.h"
+                # 225 "./neo-c.h"
                 if(_if_conditional7=self->len==0,                _if_conditional7) {
-                    # 226 "/usr/local/include/comelang2.h"
-                    litem_24=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "/usr/local/include/comelang2.h", 226, "list_item$1long");
-                    # 228 "/usr/local/include/comelang2.h"
+                    # 226 "./neo-c.h"
+                    litem_24=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 226, "list_item$1long");
+                    # 228 "./neo-c.h"
                     litem_24->prev=((void*)0);
-                    # 229 "/usr/local/include/comelang2.h"
+                    # 229 "./neo-c.h"
                     litem_24->next=((void*)0);
-                    # 230 "/usr/local/include/comelang2.h"
+                    # 230 "./neo-c.h"
                     litem_24->item=item;
-                    # 232 "/usr/local/include/comelang2.h"
+                    # 232 "./neo-c.h"
                     self->tail=litem_24;
-                    # 233 "/usr/local/include/comelang2.h"
+                    # 233 "./neo-c.h"
                     self->head=litem_24;
                 }
                 else {
-                    # 256 "/usr/local/include/comelang2.h"
-                    # 235 "/usr/local/include/comelang2.h"
+                    # 256 "./neo-c.h"
+                    # 235 "./neo-c.h"
                     if(_if_conditional8=self->len==1,                    _if_conditional8) {
-                        # 236 "/usr/local/include/comelang2.h"
-                        litem_25=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "/usr/local/include/comelang2.h", 236, "list_item$1long");
-                        # 238 "/usr/local/include/comelang2.h"
+                        # 236 "./neo-c.h"
+                        litem_25=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 236, "list_item$1long");
+                        # 238 "./neo-c.h"
                         litem_25->prev=self->head;
-                        # 239 "/usr/local/include/comelang2.h"
+                        # 239 "./neo-c.h"
                         litem_25->next=((void*)0);
-                        # 240 "/usr/local/include/comelang2.h"
+                        # 240 "./neo-c.h"
                         litem_25->item=item;
-                        # 242 "/usr/local/include/comelang2.h"
+                        # 242 "./neo-c.h"
                         self->tail=litem_25;
-                        # 243 "/usr/local/include/comelang2.h"
+                        # 243 "./neo-c.h"
                         self->head->next=litem_25;
                     }
                     else {
-                        # 246 "/usr/local/include/comelang2.h"
-                        litem_26=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "/usr/local/include/comelang2.h", 246, "list_item$1long");
-                        # 248 "/usr/local/include/comelang2.h"
+                        # 246 "./neo-c.h"
+                        litem_26=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 246, "list_item$1long");
+                        # 248 "./neo-c.h"
                         litem_26->prev=self->tail;
-                        # 249 "/usr/local/include/comelang2.h"
+                        # 249 "./neo-c.h"
                         litem_26->next=((void*)0);
-                        # 250 "/usr/local/include/comelang2.h"
+                        # 250 "./neo-c.h"
                         litem_26->item=item;
-                        # 252 "/usr/local/include/comelang2.h"
+                        # 252 "./neo-c.h"
                         self->tail->next=litem_26;
-                        # 253 "/usr/local/include/comelang2.h"
+                        # 253 "./neo-c.h"
                         self->tail=litem_26;
                     }
                 }
-                # 256 "/usr/local/include/comelang2.h"
+                # 256 "./neo-c.h"
                 self->len++;
-                # 258 "/usr/local/include/comelang2.h"
+                # 258 "./neo-c.h"
                 __result34__ = __result_obj__ = self;
                 return __result34__;
 }
@@ -3289,18 +3289,18 @@ int i_27;
 struct list$1float* __result38__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_27, 0, sizeof(int));
-        # 112 "/usr/local/include/comelang2.h"
+        # 112 "./neo-c.h"
         self->head=((void*)0);
-        # 113 "/usr/local/include/comelang2.h"
+        # 113 "./neo-c.h"
         self->tail=((void*)0);
-        # 114 "/usr/local/include/comelang2.h"
+        # 114 "./neo-c.h"
         self->len=0;
-        # 120 "/usr/local/include/comelang2.h"
+        # 120 "./neo-c.h"
         for(        i_27=0;        i_27<num_value;        i_27++        ){
-            # 117 "/usr/local/include/comelang2.h"
+            # 117 "./neo-c.h"
             list$1float_push_back(self,values[i_27]);
         }
-        # 120 "/usr/local/include/comelang2.h"
+        # 120 "./neo-c.h"
         __result38__ = __result_obj__ = self;
         return __result38__;
 }
@@ -3317,57 +3317,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_28, 0, sizeof(struct list_item$1float*));
 memset(&litem_29, 0, sizeof(struct list_item$1float*));
 memset(&litem_30, 0, sizeof(struct list_item$1float*));
-                # 256 "/usr/local/include/comelang2.h"
-                # 225 "/usr/local/include/comelang2.h"
+                # 256 "./neo-c.h"
+                # 225 "./neo-c.h"
                 if(_if_conditional9=self->len==0,                _if_conditional9) {
-                    # 226 "/usr/local/include/comelang2.h"
-                    litem_28=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "/usr/local/include/comelang2.h", 226, "list_item$1float");
-                    # 228 "/usr/local/include/comelang2.h"
+                    # 226 "./neo-c.h"
+                    litem_28=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 226, "list_item$1float");
+                    # 228 "./neo-c.h"
                     litem_28->prev=((void*)0);
-                    # 229 "/usr/local/include/comelang2.h"
+                    # 229 "./neo-c.h"
                     litem_28->next=((void*)0);
-                    # 230 "/usr/local/include/comelang2.h"
+                    # 230 "./neo-c.h"
                     litem_28->item=item;
-                    # 232 "/usr/local/include/comelang2.h"
+                    # 232 "./neo-c.h"
                     self->tail=litem_28;
-                    # 233 "/usr/local/include/comelang2.h"
+                    # 233 "./neo-c.h"
                     self->head=litem_28;
                 }
                 else {
-                    # 256 "/usr/local/include/comelang2.h"
-                    # 235 "/usr/local/include/comelang2.h"
+                    # 256 "./neo-c.h"
+                    # 235 "./neo-c.h"
                     if(_if_conditional10=self->len==1,                    _if_conditional10) {
-                        # 236 "/usr/local/include/comelang2.h"
-                        litem_29=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "/usr/local/include/comelang2.h", 236, "list_item$1float");
-                        # 238 "/usr/local/include/comelang2.h"
+                        # 236 "./neo-c.h"
+                        litem_29=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 236, "list_item$1float");
+                        # 238 "./neo-c.h"
                         litem_29->prev=self->head;
-                        # 239 "/usr/local/include/comelang2.h"
+                        # 239 "./neo-c.h"
                         litem_29->next=((void*)0);
-                        # 240 "/usr/local/include/comelang2.h"
+                        # 240 "./neo-c.h"
                         litem_29->item=item;
-                        # 242 "/usr/local/include/comelang2.h"
+                        # 242 "./neo-c.h"
                         self->tail=litem_29;
-                        # 243 "/usr/local/include/comelang2.h"
+                        # 243 "./neo-c.h"
                         self->head->next=litem_29;
                     }
                     else {
-                        # 246 "/usr/local/include/comelang2.h"
-                        litem_30=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "/usr/local/include/comelang2.h", 246, "list_item$1float");
-                        # 248 "/usr/local/include/comelang2.h"
+                        # 246 "./neo-c.h"
+                        litem_30=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 246, "list_item$1float");
+                        # 248 "./neo-c.h"
                         litem_30->prev=self->tail;
-                        # 249 "/usr/local/include/comelang2.h"
+                        # 249 "./neo-c.h"
                         litem_30->next=((void*)0);
-                        # 250 "/usr/local/include/comelang2.h"
+                        # 250 "./neo-c.h"
                         litem_30->item=item;
-                        # 252 "/usr/local/include/comelang2.h"
+                        # 252 "./neo-c.h"
                         self->tail->next=litem_30;
-                        # 253 "/usr/local/include/comelang2.h"
+                        # 253 "./neo-c.h"
                         self->tail=litem_30;
                     }
                 }
-                # 256 "/usr/local/include/comelang2.h"
+                # 256 "./neo-c.h"
                 self->len++;
-                # 258 "/usr/local/include/comelang2.h"
+                # 258 "./neo-c.h"
                 __result37__ = __result_obj__ = self;
                 return __result37__;
 }
@@ -3379,18 +3379,18 @@ int i_31;
 struct list$1double* __result41__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_31, 0, sizeof(int));
-        # 112 "/usr/local/include/comelang2.h"
+        # 112 "./neo-c.h"
         self->head=((void*)0);
-        # 113 "/usr/local/include/comelang2.h"
+        # 113 "./neo-c.h"
         self->tail=((void*)0);
-        # 114 "/usr/local/include/comelang2.h"
+        # 114 "./neo-c.h"
         self->len=0;
-        # 120 "/usr/local/include/comelang2.h"
+        # 120 "./neo-c.h"
         for(        i_31=0;        i_31<num_value;        i_31++        ){
-            # 117 "/usr/local/include/comelang2.h"
+            # 117 "./neo-c.h"
             list$1double_push_back(self,values[i_31]);
         }
-        # 120 "/usr/local/include/comelang2.h"
+        # 120 "./neo-c.h"
         __result41__ = __result_obj__ = self;
         return __result41__;
 }
@@ -3407,57 +3407,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_32, 0, sizeof(struct list_item$1double*));
 memset(&litem_33, 0, sizeof(struct list_item$1double*));
 memset(&litem_34, 0, sizeof(struct list_item$1double*));
-                # 256 "/usr/local/include/comelang2.h"
-                # 225 "/usr/local/include/comelang2.h"
+                # 256 "./neo-c.h"
+                # 225 "./neo-c.h"
                 if(_if_conditional11=self->len==0,                _if_conditional11) {
-                    # 226 "/usr/local/include/comelang2.h"
-                    litem_32=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "/usr/local/include/comelang2.h", 226, "list_item$1double");
-                    # 228 "/usr/local/include/comelang2.h"
+                    # 226 "./neo-c.h"
+                    litem_32=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 226, "list_item$1double");
+                    # 228 "./neo-c.h"
                     litem_32->prev=((void*)0);
-                    # 229 "/usr/local/include/comelang2.h"
+                    # 229 "./neo-c.h"
                     litem_32->next=((void*)0);
-                    # 230 "/usr/local/include/comelang2.h"
+                    # 230 "./neo-c.h"
                     litem_32->item=item;
-                    # 232 "/usr/local/include/comelang2.h"
+                    # 232 "./neo-c.h"
                     self->tail=litem_32;
-                    # 233 "/usr/local/include/comelang2.h"
+                    # 233 "./neo-c.h"
                     self->head=litem_32;
                 }
                 else {
-                    # 256 "/usr/local/include/comelang2.h"
-                    # 235 "/usr/local/include/comelang2.h"
+                    # 256 "./neo-c.h"
+                    # 235 "./neo-c.h"
                     if(_if_conditional12=self->len==1,                    _if_conditional12) {
-                        # 236 "/usr/local/include/comelang2.h"
-                        litem_33=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "/usr/local/include/comelang2.h", 236, "list_item$1double");
-                        # 238 "/usr/local/include/comelang2.h"
+                        # 236 "./neo-c.h"
+                        litem_33=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 236, "list_item$1double");
+                        # 238 "./neo-c.h"
                         litem_33->prev=self->head;
-                        # 239 "/usr/local/include/comelang2.h"
+                        # 239 "./neo-c.h"
                         litem_33->next=((void*)0);
-                        # 240 "/usr/local/include/comelang2.h"
+                        # 240 "./neo-c.h"
                         litem_33->item=item;
-                        # 242 "/usr/local/include/comelang2.h"
+                        # 242 "./neo-c.h"
                         self->tail=litem_33;
-                        # 243 "/usr/local/include/comelang2.h"
+                        # 243 "./neo-c.h"
                         self->head->next=litem_33;
                     }
                     else {
-                        # 246 "/usr/local/include/comelang2.h"
-                        litem_34=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "/usr/local/include/comelang2.h", 246, "list_item$1double");
-                        # 248 "/usr/local/include/comelang2.h"
+                        # 246 "./neo-c.h"
+                        litem_34=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 246, "list_item$1double");
+                        # 248 "./neo-c.h"
                         litem_34->prev=self->tail;
-                        # 249 "/usr/local/include/comelang2.h"
+                        # 249 "./neo-c.h"
                         litem_34->next=((void*)0);
-                        # 250 "/usr/local/include/comelang2.h"
+                        # 250 "./neo-c.h"
                         litem_34->item=item;
-                        # 252 "/usr/local/include/comelang2.h"
+                        # 252 "./neo-c.h"
                         self->tail->next=litem_34;
-                        # 253 "/usr/local/include/comelang2.h"
+                        # 253 "./neo-c.h"
                         self->tail=litem_34;
                     }
                 }
-                # 256 "/usr/local/include/comelang2.h"
+                # 256 "./neo-c.h"
                 self->len++;
-                # 258 "/usr/local/include/comelang2.h"
+                # 258 "./neo-c.h"
                 __result40__ = __result_obj__ = self;
                 return __result40__;
 }
@@ -4380,13 +4380,13 @@ static struct list$1charph* list$1charph_initialize(struct list$1charph* self){
 void* __result_obj__;
 struct list$1charph* __result117__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 104 "/usr/local/include/comelang2.h"
+        # 104 "./neo-c.h"
         self->head=((void*)0);
-        # 105 "/usr/local/include/comelang2.h"
+        # 105 "./neo-c.h"
         self->tail=((void*)0);
-        # 106 "/usr/local/include/comelang2.h"
+        # 106 "./neo-c.h"
         self->len=0;
-        # 108 "/usr/local/include/comelang2.h"
+        # 108 "./neo-c.h"
         __result117__ = __result_obj__ = self;
         return __result117__;
 }
@@ -4403,57 +4403,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_114, 0, sizeof(struct list_item$1charph*));
 memset(&litem_115, 0, sizeof(struct list_item$1charph*));
 memset(&litem_116, 0, sizeof(struct list_item$1charph*));
-                # 256 "/usr/local/include/comelang2.h"
-                # 225 "/usr/local/include/comelang2.h"
+                # 256 "./neo-c.h"
+                # 225 "./neo-c.h"
                 if(_if_conditional44=self->len==0,                _if_conditional44) {
-                    # 226 "/usr/local/include/comelang2.h"
-                    litem_114=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "/usr/local/include/comelang2.h", 226, "list_item$1charph");
-                    # 228 "/usr/local/include/comelang2.h"
+                    # 226 "./neo-c.h"
+                    litem_114=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 226, "list_item$1charph");
+                    # 228 "./neo-c.h"
                     litem_114->prev=((void*)0);
-                    # 229 "/usr/local/include/comelang2.h"
+                    # 229 "./neo-c.h"
                     litem_114->next=((void*)0);
-                    # 230 "/usr/local/include/comelang2.h"
+                    # 230 "./neo-c.h"
                     litem_114->item=item;
-                    # 232 "/usr/local/include/comelang2.h"
+                    # 232 "./neo-c.h"
                     self->tail=litem_114;
-                    # 233 "/usr/local/include/comelang2.h"
+                    # 233 "./neo-c.h"
                     self->head=litem_114;
                 }
                 else {
-                    # 256 "/usr/local/include/comelang2.h"
-                    # 235 "/usr/local/include/comelang2.h"
+                    # 256 "./neo-c.h"
+                    # 235 "./neo-c.h"
                     if(_if_conditional45=self->len==1,                    _if_conditional45) {
-                        # 236 "/usr/local/include/comelang2.h"
-                        litem_115=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "/usr/local/include/comelang2.h", 236, "list_item$1charph");
-                        # 238 "/usr/local/include/comelang2.h"
+                        # 236 "./neo-c.h"
+                        litem_115=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 236, "list_item$1charph");
+                        # 238 "./neo-c.h"
                         litem_115->prev=self->head;
-                        # 239 "/usr/local/include/comelang2.h"
+                        # 239 "./neo-c.h"
                         litem_115->next=((void*)0);
-                        # 240 "/usr/local/include/comelang2.h"
+                        # 240 "./neo-c.h"
                         litem_115->item=item;
-                        # 242 "/usr/local/include/comelang2.h"
+                        # 242 "./neo-c.h"
                         self->tail=litem_115;
-                        # 243 "/usr/local/include/comelang2.h"
+                        # 243 "./neo-c.h"
                         self->head->next=litem_115;
                     }
                     else {
-                        # 246 "/usr/local/include/comelang2.h"
-                        litem_116=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "/usr/local/include/comelang2.h", 246, "list_item$1charph");
-                        # 248 "/usr/local/include/comelang2.h"
+                        # 246 "./neo-c.h"
+                        litem_116=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 246, "list_item$1charph");
+                        # 248 "./neo-c.h"
                         litem_116->prev=self->tail;
-                        # 249 "/usr/local/include/comelang2.h"
+                        # 249 "./neo-c.h"
                         litem_116->next=((void*)0);
-                        # 250 "/usr/local/include/comelang2.h"
+                        # 250 "./neo-c.h"
                         litem_116->item=item;
-                        # 252 "/usr/local/include/comelang2.h"
+                        # 252 "./neo-c.h"
                         self->tail->next=litem_116;
-                        # 253 "/usr/local/include/comelang2.h"
+                        # 253 "./neo-c.h"
                         self->tail=litem_116;
                     }
                 }
-                # 256 "/usr/local/include/comelang2.h"
+                # 256 "./neo-c.h"
                 self->len++;
-                # 258 "/usr/local/include/comelang2.h"
+                # 258 "./neo-c.h"
                 __result119__ = __result_obj__ = self;
                 return __result119__;
 }
@@ -5806,23 +5806,23 @@ struct list$1charph* __result160__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_263, 0, sizeof(struct list_item$1charph*));
 memset(&prev_it_264, 0, sizeof(struct list_item$1charph*));
-                    # 433 "/usr/local/include/comelang2.h"
+                    # 433 "./neo-c.h"
                     it_263=self->head;
-                    # 440 "/usr/local/include/comelang2.h"
+                    # 440 "./neo-c.h"
                     while(_while_condtional12=it_263!=((void*)0),                    _while_condtional12) {
-                        # 435 "/usr/local/include/comelang2.h"
+                        # 435 "./neo-c.h"
                         prev_it_264=it_263;
-                        # 436 "/usr/local/include/comelang2.h"
+                        # 436 "./neo-c.h"
                         it_263=it_263->next;
-                        # 437 "/usr/local/include/comelang2.h"
+                        # 437 "./neo-c.h"
                     }
-                    # 440 "/usr/local/include/comelang2.h"
+                    # 440 "./neo-c.h"
                     self->head=((void*)0);
-                    # 441 "/usr/local/include/comelang2.h"
+                    # 441 "./neo-c.h"
                     self->tail=((void*)0);
-                    # 443 "/usr/local/include/comelang2.h"
+                    # 443 "./neo-c.h"
                     self->len=0;
-                    # 445 "/usr/local/include/comelang2.h"
+                    # 445 "./neo-c.h"
                     __result160__ = __result_obj__ = self;
                     return __result160__;
 }
