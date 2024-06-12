@@ -7743,7 +7743,7 @@ memset(&it_126, 0, sizeof(char*));
     # 310 "main.c"
     n_122=info->cursor-1;
     # 318 "main.c"
-    for(    o2_saved_125=(struct list$1charph*)come_increment_ref_count((((struct list$1charph*)(right_value179=list$1charph_reverse(((struct list$1charph*)(right_value175=list$1charph_sublist(info->files,0,n_122)))))))),it_126=list$1charph_begin((o2_saved_125)) ,    come_call_finalizer2(list$1charphp_finalize,right_value175, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__),
+    for(    o2_saved_125=(struct list$1charph*)come_increment_ref_count((((struct list$1charph*)(right_value179=list$1charph_reverse(((struct list$1charph*)(right_value175=list$1charph_sublist(info->files,0,n_122+1)))))))),it_126=list$1charph_begin((o2_saved_125)) ,    come_call_finalizer2(list$1charphp_finalize,right_value175, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__),
     come_call_finalizer2(list$1charphp_finalize,right_value179, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__),
     0;    !list$1charph_end((o2_saved_125));    it_126=list$1charph_next((o2_saved_125))    ){
         # 316 "main.c"

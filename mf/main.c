@@ -308,7 +308,7 @@ void search_next_file(sInfo* info)
 void search_prev_file(sInfo* info)
 {
     int n = info.cursor-1;
-    foreach(it, info.files.sublist(0, n).reverse()) {
+    foreach(it, info.files.sublist(0, n+1).reverse()) {
         if(strcasestr(it, info.searching_str)) {
             info.cursor = n;
             break;
