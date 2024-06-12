@@ -28,7 +28,7 @@ fi
 
 if [ -e mf/Makefile ]
 then
-    (cd mf; make distclean)
+    (cd mf; neo-c clean)
 fi
 
 if [ -e shsh/Makefile ]
