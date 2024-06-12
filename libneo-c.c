@@ -925,6 +925,43 @@ void come_call_finalizer2(void* fun, void* mem, void* protocol_fun, void* protoc
     }
 }
 
+void come_call_finalizer3(void* mem, void* fun, int call_finalizer_only, int no_decrement, int no_free, int force_delete_, void* result_obj)
+{
+    if(result_obj) {
+        if(mem == result_obj) {
+            return;
+        }
+    }
+    if(mem == NULL) {
+        return;
+    }
+    
+    if(call_finalizer_only) {
+        if(fun) {
+            void (*finalizer)(void*) = fun;
+            finalizer(mem);
+        }
+    }
+    else {
+        size_t* ref_count = (size_t*)((char*)mem - sizeof(size_t) - sizeof(size_t));
+        
+        if(!no_decrement) {
+            (*ref_count)--;
+        }
+        
+        size_t count = *ref_count;
+        if(!no_free && (count <= 0 || force_delete_)) {
+            if(mem) {
+                if(fun) {
+                    void (*finalizer)(void*) = fun;
+                    finalizer(mem);
+                }
+                come_free_object(mem);
+            }
+        }
+    }
+}
+
 string __builtin_string(char* str)
 {
     if(str == null) {

@@ -1218,6 +1218,8 @@ void* mempcpy(void* anonymous_var_nameX459, const void* anonymous_var_nameX460, 
 
 void come_call_finalizer2(void* fun, void* mem, void* protocol_fun, void* protocol_obj, int call_finalizer_only, int no_decrement, int no_free, int force_delete_, void* result_obj);
 
+void come_call_finalizer3(void* mem, void* fun, int call_finalizer_only, int no_decrement, int no_free, int force_delete_, void* result_obj);
+
 void* come_decrement_ref_count2(void* mem, void* protocol_fun, void* protocol_obj, _Bool no_decrement, _Bool no_free, _Bool force_delete_, void* result_obj);
 
 static struct smart_pointer$1char* smart_pointer$1char_initialize(struct smart_pointer$1char* self, void* memory, int size);
@@ -2323,11 +2325,11 @@ struct buffer* result_0;
 struct buffer* __result2__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_0, 0, sizeof(struct buffer*));
-    # 1942 "./neo-c.h"
-    result_0=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1942, "buffer"));
     # 1943 "./neo-c.h"
-    buffer_append(result_0,self,sizeof(char)*len);
+    result_0=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1943, "buffer"));
     # 1944 "./neo-c.h"
+    buffer_append(result_0,self,sizeof(char)*len);
+    # 1945 "./neo-c.h"
     __result2__ = __result_obj__ = result_0;
     return __result2__;
 }
@@ -2337,11 +2339,11 @@ struct buffer* result_1;
 struct buffer* __result3__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_1, 0, sizeof(struct buffer*));
-    # 1949 "./neo-c.h"
-    result_1=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1949, "buffer"));
     # 1950 "./neo-c.h"
-    buffer_append(result_1,(char*)self,sizeof(short short)*len);
+    result_1=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1950, "buffer"));
     # 1951 "./neo-c.h"
+    buffer_append(result_1,(char*)self,sizeof(short short)*len);
+    # 1952 "./neo-c.h"
     __result3__ = __result_obj__ = result_1;
     return __result3__;
 }
@@ -2351,11 +2353,11 @@ struct buffer* result_2;
 struct buffer* __result4__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_2, 0, sizeof(struct buffer*));
-    # 1956 "./neo-c.h"
-    result_2=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1956, "buffer"));
     # 1957 "./neo-c.h"
-    buffer_append(result_2,(char*)self,sizeof(int)*len);
+    result_2=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1957, "buffer"));
     # 1958 "./neo-c.h"
+    buffer_append(result_2,(char*)self,sizeof(int)*len);
+    # 1959 "./neo-c.h"
     __result4__ = __result_obj__ = result_2;
     return __result4__;
 }
@@ -2365,11 +2367,11 @@ struct buffer* result_3;
 struct buffer* __result5__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_3, 0, sizeof(struct buffer*));
-    # 1963 "./neo-c.h"
-    result_3=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1963, "buffer"));
     # 1964 "./neo-c.h"
-    buffer_append(result_3,(char*)self,sizeof(long)*len);
+    result_3=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1964, "buffer"));
     # 1965 "./neo-c.h"
+    buffer_append(result_3,(char*)self,sizeof(long)*len);
+    # 1966 "./neo-c.h"
     __result5__ = __result_obj__ = result_3;
     return __result5__;
 }
@@ -2379,11 +2381,11 @@ struct buffer* result_4;
 struct buffer* __result6__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_4, 0, sizeof(struct buffer*));
-    # 1970 "./neo-c.h"
-    result_4=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1970, "buffer"));
     # 1971 "./neo-c.h"
-    buffer_append(result_4,(char*)self,sizeof(float)*len);
+    result_4=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1971, "buffer"));
     # 1972 "./neo-c.h"
+    buffer_append(result_4,(char*)self,sizeof(float)*len);
+    # 1973 "./neo-c.h"
     __result6__ = __result_obj__ = result_4;
     return __result6__;
 }
@@ -2393,11 +2395,11 @@ struct buffer* result_5;
 struct buffer* __result7__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_5, 0, sizeof(struct buffer*));
-    # 1977 "./neo-c.h"
-    result_5=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1977, "buffer"));
     # 1978 "./neo-c.h"
-    buffer_append(result_5,(char*)self,sizeof(double)*len);
+    result_5=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1978, "buffer"));
     # 1979 "./neo-c.h"
+    buffer_append(result_5,(char*)self,sizeof(double)*len);
+    # 1980 "./neo-c.h"
     __result7__ = __result_obj__ = result_5;
     return __result7__;
 }
@@ -2407,13 +2409,13 @@ struct smart_pointer$1char* result_6;
 struct smart_pointer$1char* __result8__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_6, 0, sizeof(struct smart_pointer$1char*));
-    # 1992 "./neo-c.h"
-    result_6=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 1992, "smart_pointer$1char");
-    # 1994 "./neo-c.h"
-    result_6->memory=buffer_clone(self);
+    # 1993 "./neo-c.h"
+    result_6=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 1993, "smart_pointer$1char");
     # 1995 "./neo-c.h"
+    result_6->memory=buffer_clone(self);
+    # 1996 "./neo-c.h"
     result_6->p=result_6->memory->buf;
-    # 1997 "./neo-c.h"
+    # 1998 "./neo-c.h"
     __result8__ = __result_obj__ = result_6;
     return __result8__;
 }
@@ -2423,13 +2425,13 @@ struct smart_pointer$1char* result_7;
 struct smart_pointer$1char* __result9__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_7, 0, sizeof(struct smart_pointer$1char*));
-    # 2002 "./neo-c.h"
-    result_7=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 2002, "smart_pointer$1char");
-    # 2004 "./neo-c.h"
-    result_7->memory=buffer_clone(self);
+    # 2003 "./neo-c.h"
+    result_7=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 2003, "smart_pointer$1char");
     # 2005 "./neo-c.h"
+    result_7->memory=buffer_clone(self);
+    # 2006 "./neo-c.h"
     result_7->p=(char*)result_7->memory->buf;
-    # 2007 "./neo-c.h"
+    # 2008 "./neo-c.h"
     __result9__ = __result_obj__ = result_7;
     return __result9__;
 }
@@ -2439,13 +2441,13 @@ struct smart_pointer$1short* result_8;
 struct smart_pointer$1short* __result10__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_8, 0, sizeof(struct smart_pointer$1short*));
-    # 2012 "./neo-c.h"
-    result_8=(struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 2012, "smart_pointer$1short");
-    # 2014 "./neo-c.h"
-    result_8->memory=buffer_clone(self);
+    # 2013 "./neo-c.h"
+    result_8=(struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 2013, "smart_pointer$1short");
     # 2015 "./neo-c.h"
+    result_8->memory=buffer_clone(self);
+    # 2016 "./neo-c.h"
     result_8->p=(short short*)result_8->memory->buf;
-    # 2017 "./neo-c.h"
+    # 2018 "./neo-c.h"
     __result10__ = __result_obj__ = result_8;
     return __result10__;
 }
@@ -2455,13 +2457,13 @@ struct smart_pointer$1int* result_9;
 struct smart_pointer$1int* __result11__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_9, 0, sizeof(struct smart_pointer$1int*));
-    # 2022 "./neo-c.h"
-    result_9=(struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 2022, "smart_pointer$1int");
-    # 2024 "./neo-c.h"
-    result_9->memory=buffer_clone(self);
+    # 2023 "./neo-c.h"
+    result_9=(struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 2023, "smart_pointer$1int");
     # 2025 "./neo-c.h"
+    result_9->memory=buffer_clone(self);
+    # 2026 "./neo-c.h"
     result_9->p=(int*)result_9->memory->buf;
-    # 2027 "./neo-c.h"
+    # 2028 "./neo-c.h"
     __result11__ = __result_obj__ = result_9;
     return __result11__;
 }
@@ -2471,13 +2473,13 @@ struct smart_pointer$1long* result_10;
 struct smart_pointer$1long* __result12__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_10, 0, sizeof(struct smart_pointer$1long*));
-    # 2032 "./neo-c.h"
-    result_10=(struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 2032, "smart_pointer$1long");
-    # 2034 "./neo-c.h"
-    result_10->memory=buffer_clone(self);
+    # 2033 "./neo-c.h"
+    result_10=(struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 2033, "smart_pointer$1long");
     # 2035 "./neo-c.h"
+    result_10->memory=buffer_clone(self);
+    # 2036 "./neo-c.h"
     result_10->p=(long*)result_10->memory->buf;
-    # 2037 "./neo-c.h"
+    # 2038 "./neo-c.h"
     __result12__ = __result_obj__ = result_10;
     return __result12__;
 }
@@ -2485,103 +2487,103 @@ static inline struct smart_pointer$1char* charpa_to_pointer(char* self, unsigned
 void* __result_obj__;
 struct smart_pointer$1char* __result14__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2203 "./neo-c.h"
-    __result14__ = __result_obj__ = smart_pointer$1char_initialize((struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 2203, "smart_pointer$1char"),self,len);
+    # 2204 "./neo-c.h"
+    __result14__ = __result_obj__ = smart_pointer$1char_initialize((struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 2204, "smart_pointer$1char"),self,len);
     return __result14__;
 }
 static inline struct smart_pointer$1short* shortpa_to_pointer(short short* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1short* __result16__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2208 "./neo-c.h"
-    __result16__ = __result_obj__ = smart_pointer$1short_initialize((struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 2208, "smart_pointer$1short"),self,len);
+    # 2209 "./neo-c.h"
+    __result16__ = __result_obj__ = smart_pointer$1short_initialize((struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 2209, "smart_pointer$1short"),self,len);
     return __result16__;
 }
 static inline struct smart_pointer$1int* intpa_to_pointer(int* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1int* __result18__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2213 "./neo-c.h"
-    __result18__ = __result_obj__ = smart_pointer$1int_initialize((struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 2213, "smart_pointer$1int"),self,len);
+    # 2214 "./neo-c.h"
+    __result18__ = __result_obj__ = smart_pointer$1int_initialize((struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 2214, "smart_pointer$1int"),self,len);
     return __result18__;
 }
 static inline struct smart_pointer$1long* longpa_to_pointer(long* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1long* __result20__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2218 "./neo-c.h"
-    __result20__ = __result_obj__ = smart_pointer$1long_initialize((struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 2218, "smart_pointer$1long"),self,len);
+    # 2219 "./neo-c.h"
+    __result20__ = __result_obj__ = smart_pointer$1long_initialize((struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 2219, "smart_pointer$1long"),self,len);
     return __result20__;
 }
 static inline struct smart_pointer$1float* floatpa_to_pointer(float* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1float* __result22__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2223 "./neo-c.h"
-    __result22__ = __result_obj__ = smart_pointer$1float_initialize((struct smart_pointer$1float*)come_calloc(1, sizeof(struct smart_pointer$1float)*(1), "./neo-c.h", 2223, "smart_pointer$1float"),self,len);
+    # 2224 "./neo-c.h"
+    __result22__ = __result_obj__ = smart_pointer$1float_initialize((struct smart_pointer$1float*)come_calloc(1, sizeof(struct smart_pointer$1float)*(1), "./neo-c.h", 2224, "smart_pointer$1float"),self,len);
     return __result22__;
 }
 static inline struct smart_pointer$1double* doublepa_to_pointer(double* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1double* __result24__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2228 "./neo-c.h"
-    __result24__ = __result_obj__ = smart_pointer$1double_initialize((struct smart_pointer$1double*)come_calloc(1, sizeof(struct smart_pointer$1double)*(1), "./neo-c.h", 2228, "smart_pointer$1double"),self,len);
+    # 2229 "./neo-c.h"
+    __result24__ = __result_obj__ = smart_pointer$1double_initialize((struct smart_pointer$1double*)come_calloc(1, sizeof(struct smart_pointer$1double)*(1), "./neo-c.h", 2229, "smart_pointer$1double"),self,len);
     return __result24__;
 }
 static inline struct list$1char* charpa_to_list(char* self, unsigned long int len){
 void* __result_obj__;
 struct list$1char* __result27__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2233 "./neo-c.h"
-    __result27__ = __result_obj__ = list$1char_initialize_with_values((struct list$1char*)come_calloc(1, sizeof(struct list$1char)*(1), "./neo-c.h", 2233, "list$1char"),len,self);
+    # 2234 "./neo-c.h"
+    __result27__ = __result_obj__ = list$1char_initialize_with_values((struct list$1char*)come_calloc(1, sizeof(struct list$1char)*(1), "./neo-c.h", 2234, "list$1char"),len,self);
     return __result27__;
 }
 static inline struct list$1short* shortpa_to_list(short short* self, unsigned long int len){
 void* __result_obj__;
 struct list$1short* __result30__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2238 "./neo-c.h"
-    __result30__ = __result_obj__ = list$1short_initialize_with_values((struct list$1short*)come_calloc(1, sizeof(struct list$1short)*(1), "./neo-c.h", 2238, "list$1short"),len,self);
+    # 2239 "./neo-c.h"
+    __result30__ = __result_obj__ = list$1short_initialize_with_values((struct list$1short*)come_calloc(1, sizeof(struct list$1short)*(1), "./neo-c.h", 2239, "list$1short"),len,self);
     return __result30__;
 }
 static inline struct list$1int* intpa_to_list(int* self, unsigned long int len){
 void* __result_obj__;
 struct list$1int* __result33__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2243 "./neo-c.h"
-    __result33__ = __result_obj__ = list$1int_initialize_with_values((struct list$1int*)come_calloc(1, sizeof(struct list$1int)*(1), "./neo-c.h", 2243, "list$1int"),len,self);
+    # 2244 "./neo-c.h"
+    __result33__ = __result_obj__ = list$1int_initialize_with_values((struct list$1int*)come_calloc(1, sizeof(struct list$1int)*(1), "./neo-c.h", 2244, "list$1int"),len,self);
     return __result33__;
 }
 static inline struct list$1long* longpa_to_list(long* self, unsigned long int len){
 void* __result_obj__;
 struct list$1long* __result36__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2248 "./neo-c.h"
-    __result36__ = __result_obj__ = list$1long_initialize_with_values((struct list$1long*)come_calloc(1, sizeof(struct list$1long)*(1), "./neo-c.h", 2248, "list$1long"),len,self);
+    # 2249 "./neo-c.h"
+    __result36__ = __result_obj__ = list$1long_initialize_with_values((struct list$1long*)come_calloc(1, sizeof(struct list$1long)*(1), "./neo-c.h", 2249, "list$1long"),len,self);
     return __result36__;
 }
 static inline struct list$1float* floatpa_to_list(float* self, unsigned long int len){
 void* __result_obj__;
 struct list$1float* __result39__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2253 "./neo-c.h"
-    __result39__ = __result_obj__ = list$1float_initialize_with_values((struct list$1float*)come_calloc(1, sizeof(struct list$1float)*(1), "./neo-c.h", 2253, "list$1float"),len,self);
+    # 2254 "./neo-c.h"
+    __result39__ = __result_obj__ = list$1float_initialize_with_values((struct list$1float*)come_calloc(1, sizeof(struct list$1float)*(1), "./neo-c.h", 2254, "list$1float"),len,self);
     return __result39__;
 }
 static inline struct list$1double* doublepa_to_list(double* self, unsigned long int len){
 void* __result_obj__;
 struct list$1double* __result42__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2258 "./neo-c.h"
-    __result42__ = __result_obj__ = list$1double_initialize_with_values((struct list$1double*)come_calloc(1, sizeof(struct list$1double)*(1), "./neo-c.h", 2258, "list$1double"),len,self);
+    # 2259 "./neo-c.h"
+    __result42__ = __result_obj__ = list$1double_initialize_with_values((struct list$1double*)come_calloc(1, sizeof(struct list$1double)*(1), "./neo-c.h", 2259, "list$1double"),len,self);
     return __result42__;
 }
 static inline unsigned long int charpa_length(char* self, unsigned long int len){
 void* __result_obj__;
 unsigned long int __result43__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2288 "./neo-c.h"
+    # 2289 "./neo-c.h"
     __result43__ = len;
     return __result43__;
 }
@@ -2589,7 +2591,7 @@ static inline unsigned long int shortpa_length(short short* self, unsigned long 
 void* __result_obj__;
 unsigned long int __result44__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2293 "./neo-c.h"
+    # 2294 "./neo-c.h"
     __result44__ = len;
     return __result44__;
 }
@@ -2597,7 +2599,7 @@ static inline unsigned long int intpa_length(int* self, unsigned long int len){
 void* __result_obj__;
 unsigned long int __result45__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2298 "./neo-c.h"
+    # 2299 "./neo-c.h"
     __result45__ = len;
     return __result45__;
 }
@@ -2605,7 +2607,7 @@ static inline unsigned long int longpa_length(long* self, unsigned long int len)
 void* __result_obj__;
 unsigned long int __result46__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2303 "./neo-c.h"
+    # 2304 "./neo-c.h"
     __result46__ = len;
     return __result46__;
 }
@@ -2613,7 +2615,7 @@ static inline unsigned long int floatpa_length(float* self, unsigned long int le
 void* __result_obj__;
 unsigned long int __result47__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2308 "./neo-c.h"
+    # 2309 "./neo-c.h"
     __result47__ = len;
     return __result47__;
 }
@@ -2621,7 +2623,7 @@ static inline unsigned long int doublepa_length(double* self, unsigned long int 
 void* __result_obj__;
 unsigned long int __result48__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2313 "./neo-c.h"
+    # 2314 "./neo-c.h"
     __result48__ = len;
     return __result48__;
 }
@@ -2629,7 +2631,7 @@ static inline char* string_xsprintf(char* self, char* msg, ...){
 void* __result_obj__;
 char* __result49__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2374 "./neo-c.h"
+    # 2375 "./neo-c.h"
     __result49__ = __result_obj__ = xsprintf(msg,self);
     return __result49__;
 }
@@ -2637,7 +2639,7 @@ static inline char* charp_xsprintf(char* self, char* msg, ...){
 void* __result_obj__;
 char* __result50__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2379 "./neo-c.h"
+    # 2380 "./neo-c.h"
     __result50__ = __result_obj__ = xsprintf(msg,self);
     return __result50__;
 }
@@ -2645,7 +2647,7 @@ static inline char* int_xsprintf(int self, char* msg, ...){
 void* __result_obj__;
 char* __result51__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2384 "./neo-c.h"
+    # 2385 "./neo-c.h"
     __result51__ = __result_obj__ = xsprintf(msg,self);
     return __result51__;
 }
@@ -2668,13 +2670,13 @@ static struct smart_pointer$1char* smart_pointer$1char_initialize(struct smart_p
 void* __result_obj__;
 struct smart_pointer$1char* __result13__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2044 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2044, "buffer"));
-        # 2046 "./neo-c.h"
+        # 2045 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2045, "buffer"));
+        # 2047 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(char)*size);
-        # 2048 "./neo-c.h"
+        # 2049 "./neo-c.h"
         self->p=(char*)self->memory->buf;
-        # 2050 "./neo-c.h"
+        # 2051 "./neo-c.h"
         __result13__ = __result_obj__ = self;
         return __result13__;
 }
@@ -2684,13 +2686,13 @@ static struct smart_pointer$1short* smart_pointer$1short_initialize(struct smart
 void* __result_obj__;
 struct smart_pointer$1short* __result15__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2044 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2044, "buffer"));
-        # 2046 "./neo-c.h"
+        # 2045 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2045, "buffer"));
+        # 2047 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(short short)*size);
-        # 2048 "./neo-c.h"
+        # 2049 "./neo-c.h"
         self->p=(short short*)self->memory->buf;
-        # 2050 "./neo-c.h"
+        # 2051 "./neo-c.h"
         __result15__ = __result_obj__ = self;
         return __result15__;
 }
@@ -2700,13 +2702,13 @@ static struct smart_pointer$1int* smart_pointer$1int_initialize(struct smart_poi
 void* __result_obj__;
 struct smart_pointer$1int* __result17__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2044 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2044, "buffer"));
-        # 2046 "./neo-c.h"
+        # 2045 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2045, "buffer"));
+        # 2047 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(int)*size);
-        # 2048 "./neo-c.h"
+        # 2049 "./neo-c.h"
         self->p=(int*)self->memory->buf;
-        # 2050 "./neo-c.h"
+        # 2051 "./neo-c.h"
         __result17__ = __result_obj__ = self;
         return __result17__;
 }
@@ -2716,13 +2718,13 @@ static struct smart_pointer$1long* smart_pointer$1long_initialize(struct smart_p
 void* __result_obj__;
 struct smart_pointer$1long* __result19__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2044 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2044, "buffer"));
-        # 2046 "./neo-c.h"
+        # 2045 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2045, "buffer"));
+        # 2047 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(long)*size);
-        # 2048 "./neo-c.h"
+        # 2049 "./neo-c.h"
         self->p=(long*)self->memory->buf;
-        # 2050 "./neo-c.h"
+        # 2051 "./neo-c.h"
         __result19__ = __result_obj__ = self;
         return __result19__;
 }
@@ -2732,13 +2734,13 @@ static struct smart_pointer$1float* smart_pointer$1float_initialize(struct smart
 void* __result_obj__;
 struct smart_pointer$1float* __result21__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2044 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2044, "buffer"));
-        # 2046 "./neo-c.h"
+        # 2045 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2045, "buffer"));
+        # 2047 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(float)*size);
-        # 2048 "./neo-c.h"
+        # 2049 "./neo-c.h"
         self->p=(float*)self->memory->buf;
-        # 2050 "./neo-c.h"
+        # 2051 "./neo-c.h"
         __result21__ = __result_obj__ = self;
         return __result21__;
 }
@@ -2748,13 +2750,13 @@ static struct smart_pointer$1double* smart_pointer$1double_initialize(struct sma
 void* __result_obj__;
 struct smart_pointer$1double* __result23__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2044 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2044, "buffer"));
-        # 2046 "./neo-c.h"
+        # 2045 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2045, "buffer"));
+        # 2047 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(double)*size);
-        # 2048 "./neo-c.h"
+        # 2049 "./neo-c.h"
         self->p=(double*)self->memory->buf;
-        # 2050 "./neo-c.h"
+        # 2051 "./neo-c.h"
         __result23__ = __result_obj__ = self;
         return __result23__;
 }
@@ -2766,18 +2768,18 @@ int i_11;
 struct list$1char* __result26__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_11, 0, sizeof(int));
-        # 112 "./neo-c.h"
-        self->head=((void*)0);
         # 113 "./neo-c.h"
-        self->tail=((void*)0);
+        self->head=((void*)0);
         # 114 "./neo-c.h"
+        self->tail=((void*)0);
+        # 115 "./neo-c.h"
         self->len=0;
-        # 120 "./neo-c.h"
+        # 121 "./neo-c.h"
         for(        i_11=0;        i_11<num_value;        i_11++        ){
-            # 117 "./neo-c.h"
+            # 118 "./neo-c.h"
             list$1char_push_back(self,values[i_11]);
         }
-        # 120 "./neo-c.h"
+        # 121 "./neo-c.h"
         __result26__ = __result_obj__ = self;
         return __result26__;
 }
@@ -2794,57 +2796,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_12, 0, sizeof(struct list_item$1char*));
 memset(&litem_13, 0, sizeof(struct list_item$1char*));
 memset(&litem_14, 0, sizeof(struct list_item$1char*));
-                # 256 "./neo-c.h"
-                # 225 "./neo-c.h"
+                # 257 "./neo-c.h"
+                # 226 "./neo-c.h"
                 if(_if_conditional1=self->len==0,                _if_conditional1) {
-                    # 226 "./neo-c.h"
-                    litem_12=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 226, "list_item$1char");
-                    # 228 "./neo-c.h"
-                    litem_12->prev=((void*)0);
+                    # 227 "./neo-c.h"
+                    litem_12=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 227, "list_item$1char");
                     # 229 "./neo-c.h"
-                    litem_12->next=((void*)0);
+                    litem_12->prev=((void*)0);
                     # 230 "./neo-c.h"
+                    litem_12->next=((void*)0);
+                    # 231 "./neo-c.h"
                     litem_12->item=item;
-                    # 232 "./neo-c.h"
-                    self->tail=litem_12;
                     # 233 "./neo-c.h"
+                    self->tail=litem_12;
+                    # 234 "./neo-c.h"
                     self->head=litem_12;
                 }
                 else {
-                    # 256 "./neo-c.h"
-                    # 235 "./neo-c.h"
+                    # 257 "./neo-c.h"
+                    # 236 "./neo-c.h"
                     if(_if_conditional2=self->len==1,                    _if_conditional2) {
-                        # 236 "./neo-c.h"
-                        litem_13=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 236, "list_item$1char");
-                        # 238 "./neo-c.h"
-                        litem_13->prev=self->head;
+                        # 237 "./neo-c.h"
+                        litem_13=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 237, "list_item$1char");
                         # 239 "./neo-c.h"
-                        litem_13->next=((void*)0);
+                        litem_13->prev=self->head;
                         # 240 "./neo-c.h"
+                        litem_13->next=((void*)0);
+                        # 241 "./neo-c.h"
                         litem_13->item=item;
-                        # 242 "./neo-c.h"
-                        self->tail=litem_13;
                         # 243 "./neo-c.h"
+                        self->tail=litem_13;
+                        # 244 "./neo-c.h"
                         self->head->next=litem_13;
                     }
                     else {
-                        # 246 "./neo-c.h"
-                        litem_14=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 246, "list_item$1char");
-                        # 248 "./neo-c.h"
-                        litem_14->prev=self->tail;
+                        # 247 "./neo-c.h"
+                        litem_14=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 247, "list_item$1char");
                         # 249 "./neo-c.h"
-                        litem_14->next=((void*)0);
+                        litem_14->prev=self->tail;
                         # 250 "./neo-c.h"
+                        litem_14->next=((void*)0);
+                        # 251 "./neo-c.h"
                         litem_14->item=item;
-                        # 252 "./neo-c.h"
-                        self->tail->next=litem_14;
                         # 253 "./neo-c.h"
+                        self->tail->next=litem_14;
+                        # 254 "./neo-c.h"
                         self->tail=litem_14;
                     }
                 }
-                # 256 "./neo-c.h"
+                # 257 "./neo-c.h"
                 self->len++;
-                # 258 "./neo-c.h"
+                # 259 "./neo-c.h"
                 __result25__ = __result_obj__ = self;
                 return __result25__;
 }
@@ -2856,18 +2858,18 @@ int i_15;
 struct list$1short* __result29__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_15, 0, sizeof(int));
-        # 112 "./neo-c.h"
-        self->head=((void*)0);
         # 113 "./neo-c.h"
-        self->tail=((void*)0);
+        self->head=((void*)0);
         # 114 "./neo-c.h"
+        self->tail=((void*)0);
+        # 115 "./neo-c.h"
         self->len=0;
-        # 120 "./neo-c.h"
+        # 121 "./neo-c.h"
         for(        i_15=0;        i_15<num_value;        i_15++        ){
-            # 117 "./neo-c.h"
+            # 118 "./neo-c.h"
             list$1short_push_back(self,values[i_15]);
         }
-        # 120 "./neo-c.h"
+        # 121 "./neo-c.h"
         __result29__ = __result_obj__ = self;
         return __result29__;
 }
@@ -2884,57 +2886,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_16, 0, sizeof(struct list_item$1short*));
 memset(&litem_17, 0, sizeof(struct list_item$1short*));
 memset(&litem_18, 0, sizeof(struct list_item$1short*));
-                # 256 "./neo-c.h"
-                # 225 "./neo-c.h"
+                # 257 "./neo-c.h"
+                # 226 "./neo-c.h"
                 if(_if_conditional3=self->len==0,                _if_conditional3) {
-                    # 226 "./neo-c.h"
-                    litem_16=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 226, "list_item$1short");
-                    # 228 "./neo-c.h"
-                    litem_16->prev=((void*)0);
+                    # 227 "./neo-c.h"
+                    litem_16=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 227, "list_item$1short");
                     # 229 "./neo-c.h"
-                    litem_16->next=((void*)0);
+                    litem_16->prev=((void*)0);
                     # 230 "./neo-c.h"
+                    litem_16->next=((void*)0);
+                    # 231 "./neo-c.h"
                     litem_16->item=item;
-                    # 232 "./neo-c.h"
-                    self->tail=litem_16;
                     # 233 "./neo-c.h"
+                    self->tail=litem_16;
+                    # 234 "./neo-c.h"
                     self->head=litem_16;
                 }
                 else {
-                    # 256 "./neo-c.h"
-                    # 235 "./neo-c.h"
+                    # 257 "./neo-c.h"
+                    # 236 "./neo-c.h"
                     if(_if_conditional4=self->len==1,                    _if_conditional4) {
-                        # 236 "./neo-c.h"
-                        litem_17=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 236, "list_item$1short");
-                        # 238 "./neo-c.h"
-                        litem_17->prev=self->head;
+                        # 237 "./neo-c.h"
+                        litem_17=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 237, "list_item$1short");
                         # 239 "./neo-c.h"
-                        litem_17->next=((void*)0);
+                        litem_17->prev=self->head;
                         # 240 "./neo-c.h"
+                        litem_17->next=((void*)0);
+                        # 241 "./neo-c.h"
                         litem_17->item=item;
-                        # 242 "./neo-c.h"
-                        self->tail=litem_17;
                         # 243 "./neo-c.h"
+                        self->tail=litem_17;
+                        # 244 "./neo-c.h"
                         self->head->next=litem_17;
                     }
                     else {
-                        # 246 "./neo-c.h"
-                        litem_18=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 246, "list_item$1short");
-                        # 248 "./neo-c.h"
-                        litem_18->prev=self->tail;
+                        # 247 "./neo-c.h"
+                        litem_18=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 247, "list_item$1short");
                         # 249 "./neo-c.h"
-                        litem_18->next=((void*)0);
+                        litem_18->prev=self->tail;
                         # 250 "./neo-c.h"
+                        litem_18->next=((void*)0);
+                        # 251 "./neo-c.h"
                         litem_18->item=item;
-                        # 252 "./neo-c.h"
-                        self->tail->next=litem_18;
                         # 253 "./neo-c.h"
+                        self->tail->next=litem_18;
+                        # 254 "./neo-c.h"
                         self->tail=litem_18;
                     }
                 }
-                # 256 "./neo-c.h"
+                # 257 "./neo-c.h"
                 self->len++;
-                # 258 "./neo-c.h"
+                # 259 "./neo-c.h"
                 __result28__ = __result_obj__ = self;
                 return __result28__;
 }
@@ -2946,18 +2948,18 @@ int i_19;
 struct list$1int* __result32__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_19, 0, sizeof(int));
-        # 112 "./neo-c.h"
-        self->head=((void*)0);
         # 113 "./neo-c.h"
-        self->tail=((void*)0);
+        self->head=((void*)0);
         # 114 "./neo-c.h"
+        self->tail=((void*)0);
+        # 115 "./neo-c.h"
         self->len=0;
-        # 120 "./neo-c.h"
+        # 121 "./neo-c.h"
         for(        i_19=0;        i_19<num_value;        i_19++        ){
-            # 117 "./neo-c.h"
+            # 118 "./neo-c.h"
             list$1int_push_back(self,values[i_19]);
         }
-        # 120 "./neo-c.h"
+        # 121 "./neo-c.h"
         __result32__ = __result_obj__ = self;
         return __result32__;
 }
@@ -2974,57 +2976,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_20, 0, sizeof(struct list_item$1int*));
 memset(&litem_21, 0, sizeof(struct list_item$1int*));
 memset(&litem_22, 0, sizeof(struct list_item$1int*));
-                # 256 "./neo-c.h"
-                # 225 "./neo-c.h"
+                # 257 "./neo-c.h"
+                # 226 "./neo-c.h"
                 if(_if_conditional5=self->len==0,                _if_conditional5) {
-                    # 226 "./neo-c.h"
-                    litem_20=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 226, "list_item$1int");
-                    # 228 "./neo-c.h"
-                    litem_20->prev=((void*)0);
+                    # 227 "./neo-c.h"
+                    litem_20=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 227, "list_item$1int");
                     # 229 "./neo-c.h"
-                    litem_20->next=((void*)0);
+                    litem_20->prev=((void*)0);
                     # 230 "./neo-c.h"
+                    litem_20->next=((void*)0);
+                    # 231 "./neo-c.h"
                     litem_20->item=item;
-                    # 232 "./neo-c.h"
-                    self->tail=litem_20;
                     # 233 "./neo-c.h"
+                    self->tail=litem_20;
+                    # 234 "./neo-c.h"
                     self->head=litem_20;
                 }
                 else {
-                    # 256 "./neo-c.h"
-                    # 235 "./neo-c.h"
+                    # 257 "./neo-c.h"
+                    # 236 "./neo-c.h"
                     if(_if_conditional6=self->len==1,                    _if_conditional6) {
-                        # 236 "./neo-c.h"
-                        litem_21=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 236, "list_item$1int");
-                        # 238 "./neo-c.h"
-                        litem_21->prev=self->head;
+                        # 237 "./neo-c.h"
+                        litem_21=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 237, "list_item$1int");
                         # 239 "./neo-c.h"
-                        litem_21->next=((void*)0);
+                        litem_21->prev=self->head;
                         # 240 "./neo-c.h"
+                        litem_21->next=((void*)0);
+                        # 241 "./neo-c.h"
                         litem_21->item=item;
-                        # 242 "./neo-c.h"
-                        self->tail=litem_21;
                         # 243 "./neo-c.h"
+                        self->tail=litem_21;
+                        # 244 "./neo-c.h"
                         self->head->next=litem_21;
                     }
                     else {
-                        # 246 "./neo-c.h"
-                        litem_22=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 246, "list_item$1int");
-                        # 248 "./neo-c.h"
-                        litem_22->prev=self->tail;
+                        # 247 "./neo-c.h"
+                        litem_22=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 247, "list_item$1int");
                         # 249 "./neo-c.h"
-                        litem_22->next=((void*)0);
+                        litem_22->prev=self->tail;
                         # 250 "./neo-c.h"
+                        litem_22->next=((void*)0);
+                        # 251 "./neo-c.h"
                         litem_22->item=item;
-                        # 252 "./neo-c.h"
-                        self->tail->next=litem_22;
                         # 253 "./neo-c.h"
+                        self->tail->next=litem_22;
+                        # 254 "./neo-c.h"
                         self->tail=litem_22;
                     }
                 }
-                # 256 "./neo-c.h"
+                # 257 "./neo-c.h"
                 self->len++;
-                # 258 "./neo-c.h"
+                # 259 "./neo-c.h"
                 __result31__ = __result_obj__ = self;
                 return __result31__;
 }
@@ -3036,18 +3038,18 @@ int i_23;
 struct list$1long* __result35__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_23, 0, sizeof(int));
-        # 112 "./neo-c.h"
-        self->head=((void*)0);
         # 113 "./neo-c.h"
-        self->tail=((void*)0);
+        self->head=((void*)0);
         # 114 "./neo-c.h"
+        self->tail=((void*)0);
+        # 115 "./neo-c.h"
         self->len=0;
-        # 120 "./neo-c.h"
+        # 121 "./neo-c.h"
         for(        i_23=0;        i_23<num_value;        i_23++        ){
-            # 117 "./neo-c.h"
+            # 118 "./neo-c.h"
             list$1long_push_back(self,values[i_23]);
         }
-        # 120 "./neo-c.h"
+        # 121 "./neo-c.h"
         __result35__ = __result_obj__ = self;
         return __result35__;
 }
@@ -3064,57 +3066,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_24, 0, sizeof(struct list_item$1long*));
 memset(&litem_25, 0, sizeof(struct list_item$1long*));
 memset(&litem_26, 0, sizeof(struct list_item$1long*));
-                # 256 "./neo-c.h"
-                # 225 "./neo-c.h"
+                # 257 "./neo-c.h"
+                # 226 "./neo-c.h"
                 if(_if_conditional7=self->len==0,                _if_conditional7) {
-                    # 226 "./neo-c.h"
-                    litem_24=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 226, "list_item$1long");
-                    # 228 "./neo-c.h"
-                    litem_24->prev=((void*)0);
+                    # 227 "./neo-c.h"
+                    litem_24=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 227, "list_item$1long");
                     # 229 "./neo-c.h"
-                    litem_24->next=((void*)0);
+                    litem_24->prev=((void*)0);
                     # 230 "./neo-c.h"
+                    litem_24->next=((void*)0);
+                    # 231 "./neo-c.h"
                     litem_24->item=item;
-                    # 232 "./neo-c.h"
-                    self->tail=litem_24;
                     # 233 "./neo-c.h"
+                    self->tail=litem_24;
+                    # 234 "./neo-c.h"
                     self->head=litem_24;
                 }
                 else {
-                    # 256 "./neo-c.h"
-                    # 235 "./neo-c.h"
+                    # 257 "./neo-c.h"
+                    # 236 "./neo-c.h"
                     if(_if_conditional8=self->len==1,                    _if_conditional8) {
-                        # 236 "./neo-c.h"
-                        litem_25=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 236, "list_item$1long");
-                        # 238 "./neo-c.h"
-                        litem_25->prev=self->head;
+                        # 237 "./neo-c.h"
+                        litem_25=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 237, "list_item$1long");
                         # 239 "./neo-c.h"
-                        litem_25->next=((void*)0);
+                        litem_25->prev=self->head;
                         # 240 "./neo-c.h"
+                        litem_25->next=((void*)0);
+                        # 241 "./neo-c.h"
                         litem_25->item=item;
-                        # 242 "./neo-c.h"
-                        self->tail=litem_25;
                         # 243 "./neo-c.h"
+                        self->tail=litem_25;
+                        # 244 "./neo-c.h"
                         self->head->next=litem_25;
                     }
                     else {
-                        # 246 "./neo-c.h"
-                        litem_26=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 246, "list_item$1long");
-                        # 248 "./neo-c.h"
-                        litem_26->prev=self->tail;
+                        # 247 "./neo-c.h"
+                        litem_26=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 247, "list_item$1long");
                         # 249 "./neo-c.h"
-                        litem_26->next=((void*)0);
+                        litem_26->prev=self->tail;
                         # 250 "./neo-c.h"
+                        litem_26->next=((void*)0);
+                        # 251 "./neo-c.h"
                         litem_26->item=item;
-                        # 252 "./neo-c.h"
-                        self->tail->next=litem_26;
                         # 253 "./neo-c.h"
+                        self->tail->next=litem_26;
+                        # 254 "./neo-c.h"
                         self->tail=litem_26;
                     }
                 }
-                # 256 "./neo-c.h"
+                # 257 "./neo-c.h"
                 self->len++;
-                # 258 "./neo-c.h"
+                # 259 "./neo-c.h"
                 __result34__ = __result_obj__ = self;
                 return __result34__;
 }
@@ -3126,18 +3128,18 @@ int i_27;
 struct list$1float* __result38__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_27, 0, sizeof(int));
-        # 112 "./neo-c.h"
-        self->head=((void*)0);
         # 113 "./neo-c.h"
-        self->tail=((void*)0);
+        self->head=((void*)0);
         # 114 "./neo-c.h"
+        self->tail=((void*)0);
+        # 115 "./neo-c.h"
         self->len=0;
-        # 120 "./neo-c.h"
+        # 121 "./neo-c.h"
         for(        i_27=0;        i_27<num_value;        i_27++        ){
-            # 117 "./neo-c.h"
+            # 118 "./neo-c.h"
             list$1float_push_back(self,values[i_27]);
         }
-        # 120 "./neo-c.h"
+        # 121 "./neo-c.h"
         __result38__ = __result_obj__ = self;
         return __result38__;
 }
@@ -3154,57 +3156,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_28, 0, sizeof(struct list_item$1float*));
 memset(&litem_29, 0, sizeof(struct list_item$1float*));
 memset(&litem_30, 0, sizeof(struct list_item$1float*));
-                # 256 "./neo-c.h"
-                # 225 "./neo-c.h"
+                # 257 "./neo-c.h"
+                # 226 "./neo-c.h"
                 if(_if_conditional9=self->len==0,                _if_conditional9) {
-                    # 226 "./neo-c.h"
-                    litem_28=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 226, "list_item$1float");
-                    # 228 "./neo-c.h"
-                    litem_28->prev=((void*)0);
+                    # 227 "./neo-c.h"
+                    litem_28=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 227, "list_item$1float");
                     # 229 "./neo-c.h"
-                    litem_28->next=((void*)0);
+                    litem_28->prev=((void*)0);
                     # 230 "./neo-c.h"
+                    litem_28->next=((void*)0);
+                    # 231 "./neo-c.h"
                     litem_28->item=item;
-                    # 232 "./neo-c.h"
-                    self->tail=litem_28;
                     # 233 "./neo-c.h"
+                    self->tail=litem_28;
+                    # 234 "./neo-c.h"
                     self->head=litem_28;
                 }
                 else {
-                    # 256 "./neo-c.h"
-                    # 235 "./neo-c.h"
+                    # 257 "./neo-c.h"
+                    # 236 "./neo-c.h"
                     if(_if_conditional10=self->len==1,                    _if_conditional10) {
-                        # 236 "./neo-c.h"
-                        litem_29=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 236, "list_item$1float");
-                        # 238 "./neo-c.h"
-                        litem_29->prev=self->head;
+                        # 237 "./neo-c.h"
+                        litem_29=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 237, "list_item$1float");
                         # 239 "./neo-c.h"
-                        litem_29->next=((void*)0);
+                        litem_29->prev=self->head;
                         # 240 "./neo-c.h"
+                        litem_29->next=((void*)0);
+                        # 241 "./neo-c.h"
                         litem_29->item=item;
-                        # 242 "./neo-c.h"
-                        self->tail=litem_29;
                         # 243 "./neo-c.h"
+                        self->tail=litem_29;
+                        # 244 "./neo-c.h"
                         self->head->next=litem_29;
                     }
                     else {
-                        # 246 "./neo-c.h"
-                        litem_30=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 246, "list_item$1float");
-                        # 248 "./neo-c.h"
-                        litem_30->prev=self->tail;
+                        # 247 "./neo-c.h"
+                        litem_30=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 247, "list_item$1float");
                         # 249 "./neo-c.h"
-                        litem_30->next=((void*)0);
+                        litem_30->prev=self->tail;
                         # 250 "./neo-c.h"
+                        litem_30->next=((void*)0);
+                        # 251 "./neo-c.h"
                         litem_30->item=item;
-                        # 252 "./neo-c.h"
-                        self->tail->next=litem_30;
                         # 253 "./neo-c.h"
+                        self->tail->next=litem_30;
+                        # 254 "./neo-c.h"
                         self->tail=litem_30;
                     }
                 }
-                # 256 "./neo-c.h"
+                # 257 "./neo-c.h"
                 self->len++;
-                # 258 "./neo-c.h"
+                # 259 "./neo-c.h"
                 __result37__ = __result_obj__ = self;
                 return __result37__;
 }
@@ -3216,18 +3218,18 @@ int i_31;
 struct list$1double* __result41__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_31, 0, sizeof(int));
-        # 112 "./neo-c.h"
-        self->head=((void*)0);
         # 113 "./neo-c.h"
-        self->tail=((void*)0);
+        self->head=((void*)0);
         # 114 "./neo-c.h"
+        self->tail=((void*)0);
+        # 115 "./neo-c.h"
         self->len=0;
-        # 120 "./neo-c.h"
+        # 121 "./neo-c.h"
         for(        i_31=0;        i_31<num_value;        i_31++        ){
-            # 117 "./neo-c.h"
+            # 118 "./neo-c.h"
             list$1double_push_back(self,values[i_31]);
         }
-        # 120 "./neo-c.h"
+        # 121 "./neo-c.h"
         __result41__ = __result_obj__ = self;
         return __result41__;
 }
@@ -3244,57 +3246,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_32, 0, sizeof(struct list_item$1double*));
 memset(&litem_33, 0, sizeof(struct list_item$1double*));
 memset(&litem_34, 0, sizeof(struct list_item$1double*));
-                # 256 "./neo-c.h"
-                # 225 "./neo-c.h"
+                # 257 "./neo-c.h"
+                # 226 "./neo-c.h"
                 if(_if_conditional11=self->len==0,                _if_conditional11) {
-                    # 226 "./neo-c.h"
-                    litem_32=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 226, "list_item$1double");
-                    # 228 "./neo-c.h"
-                    litem_32->prev=((void*)0);
+                    # 227 "./neo-c.h"
+                    litem_32=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 227, "list_item$1double");
                     # 229 "./neo-c.h"
-                    litem_32->next=((void*)0);
+                    litem_32->prev=((void*)0);
                     # 230 "./neo-c.h"
+                    litem_32->next=((void*)0);
+                    # 231 "./neo-c.h"
                     litem_32->item=item;
-                    # 232 "./neo-c.h"
-                    self->tail=litem_32;
                     # 233 "./neo-c.h"
+                    self->tail=litem_32;
+                    # 234 "./neo-c.h"
                     self->head=litem_32;
                 }
                 else {
-                    # 256 "./neo-c.h"
-                    # 235 "./neo-c.h"
+                    # 257 "./neo-c.h"
+                    # 236 "./neo-c.h"
                     if(_if_conditional12=self->len==1,                    _if_conditional12) {
-                        # 236 "./neo-c.h"
-                        litem_33=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 236, "list_item$1double");
-                        # 238 "./neo-c.h"
-                        litem_33->prev=self->head;
+                        # 237 "./neo-c.h"
+                        litem_33=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 237, "list_item$1double");
                         # 239 "./neo-c.h"
-                        litem_33->next=((void*)0);
+                        litem_33->prev=self->head;
                         # 240 "./neo-c.h"
+                        litem_33->next=((void*)0);
+                        # 241 "./neo-c.h"
                         litem_33->item=item;
-                        # 242 "./neo-c.h"
-                        self->tail=litem_33;
                         # 243 "./neo-c.h"
+                        self->tail=litem_33;
+                        # 244 "./neo-c.h"
                         self->head->next=litem_33;
                     }
                     else {
-                        # 246 "./neo-c.h"
-                        litem_34=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 246, "list_item$1double");
-                        # 248 "./neo-c.h"
-                        litem_34->prev=self->tail;
+                        # 247 "./neo-c.h"
+                        litem_34=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 247, "list_item$1double");
                         # 249 "./neo-c.h"
-                        litem_34->next=((void*)0);
+                        litem_34->prev=self->tail;
                         # 250 "./neo-c.h"
+                        litem_34->next=((void*)0);
+                        # 251 "./neo-c.h"
                         litem_34->item=item;
-                        # 252 "./neo-c.h"
-                        self->tail->next=litem_34;
                         # 253 "./neo-c.h"
+                        self->tail->next=litem_34;
+                        # 254 "./neo-c.h"
                         self->tail=litem_34;
                     }
                 }
-                # 256 "./neo-c.h"
+                # 257 "./neo-c.h"
                 self->len++;
-                # 258 "./neo-c.h"
+                # 259 "./neo-c.h"
                 __result40__ = __result_obj__ = self;
                 return __result40__;
 }
@@ -6323,13 +6325,13 @@ static struct list$1charph* list$1charph_initialize(struct list$1charph* self){
 void* __result_obj__;
 struct list$1charph* __result228__;
 memset(&__result_obj__, 0, sizeof(void*));
-            # 104 "./neo-c.h"
-            self->head=((void*)0);
             # 105 "./neo-c.h"
-            self->tail=((void*)0);
+            self->head=((void*)0);
             # 106 "./neo-c.h"
+            self->tail=((void*)0);
+            # 107 "./neo-c.h"
             self->len=0;
-            # 108 "./neo-c.h"
+            # 109 "./neo-c.h"
             __result228__ = __result_obj__ = self;
             return __result228__;
 }
@@ -6346,57 +6348,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_143, 0, sizeof(struct list_item$1charph*));
 memset(&litem_144, 0, sizeof(struct list_item$1charph*));
 memset(&litem_145, 0, sizeof(struct list_item$1charph*));
-                # 256 "./neo-c.h"
-                # 225 "./neo-c.h"
+                # 257 "./neo-c.h"
+                # 226 "./neo-c.h"
                 if(_if_conditional171=self->len==0,                _if_conditional171) {
-                    # 226 "./neo-c.h"
-                    litem_143=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 226, "list_item$1charph");
-                    # 228 "./neo-c.h"
-                    litem_143->prev=((void*)0);
+                    # 227 "./neo-c.h"
+                    litem_143=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 227, "list_item$1charph");
                     # 229 "./neo-c.h"
-                    litem_143->next=((void*)0);
+                    litem_143->prev=((void*)0);
                     # 230 "./neo-c.h"
+                    litem_143->next=((void*)0);
+                    # 231 "./neo-c.h"
                     litem_143->item=item;
-                    # 232 "./neo-c.h"
-                    self->tail=litem_143;
                     # 233 "./neo-c.h"
+                    self->tail=litem_143;
+                    # 234 "./neo-c.h"
                     self->head=litem_143;
                 }
                 else {
-                    # 256 "./neo-c.h"
-                    # 235 "./neo-c.h"
+                    # 257 "./neo-c.h"
+                    # 236 "./neo-c.h"
                     if(_if_conditional172=self->len==1,                    _if_conditional172) {
-                        # 236 "./neo-c.h"
-                        litem_144=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 236, "list_item$1charph");
-                        # 238 "./neo-c.h"
-                        litem_144->prev=self->head;
+                        # 237 "./neo-c.h"
+                        litem_144=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 237, "list_item$1charph");
                         # 239 "./neo-c.h"
-                        litem_144->next=((void*)0);
+                        litem_144->prev=self->head;
                         # 240 "./neo-c.h"
+                        litem_144->next=((void*)0);
+                        # 241 "./neo-c.h"
                         litem_144->item=item;
-                        # 242 "./neo-c.h"
-                        self->tail=litem_144;
                         # 243 "./neo-c.h"
+                        self->tail=litem_144;
+                        # 244 "./neo-c.h"
                         self->head->next=litem_144;
                     }
                     else {
-                        # 246 "./neo-c.h"
-                        litem_145=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 246, "list_item$1charph");
-                        # 248 "./neo-c.h"
-                        litem_145->prev=self->tail;
+                        # 247 "./neo-c.h"
+                        litem_145=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 247, "list_item$1charph");
                         # 249 "./neo-c.h"
-                        litem_145->next=((void*)0);
+                        litem_145->prev=self->tail;
                         # 250 "./neo-c.h"
+                        litem_145->next=((void*)0);
+                        # 251 "./neo-c.h"
                         litem_145->item=item;
-                        # 252 "./neo-c.h"
-                        self->tail->next=litem_145;
                         # 253 "./neo-c.h"
+                        self->tail->next=litem_145;
+                        # 254 "./neo-c.h"
                         self->tail=litem_145;
                     }
                 }
-                # 256 "./neo-c.h"
+                # 257 "./neo-c.h"
                 self->len++;
-                # 258 "./neo-c.h"
+                # 259 "./neo-c.h"
                 __result230__ = __result_obj__ = self;
                 return __result230__;
 }

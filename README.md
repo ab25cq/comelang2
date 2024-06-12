@@ -5,7 +5,7 @@ Another modern Object Oriented C compiler. It has a heap system that is a cross 
 
 もう一つのモダンなオブジェクト指向Cコンパイラ。automatically-free-systemとリファレンスカウントGCの間をとったようなヒープシステムがありコレクションライブラリ、文字列ライブラリを備えてます。デバッグモードではC言語にできる限りのメモリセーフの機能を加えてます。
 
-version 0.9.9.7
+version 0.9.9.9
 
 ``` C
 #include <neo-c.h>
@@ -328,6 +328,7 @@ bash all_build.sh
 
 # Histories
 
+0.9.9.9 Heap bug fiexed. My firend DIO, I have seen the kingdom of heaven.
 0.9.9.8 Package manager changed. neo-c header has been required.
 0.9.9.7 build bug fixed.
 0.9.9.5 incldue module

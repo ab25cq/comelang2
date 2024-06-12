@@ -336,7 +336,7 @@ struct sInfo
     sType*% function_result_type;
     bool in_class;
     
-    map<string,string>* module_params;
+    map<string,string>*% module_params;
 };
 
 /////////////////////////////////////////////////////////////////////
