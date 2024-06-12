@@ -1,0 +1,205 @@
+main.c.c:86:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+   86 |     short short* p;
+      |           ^~~~~
+main.c.c:123:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+  123 |     short short item;
+      |           ^~~~~
+main.c.c:351:15: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+  351 | typedef short short int16_t;
+      |               ^~~~~
+main.c.c:363:15: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+  363 | typedef short short int_least16_t;
+      |               ^~~~~
+main.c.c:399:11: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+  399 |     short short id;
+      |           ^~~~~
+main.c.c:1300:63: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 1300 | struct buffer* buffer_append_short(struct buffer* self, short short value);
+      |                                                               ^~~~~
+main.c.c:1328:110: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 1328 | static struct list$1short* list$1short_initialize_with_values(struct list$1short* self, int num_value, short short* values);
+      |                                                                                                              ^~~~~
+main.c.c:1329:82: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 1329 | static struct list$1short* list$1short_push_back(struct list$1short* self, short short item);
+      |                                                                                  ^~~~~
+main.c.c:1354:26: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 1354 | _Bool short_equals(short short self, short short right);
+      |                          ^~~~~
+main.c.c:1354:44: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 1354 | _Bool short_equals(short short self, short short right);
+      |                                            ^~~~~
+main.c.c:1388:39: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 1388 | unsigned int short_get_hash_key(short short value);
+      |                                       ^~~~~
+main.c.c:1408:29: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 1408 | short int short_clone(short short self);
+      |                             ^~~~~
+main.c.c:1484:29: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 1484 | char* short_to_string(short short self);
+      |                             ^~~~~
+main.c.c:1504:25: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 1504 | int short_compare(short short left, short short right);
+      |                         ^~~~~
+main.c.c:1504:43: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 1504 | int short_compare(short short left, short short right);
+      |                                           ^~~~~
+main.c.c:1558:40: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 1558 | struct integer* short_to_integer(short short self);
+      |                                        ^~~~~
+main.c.c:2124:59: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2124 | int attr_get(unsigned int* anonymous_var_nameX1209, short short* anonymous_var_nameX1210, void* anonymous_var_nameX1211);
+      |                                                           ^~~~~
+main.c.c:2130:58: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2130 | int attr_set(unsigned int anonymous_var_nameX1216, short short anonymous_var_nameX1217, void* anonymous_var_nameX1218);
+      |                                                          ^~~~~
+main.c.c:2148:84: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2148 | int chgat(int anonymous_var_nameX1232, unsigned int anonymous_var_nameX1233, short short anonymous_var_nameX1234, const void* anonymous_var_nameX1235);
+      |                                                                                    ^~~~~
+main.c.c:2158:25: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2158 | int color_content(short short anonymous_var_nameX1238, short short* anonymous_var_nameX1239, short short* anonymous_var_nameX1240, short short* anonymous_var_nameX1241);
+      |                         ^~~~~
+main.c.c:2158:62: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2158 | int color_content(short short anonymous_var_nameX1238, short short* anonymous_var_nameX1239, short short* anonymous_var_nameX1240, short short* anonymous_var_nameX1241);
+      |                                                              ^~~~~
+main.c.c:2158:100: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2158 | int color_content(short short anonymous_var_nameX1238, short short* anonymous_var_nameX1239, short short* anonymous_var_nameX1240, short short* anonymous_var_nameX1241);
+      |                                                                                                    ^~~~~
+main.c.c:2158:138: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2158 | int color_content(short short anonymous_var_nameX1238, short short* anonymous_var_nameX1239, short short* anonymous_var_nameX1240, short short* anonymous_var_nameX1241);
+      |                                                                                                                                          ^~~~~
+main.c.c:2160:21: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2160 | int color_set(short short anonymous_var_nameX1242, void* anonymous_var_nameX1243);
+      |                     ^~~~~
+main.c.c:2238:22: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2238 | int init_color(short short anonymous_var_nameX1282, short short anonymous_var_nameX1283, short short anonymous_var_nameX1284, short short anonymous_var_nameX1285);
+      |                      ^~~~~
+main.c.c:2238:59: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2238 | int init_color(short short anonymous_var_nameX1282, short short anonymous_var_nameX1283, short short anonymous_var_nameX1284, short short anonymous_var_nameX1285);
+      |                                                           ^~~~~
+main.c.c:2238:96: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2238 | int init_color(short short anonymous_var_nameX1282, short short anonymous_var_nameX1283, short short anonymous_var_nameX1284, short short anonymous_var_nameX1285);
+      |                                                                                                ^~~~~
+main.c.c:2238:133: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2238 | int init_color(short short anonymous_var_nameX1282, short short anonymous_var_nameX1283, short short anonymous_var_nameX1284, short short anonymous_var_nameX1285);
+      |                                                                                                                                     ^~~~~
+main.c.c:2240:21: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2240 | int init_pair(short short anonymous_var_nameX1286, short short anonymous_var_nameX1287, short short anonymous_var_nameX1288);
+      |                     ^~~~~
+main.c.c:2240:58: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2240 | int init_pair(short short anonymous_var_nameX1286, short short anonymous_var_nameX1287, short short anonymous_var_nameX1288);
+      |                                                          ^~~~~
+main.c.c:2240:95: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2240 | int init_pair(short short anonymous_var_nameX1286, short short anonymous_var_nameX1287, short short anonymous_var_nameX1288);
+      |                                                                                               ^~~~~
+main.c.c:2288:144: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2288 | int mvchgat(int anonymous_var_nameX1328, int anonymous_var_nameX1329, int anonymous_var_nameX1330, unsigned int anonymous_var_nameX1331, short short anonymous_var_nameX1332, const void* anonymous_var_nameX1333);
+      |                                                                                                                                                ^~~~~
+main.c.c:2336:186: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2336 | int mvwchgat(struct _win_st* anonymous_var_nameX1414, int anonymous_var_nameX1415, int anonymous_var_nameX1416, int anonymous_var_nameX1417, unsigned int anonymous_var_nameX1418, short short anonymous_var_nameX1419, const void* anonymous_var_nameX1420);
+      |                                                                                                                                                                                          ^~~~~
+main.c.c:2400:24: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2400 | int pair_content(short short anonymous_var_nameX1509, short short* anonymous_var_nameX1510, short short* anonymous_var_nameX1511);
+      |                        ^~~~~
+main.c.c:2400:61: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2400 | int pair_content(short short anonymous_var_nameX1509, short short* anonymous_var_nameX1510, short short* anonymous_var_nameX1511);
+      |                                                             ^~~~~
+main.c.c:2400:99: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2400 | int pair_content(short short anonymous_var_nameX1509, short short* anonymous_var_nameX1510, short short* anonymous_var_nameX1511);
+      |                                                                                                   ^~~~~
+main.c.c:2464:68: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2464 | int slk_attr_set(const unsigned int anonymous_var_nameX1555, short short anonymous_var_nameX1556, void* anonymous_var_nameX1557);
+      |                                                                    ^~~~~
+main.c.c:2468:21: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2468 | int slk_color(short short anonymous_var_nameX1558);
+      |                     ^~~~~
+main.c.c:2546:101: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2546 | int wattr_get(struct _win_st* anonymous_var_nameX1621, unsigned int* anonymous_var_nameX1622, short short* anonymous_var_nameX1623, void* anonymous_var_nameX1624);
+      |                                                                                                     ^~~~~
+main.c.c:2552:100: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2552 | int wattr_set(struct _win_st* anonymous_var_nameX1631, unsigned int anonymous_var_nameX1632, short short anonymous_var_nameX1633, void* anonymous_var_nameX1634);
+      |                                                                                                    ^~~~~
+main.c.c:2560:126: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2560 | int wchgat(struct _win_st* anonymous_var_nameX1648, int anonymous_var_nameX1649, unsigned int anonymous_var_nameX1650, short short anonymous_var_nameX1651, const void* anonymous_var_nameX1652);
+      |                                                                                                                              ^~~~~
+main.c.c:2568:63: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2568 | int wcolor_set(struct _win_st* anonymous_var_nameX1656, short short anonymous_var_nameX1657, void* anonymous_var_nameX1658);
+      |                                                               ^~~~~
+main.c.c:2778:68: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2778 | int color_content_sp(struct screen* anonymous_var_nameX1823, short short anonymous_var_nameX1824, short short* anonymous_var_nameX1825, short short* anonymous_var_nameX1826, short short* anonymous_var_nameX1827);
+      |                                                                    ^~~~~
+main.c.c:2778:105: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2778 | int color_content_sp(struct screen* anonymous_var_nameX1823, short short anonymous_var_nameX1824, short short* anonymous_var_nameX1825, short short* anonymous_var_nameX1826, short short* anonymous_var_nameX1827);
+      |                                                                                                         ^~~~~
+main.c.c:2778:143: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2778 | int color_content_sp(struct screen* anonymous_var_nameX1823, short short anonymous_var_nameX1824, short short* anonymous_var_nameX1825, short short* anonymous_var_nameX1826, short short* anonymous_var_nameX1827);
+      |                                                                                                                                               ^~~~~
+main.c.c:2778:181: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2778 | int color_content_sp(struct screen* anonymous_var_nameX1823, short short anonymous_var_nameX1824, short short* anonymous_var_nameX1825, short short* anonymous_var_nameX1826, short short* anonymous_var_nameX1827);
+      |                                                                                                                                                                                     ^~~~~
+main.c.c:2810:65: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2810 | int init_color_sp(struct screen* anonymous_var_nameX1846, short short anonymous_var_nameX1847, short short anonymous_var_nameX1848, short short anonymous_var_nameX1849, short short anonymous_var_nameX1850);
+      |                                                                 ^~~~~
+main.c.c:2810:102: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2810 | int init_color_sp(struct screen* anonymous_var_nameX1846, short short anonymous_var_nameX1847, short short anonymous_var_nameX1848, short short anonymous_var_nameX1849, short short anonymous_var_nameX1850);
+      |                                                                                                      ^~~~~
+main.c.c:2810:139: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2810 | int init_color_sp(struct screen* anonymous_var_nameX1846, short short anonymous_var_nameX1847, short short anonymous_var_nameX1848, short short anonymous_var_nameX1849, short short anonymous_var_nameX1850);
+      |                                                                                                                                           ^~~~~
+main.c.c:2810:176: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2810 | int init_color_sp(struct screen* anonymous_var_nameX1846, short short anonymous_var_nameX1847, short short anonymous_var_nameX1848, short short anonymous_var_nameX1849, short short anonymous_var_nameX1850);
+      |                                                                                                                                                                                ^~~~~
+main.c.c:2812:64: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2812 | int init_pair_sp(struct screen* anonymous_var_nameX1851, short short anonymous_var_nameX1852, short short anonymous_var_nameX1853, short short anonymous_var_nameX1854);
+      |                                                                ^~~~~
+main.c.c:2812:101: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2812 | int init_pair_sp(struct screen* anonymous_var_nameX1851, short short anonymous_var_nameX1852, short short anonymous_var_nameX1853, short short anonymous_var_nameX1854);
+      |                                                                                                     ^~~~~
+main.c.c:2812:138: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2812 | int init_pair_sp(struct screen* anonymous_var_nameX1851, short short anonymous_var_nameX1852, short short anonymous_var_nameX1853, short short anonymous_var_nameX1854);
+      |                                                                                                                                          ^~~~~
+main.c.c:2846:67: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2846 | int pair_content_sp(struct screen* anonymous_var_nameX1888, short short anonymous_var_nameX1889, short short* anonymous_var_nameX1890, short short* anonymous_var_nameX1891);
+      |                                                                   ^~~~~
+main.c.c:2846:104: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2846 | int pair_content_sp(struct screen* anonymous_var_nameX1888, short short anonymous_var_nameX1889, short short* anonymous_var_nameX1890, short short* anonymous_var_nameX1891);
+      |                                                                                                        ^~~~~
+main.c.c:2846:142: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2846 | int pair_content_sp(struct screen* anonymous_var_nameX1888, short short anonymous_var_nameX1889, short short* anonymous_var_nameX1890, short short* anonymous_var_nameX1891);
+      |                                                                                                                                              ^~~~~
+main.c.c:2876:111: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2876 | int slk_attr_set_sp(struct screen* anonymous_var_nameX1915, const unsigned int anonymous_var_nameX1916, short short anonymous_var_nameX1917, void* anonymous_var_nameX1918);
+      |                                                                                                               ^~~~~
+main.c.c:2880:64: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2880 | int slk_color_sp(struct screen* anonymous_var_nameX1920, short short anonymous_var_nameX1921);
+      |                                                                ^~~~~
+/usr/local/include/neo-c.h:1949:54: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 1949 | static inline struct buffer* shortpa_to_buffer(short short* self, unsigned long int len){
+      |                                                      ^~~~~
+/usr/local/include/neo-c.h:1950:53: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 1950 |     buffer_append(result_1,(char*)self,sizeof(short short)*len);
+      |                                                     ^~~~~
+/usr/local/include/neo-c.h:2015:24: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2015 |     result_8->p=(short short*)result_8->memory->buf;
+      |                        ^~~~~
+/usr/local/include/neo-c.h:2208:69: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2208 | static inline struct smart_pointer$1short* shortpa_to_pointer(short short* self, unsigned long int len){
+      |                                                                     ^~~~~
+/usr/local/include/neo-c.h:2238:57: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2238 | static inline struct list$1short* shortpa_to_list(short short* self, unsigned long int len){
+      |                                                         ^~~~~
+/usr/local/include/neo-c.h:2291:54: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2291 | static inline unsigned long int shortpa_length(short short* self, unsigned long int len){
+      |                                                      ^~~~~
+/usr/local/include/neo-c.h:2046:56: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2046 |         buffer_append(self->memory,memory,sizeof(short short)*size);
+      |                                                        ^~~~~
+/usr/local/include/neo-c.h:2048:24: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+ 2048 |         self->p=(short short*)self->memory->buf;
+      |                        ^~~~~
+/usr/local/include/neo-c.h:132:110: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+  132 | static struct list$1short* list$1short_initialize_with_values(struct list$1short* self, int num_value, short short* values){
+      |                                                                                                              ^~~~~
+/usr/local/include/neo-c.h:126:82: warning: duplicate 'short' declaration specifier [-Wduplicate-decl-specifier]
+  126 | static struct list$1short* list$1short_push_back(struct list$1short* self, short short item){
+      |                                                                                  ^~~~~
+68 warnings generated.

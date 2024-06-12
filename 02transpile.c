@@ -595,6 +595,8 @@ run: \{project_name}
 \trm -f *.log
 \t./\{project_name}
 
+compile: \{project_name}
+
 debug: \{project_name_debug}
 \trm -f *.log
 \t./\{project_name_debug}
@@ -613,6 +615,13 @@ bool run_project(int argc, char** argv)
 bool make_header_project(int argc, char** argv)
 {
     system("make header") or die("system");
+    
+    return true;
+}
+
+bool compile_project(int argc, char** argv)
+{
+    system("make compile") or die("system");
     
     return true;
 }
@@ -818,6 +827,11 @@ int come_main(int argc, char** argv) version 2
     }
     else if(argv[1] === "header" && argc == 2) {
         if(!make_header_project(argc, argv)) {
+            return false;
+        }
+    }
+    else if(argv[1] === "compile" && argc == 2) {
+        if(!compile_project(argc, argv)) {
             return false;
         }
     }

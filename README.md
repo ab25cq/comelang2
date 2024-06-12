@@ -2822,6 +2822,8 @@ int fun(int a, int b)
 EOS
 > neo-c header
 (make header file named common.h)
+> neo-c compile
+(compile with -O2 option)
 > neo-c run
 (compile with -O2 option)
 (run)
