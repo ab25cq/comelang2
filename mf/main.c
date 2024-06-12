@@ -21,6 +21,8 @@ struct sInfo
     bool app_end;
     
     list<string>*% files;
+    list<string>*% selected_files;
+    string searching_str;
 };
 
 int xgetmaxx()
@@ -60,6 +62,7 @@ int xgetmaxy()
 void read_dir(sInfo* info)
 {
     info.files = new list<string>();
+    info.selected_files = new list<string>();
 
     DIR* dir = opendir(info.path);
 
@@ -189,6 +192,7 @@ void view(sInfo* info)
         (void)stat(path, &stat_);
 
         bool is_dir = S_ISDIR(stat_.st_mode);
+        bool selected = info.selected_files.contained(it);
 
         int index = it2;
         int cols = maxx/COLS;
@@ -196,20 +200,40 @@ void view(sInfo* info)
         int y = index % maxy;
         if(it2+head == info.cursor) {
             attron(A_REVERSE);
-            if(is_dir) {
-                mvprintw(y, x, "%s/", it.substring(0, cols-1));
+            if(selected) {
+                if(is_dir) {
+                    mvprintw(y, x, "* %s/", it.substring(0, cols-3));
+                }
+                else {
+                    mvprintw(y, x, "* %s", it.substring(0, cols-2));
+                }
             }
             else {
-                mvprintw(y, x, "%s", it.substring(0, cols));
+                if(is_dir) {
+                    mvprintw(y, x, "%s/", it.substring(0, cols-1));
+                }
+                else {
+                    mvprintw(y, x, "%s", it.substring(0, cols));
+                }
             }
             attroff(A_REVERSE);
         }
         else {
-            if(is_dir) {
-                mvprintw(y, x, "%s/", it.substring(0, cols-1));
+            if(selected) {
+                if(is_dir) {
+                    mvprintw(y, x, "* %s/", it.substring(0, cols-3));
+                }
+                else {
+                    mvprintw(y, x, "* %s", it.substring(0, cols-2));
+                }
             }
             else {
-                mvprintw(y, x, "%s", it.substring(0, cols));
+                if(is_dir) {
+                    mvprintw(y, x, "%s/", it.substring(0, cols-1));
+                }
+                else {
+                    mvprintw(y, x, "%s", it.substring(0, cols));
+                }
             }
         }
     }
@@ -233,6 +257,18 @@ string cursor_file(sInfo* info)
     return string(info.files.item(info.cursor, null));
 }
 
+string selected_files(sInfo* info)
+{
+    var buf = new buffer();
+    foreach(it, info.selected_files) {
+        buf.append_str("\"");
+        buf.append_str(it);
+        buf.append_str("\"");
+        buf.append_str(" ");
+    }
+    return buf.to_string();
+}
+
 void search_file(sInfo* info)
 {
     string str = string("");
@@ -245,6 +281,7 @@ void search_file(sInfo* info)
             foreach(it, info.files) {
                 if(strcasestr(it, str)) {
                     info.cursor = n;
+                    info.searching_str = string(str);
                     break;
                 }
                 n++;
@@ -253,6 +290,42 @@ void search_file(sInfo* info)
         else {
             break;
         }
+    }
+}
+
+void search_next_file(sInfo* info)
+{
+    int n = info.cursor+1;
+    foreach(it, info.files.sublist(n, -1)) {
+        if(strcasestr(it, info.searching_str)) {
+            info.cursor = n;
+            break;
+        }
+        n++;
+    }
+}
+
+void search_prev_file(sInfo* info)
+{
+    int n = info.cursor-1;
+    foreach(it, info.files.sublist(0, n).reverse()) {
+        if(strcasestr(it, info.searching_str)) {
+            info.cursor = n;
+            break;
+        }
+        n--;
+    }
+}
+
+void select_files(sInfo* info)
+{
+    string cursor_file = cursor_file(info);
+    
+    if(info.selected_files.contained(cursor_file)) {
+        info.selected_files.remove(cursor_file);
+    }
+    else {
+        info.selected_files.add(cursor_file);
     }
 }
 
@@ -267,17 +340,19 @@ void manual(sInfo* info)
     mvprintw(5,0, "d --> delete file");
     mvprintw(6,0, "c --> copy file");
     mvprintw(7,0, "m --> move file");
-    mvprintw(8,0, "n --> new file");
-    mvprintw(9,0, "x --> excute file");
-    mvprintw(10,0, "e --> edit file");
-    mvprintw(11,0, "LEFT h --> move cursor left");
-    mvprintw(12,0, "RIGHT l --> move cursor right");
-    mvprintw(13,0, "DOWN j --> move cursor down");
-    mvprintw(14,0, "UP k --> move cursor up");
-    mvprintw(15,0, "CTRL-L --> reread directory and refresh the window");
-    mvprintw(16,0, "/ --> move cursor with searching file");
-    mvprintw(17,0, "? --> this manual");
-    mvprintw(18,0, ": --> run shell");
+    mvprintw(8,0, "n --> next searching file");
+    mvprintw(9,0, "N --> prev searching file");
+    mvprintw(10,0, "x --> excute file");
+    mvprintw(11,0, "e --> edit file");
+    mvprintw(12,0, "LEFT h --> move cursor left");
+    mvprintw(13,0, "RIGHT l --> move cursor right");
+    mvprintw(14,0, "DOWN j --> move cursor down");
+    mvprintw(15,0, "UP k --> move cursor up");
+    mvprintw(16,0, "CTRL-L --> reread directory and refresh the window");
+    mvprintw(17,0, "/ --> move cursor with searching file (n --> next, N --> prev)");
+    mvprintw(18,0, "? --> this manual");
+    mvprintw(19,0, ": --> run shell");
+    mvprintw(20,0, "SPACE --> select files");
     
     refresh();
     getch();
@@ -294,6 +369,27 @@ void handmade_delete_file(char* path)
         
         if(key == 'y' || key == 'Y' || key == 10) {
             unlink(path);
+            break;
+        }
+        else {
+            break;
+        }
+    }
+}
+
+void handmade_selected_delete_file(sInfo* info)
+{
+    erase();
+    mvprintw(0, 0, "Are %s delete OK? (y,Y,ENTER/other", selected_files(info));
+    refresh();
+    
+    while(true) {
+        var key = getch();
+        
+        if(key == 'y' || key == 'Y' || key == 10) {
+            foreach(it, info.selected_files) {
+                unlink(it);
+            }
             break;
         }
         else {
@@ -338,7 +434,12 @@ void input(sInfo* info)
             }
             else {
                 endwin();
-                system(xsprintf("shsh -i ' %s' -n 0 -o", cursor_file(info)));
+                if(info.selected_files.length() > 0) {
+                    system(xsprintf("shsh -i ' %s' -n 0 -o", selected_files(info)));
+                }
+                else {
+                    system(xsprintf("shsh -i ' %s' -n 0 -o", cursor_file(info)));
+                }
                 read_dir(info);
                 puts("HIT ANY KEY");
                 initscr();
@@ -368,7 +469,12 @@ void input(sInfo* info)
 
         case 'd': {
             endwin();
-            handmade_delete_file(cursor_file(info));
+            if(info.selected_files.length() > 0) {
+                handmade_selected_delete_file(info);
+            }
+            else {
+                handmade_delete_file(cursor_file(info));
+            }
             read_dir(info);
             initscr();
             keypad(stdscr, true);
@@ -379,7 +485,12 @@ void input(sInfo* info)
 
         case 'c': {
             endwin();
-            system(xsprintf("shsh -i 'cp -r %s ' -o", cursor_file(info)));
+            if(info.selected_files.length() > 0) {
+                system(xsprintf("shsh -i 'cp -r %s ' -o", selected_files(info)));
+            }
+            else {
+                system(xsprintf("shsh -i 'cp -r %s ' -o", cursor_file(info)));
+            }
             read_dir(info);
             puts("HIT ANY KEY");
             initscr();
@@ -392,7 +503,12 @@ void input(sInfo* info)
 
         case 'm': {
             endwin();
-            system(xsprintf("shsh -i 'mv %s ' -o", cursor_file(info)));
+            if(info.selected_files.length() > 0) {
+                system(xsprintf("shsh -i 'mv %s ' -o", selected_files(info)));
+            }
+            else {
+                system(xsprintf("shsh -i 'mv %s ' -o", cursor_file(info)));
+            }
             read_dir(info);
             puts("HIT ANY KEY");
             initscr();
@@ -404,19 +520,23 @@ void input(sInfo* info)
             break;
 
         case 'n': {
-            endwin();
-            system(xsprintf("shsh -i 'touch '"));
-            read_dir(info);
-            initscr();
-            keypad(stdscr, true);
-            raw();
-            noecho();
+            search_next_file(info);
+            }
+            break;
+
+        case 'N': {
+            search_prev_file(info)
             }
             break;
 
         case 'x': {
             endwin();
-            system(xsprintf("shsh -i ' ./%s' -n 0 -o", cursor_file(info)));
+            if(info.selected_files.length() > 0) {
+                system(xsprintf("shsh -i ' %s' -n 0 -o", selected_files(info)));
+            }
+            else {
+                system(xsprintf("shsh -i ' ./%s' -n 0 -o", cursor_file(info)));
+            }
             read_dir(info);
             puts("HIT ANY KEY");
             initscr();
@@ -495,6 +615,11 @@ void input(sInfo* info)
 
         case 0x04: {   // C-d
             info.cursor+=10;
+            }
+            break;
+
+        case ' ': {   // C-d
+            select_files(info);
             }
             break;
 

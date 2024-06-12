@@ -84,6 +84,8 @@ run: mf
 	rm -f *.log
 	./mf
 
+compile: mf
+
 debug: mf-debug
 	rm -f *.log
 	./mf-debug
