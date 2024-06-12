@@ -328,6 +328,7 @@ bash all_build.sh
 
 # Histories
 
+0.9.9.8 Package manager changed. neo-c header has been required.
 0.9.9.7 build bug fixed.
 0.9.9.5 incldue module
 0.9.9.5 build message 
@@ -2819,12 +2820,14 @@ int fun(int a, int b)
     return a + b;
 }
 EOS
-> neo-c run
+> neo-c header
 (make header file named common.h)
+> neo-c run
 (compile with -O2 option)
 (run)
-> neo-c debug
+> neo-c header
 (make header file named common.h)
+> neo-c debug
 (compile with -g and -cg option)
 (run)
 > neo-c clean

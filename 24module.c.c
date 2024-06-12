@@ -4085,7 +4085,7 @@ right_value126 = (void*)0;
         come_call_finalizer2(buffer_finalize,right_value101, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer2(buffer_finalize,right_value102, (void*)0, (void*)0, 0, 1, 0, 0, __result_obj__);
         # 147 "24module.c"
-        buffer_append_str(header_66,((char*)(right_value104=xsprintf("module \%s",((char*)(right_value103=string_to_string(type_name_57)))))));
+        buffer_append_str(header_66,((char*)(right_value104=xsprintf("module \%s\n",((char*)(right_value103=string_to_string(type_name_57)))))));
         right_value103 = come_decrement_ref_count2(right_value103, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         right_value104 = come_decrement_ref_count2(right_value104, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         # 148 "24module.c"
@@ -4093,7 +4093,7 @@ right_value126 = (void*)0;
         # 149 "24module.c"
         buffer_append(header_66,source_head_60,source_tail_61-source_head_60);
         # 150 "24module.c"
-        buffer_append_str(header_66,"}\n");
+        buffer_append_str(header_66,"\n}\n");
         # 152 "24module.c"
         add_come_code_at_come_header(info,"%s\n",((char*)(right_value105=buffer_to_string(header_66))));
         right_value105 = come_decrement_ref_count2(right_value105, (void*)0, (void*)0, 1, 0, 0, __result_obj__);

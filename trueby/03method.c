@@ -202,9 +202,9 @@ sNode*% post_expression(sNode*% node, sInfo* info=info)
     return node;
 }
 
-sNode*% expression(sInfo* info=info) version 2
+sNode*%?? expression(sInfo* info=info) version 2
 {
-    sNode*% node = inherit(info);
+    sNode*% node = inherit(info)??;
     
     if(node == null) {
         return null;

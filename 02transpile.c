@@ -544,7 +544,7 @@ TARGET_DEBUG=\{project_name_debug}
 \#########################################
 \# main
 \#########################################
-all: common.h \{project_name}
+all: $(TARGET)
 
 $(TARGET): $(OBJS)
 \t$(CC) $(CFLAGS) $^ -o $@
@@ -552,15 +552,17 @@ $(TARGET): $(OBJS)
 $(TARGET_DEBUG): $(DEBUG_OBJS)
 \t$(CC) $(CFLAGS_DEBUG) $^ -o $@
 
-%.o: %.c common.h
+%.o: %.c
 \t$(CC) $(CFLAGS) -c $< -o $@
 
-%.debug.o: %.c common.h
+%.debug.o: %.c
 \t$(CC) $(CFLAGS_DEBUG) -c $< -o $@
 
 \#########################################
 \# header
 \#########################################
+
+header: common.h
 
 common.h: $(SINGLE_SRCS)
 \tneo-c header -common-header $(SINGLE_SRCS)
@@ -604,6 +606,13 @@ debug: \{project_name_debug}
 bool run_project(int argc, char** argv)
 {
     system("make run") or die("system");
+    
+    return true;
+}
+
+bool make_header_project(int argc, char** argv)
+{
+    system("make header") or die("system");
     
     return true;
 }
@@ -804,6 +813,11 @@ int come_main(int argc, char** argv) version 2
     }
     else if(argv[1] === "run" && argc == 2) {
         if(!run_project(argc, argv)) {
+            return false;
+        }
+    }
+    else if(argv[1] === "header" && argc == 2) {
+        if(!make_header_project(argc, argv)) {
             return false;
         }
     }

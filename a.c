@@ -1,28 +1,31 @@
 #include <neo-c.h>
 
-module MModule<T>
+module MModule
 {
-    T a;
-    T b;
+    int a;
+    int b;
+    
+    new(int a, int b, int c) {
+        self.a = a;
+        self.b = b;
+        self.c = c;
+    }
 }
 
 class sData
 {
-    include MModule<int>;
+    include MModule;
     
-    new(int a, int b) {
-        self.a = a;
-        self.b = b;
-    }
+    int c;
     
     void show() {
-        printf("%d %d\n", self.a, self.b);
+        printf("%d %d %d\n", self.a, self.b, self.c);
     }
 }
 
 int main(int argc, char** argv)
 {
-    var data = new sData(111, 222);
+    var data = new sData(111, 222, 333);
     
     data.show();
     

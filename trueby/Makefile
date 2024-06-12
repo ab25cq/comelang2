@@ -33,7 +33,7 @@ TARGET_DEBUG=trueby-debug
 #########################################
 # main
 #########################################
-all: common.h trueby
+all: $(TARGET)
 
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) $^ -o $@
@@ -41,15 +41,17 @@ $(TARGET): $(OBJS)
 $(TARGET_DEBUG): $(DEBUG_OBJS)
 	$(CC) $(CFLAGS_DEBUG) $^ -o $@
 
-%.o: %.c common.h
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-%.debug.o: %.c common.h
+%.debug.o: %.c
 	$(CC) $(CFLAGS_DEBUG) -c $< -o $@
 
 #########################################
 # header
 #########################################
+
+header: common.h
 
 common.h: $(SINGLE_SRCS)
 	neo-c header -common-header $(SINGLE_SRCS)

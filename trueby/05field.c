@@ -145,7 +145,7 @@ class sLoadAttrNode extends sNodeBase
     }
 };
 
-sNode*% expression(sInfo* info=info) version 3
+sNode*%?? expression(sInfo* info=info) version 3
 {
     if(*info->p == '@') {
         info->p++;
@@ -161,7 +161,12 @@ sNode*% expression(sInfo* info=info) version 3
                 info->p++;
                 skip_spaces_and_lf();
                 
-                sNode*% right_value = expression();
+                sNode*% right_value = expression()??;
+                
+                if(right_value == null) {
+                    err_msg(info, "require right value");
+                    exit(2);
+                }
                 
                 return new sStoreAttrNode(buf, right_value, true@alloc, null@var_type) implements sNode;
             }
@@ -172,7 +177,12 @@ sNode*% expression(sInfo* info=info) version 3
                     info->p++;
                     skip_spaces_and_lf();
                     
-                    sNode*% right_value = expression();
+                    sNode*% right_value = expression()??;
+                    
+                    if(right_value == null) {
+                        err_msg(info, "require right value");
+                        exit(2);
+                    }
                     
                     return new sStoreAttrNode(buf, right_value, true@alloc, var_type) implements sNode;
                 }
@@ -186,7 +196,12 @@ sNode*% expression(sInfo* info=info) version 3
             info->p++;
             skip_spaces_and_lf();
             
-            sNode*% right_value = expression();
+            sNode*% right_value = expression()??;
+            
+            if(right_value == null) {
+                err_msg(info, "require right value");
+                exit(2);
+            }
             
             return new sStoreAttrNode(buf, right_value, false@alloc, null@var_type) implements sNode;
         }
@@ -195,5 +210,5 @@ sNode*% expression(sInfo* info=info) version 3
         }
     }
     
-    return inherit(info);
+    return inherit(info)??;
 }

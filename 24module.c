@@ -144,10 +144,10 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 91
         }
         
         buffer*% header = new buffer();
-        header.append_str(s"module \{type_name}");
+        header.append_str(s"module \{type_name}\n");
         header.append_str("{\n");
         header.append(source_head, source_tail - source_head);
-        header.append_str("}\n");
+        header.append_str("\n}\n");
         
         add_come_code_at_come_header(info, "%s\n", header.to_string());
         

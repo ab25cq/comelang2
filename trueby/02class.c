@@ -1,5 +1,10 @@
 #include <neo-c.h>
 
+module TEST
+{
+    list<sNode*%>*% nodes;
+}
+
 void dec_stack_ptr(int value, sInfo* info=info)
 {
     info.stack.delete(-value, -1);
@@ -178,11 +183,24 @@ class sFunNode extends sNodeBase
 
 void check_assign_type(sType* left_type, sType* right_type, CVALUE* come_value, sInfo* info=info)
 {
-    if(left_type->mClass->mName !== right_type->mClass->mName) {
+    if(left_type->mClass->mName === "Any") {
+    }
+    else if(left_type->mClass->mName !== right_type->mClass->mName) {
         err_msg(info, "invalid type");
         puts(s"left type is \{left_type->mClass->mName}");
         puts(s"right type is \{right_type->mClass->mName}");
         exit(2);
+    }
+    
+    if(left_type->mGenericsTypes.length() != right_type->mGenericsTypes.length()) {
+        err_msg(info, "invalid generics type number");
+        exit(2);
+    }
+    
+    int i=0;
+    foreach(it, left_type->mGenericsTypes) {
+        check_assign_type(left_type->mGenericsTypes[i], right_type->mGenericsTypes[i], come_value);
+        i++;
     }
 }
 
@@ -470,7 +488,7 @@ sBlock*% parse_block(sInfo* info=info)
             break;
         }
         
-        sNode*% node = expression();
+        sNode*% node = expression()??;
         
         if(node == null) {
             err_msg(info, "null node");
@@ -507,7 +525,38 @@ sType*% parse_type(sInfo* info=info)
 {
     string type_name = parse_word();
     
-    return new sType(type_name);
+    sType*% result = new sType(type_name);
+    
+    if(*info->p == '<') {
+        info->p++;
+        skip_spaces_and_lf();
+        
+        while(true) {
+            sType*% type = parse_type();
+            
+            result->mGenericsTypes.add(type);
+            
+            if(*info->p == ',') {
+                info->p++;
+                skip_spaces_and_lf();
+            }
+            else if(*info->p == '>') {
+                info->p++;
+                skip_spaces_and_lf();
+                break;
+            }
+            else if(*info->p == '\0') {
+                err_msg(info, "invalid source end");
+                exit(2);
+            }
+            else {
+                err_msg(info, "invalid character(%c)", *info->p);
+                exit(2);
+            }
+        }
+    }
+    
+    return result;
 }
 
 list<tuple2<string,sType*%>*%>*%, sType*% parse_params(sInfo* info=info)
@@ -573,7 +622,7 @@ list<sNode*%>*%, list<sNode*%>*% parse_calling_params(sInfo* info=info)
             break;
         }
         
-        sNode*% exp = expression();
+        sNode*% exp = expression()??;
         
         if(exp == null) {
             err_msg(info, "require node");
@@ -604,7 +653,7 @@ list<sNode*%>*%, list<sNode*%>*% parse_calling_params(sInfo* info=info)
         skip_spaces_and_lf();
         
         while(true) {
-            sNode*% exp = expression();
+            sNode*% exp = expression()??;
             
             if(exp == null) {
                 err_msg(info, "require node for block");

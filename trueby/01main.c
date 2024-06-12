@@ -1013,7 +1013,7 @@ sNode*% compare_expression_node(sInfo* info=info)
     return node;
 }
 
-sNode*% expression(sInfo* info=info) version 1
+sNode*%?? expression(sInfo* info=info) version 1
 {
     sNode*% node = compare_expression_node();
     
@@ -1035,29 +1035,14 @@ bool output_source(sInfo* info)
 
 void init_typed_ruby(sInfo* info)
 {
-    sClass*% integer_class = new sClass("Integer");
-    
-    info.classes.insert(string("Integer"), integer_class);
-    
-    sClass*% void_class = new sClass("void");
-    
-    info.classes.insert(string("void"), void_class);
-    
-    sClass*% bool_class = new sClass("bool");
-    
-    info.classes.insert(string("bool"), bool_class);
-    
-    sClass*% string_class = new sClass("String");
-    
-    info.classes.insert(string("String"), string_class);
-    
-    sClass*% regex_class = new sClass("Regex");
-    
-    info.classes.insert(string("Regex"), regex_class);
-    
-    sClass*% kernel_class = new sClass("Kernel");
-    
-    info.classes.insert(string("Kernel"), kernel_class);
+    info.classes.insert(string("Integer"), new sClass("Integer"));
+    info.classes.insert(string("void"), new sClass("void"));
+    info.classes.insert(string("bool"), new sClass("Bool"));
+    info.classes.insert(string("String"), new sClass("String"));
+    info.classes.insert(string("Regex"), new sClass("Regex"));
+    info.classes.insert(string("Kernel"), new sClass("Kernel"));
+    info.classes.insert(string("Any"), new sClass("Any"));
+    info.classes.insert(string("Array"), new sClass("Array"));
 }
 
 int main(int argc, char** argv)
@@ -1098,7 +1083,7 @@ int main(int argc, char** argv)
             break;
         }
         
-        var node = expression(&info);
+        var node = expression(&info)??;
         
         if(node == null) {
             puts("parse error");

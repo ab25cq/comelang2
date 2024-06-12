@@ -52,7 +52,12 @@ sNode*% string_node(string buf, sInfo* info=info) version 3
     if(buf === "while") {
         expected_next_character('(');
         
-        sNode*% conditional_exp = expression();
+        sNode*% conditional_exp = expression()??;
+        
+        if(conditional_exp == null) {
+            err_msg(info, "require onditional value");
+            exit(2);
+        }
         
         expected_next_character(')');
         

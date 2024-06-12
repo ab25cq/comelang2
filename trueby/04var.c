@@ -297,7 +297,12 @@ sNode*% string_node(string buf, sInfo* info=info) version 2
             info->p++;
             skip_spaces_and_lf();
             
-            sNode*% right_value = expression();
+            sNode*% right_value = expression()??;
+            
+            if(right_value == null) {
+                err_msg(info, "require right value");
+                exit(2);
+            }
             
             return new sStoreLocalVariable(buf, right_value, true@alloc, null@var_type) implements sNode;
         }
@@ -308,7 +313,12 @@ sNode*% string_node(string buf, sInfo* info=info) version 2
                 info->p++;
                 skip_spaces_and_lf();
                 
-                sNode*% right_value = expression();
+                sNode*% right_value = expression()??;
+                
+                if(right_value == null) {
+                    err_msg(info, "require right value");
+                    exit(2);
+                }
                 
                 return new sStoreLocalVariable(buf, right_value, true@alloc, var_type) implements sNode;
             }
@@ -322,7 +332,12 @@ sNode*% string_node(string buf, sInfo* info=info) version 2
         info->p++;
         skip_spaces_and_lf();
         
-        sNode*% right_value = expression();
+        sNode*% right_value = expression()??;
+        
+        if(right_value == null) {
+            err_msg(info, "require right value");
+            exit(2);
+        }
         
         return new sStoreLocalVariable(buf, right_value, false@alloc, null@var_type) implements sNode;
     }
@@ -357,7 +372,12 @@ sNode*% expression_node(sInfo* info=info) version 3
                 info->p++;
                 skip_spaces_and_lf();
                 
-                sNode*% right_value = expression();
+                sNode*% right_value = expression()??;
+                
+                if(right_value == null) {
+                    err_msg(info, "require right value");
+                    exit(2);
+                }
                 
                 return new sStoreGlobalVariable(buf, right_value, true@alloc, null@var_type) implements sNode;
             }
@@ -368,7 +388,12 @@ sNode*% expression_node(sInfo* info=info) version 3
                     info->p++;
                     skip_spaces_and_lf();
                     
-                    sNode*% right_value = expression();
+                    sNode*% right_value = expression()??;
+                    
+                    if(right_value == null) {
+                        err_msg(info, "require right value");
+                        exit(2);
+                    }
                     
                     return new sStoreGlobalVariable(buf, right_value, true@alloc, var_type) implements sNode;
                 }
@@ -382,7 +407,12 @@ sNode*% expression_node(sInfo* info=info) version 3
             info->p++;
             skip_spaces_and_lf();
             
-            sNode*% right_value = expression();
+            sNode*% right_value = expression()??;
+            
+            if(right_value == null) {
+                err_msg(info, "require right value");
+                exit(2);
+            }
             
             return new sStoreGlobalVariable(buf, right_value, false@alloc, null@var_type) implements sNode;
         }
