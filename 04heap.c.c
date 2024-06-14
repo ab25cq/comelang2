@@ -258,6 +258,11 @@ struct sNode
     _Bool (*terminated)(void*);
     char* (*kind)(void*);
 };
+struct sNodeBase
+{
+    int sline;
+    char* sname;
+};
 struct list_item$1sTypeph
 {
     struct sType* item;

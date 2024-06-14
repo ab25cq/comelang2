@@ -61,6 +61,12 @@ interface sNode {
     string kind();
 };
 
+struct sNodeBase
+{
+    int sline;
+    string sname;
+};
+
 struct sType
 {
     sClass* mClass;
