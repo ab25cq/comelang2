@@ -1,103 +1,65 @@
 #include "common.h"
 
-struct sLambdaNode {
+class sLambdaNode extends sNodeBase
+{
     sFun* mFun;
-    int sline;
-    string sname;
-};
 
-sLambdaNode*% sLambdaNode*::initialize(sLambdaNode*% self, sFun* fun, sInfo* info)
-{
-    self.mFun = fun;
-    self.sline = info.sline;
-    self.sname = info.sname;
-    
-    return self;
-}
-
-int sLambdaNode*::sline(sLambdaNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sLambdaNode*::sname(sLambdaNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-bool sLambdaNode*::terminated()
-{
-    return false;
-}
-
-string sLambdaNode*::kind()
-{
-    return string("sLambdaNode");
-}
-
-bool sLambdaNode*::compile(sLambdaNode* self, sInfo* info)
-{
-    sFun* come_fun = info.come_fun;
-    info.come_fun = self.mFun;
-    
-    sType*% result_type = new sType("void*");
-    
-    add_come_code_at_function_head(info, "%s;\n", make_define_var(result_type, "__result_obj__"));
-    add_come_code_at_function_head2(info, "memset(&__result_obj__, 0, sizeof(%s));\n", make_type_name_string(result_type));
-    
-    if(self.mFun.mBlock) {
-        transpile_block(self.mFun.mBlock, self.mFun.mParamTypes, self.mFun.mParamNames, info);
+    new(sFun* fun, sInfo* info)
+    {
+        self.mFun = fun;
+        self.sline = info.sline;
+        self.sname = info.sname;
     }
     
-    CVALUE*% come_value = new CVALUE;
+    int sline(sInfo* info)
+    {
+        return self.sline;
+    }
     
-    come_value.c_value = xsprintf("%s", self.mFun.mName);
-    come_value.type = clone self.mFun.mLambdaType;
-    come_value.var = null;
+    string sname(sInfo* info)
+    {
+        return string(self.sname);
+    }
     
-    add_come_last_code(info, "%s;\n", come_value.c_value);
+    bool terminated()
+    {
+        return false;
+    }
     
-    info.stack.push_back(come_value);
+    string kind()
+    {
+        return string("sLambdaNode");
+    }
     
-    info.come_fun = come_fun;
-    
-    return true;
-}
-
-struct sFunNode {
-    sFun*% mFun;
-    int sline;
-    string sname;
+    bool compile(sInfo* info)
+    {
+        sFun* come_fun = info.come_fun;
+        info.come_fun = self.mFun;
+        
+        sType*% result_type = new sType("void*");
+        
+        add_come_code_at_function_head(info, "%s;\n", make_define_var(result_type, "__result_obj__"));
+        add_come_code_at_function_head2(info, "memset(&__result_obj__, 0, sizeof(%s));\n", make_type_name_string(result_type));
+        
+        if(self.mFun.mBlock) {
+            transpile_block(self.mFun.mBlock, self.mFun.mParamTypes, self.mFun.mParamNames, info);
+        }
+        
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%s", self.mFun.mName);
+        come_value.type = clone self.mFun.mLambdaType;
+        come_value.var = null;
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+        
+        info.stack.push_back(come_value);
+        
+        info.come_fun = come_fun;
+        
+        return true;
+    }
 };
-
-sFunNode*% sFunNode*::initialize(sFunNode*% self, sFun*% fun, sInfo* info)
-{
-    self.mFun = fun;
-    self.sline = info.sline;
-    self.sname = info.sname;
-    
-    return self;
-}
-
-int sFunNode*::sline(sFunNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sFunNode*::sname(sFunNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-bool sFunNode*::terminated()
-{
-    return false;
-}
-
-string sFunNode*::kind()
-{
-    return string("sFunNode");
-}
 
 void caller_begin(sInfo* info=info)
 {
@@ -107,47 +69,79 @@ void caller_end(sInfo* info=info)
 {
 }
 
-bool sFunNode*::compile(sFunNode* self, sInfo* info)
+class sFunNode extends sNodeBase
 {
-    sFun* come_fun = info.come_fun;
-    info.come_fun = self.mFun;
+    sFun*% mFun;
     
-    caller_begin();
-    
-/*
-    string var_name = s"__caller_sname_stack__";
-    add_come_code_at_function_head(info, "%s;\n", make_define_var(new sType("char*"), var_name));
-    
-    string var_name2 = s"__caller_sline_stack__";
-    add_come_code_at_function_head(info, "%s;\n", make_define_var(new sType("int"), var_name2));
-*/
-    string come_fun_name = info.come_fun_name;
-    info.come_fun_name = string(info.come_fun.mName);
-    
-    if(self.mFun.mBlock) {
-        if(info.come_fun.mName === "main") {
-            add_come_code(info, "come_heap_init(%d, %d, %d);\n", gComeMalloc, gComeDebug, gComeGC);
-        }
-        
-        sType*% result_type = new sType("void*");
-        
-        add_come_code_at_function_head(info, "%s;\n", make_define_var(result_type, "__result_obj__"));
-        add_come_code_at_function_head2(info, "memset(&__result_obj__, 0, sizeof(%s));\n", make_type_name_string(result_type));
-        
-        transpile_block(self.mFun.mBlock, self.mFun.mParamTypes, self.mFun.mParamNames, info);
-        if(info.come_fun.mName === "main") {
-            free_objects(info->gv_table, null@ret_value, info);
-            add_come_code(info, xsprintf("come_heap_final();\n"));
-        }
+    new(sFun*% fun, sInfo* info)
+    {
+        self.mFun = fun;
+        self.sline = info.sline;
+        self.sname = info.sname;
     }
     
-    caller_end();
+    int sline(sInfo* info)
+    {
+        return self.sline;
+    }
     
-    info.come_fun = come_fun;
-    info.come_fun_name = come_fun_name;
+    string sname(sInfo* info)
+    {
+        return string(self.sname);
+    }
     
-    return true;
-}
+    bool terminated()
+    {
+        return false;
+    }
+    
+    string kind()
+    {
+        return string("sFunNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        sFun* come_fun = info.come_fun;
+        info.come_fun = self.mFun;
+        
+        caller_begin();
+        
+    /*
+        string var_name = s"__caller_sname_stack__";
+        add_come_code_at_function_head(info, "%s;\n", make_define_var(new sType("char*"), var_name));
+        
+        string var_name2 = s"__caller_sline_stack__";
+        add_come_code_at_function_head(info, "%s;\n", make_define_var(new sType("int"), var_name2));
+    */
+        string come_fun_name = info.come_fun_name;
+        info.come_fun_name = string(info.come_fun.mName);
+        
+        if(self.mFun.mBlock) {
+            if(info.come_fun.mName === "main") {
+                add_come_code(info, "come_heap_init(%d, %d, %d);\n", gComeMalloc, gComeDebug, gComeGC);
+            }
+            
+            sType*% result_type = new sType("void*");
+            
+            add_come_code_at_function_head(info, "%s;\n", make_define_var(result_type, "__result_obj__"));
+            add_come_code_at_function_head2(info, "memset(&__result_obj__, 0, sizeof(%s));\n", make_type_name_string(result_type));
+            
+            transpile_block(self.mFun.mBlock, self.mFun.mParamTypes, self.mFun.mParamNames, info);
+            if(info.come_fun.mName === "main") {
+                free_objects(info->gv_table, null@ret_value, info);
+                add_come_code(info, xsprintf("come_heap_final();\n"));
+            }
+        }
+        
+        caller_end();
+        
+        info.come_fun = come_fun;
+        info.come_fun_name = come_fun_name;
+        
+        return true;
+    }
+};
 
 sBlock*% sBlock*::initialize(sBlock*% self, sInfo* info)
 {
@@ -293,8 +287,8 @@ int transpile_block(sBlock* block, list<sType*%>* param_types, list<string>* par
 
     sVarTable* current_loop_vtable = info->current_loop_vtable;
     if(loop_block) {
-	    info->current_loop_vtable = block->mVarTable;
-	}
+        info->current_loop_vtable = block->mVarTable;
+    }
     
     list<sType*%>* param_types_ = info.param_types;
     list<string>* param_names_ = info.param_names;
