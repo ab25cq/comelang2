@@ -1,316 +1,292 @@
 #include "common.h"
 
-struct sIntNode
+class sIntNode extends sNodeBase
 {
     int value;
-    int sline;
-    string sname;
+    
+    new(int value, sInfo* info)
+    {
+        self.value = value;
+        
+        self.sline = info->sline;
+        self.sname = string(info->sname);
+    }
+    
+    string kind()
+    {
+        return string("sIntNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%d", self.value);
+        come_value.type = new sType("int");
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+        
+        return true;
+    }
+    
+    bool terminated()
+    {
+        return false;
+    }
+    
+    int sline(sInfo* info)
+    {
+        return self.sline;
+    }
+    
+    string sname(sInfo* info)
+    {
+        return string(self.sname);
+    }
 };
 
-sIntNode*% sIntNode*::initialize(sIntNode*% self, int value, sInfo* info)
-{
-    self.value = value;
-    
-    self.sline = info->sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-string sIntNode*::kind()
-{
-    return string("sIntNode");
-}
-
-bool sIntNode*::compile(sIntNode* self, sInfo* info)
-{
-    CVALUE*% come_value = new CVALUE;
-    
-    come_value.c_value = xsprintf("%d", self.value);
-    come_value.type = new sType("int");
-    come_value.var = null;
-    
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
-    
-    return true;
-}
-
-bool sIntNode*::terminated()
-{
-    return false;
-}
-
-int sIntNode*::sline(sIntNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sIntNode*::sname(sIntNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sUIntNode
+class sUIntNode extends sNodeBase
 {
     unsigned int value;
-    int sline;
-    string sname;
+    
+    new(unsigned int value, sInfo* info)
+    {
+        self.value = value;
+        
+        self.sline = info->sline;
+        self.sname = string(info->sname);
+    }
+    
+    bool terminated()
+    {
+        return false;
+    }
+    
+    string kind()
+    {
+        return string("sUIntNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%u", self.value);
+        come_value.type = new sType("int");
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+        
+        return true;
+    }
+    
+    int sline(sInfo* info)
+    {
+        return self.sline;
+    }
+    
+    string sname(sInfo* info)
+    {
+        return string(self.sname);
+    }
 };
 
-sUIntNode*% sUIntNode*::initialize(sUIntNode*% self, unsigned int value, sInfo* info)
-{
-    self.value = value;
-    
-    self.sline = info->sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-bool sUIntNode*::terminated()
-{
-    return false;
-}
-
-string sUIntNode*::kind()
-{
-    return string("sUIntNode");
-}
-
-bool sUIntNode*::compile(sUIntNode* self, sInfo* info)
-{
-    CVALUE*% come_value = new CVALUE;
-    
-    come_value.c_value = xsprintf("%u", self.value);
-    come_value.type = new sType("int");
-    come_value.var = null;
-    
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
-    
-    return true;
-}
-
-int sUIntNode*::sline(sUIntNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sUIntNode*::sname(sUIntNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sLongNode
+class sLongNode extends sNodeBase
 {
     long value;
-    int sline;
-    string sname;
+    
+    new(unsigned long value, sInfo* info)
+    {
+        self.value = value;
+        
+        self.sline = info->sline;
+        self.sname = string(info->sname);
+    }
+    
+    string kind()
+    {
+        return string("sLongNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%ld", self.value);
+        come_value.type = new sType("long");
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+        
+        return true;
+    }
+    
+    bool terminated()
+    {
+        return false;
+    }
+    
+    int sline(sInfo* info)
+    {
+        return self.sline;
+    }
+    
+    string sname(sInfo* info)
+    {
+        return string(self.sname);
+    }
 };
 
-sLongNode*% sLongNode*::initialize(sLongNode*% self, unsigned long value, sInfo* info)
-{
-    self.value = value;
-    
-    self.sline = info->sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-string sLongNode*::kind()
-{
-    return string("sLongNode");
-}
-
-bool sLongNode*::compile(sLongNode* self, sInfo* info)
-{
-    CVALUE*% come_value = new CVALUE;
-    
-    come_value.c_value = xsprintf("%ld", self.value);
-    come_value.type = new sType("long");
-    come_value.var = null;
-    
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
-    
-    return true;
-}
-
-bool sLongNode*::terminated()
-{
-    return false;
-}
-
-int sLongNode*::sline(sLongNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sLongNode*::sname(sLongNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sULongNode
+class sULongNode extends sNodeBase
 {
     unsigned long value;
-    int sline;
-    string sname;
+    
+    new(unsigned long value, sInfo* info)
+    {
+        self.value = value;
+        
+        self.sline = info->sline;
+        self.sname = string(info->sname);
+    }
+    
+    string kind()
+    {
+        return string("sULongNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%lu", self.value);
+        come_value.type = new sType("long");
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+        
+        return true;
+    }
+    
+    bool terminated()
+    {
+        return false;
+    }
+    
+    int sline(sInfo* info)
+    {
+        return self.sline;
+    }
+    
+    string sname(sInfo* info)
+    {
+        return string(self.sname);
+    }
 };
 
-sULongNode*% sULongNode*::initialize(sULongNode*% self, unsigned long value, sInfo* info)
-{
-    self.value = value;
-    
-    self.sline = info->sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-string sULongNode*::kind()
-{
-    return string("sULongNode");
-}
-
-bool sULongNode*::compile(sULongNode* self, sInfo* info)
-{
-    CVALUE*% come_value = new CVALUE;
-    
-    come_value.c_value = xsprintf("%lu", self.value);
-    come_value.type = new sType("long");
-    come_value.var = null;
-    
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
-    
-    return true;
-}
-
-bool sULongNode*::terminated()
-{
-    return false;
-}
-
-int sULongNode*::sline(sULongNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sULongNode*::sname(sULongNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sFloatNode
+class sFloatNode extends sNodeBase
 {
     float value;
-    int sline;
-    string sname;
+    
+    new(float value, sInfo* info)
+    {
+        self.value = value;
+        
+        self.sline = info->sline;
+        self.sname = string(info->sname);
+    }
+    
+    string kind()
+    {
+        return string("sFloatNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%f", self.value);
+        come_value.type = new sType("float");
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+        
+        return true;
+    }
+    
+    bool terminated()
+    {
+        return false;
+    }
+    
+    int sline(sInfo* info)
+    {
+        return self.sline;
+    }
+    
+    string sname(sInfo* info)
+    {
+        return string(self.sname);
+    }
 };
 
-sFloatNode*% sFloatNode*::initialize(sFloatNode*% self, float value, sInfo* info)
-{
-    self.value = value;
-    
-    self.sline = info->sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-string sFloatNode*::kind()
-{
-    return string("sFloatNode");
-}
-
-bool sFloatNode*::compile(sFloatNode* self, sInfo* info)
-{
-    CVALUE*% come_value = new CVALUE;
-    
-    come_value.c_value = xsprintf("%f", self.value);
-    come_value.type = new sType("float");
-    come_value.var = null;
-    
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
-    
-    return true;
-}
-
-bool sFloatNode*::terminated()
-{
-    return false;
-}
-
-int sFloatNode*::sline(sFloatNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sFloatNode*::sname(sFloatNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sDoubleNode
+class sDoubleNode extends sNodeBase
 {
     double value;
-    int sline;
-    string sname;
+    
+    new(double value, sInfo* info)
+    {
+        self.value = value;
+        
+        self.sline = info->sline;
+        self.sname = string(info->sname);
+    }
+    
+    string kind()
+    {
+        return string("sDoubleNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("%lf", self.value);
+        come_value.type = new sType("double");
+        come_value.var = null;
+        
+        info.stack.push_back(come_value);
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+        
+        return true;
+    }
+    
+    bool terminated()
+    {
+        return false;
+    }
+    
+    int sline(sInfo* info)
+    {
+        return self.sline;
+    }
+    
+    string sname(sInfo* info)
+    {
+        return string(self.sname);
+    }
 };
-
-sDoubleNode*% sDoubleNode*::initialize(sDoubleNode*% self, double value, sInfo* info)
-{
-    self.value = value;
-    
-    self.sline = info->sline;
-    self.sname = string(info->sname);
-    
-    return self;
-}
-
-string sDoubleNode*::kind()
-{
-    return string("sDoubleNode");
-}
-
-bool sDoubleNode*::compile(sDoubleNode* self, sInfo* info)
-{
-    CVALUE*% come_value = new CVALUE;
-    
-    come_value.c_value = xsprintf("%lf", self.value);
-    come_value.type = new sType("double");
-    come_value.var = null;
-    
-    info.stack.push_back(come_value);
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
-    
-    return true;
-}
-
-bool sDoubleNode*::terminated()
-{
-    return false;
-}
-
-int sDoubleNode*::sline(sDoubleNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sDoubleNode*::sname(sDoubleNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
 
 sNode*% get_number(bool minus, sInfo* info)
 {
