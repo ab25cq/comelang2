@@ -1,75 +1,61 @@
 #include "common.h"
 
-struct sInterfaceNode {
+class sInterfaceNode extends sNodeBase
+{
     string name;
     sClass*% klass;
     bool mOutput;
     
-    int sline;
-    string sname;
-};
-
-sInterfaceNode*% sInterfaceNode*::initialize(sInterfaceNode*% self, string name, sClass*% klass, bool output, sInfo* info)
-{
-    self.name = string(name);
-    self.klass = clone klass;
-    
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-    
-    self.mOutput = output;
-    
-    return self;
-}
-
-int sInterfaceNode*::sline(sInterfaceNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sInterfaceNode*::sname(sInterfaceNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-bool sInterfaceNode*::terminated()
-{
-    return false;
-}
-
-string sInterfaceNode*::kind()
-{
-    return string("sInterfaceNode");
-}
-
-bool sInterfaceNode*::compile(sInterfaceNode* self, sInfo* info)
-{
-    string name = string(self.name);
-    sClass* klass = self.klass;
-    klass->mProtocol = true;
-    
-    buffer*% buf = new buffer();
-    
-    buf.append_str(xsprintf("struct %s\n{\n", klass.mName));
-    
-//    klass= info.classes[klass->mName];
-    foreach(it, klass.mFields) {
-        var name, type = it;
+    new(string name, sClass*% klass, bool output, sInfo* info)
+    {
+        self.name = string(name);
+        self.klass = clone klass;
         
-        buf.append_str("    ");
-        buf.append_str(make_define_var(type, name));
-        buf.append_str(";\n");
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+        
+        self.mOutput = output;
     }
     
-    buf.append_str("};\n");
-    
-    if(self.mOutput) {
-        add_come_code_at_source_head(info, "%s", buf.to_string());
-        info.classes.insert(string(name), clone klass);
+    bool terminated()
+    {
+        return false;
     }
     
-    return true;
-}
+    string kind()
+    {
+        return string("sInterfaceNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        string name = string(self.name);
+        sClass* klass = self.klass;
+        klass->mProtocol = true;
+        
+        buffer*% buf = new buffer();
+        
+        buf.append_str(xsprintf("struct %s\n{\n", klass.mName));
+        
+    //    klass= info.classes[klass->mName];
+        foreach(it, klass.mFields) {
+            var name, type = it;
+            
+            buf.append_str("    ");
+            buf.append_str(make_define_var(type, name));
+            buf.append_str(";\n");
+        }
+        
+        buf.append_str("};\n");
+        
+        if(self.mOutput) {
+            add_come_code_at_source_head(info, "%s", buf.to_string());
+            info.classes.insert(string(name), clone klass);
+        }
+        
+        return true;
+    }
+};
 
 sType*%, string parse_interface_function(sInfo* info)
 {

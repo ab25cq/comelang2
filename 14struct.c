@@ -256,252 +256,191 @@ bool output_generics_struct(sType* type, sType* generics_type, sInfo* info)
     return true;
 }
 
-struct sStructNode
+class sStructNode extends sNodeBase
 {
     string mName;
     sClass*% mClass;
-
-    int sline;
-    string sname;
     
     bool mOutput;
+    
+    new(string name, sClass*% klass, bool output, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mName = string(name);
+        self.mClass = clone klass;
+        
+        self.mOutput = output;
+    }
+    
+    bool terminated()
+    {
+        return true;
+    }
+    
+    string kind()
+    {
+        return string("sStructNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        sClass*% klass = clone self.mClass;
+        string name = string(self.mName);
+        
+        if(info.classes.at(name, null) == null) {
+            info.classes.insert(name, clone klass);
+        }
+        else if(info.classes.at(name, null).mFields.length() == 0 && klass->mFields.length() > 0) {
+            sClass* klass2 = info.classes.at(name, null);
+            klass2.mFields = clone klass.mFields;
+        }
+        
+        sType*% type = new sType(name);
+        info.types.insert(name, clone type);
+        
+        if(self.mOutput) {
+            output_struct(klass, info);
+        }
+    
+        return true;
+    }
 };
 
-sStructNode*% sStructNode*::initialize(sStructNode*% self, string name, sClass*% klass, bool output, sInfo* info)
-{
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mName = string(name);
-    self.mClass = clone klass;
-    
-    self.mOutput = output;
-    
-    return self;
-}
-
-bool sStructNode*::terminated()
-{
-    return true;
-}
-
-string sStructNode*::kind()
-{
-    return string("sStructNode");
-}
-
-bool sStructNode*::compile(sStructNode* self, sInfo* info)
-{
-    sClass*% klass = clone self.mClass;
-    string name = string(self.mName);
-    
-    if(info.classes.at(name, null) == null) {
-        info.classes.insert(name, clone klass);
-    }
-    else if(info.classes.at(name, null).mFields.length() == 0 && klass->mFields.length() > 0) {
-        sClass* klass2 = info.classes.at(name, null);
-        klass2.mFields = clone klass.mFields;
-    }
-    
-    sType*% type = new sType(name);
-    info.types.insert(name, clone type);
-    
-    if(self.mOutput) {
-        output_struct(klass, info);
-    }
-
-    return true;
-}
-
-int sStructNode*::sline(sStructNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sStructNode*::sname(sStructNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sStructNobodyNode
+class sStructNobodyNode extends sNodeBase
 {
     string mName;
     sClass*% mClass;
-  
-    int sline;
-    string sname;
+    
+    new(string name, sClass*% klass, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mName = string(name);
+        self.mClass = clone klass;
+    }
+    
+    bool terminated()
+    {
+        return true;
+    }
+    
+    string kind()
+    {
+        return string("sStructNobodyNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        string name = string(self.mName);
+        sClass* klass = self.mClass;
+        
+        if(info.classes.at(name, null) == null) {
+            info.classes.insert(name, clone klass);
+        }
+        
+        sType*% type = new sType(name);
+        
+        info.types.insert(name, clone type);
+        
+        if(info.output_header_file && klass.mDeclareSName !== info->base_sname) {
+        }
+        else {
+            add_come_code_at_source_head(info, "struct %s;\n", name);
+        }
+    
+        return true;
+    }
 };
 
-sStructNobodyNode*% sStructNobodyNode*::initialize(sStructNobodyNode*% self, string name, sClass*% klass, sInfo* info)
+class sGenericsStructNode extends sNodeBase
 {
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mName = string(name);
-    self.mClass = clone klass;
-
-    return self;
-}
-
-bool sStructNobodyNode*::terminated()
-{
-    return true;
-}
-
-string sStructNobodyNode*::kind()
-{
-    return string("sStructNobodyNode");
-}
-
-bool sStructNobodyNode*::compile(sStructNobodyNode* self, sInfo* info)
-{
-    string name = string(self.mName);
-    sClass* klass = self.mClass;
-    
-    if(info.classes.at(name, null) == null) {
-        info.classes.insert(name, clone klass);
+    new(sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
     }
     
-    sType*% type = new sType(name);
-    
-    info.types.insert(name, clone type);
-    
-    if(info.output_header_file && klass.mDeclareSName !== info->base_sname) {
+    bool terminated()
+    {
+        return true;
     }
-    else {
-        add_come_code_at_source_head(info, "struct %s;\n", name);
+    
+    string kind()
+    {
+        return string("sGenericsStructNode");
     }
-
-    return true;
-}
-
-int sStructNobodyNode*::sline(sStructNobodyNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sStructNobodyNode*::sname(sStructNobodyNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sGenericsStructNode
-{
-    int sline;
-    string sname;
+    
+    bool compile(sInfo* info)
+    {
+    
+        return true;
+    }
 };
 
-sGenericsStructNode*% sGenericsStructNode*::initialize(sGenericsStructNode*% self, sInfo* info)
-{
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    return self;
-}
-
-
-bool sGenericsStructNode*::terminated()
-{
-    return true;
-}
-
-string sGenericsStructNode*::kind()
-{
-    return string("sGenericsStructNode");
-}
-
-bool sGenericsStructNode*::compile(sGenericsStructNode* self, sInfo* info)
-{
-
-    return true;
-}
-
-int sGenericsStructNode*::sline(sGenericsStructNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sGenericsStructNode*::sname(sGenericsStructNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sClassNode
+class sClassNode extends sNodeBase
 {
     string mName;
     sClass*% mClass;
     
     list<sNode*%>*% mMethods;
-
-    int sline;
-    string sname;
     
     bool mOutput;
-};
-
-sClassNode*% sClassNode*::initialize(sClassNode*% self, string name, sClass*% klass, list<sNode*%>*% methods, bool output, sInfo* info)
-{
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mName = string(name);
-    self.mClass = clone klass;
     
-    self.mMethods = methods;
+    new(string name, sClass*% klass, list<sNode*%>*% methods, bool output, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
     
-    self.mOutput = output;
-    
-    return self;
-}
-
-bool sClassNode*::terminated()
-{
-    return true;
-}
-
-string sClassNode*::kind()
-{
-    return string("sClassNode");
-}
-
-bool sClassNode*::compile(sClassNode* self, sInfo* info)
-{
-    sClass*% klass = clone self.mClass;
-    string name = string(self.mName);
-    
-    if(info.classes.at(name, null) == null) {
-        info.classes.insert(name, clone klass);
-    }
-    else if(info.classes.at(name, null).mFields.length() == 0 && klass->mFields.length() > 0) {
-        sClass* klass2 = info.classes.at(name, null);
-        klass2.mFields = clone klass.mFields;
+        self.mName = string(name);
+        self.mClass = clone klass;
+        
+        self.mMethods = methods;
+        
+        self.mOutput = output;
     }
     
-    sType*% type = new sType(name);
-    info.types.insert(name, clone type);
-    
-    if(self.mOutput) {
-        output_struct(klass, info);
+    bool terminated()
+    {
+        return true;
     }
     
-    foreach(it, self.mMethods) {
-        if(!node_compile(it)) {
-            return false;
+    string kind()
+    {
+        return string("sClassNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        sClass*% klass = clone self.mClass;
+        string name = string(self.mName);
+        
+        if(info.classes.at(name, null) == null) {
+            info.classes.insert(name, clone klass);
         }
+        else if(info.classes.at(name, null).mFields.length() == 0 && klass->mFields.length() > 0) {
+            sClass* klass2 = info.classes.at(name, null);
+            klass2.mFields = clone klass.mFields;
+        }
+        
+        sType*% type = new sType(name);
+        info.types.insert(name, clone type);
+        
+        if(self.mOutput) {
+            output_struct(klass, info);
+        }
+        
+        foreach(it, self.mMethods) {
+            if(!node_compile(it)) {
+                return false;
+            }
+        }
+    
+        return true;
     }
-
-    return true;
-}
-
-int sClassNode*::sline(sClassNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sClassNode*::sname(sClassNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
+};
 
 sNode*% parse_struct(string type_name, sInfo* info)
 {

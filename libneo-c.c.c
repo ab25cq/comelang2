@@ -1180,6 +1180,10 @@ static struct list$1double* list$1double_initialize_with_values(struct list$1dou
 static struct list$1double* list$1double_push_back(struct list$1double* self, double item);
 static void list_item$1doublep_finalize(struct list_item$1double* self);
 static void list$1doublep_finalize(struct list$1double* self);
+int sNodeBase_sline(struct sNodeBase* self, struct sInfo* info);
+
+char* sNodeBase_sname(struct sNodeBase* self, struct sInfo* info);
+
 int come_main_v1(int argc, char** argv);
 
 _Bool node_compile(struct sNode* node, struct sInfo* info);

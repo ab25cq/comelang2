@@ -1245,6 +1245,10 @@ static struct list$1float* list$1float_initialize_with_values(struct list$1float
 static struct list$1float* list$1float_push_back(struct list$1float* self, float item);
 static struct list$1double* list$1double_initialize_with_values(struct list$1double* self, int num_value, double* values);
 static struct list$1double* list$1double_push_back(struct list$1double* self, double item);
+int sNodeBase_sline(struct sNodeBase* self, struct sInfo* info);
+
+char* sNodeBase_sname(struct sNodeBase* self, struct sInfo* info);
+
 int come_main_v1(int argc, char** argv);
 
 _Bool node_compile(struct sNode* node, struct sInfo* info);

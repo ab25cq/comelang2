@@ -1497,6 +1497,10 @@ struct integer* integer_operator_andand(struct integer* left, struct integer* ri
 
 struct integer* integer_operator_oror(struct integer* left, struct integer* right);
 
+int sNodeBase_sline(struct sNodeBase* self, struct sInfo* info);
+
+char* sNodeBase_sname(struct sNodeBase* self, struct sInfo* info);
+
 _Bool node_compile(struct sNode* node, struct sInfo* info);
 
 int come_main_v2(int argc, char** argv);

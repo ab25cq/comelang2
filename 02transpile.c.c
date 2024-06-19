@@ -1703,6 +1703,10 @@ struct integer* integer_operator_andand(struct integer* left, struct integer* ri
 
 struct integer* integer_operator_oror(struct integer* left, struct integer* right);
 
+int sNodeBase_sline(struct sNodeBase* self, struct sInfo* info);
+
+char* sNodeBase_sname(struct sNodeBase* self, struct sInfo* info);
+
 int come_main_v1(int argc, char** argv);
 
 char* make_type_name_string(struct sType* type, _Bool in_header, _Bool array_cast_pointer, _Bool no_pointer, struct sInfo* info);
@@ -4200,10 +4204,10 @@ right_value105 = (void*)0;
             __current_stack1__.info = &info;
             __current_stack1__.msg = &msg;
             ((char*)(right_value105=string_puts(((char*)(right_value104=list$1voidp_join(((struct list$1voidp*)(right_value100=list$1charph_map(((struct list$1charph*)(right_value93=list$1charph_sublist(((struct list$1charph*)(right_value87=string_split_char(((char*)(right_value86=buffer_to_string(info->original_source))),10))),n_52,n_52+10))),&__current_stack1__,(void*)method_block1_02transpilec))),"\n"))))));
-                                if(__current_stack1__.__method_block_result_kind__ == 4)
-                    {
-                        return;
-                    }
+                                    if(__current_stack1__.__method_block_result_kind__ == 4)
+                        {
+                            return;
+                        }
             right_value86 = come_decrement_ref_count2(right_value86, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
             come_call_finalizer3(right_value87,list$1charphp_finalize, 0, 1, 0, 0, __result_obj__);
             come_call_finalizer3(right_value93,list$1charphp_finalize, 0, 1, 0, 0, __result_obj__);
@@ -12558,10 +12562,10 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                         __current_stack2__.argc = &argc;
                                         __current_stack2__.argv = &argv;
                                         bool_expect(linker(&info_361,object_files_347),&__current_stack2__,(void*)method_block2_02transpilec);
-                                                            if(__current_stack2__.__method_block_result_kind__ == 3)
-                    {
-                        return (int)__current_stack2__.__method_block_return_value__;
-                    }
+                                                                if(__current_stack2__.__method_block_result_kind__ == 3)
+                        {
+                            return (int)__current_stack2__.__method_block_return_value__;
+                        }
                                         come_call_finalizer3((&info_361),sInfo_finalize, 1, 0, 0, 0, (void*)0);
                                     }
                                     # 1049 "02transpile.c"

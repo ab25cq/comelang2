@@ -67,6 +67,9 @@ struct sNodeBase
     string sname;
 };
 
+int sNodeBase*::sline(sNodeBase* self, sInfo* info);
+string sNodeBase*::sname(sNodeBase* self, sInfo* info);
+
 struct sType
 {
     sClass* mClass;

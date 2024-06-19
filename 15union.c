@@ -1,83 +1,68 @@
 #include "common.h"
 
-struct sUnionNode
+class sUnionNode extends sNodeBase
 {
     sType*% mType;
-  
-    int sline;
-    string sname;
     
     bool mOutput;
-};
-
-sUnionNode*% sUnionNode*::initialize(sUnionNode*% self, sType*% type, bool output, sInfo* info)
-{
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mType = clone type;
     
-    info.types.insert(string(type.mClass.mName), clone type);
+    new(sType*% type, bool output, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
     
-    self.mOutput = output;
-
-    return self;
-}
-
-bool sUnionNode*::terminated()
-{
-    return true;
-}
-
-string sUnionNode*::kind()
-{
-    return string("sUnionNode");
-}
-
-bool sUnionNode*::compile(sUnionNode* self, sInfo* info)
-{
-    sType* type = self.mType;
-    sClass* klass = type->mClass;
-    
-    if(!klass->mOutputed) {
-        klass->mOutputed = true;
+        self.mType = clone type;
         
-        if(klass.mFields.length() > 0) {
-            buffer*% buf = new buffer();
+        info.types.insert(string(type.mClass.mName), clone type);
+        
+        self.mOutput = output;
+    }
+    
+    bool terminated()
+    {
+        return true;
+    }
+    
+    string kind()
+    {
+        return string("sUnionNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        sType* type = self.mType;
+        sClass* klass = type->mClass;
+        
+        if(!klass->mOutputed) {
+            klass->mOutputed = true;
             
-            buf.append_str(xsprintf("union %s\n{\n", type.mClass.mName));
-            
-            foreach(it, klass.mFields) {
-                var name, type = it;
+            if(klass.mFields.length() > 0) {
+                buffer*% buf = new buffer();
                 
-                buf.append_str(make_define_var(type, name));
-                buf.append_str(";\n");
-            }
-            
-            buf.append_str(xsprintf("};\n"));
-            
-            if(info.output_header_file && klass.mDeclareSName !== info->base_sname) {
-            }
-            else {
-                if(self.mOutput) {
-                    add_come_code_at_source_head(info, "%s", buf.to_string());
+                buf.append_str(xsprintf("union %s\n{\n", type.mClass.mName));
+                
+                foreach(it, klass.mFields) {
+                    var name, type = it;
+                    
+                    buf.append_str(make_define_var(type, name));
+                    buf.append_str(";\n");
+                }
+                
+                buf.append_str(xsprintf("};\n"));
+                
+                if(info.output_header_file && klass.mDeclareSName !== info->base_sname) {
+                }
+                else {
+                    if(self.mOutput) {
+                        add_come_code_at_source_head(info, "%s", buf.to_string());
+                    }
                 }
             }
         }
+    
+        return true;
     }
-
-    return true;
-}
-
-int sUnionNode*::sline(sUnionNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sUnionNode*::sname(sUnionNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
+};
 
 sNode*% parse_union(string type_name, sInfo* info)
 {

@@ -1,6 +1,6 @@
 #include "common.h"
 
-struct sTypedefNode
+class sTypedefNode extends sNodeBase
 {
     string mTypeName;
     sType*% mType;
@@ -8,100 +8,85 @@ struct sTypedefNode
     list<tuple2<sType*%, string>*%>*% multiple_declare;
     
     string mDeclareSName;
-  
-    int sline;
-    string sname;
-};
-
-sTypedefNode*% sTypedefNode*::initialize(sTypedefNode*% self, string type_name, sType*% type, list<tuple2<sType*%, string>*%>*% multiple_declare, sInfo* info)
-{
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mTypeName = string(type_name);
-    self.mType = clone type;
     
-    self.mDeclareSName = string(info->sname);
+    new(string type_name, sType*% type, list<tuple2<sType*%, string>*%>*% multiple_declare, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
     
-    self.multiple_declare = clone multiple_declare;
-
-    return self;
-}
-
-bool sTypedefNode*::terminated()
-{
-    return true;
-}
-
-string sTypedefNode*::kind()
-{
-    return string("sTypedefNode");
-}
-
-bool sTypedefNode*::compile(sTypedefNode* self, sInfo* info)
-{
-    string type_name = string(self.mTypeName);
+        self.mTypeName = string(type_name);
+        self.mType = clone type;
+        
+        self.mDeclareSName = string(info->sname);
+        
+        self.multiple_declare = clone multiple_declare;
+    }
     
-    if(type_name === "__darwin_va_list") {
-        info.classes.insert(string("__darwin_va_list"), new sClass("__darwin_va_list", number:true));
+    bool terminated()
+    {
+        return true;
+    }
+    
+    string kind()
+    {
+        return string("sTypedefNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        string type_name = string(self.mTypeName);
         
-        sType*% type = new sType("__darwin_va_list");
-        type->mOriginalTypeName = string("__darwin_va_list");
-        
-        info.types.insert(string(type_name), clone type);
-        
-        if(info.output_header_file && self.mDeclareSName !== info->base_sname) {
+        if(type_name === "__darwin_va_list") {
+            info.classes.insert(string("__darwin_va_list"), new sClass("__darwin_va_list", number:true));
+            
+            sType*% type = new sType("__darwin_va_list");
+            type->mOriginalTypeName = string("__darwin_va_list");
+            
+            info.types.insert(string(type_name), clone type);
+            
+            if(info.output_header_file && self.mDeclareSName !== info->base_sname) {
+            }
+            else {
+                add_come_code_at_source_head(info, "typedef __builtin_va_list __darwin_va_list;\n");
+            }
+        }
+        else if(self.multiple_declare) {
+            foreach(it, self.multiple_declare) {
+                var type, type_name = it;
+            
+                if(type_name !== "va_list") {
+                    type->mOriginalTypeName = string(type_name);
+                }
+                
+                info.types.insert(string(type_name), clone type);
+                
+            
+                if(info.output_header_file && self.mDeclareSName !== info->base_sname) {
+                }
+                else {
+                    add_come_code_at_source_head(info, "typedef %s;\n", make_define_var(type, type_name, in_header:true));
+                }
+            }
         }
         else {
-            add_come_code_at_source_head(info, "typedef __builtin_va_list __darwin_va_list;\n");
-        }
-    }
-    else if(self.multiple_declare) {
-        foreach(it, self.multiple_declare) {
-            var type, type_name = it;
-        
+            sType*% type = clone self.mType;
+            
             if(type_name !== "va_list") {
                 type->mOriginalTypeName = string(type_name);
             }
             
             info.types.insert(string(type_name), clone type);
             
-        
             if(info.output_header_file && self.mDeclareSName !== info->base_sname) {
             }
             else {
                 add_come_code_at_source_head(info, "typedef %s;\n", make_define_var(type, type_name, in_header:true));
             }
         }
+    
+        return true;
     }
-    else {
-        sType*% type = clone self.mType;
-        
-        if(type_name !== "va_list") {
-            type->mOriginalTypeName = string(type_name);
-        }
-        
-        info.types.insert(string(type_name), clone type);
-        
-        if(info.output_header_file && self.mDeclareSName !== info->base_sname) {
-        }
-        else {
-            add_come_code_at_source_head(info, "typedef %s;\n", make_define_var(type, type_name, in_header:true));
-        }
-    }
-
-    return true;
-}
-
-int sTypedefNode*::sline(sTypedefNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sTypedefNode*::sname(sTypedefNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
+};
 
 sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 95
 {

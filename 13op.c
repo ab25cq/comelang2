@@ -123,111 +123,79 @@ bool operator_overload_fun(sType* type, char* fun_name, CVALUE* left_value, CVAL
     return result;
 }
 
-struct sNullNode
+class sNullNode extends sNodeBase
 {
-  int sline;
-  string sname;
+    new(sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    }
+    
+    bool terminated()
+    {
+        return false;
+    }
+    
+    string kind()
+    {
+        return string("sNullNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("((void*)0)");
+        come_value.type = new sType("void*");
+        come_value.var = null;
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+        
+        info.stack.push_back(come_value);
+    
+        return true;
+    }
 };
-
-
-sNullNode*% sNullNode*::initialize(sNullNode*% self, sInfo* info)
-{
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    return self;
-}
-
-bool sNullNode*::terminated()
-{
-    return false;
-}
-
-string sNullNode*::kind()
-{
-    return string("sNullNode");
-}
-
-bool sNullNode*::compile(sNullNode* self, sInfo* info)
-{
-    CVALUE*% come_value = new CVALUE;
-    
-    come_value.c_value = xsprintf("((void*)0)");
-    come_value.type = new sType("void*");
-    come_value.var = null;
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
-    
-    info.stack.push_back(come_value);
-
-    return true;
-}
-
-int sNullNode*::sline(sNullNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sNullNode*::sname(sNullNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
 
 sNode*% create_null_object(sInfo* info)
 {
     return new sNullNode(info) implements sNode;
 }
 
-struct sNilNode
+class sNilNode extends sNodeBase
 {
-  int sline;
-  string sname;
+    new(sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    }
+    
+    bool terminated()
+    {
+        return false;
+    }
+    
+    string kind()
+    {
+        return string("sNilNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        CVALUE*% come_value = new CVALUE;
+        
+        come_value.c_value = xsprintf("((void*)0)");
+        come_value.type = new sType("void*");
+        come_value.type->mNullValue = true;
+        come_value.var = null;
+        
+        add_come_last_code(info, "%s;\n", come_value.c_value);
+        
+        info.stack.push_back(come_value);
+    
+        return true;
+    }
 };
-
-
-sNilNode*% sNilNode*::initialize(sNilNode*% self, sInfo* info)
-{
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    return self;
-}
-
-bool sNilNode*::terminated()
-{
-    return false;
-}
-
-string sNilNode*::kind()
-{
-    return string("sNilNode");
-}
-
-bool sNilNode*::compile(sNilNode* self, sInfo* info)
-{
-    CVALUE*% come_value = new CVALUE;
-    
-    come_value.c_value = xsprintf("((void*)0)");
-    come_value.type = new sType("void*");
-    come_value.type->mNullValue = true;
-    come_value.var = null;
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
-    
-    info.stack.push_back(come_value);
-
-    return true;
-}
-
-int sNilNode*::sline(sNilNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sNilNode*::sname(sNilNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
 
 sNode*% create_null_object(sInfo* info)
 {
@@ -235,1230 +203,879 @@ sNode*% create_null_object(sInfo* info)
 }
 
 
-struct sAddNode
+class sAddNode extends sNodeBase
 {
-  sNode*% mLeft;
-  sNode*% mRight;
-  bool mQuote;
-  
-  int sline;
-  string sname;
+    sNode*% mLeft;
+    sNode*% mRight;
+    bool mQuote;
+      
+    new(sNode*% left, sNode*% right, bool quote, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mLeft = clone left;
+        self.mRight = clone right;
+        self.mQuote = quote;
+    }
+    
+    bool terminated()
+    {
+        return false;
+    }
+    
+    string kind()
+    {
+        return string("sAddNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
+    
+        if(!node_compile(left_node)) {
+            return false;
+        }
+        
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sNode* right_node = self.mRight;
+    
+        if(!node_compile(right_node)) {
+            return false;
+        }
+        
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sType*% type = left_value.type;
+        
+        char* fun_name = "operator_add";
+        bool calling_fun;
+        if(self.mQuote) {
+            calling_fun = false;
+        }
+        else {
+            calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
+        }
+        
+        if(!calling_fun) {
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = xsprintf("%s+%s", left_value.c_value, right_value.c_value);
+            come_value.type = clone left_value.type;
+            come_value.type->mHeap = false;
+            come_value.var = null;
+            
+            add_come_last_code(info, "%s;\n", come_value.c_value);
+            
+            info.stack.push_back(come_value);
+        }
+    
+        return true;
+    }
 };
 
-
-sAddNode*% sAddNode*::initialize(sAddNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
+class sSubNode extends sNodeBase
 {
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mLeft = clone left;
-    self.mRight = clone right;
-    self.mQuote = quote;
-
-    return self;
-}
-
-bool sAddNode*::terminated()
-{
-    return false;
-}
-
-string sAddNode*::kind()
-{
-    return string("sAddNode");
-}
-
-bool sAddNode*::compile(sAddNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
+    sNode*% mLeft;
+    sNode*% mRight;
+    bool mQuote;
+    
+    new(sNode*% left, sNode*% right, bool quote, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mLeft = clone left;
+        self.mRight = clone right;
+        self.mQuote = quote;
+    }
+    
+    bool terminated()
+    {
         return false;
     }
     
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* right_node = self.mRight;
-
-    if(!node_compile(right_node)) {
-        return false;
+    string kind()
+    {
+        return string("sSubNode");
     }
     
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
     
-    sType*% type = left_value.type;
-    
-    char* fun_name = "operator_add";
-    bool calling_fun;
-    if(self.mQuote) {
-        calling_fun = false;
-    }
-    else {
-        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
-    }
-    
-    if(!calling_fun) {
-        CVALUE*% come_value = new CVALUE;
+        if(!node_compile(left_node)) {
+            return false;
+        }
         
-        come_value.c_value = xsprintf("%s+%s", left_value.c_value, right_value.c_value);
-        come_value.type = clone left_value.type;
-        come_value.type->mHeap = false;
-        come_value.var = null;
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
         
-        add_come_last_code(info, "%s;\n", come_value.c_value);
+        sNode* right_node = self.mRight;
+    
+        if(!node_compile(right_node)) {
+            return false;
+        }
         
-        info.stack.push_back(come_value);
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sType*% type = left_value.type;
+        
+        char* fun_name = "operator_sub";
+        bool calling_fun;
+        if(self.mQuote) {
+            calling_fun = false;
+        }
+        else {
+            calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
+        }
+        
+        if(!calling_fun) {
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = xsprintf("%s-%s", left_value.c_value, right_value.c_value);
+            come_value.type = clone left_value.type;
+            come_value.type->mHeap = false;
+            come_value.var = null;
+            
+            add_come_last_code(info, "%s;\n", come_value.c_value);
+            
+            info.stack.push_back(come_value);
+        }
+    
+        return true;
     }
-
-    return true;
-}
-
-int sAddNode*::sline(sAddNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sAddNode*::sname(sAddNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sSubNode
-{
-  sNode*% mLeft;
-  sNode*% mRight;
-  bool mQuote;
-  
-  int sline;
-  string sname;
 };
 
-
-sSubNode*% sSubNode*::initialize(sSubNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
+class sMultNode extends sNodeBase
 {
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mLeft = clone left;
-    self.mRight = clone right;
-    self.mQuote = quote;
-
-    return self;
-}
-
-bool sSubNode*::terminated()
-{
-    return false;
-}
-
-string sSubNode*::kind()
-{
-    return string("sSubNode");
-}
-
-bool sSubNode*::compile(sSubNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
+    sNode*% mLeft;
+    sNode*% mRight;
+    bool mQuote;
+    
+    new(sNode*% left, sNode*% right, bool quote, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mQuote = quote;
+        self.mLeft = clone left;
+        self.mRight = clone right;
+    }
+    
+    bool terminated()
+    {
         return false;
     }
     
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* right_node = self.mRight;
-
-    if(!node_compile(right_node)) {
-        return false;
+    string kind()
+    {
+        return string("sMultNode");
     }
     
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
     
-    sType*% type = left_value.type;
-    
-    char* fun_name = "operator_sub";
-    bool calling_fun;
-    if(self.mQuote) {
-        calling_fun = false;
-    }
-    else {
-        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
-    }
-    
-    if(!calling_fun) {
-        CVALUE*% come_value = new CVALUE;
+        if(!node_compile(left_node)) {
+            return false;
+        }
         
-        come_value.c_value = xsprintf("%s-%s", left_value.c_value, right_value.c_value);
-        come_value.type = clone left_value.type;
-        come_value.type->mHeap = false;
-        come_value.var = null;
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
         
-        add_come_last_code(info, "%s;\n", come_value.c_value);
+        sNode* right_node = self.mRight;
+    
+        if(!node_compile(right_node)) {
+            return false;
+        }
         
-        info.stack.push_back(come_value);
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sType*% type = left_value.type;
+        
+        char* fun_name = "operator_mult";
+        bool calling_fun;
+        if(self.mQuote) {
+            calling_fun = false;
+        }
+        else {
+            calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
+        }
+        
+        if(!calling_fun) {
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = xsprintf("%s*%s", left_value.c_value, right_value.c_value);
+            come_value.type = clone left_value.type;
+            come_value.type->mHeap = false;
+            come_value.var = null;
+            
+            add_come_last_code(info, "%s;\n", come_value.c_value);
+            
+            info.stack.push_back(come_value);
+        }
+    
+        return true;
     }
-
-    return true;
-}
-
-int sSubNode*::sline(sSubNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sSubNode*::sname(sSubNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sMultNode
-{
-  sNode*% mLeft;
-  sNode*% mRight;
-  bool mQuote;
-  
-  int sline;
-  string sname;
 };
 
-
-sMultNode*% sMultNode*::initialize(sMultNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
+class sDivNode extends sNodeBase
 {
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mQuote = quote;
-    self.mLeft = clone left;
-    self.mRight = clone right;
-
-    return self;
-}
-
-bool sMultNode*::terminated()
-{
-    return false;
-}
-
-string sMultNode*::kind()
-{
-    return string("sMultNode");
-}
-
-bool sMultNode*::compile(sMultNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
+    sNode*% mLeft;
+    sNode*% mRight;
+    bool mQuote;
+    
+    new(sNode*% left, sNode*% right, bool quote, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mQuote = quote;
+        self.mLeft = clone left;
+        self.mRight = clone right;
+    }
+    
+    bool terminated()
+    {
         return false;
     }
     
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* right_node = self.mRight;
-
-    if(!node_compile(right_node)) {
-        return false;
+    string kind()
+    {
+        return string("sDivNode");
     }
     
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
     
-    sType*% type = left_value.type;
-    
-    char* fun_name = "operator_mult";
-    bool calling_fun;
-    if(self.mQuote) {
-        calling_fun = false;
-    }
-    else {
-        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
-    }
-    
-    if(!calling_fun) {
-        CVALUE*% come_value = new CVALUE;
+        if(!node_compile(left_node)) {
+            return false;
+        }
         
-        come_value.c_value = xsprintf("%s*%s", left_value.c_value, right_value.c_value);
-        come_value.type = clone left_value.type;
-        come_value.type->mHeap = false;
-        come_value.var = null;
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
         
-        add_come_last_code(info, "%s;\n", come_value.c_value);
+        sNode* right_node = self.mRight;
+    
+        if(!node_compile(right_node)) {
+            return false;
+        }
         
-        info.stack.push_back(come_value);
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sType*% type = left_value.type;
+        
+        char* fun_name = "operator_div";
+        bool calling_fun;
+        if(self.mQuote) {
+            calling_fun = false;
+        }
+        else {
+            calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
+        }
+        
+        if(!calling_fun) {
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = xsprintf("%s/%s", left_value.c_value, right_value.c_value);
+            come_value.type = clone left_value.type;
+            come_value.type->mHeap = false;
+            come_value.var = null;
+            
+            add_come_last_code(info, "%s;\n", come_value.c_value);
+            
+            info.stack.push_back(come_value);
+        }
+    
+        return true;
     }
-
-    return true;
-}
-
-int sMultNode*::sline(sMultNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sMultNode*::sname(sMultNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sDivNode
-{
-  sNode*% mLeft;
-  sNode*% mRight;
-  bool mQuote;
-  
-  int sline;
-  string sname;
 };
 
-
-sDivNode*% sDivNode*::initialize(sDivNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
+class sModNode extends sNodeBase
 {
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mQuote = quote;
-    self.mLeft = clone left;
-    self.mRight = clone right;
-
-    return self;
-}
-
-bool sDivNode*::terminated()
-{
-    return false;
-}
-
-string sDivNode*::kind()
-{
-    return string("sDivNode");
-}
-
-bool sDivNode*::compile(sDivNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
+    sNode*% mLeft;
+    sNode*% mRight;
+    bool mQuote;
+    
+    new(sNode*% left, sNode*% right, bool quote, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mQuote = quote;
+        self.mLeft = clone left;
+        self.mRight = clone right;
+    }
+    
+    bool terminated()
+    {
         return false;
     }
     
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* right_node = self.mRight;
-
-    if(!node_compile(right_node)) {
-        return false;
+    string kind()
+    {
+        return string("sModNode");
     }
     
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
     
-    sType*% type = left_value.type;
-    
-    char* fun_name = "operator_div";
-    bool calling_fun;
-    if(self.mQuote) {
-        calling_fun = false;
-    }
-    else {
-        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
-    }
-    
-    if(!calling_fun) {
-        CVALUE*% come_value = new CVALUE;
+        if(!node_compile(left_node)) {
+            return false;
+        }
         
-        come_value.c_value = xsprintf("%s/%s", left_value.c_value, right_value.c_value);
-        come_value.type = clone left_value.type;
-        come_value.type->mHeap = false;
-        come_value.var = null;
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
         
-        add_come_last_code(info, "%s;\n", come_value.c_value);
+        sNode* right_node = self.mRight;
+    
+        if(!node_compile(right_node)) {
+            return false;
+        }
         
-        info.stack.push_back(come_value);
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sType*% type = left_value.type;
+        
+        char* fun_name = "operator_mod";
+        bool calling_fun;
+        if(self.mQuote) {
+            calling_fun = false;
+        }
+        else {
+            calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
+        }
+        
+        if(!calling_fun) {
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = xsprintf("%s%%%s", left_value.c_value, right_value.c_value);
+            come_value.type = clone left_value.type;
+            come_value.type->mHeap = false;
+            come_value.var = null;
+            
+            add_come_last_code(info, "%s;\n", come_value.c_value);
+            
+            info.stack.push_back(come_value);
+        }
+    
+        return true;
     }
-
-    return true;
-}
-
-int sDivNode*::sline(sDivNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sDivNode*::sname(sDivNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sModNode
-{
-  sNode*% mLeft;
-  sNode*% mRight;
-  bool mQuote;
-  
-  int sline;
-  string sname;
 };
 
-
-sModNode*% sModNode*::initialize(sModNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
+class sLShiftNode extends sNodeBase
 {
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mQuote = quote;
-    self.mLeft = clone left;
-    self.mRight = clone right;
-
-    return self;
-}
-
-bool sModNode*::terminated()
-{
-    return false;
-}
-
-string sModNode*::kind()
-{
-    return string("sModNode");
-}
-
-bool sModNode*::compile(sModNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
+    sNode*% mLeft;
+    sNode*% mRight;
+    bool mQuote;
+    
+    new(sNode*% left, sNode*% right, bool quote, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+        self.mQuote = quote;
+    
+        self.mLeft = clone left;
+        self.mRight = clone right;
+    }
+    
+    bool terminated()
+    {
         return false;
     }
     
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
+    string kind()
+    {
+        return string("sLShiftNode");
+    }
     
-    sNode* right_node = self.mRight;
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
+    
+        if(!node_compile(left_node)) {
+            return false;
+        }
+        
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sNode* right_node = self.mRight;
+    
+        if(!node_compile(right_node)) {
+            return false;
+        }
+        
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sType*% type = left_value.type;
+        
+        char* fun_name = "operator_lshift";
+        bool calling_fun;
+        if(self.mQuote) {
+            calling_fun = false;
+        }
+        else {
+            calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
+        }
+        
+        if(!calling_fun) {
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = xsprintf("%s<<%s", left_value.c_value, right_value.c_value);
+            come_value.type = clone left_value.type;
+            come_value.type->mHeap = false;
+            come_value.var = null;
+            
+            add_come_last_code(info, "%s;\n", come_value.c_value);
+            
+            info.stack.push_back(come_value);
+        }
+    
+        return true;
+    }
+}
 
-    if(!node_compile(right_node)) {
+class sRShiftNode extends sNodeBase
+{
+    sNode*% mLeft;
+    sNode*% mRight;
+    bool mQuote;
+    
+    new(sNode*% left, sNode*% right, bool quote, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mQuote = quote;
+        self.mLeft = clone left;
+        self.mRight = clone right;
+    }
+    
+    bool terminated()
+    {
         return false;
     }
     
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sType*% type = left_value.type;
-    
-    char* fun_name = "operator_mod";
-    bool calling_fun;
-    if(self.mQuote) {
-        calling_fun = false;
-    }
-    else {
-        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
+    string kind()
+    {
+        return string("sRShiftNode");
     }
     
-    if(!calling_fun) {
-        CVALUE*% come_value = new CVALUE;
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
+    
+        if(!node_compile(left_node)) {
+            return false;
+        }
         
-        come_value.c_value = xsprintf("%s%%%s", left_value.c_value, right_value.c_value);
-        come_value.type = clone left_value.type;
-        come_value.type->mHeap = false;
-        come_value.var = null;
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
         
-        add_come_last_code(info, "%s;\n", come_value.c_value);
+        sNode* right_node = self.mRight;
+    
+        if(!node_compile(right_node)) {
+            return false;
+        }
         
-        info.stack.push_back(come_value);
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sType*% type = left_value.type;
+        
+        char* fun_name = "operator_rshift";
+        bool calling_fun;
+        if(self.mQuote) {
+            calling_fun = false;
+        }
+        else {
+            calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
+        }
+        
+        if(!calling_fun) {
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = xsprintf("%s>>%s", left_value.c_value, right_value.c_value);
+            come_value.type = clone left_value.type;
+            come_value.type->mHeap = false;
+            come_value.var = null;
+            
+            add_come_last_code(info, "%s;\n", come_value.c_value);
+            
+            info.stack.push_back(come_value);
+        }
+    
+        return true;
     }
-
-    return true;
-}
-
-int sModNode*::sline(sModNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sModNode*::sname(sModNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sLShiftNode
-{
-  sNode*% mLeft;
-  sNode*% mRight;
-  bool mQuote;
-  
-  int sline;
-  string sname;
 };
 
-
-sLShiftNode*% sLShiftNode*::initialize(sLShiftNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
+class sGtEqNode extends sNodeBase
 {
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-    self.mQuote = quote;
-
-    self.mLeft = clone left;
-    self.mRight = clone right;
-
-    return self;
-}
-
-bool sLShiftNode*::terminated()
-{
-    return false;
-}
-
-string sLShiftNode*::kind()
-{
-    return string("sLShiftNode");
-}
-
-bool sLShiftNode*::compile(sLShiftNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
+    sNode*% mLeft;
+    sNode*% mRight;
+    bool mQuote;
+    
+    new(sNode*% left, sNode*% right, bool quote, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mQuote = quote;
+        self.mLeft = clone left;
+        self.mRight = clone right;
+    }
+    
+    bool terminated()
+    {
         return false;
     }
     
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* right_node = self.mRight;
-
-    if(!node_compile(right_node)) {
-        return false;
+    string kind()
+    {
+        return string("sGtEqNode");
     }
     
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
     
-    sType*% type = left_value.type;
-    
-    char* fun_name = "operator_lshift";
-    bool calling_fun;
-    if(self.mQuote) {
-        calling_fun = false;
-    }
-    else {
-        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
-    }
-    
-    if(!calling_fun) {
-        CVALUE*% come_value = new CVALUE;
+        if(!node_compile(left_node)) {
+            return false;
+        }
         
-        come_value.c_value = xsprintf("%s<<%s", left_value.c_value, right_value.c_value);
-        come_value.type = clone left_value.type;
-        come_value.type->mHeap = false;
-        come_value.var = null;
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
         
-        add_come_last_code(info, "%s;\n", come_value.c_value);
+        sNode* right_node = self.mRight;
+    
+        if(!node_compile(right_node)) {
+            return false;
+        }
         
-        info.stack.push_back(come_value);
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sType*% type = left_value.type;
+        
+        char* fun_name = "operator_gteq";
+        bool calling_fun;
+        if(self.mQuote) {
+            calling_fun = false;
+        }
+        else {
+            calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
+        }
+        
+        if(!calling_fun) {
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = xsprintf("%s>=%s", left_value.c_value, right_value.c_value);
+            come_value.type = clone left_value.type;
+            come_value.type->mHeap = false;
+            come_value.var = null;
+            
+            add_come_last_code(info, "%s;\n", come_value.c_value);
+            
+            info.stack.push_back(come_value);
+        }
+    
+        return true;
     }
-
-    return true;
-}
-
-int sLShiftNode*::sline(sLShiftNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sLShiftNode*::sname(sLShiftNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sRShiftNode
-{
-  sNode*% mLeft;
-  sNode*% mRight;
-  bool mQuote;
-  
-  int sline;
-  string sname;
 };
 
-
-sRShiftNode*% sRShiftNode*::initialize(sRShiftNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
+class sLtEqNode extends sNodeBase
 {
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mQuote = quote;
-    self.mLeft = clone left;
-    self.mRight = clone right;
-
-    return self;
-}
-
-bool sRShiftNode*::terminated()
-{
-    return false;
-}
-
-string sRShiftNode*::kind()
-{
-    return string("sRShiftNode");
-}
-
-bool sRShiftNode*::compile(sRShiftNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
+    sNode*% mLeft;
+    sNode*% mRight;
+    bool mQuote;
+    
+    new(sNode*% left, sNode*% right, bool quote, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mQuote = quote;
+        self.mLeft = clone left;
+        self.mRight = clone right;
+    }
+    
+    bool terminated()
+    {
         return false;
     }
     
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* right_node = self.mRight;
-
-    if(!node_compile(right_node)) {
-        return false;
+    string kind()
+    {
+        return string("sLtEqNode");
     }
     
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
     
-    sType*% type = left_value.type;
-    
-    char* fun_name = "operator_rshift";
-    bool calling_fun;
-    if(self.mQuote) {
-        calling_fun = false;
-    }
-    else {
-        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
-    }
-    
-    if(!calling_fun) {
-        CVALUE*% come_value = new CVALUE;
+        if(!node_compile(left_node)) {
+            return false;
+        }
         
-        come_value.c_value = xsprintf("%s>>%s", left_value.c_value, right_value.c_value);
-        come_value.type = clone left_value.type;
-        come_value.type->mHeap = false;
-        come_value.var = null;
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
         
-        add_come_last_code(info, "%s;\n", come_value.c_value);
+        sNode* right_node = self.mRight;
+    
+        if(!node_compile(right_node)) {
+            return false;
+        }
         
-        info.stack.push_back(come_value);
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sType*% type = left_value.type;
+        
+        char* fun_name = "operator_lteq";
+        bool calling_fun;
+        if(self.mQuote) {
+            calling_fun = false;
+        }
+        else {
+            calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
+        }
+        
+        if(!calling_fun) {
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = xsprintf("%s<=%s", left_value.c_value, right_value.c_value);
+            come_value.type = clone left_value.type;
+            come_value.type->mHeap = false;
+            come_value.var = null;
+            
+            add_come_last_code(info, "%s;\n", come_value.c_value);
+            
+            info.stack.push_back(come_value);
+        }
+    
+        return true;
     }
-
-    return true;
-}
-
-int sRShiftNode*::sline(sRShiftNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sRShiftNode*::sname(sLShiftNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sGtEqNode
-{
-  sNode*% mLeft;
-  sNode*% mRight;
-  bool mQuote;
-  
-  int sline;
-  string sname;
 };
 
-
-sGtEqNode*% sGtEqNode*::initialize(sGtEqNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
+class sLtNode extends sNodeBase
 {
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mQuote = quote;
-    self.mLeft = clone left;
-    self.mRight = clone right;
-
-    return self;
-}
-
-bool sGtEqNode*::terminated()
-{
-    return false;
-}
-
-string sGtEqNode*::kind()
-{
-    return string("sGtEqNode");
-}
-
-bool sGtEqNode*::compile(sGtEqNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
+    sNode*% mLeft;
+    sNode*% mRight;
+    bool mQuote;
+    
+    new(sNode*% left, sNode*% right, bool quote, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mQuote = quote;
+        self.mLeft = clone left;
+        self.mRight = clone right;
+    }
+    
+    bool terminated()
+    {
         return false;
     }
     
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* right_node = self.mRight;
-
-    if(!node_compile(right_node)) {
-        return false;
+    string kind()
+    {
+        return string("sLtNode");
     }
     
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
     
-    sType*% type = left_value.type;
-    
-    char* fun_name = "operator_gteq";
-    bool calling_fun;
-    if(self.mQuote) {
-        calling_fun = false;
-    }
-    else {
-        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
-    }
-    
-    if(!calling_fun) {
-        CVALUE*% come_value = new CVALUE;
+        if(!node_compile(left_node)) {
+            return false;
+        }
         
-        come_value.c_value = xsprintf("%s>=%s", left_value.c_value, right_value.c_value);
-        come_value.type = clone left_value.type;
-        come_value.type->mHeap = false;
-        come_value.var = null;
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
         
-        add_come_last_code(info, "%s;\n", come_value.c_value);
+        sNode* right_node = self.mRight;
+    
+        if(!node_compile(right_node)) {
+            return false;
+        }
         
-        info.stack.push_back(come_value);
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sType*% type = left_value.type;
+        
+        char* fun_name = "operator_lt";
+        bool calling_fun;
+        if(self.mQuote) {
+            calling_fun = false;
+        }
+        else {
+            calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
+        }
+        
+        if(!calling_fun) {
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = xsprintf("%s<%s", left_value.c_value, right_value.c_value);
+            come_value.type = clone left_value.type;
+            come_value.type->mHeap = false;
+            come_value.var = null;
+            
+            add_come_last_code(info, "%s;\n", come_value.c_value);
+            
+            info.stack.push_back(come_value);
+        }
+    
+        return true;
     }
-
-    return true;
-}
-
-int sGtEqNode*::sline(sGtEqNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sGtEqNode*::sname(sGtEqNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sLtEqNode
-{
-  sNode*% mLeft;
-  sNode*% mRight;
-  bool mQuote;
-  
-  int sline;
-  string sname;
 };
 
-
-sLtEqNode*% sLtEqNode*::initialize(sLtEqNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
+class sGtNode extends sNodeBase
 {
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mQuote = quote;
-    self.mLeft = clone left;
-    self.mRight = clone right;
-
-    return self;
-}
-
-bool sLtEqNode*::terminated()
-{
-    return false;
-}
-
-string sLtEqNode*::kind()
-{
-    return string("sLtEqNode");
-}
-
-bool sLtEqNode*::compile(sLtEqNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
+    sNode*% mLeft;
+    sNode*% mRight;
+    bool mQuote;
+    
+    new(sNode*% left, sNode*% right, bool quote, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mQuote = quote;
+        self.mLeft = clone left;
+        self.mRight = clone right;
+    }
+    
+    bool terminated()
+    {
         return false;
     }
     
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* right_node = self.mRight;
-
-    if(!node_compile(right_node)) {
-        return false;
+    string kind()
+    {
+        return string("sGtNode");
     }
     
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
     
-    sType*% type = left_value.type;
-    
-    char* fun_name = "operator_lteq";
-    bool calling_fun;
-    if(self.mQuote) {
-        calling_fun = false;
-    }
-    else {
-        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
-    }
-    
-    if(!calling_fun) {
-        CVALUE*% come_value = new CVALUE;
+        if(!node_compile(left_node)) {
+            return false;
+        }
         
-        come_value.c_value = xsprintf("%s<=%s", left_value.c_value, right_value.c_value);
-        come_value.type = clone left_value.type;
-        come_value.type->mHeap = false;
-        come_value.var = null;
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
         
-        add_come_last_code(info, "%s;\n", come_value.c_value);
+        sNode* right_node = self.mRight;
+    
+        if(!node_compile(right_node)) {
+            return false;
+        }
         
-        info.stack.push_back(come_value);
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sType*% type = left_value.type;
+        
+        char* fun_name = "operator_gt";
+        bool calling_fun;
+        if(self.mQuote) {
+            calling_fun = false;
+        }
+        else {
+            calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
+        }
+        
+        if(!calling_fun) {
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = xsprintf("%s>%s", left_value.c_value, right_value.c_value);
+            come_value.type = clone left_value.type;
+            come_value.type->mHeap = false;
+            come_value.var = null;
+            
+            add_come_last_code(info, "%s;\n", come_value.c_value);
+            
+            info.stack.push_back(come_value);
+        }
+    
+        return true;
     }
-
-    return true;
-}
-
-int sLtEqNode*::sline(sLtEqNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sLtEqNode*::sname(sLtEqNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sLtNode
-{
-  sNode*% mLeft;
-  sNode*% mRight;
-  bool mQuote;
-  
-  int sline;
-  string sname;
 };
 
-
-sLtNode*% sLtNode*::initialize(sLtNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
+class sEqNode extends sNodeBase
 {
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mQuote = quote;
-    self.mLeft = clone left;
-    self.mRight = clone right;
-
-    return self;
-}
-
-bool sLtNode*::terminated()
-{
-    return false;
-}
-
-string sLtNode*::kind()
-{
-    return string("sLtNode");
-}
-
-bool sLtNode*::compile(sLtNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
+    sNode*% mLeft;
+    sNode*% mRight;
+    bool mQuote;
+    
+    
+    new(sNode*% left, sNode*% right, bool quote, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mQuote = quote;
+        self.mLeft = clone left;
+        self.mRight = clone right;
+    }
+    
+    bool terminated()
+    {
         return false;
     }
     
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* right_node = self.mRight;
-
-    if(!node_compile(right_node)) {
-        return false;
+    string kind()
+    {
+        return string("sEqNode");
     }
     
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
     
-    sType*% type = left_value.type;
-    
-    char* fun_name = "operator_lt";
-    bool calling_fun;
-    if(self.mQuote) {
-        calling_fun = false;
-    }
-    else {
-        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
-    }
-    
-    if(!calling_fun) {
-        CVALUE*% come_value = new CVALUE;
+        if(!node_compile(left_node)) {
+            return false;
+        }
         
-        come_value.c_value = xsprintf("%s<%s", left_value.c_value, right_value.c_value);
-        come_value.type = clone left_value.type;
-        come_value.type->mHeap = false;
-        come_value.var = null;
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
         
-        add_come_last_code(info, "%s;\n", come_value.c_value);
+        sNode* right_node = self.mRight;
+    
+        if(!node_compile(right_node)) {
+            return false;
+        }
         
-        info.stack.push_back(come_value);
-    }
-
-    return true;
-}
-
-int sLtNode*::sline(sLtNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sLtNode*::sname(sLtNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sGtNode
-{
-  sNode*% mLeft;
-  sNode*% mRight;
-  bool mQuote;
-  
-  int sline;
-  string sname;
-};
-
-
-sGtNode*% sGtNode*::initialize(sGtNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
-{
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mQuote = quote;
-    self.mLeft = clone left;
-    self.mRight = clone right;
-
-    return self;
-}
-
-bool sGtNode*::terminated()
-{
-    return false;
-}
-
-string sGtNode*::kind()
-{
-    return string("sGtNode");
-}
-
-bool sGtNode*::compile(sGtNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
-        return false;
-    }
-    
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* right_node = self.mRight;
-
-    if(!node_compile(right_node)) {
-        return false;
-    }
-    
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sType*% type = left_value.type;
-    
-    char* fun_name = "operator_gt";
-    bool calling_fun;
-    if(self.mQuote) {
-        calling_fun = false;
-    }
-    else {
-        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
-    }
-    
-    if(!calling_fun) {
-        CVALUE*% come_value = new CVALUE;
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
         
-        come_value.c_value = xsprintf("%s>%s", left_value.c_value, right_value.c_value);
-        come_value.type = clone left_value.type;
-        come_value.type->mHeap = false;
-        come_value.var = null;
-        
-        add_come_last_code(info, "%s;\n", come_value.c_value);
-        
-        info.stack.push_back(come_value);
-    }
-
-    return true;
-}
-
-int sGtNode*::sline(sGtNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sGtNode*::sname(sGtNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sEqNode
-{
-  sNode*% mLeft;
-  sNode*% mRight;
-  bool mQuote;
-  
-  int sline;
-  string sname;
-};
-
-
-sEqNode*% sEqNode*::initialize(sEqNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
-{
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mQuote = quote;
-    self.mLeft = clone left;
-    self.mRight = clone right;
-
-    return self;
-}
-
-int sEqNode*::sline(sEqNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sEqNode*::sname(sEqNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-bool sEqNode*::terminated()
-{
-    return false;
-}
-
-string sEqNode*::kind()
-{
-    return string("sEqNode");
-}
-
-bool sEqNode*::compile(sEqNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
-        return false;
-    }
-    
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* right_node = self.mRight;
-
-    if(!node_compile(right_node)) {
-        return false;
-    }
-    
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    CVALUE*% come_value = new CVALUE;
-    
-    come_value.c_value = xsprintf("%s==%s", left_value.c_value, right_value.c_value);
-    come_value.type = clone left_value.type;
-    come_value.type->mHeap = false;
-    come_value.var = null;
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
-    
-    info.stack.push_back(come_value);
-
-    return true;
-}
-
-struct sNotEqNode
-{
-  sNode*% mLeft;
-  sNode*% mRight;
-  bool mQuote;
-  
-  int sline;
-  string sname;
-};
-
-
-sNotEqNode*% sNotEqNode*::initialize(sNotEqNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
-{
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mQuote = quote;
-    self.mLeft = clone left;
-    self.mRight = clone right;
-
-    return self;
-}
-
-bool sNotEqNode*::terminated()
-{
-    return false;
-}
-
-string sNotEqNode*::kind()
-{
-    return string("sNotEqNode");
-}
-
-bool sNotEqNode*::compile(sNotEqNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
-        return false;
-    }
-    
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* right_node = self.mRight;
-
-    if(!node_compile(right_node)) {
-        return false;
-    }
-    
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    CVALUE*% come_value = new CVALUE;
-    
-    come_value.c_value = xsprintf("%s!=%s", left_value.c_value, right_value.c_value);
-    come_value.type = clone left_value.type;
-    come_value.type->mHeap = false;
-    come_value.var = null;
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
-    
-    info.stack.push_back(come_value);
-
-    return true;
-}
-
-int sNotEqNode*::sline(sNotEqNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sNotEqNode*::sname(sNotEqNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sEq2Node
-{
-  sNode*% mLeft;
-  sNode*% mRight;
-  bool mQuote;
-  
-  int sline;
-  string sname;
-};
-
-
-sEq2Node*% sEq2Node*::initialize(sEq2Node*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
-{
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mQuote = quote;
-    self.mLeft = clone left;
-    self.mRight = clone right;
-
-    return self;
-}
-
-
-bool sEq2Node*::terminated()
-{
-    return false;
-}
-
-string sEq2Node*::kind()
-{
-    return string("sEq2Node");
-}
-
-bool sEq2Node*::compile(sEqNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
-        return false;
-    }
-    
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* right_node = self.mRight;
-
-    if(!node_compile(right_node)) {
-        return false;
-    }
-    
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sType*% type = left_value.type;
-    
-    char* fun_name = "operator_equals";
-    bool calling_fun;
-    if(self.mQuote) {
-        calling_fun = false;
-    }
-    else {
-        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
-    }
-    
-    if(!calling_fun) {
         CVALUE*% come_value = new CVALUE;
         
         come_value.c_value = xsprintf("%s==%s", left_value.c_value, right_value.c_value);
@@ -1469,87 +1086,58 @@ bool sEq2Node*::compile(sEqNode* self, sInfo* info)
         add_come_last_code(info, "%s;\n", come_value.c_value);
         
         info.stack.push_back(come_value);
+    
+        return true;
     }
-
-    return true;
-}
-
-int sEq2Node*::sline(sEq2Node* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sEq2Node*::sname(sEq2Node* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sNotEq2Node
-{
-  sNode*% mLeft;
-  sNode*% mRight;
-  bool mQuote;
-  
-  int sline;
-  string sname;
 };
 
-
-sNotEq2Node*% sNotEq2Node*::initialize(sNotEq2Node*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
+class sNotEqNode extends sNodeBase
 {
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mQuote = quote;
-    self.mLeft = clone left;
-    self.mRight = clone right;
-
-    return self;
-}
-
-bool sNotEq2Node*::terminated()
-{
-    return false;
-}
-
-string sNotEq2Node*::kind()
-{
-    return string("sNotEq2Node");
-}
-
-bool sNotEq2Node*::compile(sNotEq2Node* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
+    sNode*% mLeft;
+    sNode*% mRight;
+    bool mQuote;
+    
+    new(sNode*% left, sNode*% right, bool quote, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mQuote = quote;
+        self.mLeft = clone left;
+        self.mRight = clone right;
+    }
+    
+    bool terminated()
+    {
         return false;
     }
     
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* right_node = self.mRight;
-
-    if(!node_compile(right_node)) {
-        return false;
+    string kind()
+    {
+        return string("sNotEqNode");
     }
     
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
     
-    sType*% type = left_value.type;
+        if(!node_compile(left_node)) {
+            return false;
+        }
+        
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sNode* right_node = self.mRight;
     
-    char* fun_name = "operator_not_equals";
-    bool calling_fun;
-    if(self.mQuote) {
-        calling_fun = false;
-    }
-    else {
-        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
-    }
-    
-    if(!calling_fun) {
+        if(!node_compile(right_node)) {
+            return false;
+        }
+        
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
         CVALUE*% come_value = new CVALUE;
         
         come_value.c_value = xsprintf("%s!=%s", left_value.c_value, right_value.c_value);
@@ -1560,636 +1148,667 @@ bool sNotEq2Node*::compile(sNotEq2Node* self, sInfo* info)
         add_come_last_code(info, "%s;\n", come_value.c_value);
         
         info.stack.push_back(come_value);
+    
+        return true;
     }
-
-    return true;
-}
-
-int sNotEq2Node*::sline(sNotEq2Node* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sNotEq2Node*::sname(sNotEq2Node* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sAndNode
-{
-  sNode*% mLeft;
-  sNode*% mRight;
-  bool mQuote;
-  
-  int sline;
-  string sname;
 };
 
-
-sAndNode*% sAndNode*::initialize(sAndNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
+class sEq2Node extends sNodeBase
 {
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mQuote = quote;
-    self.mLeft = clone left;
-    self.mRight = clone right;
-
-    return self;
-}
-
-bool sAndNode*::terminated()
-{
-    return false;
-}
-
-string sAndNode*::kind()
-{
-    return string("sAndNode");
-}
-
-bool sAndNode*::compile(sAndNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
+    sNode*% mLeft;
+    sNode*% mRight;
+    bool mQuote;
+    
+    new(sNode*% left, sNode*% right, bool quote, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mQuote = quote;
+        self.mLeft = clone left;
+        self.mRight = clone right;
+    }
+    
+    bool terminated()
+    {
         return false;
     }
     
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
+    string kind()
+    {
+        return string("sEq2Node");
+    }
     
-    sNode* right_node = self.mRight;
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
+    
+        if(!node_compile(left_node)) {
+            return false;
+        }
+        
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sNode* right_node = self.mRight;
+    
+        if(!node_compile(right_node)) {
+            return false;
+        }
+        
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sType*% type = left_value.type;
+        
+        char* fun_name = "operator_equals";
+        bool calling_fun;
+        if(self.mQuote) {
+            calling_fun = false;
+        }
+        else {
+            calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
+        }
+        
+        if(!calling_fun) {
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = xsprintf("%s==%s", left_value.c_value, right_value.c_value);
+            come_value.type = clone left_value.type;
+            come_value.type->mHeap = false;
+            come_value.var = null;
+            
+            add_come_last_code(info, "%s;\n", come_value.c_value);
+            
+            info.stack.push_back(come_value);
+        }
+    
+        return true;
+    }
+};
 
-    if(!node_compile(right_node)) {
+class sNotEq2Node extends sNodeBase
+{
+    sNode*% mLeft;
+    sNode*% mRight;
+    bool mQuote;
+    
+    new(sNode*% left, sNode*% right, bool quote, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mQuote = quote;
+        self.mLeft = clone left;
+        self.mRight = clone right;
+    }
+    
+    bool terminated()
+    {
         return false;
     }
     
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sType*% type = left_value.type;
-    
-    char* fun_name = "operator_and";
-    bool calling_fun;
-    if(self.mQuote) {
-        calling_fun = false;
-    }
-    else {
-        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
+    string kind()
+    {
+        return string("sNotEq2Node");
     }
     
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
     
-    if(!calling_fun) {
+        if(!node_compile(left_node)) {
+            return false;
+        }
+        
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sNode* right_node = self.mRight;
+    
+        if(!node_compile(right_node)) {
+            return false;
+        }
+        
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sType*% type = left_value.type;
+        
+        char* fun_name = "operator_not_equals";
+        bool calling_fun;
+        if(self.mQuote) {
+            calling_fun = false;
+        }
+        else {
+            calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
+        }
+        
+        if(!calling_fun) {
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = xsprintf("%s!=%s", left_value.c_value, right_value.c_value);
+            come_value.type = clone left_value.type;
+            come_value.type->mHeap = false;
+            come_value.var = null;
+            
+            add_come_last_code(info, "%s;\n", come_value.c_value);
+            
+            info.stack.push_back(come_value);
+        }
+    
+        return true;
+    }
+};
+
+class sAndNode extends sNodeBase
+{
+    sNode*% mLeft;
+    sNode*% mRight;
+    bool mQuote;
+    
+    new(sNode*% left, sNode*% right, bool quote, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mQuote = quote;
+        self.mLeft = clone left;
+        self.mRight = clone right;
+    }
+    
+    bool terminated()
+    {
+        return false;
+    }
+    
+    string kind()
+    {
+        return string("sAndNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
+    
+        if(!node_compile(left_node)) {
+            return false;
+        }
+        
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sNode* right_node = self.mRight;
+    
+        if(!node_compile(right_node)) {
+            return false;
+        }
+        
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sType*% type = left_value.type;
+        
+        char* fun_name = "operator_and";
+        bool calling_fun;
+        if(self.mQuote) {
+            calling_fun = false;
+        }
+        else {
+            calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
+        }
+        
+        
+        if(!calling_fun) {
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = xsprintf("%s&%s", left_value.c_value, right_value.c_value);
+            come_value.type = clone left_value.type;
+            come_value.type->mHeap = false;
+            come_value.var = null;
+            
+            add_come_last_code(info, "%s;\n", come_value.c_value);
+            
+            info.stack.push_back(come_value);
+        }
+    
+        return true;
+    }
+};
+
+class sXOrNode extends sNodeBase
+{
+    sNode*% mLeft;
+    sNode*% mRight;
+    bool mQuote;
+    
+    new(sNode*% left, sNode*% right, bool quote, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mQuote = quote;
+        self.mLeft = clone left;
+        self.mRight = clone right;
+    }
+    
+    bool terminated()
+    {
+        return false;
+    }
+    
+    string kind()
+    {
+        return string("sXOrNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
+    
+        if(!node_compile(left_node)) {
+            return false;
+        }
+        
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sNode* right_node = self.mRight;
+    
+        if(!node_compile(right_node)) {
+            return false;
+        }
+        
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sType*% type = left_value.type;
+        
+        char* fun_name = "operator_xor";
+        bool calling_fun;
+        if(self.mQuote) {
+            calling_fun = false;
+        }
+        else {
+            calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
+        }
+        
+        if(!calling_fun) {
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = xsprintf("%s^%s", left_value.c_value, right_value.c_value);
+            come_value.type = clone left_value.type;
+            come_value.type->mHeap = false;
+            come_value.var = null;
+            
+            add_come_last_code(info, "%s;\n", come_value.c_value);
+            
+            info.stack.push_back(come_value);
+        }
+    
+        return true;
+    }
+};
+
+class sOrNode extends sNodeBase
+{
+    sNode*% mLeft;
+    sNode*% mRight;
+    bool mQuote;
+    
+    new(sNode*% left, sNode*% right, bool quote, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mQuote = quote;
+        self.mLeft = clone left;
+        self.mRight = clone right;
+    }
+    
+    bool terminated()
+    {
+        return false;
+    }
+    
+    string kind()
+    {
+        return string("sOrNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
+    
+        if(!node_compile(left_node)) {
+            return false;
+        }
+        
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sNode* right_node = self.mRight;
+    
+        if(!node_compile(right_node)) {
+            return false;
+        }
+        
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sType*% type = left_value.type;
+        
+        char* fun_name = "operator_or";
+        bool calling_fun;
+        if(self.mQuote) {
+            calling_fun = false;
+        }
+        else {
+            calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
+        }
+        
+        
+        if(!calling_fun) {
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = xsprintf("%s|%s", left_value.c_value, right_value.c_value);
+            come_value.type = clone left_value.type;
+            come_value.type->mHeap = false;
+            come_value.var = null;
+            
+            add_come_last_code(info, "%s;\n", come_value.c_value);
+            
+            info.stack.push_back(come_value);
+        }
+    
+        return true;
+    }
+};
+
+class sAndAndNode extends sNodeBase
+{
+    sNode*% mLeft;
+    sNode*% mRight;
+    bool mQuote;
+    
+    new(sNode*% left, sNode*% right, bool quote, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mQuote = quote;
+        self.mLeft = clone left;
+        self.mRight = clone right;
+    }
+    
+    bool terminated()
+    {
+        return false;
+    }
+    
+    string kind()
+    {
+        return string("sAndAndNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
+    
+        if(!node_compile(left_node)) {
+            return false;
+        }
+        
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sNode* right_node = self.mRight;
+    
+        if(!node_compile(right_node)) {
+            return false;
+        }
+        
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sType*% type = left_value.type;
+        
+        char* fun_name = "operator_andand";
+        bool calling_fun;
+        if(self.mQuote) {
+            calling_fun = false;
+        }
+        else {
+            calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
+        }
+        
+        
+        if(!calling_fun) {
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = xsprintf("%s&&%s", left_value.c_value, right_value.c_value);
+            come_value.type = clone left_value.type;
+            come_value.type->mHeap = false;
+            come_value.var = left_value.var;
+            
+            add_come_last_code(info, "%s;\n", come_value.c_value);
+            
+            info.stack.push_back(come_value);
+        }
+    
+        return true;
+    }
+};
+
+class sOrOrNode extends sNodeBase
+{
+    sNode*% mLeft;
+    sNode*% mRight;
+    bool mQuote;
+    
+    new(sNode*% left, sNode*% right, bool quote, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mQuote = quote;
+        self.mLeft = clone left;
+        self.mRight = clone right;
+    }
+    
+    bool terminated()
+    {
+        return false;
+    }
+    
+    string kind()
+    {
+        return string("sOrOrNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
+    
+        if(!node_compile(left_node)) {
+            return false;
+        }
+        
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sNode* right_node = self.mRight;
+    
+        if(!node_compile(right_node)) {
+            return false;
+        }
+        
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sType*% type = left_value.type;
+        
+        char* fun_name = "operator_oror";
+        bool calling_fun;
+        if(self.mQuote) {
+            calling_fun = false;
+        }
+        else {
+            calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
+        }
+        
+        if(!calling_fun) {
+            CVALUE*% come_value = new CVALUE;
+            
+            come_value.c_value = xsprintf("%s||%s", left_value.c_value, right_value.c_value);
+            come_value.type = clone left_value.type;
+            come_value.type->mHeap = false;
+            come_value.var = left_value.var;
+            
+            add_come_last_code(info, "%s;\n", come_value.c_value);
+            
+            info.stack.push_back(come_value);
+        }
+    
+        return true;
+    }
+};
+
+class sCommaNode extends sNodeBase
+{
+    sNode*% mLeft;
+    sNode*% mRight;
+    
+    new(sNode*% left, sNode*% right, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mLeft = clone left;
+        self.mRight = clone right;
+    }
+    
+    bool terminated()
+    {
+        return false;
+    }
+    
+    string kind()
+    {
+        return string("sCommaNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* left_node = self.mLeft;
+    
+        if(!node_compile(left_node)) {
+            return false;
+        }
+        
+        CVALUE*% left_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sNode* right_node = self.mRight;
+    
+        if(!node_compile(right_node)) {
+            return false;
+        }
+        
+        CVALUE*% right_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
         CVALUE*% come_value = new CVALUE;
         
-        come_value.c_value = xsprintf("%s&%s", left_value.c_value, right_value.c_value);
+        come_value.c_value = xsprintf("%s,%s", left_value.c_value, right_value.c_value);
         come_value.type = clone left_value.type;
-        come_value.type->mHeap = false;
         come_value.var = null;
         
         add_come_last_code(info, "%s;\n", come_value.c_value);
         
         info.stack.push_back(come_value);
+    
+        return true;
     }
-
-    return true;
-}
-
-int sAndNode*::sline(sAndNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sAndNode*::sname(sAndNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sXOrNode
-{
-  sNode*% mLeft;
-  sNode*% mRight;
-  bool mQuote;
-  
-  int sline;
-  string sname;
 };
 
-
-sXOrNode*% sXOrNode*::initialize(sXOrNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
+class sConditionalNode extends sNodeBase
 {
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mQuote = quote;
-    self.mLeft = clone left;
-    self.mRight = clone right;
-
-    return self;
-}
-
-bool sXOrNode*::terminated()
-{
-    return false;
-}
-
-string sXOrNode*::kind()
-{
-    return string("sXOrNode");
-}
-
-bool sXOrNode*::compile(sXOrNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
+    sNode*% mValue1;
+    sNode*% mValue2;
+    sNode*% mValue3;
+    
+    new(sNode*% value1, sNode*% value2, sNode*% value3, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mValue1 = clone value1;
+        self.mValue2 = clone value2;
+        self.mValue3 = clone value3;
+    }
+    
+    bool terminated()
+    {
         return false;
     }
     
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* right_node = self.mRight;
-
-    if(!node_compile(right_node)) {
-        return false;
+    string kind()
+    {
+        return string("sConditionalNode");
     }
     
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* value1 = self.mValue1;
     
-    sType*% type = left_value.type;
+        if(!node_compile(value1)) {
+            return false;
+        }
+        
+        CVALUE*% value1_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sNode* value2 = self.mValue2;
     
-    char* fun_name = "operator_xor";
-    bool calling_fun;
-    if(self.mQuote) {
-        calling_fun = false;
-    }
-    else {
-        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
-    }
+        if(!node_compile(value2)) {
+            return false;
+        }
+        
+        CVALUE*% value2_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
+        sNode* value3 = self.mValue3;
     
-    if(!calling_fun) {
+        if(!node_compile(value3)) {
+            return false;
+        }
+        
+        CVALUE*% value3_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
+        
         CVALUE*% come_value = new CVALUE;
         
-        come_value.c_value = xsprintf("%s^%s", left_value.c_value, right_value.c_value);
-        come_value.type = clone left_value.type;
-        come_value.type->mHeap = false;
+        come_value.c_value = xsprintf("%s?%s:%s", value1_value.c_value, value2_value.c_value, value3_value.c_value);
+        come_value.type = clone value1_value.type;
         come_value.var = null;
         
         add_come_last_code(info, "%s;\n", come_value.c_value);
         
         info.stack.push_back(come_value);
+    
+        return true;
     }
-
-    return true;
-}
-
-int sXOrNode*::sline(sXOrNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sXOrNode*::sname(sXOrNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sOrNode
-{
-  sNode*% mLeft;
-  sNode*% mRight;
-  bool mQuote;
-  
-  int sline;
-  string sname;
 };
-
-sOrNode*% sOrNode*::initialize(sOrNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
-{
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mQuote = quote;
-    self.mLeft = clone left;
-    self.mRight = clone right;
-
-    return self;
-}
-
-bool sOrNode*::terminated()
-{
-    return false;
-}
-
-string sOrNode*::kind()
-{
-    return string("sOrNode");
-}
-
-bool sOrNode*::compile(sOrNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
-        return false;
-    }
-    
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* right_node = self.mRight;
-
-    if(!node_compile(right_node)) {
-        return false;
-    }
-    
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sType*% type = left_value.type;
-    
-    char* fun_name = "operator_or";
-    bool calling_fun;
-    if(self.mQuote) {
-        calling_fun = false;
-    }
-    else {
-        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
-    }
-    
-    
-    if(!calling_fun) {
-        CVALUE*% come_value = new CVALUE;
-        
-        come_value.c_value = xsprintf("%s|%s", left_value.c_value, right_value.c_value);
-        come_value.type = clone left_value.type;
-        come_value.type->mHeap = false;
-        come_value.var = null;
-        
-        add_come_last_code(info, "%s;\n", come_value.c_value);
-        
-        info.stack.push_back(come_value);
-    }
-
-    return true;
-}
-
-int sOrNode*::sline(sOrNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sOrNode*::sname(sOrNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sAndAndNode
-{
-  sNode*% mLeft;
-  sNode*% mRight;
-  bool mQuote;
-  
-  int sline;
-  string sname;
-};
-
-sAndAndNode*% sAndAndNode*::initialize(sAndAndNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
-{
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mQuote = quote;
-    self.mLeft = clone left;
-    self.mRight = clone right;
-
-    return self;
-}
-
-bool sAndAndNode*::terminated()
-{
-    return false;
-}
-
-string sAndAndNode*::kind()
-{
-    return string("sAndAndNode");
-}
-
-bool sAndAndNode*::compile(sAndAndNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
-        return false;
-    }
-    
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* right_node = self.mRight;
-
-    if(!node_compile(right_node)) {
-        return false;
-    }
-    
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sType*% type = left_value.type;
-    
-    char* fun_name = "operator_andand";
-    bool calling_fun;
-    if(self.mQuote) {
-        calling_fun = false;
-    }
-    else {
-        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
-    }
-    
-    
-    if(!calling_fun) {
-        CVALUE*% come_value = new CVALUE;
-        
-        come_value.c_value = xsprintf("%s&&%s", left_value.c_value, right_value.c_value);
-        come_value.type = clone left_value.type;
-        come_value.type->mHeap = false;
-        come_value.var = left_value.var;
-        
-        add_come_last_code(info, "%s;\n", come_value.c_value);
-        
-        info.stack.push_back(come_value);
-    }
-
-    return true;
-}
-
-int sAndAndNode*::sline(sAndAndNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sAndAndNode*::sname(sAndAndNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sOrOrNode
-{
-  sNode*% mLeft;
-  sNode*% mRight;
-  bool mQuote;
-  
-  int sline;
-  string sname;
-};
-
-sOrOrNode*% sOrOrNode*::initialize(sOrOrNode*% self, sNode*% left, sNode*% right, bool quote, sInfo* info)
-{
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mQuote = quote;
-    self.mLeft = clone left;
-    self.mRight = clone right;
-
-    return self;
-}
-
-bool sOrOrNode*::terminated()
-{
-    return false;
-}
-
-string sOrOrNode*::kind()
-{
-    return string("sOrOrNode");
-}
-
-bool sOrOrNode*::compile(sOrOrNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
-        return false;
-    }
-    
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* right_node = self.mRight;
-
-    if(!node_compile(right_node)) {
-        return false;
-    }
-    
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sType*% type = left_value.type;
-    
-    char* fun_name = "operator_oror";
-    bool calling_fun;
-    if(self.mQuote) {
-        calling_fun = false;
-    }
-    else {
-        calling_fun = operator_overload_fun(type, fun_name, left_value, right_value, false@break_guard, info);
-    }
-    
-    if(!calling_fun) {
-        CVALUE*% come_value = new CVALUE;
-        
-        come_value.c_value = xsprintf("%s||%s", left_value.c_value, right_value.c_value);
-        come_value.type = clone left_value.type;
-        come_value.type->mHeap = false;
-        come_value.var = left_value.var;
-        
-        add_come_last_code(info, "%s;\n", come_value.c_value);
-        
-        info.stack.push_back(come_value);
-    }
-
-    return true;
-}
-
-int sOrOrNode*::sline(sOrOrNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sOrOrNode*::sname(sOrOrNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sCommaNode
-{
-  sNode*% mLeft;
-  sNode*% mRight;
-  
-  int sline;
-  string sname;
-};
-
-
-sCommaNode*% sCommaNode*::initialize(sCommaNode*% self, sNode*% left, sNode*% right, sInfo* info)
-{
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mLeft = clone left;
-    self.mRight = clone right;
-
-    return self;
-}
-
-bool sCommaNode*::terminated()
-{
-    return false;
-}
-
-string sCommaNode*::kind()
-{
-    return string("sCommaNode");
-}
-
-bool sCommaNode*::compile(sCommaNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* left_node = self.mLeft;
-
-    if(!node_compile(left_node)) {
-        return false;
-    }
-    
-    CVALUE*% left_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* right_node = self.mRight;
-
-    if(!node_compile(right_node)) {
-        return false;
-    }
-    
-    CVALUE*% right_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    CVALUE*% come_value = new CVALUE;
-    
-    come_value.c_value = xsprintf("%s,%s", left_value.c_value, right_value.c_value);
-    come_value.type = clone left_value.type;
-    come_value.var = null;
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
-    
-    info.stack.push_back(come_value);
-
-    return true;
-}
-
-int sCommaNode*::sline(sCommaNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sCommaNode*::sname(sCommaNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sConditionalNode
-{
-  sNode*% mValue1;
-  sNode*% mValue2;
-  sNode*% mValue3;
-  
-  int sline;
-  string sname;
-};
-
-
-sConditionalNode*% sConditionalNode*::initialize(sConditionalNode*% self, sNode*% value1, sNode*% value2, sNode*% value3, sInfo* info)
-{
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mValue1 = clone value1;
-    self.mValue2 = clone value2;
-    self.mValue3 = clone value3;
-
-    return self;
-}
-
-bool sConditionalNode*::terminated()
-{
-    return false;
-}
-
-string sConditionalNode*::kind()
-{
-    return string("sConditionalNode");
-}
-
-bool sConditionalNode*::compile(sConditionalNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* value1 = self.mValue1;
-
-    if(!node_compile(value1)) {
-        return false;
-    }
-    
-    CVALUE*% value1_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* value2 = self.mValue2;
-
-    if(!node_compile(value2)) {
-        return false;
-    }
-    
-    CVALUE*% value2_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    sNode* value3 = self.mValue3;
-
-    if(!node_compile(value3)) {
-        return false;
-    }
-    
-    CVALUE*% value3_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-    
-    CVALUE*% come_value = new CVALUE;
-    
-    come_value.c_value = xsprintf("%s?%s:%s", value1_value.c_value, value2_value.c_value, value3_value.c_value);
-    come_value.type = clone value1_value.type;
-    come_value.var = null;
-    
-    add_come_last_code(info, "%s;\n", come_value.c_value);
-    
-    info.stack.push_back(come_value);
-
-    return true;
-}
-
-int sConditionalNode*::sline(sConditionalNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sConditionalNode*::sname(sConditionalNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
 
 sNode*% mult_exp(sInfo* info)
 {

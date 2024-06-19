@@ -11,16 +11,6 @@ class sLambdaNode extends sNodeBase
         self.sname = info.sname;
     }
     
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
-    }
-    
     bool terminated()
     {
         return false;
@@ -78,16 +68,6 @@ class sFunNode extends sNodeBase
         self.mFun = fun;
         self.sline = info.sline;
         self.sname = info.sname;
-    }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
     }
     
     bool terminated()

@@ -118,6 +118,16 @@ bool operator_overload_fun_self(sType* type, char* fun_name, CVALUE* left_value,
     return result;
 }
 
+int sNodeBase*::sline(sNodeBase* self, sInfo* info)
+{
+    return self.sline;
+}
+
+string sNodeBase*::sname(sNodeBase* self, sInfo* info)
+{
+    return string(self.sname);
+}
+
 class sReturnNode extends sNodeBase
 {
     sNode*% value;
@@ -130,16 +140,6 @@ class sReturnNode extends sNodeBase
         
         self.sline = info.sline;
         self.sname = string(info.sname);
-    }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
     }
     
     string kind()
@@ -247,16 +247,6 @@ class sLineNode extends sNodeBase
         self.sname = string(info.sname);
     }
     
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
-    }
-    
     bool terminated()
     {
         return false;
@@ -292,16 +282,6 @@ class sSNameNode extends sNodeBase
     {
         self.sline = info.sline;
         self.sname = string(info.sname);
-    }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
     }
     
     bool terminated()
@@ -341,16 +321,6 @@ class sFuncNode extends sNodeBase
         self.sname = string(info.sname);
     }
     
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
-    }
-    
     bool terminated()
     {
         return false;
@@ -387,16 +357,6 @@ class sCallerFuncNode extends sNodeBase
     {
         self.sline = info.sline;
         self.sname = string(info.sname);
-    }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
     }
     
     bool terminated()
@@ -442,16 +402,6 @@ class sCallerLineNode extends sNodeBase
         self.sname = string(info.sname);
     }
     
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
-    }
-    
     bool terminated()
     {
         return false;
@@ -487,16 +437,6 @@ class sCallerSNameNode extends sNodeBase
     {
         self.sline = info.sline;
         self.sname = string(info.sname);
-    }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
     }
     
     bool terminated()
@@ -536,16 +476,6 @@ class sDerefferenceNode extends sNodeBase
         self.sline = info.sline;
         self.sname = string(info.sname);
         self.mQuote = quote;
-    }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
     }
     
     bool terminated()
@@ -643,16 +573,6 @@ class sRefferenceNode extends sNodeBase
         self.sname = string(info.sname);
     }
     
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
-    }
-    
     bool terminated()
     {
         return false;
@@ -698,16 +618,6 @@ class sReverseNode extends sNodeBase
         self.value = value;
         self.sline = info.sline;
         self.sname = string(info.sname);
-    }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
     }
     
     bool terminated()
@@ -794,16 +704,6 @@ class sFunCallNode extends sNodeBase
         self.sline = info.sline;
         self.sname = string(info.sname);
         self.method_generics_types = method_generics_types;
-    }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
     }
     
     bool terminated()
@@ -1254,16 +1154,6 @@ class sCastNode extends sNodeBase
         self.sname = string(info.sname);
     }
     
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
-    }
-    
     bool terminated()
     {
         return false;
@@ -1313,16 +1203,6 @@ class sParenNode extends sNodeBase
         self.mLeft = clone left;
         self.sline = info.sline;
         self.sname = string(info.sname);
-    }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
     }
     
     bool terminated()
@@ -1522,16 +1402,6 @@ class sLogicalDenial extends sNodeBase
         
         return true;
     }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
-    }
 };
 
 class sMinusNode2 extends sNodeBase
@@ -1576,16 +1446,6 @@ class sMinusNode2 extends sNodeBase
         add_come_last_code(info, "%s;\n", come_value2.c_value);
         
         return true;
-    }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
     }
 };
 
@@ -1632,16 +1492,6 @@ class sPlusPlusNode2 extends sNodeBase
         
         return true;
     }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
-    }
 };
 
 class sMinusMinusNode2 extends sNodeBase
@@ -1686,16 +1536,6 @@ class sMinusMinusNode2 extends sNodeBase
         add_come_last_code(info, "%s;\n", come_value2.c_value);
         
         return true;
-    }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
     }
 };
 
@@ -1742,16 +1582,6 @@ class sComplement extends sNodeBase
         
         return true;
     }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
-    }
 };
 
 class sNormalBlock extends sNodeBase
@@ -1789,16 +1619,6 @@ class sNormalBlock extends sNodeBase
         transpiler_clear_last_code(info);
     
         return true;
-    }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
     }
 };
 
@@ -2433,16 +2253,6 @@ class sGlobalVariable extends sNodeBase
         self.mDeclareSName = string(info->sname);
     }
     
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
-    }
-    
     bool terminated()
     {
         return false;
@@ -2527,16 +2337,6 @@ class sExternalGlobalVariable extends sNodeBase
         self.multiple_declare = clone multiple_declare;
         
         self.mDeclareSName = string(info->sname);
-    }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
     }
     
     bool terminated()

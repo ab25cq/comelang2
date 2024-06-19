@@ -1,124 +1,111 @@
 #include "common.h"
 
-struct sEnumNode
+class sEnumNode extends sNodeBase
 {
     string mTypeName;
     list<tuple2<string, sNode*%>*%>*% mElements;
-  
-    int sline;
-    string sname;
     
     bool mOutput;
     
     string mDeclareSName;
-};
-
-sEnumNode*% sEnumNode*::initialize(sEnumNode*% self, string type_name, list<tuple2<string,sNode*%>*%>* elements, bool output, sInfo* info)
-{
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mTypeName = string(type_name);
-    self.mElements = clone elements;
     
-    self.mOutput = output;
+    new(string type_name, list<tuple2<string,sNode*%>*%>* elements, bool output, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
     
-    self.mDeclareSName = string(info->sname);
-
-    return self;
-}
-
-bool sEnumNode*::terminated()
-{
-    return true;
-}
-
-string sEnumNode*::kind()
-{
-    return string("sEnumNode");
-}
-
-bool sEnumNode*::compile(sEnumNode* self, sInfo* info)
-{
-    string type_name = self.mTypeName;
-    list<tuple2<string, sNode*%>*%>* elements = self.mElements;
+        self.mTypeName = string(type_name);
+        self.mElements = clone elements;
+        
+        self.mOutput = output;
+        
+        self.mDeclareSName = string(info->sname);
     
-    buffer*% buf = new buffer();
-    
-    if(type_name === "") {
-        buf.append_str(xsprintf("enum { ", type_name));
-    }
-    else {
-        buf.append_str(xsprintf("enum %s { ", type_name));
+        return self;
     }
     
-    int i = 0;
-    int n = 0;
-    foreach(it, elements) {
-        var name, value = it;
+    bool terminated()
+    {
+        return true;
+    }
+    
+    string kind()
+    {
+        return string("sEnumNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        string type_name = self.mTypeName;
+        list<tuple2<string, sNode*%>*%>* elements = self.mElements;
         
-        if(info.gv_table.mVars.at(string(name), null) != null) {
-            self.mOutput = false;
-        }
+        buffer*% buf = new buffer();
         
-        if(value == null) {
-            buf.append_str(name);
-            buf.append_str("\n");
-            
-            if(i != elements.length()-1) {
-                buf.append_str(",");
-            }
-            
-            string c_value = xsprintf("%d", n);
-            
-            add_variable_to_global_table_with_int_value(name, new sType("int"), c_value, info);
+        if(type_name === "") {
+            buf.append_str(xsprintf("enum { ", type_name));
         }
         else {
-            if(!node_compile(value)) {
-                return false;
-            }
-            
-            CVALUE*% right_value = get_value_from_stack(-1, info);
-            dec_stack_ptr(1, info);
-            
-            add_variable_to_global_table_with_int_value(name, new sType("int"), right_value.c_value, info);
-            
-            buf.append_str(xsprintf("%s=%s", name, right_value.c_value));
-            
-            if(i != elements.length()-1) {
-                buf.append_str(",");
-            }
-            
-            buf.append_str("\n");
-            
-            n = atoi(right_value.c_value);
+            buf.append_str(xsprintf("enum %s { ", type_name));
         }
         
-        i++;
-        n++;
-    }
-    buf.append_str(xsprintf("};\n", type_name));
-    
-    if(info.output_header_file && self.mDeclareSName !== info->base_sname) {
-    }
-    else {
-        if(self.mOutput) {
-            add_come_code_at_source_head(info, "%s", buf.to_string());
+        int i = 0;
+        int n = 0;
+        foreach(it, elements) {
+            var name, value = it;
+            
+            if(info.gv_table.mVars.at(string(name), null) != null) {
+                self.mOutput = false;
+            }
+            
+            if(value == null) {
+                buf.append_str(name);
+                buf.append_str("\n");
+                
+                if(i != elements.length()-1) {
+                    buf.append_str(",");
+                }
+                
+                string c_value = xsprintf("%d", n);
+                
+                add_variable_to_global_table_with_int_value(name, new sType("int"), c_value, info);
+            }
+            else {
+                if(!node_compile(value)) {
+                    return false;
+                }
+                
+                CVALUE*% right_value = get_value_from_stack(-1, info);
+                dec_stack_ptr(1, info);
+                
+                add_variable_to_global_table_with_int_value(name, new sType("int"), right_value.c_value, info);
+                
+                buf.append_str(xsprintf("%s=%s", name, right_value.c_value));
+                
+                if(i != elements.length()-1) {
+                    buf.append_str(",");
+                }
+                
+                buf.append_str("\n");
+                
+                n = atoi(right_value.c_value);
+            }
+            
+            i++;
+            n++;
         }
+        buf.append_str(xsprintf("};\n", type_name));
+        
+        if(info.output_header_file && self.mDeclareSName !== info->base_sname) {
+        }
+        else {
+            if(self.mOutput) {
+                add_come_code_at_source_head(info, "%s", buf.to_string());
+            }
+        }
+    
+        return true;
     }
-
-    return true;
-}
-
-int sEnumNode*::sline(sEnumNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sEnumNode*::sname(sEnumNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
+};
 
 sNode*% parse_enum(string type_name, sInfo* info)
 {

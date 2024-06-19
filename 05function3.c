@@ -36,16 +36,6 @@ class sIntNode extends sNodeBase
     {
         return false;
     }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
-    }
 };
 
 class sUIntNode extends sNodeBase
@@ -83,16 +73,6 @@ class sUIntNode extends sNodeBase
         add_come_last_code(info, "%s;\n", come_value.c_value);
         
         return true;
-    }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
     }
 };
 
@@ -132,16 +112,6 @@ class sLongNode extends sNodeBase
     {
         return false;
     }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
-    }
 };
 
 class sULongNode extends sNodeBase
@@ -179,16 +149,6 @@ class sULongNode extends sNodeBase
     bool terminated()
     {
         return false;
-    }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
     }
 };
 
@@ -228,16 +188,6 @@ class sFloatNode extends sNodeBase
     {
         return false;
     }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
-    }
 };
 
 class sDoubleNode extends sNodeBase
@@ -275,16 +225,6 @@ class sDoubleNode extends sNodeBase
     bool terminated()
     {
         return false;
-    }
-    
-    int sline(sInfo* info)
-    {
-        return self.sline;
-    }
-    
-    string sname(sInfo* info)
-    {
-        return string(self.sname);
     }
 };
 

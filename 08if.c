@@ -1,351 +1,303 @@
 #include "common.h"
 
-struct sIfNode
+class sIfNode extends sNodeBase
 {
-  sNode*% mExpressionNode;
-  sBlock*% mIfBlock;
-  list<sNode*%>*% mElifExpressionNodes;
-  list<sBlock*%>*% mElifBlocks;
-  int mElifNum;
-  sBlock*% mElseBlock;
-  bool mGuard;
-  
-  int sline;
-  string sname;
-};
-
-
-sIfNode*% sIfNode*::initialize(sIfNode*% self, sNode*% expression_node, sBlock* if_block, list<sNode*%>* elif_expression_nodes, list<sBlock*%>* elif_blocks, int elif_num, sBlock* else_block, bool guard_, sInfo* info)
-{
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mExpressionNode = clone expression_node;
-    self.mIfBlock = clone if_block;
-    self.mElifExpressionNodes = clone elif_expression_nodes;
-    self.mElifBlocks = clone elif_blocks;
-    self.mElifNum = elif_num;
-    self.mGuard = guard_;
+    sNode*% mExpressionNode;
+    sBlock*% mIfBlock;
+    list<sNode*%>*% mElifExpressionNodes;
+    list<sBlock*%>*% mElifBlocks;
+    int mElifNum;
+    sBlock*% mElseBlock;
+    bool mGuard;
     
-    if(else_block) {
-        self.mElseBlock = clone else_block;
-    }
-    else {
-        self.mElseBlock = null;
-    }
-
-    return self;
-}
-
-bool sIfNode*::terminated()
-{
-    return true;
-}
-
-string sIfNode*::kind()
-{
-    return string("sIfNode");
-}
-
-bool sIfNode*::compile(sIfNode* self, sInfo* info)
-{
-    sBlock* else_block = self.mElseBlock;
-    int elif_num = self.mElifNum;
-    bool guard_ = self.mGuard;
+    new(sNode*% expression_node, sBlock* if_block, list<sNode*%>* elif_expression_nodes, list<sBlock*%>* elif_blocks, int elif_num, sBlock* else_block, bool guard_, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
     
-    /// compile expression ///
-    sNode* expression_node = self.mExpressionNode;
-    
-    int sline = info.sline;
-    char* sname = info.sname;
-    
-    info.writing_source_file_position = true;
-
-    info.without_semicolon = true;
-    if(!node_compile(expression_node)) {
-        return false;
-    }
-    info.without_semicolon = false;
-
-    sBlock* if_block = self.mIfBlock;
-    
-    static int num_if_conditional = 0;
-    add_come_code_at_function_head(info, "_Bool _if_conditional%d;\n", ++num_if_conditional);
-    int num_if_conditional_stack = num_if_conditional;
-    
-    bool normal_if = true;
-    if(info.module.mLastCode || info.module.mLastCode2 || info.module.mLastCode3) {
-        normal_if = false;
-    }
-    if(existance_free_right_value_objects(info)) {
-        normal_if = false;
-    }
-    
-    if(normal_if) {
-        CVALUE*% conditional_value = get_value_from_stack(-1, info);
-        dec_stack_ptr(1, info);
+        self.mExpressionNode = clone expression_node;
+        self.mIfBlock = clone if_block;
+        self.mElifExpressionNodes = clone elif_expression_nodes;
+        self.mElifBlocks = clone elif_blocks;
+        self.mElifNum = elif_num;
+        self.mGuard = guard_;
         
-        if(guard_) {
-            sVar* var_ = conditional_value.var;
-            
-            if(var_) {
-                var_->mType->mGuardValue = false;
-            }
+        if(else_block) {
+            self.mElseBlock = clone else_block;
+        }
+        else {
+            self.mElseBlock = null;
+        }
+    }
+    
+    bool terminated()
+    {
+        return true;
+    }
+    
+    string kind()
+    {
+        return string("sIfNode");
+    }
+    
+    bool compile(sInfo* info)
+    {
+        sBlock* else_block = self.mElseBlock;
+        int elif_num = self.mElifNum;
+        bool guard_ = self.mGuard;
+        
+        /// compile expression ///
+        sNode* expression_node = self.mExpressionNode;
+        
+        int sline = info.sline;
+        char* sname = info.sname;
+        
+        info.writing_source_file_position = true;
+    
+        info.without_semicolon = true;
+        if(!node_compile(expression_node)) {
+            return false;
+        }
+        info.without_semicolon = false;
+    
+        sBlock* if_block = self.mIfBlock;
+        
+        static int num_if_conditional = 0;
+        add_come_code_at_function_head(info, "_Bool _if_conditional%d;\n", ++num_if_conditional);
+        int num_if_conditional_stack = num_if_conditional;
+        
+        bool normal_if = true;
+        if(info.module.mLastCode || info.module.mLastCode2 || info.module.mLastCode3) {
+            normal_if = false;
+        }
+        if(existance_free_right_value_objects(info)) {
+            normal_if = false;
         }
         
-        add_come_code(info, "if(%s) {\n", conditional_value.c_value);
-    }
-    else {
-        CVALUE*% conditional_value = get_value_from_stack(-1, info);
-        dec_stack_ptr(1, info);
-        
-        if(guard_) {
-            sVar* var_ = conditional_value.var;
+        if(normal_if) {
+            CVALUE*% conditional_value = get_value_from_stack(-1, info);
+            dec_stack_ptr(1, info);
             
-            if(var_) {
-                var_->mType->mGuardValue = false;
-            }
-        }
-        
-        add_come_code(info, "if(_if_conditional%d=%s,", num_if_conditional, conditional_value.c_value);
-        add_last_code_to_source_with_comma(info);
-        
-        free_right_value_objects(info, comma:true);
-        add_come_code(info, "_if_conditional%d) {\n", num_if_conditional_stack);
-    }
-
-    transpile_block(if_block, null, null, info);
-    
-    add_come_code(info, "}\n");
-
-    //// elif ///
-    if(elif_num > 0) {
-        for(int i=0; i<elif_num; i++) {
-            sNode* expression_node2 = self.mElifExpressionNodes[i];
-
-            info.writing_source_file_position = true;
-            info.without_semicolon = true;
-            if(!node_compile(expression_node2)) {
-                return false;
-            }
-            info.without_semicolon = false;
-            sBlock* elif_node_block = self.mElifBlocks[i];
-            
-    
-            bool normal_if = true;
-            if(info.module.mLastCode || info.module.mLastCode2 || info.module.mLastCode3) {
-                normal_if = false;
-            }
-            if(existance_free_right_value_objects(info)) {
-                normal_if = false;
-            }
-            
-            if(normal_if) {
-                CVALUE*% conditional_value = get_value_from_stack(-1, info);
-                dec_stack_ptr(1, info);
-
-                add_come_code(info, "else if(%s) {\n", conditional_value.c_value);
-            }
-            else {
-                CVALUE*% conditional_value = get_value_from_stack(-1, info);
-                dec_stack_ptr(1, info);
+            if(guard_) {
+                sVar* var_ = conditional_value.var;
                 
-                static int num_elif_conditional = 0;
-                add_come_code_at_function_head(info, "_Bool _elif_conditional%d;\n", ++num_elif_conditional);
-                int num_elif_conditional_stack = num_elif_conditional;
-    
-                add_come_code(info, "else if(_elif_conditional%d=%s,", num_elif_conditional, conditional_value.c_value);
-                add_last_code_to_source_with_comma(info);
-                free_right_value_objects(info, comma:true);
-                add_come_code(info, "_elif_conditional%d) {\n", num_elif_conditional_stack);
+                if(var_) {
+                    var_->mType->mGuardValue = false;
+                }
             }
             
-            transpile_block(elif_node_block, null, null, info);
-
-            add_come_code(info, "}\n");
+            add_come_code(info, "if(%s) {\n", conditional_value.c_value);
         }
-    }
-
-    if(else_block) {
-        add_come_code(info, "else {\n");
-
-        transpile_block(else_block, null, null, info);
+        else {
+            CVALUE*% conditional_value = get_value_from_stack(-1, info);
+            dec_stack_ptr(1, info);
+            
+            if(guard_) {
+                sVar* var_ = conditional_value.var;
+                
+                if(var_) {
+                    var_->mType->mGuardValue = false;
+                }
+            }
+            
+            add_come_code(info, "if(_if_conditional%d=%s,", num_if_conditional, conditional_value.c_value);
+            add_last_code_to_source_with_comma(info);
+            
+            free_right_value_objects(info, comma:true);
+            add_come_code(info, "_if_conditional%d) {\n", num_if_conditional_stack);
+        }
+    
+        transpile_block(if_block, null, null, info);
         
         add_come_code(info, "}\n");
-    }
     
-    transpiler_clear_last_code(info);
-
-    return true;
-}
-
-int sIfNode*::sline(sIfNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sIfNode*::sname(sIfNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sOrStatmentNode
-{
-  sNode*% mExpressionNode;
-  sBlock*% mIfBlock;
-  
-  int sline;
-  string sname;
+        //// elif ///
+        if(elif_num > 0) {
+            for(int i=0; i<elif_num; i++) {
+                sNode* expression_node2 = self.mElifExpressionNodes[i];
+    
+                info.writing_source_file_position = true;
+                info.without_semicolon = true;
+                if(!node_compile(expression_node2)) {
+                    return false;
+                }
+                info.without_semicolon = false;
+                sBlock* elif_node_block = self.mElifBlocks[i];
+                
+        
+                bool normal_if = true;
+                if(info.module.mLastCode || info.module.mLastCode2 || info.module.mLastCode3) {
+                    normal_if = false;
+                }
+                if(existance_free_right_value_objects(info)) {
+                    normal_if = false;
+                }
+                
+                if(normal_if) {
+                    CVALUE*% conditional_value = get_value_from_stack(-1, info);
+                    dec_stack_ptr(1, info);
+    
+                    add_come_code(info, "else if(%s) {\n", conditional_value.c_value);
+                }
+                else {
+                    CVALUE*% conditional_value = get_value_from_stack(-1, info);
+                    dec_stack_ptr(1, info);
+                    
+                    static int num_elif_conditional = 0;
+                    add_come_code_at_function_head(info, "_Bool _elif_conditional%d;\n", ++num_elif_conditional);
+                    int num_elif_conditional_stack = num_elif_conditional;
+        
+                    add_come_code(info, "else if(_elif_conditional%d=%s,", num_elif_conditional, conditional_value.c_value);
+                    add_last_code_to_source_with_comma(info);
+                    free_right_value_objects(info, comma:true);
+                    add_come_code(info, "_elif_conditional%d) {\n", num_elif_conditional_stack);
+                }
+                
+                transpile_block(elif_node_block, null, null, info);
+    
+                add_come_code(info, "}\n");
+            }
+        }
+    
+        if(else_block) {
+            add_come_code(info, "else {\n");
+    
+            transpile_block(else_block, null, null, info);
+            
+            add_come_code(info, "}\n");
+        }
+        
+        transpiler_clear_last_code(info);
+    
+        return true;
+    }
 };
 
-
-sOrStatmentNode*% sOrStatmentNode*::initialize(sOrStatmentNode*% self, sNode*% expression_node, sBlock* if_block, sInfo* info)
+class sOrStatmentNode extends sNodeBase
 {
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mExpressionNode = clone expression_node;
-    self.mIfBlock = clone if_block;
-
-    return self;
-}
-
-bool sOrStatmentNode*::terminated()
-{
-    return true;
-}
-
-string sOrStatmentNode*::kind()
-{
-    return string("sOrStatmentNode");
-}
-
-bool sOrStatmentNode*::compile(sOrStatmentNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* expression_node = self.mExpressionNode;
-
-    info.without_semicolon = true;
-    if(!node_compile(expression_node)) {
-        return false;
+    sNode*% mExpressionNode;
+    sBlock*% mIfBlock;
+    
+    new(sNode*% expression_node, sBlock* if_block, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mExpressionNode = clone expression_node;
+        self.mIfBlock = clone if_block;
     }
-    info.without_semicolon = false;
     
-
-    CVALUE*% conditional_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-
-    sBlock* if_block = self.mIfBlock;
+    bool terminated()
+    {
+        return true;
+    }
     
-    static int num_or_conditional = 0;
-    add_come_code_at_function_head(info, "_Bool _or_conditional%d;\n", ++num_or_conditional);
+    string kind()
+    {
+        return string("sOrStatmentNode");
+    }
     
-    add_come_code(info, "if(_or_conditional%d=%s,", num_or_conditional, conditional_value.c_value);
-    int num_or_conditional_stack = num_or_conditional;
-    add_last_code_to_source_with_comma(info);
-    free_right_value_objects(info, comma:true);
-    add_come_code(info, "_or_conditional%d != 0) {\n", num_or_conditional_stack);
-
-    transpile_block(if_block, null, null, info);
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* expression_node = self.mExpressionNode;
     
-    add_come_code(info, "}\n");
+        info.without_semicolon = true;
+        if(!node_compile(expression_node)) {
+            return false;
+        }
+        info.without_semicolon = false;
+        
     
-    transpiler_clear_last_code(info);
+        CVALUE*% conditional_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
     
-//    info.stack.push_back(conditional_value);
-//    add_come_last_code(info, "%s;\n", conditional_value.c_value);
-
-    return true;
-}
-
-int sOrStatmentNode*::sline(sOrStatmentNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sOrStatmentNode*::sname(sOrStatmentNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
-
-struct sAndStatmentNode
-{
-  sNode*% mExpressionNode;
-  sBlock*% mIfBlock;
-  
-  int sline;
-  string sname;
+        sBlock* if_block = self.mIfBlock;
+        
+        static int num_or_conditional = 0;
+        add_come_code_at_function_head(info, "_Bool _or_conditional%d;\n", ++num_or_conditional);
+        
+        add_come_code(info, "if(_or_conditional%d=%s,", num_or_conditional, conditional_value.c_value);
+        int num_or_conditional_stack = num_or_conditional;
+        add_last_code_to_source_with_comma(info);
+        free_right_value_objects(info, comma:true);
+        add_come_code(info, "_or_conditional%d != 0) {\n", num_or_conditional_stack);
+    
+        transpile_block(if_block, null, null, info);
+        
+        add_come_code(info, "}\n");
+        
+        transpiler_clear_last_code(info);
+        
+    //    info.stack.push_back(conditional_value);
+    //    add_come_last_code(info, "%s;\n", conditional_value.c_value);
+    
+        return true;
+    }
 };
 
-
-sAndStatmentNode*% sAndStatmentNode*::initialize(sAndStatmentNode*% self, sNode*% expression_node, sBlock* if_block, sInfo* info)
+class sAndStatmentNode extends sNodeBase
 {
-    self.sline = info.sline;
-    self.sname = string(info.sname);
-
-    self.mExpressionNode = clone expression_node;
-    self.mIfBlock = clone if_block;
-
-    return self;
-}
-
-bool sAndStatmentNode*::terminated()
-{
-    return true;
-}
-
-string sAndStatmentNode*::kind()
-{
-    return string("sAndStatmentNode");
-}
-
-bool sAndStatmentNode*::compile(sAndStatmentNode* self, sInfo* info)
-{
-    /// compile expression ///
-    sNode* expression_node = self.mExpressionNode;
-
-    info.without_semicolon = true;
-    if(!node_compile(expression_node)) {
-        return false;
+    sNode*% mExpressionNode;
+    sBlock*% mIfBlock;
+    
+    new(sNode*% expression_node, sBlock* if_block, sInfo* info)
+    {
+        self.sline = info.sline;
+        self.sname = string(info.sname);
+    
+        self.mExpressionNode = clone expression_node;
+        self.mIfBlock = clone if_block;
     }
-    info.without_semicolon = false;
     
-
-    CVALUE*% conditional_value = get_value_from_stack(-1, info);
-    dec_stack_ptr(1, info);
-
-    sBlock* if_block = self.mIfBlock;
+    bool terminated()
+    {
+        return true;
+    }
     
-    static int num_and_conditional = 0;
-    add_come_code_at_function_head(info, "_Bool _and_conditional%d;\n", ++num_and_conditional);
+    string kind()
+    {
+        return string("sAndStatmentNode");
+    }
     
-    add_come_code(info, "if(_and_conditional%d=%s,", num_and_conditional, conditional_value.c_value);
-    int num_and_conditional_stack = num_and_conditional;
-    add_last_code_to_source_with_comma(info);
-    free_right_value_objects(info, comma:true);
-    add_come_code(info, "_and_conditional%d == 0) {\n", num_and_conditional_stack);
-
-    transpile_block(if_block, null, null, info);
+    bool compile(sInfo* info)
+    {
+        /// compile expression ///
+        sNode* expression_node = self.mExpressionNode;
     
-    add_come_code(info, "}\n");
+        info.without_semicolon = true;
+        if(!node_compile(expression_node)) {
+            return false;
+        }
+        info.without_semicolon = false;
+        
     
-    transpiler_clear_last_code(info);
+        CVALUE*% conditional_value = get_value_from_stack(-1, info);
+        dec_stack_ptr(1, info);
     
-//    info.stack.push_back(conditional_value);
-//    add_come_last_code(info, "%s;\n", conditional_value.c_value);
+        sBlock* if_block = self.mIfBlock;
+        
+        static int num_and_conditional = 0;
+        add_come_code_at_function_head(info, "_Bool _and_conditional%d;\n", ++num_and_conditional);
+        
+        add_come_code(info, "if(_and_conditional%d=%s,", num_and_conditional, conditional_value.c_value);
+        int num_and_conditional_stack = num_and_conditional;
+        add_last_code_to_source_with_comma(info);
+        free_right_value_objects(info, comma:true);
+        add_come_code(info, "_and_conditional%d == 0) {\n", num_and_conditional_stack);
     
-    return true;
-}
-
-int sAndStatmentNode*::sline(sAndStatmentNode* self, sInfo* info)
-{
-    return self.sline;
-}
-
-string sAndStatmentNode*::sname(sAndStatmentNode* self, sInfo* info)
-{
-    return string(self.sname);
-}
+        transpile_block(if_block, null, null, info);
+        
+        add_come_code(info, "}\n");
+        
+        transpiler_clear_last_code(info);
+        
+    //    info.stack.push_back(conditional_value);
+    //    add_come_last_code(info, "%s;\n", conditional_value.c_value);
+        
+        return true;
+    }
+};
 
 sNode*% parse_if_method_call(sNode*% expression_node, sInfo* info)
 {
