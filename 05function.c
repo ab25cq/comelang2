@@ -2528,6 +2528,9 @@ sNode*% parse_global_variable(sInfo* info)
                     else if(*info->p == '\\') {
                         buf.append_char(*info->p);
                         info->p++;
+                        if(*info->p == '\n') {
+                            info->sline++;
+                        }
                         buf.append_char(*info->p);
                         info->p++;
                     }
@@ -2542,6 +2545,9 @@ sNode*% parse_global_variable(sInfo* info)
                         squort = !squort;
                     }
                     else if(squort || dquort) {
+                        if(*info->p == '\n') {
+                            info->sline++;
+                        }
                         buf.append_char(*info->p);
                         info->p++;
                     }
@@ -2559,6 +2565,11 @@ sNode*% parse_global_variable(sInfo* info)
                             skip_spaces_and_lf();
                             break;
                         }
+                    }
+                    else if(*info->p == '\n') {
+                        info->sline++;
+                        buf.append_char(*info->p);
+                        info->p++;
                     }
                     else {
                         buf.append_char(*info->p);

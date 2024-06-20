@@ -1085,6 +1085,9 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
                         else if(*info->p == '\\') {
                             buf2.append_char(*info->p);
                             info->p++;
+                            if(*info->p == '\n') {
+                                info->sline++;
+                            }
                             buf2.append_char(*info->p);
                             info->p++;
                         }
@@ -1099,6 +1102,7 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
                             squort = !squort;
                         }
                         else if(squort || dquort) {
+                            if(*info->p == '\n') info->sline++;
                             buf2.append_char(*info->p);
                             info->p++;
                         }
@@ -1116,6 +1120,11 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
                                 skip_spaces_and_lf();
                                 break;
                             }
+                        }
+                        else if(*info->p == '\n') {
+                            buf2.append_char(*info->p);
+                            info->p++;
+                            info->sline++;
                         }
                         else {
                             buf2.append_char(*info->p);

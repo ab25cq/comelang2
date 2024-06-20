@@ -464,6 +464,8 @@ struct sClassModule
     char* mName;
     char* mText;
     struct list$1charph* mParams;
+    char* mSName;
+    int mSLine;
 };
 struct map$2charphsFunph
 {
@@ -1700,7 +1702,7 @@ void sVarTable_finalize(struct sVarTable* self);
 
 struct sClass* sClass_initialize(struct sClass* self, char* name, _Bool number, _Bool union_, _Bool generics, _Bool method_generics, _Bool protocol_, _Bool struct_, _Bool float_, int generics_num, int method_generics_num, _Bool enum_, struct sInfo* info);
 
-struct sClassModule* sClassModule_initialize(struct sClassModule* self, char* name, char* text, struct sInfo* info);
+struct sClassModule* sClassModule_initialize(struct sClassModule* self, char* name, char* text, char* sname, int sline, struct sInfo* info);
 
 struct sFun* sFun_initialize(struct sFun* self, char* name, struct sType* result_type, struct list$1sTypeph* param_types, struct list$1charph* param_names, struct list$1charph* param_default_parametors, _Bool external, _Bool var_args, struct sBlock* block, _Bool static_, char* come_header, char* declare_sname, struct sInfo* info);
 
@@ -17621,12 +17623,15 @@ _Bool _if_conditional752;
 _Bool _if_conditional753;
 _Bool _if_conditional754;
 _Bool _if_conditional755;
+_Bool _if_conditional756;
+_Bool _if_conditional757;
+_Bool _if_conditional758;
 void* right_value700;
 char* __dec_obj291;
 void* right_value701;
 struct sNode* __dec_obj292;
-_Bool _if_conditional756;
-_Bool _if_conditional757;
+_Bool _if_conditional759;
+_Bool _if_conditional760;
 void* right_value702;
 void* right_value703;
 struct sNode* _inf_value24;
@@ -17755,7 +17760,7 @@ right_value721 = (void*)0;
         # 2454 "05function.c"
         info->sline=sline_494;
     }
-    # 2589 "05function.c"
+    # 2600 "05function.c"
     # 2457 "05function.c"
     if(multiple_declare_492) {
         # 2458 "05function.c"
@@ -17908,14 +17913,14 @@ right_value721 = (void*)0;
         right_node_519=((void*)0);
         # 2508 "05function.c"
         array_initializer_520=((void*)0);
-        # 2577 "05function.c"
+        # 2588 "05function.c"
         # 2510 "05function.c"
         if(_if_conditional746=*info->p==61,        _if_conditional746) {
             # 2511 "05function.c"
             info->p++;
             # 2512 "05function.c"
             skip_spaces_and_lf(info);
-            # 2575 "05function.c"
+            # 2586 "05function.c"
             # 2514 "05function.c"
             if(_if_conditional747=*info->p==123,            _if_conditional747) {
                 # 2515 "05function.c"
@@ -17932,9 +17937,9 @@ right_value721 = (void*)0;
                 dquort_523=(_Bool)0;
                 # 2522 "05function.c"
                 nest_524=1;
-                # 2568 "05function.c"
+                # 2579 "05function.c"
                 while(_while_condtional56=1,                _while_condtional56) {
-                    # 2567 "05function.c"
+                    # 2578 "05function.c"
                     # 2524 "05function.c"
                     if(_if_conditional748=*info->p==0,                    _if_conditional748) {
                         # 2525 "05function.c"
@@ -17943,84 +17948,108 @@ right_value721 = (void*)0;
                         exit(2);
                     }
                     else {
-                        # 2567 "05function.c"
+                        # 2578 "05function.c"
                         # 2528 "05function.c"
                         if(_if_conditional749=*info->p==92,                        _if_conditional749) {
                             # 2529 "05function.c"
                             buffer_append_char(buf_521,*info->p);
                             # 2530 "05function.c"
                             info->p++;
+                            # 2534 "05function.c"
                             # 2531 "05function.c"
+                            if(_if_conditional750=*info->p==10,                            _if_conditional750) {
+                                # 2532 "05function.c"
+                                info->sline++;
+                            }
+                            # 2534 "05function.c"
                             buffer_append_char(buf_521,*info->p);
-                            # 2532 "05function.c"
+                            # 2535 "05function.c"
                             info->p++;
                         }
                         else {
-                            # 2567 "05function.c"
-                            # 2534 "05function.c"
-                            if(_if_conditional750=!squort_522&&*info->p==34,                            _if_conditional750) {
-                                # 2535 "05function.c"
+                            # 2578 "05function.c"
+                            # 2537 "05function.c"
+                            if(_if_conditional751=!squort_522&&*info->p==34,                            _if_conditional751) {
+                                # 2538 "05function.c"
                                 buffer_append_char(buf_521,*info->p);
-                                # 2536 "05function.c"
+                                # 2539 "05function.c"
                                 info->p++;
-                                # 2537 "05function.c"
+                                # 2540 "05function.c"
                                 dquort_523=!dquort_523;
                             }
                             else {
-                                # 2567 "05function.c"
-                                # 2539 "05function.c"
-                                if(_if_conditional751=!dquort_523&&*info->p==39,                                _if_conditional751) {
-                                    # 2540 "05function.c"
+                                # 2578 "05function.c"
+                                # 2542 "05function.c"
+                                if(_if_conditional752=!dquort_523&&*info->p==39,                                _if_conditional752) {
+                                    # 2543 "05function.c"
                                     buffer_append_char(buf_521,*info->p);
-                                    # 2541 "05function.c"
+                                    # 2544 "05function.c"
                                     info->p++;
-                                    # 2542 "05function.c"
+                                    # 2545 "05function.c"
                                     squort_522=!squort_522;
                                 }
                                 else {
-                                    # 2567 "05function.c"
-                                    # 2544 "05function.c"
-                                    if(_if_conditional752=squort_522||dquort_523,                                    _if_conditional752) {
-                                        # 2545 "05function.c"
+                                    # 2578 "05function.c"
+                                    # 2547 "05function.c"
+                                    if(_if_conditional753=squort_522||dquort_523,                                    _if_conditional753) {
+                                        # 2551 "05function.c"
+                                        # 2548 "05function.c"
+                                        if(_if_conditional754=*info->p==10,                                        _if_conditional754) {
+                                            # 2549 "05function.c"
+                                            info->sline++;
+                                        }
+                                        # 2551 "05function.c"
                                         buffer_append_char(buf_521,*info->p);
-                                        # 2546 "05function.c"
+                                        # 2552 "05function.c"
                                         info->p++;
                                     }
                                     else {
-                                        # 2567 "05function.c"
-                                        # 2548 "05function.c"
-                                        if(_if_conditional753=*info->p==123,                                        _if_conditional753) {
-                                            # 2549 "05function.c"
+                                        # 2578 "05function.c"
+                                        # 2554 "05function.c"
+                                        if(_if_conditional755=*info->p==123,                                        _if_conditional755) {
+                                            # 2555 "05function.c"
                                             nest_524++;
-                                            # 2550 "05function.c"
+                                            # 2556 "05function.c"
                                             buffer_append_char(buf_521,*info->p);
-                                            # 2551 "05function.c"
+                                            # 2557 "05function.c"
                                             info->p++;
                                         }
                                         else {
-                                            # 2567 "05function.c"
-                                            # 2553 "05function.c"
-                                            if(_if_conditional754=*info->p==125,                                            _if_conditional754) {
-                                                # 2554 "05function.c"
+                                            # 2578 "05function.c"
+                                            # 2559 "05function.c"
+                                            if(_if_conditional756=*info->p==125,                                            _if_conditional756) {
+                                                # 2560 "05function.c"
                                                 nest_524--;
-                                                # 2555 "05function.c"
+                                                # 2561 "05function.c"
                                                 buffer_append_char(buf_521,*info->p);
-                                                # 2556 "05function.c"
-                                                info->p++;
                                                 # 2562 "05function.c"
-                                                # 2558 "05function.c"
-                                                if(_if_conditional755=nest_524==0,                                                _if_conditional755) {
-                                                    # 2559 "05function.c"
+                                                info->p++;
+                                                # 2568 "05function.c"
+                                                # 2564 "05function.c"
+                                                if(_if_conditional757=nest_524==0,                                                _if_conditional757) {
+                                                    # 2565 "05function.c"
                                                     skip_spaces_and_lf(info);
-                                                    # 2560 "05function.c"
+                                                    # 2566 "05function.c"
                                                     break;
                                                 }
                                             }
                                             else {
-                                                # 2564 "05function.c"
-                                                buffer_append_char(buf_521,*info->p);
-                                                # 2565 "05function.c"
-                                                info->p++;
+                                                # 2578 "05function.c"
+                                                # 2569 "05function.c"
+                                                if(_if_conditional758=*info->p==10,                                                _if_conditional758) {
+                                                    # 2570 "05function.c"
+                                                    info->sline++;
+                                                    # 2571 "05function.c"
+                                                    buffer_append_char(buf_521,*info->p);
+                                                    # 2572 "05function.c"
+                                                    info->p++;
+                                                }
+                                                else {
+                                                    # 2575 "05function.c"
+                                                    buffer_append_char(buf_521,*info->p);
+                                                    # 2576 "05function.c"
+                                                    info->p++;
+                                                }
                                             }
                                         }
                                     }
@@ -18029,7 +18058,7 @@ right_value721 = (void*)0;
                         }
                     }
                 }
-                # 2568 "05function.c"
+                # 2579 "05function.c"
                 __dec_obj291=array_initializer_520;
                 array_initializer_520=(char*)come_increment_ref_count(((char*)(right_value700=buffer_to_string(buf_521))));
                 __dec_obj291 = come_decrement_ref_count2(__dec_obj291, (void*)0, (void*)0, 0,0,0, (void*)0);
@@ -18037,31 +18066,31 @@ right_value721 = (void*)0;
                 come_call_finalizer3(buf_521,buffer_finalize, 0, 0, 0, 0, (void*)0);
             }
             else {
-                # 2571 "05function.c"
+                # 2582 "05function.c"
                 parse_sharp_v5(info);
-                # 2572 "05function.c"
+                # 2583 "05function.c"
                 __dec_obj292=right_node_519;
                 right_node_519=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value701=expression_v13(info))));
                 if(__dec_obj292) { __dec_obj292 = come_decrement_ref_count2(__dec_obj292, ((struct sNode*)__dec_obj292)->finalize, ((struct sNode*)__dec_obj292)->_protocol_obj, 0,0,0, (void*)0); }
                 if(right_value701) { right_value701 = come_decrement_ref_count2(right_value701, ((struct sNode*)right_value701)->finalize, ((struct sNode*)right_value701)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                # 2573 "05function.c"
+                # 2584 "05function.c"
                 parse_sharp_v5(info);
             }
         }
-        # 2587 "05function.c"
-        # 2577 "05function.c"
+        # 2598 "05function.c"
+        # 2588 "05function.c"
         if(result_type_516->mExtern) {
-            # 2582 "05function.c"
-            # 2578 "05function.c"
+            # 2593 "05function.c"
+            # 2589 "05function.c"
             if(right_node_519) {
-                # 2579 "05function.c"
+                # 2590 "05function.c"
                 err_msg(info,"invalid right value");
-                # 2580 "05function.c"
+                # 2591 "05function.c"
                 exit(2);
             }
-            # 2582 "05function.c"
-            _inf_value24=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05function.c", 2582, "struct sNode");
-            _inf_obj_value24=come_increment_ref_count(((struct sExternalGlobalVariable*)(right_value703=sExternalGlobalVariable_initialize((struct sExternalGlobalVariable*)come_increment_ref_count(((struct sExternalGlobalVariable*)(right_value702=(struct sExternalGlobalVariable*)come_calloc(1, sizeof(struct sExternalGlobalVariable)*(1), "05function.c", 2582, "sExternalGlobalVariable")))),((void*)0),result_type_516,(char*)come_increment_ref_count(var_name_517),info))));
+            # 2593 "05function.c"
+            _inf_value24=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05function.c", 2593, "struct sNode");
+            _inf_obj_value24=come_increment_ref_count(((struct sExternalGlobalVariable*)(right_value703=sExternalGlobalVariable_initialize((struct sExternalGlobalVariable*)come_increment_ref_count(((struct sExternalGlobalVariable*)(right_value702=(struct sExternalGlobalVariable*)come_calloc(1, sizeof(struct sExternalGlobalVariable)*(1), "05function.c", 2593, "sExternalGlobalVariable")))),((void*)0),result_type_516,(char*)come_increment_ref_count(var_name_517),info))));
             _inf_value24->_protocol_obj=_inf_obj_value24;
             _inf_value24->finalize=(void*)sExternalGlobalVariable_finalize;
             _inf_value24->clone=(void*)sExternalGlobalVariable_clone;
@@ -18081,9 +18110,9 @@ right_value721 = (void*)0;
             return __result407__;
         }
         else {
-            # 2585 "05function.c"
-            _inf_value25=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05function.c", 2585, "struct sNode");
-            _inf_obj_value25=come_increment_ref_count(((struct sGlobalVariable*)(right_value712=sGlobalVariable_initialize((struct sGlobalVariable*)come_increment_ref_count(((struct sGlobalVariable*)(right_value711=(struct sGlobalVariable*)come_calloc(1, sizeof(struct sGlobalVariable)*(1), "05function.c", 2585, "sGlobalVariable")))),((void*)0),result_type_516,(char*)come_increment_ref_count(var_name_517),(struct sNode*)come_increment_ref_count(right_node_519),(char*)come_increment_ref_count(array_initializer_520),info))));
+            # 2596 "05function.c"
+            _inf_value25=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05function.c", 2596, "struct sNode");
+            _inf_obj_value25=come_increment_ref_count(((struct sGlobalVariable*)(right_value712=sGlobalVariable_initialize((struct sGlobalVariable*)come_increment_ref_count(((struct sGlobalVariable*)(right_value711=(struct sGlobalVariable*)come_calloc(1, sizeof(struct sGlobalVariable)*(1), "05function.c", 2596, "sGlobalVariable")))),((void*)0),result_type_516,(char*)come_increment_ref_count(var_name_517),(struct sNode*)come_increment_ref_count(right_node_519),(char*)come_increment_ref_count(array_initializer_520),info))));
             _inf_value25->_protocol_obj=_inf_obj_value25;
             _inf_value25->finalize=(void*)sGlobalVariable_finalize;
             _inf_value25->clone=(void*)sGlobalVariable_clone;
@@ -18107,7 +18136,7 @@ right_value721 = (void*)0;
         if(right_node_519) { right_node_519 = come_decrement_ref_count2(right_node_519, ((struct sNode*)right_node_519)->finalize, ((struct sNode*)right_node_519)->_protocol_obj, 0, 0, 0, (void*)0); } 
         array_initializer_520 = come_decrement_ref_count2(array_initializer_520, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
-    # 2589 "05function.c"
+    # 2600 "05function.c"
     __result411__ = __result_obj__ = (struct sNode*)((void*)0);
     return __result411__;
 }
@@ -18226,39 +18255,39 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static void sExternalGlobalVariable_finalize(struct sExternalGlobalVariable* self){
 void* __result_obj__;
-_Bool _if_conditional758;
-_Bool _if_conditional759;
-_Bool _if_conditional760;
 _Bool _if_conditional761;
 _Bool _if_conditional762;
+_Bool _if_conditional763;
+_Bool _if_conditional764;
+_Bool _if_conditional765;
 memset(&__result_obj__, 0, sizeof(void*));
                 # 1 "sExternalGlobalVariable_finalize"
                 # 0 "sExternalGlobalVariable_finalize"
-                if(_if_conditional758=self!=((void*)0)&&self->sname!=((void*)0),                _if_conditional758) {
+                if(_if_conditional761=self!=((void*)0)&&self->sname!=((void*)0),                _if_conditional761) {
                     # 0 "sExternalGlobalVariable_finalize"
                     self->sname = come_decrement_ref_count2(self->sname, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 }
                 # 2 "sExternalGlobalVariable_finalize"
                 # 1 "sExternalGlobalVariable_finalize"
-                if(_if_conditional759=self!=((void*)0)&&self->type!=((void*)0),                _if_conditional759) {
+                if(_if_conditional762=self!=((void*)0)&&self->type!=((void*)0),                _if_conditional762) {
                     # 1 "sExternalGlobalVariable_finalize"
                     come_call_finalizer3(self->type,sType_finalize, 0, 0, 0, 0, (void*)0);
                 }
                 # 3 "sExternalGlobalVariable_finalize"
                 # 2 "sExternalGlobalVariable_finalize"
-                if(_if_conditional760=self!=((void*)0)&&self->name!=((void*)0),                _if_conditional760) {
+                if(_if_conditional763=self!=((void*)0)&&self->name!=((void*)0),                _if_conditional763) {
                     # 2 "sExternalGlobalVariable_finalize"
                     self->name = come_decrement_ref_count2(self->name, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 }
                 # 4 "sExternalGlobalVariable_finalize"
                 # 3 "sExternalGlobalVariable_finalize"
-                if(_if_conditional761=self!=((void*)0)&&self->multiple_declare!=((void*)0),                _if_conditional761) {
+                if(_if_conditional764=self!=((void*)0)&&self->multiple_declare!=((void*)0),                _if_conditional764) {
                     # 3 "sExternalGlobalVariable_finalize"
                     come_call_finalizer3(self->multiple_declare,list$1tuple2$2sTypephcharphphp_finalize, 0, 0, 0, 0, (void*)0);
                 }
                 # 5 "sExternalGlobalVariable_finalize"
                 # 4 "sExternalGlobalVariable_finalize"
-                if(_if_conditional762=self!=((void*)0)&&self->mDeclareSName!=((void*)0),                _if_conditional762) {
+                if(_if_conditional765=self!=((void*)0)&&self->mDeclareSName!=((void*)0),                _if_conditional765) {
                     # 4 "sExternalGlobalVariable_finalize"
                     self->mDeclareSName = come_decrement_ref_count2(self->mDeclareSName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 }
@@ -18266,24 +18295,24 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct sExternalGlobalVariable* sExternalGlobalVariable_clone(struct sExternalGlobalVariable* self){
 void* __result_obj__;
-_Bool _if_conditional763;
+_Bool _if_conditional766;
 struct sExternalGlobalVariable* __result405__;
 void* right_value704;
 struct sExternalGlobalVariable* result_525;
-_Bool _if_conditional764;
-_Bool _if_conditional765;
+_Bool _if_conditional767;
+_Bool _if_conditional768;
 void* right_value705;
 char* __dec_obj293;
-_Bool _if_conditional766;
+_Bool _if_conditional769;
 void* right_value706;
 struct sType* __dec_obj294;
-_Bool _if_conditional767;
+_Bool _if_conditional770;
 void* right_value707;
 char* __dec_obj295;
-_Bool _if_conditional768;
+_Bool _if_conditional771;
 void* right_value708;
 struct list$1tuple2$2sTypephcharphph* __dec_obj296;
-_Bool _if_conditional769;
+_Bool _if_conditional772;
 void* right_value709;
 char* __dec_obj297;
 struct sExternalGlobalVariable* __result406__;
@@ -18297,7 +18326,7 @@ right_value708 = (void*)0;
 right_value709 = (void*)0;
                 # 3 "sExternalGlobalVariable_clone"
                 # 2 "sExternalGlobalVariable_clone"
-                if(_if_conditional763=self==(void*)0,                _if_conditional763) {
+                if(_if_conditional766=self==(void*)0,                _if_conditional766) {
                     # 2 "sExternalGlobalVariable_clone"
                     __result405__ = __result_obj__ = (void*)0;
                     return __result405__;
@@ -18307,13 +18336,13 @@ right_value709 = (void*)0;
                 come_call_finalizer3(right_value704,sExternalGlobalVariable_finalize, 0, 1, 0, 0, __result_obj__);
                 # 5 "sExternalGlobalVariable_clone"
                 # 4 "sExternalGlobalVariable_clone"
-                if(_if_conditional764=self!=((void*)0),                _if_conditional764) {
+                if(_if_conditional767=self!=((void*)0),                _if_conditional767) {
                     # 4 "sExternalGlobalVariable_clone"
                     result_525->sline=self->sline;
                 }
                 # 6 "sExternalGlobalVariable_clone"
                 # 5 "sExternalGlobalVariable_clone"
-                if(_if_conditional765=self!=((void*)0)&&self->sname!=((void*)0),                _if_conditional765) {
+                if(_if_conditional768=self!=((void*)0)&&self->sname!=((void*)0),                _if_conditional768) {
                     # 5 "sExternalGlobalVariable_clone"
                     __dec_obj293=result_525->sname;
                     result_525->sname=(char*)come_increment_ref_count(((char*)(right_value705=string_clone(self->sname))));
@@ -18322,7 +18351,7 @@ right_value709 = (void*)0;
                 }
                 # 7 "sExternalGlobalVariable_clone"
                 # 6 "sExternalGlobalVariable_clone"
-                if(_if_conditional766=self!=((void*)0)&&self->type!=((void*)0),                _if_conditional766) {
+                if(_if_conditional769=self!=((void*)0)&&self->type!=((void*)0),                _if_conditional769) {
                     # 6 "sExternalGlobalVariable_clone"
                     __dec_obj294=result_525->type;
                     result_525->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value706=sType_clone(self->type))));
@@ -18331,7 +18360,7 @@ right_value709 = (void*)0;
                 }
                 # 8 "sExternalGlobalVariable_clone"
                 # 7 "sExternalGlobalVariable_clone"
-                if(_if_conditional767=self!=((void*)0)&&self->name!=((void*)0),                _if_conditional767) {
+                if(_if_conditional770=self!=((void*)0)&&self->name!=((void*)0),                _if_conditional770) {
                     # 7 "sExternalGlobalVariable_clone"
                     __dec_obj295=result_525->name;
                     result_525->name=(char*)come_increment_ref_count(((char*)(right_value707=string_clone(self->name))));
@@ -18340,7 +18369,7 @@ right_value709 = (void*)0;
                 }
                 # 9 "sExternalGlobalVariable_clone"
                 # 8 "sExternalGlobalVariable_clone"
-                if(_if_conditional768=self!=((void*)0)&&self->multiple_declare!=((void*)0),                _if_conditional768) {
+                if(_if_conditional771=self!=((void*)0)&&self->multiple_declare!=((void*)0),                _if_conditional771) {
                     # 8 "sExternalGlobalVariable_clone"
                     __dec_obj296=result_525->multiple_declare;
                     result_525->multiple_declare=(struct list$1tuple2$2sTypephcharphph*)come_increment_ref_count(((struct list$1tuple2$2sTypephcharphph*)(right_value708=list$1tuple2$2sTypephcharphphp_clone(self->multiple_declare))));
@@ -18349,7 +18378,7 @@ right_value709 = (void*)0;
                 }
                 # 10 "sExternalGlobalVariable_clone"
                 # 9 "sExternalGlobalVariable_clone"
-                if(_if_conditional769=self!=((void*)0)&&self->mDeclareSName!=((void*)0),                _if_conditional769) {
+                if(_if_conditional772=self!=((void*)0)&&self->mDeclareSName!=((void*)0),                _if_conditional772) {
                     # 9 "sExternalGlobalVariable_clone"
                     __dec_obj297=result_525->mDeclareSName;
                     result_525->mDeclareSName=(char*)come_increment_ref_count(((char*)(right_value709=string_clone(self->mDeclareSName))));
@@ -18365,53 +18394,53 @@ right_value709 = (void*)0;
 
 static void sGlobalVariable_finalize(struct sGlobalVariable* self){
 void* __result_obj__;
-_Bool _if_conditional770;
-_Bool _if_conditional771;
-_Bool _if_conditional772;
 _Bool _if_conditional773;
 _Bool _if_conditional774;
 _Bool _if_conditional775;
 _Bool _if_conditional776;
+_Bool _if_conditional777;
+_Bool _if_conditional778;
+_Bool _if_conditional779;
 memset(&__result_obj__, 0, sizeof(void*));
                 # 1 "sGlobalVariable_finalize"
                 # 0 "sGlobalVariable_finalize"
-                if(_if_conditional770=self!=((void*)0)&&self->sname!=((void*)0),                _if_conditional770) {
+                if(_if_conditional773=self!=((void*)0)&&self->sname!=((void*)0),                _if_conditional773) {
                     # 0 "sGlobalVariable_finalize"
                     self->sname = come_decrement_ref_count2(self->sname, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 }
                 # 2 "sGlobalVariable_finalize"
                 # 1 "sGlobalVariable_finalize"
-                if(_if_conditional771=self!=((void*)0)&&self->type!=((void*)0),                _if_conditional771) {
+                if(_if_conditional774=self!=((void*)0)&&self->type!=((void*)0),                _if_conditional774) {
                     # 1 "sGlobalVariable_finalize"
                     come_call_finalizer3(self->type,sType_finalize, 0, 0, 0, 0, (void*)0);
                 }
                 # 3 "sGlobalVariable_finalize"
                 # 2 "sGlobalVariable_finalize"
-                if(_if_conditional772=self!=((void*)0)&&self->name!=((void*)0),                _if_conditional772) {
+                if(_if_conditional775=self!=((void*)0)&&self->name!=((void*)0),                _if_conditional775) {
                     # 2 "sGlobalVariable_finalize"
                     self->name = come_decrement_ref_count2(self->name, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 }
                 # 4 "sGlobalVariable_finalize"
                 # 3 "sGlobalVariable_finalize"
-                if(_if_conditional773=self!=((void*)0)&&self->right_node!=((void*)0),                _if_conditional773) {
+                if(_if_conditional776=self!=((void*)0)&&self->right_node!=((void*)0),                _if_conditional776) {
                     # 3 "sGlobalVariable_finalize"
                     if(self->right_node) { self->right_node = come_decrement_ref_count2(self->right_node, ((struct sNode*)self->right_node)->finalize, ((struct sNode*)self->right_node)->_protocol_obj, 0, 0, 0, (void*)0); } 
                 }
                 # 5 "sGlobalVariable_finalize"
                 # 4 "sGlobalVariable_finalize"
-                if(_if_conditional774=self!=((void*)0)&&self->array_initializer!=((void*)0),                _if_conditional774) {
+                if(_if_conditional777=self!=((void*)0)&&self->array_initializer!=((void*)0),                _if_conditional777) {
                     # 4 "sGlobalVariable_finalize"
                     self->array_initializer = come_decrement_ref_count2(self->array_initializer, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 }
                 # 6 "sGlobalVariable_finalize"
                 # 5 "sGlobalVariable_finalize"
-                if(_if_conditional775=self!=((void*)0)&&self->multiple_declare!=((void*)0),                _if_conditional775) {
+                if(_if_conditional778=self!=((void*)0)&&self->multiple_declare!=((void*)0),                _if_conditional778) {
                     # 5 "sGlobalVariable_finalize"
                     come_call_finalizer3(self->multiple_declare,list$1tuple2$2sTypephcharphphp_finalize, 0, 0, 0, 0, (void*)0);
                 }
                 # 7 "sGlobalVariable_finalize"
                 # 6 "sGlobalVariable_finalize"
-                if(_if_conditional776=self!=((void*)0)&&self->mDeclareSName!=((void*)0),                _if_conditional776) {
+                if(_if_conditional779=self!=((void*)0)&&self->mDeclareSName!=((void*)0),                _if_conditional779) {
                     # 6 "sGlobalVariable_finalize"
                     self->mDeclareSName = come_decrement_ref_count2(self->mDeclareSName, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 }
@@ -18419,30 +18448,30 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct sGlobalVariable* sGlobalVariable_clone(struct sGlobalVariable* self){
 void* __result_obj__;
-_Bool _if_conditional777;
+_Bool _if_conditional780;
 struct sGlobalVariable* __result408__;
 void* right_value713;
 struct sGlobalVariable* result_526;
-_Bool _if_conditional778;
-_Bool _if_conditional779;
+_Bool _if_conditional781;
+_Bool _if_conditional782;
 void* right_value714;
 char* __dec_obj298;
-_Bool _if_conditional780;
+_Bool _if_conditional783;
 void* right_value715;
 struct sType* __dec_obj299;
-_Bool _if_conditional781;
+_Bool _if_conditional784;
 void* right_value716;
 char* __dec_obj300;
-_Bool _if_conditional782;
+_Bool _if_conditional785;
 void* right_value717;
 struct sNode* __dec_obj301;
-_Bool _if_conditional783;
+_Bool _if_conditional786;
 void* right_value718;
 char* __dec_obj302;
-_Bool _if_conditional784;
+_Bool _if_conditional787;
 void* right_value719;
 struct list$1tuple2$2sTypephcharphph* __dec_obj303;
-_Bool _if_conditional785;
+_Bool _if_conditional788;
 void* right_value720;
 char* __dec_obj304;
 struct sGlobalVariable* __result409__;
@@ -18458,7 +18487,7 @@ right_value719 = (void*)0;
 right_value720 = (void*)0;
                 # 3 "sGlobalVariable_clone"
                 # 2 "sGlobalVariable_clone"
-                if(_if_conditional777=self==(void*)0,                _if_conditional777) {
+                if(_if_conditional780=self==(void*)0,                _if_conditional780) {
                     # 2 "sGlobalVariable_clone"
                     __result408__ = __result_obj__ = (void*)0;
                     return __result408__;
@@ -18468,13 +18497,13 @@ right_value720 = (void*)0;
                 come_call_finalizer3(right_value713,sGlobalVariable_finalize, 0, 1, 0, 0, __result_obj__);
                 # 5 "sGlobalVariable_clone"
                 # 4 "sGlobalVariable_clone"
-                if(_if_conditional778=self!=((void*)0),                _if_conditional778) {
+                if(_if_conditional781=self!=((void*)0),                _if_conditional781) {
                     # 4 "sGlobalVariable_clone"
                     result_526->sline=self->sline;
                 }
                 # 6 "sGlobalVariable_clone"
                 # 5 "sGlobalVariable_clone"
-                if(_if_conditional779=self!=((void*)0)&&self->sname!=((void*)0),                _if_conditional779) {
+                if(_if_conditional782=self!=((void*)0)&&self->sname!=((void*)0),                _if_conditional782) {
                     # 5 "sGlobalVariable_clone"
                     __dec_obj298=result_526->sname;
                     result_526->sname=(char*)come_increment_ref_count(((char*)(right_value714=string_clone(self->sname))));
@@ -18483,7 +18512,7 @@ right_value720 = (void*)0;
                 }
                 # 7 "sGlobalVariable_clone"
                 # 6 "sGlobalVariable_clone"
-                if(_if_conditional780=self!=((void*)0)&&self->type!=((void*)0),                _if_conditional780) {
+                if(_if_conditional783=self!=((void*)0)&&self->type!=((void*)0),                _if_conditional783) {
                     # 6 "sGlobalVariable_clone"
                     __dec_obj299=result_526->type;
                     result_526->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value715=sType_clone(self->type))));
@@ -18492,7 +18521,7 @@ right_value720 = (void*)0;
                 }
                 # 8 "sGlobalVariable_clone"
                 # 7 "sGlobalVariable_clone"
-                if(_if_conditional781=self!=((void*)0)&&self->name!=((void*)0),                _if_conditional781) {
+                if(_if_conditional784=self!=((void*)0)&&self->name!=((void*)0),                _if_conditional784) {
                     # 7 "sGlobalVariable_clone"
                     __dec_obj300=result_526->name;
                     result_526->name=(char*)come_increment_ref_count(((char*)(right_value716=string_clone(self->name))));
@@ -18501,7 +18530,7 @@ right_value720 = (void*)0;
                 }
                 # 9 "sGlobalVariable_clone"
                 # 8 "sGlobalVariable_clone"
-                if(_if_conditional782=self!=((void*)0)&&self->right_node!=((void*)0),                _if_conditional782) {
+                if(_if_conditional785=self!=((void*)0)&&self->right_node!=((void*)0),                _if_conditional785) {
                     # 8 "sGlobalVariable_clone"
                     __dec_obj301=result_526->right_node;
                     result_526->right_node=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value717=sNode_clone(self->right_node))));
@@ -18510,7 +18539,7 @@ right_value720 = (void*)0;
                 }
                 # 10 "sGlobalVariable_clone"
                 # 9 "sGlobalVariable_clone"
-                if(_if_conditional783=self!=((void*)0)&&self->array_initializer!=((void*)0),                _if_conditional783) {
+                if(_if_conditional786=self!=((void*)0)&&self->array_initializer!=((void*)0),                _if_conditional786) {
                     # 9 "sGlobalVariable_clone"
                     __dec_obj302=result_526->array_initializer;
                     result_526->array_initializer=(char*)come_increment_ref_count(((char*)(right_value718=string_clone(self->array_initializer))));
@@ -18519,7 +18548,7 @@ right_value720 = (void*)0;
                 }
                 # 11 "sGlobalVariable_clone"
                 # 10 "sGlobalVariable_clone"
-                if(_if_conditional784=self!=((void*)0)&&self->multiple_declare!=((void*)0),                _if_conditional784) {
+                if(_if_conditional787=self!=((void*)0)&&self->multiple_declare!=((void*)0),                _if_conditional787) {
                     # 10 "sGlobalVariable_clone"
                     __dec_obj303=result_526->multiple_declare;
                     result_526->multiple_declare=(struct list$1tuple2$2sTypephcharphph*)come_increment_ref_count(((struct list$1tuple2$2sTypephcharphph*)(right_value719=list$1tuple2$2sTypephcharphphp_clone(self->multiple_declare))));
@@ -18528,7 +18557,7 @@ right_value720 = (void*)0;
                 }
                 # 12 "sGlobalVariable_clone"
                 # 11 "sGlobalVariable_clone"
-                if(_if_conditional785=self!=((void*)0)&&self->mDeclareSName!=((void*)0),                _if_conditional785) {
+                if(_if_conditional788=self!=((void*)0)&&self->mDeclareSName!=((void*)0),                _if_conditional788) {
                     # 11 "sGlobalVariable_clone"
                     __dec_obj304=result_526->mDeclareSName;
                     result_526->mDeclareSName=(char*)come_increment_ref_count(((char*)(right_value720=string_clone(self->mDeclareSName))));
@@ -18546,11 +18575,11 @@ struct sNode* top_level_v1(char* buf, char* head, int head_sline, struct sInfo* 
 void* __result_obj__;
 struct sNode* __result412__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2594 "05function.c"
+    # 2605 "05function.c"
     err_msg(info,"unexpected word(%s)(2)\n",buf);
-    # 2595 "05function.c"
+    # 2606 "05function.c"
     exit(2);
-    # 2597 "05function.c"
+    # 2608 "05function.c"
     __result412__ = __result_obj__ = (struct sNode*)((void*)0);
     return __result412__;
 }
@@ -18559,7 +18588,7 @@ struct sNode* post_position_operator3_v5(struct sNode* node, struct sInfo* info)
 void* __result_obj__;
 struct sNode* __result413__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2602 "05function.c"
+    # 2613 "05function.c"
     __result413__ = __result_obj__ = node;
     if(node) { node = come_decrement_ref_count2(node, ((struct sNode*)node)->finalize, ((struct sNode*)node)->_protocol_obj, 0, 1, 0, (void*)0); } 
     return __result413__;

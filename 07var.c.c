@@ -464,6 +464,8 @@ struct sClassModule
     char* mName;
     char* mText;
     struct list$1charph* mParams;
+    char* mSName;
+    int mSLine;
 };
 struct map$2charphsFunph
 {
@@ -1576,7 +1578,7 @@ void sVarTable_finalize(struct sVarTable* self);
 
 struct sClass* sClass_initialize(struct sClass* self, char* name, _Bool number, _Bool union_, _Bool generics, _Bool method_generics, _Bool protocol_, _Bool struct_, _Bool float_, int generics_num, int method_generics_num, _Bool enum_, struct sInfo* info);
 
-struct sClassModule* sClassModule_initialize(struct sClassModule* self, char* name, char* text, struct sInfo* info);
+struct sClassModule* sClassModule_initialize(struct sClassModule* self, char* name, char* text, char* sname, int sline, struct sInfo* info);
 
 struct sFun* sFun_initialize(struct sFun* self, char* name, struct sType* result_type, struct list$1sTypeph* param_types, struct list$1charph* param_names, struct list$1charph* param_default_parametors, _Bool external, _Bool var_args, struct sBlock* block, _Bool static_, char* come_header, char* declare_sname, struct sInfo* info);
 
@@ -9266,6 +9268,9 @@ _Bool _if_conditional451;
 _Bool _if_conditional452;
 _Bool _if_conditional453;
 _Bool _if_conditional454;
+_Bool _if_conditional455;
+_Bool _if_conditional456;
+_Bool _if_conditional457;
 void* right_value386;
 char* array_initializer_311;
 void* right_value387;
@@ -9566,7 +9571,7 @@ right_value424 = (void*)0;
     parse_sharp_v5(info);
     # 870 "07var.c"
     fun_259=map$2charphsFunphp_operator_load_element(info->funcs,buf);
-    # 1162 "07var.c"
+    # 1171 "07var.c"
     # 872 "07var.c"
     if(_if_conditional351=charp_operator_equals(buf,"var")||charp_operator_equals(buf,"auto"),    _if_conditional351) {
         # 873 "07var.c"
@@ -9674,7 +9679,7 @@ right_value424 = (void*)0;
         come_call_finalizer3(multiple_assign_261,list$1charphp_finalize, 0, 0, 0, 0, (void*)0);
     }
     else {
-        # 1162 "07var.c"
+        # 1171 "07var.c"
         # 921 "07var.c"
         if(multiple_declare_243) {
             # 922 "07var.c"
@@ -9751,7 +9756,7 @@ right_value424 = (void*)0;
             if(result_282) { result_282 = come_decrement_ref_count2(result_282, ((struct sNode*)result_282)->finalize, ((struct sNode*)result_282)->_protocol_obj, 0, 0, 0, (void*)0); } 
         }
         else {
-            # 1162 "07var.c"
+            # 1171 "07var.c"
             # 952 "07var.c"
             if(multiple_declare2_249) {
                 # 953 "07var.c"
@@ -9876,7 +9881,7 @@ right_value424 = (void*)0;
                 if(result_296) { result_296 = come_decrement_ref_count2(result_296, ((struct sNode*)result_296)->finalize, ((struct sNode*)result_296)->_protocol_obj, 0, 0, 0, (void*)0); } 
             }
             else {
-                # 1162 "07var.c"
+                # 1171 "07var.c"
                 # 1014 "07var.c"
                 if(_if_conditional417=!is_type_name_flag_242&&*info->p==61&&*(info->p+1)!=61&&!info->no_assign,                _if_conditional417) {
                     # 1015 "07var.c"
@@ -9922,7 +9927,7 @@ right_value424 = (void*)0;
                     if(result_299) { result_299 = come_decrement_ref_count2(result_299, ((struct sNode*)result_299)->finalize, ((struct sNode*)result_299)->_protocol_obj, 0, 0, 0, (void*)0); } 
                 }
                 else {
-                    # 1162 "07var.c"
+                    # 1171 "07var.c"
                     # 1032 "07var.c"
                     if(_if_conditional435=!is_type_name_flag_242||map$2charphsFunphp_operator_load_element(info->funcs,buf),                    _if_conditional435) {
                         # 1033 "07var.c"
@@ -9980,7 +9985,7 @@ right_value424 = (void*)0;
                         info->p=head;
                         # 1053 "07var.c"
                         info->sline=head_sline;
-                        # 1160 "07var.c"
+                        # 1169 "07var.c"
                         # 1055 "07var.c"
                         if(is_type_name_flag_303) {
                             # 1056 "07var.c"
@@ -10001,7 +10006,7 @@ right_value424 = (void*)0;
                             }
                             # 1063 "07var.c"
                             parse_sharp_v5(info);
-                            # 1159 "07var.c"
+                            # 1168 "07var.c"
                             # 1065 "07var.c"
                             if(_if_conditional445=*info->p==61,                            _if_conditional445) {
                                 # 1066 "07var.c"
@@ -10010,7 +10015,7 @@ right_value424 = (void*)0;
                                 skip_spaces_and_lf(info);
                                 # 1069 "07var.c"
                                 parse_sharp_v5(info);
-                                # 1151 "07var.c"
+                                # 1160 "07var.c"
                                 # 1071 "07var.c"
                                 if(_if_conditional446=*info->p==123,                                _if_conditional446) {
                                     # 1072 "07var.c"
@@ -10027,9 +10032,9 @@ right_value424 = (void*)0;
                                     dquort_309=(_Bool)0;
                                     # 1079 "07var.c"
                                     nest_310=1;
-                                    # 1125 "07var.c"
+                                    # 1134 "07var.c"
                                     while(_while_condtional34=1,                                    _while_condtional34) {
-                                        # 1124 "07var.c"
+                                        # 1133 "07var.c"
                                         # 1081 "07var.c"
                                         if(_if_conditional447=*info->p==0,                                        _if_conditional447) {
                                             # 1082 "07var.c"
@@ -10038,84 +10043,108 @@ right_value424 = (void*)0;
                                             exit(2);
                                         }
                                         else {
-                                            # 1124 "07var.c"
+                                            # 1133 "07var.c"
                                             # 1085 "07var.c"
                                             if(_if_conditional448=*info->p==92,                                            _if_conditional448) {
                                                 # 1086 "07var.c"
                                                 buffer_append_char(buf2_307,*info->p);
                                                 # 1087 "07var.c"
                                                 info->p++;
+                                                # 1091 "07var.c"
                                                 # 1088 "07var.c"
+                                                if(_if_conditional449=*info->p==10,                                                _if_conditional449) {
+                                                    # 1089 "07var.c"
+                                                    info->sline++;
+                                                }
+                                                # 1091 "07var.c"
                                                 buffer_append_char(buf2_307,*info->p);
-                                                # 1089 "07var.c"
+                                                # 1092 "07var.c"
                                                 info->p++;
                                             }
                                             else {
-                                                # 1124 "07var.c"
-                                                # 1091 "07var.c"
-                                                if(_if_conditional449=!squort_308&&*info->p==34,                                                _if_conditional449) {
-                                                    # 1092 "07var.c"
+                                                # 1133 "07var.c"
+                                                # 1094 "07var.c"
+                                                if(_if_conditional450=!squort_308&&*info->p==34,                                                _if_conditional450) {
+                                                    # 1095 "07var.c"
                                                     buffer_append_char(buf2_307,*info->p);
-                                                    # 1093 "07var.c"
+                                                    # 1096 "07var.c"
                                                     info->p++;
-                                                    # 1094 "07var.c"
+                                                    # 1097 "07var.c"
                                                     dquort_309=!dquort_309;
                                                 }
                                                 else {
-                                                    # 1124 "07var.c"
-                                                    # 1096 "07var.c"
-                                                    if(_if_conditional450=!dquort_309&&*info->p==39,                                                    _if_conditional450) {
-                                                        # 1097 "07var.c"
+                                                    # 1133 "07var.c"
+                                                    # 1099 "07var.c"
+                                                    if(_if_conditional451=!dquort_309&&*info->p==39,                                                    _if_conditional451) {
+                                                        # 1100 "07var.c"
                                                         buffer_append_char(buf2_307,*info->p);
-                                                        # 1098 "07var.c"
+                                                        # 1101 "07var.c"
                                                         info->p++;
-                                                        # 1099 "07var.c"
+                                                        # 1102 "07var.c"
                                                         squort_308=!squort_308;
                                                     }
                                                     else {
-                                                        # 1124 "07var.c"
-                                                        # 1101 "07var.c"
-                                                        if(_if_conditional451=squort_308||dquort_309,                                                        _if_conditional451) {
-                                                            # 1102 "07var.c"
+                                                        # 1133 "07var.c"
+                                                        # 1104 "07var.c"
+                                                        if(_if_conditional452=squort_308||dquort_309,                                                        _if_conditional452) {
+                                                            # 1105 "07var.c"
+                                                            # 1105 "07var.c"
+                                                            if(_if_conditional453=*info->p==10,                                                            _if_conditional453) {
+                                                                # 1105 "07var.c"
+                                                                info->sline++;
+                                                            }
+                                                            # 1106 "07var.c"
                                                             buffer_append_char(buf2_307,*info->p);
-                                                            # 1103 "07var.c"
+                                                            # 1107 "07var.c"
                                                             info->p++;
                                                         }
                                                         else {
-                                                            # 1124 "07var.c"
-                                                            # 1105 "07var.c"
-                                                            if(_if_conditional452=*info->p==123,                                                            _if_conditional452) {
-                                                                # 1106 "07var.c"
+                                                            # 1133 "07var.c"
+                                                            # 1109 "07var.c"
+                                                            if(_if_conditional454=*info->p==123,                                                            _if_conditional454) {
+                                                                # 1110 "07var.c"
                                                                 nest_310++;
-                                                                # 1107 "07var.c"
+                                                                # 1111 "07var.c"
                                                                 buffer_append_char(buf2_307,*info->p);
-                                                                # 1108 "07var.c"
+                                                                # 1112 "07var.c"
                                                                 info->p++;
                                                             }
                                                             else {
-                                                                # 1124 "07var.c"
-                                                                # 1110 "07var.c"
-                                                                if(_if_conditional453=*info->p==125,                                                                _if_conditional453) {
-                                                                    # 1111 "07var.c"
-                                                                    nest_310--;
-                                                                    # 1112 "07var.c"
-                                                                    buffer_append_char(buf2_307,*info->p);
-                                                                    # 1113 "07var.c"
-                                                                    info->p++;
-                                                                    # 1119 "07var.c"
+                                                                # 1133 "07var.c"
+                                                                # 1114 "07var.c"
+                                                                if(_if_conditional455=*info->p==125,                                                                _if_conditional455) {
                                                                     # 1115 "07var.c"
-                                                                    if(_if_conditional454=nest_310==0,                                                                    _if_conditional454) {
-                                                                        # 1116 "07var.c"
+                                                                    nest_310--;
+                                                                    # 1116 "07var.c"
+                                                                    buffer_append_char(buf2_307,*info->p);
+                                                                    # 1117 "07var.c"
+                                                                    info->p++;
+                                                                    # 1123 "07var.c"
+                                                                    # 1119 "07var.c"
+                                                                    if(_if_conditional456=nest_310==0,                                                                    _if_conditional456) {
+                                                                        # 1120 "07var.c"
                                                                         skip_spaces_and_lf(info);
-                                                                        # 1117 "07var.c"
+                                                                        # 1121 "07var.c"
                                                                         break;
                                                                     }
                                                                 }
                                                                 else {
-                                                                    # 1121 "07var.c"
-                                                                    buffer_append_char(buf2_307,*info->p);
-                                                                    # 1122 "07var.c"
-                                                                    info->p++;
+                                                                    # 1133 "07var.c"
+                                                                    # 1124 "07var.c"
+                                                                    if(_if_conditional457=*info->p==10,                                                                    _if_conditional457) {
+                                                                        # 1125 "07var.c"
+                                                                        buffer_append_char(buf2_307,*info->p);
+                                                                        # 1126 "07var.c"
+                                                                        info->p++;
+                                                                        # 1127 "07var.c"
+                                                                        info->sline++;
+                                                                    }
+                                                                    else {
+                                                                        # 1130 "07var.c"
+                                                                        buffer_append_char(buf2_307,*info->p);
+                                                                        # 1131 "07var.c"
+                                                                        info->p++;
+                                                                    }
                                                                 }
                                                             }
                                                         }
@@ -10124,12 +10153,12 @@ right_value424 = (void*)0;
                                             }
                                         }
                                     }
-                                    # 1125 "07var.c"
+                                    # 1134 "07var.c"
                                     array_initializer_311=(char*)come_increment_ref_count(((char*)(right_value386=buffer_to_string(buf2_307))));
                                     right_value386 = come_decrement_ref_count2(right_value386, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                    # 1127 "07var.c"
-                                    _inf_value8=(struct sNode*)come_calloc(1, sizeof(struct sNode), "07var.c", 1127, "struct sNode");
-                                    _inf_obj_value8=come_increment_ref_count(((struct sStoreNode*)(right_value388=sStoreNode_initialize((struct sStoreNode*)come_increment_ref_count(((struct sStoreNode*)(right_value387=(struct sStoreNode*)come_calloc(1, sizeof(struct sStoreNode)*(1), "07var.c", 1127, "sStoreNode")))),(char*)come_increment_ref_count(name_305),((void*)0),((void*)0),(struct sType*)come_increment_ref_count(type_304),(_Bool)1,((void*)0),(char*)come_increment_ref_count(array_initializer_311),info))));
+                                    # 1136 "07var.c"
+                                    _inf_value8=(struct sNode*)come_calloc(1, sizeof(struct sNode), "07var.c", 1136, "struct sNode");
+                                    _inf_obj_value8=come_increment_ref_count(((struct sStoreNode*)(right_value388=sStoreNode_initialize((struct sStoreNode*)come_increment_ref_count(((struct sStoreNode*)(right_value387=(struct sStoreNode*)come_calloc(1, sizeof(struct sStoreNode)*(1), "07var.c", 1136, "sStoreNode")))),(char*)come_increment_ref_count(name_305),((void*)0),((void*)0),(struct sType*)come_increment_ref_count(type_304),(_Bool)1,((void*)0),(char*)come_increment_ref_count(array_initializer_311),info))));
                                     _inf_value8->_protocol_obj=_inf_obj_value8;
                                     _inf_value8->finalize=(void*)sStoreNode_finalize;
                                     _inf_value8->clone=(void*)sStoreNode_clone;
@@ -10142,7 +10171,7 @@ right_value424 = (void*)0;
                                     come_call_finalizer3(right_value387,sStoreNode_finalize, 0, 1, 0, 0, __result_obj__);
                                     come_call_finalizer3(right_value388,sStoreNode_finalize, 0, 1, 0, 0, __result_obj__);
                                     if(right_value397) { right_value397 = come_decrement_ref_count2(right_value397, ((struct sNode*)right_value397)->finalize, ((struct sNode*)right_value397)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                                    # 1131 "07var.c"
+                                    # 1140 "07var.c"
                                     __result192__ = __result_obj__ = result_313;
                                     come_call_finalizer3(buf2_307,buffer_finalize, 0, 0, 0, 0, (void*)0);
                                     array_initializer_311 = come_decrement_ref_count2(array_initializer_311, (void*)0, (void*)0, 0, 0, 0, (void*)0);
@@ -10156,30 +10185,30 @@ right_value424 = (void*)0;
                                     if(result_313) { result_313 = come_decrement_ref_count2(result_313, ((struct sNode*)result_313)->finalize, ((struct sNode*)result_313)->_protocol_obj, 0, 0, 0, (void*)0); } 
                                 }
                                 else {
-                                    # 1134 "07var.c"
+                                    # 1143 "07var.c"
                                     parse_sharp_v5(info);
-                                    # 1135 "07var.c"
+                                    # 1144 "07var.c"
                                     right_value_314=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value398=expression_v13(info))));
                                     if(right_value398) { right_value398 = come_decrement_ref_count2(right_value398, ((struct sNode*)right_value398)->finalize, ((struct sNode*)right_value398)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                                    # 1136 "07var.c"
+                                    # 1145 "07var.c"
                                     parse_sharp_v5(info);
-                                    # 1138 "07var.c"
-                                    right_values_315=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value400=list$1sNodeph_initialize((struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value399=(struct list$1sNodeph*)come_calloc(1, sizeof(struct list$1sNodeph)*(1), "07var.c", 1138, "list$1sNodeph"))))))));
+                                    # 1147 "07var.c"
+                                    right_values_315=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value400=list$1sNodeph_initialize((struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value399=(struct list$1sNodeph*)come_calloc(1, sizeof(struct list$1sNodeph)*(1), "07var.c", 1147, "list$1sNodeph"))))))));
                                     come_call_finalizer3(right_value399,list$1sNodephp_finalize, 0, 1, 0, 0, __result_obj__);
                                     come_call_finalizer3(right_value400,list$1sNodephp_finalize, 0, 1, 0, 0, __result_obj__);
-                                    # 1143 "07var.c"
+                                    # 1152 "07var.c"
                                     while(_while_condtional35=*info->p==44,                                    _while_condtional35) {
-                                        # 1141 "07var.c"
+                                        # 1150 "07var.c"
                                         anonymous_var_nameX2213_316 = come_decrement_ref_count2(anonymous_var_nameX2213_316, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                     }
-                                    # 1143 "07var.c"
+                                    # 1152 "07var.c"
                                     __dec_obj165=right_value_314;
                                     right_value_314=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value401=post_position_operator3_v21((struct sNode*)come_increment_ref_count(right_value_314),info))));
                                     if(__dec_obj165) { __dec_obj165 = come_decrement_ref_count2(__dec_obj165, ((struct sNode*)__dec_obj165)->finalize, ((struct sNode*)__dec_obj165)->_protocol_obj, 0,0,0, (void*)0); }
                                     if(right_value401) { right_value401 = come_decrement_ref_count2(right_value401, ((struct sNode*)right_value401)->finalize, ((struct sNode*)right_value401)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                                    # 1145 "07var.c"
-                                    _inf_value9=(struct sNode*)come_calloc(1, sizeof(struct sNode), "07var.c", 1145, "struct sNode");
-                                    _inf_obj_value9=come_increment_ref_count(((struct sStoreNode*)(right_value403=sStoreNode_initialize((struct sStoreNode*)come_increment_ref_count(((struct sStoreNode*)(right_value402=(struct sStoreNode*)come_calloc(1, sizeof(struct sStoreNode)*(1), "07var.c", 1145, "sStoreNode")))),(char*)come_increment_ref_count(name_305),((void*)0),((void*)0),(struct sType*)come_increment_ref_count(type_304),(_Bool)1,(struct sNode*)come_increment_ref_count(right_value_314),((void*)0),info))));
+                                    # 1154 "07var.c"
+                                    _inf_value9=(struct sNode*)come_calloc(1, sizeof(struct sNode), "07var.c", 1154, "struct sNode");
+                                    _inf_obj_value9=come_increment_ref_count(((struct sStoreNode*)(right_value403=sStoreNode_initialize((struct sStoreNode*)come_increment_ref_count(((struct sStoreNode*)(right_value402=(struct sStoreNode*)come_calloc(1, sizeof(struct sStoreNode)*(1), "07var.c", 1154, "sStoreNode")))),(char*)come_increment_ref_count(name_305),((void*)0),((void*)0),(struct sType*)come_increment_ref_count(type_304),(_Bool)1,(struct sNode*)come_increment_ref_count(right_value_314),((void*)0),info))));
                                     _inf_value9->_protocol_obj=_inf_obj_value9;
                                     _inf_value9->finalize=(void*)sStoreNode_finalize;
                                     _inf_value9->clone=(void*)sStoreNode_clone;
@@ -10192,7 +10221,7 @@ right_value424 = (void*)0;
                                     come_call_finalizer3(right_value402,sStoreNode_finalize, 0, 1, 0, 0, __result_obj__);
                                     come_call_finalizer3(right_value403,sStoreNode_finalize, 0, 1, 0, 0, __result_obj__);
                                     if(right_value412) { right_value412 = come_decrement_ref_count2(right_value412, ((struct sNode*)right_value412)->finalize, ((struct sNode*)right_value412)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                                    # 1149 "07var.c"
+                                    # 1158 "07var.c"
                                     __result195__ = __result_obj__ = result_318;
                                     if(right_value_314) { right_value_314 = come_decrement_ref_count2(right_value_314, ((struct sNode*)right_value_314)->finalize, ((struct sNode*)right_value_314)->_protocol_obj, 0, 0, 0, (void*)0); } 
                                     come_call_finalizer3(right_values_315,list$1sNodephp_finalize, 0, 0, 0, 0, (void*)0);
@@ -10207,9 +10236,9 @@ right_value424 = (void*)0;
                                 }
                             }
                             else {
-                                # 1153 "07var.c"
-                                _inf_value10=(struct sNode*)come_calloc(1, sizeof(struct sNode), "07var.c", 1153, "struct sNode");
-                                _inf_obj_value10=come_increment_ref_count(((struct sStoreNode*)(right_value414=sStoreNode_initialize((struct sStoreNode*)come_increment_ref_count(((struct sStoreNode*)(right_value413=(struct sStoreNode*)come_calloc(1, sizeof(struct sStoreNode)*(1), "07var.c", 1153, "sStoreNode")))),(char*)come_increment_ref_count(name_305),((void*)0),((void*)0),(struct sType*)come_increment_ref_count(type_304),(_Bool)1,((void*)0),((void*)0),info))));
+                                # 1162 "07var.c"
+                                _inf_value10=(struct sNode*)come_calloc(1, sizeof(struct sNode), "07var.c", 1162, "struct sNode");
+                                _inf_obj_value10=come_increment_ref_count(((struct sStoreNode*)(right_value414=sStoreNode_initialize((struct sStoreNode*)come_increment_ref_count(((struct sStoreNode*)(right_value413=(struct sStoreNode*)come_calloc(1, sizeof(struct sStoreNode)*(1), "07var.c", 1162, "sStoreNode")))),(char*)come_increment_ref_count(name_305),((void*)0),((void*)0),(struct sType*)come_increment_ref_count(type_304),(_Bool)1,((void*)0),((void*)0),info))));
                                 _inf_value10->_protocol_obj=_inf_obj_value10;
                                 _inf_value10->finalize=(void*)sStoreNode_finalize;
                                 _inf_value10->clone=(void*)sStoreNode_clone;
@@ -10222,7 +10251,7 @@ right_value424 = (void*)0;
                                 come_call_finalizer3(right_value413,sStoreNode_finalize, 0, 1, 0, 0, __result_obj__);
                                 come_call_finalizer3(right_value414,sStoreNode_finalize, 0, 1, 0, 0, __result_obj__);
                                 if(right_value423) { right_value423 = come_decrement_ref_count2(right_value423, ((struct sNode*)right_value423)->finalize, ((struct sNode*)right_value423)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                                # 1157 "07var.c"
+                                # 1166 "07var.c"
                                 __result198__ = __result_obj__ = result_320;
                                 if(result_320) { result_320 = come_decrement_ref_count2(result_320, ((struct sNode*)result_320)->finalize, ((struct sNode*)result_320)->_protocol_obj, 0, 1, 0, (void*)0); } 
                                 come_call_finalizer3(type_304,sType_finalize, 0, 0, 0, 0, (void*)0);
@@ -10240,7 +10269,7 @@ right_value424 = (void*)0;
             }
         }
     }
-    # 1162 "07var.c"
+    # 1171 "07var.c"
     __result199__ = __result_obj__ = ((struct sNode*)(right_value424=string_node_v5(buf,head,head_sline,info)));
     if(right_value424) { right_value424 = come_decrement_ref_count2(right_value424, ((struct sNode*)right_value424)->finalize, ((struct sNode*)right_value424)->_protocol_obj, 1, 0, 0, __result_obj__); } 
     return __result199__;
@@ -10617,53 +10646,53 @@ right_value377 = (void*)0;
 
 static void sStoreNode_finalize(struct sStoreNode* self){
 void* __result_obj__;
-_Bool _if_conditional489;
-_Bool _if_conditional490;
-_Bool _if_conditional491;
 _Bool _if_conditional492;
 _Bool _if_conditional493;
 _Bool _if_conditional494;
 _Bool _if_conditional495;
+_Bool _if_conditional496;
+_Bool _if_conditional497;
+_Bool _if_conditional498;
 memset(&__result_obj__, 0, sizeof(void*));
                                     # 1 "sStoreNode_finalize"
                                     # 0 "sStoreNode_finalize"
-                                    if(_if_conditional489=self!=((void*)0)&&self->sname!=((void*)0),                                    _if_conditional489) {
+                                    if(_if_conditional492=self!=((void*)0)&&self->sname!=((void*)0),                                    _if_conditional492) {
                                         # 0 "sStoreNode_finalize"
                                         self->sname = come_decrement_ref_count2(self->sname, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                     }
                                     # 2 "sStoreNode_finalize"
                                     # 1 "sStoreNode_finalize"
-                                    if(_if_conditional490=self!=((void*)0)&&self->name!=((void*)0),                                    _if_conditional490) {
+                                    if(_if_conditional493=self!=((void*)0)&&self->name!=((void*)0),                                    _if_conditional493) {
                                         # 1 "sStoreNode_finalize"
                                         self->name = come_decrement_ref_count2(self->name, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                     }
                                     # 3 "sStoreNode_finalize"
                                     # 2 "sStoreNode_finalize"
-                                    if(_if_conditional491=self!=((void*)0)&&self->multiple_assign!=((void*)0),                                    _if_conditional491) {
+                                    if(_if_conditional494=self!=((void*)0)&&self->multiple_assign!=((void*)0),                                    _if_conditional494) {
                                         # 2 "sStoreNode_finalize"
                                         come_call_finalizer3(self->multiple_assign,list$1charphp_finalize, 0, 0, 0, 0, (void*)0);
                                     }
                                     # 4 "sStoreNode_finalize"
                                     # 3 "sStoreNode_finalize"
-                                    if(_if_conditional492=self!=((void*)0)&&self->multiple_declare!=((void*)0),                                    _if_conditional492) {
+                                    if(_if_conditional495=self!=((void*)0)&&self->multiple_declare!=((void*)0),                                    _if_conditional495) {
                                         # 3 "sStoreNode_finalize"
                                         come_call_finalizer3(self->multiple_declare,list$1tuple3$3sTypephcharphsNodephphp_finalize, 0, 0, 0, 0, (void*)0);
                                     }
                                     # 5 "sStoreNode_finalize"
                                     # 4 "sStoreNode_finalize"
-                                    if(_if_conditional493=self!=((void*)0)&&self->right_value!=((void*)0),                                    _if_conditional493) {
+                                    if(_if_conditional496=self!=((void*)0)&&self->right_value!=((void*)0),                                    _if_conditional496) {
                                         # 4 "sStoreNode_finalize"
                                         if(self->right_value) { self->right_value = come_decrement_ref_count2(self->right_value, ((struct sNode*)self->right_value)->finalize, ((struct sNode*)self->right_value)->_protocol_obj, 0, 0, 0, (void*)0); } 
                                     }
                                     # 6 "sStoreNode_finalize"
                                     # 5 "sStoreNode_finalize"
-                                    if(_if_conditional494=self!=((void*)0)&&self->type!=((void*)0),                                    _if_conditional494) {
+                                    if(_if_conditional497=self!=((void*)0)&&self->type!=((void*)0),                                    _if_conditional497) {
                                         # 5 "sStoreNode_finalize"
                                         come_call_finalizer3(self->type,sType_finalize, 0, 0, 0, 0, (void*)0);
                                     }
                                     # 7 "sStoreNode_finalize"
                                     # 6 "sStoreNode_finalize"
-                                    if(_if_conditional495=self!=((void*)0)&&self->array_initializer!=((void*)0),                                    _if_conditional495) {
+                                    if(_if_conditional498=self!=((void*)0)&&self->array_initializer!=((void*)0),                                    _if_conditional498) {
                                         # 6 "sStoreNode_finalize"
                                         self->array_initializer = come_decrement_ref_count2(self->array_initializer, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                     }
@@ -10671,33 +10700,33 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct sStoreNode* sStoreNode_clone(struct sStoreNode* self){
 void* __result_obj__;
-_Bool _if_conditional496;
+_Bool _if_conditional499;
 struct sStoreNode* __result196__;
 void* right_value415;
 struct sStoreNode* result_319;
-_Bool _if_conditional497;
-_Bool _if_conditional498;
+_Bool _if_conditional500;
+_Bool _if_conditional501;
 void* right_value416;
 char* __dec_obj173;
-_Bool _if_conditional499;
+_Bool _if_conditional502;
 void* right_value417;
 char* __dec_obj174;
-_Bool _if_conditional500;
+_Bool _if_conditional503;
 void* right_value418;
 struct list$1charph* __dec_obj175;
-_Bool _if_conditional501;
+_Bool _if_conditional504;
 void* right_value419;
 struct list$1tuple3$3sTypephcharphsNodephph* __dec_obj176;
-_Bool _if_conditional502;
+_Bool _if_conditional505;
 void* right_value420;
 struct sNode* __dec_obj177;
-_Bool _if_conditional503;
+_Bool _if_conditional506;
 void* right_value421;
 struct sType* __dec_obj178;
-_Bool _if_conditional504;
+_Bool _if_conditional507;
 void* right_value422;
 char* __dec_obj179;
-_Bool _if_conditional505;
+_Bool _if_conditional508;
 struct sStoreNode* __result197__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value415 = (void*)0;
@@ -10711,7 +10740,7 @@ right_value421 = (void*)0;
 right_value422 = (void*)0;
                                     # 3 "sStoreNode_clone"
                                     # 2 "sStoreNode_clone"
-                                    if(_if_conditional496=self==(void*)0,                                    _if_conditional496) {
+                                    if(_if_conditional499=self==(void*)0,                                    _if_conditional499) {
                                         # 2 "sStoreNode_clone"
                                         __result196__ = __result_obj__ = (void*)0;
                                         return __result196__;
@@ -10721,13 +10750,13 @@ right_value422 = (void*)0;
                                     come_call_finalizer3(right_value415,sStoreNode_finalize, 0, 1, 0, 0, __result_obj__);
                                     # 5 "sStoreNode_clone"
                                     # 4 "sStoreNode_clone"
-                                    if(_if_conditional497=self!=((void*)0),                                    _if_conditional497) {
+                                    if(_if_conditional500=self!=((void*)0),                                    _if_conditional500) {
                                         # 4 "sStoreNode_clone"
                                         result_319->sline=self->sline;
                                     }
                                     # 6 "sStoreNode_clone"
                                     # 5 "sStoreNode_clone"
-                                    if(_if_conditional498=self!=((void*)0)&&self->sname!=((void*)0),                                    _if_conditional498) {
+                                    if(_if_conditional501=self!=((void*)0)&&self->sname!=((void*)0),                                    _if_conditional501) {
                                         # 5 "sStoreNode_clone"
                                         __dec_obj173=result_319->sname;
                                         result_319->sname=(char*)come_increment_ref_count(((char*)(right_value416=string_clone(self->sname))));
@@ -10736,7 +10765,7 @@ right_value422 = (void*)0;
                                     }
                                     # 7 "sStoreNode_clone"
                                     # 6 "sStoreNode_clone"
-                                    if(_if_conditional499=self!=((void*)0)&&self->name!=((void*)0),                                    _if_conditional499) {
+                                    if(_if_conditional502=self!=((void*)0)&&self->name!=((void*)0),                                    _if_conditional502) {
                                         # 6 "sStoreNode_clone"
                                         __dec_obj174=result_319->name;
                                         result_319->name=(char*)come_increment_ref_count(((char*)(right_value417=string_clone(self->name))));
@@ -10745,7 +10774,7 @@ right_value422 = (void*)0;
                                     }
                                     # 8 "sStoreNode_clone"
                                     # 7 "sStoreNode_clone"
-                                    if(_if_conditional500=self!=((void*)0)&&self->multiple_assign!=((void*)0),                                    _if_conditional500) {
+                                    if(_if_conditional503=self!=((void*)0)&&self->multiple_assign!=((void*)0),                                    _if_conditional503) {
                                         # 7 "sStoreNode_clone"
                                         __dec_obj175=result_319->multiple_assign;
                                         result_319->multiple_assign=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value418=list$1charphp_clone(self->multiple_assign))));
@@ -10754,7 +10783,7 @@ right_value422 = (void*)0;
                                     }
                                     # 9 "sStoreNode_clone"
                                     # 8 "sStoreNode_clone"
-                                    if(_if_conditional501=self!=((void*)0)&&self->multiple_declare!=((void*)0),                                    _if_conditional501) {
+                                    if(_if_conditional504=self!=((void*)0)&&self->multiple_declare!=((void*)0),                                    _if_conditional504) {
                                         # 8 "sStoreNode_clone"
                                         __dec_obj176=result_319->multiple_declare;
                                         result_319->multiple_declare=(struct list$1tuple3$3sTypephcharphsNodephph*)come_increment_ref_count(((struct list$1tuple3$3sTypephcharphsNodephph*)(right_value419=list$1tuple3$3sTypephcharphsNodephphp_clone(self->multiple_declare))));
@@ -10763,7 +10792,7 @@ right_value422 = (void*)0;
                                     }
                                     # 10 "sStoreNode_clone"
                                     # 9 "sStoreNode_clone"
-                                    if(_if_conditional502=self!=((void*)0)&&self->right_value!=((void*)0),                                    _if_conditional502) {
+                                    if(_if_conditional505=self!=((void*)0)&&self->right_value!=((void*)0),                                    _if_conditional505) {
                                         # 9 "sStoreNode_clone"
                                         __dec_obj177=result_319->right_value;
                                         result_319->right_value=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value420=sNode_clone(self->right_value))));
@@ -10772,7 +10801,7 @@ right_value422 = (void*)0;
                                     }
                                     # 11 "sStoreNode_clone"
                                     # 10 "sStoreNode_clone"
-                                    if(_if_conditional503=self!=((void*)0)&&self->type!=((void*)0),                                    _if_conditional503) {
+                                    if(_if_conditional506=self!=((void*)0)&&self->type!=((void*)0),                                    _if_conditional506) {
                                         # 10 "sStoreNode_clone"
                                         __dec_obj178=result_319->type;
                                         result_319->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value421=sType_clone(self->type))));
@@ -10781,7 +10810,7 @@ right_value422 = (void*)0;
                                     }
                                     # 12 "sStoreNode_clone"
                                     # 11 "sStoreNode_clone"
-                                    if(_if_conditional504=self!=((void*)0)&&self->array_initializer!=((void*)0),                                    _if_conditional504) {
+                                    if(_if_conditional507=self!=((void*)0)&&self->array_initializer!=((void*)0),                                    _if_conditional507) {
                                         # 11 "sStoreNode_clone"
                                         __dec_obj179=result_319->array_initializer;
                                         result_319->array_initializer=(char*)come_increment_ref_count(((char*)(right_value422=string_clone(self->array_initializer))));
@@ -10790,7 +10819,7 @@ right_value422 = (void*)0;
                                     }
                                     # 13 "sStoreNode_clone"
                                     # 12 "sStoreNode_clone"
-                                    if(_if_conditional505=self!=((void*)0),                                    _if_conditional505) {
+                                    if(_if_conditional508=self!=((void*)0),                                    _if_conditional508) {
                                         # 12 "sStoreNode_clone"
                                         result_319->alloc=self->alloc;
                                     }

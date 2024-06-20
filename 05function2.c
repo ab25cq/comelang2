@@ -397,11 +397,23 @@ string skip_block(sInfo* info=info)
                         err_msg(info, "%s %d: unexpected the source end. close single quote or double quote.", info->sname, sline);
                         exit(2);
                     }
+                    if(*info->p == '\n') {
+                        info->p++;
+                    }
                     info->p++;
                 }
                 else if(*info->p == '"') {
                     info->p++;
                     dquort = !dquort;
+                }
+                else if(*info->p == '\n') {
+                    info->p++;
+                    info->sline++;
+
+                    if(*info->p == '\0') {
+                        err_msg(info, "%s %d: unexpected the source end. close single quote or double quote.", info->sname, sline);
+                        exit(2);
+                    }
                 }
                 else {
                     info->p++;
@@ -419,11 +431,23 @@ string skip_block(sInfo* info=info)
                         err_msg(info, "%s %d: unexpected the source end. close single quote or double quote.", info->sname, sline);
                         exit(2);
                     }
+                    if(*info->p == '\n') {
+                        info->sline++;
+                    }
                     info->p++;
                 }
                 else if(*info->p == '\'') {
                     info->p++;
                     squort = !squort;
+                }
+                else if(*info->p == '\n') {
+                    info->p++;
+                    info->sline++;
+
+                    if(*info->p == '\0') {
+                        err_msg(info, "%s %d: unexpected the source end. close single quote or double quote.", info->sname, sline);
+                        exit(2);
+                    }
                 }
                 else {
                     info->p++;

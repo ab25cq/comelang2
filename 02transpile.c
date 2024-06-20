@@ -392,11 +392,13 @@ sClass*% sClass*::initialize(sClass*% self, char* name, bool number=false, bool 
     return self;
 };
 
-sClassModule*% sClassModule*::initialize(sClassModule*% self, char* name, string text, sInfo* info)
+sClassModule*% sClassModule*::initialize(sClassModule*% self, char* name, string text, string sname, int sline, sInfo* info)
 {
     self.mName = clone name;
     self.mText = clone text;
     self.mParams = new list<string>();
+    self.mSName = string(sname);
+    self.mSLine = sline;
     
     return self;
 };

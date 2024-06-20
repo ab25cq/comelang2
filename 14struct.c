@@ -870,6 +870,7 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
        
         char* p_saved = null;
         int sline_saved = 0;
+        string sname_saved = null;
         
         list<sNode*%>*% methods = new list<sNode*%>();
         while(true) {
@@ -877,9 +878,11 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
                 if(*info.p == '\0') {
                     info.p = p_saved;
                     info.sline = sline_saved;
+                    info.sname = string(sname_saved);
                     
                     p_saved = null;
                     sline_saved = 0;
+                    sname_saved = null;
                     info->module_params = null;
                 }
             }
@@ -1044,7 +1047,13 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
                     }
                 }
                 
-                if(*info->p == ';') { info->p++; skip_spaces_and_lf(); }
+                if(*info->p == ';') { info->p++; }
+                
+                skip_spaces_and_lf();
+                
+                p_saved = info.p;
+                sline_saved = info.sline;
+                sname_saved = string(info.sname);
                 
                 if(info.modules[module_name]?? == null) {
                     err_msg(info, "module not found");
@@ -1065,11 +1074,9 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
                     info->module_params[it] = params[i];
                 }
                 
-                p_saved = info.p;
-                sline_saved = info.sline;
-                
                 info.p = module.mText;
-                info.sline = 0;
+                info.sline = module.mSLine;
+                info.sname = string(module.mSName);
             }
             else {
                 var type2, name, err = parse_type(parse_variable_name:true);
@@ -1096,6 +1103,7 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
             if(info.p == '\0') {
                 info.p = p_saved;
                 info.sline = sline_saved;
+                info.sname = string(sname_saved);
                 
                 p_saved = null;
                 sline_saved = 0;

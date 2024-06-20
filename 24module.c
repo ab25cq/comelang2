@@ -53,6 +53,9 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 91
     if(buf === "module") {
         var type_name = parse_word();
         
+        string sname = info.sname;
+        int sline = info.sline;
+        
         list<string>*% params = new list<string>();
         
         if(*info->p == '<') {
@@ -102,6 +105,10 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 91
             else if(*info->p == '\\') {
                 buf.append_char(*info->p);
                 info->p++;
+                
+                if(*info->p == '\n') {
+                    info->sline++;
+                }
                 buf.append_char(*info->p);
                 info->p++;
             }
@@ -117,6 +124,9 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 91
             }
             else if(squort || dquort) {
                 buf.append_char(*info->p);
+                if(*info->p == '\n') {
+                    info->sline++;
+                }
                 info->p++;
             }
             else if(*info->p == '{') {
@@ -137,6 +147,11 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 91
                 buf.append_char(*info->p);
                 info->p++;
             }
+            else if(*info->p == '\n') {
+                info->sline++;
+                buf.append_char(*info->p);
+                info->p++;
+            }
             else {
                 buf.append_char(*info->p);
                 info->p++;
@@ -151,7 +166,7 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 91
         
         add_come_code_at_come_header(info, "%s\n", header.to_string());
         
-        sClassModule*% module = new sClassModule(type_name, buf.to_string(), info);
+        sClassModule*% module = new sClassModule(type_name, buf.to_string(), sname, sline, info);
         
         module.mParams = clone params;
         
