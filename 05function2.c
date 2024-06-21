@@ -1847,7 +1847,9 @@ sNode*% parse_function(sInfo* info)
             header.append_str(";\n");
         }
         
-        add_come_code_at_come_header(info, "%s", header.to_string());
+        if(!result_type->mStatic) {
+            add_come_code_at_come_header(info, "%s", header.to_string());
+        }
         
         sBlock*% block = parse_block(info, false, constructor_);
         

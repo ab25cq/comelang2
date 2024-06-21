@@ -6,17 +6,17 @@ exec_prefix=${prefix}
 bindir=${exec_prefix}/bin
 datadir=${datarootdir}
 mandir=${datarootdir}/man
-sharedstatedir=${prefix}/x
-sysconfdir=${prefix}/etc/x
-includedir=${prefix}/include/x
-datarootdir=${prefix}/share/x
+sharedstatedir=${prefix}/z
+sysconfdir=${prefix}/etc/z
+includedir=${prefix}/include/z
+datarootdir=${prefix}/share/z
 docdir=${datarootdir}/doc
 libdir=${exec_prefix}/lib
 
 #########################################
 # environmnet variables
 #########################################
-CC=comelang2
+CC=neo-c
 INSTALL=install
 CFLAGS= -common-header -O2 
 CFLAGS_DEBUG= -common-header -gdwarf-4 -cg 
@@ -27,13 +27,13 @@ SRCS=$(wildcard *.c)
 SINGLE_SRCS=$(filter-out %.c.c, $(SRCS))
 OBJS=$(SINGLE_SRCS:.c=.o)
 DEBUG_OBJS=$(SINGLE_SRCS:.c=.debug.o)
-TARGET=x
-TARGET_DEBUG=x-debug
+TARGET=z
+TARGET_DEBUG=z-debug
 
 #########################################
 # main
 #########################################
-all: common.h x
+all: $(TARGET)
 
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) $^ -o $@
@@ -41,50 +41,51 @@ $(TARGET): $(OBJS)
 $(TARGET_DEBUG): $(DEBUG_OBJS)
 	$(CC) $(CFLAGS_DEBUG) $^ -o $@
 
-%.o: %.c header
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-%.debug.o: %.c header
+%.debug.o: %.c
 	$(CC) $(CFLAGS_DEBUG) -c $< -o $@
 
 #########################################
 # header
 #########################################
 
-header:
-	comelang2 header -common-header $(SINGLE_SRCS)
+header: common.h
 
-common.h: *.c
-	bash -c 'shopt -s extglob; comelang2 header !(*.c).c'
+common.h: $(SINGLE_SRCS)
+	neo-c header -common-header $(SINGLE_SRCS)
 
 #########################################
 # install
 #########################################
 install:
 	mkdir -p "$(DESTDIR)/bin"
-	$(INSTALL) -m 755 ./x "$(DESTDIR)/bin"
+	$(INSTALL) -m 755 ./z "$(DESTDIR)/bin"
 	mkdir -p "$(DESTDIR)/include"
 	mkdir -p "$(DESTDIR)/lib"
-	mkdir -p "$(DESTDIR)/share/doc/x"
-	$(INSTALL) -m 644 README.md "$(DESTDIR)/share/doc/x/README.md"
+	mkdir -p "$(DESTDIR)/share/doc/z"
+	$(INSTALL) -m 644 README.md "$(DESTDIR)/share/doc/z/README.md"
 
 #########################################
 # clean
 #########################################
 clean:
-	rm -fR *.o *.c.i *.c.out *.c.c x *.log *.out common.h x-debug
+	rm -fR *.o *.c.i *.c.out *.c.c z *.log *.out common.h z-debug
 
 #########################################
 # uninstall
 #########################################
 uninstall:
-	rm -f "$(DESTDIR)"/bin/x
-	rm -f "$(DESTDIR)/share/doc/x/README.md"
+	rm -f "$(DESTDIR)"/bin/z
+	rm -f "$(DESTDIR)/share/doc/z/README.md"
 
-run: x
+run: z
 	rm -f *.log
-	./x
+	./z
 
-debug: x-debug
+compile: z
+
+debug: z-debug
 	rm -f *.log
-	./x-debug
+	./z-debug
