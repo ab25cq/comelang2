@@ -447,7 +447,6 @@ void cast_type(sType* left_type, sType* right_type, CVALUE* come_value, sInfo* i
 string parse_attribute(sInfo* info=info);
 void come_init() version 5;
 void come_final() version 5;
-sNode*% parse_global_variable(sInfo* info);
 sNode*% get_number(bool minus, sInfo* info);
 sNode*% get_oct_number(sInfo* info);
 sNode*% get_hex_number(bool minus, sInfo* info);
@@ -500,6 +499,7 @@ sNode*% parse_tuple(sInfo* info);
 /////////////////////////////////////////////////////////////////////
 /// 07var.c
 /////////////////////////////////////////////////////////////////////
+sNode*% parse_global_variable(sInfo* info);
 sNode*% store_var(string name, list<string>*% multiple_assign, sType*% type, bool alloc, sNode*% right_node, sInfo* info);
 sNode*% load_var(string name, sInfo* info);
 sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 7;

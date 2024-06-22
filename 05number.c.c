@@ -1693,8 +1693,6 @@ void come_init_v5();
 
 void come_final_v5();
 
-struct sNode* parse_global_variable(struct sInfo* info);
-
 struct sNode* post_position_operator3_v5(struct sNode* node, struct sInfo* info);
 
 struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool* parse_params(struct sInfo* info, _Bool in_constructor_);
@@ -1768,6 +1766,8 @@ char* create_method_name_using_class(struct sClass* obj_class, _Bool no_pointer_
 struct sNode* expression_node_v98(struct sInfo* info);
 
 struct sNode* parse_tuple(struct sInfo* info);
+
+struct sNode* parse_global_variable(struct sInfo* info);
 
 struct sNode* store_var(char* name, struct list$1charph* multiple_assign, struct sType* type, _Bool alloc, struct sNode* right_node, struct sInfo* info);
 

@@ -1706,8 +1706,6 @@ void come_init_v5();
 
 void come_final_v5();
 
-struct sNode* parse_global_variable(struct sInfo* info);
-
 struct sNode* get_number(_Bool minus, struct sInfo* info);
 
 struct sNode* get_oct_number(struct sInfo* info);
@@ -1789,6 +1787,8 @@ char* create_method_name_using_class(struct sClass* obj_class, _Bool no_pointer_
 struct sNode* expression_node_v98(struct sInfo* info);
 
 struct sNode* parse_tuple(struct sInfo* info);
+
+struct sNode* parse_global_variable(struct sInfo* info);
 
 struct sNode* string_node_v8(char* buf, char* head, int head_sline, struct sInfo* info);
 
