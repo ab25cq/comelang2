@@ -108,9 +108,6 @@ bool bool::expect(bool self, void* parent, void (*block)(void* parent))
 {
     if(!self) {
         block(parent);
-        if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-            return self;
-        }
         stackframe();
         exit(1);
     }
@@ -127,10 +124,6 @@ int int::catch(int self, void* parent, void (*block)(void* parent))
 {
     if(self < 0) {
         block(parent);
-        
-        if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-            return self;
-        }
     }
     
     return self;
@@ -140,9 +133,6 @@ int int::expect(int self, void* parent, void (*block)(void* parent))
 {
     if(self < 0) {
         block(parent);
-        if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-            return self;
-        }
         stackframe();
         exit(1);
     }
@@ -159,9 +149,6 @@ int int::except(int self, void* parent, void (*block)(void* parent))
 {
     if(self < 0) {
         block(parent);
-        if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-            return self;
-        }
     }
 
     return self;
@@ -171,9 +158,6 @@ bool bool::except(bool self, void* parent, void (*block)(void* parent))
 {
     if(!self) {
         block(parent);
-        if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-            return self;
-        }
     }
 
     return self;
@@ -183,10 +167,6 @@ bool bool::catch(bool self, void* parent, void (*block)(void* parent))
 {
     if(!self) {
         block(parent);
-        
-        if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-            return self;
-        }
     }
    
     return self;
@@ -2167,10 +2147,6 @@ int fopen_block(const char* path, const char* mode, void* parent, void (*block)(
     
     if(f) {
         block(parent, f);
-        if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-            fclose(f);
-            return 0;
-        }
         
         fclose(f);
         
@@ -2266,10 +2242,6 @@ void int::times(int self, void* parent, void (*block)(void* parent, int it))
 {
     for(int i = 0; i < self; i++) {
         block(parent, i);
-        
-        if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-            return;
-        }
     }
 }
 

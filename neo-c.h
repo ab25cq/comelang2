@@ -22,11 +22,6 @@ void __builtin_va_end(char*);
 //////////////////////////////
 #define COME_STACKFRAME_MAX 16
 
-struct sDummyCurrentStack
-{
-    int __method_block_result_kind__;
-};
-
 void come_push_stackframe(char* sname, int sline, int id);
 void come_pop_stackframe();
 void stackframe();
@@ -327,10 +322,6 @@ impl list <T>
         while(it != null) {
             bool end_flag = false;
             block(parent, it.item, i, &end_flag);
-            
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return self;
-            }
 
             if(end_flag == true) {
                 break;
@@ -930,10 +921,6 @@ impl list <T>
         list_item<T>* it = self.head;
         while(it != null) {
             result.push_back(block(parent, it.item));
-            
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return result;
-            }
 
             it = it.next;
         }
@@ -947,10 +934,6 @@ impl list <T>
         list_item<T>* it = self.head;
         while(it != null) {
             result.push_back(block(parent, it.item));
-            
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return result;
-            }
 
             it = it.next;
         }
@@ -999,10 +982,6 @@ impl list <T>
         while(it != null) {
             if(block(parent, it.item)) {
                 result.push_back(dupe it.item);
-            }
-            
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return result;
             }
 
             it = it.next;
@@ -1742,10 +1721,6 @@ impl tuple1 <T>
     {
         if(!self.v1) {
             block(parent);
-            
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return;
-            }
         }
     }
     
@@ -1775,10 +1750,6 @@ impl tuple2 <T, T2>
     {
         if(!self.v2) {
             block(parent);
-            
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return clone self.v1;
-            }
         }
         
         return clone self.v1;
@@ -1813,10 +1784,6 @@ impl tuple3 <T, T2, T3>
     {
         if(!self.v3) {
             block(parent);
-            
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return new tuple2<T, T2>.initialize(self.v1, self.v2);
-            }
         }
         
         return new tuple2<T, T2>.initialize(self.v1, self.v2);
@@ -1852,10 +1819,6 @@ impl tuple4 <T, T2, T3, T4>
     {
         if(!self.v4) {
             block(parent);
-            
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return new tuple3<T, T2, T3>.initialize(self.v1, self.v2, self.v3);
-            }
         }
         
         return new tuple3<T, T2, T3>.initialize(self.v1, self.v2, self.v3);
@@ -1894,10 +1857,6 @@ impl tuple5 <T, T2, T3, T4, T5>
     {
         if(!self.v5) {
             block(parent);
-            
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return new tuple4<T, T2, T3, T4>.initialize(self.v1, self.v2, self.v3, self.v4);
-            }
         }
         
         return new tuple4<T, T2, T3, T4>.initialize(self.v1, self.v2, self.v3, self.v4);

@@ -33,12 +33,6 @@ class sCurrentNode extends sNodeBase
         info->current_stack_num++;
         string class_name = xsprintf("__current_stack%d__", info->current_stack_num);
         sClass*% current_stack = new sClass(name: class_name, struct_:true);
-        
-        tuple2<string, sType*%>*% result_kind = (s"__method_block_result_kind__", new sType("int"));
-        current_stack.mFields.push_back(clone result_kind);
-        
-        tuple2<string, sType*%>*% return_value = (s"__method_block_return_value__", new sType("void*"));
-        current_stack.mFields.push_back(clone return_value);
             
         sVarTable* vtable = info->lv_table;
         
@@ -850,57 +844,6 @@ class sMethodCallNode extends sNodeBase
                 }
                 else {
                     result_type3 = result_type2;
-                }
-                    
-                if(info.in_loop) {
-                    if(result_type3->mClass->mName === "void" && result_type3->mPointerNum == 0) {
-                        add_come_last_code3(info, """
-                            if(\{var_name}.__method_block_result_kind__ == METHOD_BLOCK_RESULT_KIND_BREAK)
-                            {
-                                break;
-                            }
-                            else if(\{var_name}.__method_block_result_kind__ == METHOD_BLOCK_RESULT_KIND_CONTINUE)
-                            {
-                                continue;
-                            }
-                            else if(\{var_name}.__method_block_result_kind__ == METHOD_BLOCK_RESULT_KIND_RETURN_VOID)
-                            {
-                                return;
-                            }
-                            """);
-                    }
-                    else {
-                        add_come_last_code3(info, """
-                            if(\{var_name}.__method_block_result_kind__ == METHOD_BLOCK_RESULT_KIND_BREAK)
-                            {
-                                break;
-                            }
-                            else if(\{var_name}.__method_block_result_kind__ == METHOD_BLOCK_RESULT_KIND_CONTINUE)
-                            {
-                                continue;
-                            }
-                            else if(\{var_name}.__method_block_result_kind__ == METHOD_BLOCK_RESULT_KIND_RETURN)
-                            {
-                                return (\{make_type_name_string(result_type2)})\{var_name}.__method_block_return_value__;
-                            }
-                            """);
-                    }
-                }
-                else if(result_type3->mClass->mName === "void" && result_type3->mPointerNum == 0) {
-                    add_come_last_code3(info, """
-                        if(\{var_name}.__method_block_result_kind__ == METHOD_BLOCK_RESULT_KIND_RETURN_VOID)
-                        {
-                            return;
-                        }
-                        """);
-                }
-                else {
-                    add_come_last_code3(info, """
-                        if(\{var_name}.__method_block_result_kind__ == METHOD_BLOCK_RESULT_KIND_RETURN)
-                        {
-                            return (\{make_type_name_string(result_type2)})\{var_name}.__method_block_return_value__;
-                        }
-                        """);
                 }
             }
         }

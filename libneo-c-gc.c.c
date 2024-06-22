@@ -50,10 +50,6 @@ struct __locale_struct;
 typedef struct __locale_struct* locale_t;
 typedef void* any;
 typedef char* string;
-struct sDummyCurrentStack
-{
-    int __method_block_result_kind__;
-};
 extern void* gComeResultObject;
 extern _Bool gComeGCLib;
 struct list_item$1voidp
@@ -2320,13 +2316,13 @@ static inline _Bool die(char* msg){
 void* __result_obj__;
 _Bool __result1__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 50 "./neo-c.h"
+    # 45 "./neo-c.h"
     perror(msg);
-    # 51 "./neo-c.h"
+    # 46 "./neo-c.h"
     stackframe();
-    # 52 "./neo-c.h"
+    # 47 "./neo-c.h"
     exit(4);
-    # 54 "./neo-c.h"
+    # 49 "./neo-c.h"
     __result1__ = (_Bool)0;
     return __result1__;
 }
@@ -2336,11 +2332,11 @@ struct buffer* result_0;
 struct buffer* __result2__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_0, 0, sizeof(struct buffer*));
-    # 1943 "./neo-c.h"
-    result_0=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1943, "buffer"));
-    # 1944 "./neo-c.h"
+    # 1902 "./neo-c.h"
+    result_0=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1902, "buffer"));
+    # 1903 "./neo-c.h"
     buffer_append(result_0,self,sizeof(char)*len);
-    # 1945 "./neo-c.h"
+    # 1904 "./neo-c.h"
     __result2__ = __result_obj__ = result_0;
     return __result2__;
 }
@@ -2350,11 +2346,11 @@ struct buffer* result_1;
 struct buffer* __result3__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_1, 0, sizeof(struct buffer*));
-    # 1950 "./neo-c.h"
-    result_1=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1950, "buffer"));
-    # 1951 "./neo-c.h"
+    # 1909 "./neo-c.h"
+    result_1=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1909, "buffer"));
+    # 1910 "./neo-c.h"
     buffer_append(result_1,(char*)self,sizeof(short short)*len);
-    # 1952 "./neo-c.h"
+    # 1911 "./neo-c.h"
     __result3__ = __result_obj__ = result_1;
     return __result3__;
 }
@@ -2364,11 +2360,11 @@ struct buffer* result_2;
 struct buffer* __result4__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_2, 0, sizeof(struct buffer*));
-    # 1957 "./neo-c.h"
-    result_2=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1957, "buffer"));
-    # 1958 "./neo-c.h"
+    # 1916 "./neo-c.h"
+    result_2=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1916, "buffer"));
+    # 1917 "./neo-c.h"
     buffer_append(result_2,(char*)self,sizeof(int)*len);
-    # 1959 "./neo-c.h"
+    # 1918 "./neo-c.h"
     __result4__ = __result_obj__ = result_2;
     return __result4__;
 }
@@ -2378,11 +2374,11 @@ struct buffer* result_3;
 struct buffer* __result5__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_3, 0, sizeof(struct buffer*));
-    # 1964 "./neo-c.h"
-    result_3=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1964, "buffer"));
-    # 1965 "./neo-c.h"
+    # 1923 "./neo-c.h"
+    result_3=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1923, "buffer"));
+    # 1924 "./neo-c.h"
     buffer_append(result_3,(char*)self,sizeof(long)*len);
-    # 1966 "./neo-c.h"
+    # 1925 "./neo-c.h"
     __result5__ = __result_obj__ = result_3;
     return __result5__;
 }
@@ -2392,11 +2388,11 @@ struct buffer* result_4;
 struct buffer* __result6__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_4, 0, sizeof(struct buffer*));
-    # 1971 "./neo-c.h"
-    result_4=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1971, "buffer"));
-    # 1972 "./neo-c.h"
+    # 1930 "./neo-c.h"
+    result_4=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1930, "buffer"));
+    # 1931 "./neo-c.h"
     buffer_append(result_4,(char*)self,sizeof(float)*len);
-    # 1973 "./neo-c.h"
+    # 1932 "./neo-c.h"
     __result6__ = __result_obj__ = result_4;
     return __result6__;
 }
@@ -2406,11 +2402,11 @@ struct buffer* result_5;
 struct buffer* __result7__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_5, 0, sizeof(struct buffer*));
-    # 1978 "./neo-c.h"
-    result_5=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1978, "buffer"));
-    # 1979 "./neo-c.h"
+    # 1937 "./neo-c.h"
+    result_5=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1937, "buffer"));
+    # 1938 "./neo-c.h"
     buffer_append(result_5,(char*)self,sizeof(double)*len);
-    # 1980 "./neo-c.h"
+    # 1939 "./neo-c.h"
     __result7__ = __result_obj__ = result_5;
     return __result7__;
 }
@@ -2420,13 +2416,13 @@ struct smart_pointer$1char* result_6;
 struct smart_pointer$1char* __result8__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_6, 0, sizeof(struct smart_pointer$1char*));
-    # 1993 "./neo-c.h"
-    result_6=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 1993, "smart_pointer$1char");
-    # 1995 "./neo-c.h"
+    # 1952 "./neo-c.h"
+    result_6=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 1952, "smart_pointer$1char");
+    # 1954 "./neo-c.h"
     result_6->memory=buffer_clone(self);
-    # 1996 "./neo-c.h"
+    # 1955 "./neo-c.h"
     result_6->p=result_6->memory->buf;
-    # 1998 "./neo-c.h"
+    # 1957 "./neo-c.h"
     __result8__ = __result_obj__ = result_6;
     return __result8__;
 }
@@ -2436,13 +2432,13 @@ struct smart_pointer$1char* result_7;
 struct smart_pointer$1char* __result9__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_7, 0, sizeof(struct smart_pointer$1char*));
-    # 2003 "./neo-c.h"
-    result_7=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 2003, "smart_pointer$1char");
-    # 2005 "./neo-c.h"
+    # 1962 "./neo-c.h"
+    result_7=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 1962, "smart_pointer$1char");
+    # 1964 "./neo-c.h"
     result_7->memory=buffer_clone(self);
-    # 2006 "./neo-c.h"
+    # 1965 "./neo-c.h"
     result_7->p=(char*)result_7->memory->buf;
-    # 2008 "./neo-c.h"
+    # 1967 "./neo-c.h"
     __result9__ = __result_obj__ = result_7;
     return __result9__;
 }
@@ -2452,13 +2448,13 @@ struct smart_pointer$1short* result_8;
 struct smart_pointer$1short* __result10__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_8, 0, sizeof(struct smart_pointer$1short*));
-    # 2013 "./neo-c.h"
-    result_8=(struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 2013, "smart_pointer$1short");
-    # 2015 "./neo-c.h"
+    # 1972 "./neo-c.h"
+    result_8=(struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 1972, "smart_pointer$1short");
+    # 1974 "./neo-c.h"
     result_8->memory=buffer_clone(self);
-    # 2016 "./neo-c.h"
+    # 1975 "./neo-c.h"
     result_8->p=(short short*)result_8->memory->buf;
-    # 2018 "./neo-c.h"
+    # 1977 "./neo-c.h"
     __result10__ = __result_obj__ = result_8;
     return __result10__;
 }
@@ -2468,13 +2464,13 @@ struct smart_pointer$1int* result_9;
 struct smart_pointer$1int* __result11__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_9, 0, sizeof(struct smart_pointer$1int*));
-    # 2023 "./neo-c.h"
-    result_9=(struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 2023, "smart_pointer$1int");
-    # 2025 "./neo-c.h"
+    # 1982 "./neo-c.h"
+    result_9=(struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 1982, "smart_pointer$1int");
+    # 1984 "./neo-c.h"
     result_9->memory=buffer_clone(self);
-    # 2026 "./neo-c.h"
+    # 1985 "./neo-c.h"
     result_9->p=(int*)result_9->memory->buf;
-    # 2028 "./neo-c.h"
+    # 1987 "./neo-c.h"
     __result11__ = __result_obj__ = result_9;
     return __result11__;
 }
@@ -2484,13 +2480,13 @@ struct smart_pointer$1long* result_10;
 struct smart_pointer$1long* __result12__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_10, 0, sizeof(struct smart_pointer$1long*));
-    # 2033 "./neo-c.h"
-    result_10=(struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 2033, "smart_pointer$1long");
-    # 2035 "./neo-c.h"
+    # 1992 "./neo-c.h"
+    result_10=(struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 1992, "smart_pointer$1long");
+    # 1994 "./neo-c.h"
     result_10->memory=buffer_clone(self);
-    # 2036 "./neo-c.h"
+    # 1995 "./neo-c.h"
     result_10->p=(long*)result_10->memory->buf;
-    # 2038 "./neo-c.h"
+    # 1997 "./neo-c.h"
     __result12__ = __result_obj__ = result_10;
     return __result12__;
 }
@@ -2498,103 +2494,103 @@ static inline struct smart_pointer$1char* charpa_to_pointer(char* self, unsigned
 void* __result_obj__;
 struct smart_pointer$1char* __result14__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2204 "./neo-c.h"
-    __result14__ = __result_obj__ = smart_pointer$1char_initialize((struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 2204, "smart_pointer$1char"),self,len);
+    # 2163 "./neo-c.h"
+    __result14__ = __result_obj__ = smart_pointer$1char_initialize((struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 2163, "smart_pointer$1char"),self,len);
     return __result14__;
 }
 static inline struct smart_pointer$1short* shortpa_to_pointer(short short* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1short* __result16__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2209 "./neo-c.h"
-    __result16__ = __result_obj__ = smart_pointer$1short_initialize((struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 2209, "smart_pointer$1short"),self,len);
+    # 2168 "./neo-c.h"
+    __result16__ = __result_obj__ = smart_pointer$1short_initialize((struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 2168, "smart_pointer$1short"),self,len);
     return __result16__;
 }
 static inline struct smart_pointer$1int* intpa_to_pointer(int* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1int* __result18__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2214 "./neo-c.h"
-    __result18__ = __result_obj__ = smart_pointer$1int_initialize((struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 2214, "smart_pointer$1int"),self,len);
+    # 2173 "./neo-c.h"
+    __result18__ = __result_obj__ = smart_pointer$1int_initialize((struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 2173, "smart_pointer$1int"),self,len);
     return __result18__;
 }
 static inline struct smart_pointer$1long* longpa_to_pointer(long* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1long* __result20__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2219 "./neo-c.h"
-    __result20__ = __result_obj__ = smart_pointer$1long_initialize((struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 2219, "smart_pointer$1long"),self,len);
+    # 2178 "./neo-c.h"
+    __result20__ = __result_obj__ = smart_pointer$1long_initialize((struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 2178, "smart_pointer$1long"),self,len);
     return __result20__;
 }
 static inline struct smart_pointer$1float* floatpa_to_pointer(float* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1float* __result22__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2224 "./neo-c.h"
-    __result22__ = __result_obj__ = smart_pointer$1float_initialize((struct smart_pointer$1float*)come_calloc(1, sizeof(struct smart_pointer$1float)*(1), "./neo-c.h", 2224, "smart_pointer$1float"),self,len);
+    # 2183 "./neo-c.h"
+    __result22__ = __result_obj__ = smart_pointer$1float_initialize((struct smart_pointer$1float*)come_calloc(1, sizeof(struct smart_pointer$1float)*(1), "./neo-c.h", 2183, "smart_pointer$1float"),self,len);
     return __result22__;
 }
 static inline struct smart_pointer$1double* doublepa_to_pointer(double* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1double* __result24__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2229 "./neo-c.h"
-    __result24__ = __result_obj__ = smart_pointer$1double_initialize((struct smart_pointer$1double*)come_calloc(1, sizeof(struct smart_pointer$1double)*(1), "./neo-c.h", 2229, "smart_pointer$1double"),self,len);
+    # 2188 "./neo-c.h"
+    __result24__ = __result_obj__ = smart_pointer$1double_initialize((struct smart_pointer$1double*)come_calloc(1, sizeof(struct smart_pointer$1double)*(1), "./neo-c.h", 2188, "smart_pointer$1double"),self,len);
     return __result24__;
 }
 static inline struct list$1char* charpa_to_list(char* self, unsigned long int len){
 void* __result_obj__;
 struct list$1char* __result27__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2234 "./neo-c.h"
-    __result27__ = __result_obj__ = list$1char_initialize_with_values((struct list$1char*)come_calloc(1, sizeof(struct list$1char)*(1), "./neo-c.h", 2234, "list$1char"),len,self);
+    # 2193 "./neo-c.h"
+    __result27__ = __result_obj__ = list$1char_initialize_with_values((struct list$1char*)come_calloc(1, sizeof(struct list$1char)*(1), "./neo-c.h", 2193, "list$1char"),len,self);
     return __result27__;
 }
 static inline struct list$1short* shortpa_to_list(short short* self, unsigned long int len){
 void* __result_obj__;
 struct list$1short* __result30__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2239 "./neo-c.h"
-    __result30__ = __result_obj__ = list$1short_initialize_with_values((struct list$1short*)come_calloc(1, sizeof(struct list$1short)*(1), "./neo-c.h", 2239, "list$1short"),len,self);
+    # 2198 "./neo-c.h"
+    __result30__ = __result_obj__ = list$1short_initialize_with_values((struct list$1short*)come_calloc(1, sizeof(struct list$1short)*(1), "./neo-c.h", 2198, "list$1short"),len,self);
     return __result30__;
 }
 static inline struct list$1int* intpa_to_list(int* self, unsigned long int len){
 void* __result_obj__;
 struct list$1int* __result33__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2244 "./neo-c.h"
-    __result33__ = __result_obj__ = list$1int_initialize_with_values((struct list$1int*)come_calloc(1, sizeof(struct list$1int)*(1), "./neo-c.h", 2244, "list$1int"),len,self);
+    # 2203 "./neo-c.h"
+    __result33__ = __result_obj__ = list$1int_initialize_with_values((struct list$1int*)come_calloc(1, sizeof(struct list$1int)*(1), "./neo-c.h", 2203, "list$1int"),len,self);
     return __result33__;
 }
 static inline struct list$1long* longpa_to_list(long* self, unsigned long int len){
 void* __result_obj__;
 struct list$1long* __result36__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2249 "./neo-c.h"
-    __result36__ = __result_obj__ = list$1long_initialize_with_values((struct list$1long*)come_calloc(1, sizeof(struct list$1long)*(1), "./neo-c.h", 2249, "list$1long"),len,self);
+    # 2208 "./neo-c.h"
+    __result36__ = __result_obj__ = list$1long_initialize_with_values((struct list$1long*)come_calloc(1, sizeof(struct list$1long)*(1), "./neo-c.h", 2208, "list$1long"),len,self);
     return __result36__;
 }
 static inline struct list$1float* floatpa_to_list(float* self, unsigned long int len){
 void* __result_obj__;
 struct list$1float* __result39__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2254 "./neo-c.h"
-    __result39__ = __result_obj__ = list$1float_initialize_with_values((struct list$1float*)come_calloc(1, sizeof(struct list$1float)*(1), "./neo-c.h", 2254, "list$1float"),len,self);
+    # 2213 "./neo-c.h"
+    __result39__ = __result_obj__ = list$1float_initialize_with_values((struct list$1float*)come_calloc(1, sizeof(struct list$1float)*(1), "./neo-c.h", 2213, "list$1float"),len,self);
     return __result39__;
 }
 static inline struct list$1double* doublepa_to_list(double* self, unsigned long int len){
 void* __result_obj__;
 struct list$1double* __result42__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2259 "./neo-c.h"
-    __result42__ = __result_obj__ = list$1double_initialize_with_values((struct list$1double*)come_calloc(1, sizeof(struct list$1double)*(1), "./neo-c.h", 2259, "list$1double"),len,self);
+    # 2218 "./neo-c.h"
+    __result42__ = __result_obj__ = list$1double_initialize_with_values((struct list$1double*)come_calloc(1, sizeof(struct list$1double)*(1), "./neo-c.h", 2218, "list$1double"),len,self);
     return __result42__;
 }
 static inline unsigned long int charpa_length(char* self, unsigned long int len){
 void* __result_obj__;
 unsigned long int __result43__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2289 "./neo-c.h"
+    # 2248 "./neo-c.h"
     __result43__ = len;
     return __result43__;
 }
@@ -2602,7 +2598,7 @@ static inline unsigned long int shortpa_length(short short* self, unsigned long 
 void* __result_obj__;
 unsigned long int __result44__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2294 "./neo-c.h"
+    # 2253 "./neo-c.h"
     __result44__ = len;
     return __result44__;
 }
@@ -2610,7 +2606,7 @@ static inline unsigned long int intpa_length(int* self, unsigned long int len){
 void* __result_obj__;
 unsigned long int __result45__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2299 "./neo-c.h"
+    # 2258 "./neo-c.h"
     __result45__ = len;
     return __result45__;
 }
@@ -2618,7 +2614,7 @@ static inline unsigned long int longpa_length(long* self, unsigned long int len)
 void* __result_obj__;
 unsigned long int __result46__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2304 "./neo-c.h"
+    # 2263 "./neo-c.h"
     __result46__ = len;
     return __result46__;
 }
@@ -2626,7 +2622,7 @@ static inline unsigned long int floatpa_length(float* self, unsigned long int le
 void* __result_obj__;
 unsigned long int __result47__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2309 "./neo-c.h"
+    # 2268 "./neo-c.h"
     __result47__ = len;
     return __result47__;
 }
@@ -2634,7 +2630,7 @@ static inline unsigned long int doublepa_length(double* self, unsigned long int 
 void* __result_obj__;
 unsigned long int __result48__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2314 "./neo-c.h"
+    # 2273 "./neo-c.h"
     __result48__ = len;
     return __result48__;
 }
@@ -2642,7 +2638,7 @@ static inline char* string_xsprintf(char* self, char* msg, ...){
 void* __result_obj__;
 char* __result49__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2375 "./neo-c.h"
+    # 2334 "./neo-c.h"
     __result49__ = __result_obj__ = xsprintf(msg,self);
     return __result49__;
 }
@@ -2650,7 +2646,7 @@ static inline char* charp_xsprintf(char* self, char* msg, ...){
 void* __result_obj__;
 char* __result50__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2380 "./neo-c.h"
+    # 2339 "./neo-c.h"
     __result50__ = __result_obj__ = xsprintf(msg,self);
     return __result50__;
 }
@@ -2658,7 +2654,7 @@ static inline char* int_xsprintf(int self, char* msg, ...){
 void* __result_obj__;
 char* __result51__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2385 "./neo-c.h"
+    # 2344 "./neo-c.h"
     __result51__ = __result_obj__ = xsprintf(msg,self);
     return __result51__;
 }
@@ -2681,13 +2677,13 @@ static struct smart_pointer$1char* smart_pointer$1char_initialize(struct smart_p
 void* __result_obj__;
 struct smart_pointer$1char* __result13__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2045 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2045, "buffer"));
-        # 2047 "./neo-c.h"
+        # 2004 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2004, "buffer"));
+        # 2006 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(char)*size);
-        # 2049 "./neo-c.h"
+        # 2008 "./neo-c.h"
         self->p=(char*)self->memory->buf;
-        # 2051 "./neo-c.h"
+        # 2010 "./neo-c.h"
         __result13__ = __result_obj__ = self;
         return __result13__;
 }
@@ -2697,13 +2693,13 @@ static struct smart_pointer$1short* smart_pointer$1short_initialize(struct smart
 void* __result_obj__;
 struct smart_pointer$1short* __result15__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2045 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2045, "buffer"));
-        # 2047 "./neo-c.h"
+        # 2004 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2004, "buffer"));
+        # 2006 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(short short)*size);
-        # 2049 "./neo-c.h"
+        # 2008 "./neo-c.h"
         self->p=(short short*)self->memory->buf;
-        # 2051 "./neo-c.h"
+        # 2010 "./neo-c.h"
         __result15__ = __result_obj__ = self;
         return __result15__;
 }
@@ -2713,13 +2709,13 @@ static struct smart_pointer$1int* smart_pointer$1int_initialize(struct smart_poi
 void* __result_obj__;
 struct smart_pointer$1int* __result17__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2045 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2045, "buffer"));
-        # 2047 "./neo-c.h"
+        # 2004 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2004, "buffer"));
+        # 2006 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(int)*size);
-        # 2049 "./neo-c.h"
+        # 2008 "./neo-c.h"
         self->p=(int*)self->memory->buf;
-        # 2051 "./neo-c.h"
+        # 2010 "./neo-c.h"
         __result17__ = __result_obj__ = self;
         return __result17__;
 }
@@ -2729,13 +2725,13 @@ static struct smart_pointer$1long* smart_pointer$1long_initialize(struct smart_p
 void* __result_obj__;
 struct smart_pointer$1long* __result19__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2045 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2045, "buffer"));
-        # 2047 "./neo-c.h"
+        # 2004 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2004, "buffer"));
+        # 2006 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(long)*size);
-        # 2049 "./neo-c.h"
+        # 2008 "./neo-c.h"
         self->p=(long*)self->memory->buf;
-        # 2051 "./neo-c.h"
+        # 2010 "./neo-c.h"
         __result19__ = __result_obj__ = self;
         return __result19__;
 }
@@ -2745,13 +2741,13 @@ static struct smart_pointer$1float* smart_pointer$1float_initialize(struct smart
 void* __result_obj__;
 struct smart_pointer$1float* __result21__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2045 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2045, "buffer"));
-        # 2047 "./neo-c.h"
+        # 2004 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2004, "buffer"));
+        # 2006 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(float)*size);
-        # 2049 "./neo-c.h"
+        # 2008 "./neo-c.h"
         self->p=(float*)self->memory->buf;
-        # 2051 "./neo-c.h"
+        # 2010 "./neo-c.h"
         __result21__ = __result_obj__ = self;
         return __result21__;
 }
@@ -2761,13 +2757,13 @@ static struct smart_pointer$1double* smart_pointer$1double_initialize(struct sma
 void* __result_obj__;
 struct smart_pointer$1double* __result23__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2045 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2045, "buffer"));
-        # 2047 "./neo-c.h"
+        # 2004 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2004, "buffer"));
+        # 2006 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(double)*size);
-        # 2049 "./neo-c.h"
+        # 2008 "./neo-c.h"
         self->p=(double*)self->memory->buf;
-        # 2051 "./neo-c.h"
+        # 2010 "./neo-c.h"
         __result23__ = __result_obj__ = self;
         return __result23__;
 }
@@ -2779,18 +2775,18 @@ int i_11;
 struct list$1char* __result26__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_11, 0, sizeof(int));
-        # 113 "./neo-c.h"
+        # 108 "./neo-c.h"
         self->head=((void*)0);
-        # 114 "./neo-c.h"
+        # 109 "./neo-c.h"
         self->tail=((void*)0);
-        # 115 "./neo-c.h"
+        # 110 "./neo-c.h"
         self->len=0;
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         for(        i_11=0;        i_11<num_value;        i_11++        ){
-            # 118 "./neo-c.h"
+            # 113 "./neo-c.h"
             list$1char_push_back(self,values[i_11]);
         }
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         __result26__ = __result_obj__ = self;
         return __result26__;
 }
@@ -2807,57 +2803,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_12, 0, sizeof(struct list_item$1char*));
 memset(&litem_13, 0, sizeof(struct list_item$1char*));
 memset(&litem_14, 0, sizeof(struct list_item$1char*));
-                # 257 "./neo-c.h"
-                # 226 "./neo-c.h"
+                # 252 "./neo-c.h"
+                # 221 "./neo-c.h"
                 if(_if_conditional1=self->len==0,                _if_conditional1) {
-                    # 227 "./neo-c.h"
-                    litem_12=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 227, "list_item$1char");
-                    # 229 "./neo-c.h"
+                    # 222 "./neo-c.h"
+                    litem_12=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 222, "list_item$1char");
+                    # 224 "./neo-c.h"
                     litem_12->prev=((void*)0);
-                    # 230 "./neo-c.h"
+                    # 225 "./neo-c.h"
                     litem_12->next=((void*)0);
-                    # 231 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     litem_12->item=item;
-                    # 233 "./neo-c.h"
+                    # 228 "./neo-c.h"
                     self->tail=litem_12;
-                    # 234 "./neo-c.h"
+                    # 229 "./neo-c.h"
                     self->head=litem_12;
                 }
                 else {
-                    # 257 "./neo-c.h"
-                    # 236 "./neo-c.h"
+                    # 252 "./neo-c.h"
+                    # 231 "./neo-c.h"
                     if(_if_conditional2=self->len==1,                    _if_conditional2) {
-                        # 237 "./neo-c.h"
-                        litem_13=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 237, "list_item$1char");
-                        # 239 "./neo-c.h"
+                        # 232 "./neo-c.h"
+                        litem_13=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 232, "list_item$1char");
+                        # 234 "./neo-c.h"
                         litem_13->prev=self->head;
-                        # 240 "./neo-c.h"
+                        # 235 "./neo-c.h"
                         litem_13->next=((void*)0);
-                        # 241 "./neo-c.h"
+                        # 236 "./neo-c.h"
                         litem_13->item=item;
-                        # 243 "./neo-c.h"
+                        # 238 "./neo-c.h"
                         self->tail=litem_13;
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         self->head->next=litem_13;
                     }
                     else {
-                        # 247 "./neo-c.h"
-                        litem_14=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 247, "list_item$1char");
-                        # 249 "./neo-c.h"
+                        # 242 "./neo-c.h"
+                        litem_14=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 242, "list_item$1char");
+                        # 244 "./neo-c.h"
                         litem_14->prev=self->tail;
-                        # 250 "./neo-c.h"
+                        # 245 "./neo-c.h"
                         litem_14->next=((void*)0);
-                        # 251 "./neo-c.h"
+                        # 246 "./neo-c.h"
                         litem_14->item=item;
-                        # 253 "./neo-c.h"
+                        # 248 "./neo-c.h"
                         self->tail->next=litem_14;
-                        # 254 "./neo-c.h"
+                        # 249 "./neo-c.h"
                         self->tail=litem_14;
                     }
                 }
-                # 257 "./neo-c.h"
+                # 252 "./neo-c.h"
                 self->len++;
-                # 259 "./neo-c.h"
+                # 254 "./neo-c.h"
                 __result25__ = __result_obj__ = self;
                 return __result25__;
 }
@@ -2869,18 +2865,18 @@ int i_15;
 struct list$1short* __result29__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_15, 0, sizeof(int));
-        # 113 "./neo-c.h"
+        # 108 "./neo-c.h"
         self->head=((void*)0);
-        # 114 "./neo-c.h"
+        # 109 "./neo-c.h"
         self->tail=((void*)0);
-        # 115 "./neo-c.h"
+        # 110 "./neo-c.h"
         self->len=0;
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         for(        i_15=0;        i_15<num_value;        i_15++        ){
-            # 118 "./neo-c.h"
+            # 113 "./neo-c.h"
             list$1short_push_back(self,values[i_15]);
         }
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         __result29__ = __result_obj__ = self;
         return __result29__;
 }
@@ -2897,57 +2893,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_16, 0, sizeof(struct list_item$1short*));
 memset(&litem_17, 0, sizeof(struct list_item$1short*));
 memset(&litem_18, 0, sizeof(struct list_item$1short*));
-                # 257 "./neo-c.h"
-                # 226 "./neo-c.h"
+                # 252 "./neo-c.h"
+                # 221 "./neo-c.h"
                 if(_if_conditional3=self->len==0,                _if_conditional3) {
-                    # 227 "./neo-c.h"
-                    litem_16=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 227, "list_item$1short");
-                    # 229 "./neo-c.h"
+                    # 222 "./neo-c.h"
+                    litem_16=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 222, "list_item$1short");
+                    # 224 "./neo-c.h"
                     litem_16->prev=((void*)0);
-                    # 230 "./neo-c.h"
+                    # 225 "./neo-c.h"
                     litem_16->next=((void*)0);
-                    # 231 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     litem_16->item=item;
-                    # 233 "./neo-c.h"
+                    # 228 "./neo-c.h"
                     self->tail=litem_16;
-                    # 234 "./neo-c.h"
+                    # 229 "./neo-c.h"
                     self->head=litem_16;
                 }
                 else {
-                    # 257 "./neo-c.h"
-                    # 236 "./neo-c.h"
+                    # 252 "./neo-c.h"
+                    # 231 "./neo-c.h"
                     if(_if_conditional4=self->len==1,                    _if_conditional4) {
-                        # 237 "./neo-c.h"
-                        litem_17=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 237, "list_item$1short");
-                        # 239 "./neo-c.h"
+                        # 232 "./neo-c.h"
+                        litem_17=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 232, "list_item$1short");
+                        # 234 "./neo-c.h"
                         litem_17->prev=self->head;
-                        # 240 "./neo-c.h"
+                        # 235 "./neo-c.h"
                         litem_17->next=((void*)0);
-                        # 241 "./neo-c.h"
+                        # 236 "./neo-c.h"
                         litem_17->item=item;
-                        # 243 "./neo-c.h"
+                        # 238 "./neo-c.h"
                         self->tail=litem_17;
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         self->head->next=litem_17;
                     }
                     else {
-                        # 247 "./neo-c.h"
-                        litem_18=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 247, "list_item$1short");
-                        # 249 "./neo-c.h"
+                        # 242 "./neo-c.h"
+                        litem_18=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 242, "list_item$1short");
+                        # 244 "./neo-c.h"
                         litem_18->prev=self->tail;
-                        # 250 "./neo-c.h"
+                        # 245 "./neo-c.h"
                         litem_18->next=((void*)0);
-                        # 251 "./neo-c.h"
+                        # 246 "./neo-c.h"
                         litem_18->item=item;
-                        # 253 "./neo-c.h"
+                        # 248 "./neo-c.h"
                         self->tail->next=litem_18;
-                        # 254 "./neo-c.h"
+                        # 249 "./neo-c.h"
                         self->tail=litem_18;
                     }
                 }
-                # 257 "./neo-c.h"
+                # 252 "./neo-c.h"
                 self->len++;
-                # 259 "./neo-c.h"
+                # 254 "./neo-c.h"
                 __result28__ = __result_obj__ = self;
                 return __result28__;
 }
@@ -2959,18 +2955,18 @@ int i_19;
 struct list$1int* __result32__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_19, 0, sizeof(int));
-        # 113 "./neo-c.h"
+        # 108 "./neo-c.h"
         self->head=((void*)0);
-        # 114 "./neo-c.h"
+        # 109 "./neo-c.h"
         self->tail=((void*)0);
-        # 115 "./neo-c.h"
+        # 110 "./neo-c.h"
         self->len=0;
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         for(        i_19=0;        i_19<num_value;        i_19++        ){
-            # 118 "./neo-c.h"
+            # 113 "./neo-c.h"
             list$1int_push_back(self,values[i_19]);
         }
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         __result32__ = __result_obj__ = self;
         return __result32__;
 }
@@ -2987,57 +2983,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_20, 0, sizeof(struct list_item$1int*));
 memset(&litem_21, 0, sizeof(struct list_item$1int*));
 memset(&litem_22, 0, sizeof(struct list_item$1int*));
-                # 257 "./neo-c.h"
-                # 226 "./neo-c.h"
+                # 252 "./neo-c.h"
+                # 221 "./neo-c.h"
                 if(_if_conditional5=self->len==0,                _if_conditional5) {
-                    # 227 "./neo-c.h"
-                    litem_20=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 227, "list_item$1int");
-                    # 229 "./neo-c.h"
+                    # 222 "./neo-c.h"
+                    litem_20=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 222, "list_item$1int");
+                    # 224 "./neo-c.h"
                     litem_20->prev=((void*)0);
-                    # 230 "./neo-c.h"
+                    # 225 "./neo-c.h"
                     litem_20->next=((void*)0);
-                    # 231 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     litem_20->item=item;
-                    # 233 "./neo-c.h"
+                    # 228 "./neo-c.h"
                     self->tail=litem_20;
-                    # 234 "./neo-c.h"
+                    # 229 "./neo-c.h"
                     self->head=litem_20;
                 }
                 else {
-                    # 257 "./neo-c.h"
-                    # 236 "./neo-c.h"
+                    # 252 "./neo-c.h"
+                    # 231 "./neo-c.h"
                     if(_if_conditional6=self->len==1,                    _if_conditional6) {
-                        # 237 "./neo-c.h"
-                        litem_21=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 237, "list_item$1int");
-                        # 239 "./neo-c.h"
+                        # 232 "./neo-c.h"
+                        litem_21=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 232, "list_item$1int");
+                        # 234 "./neo-c.h"
                         litem_21->prev=self->head;
-                        # 240 "./neo-c.h"
+                        # 235 "./neo-c.h"
                         litem_21->next=((void*)0);
-                        # 241 "./neo-c.h"
+                        # 236 "./neo-c.h"
                         litem_21->item=item;
-                        # 243 "./neo-c.h"
+                        # 238 "./neo-c.h"
                         self->tail=litem_21;
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         self->head->next=litem_21;
                     }
                     else {
-                        # 247 "./neo-c.h"
-                        litem_22=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 247, "list_item$1int");
-                        # 249 "./neo-c.h"
+                        # 242 "./neo-c.h"
+                        litem_22=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 242, "list_item$1int");
+                        # 244 "./neo-c.h"
                         litem_22->prev=self->tail;
-                        # 250 "./neo-c.h"
+                        # 245 "./neo-c.h"
                         litem_22->next=((void*)0);
-                        # 251 "./neo-c.h"
+                        # 246 "./neo-c.h"
                         litem_22->item=item;
-                        # 253 "./neo-c.h"
+                        # 248 "./neo-c.h"
                         self->tail->next=litem_22;
-                        # 254 "./neo-c.h"
+                        # 249 "./neo-c.h"
                         self->tail=litem_22;
                     }
                 }
-                # 257 "./neo-c.h"
+                # 252 "./neo-c.h"
                 self->len++;
-                # 259 "./neo-c.h"
+                # 254 "./neo-c.h"
                 __result31__ = __result_obj__ = self;
                 return __result31__;
 }
@@ -3049,18 +3045,18 @@ int i_23;
 struct list$1long* __result35__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_23, 0, sizeof(int));
-        # 113 "./neo-c.h"
+        # 108 "./neo-c.h"
         self->head=((void*)0);
-        # 114 "./neo-c.h"
+        # 109 "./neo-c.h"
         self->tail=((void*)0);
-        # 115 "./neo-c.h"
+        # 110 "./neo-c.h"
         self->len=0;
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         for(        i_23=0;        i_23<num_value;        i_23++        ){
-            # 118 "./neo-c.h"
+            # 113 "./neo-c.h"
             list$1long_push_back(self,values[i_23]);
         }
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         __result35__ = __result_obj__ = self;
         return __result35__;
 }
@@ -3077,57 +3073,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_24, 0, sizeof(struct list_item$1long*));
 memset(&litem_25, 0, sizeof(struct list_item$1long*));
 memset(&litem_26, 0, sizeof(struct list_item$1long*));
-                # 257 "./neo-c.h"
-                # 226 "./neo-c.h"
+                # 252 "./neo-c.h"
+                # 221 "./neo-c.h"
                 if(_if_conditional7=self->len==0,                _if_conditional7) {
-                    # 227 "./neo-c.h"
-                    litem_24=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 227, "list_item$1long");
-                    # 229 "./neo-c.h"
+                    # 222 "./neo-c.h"
+                    litem_24=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 222, "list_item$1long");
+                    # 224 "./neo-c.h"
                     litem_24->prev=((void*)0);
-                    # 230 "./neo-c.h"
+                    # 225 "./neo-c.h"
                     litem_24->next=((void*)0);
-                    # 231 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     litem_24->item=item;
-                    # 233 "./neo-c.h"
+                    # 228 "./neo-c.h"
                     self->tail=litem_24;
-                    # 234 "./neo-c.h"
+                    # 229 "./neo-c.h"
                     self->head=litem_24;
                 }
                 else {
-                    # 257 "./neo-c.h"
-                    # 236 "./neo-c.h"
+                    # 252 "./neo-c.h"
+                    # 231 "./neo-c.h"
                     if(_if_conditional8=self->len==1,                    _if_conditional8) {
-                        # 237 "./neo-c.h"
-                        litem_25=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 237, "list_item$1long");
-                        # 239 "./neo-c.h"
+                        # 232 "./neo-c.h"
+                        litem_25=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 232, "list_item$1long");
+                        # 234 "./neo-c.h"
                         litem_25->prev=self->head;
-                        # 240 "./neo-c.h"
+                        # 235 "./neo-c.h"
                         litem_25->next=((void*)0);
-                        # 241 "./neo-c.h"
+                        # 236 "./neo-c.h"
                         litem_25->item=item;
-                        # 243 "./neo-c.h"
+                        # 238 "./neo-c.h"
                         self->tail=litem_25;
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         self->head->next=litem_25;
                     }
                     else {
-                        # 247 "./neo-c.h"
-                        litem_26=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 247, "list_item$1long");
-                        # 249 "./neo-c.h"
+                        # 242 "./neo-c.h"
+                        litem_26=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 242, "list_item$1long");
+                        # 244 "./neo-c.h"
                         litem_26->prev=self->tail;
-                        # 250 "./neo-c.h"
+                        # 245 "./neo-c.h"
                         litem_26->next=((void*)0);
-                        # 251 "./neo-c.h"
+                        # 246 "./neo-c.h"
                         litem_26->item=item;
-                        # 253 "./neo-c.h"
+                        # 248 "./neo-c.h"
                         self->tail->next=litem_26;
-                        # 254 "./neo-c.h"
+                        # 249 "./neo-c.h"
                         self->tail=litem_26;
                     }
                 }
-                # 257 "./neo-c.h"
+                # 252 "./neo-c.h"
                 self->len++;
-                # 259 "./neo-c.h"
+                # 254 "./neo-c.h"
                 __result34__ = __result_obj__ = self;
                 return __result34__;
 }
@@ -3139,18 +3135,18 @@ int i_27;
 struct list$1float* __result38__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_27, 0, sizeof(int));
-        # 113 "./neo-c.h"
+        # 108 "./neo-c.h"
         self->head=((void*)0);
-        # 114 "./neo-c.h"
+        # 109 "./neo-c.h"
         self->tail=((void*)0);
-        # 115 "./neo-c.h"
+        # 110 "./neo-c.h"
         self->len=0;
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         for(        i_27=0;        i_27<num_value;        i_27++        ){
-            # 118 "./neo-c.h"
+            # 113 "./neo-c.h"
             list$1float_push_back(self,values[i_27]);
         }
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         __result38__ = __result_obj__ = self;
         return __result38__;
 }
@@ -3167,57 +3163,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_28, 0, sizeof(struct list_item$1float*));
 memset(&litem_29, 0, sizeof(struct list_item$1float*));
 memset(&litem_30, 0, sizeof(struct list_item$1float*));
-                # 257 "./neo-c.h"
-                # 226 "./neo-c.h"
+                # 252 "./neo-c.h"
+                # 221 "./neo-c.h"
                 if(_if_conditional9=self->len==0,                _if_conditional9) {
-                    # 227 "./neo-c.h"
-                    litem_28=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 227, "list_item$1float");
-                    # 229 "./neo-c.h"
+                    # 222 "./neo-c.h"
+                    litem_28=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 222, "list_item$1float");
+                    # 224 "./neo-c.h"
                     litem_28->prev=((void*)0);
-                    # 230 "./neo-c.h"
+                    # 225 "./neo-c.h"
                     litem_28->next=((void*)0);
-                    # 231 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     litem_28->item=item;
-                    # 233 "./neo-c.h"
+                    # 228 "./neo-c.h"
                     self->tail=litem_28;
-                    # 234 "./neo-c.h"
+                    # 229 "./neo-c.h"
                     self->head=litem_28;
                 }
                 else {
-                    # 257 "./neo-c.h"
-                    # 236 "./neo-c.h"
+                    # 252 "./neo-c.h"
+                    # 231 "./neo-c.h"
                     if(_if_conditional10=self->len==1,                    _if_conditional10) {
-                        # 237 "./neo-c.h"
-                        litem_29=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 237, "list_item$1float");
-                        # 239 "./neo-c.h"
+                        # 232 "./neo-c.h"
+                        litem_29=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 232, "list_item$1float");
+                        # 234 "./neo-c.h"
                         litem_29->prev=self->head;
-                        # 240 "./neo-c.h"
+                        # 235 "./neo-c.h"
                         litem_29->next=((void*)0);
-                        # 241 "./neo-c.h"
+                        # 236 "./neo-c.h"
                         litem_29->item=item;
-                        # 243 "./neo-c.h"
+                        # 238 "./neo-c.h"
                         self->tail=litem_29;
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         self->head->next=litem_29;
                     }
                     else {
-                        # 247 "./neo-c.h"
-                        litem_30=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 247, "list_item$1float");
-                        # 249 "./neo-c.h"
+                        # 242 "./neo-c.h"
+                        litem_30=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 242, "list_item$1float");
+                        # 244 "./neo-c.h"
                         litem_30->prev=self->tail;
-                        # 250 "./neo-c.h"
+                        # 245 "./neo-c.h"
                         litem_30->next=((void*)0);
-                        # 251 "./neo-c.h"
+                        # 246 "./neo-c.h"
                         litem_30->item=item;
-                        # 253 "./neo-c.h"
+                        # 248 "./neo-c.h"
                         self->tail->next=litem_30;
-                        # 254 "./neo-c.h"
+                        # 249 "./neo-c.h"
                         self->tail=litem_30;
                     }
                 }
-                # 257 "./neo-c.h"
+                # 252 "./neo-c.h"
                 self->len++;
-                # 259 "./neo-c.h"
+                # 254 "./neo-c.h"
                 __result37__ = __result_obj__ = self;
                 return __result37__;
 }
@@ -3229,18 +3225,18 @@ int i_31;
 struct list$1double* __result41__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_31, 0, sizeof(int));
-        # 113 "./neo-c.h"
+        # 108 "./neo-c.h"
         self->head=((void*)0);
-        # 114 "./neo-c.h"
+        # 109 "./neo-c.h"
         self->tail=((void*)0);
-        # 115 "./neo-c.h"
+        # 110 "./neo-c.h"
         self->len=0;
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         for(        i_31=0;        i_31<num_value;        i_31++        ){
-            # 118 "./neo-c.h"
+            # 113 "./neo-c.h"
             list$1double_push_back(self,values[i_31]);
         }
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         __result41__ = __result_obj__ = self;
         return __result41__;
 }
@@ -3257,57 +3253,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_32, 0, sizeof(struct list_item$1double*));
 memset(&litem_33, 0, sizeof(struct list_item$1double*));
 memset(&litem_34, 0, sizeof(struct list_item$1double*));
-                # 257 "./neo-c.h"
-                # 226 "./neo-c.h"
+                # 252 "./neo-c.h"
+                # 221 "./neo-c.h"
                 if(_if_conditional11=self->len==0,                _if_conditional11) {
-                    # 227 "./neo-c.h"
-                    litem_32=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 227, "list_item$1double");
-                    # 229 "./neo-c.h"
+                    # 222 "./neo-c.h"
+                    litem_32=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 222, "list_item$1double");
+                    # 224 "./neo-c.h"
                     litem_32->prev=((void*)0);
-                    # 230 "./neo-c.h"
+                    # 225 "./neo-c.h"
                     litem_32->next=((void*)0);
-                    # 231 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     litem_32->item=item;
-                    # 233 "./neo-c.h"
+                    # 228 "./neo-c.h"
                     self->tail=litem_32;
-                    # 234 "./neo-c.h"
+                    # 229 "./neo-c.h"
                     self->head=litem_32;
                 }
                 else {
-                    # 257 "./neo-c.h"
-                    # 236 "./neo-c.h"
+                    # 252 "./neo-c.h"
+                    # 231 "./neo-c.h"
                     if(_if_conditional12=self->len==1,                    _if_conditional12) {
-                        # 237 "./neo-c.h"
-                        litem_33=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 237, "list_item$1double");
-                        # 239 "./neo-c.h"
+                        # 232 "./neo-c.h"
+                        litem_33=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 232, "list_item$1double");
+                        # 234 "./neo-c.h"
                         litem_33->prev=self->head;
-                        # 240 "./neo-c.h"
+                        # 235 "./neo-c.h"
                         litem_33->next=((void*)0);
-                        # 241 "./neo-c.h"
+                        # 236 "./neo-c.h"
                         litem_33->item=item;
-                        # 243 "./neo-c.h"
+                        # 238 "./neo-c.h"
                         self->tail=litem_33;
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         self->head->next=litem_33;
                     }
                     else {
-                        # 247 "./neo-c.h"
-                        litem_34=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 247, "list_item$1double");
-                        # 249 "./neo-c.h"
+                        # 242 "./neo-c.h"
+                        litem_34=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 242, "list_item$1double");
+                        # 244 "./neo-c.h"
                         litem_34->prev=self->tail;
-                        # 250 "./neo-c.h"
+                        # 245 "./neo-c.h"
                         litem_34->next=((void*)0);
-                        # 251 "./neo-c.h"
+                        # 246 "./neo-c.h"
                         litem_34->item=item;
-                        # 253 "./neo-c.h"
+                        # 248 "./neo-c.h"
                         self->tail->next=litem_34;
-                        # 254 "./neo-c.h"
+                        # 249 "./neo-c.h"
                         self->tail=litem_34;
                     }
                 }
-                # 257 "./neo-c.h"
+                # 252 "./neo-c.h"
                 self->len++;
-                # 259 "./neo-c.h"
+                # 254 "./neo-c.h"
                 __result40__ = __result_obj__ = self;
                 return __result40__;
 }
@@ -3471,362 +3467,308 @@ memset(&__result_obj__, 0, sizeof(void*));
 _Bool bool_expect(_Bool self, void* parent, void (*block)(void*)){
 void* __result_obj__;
 _Bool _if_conditional20;
-_Bool _if_conditional21;
 _Bool __result55__;
-_Bool __result56__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 118 "libneo-c-gc.c"
+    # 115 "libneo-c-gc.c"
     # 109 "libneo-c-gc.c"
     if(_if_conditional20=!self,    _if_conditional20) {
         # 110 "libneo-c-gc.c"
         block(parent);
-        # 114 "libneo-c-gc.c"
         # 111 "libneo-c-gc.c"
-        if(_if_conditional21=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,        _if_conditional21) {
-            # 112 "libneo-c-gc.c"
-            __result55__ = self;
-            return __result55__;
-        }
-        # 114 "libneo-c-gc.c"
         stackframe();
-        # 115 "libneo-c-gc.c"
+        # 112 "libneo-c-gc.c"
         exit(1);
     }
-    # 118 "libneo-c-gc.c"
-    __result56__ = self;
-    return __result56__;
+    # 115 "libneo-c-gc.c"
+    __result55__ = self;
+    return __result55__;
 }
 
 _Bool bool_value(_Bool self){
 void* __result_obj__;
-_Bool __result57__;
+_Bool __result56__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 123 "libneo-c-gc.c"
-    __result57__ = self;
-    return __result57__;
+    # 120 "libneo-c-gc.c"
+    __result56__ = self;
+    return __result56__;
 }
 
 int int_catch(int self, void* parent, void (*block)(void*)){
 void* __result_obj__;
-_Bool _if_conditional22;
-_Bool _if_conditional23;
-int __result58__;
-int __result59__;
+_Bool _if_conditional21;
+int __result57__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 136 "libneo-c-gc.c"
-    # 128 "libneo-c-gc.c"
-    if(_if_conditional22=self<0,    _if_conditional22) {
-        # 129 "libneo-c-gc.c"
+    # 129 "libneo-c-gc.c"
+    # 125 "libneo-c-gc.c"
+    if(_if_conditional21=self<0,    _if_conditional21) {
+        # 126 "libneo-c-gc.c"
         block(parent);
-        # 134 "libneo-c-gc.c"
-        # 131 "libneo-c-gc.c"
-        if(_if_conditional23=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,        _if_conditional23) {
-            # 132 "libneo-c-gc.c"
-            __result58__ = self;
-            return __result58__;
-        }
     }
-    # 136 "libneo-c-gc.c"
-    __result59__ = self;
-    return __result59__;
+    # 129 "libneo-c-gc.c"
+    __result57__ = self;
+    return __result57__;
 }
 
 int int_expect(int self, void* parent, void (*block)(void*)){
 void* __result_obj__;
-_Bool _if_conditional24;
-_Bool _if_conditional25;
-int __result60__;
-int __result61__;
+_Bool _if_conditional22;
+int __result58__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 150 "libneo-c-gc.c"
-    # 141 "libneo-c-gc.c"
-    if(_if_conditional24=self<0,    _if_conditional24) {
-        # 142 "libneo-c-gc.c"
+    # 140 "libneo-c-gc.c"
+    # 134 "libneo-c-gc.c"
+    if(_if_conditional22=self<0,    _if_conditional22) {
+        # 135 "libneo-c-gc.c"
         block(parent);
-        # 146 "libneo-c-gc.c"
-        # 143 "libneo-c-gc.c"
-        if(_if_conditional25=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,        _if_conditional25) {
-            # 144 "libneo-c-gc.c"
-            __result60__ = self;
-            return __result60__;
-        }
-        # 146 "libneo-c-gc.c"
+        # 136 "libneo-c-gc.c"
         stackframe();
-        # 147 "libneo-c-gc.c"
+        # 137 "libneo-c-gc.c"
         exit(1);
     }
-    # 150 "libneo-c-gc.c"
-    __result61__ = self;
-    return __result61__;
+    # 140 "libneo-c-gc.c"
+    __result58__ = self;
+    return __result58__;
 }
 
 int int_value(int self){
 void* __result_obj__;
-int __result62__;
+int __result59__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 155 "libneo-c-gc.c"
-    __result62__ = self;
-    return __result62__;
+    # 145 "libneo-c-gc.c"
+    __result59__ = self;
+    return __result59__;
 }
 
 int int_except(int self, void* parent, void (*block)(void*)){
 void* __result_obj__;
-_Bool _if_conditional26;
-_Bool _if_conditional27;
-int __result63__;
-int __result64__;
+_Bool _if_conditional23;
+int __result60__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 167 "libneo-c-gc.c"
-    # 160 "libneo-c-gc.c"
-    if(_if_conditional26=self<0,    _if_conditional26) {
-        # 161 "libneo-c-gc.c"
+    # 154 "libneo-c-gc.c"
+    # 150 "libneo-c-gc.c"
+    if(_if_conditional23=self<0,    _if_conditional23) {
+        # 151 "libneo-c-gc.c"
         block(parent);
-        # 165 "libneo-c-gc.c"
-        # 162 "libneo-c-gc.c"
-        if(_if_conditional27=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,        _if_conditional27) {
-            # 163 "libneo-c-gc.c"
-            __result63__ = self;
-            return __result63__;
-        }
     }
-    # 167 "libneo-c-gc.c"
-    __result64__ = self;
-    return __result64__;
+    # 154 "libneo-c-gc.c"
+    __result60__ = self;
+    return __result60__;
 }
 
 _Bool bool_except(_Bool self, void* parent, void (*block)(void*)){
 void* __result_obj__;
-_Bool _if_conditional28;
-_Bool _if_conditional29;
-_Bool __result65__;
-_Bool __result66__;
+_Bool _if_conditional24;
+_Bool __result61__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 179 "libneo-c-gc.c"
-    # 172 "libneo-c-gc.c"
-    if(_if_conditional28=!self,    _if_conditional28) {
-        # 173 "libneo-c-gc.c"
+    # 163 "libneo-c-gc.c"
+    # 159 "libneo-c-gc.c"
+    if(_if_conditional24=!self,    _if_conditional24) {
+        # 160 "libneo-c-gc.c"
         block(parent);
-        # 177 "libneo-c-gc.c"
-        # 174 "libneo-c-gc.c"
-        if(_if_conditional29=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,        _if_conditional29) {
-            # 175 "libneo-c-gc.c"
-            __result65__ = self;
-            return __result65__;
-        }
     }
-    # 179 "libneo-c-gc.c"
-    __result66__ = self;
-    return __result66__;
+    # 163 "libneo-c-gc.c"
+    __result61__ = self;
+    return __result61__;
 }
 
 _Bool bool_catch(_Bool self, void* parent, void (*block)(void*)){
 void* __result_obj__;
-_Bool _if_conditional30;
-_Bool _if_conditional31;
-_Bool __result67__;
-_Bool __result68__;
+_Bool _if_conditional25;
+_Bool __result62__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 192 "libneo-c-gc.c"
-    # 184 "libneo-c-gc.c"
-    if(_if_conditional30=!self,    _if_conditional30) {
-        # 185 "libneo-c-gc.c"
+    # 172 "libneo-c-gc.c"
+    # 168 "libneo-c-gc.c"
+    if(_if_conditional25=!self,    _if_conditional25) {
+        # 169 "libneo-c-gc.c"
         block(parent);
-        # 190 "libneo-c-gc.c"
-        # 187 "libneo-c-gc.c"
-        if(_if_conditional31=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,        _if_conditional31) {
-            # 188 "libneo-c-gc.c"
-            __result67__ = self;
-            return __result67__;
-        }
     }
-    # 192 "libneo-c-gc.c"
-    __result68__ = self;
-    return __result68__;
+    # 172 "libneo-c-gc.c"
+    __result62__ = self;
+    return __result62__;
 }
 
 void xassert(char* msg, _Bool test){
 void* __result_obj__;
-_Bool _if_conditional32;
+_Bool _if_conditional26;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 197 "libneo-c-gc.c"
+    # 177 "libneo-c-gc.c"
     printf("%s...",msg);
-    # 202 "libneo-c-gc.c"
-    # 198 "libneo-c-gc.c"
-    if(_if_conditional32=!test,    _if_conditional32) {
-        # 199 "libneo-c-gc.c"
+    # 182 "libneo-c-gc.c"
+    # 178 "libneo-c-gc.c"
+    if(_if_conditional26=!test,    _if_conditional26) {
+        # 179 "libneo-c-gc.c"
         puts("false");
-        # 200 "libneo-c-gc.c"
+        # 180 "libneo-c-gc.c"
         exit(2);
     }
-    # 202 "libneo-c-gc.c"
+    # 182 "libneo-c-gc.c"
     puts("ok");
 }
 
 void come_heap_init(int come_malloc, int come_debug, int come_gc){
 void* __result_obj__;
-_Bool _if_conditional33;
+_Bool _if_conditional27;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 246 "libneo-c-gc.c"
+    # 226 "libneo-c-gc.c"
     gComeMallocLib=(_Bool)0;
-    # 248 "libneo-c-gc.c"
+    # 228 "libneo-c-gc.c"
     gComeDebugLib=come_debug;
-    # 248 "libneo-c-gc.c"
+    # 228 "libneo-c-gc.c"
     gComeGCLib=come_gc;
-    # 256 "libneo-c-gc.c"
-    # 250 "libneo-c-gc.c"
+    # 236 "libneo-c-gc.c"
+    # 230 "libneo-c-gc.c"
     if(gComeGCLib) {
-        # 251 "libneo-c-gc.c"
+        # 231 "libneo-c-gc.c"
         GC_init();
-        # 252 "libneo-c-gc.c"
+        # 232 "libneo-c-gc.c"
         GC_set_warn_proc(GC_ignore_warn_proc);
-        # 253 "libneo-c-gc.c"
+        # 233 "libneo-c-gc.c"
         GC_enable_incremental();
     }
-    # 256 "libneo-c-gc.c"
+    # 236 "libneo-c-gc.c"
     gComeStackFrameBuffer=((void*)0);
 }
 
 void come_heap_final(){
 void* __result_obj__;
-_Bool _if_conditional34;
+_Bool _if_conditional28;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 264 "libneo-c-gc.c"
-    # 261 "libneo-c-gc.c"
+    # 244 "libneo-c-gc.c"
+    # 241 "libneo-c-gc.c"
     if(gComeStackFrameBuffer) {
-        # 262 "libneo-c-gc.c"
+        # 242 "libneo-c-gc.c"
         free(gComeStackFrameBuffer);
     }
 }
 
 static void* come_alloc_mem_from_heap_pool(unsigned long int size, char* sname, int sline, char* class_name){
 void* __result_obj__;
-_Bool _if_conditional35;
+_Bool _if_conditional29;
 void* result_38;
 struct sMemHeader* it_39;
-_Bool _if_conditional36;
-_Bool _if_conditional37;
-_Bool _if_conditional38;
-void* __result69__;
+_Bool _if_conditional30;
+_Bool _if_conditional31;
+_Bool _if_conditional32;
+void* __result63__;
 void* result_40;
 struct sMemHeaderTiny* it_41;
-_Bool _if_conditional39;
-_Bool _if_conditional40;
-void* __result70__;
+_Bool _if_conditional33;
+_Bool _if_conditional34;
+void* __result64__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_38, 0, sizeof(void*));
 memset(&it_39, 0, sizeof(struct sMemHeader*));
 memset(&result_40, 0, sizeof(void*));
 memset(&it_41, 0, sizeof(struct sMemHeaderTiny*));
-    # 342 "libneo-c-gc.c"
-    # 268 "libneo-c-gc.c"
+    # 322 "libneo-c-gc.c"
+    # 248 "libneo-c-gc.c"
     if(gComeDebugLib) {
-        # 269 "libneo-c-gc.c"
+        # 249 "libneo-c-gc.c"
         result_38=GC_malloc(size+sizeof(struct sMemHeader));
-        # 270 "libneo-c-gc.c"
+        # 250 "libneo-c-gc.c"
         memset(result_38,0,size+sizeof(struct sMemHeader));
-        # 272 "libneo-c-gc.c"
+        # 252 "libneo-c-gc.c"
         it_39=result_38;
-        # 274 "libneo-c-gc.c"
+        # 254 "libneo-c-gc.c"
         it_39->allocated=177783;
-        # 276 "libneo-c-gc.c"
+        # 256 "libneo-c-gc.c"
         it_39->size=size+sizeof(struct sMemHeader);
-        # 279 "libneo-c-gc.c"
+        # 259 "libneo-c-gc.c"
         come_push_stackframe(sname,sline,0);
-        # 293 "libneo-c-gc.c"
-        # 282 "libneo-c-gc.c"
-        if(_if_conditional36=gNumComeStackFrame<16,        _if_conditional36) {
-            # 283 "libneo-c-gc.c"
+        # 273 "libneo-c-gc.c"
+        # 262 "libneo-c-gc.c"
+        if(_if_conditional30=gNumComeStackFrame<16,        _if_conditional30) {
+            # 263 "libneo-c-gc.c"
             memcpy(it_39->sname,gComeStackFrameSName,sizeof(char*)*gNumComeStackFrame);
-            # 284 "libneo-c-gc.c"
+            # 264 "libneo-c-gc.c"
             memcpy(it_39->sline,gComeStackFrameSLine,sizeof(int)*gNumComeStackFrame);
-            # 285 "libneo-c-gc.c"
+            # 265 "libneo-c-gc.c"
             memcpy(it_39->id,gComeStackFrameID,sizeof(int)*gNumComeStackFrame);
         }
         else {
-            # 288 "libneo-c-gc.c"
+            # 268 "libneo-c-gc.c"
             memcpy(it_39->sname,gComeStackFrameSName+gNumComeStackFrame-16-1,sizeof(char*)*16);
-            # 289 "libneo-c-gc.c"
+            # 269 "libneo-c-gc.c"
             memcpy(it_39->sline,gComeStackFrameSLine+gNumComeStackFrame-16-1,sizeof(int)*16);
-            # 290 "libneo-c-gc.c"
+            # 270 "libneo-c-gc.c"
             memcpy(it_39->id,gComeStackFrameID+gNumComeStackFrame-16-1,sizeof(int)*16);
         }
-        # 293 "libneo-c-gc.c"
+        # 273 "libneo-c-gc.c"
         come_pop_stackframe();
-        # 295 "libneo-c-gc.c"
+        # 275 "libneo-c-gc.c"
         it_39->next=gAllocMem;
-        # 296 "libneo-c-gc.c"
+        # 276 "libneo-c-gc.c"
         it_39->prev=((void*)0);
-        # 305 "libneo-c-gc.c"
-        # 298 "libneo-c-gc.c"
+        # 285 "libneo-c-gc.c"
+        # 278 "libneo-c-gc.c"
         if(class_name) {
-            # 299 "libneo-c-gc.c"
+            # 279 "libneo-c-gc.c"
             it_39->class_name=GC_strdup(class_name);
         }
         else {
-            # 302 "libneo-c-gc.c"
+            # 282 "libneo-c-gc.c"
             it_39->class_name=((void*)0);
         }
-        # 309 "libneo-c-gc.c"
-        # 305 "libneo-c-gc.c"
+        # 289 "libneo-c-gc.c"
+        # 285 "libneo-c-gc.c"
         if(gAllocMem) {
-            # 306 "libneo-c-gc.c"
+            # 286 "libneo-c-gc.c"
             gAllocMem->prev=it_39;
         }
-        # 309 "libneo-c-gc.c"
+        # 289 "libneo-c-gc.c"
         gAllocMem=it_39;
-        # 311 "libneo-c-gc.c"
-        __result69__ = __result_obj__ = (char*)result_38+sizeof(struct sMemHeader);
-        return __result69__;
+        # 291 "libneo-c-gc.c"
+        __result63__ = __result_obj__ = (char*)result_38+sizeof(struct sMemHeader);
+        return __result63__;
     }
     else {
-        # 314 "libneo-c-gc.c"
+        # 294 "libneo-c-gc.c"
         result_40=GC_malloc(size+sizeof(struct sMemHeaderTiny));
-        # 315 "libneo-c-gc.c"
+        # 295 "libneo-c-gc.c"
         memset(result_40,0,size+sizeof(struct sMemHeaderTiny));
-        # 317 "libneo-c-gc.c"
+        # 297 "libneo-c-gc.c"
         it_41=result_40;
-        # 319 "libneo-c-gc.c"
+        # 299 "libneo-c-gc.c"
         it_41->allocated=177783;
-        # 328 "libneo-c-gc.c"
-        # 321 "libneo-c-gc.c"
+        # 308 "libneo-c-gc.c"
+        # 301 "libneo-c-gc.c"
         if(class_name) {
-            # 322 "libneo-c-gc.c"
+            # 302 "libneo-c-gc.c"
             it_41->class_name=GC_strdup(class_name);
         }
         else {
-            # 325 "libneo-c-gc.c"
+            # 305 "libneo-c-gc.c"
             it_41->class_name=((void*)0);
         }
-        # 328 "libneo-c-gc.c"
+        # 308 "libneo-c-gc.c"
         it_41->size=size+sizeof(struct sMemHeaderTiny);
-        # 331 "libneo-c-gc.c"
+        # 311 "libneo-c-gc.c"
         it_41->next=(struct sMemHeaderTiny*)gAllocMem;
-        # 332 "libneo-c-gc.c"
+        # 312 "libneo-c-gc.c"
         it_41->prev=((void*)0);
-        # 338 "libneo-c-gc.c"
-        # 334 "libneo-c-gc.c"
+        # 318 "libneo-c-gc.c"
+        # 314 "libneo-c-gc.c"
         if(gAllocMem) {
-            # 335 "libneo-c-gc.c"
+            # 315 "libneo-c-gc.c"
             ((struct sMemHeaderTiny*)gAllocMem)->prev=it_41;
         }
-        # 338 "libneo-c-gc.c"
+        # 318 "libneo-c-gc.c"
         gAllocMem=(struct sMemHeader*)it_41;
-        # 340 "libneo-c-gc.c"
-        __result70__ = __result_obj__ = (char*)result_40+sizeof(struct sMemHeaderTiny);
-        return __result70__;
+        # 320 "libneo-c-gc.c"
+        __result64__ = __result_obj__ = (char*)result_40+sizeof(struct sMemHeaderTiny);
+        return __result64__;
     }
 }
 
 static void come_free_mem_of_heap_pool(char* mem){
 void* __result_obj__;
-_Bool _if_conditional41;
-_Bool _if_conditional42;
+_Bool _if_conditional35;
+_Bool _if_conditional36;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 352 "libneo-c-gc.c"
-    # 346 "libneo-c-gc.c"
+    # 332 "libneo-c-gc.c"
+    # 326 "libneo-c-gc.c"
     if(mem) {
-        # 351 "libneo-c-gc.c"
-        # 347 "libneo-c-gc.c"
+        # 331 "libneo-c-gc.c"
+        # 327 "libneo-c-gc.c"
         if(gComeDebugLib) {
         }
         else {
@@ -3837,23 +3779,23 @@ memset(&__result_obj__, 0, sizeof(void*));
 char* come_dynamic_typeof(void* mem){
 void* __result_obj__;
 struct sMemHeaderTiny* it_42;
-_Bool _if_conditional43;
-char* __result71__;
+_Bool _if_conditional37;
+char* __result65__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_42, 0, sizeof(struct sMemHeaderTiny*));
-    # 356 "libneo-c-gc.c"
+    # 336 "libneo-c-gc.c"
     it_42=(struct sMemHeaderTiny*)((char*)mem-sizeof(unsigned long int)-sizeof(unsigned long int)-sizeof(struct sMemHeaderTiny));
-    # 363 "libneo-c-gc.c"
-    # 358 "libneo-c-gc.c"
-    if(_if_conditional43=it_42->allocated!=177783,    _if_conditional43) {
-        # 359 "libneo-c-gc.c"
+    # 343 "libneo-c-gc.c"
+    # 338 "libneo-c-gc.c"
+    if(_if_conditional37=it_42->allocated!=177783,    _if_conditional37) {
+        # 339 "libneo-c-gc.c"
         fprintf((stderr),"invalid heap object(%p)\n",it_42);
-        # 360 "libneo-c-gc.c"
+        # 340 "libneo-c-gc.c"
         exit(2);
     }
-    # 363 "libneo-c-gc.c"
-    __result71__ = __result_obj__ = it_42->class_name;
-    return __result71__;
+    # 343 "libneo-c-gc.c"
+    __result65__ = __result_obj__ = it_42->class_name;
+    return __result65__;
 }
 
 void* come_calloc(unsigned long int count, unsigned long int size, char* sname, int sline, char* class_name){
@@ -3861,219 +3803,219 @@ void* __result_obj__;
 char* mem_43;
 unsigned long int* ref_count_44;
 unsigned long int* size2_45;
-void* __result72__;
+void* __result66__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&mem_43, 0, sizeof(char*));
 memset(&ref_count_44, 0, sizeof(unsigned long int*));
 memset(&size2_45, 0, sizeof(unsigned long int*));
-    # 369 "libneo-c-gc.c"
+    # 349 "libneo-c-gc.c"
     mem_43=come_alloc_mem_from_heap_pool(sizeof(unsigned long int)+sizeof(unsigned long int)+count*size,sname,sline,class_name);
-    # 371 "libneo-c-gc.c"
+    # 351 "libneo-c-gc.c"
     ref_count_44=(unsigned long int*)mem_43;
-    # 373 "libneo-c-gc.c"
+    # 353 "libneo-c-gc.c"
     *ref_count_44=0;
-    # 375 "libneo-c-gc.c"
+    # 355 "libneo-c-gc.c"
     size2_45=(unsigned long int*)(mem_43+sizeof(unsigned long int));
-    # 377 "libneo-c-gc.c"
+    # 357 "libneo-c-gc.c"
     *size2_45=size*count+sizeof(unsigned long int)+sizeof(unsigned long int);
-    # 379 "libneo-c-gc.c"
-    __result72__ = __result_obj__ = mem_43+sizeof(unsigned long int)+sizeof(unsigned long int);
-    return __result72__;
+    # 359 "libneo-c-gc.c"
+    __result66__ = __result_obj__ = mem_43+sizeof(unsigned long int)+sizeof(unsigned long int);
+    return __result66__;
 }
 
 void come_free_object(void* mem){
 void* __result_obj__;
-_Bool _if_conditional44;
+_Bool _if_conditional38;
 unsigned long int* ref_count_46;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&ref_count_46, 0, sizeof(unsigned long int*));
-    # 388 "libneo-c-gc.c"
-    # 384 "libneo-c-gc.c"
-    if(_if_conditional44=mem==((void*)0),    _if_conditional44) {
-        # 385 "libneo-c-gc.c"
+    # 368 "libneo-c-gc.c"
+    # 364 "libneo-c-gc.c"
+    if(_if_conditional38=mem==((void*)0),    _if_conditional38) {
+        # 365 "libneo-c-gc.c"
         return;
     }
-    # 388 "libneo-c-gc.c"
+    # 368 "libneo-c-gc.c"
     ref_count_46=(unsigned long int*)((char*)mem-sizeof(unsigned long int)-sizeof(unsigned long int));
-    # 390 "libneo-c-gc.c"
+    # 370 "libneo-c-gc.c"
     come_free_mem_of_heap_pool((char*)ref_count_46);
 }
 
 void come_free(void* mem){
 void* __result_obj__;
-_Bool _if_conditional45;
+_Bool _if_conditional39;
 unsigned long int* ref_count_47;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&ref_count_47, 0, sizeof(unsigned long int*));
-    # 399 "libneo-c-gc.c"
-    # 395 "libneo-c-gc.c"
-    if(_if_conditional45=mem==((void*)0),    _if_conditional45) {
-        # 396 "libneo-c-gc.c"
+    # 379 "libneo-c-gc.c"
+    # 375 "libneo-c-gc.c"
+    if(_if_conditional39=mem==((void*)0),    _if_conditional39) {
+        # 376 "libneo-c-gc.c"
         return;
     }
-    # 399 "libneo-c-gc.c"
+    # 379 "libneo-c-gc.c"
     ref_count_47=(unsigned long int*)((char*)mem-sizeof(unsigned long int)-sizeof(unsigned long int));
-    # 401 "libneo-c-gc.c"
+    # 381 "libneo-c-gc.c"
     come_free_mem_of_heap_pool((char*)ref_count_47);
 }
 
 void* come_memdup(void* block, char* sname, int sline, char* class_name){
 void* __result_obj__;
-_Bool _if_conditional46;
-void* __result73__;
+_Bool _if_conditional40;
+void* __result67__;
 char* mem_48;
 unsigned long int* size_p_49;
 unsigned long int size_50;
 void* result_51;
-void* __result74__;
+void* __result68__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&mem_48, 0, sizeof(char*));
 memset(&size_p_49, 0, sizeof(unsigned long int*));
 memset(&size_50, 0, sizeof(unsigned long int));
 memset(&result_51, 0, sizeof(void*));
-    # 410 "libneo-c-gc.c"
-    # 406 "libneo-c-gc.c"
-    if(_if_conditional46=!block,    _if_conditional46) {
-        # 407 "libneo-c-gc.c"
-        __result73__ = __result_obj__ = ((void*)0);
-        return __result73__;
+    # 390 "libneo-c-gc.c"
+    # 386 "libneo-c-gc.c"
+    if(_if_conditional40=!block,    _if_conditional40) {
+        # 387 "libneo-c-gc.c"
+        __result67__ = __result_obj__ = ((void*)0);
+        return __result67__;
     }
-    # 410 "libneo-c-gc.c"
+    # 390 "libneo-c-gc.c"
     mem_48=(char*)block-sizeof(unsigned long int)-sizeof(unsigned long int);
-    # 412 "libneo-c-gc.c"
+    # 392 "libneo-c-gc.c"
     size_p_49=(unsigned long int*)(mem_48+sizeof(unsigned long int));
-    # 414 "libneo-c-gc.c"
+    # 394 "libneo-c-gc.c"
     size_50=*size_p_49-sizeof(unsigned long int)-sizeof(unsigned long int);
-    # 416 "libneo-c-gc.c"
+    # 396 "libneo-c-gc.c"
     result_51=come_calloc(1,size_50,sname,sline,class_name);
-    # 418 "libneo-c-gc.c"
+    # 398 "libneo-c-gc.c"
     memcpy(result_51,block,size_50);
-    # 420 "libneo-c-gc.c"
-    __result74__ = __result_obj__ = result_51;
-    return __result74__;
+    # 400 "libneo-c-gc.c"
+    __result68__ = __result_obj__ = result_51;
+    return __result68__;
 }
 
 void* come_increment_ref_count(void* mem){
 void* __result_obj__;
-_Bool _if_conditional47;
-void* __result75__;
+_Bool _if_conditional41;
+void* __result69__;
 unsigned long int* ref_count_52;
-void* __result76__;
+void* __result70__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&ref_count_52, 0, sizeof(unsigned long int*));
-    # 429 "libneo-c-gc.c"
-    # 425 "libneo-c-gc.c"
-    if(_if_conditional47=mem==((void*)0),    _if_conditional47) {
-        # 426 "libneo-c-gc.c"
-        __result75__ = __result_obj__ = mem;
-        return __result75__;
+    # 409 "libneo-c-gc.c"
+    # 405 "libneo-c-gc.c"
+    if(_if_conditional41=mem==((void*)0),    _if_conditional41) {
+        # 406 "libneo-c-gc.c"
+        __result69__ = __result_obj__ = mem;
+        return __result69__;
     }
-    # 429 "libneo-c-gc.c"
+    # 409 "libneo-c-gc.c"
     ref_count_52=(unsigned long int*)((char*)mem-sizeof(unsigned long int)-sizeof(unsigned long int));
-    # 431 "libneo-c-gc.c"
+    # 411 "libneo-c-gc.c"
     (*ref_count_52)++;
-    # 433 "libneo-c-gc.c"
-    __result76__ = __result_obj__ = mem;
-    return __result76__;
+    # 413 "libneo-c-gc.c"
+    __result70__ = __result_obj__ = mem;
+    return __result70__;
 }
 
 void* come_print_ref_count(void* mem){
 void* __result_obj__;
-_Bool _if_conditional48;
-void* __result77__;
+_Bool _if_conditional42;
+void* __result71__;
 unsigned long int* ref_count_53;
-void* __result78__;
+void* __result72__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&ref_count_53, 0, sizeof(unsigned long int*));
-    # 442 "libneo-c-gc.c"
-    # 438 "libneo-c-gc.c"
-    if(_if_conditional48=mem==((void*)0),    _if_conditional48) {
-        # 439 "libneo-c-gc.c"
-        __result77__ = __result_obj__ = mem;
-        return __result77__;
+    # 422 "libneo-c-gc.c"
+    # 418 "libneo-c-gc.c"
+    if(_if_conditional42=mem==((void*)0),    _if_conditional42) {
+        # 419 "libneo-c-gc.c"
+        __result71__ = __result_obj__ = mem;
+        return __result71__;
     }
-    # 442 "libneo-c-gc.c"
+    # 422 "libneo-c-gc.c"
     ref_count_53=(unsigned long int*)((char*)mem-sizeof(unsigned long int)-sizeof(unsigned long int));
-    # 444 "libneo-c-gc.c"
+    # 424 "libneo-c-gc.c"
     printf("ref_count %ld\n",*ref_count_53);
-    # 446 "libneo-c-gc.c"
-    __result78__ = __result_obj__ = mem;
-    return __result78__;
+    # 426 "libneo-c-gc.c"
+    __result72__ = __result_obj__ = mem;
+    return __result72__;
 }
 
 void* come_decrement_ref_count(void* mem, void* protocol_fun, void* protocol_obj, _Bool no_decrement, _Bool no_free, _Bool force_delete_){
 void* __result_obj__;
-_Bool _if_conditional49;
-void* __result79__;
+_Bool _if_conditional43;
+void* __result73__;
 unsigned long int* ref_count_54;
-_Bool _if_conditional50;
+_Bool _if_conditional44;
 unsigned long int count_55;
-_Bool _if_conditional51;
-_Bool _if_conditional52;
+_Bool _if_conditional45;
+_Bool _if_conditional46;
 void (*finalizer_56)(void*);
-void* __result80__;
-void* __result81__;
+void* __result74__;
+void* __result75__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&ref_count_54, 0, sizeof(unsigned long int*));
 memset(&count_55, 0, sizeof(unsigned long int));
 memset(&finalizer_56, 0, sizeof(void (*)(void*)));
-    # 455 "libneo-c-gc.c"
-    # 451 "libneo-c-gc.c"
-    if(_if_conditional49=mem==((void*)0),    _if_conditional49) {
-        # 452 "libneo-c-gc.c"
-        __result79__ = __result_obj__ = ((void*)0);
-        return __result79__;
+    # 435 "libneo-c-gc.c"
+    # 431 "libneo-c-gc.c"
+    if(_if_conditional43=mem==((void*)0),    _if_conditional43) {
+        # 432 "libneo-c-gc.c"
+        __result73__ = __result_obj__ = ((void*)0);
+        return __result73__;
     }
-    # 455 "libneo-c-gc.c"
+    # 435 "libneo-c-gc.c"
     ref_count_54=(unsigned long int*)((char*)mem-sizeof(unsigned long int)-sizeof(unsigned long int));
-    # 461 "libneo-c-gc.c"
-    # 457 "libneo-c-gc.c"
-    if(_if_conditional50=!no_decrement,    _if_conditional50) {
-        # 458 "libneo-c-gc.c"
+    # 441 "libneo-c-gc.c"
+    # 437 "libneo-c-gc.c"
+    if(_if_conditional44=!no_decrement,    _if_conditional44) {
+        # 438 "libneo-c-gc.c"
         (*ref_count_54)--;
     }
-    # 461 "libneo-c-gc.c"
+    # 441 "libneo-c-gc.c"
     count_55=*ref_count_54;
-    # 473 "libneo-c-gc.c"
-    # 462 "libneo-c-gc.c"
-    if(_if_conditional51=!no_free&&(count_55<=0||force_delete_),    _if_conditional51) {
-        # 469 "libneo-c-gc.c"
-        # 463 "libneo-c-gc.c"
-        if(_if_conditional52=protocol_obj&&protocol_fun,        _if_conditional52) {
-            # 464 "libneo-c-gc.c"
+    # 453 "libneo-c-gc.c"
+    # 442 "libneo-c-gc.c"
+    if(_if_conditional45=!no_free&&(count_55<=0||force_delete_),    _if_conditional45) {
+        # 449 "libneo-c-gc.c"
+        # 443 "libneo-c-gc.c"
+        if(_if_conditional46=protocol_obj&&protocol_fun,        _if_conditional46) {
+            # 444 "libneo-c-gc.c"
             finalizer_56=protocol_fun;
-            # 465 "libneo-c-gc.c"
+            # 445 "libneo-c-gc.c"
             finalizer_56(protocol_obj);
-            # 467 "libneo-c-gc.c"
+            # 447 "libneo-c-gc.c"
             come_free_object(protocol_obj);
         }
-        # 469 "libneo-c-gc.c"
+        # 449 "libneo-c-gc.c"
         come_free_object(mem);
-        # 470 "libneo-c-gc.c"
-        __result80__ = __result_obj__ = ((void*)0);
-        return __result80__;
+        # 450 "libneo-c-gc.c"
+        __result74__ = __result_obj__ = ((void*)0);
+        return __result74__;
     }
-    # 473 "libneo-c-gc.c"
-    __result81__ = __result_obj__ = mem;
-    return __result81__;
+    # 453 "libneo-c-gc.c"
+    __result75__ = __result_obj__ = mem;
+    return __result75__;
 }
 
 void come_call_finalizer(void* fun, void* mem, void* protocol_fun, void* protocol_obj, int call_finalizer_only, int no_decrement, int no_free, int force_delete_){
 void* __result_obj__;
-_Bool _if_conditional53;
-_Bool _if_conditional54;
-_Bool _if_conditional55;
-_Bool _if_conditional56;
+_Bool _if_conditional47;
+_Bool _if_conditional48;
+_Bool _if_conditional49;
+_Bool _if_conditional50;
 void (*finalizer_57)(void*);
 void (*finalizer_58)(void*);
 unsigned long int* ref_count_59;
-_Bool _if_conditional57;
+_Bool _if_conditional51;
 unsigned long int count_60;
-_Bool _if_conditional58;
-_Bool _if_conditional59;
-_Bool _if_conditional60;
+_Bool _if_conditional52;
+_Bool _if_conditional53;
+_Bool _if_conditional54;
 void (*finalizer_61)(void*);
-_Bool _if_conditional61;
+_Bool _if_conditional55;
 void (*finalizer_62)(void*);
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&finalizer_57, 0, sizeof(void (*)(void*)));
@@ -4082,68 +4024,68 @@ memset(&ref_count_59, 0, sizeof(unsigned long int*));
 memset(&count_60, 0, sizeof(unsigned long int));
 memset(&finalizer_61, 0, sizeof(void (*)(void*)));
 memset(&finalizer_62, 0, sizeof(void (*)(void*)));
-    # 482 "libneo-c-gc.c"
-    # 478 "libneo-c-gc.c"
-    if(_if_conditional53=mem==((void*)0),    _if_conditional53) {
-        # 479 "libneo-c-gc.c"
+    # 462 "libneo-c-gc.c"
+    # 458 "libneo-c-gc.c"
+    if(_if_conditional47=mem==((void*)0),    _if_conditional47) {
+        # 459 "libneo-c-gc.c"
         return;
     }
-    # 515 "libneo-c-gc.c"
-    # 482 "libneo-c-gc.c"
+    # 495 "libneo-c-gc.c"
+    # 462 "libneo-c-gc.c"
     if(call_finalizer_only) {
-        # 491 "libneo-c-gc.c"
-        # 483 "libneo-c-gc.c"
+        # 471 "libneo-c-gc.c"
+        # 463 "libneo-c-gc.c"
         if(fun) {
-            # 488 "libneo-c-gc.c"
-            # 484 "libneo-c-gc.c"
-            if(_if_conditional56=protocol_obj&&protocol_fun,            _if_conditional56) {
-                # 485 "libneo-c-gc.c"
+            # 468 "libneo-c-gc.c"
+            # 464 "libneo-c-gc.c"
+            if(_if_conditional50=protocol_obj&&protocol_fun,            _if_conditional50) {
+                # 465 "libneo-c-gc.c"
                 finalizer_57=protocol_fun;
-                # 486 "libneo-c-gc.c"
+                # 466 "libneo-c-gc.c"
                 finalizer_57(protocol_obj);
             }
-            # 488 "libneo-c-gc.c"
+            # 468 "libneo-c-gc.c"
             finalizer_58=fun;
-            # 489 "libneo-c-gc.c"
+            # 469 "libneo-c-gc.c"
             finalizer_58(mem);
         }
     }
     else {
-        # 493 "libneo-c-gc.c"
+        # 473 "libneo-c-gc.c"
         ref_count_59=(unsigned long int*)((char*)mem-sizeof(unsigned long int)-sizeof(unsigned long int));
-        # 499 "libneo-c-gc.c"
-        # 495 "libneo-c-gc.c"
-        if(_if_conditional57=!no_decrement,        _if_conditional57) {
-            # 496 "libneo-c-gc.c"
+        # 479 "libneo-c-gc.c"
+        # 475 "libneo-c-gc.c"
+        if(_if_conditional51=!no_decrement,        _if_conditional51) {
+            # 476 "libneo-c-gc.c"
             (*ref_count_59)--;
         }
-        # 499 "libneo-c-gc.c"
+        # 479 "libneo-c-gc.c"
         count_60=*ref_count_59;
-        # 514 "libneo-c-gc.c"
-        # 500 "libneo-c-gc.c"
-        if(_if_conditional58=!no_free&&(count_60<=0||force_delete_),        _if_conditional58) {
-            # 513 "libneo-c-gc.c"
-            # 501 "libneo-c-gc.c"
+        # 494 "libneo-c-gc.c"
+        # 480 "libneo-c-gc.c"
+        if(_if_conditional52=!no_free&&(count_60<=0||force_delete_),        _if_conditional52) {
+            # 493 "libneo-c-gc.c"
+            # 481 "libneo-c-gc.c"
             if(mem) {
-                # 507 "libneo-c-gc.c"
-                # 502 "libneo-c-gc.c"
-                if(_if_conditional60=protocol_obj&&protocol_fun,                _if_conditional60) {
-                    # 503 "libneo-c-gc.c"
+                # 487 "libneo-c-gc.c"
+                # 482 "libneo-c-gc.c"
+                if(_if_conditional54=protocol_obj&&protocol_fun,                _if_conditional54) {
+                    # 483 "libneo-c-gc.c"
                     finalizer_61=protocol_fun;
-                    # 504 "libneo-c-gc.c"
+                    # 484 "libneo-c-gc.c"
                     finalizer_61(protocol_obj);
-                    # 505 "libneo-c-gc.c"
+                    # 485 "libneo-c-gc.c"
                     come_free_object(protocol_obj);
                 }
-                # 511 "libneo-c-gc.c"
-                # 507 "libneo-c-gc.c"
+                # 491 "libneo-c-gc.c"
+                # 487 "libneo-c-gc.c"
                 if(fun) {
-                    # 508 "libneo-c-gc.c"
+                    # 488 "libneo-c-gc.c"
                     finalizer_62=fun;
-                    # 509 "libneo-c-gc.c"
+                    # 489 "libneo-c-gc.c"
                     finalizer_62(mem);
                 }
-                # 511 "libneo-c-gc.c"
+                # 491 "libneo-c-gc.c"
                 come_free_object(mem);
             }
         }
@@ -4152,3928 +4094,3910 @@ memset(&finalizer_62, 0, sizeof(void (*)(void*)));
 
 char* __builtin_string(char* str){
 void* __result_obj__;
-_Bool _if_conditional62;
-char* __result82__;
+_Bool _if_conditional56;
+char* __result76__;
 int len_63;
 char* result_64;
-char* __result83__;
+char* __result77__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_63, 0, sizeof(int));
 memset(&result_64, 0, sizeof(char*));
-    # 522 "libneo-c-gc.c"
-    # 519 "libneo-c-gc.c"
-    if(_if_conditional62=str==((void*)0),    _if_conditional62) {
-        # 520 "libneo-c-gc.c"
-        __result82__ = __result_obj__ = ((void*)0);
-        return __result82__;
+    # 502 "libneo-c-gc.c"
+    # 499 "libneo-c-gc.c"
+    if(_if_conditional56=str==((void*)0),    _if_conditional56) {
+        # 500 "libneo-c-gc.c"
+        __result76__ = __result_obj__ = ((void*)0);
+        return __result76__;
     }
-    # 522 "libneo-c-gc.c"
+    # 502 "libneo-c-gc.c"
     len_63=strlen(str)+1;
-    # 524 "libneo-c-gc.c"
-    result_64=(char*)come_calloc(1, sizeof(char)*(1*(len_63)), "libneo-c-gc.c", 524, "char");
-    # 526 "libneo-c-gc.c"
+    # 504 "libneo-c-gc.c"
+    result_64=(char*)come_calloc(1, sizeof(char)*(1*(len_63)), "libneo-c-gc.c", 504, "char");
+    # 506 "libneo-c-gc.c"
     strncpy(result_64,str,len_63);
-    # 528 "libneo-c-gc.c"
-    __result83__ = __result_obj__ = result_64;
-    return __result83__;
+    # 508 "libneo-c-gc.c"
+    __result77__ = __result_obj__ = result_64;
+    return __result77__;
 }
 
 _Bool come_is_contained_element(void** array, int len, void* element){
 void* __result_obj__;
 _Bool found_65;
 int i_66;
-_Bool _if_conditional63;
-_Bool __result84__;
+_Bool _if_conditional57;
+_Bool __result78__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&found_65, 0, sizeof(_Bool));
 memset(&i_66, 0, sizeof(int));
-    # 533 "libneo-c-gc.c"
+    # 513 "libneo-c-gc.c"
     found_65=(_Bool)0;
-    # 540 "libneo-c-gc.c"
+    # 520 "libneo-c-gc.c"
     for(    i_66=0;    i_66<len;    i_66++    ){
-        # 539 "libneo-c-gc.c"
-        # 535 "libneo-c-gc.c"
-        if(_if_conditional63=array[i_66]==element,        _if_conditional63) {
-            # 536 "libneo-c-gc.c"
+        # 519 "libneo-c-gc.c"
+        # 515 "libneo-c-gc.c"
+        if(_if_conditional57=array[i_66]==element,        _if_conditional57) {
+            # 516 "libneo-c-gc.c"
             found_65=(_Bool)1;
-            # 537 "libneo-c-gc.c"
+            # 517 "libneo-c-gc.c"
             break;
         }
     }
-    # 540 "libneo-c-gc.c"
-    __result84__ = found_65;
-    return __result84__;
+    # 520 "libneo-c-gc.c"
+    __result78__ = found_65;
+    return __result78__;
 }
 
 struct buffer* buffer_initialize(struct buffer* self){
 void* __result_obj__;
-struct buffer* __result85__;
+struct buffer* __result79__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 548 "libneo-c-gc.c"
+    # 528 "libneo-c-gc.c"
     self->size=128;
-    # 549 "libneo-c-gc.c"
-    self->buf=(char*)come_calloc(1, sizeof(char)*(1*(self->size)), "libneo-c-gc.c", 549, "char");
-    # 550 "libneo-c-gc.c"
+    # 529 "libneo-c-gc.c"
+    self->buf=(char*)come_calloc(1, sizeof(char)*(1*(self->size)), "libneo-c-gc.c", 529, "char");
+    # 530 "libneo-c-gc.c"
     self->buf[0]=0;
-    # 551 "libneo-c-gc.c"
+    # 531 "libneo-c-gc.c"
     self->len=0;
-    # 553 "libneo-c-gc.c"
-    __result85__ = __result_obj__ = self;
-    return __result85__;
+    # 533 "libneo-c-gc.c"
+    __result79__ = __result_obj__ = self;
+    return __result79__;
 }
 
 void buffer_finalize(struct buffer* self){
 void* __result_obj__;
-_Bool _if_conditional64;
+_Bool _if_conditional58;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 558 "libneo-c-gc.c"
-    # 558 "libneo-c-gc.c"
-    if(_if_conditional64=self&&self->buf,    _if_conditional64) {
-        # 558 "libneo-c-gc.c"
+    # 538 "libneo-c-gc.c"
+    # 538 "libneo-c-gc.c"
+    if(_if_conditional58=self&&self->buf,    _if_conditional58) {
+        # 538 "libneo-c-gc.c"
     }
 }
 
 void buffer_force_finalize(struct buffer* self){
 void* __result_obj__;
-_Bool _if_conditional65;
+_Bool _if_conditional59;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 562 "libneo-c-gc.c"
-    # 562 "libneo-c-gc.c"
-    if(_if_conditional65=self&&self->buf,    _if_conditional65) {
-        # 562 "libneo-c-gc.c"
+    # 542 "libneo-c-gc.c"
+    # 542 "libneo-c-gc.c"
+    if(_if_conditional59=self&&self->buf,    _if_conditional59) {
+        # 542 "libneo-c-gc.c"
     }
 }
 
 struct buffer* buffer_clone(struct buffer* self){
 void* __result_obj__;
-_Bool _if_conditional66;
-struct buffer* __result86__;
+_Bool _if_conditional60;
+struct buffer* __result80__;
 struct buffer* result_67;
-struct buffer* __result87__;
+struct buffer* __result81__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_67, 0, sizeof(struct buffer*));
-    # 571 "libneo-c-gc.c"
-    # 567 "libneo-c-gc.c"
-    if(_if_conditional66=self==((void*)0),    _if_conditional66) {
-        # 568 "libneo-c-gc.c"
-        __result86__ = __result_obj__ = ((void*)0);
-        return __result86__;
+    # 551 "libneo-c-gc.c"
+    # 547 "libneo-c-gc.c"
+    if(_if_conditional60=self==((void*)0),    _if_conditional60) {
+        # 548 "libneo-c-gc.c"
+        __result80__ = __result_obj__ = ((void*)0);
+        return __result80__;
     }
-    # 571 "libneo-c-gc.c"
-    result_67=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-gc.c", 571, "buffer");
-    # 573 "libneo-c-gc.c"
+    # 551 "libneo-c-gc.c"
+    result_67=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-gc.c", 551, "buffer");
+    # 553 "libneo-c-gc.c"
     result_67->size=self->size;
-    # 574 "libneo-c-gc.c"
-    result_67->buf=(char*)come_calloc(1, sizeof(char)*(1*(self->size)), "libneo-c-gc.c", 574, "char");
-    # 575 "libneo-c-gc.c"
+    # 554 "libneo-c-gc.c"
+    result_67->buf=(char*)come_calloc(1, sizeof(char)*(1*(self->size)), "libneo-c-gc.c", 554, "char");
+    # 555 "libneo-c-gc.c"
     result_67->len=self->len;
-    # 576 "libneo-c-gc.c"
+    # 556 "libneo-c-gc.c"
     memcpy(result_67->buf,self->buf,self->len);
-    # 578 "libneo-c-gc.c"
-    __result87__ = __result_obj__ = result_67;
-    return __result87__;
+    # 558 "libneo-c-gc.c"
+    __result81__ = __result_obj__ = result_67;
+    return __result81__;
 }
 
 int buffer_length(struct buffer* self){
 void* __result_obj__;
-_Bool _if_conditional67;
-int __result88__;
-int __result89__;
+_Bool _if_conditional61;
+int __result82__;
+int __result83__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 586 "libneo-c-gc.c"
-    # 583 "libneo-c-gc.c"
-    if(_if_conditional67=self==((void*)0),    _if_conditional67) {
-        # 584 "libneo-c-gc.c"
-        __result88__ = 0;
-        return __result88__;
+    # 566 "libneo-c-gc.c"
+    # 563 "libneo-c-gc.c"
+    if(_if_conditional61=self==((void*)0),    _if_conditional61) {
+        # 564 "libneo-c-gc.c"
+        __result82__ = 0;
+        return __result82__;
     }
-    # 586 "libneo-c-gc.c"
-    __result89__ = self->len;
-    return __result89__;
+    # 566 "libneo-c-gc.c"
+    __result83__ = self->len;
+    return __result83__;
 }
 
 void buffer_reset(struct buffer* self){
 void* __result_obj__;
-_Bool _if_conditional68;
+_Bool _if_conditional62;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 594 "libneo-c-gc.c"
-    # 591 "libneo-c-gc.c"
-    if(_if_conditional68=self==((void*)0),    _if_conditional68) {
-        # 592 "libneo-c-gc.c"
+    # 574 "libneo-c-gc.c"
+    # 571 "libneo-c-gc.c"
+    if(_if_conditional62=self==((void*)0),    _if_conditional62) {
+        # 572 "libneo-c-gc.c"
         return;
     }
-    # 594 "libneo-c-gc.c"
+    # 574 "libneo-c-gc.c"
     self->buf[0]=0;
-    # 595 "libneo-c-gc.c"
+    # 575 "libneo-c-gc.c"
     self->len=0;
 }
 
 void buffer_trim(struct buffer* self, int len){
 void* __result_obj__;
-_Bool _if_conditional69;
+_Bool _if_conditional63;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 603 "libneo-c-gc.c"
-    # 600 "libneo-c-gc.c"
-    if(_if_conditional69=self==((void*)0),    _if_conditional69) {
-        # 601 "libneo-c-gc.c"
+    # 583 "libneo-c-gc.c"
+    # 580 "libneo-c-gc.c"
+    if(_if_conditional63=self==((void*)0),    _if_conditional63) {
+        # 581 "libneo-c-gc.c"
         return;
     }
-    # 603 "libneo-c-gc.c"
+    # 583 "libneo-c-gc.c"
     self->len-=len;
-    # 604 "libneo-c-gc.c"
+    # 584 "libneo-c-gc.c"
     self->buf[self->len]=0;
 }
 
 struct buffer* buffer_append(struct buffer* self, char* mem, unsigned long int size){
 void* __result_obj__;
-_Bool _if_conditional70;
-struct buffer* __result90__;
-_Bool _if_conditional71;
+_Bool _if_conditional64;
+struct buffer* __result84__;
+_Bool _if_conditional65;
 char* old_buf_68;
 int old_len_69;
 int new_size_70;
-struct buffer* __result91__;
+struct buffer* __result85__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&old_buf_68, 0, sizeof(char*));
 memset(&old_len_69, 0, sizeof(int));
 memset(&new_size_70, 0, sizeof(int));
-    # 612 "libneo-c-gc.c"
-    # 609 "libneo-c-gc.c"
-    if(_if_conditional70=self==((void*)0)||mem==((void*)0),    _if_conditional70) {
-        # 610 "libneo-c-gc.c"
-        __result90__ = __result_obj__ = self;
-        return __result90__;
+    # 592 "libneo-c-gc.c"
+    # 589 "libneo-c-gc.c"
+    if(_if_conditional64=self==((void*)0)||mem==((void*)0),    _if_conditional64) {
+        # 590 "libneo-c-gc.c"
+        __result84__ = __result_obj__ = self;
+        return __result84__;
     }
-    # 623 "libneo-c-gc.c"
-    # 612 "libneo-c-gc.c"
-    if(_if_conditional71=self->len+size+1+1>=self->size,    _if_conditional71) {
-        # 613 "libneo-c-gc.c"
-        old_buf_68=(char*)come_calloc(1, sizeof(char)*(1*(self->size)), "libneo-c-gc.c", 613, "char");
-        # 614 "libneo-c-gc.c"
+    # 603 "libneo-c-gc.c"
+    # 592 "libneo-c-gc.c"
+    if(_if_conditional65=self->len+size+1+1>=self->size,    _if_conditional65) {
+        # 593 "libneo-c-gc.c"
+        old_buf_68=(char*)come_calloc(1, sizeof(char)*(1*(self->size)), "libneo-c-gc.c", 593, "char");
+        # 594 "libneo-c-gc.c"
         memcpy(old_buf_68,self->buf,self->size);
-        # 615 "libneo-c-gc.c"
+        # 595 "libneo-c-gc.c"
         old_len_69=self->len;
-        # 616 "libneo-c-gc.c"
+        # 596 "libneo-c-gc.c"
         new_size_70=(self->size+size+1)*2;
-        # 617 "libneo-c-gc.c"
-        self->buf=(char*)come_calloc(1, sizeof(char)*(1*(new_size_70)), "libneo-c-gc.c", 617, "char");
-        # 618 "libneo-c-gc.c"
+        # 597 "libneo-c-gc.c"
+        self->buf=(char*)come_calloc(1, sizeof(char)*(1*(new_size_70)), "libneo-c-gc.c", 597, "char");
+        # 598 "libneo-c-gc.c"
         memcpy(self->buf,old_buf_68,old_len_69);
-        # 619 "libneo-c-gc.c"
+        # 599 "libneo-c-gc.c"
         self->buf[old_len_69]=0;
-        # 620 "libneo-c-gc.c"
+        # 600 "libneo-c-gc.c"
         self->size=new_size_70;
     }
-    # 623 "libneo-c-gc.c"
+    # 603 "libneo-c-gc.c"
     memcpy(self->buf+self->len,mem,size);
-    # 624 "libneo-c-gc.c"
+    # 604 "libneo-c-gc.c"
     self->len+=size;
-    # 625 "libneo-c-gc.c"
+    # 605 "libneo-c-gc.c"
     self->buf[self->len]=0;
-    # 627 "libneo-c-gc.c"
-    __result91__ = __result_obj__ = self;
-    return __result91__;
+    # 607 "libneo-c-gc.c"
+    __result85__ = __result_obj__ = self;
+    return __result85__;
 }
 
 struct buffer* buffer_append_char(struct buffer* self, char c){
 void* __result_obj__;
-_Bool _if_conditional72;
-struct buffer* __result92__;
-_Bool _if_conditional73;
+_Bool _if_conditional66;
+struct buffer* __result86__;
+_Bool _if_conditional67;
 char* old_buf_71;
 int old_len_72;
 int new_size_73;
-struct buffer* __result93__;
+struct buffer* __result87__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&old_buf_71, 0, sizeof(char*));
 memset(&old_len_72, 0, sizeof(int));
 memset(&new_size_73, 0, sizeof(int));
-    # 635 "libneo-c-gc.c"
-    # 632 "libneo-c-gc.c"
-    if(_if_conditional72=self==((void*)0),    _if_conditional72) {
-        # 633 "libneo-c-gc.c"
-        __result92__ = __result_obj__ = ((void*)0);
-        return __result92__;
+    # 615 "libneo-c-gc.c"
+    # 612 "libneo-c-gc.c"
+    if(_if_conditional66=self==((void*)0),    _if_conditional66) {
+        # 613 "libneo-c-gc.c"
+        __result86__ = __result_obj__ = ((void*)0);
+        return __result86__;
     }
-    # 646 "libneo-c-gc.c"
-    # 635 "libneo-c-gc.c"
-    if(_if_conditional73=self->len+1+1+1>=self->size,    _if_conditional73) {
-        # 636 "libneo-c-gc.c"
+    # 626 "libneo-c-gc.c"
+    # 615 "libneo-c-gc.c"
+    if(_if_conditional67=self->len+1+1+1>=self->size,    _if_conditional67) {
+        # 616 "libneo-c-gc.c"
         old_buf_71=charp_clone(self->buf);
-        # 637 "libneo-c-gc.c"
+        # 617 "libneo-c-gc.c"
         old_len_72=self->len;
-        # 639 "libneo-c-gc.c"
+        # 619 "libneo-c-gc.c"
         new_size_73=(self->size+10+1)*2;
-        # 640 "libneo-c-gc.c"
-        self->buf=(char*)come_calloc(1, sizeof(char)*(1*(new_size_73)), "libneo-c-gc.c", 640, "char");
-        # 641 "libneo-c-gc.c"
+        # 620 "libneo-c-gc.c"
+        self->buf=(char*)come_calloc(1, sizeof(char)*(1*(new_size_73)), "libneo-c-gc.c", 620, "char");
+        # 621 "libneo-c-gc.c"
         memcpy(self->buf,old_buf_71,old_len_72);
-        # 642 "libneo-c-gc.c"
+        # 622 "libneo-c-gc.c"
         self->buf[old_len_72]=0;
-        # 643 "libneo-c-gc.c"
+        # 623 "libneo-c-gc.c"
         self->size=new_size_73;
     }
-    # 646 "libneo-c-gc.c"
+    # 626 "libneo-c-gc.c"
     self->buf[self->len]=c;
-    # 647 "libneo-c-gc.c"
+    # 627 "libneo-c-gc.c"
     self->len++;
-    # 649 "libneo-c-gc.c"
+    # 629 "libneo-c-gc.c"
     self->buf[self->len]=0;
-    # 651 "libneo-c-gc.c"
-    __result93__ = __result_obj__ = self;
-    return __result93__;
+    # 631 "libneo-c-gc.c"
+    __result87__ = __result_obj__ = self;
+    return __result87__;
 }
 
 struct buffer* buffer_append_str(struct buffer* self, char* mem){
 void* __result_obj__;
-_Bool _if_conditional74;
-struct buffer* __result94__;
+_Bool _if_conditional68;
+struct buffer* __result88__;
 int size_74;
-_Bool _if_conditional75;
+_Bool _if_conditional69;
 char* old_buf_75;
 int old_len_76;
 int new_size_77;
-struct buffer* __result95__;
+struct buffer* __result89__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&size_74, 0, sizeof(int));
 memset(&old_buf_75, 0, sizeof(char*));
 memset(&old_len_76, 0, sizeof(int));
 memset(&new_size_77, 0, sizeof(int));
-    # 660 "libneo-c-gc.c"
-    # 656 "libneo-c-gc.c"
-    if(_if_conditional74=self==((void*)0)||mem==((void*)0),    _if_conditional74) {
-        # 657 "libneo-c-gc.c"
-        __result94__ = __result_obj__ = self;
-        return __result94__;
+    # 640 "libneo-c-gc.c"
+    # 636 "libneo-c-gc.c"
+    if(_if_conditional68=self==((void*)0)||mem==((void*)0),    _if_conditional68) {
+        # 637 "libneo-c-gc.c"
+        __result88__ = __result_obj__ = self;
+        return __result88__;
     }
-    # 660 "libneo-c-gc.c"
+    # 640 "libneo-c-gc.c"
     size_74=strlen(mem);
-    # 672 "libneo-c-gc.c"
-    # 661 "libneo-c-gc.c"
-    if(_if_conditional75=self->len+size_74+1+1>=self->size,    _if_conditional75) {
-        # 662 "libneo-c-gc.c"
-        old_buf_75=(char*)come_calloc(1, sizeof(char)*(1*(self->size)), "libneo-c-gc.c", 662, "char");
-        # 663 "libneo-c-gc.c"
+    # 652 "libneo-c-gc.c"
+    # 641 "libneo-c-gc.c"
+    if(_if_conditional69=self->len+size_74+1+1>=self->size,    _if_conditional69) {
+        # 642 "libneo-c-gc.c"
+        old_buf_75=(char*)come_calloc(1, sizeof(char)*(1*(self->size)), "libneo-c-gc.c", 642, "char");
+        # 643 "libneo-c-gc.c"
         memcpy(old_buf_75,self->buf,self->size);
-        # 664 "libneo-c-gc.c"
+        # 644 "libneo-c-gc.c"
         old_len_76=self->len;
-        # 665 "libneo-c-gc.c"
+        # 645 "libneo-c-gc.c"
         new_size_77=(self->size+size_74+1)*2;
-        # 666 "libneo-c-gc.c"
-        self->buf=(char*)come_calloc(1, sizeof(char)*(1*(new_size_77)), "libneo-c-gc.c", 666, "char");
-        # 667 "libneo-c-gc.c"
+        # 646 "libneo-c-gc.c"
+        self->buf=(char*)come_calloc(1, sizeof(char)*(1*(new_size_77)), "libneo-c-gc.c", 646, "char");
+        # 647 "libneo-c-gc.c"
         memcpy(self->buf,old_buf_75,old_len_76);
-        # 668 "libneo-c-gc.c"
+        # 648 "libneo-c-gc.c"
         self->buf[old_len_76]=0;
-        # 669 "libneo-c-gc.c"
+        # 649 "libneo-c-gc.c"
         self->size=new_size_77;
     }
-    # 672 "libneo-c-gc.c"
+    # 652 "libneo-c-gc.c"
     memcpy(self->buf+self->len,mem,size_74);
-    # 673 "libneo-c-gc.c"
+    # 653 "libneo-c-gc.c"
     self->len+=size_74;
-    # 674 "libneo-c-gc.c"
+    # 654 "libneo-c-gc.c"
     self->buf[self->len]=0;
-    # 676 "libneo-c-gc.c"
-    __result95__ = __result_obj__ = self;
-    return __result95__;
+    # 656 "libneo-c-gc.c"
+    __result89__ = __result_obj__ = self;
+    return __result89__;
 }
 
 struct buffer* buffer_append_nullterminated_str(struct buffer* self, char* mem){
 void* __result_obj__;
-_Bool _if_conditional76;
-struct buffer* __result96__;
+_Bool _if_conditional70;
+struct buffer* __result90__;
 int size_78;
-_Bool _if_conditional77;
+_Bool _if_conditional71;
 char* old_buf_79;
 int old_len_80;
 int new_size_81;
-struct buffer* __result97__;
+struct buffer* __result91__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&size_78, 0, sizeof(int));
 memset(&old_buf_79, 0, sizeof(char*));
 memset(&old_len_80, 0, sizeof(int));
 memset(&new_size_81, 0, sizeof(int));
-    # 684 "libneo-c-gc.c"
-    # 681 "libneo-c-gc.c"
-    if(_if_conditional76=self==((void*)0)||mem==((void*)0),    _if_conditional76) {
-        # 682 "libneo-c-gc.c"
-        __result96__ = __result_obj__ = self;
-        return __result96__;
+    # 664 "libneo-c-gc.c"
+    # 661 "libneo-c-gc.c"
+    if(_if_conditional70=self==((void*)0)||mem==((void*)0),    _if_conditional70) {
+        # 662 "libneo-c-gc.c"
+        __result90__ = __result_obj__ = self;
+        return __result90__;
     }
-    # 684 "libneo-c-gc.c"
+    # 664 "libneo-c-gc.c"
     size_78=strlen(mem)+1;
-    # 696 "libneo-c-gc.c"
-    # 685 "libneo-c-gc.c"
-    if(_if_conditional77=self->len+size_78+1+1+1>=self->size,    _if_conditional77) {
-        # 686 "libneo-c-gc.c"
-        old_buf_79=(char*)come_calloc(1, sizeof(char)*(1*(self->size)), "libneo-c-gc.c", 686, "char");
-        # 687 "libneo-c-gc.c"
+    # 676 "libneo-c-gc.c"
+    # 665 "libneo-c-gc.c"
+    if(_if_conditional71=self->len+size_78+1+1+1>=self->size,    _if_conditional71) {
+        # 666 "libneo-c-gc.c"
+        old_buf_79=(char*)come_calloc(1, sizeof(char)*(1*(self->size)), "libneo-c-gc.c", 666, "char");
+        # 667 "libneo-c-gc.c"
         memcpy(old_buf_79,self->buf,self->size);
-        # 688 "libneo-c-gc.c"
+        # 668 "libneo-c-gc.c"
         old_len_80=self->len;
-        # 689 "libneo-c-gc.c"
+        # 669 "libneo-c-gc.c"
         new_size_81=(self->size+size_78+1)*2;
-        # 690 "libneo-c-gc.c"
-        self->buf=(char*)come_calloc(1, sizeof(char)*(1*(new_size_81)), "libneo-c-gc.c", 690, "char");
-        # 691 "libneo-c-gc.c"
+        # 670 "libneo-c-gc.c"
+        self->buf=(char*)come_calloc(1, sizeof(char)*(1*(new_size_81)), "libneo-c-gc.c", 670, "char");
+        # 671 "libneo-c-gc.c"
         memcpy(self->buf,old_buf_79,old_len_80);
-        # 692 "libneo-c-gc.c"
+        # 672 "libneo-c-gc.c"
         self->buf[old_len_80]=0;
-        # 693 "libneo-c-gc.c"
+        # 673 "libneo-c-gc.c"
         self->size=new_size_81;
     }
-    # 696 "libneo-c-gc.c"
+    # 676 "libneo-c-gc.c"
     memcpy(self->buf+self->len,mem,size_78);
-    # 697 "libneo-c-gc.c"
+    # 677 "libneo-c-gc.c"
     self->len+=size_78;
-    # 698 "libneo-c-gc.c"
+    # 678 "libneo-c-gc.c"
     self->buf[self->len]=0;
-    # 699 "libneo-c-gc.c"
+    # 679 "libneo-c-gc.c"
     self->len++;
-    # 701 "libneo-c-gc.c"
-    __result97__ = __result_obj__ = self;
-    return __result97__;
+    # 681 "libneo-c-gc.c"
+    __result91__ = __result_obj__ = self;
+    return __result91__;
 }
 
 struct buffer* buffer_append_int(struct buffer* self, int value){
 void* __result_obj__;
-_Bool _if_conditional78;
-struct buffer* __result98__;
+_Bool _if_conditional72;
+struct buffer* __result92__;
 int* mem_82;
 int size_83;
-_Bool _if_conditional79;
+_Bool _if_conditional73;
 char* old_buf_84;
 int old_len_85;
 int new_size_86;
-struct buffer* __result99__;
+struct buffer* __result93__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&mem_82, 0, sizeof(int*));
 memset(&size_83, 0, sizeof(int));
 memset(&old_buf_84, 0, sizeof(char*));
 memset(&old_len_85, 0, sizeof(int));
 memset(&new_size_86, 0, sizeof(int));
-    # 709 "libneo-c-gc.c"
-    # 706 "libneo-c-gc.c"
-    if(_if_conditional78=self==((void*)0),    _if_conditional78) {
-        # 707 "libneo-c-gc.c"
-        __result98__ = __result_obj__ = ((void*)0);
-        return __result98__;
+    # 689 "libneo-c-gc.c"
+    # 686 "libneo-c-gc.c"
+    if(_if_conditional72=self==((void*)0),    _if_conditional72) {
+        # 687 "libneo-c-gc.c"
+        __result92__ = __result_obj__ = ((void*)0);
+        return __result92__;
     }
-    # 709 "libneo-c-gc.c"
+    # 689 "libneo-c-gc.c"
     mem_82=&value;
-    # 710 "libneo-c-gc.c"
+    # 690 "libneo-c-gc.c"
     size_83=sizeof(int);
-    # 723 "libneo-c-gc.c"
-    # 712 "libneo-c-gc.c"
-    if(_if_conditional79=self->len+size_83+1+1>=self->size,    _if_conditional79) {
-        # 713 "libneo-c-gc.c"
-        old_buf_84=(char*)come_calloc(1, sizeof(char)*(1*(self->size)), "libneo-c-gc.c", 713, "char");
-        # 714 "libneo-c-gc.c"
+    # 703 "libneo-c-gc.c"
+    # 692 "libneo-c-gc.c"
+    if(_if_conditional73=self->len+size_83+1+1>=self->size,    _if_conditional73) {
+        # 693 "libneo-c-gc.c"
+        old_buf_84=(char*)come_calloc(1, sizeof(char)*(1*(self->size)), "libneo-c-gc.c", 693, "char");
+        # 694 "libneo-c-gc.c"
         memcpy(old_buf_84,self->buf,self->size);
-        # 715 "libneo-c-gc.c"
+        # 695 "libneo-c-gc.c"
         old_len_85=self->len;
-        # 716 "libneo-c-gc.c"
+        # 696 "libneo-c-gc.c"
         new_size_86=(self->size+size_83+1)*2;
-        # 717 "libneo-c-gc.c"
-        self->buf=(char*)come_calloc(1, sizeof(char)*(1*(new_size_86)), "libneo-c-gc.c", 717, "char");
-        # 718 "libneo-c-gc.c"
+        # 697 "libneo-c-gc.c"
+        self->buf=(char*)come_calloc(1, sizeof(char)*(1*(new_size_86)), "libneo-c-gc.c", 697, "char");
+        # 698 "libneo-c-gc.c"
         memcpy(self->buf,old_buf_84,old_len_85);
-        # 719 "libneo-c-gc.c"
+        # 699 "libneo-c-gc.c"
         self->buf[old_len_85]=0;
-        # 720 "libneo-c-gc.c"
+        # 700 "libneo-c-gc.c"
         self->size=new_size_86;
     }
-    # 723 "libneo-c-gc.c"
+    # 703 "libneo-c-gc.c"
     memcpy(self->buf+self->len,mem_82,size_83);
-    # 724 "libneo-c-gc.c"
+    # 704 "libneo-c-gc.c"
     self->len+=size_83;
-    # 725 "libneo-c-gc.c"
+    # 705 "libneo-c-gc.c"
     self->buf[self->len]=0;
-    # 727 "libneo-c-gc.c"
-    __result99__ = __result_obj__ = self;
-    return __result99__;
+    # 707 "libneo-c-gc.c"
+    __result93__ = __result_obj__ = self;
+    return __result93__;
 }
 
 struct buffer* buffer_append_long(struct buffer* self, long value){
 void* __result_obj__;
 long* mem_87;
 int size_88;
-_Bool _if_conditional80;
+_Bool _if_conditional74;
 char* old_buf_89;
 int old_len_90;
 int new_size_91;
-struct buffer* __result100__;
+struct buffer* __result94__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&mem_87, 0, sizeof(long*));
 memset(&size_88, 0, sizeof(int));
 memset(&old_buf_89, 0, sizeof(char*));
 memset(&old_len_90, 0, sizeof(int));
 memset(&new_size_91, 0, sizeof(int));
-    # 732 "libneo-c-gc.c"
+    # 712 "libneo-c-gc.c"
     mem_87=&value;
-    # 733 "libneo-c-gc.c"
+    # 713 "libneo-c-gc.c"
     size_88=sizeof(long);
-    # 746 "libneo-c-gc.c"
-    # 735 "libneo-c-gc.c"
-    if(_if_conditional80=self->len+size_88+1+1>=self->size,    _if_conditional80) {
-        # 736 "libneo-c-gc.c"
-        old_buf_89=(char*)come_calloc(1, sizeof(char)*(1*(self->size)), "libneo-c-gc.c", 736, "char");
-        # 737 "libneo-c-gc.c"
+    # 726 "libneo-c-gc.c"
+    # 715 "libneo-c-gc.c"
+    if(_if_conditional74=self->len+size_88+1+1>=self->size,    _if_conditional74) {
+        # 716 "libneo-c-gc.c"
+        old_buf_89=(char*)come_calloc(1, sizeof(char)*(1*(self->size)), "libneo-c-gc.c", 716, "char");
+        # 717 "libneo-c-gc.c"
         memcpy(old_buf_89,self->buf,self->size);
-        # 738 "libneo-c-gc.c"
+        # 718 "libneo-c-gc.c"
         old_len_90=self->len;
-        # 739 "libneo-c-gc.c"
+        # 719 "libneo-c-gc.c"
         new_size_91=(self->size+size_88+1)*2;
-        # 740 "libneo-c-gc.c"
-        self->buf=(char*)come_calloc(1, sizeof(char)*(1*(new_size_91)), "libneo-c-gc.c", 740, "char");
-        # 741 "libneo-c-gc.c"
+        # 720 "libneo-c-gc.c"
+        self->buf=(char*)come_calloc(1, sizeof(char)*(1*(new_size_91)), "libneo-c-gc.c", 720, "char");
+        # 721 "libneo-c-gc.c"
         memcpy(self->buf,old_buf_89,old_len_90);
-        # 742 "libneo-c-gc.c"
+        # 722 "libneo-c-gc.c"
         self->buf[old_len_90]=0;
-        # 743 "libneo-c-gc.c"
+        # 723 "libneo-c-gc.c"
         self->size=new_size_91;
     }
-    # 746 "libneo-c-gc.c"
+    # 726 "libneo-c-gc.c"
     memcpy(self->buf+self->len,mem_87,size_88);
-    # 747 "libneo-c-gc.c"
+    # 727 "libneo-c-gc.c"
     self->len+=size_88;
-    # 748 "libneo-c-gc.c"
+    # 728 "libneo-c-gc.c"
     self->buf[self->len]=0;
-    # 750 "libneo-c-gc.c"
-    __result100__ = __result_obj__ = self;
-    return __result100__;
+    # 730 "libneo-c-gc.c"
+    __result94__ = __result_obj__ = self;
+    return __result94__;
 }
 
 struct buffer* buffer_append_short(struct buffer* self, short short value){
 void* __result_obj__;
-_Bool _if_conditional81;
-struct buffer* __result101__;
+_Bool _if_conditional75;
+struct buffer* __result95__;
 short short* mem_92;
 int size_93;
-_Bool _if_conditional82;
+_Bool _if_conditional76;
 char* old_buf_94;
 int old_len_95;
 int new_size_96;
-struct buffer* __result102__;
+struct buffer* __result96__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&mem_92, 0, sizeof(short short*));
 memset(&size_93, 0, sizeof(int));
 memset(&old_buf_94, 0, sizeof(char*));
 memset(&old_len_95, 0, sizeof(int));
 memset(&new_size_96, 0, sizeof(int));
-    # 759 "libneo-c-gc.c"
-    # 755 "libneo-c-gc.c"
-    if(_if_conditional81=self==((void*)0),    _if_conditional81) {
-        # 756 "libneo-c-gc.c"
-        __result101__ = __result_obj__ = ((void*)0);
-        return __result101__;
+    # 739 "libneo-c-gc.c"
+    # 735 "libneo-c-gc.c"
+    if(_if_conditional75=self==((void*)0),    _if_conditional75) {
+        # 736 "libneo-c-gc.c"
+        __result95__ = __result_obj__ = ((void*)0);
+        return __result95__;
     }
-    # 759 "libneo-c-gc.c"
+    # 739 "libneo-c-gc.c"
     mem_92=&value;
-    # 760 "libneo-c-gc.c"
+    # 740 "libneo-c-gc.c"
     size_93=sizeof(short short);
-    # 773 "libneo-c-gc.c"
-    # 762 "libneo-c-gc.c"
-    if(_if_conditional82=self->len+size_93+1+1>=self->size,    _if_conditional82) {
-        # 763 "libneo-c-gc.c"
-        old_buf_94=(char*)come_calloc(1, sizeof(char)*(1*(self->size)), "libneo-c-gc.c", 763, "char");
-        # 764 "libneo-c-gc.c"
+    # 753 "libneo-c-gc.c"
+    # 742 "libneo-c-gc.c"
+    if(_if_conditional76=self->len+size_93+1+1>=self->size,    _if_conditional76) {
+        # 743 "libneo-c-gc.c"
+        old_buf_94=(char*)come_calloc(1, sizeof(char)*(1*(self->size)), "libneo-c-gc.c", 743, "char");
+        # 744 "libneo-c-gc.c"
         memcpy(old_buf_94,self->buf,self->size);
-        # 765 "libneo-c-gc.c"
+        # 745 "libneo-c-gc.c"
         old_len_95=self->len;
-        # 766 "libneo-c-gc.c"
+        # 746 "libneo-c-gc.c"
         new_size_96=(self->size+size_93+1)*2;
-        # 767 "libneo-c-gc.c"
-        self->buf=(char*)come_calloc(1, sizeof(char)*(1*(new_size_96)), "libneo-c-gc.c", 767, "char");
-        # 768 "libneo-c-gc.c"
+        # 747 "libneo-c-gc.c"
+        self->buf=(char*)come_calloc(1, sizeof(char)*(1*(new_size_96)), "libneo-c-gc.c", 747, "char");
+        # 748 "libneo-c-gc.c"
         memcpy(self->buf,old_buf_94,old_len_95);
-        # 769 "libneo-c-gc.c"
+        # 749 "libneo-c-gc.c"
         self->buf[old_len_95]=0;
-        # 770 "libneo-c-gc.c"
+        # 750 "libneo-c-gc.c"
         self->size=new_size_96;
     }
-    # 773 "libneo-c-gc.c"
+    # 753 "libneo-c-gc.c"
     memcpy(self->buf+self->len,mem_92,size_93);
-    # 774 "libneo-c-gc.c"
+    # 754 "libneo-c-gc.c"
     self->len+=size_93;
-    # 775 "libneo-c-gc.c"
+    # 755 "libneo-c-gc.c"
     self->buf[self->len]=0;
-    # 777 "libneo-c-gc.c"
-    __result102__ = __result_obj__ = self;
-    return __result102__;
+    # 757 "libneo-c-gc.c"
+    __result96__ = __result_obj__ = self;
+    return __result96__;
 }
 
 struct buffer* buffer_alignment(struct buffer* self){
 void* __result_obj__;
-_Bool _if_conditional83;
-struct buffer* __result103__;
+_Bool _if_conditional77;
+struct buffer* __result97__;
 int len_97;
-_Bool _if_conditional84;
+_Bool _if_conditional78;
 int new_size_98;
 int i_99;
-struct buffer* __result104__;
+struct buffer* __result98__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_97, 0, sizeof(int));
 memset(&new_size_98, 0, sizeof(int));
 memset(&i_99, 0, sizeof(int));
-    # 786 "libneo-c-gc.c"
-    # 782 "libneo-c-gc.c"
-    if(_if_conditional83=self==((void*)0),    _if_conditional83) {
-        # 783 "libneo-c-gc.c"
-        __result103__ = __result_obj__ = ((void*)0);
-        return __result103__;
+    # 766 "libneo-c-gc.c"
+    # 762 "libneo-c-gc.c"
+    if(_if_conditional77=self==((void*)0),    _if_conditional77) {
+        # 763 "libneo-c-gc.c"
+        __result97__ = __result_obj__ = ((void*)0);
+        return __result97__;
     }
-    # 786 "libneo-c-gc.c"
+    # 766 "libneo-c-gc.c"
     len_97=self->len;
-    # 787 "libneo-c-gc.c"
+    # 767 "libneo-c-gc.c"
     len_97=(len_97+3)&~3;
-    # 795 "libneo-c-gc.c"
-    # 789 "libneo-c-gc.c"
-    if(_if_conditional84=len_97>=self->size,    _if_conditional84) {
-        # 790 "libneo-c-gc.c"
+    # 775 "libneo-c-gc.c"
+    # 769 "libneo-c-gc.c"
+    if(_if_conditional78=len_97>=self->size,    _if_conditional78) {
+        # 770 "libneo-c-gc.c"
         new_size_98=(self->size+1+1)*2;
-        # 791 "libneo-c-gc.c"
-        self->buf=(char*)come_calloc(1, sizeof(char)*(1*(new_size_98)), "libneo-c-gc.c", 791, "char");
-        # 792 "libneo-c-gc.c"
+        # 771 "libneo-c-gc.c"
+        self->buf=(char*)come_calloc(1, sizeof(char)*(1*(new_size_98)), "libneo-c-gc.c", 771, "char");
+        # 772 "libneo-c-gc.c"
         self->size=new_size_98;
     }
-    # 799 "libneo-c-gc.c"
+    # 779 "libneo-c-gc.c"
     for(    i_99=self->len;    i_99<len_97;    i_99++    ){
-        # 796 "libneo-c-gc.c"
+        # 776 "libneo-c-gc.c"
         self->buf[i_99]=0;
     }
-    # 799 "libneo-c-gc.c"
+    # 779 "libneo-c-gc.c"
     self->len=len_97;
-    # 801 "libneo-c-gc.c"
-    __result104__ = __result_obj__ = self;
-    return __result104__;
+    # 781 "libneo-c-gc.c"
+    __result98__ = __result_obj__ = self;
+    return __result98__;
 }
 
 int buffer_compare(struct buffer* left, struct buffer* right){
 void* __result_obj__;
-_Bool _if_conditional85;
-int __result105__;
-_Bool _if_conditional86;
-int __result106__;
-_Bool _if_conditional87;
-int __result107__;
-int __result108__;
+_Bool _if_conditional79;
+int __result99__;
+_Bool _if_conditional80;
+int __result100__;
+_Bool _if_conditional81;
+int __result101__;
+int __result102__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 816 "libneo-c-gc.c"
-    # 806 "libneo-c-gc.c"
-    if(_if_conditional85=left==((void*)0)&&right==((void*)0),    _if_conditional85) {
-        # 807 "libneo-c-gc.c"
-        __result105__ = 0;
-        return __result105__;
+    # 796 "libneo-c-gc.c"
+    # 786 "libneo-c-gc.c"
+    if(_if_conditional79=left==((void*)0)&&right==((void*)0),    _if_conditional79) {
+        # 787 "libneo-c-gc.c"
+        __result99__ = 0;
+        return __result99__;
     }
     else {
-        # 816 "libneo-c-gc.c"
-        # 809 "libneo-c-gc.c"
-        if(_if_conditional86=left==((void*)0),        _if_conditional86) {
-            # 810 "libneo-c-gc.c"
-            __result106__ = -1;
-            return __result106__;
+        # 796 "libneo-c-gc.c"
+        # 789 "libneo-c-gc.c"
+        if(_if_conditional80=left==((void*)0),        _if_conditional80) {
+            # 790 "libneo-c-gc.c"
+            __result100__ = -1;
+            return __result100__;
         }
         else {
-            # 816 "libneo-c-gc.c"
-            # 812 "libneo-c-gc.c"
-            if(_if_conditional87=right==((void*)0),            _if_conditional87) {
-                # 813 "libneo-c-gc.c"
-                __result107__ = 1;
-                return __result107__;
+            # 796 "libneo-c-gc.c"
+            # 792 "libneo-c-gc.c"
+            if(_if_conditional81=right==((void*)0),            _if_conditional81) {
+                # 793 "libneo-c-gc.c"
+                __result101__ = 1;
+                return __result101__;
             }
         }
     }
-    # 816 "libneo-c-gc.c"
-    __result108__ = strcmp(left->buf,right->buf);
-    return __result108__;
+    # 796 "libneo-c-gc.c"
+    __result102__ = strcmp(left->buf,right->buf);
+    return __result102__;
 }
 
 struct buffer* string_to_buffer(char* self){
 void* __result_obj__;
 struct buffer* result_100;
-_Bool _if_conditional88;
-struct buffer* __result109__;
-struct buffer* __result110__;
+_Bool _if_conditional82;
+struct buffer* __result103__;
+struct buffer* __result104__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_100, 0, sizeof(struct buffer*));
-    # 821 "libneo-c-gc.c"
-    result_100=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-gc.c", 821, "buffer"));
-    # 827 "libneo-c-gc.c"
-    # 823 "libneo-c-gc.c"
-    if(_if_conditional88=self==((void*)0),    _if_conditional88) {
-        # 824 "libneo-c-gc.c"
-        __result109__ = __result_obj__ = result_100;
-        return __result109__;
+    # 801 "libneo-c-gc.c"
+    result_100=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-gc.c", 801, "buffer"));
+    # 807 "libneo-c-gc.c"
+    # 803 "libneo-c-gc.c"
+    if(_if_conditional82=self==((void*)0),    _if_conditional82) {
+        # 804 "libneo-c-gc.c"
+        __result103__ = __result_obj__ = result_100;
+        return __result103__;
     }
-    # 827 "libneo-c-gc.c"
+    # 807 "libneo-c-gc.c"
     buffer_append_str(result_100,self);
-    # 829 "libneo-c-gc.c"
-    __result110__ = __result_obj__ = result_100;
-    return __result110__;
+    # 809 "libneo-c-gc.c"
+    __result104__ = __result_obj__ = result_100;
+    return __result104__;
 }
 
 struct buffer* charp_to_buffer(char* self){
 void* __result_obj__;
 struct buffer* result_101;
-_Bool _if_conditional89;
-struct buffer* __result111__;
-struct buffer* __result112__;
+_Bool _if_conditional83;
+struct buffer* __result105__;
+struct buffer* __result106__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_101, 0, sizeof(struct buffer*));
-    # 834 "libneo-c-gc.c"
-    result_101=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-gc.c", 834, "buffer"));
-    # 840 "libneo-c-gc.c"
-    # 836 "libneo-c-gc.c"
-    if(_if_conditional89=self==((void*)0),    _if_conditional89) {
-        # 837 "libneo-c-gc.c"
-        __result111__ = __result_obj__ = result_101;
-        return __result111__;
+    # 814 "libneo-c-gc.c"
+    result_101=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-gc.c", 814, "buffer"));
+    # 820 "libneo-c-gc.c"
+    # 816 "libneo-c-gc.c"
+    if(_if_conditional83=self==((void*)0),    _if_conditional83) {
+        # 817 "libneo-c-gc.c"
+        __result105__ = __result_obj__ = result_101;
+        return __result105__;
     }
-    # 840 "libneo-c-gc.c"
+    # 820 "libneo-c-gc.c"
     buffer_append_str(result_101,self);
-    # 842 "libneo-c-gc.c"
-    __result112__ = __result_obj__ = result_101;
-    return __result112__;
+    # 822 "libneo-c-gc.c"
+    __result106__ = __result_obj__ = result_101;
+    return __result106__;
 }
 
 char* buffer_to_string(struct buffer* self){
 void* __result_obj__;
-_Bool _if_conditional90;
-char* __result113__;
-char* __result114__;
+_Bool _if_conditional84;
+char* __result107__;
+char* __result108__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 851 "libneo-c-gc.c"
-    # 847 "libneo-c-gc.c"
-    if(_if_conditional90=self==((void*)0),    _if_conditional90) {
-        # 848 "libneo-c-gc.c"
-        __result113__ = __result_obj__ = __builtin_string("");
-        return __result113__;
+    # 831 "libneo-c-gc.c"
+    # 827 "libneo-c-gc.c"
+    if(_if_conditional84=self==((void*)0),    _if_conditional84) {
+        # 828 "libneo-c-gc.c"
+        __result107__ = __result_obj__ = __builtin_string("");
+        return __result107__;
     }
-    # 851 "libneo-c-gc.c"
-    __result114__ = __result_obj__ = __builtin_string(self->buf);
-    return __result114__;
+    # 831 "libneo-c-gc.c"
+    __result108__ = __result_obj__ = __builtin_string(self->buf);
+    return __result108__;
 }
 
 _Bool bool_equals(_Bool self, _Bool right){
 void* __result_obj__;
-_Bool __result115__;
+_Bool __result109__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 859 "libneo-c-gc.c"
-    __result115__ = self==right;
-    return __result115__;
+    # 839 "libneo-c-gc.c"
+    __result109__ = self==right;
+    return __result109__;
 }
 
 _Bool int_equals(int self, int right){
 void* __result_obj__;
-_Bool __result116__;
+_Bool __result110__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 864 "libneo-c-gc.c"
-    __result116__ = self==right;
-    return __result116__;
+    # 844 "libneo-c-gc.c"
+    __result110__ = self==right;
+    return __result110__;
 }
 
 _Bool char_equals(char self, char right){
 void* __result_obj__;
-_Bool __result117__;
+_Bool __result111__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 869 "libneo-c-gc.c"
-    __result117__ = self==right;
-    return __result117__;
+    # 849 "libneo-c-gc.c"
+    __result111__ = self==right;
+    return __result111__;
 }
 
 _Bool short_equals(short short self, short short right){
 void* __result_obj__;
-_Bool __result118__;
+_Bool __result112__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 874 "libneo-c-gc.c"
-    __result118__ = self==right;
-    return __result118__;
+    # 854 "libneo-c-gc.c"
+    __result112__ = self==right;
+    return __result112__;
 }
 
 _Bool long_equals(long self, long right){
 void* __result_obj__;
-_Bool __result119__;
+_Bool __result113__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 879 "libneo-c-gc.c"
-    __result119__ = self==right;
-    return __result119__;
+    # 859 "libneo-c-gc.c"
+    __result113__ = self==right;
+    return __result113__;
 }
 
 _Bool size_t_equals(unsigned long int self, unsigned long int right){
 void* __result_obj__;
-_Bool __result120__;
+_Bool __result114__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 884 "libneo-c-gc.c"
-    __result120__ = self==right;
-    return __result120__;
+    # 864 "libneo-c-gc.c"
+    __result114__ = self==right;
+    return __result114__;
 }
 
 _Bool float_equals(float self, float right){
 void* __result_obj__;
-_Bool __result121__;
+_Bool __result115__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 889 "libneo-c-gc.c"
-    __result121__ = self==right;
-    return __result121__;
+    # 869 "libneo-c-gc.c"
+    __result115__ = self==right;
+    return __result115__;
 }
 
 _Bool double_equals(double self, double right){
 void* __result_obj__;
-_Bool __result122__;
+_Bool __result116__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 894 "libneo-c-gc.c"
-    __result122__ = self==right;
-    return __result122__;
+    # 874 "libneo-c-gc.c"
+    __result116__ = self==right;
+    return __result116__;
 }
 
 _Bool string_equals(char* self, char* right){
 void* __result_obj__;
-_Bool _if_conditional91;
-_Bool __result123__;
-_Bool _if_conditional92;
-_Bool __result124__;
-_Bool _if_conditional93;
-_Bool __result125__;
-_Bool __result126__;
+_Bool _if_conditional85;
+_Bool __result117__;
+_Bool _if_conditional86;
+_Bool __result118__;
+_Bool _if_conditional87;
+_Bool __result119__;
+_Bool __result120__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 909 "libneo-c-gc.c"
-    # 899 "libneo-c-gc.c"
-    if(_if_conditional91=self==((void*)0)&&right==((void*)0),    _if_conditional91) {
-        # 900 "libneo-c-gc.c"
-        __result123__ = (_Bool)1;
-        return __result123__;
+    # 889 "libneo-c-gc.c"
+    # 879 "libneo-c-gc.c"
+    if(_if_conditional85=self==((void*)0)&&right==((void*)0),    _if_conditional85) {
+        # 880 "libneo-c-gc.c"
+        __result117__ = (_Bool)1;
+        return __result117__;
     }
     else {
-        # 909 "libneo-c-gc.c"
-        # 902 "libneo-c-gc.c"
-        if(_if_conditional92=self==((void*)0),        _if_conditional92) {
-            # 903 "libneo-c-gc.c"
-            __result124__ = (_Bool)0;
-            return __result124__;
+        # 889 "libneo-c-gc.c"
+        # 882 "libneo-c-gc.c"
+        if(_if_conditional86=self==((void*)0),        _if_conditional86) {
+            # 883 "libneo-c-gc.c"
+            __result118__ = (_Bool)0;
+            return __result118__;
         }
         else {
-            # 909 "libneo-c-gc.c"
-            # 905 "libneo-c-gc.c"
-            if(_if_conditional93=right==((void*)0),            _if_conditional93) {
-                # 906 "libneo-c-gc.c"
-                __result125__ = (_Bool)0;
-                return __result125__;
+            # 889 "libneo-c-gc.c"
+            # 885 "libneo-c-gc.c"
+            if(_if_conditional87=right==((void*)0),            _if_conditional87) {
+                # 886 "libneo-c-gc.c"
+                __result119__ = (_Bool)0;
+                return __result119__;
             }
         }
     }
-    # 909 "libneo-c-gc.c"
-    __result126__ = strcmp(self,right)==0;
-    return __result126__;
+    # 889 "libneo-c-gc.c"
+    __result120__ = strcmp(self,right)==0;
+    return __result120__;
 }
 
 _Bool charp_equals(char* self, char* right){
 void* __result_obj__;
-_Bool _if_conditional94;
-_Bool __result127__;
-_Bool _if_conditional95;
-_Bool __result128__;
-_Bool _if_conditional96;
-_Bool __result129__;
-_Bool __result130__;
+_Bool _if_conditional88;
+_Bool __result121__;
+_Bool _if_conditional89;
+_Bool __result122__;
+_Bool _if_conditional90;
+_Bool __result123__;
+_Bool __result124__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 924 "libneo-c-gc.c"
-    # 914 "libneo-c-gc.c"
-    if(_if_conditional94=self==((void*)0)&&right==((void*)0),    _if_conditional94) {
-        # 915 "libneo-c-gc.c"
-        __result127__ = (_Bool)1;
-        return __result127__;
+    # 904 "libneo-c-gc.c"
+    # 894 "libneo-c-gc.c"
+    if(_if_conditional88=self==((void*)0)&&right==((void*)0),    _if_conditional88) {
+        # 895 "libneo-c-gc.c"
+        __result121__ = (_Bool)1;
+        return __result121__;
     }
     else {
-        # 924 "libneo-c-gc.c"
-        # 917 "libneo-c-gc.c"
-        if(_if_conditional95=self==((void*)0),        _if_conditional95) {
-            # 918 "libneo-c-gc.c"
-            __result128__ = (_Bool)0;
-            return __result128__;
+        # 904 "libneo-c-gc.c"
+        # 897 "libneo-c-gc.c"
+        if(_if_conditional89=self==((void*)0),        _if_conditional89) {
+            # 898 "libneo-c-gc.c"
+            __result122__ = (_Bool)0;
+            return __result122__;
         }
         else {
-            # 924 "libneo-c-gc.c"
-            # 920 "libneo-c-gc.c"
-            if(_if_conditional96=right==((void*)0),            _if_conditional96) {
-                # 921 "libneo-c-gc.c"
-                __result129__ = (_Bool)0;
-                return __result129__;
+            # 904 "libneo-c-gc.c"
+            # 900 "libneo-c-gc.c"
+            if(_if_conditional90=right==((void*)0),            _if_conditional90) {
+                # 901 "libneo-c-gc.c"
+                __result123__ = (_Bool)0;
+                return __result123__;
             }
         }
     }
-    # 924 "libneo-c-gc.c"
-    __result130__ = strcmp(self,right)==0;
-    return __result130__;
+    # 904 "libneo-c-gc.c"
+    __result124__ = strcmp(self,right)==0;
+    return __result124__;
 }
 
 _Bool string_operator_equals(char* self, char* right){
 void* __result_obj__;
-_Bool _if_conditional97;
-_Bool __result131__;
-_Bool _if_conditional98;
-_Bool __result132__;
-_Bool _if_conditional99;
-_Bool __result133__;
-_Bool __result134__;
+_Bool _if_conditional91;
+_Bool __result125__;
+_Bool _if_conditional92;
+_Bool __result126__;
+_Bool _if_conditional93;
+_Bool __result127__;
+_Bool __result128__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 939 "libneo-c-gc.c"
-    # 929 "libneo-c-gc.c"
-    if(_if_conditional97=self==((void*)0)&&right==((void*)0),    _if_conditional97) {
-        # 930 "libneo-c-gc.c"
-        __result131__ = (_Bool)1;
-        return __result131__;
+    # 919 "libneo-c-gc.c"
+    # 909 "libneo-c-gc.c"
+    if(_if_conditional91=self==((void*)0)&&right==((void*)0),    _if_conditional91) {
+        # 910 "libneo-c-gc.c"
+        __result125__ = (_Bool)1;
+        return __result125__;
     }
     else {
-        # 939 "libneo-c-gc.c"
-        # 932 "libneo-c-gc.c"
-        if(_if_conditional98=self==((void*)0),        _if_conditional98) {
-            # 933 "libneo-c-gc.c"
-            __result132__ = (_Bool)0;
-            return __result132__;
+        # 919 "libneo-c-gc.c"
+        # 912 "libneo-c-gc.c"
+        if(_if_conditional92=self==((void*)0),        _if_conditional92) {
+            # 913 "libneo-c-gc.c"
+            __result126__ = (_Bool)0;
+            return __result126__;
         }
         else {
-            # 939 "libneo-c-gc.c"
-            # 935 "libneo-c-gc.c"
-            if(_if_conditional99=right==((void*)0),            _if_conditional99) {
-                # 936 "libneo-c-gc.c"
-                __result133__ = (_Bool)0;
-                return __result133__;
+            # 919 "libneo-c-gc.c"
+            # 915 "libneo-c-gc.c"
+            if(_if_conditional93=right==((void*)0),            _if_conditional93) {
+                # 916 "libneo-c-gc.c"
+                __result127__ = (_Bool)0;
+                return __result127__;
             }
         }
     }
-    # 939 "libneo-c-gc.c"
-    __result134__ = strcmp(self,right)==0;
-    return __result134__;
+    # 919 "libneo-c-gc.c"
+    __result128__ = strcmp(self,right)==0;
+    return __result128__;
 }
 
 _Bool charp_operator_equals(char* self, char* right){
 void* __result_obj__;
-_Bool _if_conditional100;
-_Bool __result135__;
-_Bool _if_conditional101;
-_Bool __result136__;
-_Bool _if_conditional102;
-_Bool __result137__;
-_Bool __result138__;
+_Bool _if_conditional94;
+_Bool __result129__;
+_Bool _if_conditional95;
+_Bool __result130__;
+_Bool _if_conditional96;
+_Bool __result131__;
+_Bool __result132__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 954 "libneo-c-gc.c"
-    # 944 "libneo-c-gc.c"
-    if(_if_conditional100=self==((void*)0)&&right==((void*)0),    _if_conditional100) {
-        # 945 "libneo-c-gc.c"
-        __result135__ = (_Bool)1;
-        return __result135__;
+    # 934 "libneo-c-gc.c"
+    # 924 "libneo-c-gc.c"
+    if(_if_conditional94=self==((void*)0)&&right==((void*)0),    _if_conditional94) {
+        # 925 "libneo-c-gc.c"
+        __result129__ = (_Bool)1;
+        return __result129__;
     }
     else {
-        # 954 "libneo-c-gc.c"
-        # 947 "libneo-c-gc.c"
-        if(_if_conditional101=self==((void*)0),        _if_conditional101) {
-            # 948 "libneo-c-gc.c"
-            __result136__ = (_Bool)0;
-            return __result136__;
+        # 934 "libneo-c-gc.c"
+        # 927 "libneo-c-gc.c"
+        if(_if_conditional95=self==((void*)0),        _if_conditional95) {
+            # 928 "libneo-c-gc.c"
+            __result130__ = (_Bool)0;
+            return __result130__;
         }
         else {
-            # 954 "libneo-c-gc.c"
-            # 950 "libneo-c-gc.c"
-            if(_if_conditional102=right==((void*)0),            _if_conditional102) {
-                # 951 "libneo-c-gc.c"
-                __result137__ = (_Bool)0;
-                return __result137__;
+            # 934 "libneo-c-gc.c"
+            # 930 "libneo-c-gc.c"
+            if(_if_conditional96=right==((void*)0),            _if_conditional96) {
+                # 931 "libneo-c-gc.c"
+                __result131__ = (_Bool)0;
+                return __result131__;
             }
         }
     }
-    # 954 "libneo-c-gc.c"
-    __result138__ = strcmp(self,right)==0;
-    return __result138__;
+    # 934 "libneo-c-gc.c"
+    __result132__ = strcmp(self,right)==0;
+    return __result132__;
 }
 
 _Bool string_operator_not_equals(char* self, char* right){
 void* __result_obj__;
-_Bool _if_conditional103;
-_Bool __result139__;
-_Bool _if_conditional104;
-_Bool __result140__;
-_Bool _if_conditional105;
-_Bool __result141__;
-_Bool __result142__;
+_Bool _if_conditional97;
+_Bool __result133__;
+_Bool _if_conditional98;
+_Bool __result134__;
+_Bool _if_conditional99;
+_Bool __result135__;
+_Bool __result136__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 969 "libneo-c-gc.c"
-    # 959 "libneo-c-gc.c"
-    if(_if_conditional103=self==((void*)0)&&right==((void*)0),    _if_conditional103) {
-        # 960 "libneo-c-gc.c"
-        __result139__ = (_Bool)0;
-        return __result139__;
+    # 949 "libneo-c-gc.c"
+    # 939 "libneo-c-gc.c"
+    if(_if_conditional97=self==((void*)0)&&right==((void*)0),    _if_conditional97) {
+        # 940 "libneo-c-gc.c"
+        __result133__ = (_Bool)0;
+        return __result133__;
     }
     else {
-        # 969 "libneo-c-gc.c"
-        # 962 "libneo-c-gc.c"
-        if(_if_conditional104=self==((void*)0),        _if_conditional104) {
-            # 963 "libneo-c-gc.c"
-            __result140__ = (_Bool)1;
-            return __result140__;
+        # 949 "libneo-c-gc.c"
+        # 942 "libneo-c-gc.c"
+        if(_if_conditional98=self==((void*)0),        _if_conditional98) {
+            # 943 "libneo-c-gc.c"
+            __result134__ = (_Bool)1;
+            return __result134__;
         }
         else {
-            # 969 "libneo-c-gc.c"
-            # 965 "libneo-c-gc.c"
-            if(_if_conditional105=right==((void*)0),            _if_conditional105) {
-                # 966 "libneo-c-gc.c"
-                __result141__ = (_Bool)1;
-                return __result141__;
+            # 949 "libneo-c-gc.c"
+            # 945 "libneo-c-gc.c"
+            if(_if_conditional99=right==((void*)0),            _if_conditional99) {
+                # 946 "libneo-c-gc.c"
+                __result135__ = (_Bool)1;
+                return __result135__;
             }
         }
     }
-    # 969 "libneo-c-gc.c"
-    __result142__ = strcmp(self,right)!=0;
-    return __result142__;
+    # 949 "libneo-c-gc.c"
+    __result136__ = strcmp(self,right)!=0;
+    return __result136__;
 }
 
 _Bool charp_operator_not_equals(char* self, char* right){
 void* __result_obj__;
-_Bool _if_conditional106;
-_Bool __result143__;
-_Bool _if_conditional107;
-_Bool __result144__;
-_Bool _if_conditional108;
-_Bool __result145__;
-_Bool __result146__;
+_Bool _if_conditional100;
+_Bool __result137__;
+_Bool _if_conditional101;
+_Bool __result138__;
+_Bool _if_conditional102;
+_Bool __result139__;
+_Bool __result140__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 984 "libneo-c-gc.c"
-    # 974 "libneo-c-gc.c"
-    if(_if_conditional106=self==((void*)0)&&right==((void*)0),    _if_conditional106) {
-        # 975 "libneo-c-gc.c"
-        __result143__ = (_Bool)0;
-        return __result143__;
+    # 964 "libneo-c-gc.c"
+    # 954 "libneo-c-gc.c"
+    if(_if_conditional100=self==((void*)0)&&right==((void*)0),    _if_conditional100) {
+        # 955 "libneo-c-gc.c"
+        __result137__ = (_Bool)0;
+        return __result137__;
     }
     else {
-        # 984 "libneo-c-gc.c"
-        # 977 "libneo-c-gc.c"
-        if(_if_conditional107=self==((void*)0),        _if_conditional107) {
-            # 978 "libneo-c-gc.c"
-            __result144__ = (_Bool)1;
-            return __result144__;
+        # 964 "libneo-c-gc.c"
+        # 957 "libneo-c-gc.c"
+        if(_if_conditional101=self==((void*)0),        _if_conditional101) {
+            # 958 "libneo-c-gc.c"
+            __result138__ = (_Bool)1;
+            return __result138__;
         }
         else {
-            # 984 "libneo-c-gc.c"
-            # 980 "libneo-c-gc.c"
-            if(_if_conditional108=right==((void*)0),            _if_conditional108) {
-                # 981 "libneo-c-gc.c"
-                __result145__ = (_Bool)1;
-                return __result145__;
+            # 964 "libneo-c-gc.c"
+            # 960 "libneo-c-gc.c"
+            if(_if_conditional102=right==((void*)0),            _if_conditional102) {
+                # 961 "libneo-c-gc.c"
+                __result139__ = (_Bool)1;
+                return __result139__;
             }
         }
     }
-    # 984 "libneo-c-gc.c"
-    __result146__ = strcmp(self,right)!=0;
-    return __result146__;
+    # 964 "libneo-c-gc.c"
+    __result140__ = strcmp(self,right)!=0;
+    return __result140__;
 }
 
 char* charp_operator_add(char* self, char* right){
 void* __result_obj__;
-_Bool _if_conditional109;
-char* __result147__;
+_Bool _if_conditional103;
+char* __result141__;
 int len_102;
 char* result_103;
-char* __result148__;
+char* __result142__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_102, 0, sizeof(int));
 memset(&result_103, 0, sizeof(char*));
-    # 993 "libneo-c-gc.c"
-    # 990 "libneo-c-gc.c"
-    if(_if_conditional109=self==((void*)0)||right==((void*)0),    _if_conditional109) {
-        # 991 "libneo-c-gc.c"
-        __result147__ = __result_obj__ = __builtin_string("");
-        return __result147__;
+    # 973 "libneo-c-gc.c"
+    # 970 "libneo-c-gc.c"
+    if(_if_conditional103=self==((void*)0)||right==((void*)0),    _if_conditional103) {
+        # 971 "libneo-c-gc.c"
+        __result141__ = __result_obj__ = __builtin_string("");
+        return __result141__;
     }
-    # 993 "libneo-c-gc.c"
+    # 973 "libneo-c-gc.c"
     len_102=strlen(self)+strlen(right);
-    # 995 "libneo-c-gc.c"
-    result_103=(char*)come_calloc(1, sizeof(char)*(1*(len_102+1)), "libneo-c-gc.c", 995, "char");
-    # 997 "libneo-c-gc.c"
+    # 975 "libneo-c-gc.c"
+    result_103=(char*)come_calloc(1, sizeof(char)*(1*(len_102+1)), "libneo-c-gc.c", 975, "char");
+    # 977 "libneo-c-gc.c"
     strncpy(result_103,self,len_102+1);
-    # 998 "libneo-c-gc.c"
+    # 978 "libneo-c-gc.c"
     strncat(result_103,right,len_102+1);
-    # 1000 "libneo-c-gc.c"
-    __result148__ = __result_obj__ = result_103;
-    return __result148__;
+    # 980 "libneo-c-gc.c"
+    __result142__ = __result_obj__ = result_103;
+    return __result142__;
 }
 
 char* string_operator_add(char* self, char* right){
 void* __result_obj__;
-_Bool _if_conditional110;
-char* __result149__;
+_Bool _if_conditional104;
+char* __result143__;
 int len_104;
 char* result_105;
-char* __result150__;
+char* __result144__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_104, 0, sizeof(int));
 memset(&result_105, 0, sizeof(char*));
-    # 1008 "libneo-c-gc.c"
-    # 1005 "libneo-c-gc.c"
-    if(_if_conditional110=self==((void*)0)||right==((void*)0),    _if_conditional110) {
-        # 1006 "libneo-c-gc.c"
-        __result149__ = __result_obj__ = __builtin_string("");
-        return __result149__;
+    # 988 "libneo-c-gc.c"
+    # 985 "libneo-c-gc.c"
+    if(_if_conditional104=self==((void*)0)||right==((void*)0),    _if_conditional104) {
+        # 986 "libneo-c-gc.c"
+        __result143__ = __result_obj__ = __builtin_string("");
+        return __result143__;
     }
-    # 1008 "libneo-c-gc.c"
+    # 988 "libneo-c-gc.c"
     len_104=strlen(self)+strlen(right);
-    # 1010 "libneo-c-gc.c"
-    result_105=(char*)come_calloc(1, sizeof(char)*(1*(len_104+1)), "libneo-c-gc.c", 1010, "char");
-    # 1012 "libneo-c-gc.c"
+    # 990 "libneo-c-gc.c"
+    result_105=(char*)come_calloc(1, sizeof(char)*(1*(len_104+1)), "libneo-c-gc.c", 990, "char");
+    # 992 "libneo-c-gc.c"
     strncpy(result_105,self,len_104+1);
-    # 1013 "libneo-c-gc.c"
+    # 993 "libneo-c-gc.c"
     strncat(result_105,right,len_104+1);
-    # 1015 "libneo-c-gc.c"
-    __result150__ = __result_obj__ = result_105;
-    return __result150__;
+    # 995 "libneo-c-gc.c"
+    __result144__ = __result_obj__ = result_105;
+    return __result144__;
 }
 
 char* charp_operator_mult(char* self, int right){
 void* __result_obj__;
-_Bool _if_conditional111;
-char* __result151__;
+_Bool _if_conditional105;
+char* __result145__;
 struct buffer* buf_106;
 int i_107;
-char* __result152__;
+char* __result146__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&buf_106, 0, sizeof(struct buffer*));
 memset(&i_107, 0, sizeof(int));
-    # 1023 "libneo-c-gc.c"
-    # 1020 "libneo-c-gc.c"
-    if(_if_conditional111=self==((void*)0),    _if_conditional111) {
-        # 1021 "libneo-c-gc.c"
-        __result151__ = __result_obj__ = __builtin_string("");
-        return __result151__;
+    # 1003 "libneo-c-gc.c"
+    # 1000 "libneo-c-gc.c"
+    if(_if_conditional105=self==((void*)0),    _if_conditional105) {
+        # 1001 "libneo-c-gc.c"
+        __result145__ = __result_obj__ = __builtin_string("");
+        return __result145__;
     }
-    # 1023 "libneo-c-gc.c"
-    buf_106=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-gc.c", 1023, "buffer"));
-    # 1029 "libneo-c-gc.c"
+    # 1003 "libneo-c-gc.c"
+    buf_106=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-gc.c", 1003, "buffer"));
+    # 1009 "libneo-c-gc.c"
     for(    i_107=0;    i_107<right;    i_107++    ){
-        # 1026 "libneo-c-gc.c"
+        # 1006 "libneo-c-gc.c"
         buffer_append_str(buf_106,self);
     }
-    # 1029 "libneo-c-gc.c"
-    __result152__ = __result_obj__ = buffer_to_string(buf_106);
-    return __result152__;
+    # 1009 "libneo-c-gc.c"
+    __result146__ = __result_obj__ = buffer_to_string(buf_106);
+    return __result146__;
 }
 
 char* string_operator_mult(char* self, int right){
 void* __result_obj__;
-_Bool _if_conditional112;
-char* __result153__;
+_Bool _if_conditional106;
+char* __result147__;
 struct buffer* buf_108;
 int i_109;
-char* __result154__;
+char* __result148__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&buf_108, 0, sizeof(struct buffer*));
 memset(&i_109, 0, sizeof(int));
-    # 1037 "libneo-c-gc.c"
-    # 1034 "libneo-c-gc.c"
-    if(_if_conditional112=self==((void*)0),    _if_conditional112) {
-        # 1035 "libneo-c-gc.c"
-        __result153__ = __result_obj__ = __builtin_string("");
-        return __result153__;
+    # 1017 "libneo-c-gc.c"
+    # 1014 "libneo-c-gc.c"
+    if(_if_conditional106=self==((void*)0),    _if_conditional106) {
+        # 1015 "libneo-c-gc.c"
+        __result147__ = __result_obj__ = __builtin_string("");
+        return __result147__;
     }
-    # 1037 "libneo-c-gc.c"
-    buf_108=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-gc.c", 1037, "buffer"));
-    # 1043 "libneo-c-gc.c"
+    # 1017 "libneo-c-gc.c"
+    buf_108=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-gc.c", 1017, "buffer"));
+    # 1023 "libneo-c-gc.c"
     for(    i_109=0;    i_109<right;    i_109++    ){
-        # 1040 "libneo-c-gc.c"
+        # 1020 "libneo-c-gc.c"
         buffer_append_str(buf_108,self);
     }
-    # 1043 "libneo-c-gc.c"
-    __result154__ = __result_obj__ = buffer_to_string(buf_108);
-    return __result154__;
+    # 1023 "libneo-c-gc.c"
+    __result148__ = __result_obj__ = buffer_to_string(buf_108);
+    return __result148__;
 }
 
 unsigned int bool_get_hash_key(_Bool value){
 void* __result_obj__;
-unsigned int __result155__;
+unsigned int __result149__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1051 "libneo-c-gc.c"
-    __result155__ = (int_get_hash_key(((int)value)));
-    return __result155__;
+    # 1031 "libneo-c-gc.c"
+    __result149__ = (int_get_hash_key(((int)value)));
+    return __result149__;
 }
 
 unsigned int char_get_hash_key(char value){
 void* __result_obj__;
-unsigned int __result156__;
+unsigned int __result150__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1056 "libneo-c-gc.c"
-    __result156__ = value;
-    return __result156__;
+    # 1036 "libneo-c-gc.c"
+    __result150__ = value;
+    return __result150__;
 }
 
 unsigned int short_get_hash_key(short int value){
 void* __result_obj__;
-unsigned int __result157__;
+unsigned int __result151__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1061 "libneo-c-gc.c"
-    __result157__ = value;
-    return __result157__;
+    # 1041 "libneo-c-gc.c"
+    __result151__ = value;
+    return __result151__;
 }
 
 unsigned int int_get_hash_key(int value){
 void* __result_obj__;
-unsigned int __result158__;
+unsigned int __result152__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1066 "libneo-c-gc.c"
-    __result158__ = value;
-    return __result158__;
+    # 1046 "libneo-c-gc.c"
+    __result152__ = value;
+    return __result152__;
 }
 
 unsigned int long_get_hash_key(long value){
 void* __result_obj__;
-unsigned int __result159__;
+unsigned int __result153__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1071 "libneo-c-gc.c"
-    __result159__ = value;
-    return __result159__;
+    # 1051 "libneo-c-gc.c"
+    __result153__ = value;
+    return __result153__;
 }
 
 unsigned int size_t_get_hash_key(unsigned long int value){
 void* __result_obj__;
-unsigned int __result160__;
+unsigned int __result154__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1076 "libneo-c-gc.c"
-    __result160__ = value;
-    return __result160__;
+    # 1056 "libneo-c-gc.c"
+    __result154__ = value;
+    return __result154__;
 }
 
 unsigned int float_get_hash_key(float value){
 void* __result_obj__;
-unsigned int __result161__;
+unsigned int __result155__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1081 "libneo-c-gc.c"
-    __result161__ = (unsigned int)value;
-    return __result161__;
+    # 1061 "libneo-c-gc.c"
+    __result155__ = (unsigned int)value;
+    return __result155__;
 }
 
 unsigned int double_get_hash_key(double value){
 void* __result_obj__;
-unsigned int __result162__;
+unsigned int __result156__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1086 "libneo-c-gc.c"
-    __result162__ = (unsigned int)value;
-    return __result162__;
+    # 1066 "libneo-c-gc.c"
+    __result156__ = (unsigned int)value;
+    return __result156__;
 }
 
 unsigned int string_get_hash_key(char* value){
 void* __result_obj__;
-_Bool _if_conditional113;
-unsigned int __result163__;
+_Bool _if_conditional107;
+unsigned int __result157__;
 int result_110;
 char* p_111;
 _Bool _while_condtional1;
-unsigned int __result164__;
+unsigned int __result158__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_110, 0, sizeof(int));
 memset(&p_111, 0, sizeof(char*));
-    # 1094 "libneo-c-gc.c"
-    # 1091 "libneo-c-gc.c"
-    if(_if_conditional113=value==((void*)0),    _if_conditional113) {
-        # 1092 "libneo-c-gc.c"
-        __result163__ = 0;
-        return __result163__;
+    # 1074 "libneo-c-gc.c"
+    # 1071 "libneo-c-gc.c"
+    if(_if_conditional107=value==((void*)0),    _if_conditional107) {
+        # 1072 "libneo-c-gc.c"
+        __result157__ = 0;
+        return __result157__;
     }
-    # 1094 "libneo-c-gc.c"
+    # 1074 "libneo-c-gc.c"
     result_110=0;
-    # 1095 "libneo-c-gc.c"
+    # 1075 "libneo-c-gc.c"
     p_111=value;
-    # 1100 "libneo-c-gc.c"
+    # 1080 "libneo-c-gc.c"
     while(_while_condtional1=*p_111,    _while_condtional1) {
-        # 1097 "libneo-c-gc.c"
+        # 1077 "libneo-c-gc.c"
         result_110+=(*p_111);
-        # 1098 "libneo-c-gc.c"
+        # 1078 "libneo-c-gc.c"
         p_111++;
     }
-    # 1100 "libneo-c-gc.c"
-    __result164__ = result_110;
-    return __result164__;
+    # 1080 "libneo-c-gc.c"
+    __result158__ = result_110;
+    return __result158__;
 }
 
 unsigned int charp_get_hash_key(char* value){
 void* __result_obj__;
-_Bool _if_conditional114;
-unsigned int __result165__;
+_Bool _if_conditional108;
+unsigned int __result159__;
 int result_112;
 char* p_113;
 _Bool _while_condtional2;
-unsigned int __result166__;
+unsigned int __result160__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_112, 0, sizeof(int));
 memset(&p_113, 0, sizeof(char*));
-    # 1108 "libneo-c-gc.c"
-    # 1105 "libneo-c-gc.c"
-    if(_if_conditional114=value==((void*)0),    _if_conditional114) {
-        # 1106 "libneo-c-gc.c"
-        __result165__ = 0;
-        return __result165__;
+    # 1088 "libneo-c-gc.c"
+    # 1085 "libneo-c-gc.c"
+    if(_if_conditional108=value==((void*)0),    _if_conditional108) {
+        # 1086 "libneo-c-gc.c"
+        __result159__ = 0;
+        return __result159__;
     }
-    # 1108 "libneo-c-gc.c"
+    # 1088 "libneo-c-gc.c"
     result_112=0;
-    # 1109 "libneo-c-gc.c"
+    # 1089 "libneo-c-gc.c"
     p_113=value;
-    # 1114 "libneo-c-gc.c"
+    # 1094 "libneo-c-gc.c"
     while(_while_condtional2=*p_113,    _while_condtional2) {
-        # 1111 "libneo-c-gc.c"
+        # 1091 "libneo-c-gc.c"
         result_112+=(*p_113);
-        # 1112 "libneo-c-gc.c"
+        # 1092 "libneo-c-gc.c"
         p_113++;
     }
-    # 1114 "libneo-c-gc.c"
-    __result166__ = result_112;
-    return __result166__;
+    # 1094 "libneo-c-gc.c"
+    __result160__ = result_112;
+    return __result160__;
 }
 
 _Bool bool_clone(_Bool self){
 void* __result_obj__;
-_Bool __result167__;
+_Bool __result161__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1122 "libneo-c-gc.c"
-    __result167__ = self;
-    return __result167__;
+    # 1102 "libneo-c-gc.c"
+    __result161__ = self;
+    return __result161__;
 }
 
 char char_clone(char self){
 void* __result_obj__;
-char __result168__;
+char __result162__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1127 "libneo-c-gc.c"
-    __result168__ = self;
-    return __result168__;
+    # 1107 "libneo-c-gc.c"
+    __result162__ = self;
+    return __result162__;
 }
 
 short int short_clone(short short self){
 void* __result_obj__;
-short int __result169__;
+short int __result163__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1132 "libneo-c-gc.c"
-    __result169__ = self;
-    return __result169__;
+    # 1112 "libneo-c-gc.c"
+    __result163__ = self;
+    return __result163__;
 }
 
 int int_clone(int self){
 void* __result_obj__;
-int __result170__;
+int __result164__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1137 "libneo-c-gc.c"
-    __result170__ = self;
-    return __result170__;
+    # 1117 "libneo-c-gc.c"
+    __result164__ = self;
+    return __result164__;
 }
 
 long int long_clone(long self){
 void* __result_obj__;
-long int __result171__;
+long int __result165__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1142 "libneo-c-gc.c"
-    __result171__ = self;
-    return __result171__;
+    # 1122 "libneo-c-gc.c"
+    __result165__ = self;
+    return __result165__;
 }
 
 unsigned long int size_t_clone(unsigned long int self){
 void* __result_obj__;
-unsigned long int __result172__;
+unsigned long int __result166__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1147 "libneo-c-gc.c"
-    __result172__ = self;
-    return __result172__;
+    # 1127 "libneo-c-gc.c"
+    __result166__ = self;
+    return __result166__;
 }
 
 double double_clone(double self){
 void* __result_obj__;
-double __result173__;
+double __result167__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1152 "libneo-c-gc.c"
-    __result173__ = self;
-    return __result173__;
+    # 1132 "libneo-c-gc.c"
+    __result167__ = self;
+    return __result167__;
 }
 
 float float_clone(float self){
 void* __result_obj__;
-float __result174__;
+float __result168__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1157 "libneo-c-gc.c"
-    __result174__ = self;
-    return __result174__;
+    # 1137 "libneo-c-gc.c"
+    __result168__ = self;
+    return __result168__;
 }
 
 char* charp_clone(char* self){
 void* __result_obj__;
-_Bool _if_conditional115;
-char* __result175__;
-char* __result176__;
+_Bool _if_conditional109;
+char* __result169__;
+char* __result170__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1163 "libneo-c-gc.c"
-    # 1162 "libneo-c-gc.c"
-    if(_if_conditional115=self==((void*)0),    _if_conditional115) {
-        # 1162 "libneo-c-gc.c"
-        __result175__ = __result_obj__ = ((void*)0);
-        return __result175__;
+    # 1143 "libneo-c-gc.c"
+    # 1142 "libneo-c-gc.c"
+    if(_if_conditional109=self==((void*)0),    _if_conditional109) {
+        # 1142 "libneo-c-gc.c"
+        __result169__ = __result_obj__ = ((void*)0);
+        return __result169__;
     }
-    # 1163 "libneo-c-gc.c"
-    __result176__ = __result_obj__ = __builtin_string(self);
-    return __result176__;
+    # 1143 "libneo-c-gc.c"
+    __result170__ = __result_obj__ = __builtin_string(self);
+    return __result170__;
 }
 
 char* string_clone(char* self){
 void* __result_obj__;
-_Bool _if_conditional116;
-char* __result177__;
-char* __result178__;
+_Bool _if_conditional110;
+char* __result171__;
+char* __result172__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1170 "libneo-c-gc.c"
-    # 1168 "libneo-c-gc.c"
-    if(_if_conditional116=self==((void*)0),    _if_conditional116) {
-        # 1168 "libneo-c-gc.c"
-        __result177__ = __result_obj__ = ((void*)0);
-        return __result177__;
+    # 1150 "libneo-c-gc.c"
+    # 1148 "libneo-c-gc.c"
+    if(_if_conditional110=self==((void*)0),    _if_conditional110) {
+        # 1148 "libneo-c-gc.c"
+        __result171__ = __result_obj__ = ((void*)0);
+        return __result171__;
     }
-    # 1170 "libneo-c-gc.c"
-    __result178__ = __result_obj__ = __builtin_string(self);
-    return __result178__;
+    # 1150 "libneo-c-gc.c"
+    __result172__ = __result_obj__ = __builtin_string(self);
+    return __result172__;
 }
 
 _Bool xiswalpha(unsigned int c){
 void* __result_obj__;
 _Bool result_114;
-_Bool __result179__;
+_Bool __result173__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_114, 0, sizeof(_Bool));
-    # 1178 "libneo-c-gc.c"
+    # 1158 "libneo-c-gc.c"
     result_114=(c>=97&&c<=122)||(c>=65&&c<=90);
-    # 1179 "libneo-c-gc.c"
-    __result179__ = result_114;
-    return __result179__;
+    # 1159 "libneo-c-gc.c"
+    __result173__ = result_114;
+    return __result173__;
 }
 
 _Bool xiswblank(unsigned int c){
 void* __result_obj__;
-_Bool __result180__;
+_Bool __result174__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1184 "libneo-c-gc.c"
-    __result180__ = c==32||c==9;
-    return __result180__;
+    # 1164 "libneo-c-gc.c"
+    __result174__ = c==32||c==9;
+    return __result174__;
 }
 
 _Bool xiswdigit(unsigned int c){
 void* __result_obj__;
-_Bool __result181__;
+_Bool __result175__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1189 "libneo-c-gc.c"
-    __result181__ = (c>=48&&c<=57);
-    return __result181__;
+    # 1169 "libneo-c-gc.c"
+    __result175__ = (c>=48&&c<=57);
+    return __result175__;
 }
 
 _Bool xiswalnum(unsigned int c){
 void* __result_obj__;
-_Bool __result182__;
+_Bool __result176__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1194 "libneo-c-gc.c"
-    __result182__ = xiswalpha(c)||xiswdigit(c);
-    return __result182__;
+    # 1174 "libneo-c-gc.c"
+    __result176__ = xiswalpha(c)||xiswdigit(c);
+    return __result176__;
 }
 
 _Bool xisalpha(char c){
 void* __result_obj__;
 _Bool result_115;
-_Bool __result183__;
+_Bool __result177__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_115, 0, sizeof(_Bool));
-    # 1199 "libneo-c-gc.c"
+    # 1179 "libneo-c-gc.c"
     result_115=(c>=97&&c<=122)||(c>=65&&c<=90);
-    # 1200 "libneo-c-gc.c"
-    __result183__ = result_115;
-    return __result183__;
+    # 1180 "libneo-c-gc.c"
+    __result177__ = result_115;
+    return __result177__;
 }
 
 _Bool xisblank(char c){
 void* __result_obj__;
-_Bool __result184__;
+_Bool __result178__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1205 "libneo-c-gc.c"
-    __result184__ = c==32||c==9;
-    return __result184__;
+    # 1185 "libneo-c-gc.c"
+    __result178__ = c==32||c==9;
+    return __result178__;
 }
 
 _Bool xisdigit(char c){
 void* __result_obj__;
-_Bool __result185__;
+_Bool __result179__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1210 "libneo-c-gc.c"
-    __result185__ = (c>=48&&c<=57);
-    return __result185__;
+    # 1190 "libneo-c-gc.c"
+    __result179__ = (c>=48&&c<=57);
+    return __result179__;
 }
 
 _Bool xisalnum(char c){
 void* __result_obj__;
-_Bool __result186__;
+_Bool __result180__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1215 "libneo-c-gc.c"
-    __result186__ = xisalpha(c)||xisdigit(c);
-    return __result186__;
+    # 1195 "libneo-c-gc.c"
+    __result180__ = xisalpha(c)||xisdigit(c);
+    return __result180__;
 }
 
 _Bool xisascii(char c){
 void* __result_obj__;
 _Bool result_116;
-_Bool __result187__;
+_Bool __result181__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_116, 0, sizeof(_Bool));
-    # 1220 "libneo-c-gc.c"
+    # 1200 "libneo-c-gc.c"
     result_116=(c>=32&&c<=126);
-    # 1221 "libneo-c-gc.c"
-    __result187__ = result_116;
-    return __result187__;
+    # 1201 "libneo-c-gc.c"
+    __result181__ = result_116;
+    return __result181__;
 }
 
 _Bool xiswascii(unsigned int c){
 void* __result_obj__;
 _Bool result_117;
-_Bool __result188__;
+_Bool __result182__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_117, 0, sizeof(_Bool));
-    # 1226 "libneo-c-gc.c"
+    # 1206 "libneo-c-gc.c"
     result_117=(c>=32&&c<=126);
-    # 1227 "libneo-c-gc.c"
-    __result188__ = result_117;
-    return __result188__;
+    # 1207 "libneo-c-gc.c"
+    __result182__ = result_117;
+    return __result182__;
 }
 
 int string_length(char* str){
 void* __result_obj__;
-_Bool _if_conditional117;
-int __result189__;
-int __result190__;
+_Bool _if_conditional111;
+int __result183__;
+int __result184__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1238 "libneo-c-gc.c"
-    # 1235 "libneo-c-gc.c"
-    if(_if_conditional117=str==((void*)0),    _if_conditional117) {
-        # 1236 "libneo-c-gc.c"
-        __result189__ = 0;
-        return __result189__;
+    # 1218 "libneo-c-gc.c"
+    # 1215 "libneo-c-gc.c"
+    if(_if_conditional111=str==((void*)0),    _if_conditional111) {
+        # 1216 "libneo-c-gc.c"
+        __result183__ = 0;
+        return __result183__;
     }
-    # 1238 "libneo-c-gc.c"
-    __result190__ = strlen(str);
-    return __result190__;
+    # 1218 "libneo-c-gc.c"
+    __result184__ = strlen(str);
+    return __result184__;
 }
 
 int charp_length(char* str){
 void* __result_obj__;
-_Bool _if_conditional118;
-int __result191__;
-int __result192__;
+_Bool _if_conditional112;
+int __result185__;
+int __result186__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1245 "libneo-c-gc.c"
-    # 1242 "libneo-c-gc.c"
-    if(_if_conditional118=str==((void*)0),    _if_conditional118) {
-        # 1243 "libneo-c-gc.c"
-        __result191__ = 0;
-        return __result191__;
+    # 1225 "libneo-c-gc.c"
+    # 1222 "libneo-c-gc.c"
+    if(_if_conditional112=str==((void*)0),    _if_conditional112) {
+        # 1223 "libneo-c-gc.c"
+        __result185__ = 0;
+        return __result185__;
     }
-    # 1245 "libneo-c-gc.c"
-    __result192__ = strlen(str);
-    return __result192__;
+    # 1225 "libneo-c-gc.c"
+    __result186__ = strlen(str);
+    return __result186__;
 }
 
 char* string_reverse(char* str){
 void* __result_obj__;
-_Bool _if_conditional119;
-char* __result193__;
+_Bool _if_conditional113;
+char* __result187__;
 int len_118;
 char* result_119;
 int i_120;
-char* __result194__;
+char* __result188__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_118, 0, sizeof(int));
 memset(&result_119, 0, sizeof(char*));
 memset(&i_120, 0, sizeof(int));
-    # 1253 "libneo-c-gc.c"
-    # 1250 "libneo-c-gc.c"
-    if(_if_conditional119=str==((void*)0),    _if_conditional119) {
-        # 1251 "libneo-c-gc.c"
-        __result193__ = __result_obj__ = __builtin_string("");
-        return __result193__;
+    # 1233 "libneo-c-gc.c"
+    # 1230 "libneo-c-gc.c"
+    if(_if_conditional113=str==((void*)0),    _if_conditional113) {
+        # 1231 "libneo-c-gc.c"
+        __result187__ = __result_obj__ = __builtin_string("");
+        return __result187__;
     }
-    # 1253 "libneo-c-gc.c"
+    # 1233 "libneo-c-gc.c"
     len_118=strlen(str);
-    # 1254 "libneo-c-gc.c"
-    result_119=(char*)come_calloc(1, sizeof(char)*(1*(len_118+1)), "libneo-c-gc.c", 1254, "char");
-    # 1260 "libneo-c-gc.c"
+    # 1234 "libneo-c-gc.c"
+    result_119=(char*)come_calloc(1, sizeof(char)*(1*(len_118+1)), "libneo-c-gc.c", 1234, "char");
+    # 1240 "libneo-c-gc.c"
     for(    i_120=0;    i_120<len_118;    i_120++    ){
-        # 1257 "libneo-c-gc.c"
+        # 1237 "libneo-c-gc.c"
         result_119[i_120]=str[len_118-i_120-1];
     }
-    # 1260 "libneo-c-gc.c"
+    # 1240 "libneo-c-gc.c"
     result_119[len_118]=0;
-    # 1262 "libneo-c-gc.c"
-    __result194__ = __result_obj__ = result_119;
-    return __result194__;
+    # 1242 "libneo-c-gc.c"
+    __result188__ = __result_obj__ = result_119;
+    return __result188__;
 }
 
 char* charp_reverse(char* str){
 void* __result_obj__;
-_Bool _if_conditional120;
-char* __result195__;
+_Bool _if_conditional114;
+char* __result189__;
 int len_121;
 char* result_122;
 int i_123;
-char* __result196__;
+char* __result190__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_121, 0, sizeof(int));
 memset(&result_122, 0, sizeof(char*));
 memset(&i_123, 0, sizeof(int));
-    # 1270 "libneo-c-gc.c"
-    # 1267 "libneo-c-gc.c"
-    if(_if_conditional120=str==((void*)0),    _if_conditional120) {
-        # 1268 "libneo-c-gc.c"
-        __result195__ = __result_obj__ = __builtin_string("");
-        return __result195__;
+    # 1250 "libneo-c-gc.c"
+    # 1247 "libneo-c-gc.c"
+    if(_if_conditional114=str==((void*)0),    _if_conditional114) {
+        # 1248 "libneo-c-gc.c"
+        __result189__ = __result_obj__ = __builtin_string("");
+        return __result189__;
     }
-    # 1270 "libneo-c-gc.c"
+    # 1250 "libneo-c-gc.c"
     len_121=strlen(str);
-    # 1271 "libneo-c-gc.c"
-    result_122=(char*)come_calloc(1, sizeof(char)*(1*(len_121+1)), "libneo-c-gc.c", 1271, "char");
-    # 1277 "libneo-c-gc.c"
+    # 1251 "libneo-c-gc.c"
+    result_122=(char*)come_calloc(1, sizeof(char)*(1*(len_121+1)), "libneo-c-gc.c", 1251, "char");
+    # 1257 "libneo-c-gc.c"
     for(    i_123=0;    i_123<len_121;    i_123++    ){
-        # 1274 "libneo-c-gc.c"
+        # 1254 "libneo-c-gc.c"
         result_122[i_123]=str[len_121-i_123-1];
     }
-    # 1277 "libneo-c-gc.c"
+    # 1257 "libneo-c-gc.c"
     result_122[len_121]=0;
-    # 1279 "libneo-c-gc.c"
-    __result196__ = __result_obj__ = result_122;
-    return __result196__;
+    # 1259 "libneo-c-gc.c"
+    __result190__ = __result_obj__ = result_122;
+    return __result190__;
 }
 
 char* string_operator_load_range_element(char* str, int head, int tail){
 void* __result_obj__;
-_Bool _if_conditional121;
-char* __result197__;
+_Bool _if_conditional115;
+char* __result191__;
 int len_124;
+_Bool _if_conditional116;
+_Bool _if_conditional117;
+_Bool _if_conditional118;
+char* __result192__;
+_Bool _if_conditional119;
+_Bool _if_conditional120;
+_Bool _if_conditional121;
+char* __result193__;
 _Bool _if_conditional122;
-_Bool _if_conditional123;
-_Bool _if_conditional124;
-char* __result198__;
-_Bool _if_conditional125;
-_Bool _if_conditional126;
-_Bool _if_conditional127;
-char* __result199__;
-_Bool _if_conditional128;
-char* __result200__;
+char* __result194__;
 char* result_125;
-char* __result201__;
+char* __result195__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_124, 0, sizeof(int));
 memset(&result_125, 0, sizeof(char*));
-    # 1287 "libneo-c-gc.c"
-    # 1283 "libneo-c-gc.c"
-    if(_if_conditional121=str==((void*)0),    _if_conditional121) {
-        # 1284 "libneo-c-gc.c"
-        __result197__ = __result_obj__ = __builtin_string("");
-        return __result197__;
+    # 1267 "libneo-c-gc.c"
+    # 1263 "libneo-c-gc.c"
+    if(_if_conditional115=str==((void*)0),    _if_conditional115) {
+        # 1264 "libneo-c-gc.c"
+        __result191__ = __result_obj__ = __builtin_string("");
+        return __result191__;
     }
-    # 1287 "libneo-c-gc.c"
+    # 1267 "libneo-c-gc.c"
     len_124=strlen(str);
-    # 1292 "libneo-c-gc.c"
-    # 1289 "libneo-c-gc.c"
-    if(_if_conditional122=head<0,    _if_conditional122) {
-        # 1290 "libneo-c-gc.c"
+    # 1272 "libneo-c-gc.c"
+    # 1269 "libneo-c-gc.c"
+    if(_if_conditional116=head<0,    _if_conditional116) {
+        # 1270 "libneo-c-gc.c"
         head+=len_124;
     }
-    # 1296 "libneo-c-gc.c"
-    # 1292 "libneo-c-gc.c"
-    if(_if_conditional123=tail<0,    _if_conditional123) {
-        # 1293 "libneo-c-gc.c"
+    # 1276 "libneo-c-gc.c"
+    # 1272 "libneo-c-gc.c"
+    if(_if_conditional117=tail<0,    _if_conditional117) {
+        # 1273 "libneo-c-gc.c"
         tail+=len_124+1;
     }
-    # 1300 "libneo-c-gc.c"
-    # 1296 "libneo-c-gc.c"
-    if(_if_conditional124=head>tail,    _if_conditional124) {
-        # 1297 "libneo-c-gc.c"
-        __result198__ = __result_obj__ = string_reverse(charp_substring(str,tail,head));
-        return __result198__;
+    # 1280 "libneo-c-gc.c"
+    # 1276 "libneo-c-gc.c"
+    if(_if_conditional118=head>tail,    _if_conditional118) {
+        # 1277 "libneo-c-gc.c"
+        __result192__ = __result_obj__ = string_reverse(charp_substring(str,tail,head));
+        return __result192__;
     }
-    # 1304 "libneo-c-gc.c"
-    # 1300 "libneo-c-gc.c"
-    if(_if_conditional125=head<0,    _if_conditional125) {
-        # 1301 "libneo-c-gc.c"
+    # 1284 "libneo-c-gc.c"
+    # 1280 "libneo-c-gc.c"
+    if(_if_conditional119=head<0,    _if_conditional119) {
+        # 1281 "libneo-c-gc.c"
         head=0;
     }
-    # 1308 "libneo-c-gc.c"
-    # 1304 "libneo-c-gc.c"
-    if(_if_conditional126=tail>=len_124,    _if_conditional126) {
-        # 1305 "libneo-c-gc.c"
+    # 1288 "libneo-c-gc.c"
+    # 1284 "libneo-c-gc.c"
+    if(_if_conditional120=tail>=len_124,    _if_conditional120) {
+        # 1285 "libneo-c-gc.c"
         tail=len_124;
     }
-    # 1312 "libneo-c-gc.c"
-    # 1308 "libneo-c-gc.c"
-    if(_if_conditional127=head==tail,    _if_conditional127) {
-        # 1309 "libneo-c-gc.c"
-        __result199__ = __result_obj__ = __builtin_string("");
-        return __result199__;
+    # 1292 "libneo-c-gc.c"
+    # 1288 "libneo-c-gc.c"
+    if(_if_conditional121=head==tail,    _if_conditional121) {
+        # 1289 "libneo-c-gc.c"
+        __result193__ = __result_obj__ = __builtin_string("");
+        return __result193__;
     }
-    # 1316 "libneo-c-gc.c"
-    # 1312 "libneo-c-gc.c"
-    if(_if_conditional128=tail-head+1<1,    _if_conditional128) {
-        # 1313 "libneo-c-gc.c"
-        __result200__ = __result_obj__ = __builtin_string("");
-        return __result200__;
+    # 1296 "libneo-c-gc.c"
+    # 1292 "libneo-c-gc.c"
+    if(_if_conditional122=tail-head+1<1,    _if_conditional122) {
+        # 1293 "libneo-c-gc.c"
+        __result194__ = __result_obj__ = __builtin_string("");
+        return __result194__;
     }
-    # 1316 "libneo-c-gc.c"
-    result_125=(char*)come_calloc(1, sizeof(char)*(1*(tail-head+1)), "libneo-c-gc.c", 1316, "char");
-    # 1318 "libneo-c-gc.c"
+    # 1296 "libneo-c-gc.c"
+    result_125=(char*)come_calloc(1, sizeof(char)*(1*(tail-head+1)), "libneo-c-gc.c", 1296, "char");
+    # 1298 "libneo-c-gc.c"
     memcpy(result_125,str+head,tail-head);
-    # 1319 "libneo-c-gc.c"
+    # 1299 "libneo-c-gc.c"
     result_125[tail-head]=0;
-    # 1321 "libneo-c-gc.c"
-    __result201__ = __result_obj__ = result_125;
-    return __result201__;
+    # 1301 "libneo-c-gc.c"
+    __result195__ = __result_obj__ = result_125;
+    return __result195__;
 }
 
 char* charp_operator_load_range_element(char* str, int head, int tail){
 void* __result_obj__;
-_Bool _if_conditional129;
-char* __result202__;
+_Bool _if_conditional123;
+char* __result196__;
 int len_126;
+_Bool _if_conditional124;
+_Bool _if_conditional125;
+_Bool _if_conditional126;
+char* __result197__;
+_Bool _if_conditional127;
+_Bool _if_conditional128;
+_Bool _if_conditional129;
+char* __result198__;
 _Bool _if_conditional130;
-_Bool _if_conditional131;
-_Bool _if_conditional132;
-char* __result203__;
-_Bool _if_conditional133;
-_Bool _if_conditional134;
-_Bool _if_conditional135;
-char* __result204__;
-_Bool _if_conditional136;
-char* __result205__;
+char* __result199__;
 char* result_127;
-char* __result206__;
+char* __result200__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_126, 0, sizeof(int));
 memset(&result_127, 0, sizeof(char*));
-    # 1330 "libneo-c-gc.c"
-    # 1326 "libneo-c-gc.c"
-    if(_if_conditional129=str==((void*)0),    _if_conditional129) {
-        # 1327 "libneo-c-gc.c"
-        __result202__ = __result_obj__ = __builtin_string("");
-        return __result202__;
+    # 1310 "libneo-c-gc.c"
+    # 1306 "libneo-c-gc.c"
+    if(_if_conditional123=str==((void*)0),    _if_conditional123) {
+        # 1307 "libneo-c-gc.c"
+        __result196__ = __result_obj__ = __builtin_string("");
+        return __result196__;
     }
-    # 1330 "libneo-c-gc.c"
+    # 1310 "libneo-c-gc.c"
     len_126=strlen(str);
-    # 1335 "libneo-c-gc.c"
-    # 1332 "libneo-c-gc.c"
-    if(_if_conditional130=head<0,    _if_conditional130) {
-        # 1333 "libneo-c-gc.c"
+    # 1315 "libneo-c-gc.c"
+    # 1312 "libneo-c-gc.c"
+    if(_if_conditional124=head<0,    _if_conditional124) {
+        # 1313 "libneo-c-gc.c"
         head+=len_126;
     }
-    # 1339 "libneo-c-gc.c"
-    # 1335 "libneo-c-gc.c"
-    if(_if_conditional131=tail<0,    _if_conditional131) {
-        # 1336 "libneo-c-gc.c"
+    # 1319 "libneo-c-gc.c"
+    # 1315 "libneo-c-gc.c"
+    if(_if_conditional125=tail<0,    _if_conditional125) {
+        # 1316 "libneo-c-gc.c"
         tail+=len_126+1;
     }
-    # 1343 "libneo-c-gc.c"
-    # 1339 "libneo-c-gc.c"
-    if(_if_conditional132=head>tail,    _if_conditional132) {
-        # 1340 "libneo-c-gc.c"
-        __result203__ = __result_obj__ = string_reverse(charp_substring(str,tail,head));
-        return __result203__;
+    # 1323 "libneo-c-gc.c"
+    # 1319 "libneo-c-gc.c"
+    if(_if_conditional126=head>tail,    _if_conditional126) {
+        # 1320 "libneo-c-gc.c"
+        __result197__ = __result_obj__ = string_reverse(charp_substring(str,tail,head));
+        return __result197__;
     }
-    # 1347 "libneo-c-gc.c"
-    # 1343 "libneo-c-gc.c"
-    if(_if_conditional133=head<0,    _if_conditional133) {
-        # 1344 "libneo-c-gc.c"
+    # 1327 "libneo-c-gc.c"
+    # 1323 "libneo-c-gc.c"
+    if(_if_conditional127=head<0,    _if_conditional127) {
+        # 1324 "libneo-c-gc.c"
         head=0;
     }
-    # 1351 "libneo-c-gc.c"
-    # 1347 "libneo-c-gc.c"
-    if(_if_conditional134=tail>=len_126,    _if_conditional134) {
-        # 1348 "libneo-c-gc.c"
+    # 1331 "libneo-c-gc.c"
+    # 1327 "libneo-c-gc.c"
+    if(_if_conditional128=tail>=len_126,    _if_conditional128) {
+        # 1328 "libneo-c-gc.c"
         tail=len_126;
     }
-    # 1355 "libneo-c-gc.c"
-    # 1351 "libneo-c-gc.c"
-    if(_if_conditional135=head==tail,    _if_conditional135) {
-        # 1352 "libneo-c-gc.c"
-        __result204__ = __result_obj__ = __builtin_string("");
-        return __result204__;
+    # 1335 "libneo-c-gc.c"
+    # 1331 "libneo-c-gc.c"
+    if(_if_conditional129=head==tail,    _if_conditional129) {
+        # 1332 "libneo-c-gc.c"
+        __result198__ = __result_obj__ = __builtin_string("");
+        return __result198__;
     }
-    # 1359 "libneo-c-gc.c"
-    # 1355 "libneo-c-gc.c"
-    if(_if_conditional136=tail-head+1<1,    _if_conditional136) {
-        # 1356 "libneo-c-gc.c"
-        __result205__ = __result_obj__ = __builtin_string("");
-        return __result205__;
+    # 1339 "libneo-c-gc.c"
+    # 1335 "libneo-c-gc.c"
+    if(_if_conditional130=tail-head+1<1,    _if_conditional130) {
+        # 1336 "libneo-c-gc.c"
+        __result199__ = __result_obj__ = __builtin_string("");
+        return __result199__;
     }
-    # 1359 "libneo-c-gc.c"
-    result_127=(char*)come_calloc(1, sizeof(char)*(1*(tail-head+1)), "libneo-c-gc.c", 1359, "char");
-    # 1361 "libneo-c-gc.c"
+    # 1339 "libneo-c-gc.c"
+    result_127=(char*)come_calloc(1, sizeof(char)*(1*(tail-head+1)), "libneo-c-gc.c", 1339, "char");
+    # 1341 "libneo-c-gc.c"
     memcpy(result_127,str+head,tail-head);
-    # 1362 "libneo-c-gc.c"
+    # 1342 "libneo-c-gc.c"
     result_127[tail-head]=0;
-    # 1364 "libneo-c-gc.c"
-    __result206__ = __result_obj__ = result_127;
-    return __result206__;
+    # 1344 "libneo-c-gc.c"
+    __result200__ = __result_obj__ = result_127;
+    return __result200__;
 }
 
 char* charp_substring(char* str, int head, int tail){
 void* __result_obj__;
-_Bool _if_conditional137;
-char* __result207__;
+_Bool _if_conditional131;
+char* __result201__;
 int len_128;
+_Bool _if_conditional132;
+_Bool _if_conditional133;
+_Bool _if_conditional134;
+char* __result202__;
+_Bool _if_conditional135;
+_Bool _if_conditional136;
+_Bool _if_conditional137;
+char* __result203__;
 _Bool _if_conditional138;
-_Bool _if_conditional139;
-_Bool _if_conditional140;
-char* __result208__;
-_Bool _if_conditional141;
-_Bool _if_conditional142;
-_Bool _if_conditional143;
-char* __result209__;
-_Bool _if_conditional144;
-char* __result210__;
+char* __result204__;
 char* result_129;
-char* __result211__;
+char* __result205__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_128, 0, sizeof(int));
 memset(&result_129, 0, sizeof(char*));
-    # 1373 "libneo-c-gc.c"
-    # 1369 "libneo-c-gc.c"
-    if(_if_conditional137=str==((void*)0),    _if_conditional137) {
-        # 1370 "libneo-c-gc.c"
-        __result207__ = __result_obj__ = __builtin_string("");
-        return __result207__;
+    # 1353 "libneo-c-gc.c"
+    # 1349 "libneo-c-gc.c"
+    if(_if_conditional131=str==((void*)0),    _if_conditional131) {
+        # 1350 "libneo-c-gc.c"
+        __result201__ = __result_obj__ = __builtin_string("");
+        return __result201__;
     }
-    # 1373 "libneo-c-gc.c"
+    # 1353 "libneo-c-gc.c"
     len_128=strlen(str);
-    # 1378 "libneo-c-gc.c"
-    # 1375 "libneo-c-gc.c"
-    if(_if_conditional138=head<0,    _if_conditional138) {
-        # 1376 "libneo-c-gc.c"
+    # 1358 "libneo-c-gc.c"
+    # 1355 "libneo-c-gc.c"
+    if(_if_conditional132=head<0,    _if_conditional132) {
+        # 1356 "libneo-c-gc.c"
         head+=len_128;
     }
-    # 1382 "libneo-c-gc.c"
-    # 1378 "libneo-c-gc.c"
-    if(_if_conditional139=tail<0,    _if_conditional139) {
-        # 1379 "libneo-c-gc.c"
+    # 1362 "libneo-c-gc.c"
+    # 1358 "libneo-c-gc.c"
+    if(_if_conditional133=tail<0,    _if_conditional133) {
+        # 1359 "libneo-c-gc.c"
         tail+=len_128+1;
     }
-    # 1386 "libneo-c-gc.c"
-    # 1382 "libneo-c-gc.c"
-    if(_if_conditional140=head>tail,    _if_conditional140) {
-        # 1383 "libneo-c-gc.c"
-        __result208__ = __result_obj__ = string_reverse(charp_substring(str,tail,head));
-        return __result208__;
+    # 1366 "libneo-c-gc.c"
+    # 1362 "libneo-c-gc.c"
+    if(_if_conditional134=head>tail,    _if_conditional134) {
+        # 1363 "libneo-c-gc.c"
+        __result202__ = __result_obj__ = string_reverse(charp_substring(str,tail,head));
+        return __result202__;
     }
-    # 1390 "libneo-c-gc.c"
-    # 1386 "libneo-c-gc.c"
-    if(_if_conditional141=head<0,    _if_conditional141) {
-        # 1387 "libneo-c-gc.c"
+    # 1370 "libneo-c-gc.c"
+    # 1366 "libneo-c-gc.c"
+    if(_if_conditional135=head<0,    _if_conditional135) {
+        # 1367 "libneo-c-gc.c"
         head=0;
     }
-    # 1394 "libneo-c-gc.c"
-    # 1390 "libneo-c-gc.c"
-    if(_if_conditional142=tail>=len_128,    _if_conditional142) {
-        # 1391 "libneo-c-gc.c"
+    # 1374 "libneo-c-gc.c"
+    # 1370 "libneo-c-gc.c"
+    if(_if_conditional136=tail>=len_128,    _if_conditional136) {
+        # 1371 "libneo-c-gc.c"
         tail=len_128;
     }
-    # 1398 "libneo-c-gc.c"
-    # 1394 "libneo-c-gc.c"
-    if(_if_conditional143=head==tail,    _if_conditional143) {
-        # 1395 "libneo-c-gc.c"
-        __result209__ = __result_obj__ = __builtin_string("");
-        return __result209__;
+    # 1378 "libneo-c-gc.c"
+    # 1374 "libneo-c-gc.c"
+    if(_if_conditional137=head==tail,    _if_conditional137) {
+        # 1375 "libneo-c-gc.c"
+        __result203__ = __result_obj__ = __builtin_string("");
+        return __result203__;
     }
-    # 1402 "libneo-c-gc.c"
-    # 1398 "libneo-c-gc.c"
-    if(_if_conditional144=tail-head+1<1,    _if_conditional144) {
-        # 1399 "libneo-c-gc.c"
-        __result210__ = __result_obj__ = __builtin_string("");
-        return __result210__;
+    # 1382 "libneo-c-gc.c"
+    # 1378 "libneo-c-gc.c"
+    if(_if_conditional138=tail-head+1<1,    _if_conditional138) {
+        # 1379 "libneo-c-gc.c"
+        __result204__ = __result_obj__ = __builtin_string("");
+        return __result204__;
     }
-    # 1402 "libneo-c-gc.c"
-    result_129=(char*)come_calloc(1, sizeof(char)*(1*(tail-head+1)), "libneo-c-gc.c", 1402, "char");
-    # 1404 "libneo-c-gc.c"
+    # 1382 "libneo-c-gc.c"
+    result_129=(char*)come_calloc(1, sizeof(char)*(1*(tail-head+1)), "libneo-c-gc.c", 1382, "char");
+    # 1384 "libneo-c-gc.c"
     memcpy(result_129,str+head,tail-head);
-    # 1405 "libneo-c-gc.c"
+    # 1385 "libneo-c-gc.c"
     result_129[tail-head]=0;
-    # 1407 "libneo-c-gc.c"
-    __result211__ = __result_obj__ = result_129;
-    return __result211__;
+    # 1387 "libneo-c-gc.c"
+    __result205__ = __result_obj__ = result_129;
+    return __result205__;
 }
 
 char* string_substring(char* str, int head, int tail){
 void* __result_obj__;
-_Bool _if_conditional145;
-char* __result212__;
+_Bool _if_conditional139;
+char* __result206__;
 int len_130;
+_Bool _if_conditional140;
+_Bool _if_conditional141;
+_Bool _if_conditional142;
+char* __result207__;
+_Bool _if_conditional143;
+_Bool _if_conditional144;
+_Bool _if_conditional145;
+char* __result208__;
 _Bool _if_conditional146;
-_Bool _if_conditional147;
-_Bool _if_conditional148;
-char* __result213__;
-_Bool _if_conditional149;
-_Bool _if_conditional150;
-_Bool _if_conditional151;
-char* __result214__;
-_Bool _if_conditional152;
-char* __result215__;
+char* __result209__;
 char* result_131;
-char* __result216__;
+char* __result210__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_130, 0, sizeof(int));
 memset(&result_131, 0, sizeof(char*));
-    # 1416 "libneo-c-gc.c"
-    # 1412 "libneo-c-gc.c"
-    if(_if_conditional145=str==((void*)0),    _if_conditional145) {
-        # 1413 "libneo-c-gc.c"
-        __result212__ = __result_obj__ = __builtin_string("");
-        return __result212__;
+    # 1396 "libneo-c-gc.c"
+    # 1392 "libneo-c-gc.c"
+    if(_if_conditional139=str==((void*)0),    _if_conditional139) {
+        # 1393 "libneo-c-gc.c"
+        __result206__ = __result_obj__ = __builtin_string("");
+        return __result206__;
     }
-    # 1416 "libneo-c-gc.c"
+    # 1396 "libneo-c-gc.c"
     len_130=strlen(str);
-    # 1421 "libneo-c-gc.c"
-    # 1418 "libneo-c-gc.c"
-    if(_if_conditional146=head<0,    _if_conditional146) {
-        # 1419 "libneo-c-gc.c"
+    # 1401 "libneo-c-gc.c"
+    # 1398 "libneo-c-gc.c"
+    if(_if_conditional140=head<0,    _if_conditional140) {
+        # 1399 "libneo-c-gc.c"
         head+=len_130;
     }
-    # 1425 "libneo-c-gc.c"
-    # 1421 "libneo-c-gc.c"
-    if(_if_conditional147=tail<0,    _if_conditional147) {
-        # 1422 "libneo-c-gc.c"
+    # 1405 "libneo-c-gc.c"
+    # 1401 "libneo-c-gc.c"
+    if(_if_conditional141=tail<0,    _if_conditional141) {
+        # 1402 "libneo-c-gc.c"
         tail+=len_130+1;
     }
-    # 1429 "libneo-c-gc.c"
-    # 1425 "libneo-c-gc.c"
-    if(_if_conditional148=head>tail,    _if_conditional148) {
-        # 1426 "libneo-c-gc.c"
-        __result213__ = __result_obj__ = string_reverse(charp_substring(str,tail,head));
-        return __result213__;
+    # 1409 "libneo-c-gc.c"
+    # 1405 "libneo-c-gc.c"
+    if(_if_conditional142=head>tail,    _if_conditional142) {
+        # 1406 "libneo-c-gc.c"
+        __result207__ = __result_obj__ = string_reverse(charp_substring(str,tail,head));
+        return __result207__;
     }
-    # 1433 "libneo-c-gc.c"
-    # 1429 "libneo-c-gc.c"
-    if(_if_conditional149=head<0,    _if_conditional149) {
-        # 1430 "libneo-c-gc.c"
+    # 1413 "libneo-c-gc.c"
+    # 1409 "libneo-c-gc.c"
+    if(_if_conditional143=head<0,    _if_conditional143) {
+        # 1410 "libneo-c-gc.c"
         head=0;
     }
-    # 1437 "libneo-c-gc.c"
-    # 1433 "libneo-c-gc.c"
-    if(_if_conditional150=tail>=len_130,    _if_conditional150) {
-        # 1434 "libneo-c-gc.c"
+    # 1417 "libneo-c-gc.c"
+    # 1413 "libneo-c-gc.c"
+    if(_if_conditional144=tail>=len_130,    _if_conditional144) {
+        # 1414 "libneo-c-gc.c"
         tail=len_130;
     }
-    # 1441 "libneo-c-gc.c"
-    # 1437 "libneo-c-gc.c"
-    if(_if_conditional151=head==tail,    _if_conditional151) {
-        # 1438 "libneo-c-gc.c"
-        __result214__ = __result_obj__ = __builtin_string("");
-        return __result214__;
+    # 1421 "libneo-c-gc.c"
+    # 1417 "libneo-c-gc.c"
+    if(_if_conditional145=head==tail,    _if_conditional145) {
+        # 1418 "libneo-c-gc.c"
+        __result208__ = __result_obj__ = __builtin_string("");
+        return __result208__;
     }
-    # 1445 "libneo-c-gc.c"
-    # 1441 "libneo-c-gc.c"
-    if(_if_conditional152=tail-head+1<1,    _if_conditional152) {
-        # 1442 "libneo-c-gc.c"
-        __result215__ = __result_obj__ = __builtin_string("");
-        return __result215__;
+    # 1425 "libneo-c-gc.c"
+    # 1421 "libneo-c-gc.c"
+    if(_if_conditional146=tail-head+1<1,    _if_conditional146) {
+        # 1422 "libneo-c-gc.c"
+        __result209__ = __result_obj__ = __builtin_string("");
+        return __result209__;
     }
-    # 1445 "libneo-c-gc.c"
-    result_131=(char*)come_calloc(1, sizeof(char)*(1*(tail-head+1)), "libneo-c-gc.c", 1445, "char");
-    # 1447 "libneo-c-gc.c"
+    # 1425 "libneo-c-gc.c"
+    result_131=(char*)come_calloc(1, sizeof(char)*(1*(tail-head+1)), "libneo-c-gc.c", 1425, "char");
+    # 1427 "libneo-c-gc.c"
     memcpy(result_131,str+head,tail-head);
-    # 1448 "libneo-c-gc.c"
+    # 1428 "libneo-c-gc.c"
     result_131[tail-head]=0;
-    # 1450 "libneo-c-gc.c"
-    __result216__ = __result_obj__ = result_131;
-    return __result216__;
+    # 1430 "libneo-c-gc.c"
+    __result210__ = __result_obj__ = result_131;
+    return __result210__;
 }
 
 char* xsprintf(char* msg, ...){
 void* __result_obj__;
-_Bool _if_conditional153;
-char* __result217__;
+_Bool _if_conditional147;
+char* __result211__;
 va_list args_132;
 char* result_133;
 int len_134;
-_Bool _if_conditional154;
-char* __result218__;
+_Bool _if_conditional148;
+char* __result212__;
 char* result2_135;
-char* __result219__;
+char* __result213__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&args_132, 0, sizeof(va_list));
 memset(&result_133, 0, sizeof(char*));
 memset(&len_134, 0, sizeof(int));
 memset(&result2_135, 0, sizeof(char*));
-    # 1458 "libneo-c-gc.c"
-    # 1455 "libneo-c-gc.c"
-    if(_if_conditional153=msg==((void*)0),    _if_conditional153) {
-        # 1456 "libneo-c-gc.c"
-        __result217__ = __result_obj__ = __builtin_string("");
-        return __result217__;
+    # 1438 "libneo-c-gc.c"
+    # 1435 "libneo-c-gc.c"
+    if(_if_conditional147=msg==((void*)0),    _if_conditional147) {
+        # 1436 "libneo-c-gc.c"
+        __result211__ = __result_obj__ = __builtin_string("");
+        return __result211__;
     }
-    # 1458 "libneo-c-gc.c"
-    # 1459 "libneo-c-gc.c"
+    # 1438 "libneo-c-gc.c"
+    # 1439 "libneo-c-gc.c"
     __builtin_va_start(args_132,msg);
-    # 1460 "libneo-c-gc.c"
-    # 1461 "libneo-c-gc.c"
+    # 1440 "libneo-c-gc.c"
+    # 1441 "libneo-c-gc.c"
     len_134=vasprintf(&result_133,msg,args_132);
-    # 1462 "libneo-c-gc.c"
+    # 1442 "libneo-c-gc.c"
     __builtin_va_end(args_132);
-    # 1468 "libneo-c-gc.c"
-    # 1464 "libneo-c-gc.c"
-    if(_if_conditional154=len_134<0,    _if_conditional154) {
-        # 1465 "libneo-c-gc.c"
-        __result218__ = __result_obj__ = __builtin_string("");
-        return __result218__;
+    # 1448 "libneo-c-gc.c"
+    # 1444 "libneo-c-gc.c"
+    if(_if_conditional148=len_134<0,    _if_conditional148) {
+        # 1445 "libneo-c-gc.c"
+        __result212__ = __result_obj__ = __builtin_string("");
+        return __result212__;
     }
-    # 1468 "libneo-c-gc.c"
+    # 1448 "libneo-c-gc.c"
     result2_135=__builtin_string(result_133);
-    # 1470 "libneo-c-gc.c"
+    # 1450 "libneo-c-gc.c"
     free(result_133);
-    # 1472 "libneo-c-gc.c"
-    __result219__ = __result_obj__ = result2_135;
-    return __result219__;
+    # 1452 "libneo-c-gc.c"
+    __result213__ = __result_obj__ = result2_135;
+    return __result213__;
 }
 
 char* charp_delete(char* str, int head, int tail){
 void* __result_obj__;
-_Bool _if_conditional155;
-char* __result220__;
+_Bool _if_conditional149;
+char* __result214__;
 int len_136;
-_Bool _if_conditional156;
-char* __result221__;
-_Bool _if_conditional157;
-_Bool _if_conditional158;
-_Bool _if_conditional159;
-_Bool _if_conditional160;
-char* __result222__;
-_Bool _if_conditional161;
+_Bool _if_conditional150;
+char* __result215__;
+_Bool _if_conditional151;
+_Bool _if_conditional152;
+_Bool _if_conditional153;
+_Bool _if_conditional154;
+char* __result216__;
+_Bool _if_conditional155;
 char* sub_str_137;
-char* __result223__;
+char* __result217__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_136, 0, sizeof(int));
 memset(&sub_str_137, 0, sizeof(char*));
-    # 1481 "libneo-c-gc.c"
-    # 1477 "libneo-c-gc.c"
-    if(_if_conditional155=str==((void*)0),    _if_conditional155) {
-        # 1478 "libneo-c-gc.c"
-        __result220__ = __result_obj__ = __builtin_string("");
-        return __result220__;
+    # 1461 "libneo-c-gc.c"
+    # 1457 "libneo-c-gc.c"
+    if(_if_conditional149=str==((void*)0),    _if_conditional149) {
+        # 1458 "libneo-c-gc.c"
+        __result214__ = __result_obj__ = __builtin_string("");
+        return __result214__;
     }
-    # 1481 "libneo-c-gc.c"
+    # 1461 "libneo-c-gc.c"
     len_136=strlen(str);
-    # 1487 "libneo-c-gc.c"
-    # 1483 "libneo-c-gc.c"
-    if(_if_conditional156=strcmp(str,"")==0,    _if_conditional156) {
-        # 1484 "libneo-c-gc.c"
-        __result221__ = __result_obj__ = __builtin_string(str);
-        return __result221__;
+    # 1467 "libneo-c-gc.c"
+    # 1463 "libneo-c-gc.c"
+    if(_if_conditional150=strcmp(str,"")==0,    _if_conditional150) {
+        # 1464 "libneo-c-gc.c"
+        __result215__ = __result_obj__ = __builtin_string(str);
+        return __result215__;
     }
-    # 1491 "libneo-c-gc.c"
-    # 1487 "libneo-c-gc.c"
-    if(_if_conditional157=head<0,    _if_conditional157) {
-        # 1488 "libneo-c-gc.c"
+    # 1471 "libneo-c-gc.c"
+    # 1467 "libneo-c-gc.c"
+    if(_if_conditional151=head<0,    _if_conditional151) {
+        # 1468 "libneo-c-gc.c"
         head+=len_136;
     }
-    # 1495 "libneo-c-gc.c"
-    # 1491 "libneo-c-gc.c"
-    if(_if_conditional158=tail<0,    _if_conditional158) {
-        # 1492 "libneo-c-gc.c"
+    # 1475 "libneo-c-gc.c"
+    # 1471 "libneo-c-gc.c"
+    if(_if_conditional152=tail<0,    _if_conditional152) {
+        # 1472 "libneo-c-gc.c"
         tail+=len_136+1;
     }
-    # 1499 "libneo-c-gc.c"
-    # 1495 "libneo-c-gc.c"
-    if(_if_conditional159=head<0,    _if_conditional159) {
-        # 1496 "libneo-c-gc.c"
+    # 1479 "libneo-c-gc.c"
+    # 1475 "libneo-c-gc.c"
+    if(_if_conditional153=head<0,    _if_conditional153) {
+        # 1476 "libneo-c-gc.c"
         head=0;
     }
-    # 1503 "libneo-c-gc.c"
-    # 1499 "libneo-c-gc.c"
-    if(_if_conditional160=tail<0,    _if_conditional160) {
-        # 1500 "libneo-c-gc.c"
-        __result222__ = __result_obj__ = __builtin_string(str);
-        return __result222__;
+    # 1483 "libneo-c-gc.c"
+    # 1479 "libneo-c-gc.c"
+    if(_if_conditional154=tail<0,    _if_conditional154) {
+        # 1480 "libneo-c-gc.c"
+        __result216__ = __result_obj__ = __builtin_string(str);
+        return __result216__;
     }
-    # 1507 "libneo-c-gc.c"
-    # 1503 "libneo-c-gc.c"
-    if(_if_conditional161=tail>=len_136,    _if_conditional161) {
-        # 1504 "libneo-c-gc.c"
+    # 1487 "libneo-c-gc.c"
+    # 1483 "libneo-c-gc.c"
+    if(_if_conditional155=tail>=len_136,    _if_conditional155) {
+        # 1484 "libneo-c-gc.c"
         tail=len_136;
     }
-    # 1507 "libneo-c-gc.c"
+    # 1487 "libneo-c-gc.c"
     sub_str_137=charp_substring(str,tail,-1);
-    # 1509 "libneo-c-gc.c"
+    # 1489 "libneo-c-gc.c"
     memcpy(str+head,sub_str_137,string_length(sub_str_137)+1);
-    # 1511 "libneo-c-gc.c"
-    __result223__ = __result_obj__ = __builtin_string(str);
-    return __result223__;
+    # 1491 "libneo-c-gc.c"
+    __result217__ = __result_obj__ = __builtin_string(str);
+    return __result217__;
 }
 
 char* string_delete(char* str, int head, int tail){
 void* __result_obj__;
-_Bool _if_conditional162;
-char* __result224__;
+_Bool _if_conditional156;
+char* __result218__;
 int len_138;
-_Bool _if_conditional163;
-char* __result225__;
-_Bool _if_conditional164;
-_Bool _if_conditional165;
-_Bool _if_conditional166;
-_Bool _if_conditional167;
-char* __result226__;
-_Bool _if_conditional168;
+_Bool _if_conditional157;
+char* __result219__;
+_Bool _if_conditional158;
+_Bool _if_conditional159;
+_Bool _if_conditional160;
+_Bool _if_conditional161;
+char* __result220__;
+_Bool _if_conditional162;
 char* sub_str_139;
-char* __result227__;
+char* __result221__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_138, 0, sizeof(int));
 memset(&sub_str_139, 0, sizeof(char*));
-    # 1520 "libneo-c-gc.c"
-    # 1516 "libneo-c-gc.c"
-    if(_if_conditional162=str==((void*)0),    _if_conditional162) {
-        # 1517 "libneo-c-gc.c"
-        __result224__ = __result_obj__ = __builtin_string("");
-        return __result224__;
+    # 1500 "libneo-c-gc.c"
+    # 1496 "libneo-c-gc.c"
+    if(_if_conditional156=str==((void*)0),    _if_conditional156) {
+        # 1497 "libneo-c-gc.c"
+        __result218__ = __result_obj__ = __builtin_string("");
+        return __result218__;
     }
-    # 1520 "libneo-c-gc.c"
+    # 1500 "libneo-c-gc.c"
     len_138=strlen(str);
-    # 1526 "libneo-c-gc.c"
-    # 1522 "libneo-c-gc.c"
-    if(_if_conditional163=strcmp(str,"")==0,    _if_conditional163) {
-        # 1523 "libneo-c-gc.c"
-        __result225__ = __result_obj__ = __builtin_string(str);
-        return __result225__;
+    # 1506 "libneo-c-gc.c"
+    # 1502 "libneo-c-gc.c"
+    if(_if_conditional157=strcmp(str,"")==0,    _if_conditional157) {
+        # 1503 "libneo-c-gc.c"
+        __result219__ = __result_obj__ = __builtin_string(str);
+        return __result219__;
     }
-    # 1530 "libneo-c-gc.c"
-    # 1526 "libneo-c-gc.c"
-    if(_if_conditional164=head<0,    _if_conditional164) {
-        # 1527 "libneo-c-gc.c"
+    # 1510 "libneo-c-gc.c"
+    # 1506 "libneo-c-gc.c"
+    if(_if_conditional158=head<0,    _if_conditional158) {
+        # 1507 "libneo-c-gc.c"
         head+=len_138;
     }
-    # 1534 "libneo-c-gc.c"
-    # 1530 "libneo-c-gc.c"
-    if(_if_conditional165=tail<0,    _if_conditional165) {
-        # 1531 "libneo-c-gc.c"
+    # 1514 "libneo-c-gc.c"
+    # 1510 "libneo-c-gc.c"
+    if(_if_conditional159=tail<0,    _if_conditional159) {
+        # 1511 "libneo-c-gc.c"
         tail+=len_138+1;
     }
-    # 1538 "libneo-c-gc.c"
-    # 1534 "libneo-c-gc.c"
-    if(_if_conditional166=head<0,    _if_conditional166) {
-        # 1535 "libneo-c-gc.c"
+    # 1518 "libneo-c-gc.c"
+    # 1514 "libneo-c-gc.c"
+    if(_if_conditional160=head<0,    _if_conditional160) {
+        # 1515 "libneo-c-gc.c"
         head=0;
     }
-    # 1542 "libneo-c-gc.c"
-    # 1538 "libneo-c-gc.c"
-    if(_if_conditional167=tail<0,    _if_conditional167) {
-        # 1539 "libneo-c-gc.c"
-        __result226__ = __result_obj__ = __builtin_string(str);
-        return __result226__;
+    # 1522 "libneo-c-gc.c"
+    # 1518 "libneo-c-gc.c"
+    if(_if_conditional161=tail<0,    _if_conditional161) {
+        # 1519 "libneo-c-gc.c"
+        __result220__ = __result_obj__ = __builtin_string(str);
+        return __result220__;
     }
-    # 1546 "libneo-c-gc.c"
-    # 1542 "libneo-c-gc.c"
-    if(_if_conditional168=tail>=len_138,    _if_conditional168) {
-        # 1543 "libneo-c-gc.c"
+    # 1526 "libneo-c-gc.c"
+    # 1522 "libneo-c-gc.c"
+    if(_if_conditional162=tail>=len_138,    _if_conditional162) {
+        # 1523 "libneo-c-gc.c"
         tail=len_138;
     }
-    # 1546 "libneo-c-gc.c"
+    # 1526 "libneo-c-gc.c"
     sub_str_139=charp_substring(str,tail,-1);
-    # 1548 "libneo-c-gc.c"
+    # 1528 "libneo-c-gc.c"
     memcpy(str+head,sub_str_139,string_length(sub_str_139)+1);
-    # 1550 "libneo-c-gc.c"
-    __result227__ = __result_obj__ = __builtin_string(str);
-    return __result227__;
+    # 1530 "libneo-c-gc.c"
+    __result221__ = __result_obj__ = __builtin_string(str);
+    return __result221__;
 }
 
 struct list$1charph* charp_split_char(char* self, char c){
 void* __result_obj__;
-_Bool _if_conditional169;
-struct list$1charph* __result229__;
+_Bool _if_conditional163;
+struct list$1charph* __result223__;
 struct list$1charph* result_140;
 struct buffer* str_141;
 int i_142;
-_Bool _if_conditional170;
-_Bool _if_conditional173;
-struct list$1charph* __result231__;
+_Bool _if_conditional164;
+_Bool _if_conditional167;
+struct list$1charph* __result225__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_140, 0, sizeof(struct list$1charph*));
 memset(&str_141, 0, sizeof(struct buffer*));
 memset(&i_142, 0, sizeof(int));
-    # 1559 "libneo-c-gc.c"
-    # 1555 "libneo-c-gc.c"
-    if(_if_conditional169=self==((void*)0),    _if_conditional169) {
-        # 1556 "libneo-c-gc.c"
-        __result229__ = __result_obj__ = list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-gc.c", 1556, "list$1charph"));
-        return __result229__;
+    # 1539 "libneo-c-gc.c"
+    # 1535 "libneo-c-gc.c"
+    if(_if_conditional163=self==((void*)0),    _if_conditional163) {
+        # 1536 "libneo-c-gc.c"
+        __result223__ = __result_obj__ = list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-gc.c", 1536, "list$1charph"));
+        return __result223__;
     }
-    # 1559 "libneo-c-gc.c"
-    result_140=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-gc.c", 1559, "list$1charph"));
-    # 1561 "libneo-c-gc.c"
-    str_141=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-gc.c", 1561, "buffer"));
-    # 1572 "libneo-c-gc.c"
+    # 1539 "libneo-c-gc.c"
+    result_140=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-gc.c", 1539, "list$1charph"));
+    # 1541 "libneo-c-gc.c"
+    str_141=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-gc.c", 1541, "buffer"));
+    # 1552 "libneo-c-gc.c"
     for(    i_142=0;    i_142<charp_length(self);    i_142++    ){
-        # 1571 "libneo-c-gc.c"
-        # 1564 "libneo-c-gc.c"
-        if(_if_conditional170=self[i_142]==c,        _if_conditional170) {
-            # 1565 "libneo-c-gc.c"
+        # 1551 "libneo-c-gc.c"
+        # 1544 "libneo-c-gc.c"
+        if(_if_conditional164=self[i_142]==c,        _if_conditional164) {
+            # 1545 "libneo-c-gc.c"
             list$1charph_push_back(result_140,__builtin_string(str_141->buf));
-            # 1566 "libneo-c-gc.c"
+            # 1546 "libneo-c-gc.c"
             buffer_reset(str_141);
         }
         else {
-            # 1569 "libneo-c-gc.c"
+            # 1549 "libneo-c-gc.c"
             buffer_append_char(str_141,self[i_142]);
         }
     }
-    # 1576 "libneo-c-gc.c"
-    # 1572 "libneo-c-gc.c"
-    if(_if_conditional173=buffer_length(str_141)!=0,    _if_conditional173) {
-        # 1573 "libneo-c-gc.c"
+    # 1556 "libneo-c-gc.c"
+    # 1552 "libneo-c-gc.c"
+    if(_if_conditional167=buffer_length(str_141)!=0,    _if_conditional167) {
+        # 1553 "libneo-c-gc.c"
         list$1charph_push_back(result_140,__builtin_string(str_141->buf));
     }
-    # 1576 "libneo-c-gc.c"
-    __result231__ = __result_obj__ = result_140;
-    return __result231__;
+    # 1556 "libneo-c-gc.c"
+    __result225__ = __result_obj__ = result_140;
+    return __result225__;
 }
 
 static struct list$1charph* list$1charph_initialize(struct list$1charph* self){
 void* __result_obj__;
-struct list$1charph* __result228__;
+struct list$1charph* __result222__;
 memset(&__result_obj__, 0, sizeof(void*));
-            # 105 "./neo-c.h"
+            # 100 "./neo-c.h"
             self->head=((void*)0);
-            # 106 "./neo-c.h"
+            # 101 "./neo-c.h"
             self->tail=((void*)0);
-            # 107 "./neo-c.h"
+            # 102 "./neo-c.h"
             self->len=0;
-            # 109 "./neo-c.h"
-            __result228__ = __result_obj__ = self;
-            return __result228__;
+            # 104 "./neo-c.h"
+            __result222__ = __result_obj__ = self;
+            return __result222__;
 }
 
 static struct list$1charph* list$1charph_push_back(struct list$1charph* self, char* item){
 void* __result_obj__;
-_Bool _if_conditional171;
+_Bool _if_conditional165;
 struct list_item$1charph* litem_143;
-_Bool _if_conditional172;
+_Bool _if_conditional166;
 struct list_item$1charph* litem_144;
 struct list_item$1charph* litem_145;
-struct list$1charph* __result230__;
+struct list$1charph* __result224__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_143, 0, sizeof(struct list_item$1charph*));
 memset(&litem_144, 0, sizeof(struct list_item$1charph*));
 memset(&litem_145, 0, sizeof(struct list_item$1charph*));
-                # 257 "./neo-c.h"
-                # 226 "./neo-c.h"
-                if(_if_conditional171=self->len==0,                _if_conditional171) {
-                    # 227 "./neo-c.h"
-                    litem_143=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 227, "list_item$1charph");
-                    # 229 "./neo-c.h"
+                # 252 "./neo-c.h"
+                # 221 "./neo-c.h"
+                if(_if_conditional165=self->len==0,                _if_conditional165) {
+                    # 222 "./neo-c.h"
+                    litem_143=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 222, "list_item$1charph");
+                    # 224 "./neo-c.h"
                     litem_143->prev=((void*)0);
-                    # 230 "./neo-c.h"
+                    # 225 "./neo-c.h"
                     litem_143->next=((void*)0);
-                    # 231 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     litem_143->item=item;
-                    # 233 "./neo-c.h"
+                    # 228 "./neo-c.h"
                     self->tail=litem_143;
-                    # 234 "./neo-c.h"
+                    # 229 "./neo-c.h"
                     self->head=litem_143;
                 }
                 else {
-                    # 257 "./neo-c.h"
-                    # 236 "./neo-c.h"
-                    if(_if_conditional172=self->len==1,                    _if_conditional172) {
-                        # 237 "./neo-c.h"
-                        litem_144=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 237, "list_item$1charph");
-                        # 239 "./neo-c.h"
+                    # 252 "./neo-c.h"
+                    # 231 "./neo-c.h"
+                    if(_if_conditional166=self->len==1,                    _if_conditional166) {
+                        # 232 "./neo-c.h"
+                        litem_144=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 232, "list_item$1charph");
+                        # 234 "./neo-c.h"
                         litem_144->prev=self->head;
-                        # 240 "./neo-c.h"
+                        # 235 "./neo-c.h"
                         litem_144->next=((void*)0);
-                        # 241 "./neo-c.h"
+                        # 236 "./neo-c.h"
                         litem_144->item=item;
-                        # 243 "./neo-c.h"
+                        # 238 "./neo-c.h"
                         self->tail=litem_144;
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         self->head->next=litem_144;
                     }
                     else {
-                        # 247 "./neo-c.h"
-                        litem_145=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 247, "list_item$1charph");
-                        # 249 "./neo-c.h"
+                        # 242 "./neo-c.h"
+                        litem_145=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 242, "list_item$1charph");
+                        # 244 "./neo-c.h"
                         litem_145->prev=self->tail;
-                        # 250 "./neo-c.h"
+                        # 245 "./neo-c.h"
                         litem_145->next=((void*)0);
-                        # 251 "./neo-c.h"
+                        # 246 "./neo-c.h"
                         litem_145->item=item;
-                        # 253 "./neo-c.h"
+                        # 248 "./neo-c.h"
                         self->tail->next=litem_145;
-                        # 254 "./neo-c.h"
+                        # 249 "./neo-c.h"
                         self->tail=litem_145;
                     }
                 }
-                # 257 "./neo-c.h"
+                # 252 "./neo-c.h"
                 self->len++;
-                # 259 "./neo-c.h"
-                __result230__ = __result_obj__ = self;
-                return __result230__;
+                # 254 "./neo-c.h"
+                __result224__ = __result_obj__ = self;
+                return __result224__;
 }
 
 struct list$1charph* string_split_char(char* self, char c){
 void* __result_obj__;
-_Bool _if_conditional174;
-struct list$1charph* __result232__;
+_Bool _if_conditional168;
+struct list$1charph* __result226__;
 struct list$1charph* result_146;
 struct buffer* str_147;
 int i_148;
-_Bool _if_conditional175;
-_Bool _if_conditional176;
-struct list$1charph* __result233__;
+_Bool _if_conditional169;
+_Bool _if_conditional170;
+struct list$1charph* __result227__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_146, 0, sizeof(struct list$1charph*));
 memset(&str_147, 0, sizeof(struct buffer*));
 memset(&i_148, 0, sizeof(int));
-    # 1585 "libneo-c-gc.c"
-    # 1581 "libneo-c-gc.c"
-    if(_if_conditional174=self==((void*)0),    _if_conditional174) {
-        # 1582 "libneo-c-gc.c"
-        __result232__ = __result_obj__ = list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-gc.c", 1582, "list$1charph"));
-        return __result232__;
+    # 1565 "libneo-c-gc.c"
+    # 1561 "libneo-c-gc.c"
+    if(_if_conditional168=self==((void*)0),    _if_conditional168) {
+        # 1562 "libneo-c-gc.c"
+        __result226__ = __result_obj__ = list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-gc.c", 1562, "list$1charph"));
+        return __result226__;
     }
-    # 1585 "libneo-c-gc.c"
-    result_146=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-gc.c", 1585, "list$1charph"));
-    # 1587 "libneo-c-gc.c"
-    str_147=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-gc.c", 1587, "buffer"));
-    # 1598 "libneo-c-gc.c"
+    # 1565 "libneo-c-gc.c"
+    result_146=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-gc.c", 1565, "list$1charph"));
+    # 1567 "libneo-c-gc.c"
+    str_147=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-gc.c", 1567, "buffer"));
+    # 1578 "libneo-c-gc.c"
     for(    i_148=0;    i_148<charp_length(self);    i_148++    ){
-        # 1597 "libneo-c-gc.c"
-        # 1590 "libneo-c-gc.c"
-        if(_if_conditional175=self[i_148]==c,        _if_conditional175) {
-            # 1591 "libneo-c-gc.c"
+        # 1577 "libneo-c-gc.c"
+        # 1570 "libneo-c-gc.c"
+        if(_if_conditional169=self[i_148]==c,        _if_conditional169) {
+            # 1571 "libneo-c-gc.c"
             list$1charph_push_back(result_146,__builtin_string(str_147->buf));
-            # 1592 "libneo-c-gc.c"
+            # 1572 "libneo-c-gc.c"
             buffer_reset(str_147);
         }
         else {
-            # 1595 "libneo-c-gc.c"
+            # 1575 "libneo-c-gc.c"
             buffer_append_char(str_147,self[i_148]);
         }
     }
-    # 1602 "libneo-c-gc.c"
-    # 1598 "libneo-c-gc.c"
-    if(_if_conditional176=buffer_length(str_147)!=0,    _if_conditional176) {
-        # 1599 "libneo-c-gc.c"
+    # 1582 "libneo-c-gc.c"
+    # 1578 "libneo-c-gc.c"
+    if(_if_conditional170=buffer_length(str_147)!=0,    _if_conditional170) {
+        # 1579 "libneo-c-gc.c"
         list$1charph_push_back(result_146,__builtin_string(str_147->buf));
     }
-    # 1602 "libneo-c-gc.c"
-    __result233__ = __result_obj__ = result_146;
-    return __result233__;
+    # 1582 "libneo-c-gc.c"
+    __result227__ = __result_obj__ = result_146;
+    return __result227__;
 }
 
 char* xbasename(char* path){
 void* __result_obj__;
-_Bool _if_conditional177;
-char* __result234__;
+_Bool _if_conditional171;
+char* __result228__;
 char* p_149;
 _Bool _while_condtional3;
-_Bool _if_conditional178;
-_Bool _if_conditional179;
-char* __result235__;
-char* __result236__;
-char* __result237__;
+_Bool _if_conditional172;
+_Bool _if_conditional173;
+char* __result229__;
+char* __result230__;
+char* __result231__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&p_149, 0, sizeof(char*));
-    # 1613 "libneo-c-gc.c"
-    # 1610 "libneo-c-gc.c"
-    if(_if_conditional177=path==((void*)0),    _if_conditional177) {
-        # 1611 "libneo-c-gc.c"
-        __result234__ = __result_obj__ = __builtin_string("");
-        return __result234__;
+    # 1593 "libneo-c-gc.c"
+    # 1590 "libneo-c-gc.c"
+    if(_if_conditional171=path==((void*)0),    _if_conditional171) {
+        # 1591 "libneo-c-gc.c"
+        __result228__ = __result_obj__ = __builtin_string("");
+        return __result228__;
     }
-    # 1613 "libneo-c-gc.c"
+    # 1593 "libneo-c-gc.c"
     p_149=path+strlen(path);
-    # 1624 "libneo-c-gc.c"
+    # 1604 "libneo-c-gc.c"
     while(_while_condtional3=p_149>=path,    _while_condtional3) {
-        # 1622 "libneo-c-gc.c"
-        # 1616 "libneo-c-gc.c"
-        if(_if_conditional178=*p_149==47,        _if_conditional178) {
-            # 1617 "libneo-c-gc.c"
+        # 1602 "libneo-c-gc.c"
+        # 1596 "libneo-c-gc.c"
+        if(_if_conditional172=*p_149==47,        _if_conditional172) {
+            # 1597 "libneo-c-gc.c"
             break;
         }
         else {
-            # 1620 "libneo-c-gc.c"
+            # 1600 "libneo-c-gc.c"
             p_149--;
         }
     }
-    # 1631 "libneo-c-gc.c"
-    # 1624 "libneo-c-gc.c"
-    if(_if_conditional179=p_149<path,    _if_conditional179) {
-        # 1625 "libneo-c-gc.c"
-        __result235__ = __result_obj__ = __builtin_string(path);
-        return __result235__;
+    # 1611 "libneo-c-gc.c"
+    # 1604 "libneo-c-gc.c"
+    if(_if_conditional173=p_149<path,    _if_conditional173) {
+        # 1605 "libneo-c-gc.c"
+        __result229__ = __result_obj__ = __builtin_string(path);
+        return __result229__;
     }
     else {
-        # 1628 "libneo-c-gc.c"
-        __result236__ = __result_obj__ = __builtin_string(p_149+1);
-        return __result236__;
+        # 1608 "libneo-c-gc.c"
+        __result230__ = __result_obj__ = __builtin_string(p_149+1);
+        return __result230__;
     }
-    # 1631 "libneo-c-gc.c"
-    __result237__ = __result_obj__ = __builtin_string("");
-    return __result237__;
+    # 1611 "libneo-c-gc.c"
+    __result231__ = __result_obj__ = __builtin_string("");
+    return __result231__;
 }
 
 char* xdirname(char* path){
 void* __result_obj__;
-_Bool _if_conditional180;
-char* __result238__;
-char* __result239__;
+_Bool _if_conditional174;
+char* __result232__;
+char* __result233__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1639 "libneo-c-gc.c"
-    # 1636 "libneo-c-gc.c"
-    if(_if_conditional180=path==((void*)0),    _if_conditional180) {
-        # 1637 "libneo-c-gc.c"
-        __result238__ = __result_obj__ = __builtin_string("");
-        return __result238__;
+    # 1619 "libneo-c-gc.c"
+    # 1616 "libneo-c-gc.c"
+    if(_if_conditional174=path==((void*)0),    _if_conditional174) {
+        # 1617 "libneo-c-gc.c"
+        __result232__ = __result_obj__ = __builtin_string("");
+        return __result232__;
     }
-    # 1639 "libneo-c-gc.c"
-    __result239__ = __result_obj__ = __builtin_string(dirname(__builtin_string(path)));
-    return __result239__;
+    # 1619 "libneo-c-gc.c"
+    __result233__ = __result_obj__ = __builtin_string(dirname(__builtin_string(path)));
+    return __result233__;
 }
 
 char* xnoextname(char* path){
 void* __result_obj__;
-_Bool _if_conditional181;
-char* __result240__;
+_Bool _if_conditional175;
+char* __result234__;
 char* path2_150;
 char* p_151;
 _Bool _while_condtional4;
-_Bool _if_conditional182;
-_Bool _if_conditional183;
-char* __result241__;
-char* __result242__;
-char* __result243__;
+_Bool _if_conditional176;
+_Bool _if_conditional177;
+char* __result235__;
+char* __result236__;
+char* __result237__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&path2_150, 0, sizeof(char*));
 memset(&p_151, 0, sizeof(char*));
-    # 1647 "libneo-c-gc.c"
-    # 1644 "libneo-c-gc.c"
-    if(_if_conditional181=path==((void*)0),    _if_conditional181) {
-        # 1645 "libneo-c-gc.c"
-        __result240__ = __result_obj__ = __builtin_string("");
-        return __result240__;
+    # 1627 "libneo-c-gc.c"
+    # 1624 "libneo-c-gc.c"
+    if(_if_conditional175=path==((void*)0),    _if_conditional175) {
+        # 1625 "libneo-c-gc.c"
+        __result234__ = __result_obj__ = __builtin_string("");
+        return __result234__;
     }
-    # 1647 "libneo-c-gc.c"
+    # 1627 "libneo-c-gc.c"
     path2_150=xbasename(path);
-    # 1649 "libneo-c-gc.c"
+    # 1629 "libneo-c-gc.c"
     p_151=path2_150+strlen(path2_150);
-    # 1660 "libneo-c-gc.c"
+    # 1640 "libneo-c-gc.c"
     while(_while_condtional4=p_151>=path2_150,    _while_condtional4) {
-        # 1658 "libneo-c-gc.c"
-        # 1652 "libneo-c-gc.c"
-        if(_if_conditional182=*p_151==46,        _if_conditional182) {
-            # 1653 "libneo-c-gc.c"
+        # 1638 "libneo-c-gc.c"
+        # 1632 "libneo-c-gc.c"
+        if(_if_conditional176=*p_151==46,        _if_conditional176) {
+            # 1633 "libneo-c-gc.c"
             break;
         }
         else {
-            # 1656 "libneo-c-gc.c"
+            # 1636 "libneo-c-gc.c"
             p_151--;
         }
     }
-    # 1667 "libneo-c-gc.c"
-    # 1660 "libneo-c-gc.c"
-    if(_if_conditional183=p_151<path2_150,    _if_conditional183) {
-        # 1661 "libneo-c-gc.c"
-        __result241__ = __result_obj__ = __builtin_string(path2_150);
-        return __result241__;
+    # 1647 "libneo-c-gc.c"
+    # 1640 "libneo-c-gc.c"
+    if(_if_conditional177=p_151<path2_150,    _if_conditional177) {
+        # 1641 "libneo-c-gc.c"
+        __result235__ = __result_obj__ = __builtin_string(path2_150);
+        return __result235__;
     }
     else {
-        # 1664 "libneo-c-gc.c"
-        __result242__ = __result_obj__ = string_substring(path2_150,0,p_151-path2_150);
-        return __result242__;
+        # 1644 "libneo-c-gc.c"
+        __result236__ = __result_obj__ = string_substring(path2_150,0,p_151-path2_150);
+        return __result236__;
     }
-    # 1667 "libneo-c-gc.c"
-    __result243__ = __result_obj__ = __builtin_string("");
-    return __result243__;
+    # 1647 "libneo-c-gc.c"
+    __result237__ = __result_obj__ = __builtin_string("");
+    return __result237__;
 }
 
 char* xextname(char* path){
 void* __result_obj__;
-_Bool _if_conditional184;
-char* __result244__;
+_Bool _if_conditional178;
+char* __result238__;
 char* p_152;
 _Bool _while_condtional5;
-_Bool _if_conditional185;
-_Bool _if_conditional186;
-char* __result245__;
-char* __result246__;
-char* __result247__;
+_Bool _if_conditional179;
+_Bool _if_conditional180;
+char* __result239__;
+char* __result240__;
+char* __result241__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&p_152, 0, sizeof(char*));
-    # 1675 "libneo-c-gc.c"
-    # 1672 "libneo-c-gc.c"
-    if(_if_conditional184=path==((void*)0),    _if_conditional184) {
-        # 1673 "libneo-c-gc.c"
-        __result244__ = __result_obj__ = __builtin_string("");
-        return __result244__;
+    # 1655 "libneo-c-gc.c"
+    # 1652 "libneo-c-gc.c"
+    if(_if_conditional178=path==((void*)0),    _if_conditional178) {
+        # 1653 "libneo-c-gc.c"
+        __result238__ = __result_obj__ = __builtin_string("");
+        return __result238__;
     }
-    # 1675 "libneo-c-gc.c"
+    # 1655 "libneo-c-gc.c"
     p_152=path+strlen(path);
-    # 1686 "libneo-c-gc.c"
+    # 1666 "libneo-c-gc.c"
     while(_while_condtional5=p_152>=path,    _while_condtional5) {
-        # 1684 "libneo-c-gc.c"
-        # 1678 "libneo-c-gc.c"
-        if(_if_conditional185=*p_152==46,        _if_conditional185) {
-            # 1679 "libneo-c-gc.c"
+        # 1664 "libneo-c-gc.c"
+        # 1658 "libneo-c-gc.c"
+        if(_if_conditional179=*p_152==46,        _if_conditional179) {
+            # 1659 "libneo-c-gc.c"
             break;
         }
         else {
-            # 1682 "libneo-c-gc.c"
+            # 1662 "libneo-c-gc.c"
             p_152--;
         }
     }
-    # 1693 "libneo-c-gc.c"
-    # 1686 "libneo-c-gc.c"
-    if(_if_conditional186=p_152<path,    _if_conditional186) {
-        # 1687 "libneo-c-gc.c"
-        __result245__ = __result_obj__ = __builtin_string(path);
-        return __result245__;
+    # 1673 "libneo-c-gc.c"
+    # 1666 "libneo-c-gc.c"
+    if(_if_conditional180=p_152<path,    _if_conditional180) {
+        # 1667 "libneo-c-gc.c"
+        __result239__ = __result_obj__ = __builtin_string(path);
+        return __result239__;
     }
     else {
-        # 1690 "libneo-c-gc.c"
-        __result246__ = __result_obj__ = __builtin_string(p_152+1);
-        return __result246__;
+        # 1670 "libneo-c-gc.c"
+        __result240__ = __result_obj__ = __builtin_string(p_152+1);
+        return __result240__;
     }
-    # 1693 "libneo-c-gc.c"
-    __result247__ = __result_obj__ = __builtin_string("");
-    return __result247__;
+    # 1673 "libneo-c-gc.c"
+    __result241__ = __result_obj__ = __builtin_string("");
+    return __result241__;
 }
 
 char* xrealpath(char* path){
 void* __result_obj__;
-_Bool _if_conditional187;
-char* __result248__;
+_Bool _if_conditional181;
+char* __result242__;
 char* result_153;
 char* result2_154;
-char* __result249__;
+char* __result243__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_153, 0, sizeof(char*));
 memset(&result2_154, 0, sizeof(char*));
-    # 1701 "libneo-c-gc.c"
-    # 1698 "libneo-c-gc.c"
-    if(_if_conditional187=path==((void*)0),    _if_conditional187) {
-        # 1699 "libneo-c-gc.c"
-        __result248__ = __result_obj__ = __builtin_string("");
-        return __result248__;
+    # 1681 "libneo-c-gc.c"
+    # 1678 "libneo-c-gc.c"
+    if(_if_conditional181=path==((void*)0),    _if_conditional181) {
+        # 1679 "libneo-c-gc.c"
+        __result242__ = __result_obj__ = __builtin_string("");
+        return __result242__;
     }
-    # 1701 "libneo-c-gc.c"
+    # 1681 "libneo-c-gc.c"
     result_153=realpath(path,((void*)0));
-    # 1703 "libneo-c-gc.c"
+    # 1683 "libneo-c-gc.c"
     result2_154=__builtin_string(result_153);
-    # 1705 "libneo-c-gc.c"
+    # 1685 "libneo-c-gc.c"
     free(result_153);
-    # 1707 "libneo-c-gc.c"
-    __result249__ = __result_obj__ = result2_154;
-    return __result249__;
+    # 1687 "libneo-c-gc.c"
+    __result243__ = __result_obj__ = result2_154;
+    return __result243__;
 }
 
 char* bool_to_string(_Bool self){
 void* __result_obj__;
-_Bool _if_conditional188;
-char* __result250__;
-char* __result251__;
+_Bool _if_conditional182;
+char* __result244__;
+char* __result245__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1721 "libneo-c-gc.c"
-    # 1715 "libneo-c-gc.c"
+    # 1701 "libneo-c-gc.c"
+    # 1695 "libneo-c-gc.c"
     if(self) {
-        # 1716 "libneo-c-gc.c"
-        __result250__ = __result_obj__ = __builtin_string("true");
-        return __result250__;
+        # 1696 "libneo-c-gc.c"
+        __result244__ = __result_obj__ = __builtin_string("true");
+        return __result244__;
     }
     else {
-        # 1719 "libneo-c-gc.c"
-        __result251__ = __result_obj__ = __builtin_string("false");
-        return __result251__;
+        # 1699 "libneo-c-gc.c"
+        __result245__ = __result_obj__ = __builtin_string("false");
+        return __result245__;
     }
 }
 
 char* char_to_string(char self){
 void* __result_obj__;
-char* __result252__;
+char* __result246__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1725 "libneo-c-gc.c"
-    __result252__ = __result_obj__ = xsprintf("%c",self);
-    return __result252__;
+    # 1705 "libneo-c-gc.c"
+    __result246__ = __result_obj__ = xsprintf("%c",self);
+    return __result246__;
 }
 
 char* short_to_string(short short self){
 void* __result_obj__;
-char* __result253__;
+char* __result247__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1730 "libneo-c-gc.c"
-    __result253__ = __result_obj__ = xsprintf("%d",self);
-    return __result253__;
+    # 1710 "libneo-c-gc.c"
+    __result247__ = __result_obj__ = xsprintf("%d",self);
+    return __result247__;
 }
 
 char* int_to_string(int self){
 void* __result_obj__;
-char* __result254__;
+char* __result248__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1735 "libneo-c-gc.c"
-    __result254__ = __result_obj__ = xsprintf("%d",self);
-    return __result254__;
+    # 1715 "libneo-c-gc.c"
+    __result248__ = __result_obj__ = xsprintf("%d",self);
+    return __result248__;
 }
 
 char* long_to_string(long self){
 void* __result_obj__;
-char* __result255__;
+char* __result249__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1740 "libneo-c-gc.c"
-    __result255__ = __result_obj__ = xsprintf("%ld",self);
-    return __result255__;
+    # 1720 "libneo-c-gc.c"
+    __result249__ = __result_obj__ = xsprintf("%ld",self);
+    return __result249__;
 }
 
 char* size_t_to_string(unsigned long int self){
 void* __result_obj__;
-char* __result256__;
+char* __result250__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1745 "libneo-c-gc.c"
-    __result256__ = __result_obj__ = xsprintf("%ld",self);
-    return __result256__;
+    # 1725 "libneo-c-gc.c"
+    __result250__ = __result_obj__ = xsprintf("%ld",self);
+    return __result250__;
 }
 
 char* float_to_string(float self){
 void* __result_obj__;
-char* __result257__;
+char* __result251__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1750 "libneo-c-gc.c"
-    __result257__ = __result_obj__ = xsprintf("%f",self);
-    return __result257__;
+    # 1730 "libneo-c-gc.c"
+    __result251__ = __result_obj__ = xsprintf("%f",self);
+    return __result251__;
 }
 
 char* double_to_string(double self){
 void* __result_obj__;
-char* __result258__;
+char* __result252__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1755 "libneo-c-gc.c"
-    __result258__ = __result_obj__ = xsprintf("%lf",self);
-    return __result258__;
+    # 1735 "libneo-c-gc.c"
+    __result252__ = __result_obj__ = xsprintf("%lf",self);
+    return __result252__;
 }
 
 char* string_to_string(char* self){
 void* __result_obj__;
-_Bool _if_conditional189;
-char* __result259__;
-char* __result260__;
+_Bool _if_conditional183;
+char* __result253__;
+char* __result254__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1763 "libneo-c-gc.c"
-    # 1760 "libneo-c-gc.c"
-    if(_if_conditional189=self==((void*)0),    _if_conditional189) {
-        # 1761 "libneo-c-gc.c"
-        __result259__ = __result_obj__ = __builtin_string("");
-        return __result259__;
+    # 1743 "libneo-c-gc.c"
+    # 1740 "libneo-c-gc.c"
+    if(_if_conditional183=self==((void*)0),    _if_conditional183) {
+        # 1741 "libneo-c-gc.c"
+        __result253__ = __result_obj__ = __builtin_string("");
+        return __result253__;
     }
-    # 1763 "libneo-c-gc.c"
-    __result260__ = __result_obj__ = __builtin_string(self);
-    return __result260__;
+    # 1743 "libneo-c-gc.c"
+    __result254__ = __result_obj__ = __builtin_string(self);
+    return __result254__;
 }
 
 char* charp_to_string(char* self){
 void* __result_obj__;
-_Bool _if_conditional190;
-char* __result261__;
-char* __result262__;
+_Bool _if_conditional184;
+char* __result255__;
+char* __result256__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1771 "libneo-c-gc.c"
-    # 1768 "libneo-c-gc.c"
-    if(_if_conditional190=self==((void*)0),    _if_conditional190) {
-        # 1769 "libneo-c-gc.c"
-        __result261__ = __result_obj__ = __builtin_string("");
-        return __result261__;
+    # 1751 "libneo-c-gc.c"
+    # 1748 "libneo-c-gc.c"
+    if(_if_conditional184=self==((void*)0),    _if_conditional184) {
+        # 1749 "libneo-c-gc.c"
+        __result255__ = __result_obj__ = __builtin_string("");
+        return __result255__;
     }
-    # 1771 "libneo-c-gc.c"
-    __result262__ = __result_obj__ = __builtin_string(self);
-    return __result262__;
+    # 1751 "libneo-c-gc.c"
+    __result256__ = __result_obj__ = __builtin_string(self);
+    return __result256__;
 }
 
 int bool_compare(_Bool left, _Bool right){
 void* __result_obj__;
-_Bool _if_conditional191;
-int __result263__;
-_Bool _if_conditional192;
-int __result264__;
-_Bool _if_conditional193;
-int __result265__;
-int __result266__;
-int __result267__;
+_Bool _if_conditional185;
+int __result257__;
+_Bool _if_conditional186;
+int __result258__;
+_Bool _if_conditional187;
+int __result259__;
+int __result260__;
+int __result261__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1792 "libneo-c-gc.c"
-    # 1779 "libneo-c-gc.c"
-    if(_if_conditional191=!left&&right,    _if_conditional191) {
-        # 1780 "libneo-c-gc.c"
-        __result263__ = -1;
-        return __result263__;
+    # 1772 "libneo-c-gc.c"
+    # 1759 "libneo-c-gc.c"
+    if(_if_conditional185=!left&&right,    _if_conditional185) {
+        # 1760 "libneo-c-gc.c"
+        __result257__ = -1;
+        return __result257__;
     }
     else {
-        # 1792 "libneo-c-gc.c"
-        # 1782 "libneo-c-gc.c"
-        if(_if_conditional192=left&&right,        _if_conditional192) {
-            # 1783 "libneo-c-gc.c"
-            __result264__ = 0;
-            return __result264__;
+        # 1772 "libneo-c-gc.c"
+        # 1762 "libneo-c-gc.c"
+        if(_if_conditional186=left&&right,        _if_conditional186) {
+            # 1763 "libneo-c-gc.c"
+            __result258__ = 0;
+            return __result258__;
         }
         else {
-            # 1792 "libneo-c-gc.c"
-            # 1785 "libneo-c-gc.c"
-            if(_if_conditional193=!left&&!right,            _if_conditional193) {
-                # 1786 "libneo-c-gc.c"
-                __result265__ = 0;
-                return __result265__;
+            # 1772 "libneo-c-gc.c"
+            # 1765 "libneo-c-gc.c"
+            if(_if_conditional187=!left&&!right,            _if_conditional187) {
+                # 1766 "libneo-c-gc.c"
+                __result259__ = 0;
+                return __result259__;
             }
             else {
-                # 1789 "libneo-c-gc.c"
-                __result266__ = 1;
-                return __result266__;
+                # 1769 "libneo-c-gc.c"
+                __result260__ = 1;
+                return __result260__;
             }
         }
     }
-    # 1792 "libneo-c-gc.c"
-    __result267__ = 0;
-    return __result267__;
+    # 1772 "libneo-c-gc.c"
+    __result261__ = 0;
+    return __result261__;
 }
 
 int char_compare(char left, char right){
 void* __result_obj__;
-_Bool _if_conditional194;
-int __result268__;
-_Bool _if_conditional195;
-int __result269__;
-int __result270__;
-int __result271__;
+_Bool _if_conditional188;
+int __result262__;
+_Bool _if_conditional189;
+int __result263__;
+int __result264__;
+int __result265__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1807 "libneo-c-gc.c"
-    # 1797 "libneo-c-gc.c"
-    if(_if_conditional194=left<right,    _if_conditional194) {
-        # 1798 "libneo-c-gc.c"
-        __result268__ = -1;
-        return __result268__;
+    # 1787 "libneo-c-gc.c"
+    # 1777 "libneo-c-gc.c"
+    if(_if_conditional188=left<right,    _if_conditional188) {
+        # 1778 "libneo-c-gc.c"
+        __result262__ = -1;
+        return __result262__;
     }
     else {
-        # 1807 "libneo-c-gc.c"
-        # 1800 "libneo-c-gc.c"
-        if(_if_conditional195=left>right,        _if_conditional195) {
-            # 1801 "libneo-c-gc.c"
-            __result269__ = 1;
-            return __result269__;
+        # 1787 "libneo-c-gc.c"
+        # 1780 "libneo-c-gc.c"
+        if(_if_conditional189=left>right,        _if_conditional189) {
+            # 1781 "libneo-c-gc.c"
+            __result263__ = 1;
+            return __result263__;
         }
         else {
-            # 1804 "libneo-c-gc.c"
-            __result270__ = 0;
-            return __result270__;
+            # 1784 "libneo-c-gc.c"
+            __result264__ = 0;
+            return __result264__;
         }
     }
-    # 1807 "libneo-c-gc.c"
-    __result271__ = 0;
-    return __result271__;
+    # 1787 "libneo-c-gc.c"
+    __result265__ = 0;
+    return __result265__;
 }
 
 int short_compare(short short left, short short right){
 void* __result_obj__;
-_Bool _if_conditional196;
-int __result272__;
-_Bool _if_conditional197;
-int __result273__;
-int __result274__;
-int __result275__;
+_Bool _if_conditional190;
+int __result266__;
+_Bool _if_conditional191;
+int __result267__;
+int __result268__;
+int __result269__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1822 "libneo-c-gc.c"
-    # 1812 "libneo-c-gc.c"
-    if(_if_conditional196=left<right,    _if_conditional196) {
-        # 1813 "libneo-c-gc.c"
-        __result272__ = -1;
-        return __result272__;
+    # 1802 "libneo-c-gc.c"
+    # 1792 "libneo-c-gc.c"
+    if(_if_conditional190=left<right,    _if_conditional190) {
+        # 1793 "libneo-c-gc.c"
+        __result266__ = -1;
+        return __result266__;
     }
     else {
-        # 1822 "libneo-c-gc.c"
-        # 1815 "libneo-c-gc.c"
-        if(_if_conditional197=left>right,        _if_conditional197) {
-            # 1816 "libneo-c-gc.c"
-            __result273__ = 1;
-            return __result273__;
+        # 1802 "libneo-c-gc.c"
+        # 1795 "libneo-c-gc.c"
+        if(_if_conditional191=left>right,        _if_conditional191) {
+            # 1796 "libneo-c-gc.c"
+            __result267__ = 1;
+            return __result267__;
         }
         else {
-            # 1819 "libneo-c-gc.c"
-            __result274__ = 0;
-            return __result274__;
+            # 1799 "libneo-c-gc.c"
+            __result268__ = 0;
+            return __result268__;
         }
     }
-    # 1822 "libneo-c-gc.c"
-    __result275__ = 0;
-    return __result275__;
+    # 1802 "libneo-c-gc.c"
+    __result269__ = 0;
+    return __result269__;
 }
 
 int int_compare(int left, int right){
 void* __result_obj__;
-_Bool _if_conditional198;
-int __result276__;
-_Bool _if_conditional199;
-int __result277__;
-int __result278__;
-int __result279__;
+_Bool _if_conditional192;
+int __result270__;
+_Bool _if_conditional193;
+int __result271__;
+int __result272__;
+int __result273__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1837 "libneo-c-gc.c"
-    # 1827 "libneo-c-gc.c"
-    if(_if_conditional198=left<right,    _if_conditional198) {
-        # 1828 "libneo-c-gc.c"
-        __result276__ = -1;
-        return __result276__;
+    # 1817 "libneo-c-gc.c"
+    # 1807 "libneo-c-gc.c"
+    if(_if_conditional192=left<right,    _if_conditional192) {
+        # 1808 "libneo-c-gc.c"
+        __result270__ = -1;
+        return __result270__;
     }
     else {
-        # 1837 "libneo-c-gc.c"
-        # 1830 "libneo-c-gc.c"
-        if(_if_conditional199=left>right,        _if_conditional199) {
-            # 1831 "libneo-c-gc.c"
-            __result277__ = 1;
-            return __result277__;
+        # 1817 "libneo-c-gc.c"
+        # 1810 "libneo-c-gc.c"
+        if(_if_conditional193=left>right,        _if_conditional193) {
+            # 1811 "libneo-c-gc.c"
+            __result271__ = 1;
+            return __result271__;
         }
         else {
-            # 1834 "libneo-c-gc.c"
-            __result278__ = 0;
-            return __result278__;
+            # 1814 "libneo-c-gc.c"
+            __result272__ = 0;
+            return __result272__;
         }
     }
-    # 1837 "libneo-c-gc.c"
-    __result279__ = 0;
-    return __result279__;
+    # 1817 "libneo-c-gc.c"
+    __result273__ = 0;
+    return __result273__;
 }
 
 int long_compare(long left, long right){
 void* __result_obj__;
-_Bool _if_conditional200;
-int __result280__;
-_Bool _if_conditional201;
-int __result281__;
-int __result282__;
-int __result283__;
+_Bool _if_conditional194;
+int __result274__;
+_Bool _if_conditional195;
+int __result275__;
+int __result276__;
+int __result277__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1852 "libneo-c-gc.c"
-    # 1842 "libneo-c-gc.c"
-    if(_if_conditional200=left<right,    _if_conditional200) {
-        # 1843 "libneo-c-gc.c"
-        __result280__ = -1;
-        return __result280__;
+    # 1832 "libneo-c-gc.c"
+    # 1822 "libneo-c-gc.c"
+    if(_if_conditional194=left<right,    _if_conditional194) {
+        # 1823 "libneo-c-gc.c"
+        __result274__ = -1;
+        return __result274__;
     }
     else {
-        # 1852 "libneo-c-gc.c"
-        # 1845 "libneo-c-gc.c"
-        if(_if_conditional201=left>right,        _if_conditional201) {
-            # 1846 "libneo-c-gc.c"
-            __result281__ = 1;
-            return __result281__;
+        # 1832 "libneo-c-gc.c"
+        # 1825 "libneo-c-gc.c"
+        if(_if_conditional195=left>right,        _if_conditional195) {
+            # 1826 "libneo-c-gc.c"
+            __result275__ = 1;
+            return __result275__;
         }
         else {
-            # 1849 "libneo-c-gc.c"
-            __result282__ = 0;
-            return __result282__;
+            # 1829 "libneo-c-gc.c"
+            __result276__ = 0;
+            return __result276__;
         }
     }
-    # 1852 "libneo-c-gc.c"
-    __result283__ = 0;
-    return __result283__;
+    # 1832 "libneo-c-gc.c"
+    __result277__ = 0;
+    return __result277__;
 }
 
 int size_t_compare(unsigned long int left, unsigned long int right){
 void* __result_obj__;
-_Bool _if_conditional202;
-int __result284__;
-_Bool _if_conditional203;
-int __result285__;
-int __result286__;
-int __result287__;
+_Bool _if_conditional196;
+int __result278__;
+_Bool _if_conditional197;
+int __result279__;
+int __result280__;
+int __result281__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1867 "libneo-c-gc.c"
-    # 1857 "libneo-c-gc.c"
-    if(_if_conditional202=left<right,    _if_conditional202) {
-        # 1858 "libneo-c-gc.c"
-        __result284__ = -1;
-        return __result284__;
+    # 1847 "libneo-c-gc.c"
+    # 1837 "libneo-c-gc.c"
+    if(_if_conditional196=left<right,    _if_conditional196) {
+        # 1838 "libneo-c-gc.c"
+        __result278__ = -1;
+        return __result278__;
     }
     else {
-        # 1867 "libneo-c-gc.c"
-        # 1860 "libneo-c-gc.c"
-        if(_if_conditional203=left>right,        _if_conditional203) {
-            # 1861 "libneo-c-gc.c"
-            __result285__ = 1;
-            return __result285__;
+        # 1847 "libneo-c-gc.c"
+        # 1840 "libneo-c-gc.c"
+        if(_if_conditional197=left>right,        _if_conditional197) {
+            # 1841 "libneo-c-gc.c"
+            __result279__ = 1;
+            return __result279__;
         }
         else {
-            # 1864 "libneo-c-gc.c"
-            __result286__ = 0;
-            return __result286__;
+            # 1844 "libneo-c-gc.c"
+            __result280__ = 0;
+            return __result280__;
         }
     }
-    # 1867 "libneo-c-gc.c"
-    __result287__ = 0;
-    return __result287__;
+    # 1847 "libneo-c-gc.c"
+    __result281__ = 0;
+    return __result281__;
 }
 
 int float_compare(float left, float right){
 void* __result_obj__;
-_Bool _if_conditional204;
-int __result288__;
-_Bool _if_conditional205;
-int __result289__;
-int __result290__;
-int __result291__;
+_Bool _if_conditional198;
+int __result282__;
+_Bool _if_conditional199;
+int __result283__;
+int __result284__;
+int __result285__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1882 "libneo-c-gc.c"
-    # 1872 "libneo-c-gc.c"
-    if(_if_conditional204=left<right,    _if_conditional204) {
-        # 1873 "libneo-c-gc.c"
-        __result288__ = -1;
-        return __result288__;
+    # 1862 "libneo-c-gc.c"
+    # 1852 "libneo-c-gc.c"
+    if(_if_conditional198=left<right,    _if_conditional198) {
+        # 1853 "libneo-c-gc.c"
+        __result282__ = -1;
+        return __result282__;
     }
     else {
-        # 1882 "libneo-c-gc.c"
-        # 1875 "libneo-c-gc.c"
-        if(_if_conditional205=left>right,        _if_conditional205) {
-            # 1876 "libneo-c-gc.c"
-            __result289__ = 1;
-            return __result289__;
+        # 1862 "libneo-c-gc.c"
+        # 1855 "libneo-c-gc.c"
+        if(_if_conditional199=left>right,        _if_conditional199) {
+            # 1856 "libneo-c-gc.c"
+            __result283__ = 1;
+            return __result283__;
         }
         else {
-            # 1879 "libneo-c-gc.c"
-            __result290__ = 0;
-            return __result290__;
+            # 1859 "libneo-c-gc.c"
+            __result284__ = 0;
+            return __result284__;
         }
     }
-    # 1882 "libneo-c-gc.c"
-    __result291__ = 0;
-    return __result291__;
+    # 1862 "libneo-c-gc.c"
+    __result285__ = 0;
+    return __result285__;
 }
 
 int double_compare(double left, double right){
 void* __result_obj__;
-_Bool _if_conditional206;
-int __result292__;
-_Bool _if_conditional207;
-int __result293__;
-int __result294__;
-int __result295__;
+_Bool _if_conditional200;
+int __result286__;
+_Bool _if_conditional201;
+int __result287__;
+int __result288__;
+int __result289__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1897 "libneo-c-gc.c"
-    # 1887 "libneo-c-gc.c"
-    if(_if_conditional206=left<right,    _if_conditional206) {
-        # 1888 "libneo-c-gc.c"
-        __result292__ = -1;
-        return __result292__;
+    # 1877 "libneo-c-gc.c"
+    # 1867 "libneo-c-gc.c"
+    if(_if_conditional200=left<right,    _if_conditional200) {
+        # 1868 "libneo-c-gc.c"
+        __result286__ = -1;
+        return __result286__;
     }
     else {
-        # 1897 "libneo-c-gc.c"
-        # 1890 "libneo-c-gc.c"
-        if(_if_conditional207=left>right,        _if_conditional207) {
-            # 1891 "libneo-c-gc.c"
-            __result293__ = 1;
-            return __result293__;
+        # 1877 "libneo-c-gc.c"
+        # 1870 "libneo-c-gc.c"
+        if(_if_conditional201=left>right,        _if_conditional201) {
+            # 1871 "libneo-c-gc.c"
+            __result287__ = 1;
+            return __result287__;
         }
         else {
-            # 1894 "libneo-c-gc.c"
-            __result294__ = 0;
-            return __result294__;
+            # 1874 "libneo-c-gc.c"
+            __result288__ = 0;
+            return __result288__;
         }
     }
-    # 1897 "libneo-c-gc.c"
-    __result295__ = 0;
-    return __result295__;
+    # 1877 "libneo-c-gc.c"
+    __result289__ = 0;
+    return __result289__;
 }
 
 int string_compare(char* left, char* right){
 void* __result_obj__;
-_Bool _if_conditional208;
-int __result296__;
-_Bool _if_conditional209;
-int __result297__;
-_Bool _if_conditional210;
-int __result298__;
-int __result299__;
+_Bool _if_conditional202;
+int __result290__;
+_Bool _if_conditional203;
+int __result291__;
+_Bool _if_conditional204;
+int __result292__;
+int __result293__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1912 "libneo-c-gc.c"
-    # 1902 "libneo-c-gc.c"
-    if(_if_conditional208=left==((void*)0)&&right==((void*)0),    _if_conditional208) {
-        # 1903 "libneo-c-gc.c"
-        __result296__ = 0;
-        return __result296__;
+    # 1892 "libneo-c-gc.c"
+    # 1882 "libneo-c-gc.c"
+    if(_if_conditional202=left==((void*)0)&&right==((void*)0),    _if_conditional202) {
+        # 1883 "libneo-c-gc.c"
+        __result290__ = 0;
+        return __result290__;
     }
     else {
-        # 1912 "libneo-c-gc.c"
-        # 1905 "libneo-c-gc.c"
-        if(_if_conditional209=left==((void*)0),        _if_conditional209) {
-            # 1906 "libneo-c-gc.c"
-            __result297__ = -1;
-            return __result297__;
+        # 1892 "libneo-c-gc.c"
+        # 1885 "libneo-c-gc.c"
+        if(_if_conditional203=left==((void*)0),        _if_conditional203) {
+            # 1886 "libneo-c-gc.c"
+            __result291__ = -1;
+            return __result291__;
         }
         else {
-            # 1912 "libneo-c-gc.c"
-            # 1908 "libneo-c-gc.c"
-            if(_if_conditional210=right==((void*)0),            _if_conditional210) {
-                # 1909 "libneo-c-gc.c"
-                __result298__ = 1;
-                return __result298__;
+            # 1892 "libneo-c-gc.c"
+            # 1888 "libneo-c-gc.c"
+            if(_if_conditional204=right==((void*)0),            _if_conditional204) {
+                # 1889 "libneo-c-gc.c"
+                __result292__ = 1;
+                return __result292__;
             }
         }
     }
-    # 1912 "libneo-c-gc.c"
-    __result299__ = strcmp(left,right);
-    return __result299__;
+    # 1892 "libneo-c-gc.c"
+    __result293__ = strcmp(left,right);
+    return __result293__;
 }
 
 int charp_compare(char* left, char* right){
 void* __result_obj__;
-_Bool _if_conditional211;
-int __result300__;
-_Bool _if_conditional212;
-int __result301__;
-_Bool _if_conditional213;
-int __result302__;
-int __result303__;
+_Bool _if_conditional205;
+int __result294__;
+_Bool _if_conditional206;
+int __result295__;
+_Bool _if_conditional207;
+int __result296__;
+int __result297__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1927 "libneo-c-gc.c"
-    # 1917 "libneo-c-gc.c"
-    if(_if_conditional211=left==((void*)0)&&right==((void*)0),    _if_conditional211) {
-        # 1918 "libneo-c-gc.c"
-        __result300__ = 0;
-        return __result300__;
+    # 1907 "libneo-c-gc.c"
+    # 1897 "libneo-c-gc.c"
+    if(_if_conditional205=left==((void*)0)&&right==((void*)0),    _if_conditional205) {
+        # 1898 "libneo-c-gc.c"
+        __result294__ = 0;
+        return __result294__;
     }
     else {
-        # 1927 "libneo-c-gc.c"
-        # 1920 "libneo-c-gc.c"
-        if(_if_conditional212=left==((void*)0),        _if_conditional212) {
-            # 1921 "libneo-c-gc.c"
-            __result301__ = -1;
-            return __result301__;
+        # 1907 "libneo-c-gc.c"
+        # 1900 "libneo-c-gc.c"
+        if(_if_conditional206=left==((void*)0),        _if_conditional206) {
+            # 1901 "libneo-c-gc.c"
+            __result295__ = -1;
+            return __result295__;
         }
         else {
-            # 1927 "libneo-c-gc.c"
-            # 1923 "libneo-c-gc.c"
-            if(_if_conditional213=right==((void*)0),            _if_conditional213) {
-                # 1924 "libneo-c-gc.c"
-                __result302__ = 1;
-                return __result302__;
+            # 1907 "libneo-c-gc.c"
+            # 1903 "libneo-c-gc.c"
+            if(_if_conditional207=right==((void*)0),            _if_conditional207) {
+                # 1904 "libneo-c-gc.c"
+                __result296__ = 1;
+                return __result296__;
             }
         }
     }
-    # 1927 "libneo-c-gc.c"
-    __result303__ = strcmp(left,right);
-    return __result303__;
+    # 1907 "libneo-c-gc.c"
+    __result297__ = strcmp(left,right);
+    return __result297__;
 }
 
 char* FILE_read(struct _IO_FILE* f){
 void* __result_obj__;
-_Bool _if_conditional214;
-char* __result304__;
+_Bool _if_conditional208;
+char* __result298__;
 struct buffer* buf_155;
 _Bool _while_condtional6;
 int size_157;
-_Bool _if_conditional215;
-char* __result305__;
+_Bool _if_conditional209;
+char* __result299__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&buf_155, 0, sizeof(struct buffer*));
 memset(&size_157, 0, sizeof(int));
-    # 1938 "libneo-c-gc.c"
-    # 1935 "libneo-c-gc.c"
-    if(_if_conditional214=f==((void*)0),    _if_conditional214) {
-        # 1936 "libneo-c-gc.c"
-        __result304__ = __result_obj__ = __builtin_string("");
-        return __result304__;
+    # 1918 "libneo-c-gc.c"
+    # 1915 "libneo-c-gc.c"
+    if(_if_conditional208=f==((void*)0),    _if_conditional208) {
+        # 1916 "libneo-c-gc.c"
+        __result298__ = __result_obj__ = __builtin_string("");
+        return __result298__;
     }
-    # 1938 "libneo-c-gc.c"
-    buf_155=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-gc.c", 1938, "buffer"));
-    # 1952 "libneo-c-gc.c"
+    # 1918 "libneo-c-gc.c"
+    buf_155=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-gc.c", 1918, "buffer"));
+    # 1932 "libneo-c-gc.c"
     while(_while_condtional6=1,    _while_condtional6) {
-        # 1941 "libneo-c-gc.c"
+        # 1921 "libneo-c-gc.c"
         char buf2_156[1024];
         memset(&buf2_156, 0, sizeof(char)        *(1024)        );
-        # 1943 "libneo-c-gc.c"
+        # 1923 "libneo-c-gc.c"
         size_157=fread(buf2_156,1,1024,f);
-        # 1945 "libneo-c-gc.c"
+        # 1925 "libneo-c-gc.c"
         buffer_append(buf_155,buf2_156,size_157);
-        # 1950 "libneo-c-gc.c"
-        # 1947 "libneo-c-gc.c"
-        if(_if_conditional215=size_157<1024,        _if_conditional215) {
-            # 1948 "libneo-c-gc.c"
+        # 1930 "libneo-c-gc.c"
+        # 1927 "libneo-c-gc.c"
+        if(_if_conditional209=size_157<1024,        _if_conditional209) {
+            # 1928 "libneo-c-gc.c"
             break;
         }
     }
-    # 1952 "libneo-c-gc.c"
-    __result305__ = __result_obj__ = buffer_to_string(buf_155);
-    return __result305__;
+    # 1932 "libneo-c-gc.c"
+    __result299__ = __result_obj__ = buffer_to_string(buf_155);
+    return __result299__;
 }
 
 int FILE_write(struct _IO_FILE* f, char* str){
 void* __result_obj__;
-_Bool _if_conditional216;
-int __result306__;
-int __result307__;
+_Bool _if_conditional210;
+int __result300__;
+int __result301__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1961 "libneo-c-gc.c"
-    # 1957 "libneo-c-gc.c"
-    if(_if_conditional216=f==((void*)0)||str==((void*)0),    _if_conditional216) {
-        # 1958 "libneo-c-gc.c"
-        __result306__ = -1;
-        return __result306__;
+    # 1941 "libneo-c-gc.c"
+    # 1937 "libneo-c-gc.c"
+    if(_if_conditional210=f==((void*)0)||str==((void*)0),    _if_conditional210) {
+        # 1938 "libneo-c-gc.c"
+        __result300__ = -1;
+        return __result300__;
     }
-    # 1961 "libneo-c-gc.c"
-    __result307__ = fwrite(str,strlen(str),1,f);
-    return __result307__;
+    # 1941 "libneo-c-gc.c"
+    __result301__ = fwrite(str,strlen(str),1,f);
+    return __result301__;
 }
 
 int FILE_fclose(struct _IO_FILE* f){
 void* __result_obj__;
-_Bool _if_conditional217;
-int __result308__;
+_Bool _if_conditional211;
+int __result302__;
 int result_158;
-_Bool _if_conditional218;
-int __result309__;
-int __result310__;
+_Bool _if_conditional212;
+int __result303__;
+int __result304__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_158, 0, sizeof(int));
-    # 1970 "libneo-c-gc.c"
-    # 1966 "libneo-c-gc.c"
-    if(_if_conditional217=f==((void*)0),    _if_conditional217) {
-        # 1967 "libneo-c-gc.c"
-        __result308__ = -1;
-        return __result308__;
+    # 1950 "libneo-c-gc.c"
+    # 1946 "libneo-c-gc.c"
+    if(_if_conditional211=f==((void*)0),    _if_conditional211) {
+        # 1947 "libneo-c-gc.c"
+        __result302__ = -1;
+        return __result302__;
     }
-    # 1970 "libneo-c-gc.c"
+    # 1950 "libneo-c-gc.c"
     result_158=fclose(f);
-    # 1976 "libneo-c-gc.c"
-    # 1972 "libneo-c-gc.c"
-    if(_if_conditional218=result_158<0,    _if_conditional218) {
-        # 1973 "libneo-c-gc.c"
-        __result309__ = result_158;
-        return __result309__;
+    # 1956 "libneo-c-gc.c"
+    # 1952 "libneo-c-gc.c"
+    if(_if_conditional212=result_158<0,    _if_conditional212) {
+        # 1953 "libneo-c-gc.c"
+        __result303__ = result_158;
+        return __result303__;
     }
-    # 1976 "libneo-c-gc.c"
-    __result310__ = result_158;
-    return __result310__;
+    # 1956 "libneo-c-gc.c"
+    __result304__ = result_158;
+    return __result304__;
 }
 
 struct _IO_FILE* FILE_fprintf(struct _IO_FILE* f, const char* msg, ...){
 void* __result_obj__;
-_Bool _if_conditional219;
-struct _IO_FILE* __result311__;
+_Bool _if_conditional213;
+struct _IO_FILE* __result305__;
 va_list args_160;
 int result_161;
-_Bool _if_conditional220;
-struct _IO_FILE* __result312__;
-struct _IO_FILE* __result313__;
+_Bool _if_conditional214;
+struct _IO_FILE* __result306__;
+struct _IO_FILE* __result307__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&args_160, 0, sizeof(va_list));
 memset(&result_161, 0, sizeof(int));
-    # 1984 "libneo-c-gc.c"
-    # 1981 "libneo-c-gc.c"
-    if(_if_conditional219=f==((void*)0)||msg==((void*)0),    _if_conditional219) {
-        # 1982 "libneo-c-gc.c"
-        __result311__ = __result_obj__ = f;
-        return __result311__;
+    # 1964 "libneo-c-gc.c"
+    # 1961 "libneo-c-gc.c"
+    if(_if_conditional213=f==((void*)0)||msg==((void*)0),    _if_conditional213) {
+        # 1962 "libneo-c-gc.c"
+        __result305__ = __result_obj__ = f;
+        return __result305__;
     }
-    # 1984 "libneo-c-gc.c"
+    # 1964 "libneo-c-gc.c"
     char msg2_159[1024*2*2*2];
     memset(&msg2_159, 0, sizeof(char)    *(1024*2*2*2)    );
-    # 1986 "libneo-c-gc.c"
-    # 1987 "libneo-c-gc.c"
+    # 1966 "libneo-c-gc.c"
+    # 1967 "libneo-c-gc.c"
     __builtin_va_start(args_160,msg);
-    # 1988 "libneo-c-gc.c"
+    # 1968 "libneo-c-gc.c"
     vsnprintf(msg2_159,1024*2*2*2,msg,args_160);
-    # 1989 "libneo-c-gc.c"
+    # 1969 "libneo-c-gc.c"
     __builtin_va_end(args_160);
-    # 1991 "libneo-c-gc.c"
+    # 1971 "libneo-c-gc.c"
     result_161=fprintf(f,"%s",msg2_159);
-    # 1997 "libneo-c-gc.c"
-    # 1993 "libneo-c-gc.c"
-    if(_if_conditional220=result_161<0,    _if_conditional220) {
-        # 1994 "libneo-c-gc.c"
-        __result312__ = __result_obj__ = f;
-        return __result312__;
+    # 1977 "libneo-c-gc.c"
+    # 1973 "libneo-c-gc.c"
+    if(_if_conditional214=result_161<0,    _if_conditional214) {
+        # 1974 "libneo-c-gc.c"
+        __result306__ = __result_obj__ = f;
+        return __result306__;
     }
-    # 1997 "libneo-c-gc.c"
-    __result313__ = __result_obj__ = f;
-    return __result313__;
+    # 1977 "libneo-c-gc.c"
+    __result307__ = __result_obj__ = f;
+    return __result307__;
 }
 
 int string_write(char* self, char* file_name, _Bool append){
 void* __result_obj__;
-_Bool _if_conditional221;
-int __result314__;
+_Bool _if_conditional215;
+int __result308__;
 struct _IO_FILE* f_162;
-_Bool _if_conditional222;
-_Bool _if_conditional223;
-int __result315__;
+_Bool _if_conditional216;
+_Bool _if_conditional217;
+int __result309__;
 int result_163;
-_Bool _if_conditional224;
-int __result316__;
+_Bool _if_conditional218;
+int __result310__;
 int result2_164;
-_Bool _if_conditional225;
-int __result317__;
-int __result318__;
+_Bool _if_conditional219;
+int __result311__;
+int __result312__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&f_162, 0, sizeof(struct _IO_FILE*));
 memset(&result_163, 0, sizeof(int));
 memset(&result2_164, 0, sizeof(int));
-    # 2006 "libneo-c-gc.c"
-    # 2002 "libneo-c-gc.c"
-    if(_if_conditional221=self==((void*)0)||file_name==((void*)0),    _if_conditional221) {
-        # 2003 "libneo-c-gc.c"
-        __result314__ = -1;
-        return __result314__;
+    # 1986 "libneo-c-gc.c"
+    # 1982 "libneo-c-gc.c"
+    if(_if_conditional215=self==((void*)0)||file_name==((void*)0),    _if_conditional215) {
+        # 1983 "libneo-c-gc.c"
+        __result308__ = -1;
+        return __result308__;
     }
-    # 2006 "libneo-c-gc.c"
-    # 2014 "libneo-c-gc.c"
-    # 2007 "libneo-c-gc.c"
+    # 1986 "libneo-c-gc.c"
+    # 1994 "libneo-c-gc.c"
+    # 1987 "libneo-c-gc.c"
     if(append) {
-        # 2008 "libneo-c-gc.c"
+        # 1988 "libneo-c-gc.c"
         f_162=fopen(file_name,"a");
     }
     else {
-        # 2011 "libneo-c-gc.c"
+        # 1991 "libneo-c-gc.c"
         f_162=fopen(file_name,"w");
     }
-    # 2018 "libneo-c-gc.c"
-    # 2014 "libneo-c-gc.c"
-    if(_if_conditional223=f_162==((void*)0),    _if_conditional223) {
-        # 2015 "libneo-c-gc.c"
-        __result315__ = -1;
-        return __result315__;
+    # 1998 "libneo-c-gc.c"
+    # 1994 "libneo-c-gc.c"
+    if(_if_conditional217=f_162==((void*)0),    _if_conditional217) {
+        # 1995 "libneo-c-gc.c"
+        __result309__ = -1;
+        return __result309__;
     }
-    # 2018 "libneo-c-gc.c"
+    # 1998 "libneo-c-gc.c"
     result_163=fwrite(self,strlen(self),1,f_162);
-    # 2024 "libneo-c-gc.c"
-    # 2020 "libneo-c-gc.c"
-    if(_if_conditional224=result_163<0,    _if_conditional224) {
-        # 2021 "libneo-c-gc.c"
-        __result316__ = result_163;
-        return __result316__;
+    # 2004 "libneo-c-gc.c"
+    # 2000 "libneo-c-gc.c"
+    if(_if_conditional218=result_163<0,    _if_conditional218) {
+        # 2001 "libneo-c-gc.c"
+        __result310__ = result_163;
+        return __result310__;
     }
-    # 2026 "libneo-c-gc.c"
+    # 2006 "libneo-c-gc.c"
     result2_164=fclose(f_162);
-    # 2030 "libneo-c-gc.c"
-    # 2026 "libneo-c-gc.c"
-    if(_if_conditional225=result2_164<0,    _if_conditional225) {
-        # 2027 "libneo-c-gc.c"
-        __result317__ = result2_164;
-        return __result317__;
+    # 2010 "libneo-c-gc.c"
+    # 2006 "libneo-c-gc.c"
+    if(_if_conditional219=result2_164<0,    _if_conditional219) {
+        # 2007 "libneo-c-gc.c"
+        __result311__ = result2_164;
+        return __result311__;
     }
-    # 2030 "libneo-c-gc.c"
-    __result318__ = result_163;
-    return __result318__;
+    # 2010 "libneo-c-gc.c"
+    __result312__ = result_163;
+    return __result312__;
 }
 
 int charp_write(char* self, char* file_name, _Bool append){
 void* __result_obj__;
-_Bool _if_conditional226;
-int __result319__;
+_Bool _if_conditional220;
+int __result313__;
 struct _IO_FILE* f_165;
-_Bool _if_conditional227;
-_Bool _if_conditional228;
-int __result320__;
+_Bool _if_conditional221;
+_Bool _if_conditional222;
+int __result314__;
 int result_166;
-_Bool _if_conditional229;
-int __result321__;
+_Bool _if_conditional223;
+int __result315__;
 int result2_167;
-_Bool _if_conditional230;
-int __result322__;
-int __result323__;
+_Bool _if_conditional224;
+int __result316__;
+int __result317__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&f_165, 0, sizeof(struct _IO_FILE*));
 memset(&result_166, 0, sizeof(int));
 memset(&result2_167, 0, sizeof(int));
-    # 2039 "libneo-c-gc.c"
-    # 2035 "libneo-c-gc.c"
-    if(_if_conditional226=self==((void*)0)||file_name==((void*)0),    _if_conditional226) {
-        # 2036 "libneo-c-gc.c"
-        __result319__ = -1;
-        return __result319__;
+    # 2019 "libneo-c-gc.c"
+    # 2015 "libneo-c-gc.c"
+    if(_if_conditional220=self==((void*)0)||file_name==((void*)0),    _if_conditional220) {
+        # 2016 "libneo-c-gc.c"
+        __result313__ = -1;
+        return __result313__;
     }
-    # 2039 "libneo-c-gc.c"
-    # 2047 "libneo-c-gc.c"
-    # 2040 "libneo-c-gc.c"
+    # 2019 "libneo-c-gc.c"
+    # 2027 "libneo-c-gc.c"
+    # 2020 "libneo-c-gc.c"
     if(append) {
-        # 2041 "libneo-c-gc.c"
+        # 2021 "libneo-c-gc.c"
         f_165=fopen(file_name,"a");
     }
     else {
-        # 2044 "libneo-c-gc.c"
+        # 2024 "libneo-c-gc.c"
         f_165=fopen(file_name,"w");
     }
-    # 2051 "libneo-c-gc.c"
-    # 2047 "libneo-c-gc.c"
-    if(_if_conditional228=f_165==((void*)0),    _if_conditional228) {
-        # 2048 "libneo-c-gc.c"
-        __result320__ = -1;
-        return __result320__;
+    # 2031 "libneo-c-gc.c"
+    # 2027 "libneo-c-gc.c"
+    if(_if_conditional222=f_165==((void*)0),    _if_conditional222) {
+        # 2028 "libneo-c-gc.c"
+        __result314__ = -1;
+        return __result314__;
     }
-    # 2051 "libneo-c-gc.c"
+    # 2031 "libneo-c-gc.c"
     result_166=fwrite(self,strlen(self),1,f_165);
-    # 2057 "libneo-c-gc.c"
-    # 2053 "libneo-c-gc.c"
-    if(_if_conditional229=result_166<0,    _if_conditional229) {
-        # 2054 "libneo-c-gc.c"
-        __result321__ = result_166;
-        return __result321__;
+    # 2037 "libneo-c-gc.c"
+    # 2033 "libneo-c-gc.c"
+    if(_if_conditional223=result_166<0,    _if_conditional223) {
+        # 2034 "libneo-c-gc.c"
+        __result315__ = result_166;
+        return __result315__;
     }
-    # 2059 "libneo-c-gc.c"
+    # 2039 "libneo-c-gc.c"
     result2_167=fclose(f_165);
-    # 2063 "libneo-c-gc.c"
-    # 2059 "libneo-c-gc.c"
-    if(_if_conditional230=result2_167<0,    _if_conditional230) {
-        # 2060 "libneo-c-gc.c"
-        __result322__ = result2_167;
-        return __result322__;
+    # 2043 "libneo-c-gc.c"
+    # 2039 "libneo-c-gc.c"
+    if(_if_conditional224=result2_167<0,    _if_conditional224) {
+        # 2040 "libneo-c-gc.c"
+        __result316__ = result2_167;
+        return __result316__;
     }
-    # 2063 "libneo-c-gc.c"
-    __result323__ = result_166;
-    return __result323__;
+    # 2043 "libneo-c-gc.c"
+    __result317__ = result_166;
+    return __result317__;
 }
 
 char* string_read(char* file_name){
 void* __result_obj__;
-_Bool _if_conditional231;
-char* __result324__;
+_Bool _if_conditional225;
+char* __result318__;
 struct _IO_FILE* f_168;
-_Bool _if_conditional232;
-char* __result325__;
+_Bool _if_conditional226;
+char* __result319__;
 struct buffer* buf_169;
 _Bool _while_condtional7;
 int size_171;
-_Bool _if_conditional233;
+_Bool _if_conditional227;
 char* result_172;
 int result2_173;
-_Bool _if_conditional234;
-char* __result326__;
-char* __result327__;
+_Bool _if_conditional228;
+char* __result320__;
+char* __result321__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&f_168, 0, sizeof(struct _IO_FILE*));
 memset(&buf_169, 0, sizeof(struct buffer*));
 memset(&size_171, 0, sizeof(int));
 memset(&result_172, 0, sizeof(char*));
 memset(&result2_173, 0, sizeof(int));
-    # 2072 "libneo-c-gc.c"
-    # 2068 "libneo-c-gc.c"
-    if(_if_conditional231=file_name==((void*)0),    _if_conditional231) {
-        # 2069 "libneo-c-gc.c"
-        __result324__ = __result_obj__ = __builtin_string("");
-        return __result324__;
+    # 2052 "libneo-c-gc.c"
+    # 2048 "libneo-c-gc.c"
+    if(_if_conditional225=file_name==((void*)0),    _if_conditional225) {
+        # 2049 "libneo-c-gc.c"
+        __result318__ = __result_obj__ = __builtin_string("");
+        return __result318__;
     }
-    # 2072 "libneo-c-gc.c"
+    # 2052 "libneo-c-gc.c"
     f_168=fopen(file_name,"r");
-    # 2078 "libneo-c-gc.c"
-    # 2074 "libneo-c-gc.c"
-    if(_if_conditional232=f_168==((void*)0),    _if_conditional232) {
-        # 2075 "libneo-c-gc.c"
-        __result325__ = __result_obj__ = __builtin_string("");
-        return __result325__;
+    # 2058 "libneo-c-gc.c"
+    # 2054 "libneo-c-gc.c"
+    if(_if_conditional226=f_168==((void*)0),    _if_conditional226) {
+        # 2055 "libneo-c-gc.c"
+        __result319__ = __result_obj__ = __builtin_string("");
+        return __result319__;
     }
-    # 2078 "libneo-c-gc.c"
-    buf_169=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-gc.c", 2078, "buffer"));
-    # 2092 "libneo-c-gc.c"
+    # 2058 "libneo-c-gc.c"
+    buf_169=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-gc.c", 2058, "buffer"));
+    # 2072 "libneo-c-gc.c"
     while(_while_condtional7=1,    _while_condtional7) {
-        # 2081 "libneo-c-gc.c"
+        # 2061 "libneo-c-gc.c"
         char buf2_170[1024];
         memset(&buf2_170, 0, sizeof(char)        *(1024)        );
-        # 2083 "libneo-c-gc.c"
+        # 2063 "libneo-c-gc.c"
         size_171=fread(buf2_170,1,1024,f_168);
-        # 2085 "libneo-c-gc.c"
+        # 2065 "libneo-c-gc.c"
         buffer_append(buf_169,buf2_170,size_171);
-        # 2090 "libneo-c-gc.c"
-        # 2087 "libneo-c-gc.c"
-        if(_if_conditional233=size_171<1024,        _if_conditional233) {
-            # 2088 "libneo-c-gc.c"
+        # 2070 "libneo-c-gc.c"
+        # 2067 "libneo-c-gc.c"
+        if(_if_conditional227=size_171<1024,        _if_conditional227) {
+            # 2068 "libneo-c-gc.c"
             break;
         }
     }
-    # 2092 "libneo-c-gc.c"
+    # 2072 "libneo-c-gc.c"
     result_172=buffer_to_string(buf_169);
-    # 2096 "libneo-c-gc.c"
+    # 2076 "libneo-c-gc.c"
     result2_173=fclose(f_168);
-    # 2100 "libneo-c-gc.c"
-    # 2096 "libneo-c-gc.c"
-    if(_if_conditional234=result2_173<0,    _if_conditional234) {
-        # 2097 "libneo-c-gc.c"
-        __result326__ = __result_obj__ = __builtin_string("");
-        return __result326__;
+    # 2080 "libneo-c-gc.c"
+    # 2076 "libneo-c-gc.c"
+    if(_if_conditional228=result2_173<0,    _if_conditional228) {
+        # 2077 "libneo-c-gc.c"
+        __result320__ = __result_obj__ = __builtin_string("");
+        return __result320__;
     }
-    # 2100 "libneo-c-gc.c"
-    __result327__ = __result_obj__ = result_172;
-    return __result327__;
+    # 2080 "libneo-c-gc.c"
+    __result321__ = __result_obj__ = result_172;
+    return __result321__;
 }
 
 char* charp_read(char* file_name){
 void* __result_obj__;
-_Bool _if_conditional235;
-char* __result328__;
+_Bool _if_conditional229;
+char* __result322__;
 struct _IO_FILE* f_174;
-_Bool _if_conditional236;
-char* __result329__;
+_Bool _if_conditional230;
+char* __result323__;
 struct buffer* buf_175;
 _Bool _while_condtional8;
 int size_177;
-_Bool _if_conditional237;
+_Bool _if_conditional231;
 char* result_178;
 int result2_179;
-_Bool _if_conditional238;
-char* __result330__;
-char* __result331__;
+_Bool _if_conditional232;
+char* __result324__;
+char* __result325__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&f_174, 0, sizeof(struct _IO_FILE*));
 memset(&buf_175, 0, sizeof(struct buffer*));
 memset(&size_177, 0, sizeof(int));
 memset(&result_178, 0, sizeof(char*));
 memset(&result2_179, 0, sizeof(int));
-    # 2109 "libneo-c-gc.c"
-    # 2105 "libneo-c-gc.c"
-    if(_if_conditional235=file_name==((void*)0),    _if_conditional235) {
-        # 2106 "libneo-c-gc.c"
-        __result328__ = __result_obj__ = __builtin_string("");
-        return __result328__;
+    # 2089 "libneo-c-gc.c"
+    # 2085 "libneo-c-gc.c"
+    if(_if_conditional229=file_name==((void*)0),    _if_conditional229) {
+        # 2086 "libneo-c-gc.c"
+        __result322__ = __result_obj__ = __builtin_string("");
+        return __result322__;
     }
-    # 2109 "libneo-c-gc.c"
+    # 2089 "libneo-c-gc.c"
     f_174=fopen(file_name,"r");
-    # 2115 "libneo-c-gc.c"
-    # 2111 "libneo-c-gc.c"
-    if(_if_conditional236=f_174==((void*)0),    _if_conditional236) {
-        # 2112 "libneo-c-gc.c"
-        __result329__ = __result_obj__ = __builtin_string("");
-        return __result329__;
+    # 2095 "libneo-c-gc.c"
+    # 2091 "libneo-c-gc.c"
+    if(_if_conditional230=f_174==((void*)0),    _if_conditional230) {
+        # 2092 "libneo-c-gc.c"
+        __result323__ = __result_obj__ = __builtin_string("");
+        return __result323__;
     }
-    # 2115 "libneo-c-gc.c"
-    buf_175=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-gc.c", 2115, "buffer"));
-    # 2129 "libneo-c-gc.c"
+    # 2095 "libneo-c-gc.c"
+    buf_175=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-gc.c", 2095, "buffer"));
+    # 2109 "libneo-c-gc.c"
     while(_while_condtional8=1,    _while_condtional8) {
-        # 2118 "libneo-c-gc.c"
+        # 2098 "libneo-c-gc.c"
         char buf2_176[1024];
         memset(&buf2_176, 0, sizeof(char)        *(1024)        );
-        # 2120 "libneo-c-gc.c"
+        # 2100 "libneo-c-gc.c"
         size_177=fread(buf2_176,1,1024,f_174);
-        # 2122 "libneo-c-gc.c"
+        # 2102 "libneo-c-gc.c"
         buffer_append(buf_175,buf2_176,size_177);
-        # 2127 "libneo-c-gc.c"
-        # 2124 "libneo-c-gc.c"
-        if(_if_conditional237=size_177<1024,        _if_conditional237) {
-            # 2125 "libneo-c-gc.c"
+        # 2107 "libneo-c-gc.c"
+        # 2104 "libneo-c-gc.c"
+        if(_if_conditional231=size_177<1024,        _if_conditional231) {
+            # 2105 "libneo-c-gc.c"
             break;
         }
     }
-    # 2129 "libneo-c-gc.c"
+    # 2109 "libneo-c-gc.c"
     result_178=buffer_to_string(buf_175);
-    # 2133 "libneo-c-gc.c"
+    # 2113 "libneo-c-gc.c"
     result2_179=fclose(f_174);
-    # 2137 "libneo-c-gc.c"
-    # 2133 "libneo-c-gc.c"
-    if(_if_conditional238=result2_179<0,    _if_conditional238) {
-        # 2134 "libneo-c-gc.c"
-        __result330__ = __result_obj__ = __builtin_string("");
-        return __result330__;
+    # 2117 "libneo-c-gc.c"
+    # 2113 "libneo-c-gc.c"
+    if(_if_conditional232=result2_179<0,    _if_conditional232) {
+        # 2114 "libneo-c-gc.c"
+        __result324__ = __result_obj__ = __builtin_string("");
+        return __result324__;
     }
-    # 2137 "libneo-c-gc.c"
-    __result331__ = __result_obj__ = result_178;
-    return __result331__;
+    # 2117 "libneo-c-gc.c"
+    __result325__ = __result_obj__ = result_178;
+    return __result325__;
 }
 
 struct list$1charph* FILE_readlines(struct _IO_FILE* f){
 void* __result_obj__;
 struct list$1charph* result_180;
-_Bool _if_conditional239;
-struct list$1charph* __result332__;
+_Bool _if_conditional233;
+struct list$1charph* __result326__;
 _Bool _while_condtional9;
-_Bool _if_conditional240;
-struct list$1charph* __result333__;
+_Bool _if_conditional234;
+struct list$1charph* __result327__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_180, 0, sizeof(struct list$1charph*));
-    # 2142 "libneo-c-gc.c"
-    result_180=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-gc.c", 2142, "list$1charph"));
-    # 2148 "libneo-c-gc.c"
-    # 2144 "libneo-c-gc.c"
-    if(_if_conditional239=f==((void*)0),    _if_conditional239) {
-        # 2145 "libneo-c-gc.c"
-        __result332__ = __result_obj__ = result_180;
-        return __result332__;
+    # 2122 "libneo-c-gc.c"
+    result_180=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-gc.c", 2122, "list$1charph"));
+    # 2128 "libneo-c-gc.c"
+    # 2124 "libneo-c-gc.c"
+    if(_if_conditional233=f==((void*)0),    _if_conditional233) {
+        # 2125 "libneo-c-gc.c"
+        __result326__ = __result_obj__ = result_180;
+        return __result326__;
     }
-    # 2158 "libneo-c-gc.c"
+    # 2138 "libneo-c-gc.c"
     while(_while_condtional9=1,    _while_condtional9) {
-        # 2149 "libneo-c-gc.c"
+        # 2129 "libneo-c-gc.c"
         char buf_181[1024];
         memset(&buf_181, 0, sizeof(char)        *(1024)        );
-        # 2155 "libneo-c-gc.c"
-        # 2151 "libneo-c-gc.c"
-        if(_if_conditional240=fgets(buf_181,1024,f)==((void*)0),        _if_conditional240) {
-            # 2152 "libneo-c-gc.c"
+        # 2135 "libneo-c-gc.c"
+        # 2131 "libneo-c-gc.c"
+        if(_if_conditional234=fgets(buf_181,1024,f)==((void*)0),        _if_conditional234) {
+            # 2132 "libneo-c-gc.c"
             break;
         }
-        # 2155 "libneo-c-gc.c"
+        # 2135 "libneo-c-gc.c"
         list$1charph_push_back(result_180,__builtin_string(buf_181));
     }
-    # 2158 "libneo-c-gc.c"
-    __result333__ = __result_obj__ = result_180;
-    return __result333__;
+    # 2138 "libneo-c-gc.c"
+    __result327__ = __result_obj__ = result_180;
+    return __result327__;
 }
 
 int fopen_block(const char* path, const char* mode, void* parent, void (*block)(void*,struct _IO_FILE*)){
 void* __result_obj__;
-_Bool _if_conditional241;
-int __result334__;
+_Bool _if_conditional235;
+int __result328__;
 struct _IO_FILE* f_182;
-_Bool _if_conditional242;
-_Bool _if_conditional243;
-int __result335__;
-int __result336__;
-int __result337__;
+_Bool _if_conditional236;
+int __result329__;
+int __result330__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&f_182, 0, sizeof(struct _IO_FILE*));
-    # 2166 "libneo-c-gc.c"
-    # 2163 "libneo-c-gc.c"
-    if(_if_conditional241=path==((void*)0)||mode==((void*)0),    _if_conditional241) {
-        # 2164 "libneo-c-gc.c"
-        __result334__ = -1;
-        return __result334__;
+    # 2146 "libneo-c-gc.c"
+    # 2143 "libneo-c-gc.c"
+    if(_if_conditional235=path==((void*)0)||mode==((void*)0),    _if_conditional235) {
+        # 2144 "libneo-c-gc.c"
+        __result328__ = -1;
+        return __result328__;
     }
-    # 2166 "libneo-c-gc.c"
+    # 2146 "libneo-c-gc.c"
     f_182=fopen(path,mode);
-    # 2180 "libneo-c-gc.c"
-    # 2168 "libneo-c-gc.c"
+    # 2156 "libneo-c-gc.c"
+    # 2148 "libneo-c-gc.c"
     if(f_182) {
-        # 2169 "libneo-c-gc.c"
+        # 2149 "libneo-c-gc.c"
         block(parent,f_182);
-        # 2175 "libneo-c-gc.c"
-        # 2170 "libneo-c-gc.c"
-        if(_if_conditional243=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,        _if_conditional243) {
-            # 2171 "libneo-c-gc.c"
-            fclose(f_182);
-            # 2172 "libneo-c-gc.c"
-            __result335__ = 0;
-            return __result335__;
-        }
-        # 2175 "libneo-c-gc.c"
+        # 2151 "libneo-c-gc.c"
         fclose(f_182);
-        # 2177 "libneo-c-gc.c"
-        __result336__ = 0;
-        return __result336__;
+        # 2153 "libneo-c-gc.c"
+        __result329__ = 0;
+        return __result329__;
     }
-    # 2180 "libneo-c-gc.c"
-    __result337__ = -1;
-    return __result337__;
+    # 2156 "libneo-c-gc.c"
+    __result330__ = -1;
+    return __result330__;
 }
 
 char* charp_puts(char* self){
 void* __result_obj__;
-_Bool _if_conditional244;
-char* __result338__;
-char* __result339__;
+_Bool _if_conditional237;
+char* __result331__;
+char* __result332__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2191 "libneo-c-gc.c"
-    # 2188 "libneo-c-gc.c"
-    if(_if_conditional244=self==((void*)0),    _if_conditional244) {
-        # 2189 "libneo-c-gc.c"
-        __result338__ = __result_obj__ = __builtin_string("");
-        return __result338__;
+    # 2167 "libneo-c-gc.c"
+    # 2164 "libneo-c-gc.c"
+    if(_if_conditional237=self==((void*)0),    _if_conditional237) {
+        # 2165 "libneo-c-gc.c"
+        __result331__ = __result_obj__ = __builtin_string("");
+        return __result331__;
     }
-    # 2191 "libneo-c-gc.c"
+    # 2167 "libneo-c-gc.c"
     puts(self);
-    # 2193 "libneo-c-gc.c"
-    __result339__ = __result_obj__ = __builtin_string(self);
-    return __result339__;
+    # 2169 "libneo-c-gc.c"
+    __result332__ = __result_obj__ = __builtin_string(self);
+    return __result332__;
 }
 
 char* charp_print(char* self){
 void* __result_obj__;
-_Bool _if_conditional245;
-char* __result340__;
-char* __result341__;
+_Bool _if_conditional238;
+char* __result333__;
+char* __result334__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2201 "libneo-c-gc.c"
-    # 2198 "libneo-c-gc.c"
-    if(_if_conditional245=self==((void*)0),    _if_conditional245) {
-        # 2199 "libneo-c-gc.c"
-        __result340__ = __result_obj__ = __builtin_string("");
-        return __result340__;
+    # 2177 "libneo-c-gc.c"
+    # 2174 "libneo-c-gc.c"
+    if(_if_conditional238=self==((void*)0),    _if_conditional238) {
+        # 2175 "libneo-c-gc.c"
+        __result333__ = __result_obj__ = __builtin_string("");
+        return __result333__;
     }
-    # 2201 "libneo-c-gc.c"
+    # 2177 "libneo-c-gc.c"
     printf("%s",self);
-    # 2203 "libneo-c-gc.c"
-    __result341__ = __result_obj__ = __builtin_string(self);
-    return __result341__;
+    # 2179 "libneo-c-gc.c"
+    __result334__ = __result_obj__ = __builtin_string(self);
+    return __result334__;
 }
 
 char* string_printf(char* self, ...){
 void* __result_obj__;
-_Bool _if_conditional246;
-char* __result342__;
+_Bool _if_conditional239;
+char* __result335__;
 char* msg2_183;
 va_list args_184;
-char* __result343__;
+char* __result336__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&msg2_183, 0, sizeof(char*));
 memset(&args_184, 0, sizeof(va_list));
-    # 2212 "libneo-c-gc.c"
-    # 2209 "libneo-c-gc.c"
-    if(_if_conditional246=self==((void*)0),    _if_conditional246) {
-        # 2210 "libneo-c-gc.c"
-        __result342__ = __result_obj__ = __builtin_string("");
-        return __result342__;
+    # 2188 "libneo-c-gc.c"
+    # 2185 "libneo-c-gc.c"
+    if(_if_conditional239=self==((void*)0),    _if_conditional239) {
+        # 2186 "libneo-c-gc.c"
+        __result335__ = __result_obj__ = __builtin_string("");
+        return __result335__;
     }
-    # 2212 "libneo-c-gc.c"
-    # 2214 "libneo-c-gc.c"
-    # 2215 "libneo-c-gc.c"
+    # 2188 "libneo-c-gc.c"
+    # 2190 "libneo-c-gc.c"
+    # 2191 "libneo-c-gc.c"
     __builtin_va_start(args_184,self);
-    # 2216 "libneo-c-gc.c"
+    # 2192 "libneo-c-gc.c"
     vasprintf(&msg2_183,self,args_184);
-    # 2217 "libneo-c-gc.c"
+    # 2193 "libneo-c-gc.c"
     __builtin_va_end(args_184);
-    # 2219 "libneo-c-gc.c"
+    # 2195 "libneo-c-gc.c"
     printf("%s",msg2_183);
-    # 2221 "libneo-c-gc.c"
+    # 2197 "libneo-c-gc.c"
     free(msg2_183);
-    # 2223 "libneo-c-gc.c"
-    __result343__ = __result_obj__ = __builtin_string(self);
-    return __result343__;
+    # 2199 "libneo-c-gc.c"
+    __result336__ = __result_obj__ = __builtin_string(self);
+    return __result336__;
 }
 
 char* charp_printf(char* self, ...){
 void* __result_obj__;
-_Bool _if_conditional247;
-char* __result344__;
+_Bool _if_conditional240;
+char* __result337__;
 char* msg2_185;
 va_list args_186;
-char* __result345__;
+char* __result338__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&msg2_185, 0, sizeof(char*));
 memset(&args_186, 0, sizeof(va_list));
-    # 2231 "libneo-c-gc.c"
-    # 2228 "libneo-c-gc.c"
-    if(_if_conditional247=self==((void*)0),    _if_conditional247) {
-        # 2229 "libneo-c-gc.c"
-        __result344__ = __result_obj__ = __builtin_string("");
-        return __result344__;
+    # 2207 "libneo-c-gc.c"
+    # 2204 "libneo-c-gc.c"
+    if(_if_conditional240=self==((void*)0),    _if_conditional240) {
+        # 2205 "libneo-c-gc.c"
+        __result337__ = __result_obj__ = __builtin_string("");
+        return __result337__;
     }
-    # 2231 "libneo-c-gc.c"
-    # 2233 "libneo-c-gc.c"
-    # 2234 "libneo-c-gc.c"
+    # 2207 "libneo-c-gc.c"
+    # 2209 "libneo-c-gc.c"
+    # 2210 "libneo-c-gc.c"
     __builtin_va_start(args_186,self);
-    # 2235 "libneo-c-gc.c"
+    # 2211 "libneo-c-gc.c"
     vasprintf(&msg2_185,self,args_186);
-    # 2236 "libneo-c-gc.c"
+    # 2212 "libneo-c-gc.c"
     __builtin_va_end(args_186);
-    # 2238 "libneo-c-gc.c"
+    # 2214 "libneo-c-gc.c"
     printf("%s",msg2_185);
-    # 2240 "libneo-c-gc.c"
+    # 2216 "libneo-c-gc.c"
     free(msg2_185);
-    # 2242 "libneo-c-gc.c"
-    __result345__ = __result_obj__ = __builtin_string(self);
-    return __result345__;
+    # 2218 "libneo-c-gc.c"
+    __result338__ = __result_obj__ = __builtin_string(self);
+    return __result338__;
 }
 
 int int_printf(int self, char* msg){
 void* __result_obj__;
-int __result346__;
+int __result339__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2247 "libneo-c-gc.c"
+    # 2223 "libneo-c-gc.c"
     printf(msg,self);
-    # 2249 "libneo-c-gc.c"
-    __result346__ = self;
-    return __result346__;
+    # 2225 "libneo-c-gc.c"
+    __result339__ = self;
+    return __result339__;
 }
 
 char* string_puts(char* self){
 void* __result_obj__;
-_Bool _if_conditional248;
-char* __result347__;
-char* __result348__;
+_Bool _if_conditional241;
+char* __result340__;
+char* __result341__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2257 "libneo-c-gc.c"
-    # 2254 "libneo-c-gc.c"
-    if(_if_conditional248=self==((void*)0),    _if_conditional248) {
-        # 2255 "libneo-c-gc.c"
-        __result347__ = __result_obj__ = __builtin_string("");
-        return __result347__;
+    # 2233 "libneo-c-gc.c"
+    # 2230 "libneo-c-gc.c"
+    if(_if_conditional241=self==((void*)0),    _if_conditional241) {
+        # 2231 "libneo-c-gc.c"
+        __result340__ = __result_obj__ = __builtin_string("");
+        return __result340__;
     }
-    # 2257 "libneo-c-gc.c"
+    # 2233 "libneo-c-gc.c"
     puts(self);
-    # 2259 "libneo-c-gc.c"
-    __result348__ = __result_obj__ = __builtin_string(self);
-    return __result348__;
+    # 2235 "libneo-c-gc.c"
+    __result341__ = __result_obj__ = __builtin_string(self);
+    return __result341__;
 }
 
 void int_times(int self, void* parent, void (*block)(void*,int)){
 void* __result_obj__;
 int i_187;
-_Bool _if_conditional249;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_187, 0, sizeof(int));
-    # 2274 "libneo-c-gc.c"
+    # 2246 "libneo-c-gc.c"
     for(    i_187=0;    i_187<self;    i_187++    ){
-        # 2268 "libneo-c-gc.c"
+        # 2244 "libneo-c-gc.c"
         block(parent,i_187);
-        # 2273 "libneo-c-gc.c"
-        # 2270 "libneo-c-gc.c"
-        if(_if_conditional249=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,        _if_conditional249) {
-            # 2271 "libneo-c-gc.c"
-            return;
-        }
     }
 }
 
 struct integer* integer_initialize(struct integer* self, long value){
 void* __result_obj__;
-struct integer* __result349__;
+struct integer* __result342__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2281 "libneo-c-gc.c"
+    # 2253 "libneo-c-gc.c"
     self->value=value;
-    # 2283 "libneo-c-gc.c"
-    __result349__ = __result_obj__ = self;
-    return __result349__;
+    # 2255 "libneo-c-gc.c"
+    __result342__ = __result_obj__ = self;
+    return __result342__;
 }
 
 int integer_to_int(struct integer* self){
 void* __result_obj__;
-int __result350__;
+int __result343__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2288 "libneo-c-gc.c"
-    __result350__ = self->value;
-    return __result350__;
+    # 2260 "libneo-c-gc.c"
+    __result343__ = self->value;
+    return __result343__;
 }
 
 struct integer* char_to_integer(char self){
 void* __result_obj__;
-struct integer* __result351__;
+struct integer* __result344__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2293 "libneo-c-gc.c"
-    __result351__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2293, "integer"),self);
-    return __result351__;
+    # 2265 "libneo-c-gc.c"
+    __result344__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2265, "integer"),self);
+    return __result344__;
 }
 
 struct integer* short_to_integer(short short self){
 void* __result_obj__;
-struct integer* __result352__;
+struct integer* __result345__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2298 "libneo-c-gc.c"
-    __result352__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2298, "integer"),self);
-    return __result352__;
+    # 2270 "libneo-c-gc.c"
+    __result345__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2270, "integer"),self);
+    return __result345__;
 }
 
 struct integer* int_to_integer(int self){
 void* __result_obj__;
-struct integer* __result353__;
+struct integer* __result346__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2303 "libneo-c-gc.c"
-    __result353__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2303, "integer"),self);
-    return __result353__;
+    # 2275 "libneo-c-gc.c"
+    __result346__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2275, "integer"),self);
+    return __result346__;
 }
 
 struct integer* long_to_integer(long self){
 void* __result_obj__;
-struct integer* __result354__;
+struct integer* __result347__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2308 "libneo-c-gc.c"
-    __result354__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2308, "integer"),self);
-    return __result354__;
+    # 2280 "libneo-c-gc.c"
+    __result347__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2280, "integer"),self);
+    return __result347__;
 }
 
 int integer_compare(struct integer* left, struct integer* right){
 void* __result_obj__;
-_Bool _if_conditional250;
-int __result355__;
-_Bool _if_conditional251;
-int __result356__;
-int __result357__;
-int __result358__;
+_Bool _if_conditional242;
+int __result348__;
+_Bool _if_conditional243;
+int __result349__;
+int __result350__;
+int __result351__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2323 "libneo-c-gc.c"
-    # 2313 "libneo-c-gc.c"
-    if(_if_conditional250=left->value<right->value,    _if_conditional250) {
-        # 2314 "libneo-c-gc.c"
-        __result355__ = -1;
-        return __result355__;
+    # 2295 "libneo-c-gc.c"
+    # 2285 "libneo-c-gc.c"
+    if(_if_conditional242=left->value<right->value,    _if_conditional242) {
+        # 2286 "libneo-c-gc.c"
+        __result348__ = -1;
+        return __result348__;
     }
     else {
-        # 2323 "libneo-c-gc.c"
-        # 2316 "libneo-c-gc.c"
-        if(_if_conditional251=left->value>right->value,        _if_conditional251) {
-            # 2317 "libneo-c-gc.c"
-            __result356__ = 1;
-            return __result356__;
+        # 2295 "libneo-c-gc.c"
+        # 2288 "libneo-c-gc.c"
+        if(_if_conditional243=left->value>right->value,        _if_conditional243) {
+            # 2289 "libneo-c-gc.c"
+            __result349__ = 1;
+            return __result349__;
         }
         else {
-            # 2320 "libneo-c-gc.c"
-            __result357__ = 0;
-            return __result357__;
+            # 2292 "libneo-c-gc.c"
+            __result350__ = 0;
+            return __result350__;
         }
     }
-    # 2323 "libneo-c-gc.c"
-    __result358__ = 0;
-    return __result358__;
+    # 2295 "libneo-c-gc.c"
+    __result351__ = 0;
+    return __result351__;
 }
 
 _Bool integer_equals(struct integer* self, struct integer* right){
 void* __result_obj__;
-_Bool __result359__;
+_Bool __result352__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2328 "libneo-c-gc.c"
-    __result359__ = self->value==right->value;
-    return __result359__;
+    # 2300 "libneo-c-gc.c"
+    __result352__ = self->value==right->value;
+    return __result352__;
 }
 
 _Bool integer_operator_equals(struct integer* self, struct integer* right){
 void* __result_obj__;
-_Bool __result360__;
+_Bool __result353__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2333 "libneo-c-gc.c"
-    __result360__ = self->value==right->value;
-    return __result360__;
+    # 2305 "libneo-c-gc.c"
+    __result353__ = self->value==right->value;
+    return __result353__;
 }
 
 _Bool integer_operator_not_equals(struct integer* self, struct integer* right){
 void* __result_obj__;
-_Bool __result361__;
+_Bool __result354__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2338 "libneo-c-gc.c"
-    __result361__ = self->value!=right->value;
-    return __result361__;
+    # 2310 "libneo-c-gc.c"
+    __result354__ = self->value!=right->value;
+    return __result354__;
 }
 
 struct integer* integer_operator_add(struct integer* left, struct integer* right){
 void* __result_obj__;
-struct integer* __result362__;
+struct integer* __result355__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2343 "libneo-c-gc.c"
-    __result362__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2343, "integer"),left->value+right->value);
-    return __result362__;
+    # 2315 "libneo-c-gc.c"
+    __result355__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2315, "integer"),left->value+right->value);
+    return __result355__;
 }
 
 struct integer* integer_operator_sub(struct integer* left, struct integer* right){
 void* __result_obj__;
-struct integer* __result363__;
+struct integer* __result356__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2348 "libneo-c-gc.c"
-    __result363__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2348, "integer"),left->value-right->value);
-    return __result363__;
+    # 2320 "libneo-c-gc.c"
+    __result356__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2320, "integer"),left->value-right->value);
+    return __result356__;
 }
 
 struct integer* integer_operator_mult(struct integer* left, struct integer* right){
 void* __result_obj__;
-struct integer* __result364__;
+struct integer* __result357__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2353 "libneo-c-gc.c"
-    __result364__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2353, "integer"),left->value*right->value);
-    return __result364__;
+    # 2325 "libneo-c-gc.c"
+    __result357__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2325, "integer"),left->value*right->value);
+    return __result357__;
 }
 
 struct integer* integer_operator_div(struct integer* left, struct integer* right){
 void* __result_obj__;
-struct integer* __result365__;
+struct integer* __result358__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2358 "libneo-c-gc.c"
-    __result365__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2358, "integer"),left->value/right->value);
-    return __result365__;
+    # 2330 "libneo-c-gc.c"
+    __result358__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2330, "integer"),left->value/right->value);
+    return __result358__;
 }
 
 struct integer* integer_operator_mod(struct integer* left, struct integer* right){
 void* __result_obj__;
-struct integer* __result366__;
+struct integer* __result359__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2363 "libneo-c-gc.c"
-    __result366__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2363, "integer"),left->value%right->value);
-    return __result366__;
+    # 2335 "libneo-c-gc.c"
+    __result359__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2335, "integer"),left->value%right->value);
+    return __result359__;
 }
 
 struct integer* integer_operator_lshift(struct integer* left, struct integer* right){
 void* __result_obj__;
-struct integer* __result367__;
+struct integer* __result360__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2368 "libneo-c-gc.c"
-    __result367__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2368, "integer"),left->value<<right->value);
-    return __result367__;
+    # 2340 "libneo-c-gc.c"
+    __result360__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2340, "integer"),left->value<<right->value);
+    return __result360__;
 }
 
 struct integer* integer_operator_rshift(struct integer* left, struct integer* right){
 void* __result_obj__;
-struct integer* __result368__;
+struct integer* __result361__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2373 "libneo-c-gc.c"
-    __result368__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2373, "integer"),left->value>>right->value);
-    return __result368__;
+    # 2345 "libneo-c-gc.c"
+    __result361__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2345, "integer"),left->value>>right->value);
+    return __result361__;
 }
 
 struct integer* integer_operator_gteq(struct integer* left, struct integer* right){
 void* __result_obj__;
-struct integer* __result369__;
+struct integer* __result362__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2378 "libneo-c-gc.c"
-    __result369__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2378, "integer"),left->value>=right->value);
-    return __result369__;
+    # 2350 "libneo-c-gc.c"
+    __result362__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2350, "integer"),left->value>=right->value);
+    return __result362__;
 }
 
 struct integer* integer_operator_lteq(struct integer* left, struct integer* right){
 void* __result_obj__;
-struct integer* __result370__;
+struct integer* __result363__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2383 "libneo-c-gc.c"
-    __result370__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2383, "integer"),left->value<=right->value);
-    return __result370__;
+    # 2355 "libneo-c-gc.c"
+    __result363__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2355, "integer"),left->value<=right->value);
+    return __result363__;
 }
 
 struct integer* integer_operator_lt(struct integer* left, struct integer* right){
 void* __result_obj__;
-struct integer* __result371__;
+struct integer* __result364__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2388 "libneo-c-gc.c"
-    __result371__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2388, "integer"),left->value<right->value);
-    return __result371__;
+    # 2360 "libneo-c-gc.c"
+    __result364__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2360, "integer"),left->value<right->value);
+    return __result364__;
 }
 
 struct integer* integer_operator_gt(struct integer* left, struct integer* right){
 void* __result_obj__;
-struct integer* __result372__;
+struct integer* __result365__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2393 "libneo-c-gc.c"
-    __result372__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2393, "integer"),left->value>right->value);
-    return __result372__;
+    # 2365 "libneo-c-gc.c"
+    __result365__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2365, "integer"),left->value>right->value);
+    return __result365__;
 }
 
 struct integer* integer_operator_and(struct integer* left, struct integer* right){
 void* __result_obj__;
-struct integer* __result373__;
+struct integer* __result366__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2398 "libneo-c-gc.c"
-    __result373__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2398, "integer"),left->value&right->value);
-    return __result373__;
+    # 2370 "libneo-c-gc.c"
+    __result366__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2370, "integer"),left->value&right->value);
+    return __result366__;
 }
 
 struct integer* integer_operator_xor(struct integer* left, struct integer* right){
 void* __result_obj__;
-struct integer* __result374__;
+struct integer* __result367__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2403 "libneo-c-gc.c"
-    __result374__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2403, "integer"),left->value^right->value);
-    return __result374__;
+    # 2375 "libneo-c-gc.c"
+    __result367__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2375, "integer"),left->value^right->value);
+    return __result367__;
 }
 
 struct integer* integer_operator_or(struct integer* left, struct integer* right){
 void* __result_obj__;
-struct integer* __result375__;
+struct integer* __result368__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2408 "libneo-c-gc.c"
-    __result375__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2408, "integer"),left->value|right->value);
-    return __result375__;
+    # 2380 "libneo-c-gc.c"
+    __result368__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2380, "integer"),left->value|right->value);
+    return __result368__;
 }
 
 struct integer* integer_operator_andand(struct integer* left, struct integer* right){
 void* __result_obj__;
-struct integer* __result376__;
+struct integer* __result369__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2413 "libneo-c-gc.c"
-    __result376__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2413, "integer"),left->value&&right->value);
-    return __result376__;
+    # 2385 "libneo-c-gc.c"
+    __result369__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2385, "integer"),left->value&&right->value);
+    return __result369__;
 }
 
 struct integer* integer_operator_oror(struct integer* left, struct integer* right){
 void* __result_obj__;
-struct integer* __result377__;
+struct integer* __result370__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2418 "libneo-c-gc.c"
-    __result377__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2418, "integer"),left->value||right->value);
-    return __result377__;
+    # 2390 "libneo-c-gc.c"
+    __result370__ = __result_obj__ = integer_initialize((struct integer*)come_calloc(1, sizeof(struct integer)*(1), "libneo-c-gc.c", 2390, "integer"),left->value||right->value);
+    return __result370__;
 }
 

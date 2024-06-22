@@ -50,10 +50,6 @@ struct __locale_struct;
 typedef struct __locale_struct* locale_t;
 typedef void* any;
 typedef char* string;
-struct sDummyCurrentStack
-{
-    int __method_block_result_kind__;
-};
 extern void* gComeResultObject;
 extern _Bool gComeGCLib;
 struct list_item$1voidp
@@ -2144,13 +2140,13 @@ static inline _Bool die(char* msg){
 void* __result_obj__;
 _Bool __result1__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 50 "./neo-c.h"
+    # 45 "./neo-c.h"
     perror(msg);
-    # 51 "./neo-c.h"
+    # 46 "./neo-c.h"
     stackframe();
-    # 52 "./neo-c.h"
+    # 47 "./neo-c.h"
     exit(4);
-    # 54 "./neo-c.h"
+    # 49 "./neo-c.h"
     __result1__ = (_Bool)0;
     return __result1__;
 }
@@ -2160,11 +2156,11 @@ struct buffer* result_0;
 struct buffer* __result2__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_0, 0, sizeof(struct buffer*));
-    # 1943 "./neo-c.h"
-    result_0=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1943, "buffer"));
-    # 1944 "./neo-c.h"
+    # 1902 "./neo-c.h"
+    result_0=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1902, "buffer"));
+    # 1903 "./neo-c.h"
     buffer_append(result_0,self,sizeof(char)*len);
-    # 1945 "./neo-c.h"
+    # 1904 "./neo-c.h"
     __result2__ = __result_obj__ = result_0;
     return __result2__;
 }
@@ -2174,11 +2170,11 @@ struct buffer* result_1;
 struct buffer* __result3__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_1, 0, sizeof(struct buffer*));
-    # 1950 "./neo-c.h"
-    result_1=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1950, "buffer"));
-    # 1951 "./neo-c.h"
+    # 1909 "./neo-c.h"
+    result_1=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1909, "buffer"));
+    # 1910 "./neo-c.h"
     buffer_append(result_1,(char*)self,sizeof(short short)*len);
-    # 1952 "./neo-c.h"
+    # 1911 "./neo-c.h"
     __result3__ = __result_obj__ = result_1;
     return __result3__;
 }
@@ -2188,11 +2184,11 @@ struct buffer* result_2;
 struct buffer* __result4__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_2, 0, sizeof(struct buffer*));
-    # 1957 "./neo-c.h"
-    result_2=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1957, "buffer"));
-    # 1958 "./neo-c.h"
+    # 1916 "./neo-c.h"
+    result_2=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1916, "buffer"));
+    # 1917 "./neo-c.h"
     buffer_append(result_2,(char*)self,sizeof(int)*len);
-    # 1959 "./neo-c.h"
+    # 1918 "./neo-c.h"
     __result4__ = __result_obj__ = result_2;
     return __result4__;
 }
@@ -2202,11 +2198,11 @@ struct buffer* result_3;
 struct buffer* __result5__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_3, 0, sizeof(struct buffer*));
-    # 1964 "./neo-c.h"
-    result_3=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1964, "buffer"));
-    # 1965 "./neo-c.h"
+    # 1923 "./neo-c.h"
+    result_3=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1923, "buffer"));
+    # 1924 "./neo-c.h"
     buffer_append(result_3,(char*)self,sizeof(long)*len);
-    # 1966 "./neo-c.h"
+    # 1925 "./neo-c.h"
     __result5__ = __result_obj__ = result_3;
     return __result5__;
 }
@@ -2216,11 +2212,11 @@ struct buffer* result_4;
 struct buffer* __result6__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_4, 0, sizeof(struct buffer*));
-    # 1971 "./neo-c.h"
-    result_4=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1971, "buffer"));
-    # 1972 "./neo-c.h"
+    # 1930 "./neo-c.h"
+    result_4=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1930, "buffer"));
+    # 1931 "./neo-c.h"
     buffer_append(result_4,(char*)self,sizeof(float)*len);
-    # 1973 "./neo-c.h"
+    # 1932 "./neo-c.h"
     __result6__ = __result_obj__ = result_4;
     return __result6__;
 }
@@ -2230,11 +2226,11 @@ struct buffer* result_5;
 struct buffer* __result7__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_5, 0, sizeof(struct buffer*));
-    # 1978 "./neo-c.h"
-    result_5=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1978, "buffer"));
-    # 1979 "./neo-c.h"
+    # 1937 "./neo-c.h"
+    result_5=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1937, "buffer"));
+    # 1938 "./neo-c.h"
     buffer_append(result_5,(char*)self,sizeof(double)*len);
-    # 1980 "./neo-c.h"
+    # 1939 "./neo-c.h"
     __result7__ = __result_obj__ = result_5;
     return __result7__;
 }
@@ -2244,13 +2240,13 @@ struct smart_pointer$1char* result_6;
 struct smart_pointer$1char* __result8__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_6, 0, sizeof(struct smart_pointer$1char*));
-    # 1993 "./neo-c.h"
-    result_6=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 1993, "smart_pointer$1char");
-    # 1995 "./neo-c.h"
+    # 1952 "./neo-c.h"
+    result_6=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 1952, "smart_pointer$1char");
+    # 1954 "./neo-c.h"
     result_6->memory=buffer_clone(self);
-    # 1996 "./neo-c.h"
+    # 1955 "./neo-c.h"
     result_6->p=result_6->memory->buf;
-    # 1998 "./neo-c.h"
+    # 1957 "./neo-c.h"
     __result8__ = __result_obj__ = result_6;
     return __result8__;
 }
@@ -2260,13 +2256,13 @@ struct smart_pointer$1char* result_7;
 struct smart_pointer$1char* __result9__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_7, 0, sizeof(struct smart_pointer$1char*));
-    # 2003 "./neo-c.h"
-    result_7=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 2003, "smart_pointer$1char");
-    # 2005 "./neo-c.h"
+    # 1962 "./neo-c.h"
+    result_7=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 1962, "smart_pointer$1char");
+    # 1964 "./neo-c.h"
     result_7->memory=buffer_clone(self);
-    # 2006 "./neo-c.h"
+    # 1965 "./neo-c.h"
     result_7->p=(char*)result_7->memory->buf;
-    # 2008 "./neo-c.h"
+    # 1967 "./neo-c.h"
     __result9__ = __result_obj__ = result_7;
     return __result9__;
 }
@@ -2276,13 +2272,13 @@ struct smart_pointer$1short* result_8;
 struct smart_pointer$1short* __result10__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_8, 0, sizeof(struct smart_pointer$1short*));
-    # 2013 "./neo-c.h"
-    result_8=(struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 2013, "smart_pointer$1short");
-    # 2015 "./neo-c.h"
+    # 1972 "./neo-c.h"
+    result_8=(struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 1972, "smart_pointer$1short");
+    # 1974 "./neo-c.h"
     result_8->memory=buffer_clone(self);
-    # 2016 "./neo-c.h"
+    # 1975 "./neo-c.h"
     result_8->p=(short short*)result_8->memory->buf;
-    # 2018 "./neo-c.h"
+    # 1977 "./neo-c.h"
     __result10__ = __result_obj__ = result_8;
     return __result10__;
 }
@@ -2292,13 +2288,13 @@ struct smart_pointer$1int* result_9;
 struct smart_pointer$1int* __result11__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_9, 0, sizeof(struct smart_pointer$1int*));
-    # 2023 "./neo-c.h"
-    result_9=(struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 2023, "smart_pointer$1int");
-    # 2025 "./neo-c.h"
+    # 1982 "./neo-c.h"
+    result_9=(struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 1982, "smart_pointer$1int");
+    # 1984 "./neo-c.h"
     result_9->memory=buffer_clone(self);
-    # 2026 "./neo-c.h"
+    # 1985 "./neo-c.h"
     result_9->p=(int*)result_9->memory->buf;
-    # 2028 "./neo-c.h"
+    # 1987 "./neo-c.h"
     __result11__ = __result_obj__ = result_9;
     return __result11__;
 }
@@ -2308,13 +2304,13 @@ struct smart_pointer$1long* result_10;
 struct smart_pointer$1long* __result12__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_10, 0, sizeof(struct smart_pointer$1long*));
-    # 2033 "./neo-c.h"
-    result_10=(struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 2033, "smart_pointer$1long");
-    # 2035 "./neo-c.h"
+    # 1992 "./neo-c.h"
+    result_10=(struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 1992, "smart_pointer$1long");
+    # 1994 "./neo-c.h"
     result_10->memory=buffer_clone(self);
-    # 2036 "./neo-c.h"
+    # 1995 "./neo-c.h"
     result_10->p=(long*)result_10->memory->buf;
-    # 2038 "./neo-c.h"
+    # 1997 "./neo-c.h"
     __result12__ = __result_obj__ = result_10;
     return __result12__;
 }
@@ -2322,103 +2318,103 @@ static inline struct smart_pointer$1char* charpa_to_pointer(char* self, unsigned
 void* __result_obj__;
 struct smart_pointer$1char* __result14__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2204 "./neo-c.h"
-    __result14__ = __result_obj__ = smart_pointer$1char_initialize((struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 2204, "smart_pointer$1char"),self,len);
+    # 2163 "./neo-c.h"
+    __result14__ = __result_obj__ = smart_pointer$1char_initialize((struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 2163, "smart_pointer$1char"),self,len);
     return __result14__;
 }
 static inline struct smart_pointer$1short* shortpa_to_pointer(short short* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1short* __result16__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2209 "./neo-c.h"
-    __result16__ = __result_obj__ = smart_pointer$1short_initialize((struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 2209, "smart_pointer$1short"),self,len);
+    # 2168 "./neo-c.h"
+    __result16__ = __result_obj__ = smart_pointer$1short_initialize((struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 2168, "smart_pointer$1short"),self,len);
     return __result16__;
 }
 static inline struct smart_pointer$1int* intpa_to_pointer(int* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1int* __result18__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2214 "./neo-c.h"
-    __result18__ = __result_obj__ = smart_pointer$1int_initialize((struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 2214, "smart_pointer$1int"),self,len);
+    # 2173 "./neo-c.h"
+    __result18__ = __result_obj__ = smart_pointer$1int_initialize((struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 2173, "smart_pointer$1int"),self,len);
     return __result18__;
 }
 static inline struct smart_pointer$1long* longpa_to_pointer(long* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1long* __result20__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2219 "./neo-c.h"
-    __result20__ = __result_obj__ = smart_pointer$1long_initialize((struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 2219, "smart_pointer$1long"),self,len);
+    # 2178 "./neo-c.h"
+    __result20__ = __result_obj__ = smart_pointer$1long_initialize((struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 2178, "smart_pointer$1long"),self,len);
     return __result20__;
 }
 static inline struct smart_pointer$1float* floatpa_to_pointer(float* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1float* __result22__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2224 "./neo-c.h"
-    __result22__ = __result_obj__ = smart_pointer$1float_initialize((struct smart_pointer$1float*)come_calloc(1, sizeof(struct smart_pointer$1float)*(1), "./neo-c.h", 2224, "smart_pointer$1float"),self,len);
+    # 2183 "./neo-c.h"
+    __result22__ = __result_obj__ = smart_pointer$1float_initialize((struct smart_pointer$1float*)come_calloc(1, sizeof(struct smart_pointer$1float)*(1), "./neo-c.h", 2183, "smart_pointer$1float"),self,len);
     return __result22__;
 }
 static inline struct smart_pointer$1double* doublepa_to_pointer(double* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1double* __result24__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2229 "./neo-c.h"
-    __result24__ = __result_obj__ = smart_pointer$1double_initialize((struct smart_pointer$1double*)come_calloc(1, sizeof(struct smart_pointer$1double)*(1), "./neo-c.h", 2229, "smart_pointer$1double"),self,len);
+    # 2188 "./neo-c.h"
+    __result24__ = __result_obj__ = smart_pointer$1double_initialize((struct smart_pointer$1double*)come_calloc(1, sizeof(struct smart_pointer$1double)*(1), "./neo-c.h", 2188, "smart_pointer$1double"),self,len);
     return __result24__;
 }
 static inline struct list$1char* charpa_to_list(char* self, unsigned long int len){
 void* __result_obj__;
 struct list$1char* __result27__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2234 "./neo-c.h"
-    __result27__ = __result_obj__ = list$1char_initialize_with_values((struct list$1char*)come_calloc(1, sizeof(struct list$1char)*(1), "./neo-c.h", 2234, "list$1char"),len,self);
+    # 2193 "./neo-c.h"
+    __result27__ = __result_obj__ = list$1char_initialize_with_values((struct list$1char*)come_calloc(1, sizeof(struct list$1char)*(1), "./neo-c.h", 2193, "list$1char"),len,self);
     return __result27__;
 }
 static inline struct list$1short* shortpa_to_list(short short* self, unsigned long int len){
 void* __result_obj__;
 struct list$1short* __result30__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2239 "./neo-c.h"
-    __result30__ = __result_obj__ = list$1short_initialize_with_values((struct list$1short*)come_calloc(1, sizeof(struct list$1short)*(1), "./neo-c.h", 2239, "list$1short"),len,self);
+    # 2198 "./neo-c.h"
+    __result30__ = __result_obj__ = list$1short_initialize_with_values((struct list$1short*)come_calloc(1, sizeof(struct list$1short)*(1), "./neo-c.h", 2198, "list$1short"),len,self);
     return __result30__;
 }
 static inline struct list$1int* intpa_to_list(int* self, unsigned long int len){
 void* __result_obj__;
 struct list$1int* __result33__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2244 "./neo-c.h"
-    __result33__ = __result_obj__ = list$1int_initialize_with_values((struct list$1int*)come_calloc(1, sizeof(struct list$1int)*(1), "./neo-c.h", 2244, "list$1int"),len,self);
+    # 2203 "./neo-c.h"
+    __result33__ = __result_obj__ = list$1int_initialize_with_values((struct list$1int*)come_calloc(1, sizeof(struct list$1int)*(1), "./neo-c.h", 2203, "list$1int"),len,self);
     return __result33__;
 }
 static inline struct list$1long* longpa_to_list(long* self, unsigned long int len){
 void* __result_obj__;
 struct list$1long* __result36__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2249 "./neo-c.h"
-    __result36__ = __result_obj__ = list$1long_initialize_with_values((struct list$1long*)come_calloc(1, sizeof(struct list$1long)*(1), "./neo-c.h", 2249, "list$1long"),len,self);
+    # 2208 "./neo-c.h"
+    __result36__ = __result_obj__ = list$1long_initialize_with_values((struct list$1long*)come_calloc(1, sizeof(struct list$1long)*(1), "./neo-c.h", 2208, "list$1long"),len,self);
     return __result36__;
 }
 static inline struct list$1float* floatpa_to_list(float* self, unsigned long int len){
 void* __result_obj__;
 struct list$1float* __result39__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2254 "./neo-c.h"
-    __result39__ = __result_obj__ = list$1float_initialize_with_values((struct list$1float*)come_calloc(1, sizeof(struct list$1float)*(1), "./neo-c.h", 2254, "list$1float"),len,self);
+    # 2213 "./neo-c.h"
+    __result39__ = __result_obj__ = list$1float_initialize_with_values((struct list$1float*)come_calloc(1, sizeof(struct list$1float)*(1), "./neo-c.h", 2213, "list$1float"),len,self);
     return __result39__;
 }
 static inline struct list$1double* doublepa_to_list(double* self, unsigned long int len){
 void* __result_obj__;
 struct list$1double* __result42__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2259 "./neo-c.h"
-    __result42__ = __result_obj__ = list$1double_initialize_with_values((struct list$1double*)come_calloc(1, sizeof(struct list$1double)*(1), "./neo-c.h", 2259, "list$1double"),len,self);
+    # 2218 "./neo-c.h"
+    __result42__ = __result_obj__ = list$1double_initialize_with_values((struct list$1double*)come_calloc(1, sizeof(struct list$1double)*(1), "./neo-c.h", 2218, "list$1double"),len,self);
     return __result42__;
 }
 static inline unsigned long int charpa_length(char* self, unsigned long int len){
 void* __result_obj__;
 unsigned long int __result43__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2289 "./neo-c.h"
+    # 2248 "./neo-c.h"
     __result43__ = len;
     return __result43__;
 }
@@ -2426,7 +2422,7 @@ static inline unsigned long int shortpa_length(short short* self, unsigned long 
 void* __result_obj__;
 unsigned long int __result44__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2294 "./neo-c.h"
+    # 2253 "./neo-c.h"
     __result44__ = len;
     return __result44__;
 }
@@ -2434,7 +2430,7 @@ static inline unsigned long int intpa_length(int* self, unsigned long int len){
 void* __result_obj__;
 unsigned long int __result45__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2299 "./neo-c.h"
+    # 2258 "./neo-c.h"
     __result45__ = len;
     return __result45__;
 }
@@ -2442,7 +2438,7 @@ static inline unsigned long int longpa_length(long* self, unsigned long int len)
 void* __result_obj__;
 unsigned long int __result46__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2304 "./neo-c.h"
+    # 2263 "./neo-c.h"
     __result46__ = len;
     return __result46__;
 }
@@ -2450,7 +2446,7 @@ static inline unsigned long int floatpa_length(float* self, unsigned long int le
 void* __result_obj__;
 unsigned long int __result47__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2309 "./neo-c.h"
+    # 2268 "./neo-c.h"
     __result47__ = len;
     return __result47__;
 }
@@ -2458,7 +2454,7 @@ static inline unsigned long int doublepa_length(double* self, unsigned long int 
 void* __result_obj__;
 unsigned long int __result48__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2314 "./neo-c.h"
+    # 2273 "./neo-c.h"
     __result48__ = len;
     return __result48__;
 }
@@ -2466,7 +2462,7 @@ static inline char* string_xsprintf(char* self, char* msg, ...){
 void* __result_obj__;
 char* __result49__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2375 "./neo-c.h"
+    # 2334 "./neo-c.h"
     __result49__ = __result_obj__ = xsprintf(msg,self);
     return __result49__;
 }
@@ -2474,7 +2470,7 @@ static inline char* charp_xsprintf(char* self, char* msg, ...){
 void* __result_obj__;
 char* __result50__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2380 "./neo-c.h"
+    # 2339 "./neo-c.h"
     __result50__ = __result_obj__ = xsprintf(msg,self);
     return __result50__;
 }
@@ -2482,7 +2478,7 @@ static inline char* int_xsprintf(int self, char* msg, ...){
 void* __result_obj__;
 char* __result51__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2385 "./neo-c.h"
+    # 2344 "./neo-c.h"
     __result51__ = __result_obj__ = xsprintf(msg,self);
     return __result51__;
 }
@@ -2833,13 +2829,13 @@ static struct smart_pointer$1char* smart_pointer$1char_initialize(struct smart_p
 void* __result_obj__;
 struct smart_pointer$1char* __result13__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2045 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2045, "buffer"));
-        # 2047 "./neo-c.h"
+        # 2004 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2004, "buffer"));
+        # 2006 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(char)*size);
-        # 2049 "./neo-c.h"
+        # 2008 "./neo-c.h"
         self->p=(char*)self->memory->buf;
-        # 2051 "./neo-c.h"
+        # 2010 "./neo-c.h"
         __result13__ = __result_obj__ = self;
         return __result13__;
 }
@@ -2849,13 +2845,13 @@ static struct smart_pointer$1short* smart_pointer$1short_initialize(struct smart
 void* __result_obj__;
 struct smart_pointer$1short* __result15__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2045 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2045, "buffer"));
-        # 2047 "./neo-c.h"
+        # 2004 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2004, "buffer"));
+        # 2006 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(short short)*size);
-        # 2049 "./neo-c.h"
+        # 2008 "./neo-c.h"
         self->p=(short short*)self->memory->buf;
-        # 2051 "./neo-c.h"
+        # 2010 "./neo-c.h"
         __result15__ = __result_obj__ = self;
         return __result15__;
 }
@@ -2865,13 +2861,13 @@ static struct smart_pointer$1int* smart_pointer$1int_initialize(struct smart_poi
 void* __result_obj__;
 struct smart_pointer$1int* __result17__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2045 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2045, "buffer"));
-        # 2047 "./neo-c.h"
+        # 2004 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2004, "buffer"));
+        # 2006 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(int)*size);
-        # 2049 "./neo-c.h"
+        # 2008 "./neo-c.h"
         self->p=(int*)self->memory->buf;
-        # 2051 "./neo-c.h"
+        # 2010 "./neo-c.h"
         __result17__ = __result_obj__ = self;
         return __result17__;
 }
@@ -2881,13 +2877,13 @@ static struct smart_pointer$1long* smart_pointer$1long_initialize(struct smart_p
 void* __result_obj__;
 struct smart_pointer$1long* __result19__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2045 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2045, "buffer"));
-        # 2047 "./neo-c.h"
+        # 2004 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2004, "buffer"));
+        # 2006 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(long)*size);
-        # 2049 "./neo-c.h"
+        # 2008 "./neo-c.h"
         self->p=(long*)self->memory->buf;
-        # 2051 "./neo-c.h"
+        # 2010 "./neo-c.h"
         __result19__ = __result_obj__ = self;
         return __result19__;
 }
@@ -2897,13 +2893,13 @@ static struct smart_pointer$1float* smart_pointer$1float_initialize(struct smart
 void* __result_obj__;
 struct smart_pointer$1float* __result21__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2045 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2045, "buffer"));
-        # 2047 "./neo-c.h"
+        # 2004 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2004, "buffer"));
+        # 2006 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(float)*size);
-        # 2049 "./neo-c.h"
+        # 2008 "./neo-c.h"
         self->p=(float*)self->memory->buf;
-        # 2051 "./neo-c.h"
+        # 2010 "./neo-c.h"
         __result21__ = __result_obj__ = self;
         return __result21__;
 }
@@ -2913,13 +2909,13 @@ static struct smart_pointer$1double* smart_pointer$1double_initialize(struct sma
 void* __result_obj__;
 struct smart_pointer$1double* __result23__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 2045 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2045, "buffer"));
-        # 2047 "./neo-c.h"
+        # 2004 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2004, "buffer"));
+        # 2006 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(double)*size);
-        # 2049 "./neo-c.h"
+        # 2008 "./neo-c.h"
         self->p=(double*)self->memory->buf;
-        # 2051 "./neo-c.h"
+        # 2010 "./neo-c.h"
         __result23__ = __result_obj__ = self;
         return __result23__;
 }
@@ -2931,18 +2927,18 @@ int i_11;
 struct list$1char* __result26__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_11, 0, sizeof(int));
-        # 113 "./neo-c.h"
+        # 108 "./neo-c.h"
         self->head=((void*)0);
-        # 114 "./neo-c.h"
+        # 109 "./neo-c.h"
         self->tail=((void*)0);
-        # 115 "./neo-c.h"
+        # 110 "./neo-c.h"
         self->len=0;
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         for(        i_11=0;        i_11<num_value;        i_11++        ){
-            # 118 "./neo-c.h"
+            # 113 "./neo-c.h"
             list$1char_push_back(self,values[i_11]);
         }
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         __result26__ = __result_obj__ = self;
         return __result26__;
 }
@@ -2959,57 +2955,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_12, 0, sizeof(struct list_item$1char*));
 memset(&litem_13, 0, sizeof(struct list_item$1char*));
 memset(&litem_14, 0, sizeof(struct list_item$1char*));
-                # 257 "./neo-c.h"
-                # 226 "./neo-c.h"
+                # 252 "./neo-c.h"
+                # 221 "./neo-c.h"
                 if(_if_conditional1=self->len==0,                _if_conditional1) {
-                    # 227 "./neo-c.h"
-                    litem_12=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 227, "list_item$1char");
-                    # 229 "./neo-c.h"
+                    # 222 "./neo-c.h"
+                    litem_12=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 222, "list_item$1char");
+                    # 224 "./neo-c.h"
                     litem_12->prev=((void*)0);
-                    # 230 "./neo-c.h"
+                    # 225 "./neo-c.h"
                     litem_12->next=((void*)0);
-                    # 231 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     litem_12->item=item;
-                    # 233 "./neo-c.h"
+                    # 228 "./neo-c.h"
                     self->tail=litem_12;
-                    # 234 "./neo-c.h"
+                    # 229 "./neo-c.h"
                     self->head=litem_12;
                 }
                 else {
-                    # 257 "./neo-c.h"
-                    # 236 "./neo-c.h"
+                    # 252 "./neo-c.h"
+                    # 231 "./neo-c.h"
                     if(_if_conditional2=self->len==1,                    _if_conditional2) {
-                        # 237 "./neo-c.h"
-                        litem_13=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 237, "list_item$1char");
-                        # 239 "./neo-c.h"
+                        # 232 "./neo-c.h"
+                        litem_13=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 232, "list_item$1char");
+                        # 234 "./neo-c.h"
                         litem_13->prev=self->head;
-                        # 240 "./neo-c.h"
+                        # 235 "./neo-c.h"
                         litem_13->next=((void*)0);
-                        # 241 "./neo-c.h"
+                        # 236 "./neo-c.h"
                         litem_13->item=item;
-                        # 243 "./neo-c.h"
+                        # 238 "./neo-c.h"
                         self->tail=litem_13;
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         self->head->next=litem_13;
                     }
                     else {
-                        # 247 "./neo-c.h"
-                        litem_14=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 247, "list_item$1char");
-                        # 249 "./neo-c.h"
+                        # 242 "./neo-c.h"
+                        litem_14=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 242, "list_item$1char");
+                        # 244 "./neo-c.h"
                         litem_14->prev=self->tail;
-                        # 250 "./neo-c.h"
+                        # 245 "./neo-c.h"
                         litem_14->next=((void*)0);
-                        # 251 "./neo-c.h"
+                        # 246 "./neo-c.h"
                         litem_14->item=item;
-                        # 253 "./neo-c.h"
+                        # 248 "./neo-c.h"
                         self->tail->next=litem_14;
-                        # 254 "./neo-c.h"
+                        # 249 "./neo-c.h"
                         self->tail=litem_14;
                     }
                 }
-                # 257 "./neo-c.h"
+                # 252 "./neo-c.h"
                 self->len++;
-                # 259 "./neo-c.h"
+                # 254 "./neo-c.h"
                 __result25__ = __result_obj__ = self;
                 return __result25__;
 }
@@ -3021,18 +3017,18 @@ int i_15;
 struct list$1short* __result29__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_15, 0, sizeof(int));
-        # 113 "./neo-c.h"
+        # 108 "./neo-c.h"
         self->head=((void*)0);
-        # 114 "./neo-c.h"
+        # 109 "./neo-c.h"
         self->tail=((void*)0);
-        # 115 "./neo-c.h"
+        # 110 "./neo-c.h"
         self->len=0;
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         for(        i_15=0;        i_15<num_value;        i_15++        ){
-            # 118 "./neo-c.h"
+            # 113 "./neo-c.h"
             list$1short_push_back(self,values[i_15]);
         }
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         __result29__ = __result_obj__ = self;
         return __result29__;
 }
@@ -3049,57 +3045,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_16, 0, sizeof(struct list_item$1short*));
 memset(&litem_17, 0, sizeof(struct list_item$1short*));
 memset(&litem_18, 0, sizeof(struct list_item$1short*));
-                # 257 "./neo-c.h"
-                # 226 "./neo-c.h"
+                # 252 "./neo-c.h"
+                # 221 "./neo-c.h"
                 if(_if_conditional3=self->len==0,                _if_conditional3) {
-                    # 227 "./neo-c.h"
-                    litem_16=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 227, "list_item$1short");
-                    # 229 "./neo-c.h"
+                    # 222 "./neo-c.h"
+                    litem_16=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 222, "list_item$1short");
+                    # 224 "./neo-c.h"
                     litem_16->prev=((void*)0);
-                    # 230 "./neo-c.h"
+                    # 225 "./neo-c.h"
                     litem_16->next=((void*)0);
-                    # 231 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     litem_16->item=item;
-                    # 233 "./neo-c.h"
+                    # 228 "./neo-c.h"
                     self->tail=litem_16;
-                    # 234 "./neo-c.h"
+                    # 229 "./neo-c.h"
                     self->head=litem_16;
                 }
                 else {
-                    # 257 "./neo-c.h"
-                    # 236 "./neo-c.h"
+                    # 252 "./neo-c.h"
+                    # 231 "./neo-c.h"
                     if(_if_conditional4=self->len==1,                    _if_conditional4) {
-                        # 237 "./neo-c.h"
-                        litem_17=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 237, "list_item$1short");
-                        # 239 "./neo-c.h"
+                        # 232 "./neo-c.h"
+                        litem_17=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 232, "list_item$1short");
+                        # 234 "./neo-c.h"
                         litem_17->prev=self->head;
-                        # 240 "./neo-c.h"
+                        # 235 "./neo-c.h"
                         litem_17->next=((void*)0);
-                        # 241 "./neo-c.h"
+                        # 236 "./neo-c.h"
                         litem_17->item=item;
-                        # 243 "./neo-c.h"
+                        # 238 "./neo-c.h"
                         self->tail=litem_17;
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         self->head->next=litem_17;
                     }
                     else {
-                        # 247 "./neo-c.h"
-                        litem_18=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 247, "list_item$1short");
-                        # 249 "./neo-c.h"
+                        # 242 "./neo-c.h"
+                        litem_18=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 242, "list_item$1short");
+                        # 244 "./neo-c.h"
                         litem_18->prev=self->tail;
-                        # 250 "./neo-c.h"
+                        # 245 "./neo-c.h"
                         litem_18->next=((void*)0);
-                        # 251 "./neo-c.h"
+                        # 246 "./neo-c.h"
                         litem_18->item=item;
-                        # 253 "./neo-c.h"
+                        # 248 "./neo-c.h"
                         self->tail->next=litem_18;
-                        # 254 "./neo-c.h"
+                        # 249 "./neo-c.h"
                         self->tail=litem_18;
                     }
                 }
-                # 257 "./neo-c.h"
+                # 252 "./neo-c.h"
                 self->len++;
-                # 259 "./neo-c.h"
+                # 254 "./neo-c.h"
                 __result28__ = __result_obj__ = self;
                 return __result28__;
 }
@@ -3111,18 +3107,18 @@ int i_19;
 struct list$1int* __result32__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_19, 0, sizeof(int));
-        # 113 "./neo-c.h"
+        # 108 "./neo-c.h"
         self->head=((void*)0);
-        # 114 "./neo-c.h"
+        # 109 "./neo-c.h"
         self->tail=((void*)0);
-        # 115 "./neo-c.h"
+        # 110 "./neo-c.h"
         self->len=0;
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         for(        i_19=0;        i_19<num_value;        i_19++        ){
-            # 118 "./neo-c.h"
+            # 113 "./neo-c.h"
             list$1int_push_back(self,values[i_19]);
         }
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         __result32__ = __result_obj__ = self;
         return __result32__;
 }
@@ -3139,57 +3135,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_20, 0, sizeof(struct list_item$1int*));
 memset(&litem_21, 0, sizeof(struct list_item$1int*));
 memset(&litem_22, 0, sizeof(struct list_item$1int*));
-                # 257 "./neo-c.h"
-                # 226 "./neo-c.h"
+                # 252 "./neo-c.h"
+                # 221 "./neo-c.h"
                 if(_if_conditional5=self->len==0,                _if_conditional5) {
-                    # 227 "./neo-c.h"
-                    litem_20=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 227, "list_item$1int");
-                    # 229 "./neo-c.h"
+                    # 222 "./neo-c.h"
+                    litem_20=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 222, "list_item$1int");
+                    # 224 "./neo-c.h"
                     litem_20->prev=((void*)0);
-                    # 230 "./neo-c.h"
+                    # 225 "./neo-c.h"
                     litem_20->next=((void*)0);
-                    # 231 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     litem_20->item=item;
-                    # 233 "./neo-c.h"
+                    # 228 "./neo-c.h"
                     self->tail=litem_20;
-                    # 234 "./neo-c.h"
+                    # 229 "./neo-c.h"
                     self->head=litem_20;
                 }
                 else {
-                    # 257 "./neo-c.h"
-                    # 236 "./neo-c.h"
+                    # 252 "./neo-c.h"
+                    # 231 "./neo-c.h"
                     if(_if_conditional6=self->len==1,                    _if_conditional6) {
-                        # 237 "./neo-c.h"
-                        litem_21=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 237, "list_item$1int");
-                        # 239 "./neo-c.h"
+                        # 232 "./neo-c.h"
+                        litem_21=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 232, "list_item$1int");
+                        # 234 "./neo-c.h"
                         litem_21->prev=self->head;
-                        # 240 "./neo-c.h"
+                        # 235 "./neo-c.h"
                         litem_21->next=((void*)0);
-                        # 241 "./neo-c.h"
+                        # 236 "./neo-c.h"
                         litem_21->item=item;
-                        # 243 "./neo-c.h"
+                        # 238 "./neo-c.h"
                         self->tail=litem_21;
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         self->head->next=litem_21;
                     }
                     else {
-                        # 247 "./neo-c.h"
-                        litem_22=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 247, "list_item$1int");
-                        # 249 "./neo-c.h"
+                        # 242 "./neo-c.h"
+                        litem_22=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 242, "list_item$1int");
+                        # 244 "./neo-c.h"
                         litem_22->prev=self->tail;
-                        # 250 "./neo-c.h"
+                        # 245 "./neo-c.h"
                         litem_22->next=((void*)0);
-                        # 251 "./neo-c.h"
+                        # 246 "./neo-c.h"
                         litem_22->item=item;
-                        # 253 "./neo-c.h"
+                        # 248 "./neo-c.h"
                         self->tail->next=litem_22;
-                        # 254 "./neo-c.h"
+                        # 249 "./neo-c.h"
                         self->tail=litem_22;
                     }
                 }
-                # 257 "./neo-c.h"
+                # 252 "./neo-c.h"
                 self->len++;
-                # 259 "./neo-c.h"
+                # 254 "./neo-c.h"
                 __result31__ = __result_obj__ = self;
                 return __result31__;
 }
@@ -3201,18 +3197,18 @@ int i_23;
 struct list$1long* __result35__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_23, 0, sizeof(int));
-        # 113 "./neo-c.h"
+        # 108 "./neo-c.h"
         self->head=((void*)0);
-        # 114 "./neo-c.h"
+        # 109 "./neo-c.h"
         self->tail=((void*)0);
-        # 115 "./neo-c.h"
+        # 110 "./neo-c.h"
         self->len=0;
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         for(        i_23=0;        i_23<num_value;        i_23++        ){
-            # 118 "./neo-c.h"
+            # 113 "./neo-c.h"
             list$1long_push_back(self,values[i_23]);
         }
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         __result35__ = __result_obj__ = self;
         return __result35__;
 }
@@ -3229,57 +3225,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_24, 0, sizeof(struct list_item$1long*));
 memset(&litem_25, 0, sizeof(struct list_item$1long*));
 memset(&litem_26, 0, sizeof(struct list_item$1long*));
-                # 257 "./neo-c.h"
-                # 226 "./neo-c.h"
+                # 252 "./neo-c.h"
+                # 221 "./neo-c.h"
                 if(_if_conditional7=self->len==0,                _if_conditional7) {
-                    # 227 "./neo-c.h"
-                    litem_24=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 227, "list_item$1long");
-                    # 229 "./neo-c.h"
+                    # 222 "./neo-c.h"
+                    litem_24=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 222, "list_item$1long");
+                    # 224 "./neo-c.h"
                     litem_24->prev=((void*)0);
-                    # 230 "./neo-c.h"
+                    # 225 "./neo-c.h"
                     litem_24->next=((void*)0);
-                    # 231 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     litem_24->item=item;
-                    # 233 "./neo-c.h"
+                    # 228 "./neo-c.h"
                     self->tail=litem_24;
-                    # 234 "./neo-c.h"
+                    # 229 "./neo-c.h"
                     self->head=litem_24;
                 }
                 else {
-                    # 257 "./neo-c.h"
-                    # 236 "./neo-c.h"
+                    # 252 "./neo-c.h"
+                    # 231 "./neo-c.h"
                     if(_if_conditional8=self->len==1,                    _if_conditional8) {
-                        # 237 "./neo-c.h"
-                        litem_25=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 237, "list_item$1long");
-                        # 239 "./neo-c.h"
+                        # 232 "./neo-c.h"
+                        litem_25=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 232, "list_item$1long");
+                        # 234 "./neo-c.h"
                         litem_25->prev=self->head;
-                        # 240 "./neo-c.h"
+                        # 235 "./neo-c.h"
                         litem_25->next=((void*)0);
-                        # 241 "./neo-c.h"
+                        # 236 "./neo-c.h"
                         litem_25->item=item;
-                        # 243 "./neo-c.h"
+                        # 238 "./neo-c.h"
                         self->tail=litem_25;
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         self->head->next=litem_25;
                     }
                     else {
-                        # 247 "./neo-c.h"
-                        litem_26=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 247, "list_item$1long");
-                        # 249 "./neo-c.h"
+                        # 242 "./neo-c.h"
+                        litem_26=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 242, "list_item$1long");
+                        # 244 "./neo-c.h"
                         litem_26->prev=self->tail;
-                        # 250 "./neo-c.h"
+                        # 245 "./neo-c.h"
                         litem_26->next=((void*)0);
-                        # 251 "./neo-c.h"
+                        # 246 "./neo-c.h"
                         litem_26->item=item;
-                        # 253 "./neo-c.h"
+                        # 248 "./neo-c.h"
                         self->tail->next=litem_26;
-                        # 254 "./neo-c.h"
+                        # 249 "./neo-c.h"
                         self->tail=litem_26;
                     }
                 }
-                # 257 "./neo-c.h"
+                # 252 "./neo-c.h"
                 self->len++;
-                # 259 "./neo-c.h"
+                # 254 "./neo-c.h"
                 __result34__ = __result_obj__ = self;
                 return __result34__;
 }
@@ -3291,18 +3287,18 @@ int i_27;
 struct list$1float* __result38__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_27, 0, sizeof(int));
-        # 113 "./neo-c.h"
+        # 108 "./neo-c.h"
         self->head=((void*)0);
-        # 114 "./neo-c.h"
+        # 109 "./neo-c.h"
         self->tail=((void*)0);
-        # 115 "./neo-c.h"
+        # 110 "./neo-c.h"
         self->len=0;
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         for(        i_27=0;        i_27<num_value;        i_27++        ){
-            # 118 "./neo-c.h"
+            # 113 "./neo-c.h"
             list$1float_push_back(self,values[i_27]);
         }
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         __result38__ = __result_obj__ = self;
         return __result38__;
 }
@@ -3319,57 +3315,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_28, 0, sizeof(struct list_item$1float*));
 memset(&litem_29, 0, sizeof(struct list_item$1float*));
 memset(&litem_30, 0, sizeof(struct list_item$1float*));
-                # 257 "./neo-c.h"
-                # 226 "./neo-c.h"
+                # 252 "./neo-c.h"
+                # 221 "./neo-c.h"
                 if(_if_conditional9=self->len==0,                _if_conditional9) {
-                    # 227 "./neo-c.h"
-                    litem_28=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 227, "list_item$1float");
-                    # 229 "./neo-c.h"
+                    # 222 "./neo-c.h"
+                    litem_28=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 222, "list_item$1float");
+                    # 224 "./neo-c.h"
                     litem_28->prev=((void*)0);
-                    # 230 "./neo-c.h"
+                    # 225 "./neo-c.h"
                     litem_28->next=((void*)0);
-                    # 231 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     litem_28->item=item;
-                    # 233 "./neo-c.h"
+                    # 228 "./neo-c.h"
                     self->tail=litem_28;
-                    # 234 "./neo-c.h"
+                    # 229 "./neo-c.h"
                     self->head=litem_28;
                 }
                 else {
-                    # 257 "./neo-c.h"
-                    # 236 "./neo-c.h"
+                    # 252 "./neo-c.h"
+                    # 231 "./neo-c.h"
                     if(_if_conditional10=self->len==1,                    _if_conditional10) {
-                        # 237 "./neo-c.h"
-                        litem_29=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 237, "list_item$1float");
-                        # 239 "./neo-c.h"
+                        # 232 "./neo-c.h"
+                        litem_29=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 232, "list_item$1float");
+                        # 234 "./neo-c.h"
                         litem_29->prev=self->head;
-                        # 240 "./neo-c.h"
+                        # 235 "./neo-c.h"
                         litem_29->next=((void*)0);
-                        # 241 "./neo-c.h"
+                        # 236 "./neo-c.h"
                         litem_29->item=item;
-                        # 243 "./neo-c.h"
+                        # 238 "./neo-c.h"
                         self->tail=litem_29;
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         self->head->next=litem_29;
                     }
                     else {
-                        # 247 "./neo-c.h"
-                        litem_30=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 247, "list_item$1float");
-                        # 249 "./neo-c.h"
+                        # 242 "./neo-c.h"
+                        litem_30=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 242, "list_item$1float");
+                        # 244 "./neo-c.h"
                         litem_30->prev=self->tail;
-                        # 250 "./neo-c.h"
+                        # 245 "./neo-c.h"
                         litem_30->next=((void*)0);
-                        # 251 "./neo-c.h"
+                        # 246 "./neo-c.h"
                         litem_30->item=item;
-                        # 253 "./neo-c.h"
+                        # 248 "./neo-c.h"
                         self->tail->next=litem_30;
-                        # 254 "./neo-c.h"
+                        # 249 "./neo-c.h"
                         self->tail=litem_30;
                     }
                 }
-                # 257 "./neo-c.h"
+                # 252 "./neo-c.h"
                 self->len++;
-                # 259 "./neo-c.h"
+                # 254 "./neo-c.h"
                 __result37__ = __result_obj__ = self;
                 return __result37__;
 }
@@ -3381,18 +3377,18 @@ int i_31;
 struct list$1double* __result41__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_31, 0, sizeof(int));
-        # 113 "./neo-c.h"
+        # 108 "./neo-c.h"
         self->head=((void*)0);
-        # 114 "./neo-c.h"
+        # 109 "./neo-c.h"
         self->tail=((void*)0);
-        # 115 "./neo-c.h"
+        # 110 "./neo-c.h"
         self->len=0;
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         for(        i_31=0;        i_31<num_value;        i_31++        ){
-            # 118 "./neo-c.h"
+            # 113 "./neo-c.h"
             list$1double_push_back(self,values[i_31]);
         }
-        # 121 "./neo-c.h"
+        # 116 "./neo-c.h"
         __result41__ = __result_obj__ = self;
         return __result41__;
 }
@@ -3409,57 +3405,57 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_32, 0, sizeof(struct list_item$1double*));
 memset(&litem_33, 0, sizeof(struct list_item$1double*));
 memset(&litem_34, 0, sizeof(struct list_item$1double*));
-                # 257 "./neo-c.h"
-                # 226 "./neo-c.h"
+                # 252 "./neo-c.h"
+                # 221 "./neo-c.h"
                 if(_if_conditional11=self->len==0,                _if_conditional11) {
-                    # 227 "./neo-c.h"
-                    litem_32=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 227, "list_item$1double");
-                    # 229 "./neo-c.h"
+                    # 222 "./neo-c.h"
+                    litem_32=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 222, "list_item$1double");
+                    # 224 "./neo-c.h"
                     litem_32->prev=((void*)0);
-                    # 230 "./neo-c.h"
+                    # 225 "./neo-c.h"
                     litem_32->next=((void*)0);
-                    # 231 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     litem_32->item=item;
-                    # 233 "./neo-c.h"
+                    # 228 "./neo-c.h"
                     self->tail=litem_32;
-                    # 234 "./neo-c.h"
+                    # 229 "./neo-c.h"
                     self->head=litem_32;
                 }
                 else {
-                    # 257 "./neo-c.h"
-                    # 236 "./neo-c.h"
+                    # 252 "./neo-c.h"
+                    # 231 "./neo-c.h"
                     if(_if_conditional12=self->len==1,                    _if_conditional12) {
-                        # 237 "./neo-c.h"
-                        litem_33=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 237, "list_item$1double");
-                        # 239 "./neo-c.h"
+                        # 232 "./neo-c.h"
+                        litem_33=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 232, "list_item$1double");
+                        # 234 "./neo-c.h"
                         litem_33->prev=self->head;
-                        # 240 "./neo-c.h"
+                        # 235 "./neo-c.h"
                         litem_33->next=((void*)0);
-                        # 241 "./neo-c.h"
+                        # 236 "./neo-c.h"
                         litem_33->item=item;
-                        # 243 "./neo-c.h"
+                        # 238 "./neo-c.h"
                         self->tail=litem_33;
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         self->head->next=litem_33;
                     }
                     else {
-                        # 247 "./neo-c.h"
-                        litem_34=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 247, "list_item$1double");
-                        # 249 "./neo-c.h"
+                        # 242 "./neo-c.h"
+                        litem_34=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 242, "list_item$1double");
+                        # 244 "./neo-c.h"
                         litem_34->prev=self->tail;
-                        # 250 "./neo-c.h"
+                        # 245 "./neo-c.h"
                         litem_34->next=((void*)0);
-                        # 251 "./neo-c.h"
+                        # 246 "./neo-c.h"
                         litem_34->item=item;
-                        # 253 "./neo-c.h"
+                        # 248 "./neo-c.h"
                         self->tail->next=litem_34;
-                        # 254 "./neo-c.h"
+                        # 249 "./neo-c.h"
                         self->tail=litem_34;
                     }
                 }
-                # 257 "./neo-c.h"
+                # 252 "./neo-c.h"
                 self->len++;
-                # 259 "./neo-c.h"
+                # 254 "./neo-c.h"
                 __result40__ = __result_obj__ = self;
                 return __result40__;
 }
@@ -4226,19 +4222,15 @@ _Bool _if_conditional42;
 char* str_111;
 struct list$1charph* group_strings_112;
 char* str2_113;
-_Bool _if_conditional43;
-struct list$1charph* __result118__;
+_Bool _if_conditional45;
 _Bool _if_conditional46;
-_Bool _if_conditional47;
 char* str_117;
 struct list$1charph* group_strings_118;
 int i_119;
 char* match_string_120;
 char* str2_121;
-_Bool _if_conditional48;
-struct list$1charph* __result120__;
-_Bool _if_conditional49;
-struct list$1charph* __result121__;
+_Bool _if_conditional47;
+struct list$1charph* __result119__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_95, 0, sizeof(struct list$1charph*));
 memset(&offset_96, 0, sizeof(int));
@@ -4283,7 +4275,7 @@ memset(&str2_121, 0, sizeof(char*));
     str_104=reg->str;
     # 387 "libneo-c-str-gc.c"
     re_105=reg->re;
-    # 455 "libneo-c-str-gc.c"
+    # 447 "libneo-c-str-gc.c"
     while(_while_condtional5=(_Bool)1,    _while_condtional5) {
         # 390 "libneo-c-str-gc.c"
         options_106=2097152;
@@ -4301,7 +4293,7 @@ memset(&str2_121, 0, sizeof(char*));
             # 398 "libneo-c-str-gc.c"
             end_99[i_110]=ovec_value_100[i_110*2+1];
         }
-        # 453 "libneo-c-str-gc.c"
+        # 445 "libneo-c-str-gc.c"
         # 402 "libneo-c-str-gc.c"
         if(_if_conditional42=regex_result_108==1,        _if_conditional42) {
             # 404 "libneo-c-str-gc.c"
@@ -4310,154 +4302,140 @@ memset(&str2_121, 0, sizeof(char*));
             group_strings_112=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 406, "list$1charph"));
             # 408 "libneo-c-str-gc.c"
             str2_113=block(parent,str_111,group_strings_112);
-            # 414 "libneo-c-str-gc.c"
             # 410 "libneo-c-str-gc.c"
-            if(_if_conditional43=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,            _if_conditional43) {
-                # 411 "libneo-c-str-gc.c"
-                __result118__ = __result_obj__ = result_95;
-                return __result118__;
-            }
-            # 414 "libneo-c-str-gc.c"
             list$1charph_push_back(result_95,str2_113);
-            # 422 "libneo-c-str-gc.c"
-            # 416 "libneo-c-str-gc.c"
-            if(_if_conditional46=offset_96==end_99[0],            _if_conditional46) {
-                # 417 "libneo-c-str-gc.c"
+            # 418 "libneo-c-str-gc.c"
+            # 412 "libneo-c-str-gc.c"
+            if(_if_conditional45=offset_96==end_99[0],            _if_conditional45) {
+                # 413 "libneo-c-str-gc.c"
                 offset_96++;
             }
             else {
-                # 420 "libneo-c-str-gc.c"
+                # 416 "libneo-c-str-gc.c"
                 offset_96=end_99[0];
             }
         }
         else {
-            # 453 "libneo-c-str-gc.c"
-            # 424 "libneo-c-str-gc.c"
-            if(_if_conditional47=regex_result_108>1,            _if_conditional47) {
-                # 425 "libneo-c-str-gc.c"
+            # 445 "libneo-c-str-gc.c"
+            # 420 "libneo-c-str-gc.c"
+            if(_if_conditional46=regex_result_108>1,            _if_conditional46) {
+                # 421 "libneo-c-str-gc.c"
                 str_117=charp_substring(self,start_98[0],end_99[0]);
-                # 427 "libneo-c-str-gc.c"
-                group_strings_118=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 427, "list$1charph"));
-                # 433 "libneo-c-str-gc.c"
+                # 423 "libneo-c-str-gc.c"
+                group_strings_118=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 423, "list$1charph"));
+                # 429 "libneo-c-str-gc.c"
                 for(                i_119=1;                i_119<regex_result_108;                i_119++                ){
-                    # 429 "libneo-c-str-gc.c"
+                    # 425 "libneo-c-str-gc.c"
                     match_string_120=charp_substring(self,start_98[i_119],end_99[i_119]);
-                    # 430 "libneo-c-str-gc.c"
+                    # 426 "libneo-c-str-gc.c"
                     list$1charph_push_back(group_strings_118,match_string_120);
                 }
-                # 433 "libneo-c-str-gc.c"
+                # 429 "libneo-c-str-gc.c"
                 str2_121=block(parent,str_117,group_strings_118);
-                # 439 "libneo-c-str-gc.c"
-                # 435 "libneo-c-str-gc.c"
-                if(_if_conditional48=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,                _if_conditional48) {
-                    # 436 "libneo-c-str-gc.c"
-                    __result120__ = __result_obj__ = result_95;
-                    return __result120__;
-                }
-                # 439 "libneo-c-str-gc.c"
+                # 431 "libneo-c-str-gc.c"
                 list$1charph_push_back(result_95,str2_121);
-                # 447 "libneo-c-str-gc.c"
-                # 441 "libneo-c-str-gc.c"
-                if(_if_conditional49=offset_96==end_99[0],                _if_conditional49) {
-                    # 442 "libneo-c-str-gc.c"
+                # 439 "libneo-c-str-gc.c"
+                # 433 "libneo-c-str-gc.c"
+                if(_if_conditional47=offset_96==end_99[0],                _if_conditional47) {
+                    # 434 "libneo-c-str-gc.c"
                     offset_96++;
                 }
                 else {
-                    # 445 "libneo-c-str-gc.c"
+                    # 437 "libneo-c-str-gc.c"
                     offset_96=end_99[0];
                 }
             }
             else {
-                # 451 "libneo-c-str-gc.c"
+                # 443 "libneo-c-str-gc.c"
                 break;
             }
         }
     }
-    # 455 "libneo-c-str-gc.c"
-    __result121__ = __result_obj__ = result_95;
-    return __result121__;
+    # 447 "libneo-c-str-gc.c"
+    __result119__ = __result_obj__ = result_95;
+    return __result119__;
 }
 
 static struct list$1charph* list$1charph_initialize(struct list$1charph* self){
 void* __result_obj__;
 struct list$1charph* __result117__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 105 "./neo-c.h"
+        # 100 "./neo-c.h"
         self->head=((void*)0);
-        # 106 "./neo-c.h"
+        # 101 "./neo-c.h"
         self->tail=((void*)0);
-        # 107 "./neo-c.h"
+        # 102 "./neo-c.h"
         self->len=0;
-        # 109 "./neo-c.h"
+        # 104 "./neo-c.h"
         __result117__ = __result_obj__ = self;
         return __result117__;
 }
 
 static struct list$1charph* list$1charph_push_back(struct list$1charph* self, char* item){
 void* __result_obj__;
-_Bool _if_conditional44;
+_Bool _if_conditional43;
 struct list_item$1charph* litem_114;
-_Bool _if_conditional45;
+_Bool _if_conditional44;
 struct list_item$1charph* litem_115;
 struct list_item$1charph* litem_116;
-struct list$1charph* __result119__;
+struct list$1charph* __result118__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&litem_114, 0, sizeof(struct list_item$1charph*));
 memset(&litem_115, 0, sizeof(struct list_item$1charph*));
 memset(&litem_116, 0, sizeof(struct list_item$1charph*));
-                # 257 "./neo-c.h"
-                # 226 "./neo-c.h"
-                if(_if_conditional44=self->len==0,                _if_conditional44) {
-                    # 227 "./neo-c.h"
-                    litem_114=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 227, "list_item$1charph");
-                    # 229 "./neo-c.h"
+                # 252 "./neo-c.h"
+                # 221 "./neo-c.h"
+                if(_if_conditional43=self->len==0,                _if_conditional43) {
+                    # 222 "./neo-c.h"
+                    litem_114=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 222, "list_item$1charph");
+                    # 224 "./neo-c.h"
                     litem_114->prev=((void*)0);
-                    # 230 "./neo-c.h"
+                    # 225 "./neo-c.h"
                     litem_114->next=((void*)0);
-                    # 231 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     litem_114->item=item;
-                    # 233 "./neo-c.h"
+                    # 228 "./neo-c.h"
                     self->tail=litem_114;
-                    # 234 "./neo-c.h"
+                    # 229 "./neo-c.h"
                     self->head=litem_114;
                 }
                 else {
-                    # 257 "./neo-c.h"
-                    # 236 "./neo-c.h"
-                    if(_if_conditional45=self->len==1,                    _if_conditional45) {
-                        # 237 "./neo-c.h"
-                        litem_115=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 237, "list_item$1charph");
-                        # 239 "./neo-c.h"
+                    # 252 "./neo-c.h"
+                    # 231 "./neo-c.h"
+                    if(_if_conditional44=self->len==1,                    _if_conditional44) {
+                        # 232 "./neo-c.h"
+                        litem_115=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 232, "list_item$1charph");
+                        # 234 "./neo-c.h"
                         litem_115->prev=self->head;
-                        # 240 "./neo-c.h"
+                        # 235 "./neo-c.h"
                         litem_115->next=((void*)0);
-                        # 241 "./neo-c.h"
+                        # 236 "./neo-c.h"
                         litem_115->item=item;
-                        # 243 "./neo-c.h"
+                        # 238 "./neo-c.h"
                         self->tail=litem_115;
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         self->head->next=litem_115;
                     }
                     else {
-                        # 247 "./neo-c.h"
-                        litem_116=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 247, "list_item$1charph");
-                        # 249 "./neo-c.h"
+                        # 242 "./neo-c.h"
+                        litem_116=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 242, "list_item$1charph");
+                        # 244 "./neo-c.h"
                         litem_116->prev=self->tail;
-                        # 250 "./neo-c.h"
+                        # 245 "./neo-c.h"
                         litem_116->next=((void*)0);
-                        # 251 "./neo-c.h"
+                        # 246 "./neo-c.h"
                         litem_116->item=item;
-                        # 253 "./neo-c.h"
+                        # 248 "./neo-c.h"
                         self->tail->next=litem_116;
-                        # 254 "./neo-c.h"
+                        # 249 "./neo-c.h"
                         self->tail=litem_116;
                     }
                 }
-                # 257 "./neo-c.h"
+                # 252 "./neo-c.h"
                 self->len++;
-                # 259 "./neo-c.h"
-                __result119__ = __result_obj__ = self;
-                return __result119__;
+                # 254 "./neo-c.h"
+                __result118__ = __result_obj__ = self;
+                return __result118__;
 }
 
 struct list$1charph* charp_scan_block_count(char* self, struct come_regex* reg, int count, void* parent, char* (*block)(void*,char*,struct list$1charph*)){
@@ -4477,25 +4455,21 @@ int len_135;
 int regex_result_136;
 int i_137;
 int i_138;
-_Bool _if_conditional50;
+_Bool _if_conditional48;
 char* str_139;
 struct list$1charph* group_strings_140;
 char* str2_141;
+_Bool _if_conditional49;
+_Bool _if_conditional50;
 _Bool _if_conditional51;
-struct list$1charph* __result122__;
-_Bool _if_conditional52;
-_Bool _if_conditional53;
-_Bool _if_conditional54;
 char* str_142;
 struct list$1charph* group_strings_143;
 int i_144;
 char* match_string_145;
 char* str2_146;
-_Bool _if_conditional55;
-struct list$1charph* __result123__;
-_Bool _if_conditional56;
-_Bool _if_conditional57;
-struct list$1charph* __result124__;
+_Bool _if_conditional52;
+_Bool _if_conditional53;
+struct list$1charph* __result120__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_122, 0, sizeof(struct list$1charph*));
 memset(&offset_123, 0, sizeof(int));
@@ -4518,140 +4492,126 @@ memset(&group_strings_143, 0, sizeof(struct list$1charph*));
 memset(&i_144, 0, sizeof(int));
 memset(&match_string_145, 0, sizeof(char*));
 memset(&str2_146, 0, sizeof(char*));
-    # 461 "libneo-c-str-gc.c"
-    result_122=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 461, "list$1charph"));
-    # 463 "libneo-c-str-gc.c"
+    # 453 "libneo-c-str-gc.c"
+    result_122=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 453, "list$1charph"));
+    # 455 "libneo-c-str-gc.c"
     offset_123=0;
-    # 465 "libneo-c-str-gc.c"
+    # 457 "libneo-c-str-gc.c"
     ovec_max_124=16;
-    # 466 "libneo-c-str-gc.c"
+    # 458 "libneo-c-str-gc.c"
     int start_125[ovec_max_124];
     memset(&start_125, 0, sizeof(int)    *(ovec_max_124)    );
-    # 467 "libneo-c-str-gc.c"
+    # 459 "libneo-c-str-gc.c"
     int end_126[ovec_max_124];
     memset(&end_126, 0, sizeof(int)    *(ovec_max_124)    );
-    # 468 "libneo-c-str-gc.c"
+    # 460 "libneo-c-str-gc.c"
     int ovec_value_127[ovec_max_124*3];
     memset(&ovec_value_127, 0, sizeof(int)    *(ovec_max_124*3)    );
-    # 470 "libneo-c-str-gc.c"
-    # 471 "libneo-c-str-gc.c"
-    # 473 "libneo-c-str-gc.c"
+    # 462 "libneo-c-str-gc.c"
+    # 463 "libneo-c-str-gc.c"
+    # 465 "libneo-c-str-gc.c"
     options_130=reg->options;
-    # 474 "libneo-c-str-gc.c"
+    # 466 "libneo-c-str-gc.c"
     str_131=reg->str;
-    # 476 "libneo-c-str-gc.c"
+    # 468 "libneo-c-str-gc.c"
     re_132=reg->re;
-    # 478 "libneo-c-str-gc.c"
+    # 470 "libneo-c-str-gc.c"
     n_133=0;
-    # 556 "libneo-c-str-gc.c"
+    # 540 "libneo-c-str-gc.c"
     while(_while_condtional6=(_Bool)1,    _while_condtional6) {
-        # 481 "libneo-c-str-gc.c"
+        # 473 "libneo-c-str-gc.c"
         options_134=2097152;
-        # 482 "libneo-c-str-gc.c"
+        # 474 "libneo-c-str-gc.c"
         len_135=strlen(self);
-        # 483 "libneo-c-str-gc.c"
+        # 475 "libneo-c-str-gc.c"
         regex_result_136=pcre_exec(re_132,(struct pcre_extra*)0,self,len_135,offset_123,options_134,ovec_value_127,ovec_max_124*3);
-        # 488 "libneo-c-str-gc.c"
+        # 480 "libneo-c-str-gc.c"
         for(        i_137=0;        i_137<ovec_max_124;        i_137++        ){
-            # 486 "libneo-c-str-gc.c"
+            # 478 "libneo-c-str-gc.c"
             start_125[i_137]=ovec_value_127[i_137*2];
         }
-        # 493 "libneo-c-str-gc.c"
+        # 485 "libneo-c-str-gc.c"
         for(        i_138=0;        i_138<ovec_max_124;        i_138++        ){
-            # 489 "libneo-c-str-gc.c"
+            # 481 "libneo-c-str-gc.c"
             end_126[i_138]=ovec_value_127[i_138*2+1];
         }
-        # 554 "libneo-c-str-gc.c"
-        # 493 "libneo-c-str-gc.c"
-        if(_if_conditional50=regex_result_136==1,        _if_conditional50) {
-            # 495 "libneo-c-str-gc.c"
+        # 538 "libneo-c-str-gc.c"
+        # 485 "libneo-c-str-gc.c"
+        if(_if_conditional48=regex_result_136==1,        _if_conditional48) {
+            # 487 "libneo-c-str-gc.c"
             str_139=charp_substring(self,start_125[0],end_126[0]);
-            # 497 "libneo-c-str-gc.c"
-            group_strings_140=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 497, "list$1charph"));
-            # 499 "libneo-c-str-gc.c"
+            # 489 "libneo-c-str-gc.c"
+            group_strings_140=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 489, "list$1charph"));
+            # 491 "libneo-c-str-gc.c"
             str2_141=block(parent,str_139,group_strings_140);
-            # 505 "libneo-c-str-gc.c"
-            # 501 "libneo-c-str-gc.c"
-            if(_if_conditional51=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,            _if_conditional51) {
-                # 502 "libneo-c-str-gc.c"
-                __result122__ = __result_obj__ = result_122;
-                return __result122__;
-            }
-            # 505 "libneo-c-str-gc.c"
+            # 493 "libneo-c-str-gc.c"
             list$1charph_push_back(result_122,str2_141);
-            # 514 "libneo-c-str-gc.c"
-            # 507 "libneo-c-str-gc.c"
-            if(_if_conditional52=offset_123==end_126[0],            _if_conditional52) {
-                # 508 "libneo-c-str-gc.c"
+            # 502 "libneo-c-str-gc.c"
+            # 495 "libneo-c-str-gc.c"
+            if(_if_conditional49=offset_123==end_126[0],            _if_conditional49) {
+                # 496 "libneo-c-str-gc.c"
                 offset_123++;
             }
             else {
-                # 511 "libneo-c-str-gc.c"
+                # 499 "libneo-c-str-gc.c"
                 offset_123=end_126[0];
             }
-            # 514 "libneo-c-str-gc.c"
+            # 502 "libneo-c-str-gc.c"
             n_133++;
-            # 518 "libneo-c-str-gc.c"
-            # 515 "libneo-c-str-gc.c"
-            if(_if_conditional53=n_133==count,            _if_conditional53) {
-                # 516 "libneo-c-str-gc.c"
+            # 506 "libneo-c-str-gc.c"
+            # 503 "libneo-c-str-gc.c"
+            if(_if_conditional50=n_133==count,            _if_conditional50) {
+                # 504 "libneo-c-str-gc.c"
                 break;
             }
         }
         else {
-            # 554 "libneo-c-str-gc.c"
-            # 520 "libneo-c-str-gc.c"
-            if(_if_conditional54=regex_result_136>1,            _if_conditional54) {
-                # 521 "libneo-c-str-gc.c"
+            # 538 "libneo-c-str-gc.c"
+            # 508 "libneo-c-str-gc.c"
+            if(_if_conditional51=regex_result_136>1,            _if_conditional51) {
+                # 509 "libneo-c-str-gc.c"
                 str_142=charp_substring(self,start_125[0],end_126[0]);
-                # 523 "libneo-c-str-gc.c"
-                group_strings_143=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 523, "list$1charph"));
-                # 529 "libneo-c-str-gc.c"
+                # 511 "libneo-c-str-gc.c"
+                group_strings_143=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 511, "list$1charph"));
+                # 517 "libneo-c-str-gc.c"
                 for(                i_144=1;                i_144<regex_result_136;                i_144++                ){
-                    # 525 "libneo-c-str-gc.c"
+                    # 513 "libneo-c-str-gc.c"
                     match_string_145=charp_substring(self,start_125[i_144],end_126[i_144]);
-                    # 526 "libneo-c-str-gc.c"
+                    # 514 "libneo-c-str-gc.c"
                     list$1charph_push_back(group_strings_143,match_string_145);
                 }
-                # 529 "libneo-c-str-gc.c"
+                # 517 "libneo-c-str-gc.c"
                 str2_146=block(parent,str_142,group_strings_143);
-                # 535 "libneo-c-str-gc.c"
-                # 531 "libneo-c-str-gc.c"
-                if(_if_conditional55=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,                _if_conditional55) {
-                    # 532 "libneo-c-str-gc.c"
-                    __result123__ = __result_obj__ = result_122;
-                    return __result123__;
-                }
-                # 535 "libneo-c-str-gc.c"
+                # 519 "libneo-c-str-gc.c"
                 list$1charph_push_back(result_122,str2_146);
-                # 544 "libneo-c-str-gc.c"
-                # 537 "libneo-c-str-gc.c"
-                if(_if_conditional56=offset_123==end_126[0],                _if_conditional56) {
-                    # 538 "libneo-c-str-gc.c"
+                # 528 "libneo-c-str-gc.c"
+                # 521 "libneo-c-str-gc.c"
+                if(_if_conditional52=offset_123==end_126[0],                _if_conditional52) {
+                    # 522 "libneo-c-str-gc.c"
                     offset_123++;
                 }
                 else {
-                    # 541 "libneo-c-str-gc.c"
+                    # 525 "libneo-c-str-gc.c"
                     offset_123=end_126[0];
                 }
-                # 544 "libneo-c-str-gc.c"
+                # 528 "libneo-c-str-gc.c"
                 n_133++;
-                # 548 "libneo-c-str-gc.c"
-                # 545 "libneo-c-str-gc.c"
-                if(_if_conditional57=n_133==count,                _if_conditional57) {
-                    # 546 "libneo-c-str-gc.c"
+                # 532 "libneo-c-str-gc.c"
+                # 529 "libneo-c-str-gc.c"
+                if(_if_conditional53=n_133==count,                _if_conditional53) {
+                    # 530 "libneo-c-str-gc.c"
                     break;
                 }
             }
             else {
-                # 552 "libneo-c-str-gc.c"
+                # 536 "libneo-c-str-gc.c"
                 break;
             }
         }
     }
-    # 556 "libneo-c-str-gc.c"
-    __result124__ = __result_obj__ = result_122;
-    return __result124__;
+    # 540 "libneo-c-str-gc.c"
+    __result120__ = __result_obj__ = result_122;
+    return __result120__;
 }
 
 struct list$1charph* charp_split_block(char* self, struct come_regex* reg, void* parent, char* (*block)(void*,char*,struct list$1charph*)){
@@ -4670,29 +4630,23 @@ int len_159;
 int regex_result_160;
 int i_161;
 int i_162;
-_Bool _if_conditional58;
+_Bool _if_conditional54;
 char* str_163;
 struct list$1charph* match_strings_164;
 char* str2_165;
-_Bool _if_conditional59;
-struct list$1charph* __result125__;
-_Bool _if_conditional60;
-_Bool _if_conditional61;
+_Bool _if_conditional55;
+_Bool _if_conditional56;
 char* str_166;
-_Bool _if_conditional62;
+_Bool _if_conditional57;
 struct list$1charph* match_strings_167;
 int i_168;
 char* match_str_169;
 char* str2_170;
-_Bool _if_conditional63;
-struct list$1charph* __result126__;
-_Bool _if_conditional64;
+_Bool _if_conditional58;
 char* str_171;
 struct list$1charph* match_strings_172;
 char* str2_173;
-_Bool _if_conditional65;
-struct list$1charph* __result127__;
-struct list$1charph* __result128__;
+struct list$1charph* __result121__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&erro_ofs_148, 0, sizeof(int));
 memset(&options_149, 0, sizeof(int));
@@ -4717,141 +4671,120 @@ memset(&str2_170, 0, sizeof(char*));
 memset(&str_171, 0, sizeof(char*));
 memset(&match_strings_172, 0, sizeof(struct list$1charph*));
 memset(&str2_173, 0, sizeof(char*));
-    # 561 "libneo-c-str-gc.c"
-    # 562 "libneo-c-str-gc.c"
-    # 564 "libneo-c-str-gc.c"
+    # 545 "libneo-c-str-gc.c"
+    # 546 "libneo-c-str-gc.c"
+    # 548 "libneo-c-str-gc.c"
     options_149=reg->options;
-    # 565 "libneo-c-str-gc.c"
+    # 549 "libneo-c-str-gc.c"
     str_150=reg->str;
-    # 567 "libneo-c-str-gc.c"
+    # 551 "libneo-c-str-gc.c"
     re_151=reg->re;
-    # 569 "libneo-c-str-gc.c"
-    result_152=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 569, "list$1charph"));
-    # 571 "libneo-c-str-gc.c"
+    # 553 "libneo-c-str-gc.c"
+    result_152=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 553, "list$1charph"));
+    # 555 "libneo-c-str-gc.c"
     offset_153=0;
-    # 573 "libneo-c-str-gc.c"
+    # 557 "libneo-c-str-gc.c"
     ovec_max_154=16;
-    # 574 "libneo-c-str-gc.c"
+    # 558 "libneo-c-str-gc.c"
     int start_155[ovec_max_154];
     memset(&start_155, 0, sizeof(int)    *(ovec_max_154)    );
-    # 575 "libneo-c-str-gc.c"
+    # 559 "libneo-c-str-gc.c"
     int end_156[ovec_max_154];
     memset(&end_156, 0, sizeof(int)    *(ovec_max_154)    );
-    # 576 "libneo-c-str-gc.c"
+    # 560 "libneo-c-str-gc.c"
     int ovec_value_157[ovec_max_154*3];
     memset(&ovec_value_157, 0, sizeof(int)    *(ovec_max_154*3)    );
-    # 643 "libneo-c-str-gc.c"
+    # 619 "libneo-c-str-gc.c"
     while(_while_condtional7=(_Bool)1,    _while_condtional7) {
-        # 579 "libneo-c-str-gc.c"
+        # 563 "libneo-c-str-gc.c"
         options_158=2097152;
-        # 580 "libneo-c-str-gc.c"
+        # 564 "libneo-c-str-gc.c"
         len_159=strlen(self);
-        # 582 "libneo-c-str-gc.c"
+        # 566 "libneo-c-str-gc.c"
         regex_result_160=pcre_exec(re_151,(struct pcre_extra*)0,self,len_159,offset_153,options_158,ovec_value_157,ovec_max_154*3);
-        # 587 "libneo-c-str-gc.c"
+        # 571 "libneo-c-str-gc.c"
         for(        i_161=0;        i_161<ovec_max_154;        i_161++        ){
-            # 585 "libneo-c-str-gc.c"
+            # 569 "libneo-c-str-gc.c"
             start_155[i_161]=ovec_value_157[i_161*2];
         }
-        # 592 "libneo-c-str-gc.c"
+        # 576 "libneo-c-str-gc.c"
         for(        i_162=0;        i_162<ovec_max_154;        i_162++        ){
-            # 588 "libneo-c-str-gc.c"
+            # 572 "libneo-c-str-gc.c"
             end_156[i_162]=ovec_value_157[i_162*2+1];
         }
-        # 641 "libneo-c-str-gc.c"
-        # 592 "libneo-c-str-gc.c"
-        if(_if_conditional58=regex_result_160==1,        _if_conditional58) {
-            # 594 "libneo-c-str-gc.c"
+        # 617 "libneo-c-str-gc.c"
+        # 576 "libneo-c-str-gc.c"
+        if(_if_conditional54=regex_result_160==1,        _if_conditional54) {
+            # 578 "libneo-c-str-gc.c"
             str_163=charp_substring(self,offset_153,start_155[0]);
-            # 596 "libneo-c-str-gc.c"
-            match_strings_164=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 596, "list$1charph"));
-            # 597 "libneo-c-str-gc.c"
+            # 580 "libneo-c-str-gc.c"
+            match_strings_164=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 580, "list$1charph"));
+            # 581 "libneo-c-str-gc.c"
             str2_165=block(parent,str_163,match_strings_164);
-            # 603 "libneo-c-str-gc.c"
-            # 599 "libneo-c-str-gc.c"
-            if(_if_conditional59=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,            _if_conditional59) {
-                # 600 "libneo-c-str-gc.c"
-                __result125__ = __result_obj__ = result_152;
-                return __result125__;
-            }
-            # 603 "libneo-c-str-gc.c"
+            # 583 "libneo-c-str-gc.c"
             list$1charph_push_back(result_152,str2_165);
-            # 611 "libneo-c-str-gc.c"
-            # 605 "libneo-c-str-gc.c"
-            if(_if_conditional60=offset_153==end_156[0],            _if_conditional60) {
-                # 606 "libneo-c-str-gc.c"
+            # 591 "libneo-c-str-gc.c"
+            # 585 "libneo-c-str-gc.c"
+            if(_if_conditional55=offset_153==end_156[0],            _if_conditional55) {
+                # 586 "libneo-c-str-gc.c"
                 offset_153++;
             }
             else {
-                # 609 "libneo-c-str-gc.c"
+                # 589 "libneo-c-str-gc.c"
                 offset_153=end_156[0];
             }
         }
         else {
-            # 641 "libneo-c-str-gc.c"
-            # 613 "libneo-c-str-gc.c"
-            if(_if_conditional61=regex_result_160>1,            _if_conditional61) {
-                # 614 "libneo-c-str-gc.c"
+            # 617 "libneo-c-str-gc.c"
+            # 593 "libneo-c-str-gc.c"
+            if(_if_conditional56=regex_result_160>1,            _if_conditional56) {
+                # 594 "libneo-c-str-gc.c"
                 str_166=charp_substring(self,offset_153,start_155[0]);
-                # 623 "libneo-c-str-gc.c"
-                # 616 "libneo-c-str-gc.c"
-                if(_if_conditional62=offset_153==end_156[0],                _if_conditional62) {
-                    # 617 "libneo-c-str-gc.c"
+                # 603 "libneo-c-str-gc.c"
+                # 596 "libneo-c-str-gc.c"
+                if(_if_conditional57=offset_153==end_156[0],                _if_conditional57) {
+                    # 597 "libneo-c-str-gc.c"
                     offset_153++;
                 }
                 else {
-                    # 620 "libneo-c-str-gc.c"
+                    # 600 "libneo-c-str-gc.c"
                     offset_153=end_156[0];
                 }
-                # 623 "libneo-c-str-gc.c"
-                match_strings_167=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 623, "list$1charph"));
-                # 629 "libneo-c-str-gc.c"
+                # 603 "libneo-c-str-gc.c"
+                match_strings_167=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 603, "list$1charph"));
+                # 609 "libneo-c-str-gc.c"
                 for(                i_168=1;                i_168<regex_result_160;                i_168++                ){
-                    # 625 "libneo-c-str-gc.c"
+                    # 605 "libneo-c-str-gc.c"
                     match_str_169=charp_substring(self,start_155[i_168],end_156[i_168]);
-                    # 626 "libneo-c-str-gc.c"
+                    # 606 "libneo-c-str-gc.c"
                     list$1charph_push_back(match_strings_167,match_str_169);
                 }
-                # 629 "libneo-c-str-gc.c"
+                # 609 "libneo-c-str-gc.c"
                 str2_170=block(parent,str_166,match_strings_167);
-                # 634 "libneo-c-str-gc.c"
-                # 631 "libneo-c-str-gc.c"
-                if(_if_conditional63=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,                _if_conditional63) {
-                    # 632 "libneo-c-str-gc.c"
-                    __result126__ = __result_obj__ = result_152;
-                    return __result126__;
-                }
-                # 634 "libneo-c-str-gc.c"
+                # 610 "libneo-c-str-gc.c"
                 list$1charph_push_back(result_152,str2_170);
             }
             else {
-                # 639 "libneo-c-str-gc.c"
+                # 615 "libneo-c-str-gc.c"
                 break;
             }
         }
     }
-    # 654 "libneo-c-str-gc.c"
-    # 643 "libneo-c-str-gc.c"
-    if(_if_conditional64=offset_153<charp_length(self),    _if_conditional64) {
-        # 644 "libneo-c-str-gc.c"
+    # 627 "libneo-c-str-gc.c"
+    # 619 "libneo-c-str-gc.c"
+    if(_if_conditional58=offset_153<charp_length(self),    _if_conditional58) {
+        # 620 "libneo-c-str-gc.c"
         str_171=charp_substring(self,offset_153,-1);
-        # 645 "libneo-c-str-gc.c"
-        match_strings_172=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 645, "list$1charph"));
-        # 646 "libneo-c-str-gc.c"
+        # 621 "libneo-c-str-gc.c"
+        match_strings_172=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 621, "list$1charph"));
+        # 622 "libneo-c-str-gc.c"
         str2_173=block(parent,str_171,match_strings_172);
-        # 651 "libneo-c-str-gc.c"
-        # 648 "libneo-c-str-gc.c"
-        if(_if_conditional65=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,        _if_conditional65) {
-            # 649 "libneo-c-str-gc.c"
-            __result127__ = __result_obj__ = result_152;
-            return __result127__;
-        }
-        # 651 "libneo-c-str-gc.c"
+        # 624 "libneo-c-str-gc.c"
         list$1charph_push_back(result_152,str2_173);
     }
-    # 654 "libneo-c-str-gc.c"
-    __result128__ = __result_obj__ = result_152;
-    return __result128__;
+    # 627 "libneo-c-str-gc.c"
+    __result121__ = __result_obj__ = result_152;
+    return __result121__;
 }
 
 struct list$1charph* charp_split_block_count(char* self, struct come_regex* reg, int count, void* parent, char* (*block)(void*,char*,struct list$1charph*)){
@@ -4871,24 +4804,20 @@ int len_187;
 int regex_result_188;
 int i_189;
 int i_190;
-_Bool _if_conditional66;
+_Bool _if_conditional59;
 char* str_191;
 struct list$1charph* match_strings_192;
 char* str2_193;
-_Bool _if_conditional67;
-struct list$1charph* __result129__;
-_Bool _if_conditional68;
-_Bool _if_conditional69;
+_Bool _if_conditional60;
+_Bool _if_conditional61;
 char* str_194;
-_Bool _if_conditional70;
+_Bool _if_conditional62;
 struct list$1charph* match_strings_195;
 int i_196;
 char* match_str_197;
 char* str2_198;
-_Bool _if_conditional71;
-struct list$1charph* __result130__;
-_Bool _if_conditional72;
-struct list$1charph* __result131__;
+_Bool _if_conditional63;
+struct list$1charph* __result122__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&erro_ofs_175, 0, sizeof(int));
 memset(&options_176, 0, sizeof(int));
@@ -4911,231 +4840,217 @@ memset(&match_strings_195, 0, sizeof(struct list$1charph*));
 memset(&i_196, 0, sizeof(int));
 memset(&match_str_197, 0, sizeof(char*));
 memset(&str2_198, 0, sizeof(char*));
-    # 659 "libneo-c-str-gc.c"
-    # 660 "libneo-c-str-gc.c"
-    # 662 "libneo-c-str-gc.c"
+    # 632 "libneo-c-str-gc.c"
+    # 633 "libneo-c-str-gc.c"
+    # 635 "libneo-c-str-gc.c"
     options_176=reg->options;
-    # 663 "libneo-c-str-gc.c"
+    # 636 "libneo-c-str-gc.c"
     str_177=reg->str;
-    # 665 "libneo-c-str-gc.c"
+    # 638 "libneo-c-str-gc.c"
     re_178=reg->re;
-    # 667 "libneo-c-str-gc.c"
-    result_179=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 667, "list$1charph"));
-    # 669 "libneo-c-str-gc.c"
+    # 640 "libneo-c-str-gc.c"
+    result_179=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 640, "list$1charph"));
+    # 642 "libneo-c-str-gc.c"
     offset_180=0;
-    # 671 "libneo-c-str-gc.c"
+    # 644 "libneo-c-str-gc.c"
     ovec_max_181=16;
-    # 672 "libneo-c-str-gc.c"
+    # 645 "libneo-c-str-gc.c"
     int start_182[ovec_max_181];
     memset(&start_182, 0, sizeof(int)    *(ovec_max_181)    );
-    # 673 "libneo-c-str-gc.c"
+    # 646 "libneo-c-str-gc.c"
     int end_183[ovec_max_181];
     memset(&end_183, 0, sizeof(int)    *(ovec_max_181)    );
-    # 674 "libneo-c-str-gc.c"
+    # 647 "libneo-c-str-gc.c"
     int ovec_value_184[ovec_max_181*3];
     memset(&ovec_value_184, 0, sizeof(int)    *(ovec_max_181*3)    );
-    # 676 "libneo-c-str-gc.c"
+    # 649 "libneo-c-str-gc.c"
     n_185=0;
-    # 748 "libneo-c-str-gc.c"
+    # 714 "libneo-c-str-gc.c"
     while(_while_condtional8=(_Bool)1,    _while_condtional8) {
-        # 679 "libneo-c-str-gc.c"
+        # 652 "libneo-c-str-gc.c"
         options_186=2097152;
-        # 680 "libneo-c-str-gc.c"
+        # 653 "libneo-c-str-gc.c"
         len_187=strlen(self);
-        # 682 "libneo-c-str-gc.c"
+        # 655 "libneo-c-str-gc.c"
         regex_result_188=pcre_exec(re_178,(struct pcre_extra*)0,self,len_187,offset_180,options_186,ovec_value_184,ovec_max_181*3);
-        # 687 "libneo-c-str-gc.c"
+        # 660 "libneo-c-str-gc.c"
         for(        i_189=0;        i_189<ovec_max_181;        i_189++        ){
-            # 685 "libneo-c-str-gc.c"
+            # 658 "libneo-c-str-gc.c"
             start_182[i_189]=ovec_value_184[i_189*2];
         }
-        # 692 "libneo-c-str-gc.c"
+        # 665 "libneo-c-str-gc.c"
         for(        i_190=0;        i_190<ovec_max_181;        i_190++        ){
-            # 688 "libneo-c-str-gc.c"
+            # 661 "libneo-c-str-gc.c"
             end_183[i_190]=ovec_value_184[i_190*2+1];
         }
-        # 742 "libneo-c-str-gc.c"
-        # 692 "libneo-c-str-gc.c"
-        if(_if_conditional66=regex_result_188==1,        _if_conditional66) {
-            # 694 "libneo-c-str-gc.c"
+        # 708 "libneo-c-str-gc.c"
+        # 665 "libneo-c-str-gc.c"
+        if(_if_conditional59=regex_result_188==1,        _if_conditional59) {
+            # 667 "libneo-c-str-gc.c"
             str_191=charp_substring(self,offset_180,start_182[0]);
-            # 696 "libneo-c-str-gc.c"
-            match_strings_192=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 696, "list$1charph"));
-            # 697 "libneo-c-str-gc.c"
+            # 669 "libneo-c-str-gc.c"
+            match_strings_192=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 669, "list$1charph"));
+            # 670 "libneo-c-str-gc.c"
             str2_193=block(parent,str_191,match_strings_192);
-            # 702 "libneo-c-str-gc.c"
-            # 699 "libneo-c-str-gc.c"
-            if(_if_conditional67=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,            _if_conditional67) {
-                # 700 "libneo-c-str-gc.c"
-                __result129__ = __result_obj__ = result_179;
-                return __result129__;
-            }
-            # 702 "libneo-c-str-gc.c"
+            # 672 "libneo-c-str-gc.c"
             list$1charph_push_back(result_179,str2_193);
-            # 710 "libneo-c-str-gc.c"
-            # 704 "libneo-c-str-gc.c"
-            if(_if_conditional68=offset_180==end_183[0],            _if_conditional68) {
-                # 705 "libneo-c-str-gc.c"
+            # 680 "libneo-c-str-gc.c"
+            # 674 "libneo-c-str-gc.c"
+            if(_if_conditional60=offset_180==end_183[0],            _if_conditional60) {
+                # 675 "libneo-c-str-gc.c"
                 offset_180++;
             }
             else {
-                # 708 "libneo-c-str-gc.c"
+                # 678 "libneo-c-str-gc.c"
                 offset_180=end_183[0];
             }
         }
         else {
-            # 742 "libneo-c-str-gc.c"
-            # 712 "libneo-c-str-gc.c"
-            if(_if_conditional69=regex_result_188>1,            _if_conditional69) {
-                # 713 "libneo-c-str-gc.c"
+            # 708 "libneo-c-str-gc.c"
+            # 682 "libneo-c-str-gc.c"
+            if(_if_conditional61=regex_result_188>1,            _if_conditional61) {
+                # 683 "libneo-c-str-gc.c"
                 str_194=charp_substring(self,offset_180,start_182[0]);
-                # 722 "libneo-c-str-gc.c"
-                # 715 "libneo-c-str-gc.c"
-                if(_if_conditional70=offset_180==end_183[0],                _if_conditional70) {
-                    # 716 "libneo-c-str-gc.c"
+                # 692 "libneo-c-str-gc.c"
+                # 685 "libneo-c-str-gc.c"
+                if(_if_conditional62=offset_180==end_183[0],                _if_conditional62) {
+                    # 686 "libneo-c-str-gc.c"
                     offset_180++;
                 }
                 else {
-                    # 719 "libneo-c-str-gc.c"
+                    # 689 "libneo-c-str-gc.c"
                     offset_180=end_183[0];
                 }
-                # 722 "libneo-c-str-gc.c"
-                match_strings_195=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 722, "list$1charph"));
-                # 728 "libneo-c-str-gc.c"
+                # 692 "libneo-c-str-gc.c"
+                match_strings_195=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 692, "list$1charph"));
+                # 698 "libneo-c-str-gc.c"
                 for(                i_196=1;                i_196<regex_result_188;                i_196++                ){
-                    # 724 "libneo-c-str-gc.c"
+                    # 694 "libneo-c-str-gc.c"
                     match_str_197=charp_substring(self,start_182[i_196],end_183[i_196]);
-                    # 725 "libneo-c-str-gc.c"
+                    # 695 "libneo-c-str-gc.c"
                     list$1charph_push_back(match_strings_195,match_str_197);
                 }
-                # 728 "libneo-c-str-gc.c"
+                # 698 "libneo-c-str-gc.c"
                 str2_198=block(parent,str_194,match_strings_195);
-                # 734 "libneo-c-str-gc.c"
-                # 730 "libneo-c-str-gc.c"
-                if(_if_conditional71=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,                _if_conditional71) {
-                    # 731 "libneo-c-str-gc.c"
-                    __result130__ = __result_obj__ = result_179;
-                    return __result130__;
-                }
-                # 734 "libneo-c-str-gc.c"
+                # 700 "libneo-c-str-gc.c"
                 list$1charph_push_back(result_179,str2_198);
             }
             else {
-                # 739 "libneo-c-str-gc.c"
+                # 705 "libneo-c-str-gc.c"
                 break;
             }
         }
-        # 742 "libneo-c-str-gc.c"
+        # 708 "libneo-c-str-gc.c"
         n_185++;
-        # 746 "libneo-c-str-gc.c"
-        # 743 "libneo-c-str-gc.c"
-        if(_if_conditional72=n_185==count,        _if_conditional72) {
-            # 744 "libneo-c-str-gc.c"
+        # 712 "libneo-c-str-gc.c"
+        # 709 "libneo-c-str-gc.c"
+        if(_if_conditional63=n_185==count,        _if_conditional63) {
+            # 710 "libneo-c-str-gc.c"
             break;
         }
     }
-    # 748 "libneo-c-str-gc.c"
-    __result131__ = __result_obj__ = result_179;
-    return __result131__;
+    # 714 "libneo-c-str-gc.c"
+    __result122__ = __result_obj__ = result_179;
+    return __result122__;
 }
 
 _Bool come_regex_equals(struct come_regex* left, struct come_regex* right){
 void* __result_obj__;
+_Bool _if_conditional64;
+_Bool __result123__;
+_Bool _if_conditional65;
+_Bool __result124__;
+_Bool _if_conditional66;
+_Bool __result125__;
+_Bool _if_conditional67;
+_Bool __result126__;
+_Bool _if_conditional68;
+_Bool __result127__;
+_Bool _if_conditional69;
+_Bool __result128__;
+_Bool _if_conditional70;
+_Bool __result129__;
+_Bool _if_conditional71;
+_Bool __result130__;
+_Bool _if_conditional72;
+_Bool __result131__;
 _Bool _if_conditional73;
 _Bool __result132__;
-_Bool _if_conditional74;
 _Bool __result133__;
-_Bool _if_conditional75;
-_Bool __result134__;
-_Bool _if_conditional76;
-_Bool __result135__;
-_Bool _if_conditional77;
-_Bool __result136__;
-_Bool _if_conditional78;
-_Bool __result137__;
-_Bool _if_conditional79;
-_Bool __result138__;
-_Bool _if_conditional80;
-_Bool __result139__;
-_Bool _if_conditional81;
-_Bool __result140__;
-_Bool _if_conditional82;
-_Bool __result141__;
-_Bool __result142__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 757 "libneo-c-str-gc.c"
-    # 753 "libneo-c-str-gc.c"
-    if(_if_conditional73=strcmp(left->str,right->str)!=0,    _if_conditional73) {
-        # 754 "libneo-c-str-gc.c"
+    # 723 "libneo-c-str-gc.c"
+    # 719 "libneo-c-str-gc.c"
+    if(_if_conditional64=strcmp(left->str,right->str)!=0,    _if_conditional64) {
+        # 720 "libneo-c-str-gc.c"
+        __result123__ = (_Bool)0;
+        return __result123__;
+    }
+    # 726 "libneo-c-str-gc.c"
+    # 723 "libneo-c-str-gc.c"
+    if(_if_conditional65=left->ignore_case!=right->ignore_case,    _if_conditional65) {
+        # 724 "libneo-c-str-gc.c"
+        __result124__ = (_Bool)0;
+        return __result124__;
+    }
+    # 729 "libneo-c-str-gc.c"
+    # 726 "libneo-c-str-gc.c"
+    if(_if_conditional66=left->multiline!=right->multiline,    _if_conditional66) {
+        # 727 "libneo-c-str-gc.c"
+        __result125__ = (_Bool)0;
+        return __result125__;
+    }
+    # 732 "libneo-c-str-gc.c"
+    # 729 "libneo-c-str-gc.c"
+    if(_if_conditional67=left->global!=right->global,    _if_conditional67) {
+        # 730 "libneo-c-str-gc.c"
+        __result126__ = (_Bool)0;
+        return __result126__;
+    }
+    # 735 "libneo-c-str-gc.c"
+    # 732 "libneo-c-str-gc.c"
+    if(_if_conditional68=left->extended!=right->extended,    _if_conditional68) {
+        # 733 "libneo-c-str-gc.c"
+        __result127__ = (_Bool)0;
+        return __result127__;
+    }
+    # 738 "libneo-c-str-gc.c"
+    # 735 "libneo-c-str-gc.c"
+    if(_if_conditional69=left->dotall!=right->dotall,    _if_conditional69) {
+        # 736 "libneo-c-str-gc.c"
+        __result128__ = (_Bool)0;
+        return __result128__;
+    }
+    # 741 "libneo-c-str-gc.c"
+    # 738 "libneo-c-str-gc.c"
+    if(_if_conditional70=left->anchored!=right->anchored,    _if_conditional70) {
+        # 739 "libneo-c-str-gc.c"
+        __result129__ = (_Bool)0;
+        return __result129__;
+    }
+    # 744 "libneo-c-str-gc.c"
+    # 741 "libneo-c-str-gc.c"
+    if(_if_conditional71=left->dollar_endonly!=right->dollar_endonly,    _if_conditional71) {
+        # 742 "libneo-c-str-gc.c"
+        __result130__ = (_Bool)0;
+        return __result130__;
+    }
+    # 747 "libneo-c-str-gc.c"
+    # 744 "libneo-c-str-gc.c"
+    if(_if_conditional72=left->ungreedy!=right->ungreedy,    _if_conditional72) {
+        # 745 "libneo-c-str-gc.c"
+        __result131__ = (_Bool)0;
+        return __result131__;
+    }
+    # 751 "libneo-c-str-gc.c"
+    # 747 "libneo-c-str-gc.c"
+    if(_if_conditional73=left->options!=right->options,    _if_conditional73) {
+        # 748 "libneo-c-str-gc.c"
         __result132__ = (_Bool)0;
         return __result132__;
     }
-    # 760 "libneo-c-str-gc.c"
-    # 757 "libneo-c-str-gc.c"
-    if(_if_conditional74=left->ignore_case!=right->ignore_case,    _if_conditional74) {
-        # 758 "libneo-c-str-gc.c"
-        __result133__ = (_Bool)0;
-        return __result133__;
-    }
-    # 763 "libneo-c-str-gc.c"
-    # 760 "libneo-c-str-gc.c"
-    if(_if_conditional75=left->multiline!=right->multiline,    _if_conditional75) {
-        # 761 "libneo-c-str-gc.c"
-        __result134__ = (_Bool)0;
-        return __result134__;
-    }
-    # 766 "libneo-c-str-gc.c"
-    # 763 "libneo-c-str-gc.c"
-    if(_if_conditional76=left->global!=right->global,    _if_conditional76) {
-        # 764 "libneo-c-str-gc.c"
-        __result135__ = (_Bool)0;
-        return __result135__;
-    }
-    # 769 "libneo-c-str-gc.c"
-    # 766 "libneo-c-str-gc.c"
-    if(_if_conditional77=left->extended!=right->extended,    _if_conditional77) {
-        # 767 "libneo-c-str-gc.c"
-        __result136__ = (_Bool)0;
-        return __result136__;
-    }
-    # 772 "libneo-c-str-gc.c"
-    # 769 "libneo-c-str-gc.c"
-    if(_if_conditional78=left->dotall!=right->dotall,    _if_conditional78) {
-        # 770 "libneo-c-str-gc.c"
-        __result137__ = (_Bool)0;
-        return __result137__;
-    }
-    # 775 "libneo-c-str-gc.c"
-    # 772 "libneo-c-str-gc.c"
-    if(_if_conditional79=left->anchored!=right->anchored,    _if_conditional79) {
-        # 773 "libneo-c-str-gc.c"
-        __result138__ = (_Bool)0;
-        return __result138__;
-    }
-    # 778 "libneo-c-str-gc.c"
-    # 775 "libneo-c-str-gc.c"
-    if(_if_conditional80=left->dollar_endonly!=right->dollar_endonly,    _if_conditional80) {
-        # 776 "libneo-c-str-gc.c"
-        __result139__ = (_Bool)0;
-        return __result139__;
-    }
-    # 781 "libneo-c-str-gc.c"
-    # 778 "libneo-c-str-gc.c"
-    if(_if_conditional81=left->ungreedy!=right->ungreedy,    _if_conditional81) {
-        # 779 "libneo-c-str-gc.c"
-        __result140__ = (_Bool)0;
-        return __result140__;
-    }
-    # 785 "libneo-c-str-gc.c"
-    # 781 "libneo-c-str-gc.c"
-    if(_if_conditional82=left->options!=right->options,    _if_conditional82) {
-        # 782 "libneo-c-str-gc.c"
-        __result141__ = (_Bool)0;
-        return __result141__;
-    }
-    # 785 "libneo-c-str-gc.c"
-    __result142__ = (_Bool)1;
-    return __result142__;
+    # 751 "libneo-c-str-gc.c"
+    __result133__ = (_Bool)1;
+    return __result133__;
 }
 
 struct list$1charph* charp_scan_group_strings(char* self, struct come_regex* reg, struct list$1charph* group_strings, int* num_group_string_in_regex){
@@ -5154,15 +5069,15 @@ int len_211;
 int regex_result_212;
 int i_213;
 int i_214;
-_Bool _if_conditional83;
+_Bool _if_conditional74;
 char* str_215;
-_Bool _if_conditional84;
-_Bool _if_conditional85;
+_Bool _if_conditional75;
+_Bool _if_conditional76;
 char* str_216;
-_Bool _if_conditional86;
+_Bool _if_conditional77;
 int i_217;
 char* match_string_218;
-struct list$1charph* __result143__;
+struct list$1charph* __result134__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_199, 0, sizeof(struct list$1charph*));
 memset(&offset_200, 0, sizeof(int));
@@ -5180,144 +5095,144 @@ memset(&str_215, 0, sizeof(char*));
 memset(&str_216, 0, sizeof(char*));
 memset(&i_217, 0, sizeof(int));
 memset(&match_string_218, 0, sizeof(char*));
-    # 790 "libneo-c-str-gc.c"
-    result_199=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 790, "list$1charph"));
-    # 792 "libneo-c-str-gc.c"
+    # 756 "libneo-c-str-gc.c"
+    result_199=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 756, "list$1charph"));
+    # 758 "libneo-c-str-gc.c"
     offset_200=0;
-    # 794 "libneo-c-str-gc.c"
+    # 760 "libneo-c-str-gc.c"
     ovec_max_201=16;
-    # 795 "libneo-c-str-gc.c"
+    # 761 "libneo-c-str-gc.c"
     int start_202[ovec_max_201];
     memset(&start_202, 0, sizeof(int)    *(ovec_max_201)    );
-    # 796 "libneo-c-str-gc.c"
+    # 762 "libneo-c-str-gc.c"
     int end_203[ovec_max_201];
     memset(&end_203, 0, sizeof(int)    *(ovec_max_201)    );
-    # 797 "libneo-c-str-gc.c"
+    # 763 "libneo-c-str-gc.c"
     int ovec_value_204[ovec_max_201*3];
     memset(&ovec_value_204, 0, sizeof(int)    *(ovec_max_201*3)    );
-    # 799 "libneo-c-str-gc.c"
-    # 800 "libneo-c-str-gc.c"
-    # 802 "libneo-c-str-gc.c"
+    # 765 "libneo-c-str-gc.c"
+    # 766 "libneo-c-str-gc.c"
+    # 768 "libneo-c-str-gc.c"
     options_207=reg->options;
-    # 803 "libneo-c-str-gc.c"
+    # 769 "libneo-c-str-gc.c"
     str_208=reg->str;
-    # 805 "libneo-c-str-gc.c"
+    # 771 "libneo-c-str-gc.c"
     re_209=reg->re;
-    # 859 "libneo-c-str-gc.c"
+    # 825 "libneo-c-str-gc.c"
     while(_while_condtional9=(_Bool)1,    _while_condtional9) {
-        # 810 "libneo-c-str-gc.c"
+        # 776 "libneo-c-str-gc.c"
         options_210=2097152;
-        # 811 "libneo-c-str-gc.c"
+        # 777 "libneo-c-str-gc.c"
         len_211=strlen(self);
-        # 812 "libneo-c-str-gc.c"
+        # 778 "libneo-c-str-gc.c"
         regex_result_212=pcre_exec(re_209,(struct pcre_extra*)0,self,len_211,offset_200,options_210,ovec_value_204,ovec_max_201*3);
-        # 817 "libneo-c-str-gc.c"
+        # 783 "libneo-c-str-gc.c"
         for(        i_213=0;        i_213<ovec_max_201;        i_213++        ){
-            # 815 "libneo-c-str-gc.c"
+            # 781 "libneo-c-str-gc.c"
             start_202[i_213]=ovec_value_204[i_213*2];
         }
-        # 822 "libneo-c-str-gc.c"
+        # 788 "libneo-c-str-gc.c"
         for(        i_214=0;        i_214<ovec_max_201;        i_214++        ){
-            # 818 "libneo-c-str-gc.c"
+            # 784 "libneo-c-str-gc.c"
             end_203[i_214]=ovec_value_204[i_214*2+1];
         }
-        # 857 "libneo-c-str-gc.c"
-        # 822 "libneo-c-str-gc.c"
-        if(_if_conditional83=regex_result_212==1,        _if_conditional83) {
-            # 824 "libneo-c-str-gc.c"
+        # 823 "libneo-c-str-gc.c"
+        # 788 "libneo-c-str-gc.c"
+        if(_if_conditional74=regex_result_212==1,        _if_conditional74) {
+            # 790 "libneo-c-str-gc.c"
             str_215=charp_substring(self,start_202[0],end_203[0]);
-            # 825 "libneo-c-str-gc.c"
+            # 791 "libneo-c-str-gc.c"
             list$1charph_push_back(result_199,str_215);
-            # 833 "libneo-c-str-gc.c"
-            # 827 "libneo-c-str-gc.c"
-            if(_if_conditional84=offset_200==end_203[0],            _if_conditional84) {
-                # 828 "libneo-c-str-gc.c"
+            # 799 "libneo-c-str-gc.c"
+            # 793 "libneo-c-str-gc.c"
+            if(_if_conditional75=offset_200==end_203[0],            _if_conditional75) {
+                # 794 "libneo-c-str-gc.c"
                 offset_200++;
             }
             else {
-                # 831 "libneo-c-str-gc.c"
+                # 797 "libneo-c-str-gc.c"
                 offset_200=end_203[0];
             }
         }
         else {
-            # 857 "libneo-c-str-gc.c"
-            # 835 "libneo-c-str-gc.c"
-            if(_if_conditional85=regex_result_212>1,            _if_conditional85) {
-                # 836 "libneo-c-str-gc.c"
+            # 823 "libneo-c-str-gc.c"
+            # 801 "libneo-c-str-gc.c"
+            if(_if_conditional76=regex_result_212>1,            _if_conditional76) {
+                # 802 "libneo-c-str-gc.c"
                 str_216=charp_substring(self,start_202[0],end_203[0]);
-                # 837 "libneo-c-str-gc.c"
+                # 803 "libneo-c-str-gc.c"
                 list$1charph_push_back(result_199,str_216);
-                # 846 "libneo-c-str-gc.c"
-                # 839 "libneo-c-str-gc.c"
-                if(_if_conditional86=offset_200==end_203[0],                _if_conditional86) {
-                    # 840 "libneo-c-str-gc.c"
+                # 812 "libneo-c-str-gc.c"
+                # 805 "libneo-c-str-gc.c"
+                if(_if_conditional77=offset_200==end_203[0],                _if_conditional77) {
+                    # 806 "libneo-c-str-gc.c"
                     offset_200++;
                 }
                 else {
-                    # 843 "libneo-c-str-gc.c"
+                    # 809 "libneo-c-str-gc.c"
                     offset_200=end_203[0];
                 }
-                # 846 "libneo-c-str-gc.c"
+                # 812 "libneo-c-str-gc.c"
                 *num_group_string_in_regex=regex_result_212-1;
-                # 851 "libneo-c-str-gc.c"
+                # 817 "libneo-c-str-gc.c"
                 for(                i_217=1;                i_217<regex_result_212;                i_217++                ){
-                    # 848 "libneo-c-str-gc.c"
+                    # 814 "libneo-c-str-gc.c"
                     match_string_218=charp_substring(self,start_202[i_217],end_203[i_217]);
-                    # 849 "libneo-c-str-gc.c"
+                    # 815 "libneo-c-str-gc.c"
                     list$1charph_push_back(group_strings,match_string_218);
                 }
             }
             else {
-                # 855 "libneo-c-str-gc.c"
+                # 821 "libneo-c-str-gc.c"
                 break;
             }
         }
     }
-    # 859 "libneo-c-str-gc.c"
-    __result143__ = __result_obj__ = result_199;
-    return __result143__;
+    # 825 "libneo-c-str-gc.c"
+    __result134__ = __result_obj__ = result_199;
+    return __result134__;
 }
 
 char* charp_strip(char* self){
 void* __result_obj__;
 char* result_219;
 int len_220;
-_Bool _if_conditional87;
-_Bool _if_conditional88;
-_Bool _if_conditional89;
-char* __result144__;
+_Bool _if_conditional78;
+_Bool _if_conditional79;
+_Bool _if_conditional80;
+char* __result135__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_219, 0, sizeof(char*));
 memset(&len_220, 0, sizeof(int));
-    # 864 "libneo-c-str-gc.c"
+    # 830 "libneo-c-str-gc.c"
     result_219=__builtin_string(self);
-    # 866 "libneo-c-str-gc.c"
+    # 832 "libneo-c-str-gc.c"
     len_220=strlen(self);
-    # 878 "libneo-c-str-gc.c"
-    # 868 "libneo-c-str-gc.c"
-    if(_if_conditional87=self[len_220-1]==10,    _if_conditional87) {
-        # 869 "libneo-c-str-gc.c"
+    # 844 "libneo-c-str-gc.c"
+    # 834 "libneo-c-str-gc.c"
+    if(_if_conditional78=self[len_220-1]==10,    _if_conditional78) {
+        # 835 "libneo-c-str-gc.c"
         result_219[len_220-1]=0;
     }
     else {
-        # 878 "libneo-c-str-gc.c"
-        # 871 "libneo-c-str-gc.c"
-        if(_if_conditional88=self[len_220-1]==13,        _if_conditional88) {
-            # 872 "libneo-c-str-gc.c"
+        # 844 "libneo-c-str-gc.c"
+        # 837 "libneo-c-str-gc.c"
+        if(_if_conditional79=self[len_220-1]==13,        _if_conditional79) {
+            # 838 "libneo-c-str-gc.c"
             result_219[len_220-1]=0;
         }
         else {
-            # 878 "libneo-c-str-gc.c"
-            # 874 "libneo-c-str-gc.c"
-            if(_if_conditional89=len_220>2&&self[len_220-2]==13&&self[len_220-1]==10,            _if_conditional89) {
-                # 875 "libneo-c-str-gc.c"
+            # 844 "libneo-c-str-gc.c"
+            # 840 "libneo-c-str-gc.c"
+            if(_if_conditional80=len_220>2&&self[len_220-2]==13&&self[len_220-1]==10,            _if_conditional80) {
+                # 841 "libneo-c-str-gc.c"
                 result_219[len_220-2]=0;
             }
         }
     }
-    # 878 "libneo-c-str-gc.c"
-    __result144__ = __result_obj__ = result_219;
-    return __result144__;
+    # 844 "libneo-c-str-gc.c"
+    __result135__ = __result_obj__ = result_219;
+    return __result135__;
 }
 
 char* charp_printable(char* str){
@@ -5327,173 +5242,173 @@ char* result_222;
 int n_223;
 int i_224;
 char c_225;
-_Bool _if_conditional90;
-char* __result145__;
+_Bool _if_conditional81;
+char* __result136__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_221, 0, sizeof(int));
 memset(&result_222, 0, sizeof(char*));
 memset(&n_223, 0, sizeof(int));
 memset(&i_224, 0, sizeof(int));
 memset(&c_225, 0, sizeof(char));
-    # 883 "libneo-c-str-gc.c"
+    # 849 "libneo-c-str-gc.c"
     len_221=charp_length(str);
-    # 884 "libneo-c-str-gc.c"
-    result_222=(char*)come_calloc(1, sizeof(char)*(1*(len_221*2+1)), "libneo-c-str-gc.c", 884, "char");
-    # 886 "libneo-c-str-gc.c"
+    # 850 "libneo-c-str-gc.c"
+    result_222=(char*)come_calloc(1, sizeof(char)*(1*(len_221*2+1)), "libneo-c-str-gc.c", 850, "char");
+    # 852 "libneo-c-str-gc.c"
     n_223=0;
-    # 901 "libneo-c-str-gc.c"
+    # 867 "libneo-c-str-gc.c"
     for(    i_224=0;    i_224<len_221;    i_224++    ){
-        # 888 "libneo-c-str-gc.c"
+        # 854 "libneo-c-str-gc.c"
         c_225=str[i_224];
-        # 899 "libneo-c-str-gc.c"
-        # 891 "libneo-c-str-gc.c"
-        if(_if_conditional90=(c_225>=0&&c_225<32)||c_225==127,        _if_conditional90) {
-            # 893 "libneo-c-str-gc.c"
+        # 865 "libneo-c-str-gc.c"
+        # 857 "libneo-c-str-gc.c"
+        if(_if_conditional81=(c_225>=0&&c_225<32)||c_225==127,        _if_conditional81) {
+            # 859 "libneo-c-str-gc.c"
             result_222[n_223++]=94;
-            # 894 "libneo-c-str-gc.c"
+            # 860 "libneo-c-str-gc.c"
             result_222[n_223++]=c_225+65-1;
         }
         else {
-            # 897 "libneo-c-str-gc.c"
+            # 863 "libneo-c-str-gc.c"
             result_222[n_223++]=c_225;
         }
     }
-    # 903 "libneo-c-str-gc.c"
+    # 869 "libneo-c-str-gc.c"
     result_222[n_223]=0;
-    # 903 "libneo-c-str-gc.c"
-    __result145__ = __result_obj__ = result_222;
-    return __result145__;
+    # 869 "libneo-c-str-gc.c"
+    __result136__ = __result_obj__ = result_222;
+    return __result136__;
 }
 
 char* wchar_tp_to_string(unsigned int* wstr){
 void* __result_obj__;
 int len_226;
 char* result_227;
-_Bool _if_conditional91;
-char* __result146__;
+_Bool _if_conditional82;
+char* __result137__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_226, 0, sizeof(int));
 memset(&result_227, 0, sizeof(char*));
-    # 908 "libneo-c-str-gc.c"
+    # 874 "libneo-c-str-gc.c"
     len_226=4*(wcslen(wstr)+1);
-    # 910 "libneo-c-str-gc.c"
-    result_227=(char*)come_calloc(1, sizeof(char)*(1*(len_226)), "libneo-c-str-gc.c", 910, "char");
-    # 917 "libneo-c-str-gc.c"
-    # 912 "libneo-c-str-gc.c"
-    if(_if_conditional91=wcstombs(result_227,wstr,len_226)<0,    _if_conditional91) {
-        # 914 "libneo-c-str-gc.c"
+    # 876 "libneo-c-str-gc.c"
+    result_227=(char*)come_calloc(1, sizeof(char)*(1*(len_226)), "libneo-c-str-gc.c", 876, "char");
+    # 883 "libneo-c-str-gc.c"
+    # 878 "libneo-c-str-gc.c"
+    if(_if_conditional82=wcstombs(result_227,wstr,len_226)<0,    _if_conditional82) {
+        # 880 "libneo-c-str-gc.c"
         strncpy(result_227,"",len_226);
     }
-    # 917 "libneo-c-str-gc.c"
-    __result146__ = __result_obj__ = result_227;
-    return __result146__;
+    # 883 "libneo-c-str-gc.c"
+    __result137__ = __result_obj__ = result_227;
+    return __result137__;
 }
 
 unsigned int* charp_to_wstring(char* str){
 void* __result_obj__;
-unsigned int* __result147__;
+unsigned int* __result138__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 922 "libneo-c-str-gc.c"
-    __result147__ = __result_obj__ = __builtin_wstring(str);
-    return __result147__;
+    # 888 "libneo-c-str-gc.c"
+    __result138__ = __result_obj__ = __builtin_wstring(str);
+    return __result138__;
 }
 
 int wchar_tp_length(unsigned int* str){
 void* __result_obj__;
-int __result148__;
+int __result139__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 927 "libneo-c-str-gc.c"
-    __result148__ = wcslen(str);
-    return __result148__;
+    # 893 "libneo-c-str-gc.c"
+    __result139__ = wcslen(str);
+    return __result139__;
 }
 
 unsigned int* wchar_tp_delete(unsigned int* str, int head, int tail){
 void* __result_obj__;
 int len_228;
-_Bool _if_conditional92;
-unsigned int* __result149__;
-_Bool _if_conditional93;
-_Bool _if_conditional94;
-_Bool _if_conditional95;
-_Bool _if_conditional96;
-unsigned int* __result150__;
-_Bool _if_conditional97;
+_Bool _if_conditional83;
+unsigned int* __result140__;
+_Bool _if_conditional84;
+_Bool _if_conditional85;
+_Bool _if_conditional86;
+_Bool _if_conditional87;
+unsigned int* __result141__;
+_Bool _if_conditional88;
 unsigned int* sub_str_229;
-unsigned int* __result151__;
+unsigned int* __result142__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_228, 0, sizeof(int));
 memset(&sub_str_229, 0, sizeof(unsigned int*));
-    # 932 "libneo-c-str-gc.c"
-    # 934 "libneo-c-str-gc.c"
+    # 898 "libneo-c-str-gc.c"
+    # 900 "libneo-c-str-gc.c"
     len_228=wcslen(str);
-    # 940 "libneo-c-str-gc.c"
-    # 936 "libneo-c-str-gc.c"
-    if(_if_conditional92=len_228==0,    _if_conditional92) {
-        # 937 "libneo-c-str-gc.c"
-        __result149__ = __result_obj__ = string_to_wstring(wchar_tp_to_string(str));
-        return __result149__;
+    # 906 "libneo-c-str-gc.c"
+    # 902 "libneo-c-str-gc.c"
+    if(_if_conditional83=len_228==0,    _if_conditional83) {
+        # 903 "libneo-c-str-gc.c"
+        __result140__ = __result_obj__ = string_to_wstring(wchar_tp_to_string(str));
+        return __result140__;
     }
-    # 944 "libneo-c-str-gc.c"
-    # 940 "libneo-c-str-gc.c"
-    if(_if_conditional93=head<0,    _if_conditional93) {
-        # 941 "libneo-c-str-gc.c"
+    # 910 "libneo-c-str-gc.c"
+    # 906 "libneo-c-str-gc.c"
+    if(_if_conditional84=head<0,    _if_conditional84) {
+        # 907 "libneo-c-str-gc.c"
         head+=len_228;
     }
-    # 948 "libneo-c-str-gc.c"
-    # 944 "libneo-c-str-gc.c"
-    if(_if_conditional94=tail<0,    _if_conditional94) {
-        # 945 "libneo-c-str-gc.c"
+    # 914 "libneo-c-str-gc.c"
+    # 910 "libneo-c-str-gc.c"
+    if(_if_conditional85=tail<0,    _if_conditional85) {
+        # 911 "libneo-c-str-gc.c"
         tail+=len_228+1;
     }
-    # 952 "libneo-c-str-gc.c"
-    # 948 "libneo-c-str-gc.c"
-    if(_if_conditional95=head<0,    _if_conditional95) {
-        # 949 "libneo-c-str-gc.c"
+    # 918 "libneo-c-str-gc.c"
+    # 914 "libneo-c-str-gc.c"
+    if(_if_conditional86=head<0,    _if_conditional86) {
+        # 915 "libneo-c-str-gc.c"
         head=0;
     }
-    # 956 "libneo-c-str-gc.c"
-    # 952 "libneo-c-str-gc.c"
-    if(_if_conditional96=tail<0,    _if_conditional96) {
-        # 953 "libneo-c-str-gc.c"
-        __result150__ = __result_obj__ = string_to_wstring(wchar_tp_to_string(str));
-        return __result150__;
+    # 922 "libneo-c-str-gc.c"
+    # 918 "libneo-c-str-gc.c"
+    if(_if_conditional87=tail<0,    _if_conditional87) {
+        # 919 "libneo-c-str-gc.c"
+        __result141__ = __result_obj__ = string_to_wstring(wchar_tp_to_string(str));
+        return __result141__;
     }
-    # 960 "libneo-c-str-gc.c"
-    # 956 "libneo-c-str-gc.c"
-    if(_if_conditional97=tail>=len_228,    _if_conditional97) {
-        # 957 "libneo-c-str-gc.c"
+    # 926 "libneo-c-str-gc.c"
+    # 922 "libneo-c-str-gc.c"
+    if(_if_conditional88=tail>=len_228,    _if_conditional88) {
+        # 923 "libneo-c-str-gc.c"
         tail=len_228;
     }
-    # 960 "libneo-c-str-gc.c"
+    # 926 "libneo-c-str-gc.c"
     sub_str_229=wchar_tp_substring(str,tail,-1);
-    # 962 "libneo-c-str-gc.c"
+    # 928 "libneo-c-str-gc.c"
     memcpy(str+head,sub_str_229,sizeof(unsigned int)*(wstring_length(sub_str_229)+1));
-    # 964 "libneo-c-str-gc.c"
-    __result151__ = __result_obj__ = string_to_wstring(wchar_tp_to_string(str));
-    return __result151__;
+    # 930 "libneo-c-str-gc.c"
+    __result142__ = __result_obj__ = string_to_wstring(wchar_tp_to_string(str));
+    return __result142__;
 }
 
 int wchar_tp_index(unsigned int* str, unsigned int* search_str, int default_value){
 void* __result_obj__;
 unsigned int* head_230;
-_Bool _if_conditional98;
-int __result152__;
-int __result153__;
+_Bool _if_conditional89;
+int __result143__;
+int __result144__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&head_230, 0, sizeof(unsigned int*));
-    # 969 "libneo-c-str-gc.c"
-    # 971 "libneo-c-str-gc.c"
+    # 935 "libneo-c-str-gc.c"
+    # 937 "libneo-c-str-gc.c"
     head_230=wcsstr(str,search_str);
-    # 977 "libneo-c-str-gc.c"
-    # 973 "libneo-c-str-gc.c"
-    if(_if_conditional98=head_230==((void*)0),    _if_conditional98) {
-        # 974 "libneo-c-str-gc.c"
-        __result152__ = default_value;
-        return __result152__;
+    # 943 "libneo-c-str-gc.c"
+    # 939 "libneo-c-str-gc.c"
+    if(_if_conditional89=head_230==((void*)0),    _if_conditional89) {
+        # 940 "libneo-c-str-gc.c"
+        __result143__ = default_value;
+        return __result143__;
     }
-    # 977 "libneo-c-str-gc.c"
-    __result153__ = head_230-str;
-    return __result153__;
+    # 943 "libneo-c-str-gc.c"
+    __result144__ = head_230-str;
+    return __result144__;
 }
 
 int wchar_tp_rindex(unsigned int* str, unsigned int* search_str, int default_value){
@@ -5504,50 +5419,50 @@ _Bool _while_condtional10;
 int len2_233;
 _Bool result_234;
 int i_235;
-_Bool _if_conditional99;
-_Bool _if_conditional100;
-int __result154__;
-int __result155__;
+_Bool _if_conditional90;
+_Bool _if_conditional91;
+int __result145__;
+int __result146__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_231, 0, sizeof(int));
 memset(&p_232, 0, sizeof(unsigned int*));
 memset(&len2_233, 0, sizeof(int));
 memset(&result_234, 0, sizeof(_Bool));
 memset(&i_235, 0, sizeof(int));
-    # 982 "libneo-c-str-gc.c"
-    # 984 "libneo-c-str-gc.c"
+    # 948 "libneo-c-str-gc.c"
+    # 950 "libneo-c-str-gc.c"
     len_231=wcslen(search_str);
-    # 986 "libneo-c-str-gc.c"
+    # 952 "libneo-c-str-gc.c"
     p_232=str+wcslen(str)-len_231;
-    # 1004 "libneo-c-str-gc.c"
+    # 970 "libneo-c-str-gc.c"
     while(_while_condtional10=p_232>=str,    _while_condtional10) {
-        # 989 "libneo-c-str-gc.c"
+        # 955 "libneo-c-str-gc.c"
         len2_233=wcslen(p_232);
-        # 990 "libneo-c-str-gc.c"
+        # 956 "libneo-c-str-gc.c"
         result_234=(_Bool)1;
-        # 991 "libneo-c-str-gc.c"
-        # 997 "libneo-c-str-gc.c"
+        # 957 "libneo-c-str-gc.c"
+        # 963 "libneo-c-str-gc.c"
         for(        i_235=0;        i_235<len_231&&i_235<len2_233;        i_235++        ){
-            # 996 "libneo-c-str-gc.c"
-            # 993 "libneo-c-str-gc.c"
-            if(_if_conditional99=p_232[i_235]!=search_str[i_235],            _if_conditional99) {
-                # 994 "libneo-c-str-gc.c"
+            # 962 "libneo-c-str-gc.c"
+            # 959 "libneo-c-str-gc.c"
+            if(_if_conditional90=p_232[i_235]!=search_str[i_235],            _if_conditional90) {
+                # 960 "libneo-c-str-gc.c"
                 result_234=(_Bool)0;
             }
         }
-        # 1001 "libneo-c-str-gc.c"
-        # 997 "libneo-c-str-gc.c"
+        # 967 "libneo-c-str-gc.c"
+        # 963 "libneo-c-str-gc.c"
         if(result_234) {
-            # 998 "libneo-c-str-gc.c"
-            __result154__ = (p_232-str);
-            return __result154__;
+            # 964 "libneo-c-str-gc.c"
+            __result145__ = (p_232-str);
+            return __result145__;
         }
-        # 1001 "libneo-c-str-gc.c"
+        # 967 "libneo-c-str-gc.c"
         p_232--;
     }
-    # 1004 "libneo-c-str-gc.c"
-    __result155__ = default_value;
-    return __result155__;
+    # 970 "libneo-c-str-gc.c"
+    __result146__ = default_value;
+    return __result146__;
 }
 
 unsigned int* wchar_tp_reverse(unsigned int* str){
@@ -5555,25 +5470,25 @@ void* __result_obj__;
 int len_236;
 unsigned int* result_237;
 int i_238;
-unsigned int* __result156__;
+unsigned int* __result147__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_236, 0, sizeof(int));
 memset(&result_237, 0, sizeof(unsigned int*));
 memset(&i_238, 0, sizeof(int));
-    # 1009 "libneo-c-str-gc.c"
+    # 975 "libneo-c-str-gc.c"
     len_236=wcslen(str);
-    # 1010 "libneo-c-str-gc.c"
-    result_237=(unsigned int*)come_calloc(1, sizeof(unsigned int)*(1*(len_236+1)), "libneo-c-str-gc.c", 1010, "int");
-    # 1016 "libneo-c-str-gc.c"
+    # 976 "libneo-c-str-gc.c"
+    result_237=(unsigned int*)come_calloc(1, sizeof(unsigned int)*(1*(len_236+1)), "libneo-c-str-gc.c", 976, "int");
+    # 982 "libneo-c-str-gc.c"
     for(    i_238=0;    i_238<len_236;    i_238++    ){
-        # 1013 "libneo-c-str-gc.c"
+        # 979 "libneo-c-str-gc.c"
         result_237[i_238]=str[len_236-i_238-1];
     }
-    # 1016 "libneo-c-str-gc.c"
+    # 982 "libneo-c-str-gc.c"
     result_237[len_236]=0;
-    # 1018 "libneo-c-str-gc.c"
-    __result156__ = __result_obj__ = result_237;
-    return __result156__;
+    # 984 "libneo-c-str-gc.c"
+    __result147__ = __result_obj__ = result_237;
+    return __result147__;
 }
 
 unsigned int* wchar_tp_multiply(unsigned int* str, int n){
@@ -5581,25 +5496,25 @@ void* __result_obj__;
 int len_239;
 unsigned int* result_240;
 int i_241;
-unsigned int* __result157__;
+unsigned int* __result148__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_239, 0, sizeof(int));
 memset(&result_240, 0, sizeof(unsigned int*));
 memset(&i_241, 0, sizeof(int));
-    # 1023 "libneo-c-str-gc.c"
+    # 989 "libneo-c-str-gc.c"
     len_239=wcslen(str)*n+1;
-    # 1025 "libneo-c-str-gc.c"
-    result_240=(unsigned int*)come_calloc(1, sizeof(unsigned int)*(1*(len_239)), "libneo-c-str-gc.c", 1025, "int");
-    # 1027 "libneo-c-str-gc.c"
+    # 991 "libneo-c-str-gc.c"
+    result_240=(unsigned int*)come_calloc(1, sizeof(unsigned int)*(1*(len_239)), "libneo-c-str-gc.c", 991, "int");
+    # 993 "libneo-c-str-gc.c"
     result_240[0]=0;
-    # 1033 "libneo-c-str-gc.c"
+    # 999 "libneo-c-str-gc.c"
     for(    i_241=0;    i_241<n;    i_241++    ){
-        # 1030 "libneo-c-str-gc.c"
+        # 996 "libneo-c-str-gc.c"
         wcscat(result_240,str);
     }
-    # 1033 "libneo-c-str-gc.c"
-    __result157__ = __result_obj__ = result_240;
-    return __result157__;
+    # 999 "libneo-c-str-gc.c"
+    __result148__ = __result_obj__ = result_240;
+    return __result148__;
 }
 
 unsigned int* wchar_tp_printable(unsigned int* str){
@@ -5609,42 +5524,42 @@ unsigned int* result_243;
 int n_244;
 int i_245;
 unsigned int c_246;
-_Bool _if_conditional101;
-unsigned int* __result158__;
+_Bool _if_conditional92;
+unsigned int* __result149__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_242, 0, sizeof(int));
 memset(&result_243, 0, sizeof(unsigned int*));
 memset(&n_244, 0, sizeof(int));
 memset(&i_245, 0, sizeof(int));
 memset(&c_246, 0, sizeof(unsigned int));
-    # 1038 "libneo-c-str-gc.c"
+    # 1004 "libneo-c-str-gc.c"
     len_242=wchar_tp_length(str);
-    # 1039 "libneo-c-str-gc.c"
-    result_243=(unsigned int*)come_calloc(1, sizeof(unsigned int)*(1*(len_242*2+1)), "libneo-c-str-gc.c", 1039, "int");
-    # 1041 "libneo-c-str-gc.c"
+    # 1005 "libneo-c-str-gc.c"
+    result_243=(unsigned int*)come_calloc(1, sizeof(unsigned int)*(1*(len_242*2+1)), "libneo-c-str-gc.c", 1005, "int");
+    # 1007 "libneo-c-str-gc.c"
     n_244=0;
-    # 1056 "libneo-c-str-gc.c"
+    # 1022 "libneo-c-str-gc.c"
     for(    i_245=0;    i_245<len_242;    i_245++    ){
-        # 1043 "libneo-c-str-gc.c"
+        # 1009 "libneo-c-str-gc.c"
         c_246=str[i_245];
-        # 1054 "libneo-c-str-gc.c"
-        # 1046 "libneo-c-str-gc.c"
-        if(_if_conditional101=(c_246>=0&&c_246<32)||c_246==127,        _if_conditional101) {
-            # 1048 "libneo-c-str-gc.c"
+        # 1020 "libneo-c-str-gc.c"
+        # 1012 "libneo-c-str-gc.c"
+        if(_if_conditional92=(c_246>=0&&c_246<32)||c_246==127,        _if_conditional92) {
+            # 1014 "libneo-c-str-gc.c"
             result_243[n_244++]=94;
-            # 1049 "libneo-c-str-gc.c"
+            # 1015 "libneo-c-str-gc.c"
             result_243[n_244++]=c_246+65-1;
         }
         else {
-            # 1052 "libneo-c-str-gc.c"
+            # 1018 "libneo-c-str-gc.c"
             result_243[n_244++]=c_246;
         }
     }
-    # 1058 "libneo-c-str-gc.c"
+    # 1024 "libneo-c-str-gc.c"
     result_243[n_244]=0;
-    # 1058 "libneo-c-str-gc.c"
-    __result158__ = __result_obj__ = result_243;
-    return __result158__;
+    # 1024 "libneo-c-str-gc.c"
+    __result149__ = __result_obj__ = result_243;
+    return __result149__;
 }
 
 _Bool charp_match_group_strings(char* self, struct come_regex* reg, int count, struct list$1charph* group_strings){
@@ -5663,18 +5578,18 @@ int len_259;
 int regex_result_260;
 int i_261;
 int i_262;
-_Bool _if_conditional102;
-_Bool _if_conditional103;
-_Bool __result159__;
-_Bool _if_conditional104;
-_Bool _if_conditional105;
+_Bool _if_conditional93;
+_Bool _if_conditional94;
+_Bool __result150__;
+_Bool _if_conditional95;
+_Bool _if_conditional96;
 int i_265;
 char* match_string_266;
-_Bool _if_conditional106;
-_Bool __result161__;
-_Bool _if_conditional107;
-_Bool __result162__;
-_Bool __result163__;
+_Bool _if_conditional97;
+_Bool __result152__;
+_Bool _if_conditional98;
+_Bool __result153__;
+_Bool __result154__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&offset_247, 0, sizeof(int));
 memset(&ovec_max_248, 0, sizeof(int));
@@ -5690,113 +5605,113 @@ memset(&i_261, 0, sizeof(int));
 memset(&i_262, 0, sizeof(int));
 memset(&i_265, 0, sizeof(int));
 memset(&match_string_266, 0, sizeof(char*));
-    # 1063 "libneo-c-str-gc.c"
+    # 1029 "libneo-c-str-gc.c"
     offset_247=0;
-    # 1065 "libneo-c-str-gc.c"
+    # 1031 "libneo-c-str-gc.c"
     ovec_max_248=16;
-    # 1066 "libneo-c-str-gc.c"
+    # 1032 "libneo-c-str-gc.c"
     int start_249[ovec_max_248];
     memset(&start_249, 0, sizeof(int)    *(ovec_max_248)    );
-    # 1067 "libneo-c-str-gc.c"
+    # 1033 "libneo-c-str-gc.c"
     int end_250[ovec_max_248];
     memset(&end_250, 0, sizeof(int)    *(ovec_max_248)    );
-    # 1068 "libneo-c-str-gc.c"
+    # 1034 "libneo-c-str-gc.c"
     int ovec_value_251[ovec_max_248*3];
     memset(&ovec_value_251, 0, sizeof(int)    *(ovec_max_248*3)    );
-    # 1070 "libneo-c-str-gc.c"
-    # 1071 "libneo-c-str-gc.c"
-    # 1073 "libneo-c-str-gc.c"
+    # 1036 "libneo-c-str-gc.c"
+    # 1037 "libneo-c-str-gc.c"
+    # 1039 "libneo-c-str-gc.c"
     options_254=reg->options;
-    # 1074 "libneo-c-str-gc.c"
+    # 1040 "libneo-c-str-gc.c"
     str_255=reg->str;
-    # 1076 "libneo-c-str-gc.c"
+    # 1042 "libneo-c-str-gc.c"
     re_256=reg->re;
-    # 1078 "libneo-c-str-gc.c"
+    # 1044 "libneo-c-str-gc.c"
     n_257=0;
-    # 1137 "libneo-c-str-gc.c"
+    # 1103 "libneo-c-str-gc.c"
     while(_while_condtional11=(_Bool)1,    _while_condtional11) {
-        # 1081 "libneo-c-str-gc.c"
+        # 1047 "libneo-c-str-gc.c"
         options_258=2097152;
-        # 1082 "libneo-c-str-gc.c"
+        # 1048 "libneo-c-str-gc.c"
         len_259=strlen(self);
-        # 1084 "libneo-c-str-gc.c"
+        # 1050 "libneo-c-str-gc.c"
         regex_result_260=pcre_exec(re_256,(struct pcre_extra*)0,self,len_259,offset_247,options_258,ovec_value_251,ovec_max_248*3);
-        # 1089 "libneo-c-str-gc.c"
+        # 1055 "libneo-c-str-gc.c"
         for(        i_261=0;        i_261<ovec_max_248;        i_261++        ){
-            # 1087 "libneo-c-str-gc.c"
+            # 1053 "libneo-c-str-gc.c"
             start_249[i_261]=ovec_value_251[i_261*2];
         }
-        # 1094 "libneo-c-str-gc.c"
+        # 1060 "libneo-c-str-gc.c"
         for(        i_262=0;        i_262<ovec_max_248;        i_262++        ){
-            # 1090 "libneo-c-str-gc.c"
+            # 1056 "libneo-c-str-gc.c"
             end_250[i_262]=ovec_value_251[i_262*2+1];
         }
-        # 1135 "libneo-c-str-gc.c"
-        # 1094 "libneo-c-str-gc.c"
-        if(_if_conditional102=regex_result_260==1||(group_strings==((void*)0)&&regex_result_260>0),        _if_conditional102) {
-            # 1096 "libneo-c-str-gc.c"
+        # 1101 "libneo-c-str-gc.c"
+        # 1060 "libneo-c-str-gc.c"
+        if(_if_conditional93=regex_result_260==1||(group_strings==((void*)0)&&regex_result_260>0),        _if_conditional93) {
+            # 1062 "libneo-c-str-gc.c"
             n_257++;
-            # 1102 "libneo-c-str-gc.c"
-            # 1098 "libneo-c-str-gc.c"
-            if(_if_conditional103=n_257==count,            _if_conditional103) {
-                # 1099 "libneo-c-str-gc.c"
-                __result159__ = (_Bool)1;
-                return __result159__;
+            # 1068 "libneo-c-str-gc.c"
+            # 1064 "libneo-c-str-gc.c"
+            if(_if_conditional94=n_257==count,            _if_conditional94) {
+                # 1065 "libneo-c-str-gc.c"
+                __result150__ = (_Bool)1;
+                return __result150__;
             }
-            # 1108 "libneo-c-str-gc.c"
-            # 1102 "libneo-c-str-gc.c"
-            if(_if_conditional104=offset_247==end_250[0],            _if_conditional104) {
-                # 1103 "libneo-c-str-gc.c"
+            # 1074 "libneo-c-str-gc.c"
+            # 1068 "libneo-c-str-gc.c"
+            if(_if_conditional95=offset_247==end_250[0],            _if_conditional95) {
+                # 1069 "libneo-c-str-gc.c"
                 offset_247++;
             }
             else {
-                # 1106 "libneo-c-str-gc.c"
+                # 1072 "libneo-c-str-gc.c"
                 offset_247=end_250[0];
             }
         }
         else {
-            # 1135 "libneo-c-str-gc.c"
-            # 1110 "libneo-c-str-gc.c"
-            if(_if_conditional105=regex_result_260>1,            _if_conditional105) {
-                # 1111 "libneo-c-str-gc.c"
+            # 1101 "libneo-c-str-gc.c"
+            # 1076 "libneo-c-str-gc.c"
+            if(_if_conditional96=regex_result_260>1,            _if_conditional96) {
+                # 1077 "libneo-c-str-gc.c"
                 n_257++;
-                # 1113 "libneo-c-str-gc.c"
+                # 1079 "libneo-c-str-gc.c"
                 list$1charph_reset(group_strings);
-                # 1119 "libneo-c-str-gc.c"
+                # 1085 "libneo-c-str-gc.c"
                 for(                i_265=1;                i_265<regex_result_260;                i_265++                ){
-                    # 1115 "libneo-c-str-gc.c"
+                    # 1081 "libneo-c-str-gc.c"
                     match_string_266=charp_substring(self,start_249[i_265],end_250[i_265]);
-                    # 1116 "libneo-c-str-gc.c"
+                    # 1082 "libneo-c-str-gc.c"
                     list$1charph_push_back(group_strings,match_string_266);
                 }
-                # 1123 "libneo-c-str-gc.c"
-                # 1119 "libneo-c-str-gc.c"
-                if(_if_conditional106=n_257==count,                _if_conditional106) {
-                    # 1120 "libneo-c-str-gc.c"
-                    __result161__ = (_Bool)1;
-                    return __result161__;
+                # 1089 "libneo-c-str-gc.c"
+                # 1085 "libneo-c-str-gc.c"
+                if(_if_conditional97=n_257==count,                _if_conditional97) {
+                    # 1086 "libneo-c-str-gc.c"
+                    __result152__ = (_Bool)1;
+                    return __result152__;
                 }
-                # 1129 "libneo-c-str-gc.c"
-                # 1123 "libneo-c-str-gc.c"
-                if(_if_conditional107=offset_247==end_250[0],                _if_conditional107) {
-                    # 1124 "libneo-c-str-gc.c"
+                # 1095 "libneo-c-str-gc.c"
+                # 1089 "libneo-c-str-gc.c"
+                if(_if_conditional98=offset_247==end_250[0],                _if_conditional98) {
+                    # 1090 "libneo-c-str-gc.c"
                     offset_247++;
                 }
                 else {
-                    # 1127 "libneo-c-str-gc.c"
+                    # 1093 "libneo-c-str-gc.c"
                     offset_247=end_250[0];
                 }
             }
             else {
-                # 1133 "libneo-c-str-gc.c"
-                __result162__ = (_Bool)0;
-                return __result162__;
+                # 1099 "libneo-c-str-gc.c"
+                __result153__ = (_Bool)0;
+                return __result153__;
             }
         }
     }
-    # 1137 "libneo-c-str-gc.c"
-    __result163__ = (_Bool)0;
-    return __result163__;
+    # 1103 "libneo-c-str-gc.c"
+    __result154__ = (_Bool)0;
+    return __result154__;
 }
 
 static struct list$1charph* list$1charph_reset(struct list$1charph* self){
@@ -5804,194 +5719,194 @@ void* __result_obj__;
 struct list_item$1charph* it_263;
 _Bool _while_condtional12;
 struct list_item$1charph* prev_it_264;
-struct list$1charph* __result160__;
+struct list$1charph* __result151__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_263, 0, sizeof(struct list_item$1charph*));
 memset(&prev_it_264, 0, sizeof(struct list_item$1charph*));
-                    # 434 "./neo-c.h"
+                    # 425 "./neo-c.h"
                     it_263=self->head;
-                    # 441 "./neo-c.h"
+                    # 432 "./neo-c.h"
                     while(_while_condtional12=it_263!=((void*)0),                    _while_condtional12) {
-                        # 436 "./neo-c.h"
+                        # 427 "./neo-c.h"
                         prev_it_264=it_263;
-                        # 437 "./neo-c.h"
+                        # 428 "./neo-c.h"
                         it_263=it_263->next;
-                        # 438 "./neo-c.h"
+                        # 429 "./neo-c.h"
                     }
-                    # 441 "./neo-c.h"
+                    # 432 "./neo-c.h"
                     self->head=((void*)0);
-                    # 442 "./neo-c.h"
+                    # 433 "./neo-c.h"
                     self->tail=((void*)0);
-                    # 444 "./neo-c.h"
+                    # 435 "./neo-c.h"
                     self->len=0;
-                    # 446 "./neo-c.h"
-                    __result160__ = __result_obj__ = self;
-                    return __result160__;
+                    # 437 "./neo-c.h"
+                    __result151__ = __result_obj__ = self;
+                    return __result151__;
 }
 
 int wchar_tp_compare(unsigned int* left, unsigned int* right){
 void* __result_obj__;
-int __result164__;
+int __result155__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1142 "libneo-c-str-gc.c"
-    __result164__ = wcscmp(left,right);
-    return __result164__;
+    # 1108 "libneo-c-str-gc.c"
+    __result155__ = wcscmp(left,right);
+    return __result155__;
 }
 
 int wstring_compare(unsigned int* left, unsigned int* right){
 void* __result_obj__;
-int __result165__;
+int __result156__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1147 "libneo-c-str-gc.c"
-    __result165__ = wcscmp(left,right);
-    return __result165__;
+    # 1113 "libneo-c-str-gc.c"
+    __result156__ = wcscmp(left,right);
+    return __result156__;
 }
 
 unsigned int come_regex_get_hash_key(struct come_regex* reg){
 void* __result_obj__;
-unsigned int __result166__;
+unsigned int __result157__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1152 "libneo-c-str-gc.c"
-    __result166__ = string_get_hash_key(reg->str);
-    return __result166__;
+    # 1118 "libneo-c-str-gc.c"
+    __result157__ = string_get_hash_key(reg->str);
+    return __result157__;
 }
 
 _Bool wchar_tp_equals(unsigned int left, unsigned int right){
 void* __result_obj__;
-_Bool __result167__;
+_Bool __result158__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1157 "libneo-c-str-gc.c"
-    __result167__ = left==right;
-    return __result167__;
+    # 1123 "libneo-c-str-gc.c"
+    __result158__ = left==right;
+    return __result158__;
 }
 
 unsigned int* wchar_tp_operator_mult(unsigned int* str, int n){
 void* __result_obj__;
-unsigned int* __result168__;
+unsigned int* __result159__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1163 "libneo-c-str-gc.c"
-    __result168__ = __result_obj__ = wchar_tp_multiply(str,n);
-    return __result168__;
+    # 1129 "libneo-c-str-gc.c"
+    __result159__ = __result_obj__ = wchar_tp_multiply(str,n);
+    return __result159__;
 }
 
 unsigned int* wstring_operator_mult(unsigned int* str, int n){
 void* __result_obj__;
-unsigned int* __result169__;
+unsigned int* __result160__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1168 "libneo-c-str-gc.c"
-    __result169__ = __result_obj__ = wchar_tp_multiply(str,n);
-    return __result169__;
+    # 1134 "libneo-c-str-gc.c"
+    __result160__ = __result_obj__ = wchar_tp_multiply(str,n);
+    return __result160__;
 }
 
 _Bool wchar_tp_operator_equals(unsigned int* left, unsigned int* right){
 void* __result_obj__;
-_Bool __result170__;
+_Bool __result161__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1173 "libneo-c-str-gc.c"
-    __result170__ = wcscmp(left,right)==0;
-    return __result170__;
+    # 1139 "libneo-c-str-gc.c"
+    __result161__ = wcscmp(left,right)==0;
+    return __result161__;
 }
 
 _Bool wstring_operator_equals(unsigned int* left, unsigned int* right){
 void* __result_obj__;
-_Bool __result171__;
+_Bool __result162__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1178 "libneo-c-str-gc.c"
-    __result171__ = wcscmp(left,right)==0;
-    return __result171__;
+    # 1144 "libneo-c-str-gc.c"
+    __result162__ = wcscmp(left,right)==0;
+    return __result162__;
 }
 
 _Bool wchar_tp_operator_not_equals(unsigned int* left, unsigned int* right){
 void* __result_obj__;
-_Bool __result172__;
+_Bool __result163__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1183 "libneo-c-str-gc.c"
-    __result172__ = wcscmp(left,right)!=0;
-    return __result172__;
+    # 1149 "libneo-c-str-gc.c"
+    __result163__ = wcscmp(left,right)!=0;
+    return __result163__;
 }
 
 _Bool wstring_operator_not_equals(unsigned int* left, unsigned int* right){
 void* __result_obj__;
-_Bool __result173__;
+_Bool __result164__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1188 "libneo-c-str-gc.c"
-    __result173__ = wcscmp(left,right)!=0;
-    return __result173__;
+    # 1154 "libneo-c-str-gc.c"
+    __result164__ = wcscmp(left,right)!=0;
+    return __result164__;
 }
 
 _Bool come_regex_operator_equals(struct come_regex* left, struct come_regex* right){
 void* __result_obj__;
-_Bool __result174__;
+_Bool __result165__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1193 "libneo-c-str-gc.c"
-    __result174__ = come_regex_equals(left,right);
-    return __result174__;
+    # 1159 "libneo-c-str-gc.c"
+    __result165__ = come_regex_equals(left,right);
+    return __result165__;
 }
 
 _Bool come_regex_operator_not_equals(struct come_regex* left, struct come_regex* right){
 void* __result_obj__;
-_Bool __result175__;
+_Bool __result166__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1198 "libneo-c-str-gc.c"
-    __result175__ = !come_regex_equals(left,right);
-    return __result175__;
+    # 1164 "libneo-c-str-gc.c"
+    __result166__ = !come_regex_equals(left,right);
+    return __result166__;
 }
 
 unsigned int* wchar_tp_operator_add(unsigned int* left, unsigned int* right){
 void* __result_obj__;
 unsigned int* result_267;
-unsigned int* __result176__;
+unsigned int* __result167__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_267, 0, sizeof(unsigned int*));
-    # 1203 "libneo-c-str-gc.c"
-    result_267=(unsigned int*)come_calloc(1, sizeof(unsigned int)*(1*(wcslen(left)+wcslen(right)+1)), "libneo-c-str-gc.c", 1203, "int");
-    # 1205 "libneo-c-str-gc.c"
+    # 1169 "libneo-c-str-gc.c"
+    result_267=(unsigned int*)come_calloc(1, sizeof(unsigned int)*(1*(wcslen(left)+wcslen(right)+1)), "libneo-c-str-gc.c", 1169, "int");
+    # 1171 "libneo-c-str-gc.c"
     wcscpy(result_267,left);
-    # 1206 "libneo-c-str-gc.c"
+    # 1172 "libneo-c-str-gc.c"
     wcscat(result_267,right);
-    # 1208 "libneo-c-str-gc.c"
-    __result176__ = __result_obj__ = result_267;
-    return __result176__;
+    # 1174 "libneo-c-str-gc.c"
+    __result167__ = __result_obj__ = result_267;
+    return __result167__;
 }
 
 unsigned int* wstring_operator_add(unsigned int* left, unsigned int* right){
 void* __result_obj__;
 unsigned int* result_268;
-unsigned int* __result177__;
+unsigned int* __result168__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_268, 0, sizeof(unsigned int*));
-    # 1213 "libneo-c-str-gc.c"
-    result_268=(unsigned int*)come_calloc(1, sizeof(unsigned int)*(1*(wcslen(left)+wcslen(right)+1)), "libneo-c-str-gc.c", 1213, "int");
-    # 1215 "libneo-c-str-gc.c"
+    # 1179 "libneo-c-str-gc.c"
+    result_268=(unsigned int*)come_calloc(1, sizeof(unsigned int)*(1*(wcslen(left)+wcslen(right)+1)), "libneo-c-str-gc.c", 1179, "int");
+    # 1181 "libneo-c-str-gc.c"
     wcscpy(result_268,left);
-    # 1216 "libneo-c-str-gc.c"
+    # 1182 "libneo-c-str-gc.c"
     wcscat(result_268,right);
-    # 1218 "libneo-c-str-gc.c"
-    __result177__ = __result_obj__ = result_268;
-    return __result177__;
+    # 1184 "libneo-c-str-gc.c"
+    __result168__ = __result_obj__ = result_268;
+    return __result168__;
 }
 
 int charp_index(char* str, char* search_str, int default_value){
 void* __result_obj__;
 char* head_269;
-_Bool _if_conditional108;
-int __result178__;
-int __result179__;
+_Bool _if_conditional99;
+int __result169__;
+int __result170__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&head_269, 0, sizeof(char*));
-    # 1223 "libneo-c-str-gc.c"
-    # 1225 "libneo-c-str-gc.c"
+    # 1189 "libneo-c-str-gc.c"
+    # 1191 "libneo-c-str-gc.c"
     head_269=strstr(str,search_str);
-    # 1231 "libneo-c-str-gc.c"
-    # 1227 "libneo-c-str-gc.c"
-    if(_if_conditional108=head_269==((void*)0),    _if_conditional108) {
-        # 1228 "libneo-c-str-gc.c"
-        __result178__ = default_value;
-        return __result178__;
+    # 1197 "libneo-c-str-gc.c"
+    # 1193 "libneo-c-str-gc.c"
+    if(_if_conditional99=head_269==((void*)0),    _if_conditional99) {
+        # 1194 "libneo-c-str-gc.c"
+        __result169__ = default_value;
+        return __result169__;
     }
-    # 1231 "libneo-c-str-gc.c"
-    __result179__ = head_269-str;
-    return __result179__;
+    # 1197 "libneo-c-str-gc.c"
+    __result170__ = head_269-str;
+    return __result170__;
 }
 
 int charp_index_regex(char* self, struct come_regex* reg, int default_value){
@@ -6010,8 +5925,8 @@ int len_282;
 int regex_result_283;
 int i_284;
 int i_285;
-_Bool _if_conditional109;
-int __result180__;
+_Bool _if_conditional100;
+int __result171__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&ovec_max_270, 0, sizeof(int));
 memset(&result_274, 0, sizeof(int));
@@ -6025,109 +5940,109 @@ memset(&len_282, 0, sizeof(int));
 memset(&regex_result_283, 0, sizeof(int));
 memset(&i_284, 0, sizeof(int));
 memset(&i_285, 0, sizeof(int));
-    # 1237 "libneo-c-str-gc.c"
+    # 1203 "libneo-c-str-gc.c"
     ovec_max_270=16;
-    # 1238 "libneo-c-str-gc.c"
+    # 1204 "libneo-c-str-gc.c"
     int start_271[ovec_max_270];
     memset(&start_271, 0, sizeof(int)    *(ovec_max_270)    );
-    # 1239 "libneo-c-str-gc.c"
+    # 1205 "libneo-c-str-gc.c"
     int end_272[ovec_max_270];
     memset(&end_272, 0, sizeof(int)    *(ovec_max_270)    );
-    # 1240 "libneo-c-str-gc.c"
+    # 1206 "libneo-c-str-gc.c"
     int ovec_value_273[ovec_max_270*3];
     memset(&ovec_value_273, 0, sizeof(int)    *(ovec_max_270*3)    );
-    # 1242 "libneo-c-str-gc.c"
+    # 1208 "libneo-c-str-gc.c"
     result_274=default_value;
-    # 1244 "libneo-c-str-gc.c"
+    # 1210 "libneo-c-str-gc.c"
     offset_275=0;
-    # 1246 "libneo-c-str-gc.c"
-    # 1247 "libneo-c-str-gc.c"
-    # 1249 "libneo-c-str-gc.c"
+    # 1212 "libneo-c-str-gc.c"
+    # 1213 "libneo-c-str-gc.c"
+    # 1215 "libneo-c-str-gc.c"
     options_278=reg->options;
-    # 1250 "libneo-c-str-gc.c"
+    # 1216 "libneo-c-str-gc.c"
     str_279=reg->str;
-    # 1252 "libneo-c-str-gc.c"
+    # 1218 "libneo-c-str-gc.c"
     re_280=reg->re;
-    # 1278 "libneo-c-str-gc.c"
+    # 1244 "libneo-c-str-gc.c"
     while(_while_condtional13=(_Bool)1,    _while_condtional13) {
-        # 1255 "libneo-c-str-gc.c"
+        # 1221 "libneo-c-str-gc.c"
         options_281=2097152;
-        # 1256 "libneo-c-str-gc.c"
+        # 1222 "libneo-c-str-gc.c"
         len_282=strlen(self);
-        # 1257 "libneo-c-str-gc.c"
+        # 1223 "libneo-c-str-gc.c"
         regex_result_283=pcre_exec(re_280,(struct pcre_extra*)0,self,len_282,offset_275,options_281,ovec_value_273,ovec_max_270*3);
-        # 1262 "libneo-c-str-gc.c"
+        # 1228 "libneo-c-str-gc.c"
         for(        i_284=0;        i_284<ovec_max_270;        i_284++        ){
-            # 1260 "libneo-c-str-gc.c"
+            # 1226 "libneo-c-str-gc.c"
             start_271[i_284]=ovec_value_273[i_284*2];
         }
-        # 1267 "libneo-c-str-gc.c"
+        # 1233 "libneo-c-str-gc.c"
         for(        i_285=0;        i_285<ovec_max_270;        i_285++        ){
-            # 1263 "libneo-c-str-gc.c"
+            # 1229 "libneo-c-str-gc.c"
             end_272[i_285]=ovec_value_273[i_285*2+1];
         }
-        # 1273 "libneo-c-str-gc.c"
-        # 1267 "libneo-c-str-gc.c"
-        if(_if_conditional109=regex_result_283==1||regex_result_283>0,        _if_conditional109) {
-            # 1269 "libneo-c-str-gc.c"
+        # 1239 "libneo-c-str-gc.c"
+        # 1233 "libneo-c-str-gc.c"
+        if(_if_conditional100=regex_result_283==1||regex_result_283>0,        _if_conditional100) {
+            # 1235 "libneo-c-str-gc.c"
             result_274=start_271[0];
-            # 1270 "libneo-c-str-gc.c"
+            # 1236 "libneo-c-str-gc.c"
             break;
         }
-        # 1276 "libneo-c-str-gc.c"
+        # 1242 "libneo-c-str-gc.c"
         {
-            # 1274 "libneo-c-str-gc.c"
+            # 1240 "libneo-c-str-gc.c"
             break;
         }
     }
-    # 1278 "libneo-c-str-gc.c"
-    __result180__ = result_274;
-    return __result180__;
+    # 1244 "libneo-c-str-gc.c"
+    __result171__ = result_274;
+    return __result171__;
 }
 
 char* charp_replace(char* self, int index, char c){
 void* __result_obj__;
 int len_286;
-_Bool _if_conditional110;
-char* __result181__;
-_Bool _if_conditional111;
-_Bool _if_conditional112;
-_Bool _if_conditional113;
-char* __result182__;
+_Bool _if_conditional101;
+char* __result172__;
+_Bool _if_conditional102;
+_Bool _if_conditional103;
+_Bool _if_conditional104;
+char* __result173__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_286, 0, sizeof(int));
-    # 1284 "libneo-c-str-gc.c"
+    # 1250 "libneo-c-str-gc.c"
     len_286=strlen(self);
-    # 1290 "libneo-c-str-gc.c"
-    # 1286 "libneo-c-str-gc.c"
-    if(_if_conditional110=strcmp(self,"")==0,    _if_conditional110) {
-        # 1287 "libneo-c-str-gc.c"
-        __result181__ = __result_obj__ = __builtin_string(self);
-        return __result181__;
+    # 1256 "libneo-c-str-gc.c"
+    # 1252 "libneo-c-str-gc.c"
+    if(_if_conditional101=strcmp(self,"")==0,    _if_conditional101) {
+        # 1253 "libneo-c-str-gc.c"
+        __result172__ = __result_obj__ = __builtin_string(self);
+        return __result172__;
     }
-    # 1294 "libneo-c-str-gc.c"
-    # 1290 "libneo-c-str-gc.c"
-    if(_if_conditional111=index<0,    _if_conditional111) {
-        # 1291 "libneo-c-str-gc.c"
+    # 1260 "libneo-c-str-gc.c"
+    # 1256 "libneo-c-str-gc.c"
+    if(_if_conditional102=index<0,    _if_conditional102) {
+        # 1257 "libneo-c-str-gc.c"
         index+=len_286;
     }
-    # 1298 "libneo-c-str-gc.c"
-    # 1294 "libneo-c-str-gc.c"
-    if(_if_conditional112=index>=len_286,    _if_conditional112) {
-        # 1295 "libneo-c-str-gc.c"
+    # 1264 "libneo-c-str-gc.c"
+    # 1260 "libneo-c-str-gc.c"
+    if(_if_conditional103=index>=len_286,    _if_conditional103) {
+        # 1261 "libneo-c-str-gc.c"
         index=len_286-1;
     }
-    # 1302 "libneo-c-str-gc.c"
-    # 1298 "libneo-c-str-gc.c"
-    if(_if_conditional113=index<0,    _if_conditional113) {
-        # 1299 "libneo-c-str-gc.c"
+    # 1268 "libneo-c-str-gc.c"
+    # 1264 "libneo-c-str-gc.c"
+    if(_if_conditional104=index<0,    _if_conditional104) {
+        # 1265 "libneo-c-str-gc.c"
         index=0;
     }
-    # 1302 "libneo-c-str-gc.c"
+    # 1268 "libneo-c-str-gc.c"
     self[index]=c;
-    # 1304 "libneo-c-str-gc.c"
-    __result182__ = __result_obj__ = __builtin_string(self);
-    return __result182__;
+    # 1270 "libneo-c-str-gc.c"
+    __result173__ = __result_obj__ = __builtin_string(self);
+    return __result173__;
 }
 
 char* charp_multiply(char* str, int n){
@@ -6135,25 +6050,25 @@ void* __result_obj__;
 int len_287;
 char* result_288;
 int i_289;
-char* __result183__;
+char* __result174__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&len_287, 0, sizeof(int));
 memset(&result_288, 0, sizeof(char*));
 memset(&i_289, 0, sizeof(int));
-    # 1309 "libneo-c-str-gc.c"
+    # 1275 "libneo-c-str-gc.c"
     len_287=strlen(str)*n+1;
-    # 1311 "libneo-c-str-gc.c"
-    result_288=(char*)come_calloc(1, sizeof(char)*(1*(len_287)), "libneo-c-str-gc.c", 1311, "char");
-    # 1313 "libneo-c-str-gc.c"
+    # 1277 "libneo-c-str-gc.c"
+    result_288=(char*)come_calloc(1, sizeof(char)*(1*(len_287)), "libneo-c-str-gc.c", 1277, "char");
+    # 1279 "libneo-c-str-gc.c"
     result_288[0]=0;
-    # 1319 "libneo-c-str-gc.c"
+    # 1285 "libneo-c-str-gc.c"
     for(    i_289=0;    i_289<n;    i_289++    ){
-        # 1316 "libneo-c-str-gc.c"
+        # 1282 "libneo-c-str-gc.c"
         strcat(result_288,str);
     }
-    # 1319 "libneo-c-str-gc.c"
-    __result183__ = __result_obj__ = result_288;
-    return __result183__;
+    # 1285 "libneo-c-str-gc.c"
+    __result174__ = __result_obj__ = result_288;
+    return __result174__;
 }
 
 char* charp_sub(char* self, struct come_regex* reg, char* replace){
@@ -6172,13 +6087,13 @@ int len_302;
 int regex_result_303;
 int i_304;
 int i_305;
-_Bool _if_conditional114;
+_Bool _if_conditional105;
 char* str_306;
-_Bool _if_conditional115;
-_Bool _if_conditional116;
+_Bool _if_conditional106;
+_Bool _if_conditional107;
 char* str_307;
 char* str_308;
-char* __result184__;
+char* __result175__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&offset_290, 0, sizeof(int));
 memset(&ovec_max_291, 0, sizeof(int));
@@ -6195,89 +6110,89 @@ memset(&i_305, 0, sizeof(int));
 memset(&str_306, 0, sizeof(char*));
 memset(&str_307, 0, sizeof(char*));
 memset(&str_308, 0, sizeof(char*));
-    # 1324 "libneo-c-str-gc.c"
+    # 1290 "libneo-c-str-gc.c"
     offset_290=0;
-    # 1326 "libneo-c-str-gc.c"
+    # 1292 "libneo-c-str-gc.c"
     ovec_max_291=16;
-    # 1327 "libneo-c-str-gc.c"
+    # 1293 "libneo-c-str-gc.c"
     int start_292[ovec_max_291];
     memset(&start_292, 0, sizeof(int)    *(ovec_max_291)    );
-    # 1328 "libneo-c-str-gc.c"
+    # 1294 "libneo-c-str-gc.c"
     int end_293[ovec_max_291];
     memset(&end_293, 0, sizeof(int)    *(ovec_max_291)    );
-    # 1329 "libneo-c-str-gc.c"
+    # 1295 "libneo-c-str-gc.c"
     int ovec_value_294[ovec_max_291*3];
     memset(&ovec_value_294, 0, sizeof(int)    *(ovec_max_291*3)    );
-    # 1331 "libneo-c-str-gc.c"
-    # 1332 "libneo-c-str-gc.c"
-    # 1334 "libneo-c-str-gc.c"
+    # 1297 "libneo-c-str-gc.c"
+    # 1298 "libneo-c-str-gc.c"
+    # 1300 "libneo-c-str-gc.c"
     options_297=reg->options;
-    # 1335 "libneo-c-str-gc.c"
+    # 1301 "libneo-c-str-gc.c"
     str_298=reg->str;
-    # 1337 "libneo-c-str-gc.c"
+    # 1303 "libneo-c-str-gc.c"
     re_299=reg->re;
-    # 1339 "libneo-c-str-gc.c"
-    result_300=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-str-gc.c", 1339, "buffer"));
-    # 1382 "libneo-c-str-gc.c"
+    # 1305 "libneo-c-str-gc.c"
+    result_300=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-str-gc.c", 1305, "buffer"));
+    # 1348 "libneo-c-str-gc.c"
     while(_while_condtional14=(_Bool)1,    _while_condtional14) {
-        # 1342 "libneo-c-str-gc.c"
+        # 1308 "libneo-c-str-gc.c"
         options_301=2097152;
-        # 1343 "libneo-c-str-gc.c"
+        # 1309 "libneo-c-str-gc.c"
         len_302=strlen(self);
-        # 1344 "libneo-c-str-gc.c"
+        # 1310 "libneo-c-str-gc.c"
         regex_result_303=pcre_exec(re_299,(struct pcre_extra*)0,self,len_302,offset_290,options_301,ovec_value_294,ovec_max_291*3);
-        # 1349 "libneo-c-str-gc.c"
+        # 1315 "libneo-c-str-gc.c"
         for(        i_304=0;        i_304<ovec_max_291;        i_304++        ){
-            # 1347 "libneo-c-str-gc.c"
+            # 1313 "libneo-c-str-gc.c"
             start_292[i_304]=ovec_value_294[i_304*2];
         }
-        # 1354 "libneo-c-str-gc.c"
+        # 1320 "libneo-c-str-gc.c"
         for(        i_305=0;        i_305<ovec_max_291;        i_305++        ){
-            # 1350 "libneo-c-str-gc.c"
+            # 1316 "libneo-c-str-gc.c"
             end_293[i_305]=ovec_value_294[i_305*2+1];
         }
-        # 1380 "libneo-c-str-gc.c"
-        # 1354 "libneo-c-str-gc.c"
-        if(_if_conditional114=regex_result_303==1,        _if_conditional114) {
-            # 1356 "libneo-c-str-gc.c"
+        # 1346 "libneo-c-str-gc.c"
+        # 1320 "libneo-c-str-gc.c"
+        if(_if_conditional105=regex_result_303==1,        _if_conditional105) {
+            # 1322 "libneo-c-str-gc.c"
             str_306=charp_substring(self,offset_290,start_292[0]);
-            # 1358 "libneo-c-str-gc.c"
+            # 1324 "libneo-c-str-gc.c"
             buffer_append_str(result_300,str_306);
-            # 1359 "libneo-c-str-gc.c"
+            # 1325 "libneo-c-str-gc.c"
             buffer_append_str(result_300,replace);
-            # 1368 "libneo-c-str-gc.c"
-            # 1361 "libneo-c-str-gc.c"
-            if(_if_conditional115=offset_290==end_293[0],            _if_conditional115) {
-                # 1362 "libneo-c-str-gc.c"
+            # 1334 "libneo-c-str-gc.c"
+            # 1327 "libneo-c-str-gc.c"
+            if(_if_conditional106=offset_290==end_293[0],            _if_conditional106) {
+                # 1328 "libneo-c-str-gc.c"
                 offset_290++;
             }
             else {
-                # 1365 "libneo-c-str-gc.c"
+                # 1331 "libneo-c-str-gc.c"
                 offset_290=end_293[0];
             }
-            # 1373 "libneo-c-str-gc.c"
-            # 1368 "libneo-c-str-gc.c"
-            if(_if_conditional116=!reg->global,            _if_conditional116) {
-                # 1369 "libneo-c-str-gc.c"
+            # 1339 "libneo-c-str-gc.c"
+            # 1334 "libneo-c-str-gc.c"
+            if(_if_conditional107=!reg->global,            _if_conditional107) {
+                # 1335 "libneo-c-str-gc.c"
                 str_307=charp_substring(self,offset_290,-1);
-                # 1370 "libneo-c-str-gc.c"
+                # 1336 "libneo-c-str-gc.c"
                 buffer_append_str(result_300,str_307);
-                # 1371 "libneo-c-str-gc.c"
+                # 1337 "libneo-c-str-gc.c"
                 break;
             }
         }
         else {
-            # 1376 "libneo-c-str-gc.c"
+            # 1342 "libneo-c-str-gc.c"
             str_308=charp_substring(self,offset_290,-1);
-            # 1377 "libneo-c-str-gc.c"
+            # 1343 "libneo-c-str-gc.c"
             buffer_append_str(result_300,str_308);
-            # 1378 "libneo-c-str-gc.c"
+            # 1344 "libneo-c-str-gc.c"
             break;
         }
     }
-    # 1382 "libneo-c-str-gc.c"
-    __result184__ = __result_obj__ = buffer_to_string(result_300);
-    return __result184__;
+    # 1348 "libneo-c-str-gc.c"
+    __result175__ = __result_obj__ = buffer_to_string(result_300);
+    return __result175__;
 }
 
 char* charp_sub_count(char* self, struct come_regex* reg, char* replace, int count){
@@ -6297,15 +6212,15 @@ int len_322;
 int regex_result_323;
 int i_324;
 int i_325;
-_Bool _if_conditional117;
+_Bool _if_conditional108;
 char* str_326;
-_Bool _if_conditional118;
-_Bool _if_conditional119;
+_Bool _if_conditional109;
+_Bool _if_conditional110;
 char* str_327;
-_Bool _if_conditional120;
+_Bool _if_conditional111;
 char* str_328;
 char* str_329;
-char* __result185__;
+char* __result176__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&offset_309, 0, sizeof(int));
 memset(&ovec_max_310, 0, sizeof(int));
@@ -6324,103 +6239,103 @@ memset(&str_326, 0, sizeof(char*));
 memset(&str_327, 0, sizeof(char*));
 memset(&str_328, 0, sizeof(char*));
 memset(&str_329, 0, sizeof(char*));
-    # 1387 "libneo-c-str-gc.c"
+    # 1353 "libneo-c-str-gc.c"
     offset_309=0;
-    # 1389 "libneo-c-str-gc.c"
+    # 1355 "libneo-c-str-gc.c"
     ovec_max_310=16;
-    # 1390 "libneo-c-str-gc.c"
+    # 1356 "libneo-c-str-gc.c"
     int start_311[ovec_max_310];
     memset(&start_311, 0, sizeof(int)    *(ovec_max_310)    );
-    # 1391 "libneo-c-str-gc.c"
+    # 1357 "libneo-c-str-gc.c"
     int end_312[ovec_max_310];
     memset(&end_312, 0, sizeof(int)    *(ovec_max_310)    );
-    # 1392 "libneo-c-str-gc.c"
+    # 1358 "libneo-c-str-gc.c"
     int ovec_value_313[ovec_max_310*3];
     memset(&ovec_value_313, 0, sizeof(int)    *(ovec_max_310*3)    );
-    # 1394 "libneo-c-str-gc.c"
-    # 1395 "libneo-c-str-gc.c"
-    # 1397 "libneo-c-str-gc.c"
+    # 1360 "libneo-c-str-gc.c"
+    # 1361 "libneo-c-str-gc.c"
+    # 1363 "libneo-c-str-gc.c"
     options_316=reg->options;
-    # 1398 "libneo-c-str-gc.c"
+    # 1364 "libneo-c-str-gc.c"
     str_317=reg->str;
-    # 1400 "libneo-c-str-gc.c"
+    # 1366 "libneo-c-str-gc.c"
     re_318=reg->re;
-    # 1402 "libneo-c-str-gc.c"
-    result_319=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-str-gc.c", 1402, "buffer"));
-    # 1404 "libneo-c-str-gc.c"
+    # 1368 "libneo-c-str-gc.c"
+    result_319=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-str-gc.c", 1368, "buffer"));
+    # 1370 "libneo-c-str-gc.c"
     n_320=0;
-    # 1453 "libneo-c-str-gc.c"
+    # 1419 "libneo-c-str-gc.c"
     while(_while_condtional15=(_Bool)1,    _while_condtional15) {
-        # 1407 "libneo-c-str-gc.c"
+        # 1373 "libneo-c-str-gc.c"
         options_321=2097152;
-        # 1408 "libneo-c-str-gc.c"
+        # 1374 "libneo-c-str-gc.c"
         len_322=strlen(self);
-        # 1409 "libneo-c-str-gc.c"
+        # 1375 "libneo-c-str-gc.c"
         regex_result_323=pcre_exec(re_318,(struct pcre_extra*)0,self,len_322,offset_309,options_321,ovec_value_313,ovec_max_310*3);
-        # 1414 "libneo-c-str-gc.c"
+        # 1380 "libneo-c-str-gc.c"
         for(        i_324=0;        i_324<ovec_max_310;        i_324++        ){
-            # 1412 "libneo-c-str-gc.c"
+            # 1378 "libneo-c-str-gc.c"
             start_311[i_324]=ovec_value_313[i_324*2];
         }
-        # 1419 "libneo-c-str-gc.c"
+        # 1385 "libneo-c-str-gc.c"
         for(        i_325=0;        i_325<ovec_max_310;        i_325++        ){
-            # 1415 "libneo-c-str-gc.c"
+            # 1381 "libneo-c-str-gc.c"
             end_312[i_325]=ovec_value_313[i_325*2+1];
         }
-        # 1451 "libneo-c-str-gc.c"
-        # 1419 "libneo-c-str-gc.c"
-        if(_if_conditional117=regex_result_323==1,        _if_conditional117) {
-            # 1421 "libneo-c-str-gc.c"
+        # 1417 "libneo-c-str-gc.c"
+        # 1385 "libneo-c-str-gc.c"
+        if(_if_conditional108=regex_result_323==1,        _if_conditional108) {
+            # 1387 "libneo-c-str-gc.c"
             n_320++;
-            # 1422 "libneo-c-str-gc.c"
+            # 1388 "libneo-c-str-gc.c"
             str_326=charp_substring(self,offset_309,start_311[0]);
-            # 1424 "libneo-c-str-gc.c"
+            # 1390 "libneo-c-str-gc.c"
             buffer_append_str(result_319,str_326);
-            # 1425 "libneo-c-str-gc.c"
+            # 1391 "libneo-c-str-gc.c"
             buffer_append_str(result_319,replace);
-            # 1434 "libneo-c-str-gc.c"
-            # 1427 "libneo-c-str-gc.c"
-            if(_if_conditional118=offset_309==end_312[0],            _if_conditional118) {
-                # 1428 "libneo-c-str-gc.c"
+            # 1400 "libneo-c-str-gc.c"
+            # 1393 "libneo-c-str-gc.c"
+            if(_if_conditional109=offset_309==end_312[0],            _if_conditional109) {
+                # 1394 "libneo-c-str-gc.c"
                 offset_309++;
             }
             else {
-                # 1431 "libneo-c-str-gc.c"
+                # 1397 "libneo-c-str-gc.c"
                 offset_309=end_312[0];
             }
-            # 1439 "libneo-c-str-gc.c"
-            # 1434 "libneo-c-str-gc.c"
-            if(_if_conditional119=!reg->global,            _if_conditional119) {
-                # 1435 "libneo-c-str-gc.c"
+            # 1405 "libneo-c-str-gc.c"
+            # 1400 "libneo-c-str-gc.c"
+            if(_if_conditional110=!reg->global,            _if_conditional110) {
+                # 1401 "libneo-c-str-gc.c"
                 str_327=charp_substring(self,offset_309,-1);
-                # 1436 "libneo-c-str-gc.c"
+                # 1402 "libneo-c-str-gc.c"
                 buffer_append_str(result_319,str_327);
-                # 1437 "libneo-c-str-gc.c"
+                # 1403 "libneo-c-str-gc.c"
                 break;
             }
-            # 1444 "libneo-c-str-gc.c"
-            # 1439 "libneo-c-str-gc.c"
-            if(_if_conditional120=n_320==count,            _if_conditional120) {
-                # 1440 "libneo-c-str-gc.c"
+            # 1410 "libneo-c-str-gc.c"
+            # 1405 "libneo-c-str-gc.c"
+            if(_if_conditional111=n_320==count,            _if_conditional111) {
+                # 1406 "libneo-c-str-gc.c"
                 str_328=charp_substring(self,offset_309,-1);
-                # 1441 "libneo-c-str-gc.c"
+                # 1407 "libneo-c-str-gc.c"
                 buffer_append_str(result_319,str_328);
-                # 1442 "libneo-c-str-gc.c"
+                # 1408 "libneo-c-str-gc.c"
                 break;
             }
         }
         else {
-            # 1447 "libneo-c-str-gc.c"
+            # 1413 "libneo-c-str-gc.c"
             str_329=charp_substring(self,offset_309,-1);
-            # 1448 "libneo-c-str-gc.c"
+            # 1414 "libneo-c-str-gc.c"
             buffer_append_str(result_319,str_329);
-            # 1449 "libneo-c-str-gc.c"
+            # 1415 "libneo-c-str-gc.c"
             break;
         }
     }
-    # 1453 "libneo-c-str-gc.c"
-    __result185__ = __result_obj__ = buffer_to_string(result_319);
-    return __result185__;
+    # 1419 "libneo-c-str-gc.c"
+    __result176__ = __result_obj__ = buffer_to_string(result_319);
+    return __result176__;
 }
 
 struct list$1charph* charp_split_str(char* self, char* str){
@@ -6428,44 +6343,44 @@ void* __result_obj__;
 struct list$1charph* result_330;
 struct buffer* buf_331;
 int i_332;
-_Bool _if_conditional121;
-_Bool _if_conditional122;
-struct list$1charph* __result186__;
+_Bool _if_conditional112;
+_Bool _if_conditional113;
+struct list$1charph* __result177__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_330, 0, sizeof(struct list$1charph*));
 memset(&buf_331, 0, sizeof(struct buffer*));
 memset(&i_332, 0, sizeof(int));
-    # 1459 "libneo-c-str-gc.c"
-    # 1461 "libneo-c-str-gc.c"
-    result_330=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 1461, "list$1charph"));
-    # 1463 "libneo-c-str-gc.c"
-    buf_331=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-str-gc.c", 1463, "buffer"));
-    # 1475 "libneo-c-str-gc.c"
+    # 1425 "libneo-c-str-gc.c"
+    # 1427 "libneo-c-str-gc.c"
+    result_330=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 1427, "list$1charph"));
+    # 1429 "libneo-c-str-gc.c"
+    buf_331=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-str-gc.c", 1429, "buffer"));
+    # 1441 "libneo-c-str-gc.c"
     for(    i_332=0;    i_332<charp_length(self);    i_332++    ){
-        # 1474 "libneo-c-str-gc.c"
-        # 1466 "libneo-c-str-gc.c"
-        if(_if_conditional121=strstr(self+i_332,str)==self+i_332,        _if_conditional121) {
-            # 1467 "libneo-c-str-gc.c"
+        # 1440 "libneo-c-str-gc.c"
+        # 1432 "libneo-c-str-gc.c"
+        if(_if_conditional112=strstr(self+i_332,str)==self+i_332,        _if_conditional112) {
+            # 1433 "libneo-c-str-gc.c"
             list$1charph_push_back(result_330,__builtin_string(buf_331->buf));
-            # 1468 "libneo-c-str-gc.c"
+            # 1434 "libneo-c-str-gc.c"
             buffer_reset(buf_331);
-            # 1469 "libneo-c-str-gc.c"
+            # 1435 "libneo-c-str-gc.c"
             i_332+=strlen(str)-1;
         }
         else {
-            # 1472 "libneo-c-str-gc.c"
+            # 1438 "libneo-c-str-gc.c"
             buffer_append_char(buf_331,self[i_332]);
         }
     }
-    # 1479 "libneo-c-str-gc.c"
-    # 1475 "libneo-c-str-gc.c"
-    if(_if_conditional122=buffer_length(buf_331)!=0,    _if_conditional122) {
-        # 1476 "libneo-c-str-gc.c"
+    # 1445 "libneo-c-str-gc.c"
+    # 1441 "libneo-c-str-gc.c"
+    if(_if_conditional113=buffer_length(buf_331)!=0,    _if_conditional113) {
+        # 1442 "libneo-c-str-gc.c"
         list$1charph_push_back(result_330,__builtin_string(buf_331->buf));
     }
-    # 1479 "libneo-c-str-gc.c"
-    __result186__ = __result_obj__ = result_330;
-    return __result186__;
+    # 1445 "libneo-c-str-gc.c"
+    __result177__ = __result_obj__ = result_330;
+    return __result177__;
 }
 
 struct list$1charph* charp_scan(char* self, struct come_regex* reg){
@@ -6484,15 +6399,15 @@ int len_345;
 int regex_result_346;
 int i_347;
 int i_348;
-_Bool _if_conditional123;
+_Bool _if_conditional114;
 char* str_349;
-_Bool _if_conditional124;
-_Bool _if_conditional125;
+_Bool _if_conditional115;
+_Bool _if_conditional116;
 char* str_350;
-_Bool _if_conditional126;
+_Bool _if_conditional117;
 int i_351;
 char* match_string_352;
-struct list$1charph* __result187__;
+struct list$1charph* __result178__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_333, 0, sizeof(struct list$1charph*));
 memset(&offset_334, 0, sizeof(int));
@@ -6510,100 +6425,100 @@ memset(&str_349, 0, sizeof(char*));
 memset(&str_350, 0, sizeof(char*));
 memset(&i_351, 0, sizeof(int));
 memset(&match_string_352, 0, sizeof(char*));
-    # 1484 "libneo-c-str-gc.c"
-    result_333=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 1484, "list$1charph"));
-    # 1486 "libneo-c-str-gc.c"
+    # 1450 "libneo-c-str-gc.c"
+    result_333=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 1450, "list$1charph"));
+    # 1452 "libneo-c-str-gc.c"
     offset_334=0;
-    # 1488 "libneo-c-str-gc.c"
+    # 1454 "libneo-c-str-gc.c"
     ovec_max_335=16;
-    # 1489 "libneo-c-str-gc.c"
+    # 1455 "libneo-c-str-gc.c"
     int start_336[ovec_max_335];
     memset(&start_336, 0, sizeof(int)    *(ovec_max_335)    );
-    # 1490 "libneo-c-str-gc.c"
+    # 1456 "libneo-c-str-gc.c"
     int end_337[ovec_max_335];
     memset(&end_337, 0, sizeof(int)    *(ovec_max_335)    );
-    # 1491 "libneo-c-str-gc.c"
+    # 1457 "libneo-c-str-gc.c"
     int ovec_value_338[ovec_max_335*3];
     memset(&ovec_value_338, 0, sizeof(int)    *(ovec_max_335*3)    );
-    # 1493 "libneo-c-str-gc.c"
-    # 1494 "libneo-c-str-gc.c"
-    # 1496 "libneo-c-str-gc.c"
+    # 1459 "libneo-c-str-gc.c"
+    # 1460 "libneo-c-str-gc.c"
+    # 1462 "libneo-c-str-gc.c"
     options_341=reg->options;
-    # 1497 "libneo-c-str-gc.c"
+    # 1463 "libneo-c-str-gc.c"
     str_342=reg->str;
-    # 1499 "libneo-c-str-gc.c"
+    # 1465 "libneo-c-str-gc.c"
     re_343=reg->re;
-    # 1552 "libneo-c-str-gc.c"
+    # 1518 "libneo-c-str-gc.c"
     while(_while_condtional16=(_Bool)1,    _while_condtional16) {
-        # 1503 "libneo-c-str-gc.c"
+        # 1469 "libneo-c-str-gc.c"
         options_344=2097152;
-        # 1504 "libneo-c-str-gc.c"
+        # 1470 "libneo-c-str-gc.c"
         len_345=strlen(self);
-        # 1505 "libneo-c-str-gc.c"
+        # 1471 "libneo-c-str-gc.c"
         regex_result_346=pcre_exec(re_343,(struct pcre_extra*)0,self,len_345,offset_334,options_344,ovec_value_338,ovec_max_335*3);
-        # 1510 "libneo-c-str-gc.c"
+        # 1476 "libneo-c-str-gc.c"
         for(        i_347=0;        i_347<ovec_max_335;        i_347++        ){
-            # 1508 "libneo-c-str-gc.c"
+            # 1474 "libneo-c-str-gc.c"
             start_336[i_347]=ovec_value_338[i_347*2];
         }
-        # 1515 "libneo-c-str-gc.c"
+        # 1481 "libneo-c-str-gc.c"
         for(        i_348=0;        i_348<ovec_max_335;        i_348++        ){
-            # 1511 "libneo-c-str-gc.c"
+            # 1477 "libneo-c-str-gc.c"
             end_337[i_348]=ovec_value_338[i_348*2+1];
         }
-        # 1550 "libneo-c-str-gc.c"
-        # 1515 "libneo-c-str-gc.c"
-        if(_if_conditional123=regex_result_346==1,        _if_conditional123) {
-            # 1517 "libneo-c-str-gc.c"
+        # 1516 "libneo-c-str-gc.c"
+        # 1481 "libneo-c-str-gc.c"
+        if(_if_conditional114=regex_result_346==1,        _if_conditional114) {
+            # 1483 "libneo-c-str-gc.c"
             str_349=charp_substring(self,start_336[0],end_337[0]);
-            # 1519 "libneo-c-str-gc.c"
+            # 1485 "libneo-c-str-gc.c"
             list$1charph_push_back(result_333,str_349);
-            # 1527 "libneo-c-str-gc.c"
-            # 1521 "libneo-c-str-gc.c"
-            if(_if_conditional124=offset_334==end_337[0],            _if_conditional124) {
-                # 1522 "libneo-c-str-gc.c"
+            # 1493 "libneo-c-str-gc.c"
+            # 1487 "libneo-c-str-gc.c"
+            if(_if_conditional115=offset_334==end_337[0],            _if_conditional115) {
+                # 1488 "libneo-c-str-gc.c"
                 offset_334++;
             }
             else {
-                # 1525 "libneo-c-str-gc.c"
+                # 1491 "libneo-c-str-gc.c"
                 offset_334=end_337[0];
             }
         }
         else {
-            # 1550 "libneo-c-str-gc.c"
-            # 1529 "libneo-c-str-gc.c"
-            if(_if_conditional125=regex_result_346>1,            _if_conditional125) {
-                # 1530 "libneo-c-str-gc.c"
+            # 1516 "libneo-c-str-gc.c"
+            # 1495 "libneo-c-str-gc.c"
+            if(_if_conditional116=regex_result_346>1,            _if_conditional116) {
+                # 1496 "libneo-c-str-gc.c"
                 str_350=charp_substring(self,start_336[0],end_337[0]);
-                # 1531 "libneo-c-str-gc.c"
+                # 1497 "libneo-c-str-gc.c"
                 list$1charph_push_back(result_333,str_350);
-                # 1540 "libneo-c-str-gc.c"
-                # 1533 "libneo-c-str-gc.c"
-                if(_if_conditional126=offset_334==end_337[0],                _if_conditional126) {
-                    # 1534 "libneo-c-str-gc.c"
+                # 1506 "libneo-c-str-gc.c"
+                # 1499 "libneo-c-str-gc.c"
+                if(_if_conditional117=offset_334==end_337[0],                _if_conditional117) {
+                    # 1500 "libneo-c-str-gc.c"
                     offset_334++;
                 }
                 else {
-                    # 1537 "libneo-c-str-gc.c"
+                    # 1503 "libneo-c-str-gc.c"
                     offset_334=end_337[0];
                 }
-                # 1544 "libneo-c-str-gc.c"
+                # 1510 "libneo-c-str-gc.c"
                 for(                i_351=1;                i_351<regex_result_346;                i_351++                ){
-                    # 1541 "libneo-c-str-gc.c"
+                    # 1507 "libneo-c-str-gc.c"
                     match_string_352=charp_substring(self,start_336[i_351],end_337[i_351]);
-                    # 1542 "libneo-c-str-gc.c"
+                    # 1508 "libneo-c-str-gc.c"
                     list$1charph_push_back(result_333,match_string_352);
                 }
             }
             else {
-                # 1548 "libneo-c-str-gc.c"
+                # 1514 "libneo-c-str-gc.c"
                 break;
             }
         }
     }
-    # 1552 "libneo-c-str-gc.c"
-    __result187__ = __result_obj__ = result_333;
-    return __result187__;
+    # 1518 "libneo-c-str-gc.c"
+    __result178__ = __result_obj__ = result_333;
+    return __result178__;
 }
 
 struct list$1charph* charp_split(char* self, struct come_regex* reg){
@@ -6622,17 +6537,17 @@ int len_365;
 int regex_result_366;
 int i_367;
 int i_368;
-_Bool _if_conditional127;
+_Bool _if_conditional118;
 char* str_369;
-_Bool _if_conditional128;
-_Bool _if_conditional129;
+_Bool _if_conditional119;
+_Bool _if_conditional120;
 char* str_370;
-_Bool _if_conditional130;
+_Bool _if_conditional121;
 int i_371;
 char* match_str_372;
-_Bool _if_conditional131;
+_Bool _if_conditional122;
 char* str_373;
-struct list$1charph* __result188__;
+struct list$1charph* __result179__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&erro_ofs_354, 0, sizeof(int));
 memset(&options_355, 0, sizeof(int));
@@ -6651,108 +6566,108 @@ memset(&str_370, 0, sizeof(char*));
 memset(&i_371, 0, sizeof(int));
 memset(&match_str_372, 0, sizeof(char*));
 memset(&str_373, 0, sizeof(char*));
-    # 1557 "libneo-c-str-gc.c"
-    # 1558 "libneo-c-str-gc.c"
-    # 1560 "libneo-c-str-gc.c"
+    # 1523 "libneo-c-str-gc.c"
+    # 1524 "libneo-c-str-gc.c"
+    # 1526 "libneo-c-str-gc.c"
     options_355=reg->options;
-    # 1561 "libneo-c-str-gc.c"
+    # 1527 "libneo-c-str-gc.c"
     str_356=reg->str;
-    # 1563 "libneo-c-str-gc.c"
+    # 1529 "libneo-c-str-gc.c"
     re_357=reg->re;
-    # 1565 "libneo-c-str-gc.c"
-    result_358=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 1565, "list$1charph"));
-    # 1567 "libneo-c-str-gc.c"
+    # 1531 "libneo-c-str-gc.c"
+    result_358=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 1531, "list$1charph"));
+    # 1533 "libneo-c-str-gc.c"
     offset_359=0;
-    # 1569 "libneo-c-str-gc.c"
+    # 1535 "libneo-c-str-gc.c"
     ovec_max_360=16;
-    # 1570 "libneo-c-str-gc.c"
+    # 1536 "libneo-c-str-gc.c"
     int start_361[ovec_max_360];
     memset(&start_361, 0, sizeof(int)    *(ovec_max_360)    );
-    # 1571 "libneo-c-str-gc.c"
+    # 1537 "libneo-c-str-gc.c"
     int end_362[ovec_max_360];
     memset(&end_362, 0, sizeof(int)    *(ovec_max_360)    );
-    # 1572 "libneo-c-str-gc.c"
+    # 1538 "libneo-c-str-gc.c"
     int ovec_value_363[ovec_max_360*3];
     memset(&ovec_value_363, 0, sizeof(int)    *(ovec_max_360*3)    );
-    # 1624 "libneo-c-str-gc.c"
+    # 1590 "libneo-c-str-gc.c"
     while(_while_condtional17=(_Bool)1,    _while_condtional17) {
-        # 1575 "libneo-c-str-gc.c"
+        # 1541 "libneo-c-str-gc.c"
         options_364=2097152;
-        # 1576 "libneo-c-str-gc.c"
+        # 1542 "libneo-c-str-gc.c"
         len_365=strlen(self);
-        # 1578 "libneo-c-str-gc.c"
+        # 1544 "libneo-c-str-gc.c"
         regex_result_366=pcre_exec(re_357,(struct pcre_extra*)0,self,len_365,offset_359,options_364,ovec_value_363,ovec_max_360*3);
-        # 1583 "libneo-c-str-gc.c"
+        # 1549 "libneo-c-str-gc.c"
         for(        i_367=0;        i_367<ovec_max_360;        i_367++        ){
-            # 1581 "libneo-c-str-gc.c"
+            # 1547 "libneo-c-str-gc.c"
             start_361[i_367]=ovec_value_363[i_367*2];
         }
-        # 1588 "libneo-c-str-gc.c"
+        # 1554 "libneo-c-str-gc.c"
         for(        i_368=0;        i_368<ovec_max_360;        i_368++        ){
-            # 1584 "libneo-c-str-gc.c"
+            # 1550 "libneo-c-str-gc.c"
             end_362[i_368]=ovec_value_363[i_368*2+1];
         }
-        # 1622 "libneo-c-str-gc.c"
         # 1588 "libneo-c-str-gc.c"
-        if(_if_conditional127=regex_result_366==1,        _if_conditional127) {
-            # 1590 "libneo-c-str-gc.c"
+        # 1554 "libneo-c-str-gc.c"
+        if(_if_conditional118=regex_result_366==1,        _if_conditional118) {
+            # 1556 "libneo-c-str-gc.c"
             str_369=charp_substring(self,offset_359,start_361[0]);
-            # 1591 "libneo-c-str-gc.c"
+            # 1557 "libneo-c-str-gc.c"
             list$1charph_push_back(result_358,str_369);
-            # 1599 "libneo-c-str-gc.c"
-            # 1593 "libneo-c-str-gc.c"
-            if(_if_conditional128=offset_359==end_362[0],            _if_conditional128) {
-                # 1594 "libneo-c-str-gc.c"
+            # 1565 "libneo-c-str-gc.c"
+            # 1559 "libneo-c-str-gc.c"
+            if(_if_conditional119=offset_359==end_362[0],            _if_conditional119) {
+                # 1560 "libneo-c-str-gc.c"
                 offset_359++;
             }
             else {
-                # 1597 "libneo-c-str-gc.c"
+                # 1563 "libneo-c-str-gc.c"
                 offset_359=end_362[0];
             }
         }
         else {
-            # 1622 "libneo-c-str-gc.c"
-            # 1601 "libneo-c-str-gc.c"
-            if(_if_conditional129=regex_result_366>1,            _if_conditional129) {
-                # 1602 "libneo-c-str-gc.c"
+            # 1588 "libneo-c-str-gc.c"
+            # 1567 "libneo-c-str-gc.c"
+            if(_if_conditional120=regex_result_366>1,            _if_conditional120) {
+                # 1568 "libneo-c-str-gc.c"
                 str_370=charp_substring(self,offset_359,start_361[0]);
-                # 1603 "libneo-c-str-gc.c"
+                # 1569 "libneo-c-str-gc.c"
                 list$1charph_push_back(result_358,str_370);
-                # 1612 "libneo-c-str-gc.c"
-                # 1605 "libneo-c-str-gc.c"
-                if(_if_conditional130=offset_359==end_362[0],                _if_conditional130) {
-                    # 1606 "libneo-c-str-gc.c"
+                # 1578 "libneo-c-str-gc.c"
+                # 1571 "libneo-c-str-gc.c"
+                if(_if_conditional121=offset_359==end_362[0],                _if_conditional121) {
+                    # 1572 "libneo-c-str-gc.c"
                     offset_359++;
                 }
                 else {
-                    # 1609 "libneo-c-str-gc.c"
+                    # 1575 "libneo-c-str-gc.c"
                     offset_359=end_362[0];
                 }
-                # 1616 "libneo-c-str-gc.c"
+                # 1582 "libneo-c-str-gc.c"
                 for(                i_371=1;                i_371<regex_result_366;                i_371++                ){
-                    # 1613 "libneo-c-str-gc.c"
+                    # 1579 "libneo-c-str-gc.c"
                     match_str_372=charp_substring(self,start_361[i_371],end_362[i_371]);
-                    # 1614 "libneo-c-str-gc.c"
+                    # 1580 "libneo-c-str-gc.c"
                     list$1charph_push_back(result_358,match_str_372);
                 }
             }
             else {
-                # 1620 "libneo-c-str-gc.c"
+                # 1586 "libneo-c-str-gc.c"
                 break;
             }
         }
     }
-    # 1629 "libneo-c-str-gc.c"
-    # 1624 "libneo-c-str-gc.c"
-    if(_if_conditional131=offset_359<charp_length(self),    _if_conditional131) {
-        # 1625 "libneo-c-str-gc.c"
+    # 1595 "libneo-c-str-gc.c"
+    # 1590 "libneo-c-str-gc.c"
+    if(_if_conditional122=offset_359<charp_length(self),    _if_conditional122) {
+        # 1591 "libneo-c-str-gc.c"
         str_373=charp_substring(self,offset_359,-1);
-        # 1626 "libneo-c-str-gc.c"
+        # 1592 "libneo-c-str-gc.c"
         list$1charph_push_back(result_358,str_373);
     }
-    # 1629 "libneo-c-str-gc.c"
-    __result188__ = __result_obj__ = result_358;
-    return __result188__;
+    # 1595 "libneo-c-str-gc.c"
+    __result179__ = __result_obj__ = result_358;
+    return __result179__;
 }
 
 _Bool charp_match(char* self, struct come_regex* reg){
@@ -6770,10 +6685,10 @@ int len_385;
 int regex_result_386;
 int i_387;
 int i_388;
-_Bool _if_conditional132;
-_Bool __result189__;
-_Bool __result190__;
-_Bool __result191__;
+_Bool _if_conditional123;
+_Bool __result180__;
+_Bool __result181__;
+_Bool __result182__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&offset_374, 0, sizeof(int));
 memset(&ovec_max_375, 0, sizeof(int));
@@ -6786,61 +6701,61 @@ memset(&len_385, 0, sizeof(int));
 memset(&regex_result_386, 0, sizeof(int));
 memset(&i_387, 0, sizeof(int));
 memset(&i_388, 0, sizeof(int));
-    # 1634 "libneo-c-str-gc.c"
+    # 1600 "libneo-c-str-gc.c"
     offset_374=0;
-    # 1636 "libneo-c-str-gc.c"
+    # 1602 "libneo-c-str-gc.c"
     ovec_max_375=16;
-    # 1637 "libneo-c-str-gc.c"
+    # 1603 "libneo-c-str-gc.c"
     int start_376[ovec_max_375];
     memset(&start_376, 0, sizeof(int)    *(ovec_max_375)    );
-    # 1638 "libneo-c-str-gc.c"
+    # 1604 "libneo-c-str-gc.c"
     int end_377[ovec_max_375];
     memset(&end_377, 0, sizeof(int)    *(ovec_max_375)    );
-    # 1639 "libneo-c-str-gc.c"
+    # 1605 "libneo-c-str-gc.c"
     int ovec_value_378[ovec_max_375*3];
     memset(&ovec_value_378, 0, sizeof(int)    *(ovec_max_375*3)    );
-    # 1641 "libneo-c-str-gc.c"
-    # 1642 "libneo-c-str-gc.c"
-    # 1644 "libneo-c-str-gc.c"
+    # 1607 "libneo-c-str-gc.c"
+    # 1608 "libneo-c-str-gc.c"
+    # 1610 "libneo-c-str-gc.c"
     options_381=reg->options;
-    # 1645 "libneo-c-str-gc.c"
+    # 1611 "libneo-c-str-gc.c"
     str_382=reg->str;
-    # 1647 "libneo-c-str-gc.c"
+    # 1613 "libneo-c-str-gc.c"
     re_383=reg->re;
-    # 1674 "libneo-c-str-gc.c"
+    # 1640 "libneo-c-str-gc.c"
     while(_while_condtional18=(_Bool)1,    _while_condtional18) {
-        # 1650 "libneo-c-str-gc.c"
+        # 1616 "libneo-c-str-gc.c"
         options_384=2097152;
-        # 1651 "libneo-c-str-gc.c"
+        # 1617 "libneo-c-str-gc.c"
         len_385=strlen(self);
-        # 1653 "libneo-c-str-gc.c"
+        # 1619 "libneo-c-str-gc.c"
         regex_result_386=pcre_exec(re_383,(struct pcre_extra*)0,self,len_385,offset_374,options_384,ovec_value_378,ovec_max_375*3);
-        # 1658 "libneo-c-str-gc.c"
+        # 1624 "libneo-c-str-gc.c"
         for(        i_387=0;        i_387<ovec_max_375;        i_387++        ){
-            # 1656 "libneo-c-str-gc.c"
+            # 1622 "libneo-c-str-gc.c"
             start_376[i_387]=ovec_value_378[i_387*2];
         }
-        # 1663 "libneo-c-str-gc.c"
+        # 1629 "libneo-c-str-gc.c"
         for(        i_388=0;        i_388<ovec_max_375;        i_388++        ){
-            # 1659 "libneo-c-str-gc.c"
+            # 1625 "libneo-c-str-gc.c"
             end_377[i_388]=ovec_value_378[i_388*2+1];
         }
-        # 1672 "libneo-c-str-gc.c"
-        # 1663 "libneo-c-str-gc.c"
-        if(_if_conditional132=regex_result_386>0,        _if_conditional132) {
-            # 1665 "libneo-c-str-gc.c"
-            __result189__ = (_Bool)1;
-            return __result189__;
+        # 1638 "libneo-c-str-gc.c"
+        # 1629 "libneo-c-str-gc.c"
+        if(_if_conditional123=regex_result_386>0,        _if_conditional123) {
+            # 1631 "libneo-c-str-gc.c"
+            __result180__ = (_Bool)1;
+            return __result180__;
         }
         else {
-            # 1670 "libneo-c-str-gc.c"
-            __result190__ = (_Bool)0;
-            return __result190__;
+            # 1636 "libneo-c-str-gc.c"
+            __result181__ = (_Bool)0;
+            return __result181__;
         }
     }
-    # 1674 "libneo-c-str-gc.c"
-    __result191__ = (_Bool)0;
-    return __result191__;
+    # 1640 "libneo-c-str-gc.c"
+    __result182__ = (_Bool)0;
+    return __result182__;
 }
 
 struct list$1charph* charp_split_maxsplit(char* self, struct come_regex* reg, int maxsplit){
@@ -6860,18 +6775,18 @@ int len_402;
 int regex_result_403;
 int i_404;
 int i_405;
-_Bool _if_conditional133;
+_Bool _if_conditional124;
 char* str_406;
-_Bool _if_conditional134;
-_Bool _if_conditional135;
+_Bool _if_conditional125;
+_Bool _if_conditional126;
 char* str_407;
-_Bool _if_conditional136;
+_Bool _if_conditional127;
 int i_408;
 char* match_str_409;
-_Bool _if_conditional137;
-_Bool _if_conditional138;
+_Bool _if_conditional128;
+_Bool _if_conditional129;
 char* str_410;
-struct list$1charph* __result192__;
+struct list$1charph* __result183__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&erro_ofs_390, 0, sizeof(int));
 memset(&options_391, 0, sizeof(int));
@@ -6891,118 +6806,118 @@ memset(&str_407, 0, sizeof(char*));
 memset(&i_408, 0, sizeof(int));
 memset(&match_str_409, 0, sizeof(char*));
 memset(&str_410, 0, sizeof(char*));
-    # 1679 "libneo-c-str-gc.c"
-    # 1680 "libneo-c-str-gc.c"
-    # 1682 "libneo-c-str-gc.c"
+    # 1645 "libneo-c-str-gc.c"
+    # 1646 "libneo-c-str-gc.c"
+    # 1648 "libneo-c-str-gc.c"
     options_391=reg->options;
-    # 1683 "libneo-c-str-gc.c"
+    # 1649 "libneo-c-str-gc.c"
     str_392=reg->str;
-    # 1685 "libneo-c-str-gc.c"
+    # 1651 "libneo-c-str-gc.c"
     re_393=reg->re;
-    # 1687 "libneo-c-str-gc.c"
-    result_394=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 1687, "list$1charph"));
-    # 1689 "libneo-c-str-gc.c"
+    # 1653 "libneo-c-str-gc.c"
+    result_394=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 1653, "list$1charph"));
+    # 1655 "libneo-c-str-gc.c"
     offset_395=0;
-    # 1691 "libneo-c-str-gc.c"
+    # 1657 "libneo-c-str-gc.c"
     ovec_max_396=16;
-    # 1692 "libneo-c-str-gc.c"
+    # 1658 "libneo-c-str-gc.c"
     int start_397[ovec_max_396];
     memset(&start_397, 0, sizeof(int)    *(ovec_max_396)    );
-    # 1693 "libneo-c-str-gc.c"
+    # 1659 "libneo-c-str-gc.c"
     int end_398[ovec_max_396];
     memset(&end_398, 0, sizeof(int)    *(ovec_max_396)    );
-    # 1694 "libneo-c-str-gc.c"
+    # 1660 "libneo-c-str-gc.c"
     int ovec_value_399[ovec_max_396*3];
     memset(&ovec_value_399, 0, sizeof(int)    *(ovec_max_396*3)    );
-    # 1696 "libneo-c-str-gc.c"
+    # 1662 "libneo-c-str-gc.c"
     n_400=0;
-    # 1754 "libneo-c-str-gc.c"
+    # 1720 "libneo-c-str-gc.c"
     while(_while_condtional19=(_Bool)1,    _while_condtional19) {
-        # 1699 "libneo-c-str-gc.c"
+        # 1665 "libneo-c-str-gc.c"
         options_401=2097152;
-        # 1700 "libneo-c-str-gc.c"
+        # 1666 "libneo-c-str-gc.c"
         len_402=strlen(self);
-        # 1702 "libneo-c-str-gc.c"
+        # 1668 "libneo-c-str-gc.c"
         regex_result_403=pcre_exec(re_393,(struct pcre_extra*)0,self,len_402,offset_395,options_401,ovec_value_399,ovec_max_396*3);
-        # 1707 "libneo-c-str-gc.c"
+        # 1673 "libneo-c-str-gc.c"
         for(        i_404=0;        i_404<ovec_max_396;        i_404++        ){
-            # 1705 "libneo-c-str-gc.c"
+            # 1671 "libneo-c-str-gc.c"
             start_397[i_404]=ovec_value_399[i_404*2];
         }
-        # 1712 "libneo-c-str-gc.c"
+        # 1678 "libneo-c-str-gc.c"
         for(        i_405=0;        i_405<ovec_max_396;        i_405++        ){
-            # 1708 "libneo-c-str-gc.c"
+            # 1674 "libneo-c-str-gc.c"
             end_398[i_405]=ovec_value_399[i_405*2+1];
         }
-        # 1747 "libneo-c-str-gc.c"
-        # 1712 "libneo-c-str-gc.c"
-        if(_if_conditional133=regex_result_403==1,        _if_conditional133) {
-            # 1714 "libneo-c-str-gc.c"
+        # 1713 "libneo-c-str-gc.c"
+        # 1678 "libneo-c-str-gc.c"
+        if(_if_conditional124=regex_result_403==1,        _if_conditional124) {
+            # 1680 "libneo-c-str-gc.c"
             str_406=charp_substring(self,offset_395,start_397[0]);
-            # 1715 "libneo-c-str-gc.c"
+            # 1681 "libneo-c-str-gc.c"
             list$1charph_push_back(result_394,str_406);
-            # 1723 "libneo-c-str-gc.c"
-            # 1717 "libneo-c-str-gc.c"
-            if(_if_conditional134=offset_395==end_398[0],            _if_conditional134) {
-                # 1718 "libneo-c-str-gc.c"
+            # 1689 "libneo-c-str-gc.c"
+            # 1683 "libneo-c-str-gc.c"
+            if(_if_conditional125=offset_395==end_398[0],            _if_conditional125) {
+                # 1684 "libneo-c-str-gc.c"
                 offset_395++;
             }
             else {
-                # 1721 "libneo-c-str-gc.c"
+                # 1687 "libneo-c-str-gc.c"
                 offset_395=end_398[0];
             }
         }
         else {
-            # 1747 "libneo-c-str-gc.c"
-            # 1725 "libneo-c-str-gc.c"
-            if(_if_conditional135=regex_result_403>1,            _if_conditional135) {
-                # 1726 "libneo-c-str-gc.c"
+            # 1713 "libneo-c-str-gc.c"
+            # 1691 "libneo-c-str-gc.c"
+            if(_if_conditional126=regex_result_403>1,            _if_conditional126) {
+                # 1692 "libneo-c-str-gc.c"
                 str_407=charp_substring(self,offset_395,start_397[0]);
-                # 1727 "libneo-c-str-gc.c"
+                # 1693 "libneo-c-str-gc.c"
                 list$1charph_push_back(result_394,str_407);
-                # 1736 "libneo-c-str-gc.c"
-                # 1729 "libneo-c-str-gc.c"
-                if(_if_conditional136=offset_395==end_398[0],                _if_conditional136) {
-                    # 1730 "libneo-c-str-gc.c"
+                # 1702 "libneo-c-str-gc.c"
+                # 1695 "libneo-c-str-gc.c"
+                if(_if_conditional127=offset_395==end_398[0],                _if_conditional127) {
+                    # 1696 "libneo-c-str-gc.c"
                     offset_395++;
                 }
                 else {
-                    # 1733 "libneo-c-str-gc.c"
+                    # 1699 "libneo-c-str-gc.c"
                     offset_395=end_398[0];
                 }
-                # 1740 "libneo-c-str-gc.c"
+                # 1706 "libneo-c-str-gc.c"
                 for(                i_408=1;                i_408<regex_result_403;                i_408++                ){
-                    # 1737 "libneo-c-str-gc.c"
+                    # 1703 "libneo-c-str-gc.c"
                     match_str_409=charp_substring(self,start_397[i_408],end_398[i_408]);
-                    # 1738 "libneo-c-str-gc.c"
+                    # 1704 "libneo-c-str-gc.c"
                     list$1charph_push_back(result_394,match_str_409);
                 }
             }
             else {
-                # 1744 "libneo-c-str-gc.c"
+                # 1710 "libneo-c-str-gc.c"
                 break;
             }
         }
-        # 1747 "libneo-c-str-gc.c"
+        # 1713 "libneo-c-str-gc.c"
         n_400++;
-        # 1752 "libneo-c-str-gc.c"
-        # 1749 "libneo-c-str-gc.c"
-        if(_if_conditional137=maxsplit==n_400,        _if_conditional137) {
-            # 1750 "libneo-c-str-gc.c"
+        # 1718 "libneo-c-str-gc.c"
+        # 1715 "libneo-c-str-gc.c"
+        if(_if_conditional128=maxsplit==n_400,        _if_conditional128) {
+            # 1716 "libneo-c-str-gc.c"
             break;
         }
     }
-    # 1759 "libneo-c-str-gc.c"
-    # 1754 "libneo-c-str-gc.c"
-    if(_if_conditional138=offset_395<charp_length(self),    _if_conditional138) {
-        # 1755 "libneo-c-str-gc.c"
+    # 1725 "libneo-c-str-gc.c"
+    # 1720 "libneo-c-str-gc.c"
+    if(_if_conditional129=offset_395<charp_length(self),    _if_conditional129) {
+        # 1721 "libneo-c-str-gc.c"
         str_410=charp_substring(self,offset_395,-1);
-        # 1756 "libneo-c-str-gc.c"
+        # 1722 "libneo-c-str-gc.c"
         list$1charph_push_back(result_394,str_410);
     }
-    # 1759 "libneo-c-str-gc.c"
-    __result192__ = __result_obj__ = result_394;
-    return __result192__;
+    # 1725 "libneo-c-str-gc.c"
+    __result183__ = __result_obj__ = result_394;
+    return __result183__;
 }
 
 int charp_rindex_regex_count(char* self, struct come_regex* reg, int count, int default_value){
@@ -7023,10 +6938,10 @@ int len_425;
 int regex_result_426;
 int i_427;
 int i_428;
-_Bool _if_conditional139;
-_Bool _if_conditional140;
-_Bool _if_conditional141;
-int __result193__;
+_Bool _if_conditional130;
+_Bool _if_conditional131;
+_Bool _if_conditional132;
+int __result184__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&erro_ofs_412, 0, sizeof(int));
 memset(&options_413, 0, sizeof(int));
@@ -7042,83 +6957,83 @@ memset(&len_425, 0, sizeof(int));
 memset(&regex_result_426, 0, sizeof(int));
 memset(&i_427, 0, sizeof(int));
 memset(&i_428, 0, sizeof(int));
-    # 1764 "libneo-c-str-gc.c"
-    # 1765 "libneo-c-str-gc.c"
-    # 1767 "libneo-c-str-gc.c"
+    # 1730 "libneo-c-str-gc.c"
+    # 1731 "libneo-c-str-gc.c"
+    # 1733 "libneo-c-str-gc.c"
     options_413=reg->options;
-    # 1768 "libneo-c-str-gc.c"
+    # 1734 "libneo-c-str-gc.c"
     str_414=reg->str;
-    # 1770 "libneo-c-str-gc.c"
+    # 1736 "libneo-c-str-gc.c"
     re_415=reg->re;
-    # 1772 "libneo-c-str-gc.c"
+    # 1738 "libneo-c-str-gc.c"
     self2_416=charp_reverse(self);
-    # 1774 "libneo-c-str-gc.c"
+    # 1740 "libneo-c-str-gc.c"
     ovec_max_417=16;
-    # 1775 "libneo-c-str-gc.c"
+    # 1741 "libneo-c-str-gc.c"
     int start_418[ovec_max_417];
     memset(&start_418, 0, sizeof(int)    *(ovec_max_417)    );
-    # 1776 "libneo-c-str-gc.c"
+    # 1742 "libneo-c-str-gc.c"
     int end_419[ovec_max_417];
     memset(&end_419, 0, sizeof(int)    *(ovec_max_417)    );
-    # 1777 "libneo-c-str-gc.c"
+    # 1743 "libneo-c-str-gc.c"
     int ovec_value_420[ovec_max_417*3];
     memset(&ovec_value_420, 0, sizeof(int)    *(ovec_max_417*3)    );
-    # 1779 "libneo-c-str-gc.c"
+    # 1745 "libneo-c-str-gc.c"
     result_421=default_value;
-    # 1781 "libneo-c-str-gc.c"
+    # 1747 "libneo-c-str-gc.c"
     offset_422=0;
-    # 1783 "libneo-c-str-gc.c"
+    # 1749 "libneo-c-str-gc.c"
     n_423=0;
-    # 1821 "libneo-c-str-gc.c"
+    # 1787 "libneo-c-str-gc.c"
     while(_while_condtional20=(_Bool)1,    _while_condtional20) {
-        # 1786 "libneo-c-str-gc.c"
+        # 1752 "libneo-c-str-gc.c"
         options_424=2097152;
-        # 1787 "libneo-c-str-gc.c"
+        # 1753 "libneo-c-str-gc.c"
         len_425=strlen(self2_416);
-        # 1788 "libneo-c-str-gc.c"
+        # 1754 "libneo-c-str-gc.c"
         regex_result_426=pcre_exec(re_415,(struct pcre_extra*)0,self2_416,len_425,offset_422,options_424,ovec_value_420,ovec_max_417*3);
-        # 1793 "libneo-c-str-gc.c"
+        # 1759 "libneo-c-str-gc.c"
         for(        i_427=0;        i_427<ovec_max_417;        i_427++        ){
-            # 1791 "libneo-c-str-gc.c"
+            # 1757 "libneo-c-str-gc.c"
             start_418[i_427]=ovec_value_420[i_427*2];
         }
-        # 1798 "libneo-c-str-gc.c"
+        # 1764 "libneo-c-str-gc.c"
         for(        i_428=0;        i_428<ovec_max_417;        i_428++        ){
-            # 1794 "libneo-c-str-gc.c"
+            # 1760 "libneo-c-str-gc.c"
             end_419[i_428]=ovec_value_420[i_428*2+1];
         }
-        # 1819 "libneo-c-str-gc.c"
-        # 1798 "libneo-c-str-gc.c"
-        if(_if_conditional139=regex_result_426>0,        _if_conditional139) {
-            # 1800 "libneo-c-str-gc.c"
+        # 1785 "libneo-c-str-gc.c"
+        # 1764 "libneo-c-str-gc.c"
+        if(_if_conditional130=regex_result_426>0,        _if_conditional130) {
+            # 1766 "libneo-c-str-gc.c"
             n_423++;
-            # 1809 "libneo-c-str-gc.c"
-            # 1802 "libneo-c-str-gc.c"
-            if(_if_conditional140=offset_422==end_419[0],            _if_conditional140) {
-                # 1803 "libneo-c-str-gc.c"
+            # 1775 "libneo-c-str-gc.c"
+            # 1768 "libneo-c-str-gc.c"
+            if(_if_conditional131=offset_422==end_419[0],            _if_conditional131) {
+                # 1769 "libneo-c-str-gc.c"
                 offset_422++;
             }
             else {
-                # 1806 "libneo-c-str-gc.c"
+                # 1772 "libneo-c-str-gc.c"
                 offset_422=end_419[0];
             }
-            # 1813 "libneo-c-str-gc.c"
-            # 1809 "libneo-c-str-gc.c"
-            if(_if_conditional141=n_423==count,            _if_conditional141) {
-                # 1810 "libneo-c-str-gc.c"
+            # 1779 "libneo-c-str-gc.c"
+            # 1775 "libneo-c-str-gc.c"
+            if(_if_conditional132=n_423==count,            _if_conditional132) {
+                # 1776 "libneo-c-str-gc.c"
                 result_421=strlen(self)-end_419[0];
-                # 1811 "libneo-c-str-gc.c"
+                # 1777 "libneo-c-str-gc.c"
                 break;
             }
         }
         else {
-            # 1817 "libneo-c-str-gc.c"
+            # 1783 "libneo-c-str-gc.c"
             break;
         }
     }
-    # 1821 "libneo-c-str-gc.c"
-    __result193__ = result_421;
-    return __result193__;
+    # 1787 "libneo-c-str-gc.c"
+    __result184__ = result_421;
+    return __result184__;
 }
 
 _Bool charp_match_count(char* self, struct come_regex* reg, int count){
@@ -7137,12 +7052,12 @@ int len_441;
 int regex_result_442;
 int i_443;
 int i_444;
-_Bool _if_conditional142;
-_Bool _if_conditional143;
-_Bool __result194__;
-_Bool _if_conditional144;
-_Bool __result195__;
-_Bool __result196__;
+_Bool _if_conditional133;
+_Bool _if_conditional134;
+_Bool __result185__;
+_Bool _if_conditional135;
+_Bool __result186__;
+_Bool __result187__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&offset_429, 0, sizeof(int));
 memset(&ovec_max_430, 0, sizeof(int));
@@ -7156,79 +7071,79 @@ memset(&len_441, 0, sizeof(int));
 memset(&regex_result_442, 0, sizeof(int));
 memset(&i_443, 0, sizeof(int));
 memset(&i_444, 0, sizeof(int));
-    # 1826 "libneo-c-str-gc.c"
+    # 1792 "libneo-c-str-gc.c"
     offset_429=0;
-    # 1828 "libneo-c-str-gc.c"
+    # 1794 "libneo-c-str-gc.c"
     ovec_max_430=16;
-    # 1829 "libneo-c-str-gc.c"
+    # 1795 "libneo-c-str-gc.c"
     int start_431[ovec_max_430];
     memset(&start_431, 0, sizeof(int)    *(ovec_max_430)    );
-    # 1830 "libneo-c-str-gc.c"
+    # 1796 "libneo-c-str-gc.c"
     int end_432[ovec_max_430];
     memset(&end_432, 0, sizeof(int)    *(ovec_max_430)    );
-    # 1831 "libneo-c-str-gc.c"
+    # 1797 "libneo-c-str-gc.c"
     int ovec_value_433[ovec_max_430*3];
     memset(&ovec_value_433, 0, sizeof(int)    *(ovec_max_430*3)    );
-    # 1833 "libneo-c-str-gc.c"
-    # 1834 "libneo-c-str-gc.c"
-    # 1836 "libneo-c-str-gc.c"
+    # 1799 "libneo-c-str-gc.c"
+    # 1800 "libneo-c-str-gc.c"
+    # 1802 "libneo-c-str-gc.c"
     options_436=reg->options;
-    # 1837 "libneo-c-str-gc.c"
+    # 1803 "libneo-c-str-gc.c"
     str_437=reg->str;
-    # 1839 "libneo-c-str-gc.c"
+    # 1805 "libneo-c-str-gc.c"
     re_438=reg->re;
-    # 1841 "libneo-c-str-gc.c"
+    # 1807 "libneo-c-str-gc.c"
     n_439=0;
-    # 1879 "libneo-c-str-gc.c"
+    # 1845 "libneo-c-str-gc.c"
     while(_while_condtional21=(_Bool)1,    _while_condtional21) {
-        # 1844 "libneo-c-str-gc.c"
+        # 1810 "libneo-c-str-gc.c"
         options_440=2097152;
-        # 1845 "libneo-c-str-gc.c"
+        # 1811 "libneo-c-str-gc.c"
         len_441=strlen(self);
-        # 1847 "libneo-c-str-gc.c"
+        # 1813 "libneo-c-str-gc.c"
         regex_result_442=pcre_exec(re_438,(struct pcre_extra*)0,self,len_441,offset_429,options_440,ovec_value_433,ovec_max_430*3);
-        # 1852 "libneo-c-str-gc.c"
+        # 1818 "libneo-c-str-gc.c"
         for(        i_443=0;        i_443<ovec_max_430;        i_443++        ){
-            # 1850 "libneo-c-str-gc.c"
+            # 1816 "libneo-c-str-gc.c"
             start_431[i_443]=ovec_value_433[i_443*2];
         }
-        # 1857 "libneo-c-str-gc.c"
+        # 1823 "libneo-c-str-gc.c"
         for(        i_444=0;        i_444<ovec_max_430;        i_444++        ){
-            # 1853 "libneo-c-str-gc.c"
+            # 1819 "libneo-c-str-gc.c"
             end_432[i_444]=ovec_value_433[i_444*2+1];
         }
-        # 1877 "libneo-c-str-gc.c"
-        # 1857 "libneo-c-str-gc.c"
-        if(_if_conditional142=regex_result_442>0,        _if_conditional142) {
-            # 1859 "libneo-c-str-gc.c"
+        # 1843 "libneo-c-str-gc.c"
+        # 1823 "libneo-c-str-gc.c"
+        if(_if_conditional133=regex_result_442>0,        _if_conditional133) {
+            # 1825 "libneo-c-str-gc.c"
             n_439++;
-            # 1865 "libneo-c-str-gc.c"
-            # 1861 "libneo-c-str-gc.c"
-            if(_if_conditional143=count==n_439,            _if_conditional143) {
-                # 1862 "libneo-c-str-gc.c"
-                __result194__ = (_Bool)1;
-                return __result194__;
+            # 1831 "libneo-c-str-gc.c"
+            # 1827 "libneo-c-str-gc.c"
+            if(_if_conditional134=count==n_439,            _if_conditional134) {
+                # 1828 "libneo-c-str-gc.c"
+                __result185__ = (_Bool)1;
+                return __result185__;
             }
-            # 1871 "libneo-c-str-gc.c"
-            # 1865 "libneo-c-str-gc.c"
-            if(_if_conditional144=offset_429==end_432[0],            _if_conditional144) {
-                # 1866 "libneo-c-str-gc.c"
+            # 1837 "libneo-c-str-gc.c"
+            # 1831 "libneo-c-str-gc.c"
+            if(_if_conditional135=offset_429==end_432[0],            _if_conditional135) {
+                # 1832 "libneo-c-str-gc.c"
                 offset_429++;
             }
             else {
-                # 1869 "libneo-c-str-gc.c"
+                # 1835 "libneo-c-str-gc.c"
                 offset_429=end_432[0];
             }
         }
         else {
-            # 1875 "libneo-c-str-gc.c"
-            __result195__ = (_Bool)0;
-            return __result195__;
+            # 1841 "libneo-c-str-gc.c"
+            __result186__ = (_Bool)0;
+            return __result186__;
         }
     }
-    # 1879 "libneo-c-str-gc.c"
-    __result196__ = (_Bool)0;
-    return __result196__;
+    # 1845 "libneo-c-str-gc.c"
+    __result187__ = (_Bool)0;
+    return __result187__;
 }
 
 char* charp_sub_block(char* self, struct come_regex* reg, void* parent, char* (*block)(void*,char*,struct list$1charph*)){
@@ -7247,30 +7162,26 @@ int len_457;
 int regex_result_458;
 int i_459;
 int i_460;
-_Bool _if_conditional145;
+_Bool _if_conditional136;
 char* str_461;
 struct list$1charph* group_strings_462;
 char* match_string_463;
 char* block_result_464;
-_Bool _if_conditional146;
-char* __result197__;
-_Bool _if_conditional147;
-_Bool _if_conditional148;
+_Bool _if_conditional137;
+_Bool _if_conditional138;
 char* str_465;
-_Bool _if_conditional149;
+_Bool _if_conditional139;
 char* str_466;
-_Bool _if_conditional150;
+_Bool _if_conditional140;
 struct list$1charph* group_strings_467;
 int i_468;
 char* match_string_469;
 char* match_string_470;
 char* block_result_471;
-_Bool _if_conditional151;
-char* __result198__;
-_Bool _if_conditional152;
+_Bool _if_conditional141;
 char* str_472;
 char* str_473;
-char* __result199__;
+char* __result188__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&offset_445, 0, sizeof(int));
 memset(&ovec_max_446, 0, sizeof(int));
@@ -7297,156 +7208,142 @@ memset(&match_string_470, 0, sizeof(char*));
 memset(&block_result_471, 0, sizeof(char*));
 memset(&str_472, 0, sizeof(char*));
 memset(&str_473, 0, sizeof(char*));
-    # 1884 "libneo-c-str-gc.c"
+    # 1850 "libneo-c-str-gc.c"
     offset_445=0;
-    # 1886 "libneo-c-str-gc.c"
+    # 1852 "libneo-c-str-gc.c"
     ovec_max_446=16;
-    # 1887 "libneo-c-str-gc.c"
+    # 1853 "libneo-c-str-gc.c"
     int start_447[ovec_max_446];
     memset(&start_447, 0, sizeof(int)    *(ovec_max_446)    );
-    # 1888 "libneo-c-str-gc.c"
+    # 1854 "libneo-c-str-gc.c"
     int end_448[ovec_max_446];
     memset(&end_448, 0, sizeof(int)    *(ovec_max_446)    );
-    # 1889 "libneo-c-str-gc.c"
+    # 1855 "libneo-c-str-gc.c"
     int ovec_value_449[ovec_max_446*3];
     memset(&ovec_value_449, 0, sizeof(int)    *(ovec_max_446*3)    );
-    # 1891 "libneo-c-str-gc.c"
-    # 1892 "libneo-c-str-gc.c"
-    # 1894 "libneo-c-str-gc.c"
+    # 1857 "libneo-c-str-gc.c"
+    # 1858 "libneo-c-str-gc.c"
+    # 1860 "libneo-c-str-gc.c"
     options_452=reg->options;
-    # 1895 "libneo-c-str-gc.c"
+    # 1861 "libneo-c-str-gc.c"
     str_453=reg->str;
-    # 1897 "libneo-c-str-gc.c"
+    # 1863 "libneo-c-str-gc.c"
     re_454=reg->re;
-    # 1899 "libneo-c-str-gc.c"
-    result_455=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-str-gc.c", 1899, "buffer"));
-    # 1987 "libneo-c-str-gc.c"
+    # 1865 "libneo-c-str-gc.c"
+    result_455=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-str-gc.c", 1865, "buffer"));
+    # 1946 "libneo-c-str-gc.c"
     while(_while_condtional22=(_Bool)1,    _while_condtional22) {
-        # 1902 "libneo-c-str-gc.c"
+        # 1868 "libneo-c-str-gc.c"
         options_456=2097152;
-        # 1903 "libneo-c-str-gc.c"
+        # 1869 "libneo-c-str-gc.c"
         len_457=strlen(self);
-        # 1904 "libneo-c-str-gc.c"
+        # 1870 "libneo-c-str-gc.c"
         regex_result_458=pcre_exec(re_454,(struct pcre_extra*)0,self,len_457,offset_445,options_456,ovec_value_449,ovec_max_446*3);
-        # 1909 "libneo-c-str-gc.c"
+        # 1875 "libneo-c-str-gc.c"
         for(        i_459=0;        i_459<ovec_max_446;        i_459++        ){
-            # 1907 "libneo-c-str-gc.c"
+            # 1873 "libneo-c-str-gc.c"
             start_447[i_459]=ovec_value_449[i_459*2];
         }
-        # 1914 "libneo-c-str-gc.c"
+        # 1880 "libneo-c-str-gc.c"
         for(        i_460=0;        i_460<ovec_max_446;        i_460++        ){
-            # 1910 "libneo-c-str-gc.c"
+            # 1876 "libneo-c-str-gc.c"
             end_448[i_460]=ovec_value_449[i_460*2+1];
         }
-        # 1986 "libneo-c-str-gc.c"
-        # 1914 "libneo-c-str-gc.c"
-        if(_if_conditional145=regex_result_458==1,        _if_conditional145) {
-            # 1915 "libneo-c-str-gc.c"
+        # 1945 "libneo-c-str-gc.c"
+        # 1880 "libneo-c-str-gc.c"
+        if(_if_conditional136=regex_result_458==1,        _if_conditional136) {
+            # 1881 "libneo-c-str-gc.c"
             str_461=charp_substring(self,offset_445,start_447[0]);
-            # 1917 "libneo-c-str-gc.c"
+            # 1883 "libneo-c-str-gc.c"
             buffer_append_str(result_455,str_461);
-            # 1919 "libneo-c-str-gc.c"
-            group_strings_462=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 1919, "list$1charph"));
-            # 1921 "libneo-c-str-gc.c"
+            # 1885 "libneo-c-str-gc.c"
+            group_strings_462=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 1885, "list$1charph"));
+            # 1887 "libneo-c-str-gc.c"
             match_string_463=charp_substring(self,start_447[0],end_448[0]);
-            # 1923 "libneo-c-str-gc.c"
+            # 1889 "libneo-c-str-gc.c"
             list$1charph_push_back(group_strings_462,charp_substring(self,start_447[0],end_448[0]));
-            # 1925 "libneo-c-str-gc.c"
+            # 1891 "libneo-c-str-gc.c"
             block_result_464=block(parent,match_string_463,group_strings_462);
-            # 1931 "libneo-c-str-gc.c"
-            # 1927 "libneo-c-str-gc.c"
-            if(_if_conditional146=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,            _if_conditional146) {
-                # 1928 "libneo-c-str-gc.c"
-                __result197__ = __result_obj__ = buffer_to_string(result_455);
-                return __result197__;
-            }
-            # 1931 "libneo-c-str-gc.c"
+            # 1893 "libneo-c-str-gc.c"
             buffer_append_str(result_455,block_result_464);
-            # 1940 "libneo-c-str-gc.c"
-            # 1933 "libneo-c-str-gc.c"
-            if(_if_conditional147=offset_445==end_448[0],            _if_conditional147) {
-                # 1934 "libneo-c-str-gc.c"
+            # 1902 "libneo-c-str-gc.c"
+            # 1895 "libneo-c-str-gc.c"
+            if(_if_conditional137=offset_445==end_448[0],            _if_conditional137) {
+                # 1896 "libneo-c-str-gc.c"
                 offset_445++;
             }
             else {
-                # 1937 "libneo-c-str-gc.c"
+                # 1899 "libneo-c-str-gc.c"
                 offset_445=end_448[0];
             }
-            # 1945 "libneo-c-str-gc.c"
-            # 1940 "libneo-c-str-gc.c"
-            if(_if_conditional148=!reg->global,            _if_conditional148) {
-                # 1941 "libneo-c-str-gc.c"
+            # 1907 "libneo-c-str-gc.c"
+            # 1902 "libneo-c-str-gc.c"
+            if(_if_conditional138=!reg->global,            _if_conditional138) {
+                # 1903 "libneo-c-str-gc.c"
                 str_465=charp_substring(self,offset_445,-1);
-                # 1942 "libneo-c-str-gc.c"
+                # 1904 "libneo-c-str-gc.c"
                 buffer_append_str(result_455,str_465);
-                # 1943 "libneo-c-str-gc.c"
+                # 1905 "libneo-c-str-gc.c"
                 break;
             }
         }
         else {
-            # 1986 "libneo-c-str-gc.c"
-            # 1947 "libneo-c-str-gc.c"
-            if(_if_conditional149=regex_result_458>1,            _if_conditional149) {
-                # 1948 "libneo-c-str-gc.c"
+            # 1945 "libneo-c-str-gc.c"
+            # 1909 "libneo-c-str-gc.c"
+            if(_if_conditional139=regex_result_458>1,            _if_conditional139) {
+                # 1910 "libneo-c-str-gc.c"
                 str_466=charp_substring(self,offset_445,start_447[0]);
-                # 1949 "libneo-c-str-gc.c"
+                # 1911 "libneo-c-str-gc.c"
                 buffer_append_str(result_455,str_466);
-                # 1958 "libneo-c-str-gc.c"
-                # 1951 "libneo-c-str-gc.c"
-                if(_if_conditional150=offset_445==end_448[0],                _if_conditional150) {
-                    # 1952 "libneo-c-str-gc.c"
+                # 1920 "libneo-c-str-gc.c"
+                # 1913 "libneo-c-str-gc.c"
+                if(_if_conditional140=offset_445==end_448[0],                _if_conditional140) {
+                    # 1914 "libneo-c-str-gc.c"
                     offset_445++;
                 }
                 else {
-                    # 1955 "libneo-c-str-gc.c"
+                    # 1917 "libneo-c-str-gc.c"
                     offset_445=end_448[0];
                 }
-                # 1958 "libneo-c-str-gc.c"
-                group_strings_467=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 1958, "list$1charph"));
-                # 1965 "libneo-c-str-gc.c"
+                # 1920 "libneo-c-str-gc.c"
+                group_strings_467=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 1920, "list$1charph"));
+                # 1927 "libneo-c-str-gc.c"
                 for(                i_468=1;                i_468<regex_result_458;                i_468++                ){
-                    # 1961 "libneo-c-str-gc.c"
+                    # 1923 "libneo-c-str-gc.c"
                     match_string_469=charp_substring(self,start_447[i_468],end_448[i_468]);
-                    # 1962 "libneo-c-str-gc.c"
+                    # 1924 "libneo-c-str-gc.c"
                     list$1charph_push_back(group_strings_467,match_string_469);
                 }
-                # 1965 "libneo-c-str-gc.c"
+                # 1927 "libneo-c-str-gc.c"
                 match_string_470=charp_substring(self,start_447[0],end_448[0]);
-                # 1967 "libneo-c-str-gc.c"
+                # 1929 "libneo-c-str-gc.c"
                 block_result_471=block(parent,match_string_470,group_strings_467);
-                # 1972 "libneo-c-str-gc.c"
-                # 1969 "libneo-c-str-gc.c"
-                if(_if_conditional151=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,                _if_conditional151) {
-                    # 1970 "libneo-c-str-gc.c"
-                    __result198__ = __result_obj__ = buffer_to_string(result_455);
-                    return __result198__;
-                }
-                # 1972 "libneo-c-str-gc.c"
+                # 1931 "libneo-c-str-gc.c"
                 buffer_append_str(result_455,block_result_471);
-                # 1979 "libneo-c-str-gc.c"
-                # 1974 "libneo-c-str-gc.c"
-                if(_if_conditional152=!reg->global,                _if_conditional152) {
-                    # 1975 "libneo-c-str-gc.c"
+                # 1938 "libneo-c-str-gc.c"
+                # 1933 "libneo-c-str-gc.c"
+                if(_if_conditional141=!reg->global,                _if_conditional141) {
+                    # 1934 "libneo-c-str-gc.c"
                     str_472=charp_substring(self,offset_445,-1);
-                    # 1976 "libneo-c-str-gc.c"
+                    # 1935 "libneo-c-str-gc.c"
                     buffer_append_str(result_455,str_472);
-                    # 1977 "libneo-c-str-gc.c"
+                    # 1936 "libneo-c-str-gc.c"
                     break;
                 }
             }
             else {
-                # 1982 "libneo-c-str-gc.c"
+                # 1941 "libneo-c-str-gc.c"
                 str_473=charp_substring(self,offset_445,-1);
-                # 1983 "libneo-c-str-gc.c"
+                # 1942 "libneo-c-str-gc.c"
                 buffer_append_str(result_455,str_473);
-                # 1984 "libneo-c-str-gc.c"
+                # 1943 "libneo-c-str-gc.c"
                 break;
             }
         }
     }
-    # 1987 "libneo-c-str-gc.c"
-    __result199__ = __result_obj__ = buffer_to_string(result_455);
-    return __result199__;
+    # 1946 "libneo-c-str-gc.c"
+    __result188__ = __result_obj__ = buffer_to_string(result_455);
+    return __result188__;
 }
 
 char* charp_sub_block_count(char* self, struct come_regex* reg, int count, void* parent, char* (*block)(void*,char*,struct list$1charph*)){
@@ -7466,34 +7363,30 @@ int len_487;
 int regex_result_488;
 int i_489;
 int i_490;
-_Bool _if_conditional153;
+_Bool _if_conditional142;
 char* str_491;
 struct list$1charph* group_strings_492;
 char* match_string_493;
 char* block_result_494;
-_Bool _if_conditional154;
-char* __result200__;
-_Bool _if_conditional155;
-_Bool _if_conditional156;
+_Bool _if_conditional143;
+_Bool _if_conditional144;
 char* str_495;
-_Bool _if_conditional157;
+_Bool _if_conditional145;
 char* str_496;
-_Bool _if_conditional158;
+_Bool _if_conditional146;
 char* str_497;
-_Bool _if_conditional159;
+_Bool _if_conditional147;
 struct list$1charph* group_strings_498;
 int i_499;
 char* match_string_500;
 char* match_string_501;
 char* block_result_502;
-_Bool _if_conditional160;
-char* __result201__;
-_Bool _if_conditional161;
+_Bool _if_conditional148;
 char* str_503;
-_Bool _if_conditional162;
+_Bool _if_conditional149;
 char* str_504;
 char* str_505;
-char* __result202__;
+char* __result189__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&offset_474, 0, sizeof(int));
 memset(&ovec_max_475, 0, sizeof(int));
@@ -7523,182 +7416,168 @@ memset(&block_result_502, 0, sizeof(char*));
 memset(&str_503, 0, sizeof(char*));
 memset(&str_504, 0, sizeof(char*));
 memset(&str_505, 0, sizeof(char*));
-    # 1992 "libneo-c-str-gc.c"
+    # 1951 "libneo-c-str-gc.c"
     offset_474=0;
-    # 1994 "libneo-c-str-gc.c"
+    # 1953 "libneo-c-str-gc.c"
     ovec_max_475=16;
-    # 1995 "libneo-c-str-gc.c"
+    # 1954 "libneo-c-str-gc.c"
     int start_476[ovec_max_475];
     memset(&start_476, 0, sizeof(int)    *(ovec_max_475)    );
-    # 1996 "libneo-c-str-gc.c"
+    # 1955 "libneo-c-str-gc.c"
     int end_477[ovec_max_475];
     memset(&end_477, 0, sizeof(int)    *(ovec_max_475)    );
-    # 1997 "libneo-c-str-gc.c"
+    # 1956 "libneo-c-str-gc.c"
     int ovec_value_478[ovec_max_475*3];
     memset(&ovec_value_478, 0, sizeof(int)    *(ovec_max_475*3)    );
-    # 1999 "libneo-c-str-gc.c"
-    # 2000 "libneo-c-str-gc.c"
-    # 2002 "libneo-c-str-gc.c"
+    # 1958 "libneo-c-str-gc.c"
+    # 1959 "libneo-c-str-gc.c"
+    # 1961 "libneo-c-str-gc.c"
     options_481=reg->options;
-    # 2003 "libneo-c-str-gc.c"
+    # 1962 "libneo-c-str-gc.c"
     str_482=reg->str;
-    # 2005 "libneo-c-str-gc.c"
+    # 1964 "libneo-c-str-gc.c"
     re_483=reg->re;
-    # 2007 "libneo-c-str-gc.c"
-    result_484=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-str-gc.c", 2007, "buffer"));
-    # 2009 "libneo-c-str-gc.c"
+    # 1966 "libneo-c-str-gc.c"
+    result_484=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "libneo-c-str-gc.c", 1966, "buffer"));
+    # 1968 "libneo-c-str-gc.c"
     n_485=0;
-    # 2113 "libneo-c-str-gc.c"
+    # 2065 "libneo-c-str-gc.c"
     while(_while_condtional23=(_Bool)1,    _while_condtional23) {
-        # 2012 "libneo-c-str-gc.c"
+        # 1971 "libneo-c-str-gc.c"
         options_486=2097152;
-        # 2013 "libneo-c-str-gc.c"
+        # 1972 "libneo-c-str-gc.c"
         len_487=strlen(self);
-        # 2014 "libneo-c-str-gc.c"
+        # 1973 "libneo-c-str-gc.c"
         regex_result_488=pcre_exec(re_483,(struct pcre_extra*)0,self,len_487,offset_474,options_486,ovec_value_478,ovec_max_475*3);
-        # 2019 "libneo-c-str-gc.c"
+        # 1978 "libneo-c-str-gc.c"
         for(        i_489=0;        i_489<ovec_max_475;        i_489++        ){
-            # 2017 "libneo-c-str-gc.c"
+            # 1976 "libneo-c-str-gc.c"
             start_476[i_489]=ovec_value_478[i_489*2];
         }
-        # 2024 "libneo-c-str-gc.c"
+        # 1983 "libneo-c-str-gc.c"
         for(        i_490=0;        i_490<ovec_max_475;        i_490++        ){
-            # 2020 "libneo-c-str-gc.c"
+            # 1979 "libneo-c-str-gc.c"
             end_477[i_490]=ovec_value_478[i_490*2+1];
         }
-        # 2111 "libneo-c-str-gc.c"
-        # 2024 "libneo-c-str-gc.c"
-        if(_if_conditional153=regex_result_488==1,        _if_conditional153) {
-            # 2025 "libneo-c-str-gc.c"
+        # 2063 "libneo-c-str-gc.c"
+        # 1983 "libneo-c-str-gc.c"
+        if(_if_conditional142=regex_result_488==1,        _if_conditional142) {
+            # 1984 "libneo-c-str-gc.c"
             n_485++;
-            # 2026 "libneo-c-str-gc.c"
+            # 1985 "libneo-c-str-gc.c"
             str_491=charp_substring(self,offset_474,start_476[0]);
-            # 2028 "libneo-c-str-gc.c"
+            # 1987 "libneo-c-str-gc.c"
             buffer_append_str(result_484,str_491);
-            # 2030 "libneo-c-str-gc.c"
-            group_strings_492=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 2030, "list$1charph"));
-            # 2032 "libneo-c-str-gc.c"
+            # 1989 "libneo-c-str-gc.c"
+            group_strings_492=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 1989, "list$1charph"));
+            # 1991 "libneo-c-str-gc.c"
             list$1charph_push_back(group_strings_492,charp_substring(self,start_476[0],end_477[0]));
-            # 2034 "libneo-c-str-gc.c"
+            # 1993 "libneo-c-str-gc.c"
             match_string_493=charp_substring(self,start_476[0],end_477[0]);
-            # 2036 "libneo-c-str-gc.c"
+            # 1995 "libneo-c-str-gc.c"
             block_result_494=block(parent,match_string_493,group_strings_492);
-            # 2042 "libneo-c-str-gc.c"
-            # 2038 "libneo-c-str-gc.c"
-            if(_if_conditional154=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,            _if_conditional154) {
-                # 2039 "libneo-c-str-gc.c"
-                __result200__ = __result_obj__ = buffer_to_string(result_484);
-                return __result200__;
-            }
-            # 2042 "libneo-c-str-gc.c"
+            # 1997 "libneo-c-str-gc.c"
             buffer_append_str(result_484,block_result_494);
-            # 2051 "libneo-c-str-gc.c"
-            # 2044 "libneo-c-str-gc.c"
-            if(_if_conditional155=offset_474==end_477[0],            _if_conditional155) {
-                # 2045 "libneo-c-str-gc.c"
+            # 2006 "libneo-c-str-gc.c"
+            # 1999 "libneo-c-str-gc.c"
+            if(_if_conditional143=offset_474==end_477[0],            _if_conditional143) {
+                # 2000 "libneo-c-str-gc.c"
                 offset_474++;
             }
             else {
-                # 2048 "libneo-c-str-gc.c"
+                # 2003 "libneo-c-str-gc.c"
                 offset_474=end_477[0];
             }
-            # 2057 "libneo-c-str-gc.c"
-            # 2051 "libneo-c-str-gc.c"
-            if(_if_conditional156=!reg->global,            _if_conditional156) {
-                # 2052 "libneo-c-str-gc.c"
+            # 2012 "libneo-c-str-gc.c"
+            # 2006 "libneo-c-str-gc.c"
+            if(_if_conditional144=!reg->global,            _if_conditional144) {
+                # 2007 "libneo-c-str-gc.c"
                 str_495=charp_substring(self,offset_474,-1);
-                # 2053 "libneo-c-str-gc.c"
+                # 2008 "libneo-c-str-gc.c"
                 buffer_append_str(result_484,str_495);
-                # 2054 "libneo-c-str-gc.c"
+                # 2009 "libneo-c-str-gc.c"
                 break;
             }
-            # 2062 "libneo-c-str-gc.c"
-            # 2057 "libneo-c-str-gc.c"
-            if(_if_conditional157=n_485==count,            _if_conditional157) {
-                # 2058 "libneo-c-str-gc.c"
+            # 2017 "libneo-c-str-gc.c"
+            # 2012 "libneo-c-str-gc.c"
+            if(_if_conditional145=n_485==count,            _if_conditional145) {
+                # 2013 "libneo-c-str-gc.c"
                 str_496=charp_substring(self,offset_474,-1);
-                # 2059 "libneo-c-str-gc.c"
+                # 2014 "libneo-c-str-gc.c"
                 buffer_append_str(result_484,str_496);
-                # 2060 "libneo-c-str-gc.c"
+                # 2015 "libneo-c-str-gc.c"
                 break;
             }
         }
         else {
-            # 2111 "libneo-c-str-gc.c"
-            # 2064 "libneo-c-str-gc.c"
-            if(_if_conditional158=regex_result_488>1,            _if_conditional158) {
-                # 2065 "libneo-c-str-gc.c"
+            # 2063 "libneo-c-str-gc.c"
+            # 2019 "libneo-c-str-gc.c"
+            if(_if_conditional146=regex_result_488>1,            _if_conditional146) {
+                # 2020 "libneo-c-str-gc.c"
                 n_485++;
-                # 2067 "libneo-c-str-gc.c"
+                # 2022 "libneo-c-str-gc.c"
                 str_497=charp_substring(self,offset_474,start_476[0]);
-                # 2068 "libneo-c-str-gc.c"
+                # 2023 "libneo-c-str-gc.c"
                 buffer_append_str(result_484,str_497);
-                # 2077 "libneo-c-str-gc.c"
-                # 2070 "libneo-c-str-gc.c"
-                if(_if_conditional159=offset_474==end_477[0],                _if_conditional159) {
-                    # 2071 "libneo-c-str-gc.c"
+                # 2032 "libneo-c-str-gc.c"
+                # 2025 "libneo-c-str-gc.c"
+                if(_if_conditional147=offset_474==end_477[0],                _if_conditional147) {
+                    # 2026 "libneo-c-str-gc.c"
                     offset_474++;
                 }
                 else {
-                    # 2074 "libneo-c-str-gc.c"
+                    # 2029 "libneo-c-str-gc.c"
                     offset_474=end_477[0];
                 }
-                # 2077 "libneo-c-str-gc.c"
-                group_strings_498=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 2077, "list$1charph"));
-                # 2084 "libneo-c-str-gc.c"
+                # 2032 "libneo-c-str-gc.c"
+                group_strings_498=list$1charph_initialize((struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "libneo-c-str-gc.c", 2032, "list$1charph"));
+                # 2039 "libneo-c-str-gc.c"
                 for(                i_499=1;                i_499<regex_result_488;                i_499++                ){
-                    # 2080 "libneo-c-str-gc.c"
+                    # 2035 "libneo-c-str-gc.c"
                     match_string_500=charp_substring(self,start_476[i_499],end_477[i_499]);
-                    # 2081 "libneo-c-str-gc.c"
+                    # 2036 "libneo-c-str-gc.c"
                     list$1charph_push_back(group_strings_498,match_string_500);
                 }
-                # 2084 "libneo-c-str-gc.c"
+                # 2039 "libneo-c-str-gc.c"
                 match_string_501=charp_substring(self,start_476[0],end_477[0]);
-                # 2086 "libneo-c-str-gc.c"
+                # 2041 "libneo-c-str-gc.c"
                 block_result_502=block(parent,match_string_501,group_strings_498);
-                # 2091 "libneo-c-str-gc.c"
-                # 2088 "libneo-c-str-gc.c"
-                if(_if_conditional160=((struct sDummyCurrentStack*)parent)->__method_block_result_kind__!=0,                _if_conditional160) {
-                    # 2089 "libneo-c-str-gc.c"
-                    __result201__ = __result_obj__ = buffer_to_string(result_484);
-                    return __result201__;
-                }
-                # 2091 "libneo-c-str-gc.c"
+                # 2043 "libneo-c-str-gc.c"
                 buffer_append_str(result_484,block_result_502);
-                # 2099 "libneo-c-str-gc.c"
-                # 2093 "libneo-c-str-gc.c"
-                if(_if_conditional161=!reg->global,                _if_conditional161) {
-                    # 2094 "libneo-c-str-gc.c"
+                # 2051 "libneo-c-str-gc.c"
+                # 2045 "libneo-c-str-gc.c"
+                if(_if_conditional148=!reg->global,                _if_conditional148) {
+                    # 2046 "libneo-c-str-gc.c"
                     str_503=charp_substring(self,offset_474,-1);
-                    # 2095 "libneo-c-str-gc.c"
+                    # 2047 "libneo-c-str-gc.c"
                     buffer_append_str(result_484,str_503);
-                    # 2096 "libneo-c-str-gc.c"
+                    # 2048 "libneo-c-str-gc.c"
                     break;
                 }
-                # 2104 "libneo-c-str-gc.c"
-                # 2099 "libneo-c-str-gc.c"
-                if(_if_conditional162=n_485==count,                _if_conditional162) {
-                    # 2100 "libneo-c-str-gc.c"
+                # 2056 "libneo-c-str-gc.c"
+                # 2051 "libneo-c-str-gc.c"
+                if(_if_conditional149=n_485==count,                _if_conditional149) {
+                    # 2052 "libneo-c-str-gc.c"
                     str_504=charp_substring(self,offset_474,-1);
-                    # 2101 "libneo-c-str-gc.c"
+                    # 2053 "libneo-c-str-gc.c"
                     buffer_append_str(result_484,str_504);
-                    # 2102 "libneo-c-str-gc.c"
+                    # 2054 "libneo-c-str-gc.c"
                     break;
                 }
             }
             else {
-                # 2107 "libneo-c-str-gc.c"
+                # 2059 "libneo-c-str-gc.c"
                 str_505=charp_substring(self,offset_474,-1);
-                # 2108 "libneo-c-str-gc.c"
+                # 2060 "libneo-c-str-gc.c"
                 buffer_append_str(result_484,str_505);
-                # 2109 "libneo-c-str-gc.c"
+                # 2061 "libneo-c-str-gc.c"
                 break;
             }
         }
     }
-    # 2113 "libneo-c-str-gc.c"
-    __result202__ = __result_obj__ = buffer_to_string(result_484);
-    return __result202__;
+    # 2065 "libneo-c-str-gc.c"
+    __result189__ = __result_obj__ = buffer_to_string(result_484);
+    return __result189__;
 }
 
 unsigned int wchar_tp_get_hash_key(unsigned int* value){
@@ -7706,100 +7585,100 @@ void* __result_obj__;
 int result_506;
 unsigned int* p_507;
 _Bool _while_condtional24;
-unsigned int __result203__;
+unsigned int __result190__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_506, 0, sizeof(int));
 memset(&p_507, 0, sizeof(unsigned int*));
-    # 2118 "libneo-c-str-gc.c"
-    # 2120 "libneo-c-str-gc.c"
+    # 2070 "libneo-c-str-gc.c"
+    # 2072 "libneo-c-str-gc.c"
     result_506=0;
-    # 2121 "libneo-c-str-gc.c"
+    # 2073 "libneo-c-str-gc.c"
     p_507=value;
-    # 2126 "libneo-c-str-gc.c"
+    # 2078 "libneo-c-str-gc.c"
     while(_while_condtional24=*p_507,    _while_condtional24) {
-        # 2123 "libneo-c-str-gc.c"
+        # 2075 "libneo-c-str-gc.c"
         result_506+=(*p_507);
-        # 2124 "libneo-c-str-gc.c"
+        # 2076 "libneo-c-str-gc.c"
         p_507++;
     }
-    # 2126 "libneo-c-str-gc.c"
-    __result203__ = result_506;
-    return __result203__;
+    # 2078 "libneo-c-str-gc.c"
+    __result190__ = result_506;
+    return __result190__;
 }
 
 _Bool wstring_equals(unsigned int* left, unsigned int* right){
 void* __result_obj__;
-_Bool __result205__;
+_Bool __result192__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2137 "libneo-c-str-gc.c"
-    __result205__ = wcscmp(left,right)==0;
-    return __result205__;
+    # 2089 "libneo-c-str-gc.c"
+    __result192__ = wcscmp(left,right)==0;
+    return __result192__;
 }
 
 _Bool wchar_t_operator_equals(unsigned int left, unsigned int right){
 void* __result_obj__;
-_Bool __result207__;
+_Bool __result194__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2147 "libneo-c-str-gc.c"
-    __result207__ = left==right;
-    return __result207__;
+    # 2099 "libneo-c-str-gc.c"
+    __result194__ = left==right;
+    return __result194__;
 }
 
 _Bool wchar_t_operator_not_equals(unsigned int left, unsigned int right){
 void* __result_obj__;
-_Bool __result208__;
+_Bool __result195__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2152 "libneo-c-str-gc.c"
-    __result208__ = left!=right;
-    return __result208__;
+    # 2104 "libneo-c-str-gc.c"
+    __result195__ = left!=right;
+    return __result195__;
 }
 
 unsigned int wchar_t_get_hash_key(unsigned int value){
 void* __result_obj__;
-unsigned int __result209__;
+unsigned int __result196__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2157 "libneo-c-str-gc.c"
-    __result209__ = value;
-    return __result209__;
+    # 2109 "libneo-c-str-gc.c"
+    __result196__ = value;
+    return __result196__;
 }
 
 _Bool wchar_t_equals(unsigned int left, unsigned int right){
 void* __result_obj__;
-_Bool __result210__;
+_Bool __result197__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2162 "libneo-c-str-gc.c"
-    __result210__ = left==right;
-    return __result210__;
+    # 2114 "libneo-c-str-gc.c"
+    __result197__ = left==right;
+    return __result197__;
 }
 
 char* wchar_t_to_string(unsigned int wc){
 void* __result_obj__;
-char* __result211__;
+char* __result198__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2167 "libneo-c-str-gc.c"
-    __result211__ = __result_obj__ = xsprintf("%ls",wc);
-    return __result211__;
+    # 2119 "libneo-c-str-gc.c"
+    __result198__ = __result_obj__ = xsprintf("%ls",wc);
+    return __result198__;
 }
 
 char* string_chomp(char* str){
 void* __result_obj__;
 char* result_508;
-_Bool _if_conditional163;
-char* __result212__;
-char* __result213__;
+_Bool _if_conditional150;
+char* __result199__;
+char* __result200__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_508, 0, sizeof(char*));
-    # 2172 "libneo-c-str-gc.c"
+    # 2124 "libneo-c-str-gc.c"
     result_508=__builtin_string(str);
-    # 2178 "libneo-c-str-gc.c"
-    # 2174 "libneo-c-str-gc.c"
-    if(_if_conditional163=result_508[string_length(result_508)-1]==10,    _if_conditional163) {
-        # 2175 "libneo-c-str-gc.c"
-        __result212__ = __result_obj__ = string_substring(result_508,0,-2);
-        return __result212__;
+    # 2130 "libneo-c-str-gc.c"
+    # 2126 "libneo-c-str-gc.c"
+    if(_if_conditional150=result_508[string_length(result_508)-1]==10,    _if_conditional150) {
+        # 2127 "libneo-c-str-gc.c"
+        __result199__ = __result_obj__ = string_substring(result_508,0,-2);
+        return __result199__;
     }
-    # 2178 "libneo-c-str-gc.c"
-    __result213__ = __result_obj__ = result_508;
-    return __result213__;
+    # 2130 "libneo-c-str-gc.c"
+    __result200__ = __result_obj__ = result_508;
+    return __result200__;
 }
 

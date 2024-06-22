@@ -407,10 +407,6 @@ list<string>*% char*::scan_block(char* self, come_regex* reg, void* parent, stri
             
             string str2 = block(parent, str, group_strings);
             
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return result;
-            }
-            
             result.push_back(str2);
 
             if(offset == end[0]) {
@@ -431,10 +427,6 @@ list<string>*% char*::scan_block(char* self, come_regex* reg, void* parent, stri
             }
             
             string str2 = block(parent, str, group_strings);
-            
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return result;
-            }
             
             result.push_back(str2);
 
@@ -498,10 +490,6 @@ list<string>*% char*::scan_block_count(char* self, come_regex* reg, int count, v
             
             string str2 = block(parent, str, group_strings);
             
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return result;
-            }
-            
             result.push_back(str2);
 
             if(offset == end[0]) {
@@ -527,10 +515,6 @@ list<string>*% char*::scan_block_count(char* self, come_regex* reg, int count, v
             }
             
             string str2 = block(parent, str, group_strings);
-            
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return result;
-            }
             
             result.push_back(str2);
 
@@ -596,10 +580,6 @@ list<string>*% char*::split_block(char* self, come_regex* reg, void* parent, str
             list<string>*% match_strings = new list<string>.initialize();
             string str2 = block(parent, str, match_strings);
             
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return result;
-            }
-            
             result.push_back(str2);
 
             if(offset == end[0]) {
@@ -627,10 +607,6 @@ list<string>*% char*::split_block(char* self, come_regex* reg, void* parent, str
             }
             
             string str2 = block(parent, str, match_strings);
-            
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return result;
-            }
             result.push_back(str2);
         }
         /// no match ///
@@ -645,9 +621,6 @@ list<string>*% char*::split_block(char* self, come_regex* reg, void* parent, str
         list<string>*% match_strings = new list<string>.initialize();
         string str2 = block(parent, str, match_strings);
         
-        if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-            return result;
-        }
         result.push_back(str2);
     }
 
@@ -696,9 +669,6 @@ list<string>*% char*::split_block_count(char* self, come_regex* reg, int count, 
             list<string>*% match_strings = new list<string>.initialize();
             string str2 = block(parent, str, match_strings);
             
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return result;
-            }
             result.push_back(str2);
 
             if(offset == end[0]) {
@@ -726,10 +696,6 @@ list<string>*% char*::split_block_count(char* self, come_regex* reg, int count, 
             }
             
             string str2 = block(parent, str, match_strings);
-            
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return result;
-            }
             
             result.push_back(str2);
         }
@@ -1924,10 +1890,6 @@ string char*::sub_block(char* self, come_regex* reg, void* parent, string (*bloc
             
             string block_result = block(parent, match_string, group_strings);
             
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return result.to_string();
-            }
-            
             result.append_str(block_result);
 
             if(offset == end[0]) {
@@ -1966,9 +1928,6 @@ string char*::sub_block(char* self, come_regex* reg, void* parent, string (*bloc
             
             string block_result = block(parent, match_string, group_strings);
             
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return result.to_string();
-            }
             result.append_str(block_result);
 
             if(!reg.global) {
@@ -2035,10 +1994,6 @@ string char*::sub_block_count(char* self, come_regex* reg, int count, void* pare
             
             string block_result = block(parent, match_string, group_strings);
             
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return result.to_string();
-            }
-            
             result.append_str(block_result);
 
             if(offset == end[0]) {
@@ -2085,9 +2040,6 @@ string char*::sub_block_count(char* self, come_regex* reg, int count, void* pare
             
             string block_result = block(parent, match_string, group_strings);
             
-            if(((sDummyCurrentStack*)parent)->__method_block_result_kind__ != 0) {
-                return result.to_string();
-            }
             result.append_str(block_result);
 
             if(!reg.global) {
