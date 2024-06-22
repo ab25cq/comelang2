@@ -1774,11 +1774,13 @@ struct sNode* top_level_v99(char* buf, char* head, int head_sline, struct sInfo*
 
 struct sNode* expression_node_v99(struct sInfo* info);
 
+struct sNode* expression_node_v98(struct sInfo* info);
+
 int transpile_v5(struct sInfo* info);
 
 void parse_sharp_v5(struct sInfo* info);
 
-struct sNode* expression_node_v97(struct sInfo* info);
+struct sNode* expression_node_v96(struct sInfo* info);
 
 struct sNode* parse_tuple(struct sInfo* info);
 
@@ -2041,7 +2043,7 @@ struct sNode* post_position_operator_v5(struct sNode* node, struct sInfo* info);
 
 void backtrace_parse_type(struct sInfo* info);
 
-struct sNode* expression_node_v98(struct sInfo* info);
+struct sNode* expression_node_v97(struct sInfo* info);
 
 static void sReturnNode_finalize(struct sReturnNode* self);
 static struct sReturnNode* sReturnNode_clone(struct sReturnNode* self);
@@ -9732,7 +9734,7 @@ right_value307 = (void*)0;
     info->no_output_err=(_Bool)0;
 }
 
-struct sNode* expression_node_v98(struct sInfo* info){
+struct sNode* expression_node_v97(struct sInfo* info){
 void* __result_obj__;
 _Bool _if_conditional329;
 _Bool _if_conditional330;
@@ -10732,7 +10734,7 @@ right_value409 = (void*)0;
         }
         else {
             # 1371 "05call.c"
-            node_316=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value408=expression_node_v97(info))));
+            node_316=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value408=expression_node_v96(info))));
             if(right_value408) { right_value408 = come_decrement_ref_count2(right_value408, ((struct sNode*)right_value408)->finalize, ((struct sNode*)right_value408)->_protocol_obj, 1, 0, 0, __result_obj__); } 
             # 1373 "05call.c"
             __dec_obj166=node_316;

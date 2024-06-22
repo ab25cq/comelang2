@@ -445,8 +445,6 @@ sNode*% parse_normal_block(sInfo* info=info);
 bool check_assign_type(char* msg, sType* left_type, sType* right_type, CVALUE* come_value, bool check_no_pointer=false, bool print_err_msg=true, sInfo* info=info);
 void cast_type(sType* left_type, sType* right_type, CVALUE* come_value, sInfo* info=info);
 string parse_attribute(sInfo* info=info);
-void come_init() version 5;
-void come_final() version 5;
 sNode*% get_number(bool minus, sInfo* info);
 sNode*% get_oct_number(sInfo* info);
 sNode*% get_hex_number(bool minus, sInfo* info);
@@ -483,6 +481,7 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 99
 sNode*% expression_node(sInfo* info=info) version 1;
 sNode*% expression_node(sInfo* info=info) version 99;
 sNode*% expression_node(sInfo* info=info) version 98;
+sNode*% expression_node(sInfo* info=info) version 97;
 
 int transpile(sInfo* info) version 5;
 void parse_sharp(sInfo* info=info) version 5;
@@ -494,7 +493,7 @@ string create_method_name_using_class(sClass* obj_class, bool no_pointer_name, c
 /////////////////////////////////////////////////////////////////////
 /// 06str.c ///
 /////////////////////////////////////////////////////////////////////
-sNode*% expression_node(sInfo* info=info) version 97;
+sNode*% expression_node(sInfo* info=info) version 96;
 sNode*% parse_tuple(sInfo* info);
 
 /////////////////////////////////////////////////////////////////////

@@ -1742,9 +1742,9 @@ struct sNode* top_level_v99(char* buf, char* head, int head_sline, struct sInfo*
 
 struct sNode* expression_node_v1(struct sInfo* info);
 
-struct sNode* expression_node_v99(struct sInfo* info);
-
 struct sNode* expression_node_v98(struct sInfo* info);
+
+struct sNode* expression_node_v97(struct sInfo* info);
 
 int transpile_v5(struct sInfo* info);
 
@@ -1758,7 +1758,7 @@ char* create_method_name(struct sType* obj_type, _Bool no_pointer_name, char* fu
 
 char* create_method_name_using_class(struct sClass* obj_class, _Bool no_pointer_name, char* fun_name, struct sInfo* info, _Bool array_equal_pointer);
 
-struct sNode* expression_node_v97(struct sInfo* info);
+struct sNode* expression_node_v96(struct sInfo* info);
 
 struct sNode* parse_tuple(struct sInfo* info);
 
@@ -1927,14 +1927,14 @@ _Bool sDoubleNode_compile(struct sDoubleNode* self, struct sInfo* info);
 
 _Bool sDoubleNode_terminated(struct sDoubleNode* self);
 
+struct sNode* create_int_node(int value, struct sInfo* info);
+
 struct sNode* get_number(_Bool minus, struct sInfo* info);
 
 static void sFloatNode_finalize(struct sFloatNode* self);
 static struct sFloatNode* sFloatNode_clone(struct sFloatNode* self);
 static void sDoubleNode_finalize(struct sDoubleNode* self);
 static struct sDoubleNode* sDoubleNode_clone(struct sDoubleNode* self);
-struct sNode* create_int_node(int value, struct sInfo* info);
-
 struct sNode* get_hex_number(_Bool minus, struct sInfo* info);
 
 struct sNode* get_oct_number(struct sInfo* info);
@@ -1947,6 +1947,8 @@ static void sLongNode_finalize(struct sLongNode* self);
 static struct sLongNode* sLongNode_clone(struct sLongNode* self);
 static void sIntNode_finalize(struct sIntNode* self);
 static struct sIntNode* sIntNode_clone(struct sIntNode* self);
+struct sNode* expression_node_v99(struct sInfo* info);
+
 // inline function
 static inline _Bool die(char* msg){
 void* __result_obj__;
@@ -4344,374 +4346,386 @@ memset(&__result_obj__, 0, sizeof(void*));
     return __result76__;
 }
 
-struct sNode* get_number(_Bool minus, struct sInfo* info){
+struct sNode* create_int_node(int value, struct sInfo* info){
 void* __result_obj__;
-const int buf_size_62=128;
-char* p2_64;
-_Bool _if_conditional47;
-_Bool _if_conditional48;
-_Bool _while_condtional10;
-_Bool _if_conditional49;
-_Bool _if_conditional50;
-char c_65;
-_Bool _if_conditional51;
-_Bool _if_conditional52;
-_Bool _while_condtional11;
-_Bool _if_conditional53;
-_Bool _if_conditional54;
-_Bool _if_conditional55;
-_Bool _if_conditional56;
-_Bool _if_conditional57;
-_Bool _if_conditional58;
-_Bool _if_conditional59;
-_Bool _if_conditional60;
-_Bool _while_condtional12;
-_Bool _if_conditional61;
-_Bool _if_conditional62;
-_Bool _if_conditional63;
 void* right_value118;
 void* right_value119;
 struct sNode* _inf_value1;
-struct sFloatNode* _inf_obj_value1;
+struct sIntNode* _inf_obj_value1;
 void* right_value122;
 struct sNode* __result79__;
-_Bool _if_conditional69;
+memset(&__result_obj__, 0, sizeof(void*));
+right_value118 = (void*)0;
+right_value119 = (void*)0;
+right_value122 = (void*)0;
+    # 233 "05number.c"
+    _inf_value1=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 233, "struct sNode");
+    _inf_obj_value1=come_increment_ref_count(((struct sIntNode*)(right_value119=sIntNode_initialize((struct sIntNode*)come_increment_ref_count(((struct sIntNode*)(right_value118=(struct sIntNode*)come_calloc(1, sizeof(struct sIntNode)*(1), "05number.c", 233, "sIntNode")))),value,info))));
+    _inf_value1->_protocol_obj=_inf_obj_value1;
+    _inf_value1->finalize=(void*)sIntNode_finalize;
+    _inf_value1->clone=(void*)sIntNode_clone;
+    _inf_value1->compile=(void*)sIntNode_compile;
+    _inf_value1->sline=(void*)sNodeBase_sline;
+    _inf_value1->sname=(void*)sNodeBase_sname;
+    _inf_value1->terminated=(void*)sIntNode_terminated;
+    _inf_value1->kind=(void*)sIntNode_kind;
+    __result79__ = __result_obj__ = ((struct sNode*)(right_value122=_inf_value1));
+    come_call_finalizer3(right_value118,sIntNode_finalize, 0, 1, 0, 0, __result_obj__);
+    come_call_finalizer3(right_value119,sIntNode_finalize, 0, 1, 0, 0, __result_obj__);
+    if(right_value122) { right_value122 = come_decrement_ref_count2(right_value122, ((struct sNode*)right_value122)->finalize, ((struct sNode*)right_value122)->_protocol_obj, 1, 0, 0, __result_obj__); } 
+    return __result79__;
+}
+
+struct sNode* get_number(_Bool minus, struct sInfo* info){
+void* __result_obj__;
+const int buf_size_63=128;
+char* p2_65;
+_Bool _if_conditional52;
+_Bool _if_conditional53;
+_Bool _while_condtional10;
+_Bool _if_conditional54;
+_Bool _if_conditional55;
+char c_66;
+_Bool _if_conditional56;
+_Bool _if_conditional57;
+_Bool _while_condtional11;
+_Bool _if_conditional58;
+_Bool _if_conditional59;
+_Bool _if_conditional60;
+_Bool _if_conditional61;
+_Bool _if_conditional62;
+_Bool _if_conditional63;
+_Bool _if_conditional64;
+_Bool _if_conditional65;
+_Bool _while_condtional12;
+_Bool _if_conditional66;
+_Bool _if_conditional67;
+_Bool _if_conditional68;
 void* right_value123;
 void* right_value124;
 struct sNode* _inf_value2;
-struct sDoubleNode* _inf_obj_value2;
+struct sFloatNode* _inf_obj_value2;
 void* right_value127;
 struct sNode* __result82__;
+_Bool _if_conditional74;
 void* right_value128;
 void* right_value129;
 struct sNode* _inf_value3;
 struct sDoubleNode* _inf_obj_value3;
 void* right_value132;
 struct sNode* __result85__;
-_Bool _if_conditional80;
-_Bool _if_conditional81;
-_Bool _if_conditional82;
-unsigned long int lont_69;
-int value2_70;
 void* right_value133;
 void* right_value134;
 struct sNode* _inf_value4;
-struct sULongNode* _inf_obj_value4;
+struct sDoubleNode* _inf_obj_value4;
 void* right_value137;
 struct sNode* __result88__;
-unsigned long int lont_72;
-int value_73;
+_Bool _if_conditional85;
+_Bool _if_conditional86;
+_Bool _if_conditional87;
+unsigned long int lont_70;
+int value2_71;
 void* right_value138;
 void* right_value139;
 struct sNode* _inf_value5;
 struct sULongNode* _inf_obj_value5;
 void* right_value142;
 struct sNode* __result91__;
-unsigned int value_75;
+unsigned long int lont_73;
+int value_74;
 void* right_value143;
 void* right_value144;
 struct sNode* _inf_value6;
-struct sUIntNode* _inf_obj_value6;
+struct sULongNode* _inf_obj_value6;
 void* right_value147;
 struct sNode* __result94__;
-_Bool _if_conditional98;
-_Bool _if_conditional99;
-unsigned long long int value_77;
+unsigned int value_76;
 void* right_value148;
 void* right_value149;
 struct sNode* _inf_value7;
-struct sLongNode* _inf_obj_value7;
+struct sUIntNode* _inf_obj_value7;
 void* right_value152;
 struct sNode* __result97__;
-_Bool _if_conditional105;
-unsigned long long int value_79;
+_Bool _if_conditional103;
+_Bool _if_conditional104;
+unsigned long long int value_78;
 void* right_value153;
 void* right_value154;
 struct sNode* _inf_value8;
-struct sULongNode* _inf_obj_value8;
+struct sLongNode* _inf_obj_value8;
 void* right_value157;
 struct sNode* __result100__;
-unsigned long long int value_81;
+_Bool _if_conditional110;
+unsigned long long int value_80;
 void* right_value158;
 void* right_value159;
 struct sNode* _inf_value9;
-struct sLongNode* _inf_obj_value9;
+struct sULongNode* _inf_obj_value9;
 void* right_value162;
 struct sNode* __result103__;
-unsigned long int lont_83;
-int value_84;
+unsigned long long int value_82;
 void* right_value163;
 void* right_value164;
 struct sNode* _inf_value10;
-struct sIntNode* _inf_obj_value10;
+struct sLongNode* _inf_obj_value10;
 void* right_value167;
 struct sNode* __result106__;
-struct sNode* __result107__;
+unsigned long int lont_84;
+int value_85;
+void* right_value168;
+void* right_value169;
+struct sNode* _inf_value11;
+struct sIntNode* _inf_obj_value11;
+void* right_value172;
+struct sNode* __result109__;
+struct sNode* __result110__;
 memset(&__result_obj__, 0, sizeof(void*));
-memset(&p2_64, 0, sizeof(char*));
-memset(&c_65, 0, sizeof(char));
-right_value118 = (void*)0;
-right_value119 = (void*)0;
-right_value122 = (void*)0;
+memset(&p2_65, 0, sizeof(char*));
+memset(&c_66, 0, sizeof(char));
 right_value123 = (void*)0;
 right_value124 = (void*)0;
 right_value127 = (void*)0;
 right_value128 = (void*)0;
 right_value129 = (void*)0;
 right_value132 = (void*)0;
-memset(&lont_69, 0, sizeof(unsigned long int));
-memset(&value2_70, 0, sizeof(int));
 right_value133 = (void*)0;
 right_value134 = (void*)0;
 right_value137 = (void*)0;
-memset(&lont_72, 0, sizeof(unsigned long int));
-memset(&value_73, 0, sizeof(int));
+memset(&lont_70, 0, sizeof(unsigned long int));
+memset(&value2_71, 0, sizeof(int));
 right_value138 = (void*)0;
 right_value139 = (void*)0;
 right_value142 = (void*)0;
-memset(&value_75, 0, sizeof(unsigned int));
+memset(&lont_73, 0, sizeof(unsigned long int));
+memset(&value_74, 0, sizeof(int));
 right_value143 = (void*)0;
 right_value144 = (void*)0;
 right_value147 = (void*)0;
-memset(&value_77, 0, sizeof(unsigned long long int));
+memset(&value_76, 0, sizeof(unsigned int));
 right_value148 = (void*)0;
 right_value149 = (void*)0;
 right_value152 = (void*)0;
-memset(&value_79, 0, sizeof(unsigned long long int));
+memset(&value_78, 0, sizeof(unsigned long long int));
 right_value153 = (void*)0;
 right_value154 = (void*)0;
 right_value157 = (void*)0;
-memset(&value_81, 0, sizeof(unsigned long long int));
+memset(&value_80, 0, sizeof(unsigned long long int));
 right_value158 = (void*)0;
 right_value159 = (void*)0;
 right_value162 = (void*)0;
-memset(&lont_83, 0, sizeof(unsigned long int));
-memset(&value_84, 0, sizeof(int));
+memset(&value_82, 0, sizeof(unsigned long long int));
 right_value163 = (void*)0;
 right_value164 = (void*)0;
 right_value167 = (void*)0;
-    # 233 "05number.c"
-    # 234 "05number.c"
-    char buf_63[128+1];
-    memset(&buf_63, 0, sizeof(char)    *(128+1)    );
-    # 235 "05number.c"
-    p2_64=buf_63;
+memset(&lont_84, 0, sizeof(unsigned long int));
+memset(&value_85, 0, sizeof(int));
+right_value168 = (void*)0;
+right_value169 = (void*)0;
+right_value172 = (void*)0;
+    # 238 "05number.c"
+    # 239 "05number.c"
+    char buf_64[128+1];
+    memset(&buf_64, 0, sizeof(char)    *(128+1)    );
+    # 240 "05number.c"
+    p2_65=buf_64;
+    # 247 "05number.c"
     # 242 "05number.c"
-    # 237 "05number.c"
     if(minus) {
-        # 238 "05number.c"
-        *p2_64=45;
-        # 239 "05number.c"
-        p2_64++;
+        # 243 "05number.c"
+        *p2_65=45;
+        # 244 "05number.c"
+        p2_65++;
     }
-    # 420 "05number.c"
-    # 242 "05number.c"
-    if(_if_conditional48=xisdigit(*info->p),    _if_conditional48) {
-        # 256 "05number.c"
+    # 425 "05number.c"
+    # 247 "05number.c"
+    if(_if_conditional53=xisdigit(*info->p),    _if_conditional53) {
+        # 261 "05number.c"
         while(_while_condtional10=xisdigit(*info->p)||*info->p==95,        _while_condtional10) {
-            # 252 "05number.c"
-            # 244 "05number.c"
-            if(_if_conditional49=*info->p==95,            _if_conditional49) {
-                # 245 "05number.c"
+            # 257 "05number.c"
+            # 249 "05number.c"
+            if(_if_conditional54=*info->p==95,            _if_conditional54) {
+                # 250 "05number.c"
                 info->p++;
             }
             else {
-                # 248 "05number.c"
-                *p2_64++=*info->p;
-                # 249 "05number.c"
+                # 253 "05number.c"
+                *p2_65++=*info->p;
+                # 254 "05number.c"
                 info->p++;
             }
-            # 256 "05number.c"
-            # 252 "05number.c"
-            if(_if_conditional50=p2_64-buf_63>=buf_size_62,            _if_conditional50) {
-                # 253 "05number.c"
+            # 261 "05number.c"
+            # 257 "05number.c"
+            if(_if_conditional55=p2_65-buf_64>=buf_size_63,            _if_conditional55) {
+                # 258 "05number.c"
                 printf("%s %d: overflow node of number\n",info->sname,info->sline);
-                # 254 "05number.c"
+                # 259 "05number.c"
                 exit(5);
             }
         }
-        # 257 "05number.c"
-        *p2_64=0;
-        # 258 "05number.c"
-        skip_spaces_and_lf(info);
-        # 260 "05number.c"
-        c_65=*(info->p+1);
-        # 414 "05number.c"
         # 262 "05number.c"
-        if(_if_conditional51=*info->p==46&&xisdigit(c_65),        _if_conditional51) {
-            # 263 "05number.c"
-            *p2_64++=*info->p;
+        *p2_65=0;
+        # 263 "05number.c"
+        skip_spaces_and_lf(info);
+        # 265 "05number.c"
+        c_66=*(info->p+1);
+        # 419 "05number.c"
+        # 267 "05number.c"
+        if(_if_conditional56=*info->p==46&&xisdigit(c_66),        _if_conditional56) {
+            # 268 "05number.c"
+            *p2_65++=*info->p;
+            # 275 "05number.c"
             # 270 "05number.c"
-            # 265 "05number.c"
-            if(_if_conditional52=p2_64-buf_63>=buf_size_62,            _if_conditional52) {
-                # 266 "05number.c"
+            if(_if_conditional57=p2_65-buf_64>=buf_size_63,            _if_conditional57) {
+                # 271 "05number.c"
                 printf("%s %d: overflow node of number",info->sname,info->sline);
-                # 267 "05number.c"
+                # 272 "05number.c"
                 exit(11);
             }
-            # 270 "05number.c"
+            # 275 "05number.c"
             info->p++;
-            # 271 "05number.c"
+            # 276 "05number.c"
             skip_spaces_and_lf(info);
-            # 288 "05number.c"
+            # 293 "05number.c"
             while(_while_condtional11=xisdigit(*info->p)||*info->p==95,            _while_condtional11) {
-                # 282 "05number.c"
-                # 274 "05number.c"
-                if(_if_conditional53=*info->p==95,                _if_conditional53) {
-                    # 275 "05number.c"
+                # 287 "05number.c"
+                # 279 "05number.c"
+                if(_if_conditional58=*info->p==95,                _if_conditional58) {
+                    # 280 "05number.c"
                     info->p++;
                 }
                 else {
-                    # 278 "05number.c"
-                    *p2_64++=*info->p;
-                    # 279 "05number.c"
+                    # 283 "05number.c"
+                    *p2_65++=*info->p;
+                    # 284 "05number.c"
                     info->p++;
                 }
-                # 286 "05number.c"
-                # 282 "05number.c"
-                if(_if_conditional54=p2_64-buf_63>=buf_size_62,                _if_conditional54) {
-                    # 283 "05number.c"
+                # 291 "05number.c"
+                # 287 "05number.c"
+                if(_if_conditional59=p2_65-buf_64>=buf_size_63,                _if_conditional59) {
+                    # 288 "05number.c"
                     err_msg(info,"overflow node of number");
-                    # 284 "05number.c"
+                    # 289 "05number.c"
                     exit(2);
                 }
             }
-            # 335 "05number.c"
-            # 288 "05number.c"
-            if(_if_conditional55=*info->p==101,            _if_conditional55) {
-                # 289 "05number.c"
-                *p2_64++=*info->p;
-                # 290 "05number.c"
+            # 340 "05number.c"
+            # 293 "05number.c"
+            if(_if_conditional60=*info->p==101,            _if_conditional60) {
+                # 294 "05number.c"
+                *p2_65++=*info->p;
+                # 295 "05number.c"
                 info->p++;
+                # 302 "05number.c"
                 # 297 "05number.c"
-                # 292 "05number.c"
-                if(_if_conditional56=p2_64-buf_63>=buf_size_62,                _if_conditional56) {
-                    # 293 "05number.c"
+                if(_if_conditional61=p2_65-buf_64>=buf_size_63,                _if_conditional61) {
+                    # 298 "05number.c"
                     err_msg(info,"overflow node of number");
-                    # 294 "05number.c"
+                    # 299 "05number.c"
                     exit(2);
                 }
-                # 320 "05number.c"
-                # 297 "05number.c"
-                if(_if_conditional57=*info->p==43,                _if_conditional57) {
-                    # 298 "05number.c"
-                    *p2_64++=*info->p;
-                    # 299 "05number.c"
+                # 325 "05number.c"
+                # 302 "05number.c"
+                if(_if_conditional62=*info->p==43,                _if_conditional62) {
+                    # 303 "05number.c"
+                    *p2_65++=*info->p;
+                    # 304 "05number.c"
                     info->p++;
-                    # 305 "05number.c"
-                    # 301 "05number.c"
-                    if(_if_conditional58=p2_64-buf_63>=buf_size_62,                    _if_conditional58) {
-                        # 302 "05number.c"
+                    # 310 "05number.c"
+                    # 306 "05number.c"
+                    if(_if_conditional63=p2_65-buf_64>=buf_size_63,                    _if_conditional63) {
+                        # 307 "05number.c"
                         err_msg(info,"overflow node of number");
-                        # 303 "05number.c"
+                        # 308 "05number.c"
                         exit(2);
                     }
                 }
                 else {
-                    # 320 "05number.c"
-                    # 306 "05number.c"
-                    if(_if_conditional59=*info->p==45,                    _if_conditional59) {
-                        # 307 "05number.c"
-                        *p2_64++=*info->p;
-                        # 308 "05number.c"
+                    # 325 "05number.c"
+                    # 311 "05number.c"
+                    if(_if_conditional64=*info->p==45,                    _if_conditional64) {
+                        # 312 "05number.c"
+                        *p2_65++=*info->p;
+                        # 313 "05number.c"
                         info->p++;
-                        # 314 "05number.c"
-                        # 310 "05number.c"
-                        if(_if_conditional60=p2_64-buf_63>=buf_size_62,                        _if_conditional60) {
-                            # 311 "05number.c"
+                        # 319 "05number.c"
+                        # 315 "05number.c"
+                        if(_if_conditional65=p2_65-buf_64>=buf_size_63,                        _if_conditional65) {
+                            # 316 "05number.c"
                             err_msg(info,"overflow node of number");
-                            # 312 "05number.c"
+                            # 317 "05number.c"
                             exit(2);
                         }
                     }
                     else {
-                        # 316 "05number.c"
+                        # 321 "05number.c"
                         err_msg(info,"invalid float value");
-                        # 317 "05number.c"
+                        # 322 "05number.c"
                         exit(2);
                     }
                 }
-                # 333 "05number.c"
+                # 338 "05number.c"
                 while(_while_condtional12=xisdigit(*info->p)||*info->p==95,                _while_condtional12) {
-                    # 329 "05number.c"
-                    # 321 "05number.c"
-                    if(_if_conditional61=*info->p==95,                    _if_conditional61) {
-                        # 322 "05number.c"
+                    # 334 "05number.c"
+                    # 326 "05number.c"
+                    if(_if_conditional66=*info->p==95,                    _if_conditional66) {
+                        # 327 "05number.c"
                         info->p++;
                     }
                     else {
-                        # 325 "05number.c"
-                        *p2_64++=*info->p;
-                        # 326 "05number.c"
+                        # 330 "05number.c"
+                        *p2_65++=*info->p;
+                        # 331 "05number.c"
                         info->p++;
                     }
-                    # 333 "05number.c"
-                    # 329 "05number.c"
-                    if(_if_conditional62=p2_64-buf_63>=buf_size_62,                    _if_conditional62) {
-                        # 330 "05number.c"
+                    # 338 "05number.c"
+                    # 334 "05number.c"
+                    if(_if_conditional67=p2_65-buf_64>=buf_size_63,                    _if_conditional67) {
+                        # 335 "05number.c"
                         err_msg(info,"overflow node of number");
-                        # 331 "05number.c"
+                        # 336 "05number.c"
                         exit(2);
                     }
                 }
             }
-            # 335 "05number.c"
-            *p2_64=0;
-            # 336 "05number.c"
+            # 340 "05number.c"
+            *p2_65=0;
+            # 341 "05number.c"
             skip_spaces_and_lf(info);
-            # 353 "05number.c"
-            # 338 "05number.c"
-            if(_if_conditional63=*info->p==102||*info->p==70,            _if_conditional63) {
-                # 339 "05number.c"
+            # 358 "05number.c"
+            # 343 "05number.c"
+            if(_if_conditional68=*info->p==102||*info->p==70,            _if_conditional68) {
+                # 344 "05number.c"
                 info->p++;
-                # 340 "05number.c"
+                # 345 "05number.c"
                 skip_spaces_and_lf(info);
-                # 342 "05number.c"
-                _inf_value1=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 342, "struct sNode");
-                _inf_obj_value1=come_increment_ref_count(((struct sFloatNode*)(right_value119=sFloatNode_initialize((struct sFloatNode*)come_increment_ref_count(((struct sFloatNode*)(right_value118=(struct sFloatNode*)come_calloc(1, sizeof(struct sFloatNode)*(1), "05number.c", 342, "sFloatNode")))),strtof(buf_63,((void*)0)),info))));
-                _inf_value1->_protocol_obj=_inf_obj_value1;
-                _inf_value1->finalize=(void*)sFloatNode_finalize;
-                _inf_value1->clone=(void*)sFloatNode_clone;
-                _inf_value1->compile=(void*)sFloatNode_compile;
-                _inf_value1->sline=(void*)sNodeBase_sline;
-                _inf_value1->sname=(void*)sNodeBase_sname;
-                _inf_value1->terminated=(void*)sFloatNode_terminated;
-                _inf_value1->kind=(void*)sFloatNode_kind;
-                __result79__ = __result_obj__ = ((struct sNode*)(right_value122=_inf_value1));
-                come_call_finalizer3(right_value118,sFloatNode_finalize, 0, 1, 0, 0, __result_obj__);
-                come_call_finalizer3(right_value119,sFloatNode_finalize, 0, 1, 0, 0, __result_obj__);
-                if(right_value122) { right_value122 = come_decrement_ref_count2(right_value122, ((struct sNode*)right_value122)->finalize, ((struct sNode*)right_value122)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                return __result79__;
+                # 347 "05number.c"
+                _inf_value2=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 347, "struct sNode");
+                _inf_obj_value2=come_increment_ref_count(((struct sFloatNode*)(right_value124=sFloatNode_initialize((struct sFloatNode*)come_increment_ref_count(((struct sFloatNode*)(right_value123=(struct sFloatNode*)come_calloc(1, sizeof(struct sFloatNode)*(1), "05number.c", 347, "sFloatNode")))),strtof(buf_64,((void*)0)),info))));
+                _inf_value2->_protocol_obj=_inf_obj_value2;
+                _inf_value2->finalize=(void*)sFloatNode_finalize;
+                _inf_value2->clone=(void*)sFloatNode_clone;
+                _inf_value2->compile=(void*)sFloatNode_compile;
+                _inf_value2->sline=(void*)sNodeBase_sline;
+                _inf_value2->sname=(void*)sNodeBase_sname;
+                _inf_value2->terminated=(void*)sFloatNode_terminated;
+                _inf_value2->kind=(void*)sFloatNode_kind;
+                __result82__ = __result_obj__ = ((struct sNode*)(right_value127=_inf_value2));
+                come_call_finalizer3(right_value123,sFloatNode_finalize, 0, 1, 0, 0, __result_obj__);
+                come_call_finalizer3(right_value124,sFloatNode_finalize, 0, 1, 0, 0, __result_obj__);
+                if(right_value127) { right_value127 = come_decrement_ref_count2(right_value127, ((struct sNode*)right_value127)->finalize, ((struct sNode*)right_value127)->_protocol_obj, 1, 0, 0, __result_obj__); } 
+                return __result82__;
             }
             else {
-                # 353 "05number.c"
-                # 344 "05number.c"
-                if(_if_conditional69=*info->p==108||*info->p==76,                _if_conditional69) {
-                    # 345 "05number.c"
+                # 358 "05number.c"
+                # 349 "05number.c"
+                if(_if_conditional74=*info->p==108||*info->p==76,                _if_conditional74) {
+                    # 350 "05number.c"
                     info->p++;
-                    # 346 "05number.c"
-                    skip_spaces_and_lf(info);
-                    # 348 "05number.c"
-                    _inf_value2=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 348, "struct sNode");
-                    _inf_obj_value2=come_increment_ref_count(((struct sDoubleNode*)(right_value124=sDoubleNode_initialize((struct sDoubleNode*)come_increment_ref_count(((struct sDoubleNode*)(right_value123=(struct sDoubleNode*)come_calloc(1, sizeof(struct sDoubleNode)*(1), "05number.c", 348, "sDoubleNode")))),strtod(buf_63,((void*)0)),info))));
-                    _inf_value2->_protocol_obj=_inf_obj_value2;
-                    _inf_value2->finalize=(void*)sDoubleNode_finalize;
-                    _inf_value2->clone=(void*)sDoubleNode_clone;
-                    _inf_value2->compile=(void*)sDoubleNode_compile;
-                    _inf_value2->sline=(void*)sNodeBase_sline;
-                    _inf_value2->sname=(void*)sNodeBase_sname;
-                    _inf_value2->terminated=(void*)sDoubleNode_terminated;
-                    _inf_value2->kind=(void*)sDoubleNode_kind;
-                    __result82__ = __result_obj__ = ((struct sNode*)(right_value127=_inf_value2));
-                    come_call_finalizer3(right_value123,sDoubleNode_finalize, 0, 1, 0, 0, __result_obj__);
-                    come_call_finalizer3(right_value124,sDoubleNode_finalize, 0, 1, 0, 0, __result_obj__);
-                    if(right_value127) { right_value127 = come_decrement_ref_count2(right_value127, ((struct sNode*)right_value127)->finalize, ((struct sNode*)right_value127)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                    return __result82__;
-                }
-                else {
                     # 351 "05number.c"
-                    _inf_value3=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 351, "struct sNode");
-                    _inf_obj_value3=come_increment_ref_count(((struct sDoubleNode*)(right_value129=sDoubleNode_initialize((struct sDoubleNode*)come_increment_ref_count(((struct sDoubleNode*)(right_value128=(struct sDoubleNode*)come_calloc(1, sizeof(struct sDoubleNode)*(1), "05number.c", 351, "sDoubleNode")))),strtod(buf_63,((void*)0)),info))));
+                    skip_spaces_and_lf(info);
+                    # 353 "05number.c"
+                    _inf_value3=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 353, "struct sNode");
+                    _inf_obj_value3=come_increment_ref_count(((struct sDoubleNode*)(right_value129=sDoubleNode_initialize((struct sDoubleNode*)come_increment_ref_count(((struct sDoubleNode*)(right_value128=(struct sDoubleNode*)come_calloc(1, sizeof(struct sDoubleNode)*(1), "05number.c", 353, "sDoubleNode")))),strtod(buf_64,((void*)0)),info))));
                     _inf_value3->_protocol_obj=_inf_obj_value3;
                     _inf_value3->finalize=(void*)sDoubleNode_finalize;
                     _inf_value3->clone=(void*)sDoubleNode_clone;
@@ -4726,57 +4740,54 @@ right_value167 = (void*)0;
                     if(right_value132) { right_value132 = come_decrement_ref_count2(right_value132, ((struct sNode*)right_value132)->finalize, ((struct sNode*)right_value132)->_protocol_obj, 1, 0, 0, __result_obj__); } 
                     return __result85__;
                 }
+                else {
+                    # 356 "05number.c"
+                    _inf_value4=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 356, "struct sNode");
+                    _inf_obj_value4=come_increment_ref_count(((struct sDoubleNode*)(right_value134=sDoubleNode_initialize((struct sDoubleNode*)come_increment_ref_count(((struct sDoubleNode*)(right_value133=(struct sDoubleNode*)come_calloc(1, sizeof(struct sDoubleNode)*(1), "05number.c", 356, "sDoubleNode")))),strtod(buf_64,((void*)0)),info))));
+                    _inf_value4->_protocol_obj=_inf_obj_value4;
+                    _inf_value4->finalize=(void*)sDoubleNode_finalize;
+                    _inf_value4->clone=(void*)sDoubleNode_clone;
+                    _inf_value4->compile=(void*)sDoubleNode_compile;
+                    _inf_value4->sline=(void*)sNodeBase_sline;
+                    _inf_value4->sname=(void*)sNodeBase_sname;
+                    _inf_value4->terminated=(void*)sDoubleNode_terminated;
+                    _inf_value4->kind=(void*)sDoubleNode_kind;
+                    __result88__ = __result_obj__ = ((struct sNode*)(right_value137=_inf_value4));
+                    come_call_finalizer3(right_value133,sDoubleNode_finalize, 0, 1, 0, 0, __result_obj__);
+                    come_call_finalizer3(right_value134,sDoubleNode_finalize, 0, 1, 0, 0, __result_obj__);
+                    if(right_value137) { right_value137 = come_decrement_ref_count2(right_value137, ((struct sNode*)right_value137)->finalize, ((struct sNode*)right_value137)->_protocol_obj, 1, 0, 0, __result_obj__); } 
+                    return __result88__;
+                }
             }
         }
         else {
-            # 414 "05number.c"
-            # 354 "05number.c"
-            if(_if_conditional80=*info->p==117||*info->p==85,            _if_conditional80) {
-                # 356 "05number.c"
+            # 419 "05number.c"
+            # 359 "05number.c"
+            if(_if_conditional85=*info->p==117||*info->p==85,            _if_conditional85) {
+                # 361 "05number.c"
                 info->p++;
-                # 357 "05number.c"
+                # 362 "05number.c"
                 skip_spaces_and_lf(info);
-                # 382 "05number.c"
-                # 359 "05number.c"
-                if(_if_conditional81=*info->p==76||*info->p==108,                _if_conditional81) {
-                    # 361 "05number.c"
+                # 387 "05number.c"
+                # 364 "05number.c"
+                if(_if_conditional86=*info->p==76||*info->p==108,                _if_conditional86) {
+                    # 366 "05number.c"
                     info->p++;
-                    # 362 "05number.c"
+                    # 367 "05number.c"
                     skip_spaces_and_lf(info);
-                    # 377 "05number.c"
-                    # 364 "05number.c"
-                    if(_if_conditional82=*info->p==76||*info->p==108,                    _if_conditional82) {
-                        # 366 "05number.c"
-                        info->p++;
-                        # 367 "05number.c"
-                        skip_spaces_and_lf(info);
-                        # 369 "05number.c"
-                        # 369 "05number.c"
-                        value2_70=strtoull(buf_63,((void*)0),0);
+                    # 382 "05number.c"
+                    # 369 "05number.c"
+                    if(_if_conditional87=*info->p==76||*info->p==108,                    _if_conditional87) {
                         # 371 "05number.c"
-                        _inf_value4=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 371, "struct sNode");
-                        _inf_obj_value4=come_increment_ref_count(((struct sULongNode*)(right_value134=sULongNode_initialize((struct sULongNode*)come_increment_ref_count(((struct sULongNode*)(right_value133=(struct sULongNode*)come_calloc(1, sizeof(struct sULongNode)*(1), "05number.c", 371, "sULongNode")))),value2_70,info))));
-                        _inf_value4->_protocol_obj=_inf_obj_value4;
-                        _inf_value4->finalize=(void*)sULongNode_finalize;
-                        _inf_value4->clone=(void*)sULongNode_clone;
-                        _inf_value4->compile=(void*)sULongNode_compile;
-                        _inf_value4->sline=(void*)sNodeBase_sline;
-                        _inf_value4->sname=(void*)sNodeBase_sname;
-                        _inf_value4->terminated=(void*)sULongNode_terminated;
-                        _inf_value4->kind=(void*)sULongNode_kind;
-                        __result88__ = __result_obj__ = ((struct sNode*)(right_value137=_inf_value4));
-                        come_call_finalizer3(right_value133,sULongNode_finalize, 0, 1, 0, 0, __result_obj__);
-                        come_call_finalizer3(right_value134,sULongNode_finalize, 0, 1, 0, 0, __result_obj__);
-                        if(right_value137) { right_value137 = come_decrement_ref_count2(right_value137, ((struct sNode*)right_value137)->finalize, ((struct sNode*)right_value137)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                        return __result88__;
-                    }
-                    else {
+                        info->p++;
+                        # 372 "05number.c"
+                        skip_spaces_and_lf(info);
                         # 374 "05number.c"
                         # 374 "05number.c"
-                        value_73=strtoull(buf_63,((void*)0),0);
-                        # 375 "05number.c"
-                        _inf_value5=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 375, "struct sNode");
-                        _inf_obj_value5=come_increment_ref_count(((struct sULongNode*)(right_value139=sULongNode_initialize((struct sULongNode*)come_increment_ref_count(((struct sULongNode*)(right_value138=(struct sULongNode*)come_calloc(1, sizeof(struct sULongNode)*(1), "05number.c", 375, "sULongNode")))),value_73,info))));
+                        value2_71=strtoull(buf_64,((void*)0),0);
+                        # 376 "05number.c"
+                        _inf_value5=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 376, "struct sNode");
+                        _inf_obj_value5=come_increment_ref_count(((struct sULongNode*)(right_value139=sULongNode_initialize((struct sULongNode*)come_increment_ref_count(((struct sULongNode*)(right_value138=(struct sULongNode*)come_calloc(1, sizeof(struct sULongNode)*(1), "05number.c", 376, "sULongNode")))),value2_71,info))));
                         _inf_value5->_protocol_obj=_inf_obj_value5;
                         _inf_value5->finalize=(void*)sULongNode_finalize;
                         _inf_value5->clone=(void*)sULongNode_clone;
@@ -4791,153 +4802,174 @@ right_value167 = (void*)0;
                         if(right_value142) { right_value142 = come_decrement_ref_count2(right_value142, ((struct sNode*)right_value142)->finalize, ((struct sNode*)right_value142)->_protocol_obj, 1, 0, 0, __result_obj__); } 
                         return __result91__;
                     }
+                    else {
+                        # 379 "05number.c"
+                        # 379 "05number.c"
+                        value_74=strtoull(buf_64,((void*)0),0);
+                        # 380 "05number.c"
+                        _inf_value6=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 380, "struct sNode");
+                        _inf_obj_value6=come_increment_ref_count(((struct sULongNode*)(right_value144=sULongNode_initialize((struct sULongNode*)come_increment_ref_count(((struct sULongNode*)(right_value143=(struct sULongNode*)come_calloc(1, sizeof(struct sULongNode)*(1), "05number.c", 380, "sULongNode")))),value_74,info))));
+                        _inf_value6->_protocol_obj=_inf_obj_value6;
+                        _inf_value6->finalize=(void*)sULongNode_finalize;
+                        _inf_value6->clone=(void*)sULongNode_clone;
+                        _inf_value6->compile=(void*)sULongNode_compile;
+                        _inf_value6->sline=(void*)sNodeBase_sline;
+                        _inf_value6->sname=(void*)sNodeBase_sname;
+                        _inf_value6->terminated=(void*)sULongNode_terminated;
+                        _inf_value6->kind=(void*)sULongNode_kind;
+                        __result94__ = __result_obj__ = ((struct sNode*)(right_value147=_inf_value6));
+                        come_call_finalizer3(right_value143,sULongNode_finalize, 0, 1, 0, 0, __result_obj__);
+                        come_call_finalizer3(right_value144,sULongNode_finalize, 0, 1, 0, 0, __result_obj__);
+                        if(right_value147) { right_value147 = come_decrement_ref_count2(right_value147, ((struct sNode*)right_value147)->finalize, ((struct sNode*)right_value147)->_protocol_obj, 1, 0, 0, __result_obj__); } 
+                        return __result94__;
+                    }
                 }
                 else {
-                    # 379 "05number.c"
-                    value_75=strtoul(buf_63,((void*)0),0);
-                    # 380 "05number.c"
-                    _inf_value6=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 380, "struct sNode");
-                    _inf_obj_value6=come_increment_ref_count(((struct sUIntNode*)(right_value144=sUIntNode_initialize((struct sUIntNode*)come_increment_ref_count(((struct sUIntNode*)(right_value143=(struct sUIntNode*)come_calloc(1, sizeof(struct sUIntNode)*(1), "05number.c", 380, "sUIntNode")))),value_75,info))));
-                    _inf_value6->_protocol_obj=_inf_obj_value6;
-                    _inf_value6->finalize=(void*)sUIntNode_finalize;
-                    _inf_value6->clone=(void*)sUIntNode_clone;
-                    _inf_value6->compile=(void*)sUIntNode_compile;
-                    _inf_value6->sline=(void*)sNodeBase_sline;
-                    _inf_value6->sname=(void*)sNodeBase_sname;
-                    _inf_value6->terminated=(void*)sUIntNode_terminated;
-                    _inf_value6->kind=(void*)sUIntNode_kind;
-                    __result94__ = __result_obj__ = ((struct sNode*)(right_value147=_inf_value6));
-                    come_call_finalizer3(right_value143,sUIntNode_finalize, 0, 1, 0, 0, __result_obj__);
-                    come_call_finalizer3(right_value144,sUIntNode_finalize, 0, 1, 0, 0, __result_obj__);
-                    if(right_value147) { right_value147 = come_decrement_ref_count2(right_value147, ((struct sNode*)right_value147)->finalize, ((struct sNode*)right_value147)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                    return __result94__;
+                    # 384 "05number.c"
+                    value_76=strtoul(buf_64,((void*)0),0);
+                    # 385 "05number.c"
+                    _inf_value7=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 385, "struct sNode");
+                    _inf_obj_value7=come_increment_ref_count(((struct sUIntNode*)(right_value149=sUIntNode_initialize((struct sUIntNode*)come_increment_ref_count(((struct sUIntNode*)(right_value148=(struct sUIntNode*)come_calloc(1, sizeof(struct sUIntNode)*(1), "05number.c", 385, "sUIntNode")))),value_76,info))));
+                    _inf_value7->_protocol_obj=_inf_obj_value7;
+                    _inf_value7->finalize=(void*)sUIntNode_finalize;
+                    _inf_value7->clone=(void*)sUIntNode_clone;
+                    _inf_value7->compile=(void*)sUIntNode_compile;
+                    _inf_value7->sline=(void*)sNodeBase_sline;
+                    _inf_value7->sname=(void*)sNodeBase_sname;
+                    _inf_value7->terminated=(void*)sUIntNode_terminated;
+                    _inf_value7->kind=(void*)sUIntNode_kind;
+                    __result97__ = __result_obj__ = ((struct sNode*)(right_value152=_inf_value7));
+                    come_call_finalizer3(right_value148,sUIntNode_finalize, 0, 1, 0, 0, __result_obj__);
+                    come_call_finalizer3(right_value149,sUIntNode_finalize, 0, 1, 0, 0, __result_obj__);
+                    if(right_value152) { right_value152 = come_decrement_ref_count2(right_value152, ((struct sNode*)right_value152)->finalize, ((struct sNode*)right_value152)->_protocol_obj, 1, 0, 0, __result_obj__); } 
+                    return __result97__;
                 }
             }
             else {
-                # 414 "05number.c"
-                # 383 "05number.c"
-                if(_if_conditional98=*info->p==76||*info->p==108,                _if_conditional98) {
-                    # 384 "05number.c"
+                # 419 "05number.c"
+                # 388 "05number.c"
+                if(_if_conditional103=*info->p==76||*info->p==108,                _if_conditional103) {
+                    # 389 "05number.c"
                     info->p++;
-                    # 385 "05number.c"
+                    # 390 "05number.c"
                     skip_spaces_and_lf(info);
-                    # 409 "05number.c"
-                    # 387 "05number.c"
-                    if(_if_conditional99=*info->p==76||*info->p==108,                    _if_conditional99) {
-                        # 389 "05number.c"
-                        info->p++;
-                        # 390 "05number.c"
-                        skip_spaces_and_lf(info);
-                        # 392 "05number.c"
-                        value_77=strtoull(buf_63,((void*)0),0);
+                    # 414 "05number.c"
+                    # 392 "05number.c"
+                    if(_if_conditional104=*info->p==76||*info->p==108,                    _if_conditional104) {
                         # 394 "05number.c"
-                        _inf_value7=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 394, "struct sNode");
-                        _inf_obj_value7=come_increment_ref_count(((struct sLongNode*)(right_value149=sLongNode_initialize((struct sLongNode*)come_increment_ref_count(((struct sLongNode*)(right_value148=(struct sLongNode*)come_calloc(1, sizeof(struct sLongNode)*(1), "05number.c", 394, "sLongNode")))),value_77,info))));
-                        _inf_value7->_protocol_obj=_inf_obj_value7;
-                        _inf_value7->finalize=(void*)sLongNode_finalize;
-                        _inf_value7->clone=(void*)sLongNode_clone;
-                        _inf_value7->compile=(void*)sLongNode_compile;
-                        _inf_value7->sline=(void*)sNodeBase_sline;
-                        _inf_value7->sname=(void*)sNodeBase_sname;
-                        _inf_value7->terminated=(void*)sLongNode_terminated;
-                        _inf_value7->kind=(void*)sLongNode_kind;
-                        __result97__ = __result_obj__ = ((struct sNode*)(right_value152=_inf_value7));
-                        come_call_finalizer3(right_value148,sLongNode_finalize, 0, 1, 0, 0, __result_obj__);
-                        come_call_finalizer3(right_value149,sLongNode_finalize, 0, 1, 0, 0, __result_obj__);
-                        if(right_value152) { right_value152 = come_decrement_ref_count2(right_value152, ((struct sNode*)right_value152)->finalize, ((struct sNode*)right_value152)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                        return __result97__;
+                        info->p++;
+                        # 395 "05number.c"
+                        skip_spaces_and_lf(info);
+                        # 397 "05number.c"
+                        value_78=strtoull(buf_64,((void*)0),0);
+                        # 399 "05number.c"
+                        _inf_value8=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 399, "struct sNode");
+                        _inf_obj_value8=come_increment_ref_count(((struct sLongNode*)(right_value154=sLongNode_initialize((struct sLongNode*)come_increment_ref_count(((struct sLongNode*)(right_value153=(struct sLongNode*)come_calloc(1, sizeof(struct sLongNode)*(1), "05number.c", 399, "sLongNode")))),value_78,info))));
+                        _inf_value8->_protocol_obj=_inf_obj_value8;
+                        _inf_value8->finalize=(void*)sLongNode_finalize;
+                        _inf_value8->clone=(void*)sLongNode_clone;
+                        _inf_value8->compile=(void*)sLongNode_compile;
+                        _inf_value8->sline=(void*)sNodeBase_sline;
+                        _inf_value8->sname=(void*)sNodeBase_sname;
+                        _inf_value8->terminated=(void*)sLongNode_terminated;
+                        _inf_value8->kind=(void*)sLongNode_kind;
+                        __result100__ = __result_obj__ = ((struct sNode*)(right_value157=_inf_value8));
+                        come_call_finalizer3(right_value153,sLongNode_finalize, 0, 1, 0, 0, __result_obj__);
+                        come_call_finalizer3(right_value154,sLongNode_finalize, 0, 1, 0, 0, __result_obj__);
+                        if(right_value157) { right_value157 = come_decrement_ref_count2(right_value157, ((struct sNode*)right_value157)->finalize, ((struct sNode*)right_value157)->_protocol_obj, 1, 0, 0, __result_obj__); } 
+                        return __result100__;
                     }
                     else {
-                        # 409 "05number.c"
-                        # 396 "05number.c"
-                        if(_if_conditional105=*info->p==85||*info->p==117,                        _if_conditional105) {
-                            # 398 "05number.c"
-                            info->p++;
-                            # 399 "05number.c"
-                            skip_spaces_and_lf(info);
-                            # 401 "05number.c"
-                            value_79=strtoull(buf_63,((void*)0),0);
+                        # 414 "05number.c"
+                        # 401 "05number.c"
+                        if(_if_conditional110=*info->p==85||*info->p==117,                        _if_conditional110) {
                             # 403 "05number.c"
-                            _inf_value8=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 403, "struct sNode");
-                            _inf_obj_value8=come_increment_ref_count(((struct sULongNode*)(right_value154=sULongNode_initialize((struct sULongNode*)come_increment_ref_count(((struct sULongNode*)(right_value153=(struct sULongNode*)come_calloc(1, sizeof(struct sULongNode)*(1), "05number.c", 403, "sULongNode")))),value_79,info))));
-                            _inf_value8->_protocol_obj=_inf_obj_value8;
-                            _inf_value8->finalize=(void*)sULongNode_finalize;
-                            _inf_value8->clone=(void*)sULongNode_clone;
-                            _inf_value8->compile=(void*)sULongNode_compile;
-                            _inf_value8->sline=(void*)sNodeBase_sline;
-                            _inf_value8->sname=(void*)sNodeBase_sname;
-                            _inf_value8->terminated=(void*)sULongNode_terminated;
-                            _inf_value8->kind=(void*)sULongNode_kind;
-                            __result100__ = __result_obj__ = ((struct sNode*)(right_value157=_inf_value8));
-                            come_call_finalizer3(right_value153,sULongNode_finalize, 0, 1, 0, 0, __result_obj__);
-                            come_call_finalizer3(right_value154,sULongNode_finalize, 0, 1, 0, 0, __result_obj__);
-                            if(right_value157) { right_value157 = come_decrement_ref_count2(right_value157, ((struct sNode*)right_value157)->finalize, ((struct sNode*)right_value157)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                            return __result100__;
-                        }
-                        else {
+                            info->p++;
+                            # 404 "05number.c"
+                            skip_spaces_and_lf(info);
                             # 406 "05number.c"
-                            value_81=strtoull(buf_63,((void*)0),0);
-                            # 407 "05number.c"
-                            _inf_value9=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 407, "struct sNode");
-                            _inf_obj_value9=come_increment_ref_count(((struct sLongNode*)(right_value159=sLongNode_initialize((struct sLongNode*)come_increment_ref_count(((struct sLongNode*)(right_value158=(struct sLongNode*)come_calloc(1, sizeof(struct sLongNode)*(1), "05number.c", 407, "sLongNode")))),value_81,info))));
+                            value_80=strtoull(buf_64,((void*)0),0);
+                            # 408 "05number.c"
+                            _inf_value9=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 408, "struct sNode");
+                            _inf_obj_value9=come_increment_ref_count(((struct sULongNode*)(right_value159=sULongNode_initialize((struct sULongNode*)come_increment_ref_count(((struct sULongNode*)(right_value158=(struct sULongNode*)come_calloc(1, sizeof(struct sULongNode)*(1), "05number.c", 408, "sULongNode")))),value_80,info))));
                             _inf_value9->_protocol_obj=_inf_obj_value9;
-                            _inf_value9->finalize=(void*)sLongNode_finalize;
-                            _inf_value9->clone=(void*)sLongNode_clone;
-                            _inf_value9->compile=(void*)sLongNode_compile;
+                            _inf_value9->finalize=(void*)sULongNode_finalize;
+                            _inf_value9->clone=(void*)sULongNode_clone;
+                            _inf_value9->compile=(void*)sULongNode_compile;
                             _inf_value9->sline=(void*)sNodeBase_sline;
                             _inf_value9->sname=(void*)sNodeBase_sname;
-                            _inf_value9->terminated=(void*)sLongNode_terminated;
-                            _inf_value9->kind=(void*)sLongNode_kind;
+                            _inf_value9->terminated=(void*)sULongNode_terminated;
+                            _inf_value9->kind=(void*)sULongNode_kind;
                             __result103__ = __result_obj__ = ((struct sNode*)(right_value162=_inf_value9));
-                            come_call_finalizer3(right_value158,sLongNode_finalize, 0, 1, 0, 0, __result_obj__);
-                            come_call_finalizer3(right_value159,sLongNode_finalize, 0, 1, 0, 0, __result_obj__);
+                            come_call_finalizer3(right_value158,sULongNode_finalize, 0, 1, 0, 0, __result_obj__);
+                            come_call_finalizer3(right_value159,sULongNode_finalize, 0, 1, 0, 0, __result_obj__);
                             if(right_value162) { right_value162 = come_decrement_ref_count2(right_value162, ((struct sNode*)right_value162)->finalize, ((struct sNode*)right_value162)->_protocol_obj, 1, 0, 0, __result_obj__); } 
                             return __result103__;
+                        }
+                        else {
+                            # 411 "05number.c"
+                            value_82=strtoull(buf_64,((void*)0),0);
+                            # 412 "05number.c"
+                            _inf_value10=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 412, "struct sNode");
+                            _inf_obj_value10=come_increment_ref_count(((struct sLongNode*)(right_value164=sLongNode_initialize((struct sLongNode*)come_increment_ref_count(((struct sLongNode*)(right_value163=(struct sLongNode*)come_calloc(1, sizeof(struct sLongNode)*(1), "05number.c", 412, "sLongNode")))),value_82,info))));
+                            _inf_value10->_protocol_obj=_inf_obj_value10;
+                            _inf_value10->finalize=(void*)sLongNode_finalize;
+                            _inf_value10->clone=(void*)sLongNode_clone;
+                            _inf_value10->compile=(void*)sLongNode_compile;
+                            _inf_value10->sline=(void*)sNodeBase_sline;
+                            _inf_value10->sname=(void*)sNodeBase_sname;
+                            _inf_value10->terminated=(void*)sLongNode_terminated;
+                            _inf_value10->kind=(void*)sLongNode_kind;
+                            __result106__ = __result_obj__ = ((struct sNode*)(right_value167=_inf_value10));
+                            come_call_finalizer3(right_value163,sLongNode_finalize, 0, 1, 0, 0, __result_obj__);
+                            come_call_finalizer3(right_value164,sLongNode_finalize, 0, 1, 0, 0, __result_obj__);
+                            if(right_value167) { right_value167 = come_decrement_ref_count2(right_value167, ((struct sNode*)right_value167)->finalize, ((struct sNode*)right_value167)->_protocol_obj, 1, 0, 0, __result_obj__); } 
+                            return __result106__;
                         }
                     }
                 }
                 else {
-                    # 411 "05number.c"
-                    # 411 "05number.c"
-                    value_84=strtoll(buf_63,((void*)0),0);
-                    # 412 "05number.c"
-                    _inf_value10=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 412, "struct sNode");
-                    _inf_obj_value10=come_increment_ref_count(((struct sIntNode*)(right_value164=sIntNode_initialize((struct sIntNode*)come_increment_ref_count(((struct sIntNode*)(right_value163=(struct sIntNode*)come_calloc(1, sizeof(struct sIntNode)*(1), "05number.c", 412, "sIntNode")))),value_84,info))));
-                    _inf_value10->_protocol_obj=_inf_obj_value10;
-                    _inf_value10->finalize=(void*)sIntNode_finalize;
-                    _inf_value10->clone=(void*)sIntNode_clone;
-                    _inf_value10->compile=(void*)sIntNode_compile;
-                    _inf_value10->sline=(void*)sNodeBase_sline;
-                    _inf_value10->sname=(void*)sNodeBase_sname;
-                    _inf_value10->terminated=(void*)sIntNode_terminated;
-                    _inf_value10->kind=(void*)sIntNode_kind;
-                    __result106__ = __result_obj__ = ((struct sNode*)(right_value167=_inf_value10));
-                    come_call_finalizer3(right_value163,sIntNode_finalize, 0, 1, 0, 0, __result_obj__);
-                    come_call_finalizer3(right_value164,sIntNode_finalize, 0, 1, 0, 0, __result_obj__);
-                    if(right_value167) { right_value167 = come_decrement_ref_count2(right_value167, ((struct sNode*)right_value167)->finalize, ((struct sNode*)right_value167)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                    return __result106__;
+                    # 416 "05number.c"
+                    # 416 "05number.c"
+                    value_85=strtoll(buf_64,((void*)0),0);
+                    # 417 "05number.c"
+                    _inf_value11=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 417, "struct sNode");
+                    _inf_obj_value11=come_increment_ref_count(((struct sIntNode*)(right_value169=sIntNode_initialize((struct sIntNode*)come_increment_ref_count(((struct sIntNode*)(right_value168=(struct sIntNode*)come_calloc(1, sizeof(struct sIntNode)*(1), "05number.c", 417, "sIntNode")))),value_85,info))));
+                    _inf_value11->_protocol_obj=_inf_obj_value11;
+                    _inf_value11->finalize=(void*)sIntNode_finalize;
+                    _inf_value11->clone=(void*)sIntNode_clone;
+                    _inf_value11->compile=(void*)sIntNode_compile;
+                    _inf_value11->sline=(void*)sNodeBase_sline;
+                    _inf_value11->sname=(void*)sNodeBase_sname;
+                    _inf_value11->terminated=(void*)sIntNode_terminated;
+                    _inf_value11->kind=(void*)sIntNode_kind;
+                    __result109__ = __result_obj__ = ((struct sNode*)(right_value172=_inf_value11));
+                    come_call_finalizer3(right_value168,sIntNode_finalize, 0, 1, 0, 0, __result_obj__);
+                    come_call_finalizer3(right_value169,sIntNode_finalize, 0, 1, 0, 0, __result_obj__);
+                    if(right_value172) { right_value172 = come_decrement_ref_count2(right_value172, ((struct sNode*)right_value172)->finalize, ((struct sNode*)right_value172)->_protocol_obj, 1, 0, 0, __result_obj__); } 
+                    return __result109__;
                 }
             }
         }
     }
     else {
-        # 416 "05number.c"
+        # 421 "05number.c"
         err_msg(info,"require digits after + or -");
-        # 417 "05number.c"
+        # 422 "05number.c"
         exit(2);
     }
-    # 420 "05number.c"
-    __result107__ = __result_obj__ = (struct sNode*)((void*)0);
-    return __result107__;
+    # 425 "05number.c"
+    __result110__ = __result_obj__ = (struct sNode*)((void*)0);
+    return __result110__;
 }
 
 static void sFloatNode_finalize(struct sFloatNode* self){
 void* __result_obj__;
-_Bool _if_conditional64;
+_Bool _if_conditional69;
 memset(&__result_obj__, 0, sizeof(void*));
                     # 1 "sFloatNode_finalize"
                     # 0 "sFloatNode_finalize"
-                    if(_if_conditional64=self!=((void*)0)&&self->sname!=((void*)0),                    _if_conditional64) {
+                    if(_if_conditional69=self!=((void*)0)&&self->sname!=((void*)0),                    _if_conditional69) {
                         # 0 "sFloatNode_finalize"
                         self->sname = come_decrement_ref_count2(self->sname, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                     }
@@ -4945,65 +4977,65 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct sFloatNode* sFloatNode_clone(struct sFloatNode* self){
 void* __result_obj__;
-_Bool _if_conditional65;
-struct sFloatNode* __result77__;
-void* right_value120;
-struct sFloatNode* result_66;
-_Bool _if_conditional66;
-_Bool _if_conditional67;
-void* right_value121;
-char* __dec_obj33;
-_Bool _if_conditional68;
-struct sFloatNode* __result78__;
+_Bool _if_conditional70;
+struct sFloatNode* __result80__;
+void* right_value125;
+struct sFloatNode* result_67;
+_Bool _if_conditional71;
+_Bool _if_conditional72;
+void* right_value126;
+char* __dec_obj34;
+_Bool _if_conditional73;
+struct sFloatNode* __result81__;
 memset(&__result_obj__, 0, sizeof(void*));
-right_value120 = (void*)0;
-memset(&result_66, 0, sizeof(struct sFloatNode*));
-right_value121 = (void*)0;
+right_value125 = (void*)0;
+memset(&result_67, 0, sizeof(struct sFloatNode*));
+right_value126 = (void*)0;
                     # 3 "sFloatNode_clone"
                     # 2 "sFloatNode_clone"
-                    if(_if_conditional65=self==(void*)0,                    _if_conditional65) {
+                    if(_if_conditional70=self==(void*)0,                    _if_conditional70) {
                         # 2 "sFloatNode_clone"
-                        __result77__ = __result_obj__ = (void*)0;
-                        return __result77__;
+                        __result80__ = __result_obj__ = (void*)0;
+                        return __result80__;
                     }
                     # 3 "sFloatNode_clone"
-                    result_66=(struct sFloatNode*)come_increment_ref_count(((struct sFloatNode*)(right_value120=(struct sFloatNode*)come_calloc(1, sizeof(struct sFloatNode)*(1), "sFloatNode_clone", 3, "sFloatNode"))));
-                    come_call_finalizer3(right_value120,sFloatNode_finalize, 0, 1, 0, 0, __result_obj__);
+                    result_67=(struct sFloatNode*)come_increment_ref_count(((struct sFloatNode*)(right_value125=(struct sFloatNode*)come_calloc(1, sizeof(struct sFloatNode)*(1), "sFloatNode_clone", 3, "sFloatNode"))));
+                    come_call_finalizer3(right_value125,sFloatNode_finalize, 0, 1, 0, 0, __result_obj__);
                     # 5 "sFloatNode_clone"
                     # 4 "sFloatNode_clone"
-                    if(_if_conditional66=self!=((void*)0),                    _if_conditional66) {
+                    if(_if_conditional71=self!=((void*)0),                    _if_conditional71) {
                         # 4 "sFloatNode_clone"
-                        result_66->sline=self->sline;
+                        result_67->sline=self->sline;
                     }
                     # 6 "sFloatNode_clone"
                     # 5 "sFloatNode_clone"
-                    if(_if_conditional67=self!=((void*)0)&&self->sname!=((void*)0),                    _if_conditional67) {
+                    if(_if_conditional72=self!=((void*)0)&&self->sname!=((void*)0),                    _if_conditional72) {
                         # 5 "sFloatNode_clone"
-                        __dec_obj33=result_66->sname;
-                        result_66->sname=(char*)come_increment_ref_count(((char*)(right_value121=string_clone(self->sname))));
-                        __dec_obj33 = come_decrement_ref_count2(__dec_obj33, (void*)0, (void*)0, 0,0,0, (void*)0);
-                        right_value121 = come_decrement_ref_count2(right_value121, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
+                        __dec_obj34=result_67->sname;
+                        result_67->sname=(char*)come_increment_ref_count(((char*)(right_value126=string_clone(self->sname))));
+                        __dec_obj34 = come_decrement_ref_count2(__dec_obj34, (void*)0, (void*)0, 0,0,0, (void*)0);
+                        right_value126 = come_decrement_ref_count2(right_value126, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                     }
                     # 7 "sFloatNode_clone"
                     # 6 "sFloatNode_clone"
-                    if(_if_conditional68=self!=((void*)0),                    _if_conditional68) {
+                    if(_if_conditional73=self!=((void*)0),                    _if_conditional73) {
                         # 6 "sFloatNode_clone"
-                        result_66->value=self->value;
+                        result_67->value=self->value;
                     }
                     # 7 "sFloatNode_clone"
-                    __result78__ = __result_obj__ = result_66;
-                    come_call_finalizer3(result_66,sFloatNode_finalize, 0, 0, 1, 0, (void*)0);
-                    return __result78__;
-                    come_call_finalizer3(result_66,sFloatNode_finalize, 0, 0, 0, 0, (void*)0);
+                    __result81__ = __result_obj__ = result_67;
+                    come_call_finalizer3(result_67,sFloatNode_finalize, 0, 0, 1, 0, (void*)0);
+                    return __result81__;
+                    come_call_finalizer3(result_67,sFloatNode_finalize, 0, 0, 0, 0, (void*)0);
 }
 
 static void sDoubleNode_finalize(struct sDoubleNode* self){
 void* __result_obj__;
-_Bool _if_conditional75;
+_Bool _if_conditional80;
 memset(&__result_obj__, 0, sizeof(void*));
                         # 1 "sDoubleNode_finalize"
                         # 0 "sDoubleNode_finalize"
-                        if(_if_conditional75=self!=((void*)0)&&self->sname!=((void*)0),                        _if_conditional75) {
+                        if(_if_conditional80=self!=((void*)0)&&self->sname!=((void*)0),                        _if_conditional80) {
                             # 0 "sDoubleNode_finalize"
                             self->sname = come_decrement_ref_count2(self->sname, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         }
@@ -5011,86 +5043,56 @@ memset(&__result_obj__, 0, sizeof(void*));
 
 static struct sDoubleNode* sDoubleNode_clone(struct sDoubleNode* self){
 void* __result_obj__;
-_Bool _if_conditional76;
-struct sDoubleNode* __result83__;
-void* right_value130;
-struct sDoubleNode* result_68;
-_Bool _if_conditional77;
-_Bool _if_conditional78;
-void* right_value131;
-char* __dec_obj35;
-_Bool _if_conditional79;
-struct sDoubleNode* __result84__;
+_Bool _if_conditional81;
+struct sDoubleNode* __result86__;
+void* right_value135;
+struct sDoubleNode* result_69;
+_Bool _if_conditional82;
+_Bool _if_conditional83;
+void* right_value136;
+char* __dec_obj36;
+_Bool _if_conditional84;
+struct sDoubleNode* __result87__;
 memset(&__result_obj__, 0, sizeof(void*));
-right_value130 = (void*)0;
-memset(&result_68, 0, sizeof(struct sDoubleNode*));
-right_value131 = (void*)0;
+right_value135 = (void*)0;
+memset(&result_69, 0, sizeof(struct sDoubleNode*));
+right_value136 = (void*)0;
                         # 3 "sDoubleNode_clone"
                         # 2 "sDoubleNode_clone"
-                        if(_if_conditional76=self==(void*)0,                        _if_conditional76) {
+                        if(_if_conditional81=self==(void*)0,                        _if_conditional81) {
                             # 2 "sDoubleNode_clone"
-                            __result83__ = __result_obj__ = (void*)0;
-                            return __result83__;
+                            __result86__ = __result_obj__ = (void*)0;
+                            return __result86__;
                         }
                         # 3 "sDoubleNode_clone"
-                        result_68=(struct sDoubleNode*)come_increment_ref_count(((struct sDoubleNode*)(right_value130=(struct sDoubleNode*)come_calloc(1, sizeof(struct sDoubleNode)*(1), "sDoubleNode_clone", 3, "sDoubleNode"))));
-                        come_call_finalizer3(right_value130,sDoubleNode_finalize, 0, 1, 0, 0, __result_obj__);
+                        result_69=(struct sDoubleNode*)come_increment_ref_count(((struct sDoubleNode*)(right_value135=(struct sDoubleNode*)come_calloc(1, sizeof(struct sDoubleNode)*(1), "sDoubleNode_clone", 3, "sDoubleNode"))));
+                        come_call_finalizer3(right_value135,sDoubleNode_finalize, 0, 1, 0, 0, __result_obj__);
                         # 5 "sDoubleNode_clone"
                         # 4 "sDoubleNode_clone"
-                        if(_if_conditional77=self!=((void*)0),                        _if_conditional77) {
+                        if(_if_conditional82=self!=((void*)0),                        _if_conditional82) {
                             # 4 "sDoubleNode_clone"
-                            result_68->sline=self->sline;
+                            result_69->sline=self->sline;
                         }
                         # 6 "sDoubleNode_clone"
                         # 5 "sDoubleNode_clone"
-                        if(_if_conditional78=self!=((void*)0)&&self->sname!=((void*)0),                        _if_conditional78) {
+                        if(_if_conditional83=self!=((void*)0)&&self->sname!=((void*)0),                        _if_conditional83) {
                             # 5 "sDoubleNode_clone"
-                            __dec_obj35=result_68->sname;
-                            result_68->sname=(char*)come_increment_ref_count(((char*)(right_value131=string_clone(self->sname))));
-                            __dec_obj35 = come_decrement_ref_count2(__dec_obj35, (void*)0, (void*)0, 0,0,0, (void*)0);
-                            right_value131 = come_decrement_ref_count2(right_value131, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
+                            __dec_obj36=result_69->sname;
+                            result_69->sname=(char*)come_increment_ref_count(((char*)(right_value136=string_clone(self->sname))));
+                            __dec_obj36 = come_decrement_ref_count2(__dec_obj36, (void*)0, (void*)0, 0,0,0, (void*)0);
+                            right_value136 = come_decrement_ref_count2(right_value136, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         }
                         # 7 "sDoubleNode_clone"
                         # 6 "sDoubleNode_clone"
-                        if(_if_conditional79=self!=((void*)0),                        _if_conditional79) {
+                        if(_if_conditional84=self!=((void*)0),                        _if_conditional84) {
                             # 6 "sDoubleNode_clone"
-                            result_68->value=self->value;
+                            result_69->value=self->value;
                         }
                         # 7 "sDoubleNode_clone"
-                        __result84__ = __result_obj__ = result_68;
-                        come_call_finalizer3(result_68,sDoubleNode_finalize, 0, 0, 1, 0, (void*)0);
-                        return __result84__;
-                        come_call_finalizer3(result_68,sDoubleNode_finalize, 0, 0, 0, 0, (void*)0);
-}
-
-struct sNode* create_int_node(int value, struct sInfo* info){
-void* __result_obj__;
-void* right_value168;
-void* right_value169;
-struct sNode* _inf_value11;
-struct sIntNode* _inf_obj_value11;
-void* right_value172;
-struct sNode* __result110__;
-memset(&__result_obj__, 0, sizeof(void*));
-right_value168 = (void*)0;
-right_value169 = (void*)0;
-right_value172 = (void*)0;
-    # 425 "05number.c"
-    _inf_value11=(struct sNode*)come_calloc(1, sizeof(struct sNode), "05number.c", 425, "struct sNode");
-    _inf_obj_value11=come_increment_ref_count(((struct sIntNode*)(right_value169=sIntNode_initialize((struct sIntNode*)come_increment_ref_count(((struct sIntNode*)(right_value168=(struct sIntNode*)come_calloc(1, sizeof(struct sIntNode)*(1), "05number.c", 425, "sIntNode")))),value,info))));
-    _inf_value11->_protocol_obj=_inf_obj_value11;
-    _inf_value11->finalize=(void*)sIntNode_finalize;
-    _inf_value11->clone=(void*)sIntNode_clone;
-    _inf_value11->compile=(void*)sIntNode_compile;
-    _inf_value11->sline=(void*)sNodeBase_sline;
-    _inf_value11->sname=(void*)sNodeBase_sname;
-    _inf_value11->terminated=(void*)sIntNode_terminated;
-    _inf_value11->kind=(void*)sIntNode_kind;
-    __result110__ = __result_obj__ = ((struct sNode*)(right_value172=_inf_value11));
-    come_call_finalizer3(right_value168,sIntNode_finalize, 0, 1, 0, 0, __result_obj__);
-    come_call_finalizer3(right_value169,sIntNode_finalize, 0, 1, 0, 0, __result_obj__);
-    if(right_value172) { right_value172 = come_decrement_ref_count2(right_value172, ((struct sNode*)right_value172)->finalize, ((struct sNode*)right_value172)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-    return __result110__;
+                        __result87__ = __result_obj__ = result_69;
+                        come_call_finalizer3(result_69,sDoubleNode_finalize, 0, 0, 1, 0, (void*)0);
+                        return __result87__;
+                        come_call_finalizer3(result_69,sDoubleNode_finalize, 0, 0, 0, 0, (void*)0);
 }
 
 struct sNode* get_hex_number(_Bool minus, struct sInfo* info){
@@ -6225,5 +6227,161 @@ right_value276 = (void*)0;
                 come_call_finalizer3(result_127,sIntNode_finalize, 0, 0, 1, 0, (void*)0);
                 return __result173__;
                 come_call_finalizer3(result_127,sIntNode_finalize, 0, 0, 0, 0, (void*)0);
+}
+
+struct sNode* expression_node_v99(struct sInfo* info){
+void* __result_obj__;
+_Bool _if_conditional254;
+void* right_value278;
+struct sNode* node_128;
+void* right_value279;
+struct sNode* __dec_obj65;
+struct sNode* __result176__;
+_Bool _if_conditional255;
+void* right_value280;
+struct sNode* node_129;
+void* right_value281;
+struct sNode* __dec_obj66;
+struct sNode* __result177__;
+_Bool _if_conditional256;
+void* right_value282;
+struct sNode* node_130;
+void* right_value283;
+struct sNode* __dec_obj67;
+struct sNode* __result178__;
+_Bool _if_conditional257;
+void* right_value284;
+struct sNode* node_131;
+void* right_value285;
+struct sNode* __dec_obj68;
+struct sNode* __result179__;
+void* right_value286;
+struct sNode* node_132;
+void* right_value287;
+struct sNode* __dec_obj69;
+struct sNode* __result180__;
+struct sNode* __result181__;
+memset(&__result_obj__, 0, sizeof(void*));
+right_value278 = (void*)0;
+memset(&node_128, 0, sizeof(struct sNode*));
+right_value279 = (void*)0;
+right_value280 = (void*)0;
+memset(&node_129, 0, sizeof(struct sNode*));
+right_value281 = (void*)0;
+right_value282 = (void*)0;
+memset(&node_130, 0, sizeof(struct sNode*));
+right_value283 = (void*)0;
+right_value284 = (void*)0;
+memset(&node_131, 0, sizeof(struct sNode*));
+right_value285 = (void*)0;
+right_value286 = (void*)0;
+memset(&node_132, 0, sizeof(struct sNode*));
+right_value287 = (void*)0;
+    # 645 "05number.c"
+    skip_spaces_and_lf(info);
+    # 647 "05number.c"
+    parse_sharp_v5(info);
+    # 691 "05number.c"
+    # 649 "05number.c"
+    if(_if_conditional254=*info->p==48&&(*(info->p+1)==120||*(info->p+1)==88),    _if_conditional254) {
+        # 650 "05number.c"
+        info->p+=2;
+        # 652 "05number.c"
+        node_128=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value278=get_hex_number((_Bool)0,info))));
+        if(right_value278) { right_value278 = come_decrement_ref_count2(right_value278, ((struct sNode*)right_value278)->finalize, ((struct sNode*)right_value278)->_protocol_obj, 1, 0, 0, __result_obj__); } 
+        # 654 "05number.c"
+        __dec_obj65=node_128;
+        node_128=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value279=post_position_operator_v18((struct sNode*)come_increment_ref_count(node_128),info))));
+        if(__dec_obj65) { __dec_obj65 = come_decrement_ref_count2(__dec_obj65, ((struct sNode*)__dec_obj65)->finalize, ((struct sNode*)__dec_obj65)->_protocol_obj, 0,0,0, (void*)0); }
+        if(right_value279) { right_value279 = come_decrement_ref_count2(right_value279, ((struct sNode*)right_value279)->finalize, ((struct sNode*)right_value279)->_protocol_obj, 1, 0, 0, __result_obj__); } 
+        # 656 "05number.c"
+        __result176__ = __result_obj__ = node_128;
+        if(node_128) { node_128 = come_decrement_ref_count2(node_128, ((struct sNode*)node_128)->finalize, ((struct sNode*)node_128)->_protocol_obj, 0, 1, 0, (void*)0); } 
+        return __result176__;
+        if(node_128) { node_128 = come_decrement_ref_count2(node_128, ((struct sNode*)node_128)->finalize, ((struct sNode*)node_128)->_protocol_obj, 0, 0, 0, (void*)0); } 
+    }
+    else {
+        # 691 "05number.c"
+        # 658 "05number.c"
+        if(_if_conditional255=*info->p==48&&xisdigit(*(info->p+1)),        _if_conditional255) {
+            # 659 "05number.c"
+            info->p++;
+            # 661 "05number.c"
+            node_129=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value280=get_oct_number(info))));
+            if(right_value280) { right_value280 = come_decrement_ref_count2(right_value280, ((struct sNode*)right_value280)->finalize, ((struct sNode*)right_value280)->_protocol_obj, 1, 0, 0, __result_obj__); } 
+            # 663 "05number.c"
+            __dec_obj66=node_129;
+            node_129=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value281=post_position_operator_v18((struct sNode*)come_increment_ref_count(node_129),info))));
+            if(__dec_obj66) { __dec_obj66 = come_decrement_ref_count2(__dec_obj66, ((struct sNode*)__dec_obj66)->finalize, ((struct sNode*)__dec_obj66)->_protocol_obj, 0,0,0, (void*)0); }
+            if(right_value281) { right_value281 = come_decrement_ref_count2(right_value281, ((struct sNode*)right_value281)->finalize, ((struct sNode*)right_value281)->_protocol_obj, 1, 0, 0, __result_obj__); } 
+            # 665 "05number.c"
+            __result177__ = __result_obj__ = node_129;
+            if(node_129) { node_129 = come_decrement_ref_count2(node_129, ((struct sNode*)node_129)->finalize, ((struct sNode*)node_129)->_protocol_obj, 0, 1, 0, (void*)0); } 
+            return __result177__;
+            if(node_129) { node_129 = come_decrement_ref_count2(node_129, ((struct sNode*)node_129)->finalize, ((struct sNode*)node_129)->_protocol_obj, 0, 0, 0, (void*)0); } 
+        }
+        else {
+            # 691 "05number.c"
+            # 667 "05number.c"
+            if(_if_conditional256=xisdigit(*info->p),            _if_conditional256) {
+                # 668 "05number.c"
+                node_130=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value282=get_number((_Bool)0,info))));
+                if(right_value282) { right_value282 = come_decrement_ref_count2(right_value282, ((struct sNode*)right_value282)->finalize, ((struct sNode*)right_value282)->_protocol_obj, 1, 0, 0, __result_obj__); } 
+                # 670 "05number.c"
+                __dec_obj67=node_130;
+                node_130=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value283=post_position_operator_v18((struct sNode*)come_increment_ref_count(node_130),info))));
+                if(__dec_obj67) { __dec_obj67 = come_decrement_ref_count2(__dec_obj67, ((struct sNode*)__dec_obj67)->finalize, ((struct sNode*)__dec_obj67)->_protocol_obj, 0,0,0, (void*)0); }
+                if(right_value283) { right_value283 = come_decrement_ref_count2(right_value283, ((struct sNode*)right_value283)->finalize, ((struct sNode*)right_value283)->_protocol_obj, 1, 0, 0, __result_obj__); } 
+                # 672 "05number.c"
+                __result178__ = __result_obj__ = node_130;
+                if(node_130) { node_130 = come_decrement_ref_count2(node_130, ((struct sNode*)node_130)->finalize, ((struct sNode*)node_130)->_protocol_obj, 0, 1, 0, (void*)0); } 
+                return __result178__;
+                if(node_130) { node_130 = come_decrement_ref_count2(node_130, ((struct sNode*)node_130)->finalize, ((struct sNode*)node_130)->_protocol_obj, 0, 0, 0, (void*)0); } 
+            }
+            else {
+                # 691 "05number.c"
+                # 674 "05number.c"
+                if(_if_conditional257=*info->p==45&&xisdigit(*(info->p+1)),                _if_conditional257) {
+                    # 675 "05number.c"
+                    info->p++;
+                    # 677 "05number.c"
+                    node_131=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value284=get_number((_Bool)1,info))));
+                    if(right_value284) { right_value284 = come_decrement_ref_count2(right_value284, ((struct sNode*)right_value284)->finalize, ((struct sNode*)right_value284)->_protocol_obj, 1, 0, 0, __result_obj__); } 
+                    # 679 "05number.c"
+                    __dec_obj68=node_131;
+                    node_131=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value285=post_position_operator_v18((struct sNode*)come_increment_ref_count(node_131),info))));
+                    if(__dec_obj68) { __dec_obj68 = come_decrement_ref_count2(__dec_obj68, ((struct sNode*)__dec_obj68)->finalize, ((struct sNode*)__dec_obj68)->_protocol_obj, 0,0,0, (void*)0); }
+                    if(right_value285) { right_value285 = come_decrement_ref_count2(right_value285, ((struct sNode*)right_value285)->finalize, ((struct sNode*)right_value285)->_protocol_obj, 1, 0, 0, __result_obj__); } 
+                    # 681 "05number.c"
+                    __result179__ = __result_obj__ = node_131;
+                    if(node_131) { node_131 = come_decrement_ref_count2(node_131, ((struct sNode*)node_131)->finalize, ((struct sNode*)node_131)->_protocol_obj, 0, 1, 0, (void*)0); } 
+                    return __result179__;
+                    if(node_131) { node_131 = come_decrement_ref_count2(node_131, ((struct sNode*)node_131)->finalize, ((struct sNode*)node_131)->_protocol_obj, 0, 0, 0, (void*)0); } 
+                }
+                else {
+                    # 684 "05number.c"
+                    node_132=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value286=expression_node_v98(info))));
+                    if(right_value286) { right_value286 = come_decrement_ref_count2(right_value286, ((struct sNode*)right_value286)->finalize, ((struct sNode*)right_value286)->_protocol_obj, 1, 0, 0, __result_obj__); } 
+                    # 686 "05number.c"
+                    __dec_obj69=node_132;
+                    node_132=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value287=post_position_operator_v18((struct sNode*)come_increment_ref_count(node_132),info))));
+                    if(__dec_obj69) { __dec_obj69 = come_decrement_ref_count2(__dec_obj69, ((struct sNode*)__dec_obj69)->finalize, ((struct sNode*)__dec_obj69)->_protocol_obj, 0,0,0, (void*)0); }
+                    if(right_value287) { right_value287 = come_decrement_ref_count2(right_value287, ((struct sNode*)right_value287)->finalize, ((struct sNode*)right_value287)->_protocol_obj, 1, 0, 0, __result_obj__); } 
+                    # 688 "05number.c"
+                    __result180__ = __result_obj__ = node_132;
+                    if(node_132) { node_132 = come_decrement_ref_count2(node_132, ((struct sNode*)node_132)->finalize, ((struct sNode*)node_132)->_protocol_obj, 0, 1, 0, (void*)0); } 
+                    return __result180__;
+                    if(node_132) { node_132 = come_decrement_ref_count2(node_132, ((struct sNode*)node_132)->finalize, ((struct sNode*)node_132)->_protocol_obj, 0, 0, 0, (void*)0); } 
+                }
+            }
+        }
+    }
+    # 691 "05number.c"
+    err_msg(info,"unexpected operator(%c)\n",*info->p);
+    # 692 "05number.c"
+    exit(2);
+    # 694 "05number.c"
+    __result181__ = __result_obj__ = (struct sNode*)((void*)0);
+    return __result181__;
 }
 

@@ -1011,6 +1011,13 @@ void skip_pointer_attribute(sInfo* info=info)
     }
 }
 
+void backtrace_parse_type(sInfo* info=info)
+{
+    info.no_output_err = true;
+    parse_type();
+    info.no_output_err = false;
+}
+
 tuple3<sType*%,string,bool>*% parse_type(sInfo* info=info, bool parse_variable_name=false, bool parse_multiple_type=true, bool in_function_parametor=false)
 {
     char* head = info.p;

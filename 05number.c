@@ -228,6 +228,11 @@ class sDoubleNode extends sNodeBase
     }
 };
 
+sNode*% create_int_node(int value, sInfo* info)
+{
+    return new sIntNode(value, info) implements sNode;
+}
+
 sNode*% get_number(bool minus, sInfo* info)
 {
     const int buf_size = 128;
@@ -418,11 +423,6 @@ sNode*% get_number(bool minus, sInfo* info)
     }
     
     return (sNode*%)null;
-}
-
-sNode*% create_int_node(int value, sInfo* info)
-{
-    return new sIntNode(value, info) implements sNode;
 }
 
 sNode*% get_hex_number(bool minus, sInfo* info)
@@ -639,3 +639,58 @@ sNode*% get_oct_number(sInfo* info)
     
     return (sNode*%)null;
 }
+
+sNode*% expression_node(sInfo* info=info) version 99
+{
+    skip_spaces_and_lf();
+    
+    parse_sharp();
+    
+    if(*info->p == '0' && (*(info->p+1) == 'x' || *(info->p+1) == 'X')) {
+        info->p += 2;
+
+        sNode*% node = get_hex_number(false@minus, info);
+        
+        node = post_position_operator(node, info);
+        
+        return node;
+    }
+    else if(*info->p == '0' && xisdigit(*(info->p+1))) {
+        info->p++;
+
+        sNode*% node = get_oct_number(info);
+        
+        node = post_position_operator(node, info);
+        
+        return node;
+    }
+    else if(xisdigit(*info->p)) {
+        sNode*% node = get_number(false@minus, info);
+        
+        node = post_position_operator(node, info);
+        
+        return node;
+    }
+    else if(*info->p == '-' && xisdigit(*(info->p+1))) {
+        info->p++;
+        
+        sNode*% node = get_number(true@minus, info);
+        
+        node = post_position_operator(node, info);
+        
+        return node;
+    }
+    else {
+        sNode*% node = inherit(info);
+        
+        node = post_position_operator(node, info);
+        
+        return node;
+    }
+    
+    err_msg(info, "unexpected operator(%c)\n", *info->p);
+    exit(2);
+    
+    return (sNode*%)null;
+}
+

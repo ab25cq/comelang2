@@ -1776,6 +1776,8 @@ struct sNode* expression_node_v99(struct sInfo* info);
 
 struct sNode* expression_node_v98(struct sInfo* info);
 
+struct sNode* expression_node_v97(struct sInfo* info);
+
 int transpile_v5(struct sInfo* info);
 
 void parse_sharp_v5(struct sInfo* info);
@@ -2017,7 +2019,7 @@ char* sMapNode_kind(struct sMapNode* self);
 _Bool sMapNode_compile(struct sMapNode* self, struct sInfo* info);
 
 static struct sNode* list$1sNodephp_operator_load_element(struct list$1sNodeph* self, int position);
-struct sNode* expression_node_v97(struct sInfo* info);
+struct sNode* expression_node_v96(struct sInfo* info);
 
 static void sStrNode_finalize(struct sStrNode* self);
 static struct sStrNode* sStrNode_clone(struct sStrNode* self);
@@ -8529,7 +8531,7 @@ memset(&default_value_200, 0, sizeof(struct sNode*));
             if(default_value_200) { default_value_200 = come_decrement_ref_count2(default_value_200, ((struct sNode*)default_value_200)->finalize, ((struct sNode*)default_value_200)->_protocol_obj, 0, 0, 0, (void*)0); } 
 }
 
-struct sNode* expression_node_v97(struct sInfo* info){
+struct sNode* expression_node_v96(struct sInfo* info){
 void* __result_obj__;
 _Bool _if_conditional212;
 int sline_237;

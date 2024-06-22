@@ -1,123 +1,5 @@
 #include "common.h"
 
-void come_init() version 5
-{
-}
-
-void come_final() version 5
-{
-}
-
-bool operator_overload_fun_self(sType* type, char* fun_name, CVALUE* left_value, sInfo* info)
-{
-    sType*% generics_type = clone type;
-    if(generics_type->mNoSolvedGenericsType.v1) {
-        generics_type = generics_type->mNoSolvedGenericsType.v1;
-    }
-    
-    if(type->mNoSolvedGenericsType.v1) {
-        type = type->mNoSolvedGenericsType.v1;
-    }
-    sClass* klass = type->mClass;
-    char* class_name = klass->mName;
-    
-    sFun* operator_fun = null;
-    
-    string fun_name2;
-    if(type->mGenericsTypes.length() > 0) {
-        string none_generics_name = get_none_generics_name(type.mClass.mName);
-        
-        sType*% obj_type = solve_generics(type, info.generics_type, info);
-        
-        fun_name2 = create_method_name(obj_type, false@no_pointer_name, fun_name, info);
-        string fun_name3 = xsprintf("%s_%s", none_generics_name, fun_name);
-        
-        sGenericsFun* generics_fun = info.generics_funcs.at(fun_name3, null);
-        
-        
-        if(generics_fun) {
-            if(!create_generics_fun(string(fun_name2), generics_fun, obj_type, info)) {
-                return false;
-            }
-            
-            operator_fun = info->funcs[fun_name2]??;
-        }
-        else {
-            if(fun_name === "operator_equals") {
-                var fun, fun_name = create_equals_automatically(obj_type, "equals", info);
-                var fun2, fun_name2 = create_operator_equals_automatically(obj_type, "operator_equals", info);
-                
-                operator_fun = fun2;
-            }
-            else if(fun_name === "operator_not_equals") {
-                var fun, fun_name = create_equals_automatically(obj_type, "not_equals", info);
-                var fun2, fun_name2 = create_operator_not_equals_automatically(obj_type, "operator_not_equals", info);
-                
-                operator_fun = fun2;
-            }
-            else {
-                operator_fun = info->funcs[fun_name2]??;
-            }
-        }
-    }
-    else {
-        fun_name2 = create_method_name(type, false@no_pointer_name, fun_name, info);
-        
-        int i;
-        for(i=FUN_VERSION_MAX-1; i>=1; i--) {
-            string new_fun_name = xsprintf("%s_v%d", fun_name2, i);
-            operator_fun = info->funcs[new_fun_name]??;
-            
-            if(operator_fun) {
-                fun_name2 = string(new_fun_name);
-                break;
-            }
-        }
-        
-        if(operator_fun == NULL) {
-            operator_fun = info->funcs[fun_name2]??;
-        }
-    }
-    
-    bool result = false;
-    
-    if(operator_fun) {
-        CVALUE*% come_value = new CVALUE;
-        string left_value2;
-        check_assign_type(s"\{fun_name2} is assigned to", operator_fun.mParamTypes[0], left_value.type, left_value);
-        if(operator_fun.mParamTypes[0].mHeap && left_value.type.mHeap) {
-            std_move(operator_fun.mParamTypes[0], left_value.type, left_value);
-            left_value2 = xsprintf("%s", left_value.c_value);
-        }
-        else {
-            left_value2 = clone left_value.c_value;
-        }
-        
-        come_value.c_value = xsprintf("%s(%s)", fun_name2, left_value2);
-        
-        sType*% type2 = clone operator_fun->mResultType;
-        
-        sType*% type3 = solve_generics(type2, generics_type, info);
-        
-        come_value.type = clone type3;
-        come_value.var = null;
-        
-        if(type3->mHeap) {
-            come_value.c_value = append_object_to_right_values(come_value.c_value, type3, info);
-        }
-        
-        come_value.c_value = append_stackframe(come_value.c_value, come_value.type, info);
-        
-        add_come_last_code(info, "%s;\n", come_value.c_value);
-        
-        info.stack.push_back(come_value);
-    
-        result = true;
-    }
-    
-    return result;
-}
-
 class sReturnNode extends sNodeBase
 {
     sNode*% value;
@@ -454,19 +336,6 @@ class sCallerSNameNode extends sNodeBase
         return string("sCallerSNameNode");
     }
 };
-
-
-
-sNode*% expression_node(sInfo* info=info) version 1
-{
-    skip_spaces_and_lf();
-    parse_sharp();
-    
-    err_msg(info, "invalid character(%c)(1)\n", *info->p);
-    stackframe();
-    exit(3);
-    return (sNode*%)null;
-}
 
 string make_method_generics_function(string fun_name, list<sType*%>*% method_generics_types, sInfo* info)
 {
@@ -942,8 +811,6 @@ class sFunCallNode extends sNodeBase
     }
 };
 
-
-
 sNode*% parse_function_call(char* fun_name, sInfo* info)
 {
     list<sType*%>*% method_generics_types = new list<sType*%>();
@@ -1062,19 +929,18 @@ sNode*% post_position_operator(sNode*% node, sInfo* info) version 5
     return node;
 }
 
-
-
-
-
-            
-void backtrace_parse_type(sInfo* info=info)
+sNode*% expression_node(sInfo* info=info) version 1
 {
-    info.no_output_err = true;
-    parse_type();
-    info.no_output_err = false;
+    skip_spaces_and_lf();
+    parse_sharp();
+    
+    err_msg(info, "invalid character(%c)(1)\n", *info->p);
+    stackframe();
+    exit(3);
+    return (sNode*%)null;
 }
 
-sNode*% expression_node(sInfo* info=info) version 98
+sNode*% expression_node(sInfo* info=info) version 97
 {
     skip_spaces_and_lf();
     parse_sharp();
@@ -1414,16 +1280,8 @@ sNode*% statment(sInfo* info=info)
     
     node = post_position_operator_of_statment(node, info);
     
-/*
-    if(!node.terminated->()) {
-        expected_next_character(';');
-    }
-*/
-    
     return node;
 }
-
-
 
 string create_method_name(sType* obj_type, bool no_pointer_name, char* fun_name, sInfo* info, bool array_equal_pointer=true)
 {
