@@ -50,7 +50,6 @@ struct __locale_struct;
 typedef struct __locale_struct* locale_t;
 typedef void* any;
 typedef char* string;
-extern void* gComeResultObject;
 extern _Bool gComeGCLib;
 struct list_item$1voidp
 {
@@ -1200,8 +1199,6 @@ void* come_memdup(void* block, char* sname, int sline, char* class_name);
 
 char* __builtin_string(char* str);
 
-_Bool come_is_contained_element(void** array, int len, void* element);
-
 struct buffer* buffer_initialize(struct buffer* self);
 
 void buffer_finalize(struct buffer* self);
@@ -2037,13 +2034,13 @@ memset(&__result_obj__, 0, sizeof(void*));
 right_value0 = (void*)0;
 right_value1 = (void*)0;
 memset(&result_0, 0, sizeof(struct buffer*));
-    # 1902 "./neo-c.h"
-    result_0=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value1=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value0=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1902, "buffer"))))))));
+    # 1897 "./neo-c.h"
+    result_0=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value1=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value0=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1897, "buffer"))))))));
     come_call_finalizer3(right_value0,buffer_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value1,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-    # 1903 "./neo-c.h"
+    # 1898 "./neo-c.h"
     buffer_append(result_0,self,sizeof(char)*len);
-    # 1904 "./neo-c.h"
+    # 1899 "./neo-c.h"
     __result2__ = __result_obj__ = result_0;
     come_call_finalizer3(result_0,buffer_finalize, 0, 0, 1, 0, (void*)0);
     return __result2__;
@@ -2059,13 +2056,13 @@ memset(&__result_obj__, 0, sizeof(void*));
 right_value2 = (void*)0;
 right_value3 = (void*)0;
 memset(&result_1, 0, sizeof(struct buffer*));
-    # 1909 "./neo-c.h"
-    result_1=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value3=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value2=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1909, "buffer"))))))));
+    # 1904 "./neo-c.h"
+    result_1=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value3=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value2=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1904, "buffer"))))))));
     come_call_finalizer3(right_value2,buffer_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value3,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-    # 1910 "./neo-c.h"
+    # 1905 "./neo-c.h"
     buffer_append(result_1,(char*)self,sizeof(short short)*len);
-    # 1911 "./neo-c.h"
+    # 1906 "./neo-c.h"
     __result3__ = __result_obj__ = result_1;
     come_call_finalizer3(result_1,buffer_finalize, 0, 0, 1, 0, (void*)0);
     return __result3__;
@@ -2081,13 +2078,13 @@ memset(&__result_obj__, 0, sizeof(void*));
 right_value4 = (void*)0;
 right_value5 = (void*)0;
 memset(&result_2, 0, sizeof(struct buffer*));
-    # 1916 "./neo-c.h"
-    result_2=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value5=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value4=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1916, "buffer"))))))));
+    # 1911 "./neo-c.h"
+    result_2=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value5=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value4=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1911, "buffer"))))))));
     come_call_finalizer3(right_value4,buffer_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value5,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-    # 1917 "./neo-c.h"
+    # 1912 "./neo-c.h"
     buffer_append(result_2,(char*)self,sizeof(int)*len);
-    # 1918 "./neo-c.h"
+    # 1913 "./neo-c.h"
     __result4__ = __result_obj__ = result_2;
     come_call_finalizer3(result_2,buffer_finalize, 0, 0, 1, 0, (void*)0);
     return __result4__;
@@ -2103,13 +2100,13 @@ memset(&__result_obj__, 0, sizeof(void*));
 right_value6 = (void*)0;
 right_value7 = (void*)0;
 memset(&result_3, 0, sizeof(struct buffer*));
-    # 1923 "./neo-c.h"
-    result_3=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value7=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value6=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1923, "buffer"))))))));
+    # 1918 "./neo-c.h"
+    result_3=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value7=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value6=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1918, "buffer"))))))));
     come_call_finalizer3(right_value6,buffer_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value7,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-    # 1924 "./neo-c.h"
+    # 1919 "./neo-c.h"
     buffer_append(result_3,(char*)self,sizeof(long)*len);
-    # 1925 "./neo-c.h"
+    # 1920 "./neo-c.h"
     __result5__ = __result_obj__ = result_3;
     come_call_finalizer3(result_3,buffer_finalize, 0, 0, 1, 0, (void*)0);
     return __result5__;
@@ -2125,13 +2122,13 @@ memset(&__result_obj__, 0, sizeof(void*));
 right_value8 = (void*)0;
 right_value9 = (void*)0;
 memset(&result_4, 0, sizeof(struct buffer*));
-    # 1930 "./neo-c.h"
-    result_4=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value9=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value8=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1930, "buffer"))))))));
+    # 1925 "./neo-c.h"
+    result_4=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value9=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value8=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1925, "buffer"))))))));
     come_call_finalizer3(right_value8,buffer_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value9,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-    # 1931 "./neo-c.h"
+    # 1926 "./neo-c.h"
     buffer_append(result_4,(char*)self,sizeof(float)*len);
-    # 1932 "./neo-c.h"
+    # 1927 "./neo-c.h"
     __result6__ = __result_obj__ = result_4;
     come_call_finalizer3(result_4,buffer_finalize, 0, 0, 1, 0, (void*)0);
     return __result6__;
@@ -2147,13 +2144,13 @@ memset(&__result_obj__, 0, sizeof(void*));
 right_value10 = (void*)0;
 right_value11 = (void*)0;
 memset(&result_5, 0, sizeof(struct buffer*));
-    # 1937 "./neo-c.h"
-    result_5=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value11=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value10=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1937, "buffer"))))))));
+    # 1932 "./neo-c.h"
+    result_5=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value11=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value10=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1932, "buffer"))))))));
     come_call_finalizer3(right_value10,buffer_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value11,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-    # 1938 "./neo-c.h"
+    # 1933 "./neo-c.h"
     buffer_append(result_5,(char*)self,sizeof(double)*len);
-    # 1939 "./neo-c.h"
+    # 1934 "./neo-c.h"
     __result7__ = __result_obj__ = result_5;
     come_call_finalizer3(result_5,buffer_finalize, 0, 0, 1, 0, (void*)0);
     return __result7__;
@@ -2170,17 +2167,17 @@ memset(&__result_obj__, 0, sizeof(void*));
 right_value12 = (void*)0;
 memset(&result_6, 0, sizeof(struct smart_pointer$1char*));
 right_value13 = (void*)0;
-    # 1952 "./neo-c.h"
-    result_6=(struct smart_pointer$1char*)come_increment_ref_count(((struct smart_pointer$1char*)(right_value12=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 1952, "smart_pointer$1char"))));
+    # 1947 "./neo-c.h"
+    result_6=(struct smart_pointer$1char*)come_increment_ref_count(((struct smart_pointer$1char*)(right_value12=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 1947, "smart_pointer$1char"))));
     come_call_finalizer3(right_value12,smart_pointer$1charp_finalize, 0, 1, 0, 0, __result_obj__);
-    # 1954 "./neo-c.h"
+    # 1949 "./neo-c.h"
     __dec_obj1=result_6->memory;
     result_6->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value13=buffer_clone(self))));
     come_call_finalizer3(__dec_obj1,buffer_finalize, 0, 0, 0, 0, (void*)0);
     come_call_finalizer3(right_value13,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-    # 1955 "./neo-c.h"
+    # 1950 "./neo-c.h"
     result_6->p=result_6->memory->buf;
-    # 1957 "./neo-c.h"
+    # 1952 "./neo-c.h"
     __result8__ = __result_obj__ = result_6;
     come_call_finalizer3(result_6,smart_pointer$1charp_finalize, 0, 0, 1, 0, (void*)0);
     return __result8__;
@@ -2197,17 +2194,17 @@ memset(&__result_obj__, 0, sizeof(void*));
 right_value14 = (void*)0;
 memset(&result_7, 0, sizeof(struct smart_pointer$1char*));
 right_value15 = (void*)0;
-    # 1962 "./neo-c.h"
-    result_7=(struct smart_pointer$1char*)come_increment_ref_count(((struct smart_pointer$1char*)(right_value14=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 1962, "smart_pointer$1char"))));
+    # 1957 "./neo-c.h"
+    result_7=(struct smart_pointer$1char*)come_increment_ref_count(((struct smart_pointer$1char*)(right_value14=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 1957, "smart_pointer$1char"))));
     come_call_finalizer3(right_value14,smart_pointer$1charp_finalize, 0, 1, 0, 0, __result_obj__);
-    # 1964 "./neo-c.h"
+    # 1959 "./neo-c.h"
     __dec_obj2=result_7->memory;
     result_7->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value15=buffer_clone(self))));
     come_call_finalizer3(__dec_obj2,buffer_finalize, 0, 0, 0, 0, (void*)0);
     come_call_finalizer3(right_value15,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-    # 1965 "./neo-c.h"
+    # 1960 "./neo-c.h"
     result_7->p=(char*)result_7->memory->buf;
-    # 1967 "./neo-c.h"
+    # 1962 "./neo-c.h"
     __result9__ = __result_obj__ = result_7;
     come_call_finalizer3(result_7,smart_pointer$1charp_finalize, 0, 0, 1, 0, (void*)0);
     return __result9__;
@@ -2224,17 +2221,17 @@ memset(&__result_obj__, 0, sizeof(void*));
 right_value16 = (void*)0;
 memset(&result_8, 0, sizeof(struct smart_pointer$1short*));
 right_value17 = (void*)0;
-    # 1972 "./neo-c.h"
-    result_8=(struct smart_pointer$1short*)come_increment_ref_count(((struct smart_pointer$1short*)(right_value16=(struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 1972, "smart_pointer$1short"))));
+    # 1967 "./neo-c.h"
+    result_8=(struct smart_pointer$1short*)come_increment_ref_count(((struct smart_pointer$1short*)(right_value16=(struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 1967, "smart_pointer$1short"))));
     come_call_finalizer3(right_value16,smart_pointer$1shortp_finalize, 0, 1, 0, 0, __result_obj__);
-    # 1974 "./neo-c.h"
+    # 1969 "./neo-c.h"
     __dec_obj3=result_8->memory;
     result_8->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value17=buffer_clone(self))));
     come_call_finalizer3(__dec_obj3,buffer_finalize, 0, 0, 0, 0, (void*)0);
     come_call_finalizer3(right_value17,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-    # 1975 "./neo-c.h"
+    # 1970 "./neo-c.h"
     result_8->p=(short short*)result_8->memory->buf;
-    # 1977 "./neo-c.h"
+    # 1972 "./neo-c.h"
     __result10__ = __result_obj__ = result_8;
     come_call_finalizer3(result_8,smart_pointer$1shortp_finalize, 0, 0, 1, 0, (void*)0);
     return __result10__;
@@ -2251,17 +2248,17 @@ memset(&__result_obj__, 0, sizeof(void*));
 right_value18 = (void*)0;
 memset(&result_9, 0, sizeof(struct smart_pointer$1int*));
 right_value19 = (void*)0;
-    # 1982 "./neo-c.h"
-    result_9=(struct smart_pointer$1int*)come_increment_ref_count(((struct smart_pointer$1int*)(right_value18=(struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 1982, "smart_pointer$1int"))));
+    # 1977 "./neo-c.h"
+    result_9=(struct smart_pointer$1int*)come_increment_ref_count(((struct smart_pointer$1int*)(right_value18=(struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 1977, "smart_pointer$1int"))));
     come_call_finalizer3(right_value18,smart_pointer$1intp_finalize, 0, 1, 0, 0, __result_obj__);
-    # 1984 "./neo-c.h"
+    # 1979 "./neo-c.h"
     __dec_obj4=result_9->memory;
     result_9->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value19=buffer_clone(self))));
     come_call_finalizer3(__dec_obj4,buffer_finalize, 0, 0, 0, 0, (void*)0);
     come_call_finalizer3(right_value19,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-    # 1985 "./neo-c.h"
+    # 1980 "./neo-c.h"
     result_9->p=(int*)result_9->memory->buf;
-    # 1987 "./neo-c.h"
+    # 1982 "./neo-c.h"
     __result11__ = __result_obj__ = result_9;
     come_call_finalizer3(result_9,smart_pointer$1intp_finalize, 0, 0, 1, 0, (void*)0);
     return __result11__;
@@ -2278,17 +2275,17 @@ memset(&__result_obj__, 0, sizeof(void*));
 right_value20 = (void*)0;
 memset(&result_10, 0, sizeof(struct smart_pointer$1long*));
 right_value21 = (void*)0;
-    # 1992 "./neo-c.h"
-    result_10=(struct smart_pointer$1long*)come_increment_ref_count(((struct smart_pointer$1long*)(right_value20=(struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 1992, "smart_pointer$1long"))));
+    # 1987 "./neo-c.h"
+    result_10=(struct smart_pointer$1long*)come_increment_ref_count(((struct smart_pointer$1long*)(right_value20=(struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 1987, "smart_pointer$1long"))));
     come_call_finalizer3(right_value20,smart_pointer$1longp_finalize, 0, 1, 0, 0, __result_obj__);
-    # 1994 "./neo-c.h"
+    # 1989 "./neo-c.h"
     __dec_obj5=result_10->memory;
     result_10->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value21=buffer_clone(self))));
     come_call_finalizer3(__dec_obj5,buffer_finalize, 0, 0, 0, 0, (void*)0);
     come_call_finalizer3(right_value21,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-    # 1995 "./neo-c.h"
+    # 1990 "./neo-c.h"
     result_10->p=(long*)result_10->memory->buf;
-    # 1997 "./neo-c.h"
+    # 1992 "./neo-c.h"
     __result12__ = __result_obj__ = result_10;
     come_call_finalizer3(result_10,smart_pointer$1longp_finalize, 0, 0, 1, 0, (void*)0);
     return __result12__;
@@ -2302,8 +2299,8 @@ struct smart_pointer$1char* __result14__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value22 = (void*)0;
 right_value25 = (void*)0;
-    # 2163 "./neo-c.h"
-    __result14__ = __result_obj__ = ((struct smart_pointer$1char*)(right_value25=smart_pointer$1char_initialize((struct smart_pointer$1char*)come_increment_ref_count(((struct smart_pointer$1char*)(right_value22=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 2163, "smart_pointer$1char")))),self,len)));
+    # 2158 "./neo-c.h"
+    __result14__ = __result_obj__ = ((struct smart_pointer$1char*)(right_value25=smart_pointer$1char_initialize((struct smart_pointer$1char*)come_increment_ref_count(((struct smart_pointer$1char*)(right_value22=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 2158, "smart_pointer$1char")))),self,len)));
     come_call_finalizer3(right_value22,smart_pointer$1charp_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value25,smart_pointer$1charp_finalize, 0, 1, 0, 0, __result_obj__);
     return __result14__;
@@ -2316,8 +2313,8 @@ struct smart_pointer$1short* __result16__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value26 = (void*)0;
 right_value29 = (void*)0;
-    # 2168 "./neo-c.h"
-    __result16__ = __result_obj__ = ((struct smart_pointer$1short*)(right_value29=smart_pointer$1short_initialize((struct smart_pointer$1short*)come_increment_ref_count(((struct smart_pointer$1short*)(right_value26=(struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 2168, "smart_pointer$1short")))),self,len)));
+    # 2163 "./neo-c.h"
+    __result16__ = __result_obj__ = ((struct smart_pointer$1short*)(right_value29=smart_pointer$1short_initialize((struct smart_pointer$1short*)come_increment_ref_count(((struct smart_pointer$1short*)(right_value26=(struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 2163, "smart_pointer$1short")))),self,len)));
     come_call_finalizer3(right_value26,smart_pointer$1shortp_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value29,smart_pointer$1shortp_finalize, 0, 1, 0, 0, __result_obj__);
     return __result16__;
@@ -2330,8 +2327,8 @@ struct smart_pointer$1int* __result18__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value30 = (void*)0;
 right_value33 = (void*)0;
-    # 2173 "./neo-c.h"
-    __result18__ = __result_obj__ = ((struct smart_pointer$1int*)(right_value33=smart_pointer$1int_initialize((struct smart_pointer$1int*)come_increment_ref_count(((struct smart_pointer$1int*)(right_value30=(struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 2173, "smart_pointer$1int")))),self,len)));
+    # 2168 "./neo-c.h"
+    __result18__ = __result_obj__ = ((struct smart_pointer$1int*)(right_value33=smart_pointer$1int_initialize((struct smart_pointer$1int*)come_increment_ref_count(((struct smart_pointer$1int*)(right_value30=(struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 2168, "smart_pointer$1int")))),self,len)));
     come_call_finalizer3(right_value30,smart_pointer$1intp_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value33,smart_pointer$1intp_finalize, 0, 1, 0, 0, __result_obj__);
     return __result18__;
@@ -2344,8 +2341,8 @@ struct smart_pointer$1long* __result20__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value34 = (void*)0;
 right_value37 = (void*)0;
-    # 2178 "./neo-c.h"
-    __result20__ = __result_obj__ = ((struct smart_pointer$1long*)(right_value37=smart_pointer$1long_initialize((struct smart_pointer$1long*)come_increment_ref_count(((struct smart_pointer$1long*)(right_value34=(struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 2178, "smart_pointer$1long")))),self,len)));
+    # 2173 "./neo-c.h"
+    __result20__ = __result_obj__ = ((struct smart_pointer$1long*)(right_value37=smart_pointer$1long_initialize((struct smart_pointer$1long*)come_increment_ref_count(((struct smart_pointer$1long*)(right_value34=(struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 2173, "smart_pointer$1long")))),self,len)));
     come_call_finalizer3(right_value34,smart_pointer$1longp_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value37,smart_pointer$1longp_finalize, 0, 1, 0, 0, __result_obj__);
     return __result20__;
@@ -2358,8 +2355,8 @@ struct smart_pointer$1float* __result22__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value38 = (void*)0;
 right_value41 = (void*)0;
-    # 2183 "./neo-c.h"
-    __result22__ = __result_obj__ = ((struct smart_pointer$1float*)(right_value41=smart_pointer$1float_initialize((struct smart_pointer$1float*)come_increment_ref_count(((struct smart_pointer$1float*)(right_value38=(struct smart_pointer$1float*)come_calloc(1, sizeof(struct smart_pointer$1float)*(1), "./neo-c.h", 2183, "smart_pointer$1float")))),self,len)));
+    # 2178 "./neo-c.h"
+    __result22__ = __result_obj__ = ((struct smart_pointer$1float*)(right_value41=smart_pointer$1float_initialize((struct smart_pointer$1float*)come_increment_ref_count(((struct smart_pointer$1float*)(right_value38=(struct smart_pointer$1float*)come_calloc(1, sizeof(struct smart_pointer$1float)*(1), "./neo-c.h", 2178, "smart_pointer$1float")))),self,len)));
     come_call_finalizer3(right_value38,smart_pointer$1floatp_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value41,smart_pointer$1floatp_finalize, 0, 1, 0, 0, __result_obj__);
     return __result22__;
@@ -2372,8 +2369,8 @@ struct smart_pointer$1double* __result24__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value42 = (void*)0;
 right_value45 = (void*)0;
-    # 2188 "./neo-c.h"
-    __result24__ = __result_obj__ = ((struct smart_pointer$1double*)(right_value45=smart_pointer$1double_initialize((struct smart_pointer$1double*)come_increment_ref_count(((struct smart_pointer$1double*)(right_value42=(struct smart_pointer$1double*)come_calloc(1, sizeof(struct smart_pointer$1double)*(1), "./neo-c.h", 2188, "smart_pointer$1double")))),self,len)));
+    # 2183 "./neo-c.h"
+    __result24__ = __result_obj__ = ((struct smart_pointer$1double*)(right_value45=smart_pointer$1double_initialize((struct smart_pointer$1double*)come_increment_ref_count(((struct smart_pointer$1double*)(right_value42=(struct smart_pointer$1double*)come_calloc(1, sizeof(struct smart_pointer$1double)*(1), "./neo-c.h", 2183, "smart_pointer$1double")))),self,len)));
     come_call_finalizer3(right_value42,smart_pointer$1doublep_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value45,smart_pointer$1doublep_finalize, 0, 1, 0, 0, __result_obj__);
     return __result24__;
@@ -2386,8 +2383,8 @@ struct list$1char* __result27__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value46 = (void*)0;
 right_value50 = (void*)0;
-    # 2193 "./neo-c.h"
-    __result27__ = __result_obj__ = ((struct list$1char*)(right_value50=list$1char_initialize_with_values((struct list$1char*)come_increment_ref_count(((struct list$1char*)(right_value46=(struct list$1char*)come_calloc(1, sizeof(struct list$1char)*(1), "./neo-c.h", 2193, "list$1char")))),len,self)));
+    # 2188 "./neo-c.h"
+    __result27__ = __result_obj__ = ((struct list$1char*)(right_value50=list$1char_initialize_with_values((struct list$1char*)come_increment_ref_count(((struct list$1char*)(right_value46=(struct list$1char*)come_calloc(1, sizeof(struct list$1char)*(1), "./neo-c.h", 2188, "list$1char")))),len,self)));
     come_call_finalizer3(right_value46,list$1charp_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value50,list$1charp_finalize, 0, 1, 0, 0, __result_obj__);
     return __result27__;
@@ -2400,8 +2397,8 @@ struct list$1short* __result30__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value51 = (void*)0;
 right_value55 = (void*)0;
-    # 2198 "./neo-c.h"
-    __result30__ = __result_obj__ = ((struct list$1short*)(right_value55=list$1short_initialize_with_values((struct list$1short*)come_increment_ref_count(((struct list$1short*)(right_value51=(struct list$1short*)come_calloc(1, sizeof(struct list$1short)*(1), "./neo-c.h", 2198, "list$1short")))),len,self)));
+    # 2193 "./neo-c.h"
+    __result30__ = __result_obj__ = ((struct list$1short*)(right_value55=list$1short_initialize_with_values((struct list$1short*)come_increment_ref_count(((struct list$1short*)(right_value51=(struct list$1short*)come_calloc(1, sizeof(struct list$1short)*(1), "./neo-c.h", 2193, "list$1short")))),len,self)));
     come_call_finalizer3(right_value51,list$1shortp_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value55,list$1shortp_finalize, 0, 1, 0, 0, __result_obj__);
     return __result30__;
@@ -2414,8 +2411,8 @@ struct list$1int* __result33__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value56 = (void*)0;
 right_value60 = (void*)0;
-    # 2203 "./neo-c.h"
-    __result33__ = __result_obj__ = ((struct list$1int*)(right_value60=list$1int_initialize_with_values((struct list$1int*)come_increment_ref_count(((struct list$1int*)(right_value56=(struct list$1int*)come_calloc(1, sizeof(struct list$1int)*(1), "./neo-c.h", 2203, "list$1int")))),len,self)));
+    # 2198 "./neo-c.h"
+    __result33__ = __result_obj__ = ((struct list$1int*)(right_value60=list$1int_initialize_with_values((struct list$1int*)come_increment_ref_count(((struct list$1int*)(right_value56=(struct list$1int*)come_calloc(1, sizeof(struct list$1int)*(1), "./neo-c.h", 2198, "list$1int")))),len,self)));
     come_call_finalizer3(right_value56,list$1intp_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value60,list$1intp_finalize, 0, 1, 0, 0, __result_obj__);
     return __result33__;
@@ -2428,8 +2425,8 @@ struct list$1long* __result36__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value61 = (void*)0;
 right_value65 = (void*)0;
-    # 2208 "./neo-c.h"
-    __result36__ = __result_obj__ = ((struct list$1long*)(right_value65=list$1long_initialize_with_values((struct list$1long*)come_increment_ref_count(((struct list$1long*)(right_value61=(struct list$1long*)come_calloc(1, sizeof(struct list$1long)*(1), "./neo-c.h", 2208, "list$1long")))),len,self)));
+    # 2203 "./neo-c.h"
+    __result36__ = __result_obj__ = ((struct list$1long*)(right_value65=list$1long_initialize_with_values((struct list$1long*)come_increment_ref_count(((struct list$1long*)(right_value61=(struct list$1long*)come_calloc(1, sizeof(struct list$1long)*(1), "./neo-c.h", 2203, "list$1long")))),len,self)));
     come_call_finalizer3(right_value61,list$1longp_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value65,list$1longp_finalize, 0, 1, 0, 0, __result_obj__);
     return __result36__;
@@ -2442,8 +2439,8 @@ struct list$1float* __result39__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value66 = (void*)0;
 right_value70 = (void*)0;
-    # 2213 "./neo-c.h"
-    __result39__ = __result_obj__ = ((struct list$1float*)(right_value70=list$1float_initialize_with_values((struct list$1float*)come_increment_ref_count(((struct list$1float*)(right_value66=(struct list$1float*)come_calloc(1, sizeof(struct list$1float)*(1), "./neo-c.h", 2213, "list$1float")))),len,self)));
+    # 2208 "./neo-c.h"
+    __result39__ = __result_obj__ = ((struct list$1float*)(right_value70=list$1float_initialize_with_values((struct list$1float*)come_increment_ref_count(((struct list$1float*)(right_value66=(struct list$1float*)come_calloc(1, sizeof(struct list$1float)*(1), "./neo-c.h", 2208, "list$1float")))),len,self)));
     come_call_finalizer3(right_value66,list$1floatp_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value70,list$1floatp_finalize, 0, 1, 0, 0, __result_obj__);
     return __result39__;
@@ -2456,8 +2453,8 @@ struct list$1double* __result42__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value71 = (void*)0;
 right_value75 = (void*)0;
-    # 2218 "./neo-c.h"
-    __result42__ = __result_obj__ = ((struct list$1double*)(right_value75=list$1double_initialize_with_values((struct list$1double*)come_increment_ref_count(((struct list$1double*)(right_value71=(struct list$1double*)come_calloc(1, sizeof(struct list$1double)*(1), "./neo-c.h", 2218, "list$1double")))),len,self)));
+    # 2213 "./neo-c.h"
+    __result42__ = __result_obj__ = ((struct list$1double*)(right_value75=list$1double_initialize_with_values((struct list$1double*)come_increment_ref_count(((struct list$1double*)(right_value71=(struct list$1double*)come_calloc(1, sizeof(struct list$1double)*(1), "./neo-c.h", 2213, "list$1double")))),len,self)));
     come_call_finalizer3(right_value71,list$1doublep_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value75,list$1doublep_finalize, 0, 1, 0, 0, __result_obj__);
     return __result42__;
@@ -2466,7 +2463,7 @@ static inline unsigned long int charpa_length(char* self, unsigned long int len)
 void* __result_obj__;
 unsigned long int __result43__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2248 "./neo-c.h"
+    # 2243 "./neo-c.h"
     __result43__ = len;
     return __result43__;
 }
@@ -2474,7 +2471,7 @@ static inline unsigned long int shortpa_length(short short* self, unsigned long 
 void* __result_obj__;
 unsigned long int __result44__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2253 "./neo-c.h"
+    # 2248 "./neo-c.h"
     __result44__ = len;
     return __result44__;
 }
@@ -2482,7 +2479,7 @@ static inline unsigned long int intpa_length(int* self, unsigned long int len){
 void* __result_obj__;
 unsigned long int __result45__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2258 "./neo-c.h"
+    # 2253 "./neo-c.h"
     __result45__ = len;
     return __result45__;
 }
@@ -2490,7 +2487,7 @@ static inline unsigned long int longpa_length(long* self, unsigned long int len)
 void* __result_obj__;
 unsigned long int __result46__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2263 "./neo-c.h"
+    # 2258 "./neo-c.h"
     __result46__ = len;
     return __result46__;
 }
@@ -2498,7 +2495,7 @@ static inline unsigned long int floatpa_length(float* self, unsigned long int le
 void* __result_obj__;
 unsigned long int __result47__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2268 "./neo-c.h"
+    # 2263 "./neo-c.h"
     __result47__ = len;
     return __result47__;
 }
@@ -2506,7 +2503,7 @@ static inline unsigned long int doublepa_length(double* self, unsigned long int 
 void* __result_obj__;
 unsigned long int __result48__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2273 "./neo-c.h"
+    # 2268 "./neo-c.h"
     __result48__ = len;
     return __result48__;
 }
@@ -2516,7 +2513,7 @@ void* right_value76;
 char* __result49__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value76 = (void*)0;
-    # 2334 "./neo-c.h"
+    # 2329 "./neo-c.h"
     __result49__ = __result_obj__ = ((char*)(right_value76=xsprintf(msg,self)));
     right_value76 = come_decrement_ref_count2(right_value76, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
     return __result49__;
@@ -2527,7 +2524,7 @@ void* right_value77;
 char* __result50__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value77 = (void*)0;
-    # 2339 "./neo-c.h"
+    # 2334 "./neo-c.h"
     __result50__ = __result_obj__ = ((char*)(right_value77=xsprintf(msg,self)));
     right_value77 = come_decrement_ref_count2(right_value77, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
     return __result50__;
@@ -2538,7 +2535,7 @@ void* right_value78;
 char* __result51__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value78 = (void*)0;
-    # 2344 "./neo-c.h"
+    # 2339 "./neo-c.h"
     __result51__ = __result_obj__ = ((char*)(right_value78=xsprintf(msg,self)));
     right_value78 = come_decrement_ref_count2(right_value78, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
     return __result51__;
@@ -2615,17 +2612,17 @@ struct smart_pointer$1char* __result13__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value23 = (void*)0;
 right_value24 = (void*)0;
-        # 2004 "./neo-c.h"
+        # 1999 "./neo-c.h"
         __dec_obj6=self->memory;
-        self->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value24=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value23=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2004, "buffer"))))))));
+        self->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value24=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value23=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1999, "buffer"))))))));
         come_call_finalizer3(__dec_obj6,buffer_finalize, 0, 0, 0, 0, (void*)0);
         come_call_finalizer3(right_value23,buffer_finalize, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer3(right_value24,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-        # 2006 "./neo-c.h"
+        # 2001 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(char)*size);
-        # 2008 "./neo-c.h"
+        # 2003 "./neo-c.h"
         self->p=(char*)self->memory->buf;
-        # 2010 "./neo-c.h"
+        # 2005 "./neo-c.h"
         __result13__ = __result_obj__ = self;
         come_call_finalizer3(self,smart_pointer$1charp_finalize, 0, 0, 1, 0, (void*)0);
         return __result13__;
@@ -2642,17 +2639,17 @@ struct smart_pointer$1short* __result15__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value27 = (void*)0;
 right_value28 = (void*)0;
-        # 2004 "./neo-c.h"
+        # 1999 "./neo-c.h"
         __dec_obj7=self->memory;
-        self->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value28=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value27=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2004, "buffer"))))))));
+        self->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value28=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value27=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1999, "buffer"))))))));
         come_call_finalizer3(__dec_obj7,buffer_finalize, 0, 0, 0, 0, (void*)0);
         come_call_finalizer3(right_value27,buffer_finalize, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer3(right_value28,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-        # 2006 "./neo-c.h"
+        # 2001 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(short short)*size);
-        # 2008 "./neo-c.h"
+        # 2003 "./neo-c.h"
         self->p=(short short*)self->memory->buf;
-        # 2010 "./neo-c.h"
+        # 2005 "./neo-c.h"
         __result15__ = __result_obj__ = self;
         come_call_finalizer3(self,smart_pointer$1shortp_finalize, 0, 0, 1, 0, (void*)0);
         return __result15__;
@@ -2669,17 +2666,17 @@ struct smart_pointer$1int* __result17__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value31 = (void*)0;
 right_value32 = (void*)0;
-        # 2004 "./neo-c.h"
+        # 1999 "./neo-c.h"
         __dec_obj8=self->memory;
-        self->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value32=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value31=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2004, "buffer"))))))));
+        self->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value32=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value31=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1999, "buffer"))))))));
         come_call_finalizer3(__dec_obj8,buffer_finalize, 0, 0, 0, 0, (void*)0);
         come_call_finalizer3(right_value31,buffer_finalize, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer3(right_value32,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-        # 2006 "./neo-c.h"
+        # 2001 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(int)*size);
-        # 2008 "./neo-c.h"
+        # 2003 "./neo-c.h"
         self->p=(int*)self->memory->buf;
-        # 2010 "./neo-c.h"
+        # 2005 "./neo-c.h"
         __result17__ = __result_obj__ = self;
         come_call_finalizer3(self,smart_pointer$1intp_finalize, 0, 0, 1, 0, (void*)0);
         return __result17__;
@@ -2696,17 +2693,17 @@ struct smart_pointer$1long* __result19__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value35 = (void*)0;
 right_value36 = (void*)0;
-        # 2004 "./neo-c.h"
+        # 1999 "./neo-c.h"
         __dec_obj9=self->memory;
-        self->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value36=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value35=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2004, "buffer"))))))));
+        self->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value36=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value35=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1999, "buffer"))))))));
         come_call_finalizer3(__dec_obj9,buffer_finalize, 0, 0, 0, 0, (void*)0);
         come_call_finalizer3(right_value35,buffer_finalize, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer3(right_value36,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-        # 2006 "./neo-c.h"
+        # 2001 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(long)*size);
-        # 2008 "./neo-c.h"
+        # 2003 "./neo-c.h"
         self->p=(long*)self->memory->buf;
-        # 2010 "./neo-c.h"
+        # 2005 "./neo-c.h"
         __result19__ = __result_obj__ = self;
         come_call_finalizer3(self,smart_pointer$1longp_finalize, 0, 0, 1, 0, (void*)0);
         return __result19__;
@@ -2723,17 +2720,17 @@ struct smart_pointer$1float* __result21__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value39 = (void*)0;
 right_value40 = (void*)0;
-        # 2004 "./neo-c.h"
+        # 1999 "./neo-c.h"
         __dec_obj10=self->memory;
-        self->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value40=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value39=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2004, "buffer"))))))));
+        self->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value40=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value39=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1999, "buffer"))))))));
         come_call_finalizer3(__dec_obj10,buffer_finalize, 0, 0, 0, 0, (void*)0);
         come_call_finalizer3(right_value39,buffer_finalize, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer3(right_value40,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-        # 2006 "./neo-c.h"
+        # 2001 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(float)*size);
-        # 2008 "./neo-c.h"
+        # 2003 "./neo-c.h"
         self->p=(float*)self->memory->buf;
-        # 2010 "./neo-c.h"
+        # 2005 "./neo-c.h"
         __result21__ = __result_obj__ = self;
         come_call_finalizer3(self,smart_pointer$1floatp_finalize, 0, 0, 1, 0, (void*)0);
         return __result21__;
@@ -2762,17 +2759,17 @@ struct smart_pointer$1double* __result23__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value43 = (void*)0;
 right_value44 = (void*)0;
-        # 2004 "./neo-c.h"
+        # 1999 "./neo-c.h"
         __dec_obj11=self->memory;
-        self->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value44=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value43=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2004, "buffer"))))))));
+        self->memory=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value44=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value43=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1999, "buffer"))))))));
         come_call_finalizer3(__dec_obj11,buffer_finalize, 0, 0, 0, 0, (void*)0);
         come_call_finalizer3(right_value43,buffer_finalize, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer3(right_value44,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-        # 2006 "./neo-c.h"
+        # 2001 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(double)*size);
-        # 2008 "./neo-c.h"
+        # 2003 "./neo-c.h"
         self->p=(double*)self->memory->buf;
-        # 2010 "./neo-c.h"
+        # 2005 "./neo-c.h"
         __result23__ = __result_obj__ = self;
         come_call_finalizer3(self,smart_pointer$1doublep_finalize, 0, 0, 1, 0, (void*)0);
         return __result23__;
@@ -2798,18 +2795,18 @@ int i_11;
 struct list$1char* __result26__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_11, 0, sizeof(int));
-        # 108 "./neo-c.h"
+        # 103 "./neo-c.h"
         self->head=((void*)0);
-        # 109 "./neo-c.h"
+        # 104 "./neo-c.h"
         self->tail=((void*)0);
-        # 110 "./neo-c.h"
+        # 105 "./neo-c.h"
         self->len=0;
-        # 116 "./neo-c.h"
+        # 111 "./neo-c.h"
         for(        i_11=0;        i_11<num_value;        i_11++        ){
-            # 113 "./neo-c.h"
+            # 108 "./neo-c.h"
             list$1char_push_back(self,values[i_11]);
         }
-        # 116 "./neo-c.h"
+        # 111 "./neo-c.h"
         __result26__ = __result_obj__ = self;
         come_call_finalizer3(self,list$1charp_finalize, 0, 0, 1, 0, (void*)0);
         return __result26__;
@@ -2834,60 +2831,60 @@ right_value48 = (void*)0;
 memset(&litem_13, 0, sizeof(struct list_item$1char*));
 right_value49 = (void*)0;
 memset(&litem_14, 0, sizeof(struct list_item$1char*));
-                # 252 "./neo-c.h"
-                # 221 "./neo-c.h"
+                # 247 "./neo-c.h"
+                # 216 "./neo-c.h"
                 if(_if_conditional7=self->len==0,                _if_conditional7) {
-                    # 222 "./neo-c.h"
-                    litem_12=(struct list_item$1char*)come_increment_ref_count(((struct list_item$1char*)(right_value47=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 222, "list_item$1char"))));
+                    # 217 "./neo-c.h"
+                    litem_12=(struct list_item$1char*)come_increment_ref_count(((struct list_item$1char*)(right_value47=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 217, "list_item$1char"))));
                     come_call_finalizer3(right_value47,list_item$1charp_finalize, 0, 1, 0, 0, __result_obj__);
-                    # 224 "./neo-c.h"
+                    # 219 "./neo-c.h"
                     litem_12->prev=((void*)0);
-                    # 225 "./neo-c.h"
+                    # 220 "./neo-c.h"
                     litem_12->next=((void*)0);
-                    # 226 "./neo-c.h"
+                    # 221 "./neo-c.h"
                     litem_12->item=item;
-                    # 228 "./neo-c.h"
+                    # 223 "./neo-c.h"
                     self->tail=litem_12;
-                    # 229 "./neo-c.h"
+                    # 224 "./neo-c.h"
                     self->head=litem_12;
                 }
                 else {
-                    # 252 "./neo-c.h"
-                    # 231 "./neo-c.h"
+                    # 247 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     if(_if_conditional8=self->len==1,                    _if_conditional8) {
-                        # 232 "./neo-c.h"
-                        litem_13=(struct list_item$1char*)come_increment_ref_count(((struct list_item$1char*)(right_value48=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 232, "list_item$1char"))));
+                        # 227 "./neo-c.h"
+                        litem_13=(struct list_item$1char*)come_increment_ref_count(((struct list_item$1char*)(right_value48=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 227, "list_item$1char"))));
                         come_call_finalizer3(right_value48,list_item$1charp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 234 "./neo-c.h"
+                        # 229 "./neo-c.h"
                         litem_13->prev=self->head;
-                        # 235 "./neo-c.h"
+                        # 230 "./neo-c.h"
                         litem_13->next=((void*)0);
-                        # 236 "./neo-c.h"
+                        # 231 "./neo-c.h"
                         litem_13->item=item;
-                        # 238 "./neo-c.h"
+                        # 233 "./neo-c.h"
                         self->tail=litem_13;
-                        # 239 "./neo-c.h"
+                        # 234 "./neo-c.h"
                         self->head->next=litem_13;
                     }
                     else {
-                        # 242 "./neo-c.h"
-                        litem_14=(struct list_item$1char*)come_increment_ref_count(((struct list_item$1char*)(right_value49=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 242, "list_item$1char"))));
+                        # 237 "./neo-c.h"
+                        litem_14=(struct list_item$1char*)come_increment_ref_count(((struct list_item$1char*)(right_value49=(struct list_item$1char*)come_calloc(1, sizeof(struct list_item$1char)*(1), "./neo-c.h", 237, "list_item$1char"))));
                         come_call_finalizer3(right_value49,list_item$1charp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         litem_14->prev=self->tail;
-                        # 245 "./neo-c.h"
+                        # 240 "./neo-c.h"
                         litem_14->next=((void*)0);
-                        # 246 "./neo-c.h"
+                        # 241 "./neo-c.h"
                         litem_14->item=item;
-                        # 248 "./neo-c.h"
+                        # 243 "./neo-c.h"
                         self->tail->next=litem_14;
-                        # 249 "./neo-c.h"
+                        # 244 "./neo-c.h"
                         self->tail=litem_14;
                     }
                 }
-                # 252 "./neo-c.h"
+                # 247 "./neo-c.h"
                 self->len++;
-                # 254 "./neo-c.h"
+                # 249 "./neo-c.h"
                 __result25__ = __result_obj__ = self;
                 return __result25__;
 }
@@ -2905,15 +2902,15 @@ struct list_item$1char* prev_it_16;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_15, 0, sizeof(struct list_item$1char*));
 memset(&prev_it_16, 0, sizeof(struct list_item$1char*));
-            # 119 "./neo-c.h"
+            # 114 "./neo-c.h"
             it_15=self->head;
-            # 125 "./neo-c.h"
+            # 120 "./neo-c.h"
             while(_while_condtional1=it_15!=((void*)0),            _while_condtional1) {
-                # 121 "./neo-c.h"
+                # 116 "./neo-c.h"
                 prev_it_16=it_15;
-                # 122 "./neo-c.h"
+                # 117 "./neo-c.h"
                 it_15=it_15->next;
-                # 123 "./neo-c.h"
+                # 118 "./neo-c.h"
                 come_call_finalizer3(prev_it_16,list_item$1charp_finalize, 0, 0, 0, 0, (void*)0);
             }
 }
@@ -2925,18 +2922,18 @@ int i_17;
 struct list$1short* __result29__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_17, 0, sizeof(int));
-        # 108 "./neo-c.h"
+        # 103 "./neo-c.h"
         self->head=((void*)0);
-        # 109 "./neo-c.h"
+        # 104 "./neo-c.h"
         self->tail=((void*)0);
-        # 110 "./neo-c.h"
+        # 105 "./neo-c.h"
         self->len=0;
-        # 116 "./neo-c.h"
+        # 111 "./neo-c.h"
         for(        i_17=0;        i_17<num_value;        i_17++        ){
-            # 113 "./neo-c.h"
+            # 108 "./neo-c.h"
             list$1short_push_back(self,values[i_17]);
         }
-        # 116 "./neo-c.h"
+        # 111 "./neo-c.h"
         __result29__ = __result_obj__ = self;
         come_call_finalizer3(self,list$1shortp_finalize, 0, 0, 1, 0, (void*)0);
         return __result29__;
@@ -2961,60 +2958,60 @@ right_value53 = (void*)0;
 memset(&litem_19, 0, sizeof(struct list_item$1short*));
 right_value54 = (void*)0;
 memset(&litem_20, 0, sizeof(struct list_item$1short*));
-                # 252 "./neo-c.h"
-                # 221 "./neo-c.h"
+                # 247 "./neo-c.h"
+                # 216 "./neo-c.h"
                 if(_if_conditional9=self->len==0,                _if_conditional9) {
-                    # 222 "./neo-c.h"
-                    litem_18=(struct list_item$1short*)come_increment_ref_count(((struct list_item$1short*)(right_value52=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 222, "list_item$1short"))));
+                    # 217 "./neo-c.h"
+                    litem_18=(struct list_item$1short*)come_increment_ref_count(((struct list_item$1short*)(right_value52=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 217, "list_item$1short"))));
                     come_call_finalizer3(right_value52,list_item$1shortp_finalize, 0, 1, 0, 0, __result_obj__);
-                    # 224 "./neo-c.h"
+                    # 219 "./neo-c.h"
                     litem_18->prev=((void*)0);
-                    # 225 "./neo-c.h"
+                    # 220 "./neo-c.h"
                     litem_18->next=((void*)0);
-                    # 226 "./neo-c.h"
+                    # 221 "./neo-c.h"
                     litem_18->item=item;
-                    # 228 "./neo-c.h"
+                    # 223 "./neo-c.h"
                     self->tail=litem_18;
-                    # 229 "./neo-c.h"
+                    # 224 "./neo-c.h"
                     self->head=litem_18;
                 }
                 else {
-                    # 252 "./neo-c.h"
-                    # 231 "./neo-c.h"
+                    # 247 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     if(_if_conditional10=self->len==1,                    _if_conditional10) {
-                        # 232 "./neo-c.h"
-                        litem_19=(struct list_item$1short*)come_increment_ref_count(((struct list_item$1short*)(right_value53=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 232, "list_item$1short"))));
+                        # 227 "./neo-c.h"
+                        litem_19=(struct list_item$1short*)come_increment_ref_count(((struct list_item$1short*)(right_value53=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 227, "list_item$1short"))));
                         come_call_finalizer3(right_value53,list_item$1shortp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 234 "./neo-c.h"
+                        # 229 "./neo-c.h"
                         litem_19->prev=self->head;
-                        # 235 "./neo-c.h"
+                        # 230 "./neo-c.h"
                         litem_19->next=((void*)0);
-                        # 236 "./neo-c.h"
+                        # 231 "./neo-c.h"
                         litem_19->item=item;
-                        # 238 "./neo-c.h"
+                        # 233 "./neo-c.h"
                         self->tail=litem_19;
-                        # 239 "./neo-c.h"
+                        # 234 "./neo-c.h"
                         self->head->next=litem_19;
                     }
                     else {
-                        # 242 "./neo-c.h"
-                        litem_20=(struct list_item$1short*)come_increment_ref_count(((struct list_item$1short*)(right_value54=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 242, "list_item$1short"))));
+                        # 237 "./neo-c.h"
+                        litem_20=(struct list_item$1short*)come_increment_ref_count(((struct list_item$1short*)(right_value54=(struct list_item$1short*)come_calloc(1, sizeof(struct list_item$1short)*(1), "./neo-c.h", 237, "list_item$1short"))));
                         come_call_finalizer3(right_value54,list_item$1shortp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         litem_20->prev=self->tail;
-                        # 245 "./neo-c.h"
+                        # 240 "./neo-c.h"
                         litem_20->next=((void*)0);
-                        # 246 "./neo-c.h"
+                        # 241 "./neo-c.h"
                         litem_20->item=item;
-                        # 248 "./neo-c.h"
+                        # 243 "./neo-c.h"
                         self->tail->next=litem_20;
-                        # 249 "./neo-c.h"
+                        # 244 "./neo-c.h"
                         self->tail=litem_20;
                     }
                 }
-                # 252 "./neo-c.h"
+                # 247 "./neo-c.h"
                 self->len++;
-                # 254 "./neo-c.h"
+                # 249 "./neo-c.h"
                 __result28__ = __result_obj__ = self;
                 return __result28__;
 }
@@ -3032,15 +3029,15 @@ struct list_item$1short* prev_it_22;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_21, 0, sizeof(struct list_item$1short*));
 memset(&prev_it_22, 0, sizeof(struct list_item$1short*));
-            # 119 "./neo-c.h"
+            # 114 "./neo-c.h"
             it_21=self->head;
-            # 125 "./neo-c.h"
+            # 120 "./neo-c.h"
             while(_while_condtional2=it_21!=((void*)0),            _while_condtional2) {
-                # 121 "./neo-c.h"
+                # 116 "./neo-c.h"
                 prev_it_22=it_21;
-                # 122 "./neo-c.h"
+                # 117 "./neo-c.h"
                 it_21=it_21->next;
-                # 123 "./neo-c.h"
+                # 118 "./neo-c.h"
                 come_call_finalizer3(prev_it_22,list_item$1shortp_finalize, 0, 0, 0, 0, (void*)0);
             }
 }
@@ -3052,18 +3049,18 @@ int i_23;
 struct list$1int* __result32__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_23, 0, sizeof(int));
-        # 108 "./neo-c.h"
+        # 103 "./neo-c.h"
         self->head=((void*)0);
-        # 109 "./neo-c.h"
+        # 104 "./neo-c.h"
         self->tail=((void*)0);
-        # 110 "./neo-c.h"
+        # 105 "./neo-c.h"
         self->len=0;
-        # 116 "./neo-c.h"
+        # 111 "./neo-c.h"
         for(        i_23=0;        i_23<num_value;        i_23++        ){
-            # 113 "./neo-c.h"
+            # 108 "./neo-c.h"
             list$1int_push_back(self,values[i_23]);
         }
-        # 116 "./neo-c.h"
+        # 111 "./neo-c.h"
         __result32__ = __result_obj__ = self;
         come_call_finalizer3(self,list$1intp_finalize, 0, 0, 1, 0, (void*)0);
         return __result32__;
@@ -3088,60 +3085,60 @@ right_value58 = (void*)0;
 memset(&litem_25, 0, sizeof(struct list_item$1int*));
 right_value59 = (void*)0;
 memset(&litem_26, 0, sizeof(struct list_item$1int*));
-                # 252 "./neo-c.h"
-                # 221 "./neo-c.h"
+                # 247 "./neo-c.h"
+                # 216 "./neo-c.h"
                 if(_if_conditional11=self->len==0,                _if_conditional11) {
-                    # 222 "./neo-c.h"
-                    litem_24=(struct list_item$1int*)come_increment_ref_count(((struct list_item$1int*)(right_value57=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 222, "list_item$1int"))));
+                    # 217 "./neo-c.h"
+                    litem_24=(struct list_item$1int*)come_increment_ref_count(((struct list_item$1int*)(right_value57=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 217, "list_item$1int"))));
                     come_call_finalizer3(right_value57,list_item$1intp_finalize, 0, 1, 0, 0, __result_obj__);
-                    # 224 "./neo-c.h"
+                    # 219 "./neo-c.h"
                     litem_24->prev=((void*)0);
-                    # 225 "./neo-c.h"
+                    # 220 "./neo-c.h"
                     litem_24->next=((void*)0);
-                    # 226 "./neo-c.h"
+                    # 221 "./neo-c.h"
                     litem_24->item=item;
-                    # 228 "./neo-c.h"
+                    # 223 "./neo-c.h"
                     self->tail=litem_24;
-                    # 229 "./neo-c.h"
+                    # 224 "./neo-c.h"
                     self->head=litem_24;
                 }
                 else {
-                    # 252 "./neo-c.h"
-                    # 231 "./neo-c.h"
+                    # 247 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     if(_if_conditional12=self->len==1,                    _if_conditional12) {
-                        # 232 "./neo-c.h"
-                        litem_25=(struct list_item$1int*)come_increment_ref_count(((struct list_item$1int*)(right_value58=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 232, "list_item$1int"))));
+                        # 227 "./neo-c.h"
+                        litem_25=(struct list_item$1int*)come_increment_ref_count(((struct list_item$1int*)(right_value58=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 227, "list_item$1int"))));
                         come_call_finalizer3(right_value58,list_item$1intp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 234 "./neo-c.h"
+                        # 229 "./neo-c.h"
                         litem_25->prev=self->head;
-                        # 235 "./neo-c.h"
+                        # 230 "./neo-c.h"
                         litem_25->next=((void*)0);
-                        # 236 "./neo-c.h"
+                        # 231 "./neo-c.h"
                         litem_25->item=item;
-                        # 238 "./neo-c.h"
+                        # 233 "./neo-c.h"
                         self->tail=litem_25;
-                        # 239 "./neo-c.h"
+                        # 234 "./neo-c.h"
                         self->head->next=litem_25;
                     }
                     else {
-                        # 242 "./neo-c.h"
-                        litem_26=(struct list_item$1int*)come_increment_ref_count(((struct list_item$1int*)(right_value59=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 242, "list_item$1int"))));
+                        # 237 "./neo-c.h"
+                        litem_26=(struct list_item$1int*)come_increment_ref_count(((struct list_item$1int*)(right_value59=(struct list_item$1int*)come_calloc(1, sizeof(struct list_item$1int)*(1), "./neo-c.h", 237, "list_item$1int"))));
                         come_call_finalizer3(right_value59,list_item$1intp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         litem_26->prev=self->tail;
-                        # 245 "./neo-c.h"
+                        # 240 "./neo-c.h"
                         litem_26->next=((void*)0);
-                        # 246 "./neo-c.h"
+                        # 241 "./neo-c.h"
                         litem_26->item=item;
-                        # 248 "./neo-c.h"
+                        # 243 "./neo-c.h"
                         self->tail->next=litem_26;
-                        # 249 "./neo-c.h"
+                        # 244 "./neo-c.h"
                         self->tail=litem_26;
                     }
                 }
-                # 252 "./neo-c.h"
+                # 247 "./neo-c.h"
                 self->len++;
-                # 254 "./neo-c.h"
+                # 249 "./neo-c.h"
                 __result31__ = __result_obj__ = self;
                 return __result31__;
 }
@@ -3159,15 +3156,15 @@ struct list_item$1int* prev_it_28;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_27, 0, sizeof(struct list_item$1int*));
 memset(&prev_it_28, 0, sizeof(struct list_item$1int*));
-            # 119 "./neo-c.h"
+            # 114 "./neo-c.h"
             it_27=self->head;
-            # 125 "./neo-c.h"
+            # 120 "./neo-c.h"
             while(_while_condtional3=it_27!=((void*)0),            _while_condtional3) {
-                # 121 "./neo-c.h"
+                # 116 "./neo-c.h"
                 prev_it_28=it_27;
-                # 122 "./neo-c.h"
+                # 117 "./neo-c.h"
                 it_27=it_27->next;
-                # 123 "./neo-c.h"
+                # 118 "./neo-c.h"
                 come_call_finalizer3(prev_it_28,list_item$1intp_finalize, 0, 0, 0, 0, (void*)0);
             }
 }
@@ -3179,18 +3176,18 @@ int i_29;
 struct list$1long* __result35__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_29, 0, sizeof(int));
-        # 108 "./neo-c.h"
+        # 103 "./neo-c.h"
         self->head=((void*)0);
-        # 109 "./neo-c.h"
+        # 104 "./neo-c.h"
         self->tail=((void*)0);
-        # 110 "./neo-c.h"
+        # 105 "./neo-c.h"
         self->len=0;
-        # 116 "./neo-c.h"
+        # 111 "./neo-c.h"
         for(        i_29=0;        i_29<num_value;        i_29++        ){
-            # 113 "./neo-c.h"
+            # 108 "./neo-c.h"
             list$1long_push_back(self,values[i_29]);
         }
-        # 116 "./neo-c.h"
+        # 111 "./neo-c.h"
         __result35__ = __result_obj__ = self;
         come_call_finalizer3(self,list$1longp_finalize, 0, 0, 1, 0, (void*)0);
         return __result35__;
@@ -3215,60 +3212,60 @@ right_value63 = (void*)0;
 memset(&litem_31, 0, sizeof(struct list_item$1long*));
 right_value64 = (void*)0;
 memset(&litem_32, 0, sizeof(struct list_item$1long*));
-                # 252 "./neo-c.h"
-                # 221 "./neo-c.h"
+                # 247 "./neo-c.h"
+                # 216 "./neo-c.h"
                 if(_if_conditional13=self->len==0,                _if_conditional13) {
-                    # 222 "./neo-c.h"
-                    litem_30=(struct list_item$1long*)come_increment_ref_count(((struct list_item$1long*)(right_value62=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 222, "list_item$1long"))));
+                    # 217 "./neo-c.h"
+                    litem_30=(struct list_item$1long*)come_increment_ref_count(((struct list_item$1long*)(right_value62=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 217, "list_item$1long"))));
                     come_call_finalizer3(right_value62,list_item$1longp_finalize, 0, 1, 0, 0, __result_obj__);
-                    # 224 "./neo-c.h"
+                    # 219 "./neo-c.h"
                     litem_30->prev=((void*)0);
-                    # 225 "./neo-c.h"
+                    # 220 "./neo-c.h"
                     litem_30->next=((void*)0);
-                    # 226 "./neo-c.h"
+                    # 221 "./neo-c.h"
                     litem_30->item=item;
-                    # 228 "./neo-c.h"
+                    # 223 "./neo-c.h"
                     self->tail=litem_30;
-                    # 229 "./neo-c.h"
+                    # 224 "./neo-c.h"
                     self->head=litem_30;
                 }
                 else {
-                    # 252 "./neo-c.h"
-                    # 231 "./neo-c.h"
+                    # 247 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     if(_if_conditional14=self->len==1,                    _if_conditional14) {
-                        # 232 "./neo-c.h"
-                        litem_31=(struct list_item$1long*)come_increment_ref_count(((struct list_item$1long*)(right_value63=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 232, "list_item$1long"))));
+                        # 227 "./neo-c.h"
+                        litem_31=(struct list_item$1long*)come_increment_ref_count(((struct list_item$1long*)(right_value63=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 227, "list_item$1long"))));
                         come_call_finalizer3(right_value63,list_item$1longp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 234 "./neo-c.h"
+                        # 229 "./neo-c.h"
                         litem_31->prev=self->head;
-                        # 235 "./neo-c.h"
+                        # 230 "./neo-c.h"
                         litem_31->next=((void*)0);
-                        # 236 "./neo-c.h"
+                        # 231 "./neo-c.h"
                         litem_31->item=item;
-                        # 238 "./neo-c.h"
+                        # 233 "./neo-c.h"
                         self->tail=litem_31;
-                        # 239 "./neo-c.h"
+                        # 234 "./neo-c.h"
                         self->head->next=litem_31;
                     }
                     else {
-                        # 242 "./neo-c.h"
-                        litem_32=(struct list_item$1long*)come_increment_ref_count(((struct list_item$1long*)(right_value64=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 242, "list_item$1long"))));
+                        # 237 "./neo-c.h"
+                        litem_32=(struct list_item$1long*)come_increment_ref_count(((struct list_item$1long*)(right_value64=(struct list_item$1long*)come_calloc(1, sizeof(struct list_item$1long)*(1), "./neo-c.h", 237, "list_item$1long"))));
                         come_call_finalizer3(right_value64,list_item$1longp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         litem_32->prev=self->tail;
-                        # 245 "./neo-c.h"
+                        # 240 "./neo-c.h"
                         litem_32->next=((void*)0);
-                        # 246 "./neo-c.h"
+                        # 241 "./neo-c.h"
                         litem_32->item=item;
-                        # 248 "./neo-c.h"
+                        # 243 "./neo-c.h"
                         self->tail->next=litem_32;
-                        # 249 "./neo-c.h"
+                        # 244 "./neo-c.h"
                         self->tail=litem_32;
                     }
                 }
-                # 252 "./neo-c.h"
+                # 247 "./neo-c.h"
                 self->len++;
-                # 254 "./neo-c.h"
+                # 249 "./neo-c.h"
                 __result34__ = __result_obj__ = self;
                 return __result34__;
 }
@@ -3286,15 +3283,15 @@ struct list_item$1long* prev_it_34;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_33, 0, sizeof(struct list_item$1long*));
 memset(&prev_it_34, 0, sizeof(struct list_item$1long*));
-            # 119 "./neo-c.h"
+            # 114 "./neo-c.h"
             it_33=self->head;
-            # 125 "./neo-c.h"
+            # 120 "./neo-c.h"
             while(_while_condtional4=it_33!=((void*)0),            _while_condtional4) {
-                # 121 "./neo-c.h"
+                # 116 "./neo-c.h"
                 prev_it_34=it_33;
-                # 122 "./neo-c.h"
+                # 117 "./neo-c.h"
                 it_33=it_33->next;
-                # 123 "./neo-c.h"
+                # 118 "./neo-c.h"
                 come_call_finalizer3(prev_it_34,list_item$1longp_finalize, 0, 0, 0, 0, (void*)0);
             }
 }
@@ -3306,18 +3303,18 @@ int i_35;
 struct list$1float* __result38__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_35, 0, sizeof(int));
-        # 108 "./neo-c.h"
+        # 103 "./neo-c.h"
         self->head=((void*)0);
-        # 109 "./neo-c.h"
+        # 104 "./neo-c.h"
         self->tail=((void*)0);
-        # 110 "./neo-c.h"
+        # 105 "./neo-c.h"
         self->len=0;
-        # 116 "./neo-c.h"
+        # 111 "./neo-c.h"
         for(        i_35=0;        i_35<num_value;        i_35++        ){
-            # 113 "./neo-c.h"
+            # 108 "./neo-c.h"
             list$1float_push_back(self,values[i_35]);
         }
-        # 116 "./neo-c.h"
+        # 111 "./neo-c.h"
         __result38__ = __result_obj__ = self;
         come_call_finalizer3(self,list$1floatp_finalize, 0, 0, 1, 0, (void*)0);
         return __result38__;
@@ -3342,60 +3339,60 @@ right_value68 = (void*)0;
 memset(&litem_37, 0, sizeof(struct list_item$1float*));
 right_value69 = (void*)0;
 memset(&litem_38, 0, sizeof(struct list_item$1float*));
-                # 252 "./neo-c.h"
-                # 221 "./neo-c.h"
+                # 247 "./neo-c.h"
+                # 216 "./neo-c.h"
                 if(_if_conditional15=self->len==0,                _if_conditional15) {
-                    # 222 "./neo-c.h"
-                    litem_36=(struct list_item$1float*)come_increment_ref_count(((struct list_item$1float*)(right_value67=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 222, "list_item$1float"))));
+                    # 217 "./neo-c.h"
+                    litem_36=(struct list_item$1float*)come_increment_ref_count(((struct list_item$1float*)(right_value67=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 217, "list_item$1float"))));
                     come_call_finalizer3(right_value67,list_item$1floatp_finalize, 0, 1, 0, 0, __result_obj__);
-                    # 224 "./neo-c.h"
+                    # 219 "./neo-c.h"
                     litem_36->prev=((void*)0);
-                    # 225 "./neo-c.h"
+                    # 220 "./neo-c.h"
                     litem_36->next=((void*)0);
-                    # 226 "./neo-c.h"
+                    # 221 "./neo-c.h"
                     litem_36->item=item;
-                    # 228 "./neo-c.h"
+                    # 223 "./neo-c.h"
                     self->tail=litem_36;
-                    # 229 "./neo-c.h"
+                    # 224 "./neo-c.h"
                     self->head=litem_36;
                 }
                 else {
-                    # 252 "./neo-c.h"
-                    # 231 "./neo-c.h"
+                    # 247 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     if(_if_conditional16=self->len==1,                    _if_conditional16) {
-                        # 232 "./neo-c.h"
-                        litem_37=(struct list_item$1float*)come_increment_ref_count(((struct list_item$1float*)(right_value68=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 232, "list_item$1float"))));
+                        # 227 "./neo-c.h"
+                        litem_37=(struct list_item$1float*)come_increment_ref_count(((struct list_item$1float*)(right_value68=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 227, "list_item$1float"))));
                         come_call_finalizer3(right_value68,list_item$1floatp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 234 "./neo-c.h"
+                        # 229 "./neo-c.h"
                         litem_37->prev=self->head;
-                        # 235 "./neo-c.h"
+                        # 230 "./neo-c.h"
                         litem_37->next=((void*)0);
-                        # 236 "./neo-c.h"
+                        # 231 "./neo-c.h"
                         litem_37->item=item;
-                        # 238 "./neo-c.h"
+                        # 233 "./neo-c.h"
                         self->tail=litem_37;
-                        # 239 "./neo-c.h"
+                        # 234 "./neo-c.h"
                         self->head->next=litem_37;
                     }
                     else {
-                        # 242 "./neo-c.h"
-                        litem_38=(struct list_item$1float*)come_increment_ref_count(((struct list_item$1float*)(right_value69=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 242, "list_item$1float"))));
+                        # 237 "./neo-c.h"
+                        litem_38=(struct list_item$1float*)come_increment_ref_count(((struct list_item$1float*)(right_value69=(struct list_item$1float*)come_calloc(1, sizeof(struct list_item$1float)*(1), "./neo-c.h", 237, "list_item$1float"))));
                         come_call_finalizer3(right_value69,list_item$1floatp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         litem_38->prev=self->tail;
-                        # 245 "./neo-c.h"
+                        # 240 "./neo-c.h"
                         litem_38->next=((void*)0);
-                        # 246 "./neo-c.h"
+                        # 241 "./neo-c.h"
                         litem_38->item=item;
-                        # 248 "./neo-c.h"
+                        # 243 "./neo-c.h"
                         self->tail->next=litem_38;
-                        # 249 "./neo-c.h"
+                        # 244 "./neo-c.h"
                         self->tail=litem_38;
                     }
                 }
-                # 252 "./neo-c.h"
+                # 247 "./neo-c.h"
                 self->len++;
-                # 254 "./neo-c.h"
+                # 249 "./neo-c.h"
                 __result37__ = __result_obj__ = self;
                 return __result37__;
 }
@@ -3413,15 +3410,15 @@ struct list_item$1float* prev_it_40;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_39, 0, sizeof(struct list_item$1float*));
 memset(&prev_it_40, 0, sizeof(struct list_item$1float*));
-            # 119 "./neo-c.h"
+            # 114 "./neo-c.h"
             it_39=self->head;
-            # 125 "./neo-c.h"
+            # 120 "./neo-c.h"
             while(_while_condtional5=it_39!=((void*)0),            _while_condtional5) {
-                # 121 "./neo-c.h"
+                # 116 "./neo-c.h"
                 prev_it_40=it_39;
-                # 122 "./neo-c.h"
+                # 117 "./neo-c.h"
                 it_39=it_39->next;
-                # 123 "./neo-c.h"
+                # 118 "./neo-c.h"
                 come_call_finalizer3(prev_it_40,list_item$1floatp_finalize, 0, 0, 0, 0, (void*)0);
             }
 }
@@ -3433,18 +3430,18 @@ int i_41;
 struct list$1double* __result41__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_41, 0, sizeof(int));
-        # 108 "./neo-c.h"
+        # 103 "./neo-c.h"
         self->head=((void*)0);
-        # 109 "./neo-c.h"
+        # 104 "./neo-c.h"
         self->tail=((void*)0);
-        # 110 "./neo-c.h"
+        # 105 "./neo-c.h"
         self->len=0;
-        # 116 "./neo-c.h"
+        # 111 "./neo-c.h"
         for(        i_41=0;        i_41<num_value;        i_41++        ){
-            # 113 "./neo-c.h"
+            # 108 "./neo-c.h"
             list$1double_push_back(self,values[i_41]);
         }
-        # 116 "./neo-c.h"
+        # 111 "./neo-c.h"
         __result41__ = __result_obj__ = self;
         come_call_finalizer3(self,list$1doublep_finalize, 0, 0, 1, 0, (void*)0);
         return __result41__;
@@ -3469,60 +3466,60 @@ right_value73 = (void*)0;
 memset(&litem_43, 0, sizeof(struct list_item$1double*));
 right_value74 = (void*)0;
 memset(&litem_44, 0, sizeof(struct list_item$1double*));
-                # 252 "./neo-c.h"
-                # 221 "./neo-c.h"
+                # 247 "./neo-c.h"
+                # 216 "./neo-c.h"
                 if(_if_conditional17=self->len==0,                _if_conditional17) {
-                    # 222 "./neo-c.h"
-                    litem_42=(struct list_item$1double*)come_increment_ref_count(((struct list_item$1double*)(right_value72=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 222, "list_item$1double"))));
+                    # 217 "./neo-c.h"
+                    litem_42=(struct list_item$1double*)come_increment_ref_count(((struct list_item$1double*)(right_value72=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 217, "list_item$1double"))));
                     come_call_finalizer3(right_value72,list_item$1doublep_finalize, 0, 1, 0, 0, __result_obj__);
-                    # 224 "./neo-c.h"
+                    # 219 "./neo-c.h"
                     litem_42->prev=((void*)0);
-                    # 225 "./neo-c.h"
+                    # 220 "./neo-c.h"
                     litem_42->next=((void*)0);
-                    # 226 "./neo-c.h"
+                    # 221 "./neo-c.h"
                     litem_42->item=item;
-                    # 228 "./neo-c.h"
+                    # 223 "./neo-c.h"
                     self->tail=litem_42;
-                    # 229 "./neo-c.h"
+                    # 224 "./neo-c.h"
                     self->head=litem_42;
                 }
                 else {
-                    # 252 "./neo-c.h"
-                    # 231 "./neo-c.h"
+                    # 247 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     if(_if_conditional18=self->len==1,                    _if_conditional18) {
-                        # 232 "./neo-c.h"
-                        litem_43=(struct list_item$1double*)come_increment_ref_count(((struct list_item$1double*)(right_value73=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 232, "list_item$1double"))));
+                        # 227 "./neo-c.h"
+                        litem_43=(struct list_item$1double*)come_increment_ref_count(((struct list_item$1double*)(right_value73=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 227, "list_item$1double"))));
                         come_call_finalizer3(right_value73,list_item$1doublep_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 234 "./neo-c.h"
+                        # 229 "./neo-c.h"
                         litem_43->prev=self->head;
-                        # 235 "./neo-c.h"
+                        # 230 "./neo-c.h"
                         litem_43->next=((void*)0);
-                        # 236 "./neo-c.h"
+                        # 231 "./neo-c.h"
                         litem_43->item=item;
-                        # 238 "./neo-c.h"
+                        # 233 "./neo-c.h"
                         self->tail=litem_43;
-                        # 239 "./neo-c.h"
+                        # 234 "./neo-c.h"
                         self->head->next=litem_43;
                     }
                     else {
-                        # 242 "./neo-c.h"
-                        litem_44=(struct list_item$1double*)come_increment_ref_count(((struct list_item$1double*)(right_value74=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 242, "list_item$1double"))));
+                        # 237 "./neo-c.h"
+                        litem_44=(struct list_item$1double*)come_increment_ref_count(((struct list_item$1double*)(right_value74=(struct list_item$1double*)come_calloc(1, sizeof(struct list_item$1double)*(1), "./neo-c.h", 237, "list_item$1double"))));
                         come_call_finalizer3(right_value74,list_item$1doublep_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         litem_44->prev=self->tail;
-                        # 245 "./neo-c.h"
+                        # 240 "./neo-c.h"
                         litem_44->next=((void*)0);
-                        # 246 "./neo-c.h"
+                        # 241 "./neo-c.h"
                         litem_44->item=item;
-                        # 248 "./neo-c.h"
+                        # 243 "./neo-c.h"
                         self->tail->next=litem_44;
-                        # 249 "./neo-c.h"
+                        # 244 "./neo-c.h"
                         self->tail=litem_44;
                     }
                 }
-                # 252 "./neo-c.h"
+                # 247 "./neo-c.h"
                 self->len++;
-                # 254 "./neo-c.h"
+                # 249 "./neo-c.h"
                 __result40__ = __result_obj__ = self;
                 return __result40__;
 }
@@ -3540,15 +3537,15 @@ struct list_item$1double* prev_it_46;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_45, 0, sizeof(struct list_item$1double*));
 memset(&prev_it_46, 0, sizeof(struct list_item$1double*));
-            # 119 "./neo-c.h"
+            # 114 "./neo-c.h"
             it_45=self->head;
-            # 125 "./neo-c.h"
+            # 120 "./neo-c.h"
             while(_while_condtional6=it_45!=((void*)0),            _while_condtional6) {
-                # 121 "./neo-c.h"
+                # 116 "./neo-c.h"
                 prev_it_46=it_45;
-                # 122 "./neo-c.h"
+                # 117 "./neo-c.h"
                 it_45=it_45->next;
-                # 123 "./neo-c.h"
+                # 118 "./neo-c.h"
                 come_call_finalizer3(prev_it_46,list_item$1doublep_finalize, 0, 0, 0, 0, (void*)0);
             }
 }
@@ -3957,15 +3954,15 @@ struct list_item$1tuple2$2charphsTypephph* prev_it_50;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_49, 0, sizeof(struct list_item$1tuple2$2charphsTypephph*));
 memset(&prev_it_50, 0, sizeof(struct list_item$1tuple2$2charphsTypephph*));
-                # 119 "./neo-c.h"
+                # 114 "./neo-c.h"
                 it_49=self->head;
-                # 125 "./neo-c.h"
+                # 120 "./neo-c.h"
                 while(_while_condtional7=it_49!=((void*)0),                _while_condtional7) {
-                    # 121 "./neo-c.h"
+                    # 116 "./neo-c.h"
                     prev_it_50=it_49;
-                    # 122 "./neo-c.h"
+                    # 117 "./neo-c.h"
                     it_49=it_49->next;
-                    # 123 "./neo-c.h"
+                    # 118 "./neo-c.h"
                     come_call_finalizer3(prev_it_50,list_item$1tuple2$2charphsTypephphp_finalize, 0, 0, 0, 0, (void*)0);
                 }
 }
@@ -4086,15 +4083,15 @@ struct list_item$1sTypeph* prev_it_52;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_51, 0, sizeof(struct list_item$1sTypeph*));
 memset(&prev_it_52, 0, sizeof(struct list_item$1sTypeph*));
-                                                # 119 "./neo-c.h"
+                                                # 114 "./neo-c.h"
                                                 it_51=self->head;
-                                                # 125 "./neo-c.h"
+                                                # 120 "./neo-c.h"
                                                 while(_while_condtional8=it_51!=((void*)0),                                                _while_condtional8) {
-                                                    # 121 "./neo-c.h"
+                                                    # 116 "./neo-c.h"
                                                     prev_it_52=it_51;
-                                                    # 122 "./neo-c.h"
+                                                    # 117 "./neo-c.h"
                                                     it_51=it_51->next;
-                                                    # 123 "./neo-c.h"
+                                                    # 118 "./neo-c.h"
                                                     come_call_finalizer3(prev_it_52,list_item$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
                                                 }
 }
@@ -4131,15 +4128,15 @@ struct list_item$1sNodeph* prev_it_54;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_53, 0, sizeof(struct list_item$1sNodeph*));
 memset(&prev_it_54, 0, sizeof(struct list_item$1sNodeph*));
-                                                # 119 "./neo-c.h"
+                                                # 114 "./neo-c.h"
                                                 it_53=self->head;
-                                                # 125 "./neo-c.h"
+                                                # 120 "./neo-c.h"
                                                 while(_while_condtional9=it_53!=((void*)0),                                                _while_condtional9) {
-                                                    # 121 "./neo-c.h"
+                                                    # 116 "./neo-c.h"
                                                     prev_it_54=it_53;
-                                                    # 122 "./neo-c.h"
+                                                    # 117 "./neo-c.h"
                                                     it_53=it_53->next;
-                                                    # 123 "./neo-c.h"
+                                                    # 118 "./neo-c.h"
                                                     come_call_finalizer3(prev_it_54,list_item$1sNodephp_finalize, 0, 0, 0, 0, (void*)0);
                                                 }
 }
@@ -4164,15 +4161,15 @@ struct list_item$1charph* prev_it_56;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_55, 0, sizeof(struct list_item$1charph*));
 memset(&prev_it_56, 0, sizeof(struct list_item$1charph*));
-                                                # 119 "./neo-c.h"
+                                                # 114 "./neo-c.h"
                                                 it_55=self->head;
-                                                # 125 "./neo-c.h"
+                                                # 120 "./neo-c.h"
                                                 while(_while_condtional10=it_55!=((void*)0),                                                _while_condtional10) {
-                                                    # 121 "./neo-c.h"
+                                                    # 116 "./neo-c.h"
                                                     prev_it_56=it_55;
-                                                    # 122 "./neo-c.h"
+                                                    # 117 "./neo-c.h"
                                                     it_55=it_55->next;
-                                                    # 123 "./neo-c.h"
+                                                    # 118 "./neo-c.h"
                                                     come_call_finalizer3(prev_it_56,list_item$1charphp_finalize, 0, 0, 0, 0, (void*)0);
                                                 }
 }
@@ -4201,29 +4198,29 @@ char* __result59__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_59, 0, sizeof(char*));
 memset(&result_60, 0, sizeof(char*));
-            # 1284 "./neo-c.h"
             # 1279 "./neo-c.h"
+            # 1274 "./neo-c.h"
             if(_if_conditional44=self==((void*)0),            _if_conditional44) {
-                # 1280 "./neo-c.h"
-                # 1281 "./neo-c.h"
+                # 1275 "./neo-c.h"
+                # 1276 "./neo-c.h"
                 memset(&result_59,0,sizeof(char*));
-                # 1282 "./neo-c.h"
+                # 1277 "./neo-c.h"
                 __result57__ = __result_obj__ = result_59;
                 return __result57__;
             }
-            # 1284 "./neo-c.h"
+            # 1279 "./neo-c.h"
             self->key_list->it=self->key_list->head;
-            # 1290 "./neo-c.h"
-            # 1286 "./neo-c.h"
+            # 1285 "./neo-c.h"
+            # 1281 "./neo-c.h"
             if(self->key_list->it) {
-                # 1287 "./neo-c.h"
+                # 1282 "./neo-c.h"
                 __result58__ = __result_obj__ = self->key_list->it->item;
                 return __result58__;
             }
-            # 1290 "./neo-c.h"
-            # 1291 "./neo-c.h"
+            # 1285 "./neo-c.h"
+            # 1286 "./neo-c.h"
             memset(&result_60,0,sizeof(char*));
-            # 1292 "./neo-c.h"
+            # 1287 "./neo-c.h"
             __result59__ = __result_obj__ = result_60;
             return __result59__;
 }
@@ -4232,7 +4229,7 @@ static _Bool map$2charphsVarph_end(struct map$2charphsVarph* self){
 void* __result_obj__;
 _Bool __result60__;
 memset(&__result_obj__, 0, sizeof(void*));
-            # 1313 "./neo-c.h"
+            # 1308 "./neo-c.h"
             __result60__ = self==((void*)0)||self->key_list==((void*)0)||self->key_list->it==((void*)0);
             return __result60__;
 }
@@ -4249,29 +4246,29 @@ char* __result63__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_62, 0, sizeof(char*));
 memset(&result_63, 0, sizeof(char*));
-            # 1301 "./neo-c.h"
             # 1296 "./neo-c.h"
+            # 1291 "./neo-c.h"
             if(_if_conditional46=self==((void*)0)||self->key_list->it==((void*)0),            _if_conditional46) {
-                # 1297 "./neo-c.h"
-                # 1298 "./neo-c.h"
+                # 1292 "./neo-c.h"
+                # 1293 "./neo-c.h"
                 memset(&result_62,0,sizeof(char*));
-                # 1299 "./neo-c.h"
+                # 1294 "./neo-c.h"
                 __result61__ = __result_obj__ = result_62;
                 return __result61__;
             }
-            # 1301 "./neo-c.h"
+            # 1296 "./neo-c.h"
             self->key_list->it=self->key_list->it->next;
-            # 1307 "./neo-c.h"
-            # 1303 "./neo-c.h"
+            # 1302 "./neo-c.h"
+            # 1298 "./neo-c.h"
             if(self->key_list->it) {
-                # 1304 "./neo-c.h"
+                # 1299 "./neo-c.h"
                 __result62__ = __result_obj__ = self->key_list->it->item;
                 return __result62__;
             }
-            # 1307 "./neo-c.h"
-            # 1308 "./neo-c.h"
+            # 1302 "./neo-c.h"
+            # 1303 "./neo-c.h"
             memset(&result_63,0,sizeof(char*));
-            # 1309 "./neo-c.h"
+            # 1304 "./neo-c.h"
             __result63__ = __result_obj__ = result_63;
             return __result63__;
 }
@@ -4294,39 +4291,39 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&default_value_65, 0, sizeof(struct sVar*));
 memset(&hash_66, 0, sizeof(unsigned int));
 memset(&it_67, 0, sizeof(unsigned int));
-                # 1524 "./neo-c.h"
-                # 1525 "./neo-c.h"
+                # 1519 "./neo-c.h"
+                # 1520 "./neo-c.h"
                 memset(&default_value_65,0,sizeof(struct sVar*));
-                # 1527 "./neo-c.h"
+                # 1522 "./neo-c.h"
                 hash_66=string_get_hash_key(((char*)key))%self->size;
-                # 1528 "./neo-c.h"
+                # 1523 "./neo-c.h"
                 it_67=hash_66;
-                # 1552 "./neo-c.h"
+                # 1547 "./neo-c.h"
                 while(_while_condtional11=(_Bool)1,                _while_condtional11) {
-                    # 1550 "./neo-c.h"
-                    # 1531 "./neo-c.h"
+                    # 1545 "./neo-c.h"
+                    # 1526 "./neo-c.h"
                     if(_if_conditional48=self->item_existance[it_67],                    _if_conditional48) {
-                        # 1538 "./neo-c.h"
                         # 1533 "./neo-c.h"
+                        # 1528 "./neo-c.h"
                         if(_if_conditional49=string_equals(self->keys[it_67],key),                        _if_conditional49) {
-                            # 1535 "./neo-c.h"
+                            # 1530 "./neo-c.h"
                             __result64__ = __result_obj__ = self->items[it_67];
                             come_call_finalizer3(default_value_65,sVar_finalize, 0, 0, 0, 0, (void*)0);
                             return __result64__;
                         }
-                        # 1538 "./neo-c.h"
+                        # 1533 "./neo-c.h"
                         it_67++;
-                        # 1546 "./neo-c.h"
-                        # 1540 "./neo-c.h"
+                        # 1541 "./neo-c.h"
+                        # 1535 "./neo-c.h"
                         if(_if_conditional54=it_67>=self->size,                        _if_conditional54) {
-                            # 1541 "./neo-c.h"
+                            # 1536 "./neo-c.h"
                             it_67=0;
                         }
                         else {
-                            # 1546 "./neo-c.h"
-                            # 1543 "./neo-c.h"
+                            # 1541 "./neo-c.h"
+                            # 1538 "./neo-c.h"
                             if(_if_conditional55=it_67==hash_66,                            _if_conditional55) {
-                                # 1544 "./neo-c.h"
+                                # 1539 "./neo-c.h"
                                 __result65__ = __result_obj__ = default_value_65;
                                 come_call_finalizer3(default_value_65,sVar_finalize, 0, 0, 1, 0, (void*)0);
                                 return __result65__;
@@ -4334,13 +4331,13 @@ memset(&it_67, 0, sizeof(unsigned int));
                         }
                     }
                     else {
-                        # 1548 "./neo-c.h"
+                        # 1543 "./neo-c.h"
                         __result66__ = __result_obj__ = default_value_65;
                         come_call_finalizer3(default_value_65,sVar_finalize, 0, 0, 1, 0, (void*)0);
                         return __result66__;
                     }
                 }
-                # 1552 "./neo-c.h"
+                # 1547 "./neo-c.h"
                 __result67__ = __result_obj__ = default_value_65;
                 come_call_finalizer3(default_value_65,sVar_finalize, 0, 0, 1, 0, (void*)0);
                 return __result67__;
@@ -4866,28 +4863,28 @@ right_value87 = (void*)0;
 memset(&result_70, 0, sizeof(struct list$1sTypeph*));
 memset(&it_71, 0, sizeof(struct list_item$1sTypeph*));
 right_value91 = (void*)0;
-                        # 138 "./neo-c.h"
-                        # 135 "./neo-c.h"
+                        # 133 "./neo-c.h"
+                        # 130 "./neo-c.h"
                         if(_if_conditional59=self==((void*)0),                        _if_conditional59) {
-                            # 136 "./neo-c.h"
+                            # 131 "./neo-c.h"
                             __result69__ = __result_obj__ = ((void*)0);
                             return __result69__;
                         }
-                        # 138 "./neo-c.h"
-                        result_70=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value87=list$1sTypeph_initialize((struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value86=(struct list$1sTypeph*)come_calloc(1, sizeof(struct list$1sTypeph)*(1), "./neo-c.h", 138, "list$1sTypeph"))))))));
+                        # 133 "./neo-c.h"
+                        result_70=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value87=list$1sTypeph_initialize((struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value86=(struct list$1sTypeph*)come_calloc(1, sizeof(struct list$1sTypeph)*(1), "./neo-c.h", 133, "list$1sTypeph"))))))));
                         come_call_finalizer3(right_value86,list$1sTypephp_finalize, 0, 1, 0, 0, __result_obj__);
                         come_call_finalizer3(right_value87,list$1sTypephp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 140 "./neo-c.h"
+                        # 135 "./neo-c.h"
                         it_71=self->head;
-                        # 147 "./neo-c.h"
+                        # 142 "./neo-c.h"
                         while(_while_condtional12=it_71!=((void*)0),                        _while_condtional12) {
-                            # 142 "./neo-c.h"
+                            # 137 "./neo-c.h"
                             list$1sTypeph_add(result_70,(struct sType*)come_increment_ref_count(((struct sType*)(right_value91=sType_clone(it_71->item)))));
                             come_call_finalizer3(right_value91,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                            # 144 "./neo-c.h"
+                            # 139 "./neo-c.h"
                             it_71=it_71->next;
                         }
-                        # 147 "./neo-c.h"
+                        # 142 "./neo-c.h"
                         __result72__ = __result_obj__ = result_70;
                         come_call_finalizer3(result_70,list$1sTypephp_finalize, 0, 0, 1, 0, (void*)0);
                         return __result72__;
@@ -4898,13 +4895,13 @@ static struct list$1sTypeph* list$1sTypeph_initialize(struct list$1sTypeph* self
 void* __result_obj__;
 struct list$1sTypeph* __result70__;
 memset(&__result_obj__, 0, sizeof(void*));
-                            # 100 "./neo-c.h"
+                            # 95 "./neo-c.h"
                             self->head=((void*)0);
-                            # 101 "./neo-c.h"
+                            # 96 "./neo-c.h"
                             self->tail=((void*)0);
-                            # 102 "./neo-c.h"
+                            # 97 "./neo-c.h"
                             self->len=0;
-                            # 104 "./neo-c.h"
+                            # 99 "./neo-c.h"
                             __result70__ = __result_obj__ = self;
                             come_call_finalizer3(self,list$1sTypephp_finalize, 0, 0, 1, 0, (void*)0);
                             return __result70__;
@@ -4932,66 +4929,66 @@ right_value89 = (void*)0;
 memset(&litem_73, 0, sizeof(struct list_item$1sTypeph*));
 right_value90 = (void*)0;
 memset(&litem_74, 0, sizeof(struct list_item$1sTypeph*));
-                                # 182 "./neo-c.h"
-                                # 151 "./neo-c.h"
+                                # 177 "./neo-c.h"
+                                # 146 "./neo-c.h"
                                 if(_if_conditional60=self->len==0,                                _if_conditional60) {
-                                    # 152 "./neo-c.h"
-                                    litem_72=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value88=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./neo-c.h", 152, "list_item$1sTypeph"))));
+                                    # 147 "./neo-c.h"
+                                    litem_72=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value88=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./neo-c.h", 147, "list_item$1sTypeph"))));
                                     come_call_finalizer3(right_value88,list_item$1sTypephp_finalize, 0, 1, 0, 0, __result_obj__);
-                                    # 154 "./neo-c.h"
+                                    # 149 "./neo-c.h"
                                     litem_72->prev=((void*)0);
-                                    # 155 "./neo-c.h"
+                                    # 150 "./neo-c.h"
                                     litem_72->next=((void*)0);
-                                    # 156 "./neo-c.h"
+                                    # 151 "./neo-c.h"
                                     __dec_obj13=litem_72->item;
                                     litem_72->item=(struct sType*)come_increment_ref_count(item);
                                     come_call_finalizer3(__dec_obj13,sType_finalize, 0, 0, 0, 0, (void*)0);
-                                    # 158 "./neo-c.h"
+                                    # 153 "./neo-c.h"
                                     self->tail=litem_72;
-                                    # 159 "./neo-c.h"
+                                    # 154 "./neo-c.h"
                                     self->head=litem_72;
                                 }
                                 else {
-                                    # 182 "./neo-c.h"
-                                    # 161 "./neo-c.h"
+                                    # 177 "./neo-c.h"
+                                    # 156 "./neo-c.h"
                                     if(_if_conditional61=self->len==1,                                    _if_conditional61) {
-                                        # 162 "./neo-c.h"
-                                        litem_73=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value89=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./neo-c.h", 162, "list_item$1sTypeph"))));
+                                        # 157 "./neo-c.h"
+                                        litem_73=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value89=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./neo-c.h", 157, "list_item$1sTypeph"))));
                                         come_call_finalizer3(right_value89,list_item$1sTypephp_finalize, 0, 1, 0, 0, __result_obj__);
-                                        # 164 "./neo-c.h"
+                                        # 159 "./neo-c.h"
                                         litem_73->prev=self->head;
-                                        # 165 "./neo-c.h"
+                                        # 160 "./neo-c.h"
                                         litem_73->next=((void*)0);
-                                        # 166 "./neo-c.h"
+                                        # 161 "./neo-c.h"
                                         __dec_obj14=litem_73->item;
                                         litem_73->item=(struct sType*)come_increment_ref_count(item);
                                         come_call_finalizer3(__dec_obj14,sType_finalize, 0, 0, 0, 0, (void*)0);
-                                        # 168 "./neo-c.h"
+                                        # 163 "./neo-c.h"
                                         self->tail=litem_73;
-                                        # 169 "./neo-c.h"
+                                        # 164 "./neo-c.h"
                                         self->head->next=litem_73;
                                     }
                                     else {
-                                        # 172 "./neo-c.h"
-                                        litem_74=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value90=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./neo-c.h", 172, "list_item$1sTypeph"))));
+                                        # 167 "./neo-c.h"
+                                        litem_74=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value90=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./neo-c.h", 167, "list_item$1sTypeph"))));
                                         come_call_finalizer3(right_value90,list_item$1sTypephp_finalize, 0, 1, 0, 0, __result_obj__);
-                                        # 174 "./neo-c.h"
+                                        # 169 "./neo-c.h"
                                         litem_74->prev=self->tail;
-                                        # 175 "./neo-c.h"
+                                        # 170 "./neo-c.h"
                                         litem_74->next=((void*)0);
-                                        # 176 "./neo-c.h"
+                                        # 171 "./neo-c.h"
                                         __dec_obj15=litem_74->item;
                                         litem_74->item=(struct sType*)come_increment_ref_count(item);
                                         come_call_finalizer3(__dec_obj15,sType_finalize, 0, 0, 0, 0, (void*)0);
-                                        # 178 "./neo-c.h"
+                                        # 173 "./neo-c.h"
                                         self->tail->next=litem_74;
-                                        # 179 "./neo-c.h"
+                                        # 174 "./neo-c.h"
                                         self->tail=litem_74;
                                     }
                                 }
-                                # 182 "./neo-c.h"
+                                # 177 "./neo-c.h"
                                 self->len++;
-                                # 184 "./neo-c.h"
+                                # 179 "./neo-c.h"
                                 __result71__ = __result_obj__ = self;
                                 come_call_finalizer3(item,sType_finalize, 0, 0, 1, 0, (void*)0);
                                 return __result71__;
@@ -5006,15 +5003,15 @@ struct list_item$1sTypeph* prev_it_76;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_75, 0, sizeof(struct list_item$1sTypeph*));
 memset(&prev_it_76, 0, sizeof(struct list_item$1sTypeph*));
-                        # 119 "./neo-c.h"
+                        # 114 "./neo-c.h"
                         it_75=self->head;
-                        # 125 "./neo-c.h"
+                        # 120 "./neo-c.h"
                         while(_while_condtional13=it_75!=((void*)0),                        _while_condtional13) {
-                            # 121 "./neo-c.h"
+                            # 116 "./neo-c.h"
                             prev_it_76=it_75;
-                            # 122 "./neo-c.h"
+                            # 117 "./neo-c.h"
                             it_75=it_75->next;
-                            # 123 "./neo-c.h"
+                            # 118 "./neo-c.h"
                             come_call_finalizer3(prev_it_76,list_item$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
                         }
 }
@@ -5088,28 +5085,28 @@ right_value100 = (void*)0;
 memset(&result_78, 0, sizeof(struct list$1sNodeph*));
 memset(&it_79, 0, sizeof(struct list_item$1sNodeph*));
 right_value105 = (void*)0;
-                        # 138 "./neo-c.h"
-                        # 135 "./neo-c.h"
+                        # 133 "./neo-c.h"
+                        # 130 "./neo-c.h"
                         if(_if_conditional70=self==((void*)0),                        _if_conditional70) {
-                            # 136 "./neo-c.h"
+                            # 131 "./neo-c.h"
                             __result75__ = __result_obj__ = ((void*)0);
                             return __result75__;
                         }
-                        # 138 "./neo-c.h"
-                        result_78=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value100=list$1sNodeph_initialize((struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value99=(struct list$1sNodeph*)come_calloc(1, sizeof(struct list$1sNodeph)*(1), "./neo-c.h", 138, "list$1sNodeph"))))))));
+                        # 133 "./neo-c.h"
+                        result_78=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value100=list$1sNodeph_initialize((struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value99=(struct list$1sNodeph*)come_calloc(1, sizeof(struct list$1sNodeph)*(1), "./neo-c.h", 133, "list$1sNodeph"))))))));
                         come_call_finalizer3(right_value99,list$1sNodephp_finalize, 0, 1, 0, 0, __result_obj__);
                         come_call_finalizer3(right_value100,list$1sNodephp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 140 "./neo-c.h"
+                        # 135 "./neo-c.h"
                         it_79=self->head;
-                        # 147 "./neo-c.h"
+                        # 142 "./neo-c.h"
                         while(_while_condtional14=it_79!=((void*)0),                        _while_condtional14) {
-                            # 142 "./neo-c.h"
+                            # 137 "./neo-c.h"
                             list$1sNodeph_add(result_78,(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value105=sNode_clone(it_79->item)))));
                             if(right_value105) { right_value105 = come_decrement_ref_count2(right_value105, ((struct sNode*)right_value105)->finalize, ((struct sNode*)right_value105)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                            # 144 "./neo-c.h"
+                            # 139 "./neo-c.h"
                             it_79=it_79->next;
                         }
-                        # 147 "./neo-c.h"
+                        # 142 "./neo-c.h"
                         __result80__ = __result_obj__ = result_78;
                         come_call_finalizer3(result_78,list$1sNodephp_finalize, 0, 0, 1, 0, (void*)0);
                         return __result80__;
@@ -5120,13 +5117,13 @@ static struct list$1sNodeph* list$1sNodeph_initialize(struct list$1sNodeph* self
 void* __result_obj__;
 struct list$1sNodeph* __result76__;
 memset(&__result_obj__, 0, sizeof(void*));
-                            # 100 "./neo-c.h"
+                            # 95 "./neo-c.h"
                             self->head=((void*)0);
-                            # 101 "./neo-c.h"
+                            # 96 "./neo-c.h"
                             self->tail=((void*)0);
-                            # 102 "./neo-c.h"
+                            # 97 "./neo-c.h"
                             self->len=0;
-                            # 104 "./neo-c.h"
+                            # 99 "./neo-c.h"
                             __result76__ = __result_obj__ = self;
                             come_call_finalizer3(self,list$1sNodephp_finalize, 0, 0, 1, 0, (void*)0);
                             return __result76__;
@@ -5154,66 +5151,66 @@ right_value102 = (void*)0;
 memset(&litem_81, 0, sizeof(struct list_item$1sNodeph*));
 right_value103 = (void*)0;
 memset(&litem_82, 0, sizeof(struct list_item$1sNodeph*));
-                                # 182 "./neo-c.h"
-                                # 151 "./neo-c.h"
+                                # 177 "./neo-c.h"
+                                # 146 "./neo-c.h"
                                 if(_if_conditional71=self->len==0,                                _if_conditional71) {
-                                    # 152 "./neo-c.h"
-                                    litem_80=(struct list_item$1sNodeph*)come_increment_ref_count(((struct list_item$1sNodeph*)(right_value101=(struct list_item$1sNodeph*)come_calloc(1, sizeof(struct list_item$1sNodeph)*(1), "./neo-c.h", 152, "list_item$1sNodeph"))));
+                                    # 147 "./neo-c.h"
+                                    litem_80=(struct list_item$1sNodeph*)come_increment_ref_count(((struct list_item$1sNodeph*)(right_value101=(struct list_item$1sNodeph*)come_calloc(1, sizeof(struct list_item$1sNodeph)*(1), "./neo-c.h", 147, "list_item$1sNodeph"))));
                                     come_call_finalizer3(right_value101,list_item$1sNodephp_finalize, 0, 1, 0, 0, __result_obj__);
-                                    # 154 "./neo-c.h"
+                                    # 149 "./neo-c.h"
                                     litem_80->prev=((void*)0);
-                                    # 155 "./neo-c.h"
+                                    # 150 "./neo-c.h"
                                     litem_80->next=((void*)0);
-                                    # 156 "./neo-c.h"
+                                    # 151 "./neo-c.h"
                                     __dec_obj22=litem_80->item;
                                     litem_80->item=(struct sNode*)come_increment_ref_count(item);
                                     if(__dec_obj22) { __dec_obj22 = come_decrement_ref_count2(__dec_obj22, ((struct sNode*)__dec_obj22)->finalize, ((struct sNode*)__dec_obj22)->_protocol_obj, 0,0,0, (void*)0); }
-                                    # 158 "./neo-c.h"
+                                    # 153 "./neo-c.h"
                                     self->tail=litem_80;
-                                    # 159 "./neo-c.h"
+                                    # 154 "./neo-c.h"
                                     self->head=litem_80;
                                 }
                                 else {
-                                    # 182 "./neo-c.h"
-                                    # 161 "./neo-c.h"
+                                    # 177 "./neo-c.h"
+                                    # 156 "./neo-c.h"
                                     if(_if_conditional72=self->len==1,                                    _if_conditional72) {
-                                        # 162 "./neo-c.h"
-                                        litem_81=(struct list_item$1sNodeph*)come_increment_ref_count(((struct list_item$1sNodeph*)(right_value102=(struct list_item$1sNodeph*)come_calloc(1, sizeof(struct list_item$1sNodeph)*(1), "./neo-c.h", 162, "list_item$1sNodeph"))));
+                                        # 157 "./neo-c.h"
+                                        litem_81=(struct list_item$1sNodeph*)come_increment_ref_count(((struct list_item$1sNodeph*)(right_value102=(struct list_item$1sNodeph*)come_calloc(1, sizeof(struct list_item$1sNodeph)*(1), "./neo-c.h", 157, "list_item$1sNodeph"))));
                                         come_call_finalizer3(right_value102,list_item$1sNodephp_finalize, 0, 1, 0, 0, __result_obj__);
-                                        # 164 "./neo-c.h"
+                                        # 159 "./neo-c.h"
                                         litem_81->prev=self->head;
-                                        # 165 "./neo-c.h"
+                                        # 160 "./neo-c.h"
                                         litem_81->next=((void*)0);
-                                        # 166 "./neo-c.h"
+                                        # 161 "./neo-c.h"
                                         __dec_obj23=litem_81->item;
                                         litem_81->item=(struct sNode*)come_increment_ref_count(item);
                                         if(__dec_obj23) { __dec_obj23 = come_decrement_ref_count2(__dec_obj23, ((struct sNode*)__dec_obj23)->finalize, ((struct sNode*)__dec_obj23)->_protocol_obj, 0,0,0, (void*)0); }
-                                        # 168 "./neo-c.h"
+                                        # 163 "./neo-c.h"
                                         self->tail=litem_81;
-                                        # 169 "./neo-c.h"
+                                        # 164 "./neo-c.h"
                                         self->head->next=litem_81;
                                     }
                                     else {
-                                        # 172 "./neo-c.h"
-                                        litem_82=(struct list_item$1sNodeph*)come_increment_ref_count(((struct list_item$1sNodeph*)(right_value103=(struct list_item$1sNodeph*)come_calloc(1, sizeof(struct list_item$1sNodeph)*(1), "./neo-c.h", 172, "list_item$1sNodeph"))));
+                                        # 167 "./neo-c.h"
+                                        litem_82=(struct list_item$1sNodeph*)come_increment_ref_count(((struct list_item$1sNodeph*)(right_value103=(struct list_item$1sNodeph*)come_calloc(1, sizeof(struct list_item$1sNodeph)*(1), "./neo-c.h", 167, "list_item$1sNodeph"))));
                                         come_call_finalizer3(right_value103,list_item$1sNodephp_finalize, 0, 1, 0, 0, __result_obj__);
-                                        # 174 "./neo-c.h"
+                                        # 169 "./neo-c.h"
                                         litem_82->prev=self->tail;
-                                        # 175 "./neo-c.h"
+                                        # 170 "./neo-c.h"
                                         litem_82->next=((void*)0);
-                                        # 176 "./neo-c.h"
+                                        # 171 "./neo-c.h"
                                         __dec_obj24=litem_82->item;
                                         litem_82->item=(struct sNode*)come_increment_ref_count(item);
                                         if(__dec_obj24) { __dec_obj24 = come_decrement_ref_count2(__dec_obj24, ((struct sNode*)__dec_obj24)->finalize, ((struct sNode*)__dec_obj24)->_protocol_obj, 0,0,0, (void*)0); }
-                                        # 178 "./neo-c.h"
+                                        # 173 "./neo-c.h"
                                         self->tail->next=litem_82;
-                                        # 179 "./neo-c.h"
+                                        # 174 "./neo-c.h"
                                         self->tail=litem_82;
                                     }
                                 }
-                                # 182 "./neo-c.h"
+                                # 177 "./neo-c.h"
                                 self->len++;
-                                # 184 "./neo-c.h"
+                                # 179 "./neo-c.h"
                                 __result77__ = __result_obj__ = self;
                                 if(item) { item = come_decrement_ref_count2(item, ((struct sNode*)item)->finalize, ((struct sNode*)item)->_protocol_obj, 0, 1, 0, (void*)0); } 
                                 return __result77__;
@@ -5311,15 +5308,15 @@ struct list_item$1sNodeph* prev_it_85;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_84, 0, sizeof(struct list_item$1sNodeph*));
 memset(&prev_it_85, 0, sizeof(struct list_item$1sNodeph*));
-                        # 119 "./neo-c.h"
+                        # 114 "./neo-c.h"
                         it_84=self->head;
-                        # 125 "./neo-c.h"
+                        # 120 "./neo-c.h"
                         while(_while_condtional15=it_84!=((void*)0),                        _while_condtional15) {
-                            # 121 "./neo-c.h"
+                            # 116 "./neo-c.h"
                             prev_it_85=it_84;
-                            # 122 "./neo-c.h"
+                            # 117 "./neo-c.h"
                             it_84=it_84->next;
-                            # 123 "./neo-c.h"
+                            # 118 "./neo-c.h"
                             come_call_finalizer3(prev_it_85,list_item$1sNodephp_finalize, 0, 0, 0, 0, (void*)0);
                         }
 }
@@ -5341,28 +5338,28 @@ right_value109 = (void*)0;
 memset(&result_86, 0, sizeof(struct list$1charph*));
 memset(&it_87, 0, sizeof(struct list_item$1charph*));
 right_value113 = (void*)0;
-                        # 138 "./neo-c.h"
-                        # 135 "./neo-c.h"
+                        # 133 "./neo-c.h"
+                        # 130 "./neo-c.h"
                         if(_if_conditional85=self==((void*)0),                        _if_conditional85) {
-                            # 136 "./neo-c.h"
+                            # 131 "./neo-c.h"
                             __result81__ = __result_obj__ = ((void*)0);
                             return __result81__;
                         }
-                        # 138 "./neo-c.h"
-                        result_86=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value109=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value108=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "./neo-c.h", 138, "list$1charph"))))))));
+                        # 133 "./neo-c.h"
+                        result_86=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value109=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value108=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "./neo-c.h", 133, "list$1charph"))))))));
                         come_call_finalizer3(right_value108,list$1charphp_finalize, 0, 1, 0, 0, __result_obj__);
                         come_call_finalizer3(right_value109,list$1charphp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 140 "./neo-c.h"
+                        # 135 "./neo-c.h"
                         it_87=self->head;
-                        # 147 "./neo-c.h"
+                        # 142 "./neo-c.h"
                         while(_while_condtional16=it_87!=((void*)0),                        _while_condtional16) {
-                            # 142 "./neo-c.h"
+                            # 137 "./neo-c.h"
                             list$1charph_add(result_86,(char*)come_increment_ref_count(((char*)(right_value113=string_clone(it_87->item)))));
                             right_value113 = come_decrement_ref_count2(right_value113, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                            # 144 "./neo-c.h"
+                            # 139 "./neo-c.h"
                             it_87=it_87->next;
                         }
-                        # 147 "./neo-c.h"
+                        # 142 "./neo-c.h"
                         __result84__ = __result_obj__ = result_86;
                         come_call_finalizer3(result_86,list$1charphp_finalize, 0, 0, 1, 0, (void*)0);
                         return __result84__;
@@ -5373,13 +5370,13 @@ static struct list$1charph* list$1charph_initialize(struct list$1charph* self){
 void* __result_obj__;
 struct list$1charph* __result82__;
 memset(&__result_obj__, 0, sizeof(void*));
-                            # 100 "./neo-c.h"
+                            # 95 "./neo-c.h"
                             self->head=((void*)0);
-                            # 101 "./neo-c.h"
+                            # 96 "./neo-c.h"
                             self->tail=((void*)0);
-                            # 102 "./neo-c.h"
+                            # 97 "./neo-c.h"
                             self->len=0;
-                            # 104 "./neo-c.h"
+                            # 99 "./neo-c.h"
                             __result82__ = __result_obj__ = self;
                             come_call_finalizer3(self,list$1charphp_finalize, 0, 0, 1, 0, (void*)0);
                             return __result82__;
@@ -5407,66 +5404,66 @@ right_value111 = (void*)0;
 memset(&litem_89, 0, sizeof(struct list_item$1charph*));
 right_value112 = (void*)0;
 memset(&litem_90, 0, sizeof(struct list_item$1charph*));
-                                # 182 "./neo-c.h"
-                                # 151 "./neo-c.h"
+                                # 177 "./neo-c.h"
+                                # 146 "./neo-c.h"
                                 if(_if_conditional86=self->len==0,                                _if_conditional86) {
-                                    # 152 "./neo-c.h"
-                                    litem_88=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value110=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 152, "list_item$1charph"))));
+                                    # 147 "./neo-c.h"
+                                    litem_88=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value110=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 147, "list_item$1charph"))));
                                     come_call_finalizer3(right_value110,list_item$1charphp_finalize, 0, 1, 0, 0, __result_obj__);
-                                    # 154 "./neo-c.h"
+                                    # 149 "./neo-c.h"
                                     litem_88->prev=((void*)0);
-                                    # 155 "./neo-c.h"
+                                    # 150 "./neo-c.h"
                                     litem_88->next=((void*)0);
-                                    # 156 "./neo-c.h"
+                                    # 151 "./neo-c.h"
                                     __dec_obj27=litem_88->item;
                                     litem_88->item=(char*)come_increment_ref_count(item);
                                     __dec_obj27 = come_decrement_ref_count2(__dec_obj27, (void*)0, (void*)0, 0,0,0, (void*)0);
-                                    # 158 "./neo-c.h"
+                                    # 153 "./neo-c.h"
                                     self->tail=litem_88;
-                                    # 159 "./neo-c.h"
+                                    # 154 "./neo-c.h"
                                     self->head=litem_88;
                                 }
                                 else {
-                                    # 182 "./neo-c.h"
-                                    # 161 "./neo-c.h"
+                                    # 177 "./neo-c.h"
+                                    # 156 "./neo-c.h"
                                     if(_if_conditional87=self->len==1,                                    _if_conditional87) {
-                                        # 162 "./neo-c.h"
-                                        litem_89=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value111=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 162, "list_item$1charph"))));
+                                        # 157 "./neo-c.h"
+                                        litem_89=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value111=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 157, "list_item$1charph"))));
                                         come_call_finalizer3(right_value111,list_item$1charphp_finalize, 0, 1, 0, 0, __result_obj__);
-                                        # 164 "./neo-c.h"
+                                        # 159 "./neo-c.h"
                                         litem_89->prev=self->head;
-                                        # 165 "./neo-c.h"
+                                        # 160 "./neo-c.h"
                                         litem_89->next=((void*)0);
-                                        # 166 "./neo-c.h"
+                                        # 161 "./neo-c.h"
                                         __dec_obj28=litem_89->item;
                                         litem_89->item=(char*)come_increment_ref_count(item);
                                         __dec_obj28 = come_decrement_ref_count2(__dec_obj28, (void*)0, (void*)0, 0,0,0, (void*)0);
-                                        # 168 "./neo-c.h"
+                                        # 163 "./neo-c.h"
                                         self->tail=litem_89;
-                                        # 169 "./neo-c.h"
+                                        # 164 "./neo-c.h"
                                         self->head->next=litem_89;
                                     }
                                     else {
-                                        # 172 "./neo-c.h"
-                                        litem_90=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value112=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 172, "list_item$1charph"))));
+                                        # 167 "./neo-c.h"
+                                        litem_90=(struct list_item$1charph*)come_increment_ref_count(((struct list_item$1charph*)(right_value112=(struct list_item$1charph*)come_calloc(1, sizeof(struct list_item$1charph)*(1), "./neo-c.h", 167, "list_item$1charph"))));
                                         come_call_finalizer3(right_value112,list_item$1charphp_finalize, 0, 1, 0, 0, __result_obj__);
-                                        # 174 "./neo-c.h"
+                                        # 169 "./neo-c.h"
                                         litem_90->prev=self->tail;
-                                        # 175 "./neo-c.h"
+                                        # 170 "./neo-c.h"
                                         litem_90->next=((void*)0);
-                                        # 176 "./neo-c.h"
+                                        # 171 "./neo-c.h"
                                         __dec_obj29=litem_90->item;
                                         litem_90->item=(char*)come_increment_ref_count(item);
                                         __dec_obj29 = come_decrement_ref_count2(__dec_obj29, (void*)0, (void*)0, 0,0,0, (void*)0);
-                                        # 178 "./neo-c.h"
+                                        # 173 "./neo-c.h"
                                         self->tail->next=litem_90;
-                                        # 179 "./neo-c.h"
+                                        # 174 "./neo-c.h"
                                         self->tail=litem_90;
                                     }
                                 }
-                                # 182 "./neo-c.h"
+                                # 177 "./neo-c.h"
                                 self->len++;
-                                # 184 "./neo-c.h"
+                                # 179 "./neo-c.h"
                                 __result83__ = __result_obj__ = self;
                                 item = come_decrement_ref_count2(item, (void*)0, (void*)0, 0, 1, 0, (void*)0);
                                 return __result83__;
@@ -5481,15 +5478,15 @@ struct list_item$1charph* prev_it_92;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_91, 0, sizeof(struct list_item$1charph*));
 memset(&prev_it_92, 0, sizeof(struct list_item$1charph*));
-                        # 119 "./neo-c.h"
+                        # 114 "./neo-c.h"
                         it_91=self->head;
-                        # 125 "./neo-c.h"
+                        # 120 "./neo-c.h"
                         while(_while_condtional17=it_91!=((void*)0),                        _while_condtional17) {
-                            # 121 "./neo-c.h"
+                            # 116 "./neo-c.h"
                             prev_it_92=it_91;
-                            # 122 "./neo-c.h"
+                            # 117 "./neo-c.h"
                             it_91=it_91->next;
-                            # 123 "./neo-c.h"
+                            # 118 "./neo-c.h"
                             come_call_finalizer3(prev_it_92,list_item$1charphp_finalize, 0, 0, 0, 0, (void*)0);
                         }
 }
@@ -5500,15 +5497,15 @@ char* __dec_obj36;
 struct sType* __dec_obj37;
 struct tuple2$2charphsTypeph* __result86__;
 memset(&__result_obj__, 0, sizeof(void*));
-                # 1743 "./neo-c.h"
+                # 1738 "./neo-c.h"
                 __dec_obj36=self->v1;
                 self->v1=(char*)come_increment_ref_count(v1);
                 __dec_obj36 = come_decrement_ref_count2(__dec_obj36, (void*)0, (void*)0, 0,0,0, (void*)0);
-                # 1744 "./neo-c.h"
+                # 1739 "./neo-c.h"
                 __dec_obj37=self->v2;
                 self->v2=(struct sType*)come_increment_ref_count(v2);
                 come_call_finalizer3(__dec_obj37,sType_finalize, 0, 0, 0, 0, (void*)0);
-                # 1746 "./neo-c.h"
+                # 1741 "./neo-c.h"
                 __result86__ = __result_obj__ = self;
                 come_call_finalizer3(self,tuple2$2charphsTypephp_finalize, 0, 0, 1, 0, (void*)0);
                 v1 = come_decrement_ref_count2(v1, (void*)0, (void*)0, 0, 1, 0, (void*)0);
@@ -5525,14 +5522,14 @@ _Bool _if_conditional135;
 int __result87__;
 int __result88__;
 memset(&__result_obj__, 0, sizeof(void*));
-                                    # 359 "./neo-c.h"
-                                    # 356 "./neo-c.h"
+                                    # 354 "./neo-c.h"
+                                    # 351 "./neo-c.h"
                                     if(_if_conditional135=self==((void*)0),                                    _if_conditional135) {
-                                        # 357 "./neo-c.h"
+                                        # 352 "./neo-c.h"
                                         __result87__ = 0;
                                         return __result87__;
                                     }
-                                    # 359 "./neo-c.h"
+                                    # 354 "./neo-c.h"
                                     __result88__ = self->len;
                                     return __result88__;
 }
@@ -5546,24 +5543,24 @@ struct list$1sNodeph* __result89__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_96, 0, sizeof(struct list_item$1sNodeph*));
 memset(&prev_it_97, 0, sizeof(struct list_item$1sNodeph*));
-                                        # 425 "./neo-c.h"
+                                        # 420 "./neo-c.h"
                                         it_96=self->head;
-                                        # 432 "./neo-c.h"
+                                        # 427 "./neo-c.h"
                                         while(_while_condtional18=it_96!=((void*)0),                                        _while_condtional18) {
-                                            # 427 "./neo-c.h"
+                                            # 422 "./neo-c.h"
                                             prev_it_97=it_96;
-                                            # 428 "./neo-c.h"
+                                            # 423 "./neo-c.h"
                                             it_96=it_96->next;
-                                            # 429 "./neo-c.h"
+                                            # 424 "./neo-c.h"
                                             come_call_finalizer3(prev_it_97,list_item$1sNodephp_finalize, 0, 0, 0, 0, (void*)0);
                                         }
-                                        # 432 "./neo-c.h"
+                                        # 427 "./neo-c.h"
                                         self->head=((void*)0);
-                                        # 433 "./neo-c.h"
+                                        # 428 "./neo-c.h"
                                         self->tail=((void*)0);
-                                        # 435 "./neo-c.h"
+                                        # 430 "./neo-c.h"
                                         self->len=0;
-                                        # 437 "./neo-c.h"
+                                        # 432 "./neo-c.h"
                                         __result89__ = __result_obj__ = self;
                                         return __result89__;
 }
@@ -5589,66 +5586,66 @@ right_value129 = (void*)0;
 memset(&litem_100, 0, sizeof(struct list_item$1tuple2$2charphsTypephph*));
 right_value130 = (void*)0;
 memset(&litem_101, 0, sizeof(struct list_item$1tuple2$2charphsTypephph*));
-                                        # 252 "./neo-c.h"
-                                        # 221 "./neo-c.h"
+                                        # 247 "./neo-c.h"
+                                        # 216 "./neo-c.h"
                                         if(_if_conditional137=self->len==0,                                        _if_conditional137) {
-                                            # 222 "./neo-c.h"
-                                            litem_99=(struct list_item$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsTypephph*)(right_value128=(struct list_item$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsTypephph)*(1), "./neo-c.h", 222, "list_item$1tuple2$2charphsTypephph"))));
+                                            # 217 "./neo-c.h"
+                                            litem_99=(struct list_item$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsTypephph*)(right_value128=(struct list_item$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsTypephph)*(1), "./neo-c.h", 217, "list_item$1tuple2$2charphsTypephph"))));
                                             come_call_finalizer3(right_value128,list_item$1tuple2$2charphsTypephphp_finalize, 0, 1, 0, 0, __result_obj__);
-                                            # 224 "./neo-c.h"
+                                            # 219 "./neo-c.h"
                                             litem_99->prev=((void*)0);
-                                            # 225 "./neo-c.h"
+                                            # 220 "./neo-c.h"
                                             litem_99->next=((void*)0);
-                                            # 226 "./neo-c.h"
+                                            # 221 "./neo-c.h"
                                             __dec_obj38=litem_99->item;
                                             litem_99->item=(struct tuple2$2charphsTypeph*)come_increment_ref_count(item);
                                             come_call_finalizer3(__dec_obj38,tuple2$2charphsTypephp_finalize, 0, 0, 0, 0, (void*)0);
-                                            # 228 "./neo-c.h"
+                                            # 223 "./neo-c.h"
                                             self->tail=litem_99;
-                                            # 229 "./neo-c.h"
+                                            # 224 "./neo-c.h"
                                             self->head=litem_99;
                                         }
                                         else {
-                                            # 252 "./neo-c.h"
-                                            # 231 "./neo-c.h"
+                                            # 247 "./neo-c.h"
+                                            # 226 "./neo-c.h"
                                             if(_if_conditional140=self->len==1,                                            _if_conditional140) {
-                                                # 232 "./neo-c.h"
-                                                litem_100=(struct list_item$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsTypephph*)(right_value129=(struct list_item$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsTypephph)*(1), "./neo-c.h", 232, "list_item$1tuple2$2charphsTypephph"))));
+                                                # 227 "./neo-c.h"
+                                                litem_100=(struct list_item$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsTypephph*)(right_value129=(struct list_item$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsTypephph)*(1), "./neo-c.h", 227, "list_item$1tuple2$2charphsTypephph"))));
                                                 come_call_finalizer3(right_value129,list_item$1tuple2$2charphsTypephphp_finalize, 0, 1, 0, 0, __result_obj__);
-                                                # 234 "./neo-c.h"
+                                                # 229 "./neo-c.h"
                                                 litem_100->prev=self->head;
-                                                # 235 "./neo-c.h"
+                                                # 230 "./neo-c.h"
                                                 litem_100->next=((void*)0);
-                                                # 236 "./neo-c.h"
+                                                # 231 "./neo-c.h"
                                                 __dec_obj39=litem_100->item;
                                                 litem_100->item=(struct tuple2$2charphsTypeph*)come_increment_ref_count(item);
                                                 come_call_finalizer3(__dec_obj39,tuple2$2charphsTypephp_finalize, 0, 0, 0, 0, (void*)0);
-                                                # 238 "./neo-c.h"
+                                                # 233 "./neo-c.h"
                                                 self->tail=litem_100;
-                                                # 239 "./neo-c.h"
+                                                # 234 "./neo-c.h"
                                                 self->head->next=litem_100;
                                             }
                                             else {
-                                                # 242 "./neo-c.h"
-                                                litem_101=(struct list_item$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsTypephph*)(right_value130=(struct list_item$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsTypephph)*(1), "./neo-c.h", 242, "list_item$1tuple2$2charphsTypephph"))));
+                                                # 237 "./neo-c.h"
+                                                litem_101=(struct list_item$1tuple2$2charphsTypephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsTypephph*)(right_value130=(struct list_item$1tuple2$2charphsTypephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsTypephph)*(1), "./neo-c.h", 237, "list_item$1tuple2$2charphsTypephph"))));
                                                 come_call_finalizer3(right_value130,list_item$1tuple2$2charphsTypephphp_finalize, 0, 1, 0, 0, __result_obj__);
-                                                # 244 "./neo-c.h"
+                                                # 239 "./neo-c.h"
                                                 litem_101->prev=self->tail;
-                                                # 245 "./neo-c.h"
+                                                # 240 "./neo-c.h"
                                                 litem_101->next=((void*)0);
-                                                # 246 "./neo-c.h"
+                                                # 241 "./neo-c.h"
                                                 __dec_obj40=litem_101->item;
                                                 litem_101->item=(struct tuple2$2charphsTypeph*)come_increment_ref_count(item);
                                                 come_call_finalizer3(__dec_obj40,tuple2$2charphsTypephp_finalize, 0, 0, 0, 0, (void*)0);
-                                                # 248 "./neo-c.h"
+                                                # 243 "./neo-c.h"
                                                 self->tail->next=litem_101;
-                                                # 249 "./neo-c.h"
+                                                # 244 "./neo-c.h"
                                                 self->tail=litem_101;
                                             }
                                         }
-                                        # 252 "./neo-c.h"
+                                        # 247 "./neo-c.h"
                                         self->len++;
-                                        # 254 "./neo-c.h"
+                                        # 249 "./neo-c.h"
                                         __result90__ = __result_obj__ = self;
                                         come_call_finalizer3(item,tuple2$2charphsTypephp_finalize, 0, 0, 1, 0, (void*)0);
                                         return __result90__;
@@ -5757,39 +5754,39 @@ _Bool _if_conditional153;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_103, 0, sizeof(int));
 memset(&i_104, 0, sizeof(int));
-            # 1117 "./neo-c.h"
+            # 1112 "./neo-c.h"
             for(            i_103=0;            i_103<self->size;            i_103++            ){
-                # 1116 "./neo-c.h"
                 # 1111 "./neo-c.h"
+                # 1106 "./neo-c.h"
                 if(_if_conditional150=self->item_existance[i_103],                _if_conditional150) {
-                    # 1115 "./neo-c.h"
-                    # 1112 "./neo-c.h"
+                    # 1110 "./neo-c.h"
+                    # 1107 "./neo-c.h"
                     if(_if_conditional151=1,                    _if_conditional151) {
-                        # 1113 "./neo-c.h"
+                        # 1108 "./neo-c.h"
                         come_call_finalizer3(self->items[i_103],sVar_finalize, 0, 0, 0, 0, (void*)0);
                     }
                 }
             }
-            # 1117 "./neo-c.h"
+            # 1112 "./neo-c.h"
             come_free((char*)self->items);
-            # 1126 "./neo-c.h"
+            # 1121 "./neo-c.h"
             for(            i_104=0;            i_104<self->size;            i_104++            ){
-                # 1125 "./neo-c.h"
                 # 1120 "./neo-c.h"
+                # 1115 "./neo-c.h"
                 if(_if_conditional152=self->item_existance[i_104],                _if_conditional152) {
-                    # 1124 "./neo-c.h"
-                    # 1121 "./neo-c.h"
+                    # 1119 "./neo-c.h"
+                    # 1116 "./neo-c.h"
                     if(_if_conditional153=1,                    _if_conditional153) {
-                        # 1122 "./neo-c.h"
+                        # 1117 "./neo-c.h"
                         self->keys[i_104] = come_decrement_ref_count2(self->keys[i_104], (void*)0, (void*)0, 0, 0, 0, (void*)0);
                     }
                 }
             }
-            # 1126 "./neo-c.h"
+            # 1121 "./neo-c.h"
             come_free((char*)self->keys);
-            # 1128 "./neo-c.h"
+            # 1123 "./neo-c.h"
             come_call_finalizer3(self->key_list,list$1charpp_finalize, 0, 0, 0, 0, (void*)0);
-            # 1130 "./neo-c.h"
+            # 1125 "./neo-c.h"
             self->item_existance = come_decrement_ref_count2(self->item_existance, (void*)0, (void*)0, 0, 0, 0, (void*)0);
 }
 
@@ -5801,15 +5798,15 @@ struct list_item$1charp* prev_it_106;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_105, 0, sizeof(struct list_item$1charp*));
 memset(&prev_it_106, 0, sizeof(struct list_item$1charp*));
-                # 119 "./neo-c.h"
+                # 114 "./neo-c.h"
                 it_105=self->head;
-                # 125 "./neo-c.h"
+                # 120 "./neo-c.h"
                 while(_while_condtional19=it_105!=((void*)0),                _while_condtional19) {
-                    # 121 "./neo-c.h"
+                    # 116 "./neo-c.h"
                     prev_it_106=it_105;
-                    # 122 "./neo-c.h"
+                    # 117 "./neo-c.h"
                     it_105=it_105->next;
-                    # 123 "./neo-c.h"
+                    # 118 "./neo-c.h"
                     come_call_finalizer3(prev_it_106,list_item$1charpp_finalize, 0, 0, 0, 0, (void*)0);
                 }
 }
@@ -5843,123 +5840,123 @@ memset(&hash_124, 0, sizeof(unsigned int));
 memset(&it_125, 0, sizeof(unsigned int));
 memset(&same_key_exist_142, 0, sizeof(_Bool));
 memset(&it2_145, 0, sizeof(char*));
-        # 1373 "./neo-c.h"
-        # 1370 "./neo-c.h"
+        # 1368 "./neo-c.h"
+        # 1365 "./neo-c.h"
         if(_if_conditional154=self->len*10>=self->size,        _if_conditional154) {
-            # 1371 "./neo-c.h"
+            # 1366 "./neo-c.h"
             map$2charphsClassph_rehash(self);
         }
-        # 1373 "./neo-c.h"
+        # 1368 "./neo-c.h"
         hash_124=string_get_hash_key(key)%self->size;
-        # 1374 "./neo-c.h"
+        # 1369 "./neo-c.h"
         it_125=hash_124;
-        # 1432 "./neo-c.h"
+        # 1427 "./neo-c.h"
         while(_while_condtional22=(_Bool)1,        _while_condtional22) {
-            # 1430 "./neo-c.h"
-            # 1377 "./neo-c.h"
+            # 1425 "./neo-c.h"
+            # 1372 "./neo-c.h"
             if(_if_conditional166=self->item_existance[it_125],            _if_conditional166) {
-                # 1400 "./neo-c.h"
-                # 1379 "./neo-c.h"
+                # 1395 "./neo-c.h"
+                # 1374 "./neo-c.h"
                 if(_if_conditional167=string_equals(self->keys[it_125],key),                _if_conditional167) {
-                    # 1390 "./neo-c.h"
-                    # 1381 "./neo-c.h"
+                    # 1385 "./neo-c.h"
+                    # 1376 "./neo-c.h"
                     if(_if_conditional168=1,                    _if_conditional168) {
-                        # 1382 "./neo-c.h"
+                        # 1377 "./neo-c.h"
                         list$1charp_remove(self->key_list,self->keys[it_125]);
-                        # 1383 "./neo-c.h"
+                        # 1378 "./neo-c.h"
                         self->keys[it_125] = come_decrement_ref_count2(self->keys[it_125], (void*)0, (void*)0, 0, 0, 0, (void*)0);
-                        # 1384 "./neo-c.h"
+                        # 1379 "./neo-c.h"
                         self->keys[it_125]=(char*)come_increment_ref_count(key);
                     }
                     else {
-                        # 1387 "./neo-c.h"
+                        # 1382 "./neo-c.h"
                         list$1charp_remove(self->key_list,self->keys[it_125]);
-                        # 1388 "./neo-c.h"
+                        # 1383 "./neo-c.h"
                         self->keys[it_125]=key;
                     }
-                    # 1397 "./neo-c.h"
-                    # 1390 "./neo-c.h"
+                    # 1392 "./neo-c.h"
+                    # 1385 "./neo-c.h"
                     if(_if_conditional188=1,                    _if_conditional188) {
-                        # 1391 "./neo-c.h"
+                        # 1386 "./neo-c.h"
                         come_call_finalizer3(self->items[it_125],sClass_finalize, 0, 0, 0, 0, (void*)0);
-                        # 1392 "./neo-c.h"
+                        # 1387 "./neo-c.h"
                         self->items[it_125]=(struct sClass*)come_increment_ref_count(item);
                     }
                     else {
-                        # 1395 "./neo-c.h"
+                        # 1390 "./neo-c.h"
                         self->items[it_125]=item;
                     }
-                    # 1397 "./neo-c.h"
+                    # 1392 "./neo-c.h"
                     break;
                 }
-                # 1400 "./neo-c.h"
+                # 1395 "./neo-c.h"
                 it_125++;
-                # 1410 "./neo-c.h"
-                # 1402 "./neo-c.h"
+                # 1405 "./neo-c.h"
+                # 1397 "./neo-c.h"
                 if(_if_conditional189=it_125>=self->size,                _if_conditional189) {
-                    # 1403 "./neo-c.h"
+                    # 1398 "./neo-c.h"
                     it_125=0;
                 }
                 else {
-                    # 1410 "./neo-c.h"
                     # 1405 "./neo-c.h"
+                    # 1400 "./neo-c.h"
                     if(_if_conditional190=it_125==hash_124,                    _if_conditional190) {
-                        # 1406 "./neo-c.h"
+                        # 1401 "./neo-c.h"
                         printf("unexpected error in map.insert\n");
-                        # 1407 "./neo-c.h"
+                        # 1402 "./neo-c.h"
                         stackframe();
-                        # 1408 "./neo-c.h"
+                        # 1403 "./neo-c.h"
                         exit(2);
                     }
                 }
             }
             else {
-                # 1412 "./neo-c.h"
+                # 1407 "./neo-c.h"
                 self->item_existance[it_125]=(_Bool)1;
-                # 1419 "./neo-c.h"
-                # 1413 "./neo-c.h"
+                # 1414 "./neo-c.h"
+                # 1408 "./neo-c.h"
                 if(_if_conditional191=1,                _if_conditional191) {
-                    # 1414 "./neo-c.h"
+                    # 1409 "./neo-c.h"
                     self->keys[it_125]=(char*)come_increment_ref_count(key);
                 }
                 else {
-                    # 1417 "./neo-c.h"
+                    # 1412 "./neo-c.h"
                     self->keys[it_125]=key;
                 }
-                # 1426 "./neo-c.h"
-                # 1419 "./neo-c.h"
+                # 1421 "./neo-c.h"
+                # 1414 "./neo-c.h"
                 if(_if_conditional192=1,                _if_conditional192) {
-                    # 1420 "./neo-c.h"
+                    # 1415 "./neo-c.h"
                     self->items[it_125]=(struct sClass*)come_increment_ref_count(item);
                 }
                 else {
-                    # 1423 "./neo-c.h"
+                    # 1418 "./neo-c.h"
                     self->items[it_125]=item;
                 }
-                # 1426 "./neo-c.h"
+                # 1421 "./neo-c.h"
                 self->len++;
-                # 1428 "./neo-c.h"
+                # 1423 "./neo-c.h"
                 break;
             }
         }
-        # 1432 "./neo-c.h"
+        # 1427 "./neo-c.h"
         same_key_exist_142=(_Bool)0;
-        # 1440 "./neo-c.h"
+        # 1435 "./neo-c.h"
         for(        it2_145=list$1charp_begin(self->key_list);        !list$1charp_end(self->key_list);        it2_145=list$1charp_next(self->key_list)        ){
-            # 1438 "./neo-c.h"
-            # 1435 "./neo-c.h"
+            # 1433 "./neo-c.h"
+            # 1430 "./neo-c.h"
             if(_if_conditional197=string_equals(it2_145,key),            _if_conditional197) {
-                # 1436 "./neo-c.h"
+                # 1431 "./neo-c.h"
                 same_key_exist_142=(_Bool)1;
             }
         }
-        # 1444 "./neo-c.h"
-        # 1440 "./neo-c.h"
+        # 1439 "./neo-c.h"
+        # 1435 "./neo-c.h"
         if(_if_conditional198=!same_key_exist_142,        _if_conditional198) {
-            # 1441 "./neo-c.h"
+            # 1436 "./neo-c.h"
             list$1charp_push_back(self->key_list,key);
         }
-        # 1444 "./neo-c.h"
+        # 1439 "./neo-c.h"
         __result116__ = __result_obj__ = self;
         key = come_decrement_ref_count2(key, (void*)0, (void*)0, 0, 1, 0, (void*)0);
         come_call_finalizer3(item,sClass_finalize, 0, 0, 1, 0, (void*)0);
@@ -6003,86 +6000,86 @@ memset(&it2_120, 0, sizeof(struct sClass*));
 memset(&hash_121, 0, sizeof(unsigned int));
 memset(&n_122, 0, sizeof(int));
 memset(&default_value_123, 0, sizeof(struct sClass*));
-                # 1317 "./neo-c.h"
+                # 1312 "./neo-c.h"
                 size_107=self->size*10;
-                # 1318 "./neo-c.h"
-                keys_108=(char**)come_increment_ref_count(((char**)(right_value136=(char**)come_calloc(1, sizeof(char*)*(1*(size_107)), "./neo-c.h", 1318, "char*%"))));
+                # 1313 "./neo-c.h"
+                keys_108=(char**)come_increment_ref_count(((char**)(right_value136=(char**)come_calloc(1, sizeof(char*)*(1*(size_107)), "./neo-c.h", 1313, "char*%"))));
                 right_value136 = come_decrement_ref_count2(right_value136, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 1319 "./neo-c.h"
-                items_109=(struct sClass**)come_increment_ref_count(((struct sClass**)(right_value137=(struct sClass**)come_calloc(1, sizeof(struct sClass*)*(1*(size_107)), "./neo-c.h", 1319, "sClass*%"))));
+                # 1314 "./neo-c.h"
+                items_109=(struct sClass**)come_increment_ref_count(((struct sClass**)(right_value137=(struct sClass**)come_calloc(1, sizeof(struct sClass*)*(1*(size_107)), "./neo-c.h", 1314, "sClass*%"))));
                 come_call_finalizer3(right_value137,sClass_finalize, 0, 1, 0, 0, __result_obj__);
-                # 1320 "./neo-c.h"
-                item_existance_110=(_Bool*)come_increment_ref_count(((_Bool*)(right_value138=(_Bool*)come_calloc(1, sizeof(_Bool)*(1*(size_107)), "./neo-c.h", 1320, "bool"))));
+                # 1315 "./neo-c.h"
+                item_existance_110=(_Bool*)come_increment_ref_count(((_Bool*)(right_value138=(_Bool*)come_calloc(1, sizeof(_Bool)*(1*(size_107)), "./neo-c.h", 1315, "bool"))));
                 right_value138 = come_decrement_ref_count2(right_value138, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 1322 "./neo-c.h"
+                # 1317 "./neo-c.h"
                 len_111=0;
-                # 1357 "./neo-c.h"
+                # 1352 "./neo-c.h"
                 for(                it_114=map$2charphsClassph_begin(self);                !map$2charphsClassph_end(self);                it_114=map$2charphsClassph_next(self)                ){
-                    # 1325 "./neo-c.h"
-                    # 1326 "./neo-c.h"
+                    # 1320 "./neo-c.h"
+                    # 1321 "./neo-c.h"
                     memset(&default_value_117,0,sizeof(struct sClass*));
-                    # 1327 "./neo-c.h"
+                    # 1322 "./neo-c.h"
                     it2_120=map$2charphsClassph_at(self,it_114,default_value_117);
-                    # 1328 "./neo-c.h"
+                    # 1323 "./neo-c.h"
                     hash_121=string_get_hash_key(it_114)%size_107;
-                    # 1329 "./neo-c.h"
+                    # 1324 "./neo-c.h"
                     n_122=hash_121;
-                    # 1355 "./neo-c.h"
+                    # 1350 "./neo-c.h"
                     while(_while_condtional21=(_Bool)1,                    _while_condtional21) {
-                        # 1354 "./neo-c.h"
-                        # 1332 "./neo-c.h"
+                        # 1349 "./neo-c.h"
+                        # 1327 "./neo-c.h"
                         if(_if_conditional163=item_existance_110[n_122],                        _if_conditional163) {
-                            # 1334 "./neo-c.h"
+                            # 1329 "./neo-c.h"
                             n_122++;
-                            # 1344 "./neo-c.h"
-                            # 1336 "./neo-c.h"
+                            # 1339 "./neo-c.h"
+                            # 1331 "./neo-c.h"
                             if(_if_conditional164=n_122>=size_107,                            _if_conditional164) {
-                                # 1337 "./neo-c.h"
+                                # 1332 "./neo-c.h"
                                 n_122=0;
                             }
                             else {
-                                # 1344 "./neo-c.h"
                                 # 1339 "./neo-c.h"
+                                # 1334 "./neo-c.h"
                                 if(_if_conditional165=n_122==hash_121,                                _if_conditional165) {
-                                    # 1340 "./neo-c.h"
+                                    # 1335 "./neo-c.h"
                                     printf("unexpected error in map.rehash(1)\n");
-                                    # 1341 "./neo-c.h"
+                                    # 1336 "./neo-c.h"
                                     stackframe();
-                                    # 1342 "./neo-c.h"
+                                    # 1337 "./neo-c.h"
                                     exit(2);
                                 }
                             }
                         }
                         else {
-                            # 1346 "./neo-c.h"
+                            # 1341 "./neo-c.h"
                             item_existance_110[n_122]=(_Bool)1;
-                            # 1347 "./neo-c.h"
+                            # 1342 "./neo-c.h"
                             keys_108[n_122]=it_114;
-                            # 1348 "./neo-c.h"
-                            # 1349 "./neo-c.h"
+                            # 1343 "./neo-c.h"
+                            # 1344 "./neo-c.h"
                             items_109[n_122]=map$2charphsClassph_at(self,it_114,default_value_123);
-                            # 1351 "./neo-c.h"
+                            # 1346 "./neo-c.h"
                             len_111++;
-                            # 1352 "./neo-c.h"
+                            # 1347 "./neo-c.h"
                             break;
                         }
                     }
                 }
-                # 1357 "./neo-c.h"
+                # 1352 "./neo-c.h"
                 come_free((char*)self->items);
-                # 1358 "./neo-c.h"
+                # 1353 "./neo-c.h"
                 self->item_existance = come_decrement_ref_count2(self->item_existance, (void*)0, (void*)0, 0, 0, 0, (void*)0);
-                # 1359 "./neo-c.h"
+                # 1354 "./neo-c.h"
                 come_free((char*)self->keys);
-                # 1361 "./neo-c.h"
+                # 1356 "./neo-c.h"
                 self->keys=keys_108;
-                # 1362 "./neo-c.h"
+                # 1357 "./neo-c.h"
                 self->items=items_109;
-                # 1363 "./neo-c.h"
+                # 1358 "./neo-c.h"
                 self->item_existance=item_existance_110;
-                # 1365 "./neo-c.h"
+                # 1360 "./neo-c.h"
                 self->size=size_107;
-                # 1366 "./neo-c.h"
+                # 1361 "./neo-c.h"
                 self->len=len_111;
 }
 
@@ -6098,29 +6095,29 @@ char* __result95__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_112, 0, sizeof(char*));
 memset(&result_113, 0, sizeof(char*));
-                    # 1284 "./neo-c.h"
                     # 1279 "./neo-c.h"
+                    # 1274 "./neo-c.h"
                     if(_if_conditional155=self==((void*)0),                    _if_conditional155) {
-                        # 1280 "./neo-c.h"
-                        # 1281 "./neo-c.h"
+                        # 1275 "./neo-c.h"
+                        # 1276 "./neo-c.h"
                         memset(&result_112,0,sizeof(char*));
-                        # 1282 "./neo-c.h"
+                        # 1277 "./neo-c.h"
                         __result93__ = __result_obj__ = result_112;
                         return __result93__;
                     }
-                    # 1284 "./neo-c.h"
+                    # 1279 "./neo-c.h"
                     self->key_list->it=self->key_list->head;
-                    # 1290 "./neo-c.h"
-                    # 1286 "./neo-c.h"
+                    # 1285 "./neo-c.h"
+                    # 1281 "./neo-c.h"
                     if(self->key_list->it) {
-                        # 1287 "./neo-c.h"
+                        # 1282 "./neo-c.h"
                         __result94__ = __result_obj__ = self->key_list->it->item;
                         return __result94__;
                     }
-                    # 1290 "./neo-c.h"
-                    # 1291 "./neo-c.h"
+                    # 1285 "./neo-c.h"
+                    # 1286 "./neo-c.h"
                     memset(&result_113,0,sizeof(char*));
-                    # 1292 "./neo-c.h"
+                    # 1287 "./neo-c.h"
                     __result95__ = __result_obj__ = result_113;
                     return __result95__;
 }
@@ -6129,7 +6126,7 @@ static _Bool map$2charphsClassph_end(struct map$2charphsClassph* self){
 void* __result_obj__;
 _Bool __result96__;
 memset(&__result_obj__, 0, sizeof(void*));
-                    # 1313 "./neo-c.h"
+                    # 1308 "./neo-c.h"
                     __result96__ = self==((void*)0)||self->key_list==((void*)0)||self->key_list->it==((void*)0);
                     return __result96__;
 }
@@ -6146,29 +6143,29 @@ char* __result99__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_115, 0, sizeof(char*));
 memset(&result_116, 0, sizeof(char*));
-                    # 1301 "./neo-c.h"
                     # 1296 "./neo-c.h"
+                    # 1291 "./neo-c.h"
                     if(_if_conditional157=self==((void*)0)||self->key_list->it==((void*)0),                    _if_conditional157) {
-                        # 1297 "./neo-c.h"
-                        # 1298 "./neo-c.h"
+                        # 1292 "./neo-c.h"
+                        # 1293 "./neo-c.h"
                         memset(&result_115,0,sizeof(char*));
-                        # 1299 "./neo-c.h"
+                        # 1294 "./neo-c.h"
                         __result97__ = __result_obj__ = result_115;
                         return __result97__;
                     }
-                    # 1301 "./neo-c.h"
+                    # 1296 "./neo-c.h"
                     self->key_list->it=self->key_list->it->next;
-                    # 1307 "./neo-c.h"
-                    # 1303 "./neo-c.h"
+                    # 1302 "./neo-c.h"
+                    # 1298 "./neo-c.h"
                     if(self->key_list->it) {
-                        # 1304 "./neo-c.h"
+                        # 1299 "./neo-c.h"
                         __result98__ = __result_obj__ = self->key_list->it->item;
                         return __result98__;
                     }
-                    # 1307 "./neo-c.h"
-                    # 1308 "./neo-c.h"
+                    # 1302 "./neo-c.h"
+                    # 1303 "./neo-c.h"
                     memset(&result_116,0,sizeof(char*));
-                    # 1309 "./neo-c.h"
+                    # 1304 "./neo-c.h"
                     __result99__ = __result_obj__ = result_116;
                     return __result99__;
 }
@@ -6189,36 +6186,36 @@ struct sClass* __result103__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&hash_118, 0, sizeof(unsigned int));
 memset(&it_119, 0, sizeof(unsigned int));
-                        # 1206 "./neo-c.h"
+                        # 1201 "./neo-c.h"
                         hash_118=string_get_hash_key(((char*)key))%self->size;
-                        # 1207 "./neo-c.h"
+                        # 1202 "./neo-c.h"
                         it_119=hash_118;
-                        # 1231 "./neo-c.h"
+                        # 1226 "./neo-c.h"
                         while(_while_condtional20=(_Bool)1,                        _while_condtional20) {
-                            # 1229 "./neo-c.h"
-                            # 1210 "./neo-c.h"
+                            # 1224 "./neo-c.h"
+                            # 1205 "./neo-c.h"
                             if(_if_conditional159=self->item_existance[it_119],                            _if_conditional159) {
-                                # 1217 "./neo-c.h"
                                 # 1212 "./neo-c.h"
+                                # 1207 "./neo-c.h"
                                 if(_if_conditional160=string_equals(self->keys[it_119],key),                                _if_conditional160) {
-                                    # 1214 "./neo-c.h"
+                                    # 1209 "./neo-c.h"
                                     __result100__ = __result_obj__ = self->items[it_119];
                                     come_call_finalizer3(default_value,sClass_finalize, 0, 0, 1, 0, (void*)0);
                                     return __result100__;
                                 }
-                                # 1217 "./neo-c.h"
+                                # 1212 "./neo-c.h"
                                 it_119++;
-                                # 1225 "./neo-c.h"
-                                # 1219 "./neo-c.h"
+                                # 1220 "./neo-c.h"
+                                # 1214 "./neo-c.h"
                                 if(_if_conditional161=it_119>=self->size,                                _if_conditional161) {
-                                    # 1220 "./neo-c.h"
+                                    # 1215 "./neo-c.h"
                                     it_119=0;
                                 }
                                 else {
-                                    # 1225 "./neo-c.h"
-                                    # 1222 "./neo-c.h"
+                                    # 1220 "./neo-c.h"
+                                    # 1217 "./neo-c.h"
                                     if(_if_conditional162=it_119==hash_118,                                    _if_conditional162) {
-                                        # 1223 "./neo-c.h"
+                                        # 1218 "./neo-c.h"
                                         __result101__ = __result_obj__ = default_value;
                                         come_call_finalizer3(default_value,sClass_finalize, 0, 0, 1, 0, (void*)0);
                                         return __result101__;
@@ -6226,13 +6223,13 @@ memset(&it_119, 0, sizeof(unsigned int));
                                 }
                             }
                             else {
-                                # 1227 "./neo-c.h"
+                                # 1222 "./neo-c.h"
                                 __result102__ = __result_obj__ = default_value;
                                 come_call_finalizer3(default_value,sClass_finalize, 0, 0, 1, 0, (void*)0);
                                 return __result102__;
                             }
                         }
-                        # 1231 "./neo-c.h"
+                        # 1226 "./neo-c.h"
                         __result103__ = __result_obj__ = default_value;
                         come_call_finalizer3(default_value,sClass_finalize, 0, 0, 1, 0, (void*)0);
                         return __result103__;
@@ -6249,26 +6246,26 @@ struct list$1charp* __result107__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it2_126, 0, sizeof(int));
 memset(&it_127, 0, sizeof(struct list_item$1charp*));
-                            # 440 "./neo-c.h"
+                            # 435 "./neo-c.h"
                             it2_126=0;
-                            # 441 "./neo-c.h"
+                            # 436 "./neo-c.h"
                             it_127=self->head;
-                            # 452 "./neo-c.h"
+                            # 447 "./neo-c.h"
                             while(_while_condtional23=it_127!=((void*)0),                            _while_condtional23) {
-                                # 447 "./neo-c.h"
-                                # 443 "./neo-c.h"
+                                # 442 "./neo-c.h"
+                                # 438 "./neo-c.h"
                                 if(_if_conditional169=string_equals(it_127->item,item),                                _if_conditional169) {
-                                    # 444 "./neo-c.h"
+                                    # 439 "./neo-c.h"
                                     list$1charp_delete(self,it2_126,it2_126+1);
-                                    # 445 "./neo-c.h"
+                                    # 440 "./neo-c.h"
                                     break;
                                 }
-                                # 447 "./neo-c.h"
+                                # 442 "./neo-c.h"
                                 it2_126++;
-                                # 449 "./neo-c.h"
+                                # 444 "./neo-c.h"
                                 it_127=it_127->next;
                             }
-                            # 452 "./neo-c.h"
+                            # 447 "./neo-c.h"
                             __result107__ = __result_obj__ = self;
                             return __result107__;
 }
@@ -6323,197 +6320,197 @@ memset(&head_prev_it_138, 0, sizeof(struct list_item$1charp*));
 memset(&tail_it_139, 0, sizeof(struct list_item$1charp*));
 memset(&i_140, 0, sizeof(int));
 memset(&prev_it_141, 0, sizeof(struct list_item$1charp*));
-                                        # 459 "./neo-c.h"
-                                        # 456 "./neo-c.h"
+                                        # 454 "./neo-c.h"
+                                        # 451 "./neo-c.h"
                                         if(_if_conditional170=head<0,                                        _if_conditional170) {
-                                            # 457 "./neo-c.h"
+                                            # 452 "./neo-c.h"
                                             head+=self->len;
                                         }
-                                        # 463 "./neo-c.h"
-                                        # 459 "./neo-c.h"
+                                        # 458 "./neo-c.h"
+                                        # 454 "./neo-c.h"
                                         if(_if_conditional171=tail<0,                                        _if_conditional171) {
-                                            # 460 "./neo-c.h"
+                                            # 455 "./neo-c.h"
                                             tail+=self->len+1;
                                         }
-                                        # 469 "./neo-c.h"
-                                        # 463 "./neo-c.h"
+                                        # 464 "./neo-c.h"
+                                        # 458 "./neo-c.h"
                                         if(_if_conditional172=head>tail,                                        _if_conditional172) {
-                                            # 464 "./neo-c.h"
+                                            # 459 "./neo-c.h"
                                             tmp_128=tail;
-                                            # 465 "./neo-c.h"
+                                            # 460 "./neo-c.h"
                                             tail=head;
-                                            # 466 "./neo-c.h"
+                                            # 461 "./neo-c.h"
                                             head=tmp_128;
                                         }
-                                        # 473 "./neo-c.h"
-                                        # 469 "./neo-c.h"
+                                        # 468 "./neo-c.h"
+                                        # 464 "./neo-c.h"
                                         if(_if_conditional173=head<0,                                        _if_conditional173) {
-                                            # 470 "./neo-c.h"
+                                            # 465 "./neo-c.h"
                                             head=0;
                                         }
-                                        # 477 "./neo-c.h"
-                                        # 473 "./neo-c.h"
+                                        # 472 "./neo-c.h"
+                                        # 468 "./neo-c.h"
                                         if(_if_conditional174=tail>self->len,                                        _if_conditional174) {
-                                            # 474 "./neo-c.h"
+                                            # 469 "./neo-c.h"
                                             tail=self->len;
                                         }
-                                        # 481 "./neo-c.h"
-                                        # 477 "./neo-c.h"
+                                        # 476 "./neo-c.h"
+                                        # 472 "./neo-c.h"
                                         if(_if_conditional175=head==tail,                                        _if_conditional175) {
-                                            # 478 "./neo-c.h"
+                                            # 473 "./neo-c.h"
                                             __result104__ = __result_obj__ = self;
                                             return __result104__;
                                         }
-                                        # 576 "./neo-c.h"
-                                        # 481 "./neo-c.h"
+                                        # 571 "./neo-c.h"
+                                        # 476 "./neo-c.h"
                                         if(_if_conditional176=head==0&&tail==self->len,                                        _if_conditional176) {
-                                            # 483 "./neo-c.h"
+                                            # 478 "./neo-c.h"
                                             list$1charp_reset(self);
                                         }
                                         else {
-                                            # 576 "./neo-c.h"
-                                            # 485 "./neo-c.h"
+                                            # 571 "./neo-c.h"
+                                            # 480 "./neo-c.h"
                                             if(_if_conditional177=head==0,                                            _if_conditional177) {
-                                                # 486 "./neo-c.h"
+                                                # 481 "./neo-c.h"
                                                 it_131=self->head;
-                                                # 487 "./neo-c.h"
+                                                # 482 "./neo-c.h"
                                                 i_132=0;
-                                                # 509 "./neo-c.h"
+                                                # 504 "./neo-c.h"
                                                 while(_while_condtional25=it_131!=((void*)0),                                                _while_condtional25) {
-                                                    # 508 "./neo-c.h"
-                                                    # 489 "./neo-c.h"
+                                                    # 503 "./neo-c.h"
+                                                    # 484 "./neo-c.h"
                                                     if(_if_conditional178=i_132<tail,                                                    _if_conditional178) {
-                                                        # 490 "./neo-c.h"
+                                                        # 485 "./neo-c.h"
                                                         prev_it_133=it_131;
-                                                        # 492 "./neo-c.h"
+                                                        # 487 "./neo-c.h"
                                                         it_131=it_131->next;
-                                                        # 493 "./neo-c.h"
+                                                        # 488 "./neo-c.h"
                                                         i_132++;
-                                                        # 495 "./neo-c.h"
+                                                        # 490 "./neo-c.h"
                                                         come_call_finalizer3(prev_it_133,list_item$1charpp_finalize, 0, 0, 0, 0, (void*)0);
-                                                        # 497 "./neo-c.h"
+                                                        # 492 "./neo-c.h"
                                                         self->len--;
                                                     }
                                                     else {
-                                                        # 508 "./neo-c.h"
-                                                        # 499 "./neo-c.h"
+                                                        # 503 "./neo-c.h"
+                                                        # 494 "./neo-c.h"
                                                         if(_if_conditional179=i_132==tail,                                                        _if_conditional179) {
-                                                            # 500 "./neo-c.h"
+                                                            # 495 "./neo-c.h"
                                                             self->head=it_131;
-                                                            # 501 "./neo-c.h"
+                                                            # 496 "./neo-c.h"
                                                             self->head->prev=((void*)0);
-                                                            # 502 "./neo-c.h"
+                                                            # 497 "./neo-c.h"
                                                             break;
                                                         }
                                                         else {
-                                                            # 505 "./neo-c.h"
+                                                            # 500 "./neo-c.h"
                                                             it_131=it_131->next;
-                                                            # 506 "./neo-c.h"
+                                                            # 501 "./neo-c.h"
                                                             i_132++;
                                                         }
                                                     }
                                                 }
                                             }
                                             else {
-                                                # 576 "./neo-c.h"
-                                                # 510 "./neo-c.h"
+                                                # 571 "./neo-c.h"
+                                                # 505 "./neo-c.h"
                                                 if(_if_conditional180=tail==self->len,                                                _if_conditional180) {
-                                                    # 511 "./neo-c.h"
+                                                    # 506 "./neo-c.h"
                                                     it_134=self->head;
-                                                    # 512 "./neo-c.h"
+                                                    # 507 "./neo-c.h"
                                                     i_135=0;
-                                                    # 534 "./neo-c.h"
+                                                    # 529 "./neo-c.h"
                                                     while(_while_condtional26=it_134!=((void*)0),                                                    _while_condtional26) {
-                                                        # 519 "./neo-c.h"
                                                         # 514 "./neo-c.h"
+                                                        # 509 "./neo-c.h"
                                                         if(_if_conditional181=i_135==head,                                                        _if_conditional181) {
-                                                            # 515 "./neo-c.h"
+                                                            # 510 "./neo-c.h"
                                                             self->tail=it_134->prev;
-                                                            # 516 "./neo-c.h"
+                                                            # 511 "./neo-c.h"
                                                             self->tail->next=((void*)0);
                                                         }
-                                                        # 533 "./neo-c.h"
-                                                        # 519 "./neo-c.h"
+                                                        # 528 "./neo-c.h"
+                                                        # 514 "./neo-c.h"
                                                         if(_if_conditional182=i_135>=head,                                                        _if_conditional182) {
-                                                            # 520 "./neo-c.h"
+                                                            # 515 "./neo-c.h"
                                                             prev_it_136=it_134;
-                                                            # 522 "./neo-c.h"
+                                                            # 517 "./neo-c.h"
                                                             it_134=it_134->next;
-                                                            # 523 "./neo-c.h"
+                                                            # 518 "./neo-c.h"
                                                             i_135++;
-                                                            # 525 "./neo-c.h"
+                                                            # 520 "./neo-c.h"
                                                             come_call_finalizer3(prev_it_136,list_item$1charpp_finalize, 0, 0, 0, 0, (void*)0);
-                                                            # 527 "./neo-c.h"
+                                                            # 522 "./neo-c.h"
                                                             self->len--;
                                                         }
                                                         else {
-                                                            # 530 "./neo-c.h"
+                                                            # 525 "./neo-c.h"
                                                             it_134=it_134->next;
-                                                            # 531 "./neo-c.h"
+                                                            # 526 "./neo-c.h"
                                                             i_135++;
                                                         }
                                                     }
                                                 }
                                                 else {
-                                                    # 536 "./neo-c.h"
+                                                    # 531 "./neo-c.h"
                                                     it_137=self->head;
-                                                    # 538 "./neo-c.h"
+                                                    # 533 "./neo-c.h"
                                                     head_prev_it_138=((void*)0);
-                                                    # 539 "./neo-c.h"
+                                                    # 534 "./neo-c.h"
                                                     tail_it_139=((void*)0);
-                                                    # 542 "./neo-c.h"
+                                                    # 537 "./neo-c.h"
                                                     i_140=0;
-                                                    # 568 "./neo-c.h"
+                                                    # 563 "./neo-c.h"
                                                     while(_while_condtional27=it_137!=((void*)0),                                                    _while_condtional27) {
-                                                        # 547 "./neo-c.h"
-                                                        # 544 "./neo-c.h"
+                                                        # 542 "./neo-c.h"
+                                                        # 539 "./neo-c.h"
                                                         if(_if_conditional183=i_140==head,                                                        _if_conditional183) {
-                                                            # 545 "./neo-c.h"
+                                                            # 540 "./neo-c.h"
                                                             head_prev_it_138=it_137->prev;
                                                         }
-                                                        # 551 "./neo-c.h"
-                                                        # 547 "./neo-c.h"
+                                                        # 546 "./neo-c.h"
+                                                        # 542 "./neo-c.h"
                                                         if(_if_conditional184=i_140==tail,                                                        _if_conditional184) {
-                                                            # 548 "./neo-c.h"
+                                                            # 543 "./neo-c.h"
                                                             tail_it_139=it_137;
                                                         }
-                                                        # 566 "./neo-c.h"
-                                                        # 551 "./neo-c.h"
+                                                        # 561 "./neo-c.h"
+                                                        # 546 "./neo-c.h"
                                                         if(_if_conditional185=i_140>=head&&i_140<tail,                                                        _if_conditional185) {
-                                                            # 553 "./neo-c.h"
+                                                            # 548 "./neo-c.h"
                                                             prev_it_141=it_137;
-                                                            # 555 "./neo-c.h"
+                                                            # 550 "./neo-c.h"
                                                             it_137=it_137->next;
-                                                            # 556 "./neo-c.h"
+                                                            # 551 "./neo-c.h"
                                                             i_140++;
-                                                            # 558 "./neo-c.h"
+                                                            # 553 "./neo-c.h"
                                                             come_call_finalizer3(prev_it_141,list_item$1charpp_finalize, 0, 0, 0, 0, (void*)0);
-                                                            # 560 "./neo-c.h"
+                                                            # 555 "./neo-c.h"
                                                             self->len--;
                                                         }
                                                         else {
-                                                            # 563 "./neo-c.h"
+                                                            # 558 "./neo-c.h"
                                                             it_137=it_137->next;
-                                                            # 564 "./neo-c.h"
+                                                            # 559 "./neo-c.h"
                                                             i_140++;
                                                         }
                                                     }
-                                                    # 571 "./neo-c.h"
-                                                    # 568 "./neo-c.h"
+                                                    # 566 "./neo-c.h"
+                                                    # 563 "./neo-c.h"
                                                     if(_if_conditional186=head_prev_it_138!=((void*)0),                                                    _if_conditional186) {
-                                                        # 569 "./neo-c.h"
+                                                        # 564 "./neo-c.h"
                                                         head_prev_it_138->next=tail_it_139;
                                                     }
-                                                    # 574 "./neo-c.h"
-                                                    # 571 "./neo-c.h"
+                                                    # 569 "./neo-c.h"
+                                                    # 566 "./neo-c.h"
                                                     if(_if_conditional187=tail_it_139!=((void*)0),                                                    _if_conditional187) {
-                                                        # 572 "./neo-c.h"
+                                                        # 567 "./neo-c.h"
                                                         tail_it_139->prev=head_prev_it_138;
                                                     }
                                                 }
                                             }
                                         }
-                                        # 576 "./neo-c.h"
+                                        # 571 "./neo-c.h"
                                         __result106__ = __result_obj__ = self;
                                         return __result106__;
 }
@@ -6527,24 +6524,24 @@ struct list$1charp* __result105__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_129, 0, sizeof(struct list_item$1charp*));
 memset(&prev_it_130, 0, sizeof(struct list_item$1charp*));
-                                                # 425 "./neo-c.h"
+                                                # 420 "./neo-c.h"
                                                 it_129=self->head;
-                                                # 432 "./neo-c.h"
+                                                # 427 "./neo-c.h"
                                                 while(_while_condtional24=it_129!=((void*)0),                                                _while_condtional24) {
-                                                    # 427 "./neo-c.h"
+                                                    # 422 "./neo-c.h"
                                                     prev_it_130=it_129;
-                                                    # 428 "./neo-c.h"
+                                                    # 423 "./neo-c.h"
                                                     it_129=it_129->next;
-                                                    # 429 "./neo-c.h"
+                                                    # 424 "./neo-c.h"
                                                     come_call_finalizer3(prev_it_130,list_item$1charpp_finalize, 0, 0, 0, 0, (void*)0);
                                                 }
-                                                # 432 "./neo-c.h"
+                                                # 427 "./neo-c.h"
                                                 self->head=((void*)0);
-                                                # 433 "./neo-c.h"
+                                                # 428 "./neo-c.h"
                                                 self->tail=((void*)0);
-                                                # 435 "./neo-c.h"
+                                                # 430 "./neo-c.h"
                                                 self->len=0;
-                                                # 437 "./neo-c.h"
+                                                # 432 "./neo-c.h"
                                                 __result105__ = __result_obj__ = self;
                                                 return __result105__;
 }
@@ -6561,29 +6558,29 @@ char* __result110__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_143, 0, sizeof(char*));
 memset(&result_144, 0, sizeof(char*));
-            # 286 "./neo-c.h"
             # 281 "./neo-c.h"
+            # 276 "./neo-c.h"
             if(_if_conditional193=self==((void*)0),            _if_conditional193) {
-                # 282 "./neo-c.h"
-                # 283 "./neo-c.h"
+                # 277 "./neo-c.h"
+                # 278 "./neo-c.h"
                 memset(&result_143,0,sizeof(char*));
-                # 284 "./neo-c.h"
+                # 279 "./neo-c.h"
                 __result108__ = __result_obj__ = result_143;
                 return __result108__;
             }
-            # 286 "./neo-c.h"
+            # 281 "./neo-c.h"
             self->it=self->head;
-            # 292 "./neo-c.h"
-            # 288 "./neo-c.h"
+            # 287 "./neo-c.h"
+            # 283 "./neo-c.h"
             if(self->it) {
-                # 289 "./neo-c.h"
+                # 284 "./neo-c.h"
                 __result109__ = __result_obj__ = self->it->item;
                 return __result109__;
             }
-            # 292 "./neo-c.h"
-            # 293 "./neo-c.h"
+            # 287 "./neo-c.h"
+            # 288 "./neo-c.h"
             memset(&result_144,0,sizeof(char*));
-            # 294 "./neo-c.h"
+            # 289 "./neo-c.h"
             __result110__ = __result_obj__ = result_144;
             return __result110__;
 }
@@ -6592,7 +6589,7 @@ static _Bool list$1charp_end(struct list$1charp* self){
 void* __result_obj__;
 _Bool __result111__;
 memset(&__result_obj__, 0, sizeof(void*));
-            # 316 "./neo-c.h"
+            # 311 "./neo-c.h"
             __result111__ = self==((void*)0)||self->it==((void*)0);
             return __result111__;
 }
@@ -6609,29 +6606,29 @@ char* __result114__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_146, 0, sizeof(char*));
 memset(&result_147, 0, sizeof(char*));
-            # 304 "./neo-c.h"
-            # 298 "./neo-c.h"
+            # 299 "./neo-c.h"
+            # 293 "./neo-c.h"
             if(_if_conditional195=self==((void*)0)||self->it==((void*)0),            _if_conditional195) {
-                # 299 "./neo-c.h"
-                # 300 "./neo-c.h"
+                # 294 "./neo-c.h"
+                # 295 "./neo-c.h"
                 memset(&result_146,0,sizeof(char*));
-                # 301 "./neo-c.h"
+                # 296 "./neo-c.h"
                 __result112__ = __result_obj__ = result_146;
                 return __result112__;
             }
-            # 304 "./neo-c.h"
+            # 299 "./neo-c.h"
             self->it=self->it->next;
-            # 310 "./neo-c.h"
-            # 306 "./neo-c.h"
+            # 305 "./neo-c.h"
+            # 301 "./neo-c.h"
             if(self->it) {
-                # 307 "./neo-c.h"
+                # 302 "./neo-c.h"
                 __result113__ = __result_obj__ = self->it->item;
                 return __result113__;
             }
-            # 310 "./neo-c.h"
-            # 311 "./neo-c.h"
+            # 305 "./neo-c.h"
+            # 306 "./neo-c.h"
             memset(&result_147,0,sizeof(char*));
-            # 312 "./neo-c.h"
+            # 307 "./neo-c.h"
             __result114__ = __result_obj__ = result_147;
             return __result114__;
 }
@@ -6654,60 +6651,60 @@ right_value140 = (void*)0;
 memset(&litem_149, 0, sizeof(struct list_item$1charp*));
 right_value141 = (void*)0;
 memset(&litem_150, 0, sizeof(struct list_item$1charp*));
-                # 252 "./neo-c.h"
-                # 221 "./neo-c.h"
+                # 247 "./neo-c.h"
+                # 216 "./neo-c.h"
                 if(_if_conditional199=self->len==0,                _if_conditional199) {
-                    # 222 "./neo-c.h"
-                    litem_148=(struct list_item$1charp*)come_increment_ref_count(((struct list_item$1charp*)(right_value139=(struct list_item$1charp*)come_calloc(1, sizeof(struct list_item$1charp)*(1), "./neo-c.h", 222, "list_item$1charp"))));
+                    # 217 "./neo-c.h"
+                    litem_148=(struct list_item$1charp*)come_increment_ref_count(((struct list_item$1charp*)(right_value139=(struct list_item$1charp*)come_calloc(1, sizeof(struct list_item$1charp)*(1), "./neo-c.h", 217, "list_item$1charp"))));
                     come_call_finalizer3(right_value139,list_item$1charpp_finalize, 0, 1, 0, 0, __result_obj__);
-                    # 224 "./neo-c.h"
+                    # 219 "./neo-c.h"
                     litem_148->prev=((void*)0);
-                    # 225 "./neo-c.h"
+                    # 220 "./neo-c.h"
                     litem_148->next=((void*)0);
-                    # 226 "./neo-c.h"
+                    # 221 "./neo-c.h"
                     litem_148->item=item;
-                    # 228 "./neo-c.h"
+                    # 223 "./neo-c.h"
                     self->tail=litem_148;
-                    # 229 "./neo-c.h"
+                    # 224 "./neo-c.h"
                     self->head=litem_148;
                 }
                 else {
-                    # 252 "./neo-c.h"
-                    # 231 "./neo-c.h"
+                    # 247 "./neo-c.h"
+                    # 226 "./neo-c.h"
                     if(_if_conditional200=self->len==1,                    _if_conditional200) {
-                        # 232 "./neo-c.h"
-                        litem_149=(struct list_item$1charp*)come_increment_ref_count(((struct list_item$1charp*)(right_value140=(struct list_item$1charp*)come_calloc(1, sizeof(struct list_item$1charp)*(1), "./neo-c.h", 232, "list_item$1charp"))));
+                        # 227 "./neo-c.h"
+                        litem_149=(struct list_item$1charp*)come_increment_ref_count(((struct list_item$1charp*)(right_value140=(struct list_item$1charp*)come_calloc(1, sizeof(struct list_item$1charp)*(1), "./neo-c.h", 227, "list_item$1charp"))));
                         come_call_finalizer3(right_value140,list_item$1charpp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 234 "./neo-c.h"
+                        # 229 "./neo-c.h"
                         litem_149->prev=self->head;
-                        # 235 "./neo-c.h"
+                        # 230 "./neo-c.h"
                         litem_149->next=((void*)0);
-                        # 236 "./neo-c.h"
+                        # 231 "./neo-c.h"
                         litem_149->item=item;
-                        # 238 "./neo-c.h"
+                        # 233 "./neo-c.h"
                         self->tail=litem_149;
-                        # 239 "./neo-c.h"
+                        # 234 "./neo-c.h"
                         self->head->next=litem_149;
                     }
                     else {
-                        # 242 "./neo-c.h"
-                        litem_150=(struct list_item$1charp*)come_increment_ref_count(((struct list_item$1charp*)(right_value141=(struct list_item$1charp*)come_calloc(1, sizeof(struct list_item$1charp)*(1), "./neo-c.h", 242, "list_item$1charp"))));
+                        # 237 "./neo-c.h"
+                        litem_150=(struct list_item$1charp*)come_increment_ref_count(((struct list_item$1charp*)(right_value141=(struct list_item$1charp*)come_calloc(1, sizeof(struct list_item$1charp)*(1), "./neo-c.h", 237, "list_item$1charp"))));
                         come_call_finalizer3(right_value141,list_item$1charpp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 244 "./neo-c.h"
+                        # 239 "./neo-c.h"
                         litem_150->prev=self->tail;
-                        # 245 "./neo-c.h"
+                        # 240 "./neo-c.h"
                         litem_150->next=((void*)0);
-                        # 246 "./neo-c.h"
+                        # 241 "./neo-c.h"
                         litem_150->item=item;
-                        # 248 "./neo-c.h"
+                        # 243 "./neo-c.h"
                         self->tail->next=litem_150;
-                        # 249 "./neo-c.h"
+                        # 244 "./neo-c.h"
                         self->tail=litem_150;
                     }
                 }
-                # 252 "./neo-c.h"
+                # 247 "./neo-c.h"
                 self->len++;
-                # 254 "./neo-c.h"
+                # 249 "./neo-c.h"
                 __result115__ = __result_obj__ = self;
                 return __result115__;
 }
@@ -6752,66 +6749,66 @@ right_value150 = (void*)0;
 memset(&litem_160, 0, sizeof(struct list_item$1CVALUEph*));
 right_value151 = (void*)0;
 memset(&litem_161, 0, sizeof(struct list_item$1CVALUEph*));
-        # 252 "./neo-c.h"
-        # 221 "./neo-c.h"
+        # 247 "./neo-c.h"
+        # 216 "./neo-c.h"
         if(_if_conditional209=self->len==0,        _if_conditional209) {
-            # 222 "./neo-c.h"
-            litem_159=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value149=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./neo-c.h", 222, "list_item$1CVALUEph"))));
+            # 217 "./neo-c.h"
+            litem_159=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value149=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./neo-c.h", 217, "list_item$1CVALUEph"))));
             come_call_finalizer3(right_value149,list_item$1CVALUEphp_finalize, 0, 1, 0, 0, __result_obj__);
-            # 224 "./neo-c.h"
+            # 219 "./neo-c.h"
             litem_159->prev=((void*)0);
-            # 225 "./neo-c.h"
+            # 220 "./neo-c.h"
             litem_159->next=((void*)0);
-            # 226 "./neo-c.h"
+            # 221 "./neo-c.h"
             __dec_obj45=litem_159->item;
             litem_159->item=(struct CVALUE*)come_increment_ref_count(item);
             come_call_finalizer3(__dec_obj45,CVALUE_finalize, 0, 0, 0, 0, (void*)0);
-            # 228 "./neo-c.h"
+            # 223 "./neo-c.h"
             self->tail=litem_159;
-            # 229 "./neo-c.h"
+            # 224 "./neo-c.h"
             self->head=litem_159;
         }
         else {
-            # 252 "./neo-c.h"
-            # 231 "./neo-c.h"
+            # 247 "./neo-c.h"
+            # 226 "./neo-c.h"
             if(_if_conditional211=self->len==1,            _if_conditional211) {
-                # 232 "./neo-c.h"
-                litem_160=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value150=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./neo-c.h", 232, "list_item$1CVALUEph"))));
+                # 227 "./neo-c.h"
+                litem_160=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value150=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./neo-c.h", 227, "list_item$1CVALUEph"))));
                 come_call_finalizer3(right_value150,list_item$1CVALUEphp_finalize, 0, 1, 0, 0, __result_obj__);
-                # 234 "./neo-c.h"
+                # 229 "./neo-c.h"
                 litem_160->prev=self->head;
-                # 235 "./neo-c.h"
+                # 230 "./neo-c.h"
                 litem_160->next=((void*)0);
-                # 236 "./neo-c.h"
+                # 231 "./neo-c.h"
                 __dec_obj46=litem_160->item;
                 litem_160->item=(struct CVALUE*)come_increment_ref_count(item);
                 come_call_finalizer3(__dec_obj46,CVALUE_finalize, 0, 0, 0, 0, (void*)0);
-                # 238 "./neo-c.h"
+                # 233 "./neo-c.h"
                 self->tail=litem_160;
-                # 239 "./neo-c.h"
+                # 234 "./neo-c.h"
                 self->head->next=litem_160;
             }
             else {
-                # 242 "./neo-c.h"
-                litem_161=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value151=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./neo-c.h", 242, "list_item$1CVALUEph"))));
+                # 237 "./neo-c.h"
+                litem_161=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value151=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./neo-c.h", 237, "list_item$1CVALUEph"))));
                 come_call_finalizer3(right_value151,list_item$1CVALUEphp_finalize, 0, 1, 0, 0, __result_obj__);
-                # 244 "./neo-c.h"
+                # 239 "./neo-c.h"
                 litem_161->prev=self->tail;
-                # 245 "./neo-c.h"
+                # 240 "./neo-c.h"
                 litem_161->next=((void*)0);
-                # 246 "./neo-c.h"
+                # 241 "./neo-c.h"
                 __dec_obj47=litem_161->item;
                 litem_161->item=(struct CVALUE*)come_increment_ref_count(item);
                 come_call_finalizer3(__dec_obj47,CVALUE_finalize, 0, 0, 0, 0, (void*)0);
-                # 248 "./neo-c.h"
+                # 243 "./neo-c.h"
                 self->tail->next=litem_161;
-                # 249 "./neo-c.h"
+                # 244 "./neo-c.h"
                 self->tail=litem_161;
             }
         }
-        # 252 "./neo-c.h"
+        # 247 "./neo-c.h"
         self->len++;
-        # 254 "./neo-c.h"
+        # 249 "./neo-c.h"
         __result117__ = __result_obj__ = self;
         come_call_finalizer3(item,CVALUE_finalize, 0, 0, 1, 0, (void*)0);
         return __result117__;
@@ -6914,36 +6911,36 @@ struct sGenericsFun* __result122__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&hash_165, 0, sizeof(unsigned int));
 memset(&it_166, 0, sizeof(unsigned int));
-        # 1206 "./neo-c.h"
+        # 1201 "./neo-c.h"
         hash_165=string_get_hash_key(((char*)key))%self->size;
-        # 1207 "./neo-c.h"
+        # 1202 "./neo-c.h"
         it_166=hash_165;
-        # 1231 "./neo-c.h"
+        # 1226 "./neo-c.h"
         while(_while_condtional28=(_Bool)1,        _while_condtional28) {
-            # 1229 "./neo-c.h"
-            # 1210 "./neo-c.h"
+            # 1224 "./neo-c.h"
+            # 1205 "./neo-c.h"
             if(_if_conditional212=self->item_existance[it_166],            _if_conditional212) {
-                # 1217 "./neo-c.h"
                 # 1212 "./neo-c.h"
+                # 1207 "./neo-c.h"
                 if(_if_conditional213=string_equals(self->keys[it_166],key),                _if_conditional213) {
-                    # 1214 "./neo-c.h"
+                    # 1209 "./neo-c.h"
                     __result119__ = __result_obj__ = self->items[it_166];
                     come_call_finalizer3(default_value,sGenericsFun_finalize, 0, 0, 1, 0, (void*)0);
                     return __result119__;
                 }
-                # 1217 "./neo-c.h"
+                # 1212 "./neo-c.h"
                 it_166++;
-                # 1225 "./neo-c.h"
-                # 1219 "./neo-c.h"
+                # 1220 "./neo-c.h"
+                # 1214 "./neo-c.h"
                 if(_if_conditional224=it_166>=self->size,                _if_conditional224) {
-                    # 1220 "./neo-c.h"
+                    # 1215 "./neo-c.h"
                     it_166=0;
                 }
                 else {
-                    # 1225 "./neo-c.h"
-                    # 1222 "./neo-c.h"
+                    # 1220 "./neo-c.h"
+                    # 1217 "./neo-c.h"
                     if(_if_conditional225=it_166==hash_165,                    _if_conditional225) {
-                        # 1223 "./neo-c.h"
+                        # 1218 "./neo-c.h"
                         __result120__ = __result_obj__ = default_value;
                         come_call_finalizer3(default_value,sGenericsFun_finalize, 0, 0, 1, 0, (void*)0);
                         return __result120__;
@@ -6951,13 +6948,13 @@ memset(&it_166, 0, sizeof(unsigned int));
                 }
             }
             else {
-                # 1227 "./neo-c.h"
+                # 1222 "./neo-c.h"
                 __result121__ = __result_obj__ = default_value;
                 come_call_finalizer3(default_value,sGenericsFun_finalize, 0, 0, 1, 0, (void*)0);
                 return __result121__;
             }
         }
-        # 1231 "./neo-c.h"
+        # 1226 "./neo-c.h"
         __result122__ = __result_obj__ = default_value;
         come_call_finalizer3(default_value,sGenericsFun_finalize, 0, 0, 1, 0, (void*)0);
         return __result122__;
@@ -9246,28 +9243,28 @@ right_value160 = (void*)0;
 memset(&result_170, 0, sizeof(struct list$1tuple2$2charphsNodephph*));
 memset(&it_171, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
 right_value167 = (void*)0;
-        # 138 "./neo-c.h"
-        # 135 "./neo-c.h"
+        # 133 "./neo-c.h"
+        # 130 "./neo-c.h"
         if(_if_conditional228=self==((void*)0),        _if_conditional228) {
-            # 136 "./neo-c.h"
+            # 131 "./neo-c.h"
             __result125__ = __result_obj__ = ((void*)0);
             return __result125__;
         }
-        # 138 "./neo-c.h"
-        result_170=(struct list$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list$1tuple2$2charphsNodephph*)(right_value160=list$1tuple2$2charphsNodephph_initialize((struct list$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list$1tuple2$2charphsNodephph*)(right_value159=(struct list$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 138, "list$1tuple2$2charphsNodephph"))))))));
+        # 133 "./neo-c.h"
+        result_170=(struct list$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list$1tuple2$2charphsNodephph*)(right_value160=list$1tuple2$2charphsNodephph_initialize((struct list$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list$1tuple2$2charphsNodephph*)(right_value159=(struct list$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 133, "list$1tuple2$2charphsNodephph"))))))));
         come_call_finalizer3(right_value159,list$1tuple2$2charphsNodephphp_finalize, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer3(right_value160,list$1tuple2$2charphsNodephphp_finalize, 0, 1, 0, 0, __result_obj__);
-        # 140 "./neo-c.h"
+        # 135 "./neo-c.h"
         it_171=self->head;
-        # 147 "./neo-c.h"
+        # 142 "./neo-c.h"
         while(_while_condtional30=it_171!=((void*)0),        _while_condtional30) {
-            # 142 "./neo-c.h"
+            # 137 "./neo-c.h"
             list$1tuple2$2charphsNodephph_add(result_170,(struct tuple2$2charphsNodeph*)come_increment_ref_count(((struct tuple2$2charphsNodeph*)(right_value167=tuple2$2charphsNodephp_clone(it_171->item)))));
             come_call_finalizer3(right_value167,tuple2$2charphsNodephp_finalize, 0, 1, 0, 0, __result_obj__);
-            # 144 "./neo-c.h"
+            # 139 "./neo-c.h"
             it_171=it_171->next;
         }
-        # 147 "./neo-c.h"
+        # 142 "./neo-c.h"
         __result130__ = __result_obj__ = result_170;
         come_call_finalizer3(result_170,list$1tuple2$2charphsNodephphp_finalize, 0, 0, 1, 0, (void*)0);
         return __result130__;
@@ -9278,13 +9275,13 @@ static struct list$1tuple2$2charphsNodephph* list$1tuple2$2charphsNodephph_initi
 void* __result_obj__;
 struct list$1tuple2$2charphsNodephph* __result126__;
 memset(&__result_obj__, 0, sizeof(void*));
-            # 100 "./neo-c.h"
+            # 95 "./neo-c.h"
             self->head=((void*)0);
-            # 101 "./neo-c.h"
+            # 96 "./neo-c.h"
             self->tail=((void*)0);
-            # 102 "./neo-c.h"
+            # 97 "./neo-c.h"
             self->len=0;
-            # 104 "./neo-c.h"
+            # 99 "./neo-c.h"
             __result126__ = __result_obj__ = self;
             come_call_finalizer3(self,list$1tuple2$2charphsNodephphp_finalize, 0, 0, 1, 0, (void*)0);
             return __result126__;
@@ -9299,15 +9296,15 @@ struct list_item$1tuple2$2charphsNodephph* prev_it_169;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_168, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
 memset(&prev_it_169, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
-                # 119 "./neo-c.h"
+                # 114 "./neo-c.h"
                 it_168=self->head;
-                # 125 "./neo-c.h"
+                # 120 "./neo-c.h"
                 while(_while_condtional29=it_168!=((void*)0),                _while_condtional29) {
-                    # 121 "./neo-c.h"
+                    # 116 "./neo-c.h"
                     prev_it_169=it_168;
-                    # 122 "./neo-c.h"
+                    # 117 "./neo-c.h"
                     it_168=it_168->next;
-                    # 123 "./neo-c.h"
+                    # 118 "./neo-c.h"
                     come_call_finalizer3(prev_it_169,list_item$1tuple2$2charphsNodephphp_finalize, 0, 0, 0, 0, (void*)0);
                 }
 }
@@ -9345,66 +9342,66 @@ right_value162 = (void*)0;
 memset(&litem_173, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
 right_value163 = (void*)0;
 memset(&litem_174, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
-                # 182 "./neo-c.h"
-                # 151 "./neo-c.h"
+                # 177 "./neo-c.h"
+                # 146 "./neo-c.h"
                 if(_if_conditional232=self->len==0,                _if_conditional232) {
-                    # 152 "./neo-c.h"
-                    litem_172=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value161=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 152, "list_item$1tuple2$2charphsNodephph"))));
+                    # 147 "./neo-c.h"
+                    litem_172=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value161=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 147, "list_item$1tuple2$2charphsNodephph"))));
                     come_call_finalizer3(right_value161,list_item$1tuple2$2charphsNodephphp_finalize, 0, 1, 0, 0, __result_obj__);
-                    # 154 "./neo-c.h"
+                    # 149 "./neo-c.h"
                     litem_172->prev=((void*)0);
-                    # 155 "./neo-c.h"
+                    # 150 "./neo-c.h"
                     litem_172->next=((void*)0);
-                    # 156 "./neo-c.h"
+                    # 151 "./neo-c.h"
                     __dec_obj50=litem_172->item;
                     litem_172->item=(struct tuple2$2charphsNodeph*)come_increment_ref_count(item);
                     come_call_finalizer3(__dec_obj50,tuple2$2charphsNodephp_finalize, 0, 0, 0, 0, (void*)0);
-                    # 158 "./neo-c.h"
+                    # 153 "./neo-c.h"
                     self->tail=litem_172;
-                    # 159 "./neo-c.h"
+                    # 154 "./neo-c.h"
                     self->head=litem_172;
                 }
                 else {
-                    # 182 "./neo-c.h"
-                    # 161 "./neo-c.h"
+                    # 177 "./neo-c.h"
+                    # 156 "./neo-c.h"
                     if(_if_conditional235=self->len==1,                    _if_conditional235) {
-                        # 162 "./neo-c.h"
-                        litem_173=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value162=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 162, "list_item$1tuple2$2charphsNodephph"))));
+                        # 157 "./neo-c.h"
+                        litem_173=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value162=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 157, "list_item$1tuple2$2charphsNodephph"))));
                         come_call_finalizer3(right_value162,list_item$1tuple2$2charphsNodephphp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 164 "./neo-c.h"
+                        # 159 "./neo-c.h"
                         litem_173->prev=self->head;
-                        # 165 "./neo-c.h"
+                        # 160 "./neo-c.h"
                         litem_173->next=((void*)0);
-                        # 166 "./neo-c.h"
+                        # 161 "./neo-c.h"
                         __dec_obj51=litem_173->item;
                         litem_173->item=(struct tuple2$2charphsNodeph*)come_increment_ref_count(item);
                         come_call_finalizer3(__dec_obj51,tuple2$2charphsNodephp_finalize, 0, 0, 0, 0, (void*)0);
-                        # 168 "./neo-c.h"
+                        # 163 "./neo-c.h"
                         self->tail=litem_173;
-                        # 169 "./neo-c.h"
+                        # 164 "./neo-c.h"
                         self->head->next=litem_173;
                     }
                     else {
-                        # 172 "./neo-c.h"
-                        litem_174=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value163=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 172, "list_item$1tuple2$2charphsNodephph"))));
+                        # 167 "./neo-c.h"
+                        litem_174=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value163=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 167, "list_item$1tuple2$2charphsNodephph"))));
                         come_call_finalizer3(right_value163,list_item$1tuple2$2charphsNodephphp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 174 "./neo-c.h"
+                        # 169 "./neo-c.h"
                         litem_174->prev=self->tail;
-                        # 175 "./neo-c.h"
+                        # 170 "./neo-c.h"
                         litem_174->next=((void*)0);
-                        # 176 "./neo-c.h"
+                        # 171 "./neo-c.h"
                         __dec_obj52=litem_174->item;
                         litem_174->item=(struct tuple2$2charphsNodeph*)come_increment_ref_count(item);
                         come_call_finalizer3(__dec_obj52,tuple2$2charphsNodephp_finalize, 0, 0, 0, 0, (void*)0);
-                        # 178 "./neo-c.h"
+                        # 173 "./neo-c.h"
                         self->tail->next=litem_174;
-                        # 179 "./neo-c.h"
+                        # 174 "./neo-c.h"
                         self->tail=litem_174;
                     }
                 }
-                # 182 "./neo-c.h"
+                # 177 "./neo-c.h"
                 self->len++;
-                # 184 "./neo-c.h"
+                # 179 "./neo-c.h"
                 __result127__ = __result_obj__ = self;
                 come_call_finalizer3(item,tuple2$2charphsNodephp_finalize, 0, 0, 1, 0, (void*)0);
                 return __result127__;
@@ -9510,15 +9507,15 @@ struct list_item$1tuple2$2charphsNodephph* prev_it_177;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_176, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
 memset(&prev_it_177, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
-        # 119 "./neo-c.h"
+        # 114 "./neo-c.h"
         it_176=self->head;
-        # 125 "./neo-c.h"
+        # 120 "./neo-c.h"
         while(_while_condtional31=it_176!=((void*)0),        _while_condtional31) {
-            # 121 "./neo-c.h"
+            # 116 "./neo-c.h"
             prev_it_177=it_176;
-            # 122 "./neo-c.h"
+            # 117 "./neo-c.h"
             it_176=it_176->next;
-            # 123 "./neo-c.h"
+            # 118 "./neo-c.h"
             come_call_finalizer3(prev_it_177,list_item$1tuple2$2charphsNodephphp_finalize, 0, 0, 0, 0, (void*)0);
         }
 }
@@ -9535,29 +9532,29 @@ struct tuple2$2charphsTypeph* __result138__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_190, 0, sizeof(struct tuple2$2charphsTypeph*));
 memset(&result_191, 0, sizeof(struct tuple2$2charphsTypeph*));
-        # 286 "./neo-c.h"
         # 281 "./neo-c.h"
+        # 276 "./neo-c.h"
         if(_if_conditional254=self==((void*)0),        _if_conditional254) {
-            # 282 "./neo-c.h"
-            # 283 "./neo-c.h"
+            # 277 "./neo-c.h"
+            # 278 "./neo-c.h"
             memset(&result_190,0,sizeof(struct tuple2$2charphsTypeph*));
-            # 284 "./neo-c.h"
+            # 279 "./neo-c.h"
             __result136__ = __result_obj__ = result_190;
             return __result136__;
         }
-        # 286 "./neo-c.h"
+        # 281 "./neo-c.h"
         self->it=self->head;
-        # 292 "./neo-c.h"
-        # 288 "./neo-c.h"
+        # 287 "./neo-c.h"
+        # 283 "./neo-c.h"
         if(self->it) {
-            # 289 "./neo-c.h"
+            # 284 "./neo-c.h"
             __result137__ = __result_obj__ = self->it->item;
             return __result137__;
         }
-        # 292 "./neo-c.h"
-        # 293 "./neo-c.h"
+        # 287 "./neo-c.h"
+        # 288 "./neo-c.h"
         memset(&result_191,0,sizeof(struct tuple2$2charphsTypeph*));
-        # 294 "./neo-c.h"
+        # 289 "./neo-c.h"
         __result138__ = __result_obj__ = result_191;
         return __result138__;
 }
@@ -9566,7 +9563,7 @@ static _Bool list$1tuple2$2charphsTypephph_end(struct list$1tuple2$2charphsTypep
 void* __result_obj__;
 _Bool __result139__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 316 "./neo-c.h"
+        # 311 "./neo-c.h"
         __result139__ = self==((void*)0)||self->it==((void*)0);
         return __result139__;
 }
@@ -9583,29 +9580,29 @@ struct tuple2$2charphsTypeph* __result142__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_193, 0, sizeof(struct tuple2$2charphsTypeph*));
 memset(&result_194, 0, sizeof(struct tuple2$2charphsTypeph*));
-        # 304 "./neo-c.h"
-        # 298 "./neo-c.h"
+        # 299 "./neo-c.h"
+        # 293 "./neo-c.h"
         if(_if_conditional256=self==((void*)0)||self->it==((void*)0),        _if_conditional256) {
-            # 299 "./neo-c.h"
-            # 300 "./neo-c.h"
+            # 294 "./neo-c.h"
+            # 295 "./neo-c.h"
             memset(&result_193,0,sizeof(struct tuple2$2charphsTypeph*));
-            # 301 "./neo-c.h"
+            # 296 "./neo-c.h"
             __result140__ = __result_obj__ = result_193;
             return __result140__;
         }
-        # 304 "./neo-c.h"
+        # 299 "./neo-c.h"
         self->it=self->it->next;
-        # 310 "./neo-c.h"
-        # 306 "./neo-c.h"
+        # 305 "./neo-c.h"
+        # 301 "./neo-c.h"
         if(self->it) {
-            # 307 "./neo-c.h"
+            # 302 "./neo-c.h"
             __result141__ = __result_obj__ = self->it->item;
             return __result141__;
         }
-        # 310 "./neo-c.h"
-        # 311 "./neo-c.h"
+        # 305 "./neo-c.h"
+        # 306 "./neo-c.h"
         memset(&result_194,0,sizeof(struct tuple2$2charphsTypeph*));
-        # 312 "./neo-c.h"
+        # 307 "./neo-c.h"
         __result142__ = __result_obj__ = result_194;
         return __result142__;
 }
@@ -9614,13 +9611,13 @@ static struct list$1CVALUEph* list$1CVALUEph_initialize(struct list$1CVALUEph* s
 void* __result_obj__;
 struct list$1CVALUEph* __result143__;
 memset(&__result_obj__, 0, sizeof(void*));
-            # 100 "./neo-c.h"
+            # 95 "./neo-c.h"
             self->head=((void*)0);
-            # 101 "./neo-c.h"
+            # 96 "./neo-c.h"
             self->tail=((void*)0);
-            # 102 "./neo-c.h"
+            # 97 "./neo-c.h"
             self->len=0;
-            # 104 "./neo-c.h"
+            # 99 "./neo-c.h"
             __result143__ = __result_obj__ = self;
             come_call_finalizer3(self,list$1CVALUEphp_finalize, 0, 0, 1, 0, (void*)0);
             return __result143__;
@@ -9635,15 +9632,15 @@ struct list_item$1CVALUEph* prev_it_199;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_198, 0, sizeof(struct list_item$1CVALUEph*));
 memset(&prev_it_199, 0, sizeof(struct list_item$1CVALUEph*));
-                # 119 "./neo-c.h"
+                # 114 "./neo-c.h"
                 it_198=self->head;
-                # 125 "./neo-c.h"
+                # 120 "./neo-c.h"
                 while(_while_condtional32=it_198!=((void*)0),                _while_condtional32) {
-                    # 121 "./neo-c.h"
+                    # 116 "./neo-c.h"
                     prev_it_199=it_198;
-                    # 122 "./neo-c.h"
+                    # 117 "./neo-c.h"
                     it_198=it_198->next;
-                    # 123 "./neo-c.h"
+                    # 118 "./neo-c.h"
                     come_call_finalizer3(prev_it_199,list_item$1CVALUEphp_finalize, 0, 0, 0, 0, (void*)0);
                 }
 }
@@ -9660,29 +9657,29 @@ struct tuple2$2charphsNodeph* __result146__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_203, 0, sizeof(struct tuple2$2charphsNodeph*));
 memset(&result_204, 0, sizeof(struct tuple2$2charphsNodeph*));
-            # 286 "./neo-c.h"
             # 281 "./neo-c.h"
+            # 276 "./neo-c.h"
             if(_if_conditional260=self==((void*)0),            _if_conditional260) {
-                # 282 "./neo-c.h"
-                # 283 "./neo-c.h"
+                # 277 "./neo-c.h"
+                # 278 "./neo-c.h"
                 memset(&result_203,0,sizeof(struct tuple2$2charphsNodeph*));
-                # 284 "./neo-c.h"
+                # 279 "./neo-c.h"
                 __result144__ = __result_obj__ = result_203;
                 return __result144__;
             }
-            # 286 "./neo-c.h"
+            # 281 "./neo-c.h"
             self->it=self->head;
-            # 292 "./neo-c.h"
-            # 288 "./neo-c.h"
+            # 287 "./neo-c.h"
+            # 283 "./neo-c.h"
             if(self->it) {
-                # 289 "./neo-c.h"
+                # 284 "./neo-c.h"
                 __result145__ = __result_obj__ = self->it->item;
                 return __result145__;
             }
-            # 292 "./neo-c.h"
-            # 293 "./neo-c.h"
+            # 287 "./neo-c.h"
+            # 288 "./neo-c.h"
             memset(&result_204,0,sizeof(struct tuple2$2charphsNodeph*));
-            # 294 "./neo-c.h"
+            # 289 "./neo-c.h"
             __result146__ = __result_obj__ = result_204;
             return __result146__;
 }
@@ -9691,7 +9688,7 @@ static _Bool list$1tuple2$2charphsNodephph_end(struct list$1tuple2$2charphsNodep
 void* __result_obj__;
 _Bool __result147__;
 memset(&__result_obj__, 0, sizeof(void*));
-            # 316 "./neo-c.h"
+            # 311 "./neo-c.h"
             __result147__ = self==((void*)0)||self->it==((void*)0);
             return __result147__;
 }
@@ -9708,29 +9705,29 @@ struct tuple2$2charphsNodeph* __result150__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_206, 0, sizeof(struct tuple2$2charphsNodeph*));
 memset(&result_207, 0, sizeof(struct tuple2$2charphsNodeph*));
-            # 304 "./neo-c.h"
-            # 298 "./neo-c.h"
+            # 299 "./neo-c.h"
+            # 293 "./neo-c.h"
             if(_if_conditional262=self==((void*)0)||self->it==((void*)0),            _if_conditional262) {
-                # 299 "./neo-c.h"
-                # 300 "./neo-c.h"
+                # 294 "./neo-c.h"
+                # 295 "./neo-c.h"
                 memset(&result_206,0,sizeof(struct tuple2$2charphsNodeph*));
-                # 301 "./neo-c.h"
+                # 296 "./neo-c.h"
                 __result148__ = __result_obj__ = result_206;
                 return __result148__;
             }
-            # 304 "./neo-c.h"
+            # 299 "./neo-c.h"
             self->it=self->it->next;
-            # 310 "./neo-c.h"
-            # 306 "./neo-c.h"
+            # 305 "./neo-c.h"
+            # 301 "./neo-c.h"
             if(self->it) {
-                # 307 "./neo-c.h"
+                # 302 "./neo-c.h"
                 __result149__ = __result_obj__ = self->it->item;
                 return __result149__;
             }
-            # 310 "./neo-c.h"
-            # 311 "./neo-c.h"
+            # 305 "./neo-c.h"
+            # 306 "./neo-c.h"
             memset(&result_207,0,sizeof(struct tuple2$2charphsNodeph*));
-            # 312 "./neo-c.h"
+            # 307 "./neo-c.h"
             __result150__ = __result_obj__ = result_207;
             return __result150__;
 }
@@ -9749,34 +9746,34 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_211, 0, sizeof(struct list_item$1sTypeph*));
 memset(&i_212, 0, sizeof(int));
 memset(&default_value_213, 0, sizeof(struct sType*));
-                    # 678 "./neo-c.h"
-                    # 674 "./neo-c.h"
+                    # 673 "./neo-c.h"
+                    # 669 "./neo-c.h"
                     if(_if_conditional266=position<0,                    _if_conditional266) {
-                        # 675 "./neo-c.h"
+                        # 670 "./neo-c.h"
                         position+=self->len;
                     }
-                    # 678 "./neo-c.h"
+                    # 673 "./neo-c.h"
                     it_211=self->head;
-                    # 679 "./neo-c.h"
+                    # 674 "./neo-c.h"
                     i_212=0;
-                    # 686 "./neo-c.h"
+                    # 681 "./neo-c.h"
                     while(_while_condtional33=it_211!=((void*)0),                    _while_condtional33) {
-                        # 684 "./neo-c.h"
-                        # 681 "./neo-c.h"
+                        # 679 "./neo-c.h"
+                        # 676 "./neo-c.h"
                         if(_if_conditional267=position==i_212,                        _if_conditional267) {
-                            # 682 "./neo-c.h"
+                            # 677 "./neo-c.h"
                             __result152__ = __result_obj__ = it_211->item;
                             return __result152__;
                         }
-                        # 684 "./neo-c.h"
+                        # 679 "./neo-c.h"
                         it_211=it_211->next;
-                        # 685 "./neo-c.h"
+                        # 680 "./neo-c.h"
                         i_212++;
                     }
-                    # 688 "./neo-c.h"
-                    # 689 "./neo-c.h"
+                    # 683 "./neo-c.h"
+                    # 684 "./neo-c.h"
                     memset(&default_value_213,0,sizeof(struct sType*));
-                    # 690 "./neo-c.h"
+                    # 685 "./neo-c.h"
                     __result153__ = __result_obj__ = default_value_213;
                     come_call_finalizer3(default_value_213,sType_finalize, 0, 0, 1, 0, (void*)0);
                     return __result153__;
@@ -9795,29 +9792,29 @@ struct CVALUE* __result156__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_217, 0, sizeof(struct CVALUE*));
 memset(&result_218, 0, sizeof(struct CVALUE*));
-            # 286 "./neo-c.h"
             # 281 "./neo-c.h"
+            # 276 "./neo-c.h"
             if(_if_conditional269=self==((void*)0),            _if_conditional269) {
-                # 282 "./neo-c.h"
-                # 283 "./neo-c.h"
+                # 277 "./neo-c.h"
+                # 278 "./neo-c.h"
                 memset(&result_217,0,sizeof(struct CVALUE*));
-                # 284 "./neo-c.h"
+                # 279 "./neo-c.h"
                 __result154__ = __result_obj__ = result_217;
                 return __result154__;
             }
-            # 286 "./neo-c.h"
+            # 281 "./neo-c.h"
             self->it=self->head;
-            # 292 "./neo-c.h"
-            # 288 "./neo-c.h"
+            # 287 "./neo-c.h"
+            # 283 "./neo-c.h"
             if(self->it) {
-                # 289 "./neo-c.h"
+                # 284 "./neo-c.h"
                 __result155__ = __result_obj__ = self->it->item;
                 return __result155__;
             }
-            # 292 "./neo-c.h"
-            # 293 "./neo-c.h"
+            # 287 "./neo-c.h"
+            # 288 "./neo-c.h"
             memset(&result_218,0,sizeof(struct CVALUE*));
-            # 294 "./neo-c.h"
+            # 289 "./neo-c.h"
             __result156__ = __result_obj__ = result_218;
             return __result156__;
 }
@@ -9826,7 +9823,7 @@ static _Bool list$1CVALUEph_end(struct list$1CVALUEph* self){
 void* __result_obj__;
 _Bool __result157__;
 memset(&__result_obj__, 0, sizeof(void*));
-            # 316 "./neo-c.h"
+            # 311 "./neo-c.h"
             __result157__ = self==((void*)0)||self->it==((void*)0);
             return __result157__;
 }
@@ -9843,29 +9840,29 @@ struct CVALUE* __result160__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_220, 0, sizeof(struct CVALUE*));
 memset(&result_221, 0, sizeof(struct CVALUE*));
-            # 304 "./neo-c.h"
-            # 298 "./neo-c.h"
+            # 299 "./neo-c.h"
+            # 293 "./neo-c.h"
             if(_if_conditional271=self==((void*)0)||self->it==((void*)0),            _if_conditional271) {
-                # 299 "./neo-c.h"
-                # 300 "./neo-c.h"
+                # 294 "./neo-c.h"
+                # 295 "./neo-c.h"
                 memset(&result_220,0,sizeof(struct CVALUE*));
-                # 301 "./neo-c.h"
+                # 296 "./neo-c.h"
                 __result158__ = __result_obj__ = result_220;
                 return __result158__;
             }
-            # 304 "./neo-c.h"
+            # 299 "./neo-c.h"
             self->it=self->it->next;
-            # 310 "./neo-c.h"
-            # 306 "./neo-c.h"
+            # 305 "./neo-c.h"
+            # 301 "./neo-c.h"
             if(self->it) {
-                # 307 "./neo-c.h"
+                # 302 "./neo-c.h"
                 __result159__ = __result_obj__ = self->it->item;
                 return __result159__;
             }
-            # 310 "./neo-c.h"
-            # 311 "./neo-c.h"
+            # 305 "./neo-c.h"
+            # 306 "./neo-c.h"
             memset(&result_221,0,sizeof(struct CVALUE*));
-            # 312 "./neo-c.h"
+            # 307 "./neo-c.h"
             __result160__ = __result_obj__ = result_221;
             return __result160__;
 }
@@ -9876,14 +9873,14 @@ _Bool _if_conditional274;
 int __result161__;
 int __result162__;
 memset(&__result_obj__, 0, sizeof(void*));
-                # 359 "./neo-c.h"
-                # 356 "./neo-c.h"
+                # 354 "./neo-c.h"
+                # 351 "./neo-c.h"
                 if(_if_conditional274=self==((void*)0),                _if_conditional274) {
-                    # 357 "./neo-c.h"
+                    # 352 "./neo-c.h"
                     __result161__ = 0;
                     return __result161__;
                 }
-                # 359 "./neo-c.h"
+                # 354 "./neo-c.h"
                 __result162__ = self->len;
                 return __result162__;
 }
@@ -9906,39 +9903,39 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&default_value_228, 0, sizeof(struct sFun*));
 memset(&hash_229, 0, sizeof(unsigned int));
 memset(&it_230, 0, sizeof(unsigned int));
-                # 1524 "./neo-c.h"
-                # 1525 "./neo-c.h"
+                # 1519 "./neo-c.h"
+                # 1520 "./neo-c.h"
                 memset(&default_value_228,0,sizeof(struct sFun*));
-                # 1527 "./neo-c.h"
+                # 1522 "./neo-c.h"
                 hash_229=string_get_hash_key(((char*)key))%self->size;
-                # 1528 "./neo-c.h"
+                # 1523 "./neo-c.h"
                 it_230=hash_229;
-                # 1552 "./neo-c.h"
+                # 1547 "./neo-c.h"
                 while(_while_condtional34=(_Bool)1,                _while_condtional34) {
-                    # 1550 "./neo-c.h"
-                    # 1531 "./neo-c.h"
+                    # 1545 "./neo-c.h"
+                    # 1526 "./neo-c.h"
                     if(_if_conditional277=self->item_existance[it_230],                    _if_conditional277) {
-                        # 1538 "./neo-c.h"
                         # 1533 "./neo-c.h"
+                        # 1528 "./neo-c.h"
                         if(_if_conditional278=string_equals(self->keys[it_230],key),                        _if_conditional278) {
-                            # 1535 "./neo-c.h"
+                            # 1530 "./neo-c.h"
                             __result163__ = __result_obj__ = self->items[it_230];
                             come_call_finalizer3(default_value_228,sFun_finalize, 0, 0, 0, 0, (void*)0);
                             return __result163__;
                         }
-                        # 1538 "./neo-c.h"
+                        # 1533 "./neo-c.h"
                         it_230++;
-                        # 1546 "./neo-c.h"
-                        # 1540 "./neo-c.h"
+                        # 1541 "./neo-c.h"
+                        # 1535 "./neo-c.h"
                         if(_if_conditional294=it_230>=self->size,                        _if_conditional294) {
-                            # 1541 "./neo-c.h"
+                            # 1536 "./neo-c.h"
                             it_230=0;
                         }
                         else {
-                            # 1546 "./neo-c.h"
-                            # 1543 "./neo-c.h"
+                            # 1541 "./neo-c.h"
+                            # 1538 "./neo-c.h"
                             if(_if_conditional295=it_230==hash_229,                            _if_conditional295) {
-                                # 1544 "./neo-c.h"
+                                # 1539 "./neo-c.h"
                                 __result164__ = __result_obj__ = default_value_228;
                                 come_call_finalizer3(default_value_228,sFun_finalize, 0, 0, 1, 0, (void*)0);
                                 return __result164__;
@@ -9946,13 +9943,13 @@ memset(&it_230, 0, sizeof(unsigned int));
                         }
                     }
                     else {
-                        # 1548 "./neo-c.h"
+                        # 1543 "./neo-c.h"
                         __result165__ = __result_obj__ = default_value_228;
                         come_call_finalizer3(default_value_228,sFun_finalize, 0, 0, 1, 0, (void*)0);
                         return __result165__;
                     }
                 }
-                # 1552 "./neo-c.h"
+                # 1547 "./neo-c.h"
                 __result166__ = __result_obj__ = default_value_228;
                 come_call_finalizer3(default_value_228,sFun_finalize, 0, 0, 1, 0, (void*)0);
                 return __result166__;
@@ -10090,36 +10087,36 @@ struct sFun* __result170__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&hash_233, 0, sizeof(unsigned int));
 memset(&it_234, 0, sizeof(unsigned int));
-                    # 1206 "./neo-c.h"
+                    # 1201 "./neo-c.h"
                     hash_233=string_get_hash_key(((char*)key))%self->size;
-                    # 1207 "./neo-c.h"
+                    # 1202 "./neo-c.h"
                     it_234=hash_233;
-                    # 1231 "./neo-c.h"
+                    # 1226 "./neo-c.h"
                     while(_while_condtional35=(_Bool)1,                    _while_condtional35) {
-                        # 1229 "./neo-c.h"
-                        # 1210 "./neo-c.h"
+                        # 1224 "./neo-c.h"
+                        # 1205 "./neo-c.h"
                         if(_if_conditional299=self->item_existance[it_234],                        _if_conditional299) {
-                            # 1217 "./neo-c.h"
                             # 1212 "./neo-c.h"
+                            # 1207 "./neo-c.h"
                             if(_if_conditional300=string_equals(self->keys[it_234],key),                            _if_conditional300) {
-                                # 1214 "./neo-c.h"
+                                # 1209 "./neo-c.h"
                                 __result167__ = __result_obj__ = self->items[it_234];
                                 come_call_finalizer3(default_value,sFun_finalize, 0, 0, 1, 0, (void*)0);
                                 return __result167__;
                             }
-                            # 1217 "./neo-c.h"
+                            # 1212 "./neo-c.h"
                             it_234++;
-                            # 1225 "./neo-c.h"
-                            # 1219 "./neo-c.h"
+                            # 1220 "./neo-c.h"
+                            # 1214 "./neo-c.h"
                             if(_if_conditional301=it_234>=self->size,                            _if_conditional301) {
-                                # 1220 "./neo-c.h"
+                                # 1215 "./neo-c.h"
                                 it_234=0;
                             }
                             else {
-                                # 1225 "./neo-c.h"
-                                # 1222 "./neo-c.h"
+                                # 1220 "./neo-c.h"
+                                # 1217 "./neo-c.h"
                                 if(_if_conditional302=it_234==hash_233,                                _if_conditional302) {
-                                    # 1223 "./neo-c.h"
+                                    # 1218 "./neo-c.h"
                                     __result168__ = __result_obj__ = default_value;
                                     come_call_finalizer3(default_value,sFun_finalize, 0, 0, 1, 0, (void*)0);
                                     return __result168__;
@@ -10127,13 +10124,13 @@ memset(&it_234, 0, sizeof(unsigned int));
                             }
                         }
                         else {
-                            # 1227 "./neo-c.h"
+                            # 1222 "./neo-c.h"
                             __result169__ = __result_obj__ = default_value;
                             come_call_finalizer3(default_value,sFun_finalize, 0, 0, 1, 0, (void*)0);
                             return __result169__;
                         }
                     }
-                    # 1231 "./neo-c.h"
+                    # 1226 "./neo-c.h"
                     __result170__ = __result_obj__ = default_value;
                     come_call_finalizer3(default_value,sFun_finalize, 0, 0, 1, 0, (void*)0);
                     return __result170__;
@@ -10158,39 +10155,39 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&default_value_236, 0, sizeof(struct sClass*));
 memset(&hash_237, 0, sizeof(unsigned int));
 memset(&it_238, 0, sizeof(unsigned int));
-                            # 1524 "./neo-c.h"
-                            # 1525 "./neo-c.h"
+                            # 1519 "./neo-c.h"
+                            # 1520 "./neo-c.h"
                             memset(&default_value_236,0,sizeof(struct sClass*));
-                            # 1527 "./neo-c.h"
+                            # 1522 "./neo-c.h"
                             hash_237=string_get_hash_key(((char*)key))%self->size;
-                            # 1528 "./neo-c.h"
+                            # 1523 "./neo-c.h"
                             it_238=hash_237;
-                            # 1552 "./neo-c.h"
+                            # 1547 "./neo-c.h"
                             while(_while_condtional36=(_Bool)1,                            _while_condtional36) {
-                                # 1550 "./neo-c.h"
-                                # 1531 "./neo-c.h"
+                                # 1545 "./neo-c.h"
+                                # 1526 "./neo-c.h"
                                 if(_if_conditional308=self->item_existance[it_238],                                _if_conditional308) {
-                                    # 1538 "./neo-c.h"
                                     # 1533 "./neo-c.h"
+                                    # 1528 "./neo-c.h"
                                     if(_if_conditional309=string_equals(self->keys[it_238],key),                                    _if_conditional309) {
-                                        # 1535 "./neo-c.h"
+                                        # 1530 "./neo-c.h"
                                         __result172__ = __result_obj__ = self->items[it_238];
                                         come_call_finalizer3(default_value_236,sClass_finalize, 0, 0, 0, 0, (void*)0);
                                         return __result172__;
                                     }
-                                    # 1538 "./neo-c.h"
+                                    # 1533 "./neo-c.h"
                                     it_238++;
-                                    # 1546 "./neo-c.h"
-                                    # 1540 "./neo-c.h"
+                                    # 1541 "./neo-c.h"
+                                    # 1535 "./neo-c.h"
                                     if(_if_conditional310=it_238>=self->size,                                    _if_conditional310) {
-                                        # 1541 "./neo-c.h"
+                                        # 1536 "./neo-c.h"
                                         it_238=0;
                                     }
                                     else {
-                                        # 1546 "./neo-c.h"
-                                        # 1543 "./neo-c.h"
+                                        # 1541 "./neo-c.h"
+                                        # 1538 "./neo-c.h"
                                         if(_if_conditional311=it_238==hash_237,                                        _if_conditional311) {
-                                            # 1544 "./neo-c.h"
+                                            # 1539 "./neo-c.h"
                                             __result173__ = __result_obj__ = default_value_236;
                                             come_call_finalizer3(default_value_236,sClass_finalize, 0, 0, 1, 0, (void*)0);
                                             return __result173__;
@@ -10198,13 +10195,13 @@ memset(&it_238, 0, sizeof(unsigned int));
                                     }
                                 }
                                 else {
-                                    # 1548 "./neo-c.h"
+                                    # 1543 "./neo-c.h"
                                     __result174__ = __result_obj__ = default_value_236;
                                     come_call_finalizer3(default_value_236,sClass_finalize, 0, 0, 1, 0, (void*)0);
                                     return __result174__;
                                 }
                             }
-                            # 1552 "./neo-c.h"
+                            # 1547 "./neo-c.h"
                             __result175__ = __result_obj__ = default_value_236;
                             come_call_finalizer3(default_value_236,sClass_finalize, 0, 0, 1, 0, (void*)0);
                             return __result175__;
@@ -10217,14 +10214,14 @@ _Bool _if_conditional315;
 int __result178__;
 int __result179__;
 memset(&__result_obj__, 0, sizeof(void*));
-            # 359 "./neo-c.h"
-            # 356 "./neo-c.h"
+            # 354 "./neo-c.h"
+            # 351 "./neo-c.h"
             if(_if_conditional315=self==((void*)0),            _if_conditional315) {
-                # 357 "./neo-c.h"
+                # 352 "./neo-c.h"
                 __result178__ = 0;
                 return __result178__;
             }
-            # 359 "./neo-c.h"
+            # 354 "./neo-c.h"
             __result179__ = self->len;
             return __result179__;
 }
@@ -10241,29 +10238,29 @@ struct sType* __result183__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_243, 0, sizeof(struct sType*));
 memset(&result_244, 0, sizeof(struct sType*));
-            # 286 "./neo-c.h"
             # 281 "./neo-c.h"
+            # 276 "./neo-c.h"
             if(_if_conditional317=self==((void*)0),            _if_conditional317) {
-                # 282 "./neo-c.h"
-                # 283 "./neo-c.h"
+                # 277 "./neo-c.h"
+                # 278 "./neo-c.h"
                 memset(&result_243,0,sizeof(struct sType*));
-                # 284 "./neo-c.h"
+                # 279 "./neo-c.h"
                 __result181__ = __result_obj__ = result_243;
                 return __result181__;
             }
-            # 286 "./neo-c.h"
+            # 281 "./neo-c.h"
             self->it=self->head;
-            # 292 "./neo-c.h"
-            # 288 "./neo-c.h"
+            # 287 "./neo-c.h"
+            # 283 "./neo-c.h"
             if(self->it) {
-                # 289 "./neo-c.h"
+                # 284 "./neo-c.h"
                 __result182__ = __result_obj__ = self->it->item;
                 return __result182__;
             }
-            # 292 "./neo-c.h"
-            # 293 "./neo-c.h"
+            # 287 "./neo-c.h"
+            # 288 "./neo-c.h"
             memset(&result_244,0,sizeof(struct sType*));
-            # 294 "./neo-c.h"
+            # 289 "./neo-c.h"
             __result183__ = __result_obj__ = result_244;
             return __result183__;
 }
@@ -10272,7 +10269,7 @@ static _Bool list$1sTypeph_end(struct list$1sTypeph* self){
 void* __result_obj__;
 _Bool __result184__;
 memset(&__result_obj__, 0, sizeof(void*));
-            # 316 "./neo-c.h"
+            # 311 "./neo-c.h"
             __result184__ = self==((void*)0)||self->it==((void*)0);
             return __result184__;
 }
@@ -10289,29 +10286,29 @@ struct sType* __result187__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_246, 0, sizeof(struct sType*));
 memset(&result_247, 0, sizeof(struct sType*));
-            # 304 "./neo-c.h"
-            # 298 "./neo-c.h"
+            # 299 "./neo-c.h"
+            # 293 "./neo-c.h"
             if(_if_conditional319=self==((void*)0)||self->it==((void*)0),            _if_conditional319) {
-                # 299 "./neo-c.h"
-                # 300 "./neo-c.h"
+                # 294 "./neo-c.h"
+                # 295 "./neo-c.h"
                 memset(&result_246,0,sizeof(struct sType*));
-                # 301 "./neo-c.h"
+                # 296 "./neo-c.h"
                 __result185__ = __result_obj__ = result_246;
                 return __result185__;
             }
-            # 304 "./neo-c.h"
+            # 299 "./neo-c.h"
             self->it=self->it->next;
-            # 310 "./neo-c.h"
-            # 306 "./neo-c.h"
+            # 305 "./neo-c.h"
+            # 301 "./neo-c.h"
             if(self->it) {
-                # 307 "./neo-c.h"
+                # 302 "./neo-c.h"
                 __result186__ = __result_obj__ = self->it->item;
                 return __result186__;
             }
-            # 310 "./neo-c.h"
-            # 311 "./neo-c.h"
+            # 305 "./neo-c.h"
+            # 306 "./neo-c.h"
             memset(&result_247,0,sizeof(struct sType*));
-            # 312 "./neo-c.h"
+            # 307 "./neo-c.h"
             __result187__ = __result_obj__ = result_247;
             return __result187__;
 }
@@ -10337,66 +10334,66 @@ right_value212 = (void*)0;
 memset(&litem_249, 0, sizeof(struct list_item$1sTypeph*));
 right_value213 = (void*)0;
 memset(&litem_250, 0, sizeof(struct list_item$1sTypeph*));
-                    # 252 "./neo-c.h"
-                    # 221 "./neo-c.h"
+                    # 247 "./neo-c.h"
+                    # 216 "./neo-c.h"
                     if(_if_conditional322=self->len==0,                    _if_conditional322) {
-                        # 222 "./neo-c.h"
-                        litem_248=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value211=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./neo-c.h", 222, "list_item$1sTypeph"))));
+                        # 217 "./neo-c.h"
+                        litem_248=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value211=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./neo-c.h", 217, "list_item$1sTypeph"))));
                         come_call_finalizer3(right_value211,list_item$1sTypephp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 224 "./neo-c.h"
+                        # 219 "./neo-c.h"
                         litem_248->prev=((void*)0);
-                        # 225 "./neo-c.h"
+                        # 220 "./neo-c.h"
                         litem_248->next=((void*)0);
-                        # 226 "./neo-c.h"
+                        # 221 "./neo-c.h"
                         __dec_obj70=litem_248->item;
                         litem_248->item=(struct sType*)come_increment_ref_count(item);
                         come_call_finalizer3(__dec_obj70,sType_finalize, 0, 0, 0, 0, (void*)0);
-                        # 228 "./neo-c.h"
+                        # 223 "./neo-c.h"
                         self->tail=litem_248;
-                        # 229 "./neo-c.h"
+                        # 224 "./neo-c.h"
                         self->head=litem_248;
                     }
                     else {
-                        # 252 "./neo-c.h"
-                        # 231 "./neo-c.h"
+                        # 247 "./neo-c.h"
+                        # 226 "./neo-c.h"
                         if(_if_conditional323=self->len==1,                        _if_conditional323) {
-                            # 232 "./neo-c.h"
-                            litem_249=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value212=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./neo-c.h", 232, "list_item$1sTypeph"))));
+                            # 227 "./neo-c.h"
+                            litem_249=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value212=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./neo-c.h", 227, "list_item$1sTypeph"))));
                             come_call_finalizer3(right_value212,list_item$1sTypephp_finalize, 0, 1, 0, 0, __result_obj__);
-                            # 234 "./neo-c.h"
+                            # 229 "./neo-c.h"
                             litem_249->prev=self->head;
-                            # 235 "./neo-c.h"
+                            # 230 "./neo-c.h"
                             litem_249->next=((void*)0);
-                            # 236 "./neo-c.h"
+                            # 231 "./neo-c.h"
                             __dec_obj71=litem_249->item;
                             litem_249->item=(struct sType*)come_increment_ref_count(item);
                             come_call_finalizer3(__dec_obj71,sType_finalize, 0, 0, 0, 0, (void*)0);
-                            # 238 "./neo-c.h"
+                            # 233 "./neo-c.h"
                             self->tail=litem_249;
-                            # 239 "./neo-c.h"
+                            # 234 "./neo-c.h"
                             self->head->next=litem_249;
                         }
                         else {
-                            # 242 "./neo-c.h"
-                            litem_250=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value213=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./neo-c.h", 242, "list_item$1sTypeph"))));
+                            # 237 "./neo-c.h"
+                            litem_250=(struct list_item$1sTypeph*)come_increment_ref_count(((struct list_item$1sTypeph*)(right_value213=(struct list_item$1sTypeph*)come_calloc(1, sizeof(struct list_item$1sTypeph)*(1), "./neo-c.h", 237, "list_item$1sTypeph"))));
                             come_call_finalizer3(right_value213,list_item$1sTypephp_finalize, 0, 1, 0, 0, __result_obj__);
-                            # 244 "./neo-c.h"
+                            # 239 "./neo-c.h"
                             litem_250->prev=self->tail;
-                            # 245 "./neo-c.h"
+                            # 240 "./neo-c.h"
                             litem_250->next=((void*)0);
-                            # 246 "./neo-c.h"
+                            # 241 "./neo-c.h"
                             __dec_obj72=litem_250->item;
                             litem_250->item=(struct sType*)come_increment_ref_count(item);
                             come_call_finalizer3(__dec_obj72,sType_finalize, 0, 0, 0, 0, (void*)0);
-                            # 248 "./neo-c.h"
+                            # 243 "./neo-c.h"
                             self->tail->next=litem_250;
-                            # 249 "./neo-c.h"
+                            # 244 "./neo-c.h"
                             self->tail=litem_250;
                         }
                     }
-                    # 252 "./neo-c.h"
+                    # 247 "./neo-c.h"
                     self->len++;
-                    # 254 "./neo-c.h"
+                    # 249 "./neo-c.h"
                     __result188__ = __result_obj__ = self;
                     come_call_finalizer3(item,sType_finalize, 0, 0, 1, 0, (void*)0);
                     return __result188__;
@@ -10424,66 +10421,66 @@ right_value219 = (void*)0;
 memset(&litem_255, 0, sizeof(struct list_item$1CVALUEph*));
 right_value220 = (void*)0;
 memset(&litem_256, 0, sizeof(struct list_item$1CVALUEph*));
-                # 182 "./neo-c.h"
-                # 151 "./neo-c.h"
+                # 177 "./neo-c.h"
+                # 146 "./neo-c.h"
                 if(_if_conditional324=self->len==0,                _if_conditional324) {
-                    # 152 "./neo-c.h"
-                    litem_254=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value218=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./neo-c.h", 152, "list_item$1CVALUEph"))));
+                    # 147 "./neo-c.h"
+                    litem_254=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value218=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./neo-c.h", 147, "list_item$1CVALUEph"))));
                     come_call_finalizer3(right_value218,list_item$1CVALUEphp_finalize, 0, 1, 0, 0, __result_obj__);
-                    # 154 "./neo-c.h"
+                    # 149 "./neo-c.h"
                     litem_254->prev=((void*)0);
-                    # 155 "./neo-c.h"
+                    # 150 "./neo-c.h"
                     litem_254->next=((void*)0);
-                    # 156 "./neo-c.h"
+                    # 151 "./neo-c.h"
                     __dec_obj73=litem_254->item;
                     litem_254->item=(struct CVALUE*)come_increment_ref_count(item);
                     come_call_finalizer3(__dec_obj73,CVALUE_finalize, 0, 0, 0, 0, (void*)0);
-                    # 158 "./neo-c.h"
+                    # 153 "./neo-c.h"
                     self->tail=litem_254;
-                    # 159 "./neo-c.h"
+                    # 154 "./neo-c.h"
                     self->head=litem_254;
                 }
                 else {
-                    # 182 "./neo-c.h"
-                    # 161 "./neo-c.h"
+                    # 177 "./neo-c.h"
+                    # 156 "./neo-c.h"
                     if(_if_conditional325=self->len==1,                    _if_conditional325) {
-                        # 162 "./neo-c.h"
-                        litem_255=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value219=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./neo-c.h", 162, "list_item$1CVALUEph"))));
+                        # 157 "./neo-c.h"
+                        litem_255=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value219=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./neo-c.h", 157, "list_item$1CVALUEph"))));
                         come_call_finalizer3(right_value219,list_item$1CVALUEphp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 164 "./neo-c.h"
+                        # 159 "./neo-c.h"
                         litem_255->prev=self->head;
-                        # 165 "./neo-c.h"
+                        # 160 "./neo-c.h"
                         litem_255->next=((void*)0);
-                        # 166 "./neo-c.h"
+                        # 161 "./neo-c.h"
                         __dec_obj74=litem_255->item;
                         litem_255->item=(struct CVALUE*)come_increment_ref_count(item);
                         come_call_finalizer3(__dec_obj74,CVALUE_finalize, 0, 0, 0, 0, (void*)0);
-                        # 168 "./neo-c.h"
+                        # 163 "./neo-c.h"
                         self->tail=litem_255;
-                        # 169 "./neo-c.h"
+                        # 164 "./neo-c.h"
                         self->head->next=litem_255;
                     }
                     else {
-                        # 172 "./neo-c.h"
-                        litem_256=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value220=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./neo-c.h", 172, "list_item$1CVALUEph"))));
+                        # 167 "./neo-c.h"
+                        litem_256=(struct list_item$1CVALUEph*)come_increment_ref_count(((struct list_item$1CVALUEph*)(right_value220=(struct list_item$1CVALUEph*)come_calloc(1, sizeof(struct list_item$1CVALUEph)*(1), "./neo-c.h", 167, "list_item$1CVALUEph"))));
                         come_call_finalizer3(right_value220,list_item$1CVALUEphp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 174 "./neo-c.h"
+                        # 169 "./neo-c.h"
                         litem_256->prev=self->tail;
-                        # 175 "./neo-c.h"
+                        # 170 "./neo-c.h"
                         litem_256->next=((void*)0);
-                        # 176 "./neo-c.h"
+                        # 171 "./neo-c.h"
                         __dec_obj75=litem_256->item;
                         litem_256->item=(struct CVALUE*)come_increment_ref_count(item);
                         come_call_finalizer3(__dec_obj75,CVALUE_finalize, 0, 0, 0, 0, (void*)0);
-                        # 178 "./neo-c.h"
+                        # 173 "./neo-c.h"
                         self->tail->next=litem_256;
-                        # 179 "./neo-c.h"
+                        # 174 "./neo-c.h"
                         self->tail=litem_256;
                     }
                 }
-                # 182 "./neo-c.h"
+                # 177 "./neo-c.h"
                 self->len++;
-                # 184 "./neo-c.h"
+                # 179 "./neo-c.h"
                 __result189__ = __result_obj__ = self;
                 come_call_finalizer3(item,CVALUE_finalize, 0, 0, 1, 0, (void*)0);
                 return __result189__;
@@ -10502,29 +10499,29 @@ char* __result193__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_265, 0, sizeof(char*));
 memset(&result_266, 0, sizeof(char*));
-                        # 286 "./neo-c.h"
                         # 281 "./neo-c.h"
+                        # 276 "./neo-c.h"
                         if(_if_conditional329=self==((void*)0),                        _if_conditional329) {
-                            # 282 "./neo-c.h"
-                            # 283 "./neo-c.h"
+                            # 277 "./neo-c.h"
+                            # 278 "./neo-c.h"
                             memset(&result_265,0,sizeof(char*));
-                            # 284 "./neo-c.h"
+                            # 279 "./neo-c.h"
                             __result191__ = __result_obj__ = result_265;
                             return __result191__;
                         }
-                        # 286 "./neo-c.h"
+                        # 281 "./neo-c.h"
                         self->it=self->head;
-                        # 292 "./neo-c.h"
-                        # 288 "./neo-c.h"
+                        # 287 "./neo-c.h"
+                        # 283 "./neo-c.h"
                         if(self->it) {
-                            # 289 "./neo-c.h"
+                            # 284 "./neo-c.h"
                             __result192__ = __result_obj__ = self->it->item;
                             return __result192__;
                         }
-                        # 292 "./neo-c.h"
-                        # 293 "./neo-c.h"
+                        # 287 "./neo-c.h"
+                        # 288 "./neo-c.h"
                         memset(&result_266,0,sizeof(char*));
-                        # 294 "./neo-c.h"
+                        # 289 "./neo-c.h"
                         __result193__ = __result_obj__ = result_266;
                         return __result193__;
 }
@@ -10533,7 +10530,7 @@ static _Bool list$1charph_end(struct list$1charph* self){
 void* __result_obj__;
 _Bool __result194__;
 memset(&__result_obj__, 0, sizeof(void*));
-                        # 316 "./neo-c.h"
+                        # 311 "./neo-c.h"
                         __result194__ = self==((void*)0)||self->it==((void*)0);
                         return __result194__;
 }
@@ -10550,29 +10547,29 @@ char* __result197__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_268, 0, sizeof(char*));
 memset(&result_269, 0, sizeof(char*));
-                        # 304 "./neo-c.h"
-                        # 298 "./neo-c.h"
+                        # 299 "./neo-c.h"
+                        # 293 "./neo-c.h"
                         if(_if_conditional331=self==((void*)0)||self->it==((void*)0),                        _if_conditional331) {
-                            # 299 "./neo-c.h"
-                            # 300 "./neo-c.h"
+                            # 294 "./neo-c.h"
+                            # 295 "./neo-c.h"
                             memset(&result_268,0,sizeof(char*));
-                            # 301 "./neo-c.h"
+                            # 296 "./neo-c.h"
                             __result195__ = __result_obj__ = result_268;
                             return __result195__;
                         }
-                        # 304 "./neo-c.h"
+                        # 299 "./neo-c.h"
                         self->it=self->it->next;
-                        # 310 "./neo-c.h"
-                        # 306 "./neo-c.h"
+                        # 305 "./neo-c.h"
+                        # 301 "./neo-c.h"
                         if(self->it) {
-                            # 307 "./neo-c.h"
+                            # 302 "./neo-c.h"
                             __result196__ = __result_obj__ = self->it->item;
                             return __result196__;
                         }
-                        # 310 "./neo-c.h"
-                        # 311 "./neo-c.h"
+                        # 305 "./neo-c.h"
+                        # 306 "./neo-c.h"
                         memset(&result_269,0,sizeof(char*));
-                        # 312 "./neo-c.h"
+                        # 307 "./neo-c.h"
                         __result197__ = __result_obj__ = result_269;
                         return __result197__;
 }
@@ -10591,44 +10588,44 @@ struct list$1CVALUEph* __result199__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_270, 0, sizeof(struct list_item$1CVALUEph*));
 memset(&i_271, 0, sizeof(int));
-                        # 584 "./neo-c.h"
-                        # 580 "./neo-c.h"
+                        # 579 "./neo-c.h"
+                        # 575 "./neo-c.h"
                         if(_if_conditional336=position<0,                        _if_conditional336) {
-                            # 581 "./neo-c.h"
+                            # 576 "./neo-c.h"
                             position+=self->len;
                         }
-                        # 589 "./neo-c.h"
                         # 584 "./neo-c.h"
+                        # 579 "./neo-c.h"
                         if(_if_conditional337=position>=self->len,                        _if_conditional337) {
-                            # 585 "./neo-c.h"
+                            # 580 "./neo-c.h"
                             list$1CVALUEph_push_back(self,(struct CVALUE*)come_increment_ref_count(item));
-                            # 586 "./neo-c.h"
+                            # 581 "./neo-c.h"
                             __result198__ = __result_obj__ = self;
                             come_call_finalizer3(item,CVALUE_finalize, 0, 0, 1, 0, (void*)0);
                             return __result198__;
                         }
-                        # 589 "./neo-c.h"
+                        # 584 "./neo-c.h"
                         it_270=self->head;
-                        # 590 "./neo-c.h"
+                        # 585 "./neo-c.h"
                         i_271=0;
-                        # 600 "./neo-c.h"
+                        # 595 "./neo-c.h"
                         while(_while_condtional38=it_270!=((void*)0),                        _while_condtional38) {
-                            # 596 "./neo-c.h"
-                            # 592 "./neo-c.h"
+                            # 591 "./neo-c.h"
+                            # 587 "./neo-c.h"
                             if(_if_conditional338=position==i_271,                            _if_conditional338) {
-                                # 593 "./neo-c.h"
+                                # 588 "./neo-c.h"
                                 __dec_obj76=it_270->item;
                                 it_270->item=(struct CVALUE*)come_increment_ref_count(item);
                                 come_call_finalizer3(__dec_obj76,CVALUE_finalize, 0, 0, 0, 0, (void*)0);
-                                # 594 "./neo-c.h"
+                                # 589 "./neo-c.h"
                                 break;
                             }
-                            # 596 "./neo-c.h"
+                            # 591 "./neo-c.h"
                             it_270=it_270->next;
-                            # 597 "./neo-c.h"
+                            # 592 "./neo-c.h"
                             i_271++;
                         }
-                        # 600 "./neo-c.h"
+                        # 595 "./neo-c.h"
                         __result199__ = __result_obj__ = self;
                         come_call_finalizer3(item,CVALUE_finalize, 0, 0, 1, 0, (void*)0);
                         return __result199__;
@@ -10649,34 +10646,34 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_277, 0, sizeof(struct list_item$1charph*));
 memset(&i_278, 0, sizeof(int));
 memset(&default_value_279, 0, sizeof(char*));
-                            # 678 "./neo-c.h"
-                            # 674 "./neo-c.h"
+                            # 673 "./neo-c.h"
+                            # 669 "./neo-c.h"
                             if(_if_conditional342=position<0,                            _if_conditional342) {
-                                # 675 "./neo-c.h"
+                                # 670 "./neo-c.h"
                                 position+=self->len;
                             }
-                            # 678 "./neo-c.h"
+                            # 673 "./neo-c.h"
                             it_277=self->head;
-                            # 679 "./neo-c.h"
+                            # 674 "./neo-c.h"
                             i_278=0;
-                            # 686 "./neo-c.h"
+                            # 681 "./neo-c.h"
                             while(_while_condtional39=it_277!=((void*)0),                            _while_condtional39) {
-                                # 684 "./neo-c.h"
-                                # 681 "./neo-c.h"
+                                # 679 "./neo-c.h"
+                                # 676 "./neo-c.h"
                                 if(_if_conditional343=position==i_278,                                _if_conditional343) {
-                                    # 682 "./neo-c.h"
+                                    # 677 "./neo-c.h"
                                     __result200__ = __result_obj__ = it_277->item;
                                     return __result200__;
                                 }
-                                # 684 "./neo-c.h"
+                                # 679 "./neo-c.h"
                                 it_277=it_277->next;
-                                # 685 "./neo-c.h"
+                                # 680 "./neo-c.h"
                                 i_278++;
                             }
-                            # 688 "./neo-c.h"
-                            # 689 "./neo-c.h"
+                            # 683 "./neo-c.h"
+                            # 684 "./neo-c.h"
                             memset(&default_value_279,0,sizeof(char*));
-                            # 690 "./neo-c.h"
+                            # 685 "./neo-c.h"
                             __result201__ = __result_obj__ = default_value_279;
                             default_value_279 = come_decrement_ref_count2(default_value_279, (void*)0, (void*)0, 0, 1, 0, (void*)0);
                             return __result201__;
@@ -10697,34 +10694,34 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_281, 0, sizeof(struct list_item$1CVALUEph*));
 memset(&i_282, 0, sizeof(int));
 memset(&default_value_283, 0, sizeof(struct CVALUE*));
-                            # 678 "./neo-c.h"
-                            # 674 "./neo-c.h"
+                            # 673 "./neo-c.h"
+                            # 669 "./neo-c.h"
                             if(_if_conditional346=position<0,                            _if_conditional346) {
-                                # 675 "./neo-c.h"
+                                # 670 "./neo-c.h"
                                 position+=self->len;
                             }
-                            # 678 "./neo-c.h"
+                            # 673 "./neo-c.h"
                             it_281=self->head;
-                            # 679 "./neo-c.h"
+                            # 674 "./neo-c.h"
                             i_282=0;
-                            # 686 "./neo-c.h"
+                            # 681 "./neo-c.h"
                             while(_while_condtional41=it_281!=((void*)0),                            _while_condtional41) {
-                                # 684 "./neo-c.h"
-                                # 681 "./neo-c.h"
+                                # 679 "./neo-c.h"
+                                # 676 "./neo-c.h"
                                 if(_if_conditional347=position==i_282,                                _if_conditional347) {
-                                    # 682 "./neo-c.h"
+                                    # 677 "./neo-c.h"
                                     __result203__ = __result_obj__ = it_281->item;
                                     return __result203__;
                                 }
-                                # 684 "./neo-c.h"
+                                # 679 "./neo-c.h"
                                 it_281=it_281->next;
-                                # 685 "./neo-c.h"
+                                # 680 "./neo-c.h"
                                 i_282++;
                             }
-                            # 688 "./neo-c.h"
-                            # 689 "./neo-c.h"
+                            # 683 "./neo-c.h"
+                            # 684 "./neo-c.h"
                             memset(&default_value_283,0,sizeof(struct CVALUE*));
-                            # 690 "./neo-c.h"
+                            # 685 "./neo-c.h"
                             __result204__ = __result_obj__ = default_value_283;
                             come_call_finalizer3(default_value_283,CVALUE_finalize, 0, 0, 1, 0, (void*)0);
                             return __result204__;
@@ -10743,29 +10740,29 @@ struct sNode* __result207__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_289, 0, sizeof(struct sNode*));
 memset(&result_290, 0, sizeof(struct sNode*));
-                        # 286 "./neo-c.h"
                         # 281 "./neo-c.h"
+                        # 276 "./neo-c.h"
                         if(_if_conditional355=self==((void*)0),                        _if_conditional355) {
-                            # 282 "./neo-c.h"
-                            # 283 "./neo-c.h"
+                            # 277 "./neo-c.h"
+                            # 278 "./neo-c.h"
                             memset(&result_289,0,sizeof(struct sNode*));
-                            # 284 "./neo-c.h"
+                            # 279 "./neo-c.h"
                             __result205__ = __result_obj__ = result_289;
                             return __result205__;
                         }
-                        # 286 "./neo-c.h"
+                        # 281 "./neo-c.h"
                         self->it=self->head;
-                        # 292 "./neo-c.h"
-                        # 288 "./neo-c.h"
+                        # 287 "./neo-c.h"
+                        # 283 "./neo-c.h"
                         if(self->it) {
-                            # 289 "./neo-c.h"
+                            # 284 "./neo-c.h"
                             __result206__ = __result_obj__ = self->it->item;
                             return __result206__;
                         }
-                        # 292 "./neo-c.h"
-                        # 293 "./neo-c.h"
+                        # 287 "./neo-c.h"
+                        # 288 "./neo-c.h"
                         memset(&result_290,0,sizeof(struct sNode*));
-                        # 294 "./neo-c.h"
+                        # 289 "./neo-c.h"
                         __result207__ = __result_obj__ = result_290;
                         return __result207__;
 }
@@ -10774,7 +10771,7 @@ static _Bool list$1sNodeph_end(struct list$1sNodeph* self){
 void* __result_obj__;
 _Bool __result208__;
 memset(&__result_obj__, 0, sizeof(void*));
-                        # 316 "./neo-c.h"
+                        # 311 "./neo-c.h"
                         __result208__ = self==((void*)0)||self->it==((void*)0);
                         return __result208__;
 }
@@ -10791,29 +10788,29 @@ struct sNode* __result211__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_292, 0, sizeof(struct sNode*));
 memset(&result_293, 0, sizeof(struct sNode*));
-                        # 304 "./neo-c.h"
-                        # 298 "./neo-c.h"
+                        # 299 "./neo-c.h"
+                        # 293 "./neo-c.h"
                         if(_if_conditional357=self==((void*)0)||self->it==((void*)0),                        _if_conditional357) {
-                            # 299 "./neo-c.h"
-                            # 300 "./neo-c.h"
+                            # 294 "./neo-c.h"
+                            # 295 "./neo-c.h"
                             memset(&result_292,0,sizeof(struct sNode*));
-                            # 301 "./neo-c.h"
+                            # 296 "./neo-c.h"
                             __result209__ = __result_obj__ = result_292;
                             return __result209__;
                         }
-                        # 304 "./neo-c.h"
+                        # 299 "./neo-c.h"
                         self->it=self->it->next;
-                        # 310 "./neo-c.h"
-                        # 306 "./neo-c.h"
+                        # 305 "./neo-c.h"
+                        # 301 "./neo-c.h"
                         if(self->it) {
-                            # 307 "./neo-c.h"
+                            # 302 "./neo-c.h"
                             __result210__ = __result_obj__ = self->it->item;
                             return __result210__;
                         }
-                        # 310 "./neo-c.h"
-                        # 311 "./neo-c.h"
+                        # 305 "./neo-c.h"
+                        # 306 "./neo-c.h"
                         memset(&result_293,0,sizeof(struct sNode*));
-                        # 312 "./neo-c.h"
+                        # 307 "./neo-c.h"
                         __result211__ = __result_obj__ = result_293;
                         return __result211__;
 }
@@ -10839,66 +10836,66 @@ right_value242 = (void*)0;
 memset(&litem_297, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
 right_value243 = (void*)0;
 memset(&litem_298, 0, sizeof(struct list_item$1tuple2$2charphsNodephph*));
-                        # 252 "./neo-c.h"
-                        # 221 "./neo-c.h"
+                        # 247 "./neo-c.h"
+                        # 216 "./neo-c.h"
                         if(_if_conditional361=self->len==0,                        _if_conditional361) {
-                            # 222 "./neo-c.h"
-                            litem_296=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value241=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 222, "list_item$1tuple2$2charphsNodephph"))));
+                            # 217 "./neo-c.h"
+                            litem_296=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value241=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 217, "list_item$1tuple2$2charphsNodephph"))));
                             come_call_finalizer3(right_value241,list_item$1tuple2$2charphsNodephphp_finalize, 0, 1, 0, 0, __result_obj__);
-                            # 224 "./neo-c.h"
+                            # 219 "./neo-c.h"
                             litem_296->prev=((void*)0);
-                            # 225 "./neo-c.h"
+                            # 220 "./neo-c.h"
                             litem_296->next=((void*)0);
-                            # 226 "./neo-c.h"
+                            # 221 "./neo-c.h"
                             __dec_obj79=litem_296->item;
                             litem_296->item=(struct tuple2$2charphsNodeph*)come_increment_ref_count(item);
                             come_call_finalizer3(__dec_obj79,tuple2$2charphsNodeph_finalize, 0, 0, 0, 0, (void*)0);
-                            # 228 "./neo-c.h"
+                            # 223 "./neo-c.h"
                             self->tail=litem_296;
-                            # 229 "./neo-c.h"
+                            # 224 "./neo-c.h"
                             self->head=litem_296;
                         }
                         else {
-                            # 252 "./neo-c.h"
-                            # 231 "./neo-c.h"
+                            # 247 "./neo-c.h"
+                            # 226 "./neo-c.h"
                             if(_if_conditional362=self->len==1,                            _if_conditional362) {
-                                # 232 "./neo-c.h"
-                                litem_297=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value242=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 232, "list_item$1tuple2$2charphsNodephph"))));
+                                # 227 "./neo-c.h"
+                                litem_297=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value242=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 227, "list_item$1tuple2$2charphsNodephph"))));
                                 come_call_finalizer3(right_value242,list_item$1tuple2$2charphsNodephphp_finalize, 0, 1, 0, 0, __result_obj__);
-                                # 234 "./neo-c.h"
+                                # 229 "./neo-c.h"
                                 litem_297->prev=self->head;
-                                # 235 "./neo-c.h"
+                                # 230 "./neo-c.h"
                                 litem_297->next=((void*)0);
-                                # 236 "./neo-c.h"
+                                # 231 "./neo-c.h"
                                 __dec_obj80=litem_297->item;
                                 litem_297->item=(struct tuple2$2charphsNodeph*)come_increment_ref_count(item);
                                 come_call_finalizer3(__dec_obj80,tuple2$2charphsNodeph_finalize, 0, 0, 0, 0, (void*)0);
-                                # 238 "./neo-c.h"
+                                # 233 "./neo-c.h"
                                 self->tail=litem_297;
-                                # 239 "./neo-c.h"
+                                # 234 "./neo-c.h"
                                 self->head->next=litem_297;
                             }
                             else {
-                                # 242 "./neo-c.h"
-                                litem_298=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value243=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 242, "list_item$1tuple2$2charphsNodephph"))));
+                                # 237 "./neo-c.h"
+                                litem_298=(struct list_item$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list_item$1tuple2$2charphsNodephph*)(right_value243=(struct list_item$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list_item$1tuple2$2charphsNodephph)*(1), "./neo-c.h", 237, "list_item$1tuple2$2charphsNodephph"))));
                                 come_call_finalizer3(right_value243,list_item$1tuple2$2charphsNodephphp_finalize, 0, 1, 0, 0, __result_obj__);
-                                # 244 "./neo-c.h"
+                                # 239 "./neo-c.h"
                                 litem_298->prev=self->tail;
-                                # 245 "./neo-c.h"
+                                # 240 "./neo-c.h"
                                 litem_298->next=((void*)0);
-                                # 246 "./neo-c.h"
+                                # 241 "./neo-c.h"
                                 __dec_obj81=litem_298->item;
                                 litem_298->item=(struct tuple2$2charphsNodeph*)come_increment_ref_count(item);
                                 come_call_finalizer3(__dec_obj81,tuple2$2charphsNodeph_finalize, 0, 0, 0, 0, (void*)0);
-                                # 248 "./neo-c.h"
+                                # 243 "./neo-c.h"
                                 self->tail->next=litem_298;
-                                # 249 "./neo-c.h"
+                                # 244 "./neo-c.h"
                                 self->tail=litem_298;
                             }
                         }
-                        # 252 "./neo-c.h"
+                        # 247 "./neo-c.h"
                         self->len++;
-                        # 254 "./neo-c.h"
+                        # 249 "./neo-c.h"
                         __result212__ = __result_obj__ = self;
                         come_call_finalizer3(item,tuple2$2charphsNodephp_finalize, 0, 0, 1, 0, (void*)0);
                         return __result212__;
@@ -10910,13 +10907,13 @@ void* __result_obj__;
 char* __dec_obj82;
 struct tuple2$2charphvoidp* __result213__;
 memset(&__result_obj__, 0, sizeof(void*));
-                        # 1743 "./neo-c.h"
+                        # 1738 "./neo-c.h"
                         __dec_obj82=self->v1;
                         self->v1=(char*)come_increment_ref_count(v1);
                         __dec_obj82 = come_decrement_ref_count2(__dec_obj82, (void*)0, (void*)0, 0,0,0, (void*)0);
-                        # 1744 "./neo-c.h"
+                        # 1739 "./neo-c.h"
                         self->v2=v2;
-                        # 1746 "./neo-c.h"
+                        # 1741 "./neo-c.h"
                         __result213__ = __result_obj__ = self;
                         come_call_finalizer3(self,tuple2$2charphvoidpp_finalize, 0, 0, 1, 0, (void*)0);
                         v1 = come_decrement_ref_count2(v1, (void*)0, (void*)0, 0, 1, 0, (void*)0);
@@ -10943,14 +10940,14 @@ _Bool _if_conditional373;
 int __result214__;
 int __result215__;
 memset(&__result_obj__, 0, sizeof(void*));
-            # 359 "./neo-c.h"
-            # 356 "./neo-c.h"
+            # 354 "./neo-c.h"
+            # 351 "./neo-c.h"
             if(_if_conditional373=self==((void*)0),            _if_conditional373) {
-                # 357 "./neo-c.h"
+                # 352 "./neo-c.h"
                 __result214__ = 0;
                 return __result214__;
             }
-            # 359 "./neo-c.h"
+            # 354 "./neo-c.h"
             __result215__ = self->len;
             return __result215__;
 }
@@ -11381,15 +11378,15 @@ char* __dec_obj101;
 struct sNode* __dec_obj102;
 struct tuple2$2charphsNodeph* __result225__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 1743 "./neo-c.h"
+        # 1738 "./neo-c.h"
         __dec_obj101=self->v1;
         self->v1=(char*)come_increment_ref_count(v1);
         __dec_obj101 = come_decrement_ref_count2(__dec_obj101, (void*)0, (void*)0, 0,0,0, (void*)0);
-        # 1744 "./neo-c.h"
+        # 1739 "./neo-c.h"
         __dec_obj102=self->v2;
         self->v2=(struct sNode*)come_increment_ref_count(v2);
         if(__dec_obj102) { __dec_obj102 = come_decrement_ref_count2(__dec_obj102, ((struct sNode*)__dec_obj102)->finalize, ((struct sNode*)__dec_obj102)->_protocol_obj, 0,0,0, (void*)0); }
-        # 1746 "./neo-c.h"
+        # 1741 "./neo-c.h"
         __result225__ = __result_obj__ = self;
         come_call_finalizer3(self,tuple2$2charphsNodephp_finalize, 0, 0, 1, 0, (void*)0);
         v1 = come_decrement_ref_count2(v1, (void*)0, (void*)0, 0, 1, 0, (void*)0);
