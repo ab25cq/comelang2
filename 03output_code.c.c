@@ -3550,230 +3550,230 @@ memset(&param_type_str_64, 0, sizeof(char*));
 right_value86 = (void*)0;
 memset(&i_65, 0, sizeof(int));
 right_value87 = (void*)0;
-    # 15 "03transpile2.c"
-    buf_47=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value80=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value79=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "03transpile2.c", 15, "buffer"))))))));
+    # 13 "03output_code.c"
+    buf_47=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value80=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value79=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "03output_code.c", 13, "buffer"))))))));
     come_call_finalizer3(right_value79,buffer_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value80,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-    # 17 "03transpile2.c"
+    # 15 "03output_code.c"
     class_name_48=type->mClass->mName;
-    # 31 "03transpile2.c"
-    # 19 "03transpile2.c"
+    # 29 "03output_code.c"
+    # 17 "03output_code.c"
     if(type->mAlignas) {
-        # 25 "03transpile2.c"
-        # 20 "03transpile2.c"
+        # 23 "03output_code.c"
+        # 18 "03output_code.c"
         if(_if_conditional20=!node_compile(type->mAlignas,info),        _if_conditional20) {
-            # 21 "03transpile2.c"
+            # 19 "03output_code.c"
             printf("_Alignas error\n");
-            # 22 "03transpile2.c"
+            # 20 "03output_code.c"
             __result52__ = __result_obj__ = ((char*)(right_value81=__builtin_string("")));
             come_call_finalizer3(buf_47,buffer_finalize, 0, 0, 0, 0, (void*)0);
             right_value81 = come_decrement_ref_count2(right_value81, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
             return __result52__;
         }
-        # 25 "03transpile2.c"
+        # 23 "03output_code.c"
         come_value_49=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value82=get_value_from_stack(-1,info))));
         come_call_finalizer3(right_value82,CVALUE_finalize, 0, 1, 0, 0, __result_obj__);
-        # 26 "03transpile2.c"
+        # 24 "03output_code.c"
         dec_stack_ptr(1,info);
-        # 28 "03transpile2.c"
+        # 26 "03output_code.c"
         buffer_append_str(buf_47,((char*)(right_value83=xsprintf("_Alignas(%s) ",come_value_49->c_value))));
         right_value83 = come_decrement_ref_count2(right_value83, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         come_call_finalizer3(come_value_49,CVALUE_finalize, 0, 0, 0, 0, (void*)0);
     }
-    # 35 "03transpile2.c"
-    # 31 "03transpile2.c"
+    # 33 "03output_code.c"
+    # 29 "03output_code.c"
     if(_if_conditional40=type->mStatic&&!type->mClass->mStruct&&!type->mClass->mUnion,    _if_conditional40) {
-        # 32 "03transpile2.c"
+        # 30 "03output_code.c"
         buffer_append_str(buf_47,"static ");
     }
-    # 39 "03transpile2.c"
-    # 35 "03transpile2.c"
+    # 37 "03output_code.c"
+    # 33 "03output_code.c"
     if(type->mConstant) {
-        # 36 "03transpile2.c"
+        # 34 "03output_code.c"
         buffer_append_str(buf_47,"const ");
     }
-    # 44 "03transpile2.c"
-    # 39 "03transpile2.c"
+    # 42 "03output_code.c"
+    # 37 "03output_code.c"
     if(type->mUnsigned) {
-        # 40 "03transpile2.c"
+        # 38 "03output_code.c"
         buffer_append_str(buf_47,"unsigned ");
     }
-    # 48 "03transpile2.c"
-    # 44 "03transpile2.c"
+    # 46 "03output_code.c"
+    # 42 "03output_code.c"
     if(type->mShort) {
-        # 45 "03transpile2.c"
+        # 43 "03output_code.c"
         buffer_append_str(buf_47,"short ");
     }
-    # 128 "03transpile2.c"
-    # 48 "03transpile2.c"
+    # 126 "03output_code.c"
+    # 46 "03output_code.c"
     if(_if_conditional44=string_operator_equals(type->mOriginalTypeName,"va_list"),    _if_conditional44) {
-        # 49 "03transpile2.c"
+        # 47 "03output_code.c"
         buffer_append_str(buf_47,"va_list");
     }
     else {
-        # 128 "03transpile2.c"
-        # 51 "03transpile2.c"
+        # 126 "03output_code.c"
+        # 49 "03output_code.c"
         if(_if_conditional45=string_operator_equals(type->mOriginalTypeName,"__builtin_va_list"),        _if_conditional45) {
-            # 52 "03transpile2.c"
+            # 50 "03output_code.c"
             buffer_append_str(buf_47,"__builtin_va_list");
         }
         else {
-            # 128 "03transpile2.c"
-            # 54 "03transpile2.c"
+            # 126 "03output_code.c"
+            # 52 "03output_code.c"
             if(_if_conditional46=charp_operator_equals(class_name_48,"__builtin_va_list"),            _if_conditional46) {
-                # 61 "03transpile2.c"
-                # 55 "03transpile2.c"
+                # 59 "03output_code.c"
+                # 53 "03output_code.c"
                 if(in_header) {
-                    # 56 "03transpile2.c"
+                    # 54 "03output_code.c"
                     buffer_append_str(buf_47,class_name_48);
                 }
                 else {
-                    # 59 "03transpile2.c"
+                    # 57 "03output_code.c"
                     buffer_append_str(buf_47,"va_list");
                 }
             }
             else {
-                # 128 "03transpile2.c"
-                # 62 "03transpile2.c"
+                # 126 "03output_code.c"
+                # 60 "03output_code.c"
                 if(type->mClass->mStruct) {
-                    # 63 "03transpile2.c"
+                    # 61 "03output_code.c"
                     buffer_append_str(buf_47,"struct ");
-                    # 64 "03transpile2.c"
+                    # 62 "03output_code.c"
                     buffer_append_str(buf_47,class_name_48);
                 }
                 else {
-                    # 128 "03transpile2.c"
-                    # 66 "03transpile2.c"
+                    # 126 "03output_code.c"
+                    # 64 "03output_code.c"
                     if(type->mClass->mUnion) {
-                        # 67 "03transpile2.c"
+                        # 65 "03output_code.c"
                         buffer_append_str(buf_47,"union ");
-                        # 68 "03transpile2.c"
+                        # 66 "03output_code.c"
                         buffer_append_str(buf_47,class_name_48);
                     }
                     else {
-                        # 128 "03transpile2.c"
-                        # 70 "03transpile2.c"
+                        # 126 "03output_code.c"
+                        # 68 "03output_code.c"
                         if(type->mClass->mEnum) {
-                            # 71 "03transpile2.c"
+                            # 69 "03output_code.c"
                             buffer_append_str(buf_47,"enum ");
-                            # 72 "03transpile2.c"
+                            # 70 "03output_code.c"
                             buffer_append_str(buf_47,class_name_48);
                         }
                         else {
-                            # 128 "03transpile2.c"
-                            # 74 "03transpile2.c"
+                            # 126 "03output_code.c"
+                            # 72 "03output_code.c"
                             if(type->mLongLong) {
-                                # 81 "03transpile2.c"
-                                # 75 "03transpile2.c"
+                                # 79 "03output_code.c"
+                                # 73 "03output_code.c"
                                 if(_if_conditional52=charp_operator_equals(class_name_48,"int"),                                _if_conditional52) {
-                                    # 76 "03transpile2.c"
+                                    # 74 "03output_code.c"
                                     buffer_append_str(buf_47,"long long int");
                                 }
                                 else {
-                                    # 81 "03transpile2.c"
-                                    # 78 "03transpile2.c"
+                                    # 79 "03output_code.c"
+                                    # 76 "03output_code.c"
                                     if(_if_conditional53=charp_operator_equals(class_name_48,"long"),                                    _if_conditional53) {
-                                        # 79 "03transpile2.c"
+                                        # 77 "03output_code.c"
                                         buffer_append_str(buf_47,"long long");
                                     }
                                 }
                             }
                             else {
-                                # 128 "03transpile2.c"
-                                # 82 "03transpile2.c"
+                                # 126 "03output_code.c"
+                                # 80 "03output_code.c"
                                 if(type->mLong) {
-                                    # 92 "03transpile2.c"
-                                    # 83 "03transpile2.c"
+                                    # 90 "03output_code.c"
+                                    # 81 "03output_code.c"
                                     if(_if_conditional55=charp_operator_equals(class_name_48,"int"),                                    _if_conditional55) {
-                                        # 84 "03transpile2.c"
+                                        # 82 "03output_code.c"
                                         buffer_append_str(buf_47,"long int");
                                     }
                                     else {
-                                        # 92 "03transpile2.c"
-                                        # 86 "03transpile2.c"
+                                        # 90 "03output_code.c"
+                                        # 84 "03output_code.c"
                                         if(_if_conditional56=charp_operator_equals(class_name_48,"long"),                                        _if_conditional56) {
-                                            # 87 "03transpile2.c"
+                                            # 85 "03output_code.c"
                                             buffer_append_str(buf_47,"long long");
                                         }
                                         else {
-                                            # 92 "03transpile2.c"
-                                            # 89 "03transpile2.c"
+                                            # 90 "03output_code.c"
+                                            # 87 "03output_code.c"
                                             if(_if_conditional57=charp_operator_equals(class_name_48,"double"),                                            _if_conditional57) {
-                                                # 90 "03transpile2.c"
+                                                # 88 "03output_code.c"
                                                 buffer_append_str(buf_47,"long double");
                                             }
                                         }
                                     }
                                 }
                                 else {
-                                    # 128 "03transpile2.c"
-                                    # 93 "03transpile2.c"
+                                    # 126 "03output_code.c"
+                                    # 91 "03output_code.c"
                                     if(_if_conditional58=charp_operator_equals(class_name_48,"long"),                                    _if_conditional58) {
-                                        # 94 "03transpile2.c"
+                                        # 92 "03output_code.c"
                                         buffer_append_str(buf_47,"long");
                                     }
                                     else {
-                                        # 128 "03transpile2.c"
-                                        # 96 "03transpile2.c"
+                                        # 126 "03output_code.c"
+                                        # 94 "03output_code.c"
                                         if(_if_conditional59=charp_operator_equals(class_name_48,"__uint128_t"),                                        _if_conditional59) {
-                                            # 97 "03transpile2.c"
+                                            # 95 "03output_code.c"
                                             buffer_append_str(buf_47,"__uint128_t");
                                         }
                                         else {
-                                            # 128 "03transpile2.c"
-                                            # 99 "03transpile2.c"
+                                            # 126 "03output_code.c"
+                                            # 97 "03output_code.c"
                                             if(_if_conditional60=charp_operator_equals(class_name_48,"bool"),                                            _if_conditional60) {
-                                                # 100 "03transpile2.c"
+                                                # 98 "03output_code.c"
                                                 buffer_append_str(buf_47,"_Bool");
                                             }
                                             else {
-                                                # 128 "03transpile2.c"
-                                                # 102 "03transpile2.c"
+                                                # 126 "03output_code.c"
+                                                # 100 "03output_code.c"
                                                 if(_if_conditional61=charp_operator_equals(class_name_48,"lambda"),                                                _if_conditional61) {
-                                                    # 103 "03transpile2.c"
+                                                    # 101 "03output_code.c"
                                                     result_type_str_56=(char*)come_increment_ref_count(((char*)(right_value84=make_type_name_string(type->mResultType->v1,in_header,(_Bool)0,(_Bool)0,info))));
                                                     right_value84 = come_decrement_ref_count2(right_value84, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                    # 104 "03transpile2.c"
+                                                    # 102 "03output_code.c"
                                                     buffer_append_str(buf_47,result_type_str_56);
-                                                    # 105 "03transpile2.c"
+                                                    # 103 "03output_code.c"
                                                     buffer_append_str(buf_47," (*)(");
-                                                    # 107 "03transpile2.c"
+                                                    # 105 "03output_code.c"
                                                     j_57=0;
-                                                    # 118 "03transpile2.c"
+                                                    # 116 "03output_code.c"
                                                     for(                                                    o2_saved_58=(struct list$1sTypeph*)come_increment_ref_count((type->mParamTypes)),it_61=list$1sTypeph_begin((o2_saved_58));                                                    !list$1sTypeph_end((o2_saved_58));                                                    it_61=list$1sTypeph_next((o2_saved_58))                                                    ){
-                                                        # 109 "03transpile2.c"
+                                                        # 107 "03output_code.c"
                                                         param_type_str_64=(char*)come_increment_ref_count(((char*)(right_value85=make_type_name_string(it_61,in_header,(_Bool)0,(_Bool)0,info))));
                                                         right_value85 = come_decrement_ref_count2(right_value85, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                        # 111 "03transpile2.c"
+                                                        # 109 "03output_code.c"
                                                         buffer_append_str(buf_47,param_type_str_64);
-                                                        # 116 "03transpile2.c"
-                                                        # 113 "03transpile2.c"
+                                                        # 114 "03output_code.c"
+                                                        # 111 "03output_code.c"
                                                         if(_if_conditional67=j_57!=list$1sTypeph_length(type->mParamTypes)-1,                                                        _if_conditional67) {
-                                                            # 114 "03transpile2.c"
+                                                            # 112 "03output_code.c"
                                                             buffer_append_str(buf_47,",");
                                                         }
-                                                        # 116 "03transpile2.c"
+                                                        # 114 "03output_code.c"
                                                         j_57++;
                                                         param_type_str_64 = come_decrement_ref_count2(param_type_str_64, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                                     }
                                                     come_call_finalizer3(o2_saved_58,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
-                                                    # 118 "03transpile2.c"
+                                                    # 116 "03output_code.c"
                                                     buffer_append_str(buf_47,")");
                                                     result_type_str_56 = come_decrement_ref_count2(result_type_str_56, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                                 }
                                                 else {
-                                                    # 125 "03transpile2.c"
-                                                    # 121 "03transpile2.c"
+                                                    # 123 "03output_code.c"
+                                                    # 119 "03output_code.c"
                                                     if(_if_conditional68=class_name_48==((void*)0),                                                    _if_conditional68) {
-                                                        # 122 "03transpile2.c"
+                                                        # 120 "03output_code.c"
                                                         err_msg(info,"class name is null");
-                                                        # 123 "03transpile2.c"
+                                                        # 121 "03output_code.c"
                                                         __result62__ = __result_obj__ = ((char*)(right_value86=__builtin_string("")));
                                                         come_call_finalizer3(buf_47,buffer_finalize, 0, 0, 0, 0, (void*)0);
                                                         right_value86 = come_decrement_ref_count2(right_value86, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                         return __result62__;
                                                     }
-                                                    # 125 "03transpile2.c"
+                                                    # 123 "03output_code.c"
                                                     buffer_append_str(buf_47,class_name_48);
                                                 }
                                             }
@@ -3787,28 +3787,28 @@ right_value87 = (void*)0;
             }
         }
     }
-    # 134 "03transpile2.c"
-    # 128 "03transpile2.c"
+    # 132 "03output_code.c"
+    # 126 "03output_code.c"
     if(_if_conditional69=type->mNoArrayPointerNum==0&&charp_operator_not_equals(class_name_48,"lambda")&&!no_pointer&&string_operator_not_equals(type->mOriginalTypeName,"va_list")&&string_operator_not_equals(type->mOriginalTypeName,"__builtin_va_list"),    _if_conditional69) {
-        # 132 "03transpile2.c"
+        # 130 "03output_code.c"
         for(        i_65=0;        i_65<type->mPointerNum;        i_65++        ){
-            # 130 "03transpile2.c"
+            # 128 "03output_code.c"
             buffer_append_str(buf_47,"*");
         }
     }
-    # 138 "03transpile2.c"
-    # 134 "03transpile2.c"
+    # 136 "03output_code.c"
+    # 132 "03output_code.c"
     if(_if_conditional71=array_cast_pointer&&list$1sNodeph_length(type->mArrayNum)>0&&!no_pointer&&string_operator_not_equals(type->mOriginalTypeName,"va_list")&&string_operator_not_equals(type->mOriginalTypeName,"__builtin_va_list"),    _if_conditional71) {
-        # 135 "03transpile2.c"
+        # 133 "03output_code.c"
         buffer_append_str(buf_47,"*");
     }
-    # 142 "03transpile2.c"
-    # 138 "03transpile2.c"
+    # 140 "03output_code.c"
+    # 136 "03output_code.c"
     if(type->mRestrict) {
-        # 139 "03transpile2.c"
+        # 137 "03output_code.c"
         buffer_append_str(buf_47,"restrict");
     }
-    # 142 "03transpile2.c"
+    # 140 "03output_code.c"
     __result65__ = __result_obj__ = ((char*)(right_value87=buffer_to_string(buf_47)));
     come_call_finalizer3(buf_47,buffer_finalize, 0, 0, 0, 0, (void*)0);
     right_value87 = come_decrement_ref_count2(right_value87, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -4194,61 +4194,61 @@ right_value90 = (void*)0;
 memset(&i_73, 0, sizeof(int));
 memset(&i_74, 0, sizeof(int));
 right_value91 = (void*)0;
-    # 147 "03transpile2.c"
-    buf_66=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value89=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value88=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "03transpile2.c", 147, "buffer"))))))));
+    # 145 "03output_code.c"
+    buf_66=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value89=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value88=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "03output_code.c", 145, "buffer"))))))));
     come_call_finalizer3(right_value88,buffer_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value89,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-    # 149 "03transpile2.c"
+    # 147 "03output_code.c"
     class_name_67=type->mClass->mName;
-    # 151 "03transpile2.c"
+    # 149 "03output_code.c"
     buffer_append_str(buf_66,class_name_67);
-    # 168 "03transpile2.c"
-    # 153 "03transpile2.c"
+    # 166 "03output_code.c"
+    # 151 "03output_code.c"
     if(_if_conditional73=list$1sTypeph_length(type->mGenericsTypes)>0,    _if_conditional73) {
-        # 154 "03transpile2.c"
+        # 152 "03output_code.c"
         buffer_append_str(buf_66,"<");
-        # 165 "03transpile2.c"
+        # 163 "03output_code.c"
         for(        i_68=0;        i_68<list$1sTypeph_length(type->mGenericsTypes);        i_68++        ){
-            # 156 "03transpile2.c"
-            gtype_72=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(type->mGenericsTypes,i_68), "03transpile2.c", 156, 0));
-            # 158 "03transpile2.c"
+            # 154 "03output_code.c"
+            gtype_72=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(type->mGenericsTypes,i_68), "03output_code.c", 154, 0));
+            # 156 "03output_code.c"
             buffer_append_str(buf_66,((char*)(right_value90=make_come_type_name_string(gtype_72,info))));
             right_value90 = come_decrement_ref_count2(right_value90, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 163 "03transpile2.c"
-            # 160 "03transpile2.c"
+            # 161 "03output_code.c"
+            # 158 "03output_code.c"
             if(_if_conditional76=i_68!=list$1sTypeph_length(type->mGenericsTypes)-1,            _if_conditional76) {
-                # 161 "03transpile2.c"
+                # 159 "03output_code.c"
                 buffer_append_str(buf_66,",");
             }
         }
-        # 165 "03transpile2.c"
+        # 163 "03output_code.c"
         buffer_append_str(buf_66,">");
     }
-    # 174 "03transpile2.c"
-    # 168 "03transpile2.c"
+    # 172 "03output_code.c"
+    # 166 "03output_code.c"
     if(_if_conditional77=type->mNoArrayPointerNum==0&&charp_operator_not_equals(class_name_67,"lambda"),    _if_conditional77) {
-        # 172 "03transpile2.c"
+        # 170 "03output_code.c"
         for(        i_73=0;        i_73<type->mPointerNum;        i_73++        ){
-            # 170 "03transpile2.c"
+            # 168 "03output_code.c"
             buffer_append_str(buf_66,"*");
         }
     }
-    # 180 "03transpile2.c"
-    # 174 "03transpile2.c"
+    # 178 "03output_code.c"
+    # 172 "03output_code.c"
     if(_if_conditional78=list$1sNodeph_length(type->mArrayNum)>0,    _if_conditional78) {
-        # 178 "03transpile2.c"
+        # 176 "03output_code.c"
         for(        i_74=0;        i_74<list$1sNodeph_length(type->mArrayNum);        i_74++        ){
-            # 176 "03transpile2.c"
+            # 174 "03output_code.c"
             buffer_append_str(buf_66,"[]");
         }
     }
-    # 184 "03transpile2.c"
-    # 180 "03transpile2.c"
+    # 182 "03output_code.c"
+    # 178 "03output_code.c"
     if(type->mHeap) {
-        # 181 "03transpile2.c"
+        # 179 "03output_code.c"
         buffer_append_str(buf_66,"%");
     }
-    # 184 "03transpile2.c"
+    # 182 "03output_code.c"
     __result68__ = __result_obj__ = ((char*)(right_value91=buffer_to_string(buf_66)));
     come_call_finalizer3(buf_66,buffer_finalize, 0, 0, 0, 0, (void*)0);
     right_value91 = come_decrement_ref_count2(right_value91, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -4309,7 +4309,7 @@ void* __result_obj__;
 void* right_value92;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value92 = (void*)0;
-    # 189 "03transpile2.c"
+    # 187 "03output_code.c"
     puts(((char*)(right_value92=make_type_name_string(type,(_Bool)0,(_Bool)0,(_Bool)0,info))));
     right_value92 = come_decrement_ref_count2(right_value92, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
 }
@@ -4363,47 +4363,47 @@ memset(&it_81, 0, sizeof(struct sType*));
 right_value102 = (void*)0;
 right_value103 = (void*)0;
 right_value104 = (void*)0;
-    # 194 "03transpile2.c"
-    buf_75=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value94=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value93=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "03transpile2.c", 194, "buffer"))))))));
+    # 192 "03output_code.c"
+    buf_75=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value94=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value93=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "03output_code.c", 192, "buffer"))))))));
     come_call_finalizer3(right_value93,buffer_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value94,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-    # 200 "03transpile2.c"
-    # 195 "03transpile2.c"
+    # 198 "03output_code.c"
+    # 193 "03output_code.c"
     if(_if_conditional80=type->mResultType==((void*)0),    _if_conditional80) {
-        # 196 "03transpile2.c"
+        # 194 "03output_code.c"
         err_msg(info,"invalid lambda type");
-        # 197 "03transpile2.c"
+        # 195 "03output_code.c"
         __result69__ = __result_obj__ = ((char*)(right_value95=__builtin_string("")));
         come_call_finalizer3(buf_75,buffer_finalize, 0, 0, 0, 0, (void*)0);
         right_value95 = come_decrement_ref_count2(right_value95, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         return __result69__;
     }
-    # 236 "03transpile2.c"
-    # 200 "03transpile2.c"
+    # 234 "03output_code.c"
+    # 198 "03output_code.c"
     if(_if_conditional81=type->mResultType->v1&&string_operator_equals(type->mResultType->v1->mClass->mName,"lambda"),    _if_conditional81) {
-        # 202 "03transpile2.c"
+        # 200 "03output_code.c"
         buffer_append_str(buf_75,((char*)(right_value96=xsprintf("(*%s)(",var_name))));
         right_value96 = come_decrement_ref_count2(right_value96, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 204 "03transpile2.c"
+        # 202 "03output_code.c"
         i_76=0;
-        # 214 "03transpile2.c"
+        # 212 "03output_code.c"
         for(        o2_saved_77=(struct list$1sTypeph*)come_increment_ref_count((type->mParamTypes)),it_78=list$1sTypeph_begin((o2_saved_77));        !list$1sTypeph_end((o2_saved_77));        it_78=list$1sTypeph_next((o2_saved_77))        ){
-            # 206 "03transpile2.c"
+            # 204 "03output_code.c"
             buffer_append_str(buf_75,((char*)(right_value97=make_type_name_string(it_78,(_Bool)0,(_Bool)0,(_Bool)0,info))));
             right_value97 = come_decrement_ref_count2(right_value97, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 211 "03transpile2.c"
-            # 207 "03transpile2.c"
+            # 209 "03output_code.c"
+            # 205 "03output_code.c"
             if(_if_conditional82=i_76!=list$1sTypeph_length(type->mParamTypes)-1,            _if_conditional82) {
-                # 208 "03transpile2.c"
+                # 206 "03output_code.c"
                 buffer_append_str(buf_75,",");
             }
-            # 211 "03transpile2.c"
+            # 209 "03output_code.c"
             i_76++;
         }
         come_call_finalizer3(o2_saved_77,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
-        # 214 "03transpile2.c"
+        # 212 "03output_code.c"
         buffer_append_str(buf_75,")");
-        # 216 "03transpile2.c"
+        # 214 "03output_code.c"
         __result70__ = __result_obj__ = ((char*)(right_value99=make_lambda_type_name_string(type->mResultType->v1,((char*)(right_value98=buffer_to_string(buf_75))),info)));
         come_call_finalizer3(buf_75,buffer_finalize, 0, 0, 0, 0, (void*)0);
         right_value98 = come_decrement_ref_count2(right_value98, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -4411,36 +4411,36 @@ right_value104 = (void*)0;
         return __result70__;
     }
     else {
-        # 219 "03transpile2.c"
+        # 217 "03output_code.c"
         buffer_append_str(buf_75,((char*)(right_value101=xsprintf("%s (*%s)(",((char*)(right_value100=make_type_name_string(type->mResultType->v1,(_Bool)0,(_Bool)0,(_Bool)0,info))),var_name))));
         right_value100 = come_decrement_ref_count2(right_value100, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         right_value101 = come_decrement_ref_count2(right_value101, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 221 "03transpile2.c"
+        # 219 "03output_code.c"
         i_79=0;
-        # 231 "03transpile2.c"
+        # 229 "03output_code.c"
         for(        o2_saved_80=(struct list$1sTypeph*)come_increment_ref_count((type->mParamTypes)),it_81=list$1sTypeph_begin((o2_saved_80));        !list$1sTypeph_end((o2_saved_80));        it_81=list$1sTypeph_next((o2_saved_80))        ){
-            # 223 "03transpile2.c"
+            # 221 "03output_code.c"
             buffer_append_str(buf_75,((char*)(right_value102=make_type_name_string(it_81,(_Bool)0,(_Bool)0,(_Bool)0,info))));
             right_value102 = come_decrement_ref_count2(right_value102, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 228 "03transpile2.c"
-            # 224 "03transpile2.c"
+            # 226 "03output_code.c"
+            # 222 "03output_code.c"
             if(_if_conditional83=i_79!=list$1sTypeph_length(type->mParamTypes)-1,            _if_conditional83) {
-                # 225 "03transpile2.c"
+                # 223 "03output_code.c"
                 buffer_append_str(buf_75,",");
             }
-            # 228 "03transpile2.c"
+            # 226 "03output_code.c"
             i_79++;
         }
         come_call_finalizer3(o2_saved_80,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
-        # 231 "03transpile2.c"
+        # 229 "03output_code.c"
         buffer_append_str(buf_75,")");
-        # 233 "03transpile2.c"
+        # 231 "03output_code.c"
         __result71__ = __result_obj__ = ((char*)(right_value103=buffer_to_string(buf_75)));
         come_call_finalizer3(buf_75,buffer_finalize, 0, 0, 0, 0, (void*)0);
         right_value103 = come_decrement_ref_count2(right_value103, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         return __result71__;
     }
-    # 236 "03transpile2.c"
+    # 234 "03output_code.c"
     __result72__ = __result_obj__ = ((char*)(right_value104=buffer_to_string(buf_75)));
     come_call_finalizer3(buf_75,buffer_finalize, 0, 0, 0, 0, (void*)0);
     right_value104 = come_decrement_ref_count2(right_value104, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -4538,71 +4538,71 @@ memset(&type_str_96, 0, sizeof(char*));
 right_value124 = (void*)0;
 right_value125 = (void*)0;
 right_value126 = (void*)0;
-    # 243 "03transpile2.c"
-    buf_82=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value106=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value105=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "03transpile2.c", 243, "buffer"))))))));
+    # 241 "03output_code.c"
+    buf_82=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value106=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value105=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "03output_code.c", 241, "buffer"))))))));
     come_call_finalizer3(right_value105,buffer_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value106,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-    # 342 "03transpile2.c"
-    # 245 "03transpile2.c"
+    # 340 "03output_code.c"
+    # 243 "03output_code.c"
     if(_if_conditional84=string_operator_equals(type->mClass->mName,"lambda")&&type->mAsmName!=((void*)0)&&string_operator_not_equals(type->mAsmName,""),    _if_conditional84) {
-        # 246 "03transpile2.c"
+        # 244 "03output_code.c"
         str_83=(char*)come_increment_ref_count(((char*)(right_value107=header_lambda(type,(char*)come_increment_ref_count(type->mAsmName),info))));
         right_value107 = come_decrement_ref_count2(right_value107, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 248 "03transpile2.c"
+        # 246 "03output_code.c"
         buffer_append_str(buf_82,str_83);
         str_83 = come_decrement_ref_count2(str_83, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
     else {
-        # 342 "03transpile2.c"
-        # 250 "03transpile2.c"
+        # 340 "03output_code.c"
+        # 248 "03output_code.c"
         if(_if_conditional85=string_operator_equals(type->mClass->mName,"lambda"),        _if_conditional85) {
-            # 251 "03transpile2.c"
+            # 249 "03output_code.c"
             str_84=(char*)come_increment_ref_count(((char*)(right_value108=make_lambda_type_name_string(type,name,info))));
             right_value108 = come_decrement_ref_count2(right_value108, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 253 "03transpile2.c"
+            # 251 "03output_code.c"
             buffer_append_str(buf_82,str_84);
             str_84 = come_decrement_ref_count2(str_84, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
         else {
-            # 342 "03transpile2.c"
-            # 255 "03transpile2.c"
+            # 340 "03output_code.c"
+            # 253 "03output_code.c"
             if(_if_conditional86=type->mSizeNum!=((void*)0),            _if_conditional86) {
-                # 261 "03transpile2.c"
-                # 256 "03transpile2.c"
+                # 259 "03output_code.c"
+                # 254 "03output_code.c"
                 if(_if_conditional87=!node_compile(type->mSizeNum,info),                _if_conditional87) {
-                    # 257 "03transpile2.c"
+                    # 255 "03output_code.c"
                     err_msg(info,"invalid bit field number");
-                    # 258 "03transpile2.c"
+                    # 256 "03output_code.c"
                     __result73__ = __result_obj__ = ((char*)(right_value109=__builtin_string("")));
                     come_call_finalizer3(buf_82,buffer_finalize, 0, 0, 0, 0, (void*)0);
                     right_value109 = come_decrement_ref_count2(right_value109, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                     return __result73__;
                 }
-                # 261 "03transpile2.c"
+                # 259 "03output_code.c"
                 come_value_85=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value110=get_value_from_stack(-1,info))));
                 come_call_finalizer3(right_value110,CVALUE_finalize, 0, 1, 0, 0, __result_obj__);
-                # 262 "03transpile2.c"
+                # 260 "03output_code.c"
                 dec_stack_ptr(1,info);
-                # 264 "03transpile2.c"
+                # 262 "03output_code.c"
                 type_str_86=(char*)come_increment_ref_count(((char*)(right_value111=make_type_name_string(type,in_header,(_Bool)0,(_Bool)0,info))));
                 right_value111 = come_decrement_ref_count2(right_value111, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 265 "03transpile2.c"
+                # 263 "03output_code.c"
                 buffer_append_str(buf_82,((char*)(right_value112=xsprintf("%s ",type_str_86))));
                 right_value112 = come_decrement_ref_count2(right_value112, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 266 "03transpile2.c"
+                # 264 "03output_code.c"
                 buffer_append_str(buf_82,((char*)(right_value113=xsprintf("%s:%s",name,come_value_85->c_value))));
                 right_value113 = come_decrement_ref_count2(right_value113, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 272 "03transpile2.c"
-                # 268 "03transpile2.c"
+                # 270 "03output_code.c"
+                # 266 "03output_code.c"
                 if(_if_conditional88=type->mAsmName!=((void*)0)&&string_operator_not_equals(type->mAsmName,""),                _if_conditional88) {
-                    # 269 "03transpile2.c"
+                    # 267 "03output_code.c"
                     buffer_append_str(buf_82,((char*)(right_value114=xsprintf(" __asm__(\"%s\")",type->mAsmName))));
                     right_value114 = come_decrement_ref_count2(right_value114, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                 }
-                # 275 "03transpile2.c"
-                # 272 "03transpile2.c"
+                # 273 "03output_code.c"
+                # 270 "03output_code.c"
                 if(_if_conditional89=type->mAsmName!=((void*)0)&&string_operator_not_equals(type->mAsmName,""),                _if_conditional89) {
-                    # 273 "03transpile2.c"
+                    # 271 "03output_code.c"
                     buffer_append_str(buf_82,((char*)(right_value115=xsprintf(" __asm__(\"%s\")",type->mAsmName))));
                     right_value115 = come_decrement_ref_count2(right_value115, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                 }
@@ -4610,62 +4610,62 @@ right_value126 = (void*)0;
                 type_str_86 = come_decrement_ref_count2(type_str_86, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
             else {
-                # 342 "03transpile2.c"
-                # 276 "03transpile2.c"
+                # 340 "03output_code.c"
+                # 274 "03output_code.c"
                 if(type->mOmitArrayNum) {
-                    # 277 "03transpile2.c"
+                    # 275 "03output_code.c"
                     type_str_87=(char*)come_increment_ref_count(((char*)(right_value116=make_type_name_string(type,in_header,(_Bool)0,(_Bool)0,info))));
                     right_value116 = come_decrement_ref_count2(right_value116, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                    # 279 "03transpile2.c"
+                    # 277 "03output_code.c"
                     buffer_append_str(buf_82,type_str_87);
-                    # 281 "03transpile2.c"
+                    # 279 "03output_code.c"
                     buffer_append_str(buf_82," ");
-                    # 282 "03transpile2.c"
+                    # 280 "03output_code.c"
                     buffer_append_str(buf_82,name);
-                    # 284 "03transpile2.c"
+                    # 282 "03output_code.c"
                     buffer_append_str(buf_82,"[]");
-                    # 289 "03transpile2.c"
-                    # 286 "03transpile2.c"
+                    # 287 "03output_code.c"
+                    # 284 "03output_code.c"
                     if(_if_conditional91=type->mAsmName!=((void*)0)&&string_operator_not_equals(type->mAsmName,""),                    _if_conditional91) {
-                        # 287 "03transpile2.c"
+                        # 285 "03output_code.c"
                         buffer_append_str(buf_82,((char*)(right_value117=xsprintf(" __asm__(\"%s\")",type->mAsmName))));
                         right_value117 = come_decrement_ref_count2(right_value117, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                     }
                     type_str_87 = come_decrement_ref_count2(type_str_87, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 }
                 else {
-                    # 342 "03transpile2.c"
-                    # 290 "03transpile2.c"
+                    # 340 "03output_code.c"
+                    # 288 "03output_code.c"
                     if(_if_conditional92=list$1sNodeph_length(type->mArrayNum)>0,                    _if_conditional92) {
-                        # 291 "03transpile2.c"
+                        # 289 "03output_code.c"
                         type_str_88=(char*)come_increment_ref_count(((char*)(right_value118=make_type_name_string(type,in_header,(_Bool)0,(_Bool)0,info))));
                         right_value118 = come_decrement_ref_count2(right_value118, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                        # 293 "03transpile2.c"
+                        # 291 "03output_code.c"
                         buffer_append_str(buf_82,type_str_88);
-                        # 295 "03transpile2.c"
+                        # 293 "03output_code.c"
                         buffer_append_str(buf_82," ");
-                        # 299 "03transpile2.c"
-                        # 296 "03transpile2.c"
+                        # 297 "03output_code.c"
+                        # 294 "03output_code.c"
                         if(_if_conditional93=type->mNoArrayPointerNum>0,                        _if_conditional93) {
-                            # 297 "03transpile2.c"
+                            # 295 "03output_code.c"
                             buffer_append_str(buf_82,"(*");
                         }
-                        # 299 "03transpile2.c"
+                        # 297 "03output_code.c"
                         buffer_append_str(buf_82,name);
-                        # 304 "03transpile2.c"
-                        # 300 "03transpile2.c"
+                        # 302 "03output_code.c"
+                        # 298 "03output_code.c"
                         if(_if_conditional94=type->mNoArrayPointerNum>0,                        _if_conditional94) {
-                            # 301 "03transpile2.c"
+                            # 299 "03output_code.c"
                             buffer_append_str(buf_82,")");
                         }
-                        # 315 "03transpile2.c"
+                        # 313 "03output_code.c"
                         for(                        o2_saved_89=(struct list$1sNodeph*)come_increment_ref_count((type->mArrayNum)),it_92=list$1sNodeph_begin((o2_saved_89));                        !list$1sNodeph_end((o2_saved_89));                        it_92=list$1sNodeph_next((o2_saved_89))                        ){
-                            # 309 "03transpile2.c"
-                            # 305 "03transpile2.c"
+                            # 307 "03output_code.c"
+                            # 303 "03output_code.c"
                             if(_if_conditional99=!node_compile(it_92,info),                            _if_conditional99) {
-                                # 306 "03transpile2.c"
+                                # 304 "03output_code.c"
                                 err_msg(info,"invalid array number");
-                                # 307 "03transpile2.c"
+                                # 305 "03output_code.c"
                                 __result81__ = __result_obj__ = ((char*)(right_value119=__builtin_string("")));
                                 come_call_finalizer3(o2_saved_89,list$1sNodephp_finalize, 0, 0, 0, 0, (void*)0);
                                 type_str_88 = come_decrement_ref_count2(type_str_88, (void*)0, (void*)0, 0, 0, 0, (void*)0);
@@ -4673,62 +4673,62 @@ right_value126 = (void*)0;
                                 right_value119 = come_decrement_ref_count2(right_value119, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 return __result81__;
                             }
-                            # 309 "03transpile2.c"
+                            # 307 "03output_code.c"
                             cvalue_95=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value120=get_value_from_stack(-1,info))));
                             come_call_finalizer3(right_value120,CVALUE_finalize, 0, 1, 0, 0, __result_obj__);
-                            # 310 "03transpile2.c"
+                            # 308 "03output_code.c"
                             dec_stack_ptr(1,info);
-                            # 312 "03transpile2.c"
+                            # 310 "03output_code.c"
                             buffer_append_str(buf_82,((char*)(right_value121=xsprintf("[%s]",cvalue_95->c_value))));
                             right_value121 = come_decrement_ref_count2(right_value121, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                             come_call_finalizer3(cvalue_95,CVALUE_finalize, 0, 0, 0, 0, (void*)0);
                         }
                         come_call_finalizer3(o2_saved_89,list$1sNodephp_finalize, 0, 0, 0, 0, (void*)0);
-                        # 318 "03transpile2.c"
-                        # 315 "03transpile2.c"
+                        # 316 "03output_code.c"
+                        # 313 "03output_code.c"
                         if(_if_conditional100=type->mAsmName!=((void*)0)&&string_operator_not_equals(type->mAsmName,""),                        _if_conditional100) {
-                            # 316 "03transpile2.c"
+                            # 314 "03output_code.c"
                             buffer_append_str(buf_82,((char*)(right_value122=xsprintf(" __asm__(\"%s\")",type->mAsmName))));
                             right_value122 = come_decrement_ref_count2(right_value122, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         }
                         type_str_88 = come_decrement_ref_count2(type_str_88, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                     }
                     else {
-                        # 320 "03transpile2.c"
+                        # 318 "03output_code.c"
                         type_str_96=(char*)come_increment_ref_count(((char*)(right_value123=make_type_name_string(type,in_header,(_Bool)0,(_Bool)0,info))));
                         right_value123 = come_decrement_ref_count2(right_value123, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                        # 326 "03transpile2.c"
-                        # 322 "03transpile2.c"
+                        # 324 "03output_code.c"
+                        # 320 "03output_code.c"
                         if(_if_conditional101=string_operator_equals(type_str_96,""),                        _if_conditional101) {
-                            # 323 "03transpile2.c"
+                            # 321 "03output_code.c"
                             __result82__ = __result_obj__ = ((char*)(right_value124=__builtin_string("")));
                             type_str_96 = come_decrement_ref_count2(type_str_96, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                             come_call_finalizer3(buf_82,buffer_finalize, 0, 0, 0, 0, (void*)0);
                             right_value124 = come_decrement_ref_count2(right_value124, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                             return __result82__;
                         }
-                        # 326 "03transpile2.c"
+                        # 324 "03output_code.c"
                         buffer_append_str(buf_82,type_str_96);
-                        # 328 "03transpile2.c"
+                        # 326 "03output_code.c"
                         buffer_append_str(buf_82," ");
-                        # 332 "03transpile2.c"
-                        # 329 "03transpile2.c"
+                        # 330 "03output_code.c"
+                        # 327 "03output_code.c"
                         if(_if_conditional102=type->mNoArrayPointerNum>0,                        _if_conditional102) {
-                            # 330 "03transpile2.c"
+                            # 328 "03output_code.c"
                             buffer_append_str(buf_82,"(*");
                         }
-                        # 332 "03transpile2.c"
+                        # 330 "03output_code.c"
                         buffer_append_str(buf_82,name);
-                        # 337 "03transpile2.c"
-                        # 333 "03transpile2.c"
+                        # 335 "03output_code.c"
+                        # 331 "03output_code.c"
                         if(_if_conditional103=type->mNoArrayPointerNum>0,                        _if_conditional103) {
-                            # 334 "03transpile2.c"
+                            # 332 "03output_code.c"
                             buffer_append_str(buf_82,")");
                         }
-                        # 340 "03transpile2.c"
-                        # 337 "03transpile2.c"
+                        # 338 "03output_code.c"
+                        # 335 "03output_code.c"
                         if(_if_conditional104=type->mAsmName!=((void*)0)&&string_operator_not_equals(type->mAsmName,""),                        _if_conditional104) {
-                            # 338 "03transpile2.c"
+                            # 336 "03output_code.c"
                             buffer_append_str(buf_82,((char*)(right_value125=xsprintf(" __asm__(\"%s\")",type->mAsmName))));
                             right_value125 = come_decrement_ref_count2(right_value125, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         }
@@ -4738,7 +4738,7 @@ right_value126 = (void*)0;
             }
         }
     }
-    # 342 "03transpile2.c"
+    # 340 "03output_code.c"
     __result83__ = __result_obj__ = ((char*)(right_value126=buffer_to_string(buf_82)));
     come_call_finalizer3(buf_82,buffer_finalize, 0, 0, 0, 0, (void*)0);
     right_value126 = come_decrement_ref_count2(right_value126, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -4854,35 +4854,35 @@ memset(&i_122, 0, sizeof(int));
 memset(&o2_saved_123, 0, sizeof(struct list$1sTypeph*));
 memset(&it_124, 0, sizeof(struct sType*));
 right_value164 = (void*)0;
-    # 347 "03transpile2.c"
-    # 355 "03transpile2.c"
-    # 348 "03transpile2.c"
+    # 345 "03output_code.c"
+    # 353 "03output_code.c"
+    # 346 "03output_code.c"
     if(type->mNoSolvedGenericsType->v1) {
-        # 349 "03transpile2.c"
+        # 347 "03output_code.c"
         __dec_obj35=result_97;
         result_97=(struct sType*)come_increment_ref_count(((struct sType*)(right_value162=sType_clone(type->mNoSolvedGenericsType->v1))));
         come_call_finalizer3(__dec_obj35,sType_finalize, 0, 0, 0, 0, (void*)0);
         come_call_finalizer3(right_value162,sType_finalize, 0, 1, 0, 0, __result_obj__);
     }
     else {
-        # 352 "03transpile2.c"
+        # 350 "03output_code.c"
         __dec_obj36=result_97;
         result_97=(struct sType*)come_increment_ref_count(((struct sType*)(right_value163=sType_clone(type))));
         come_call_finalizer3(__dec_obj36,sType_finalize, 0, 0, 0, 0, (void*)0);
         come_call_finalizer3(right_value163,sType_finalize, 0, 1, 0, 0, __result_obj__);
     }
-    # 355 "03transpile2.c"
+    # 353 "03output_code.c"
     i_122=0;
-    # 361 "03transpile2.c"
+    # 359 "03output_code.c"
     for(    o2_saved_123=(struct list$1sTypeph*)come_increment_ref_count((type->mGenericsTypes)),it_124=list$1sTypeph_begin((o2_saved_123));    !list$1sTypeph_end((o2_saved_123));    it_124=list$1sTypeph_next((o2_saved_123))    ){
-        # 357 "03transpile2.c"
+        # 355 "03output_code.c"
         list$1sTypephp_operator_store_element(result_97->mGenericsTypes,i_122,(struct sType*)come_increment_ref_count(((struct sType*)(right_value164=get_no_solved_type(it_124)))));
         come_call_finalizer3(right_value164,sType_finalize, 0, 1, 0, 0, __result_obj__);
-        # 358 "03transpile2.c"
+        # 356 "03output_code.c"
         i_122++;
     }
     come_call_finalizer3(o2_saved_123,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
-    # 361 "03transpile2.c"
+    # 359 "03output_code.c"
     __result106__ = __result_obj__ = result_97;
     come_call_finalizer3(result_97,sType_finalize, 0, 0, 1, 0, (void*)0);
     return __result106__;
@@ -6194,64 +6194,64 @@ right_value171 = (void*)0;
 memset(&i_135, 0, sizeof(int));
 memset(&i_136, 0, sizeof(int));
 right_value172 = (void*)0;
-    # 366 "03transpile2.c"
+    # 364 "03output_code.c"
     no_solved_type_130=(struct sType*)come_increment_ref_count(((struct sType*)(right_value168=get_no_solved_type(type))));
     come_call_finalizer3(right_value168,sType_finalize, 0, 1, 0, 0, __result_obj__);
-    # 368 "03transpile2.c"
-    buf_131=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value170=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value169=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "03transpile2.c", 368, "buffer"))))))));
+    # 366 "03output_code.c"
+    buf_131=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value170=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value169=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "03output_code.c", 366, "buffer"))))))));
     come_call_finalizer3(right_value169,buffer_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value170,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-    # 370 "03transpile2.c"
+    # 368 "03output_code.c"
     class_name_132=no_solved_type_130->mClass->mName;
-    # 372 "03transpile2.c"
+    # 370 "03output_code.c"
     buffer_append_str(buf_131,class_name_132);
-    # 389 "03transpile2.c"
-    # 374 "03transpile2.c"
+    # 387 "03output_code.c"
+    # 372 "03output_code.c"
     if(_if_conditional185=list$1sTypeph_length(no_solved_type_130->mGenericsTypes)>0,    _if_conditional185) {
-        # 375 "03transpile2.c"
+        # 373 "03output_code.c"
         buffer_append_str(buf_131,"<");
-        # 386 "03transpile2.c"
+        # 384 "03output_code.c"
         for(        i_133=0;        i_133<list$1sTypeph_length(no_solved_type_130->mGenericsTypes);        i_133++        ){
-            # 377 "03transpile2.c"
-            gtype_134=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(no_solved_type_130->mGenericsTypes,i_133), "03transpile2.c", 377, 1));
-            # 379 "03transpile2.c"
+            # 375 "03output_code.c"
+            gtype_134=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(no_solved_type_130->mGenericsTypes,i_133), "03output_code.c", 375, 1));
+            # 377 "03output_code.c"
             buffer_append_str(buf_131,((char*)(right_value171=make_come_type_name_string_no_solved(gtype_134,info))));
             right_value171 = come_decrement_ref_count2(right_value171, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 384 "03transpile2.c"
-            # 381 "03transpile2.c"
+            # 382 "03output_code.c"
+            # 379 "03output_code.c"
             if(_if_conditional186=i_133!=list$1sTypeph_length(no_solved_type_130->mGenericsTypes)-1,            _if_conditional186) {
-                # 382 "03transpile2.c"
+                # 380 "03output_code.c"
                 buffer_append_str(buf_131,",");
             }
         }
-        # 386 "03transpile2.c"
+        # 384 "03output_code.c"
         buffer_append_str(buf_131,">");
     }
-    # 395 "03transpile2.c"
-    # 389 "03transpile2.c"
+    # 393 "03output_code.c"
+    # 387 "03output_code.c"
     if(_if_conditional187=no_solved_type_130->mNoArrayPointerNum==0&&charp_operator_not_equals(class_name_132,"lambda"),    _if_conditional187) {
-        # 393 "03transpile2.c"
+        # 391 "03output_code.c"
         for(        i_135=0;        i_135<no_solved_type_130->mPointerNum;        i_135++        ){
-            # 391 "03transpile2.c"
+            # 389 "03output_code.c"
             buffer_append_str(buf_131,"*");
         }
     }
-    # 401 "03transpile2.c"
-    # 395 "03transpile2.c"
+    # 399 "03output_code.c"
+    # 393 "03output_code.c"
     if(_if_conditional188=list$1sNodeph_length(no_solved_type_130->mArrayNum)>0,    _if_conditional188) {
-        # 399 "03transpile2.c"
+        # 397 "03output_code.c"
         for(        i_136=0;        i_136<list$1sNodeph_length(no_solved_type_130->mArrayNum);        i_136++        ){
-            # 397 "03transpile2.c"
+            # 395 "03output_code.c"
             buffer_append_str(buf_131,"[]");
         }
     }
-    # 405 "03transpile2.c"
-    # 401 "03transpile2.c"
+    # 403 "03output_code.c"
+    # 399 "03output_code.c"
     if(no_solved_type_130->mHeap) {
-        # 402 "03transpile2.c"
+        # 400 "03output_code.c"
         buffer_append_str(buf_131,"%");
     }
-    # 405 "03transpile2.c"
+    # 403 "03output_code.c"
     __result107__ = __result_obj__ = ((char*)(right_value172=buffer_to_string(buf_131)));
     come_call_finalizer3(no_solved_type_130,sType_finalize, 0, 0, 0, 0, (void*)0);
     come_call_finalizer3(buf_131,buffer_finalize, 0, 0, 0, 0, (void*)0);
@@ -6271,10 +6271,10 @@ memset(&__result_obj__, 0, sizeof(void*));
 right_value173 = (void*)0;
 memset(&type_name_137, 0, sizeof(char*));
 right_value174 = (void*)0;
-    # 410 "03transpile2.c"
+    # 408 "03output_code.c"
     type_name_137=(char*)come_increment_ref_count(((char*)(right_value173=make_come_type_name_string_no_solved(type,info))));
     right_value173 = come_decrement_ref_count2(right_value173, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 412 "03transpile2.c"
+    # 410 "03output_code.c"
     __result108__ = __result_obj__ = ((char*)(right_value174=xsprintf("%s %s",type_name_137,name)));
     type_name_137 = come_decrement_ref_count2(type_name_137, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     right_value174 = come_decrement_ref_count2(right_value174, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -6391,129 +6391,129 @@ right_value195 = (void*)0;
 right_value196 = (void*)0;
 right_value197 = (void*)0;
 right_value198 = (void*)0;
-    # 417 "03transpile2.c"
-    output_138=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value176=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value175=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "03transpile2.c", 417, "buffer"))))))));
+    # 415 "03output_code.c"
+    output_138=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value176=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value175=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "03output_code.c", 415, "buffer"))))))));
     come_call_finalizer3(right_value175,buffer_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value176,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-    # 531 "03transpile2.c"
-    # 418 "03transpile2.c"
+    # 529 "03output_code.c"
+    # 416 "03output_code.c"
     if(fun->mResultType->mResultType) {
-        # 419 "03transpile2.c"
-        output2_139=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value178=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value177=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "03transpile2.c", 419, "buffer"))))))));
+        # 417 "03output_code.c"
+        output2_139=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value178=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value177=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "03output_code.c", 417, "buffer"))))))));
         come_call_finalizer3(right_value177,buffer_finalize, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer3(right_value178,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-        # 421 "03transpile2.c"
+        # 419 "03output_code.c"
         buffer_append_str(output2_139,fun->mName);
-        # 422 "03transpile2.c"
+        # 420 "03output_code.c"
         buffer_append_str(output2_139,"(");
-        # 424 "03transpile2.c"
+        # 422 "03output_code.c"
         i_140=0;
-        # 442 "03transpile2.c"
+        # 440 "03output_code.c"
         for(        o2_saved_141=(struct list$1sTypeph*)come_increment_ref_count((fun->mParamTypes)),it_142=list$1sTypeph_begin((o2_saved_141));        !list$1sTypeph_end((o2_saved_141));        it_142=list$1sTypeph_next((o2_saved_141))        ){
-            # 426 "03transpile2.c"
-            name_146=((char*)come_null_check(list$1charphp_operator_load_element(fun->mParamNames,i_140), "03transpile2.c", 426, 2));
-            # 428 "03transpile2.c"
+            # 424 "03output_code.c"
+            name_146=((char*)come_null_check(list$1charphp_operator_load_element(fun->mParamNames,i_140), "03output_code.c", 424, 2));
+            # 426 "03output_code.c"
             str_147=(char*)come_increment_ref_count(((char*)(right_value179=make_define_var(it_142,name_146,(_Bool)0,info))));
             right_value179 = come_decrement_ref_count2(right_value179, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 429 "03transpile2.c"
+            # 427 "03output_code.c"
             buffer_append_str(output2_139,str_147);
-            # 440 "03transpile2.c"
-            # 431 "03transpile2.c"
+            # 438 "03output_code.c"
+            # 429 "03output_code.c"
             if(_if_conditional193=i_140==list$1sTypeph_length(fun->mParamTypes)-1,            _if_conditional193) {
-                # 435 "03transpile2.c"
-                # 432 "03transpile2.c"
+                # 433 "03output_code.c"
+                # 430 "03output_code.c"
                 if(fun->mVarArgs) {
-                    # 433 "03transpile2.c"
+                    # 431 "03output_code.c"
                     buffer_append_str(output2_139,", ...");
                 }
             }
             else {
-                # 437 "03transpile2.c"
+                # 435 "03output_code.c"
                 buffer_append_str(output2_139,", ");
             }
-            # 440 "03transpile2.c"
+            # 438 "03output_code.c"
             i_140++;
             str_147 = come_decrement_ref_count2(str_147, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
         come_call_finalizer3(o2_saved_141,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
-        # 442 "03transpile2.c"
+        # 440 "03output_code.c"
         buffer_append_str(output2_139,")");
-        # 444 "03transpile2.c"
+        # 442 "03output_code.c"
         str_148=(char*)come_increment_ref_count(((char*)(right_value181=make_lambda_type_name_string(fun->mResultType,((char*)(right_value180=buffer_to_string(output2_139))),info))));
         right_value180 = come_decrement_ref_count2(right_value180, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         right_value181 = come_decrement_ref_count2(right_value181, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 446 "03transpile2.c"
+        # 444 "03output_code.c"
         buffer_append_str(output_138,str_148);
-        # 450 "03transpile2.c"
+        # 448 "03output_code.c"
         buffer_append_str(info->module->mSourceHead,((char*)(right_value182=buffer_to_string(output_138))));
         right_value182 = come_decrement_ref_count2(right_value182, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 451 "03transpile2.c"
+        # 449 "03output_code.c"
         buffer_append_str(info->module->mSourceHead,";\n");
         come_call_finalizer3(output2_139,buffer_finalize, 0, 0, 0, 0, (void*)0);
         str_148 = come_decrement_ref_count2(str_148, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
     else {
-        # 531 "03transpile2.c"
-        # 453 "03transpile2.c"
+        # 529 "03output_code.c"
+        # 451 "03output_code.c"
         if(_if_conditional195=list$1sNodeph_length(fun->mResultType->mArrayNum)>0,        _if_conditional195) {
-            # 454 "03transpile2.c"
+            # 452 "03output_code.c"
             base_result_type_149=(struct sType*)come_increment_ref_count(((struct sType*)(right_value183=sType_clone(fun->mResultType))));
             come_call_finalizer3(right_value183,sType_finalize, 0, 1, 0, 0, __result_obj__);
-            # 455 "03transpile2.c"
+            # 453 "03output_code.c"
             __dec_obj41=base_result_type_149->mArrayNum;
-            base_result_type_149->mArrayNum=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value185=list$1sNodeph_initialize((struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value184=(struct list$1sNodeph*)come_calloc(1, sizeof(struct list$1sNodeph)*(1), "03transpile2.c", 455, "list$1sNodeph"))))))));
+            base_result_type_149->mArrayNum=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value185=list$1sNodeph_initialize((struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value184=(struct list$1sNodeph*)come_calloc(1, sizeof(struct list$1sNodeph)*(1), "03output_code.c", 453, "list$1sNodeph"))))))));
             come_call_finalizer3(__dec_obj41,list$1sNodeph_finalize, 0, 0, 0, 0, (void*)0);
             come_call_finalizer3(right_value184,list$1sNodephp_finalize, 0, 1, 0, 0, __result_obj__);
             come_call_finalizer3(right_value185,list$1sNodephp_finalize, 0, 1, 0, 0, __result_obj__);
-            # 457 "03transpile2.c"
+            # 455 "03output_code.c"
             result_type_str_150=(char*)come_increment_ref_count(((char*)(right_value186=make_type_name_string(base_result_type_149,(_Bool)0,(_Bool)0,(_Bool)0,info))));
             right_value186 = come_decrement_ref_count2(right_value186, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 459 "03transpile2.c"
+            # 457 "03output_code.c"
             buffer_append_str(output_138,result_type_str_150);
-            # 460 "03transpile2.c"
+            # 458 "03output_code.c"
             buffer_append_str(output_138," (*");
-            # 462 "03transpile2.c"
+            # 460 "03output_code.c"
             buffer_append_str(output_138,fun->mName);
-            # 463 "03transpile2.c"
+            # 461 "03output_code.c"
             buffer_append_str(output_138,"(");
-            # 465 "03transpile2.c"
+            # 463 "03output_code.c"
             i_151=0;
-            # 484 "03transpile2.c"
+            # 482 "03output_code.c"
             for(            o2_saved_152=(struct list$1sTypeph*)come_increment_ref_count((fun->mParamTypes)),it_153=list$1sTypeph_begin((o2_saved_152));            !list$1sTypeph_end((o2_saved_152));            it_153=list$1sTypeph_next((o2_saved_152))            ){
-                # 467 "03transpile2.c"
-                name_154=((char*)come_null_check(list$1charphp_operator_load_element(fun->mParamNames,i_151), "03transpile2.c", 467, 3));
-                # 469 "03transpile2.c"
+                # 465 "03output_code.c"
+                name_154=((char*)come_null_check(list$1charphp_operator_load_element(fun->mParamNames,i_151), "03output_code.c", 465, 3));
+                # 467 "03output_code.c"
                 str_155=(char*)come_increment_ref_count(((char*)(right_value187=make_define_var(it_153,name_154,(_Bool)0,info))));
                 right_value187 = come_decrement_ref_count2(right_value187, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 470 "03transpile2.c"
+                # 468 "03output_code.c"
                 buffer_append_str(output_138,str_155);
-                # 481 "03transpile2.c"
-                # 472 "03transpile2.c"
+                # 479 "03output_code.c"
+                # 470 "03output_code.c"
                 if(_if_conditional196=i_151==list$1sTypeph_length(fun->mParamTypes)-1,                _if_conditional196) {
-                    # 476 "03transpile2.c"
-                    # 473 "03transpile2.c"
+                    # 474 "03output_code.c"
+                    # 471 "03output_code.c"
                     if(fun->mVarArgs) {
-                        # 474 "03transpile2.c"
+                        # 472 "03output_code.c"
                         buffer_append_str(output_138,", ...");
                     }
                 }
                 else {
-                    # 478 "03transpile2.c"
+                    # 476 "03output_code.c"
                     buffer_append_str(output_138,", ");
                 }
-                # 481 "03transpile2.c"
+                # 479 "03output_code.c"
                 i_151++;
                 str_155 = come_decrement_ref_count2(str_155, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
             come_call_finalizer3(o2_saved_152,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
-            # 484 "03transpile2.c"
-            node_159=((struct sNode*)come_null_check(list$1sNodephp_operator_load_element(fun->mResultType->mArrayNum,0), "03transpile2.c", 484, 4));
-            # 490 "03transpile2.c"
-            # 486 "03transpile2.c"
+            # 482 "03output_code.c"
+            node_159=((struct sNode*)come_null_check(list$1sNodephp_operator_load_element(fun->mResultType->mArrayNum,0), "03output_code.c", 482, 4));
+            # 488 "03output_code.c"
+            # 484 "03output_code.c"
             if(_if_conditional200=!node_compile(node_159,info),            _if_conditional200) {
-                # 487 "03transpile2.c"
+                # 485 "03output_code.c"
                 err_msg(info,"invalid array number");
-                # 488 "03transpile2.c"
+                # 486 "03output_code.c"
                 __result113__ = __result_obj__ = ((char*)(right_value188=__builtin_string("")));
                 come_call_finalizer3(base_result_type_149,sType_finalize, 0, 0, 0, 0, (void*)0);
                 result_type_str_150 = come_decrement_ref_count2(result_type_str_150, (void*)0, (void*)0, 0, 0, 0, (void*)0);
@@ -6521,89 +6521,89 @@ right_value198 = (void*)0;
                 right_value188 = come_decrement_ref_count2(right_value188, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                 return __result113__;
             }
-            # 490 "03transpile2.c"
+            # 488 "03output_code.c"
             cvalue_160=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value189=get_value_from_stack(-1,info))));
             come_call_finalizer3(right_value189,CVALUE_finalize, 0, 1, 0, 0, __result_obj__);
-            # 491 "03transpile2.c"
+            # 489 "03output_code.c"
             dec_stack_ptr(1,info);
-            # 493 "03transpile2.c"
+            # 491 "03output_code.c"
             buffer_append_str(output_138,((char*)(right_value190=xsprintf("))[%s]",cvalue_160->c_value))));
             right_value190 = come_decrement_ref_count2(right_value190, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 495 "03transpile2.c"
+            # 493 "03output_code.c"
             buffer_append_str(info->module->mSourceHead,((char*)(right_value191=buffer_to_string(output_138))));
             right_value191 = come_decrement_ref_count2(right_value191, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 496 "03transpile2.c"
+            # 494 "03output_code.c"
             buffer_append_str(info->module->mSourceHead,";\n");
             come_call_finalizer3(base_result_type_149,sType_finalize, 0, 0, 0, 0, (void*)0);
             result_type_str_150 = come_decrement_ref_count2(result_type_str_150, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             come_call_finalizer3(cvalue_160,CVALUE_finalize, 0, 0, 0, 0, (void*)0);
         }
         else {
-            # 499 "03transpile2.c"
+            # 497 "03output_code.c"
             result_type_str_161=(char*)come_increment_ref_count(((char*)(right_value192=make_type_name_string(fun->mResultType,(_Bool)0,(_Bool)0,(_Bool)0,info))));
             right_value192 = come_decrement_ref_count2(right_value192, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 501 "03transpile2.c"
+            # 499 "03output_code.c"
             buffer_append_str(output_138,result_type_str_161);
-            # 502 "03transpile2.c"
+            # 500 "03output_code.c"
             buffer_append_str(output_138," ");
-            # 504 "03transpile2.c"
+            # 502 "03output_code.c"
             buffer_append_str(output_138,fun->mName);
-            # 505 "03transpile2.c"
+            # 503 "03output_code.c"
             buffer_append_str(output_138,"(");
-            # 507 "03transpile2.c"
+            # 505 "03output_code.c"
             i_162=0;
-            # 525 "03transpile2.c"
+            # 523 "03output_code.c"
             for(            o2_saved_163=(struct list$1sTypeph*)come_increment_ref_count((fun->mParamTypes)),it_164=list$1sTypeph_begin((o2_saved_163));            !list$1sTypeph_end((o2_saved_163));            it_164=list$1sTypeph_next((o2_saved_163))            ){
-                # 509 "03transpile2.c"
-                name_165=((char*)come_null_check(list$1charphp_operator_load_element(fun->mParamNames,i_162), "03transpile2.c", 509, 5));
-                # 511 "03transpile2.c"
+                # 507 "03output_code.c"
+                name_165=((char*)come_null_check(list$1charphp_operator_load_element(fun->mParamNames,i_162), "03output_code.c", 507, 5));
+                # 509 "03output_code.c"
                 str_166=(char*)come_increment_ref_count(((char*)(right_value193=make_define_var(it_164,name_165,(_Bool)0,info))));
                 right_value193 = come_decrement_ref_count2(right_value193, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 512 "03transpile2.c"
+                # 510 "03output_code.c"
                 buffer_append_str(output_138,str_166);
-                # 522 "03transpile2.c"
-                # 514 "03transpile2.c"
+                # 520 "03output_code.c"
+                # 512 "03output_code.c"
                 if(_if_conditional201=i_162==list$1sTypeph_length(fun->mParamTypes)-1,                _if_conditional201) {
-                    # 518 "03transpile2.c"
-                    # 515 "03transpile2.c"
+                    # 516 "03output_code.c"
+                    # 513 "03output_code.c"
                     if(fun->mVarArgs) {
-                        # 516 "03transpile2.c"
+                        # 514 "03output_code.c"
                         buffer_append_str(output_138,", ...");
                     }
                 }
                 else {
-                    # 520 "03transpile2.c"
+                    # 518 "03output_code.c"
                     buffer_append_str(output_138,", ");
                 }
-                # 522 "03transpile2.c"
+                # 520 "03output_code.c"
                 i_162++;
                 str_166 = come_decrement_ref_count2(str_166, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
             come_call_finalizer3(o2_saved_163,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
-            # 525 "03transpile2.c"
+            # 523 "03output_code.c"
             buffer_append_str(output_138,")");
-            # 527 "03transpile2.c"
+            # 525 "03output_code.c"
             buffer_append_str(info->module->mSourceHead,((char*)(right_value194=buffer_to_string(output_138))));
             right_value194 = come_decrement_ref_count2(right_value194, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 528 "03transpile2.c"
+            # 526 "03output_code.c"
             buffer_append_str(info->module->mSourceHead,";\n");
             result_type_str_161 = come_decrement_ref_count2(result_type_str_161, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
     }
-    # 531 "03transpile2.c"
+    # 529 "03output_code.c"
     buffer_append_str(output_138,"{\n");
-    # 533 "03transpile2.c"
+    # 531 "03output_code.c"
     buffer_append_str(output_138,((char*)(right_value195=buffer_to_string(fun->mSourceHead))));
     right_value195 = come_decrement_ref_count2(right_value195, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 534 "03transpile2.c"
+    # 532 "03output_code.c"
     buffer_append_str(output_138,((char*)(right_value196=buffer_to_string(fun->mSourceHead2))));
     right_value196 = come_decrement_ref_count2(right_value196, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 535 "03transpile2.c"
+    # 533 "03output_code.c"
     buffer_append_str(output_138,((char*)(right_value197=buffer_to_string(fun->mSource))));
     right_value197 = come_decrement_ref_count2(right_value197, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 537 "03transpile2.c"
+    # 535 "03output_code.c"
     buffer_append_str(output_138,"}\n");
-    # 539 "03transpile2.c"
+    # 537 "03output_code.c"
     __result114__ = __result_obj__ = ((char*)(right_value198=buffer_to_string(output_138)));
     come_call_finalizer3(output_138,buffer_finalize, 0, 0, 0, 0, (void*)0);
     right_value198 = come_decrement_ref_count2(right_value198, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -6803,118 +6803,118 @@ memset(&name_188, 0, sizeof(char*));
 right_value215 = (void*)0;
 memset(&str_189, 0, sizeof(char*));
 right_value216 = (void*)0;
-    # 544 "03transpile2.c"
-    output_167=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value200=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value199=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "03transpile2.c", 544, "buffer"))))))));
+    # 542 "03output_code.c"
+    output_167=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value200=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value199=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "03output_code.c", 542, "buffer"))))))));
     come_call_finalizer3(right_value199,buffer_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value200,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-    # 641 "03transpile2.c"
-    # 546 "03transpile2.c"
+    # 639 "03output_code.c"
+    # 544 "03output_code.c"
     if(fun->mResultType->mResultType) {
-        # 547 "03transpile2.c"
-        output2_168=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value202=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value201=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "03transpile2.c", 547, "buffer"))))))));
+        # 545 "03output_code.c"
+        output2_168=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value202=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value201=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "03output_code.c", 545, "buffer"))))))));
         come_call_finalizer3(right_value201,buffer_finalize, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer3(right_value202,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-        # 549 "03transpile2.c"
+        # 547 "03output_code.c"
         buffer_append_str(output2_168,fun->mName);
-        # 550 "03transpile2.c"
+        # 548 "03output_code.c"
         buffer_append_str(output2_168,"(");
-        # 552 "03transpile2.c"
+        # 550 "03output_code.c"
         i_169=0;
-        # 564 "03transpile2.c"
+        # 562 "03output_code.c"
         for(        o2_saved_170=(struct list$1sTypeph*)come_increment_ref_count((fun->mParamTypes)),it_171=list$1sTypeph_begin((o2_saved_170));        !list$1sTypeph_end((o2_saved_170));        it_171=list$1sTypeph_next((o2_saved_170))        ){
-            # 554 "03transpile2.c"
-            name_172=((char*)come_null_check(list$1charphp_operator_load_element(fun->mParamNames,i_169), "03transpile2.c", 554, 6));
-            # 556 "03transpile2.c"
+            # 552 "03output_code.c"
+            name_172=((char*)come_null_check(list$1charphp_operator_load_element(fun->mParamNames,i_169), "03output_code.c", 552, 6));
+            # 554 "03output_code.c"
             str_173=(char*)come_increment_ref_count(((char*)(right_value203=make_define_var(it_171,name_172,(_Bool)0,info))));
             right_value203 = come_decrement_ref_count2(right_value203, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 557 "03transpile2.c"
+            # 555 "03output_code.c"
             buffer_append_str(output2_168,str_173);
-            # 562 "03transpile2.c"
-            # 559 "03transpile2.c"
+            # 560 "03output_code.c"
+            # 557 "03output_code.c"
             if(_if_conditional204=i_169!=list$1sTypeph_length(fun->mParamTypes)-1,            _if_conditional204) {
-                # 560 "03transpile2.c"
+                # 558 "03output_code.c"
                 buffer_append_str(output2_168,", ");
             }
-            # 562 "03transpile2.c"
+            # 560 "03output_code.c"
             i_169++;
             str_173 = come_decrement_ref_count2(str_173, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
         come_call_finalizer3(o2_saved_170,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
-        # 564 "03transpile2.c"
+        # 562 "03output_code.c"
         buffer_append_str(output2_168,")");
-        # 566 "03transpile2.c"
+        # 564 "03output_code.c"
         str_174=(char*)come_increment_ref_count(((char*)(right_value205=make_lambda_type_name_string(fun->mResultType,((char*)(right_value204=buffer_to_string(output2_168))),info))));
         right_value204 = come_decrement_ref_count2(right_value204, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         right_value205 = come_decrement_ref_count2(right_value205, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 568 "03transpile2.c"
+        # 566 "03output_code.c"
         buffer_append_str(output_167,str_174);
-        # 569 "03transpile2.c"
+        # 567 "03output_code.c"
         buffer_append_str(output_167,";\n");
         come_call_finalizer3(output2_168,buffer_finalize, 0, 0, 0, 0, (void*)0);
         str_174 = come_decrement_ref_count2(str_174, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
     else {
-        # 641 "03transpile2.c"
-        # 571 "03transpile2.c"
+        # 639 "03output_code.c"
+        # 569 "03output_code.c"
         if(_if_conditional205=list$1sNodeph_length(fun->mResultType->mArrayNum)>0,        _if_conditional205) {
-            # 572 "03transpile2.c"
+            # 570 "03output_code.c"
             base_result_type_175=(struct sType*)come_increment_ref_count(((struct sType*)(right_value206=sType_clone(fun->mResultType))));
             come_call_finalizer3(right_value206,sType_finalize, 0, 1, 0, 0, __result_obj__);
-            # 573 "03transpile2.c"
+            # 571 "03output_code.c"
             __dec_obj42=base_result_type_175->mArrayNum;
-            base_result_type_175->mArrayNum=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value208=list$1sNodeph_initialize((struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value207=(struct list$1sNodeph*)come_calloc(1, sizeof(struct list$1sNodeph)*(1), "03transpile2.c", 573, "list$1sNodeph"))))))));
+            base_result_type_175->mArrayNum=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value208=list$1sNodeph_initialize((struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value207=(struct list$1sNodeph*)come_calloc(1, sizeof(struct list$1sNodeph)*(1), "03output_code.c", 571, "list$1sNodeph"))))))));
             come_call_finalizer3(__dec_obj42,list$1sNodeph_finalize, 0, 0, 0, 0, (void*)0);
             come_call_finalizer3(right_value207,list$1sNodephp_finalize, 0, 1, 0, 0, __result_obj__);
             come_call_finalizer3(right_value208,list$1sNodephp_finalize, 0, 1, 0, 0, __result_obj__);
-            # 575 "03transpile2.c"
+            # 573 "03output_code.c"
             result_type_str_176=(char*)come_increment_ref_count(((char*)(right_value209=make_type_name_string(base_result_type_175,(_Bool)1,(_Bool)0,(_Bool)0,info))));
             right_value209 = come_decrement_ref_count2(right_value209, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 577 "03transpile2.c"
+            # 575 "03output_code.c"
             buffer_append_str(output_167,result_type_str_176);
-            # 578 "03transpile2.c"
+            # 576 "03output_code.c"
             buffer_append_str(output_167," (*");
-            # 580 "03transpile2.c"
+            # 578 "03output_code.c"
             buffer_append_str(output_167,fun->mName);
-            # 581 "03transpile2.c"
+            # 579 "03output_code.c"
             buffer_append_str(output_167,"(");
-            # 583 "03transpile2.c"
+            # 581 "03output_code.c"
             i_177=0;
-            # 601 "03transpile2.c"
+            # 599 "03output_code.c"
             for(            o2_saved_178=(struct list$1sTypeph*)come_increment_ref_count((fun->mParamTypes)),it_179=list$1sTypeph_begin((o2_saved_178));            !list$1sTypeph_end((o2_saved_178));            it_179=list$1sTypeph_next((o2_saved_178))            ){
-                # 585 "03transpile2.c"
-                name_180=((char*)come_null_check(list$1charphp_operator_load_element(fun->mParamNames,i_177), "03transpile2.c", 585, 7));
-                # 587 "03transpile2.c"
+                # 583 "03output_code.c"
+                name_180=((char*)come_null_check(list$1charphp_operator_load_element(fun->mParamNames,i_177), "03output_code.c", 583, 7));
+                # 585 "03output_code.c"
                 str_181=(char*)come_increment_ref_count(((char*)(right_value210=make_define_var(it_179,name_180,(_Bool)0,info))));
                 right_value210 = come_decrement_ref_count2(right_value210, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 588 "03transpile2.c"
+                # 586 "03output_code.c"
                 buffer_append_str(output_167,str_181);
-                # 598 "03transpile2.c"
-                # 590 "03transpile2.c"
+                # 596 "03output_code.c"
+                # 588 "03output_code.c"
                 if(_if_conditional206=i_177==list$1sTypeph_length(fun->mParamTypes)-1,                _if_conditional206) {
-                    # 594 "03transpile2.c"
-                    # 591 "03transpile2.c"
+                    # 592 "03output_code.c"
+                    # 589 "03output_code.c"
                     if(fun->mVarArgs) {
-                        # 592 "03transpile2.c"
+                        # 590 "03output_code.c"
                         buffer_append_str(output_167,", ...");
                     }
                 }
                 else {
-                    # 596 "03transpile2.c"
+                    # 594 "03output_code.c"
                     buffer_append_str(output_167,", ");
                 }
-                # 598 "03transpile2.c"
+                # 596 "03output_code.c"
                 i_177++;
                 str_181 = come_decrement_ref_count2(str_181, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
             come_call_finalizer3(o2_saved_178,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
-            # 601 "03transpile2.c"
-            node_182=((struct sNode*)come_null_check(list$1sNodephp_operator_load_element(fun->mResultType->mArrayNum,0), "03transpile2.c", 601, 8));
-            # 606 "03transpile2.c"
-            # 602 "03transpile2.c"
+            # 599 "03output_code.c"
+            node_182=((struct sNode*)come_null_check(list$1sNodephp_operator_load_element(fun->mResultType->mArrayNum,0), "03output_code.c", 599, 8));
+            # 604 "03output_code.c"
+            # 600 "03output_code.c"
             if(_if_conditional208=!node_compile(node_182,info),            _if_conditional208) {
-                # 603 "03transpile2.c"
+                # 601 "03output_code.c"
                 err_msg(info,"invalid array number");
-                # 604 "03transpile2.c"
+                # 602 "03output_code.c"
                 __result115__ = __result_obj__ = ((char*)(right_value211=__builtin_string("")));
                 come_call_finalizer3(base_result_type_175,sType_finalize, 0, 0, 0, 0, (void*)0);
                 result_type_str_176 = come_decrement_ref_count2(result_type_str_176, (void*)0, (void*)0, 0, 0, 0, (void*)0);
@@ -6922,12 +6922,12 @@ right_value216 = (void*)0;
                 right_value211 = come_decrement_ref_count2(right_value211, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                 return __result115__;
             }
-            # 606 "03transpile2.c"
+            # 604 "03output_code.c"
             cvalue_183=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value212=get_value_from_stack(-1,info))));
             come_call_finalizer3(right_value212,CVALUE_finalize, 0, 1, 0, 0, __result_obj__);
-            # 607 "03transpile2.c"
+            # 605 "03output_code.c"
             dec_stack_ptr(1,info);
-            # 609 "03transpile2.c"
+            # 607 "03output_code.c"
             buffer_append_str(output_167,((char*)(right_value213=xsprintf("))[%s];\n",cvalue_183->c_value))));
             right_value213 = come_decrement_ref_count2(right_value213, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
             come_call_finalizer3(base_result_type_175,sType_finalize, 0, 0, 0, 0, (void*)0);
@@ -6935,53 +6935,53 @@ right_value216 = (void*)0;
             come_call_finalizer3(cvalue_183,CVALUE_finalize, 0, 0, 0, 0, (void*)0);
         }
         else {
-            # 612 "03transpile2.c"
+            # 610 "03output_code.c"
             result_type_str_184=(char*)come_increment_ref_count(((char*)(right_value214=make_type_name_string(fun->mResultType,(_Bool)1,(_Bool)0,(_Bool)0,info))));
             right_value214 = come_decrement_ref_count2(right_value214, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 614 "03transpile2.c"
+            # 612 "03output_code.c"
             buffer_append_str(output_167,result_type_str_184);
-            # 615 "03transpile2.c"
+            # 613 "03output_code.c"
             buffer_append_str(output_167," ");
-            # 617 "03transpile2.c"
+            # 615 "03output_code.c"
             buffer_append_str(output_167,fun->mName);
-            # 618 "03transpile2.c"
+            # 616 "03output_code.c"
             buffer_append_str(output_167,"(");
-            # 620 "03transpile2.c"
+            # 618 "03output_code.c"
             i_185=0;
-            # 638 "03transpile2.c"
+            # 636 "03output_code.c"
             for(            o2_saved_186=(struct list$1sTypeph*)come_increment_ref_count((fun->mParamTypes)),it_187=list$1sTypeph_begin((o2_saved_186));            !list$1sTypeph_end((o2_saved_186));            it_187=list$1sTypeph_next((o2_saved_186))            ){
-                # 622 "03transpile2.c"
-                name_188=((char*)come_null_check(list$1charphp_operator_load_element(fun->mParamNames,i_185), "03transpile2.c", 622, 9));
-                # 624 "03transpile2.c"
+                # 620 "03output_code.c"
+                name_188=((char*)come_null_check(list$1charphp_operator_load_element(fun->mParamNames,i_185), "03output_code.c", 620, 9));
+                # 622 "03output_code.c"
                 str_189=(char*)come_increment_ref_count(((char*)(right_value215=make_define_var(it_187,name_188,(_Bool)0,info))));
                 right_value215 = come_decrement_ref_count2(right_value215, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 625 "03transpile2.c"
+                # 623 "03output_code.c"
                 buffer_append_str(output_167,str_189);
-                # 635 "03transpile2.c"
-                # 627 "03transpile2.c"
+                # 633 "03output_code.c"
+                # 625 "03output_code.c"
                 if(_if_conditional209=i_185==list$1sTypeph_length(fun->mParamTypes)-1,                _if_conditional209) {
-                    # 631 "03transpile2.c"
-                    # 628 "03transpile2.c"
+                    # 629 "03output_code.c"
+                    # 626 "03output_code.c"
                     if(fun->mVarArgs) {
-                        # 629 "03transpile2.c"
+                        # 627 "03output_code.c"
                         buffer_append_str(output_167,", ...");
                     }
                 }
                 else {
-                    # 633 "03transpile2.c"
+                    # 631 "03output_code.c"
                     buffer_append_str(output_167,", ");
                 }
-                # 635 "03transpile2.c"
+                # 633 "03output_code.c"
                 i_185++;
                 str_189 = come_decrement_ref_count2(str_189, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
             come_call_finalizer3(o2_saved_186,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
-            # 638 "03transpile2.c"
+            # 636 "03output_code.c"
             buffer_append_str(output_167,");\n");
             result_type_str_184 = come_decrement_ref_count2(result_type_str_184, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
     }
-    # 641 "03transpile2.c"
+    # 639 "03output_code.c"
     __result116__ = __result_obj__ = ((char*)(right_value216=buffer_to_string(output_167)));
     come_call_finalizer3(output_167,buffer_finalize, 0, 0, 0, 0, (void*)0);
     right_value216 = come_decrement_ref_count2(right_value216, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -7019,54 +7019,54 @@ memset(&name_195, 0, sizeof(char*));
 right_value220 = (void*)0;
 memset(&str_196, 0, sizeof(char*));
 right_value221 = (void*)0;
-    # 646 "03transpile2.c"
-    output_190=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value218=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value217=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "03transpile2.c", 646, "buffer"))))))));
+    # 644 "03output_code.c"
+    output_190=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value218=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value217=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "03output_code.c", 644, "buffer"))))))));
     come_call_finalizer3(right_value217,buffer_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value218,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-    # 648 "03transpile2.c"
+    # 646 "03output_code.c"
     result_type_str_191=(char*)come_increment_ref_count(((char*)(right_value219=make_type_name_string(lambda_type->mResultType->v1,(_Bool)1,(_Bool)0,(_Bool)0,info))));
     right_value219 = come_decrement_ref_count2(right_value219, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 650 "03transpile2.c"
+    # 648 "03output_code.c"
     buffer_append_str(output_190,result_type_str_191);
-    # 651 "03transpile2.c"
+    # 649 "03output_code.c"
     buffer_append_str(output_190," ");
-    # 653 "03transpile2.c"
+    # 651 "03output_code.c"
     buffer_append_str(output_190,name);
-    # 654 "03transpile2.c"
+    # 652 "03output_code.c"
     buffer_append_str(output_190,"(");
-    # 656 "03transpile2.c"
+    # 654 "03output_code.c"
     i_192=0;
-    # 674 "03transpile2.c"
+    # 672 "03output_code.c"
     for(    o2_saved_193=(struct list$1sTypeph*)come_increment_ref_count((lambda_type->mParamTypes)),it_194=list$1sTypeph_begin((o2_saved_193));    !list$1sTypeph_end((o2_saved_193));    it_194=list$1sTypeph_next((o2_saved_193))    ){
-        # 658 "03transpile2.c"
-        name_195=((char*)come_null_check(list$1charphp_operator_load_element(lambda_type->mParamNames,i_192), "03transpile2.c", 658, 10));
-        # 660 "03transpile2.c"
+        # 656 "03output_code.c"
+        name_195=((char*)come_null_check(list$1charphp_operator_load_element(lambda_type->mParamNames,i_192), "03output_code.c", 656, 10));
+        # 658 "03output_code.c"
         str_196=(char*)come_increment_ref_count(((char*)(right_value220=make_define_var(it_194,name_195,(_Bool)0,info))));
         right_value220 = come_decrement_ref_count2(right_value220, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 661 "03transpile2.c"
+        # 659 "03output_code.c"
         buffer_append_str(output_190,str_196);
-        # 671 "03transpile2.c"
-        # 663 "03transpile2.c"
+        # 669 "03output_code.c"
+        # 661 "03output_code.c"
         if(_if_conditional211=i_192==list$1sTypeph_length(lambda_type->mParamTypes)-1,        _if_conditional211) {
-            # 667 "03transpile2.c"
-            # 664 "03transpile2.c"
+            # 665 "03output_code.c"
+            # 662 "03output_code.c"
             if(lambda_type->mVarArgs) {
-                # 665 "03transpile2.c"
+                # 663 "03output_code.c"
                 buffer_append_str(output_190,", ...");
             }
         }
         else {
-            # 669 "03transpile2.c"
+            # 667 "03output_code.c"
             buffer_append_str(output_190,", ");
         }
-        # 671 "03transpile2.c"
+        # 669 "03output_code.c"
         i_192++;
         str_196 = come_decrement_ref_count2(str_196, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
     come_call_finalizer3(o2_saved_193,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
-    # 674 "03transpile2.c"
+    # 672 "03output_code.c"
     buffer_append_str(output_190,");\n");
-    # 676 "03transpile2.c"
+    # 674 "03output_code.c"
     __result117__ = __result_obj__ = ((char*)(right_value221=buffer_to_string(output_190)));
     name = come_decrement_ref_count2(name, (void*)0, (void*)0, 0, 1, 0, (void*)0);
     come_call_finalizer3(output_190,buffer_finalize, 0, 0, 0, 0, (void*)0);
@@ -7095,39 +7095,39 @@ memset(&len_199, 0, sizeof(int));
 memset(&i_200, 0, sizeof(int));
 right_value222 = (void*)0;
 right_value223 = (void*)0;
-    # 685 "03transpile2.c"
-    # 682 "03transpile2.c"
+    # 683 "03output_code.c"
+    # 680 "03output_code.c"
     if(info->no_output_come_code) {
-        # 683 "03transpile2.c"
+        # 681 "03output_code.c"
         return;
     }
-    # 685 "03transpile2.c"
-    # 687 "03transpile2.c"
-    # 688 "03transpile2.c"
+    # 683 "03output_code.c"
+    # 685 "03output_code.c"
+    # 686 "03output_code.c"
     __builtin_va_start(args_198,msg);
-    # 689 "03transpile2.c"
+    # 687 "03output_code.c"
     len_199=vasprintf(&msg2_197,msg,args_198);
-    # 690 "03transpile2.c"
+    # 688 "03output_code.c"
     __builtin_va_end(args_198);
-    # 704 "03transpile2.c"
-    # 692 "03transpile2.c"
+    # 702 "03output_code.c"
+    # 690 "03output_code.c"
     if(info->come_fun) {
-        # 693 "03transpile2.c"
-        # 698 "03transpile2.c"
+        # 691 "03output_code.c"
+        # 696 "03output_code.c"
         for(        i_200=0;        i_200<info->block_level;        i_200++        ){
-            # 695 "03transpile2.c"
+            # 693 "03output_code.c"
             buffer_append_str(info->come_fun->mSource,"    ");
         }
-        # 698 "03transpile2.c"
+        # 696 "03output_code.c"
         buffer_append_str(info->come_fun->mSource,((char*)(right_value222=xsprintf("%s",msg2_197))));
         right_value222 = come_decrement_ref_count2(right_value222, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
     }
     else {
-        # 701 "03transpile2.c"
+        # 699 "03output_code.c"
         buffer_append_str(info->module->mSourceHead,((char*)(right_value223=xsprintf("%s",msg2_197))));
         right_value223 = come_decrement_ref_count2(right_value223, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
     }
-    # 704 "03transpile2.c"
+    # 702 "03output_code.c"
     free(msg2_197);
     come_call_finalizer3((&args_198),va_list_finalize, 1, 0, 0, 0, (void*)0);
 }
@@ -7149,24 +7149,24 @@ memset(&msg2_201, 0, sizeof(char*));
 memset(&args_202, 0, sizeof(va_list));
 memset(&len_203, 0, sizeof(int));
 right_value224 = (void*)0;
-    # 712 "03transpile2.c"
-    # 709 "03transpile2.c"
+    # 710 "03output_code.c"
+    # 707 "03output_code.c"
     if(info->no_output_come_code) {
-        # 710 "03transpile2.c"
+        # 708 "03output_code.c"
         return;
     }
-    # 712 "03transpile2.c"
-    # 714 "03transpile2.c"
-    # 715 "03transpile2.c"
+    # 710 "03output_code.c"
+    # 712 "03output_code.c"
+    # 713 "03output_code.c"
     __builtin_va_start(args_202,msg);
-    # 716 "03transpile2.c"
+    # 714 "03output_code.c"
     len_203=vasprintf(&msg2_201,msg,args_202);
-    # 717 "03transpile2.c"
+    # 715 "03output_code.c"
     __builtin_va_end(args_202);
-    # 719 "03transpile2.c"
+    # 717 "03output_code.c"
     buffer_append_str(info->module->mSourceHead,((char*)(right_value224=xsprintf("%s",msg2_201))));
     right_value224 = come_decrement_ref_count2(right_value224, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 721 "03transpile2.c"
+    # 719 "03output_code.c"
     free(msg2_201);
     come_call_finalizer3((&args_202),va_list_finalize, 1, 0, 0, 0, (void*)0);
 }
@@ -7184,27 +7184,27 @@ memset(&msg2_204, 0, sizeof(char*));
 memset(&args_205, 0, sizeof(va_list));
 memset(&len_206, 0, sizeof(int));
 right_value225 = (void*)0;
-    # 729 "03transpile2.c"
-    # 726 "03transpile2.c"
+    # 727 "03output_code.c"
+    # 724 "03output_code.c"
     if(info->no_output_come_code) {
-        # 727 "03transpile2.c"
+        # 725 "03output_code.c"
         return;
     }
-    # 741 "03transpile2.c"
-    # 729 "03transpile2.c"
+    # 739 "03output_code.c"
+    # 727 "03output_code.c"
     if(_if_conditional217=string_operator_equals(info->sname,info->base_sname),    _if_conditional217) {
-        # 730 "03transpile2.c"
-        # 732 "03transpile2.c"
-        # 733 "03transpile2.c"
+        # 728 "03output_code.c"
+        # 730 "03output_code.c"
+        # 731 "03output_code.c"
         __builtin_va_start(args_205,msg);
-        # 734 "03transpile2.c"
+        # 732 "03output_code.c"
         len_206=vasprintf(&msg2_204,msg,args_205);
-        # 735 "03transpile2.c"
+        # 733 "03output_code.c"
         __builtin_va_end(args_205);
-        # 737 "03transpile2.c"
+        # 735 "03output_code.c"
         buffer_append_str(info->module->mHeader,((char*)(right_value225=xsprintf("%s",msg2_204))));
         right_value225 = come_decrement_ref_count2(right_value225, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 739 "03transpile2.c"
+        # 737 "03output_code.c"
         free(msg2_204);
         come_call_finalizer3((&args_205),va_list_finalize, 1, 0, 0, 0, (void*)0);
     }
@@ -7268,57 +7268,57 @@ right_value246 = (void*)0;
 right_value247 = (void*)0;
 memset(&main_fun_219, 0, sizeof(struct sFun*));
 right_value254 = (void*)0;
-    # 745 "03transpile2.c"
+    # 743 "03output_code.c"
     name_207=(char*)come_increment_ref_count(((char*)(right_value226=__builtin_string("main"))));
     right_value226 = come_decrement_ref_count2(right_value226, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 746 "03transpile2.c"
-    result_type_208=(struct sType*)come_increment_ref_count(((struct sType*)(right_value228=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value227=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "03transpile2.c", 746, "sType")))),"int",(_Bool)0,info))));
+    # 744 "03output_code.c"
+    result_type_208=(struct sType*)come_increment_ref_count(((struct sType*)(right_value228=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value227=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "03output_code.c", 744, "sType")))),"int",(_Bool)0,info))));
     come_call_finalizer3(right_value227,sType_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value228,sType_finalize, 0, 1, 0, 0, __result_obj__);
-    # 747 "03transpile2.c"
-    {__list_values1___209[0]=come_increment_ref_count(((struct sType*)(right_value230=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value229=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "03transpile2.c", 747, "sType")))),"int",(_Bool)0,info))));
-__list_values1___209[1]=come_increment_ref_count(((struct sType*)(right_value232=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value231=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "03transpile2.c", 747, "sType")))),"char**",(_Bool)0,info))));
-}    param_types_211=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value234=list$1sTypeph_initialize_with_values((struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value233=(struct list$1sTypeph*)come_calloc(1, sizeof(struct list$1sTypeph)*(1), "03transpile2.c", 747, "struct list$1sTypeph")))),2,__list_values1___209))));
+    # 745 "03output_code.c"
+    {__list_values1___209[0]=come_increment_ref_count(((struct sType*)(right_value230=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value229=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "03output_code.c", 745, "sType")))),"int",(_Bool)0,info))));
+__list_values1___209[1]=come_increment_ref_count(((struct sType*)(right_value232=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value231=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "03output_code.c", 745, "sType")))),"char**",(_Bool)0,info))));
+}    param_types_211=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value234=list$1sTypeph_initialize_with_values((struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value233=(struct list$1sTypeph*)come_calloc(1, sizeof(struct list$1sTypeph)*(1), "03output_code.c", 745, "struct list$1sTypeph")))),2,__list_values1___209))));
     come_call_finalizer3(right_value229,sType_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value230,sType_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value231,sType_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value232,sType_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value233,list$1sTypeph_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value234,list$1sTypephp_finalize, 0, 1, 0, 0, __result_obj__);
-    # 748 "03transpile2.c"
+    # 746 "03output_code.c"
     {__list_values2___212[0]=come_increment_ref_count(((char*)(right_value235=__builtin_string("argc"))));
 __list_values2___212[1]=come_increment_ref_count(((char*)(right_value236=__builtin_string("argv"))));
-}    param_names_217=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value241=list$1charph_initialize_with_values((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value240=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "03transpile2.c", 748, "struct list$1charph")))),2,__list_values2___212))));
+}    param_names_217=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value241=list$1charph_initialize_with_values((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value240=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "03output_code.c", 746, "struct list$1charph")))),2,__list_values2___212))));
     right_value235 = come_decrement_ref_count2(right_value235, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
     right_value236 = come_decrement_ref_count2(right_value236, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value240,list$1charph_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value241,list$1charphp_finalize, 0, 1, 0, 0, __result_obj__);
-    # 749 "03transpile2.c"
-    param_default_parametors_218=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value243=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value242=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "03transpile2.c", 749, "list$1charph"))))))));
+    # 747 "03output_code.c"
+    param_default_parametors_218=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value243=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value242=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "03output_code.c", 747, "list$1charph"))))))));
     come_call_finalizer3(right_value242,list$1charphp_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value243,list$1charphp_finalize, 0, 1, 0, 0, __result_obj__);
-    # 755 "03transpile2.c"
-    main_fun_219=(struct sFun*)come_increment_ref_count(((struct sFun*)(right_value247=sFun_initialize((struct sFun*)come_increment_ref_count(((struct sFun*)(right_value244=(struct sFun*)come_calloc(1, sizeof(struct sFun)*(1), "03transpile2.c", 750, "sFun")))),(char*)come_increment_ref_count(name_207),(struct sType*)come_increment_ref_count(result_type_208),(struct list$1sTypeph*)come_increment_ref_count(param_types_211),(struct list$1charph*)come_increment_ref_count(param_names_217),(struct list$1charph*)come_increment_ref_count(param_default_parametors_218),(_Bool)0,(_Bool)0,((void*)0),(_Bool)0,(char*)come_increment_ref_count(((char*)(right_value245=__builtin_string("int main(int argc, char** argv)")))),(char*)come_increment_ref_count(((char*)(right_value246=__builtin_string("")))),info))));
+    # 753 "03output_code.c"
+    main_fun_219=(struct sFun*)come_increment_ref_count(((struct sFun*)(right_value247=sFun_initialize((struct sFun*)come_increment_ref_count(((struct sFun*)(right_value244=(struct sFun*)come_calloc(1, sizeof(struct sFun)*(1), "03output_code.c", 748, "sFun")))),(char*)come_increment_ref_count(name_207),(struct sType*)come_increment_ref_count(result_type_208),(struct list$1sTypeph*)come_increment_ref_count(param_types_211),(struct list$1charph*)come_increment_ref_count(param_names_217),(struct list$1charph*)come_increment_ref_count(param_default_parametors_218),(_Bool)0,(_Bool)0,((void*)0),(_Bool)0,(char*)come_increment_ref_count(((char*)(right_value245=__builtin_string("int main(int argc, char** argv)")))),(char*)come_increment_ref_count(((char*)(right_value246=__builtin_string("")))),info))));
     come_call_finalizer3(right_value244,sFun_finalize, 0, 1, 0, 0, __result_obj__);
     right_value245 = come_decrement_ref_count2(right_value245, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
     right_value246 = come_decrement_ref_count2(right_value246, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value247,sFun_finalize, 0, 1, 0, 0, __result_obj__);
-    # 757 "03transpile2.c"
+    # 755 "03output_code.c"
     map$2charphsFunph_insert(info->funcs,(char*)come_increment_ref_count(((char*)(right_value254=__builtin_string(name_207)))),(struct sFun*)come_increment_ref_count(main_fun_219));
     right_value254 = come_decrement_ref_count2(right_value254, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 759 "03transpile2.c"
+    # 757 "03output_code.c"
     add_come_code(info,"#include <stdio.h>\n");
-    # 761 "03transpile2.c"
+    # 759 "03output_code.c"
     info->come_fun=main_fun_219;
-    # 763 "03transpile2.c"
+    # 761 "03output_code.c"
     info->block_level++;
-    # 764 "03transpile2.c"
+    # 762 "03output_code.c"
     add_come_code(info,"puts(\"HELLO COMELANG\");\n\n");
-    # 765 "03transpile2.c"
+    # 763 "03output_code.c"
     add_come_code(info,"return 0;\n");
-    # 766 "03transpile2.c"
+    # 764 "03output_code.c"
     info->block_level--;
-    # 768 "03transpile2.c"
+    # 766 "03output_code.c"
     __result145__ = 0;
     name_207 = come_decrement_ref_count2(name_207, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     come_call_finalizer3(result_type_208,sType_finalize, 0, 0, 0, 0, (void*)0);
@@ -8549,47 +8549,47 @@ memset(&it_284, 0, sizeof(char*));
 memset(&it2_285, 0, sizeof(struct sFun*));
 right_value263 = (void*)0;
 memset(&output_286, 0, sizeof(char*));
-    # 774 "03transpile2.c"
+    # 772 "03output_code.c"
     output_file_name_264=(char*)come_increment_ref_count(((char*)(right_value255=xsprintf("%s.c",info->sname))));
     right_value255 = come_decrement_ref_count2(right_value255, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 776 "03transpile2.c"
+    # 774 "03output_code.c"
     f_265=fopen(output_file_name_264,"w");
-    # 778 "03transpile2.c"
+    # 776 "03output_code.c"
     fprintf(f_265,"// source head\n");
-    # 779 "03transpile2.c"
+    # 777 "03output_code.c"
     fprintf(f_265,"%s\n",((char*)(right_value256=buffer_to_string(info->module->mSourceHead))));
     right_value256 = come_decrement_ref_count2(right_value256, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 781 "03transpile2.c"
+    # 779 "03output_code.c"
     fprintf(f_265,"// header function\n");
-    # 799 "03transpile2.c"
+    # 797 "03output_code.c"
     for(    o2_saved_266=(struct map$2charphsFunph*)come_increment_ref_count((info->funcs)),it_267=map$2charphsFunph_begin((o2_saved_266));    !map$2charphsFunph_end((o2_saved_266));    it_267=map$2charphsFunph_next((o2_saved_266))    ){
-        # 783 "03transpile2.c"
+        # 781 "03output_code.c"
         it2_271=map$2charphsFunphp_operator_load_element(info->funcs,((char*)(right_value257=__builtin_string(it_267))));
         right_value257 = come_decrement_ref_count2(right_value257, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 785 "03transpile2.c"
+        # 783 "03output_code.c"
         header_272=(char*)come_increment_ref_count(((char*)(right_value258=header_function(it2_271,info))));
         right_value258 = come_decrement_ref_count2(right_value258, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 797 "03transpile2.c"
-        # 787 "03transpile2.c"
+        # 795 "03output_code.c"
+        # 785 "03output_code.c"
         if(_if_conditional286=it2_271->mStatic&&it2_271->mResultType->mInline,        _if_conditional286) {
         }
         else {
-            # 797 "03transpile2.c"
-            # 789 "03transpile2.c"
+            # 795 "03output_code.c"
+            # 787 "03output_code.c"
             if(it2_271->mStatic) {
-                # 790 "03transpile2.c"
+                # 788 "03output_code.c"
                 fprintf(f_265,"static %s",header_272);
             }
             else {
-                # 797 "03transpile2.c"
-                # 792 "03transpile2.c"
+                # 795 "03output_code.c"
+                # 790 "03output_code.c"
                 if(it2_271->mResultType->mInline) {
                 }
                 else {
-                    # 797 "03transpile2.c"
-                    # 794 "03transpile2.c"
+                    # 795 "03output_code.c"
+                    # 792 "03output_code.c"
                     if(_if_conditional289=string_operator_not_equals(it_267,"__builtin_va_start")&&string_operator_not_equals(it_267,"__builtin_va_end"),                    _if_conditional289) {
-                        # 795 "03transpile2.c"
+                        # 793 "03output_code.c"
                         fprintf(f_265,"%s\n",header_272,it_267);
                     }
                 }
@@ -8598,45 +8598,45 @@ memset(&output_286, 0, sizeof(char*));
         header_272 = come_decrement_ref_count2(header_272, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
     come_call_finalizer3(o2_saved_266,map$2charphsFunphp_finalize, 0, 0, 0, 0, (void*)0);
-    # 799 "03transpile2.c"
+    # 797 "03output_code.c"
     fprintf(f_265,"// inline function\n");
-    # 819 "03transpile2.c"
+    # 817 "03output_code.c"
     for(    o2_saved_277=(struct map$2charphsFunph*)come_increment_ref_count((info->funcs)),it_278=map$2charphsFunph_begin((o2_saved_277));    !map$2charphsFunph_end((o2_saved_277));    it_278=map$2charphsFunph_next((o2_saved_277))    ){
-        # 801 "03transpile2.c"
+        # 799 "03output_code.c"
         it2_279=map$2charphsFunphp_operator_load_element(info->funcs,((char*)(right_value259=__builtin_string(it_278))));
         right_value259 = come_decrement_ref_count2(right_value259, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 803 "03transpile2.c"
+        # 801 "03output_code.c"
         header_280=(char*)come_increment_ref_count(((char*)(right_value260=header_function(it2_279,info))));
         right_value260 = come_decrement_ref_count2(right_value260, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 817 "03transpile2.c"
-        # 805 "03transpile2.c"
+        # 815 "03output_code.c"
+        # 803 "03output_code.c"
         if(_if_conditional294=it2_279->mStatic&&it2_279->mResultType->mInline,        _if_conditional294) {
-            # 806 "03transpile2.c"
+            # 804 "03output_code.c"
             output_281=(char*)come_increment_ref_count(((char*)(right_value261=output_function(it2_279,info))));
             right_value261 = come_decrement_ref_count2(right_value261, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 807 "03transpile2.c"
+            # 805 "03output_code.c"
             fprintf(f_265,"static inline %s",output_281);
             output_281 = come_decrement_ref_count2(output_281, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
         else {
-            # 817 "03transpile2.c"
-            # 809 "03transpile2.c"
+            # 815 "03output_code.c"
+            # 807 "03output_code.c"
             if(it2_279->mResultType->mInline) {
-                # 810 "03transpile2.c"
+                # 808 "03output_code.c"
                 output_282=(char*)come_increment_ref_count(((char*)(right_value262=output_function(it2_279,info))));
                 right_value262 = come_decrement_ref_count2(right_value262, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 811 "03transpile2.c"
+                # 809 "03output_code.c"
                 fprintf(f_265,"static inline %s",output_282);
                 output_282 = come_decrement_ref_count2(output_282, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
             else {
-                # 817 "03transpile2.c"
-                # 813 "03transpile2.c"
+                # 815 "03output_code.c"
+                # 811 "03output_code.c"
                 if(it2_279->mStatic) {
                 }
                 else {
-                    # 817 "03transpile2.c"
-                    # 815 "03transpile2.c"
+                    # 815 "03output_code.c"
+                    # 813 "03output_code.c"
                     if(_if_conditional297=string_operator_not_equals(it_278,"__builtin_va_start")&&string_operator_not_equals(it_278,"__builtin_va_end"),                    _if_conditional297) {
                     }
                 }
@@ -8645,51 +8645,51 @@ memset(&output_286, 0, sizeof(char*));
         header_280 = come_decrement_ref_count2(header_280, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
     come_call_finalizer3(o2_saved_277,map$2charphsFunphp_finalize, 0, 0, 0, 0, (void*)0);
-    # 819 "03transpile2.c"
+    # 817 "03output_code.c"
     fprintf(f_265,"\n");
-    # 821 "03transpile2.c"
+    # 819 "03output_code.c"
     fprintf(f_265,"// body function\n");
-    # 843 "03transpile2.c"
+    # 841 "03output_code.c"
     for(    o2_saved_283=(struct map$2charphsFunph*)come_increment_ref_count((info->funcs)),it_284=map$2charphsFunph_begin((o2_saved_283));    !map$2charphsFunph_end((o2_saved_283));    it_284=map$2charphsFunph_next((o2_saved_283))    ){
-        # 823 "03transpile2.c"
+        # 821 "03output_code.c"
         it2_285=map$2charphsFunphp_operator_load_element(info->funcs,it_284);
-        # 841 "03transpile2.c"
-        # 825 "03transpile2.c"
+        # 839 "03output_code.c"
+        # 823 "03output_code.c"
         if(_if_conditional298=!it2_285->mExternal,        _if_conditional298) {
-            # 826 "03transpile2.c"
+            # 824 "03output_code.c"
             output_286=(char*)come_increment_ref_count(((char*)(right_value263=output_function(it2_285,info))));
             right_value263 = come_decrement_ref_count2(right_value263, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 839 "03transpile2.c"
-            # 828 "03transpile2.c"
+            # 837 "03output_code.c"
+            # 826 "03output_code.c"
             if(_if_conditional299=it2_285->mStatic&&it2_285->mResultType->mInline,            _if_conditional299) {
             }
             else {
-                # 839 "03transpile2.c"
-                # 830 "03transpile2.c"
+                # 837 "03output_code.c"
+                # 828 "03output_code.c"
                 if(it2_285->mStatic) {
-                    # 831 "03transpile2.c"
+                    # 829 "03output_code.c"
                     fprintf(f_265,"static %s",output_286);
                 }
                 else {
-                    # 839 "03transpile2.c"
-                    # 833 "03transpile2.c"
+                    # 837 "03output_code.c"
+                    # 831 "03output_code.c"
                     if(it2_285->mResultType->mInline) {
                     }
                     else {
-                        # 836 "03transpile2.c"
+                        # 834 "03output_code.c"
                         fprintf(f_265,"%s",output_286);
                     }
                 }
             }
-            # 839 "03transpile2.c"
+            # 837 "03output_code.c"
             fprintf(f_265,"\n");
             output_286 = come_decrement_ref_count2(output_286, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
     }
     come_call_finalizer3(o2_saved_283,map$2charphsFunphp_finalize, 0, 0, 0, 0, (void*)0);
-    # 843 "03transpile2.c"
+    # 841 "03output_code.c"
     fclose(f_265);
-    # 845 "03transpile2.c"
+    # 843 "03output_code.c"
     __result150__ = (_Bool)1;
     output_file_name_264 = come_decrement_ref_count2(output_file_name_264, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     return __result150__;
@@ -8847,34 +8847,34 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&output_file_name_287, 0, sizeof(char*));
 memset(&f_288, 0, sizeof(struct _IO_FILE*));
 right_value264 = (void*)0;
-    # 851 "03transpile2.c"
+    # 849 "03output_code.c"
     output_file_name_287=(char*)come_increment_ref_count(info->output_file_name);
-    # 853 "03transpile2.c"
+    # 851 "03output_code.c"
     f_288=fopen(output_file_name_287,"a");
-    # 861 "03transpile2.c"
-    # 855 "03transpile2.c"
+    # 859 "03output_code.c"
+    # 853 "03output_code.c"
     if(_if_conditional302=string_operator_equals(info->output_file_name,"common.h"),    _if_conditional302) {
-        # 856 "03transpile2.c"
+        # 854 "03output_code.c"
         fprintf(f_288,"#ifndef __COMMON_H__\n");
-        # 857 "03transpile2.c"
+        # 855 "03output_code.c"
         fprintf(f_288,"#define __COMMON_H__\n");
-        # 858 "03transpile2.c"
+        # 856 "03output_code.c"
         fprintf(f_288,"#include <neo-c.h>\n");
     }
-    # 861 "03transpile2.c"
+    # 859 "03output_code.c"
     fprintf(f_288,"%s\n",((char*)(right_value264=buffer_to_string(info->module->mHeader))));
     right_value264 = come_decrement_ref_count2(right_value264, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 863 "03transpile2.c"
+    # 861 "03output_code.c"
     fprintf(f_288,"\n");
-    # 869 "03transpile2.c"
-    # 865 "03transpile2.c"
+    # 867 "03output_code.c"
+    # 863 "03output_code.c"
     if(_if_conditional303=string_operator_equals(info->output_file_name,"common.h"),    _if_conditional303) {
-        # 866 "03transpile2.c"
+        # 864 "03output_code.c"
         fprintf(f_288,"#endif\n");
     }
-    # 869 "03transpile2.c"
+    # 867 "03output_code.c"
     fclose(f_288);
-    # 871 "03transpile2.c"
+    # 869 "03output_code.c"
     __result151__ = (_Bool)1;
     output_file_name_287 = come_decrement_ref_count2(output_file_name_287, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     return __result151__;
@@ -8892,27 +8892,27 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&msg2_289, 0, sizeof(char*));
 memset(&args_290, 0, sizeof(va_list));
 memset(&len_291, 0, sizeof(int));
-    # 879 "03transpile2.c"
-    # 876 "03transpile2.c"
+    # 877 "03output_code.c"
+    # 874 "03output_code.c"
     if(info->no_output_come_code) {
-        # 877 "03transpile2.c"
+        # 875 "03output_code.c"
         return;
     }
-    # 879 "03transpile2.c"
-    # 881 "03transpile2.c"
-    # 882 "03transpile2.c"
+    # 877 "03output_code.c"
+    # 879 "03output_code.c"
+    # 880 "03output_code.c"
     __builtin_va_start(args_290,code);
-    # 883 "03transpile2.c"
+    # 881 "03output_code.c"
     len_291=vasprintf(&msg2_289,code,args_290);
-    # 884 "03transpile2.c"
+    # 882 "03output_code.c"
     __builtin_va_end(args_290);
-    # 890 "03transpile2.c"
-    # 886 "03transpile2.c"
+    # 888 "03output_code.c"
+    # 884 "03output_code.c"
     if(info->come_fun) {
-        # 887 "03transpile2.c"
+        # 885 "03output_code.c"
         buffer_append_str(info->come_fun->mSourceHead,msg2_289);
     }
-    # 890 "03transpile2.c"
+    # 888 "03output_code.c"
     free(msg2_289);
     come_call_finalizer3((&args_290),va_list_finalize, 1, 0, 0, 0, (void*)0);
 }
@@ -8928,27 +8928,27 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&msg2_292, 0, sizeof(char*));
 memset(&args_293, 0, sizeof(va_list));
 memset(&len_294, 0, sizeof(int));
-    # 898 "03transpile2.c"
-    # 895 "03transpile2.c"
+    # 896 "03output_code.c"
+    # 893 "03output_code.c"
     if(info->no_output_come_code) {
-        # 896 "03transpile2.c"
+        # 894 "03output_code.c"
         return;
     }
-    # 898 "03transpile2.c"
-    # 900 "03transpile2.c"
-    # 901 "03transpile2.c"
+    # 896 "03output_code.c"
+    # 898 "03output_code.c"
+    # 899 "03output_code.c"
     __builtin_va_start(args_293,code);
-    # 902 "03transpile2.c"
+    # 900 "03output_code.c"
     len_294=vasprintf(&msg2_292,code,args_293);
-    # 903 "03transpile2.c"
+    # 901 "03output_code.c"
     __builtin_va_end(args_293);
-    # 909 "03transpile2.c"
-    # 905 "03transpile2.c"
+    # 907 "03output_code.c"
+    # 903 "03output_code.c"
     if(info->come_fun) {
-        # 906 "03transpile2.c"
+        # 904 "03output_code.c"
         buffer_append_str(info->come_fun->mSourceHead2,msg2_292);
     }
-    # 909 "03transpile2.c"
+    # 907 "03output_code.c"
     free(msg2_292);
     come_call_finalizer3((&args_293),va_list_finalize, 1, 0, 0, 0, (void*)0);
 }
@@ -8963,38 +8963,38 @@ char* __dec_obj47;
 _Bool _if_conditional311;
 char* __dec_obj48;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 917 "03transpile2.c"
-    # 914 "03transpile2.c"
+    # 915 "03output_code.c"
+    # 912 "03output_code.c"
     if(info->no_output_come_code) {
-        # 915 "03transpile2.c"
+        # 913 "03output_code.c"
         return;
     }
-    # 921 "03transpile2.c"
-    # 917 "03transpile2.c"
+    # 919 "03output_code.c"
+    # 915 "03output_code.c"
     if(info->module->mLastCode) {
-        # 918 "03transpile2.c"
+        # 916 "03output_code.c"
         add_come_code(info,"%s",info->module->mLastCode);
-        # 919 "03transpile2.c"
+        # 917 "03output_code.c"
         __dec_obj46=info->module->mLastCode;
         info->module->mLastCode=((void*)0);
         __dec_obj46 = come_decrement_ref_count2(__dec_obj46, (void*)0, (void*)0, 0,0,0, (void*)0);
     }
-    # 925 "03transpile2.c"
-    # 921 "03transpile2.c"
+    # 923 "03output_code.c"
+    # 919 "03output_code.c"
     if(info->module->mLastCode2) {
-        # 922 "03transpile2.c"
+        # 920 "03output_code.c"
         add_come_code(info,"%s",info->module->mLastCode2);
-        # 923 "03transpile2.c"
+        # 921 "03output_code.c"
         __dec_obj47=info->module->mLastCode2;
         info->module->mLastCode2=((void*)0);
         __dec_obj47 = come_decrement_ref_count2(__dec_obj47, (void*)0, (void*)0, 0,0,0, (void*)0);
     }
-    # 929 "03transpile2.c"
-    # 925 "03transpile2.c"
+    # 927 "03output_code.c"
+    # 923 "03output_code.c"
     if(info->module->mLastCode3) {
-        # 926 "03transpile2.c"
+        # 924 "03output_code.c"
         add_come_code(info,"%s",info->module->mLastCode3);
-        # 927 "03transpile2.c"
+        # 925 "03output_code.c"
         __dec_obj48=info->module->mLastCode3;
         info->module->mLastCode3=((void*)0);
         __dec_obj48 = come_decrement_ref_count2(__dec_obj48, (void*)0, (void*)0, 0,0,0, (void*)0);
@@ -9017,41 +9017,41 @@ memset(&__result_obj__, 0, sizeof(void*));
 right_value265 = (void*)0;
 right_value266 = (void*)0;
 right_value267 = (void*)0;
-    # 936 "03transpile2.c"
-    # 933 "03transpile2.c"
+    # 934 "03output_code.c"
+    # 931 "03output_code.c"
     if(info->no_output_come_code) {
-        # 934 "03transpile2.c"
+        # 932 "03output_code.c"
         return;
     }
-    # 940 "03transpile2.c"
-    # 936 "03transpile2.c"
+    # 938 "03output_code.c"
+    # 934 "03output_code.c"
     if(info->module->mLastCode) {
-        # 937 "03transpile2.c"
+        # 935 "03output_code.c"
         add_come_code(info,"%s ,",((char*)(right_value265=string_substring(info->module->mLastCode,0,-3))));
         right_value265 = come_decrement_ref_count2(right_value265, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 938 "03transpile2.c"
+        # 936 "03output_code.c"
         __dec_obj49=info->module->mLastCode;
         info->module->mLastCode=((void*)0);
         __dec_obj49 = come_decrement_ref_count2(__dec_obj49, (void*)0, (void*)0, 0,0,0, (void*)0);
     }
-    # 944 "03transpile2.c"
-    # 940 "03transpile2.c"
+    # 942 "03output_code.c"
+    # 938 "03output_code.c"
     if(info->module->mLastCode2) {
-        # 941 "03transpile2.c"
+        # 939 "03output_code.c"
         add_come_code(info,"%s ,",((char*)(right_value266=string_substring(info->module->mLastCode2,0,-3))));
         right_value266 = come_decrement_ref_count2(right_value266, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 942 "03transpile2.c"
+        # 940 "03output_code.c"
         __dec_obj50=info->module->mLastCode2;
         info->module->mLastCode2=((void*)0);
         __dec_obj50 = come_decrement_ref_count2(__dec_obj50, (void*)0, (void*)0, 0,0,0, (void*)0);
     }
-    # 948 "03transpile2.c"
-    # 944 "03transpile2.c"
+    # 946 "03output_code.c"
+    # 942 "03output_code.c"
     if(info->module->mLastCode3) {
-        # 945 "03transpile2.c"
+        # 943 "03output_code.c"
         add_come_code(info,"%s ,",((char*)(right_value267=string_substring(info->module->mLastCode3,0,-3))));
         right_value267 = come_decrement_ref_count2(right_value267, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 946 "03transpile2.c"
+        # 944 "03output_code.c"
         __dec_obj51=info->module->mLastCode3;
         info->module->mLastCode3=((void*)0);
         __dec_obj51 = come_decrement_ref_count2(__dec_obj51, (void*)0, (void*)0, 0,0,0, (void*)0);
@@ -9071,26 +9071,26 @@ memset(&msg2_295, 0, sizeof(char*));
 memset(&args_296, 0, sizeof(va_list));
 memset(&len_297, 0, sizeof(int));
 right_value268 = (void*)0;
-    # 955 "03transpile2.c"
-    # 952 "03transpile2.c"
+    # 953 "03output_code.c"
+    # 950 "03output_code.c"
     if(info->no_output_come_code) {
-        # 953 "03transpile2.c"
+        # 951 "03output_code.c"
         return;
     }
-    # 955 "03transpile2.c"
-    # 957 "03transpile2.c"
-    # 958 "03transpile2.c"
+    # 953 "03output_code.c"
+    # 955 "03output_code.c"
+    # 956 "03output_code.c"
     __builtin_va_start(args_296,msg);
-    # 959 "03transpile2.c"
+    # 957 "03output_code.c"
     len_297=vasprintf(&msg2_295,msg,args_296);
-    # 960 "03transpile2.c"
+    # 958 "03output_code.c"
     __builtin_va_end(args_296);
-    # 962 "03transpile2.c"
+    # 960 "03output_code.c"
     __dec_obj52=info->module->mLastCode;
     info->module->mLastCode=(char*)come_increment_ref_count(((char*)(right_value268=xsprintf("%s",msg2_295))));
     __dec_obj52 = come_decrement_ref_count2(__dec_obj52, (void*)0, (void*)0, 0,0,0, (void*)0);
     right_value268 = come_decrement_ref_count2(right_value268, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 964 "03transpile2.c"
+    # 962 "03output_code.c"
     free(msg2_295);
     come_call_finalizer3((&args_296),va_list_finalize, 1, 0, 0, 0, (void*)0);
 }
@@ -9108,26 +9108,26 @@ memset(&msg2_298, 0, sizeof(char*));
 memset(&args_299, 0, sizeof(va_list));
 memset(&len_300, 0, sizeof(int));
 right_value269 = (void*)0;
-    # 972 "03transpile2.c"
-    # 969 "03transpile2.c"
+    # 970 "03output_code.c"
+    # 967 "03output_code.c"
     if(info->no_output_come_code) {
-        # 970 "03transpile2.c"
+        # 968 "03output_code.c"
         return;
     }
-    # 972 "03transpile2.c"
-    # 974 "03transpile2.c"
-    # 975 "03transpile2.c"
+    # 970 "03output_code.c"
+    # 972 "03output_code.c"
+    # 973 "03output_code.c"
     __builtin_va_start(args_299,msg);
-    # 976 "03transpile2.c"
+    # 974 "03output_code.c"
     len_300=vasprintf(&msg2_298,msg,args_299);
-    # 977 "03transpile2.c"
+    # 975 "03output_code.c"
     __builtin_va_end(args_299);
-    # 979 "03transpile2.c"
+    # 977 "03output_code.c"
     __dec_obj53=info->module->mLastCode2;
     info->module->mLastCode2=(char*)come_increment_ref_count(((char*)(right_value269=xsprintf("%s",msg2_298))));
     __dec_obj53 = come_decrement_ref_count2(__dec_obj53, (void*)0, (void*)0, 0,0,0, (void*)0);
     right_value269 = come_decrement_ref_count2(right_value269, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 981 "03transpile2.c"
+    # 979 "03output_code.c"
     free(msg2_298);
     come_call_finalizer3((&args_299),va_list_finalize, 1, 0, 0, 0, (void*)0);
 }
@@ -9145,26 +9145,26 @@ memset(&msg2_301, 0, sizeof(char*));
 memset(&args_302, 0, sizeof(va_list));
 memset(&len_303, 0, sizeof(int));
 right_value270 = (void*)0;
-    # 989 "03transpile2.c"
-    # 986 "03transpile2.c"
+    # 987 "03output_code.c"
+    # 984 "03output_code.c"
     if(info->no_output_come_code) {
-        # 987 "03transpile2.c"
+        # 985 "03output_code.c"
         return;
     }
-    # 989 "03transpile2.c"
-    # 991 "03transpile2.c"
-    # 992 "03transpile2.c"
+    # 987 "03output_code.c"
+    # 989 "03output_code.c"
+    # 990 "03output_code.c"
     __builtin_va_start(args_302,msg);
-    # 993 "03transpile2.c"
+    # 991 "03output_code.c"
     len_303=vasprintf(&msg2_301,msg,args_302);
-    # 994 "03transpile2.c"
+    # 992 "03output_code.c"
     __builtin_va_end(args_302);
-    # 996 "03transpile2.c"
+    # 994 "03output_code.c"
     __dec_obj54=info->module->mLastCode3;
     info->module->mLastCode3=(char*)come_increment_ref_count(((char*)(right_value270=xsprintf("%s",msg2_301))));
     __dec_obj54 = come_decrement_ref_count2(__dec_obj54, (void*)0, (void*)0, 0,0,0, (void*)0);
     right_value270 = come_decrement_ref_count2(right_value270, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 998 "03transpile2.c"
+    # 996 "03output_code.c"
     free(msg2_301);
     come_call_finalizer3((&args_302),va_list_finalize, 1, 0, 0, 0, (void*)0);
 }
@@ -9172,7 +9172,7 @@ right_value270 = (void*)0;
 void dec_stack_ptr(int value, struct sInfo* info){
 void* __result_obj__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1003 "03transpile2.c"
+    # 1001 "03output_code.c"
     list$1CVALUEph_delete(info->stack,-value,-1);
 }
 
@@ -9474,22 +9474,22 @@ struct CVALUE* __result159__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value274 = (void*)0;
 memset(&result_322, 0, sizeof(struct CVALUE*));
-    # 1008 "03transpile2.c"
+    # 1006 "03output_code.c"
     __dec_obj55=info->module->mLastCode;
     info->module->mLastCode=((void*)0);
     __dec_obj55 = come_decrement_ref_count2(__dec_obj55, (void*)0, (void*)0, 0,0,0, (void*)0);
-    # 1011 "03transpile2.c"
-    result_322=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value274=CVALUE_clone(((struct CVALUE*)come_null_check(list$1CVALUEphp_operator_load_element(info->stack,offset), "03transpile2.c", 1011, 11))))));
+    # 1009 "03output_code.c"
+    result_322=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value274=CVALUE_clone(((struct CVALUE*)come_null_check(list$1CVALUEphp_operator_load_element(info->stack,offset), "03output_code.c", 1009, 11))))));
     come_call_finalizer3(right_value274,CVALUE_finalize, 0, 1, 0, 0, __result_obj__);
-    # 1018 "03transpile2.c"
-    # 1013 "03transpile2.c"
+    # 1016 "03output_code.c"
+    # 1011 "03output_code.c"
     if(_if_conditional344=result_322==((void*)0),    _if_conditional344) {
-        # 1014 "03transpile2.c"
+        # 1012 "03output_code.c"
         err_msg(info,"invalid stack value");
-        # 1015 "03transpile2.c"
+        # 1013 "03output_code.c"
         exit(2);
     }
-    # 1018 "03transpile2.c"
+    # 1016 "03output_code.c"
     __result159__ = __result_obj__ = result_322;
     come_call_finalizer3(result_322,CVALUE_finalize, 0, 0, 1, 0, (void*)0);
     return __result159__;
@@ -9610,15 +9610,15 @@ char* __dec_obj58;
 char* __dec_obj59;
 char* __dec_obj60;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 1023 "03transpile2.c"
+    # 1021 "03output_code.c"
     __dec_obj58=info->module->mLastCode;
     info->module->mLastCode=((void*)0);
     __dec_obj58 = come_decrement_ref_count2(__dec_obj58, (void*)0, (void*)0, 0,0,0, (void*)0);
-    # 1024 "03transpile2.c"
+    # 1022 "03output_code.c"
     __dec_obj59=info->module->mLastCode2;
     info->module->mLastCode2=((void*)0);
     __dec_obj59 = come_decrement_ref_count2(__dec_obj59, (void*)0, (void*)0, 0,0,0, (void*)0);
-    # 1025 "03transpile2.c"
+    # 1023 "03output_code.c"
     __dec_obj60=info->module->mLastCode3;
     info->module->mLastCode3=((void*)0);
     __dec_obj60 = come_decrement_ref_count2(__dec_obj60, (void*)0, (void*)0, 0,0,0, (void*)0);

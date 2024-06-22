@@ -3494,39 +3494,39 @@ _Bool _if_conditional20;
 _Bool _if_conditional21;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&nest_47, 0, sizeof(int));
-    # 5 "05function4.c"
+    # 5 "05type.c"
     nest_47=0;
-    # 26 "05function4.c"
+    # 26 "05type.c"
     while(_while_condtional7=(_Bool)1,    _while_condtional7) {
-        # 25 "05function4.c"
-        # 7 "05function4.c"
+        # 25 "05type.c"
+        # 7 "05type.c"
         if(_if_conditional19=*info->p==40,        _if_conditional19) {
-            # 8 "05function4.c"
+            # 8 "05type.c"
             info->p++;
-            # 9 "05function4.c"
+            # 9 "05type.c"
             skip_spaces_and_lf(info);
-            # 11 "05function4.c"
+            # 11 "05type.c"
             nest_47++;
         }
         else {
-            # 25 "05function4.c"
-            # 13 "05function4.c"
+            # 25 "05type.c"
+            # 13 "05type.c"
             if(_if_conditional20=*info->p==41,            _if_conditional20) {
-                # 14 "05function4.c"
+                # 14 "05type.c"
                 info->p++;
-                # 15 "05function4.c"
+                # 15 "05type.c"
                 skip_spaces_and_lf(info);
-                # 17 "05function4.c"
+                # 17 "05type.c"
                 nest_47--;
-                # 21 "05function4.c"
-                # 18 "05function4.c"
+                # 21 "05type.c"
+                # 18 "05type.c"
                 if(_if_conditional21=nest_47==0,                _if_conditional21) {
-                    # 19 "05function4.c"
+                    # 19 "05type.c"
                     break;
                 }
             }
             else {
-                # 23 "05function4.c"
+                # 23 "05type.c"
                 info->p++;
             }
         }
@@ -3563,137 +3563,137 @@ right_value79 = (void*)0;
 right_value80 = (void*)0;
 memset(&fname_49, 0, sizeof(struct buffer*));
 right_value81 = (void*)0;
-    # 35 "05function4.c"
+    # 35 "05type.c"
     while(_while_condtional8=strmemcmp(info->p,"__attribute__"),    _while_condtional8) {
-        # 31 "05function4.c"
+        # 31 "05type.c"
         info->p+=strlen("__attribute__");
-        # 32 "05function4.c"
+        # 32 "05type.c"
         skip_spaces_and_lf(info);
-        # 33 "05function4.c"
+        # 33 "05type.c"
         skip_paren(info);
     }
-    # 39 "05function4.c"
+    # 39 "05type.c"
     while(_while_condtional9=strmemcmp(info->p,"__extension__"),    _while_condtional9) {
-        # 36 "05function4.c"
+        # 36 "05type.c"
         info->p+=strlen("__extension__");
-        # 37 "05function4.c"
+        # 37 "05type.c"
         skip_spaces_and_lf(info);
     }
-    # 114 "05function4.c"
+    # 114 "05type.c"
     while(_while_condtional10=*info->p==35,    _while_condtional10) {
-        # 53 "05function4.c"
+        # 53 "05type.c"
         skip_spaces_and_lf(info);
-        # 55 "05function4.c"
+        # 55 "05type.c"
         info->p++;
-        # 56 "05function4.c"
+        # 56 "05type.c"
         skip_spaces_and_lf(info);
-        # 111 "05function4.c"
-        # 58 "05function4.c"
+        # 111 "05type.c"
+        # 58 "05type.c"
         if(_if_conditional22=strmemcmp(info->p,"pragma"),        _if_conditional22) {
-            # 68 "05function4.c"
+            # 68 "05type.c"
             while(_while_condtional11=*info->p,            _while_condtional11) {
-                # 67 "05function4.c"
-                # 60 "05function4.c"
+                # 67 "05type.c"
+                # 60 "05type.c"
                 if(_if_conditional23=*info->p==10,                _if_conditional23) {
-                    # 61 "05function4.c"
+                    # 61 "05type.c"
                     skip_spaces_and_lf(info);
-                    # 62 "05function4.c"
+                    # 62 "05type.c"
                     break;
                 }
                 else {
-                    # 65 "05function4.c"
+                    # 65 "05type.c"
                     info->p++;
                 }
             }
         }
         else {
-            # 111 "05function4.c"
-            # 69 "05function4.c"
+            # 111 "05type.c"
+            # 69 "05type.c"
             if(_if_conditional24=xisdigit(*info->p),            _if_conditional24) {
-                # 70 "05function4.c"
+                # 70 "05type.c"
                 line_48=0;
-                # 71 "05function4.c"
-                fname_49=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value80=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value79=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "05function4.c", 71, "buffer"))))))));
+                # 71 "05type.c"
+                fname_49=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value80=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value79=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "05type.c", 71, "buffer"))))))));
                 come_call_finalizer3(right_value79,buffer_finalize, 0, 1, 0, 0, __result_obj__);
                 come_call_finalizer3(right_value80,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-                # 77 "05function4.c"
+                # 77 "05type.c"
                 while(_while_condtional12=xisdigit(*info->p),                _while_condtional12) {
-                    # 74 "05function4.c"
+                    # 74 "05type.c"
                     line_48=line_48*10+(*info->p-48);
-                    # 75 "05function4.c"
+                    # 75 "05type.c"
                     info->p++;
                 }
-                # 77 "05function4.c"
+                # 77 "05type.c"
                 skip_spaces_and_lf(info);
-                # 93 "05function4.c"
-                # 79 "05function4.c"
+                # 93 "05type.c"
+                # 79 "05type.c"
                 if(_if_conditional25=*info->p==34,                _if_conditional25) {
-                    # 80 "05function4.c"
+                    # 80 "05type.c"
                     info->p++;
-                    # 87 "05function4.c"
+                    # 87 "05type.c"
                     while(_while_condtional13=*info->p!=34,                    _while_condtional13) {
-                        # 83 "05function4.c"
+                        # 83 "05type.c"
                         buffer_append_char(fname_49,*info->p);
-                        # 84 "05function4.c"
+                        # 84 "05type.c"
                         info->p++;
                     }
-                    # 90 "05function4.c"
+                    # 90 "05type.c"
                     while(_while_condtional14=*info->p!=10,                    _while_condtional14) {
-                        # 88 "05function4.c"
+                        # 88 "05type.c"
                         info->p++;
                     }
-                    # 90 "05function4.c"
+                    # 90 "05type.c"
                     info->p++;
                 }
-                # 93 "05function4.c"
+                # 93 "05type.c"
                 info->sline=line_48;
-                # 94 "05function4.c"
+                # 94 "05type.c"
                 __dec_obj12=info->sname;
                 info->sname=(char*)come_increment_ref_count(((char*)(right_value81=buffer_to_string(fname_49))));
                 __dec_obj12 = come_decrement_ref_count2(__dec_obj12, (void*)0, (void*)0, 0,0,0, (void*)0);
                 right_value81 = come_decrement_ref_count2(right_value81, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 96 "05function4.c"
+                # 96 "05type.c"
                 skip_spaces_and_lf(info);
                 come_call_finalizer3(fname_49,buffer_finalize, 0, 0, 0, 0, (void*)0);
             }
             else {
-                # 111 "05function4.c"
-                # 98 "05function4.c"
+                # 111 "05type.c"
+                # 98 "05type.c"
                 if(_if_conditional26=*info->p==34,                _if_conditional26) {
-                    # 99 "05function4.c"
+                    # 99 "05type.c"
                     info->p++;
-                    # 105 "05function4.c"
+                    # 105 "05type.c"
                     while(_while_condtional15=*info->p!=34,                    _while_condtional15) {
-                        # 102 "05function4.c"
+                        # 102 "05type.c"
                         info->p++;
                     }
-                    # 108 "05function4.c"
+                    # 108 "05type.c"
                     while(_while_condtional16=*info->p!=10,                    _while_condtional16) {
-                        # 106 "05function4.c"
+                        # 106 "05type.c"
                         info->p++;
                     }
-                    # 108 "05function4.c"
+                    # 108 "05type.c"
                     info->p++;
                 }
             }
         }
-        # 111 "05function4.c"
+        # 111 "05type.c"
         skip_spaces_and_lf(info);
     }
-    # 119 "05function4.c"
+    # 119 "05type.c"
     while(_while_condtional17=strmemcmp(info->p,"__attribute__"),    _while_condtional17) {
-        # 115 "05function4.c"
+        # 115 "05type.c"
         info->p+=strlen("__attribute__");
-        # 116 "05function4.c"
+        # 116 "05type.c"
         skip_spaces_and_lf(info);
-        # 117 "05function4.c"
+        # 117 "05type.c"
         skip_paren(info);
     }
-    # 123 "05function4.c"
+    # 123 "05type.c"
     while(_while_condtional18=strmemcmp(info->p,"__extension__"),    _while_condtional18) {
-        # 120 "05function4.c"
+        # 120 "05type.c"
         info->p+=strlen("__extension__");
-        # 121 "05function4.c"
+        # 121 "05type.c"
         skip_spaces_and_lf(info);
     }
 }
@@ -3704,9 +3704,9 @@ char c_50;
 _Bool __result52__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&c_50, 0, sizeof(char));
-    # 139 "05function4.c"
+    # 139 "05type.c"
     c_50=*(info->p+strlen(str));
-    # 140 "05function4.c"
+    # 140 "05type.c"
     __result52__ = strmemcmp(info->p,str)&&(c_50==59||c_50==32||c_50==9||c_50==10||c_50==10);
     return __result52__;
 }
@@ -3736,47 +3736,47 @@ right_value85 = (void*)0;
 right_value86 = (void*)0;
 memset(&result_52, 0, sizeof(char*));
 right_value87 = (void*)0;
-    # 145 "05function4.c"
-    buf_51=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value83=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value82=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "05function4.c", 145, "buffer"))))))));
+    # 145 "05type.c"
+    buf_51=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value83=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value82=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "05type.c", 145, "buffer"))))))));
     come_call_finalizer3(right_value82,buffer_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value83,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-    # 146 "05function4.c"
+    # 146 "05type.c"
     parse_sharp_v5(info);
-    # 153 "05function4.c"
+    # 153 "05type.c"
     while(_while_condtional19=(*info->p>=97&&*info->p<=122)||(*info->p>=65&&*info->p<=90)||*info->p==95||(*info->p>=48&&*info->p<=57)||(*info->p==36),    _while_condtional19) {
-        # 150 "05function4.c"
+        # 150 "05type.c"
         buffer_append_char(buf_51,*info->p);
-        # 151 "05function4.c"
+        # 151 "05type.c"
         info->p++;
     }
-    # 153 "05function4.c"
+    # 153 "05type.c"
     skip_spaces_and_lf(info);
-    # 160 "05function4.c"
-    # 155 "05function4.c"
+    # 160 "05type.c"
+    # 155 "05type.c"
     if(_if_conditional27=string_length(((char*)(right_value84=buffer_to_string(buf_51))))==0,    right_value84 = come_decrement_ref_count2(right_value84, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
     _if_conditional27) {
-        # 156 "05function4.c"
+        # 156 "05type.c"
         err_msg(info,"unexpected character(%c). expected word character",*info->p);
-        # 157 "05function4.c"
+        # 157 "05type.c"
         __result53__ = __result_obj__ = ((char*)(right_value85=__builtin_string("")));
         come_call_finalizer3(buf_51,buffer_finalize, 0, 0, 0, 0, (void*)0);
         right_value85 = come_decrement_ref_count2(right_value85, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         return __result53__;
     }
-    # 160 "05function4.c"
+    # 160 "05type.c"
     result_52=(char*)come_increment_ref_count(((char*)(right_value86=buffer_to_string(buf_51))));
     right_value86 = come_decrement_ref_count2(right_value86, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 166 "05function4.c"
-    # 162 "05function4.c"
+    # 166 "05type.c"
+    # 162 "05type.c"
     if(_if_conditional32=info->module_params&&map$2charphcharphp_operator_load_element(info->module_params,result_52),    _if_conditional32) {
-        # 163 "05function4.c"
-        __result58__ = __result_obj__ = ((char*)(right_value87=__builtin_string(((char*)come_null_check(map$2charphcharphp_operator_load_element(info->module_params,result_52), "05function4.c", 163, 0)))));
+        # 163 "05type.c"
+        __result58__ = __result_obj__ = ((char*)(right_value87=__builtin_string(((char*)come_null_check(map$2charphcharphp_operator_load_element(info->module_params,result_52), "05type.c", 163, 0)))));
         come_call_finalizer3(buf_51,buffer_finalize, 0, 0, 0, 0, (void*)0);
         result_52 = come_decrement_ref_count2(result_52, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         right_value87 = come_decrement_ref_count2(right_value87, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         return __result58__;
     }
-    # 166 "05function4.c"
+    # 166 "05type.c"
     __result59__ = __result_obj__ = result_52;
     come_call_finalizer3(buf_51,buffer_finalize, 0, 0, 0, 0, (void*)0);
     result_52 = come_decrement_ref_count2(result_52, (void*)0, (void*)0, 0, 1, 0, (void*)0);
@@ -3862,25 +3862,25 @@ _Bool _while_condtional21;
 _Bool _if_conditional33;
 _Bool _if_conditional34;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 183 "05function4.c"
+    # 183 "05type.c"
     while(_while_condtional21=(_Bool)1,    _while_condtional21) {
-        # 182 "05function4.c"
-        # 172 "05function4.c"
+        # 182 "05type.c"
+        # 172 "05type.c"
         if(_if_conditional33=*info->p==32||*info->p==9,        _if_conditional33) {
-            # 173 "05function4.c"
+            # 173 "05type.c"
             info->p++;
         }
         else {
-            # 182 "05function4.c"
-            # 175 "05function4.c"
+            # 182 "05type.c"
+            # 175 "05type.c"
             if(_if_conditional34=*info->p==10,            _if_conditional34) {
-                # 176 "05function4.c"
+                # 176 "05type.c"
                 info->p++;
-                # 177 "05function4.c"
+                # 177 "05type.c"
                 info->sline++;
             }
             else {
-                # 180 "05function4.c"
+                # 180 "05type.c"
                 break;
             }
         }
@@ -3907,45 +3907,45 @@ memset(&o2_saved_56, 0, sizeof(struct list$1sTypeph*));
 memset(&it_59, 0, sizeof(struct sType*));
 memset(&o2_saved_68, 0, sizeof(struct list$1sTypeph*));
 memset(&it_69, 0, sizeof(struct sType*));
-    # 192 "05function4.c"
+    # 192 "05type.c"
     for(    o2_saved_56=(struct list$1sTypeph*)come_increment_ref_count((type->mMultipleTypes)),it_59=list$1sTypeph_begin((o2_saved_56));    !list$1sTypeph_end((o2_saved_56));    it_59=list$1sTypeph_next((o2_saved_56))    ){
-        # 191 "05function4.c"
-        # 188 "05function4.c"
+        # 191 "05type.c"
+        # 188 "05type.c"
         if(_if_conditional39=is_contained_generics_class(it_59,info),        _if_conditional39) {
-            # 189 "05function4.c"
+            # 189 "05type.c"
             __result67__ = (_Bool)1;
             come_call_finalizer3(o2_saved_56,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
             return __result67__;
         }
     }
     come_call_finalizer3(o2_saved_56,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
-    # 198 "05function4.c"
+    # 198 "05type.c"
     for(    o2_saved_68=(struct list$1sTypeph*)come_increment_ref_count((type->mGenericsTypes)),it_69=list$1sTypeph_begin((o2_saved_68));    !list$1sTypeph_end((o2_saved_68));    it_69=list$1sTypeph_next((o2_saved_68))    ){
-        # 196 "05function4.c"
-        # 193 "05function4.c"
+        # 196 "05type.c"
+        # 193 "05type.c"
         if(_if_conditional57=is_contained_generics_class(it_69,info),        _if_conditional57) {
-            # 194 "05function4.c"
+            # 194 "05type.c"
             __result68__ = (_Bool)1;
             come_call_finalizer3(o2_saved_68,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
             return __result68__;
         }
     }
     come_call_finalizer3(o2_saved_68,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
-    # 201 "05function4.c"
-    # 198 "05function4.c"
+    # 201 "05type.c"
+    # 198 "05type.c"
     if(type->mClass->mGenerics) {
-        # 199 "05function4.c"
+        # 199 "05type.c"
         __result69__ = (_Bool)1;
         return __result69__;
     }
-    # 205 "05function4.c"
-    # 201 "05function4.c"
+    # 205 "05type.c"
+    # 201 "05type.c"
     if(type->mClass->mMethodGenerics) {
-        # 202 "05function4.c"
+        # 202 "05type.c"
         __result70__ = (_Bool)1;
         return __result70__;
     }
-    # 205 "05function4.c"
+    # 205 "05type.c"
     __result71__ = (_Bool)0;
     return __result71__;
 }
@@ -4339,128 +4339,128 @@ memset(&p2_115, 0, sizeof(char*));
 right_value146 = (void*)0;
 right_value147 = (void*)0;
 right_value148 = (void*)0;
-    # 210 "05function4.c"
-    param_types_70=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value89=list$1sTypeph_initialize((struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value88=(struct list$1sTypeph*)come_calloc(1, sizeof(struct list$1sTypeph)*(1), "05function4.c", 210, "list$1sTypeph"))))))));
+    # 210 "05type.c"
+    param_types_70=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value89=list$1sTypeph_initialize((struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value88=(struct list$1sTypeph*)come_calloc(1, sizeof(struct list$1sTypeph)*(1), "05type.c", 210, "list$1sTypeph"))))))));
     come_call_finalizer3(right_value88,list$1sTypephp_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value89,list$1sTypephp_finalize, 0, 1, 0, 0, __result_obj__);
-    # 211 "05function4.c"
-    param_names_71=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value91=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value90=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "05function4.c", 211, "list$1charph"))))))));
+    # 211 "05type.c"
+    param_names_71=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value91=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value90=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "05type.c", 211, "list$1charph"))))))));
     come_call_finalizer3(right_value90,list$1charphp_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value91,list$1charphp_finalize, 0, 1, 0, 0, __result_obj__);
-    # 212 "05function4.c"
-    param_default_parametors_72=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value93=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value92=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "05function4.c", 212, "list$1charph"))))))));
+    # 212 "05type.c"
+    param_default_parametors_72=(struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value93=list$1charph_initialize((struct list$1charph*)come_increment_ref_count(((struct list$1charph*)(right_value92=(struct list$1charph*)come_calloc(1, sizeof(struct list$1charph)*(1), "05type.c", 212, "list$1charph"))))))));
     come_call_finalizer3(right_value92,list$1charphp_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value93,list$1charphp_finalize, 0, 1, 0, 0, __result_obj__);
-    # 213 "05function4.c"
+    # 213 "05type.c"
     var_args_73=(_Bool)0;
-    # 228 "05function4.c"
-    # 215 "05function4.c"
+    # 228 "05type.c"
+    # 215 "05type.c"
     if(in_constructor_) {
-        # 216 "05function4.c"
+        # 216 "05type.c"
         list$1charph_add(param_names_71,(char*)come_increment_ref_count(((char*)(right_value97=xsprintf("self")))));
         right_value97 = come_decrement_ref_count2(right_value97, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 217 "05function4.c"
+        # 217 "05type.c"
         type__98=(struct sType*)come_increment_ref_count(((struct sType*)(right_value130=sType_clone(info->impl_type))));
         come_call_finalizer3(right_value130,sType_finalize, 0, 1, 0, 0, __result_obj__);
-        # 218 "05function4.c"
+        # 218 "05type.c"
         type__98->mHeap=(_Bool)1;
-        # 219 "05function4.c"
+        # 219 "05type.c"
         list$1sTypeph_add(param_types_70,(struct sType*)come_increment_ref_count(type__98));
-        # 220 "05function4.c"
+        # 220 "05type.c"
         list$1charph_add(param_default_parametors_72,((void*)0));
         come_call_finalizer3(type__98,sType_finalize, 0, 0, 0, 0, (void*)0);
     }
     else {
-        # 228 "05function4.c"
-        # 222 "05function4.c"
+        # 228 "05type.c"
+        # 222 "05type.c"
         if(info->in_class) {
-            # 223 "05function4.c"
+            # 223 "05type.c"
             list$1charph_add(param_names_71,(char*)come_increment_ref_count(((char*)(right_value131=xsprintf("self")))));
             right_value131 = come_decrement_ref_count2(right_value131, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 224 "05function4.c"
+            # 224 "05type.c"
             list$1sTypeph_add(param_types_70,(struct sType*)come_increment_ref_count(((struct sType*)(right_value132=sType_clone(info->impl_type)))));
             come_call_finalizer3(right_value132,sType_finalize, 0, 1, 0, 0, __result_obj__);
-            # 225 "05function4.c"
+            # 225 "05type.c"
             list$1charph_add(param_default_parametors_72,((void*)0));
         }
     }
-    # 228 "05function4.c"
+    # 228 "05type.c"
     expected_next_character(40,info);
-    # 231 "05function4.c"
+    # 231 "05type.c"
     void_param_99=(_Bool)0;
-    # 249 "05function4.c"
+    # 249 "05type.c"
     {
-        # 233 "05function4.c"
+        # 233 "05type.c"
         p_100=info->p;
-        # 234 "05function4.c"
+        # 234 "05type.c"
         sline_101=info->sline;
-        # 245 "05function4.c"
-        # 236 "05function4.c"
+        # 245 "05type.c"
+        # 236 "05type.c"
         if(_if_conditional136=strmemcmp(info->p,"void"),        _if_conditional136) {
-            # 237 "05function4.c"
+            # 237 "05type.c"
             info->p+=strlen("void");
-            # 238 "05function4.c"
+            # 238 "05type.c"
             skip_spaces_and_lf(info);
-            # 243 "05function4.c"
-            # 240 "05function4.c"
+            # 243 "05type.c"
+            # 240 "05type.c"
             if(_if_conditional137=*info->p==41,            _if_conditional137) {
-                # 241 "05function4.c"
+                # 241 "05type.c"
                 void_param_99=(_Bool)1;
             }
         }
-        # 245 "05function4.c"
+        # 245 "05type.c"
         info->p=p_100;
-        # 246 "05function4.c"
+        # 246 "05type.c"
         info->sline=sline_101;
     }
-    # 334 "05function4.c"
-    # 249 "05function4.c"
+    # 334 "05type.c"
+    # 249 "05type.c"
     if(void_param_99) {
-        # 259 "05function4.c"
-        # 250 "05function4.c"
+        # 259 "05type.c"
+        # 250 "05type.c"
         if(_if_conditional139=strmemcmp(info->p,"void"),        _if_conditional139) {
-            # 251 "05function4.c"
+            # 251 "05type.c"
             info->p+=strlen("void");
-            # 252 "05function4.c"
+            # 252 "05type.c"
             skip_spaces_and_lf(info);
-            # 258 "05function4.c"
-            # 254 "05function4.c"
+            # 258 "05type.c"
+            # 254 "05type.c"
             if(_if_conditional140=*info->p==41,            _if_conditional140) {
-                # 255 "05function4.c"
+                # 255 "05type.c"
                 info->p++;
-                # 256 "05function4.c"
+                # 256 "05type.c"
                 skip_spaces_and_lf(info);
             }
         }
     }
     else {
-        # 332 "05function4.c"
+        # 332 "05type.c"
         while(_while_condtional31=(_Bool)1,        _while_condtional31) {
-            # 268 "05function4.c"
-            # 262 "05function4.c"
+            # 268 "05type.c"
+            # 262 "05type.c"
             if(_if_conditional141=*info->p==41,            _if_conditional141) {
-                # 263 "05function4.c"
+                # 263 "05type.c"
                 info->p++;
-                # 264 "05function4.c"
+                # 264 "05type.c"
                 skip_spaces_and_lf(info);
-                # 265 "05function4.c"
+                # 265 "05type.c"
                 break;
             }
-            # 268 "05function4.c"
+            # 268 "05type.c"
             parse_sharp_v5(info);
-            # 270 "05function4.c"
+            # 270 "05type.c"
             multiple_assign_var1=((struct tuple3$3sTypephcharphbool*)(right_value133=parse_type(info,(_Bool)1,(_Bool)0,(_Bool)1)));
             param_type_102=(struct sType*)come_increment_ref_count(multiple_assign_var1->v1);
             param_name_103=(char*)come_increment_ref_count(multiple_assign_var1->v2);
             err_104=multiple_assign_var1->v3;
             come_call_finalizer3(right_value133,tuple3$3sTypephcharphboolp_finalize, 0, 1, 0, 0, __result_obj__);
-            # 277 "05function4.c"
-            # 272 "05function4.c"
+            # 277 "05type.c"
+            # 272 "05type.c"
             if(_if_conditional144=!err_104,            _if_conditional144) {
-                # 273 "05function4.c"
+                # 273 "05type.c"
                 printf("%s %d: failed to function parametor\n",info->sname,info->sline);
-                # 274 "05function4.c"
-                __result91__ = __result_obj__ = ((struct tuple4$4list$1sTypephplist$1charphplist$1charphpbool*)(right_value135=tuple4$4list$1sTypephplist$1charphplist$1charphpbool_initialize((struct tuple4$4list$1sTypephplist$1charphplist$1charphpbool*)come_increment_ref_count(((struct tuple4$4list$1sTypephplist$1charphplist$1charphpbool*)(right_value134=(struct tuple4$4list$1sTypephplist$1charphplist$1charphpbool*)come_calloc(1, sizeof(struct tuple4$4list$1sTypephplist$1charphplist$1charphpbool)*(1), "05function4.c", 274, "struct tuple4$4list$1sTypephplist$1charphplist$1charphpbool")))),(struct list$1sTypeph*)((void*)0),(struct list$1charph*)((void*)0),(struct list$1charph*)((void*)0),(_Bool)0)));
+                # 274 "05type.c"
+                __result91__ = __result_obj__ = ((struct tuple4$4list$1sTypephplist$1charphplist$1charphpbool*)(right_value135=tuple4$4list$1sTypephplist$1charphplist$1charphpbool_initialize((struct tuple4$4list$1sTypephplist$1charphplist$1charphpbool*)come_increment_ref_count(((struct tuple4$4list$1sTypephplist$1charphplist$1charphpbool*)(right_value134=(struct tuple4$4list$1sTypephplist$1charphplist$1charphpbool*)come_calloc(1, sizeof(struct tuple4$4list$1sTypephplist$1charphplist$1charphpbool)*(1), "05type.c", 274, "struct tuple4$4list$1sTypephplist$1charphplist$1charphpbool")))),(struct list$1sTypeph*)((void*)0),(struct list$1charph*)((void*)0),(struct list$1charph*)((void*)0),(_Bool)0)));
                 come_call_finalizer3(param_type_102,sType_finalize, 0, 0, 0, 0, (void*)0);
                 param_name_103 = come_decrement_ref_count2(param_name_103, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 come_call_finalizer3(param_types_70,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
@@ -4470,76 +4470,76 @@ right_value148 = (void*)0;
                 come_call_finalizer3(right_value135,tuple4$4list$1sTypephplist$1charphplist$1charphpboolp_finalize, 0, 1, 0, 0, __result_obj__);
                 return __result91__;
             }
-            # 277 "05function4.c"
+            # 277 "05type.c"
             param_type2_105=(struct sType*)come_increment_ref_count(((struct sType*)(right_value136=solve_generics(param_type_102,info->generics_type,info))));
             come_call_finalizer3(right_value136,sType_finalize, 0, 1, 0, 0, __result_obj__);
-            # 279 "05function4.c"
+            # 279 "05type.c"
             param_type2_105->mFunctionParam=(_Bool)1;
-            # 281 "05function4.c"
+            # 281 "05type.c"
             list$1sTypeph_push_back(param_types_70,(struct sType*)come_increment_ref_count(((struct sType*)(right_value140=sType_clone(param_type2_105)))));
             come_call_finalizer3(right_value140,sType_finalize, 0, 1, 0, 0, __result_obj__);
-            # 282 "05function4.c"
+            # 282 "05type.c"
             list$1charph_push_back(param_names_71,(char*)come_increment_ref_count(((char*)(right_value144=string_clone(param_name_103)))));
             right_value144 = come_decrement_ref_count2(right_value144, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 311 "05function4.c"
-            # 284 "05function4.c"
+            # 311 "05type.c"
+            # 284 "05type.c"
             if(_if_conditional149=*info->p==61,            _if_conditional149) {
-                # 285 "05function4.c"
+                # 285 "05type.c"
                 info->p++;
-                # 286 "05function4.c"
+                # 286 "05type.c"
                 skip_spaces_and_lf(info);
-                # 288 "05function4.c"
+                # 288 "05type.c"
                 parse_sharp_v5(info);
-                # 290 "05function4.c"
+                # 290 "05type.c"
                 p_112=info->p;
-                # 292 "05function4.c"
+                # 292 "05type.c"
                 no_comma_113=info->no_comma;
-                # 293 "05function4.c"
+                # 293 "05type.c"
                 info->no_comma=(_Bool)1;
-                # 295 "05function4.c"
+                # 295 "05type.c"
                 node_114=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value145=expression_v13(info))));
                 if(right_value145) { right_value145 = come_decrement_ref_count2(right_value145, ((struct sNode*)right_value145)->finalize, ((struct sNode*)right_value145)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                # 297 "05function4.c"
+                # 297 "05type.c"
                 info->no_comma=no_comma_113;
-                # 299 "05function4.c"
+                # 299 "05type.c"
                 p2_115=info->p;
-                # 301 "05function4.c"
+                # 301 "05type.c"
                 char buf_116[p2_115-p_112+1];
                 memset(&buf_116, 0, sizeof(char)                *(p2_115-p_112+1)                );
-                # 302 "05function4.c"
+                # 302 "05type.c"
                 memcpy(buf_116,p_112,p2_115-p_112);
-                # 303 "05function4.c"
+                # 303 "05type.c"
                 buf_116[p2_115-p_112]=0;
-                # 305 "05function4.c"
+                # 305 "05type.c"
                 list$1charph_push_back(param_default_parametors_72,(char*)come_increment_ref_count(((char*)(right_value146=__builtin_string(buf_116)))));
                 right_value146 = come_decrement_ref_count2(right_value146, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                 if(node_114) { node_114 = come_decrement_ref_count2(node_114, ((struct sNode*)node_114)->finalize, ((struct sNode*)node_114)->_protocol_obj, 0, 0, 0, (void*)0); } 
             }
             else {
-                # 308 "05function4.c"
+                # 308 "05type.c"
                 list$1charph_push_back(param_default_parametors_72,((void*)0));
             }
-            # 311 "05function4.c"
+            # 311 "05type.c"
             parse_sharp_v5(info);
-            # 331 "05function4.c"
-            # 313 "05function4.c"
+            # 331 "05type.c"
+            # 313 "05type.c"
             if(_if_conditional150=*info->p==44,            _if_conditional150) {
-                # 314 "05function4.c"
+                # 314 "05type.c"
                 info->p++;
-                # 315 "05function4.c"
+                # 315 "05type.c"
                 skip_spaces_and_lf(info);
-                # 325 "05function4.c"
-                # 317 "05function4.c"
+                # 325 "05type.c"
+                # 317 "05type.c"
                 if(_if_conditional151=strmemcmp(info->p,"..."),                _if_conditional151) {
-                    # 318 "05function4.c"
+                    # 318 "05type.c"
                     info->p+=strlen("...");
-                    # 319 "05function4.c"
+                    # 319 "05type.c"
                     skip_spaces_and_lf(info);
-                    # 320 "05function4.c"
+                    # 320 "05type.c"
                     var_args_73=(_Bool)1;
-                    # 322 "05function4.c"
+                    # 322 "05type.c"
                     expected_next_character(41,info);
-                    # 323 "05function4.c"
+                    # 323 "05type.c"
                     come_call_finalizer3(param_type_102,sType_finalize, 0, 0, 0, 0, (void*)0);
                     param_name_103 = come_decrement_ref_count2(param_name_103, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                     come_call_finalizer3(param_type2_105,sType_finalize, 0, 0, 0, 0, (void*)0);
@@ -4547,14 +4547,14 @@ right_value148 = (void*)0;
                 }
             }
             else {
-                # 331 "05function4.c"
-                # 326 "05function4.c"
+                # 331 "05type.c"
+                # 326 "05type.c"
                 if(_if_conditional152=*info->p==41,                _if_conditional152) {
-                    # 327 "05function4.c"
+                    # 327 "05type.c"
                     info->p++;
-                    # 328 "05function4.c"
+                    # 328 "05type.c"
                     skip_spaces_and_lf(info);
-                    # 329 "05function4.c"
+                    # 329 "05type.c"
                     come_call_finalizer3(param_type_102,sType_finalize, 0, 0, 0, 0, (void*)0);
                     param_name_103 = come_decrement_ref_count2(param_name_103, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                     come_call_finalizer3(param_type2_105,sType_finalize, 0, 0, 0, 0, (void*)0);
@@ -4566,8 +4566,8 @@ right_value148 = (void*)0;
             come_call_finalizer3(param_type2_105,sType_finalize, 0, 0, 0, 0, (void*)0);
         }
     }
-    # 334 "05function4.c"
-    __result95__ = __result_obj__ = ((struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool*)(right_value148=tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool_initialize((struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool*)come_increment_ref_count(((struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool*)(right_value147=(struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool*)come_calloc(1, sizeof(struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool)*(1), "05function4.c", 334, "struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool")))),(struct list$1sTypeph*)come_increment_ref_count(param_types_70),(struct list$1charph*)come_increment_ref_count(param_names_71),(struct list$1charph*)come_increment_ref_count(param_default_parametors_72),var_args_73)));
+    # 334 "05type.c"
+    __result95__ = __result_obj__ = ((struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool*)(right_value148=tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool_initialize((struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool*)come_increment_ref_count(((struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool*)(right_value147=(struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool*)come_calloc(1, sizeof(struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool)*(1), "05type.c", 334, "struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool")))),(struct list$1sTypeph*)come_increment_ref_count(param_types_70),(struct list$1charph*)come_increment_ref_count(param_names_71),(struct list$1charph*)come_increment_ref_count(param_default_parametors_72),var_args_73)));
     come_call_finalizer3(param_types_70,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
     come_call_finalizer3(param_names_71,list$1charphp_finalize, 0, 0, 0, 0, (void*)0);
     come_call_finalizer3(param_default_parametors_72,list$1charphp_finalize, 0, 0, 0, 0, (void*)0);
@@ -6240,58 +6240,58 @@ right_value190 = (void*)0;
 right_value191 = (void*)0;
 right_value192 = (void*)0;
 memset(&i_151, 0, sizeof(int));
-    # 339 "05function4.c"
+    # 339 "05type.c"
     right_type2_117=(struct sType*)come_increment_ref_count(((struct sType*)(right_value149=sType_clone(right_type))));
     come_call_finalizer3(right_value149,sType_finalize, 0, 1, 0, 0, __result_obj__);
-    # 366 "05function4.c"
-    # 341 "05function4.c"
+    # 366 "05type.c"
+    # 341 "05type.c"
     if(_if_conditional157=list$1sTypeph_length(left_type->mMultipleTypes)>0,    _if_conditional157) {
-        # 342 "05function4.c"
+        # 342 "05type.c"
         left_type2_118=(struct sType*)come_increment_ref_count(((struct sType*)(right_value150=sType_clone(left_type))));
         come_call_finalizer3(right_value150,sType_finalize, 0, 1, 0, 0, __result_obj__);
-        # 343 "05function4.c"
+        # 343 "05type.c"
         found_match_type_119=(_Bool)0;
-        # 350 "05function4.c"
+        # 350 "05type.c"
         for(        o2_saved_120=(struct list$1sTypeph*)come_increment_ref_count((left_type->mMultipleTypes)),it_121=list$1sTypeph_begin((o2_saved_120));        !list$1sTypeph_end((o2_saved_120));        it_121=list$1sTypeph_next((o2_saved_120))        ){
-            # 348 "05function4.c"
-            # 345 "05function4.c"
+            # 348 "05type.c"
+            # 345 "05type.c"
             if(_if_conditional158=check_assign_type(msg,it_121,right_type,come_value,check_no_pointer,(_Bool)0,info),            _if_conditional158) {
-                # 346 "05function4.c"
+                # 346 "05type.c"
                 found_match_type_119=(_Bool)1;
             }
         }
         come_call_finalizer3(o2_saved_120,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
-        # 357 "05function4.c"
-        # 350 "05function4.c"
+        # 357 "05type.c"
+        # 350 "05type.c"
         if(_if_conditional159=!found_match_type_119,        _if_conditional159) {
-            # 351 "05function4.c"
+            # 351 "05type.c"
             err_msg(info,"type errorX");
-            # 352 "05function4.c"
+            # 352 "05type.c"
             printf("left type is %s pointer num %d\n",left_type->mClass->mName,left_type->mPointerNum);
-            # 353 "05function4.c"
+            # 353 "05type.c"
             printf("right type is %s pointer num %d\n",right_type2_117->mClass->mName,right_type2_117->mPointerNum);
-            # 354 "05function4.c"
+            # 354 "05type.c"
             exit(2);
         }
-        # 357 "05function4.c"
+        # 357 "05type.c"
         tmp_122=(char*)come_increment_ref_count(((char*)(right_value151=xsprintf("(void*)%s",come_value->c_value))));
         right_value151 = come_decrement_ref_count2(right_value151, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 358 "05function4.c"
+        # 358 "05type.c"
         __dec_obj45=come_value->c_value;
         come_value->c_value=(char*)come_increment_ref_count(((char*)(right_value152=string_clone(tmp_122))));
         __dec_obj45 = come_decrement_ref_count2(__dec_obj45, (void*)0, (void*)0, 0,0,0, (void*)0);
         right_value152 = come_decrement_ref_count2(right_value152, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 359 "05function4.c"
+        # 359 "05type.c"
         __dec_obj46=come_value->type;
-        come_value->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value154=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value153=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 359, "sType")))),"void*",(_Bool)0,info))));
+        come_value->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value154=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value153=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 359, "sType")))),"void*",(_Bool)0,info))));
         come_call_finalizer3(__dec_obj46,sType_finalize, 0, 0, 0, 0, (void*)0);
         come_call_finalizer3(right_value153,sType_finalize, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer3(right_value154,sType_finalize, 0, 1, 0, 0, __result_obj__);
-        # 360 "05function4.c"
-        come_value->type->mHeap=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(left_type->mMultipleTypes,0), "05function4.c", 360, 1))->mHeap;
-        # 361 "05function4.c"
+        # 360 "05type.c"
+        come_value->type->mHeap=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(left_type->mMultipleTypes,0), "05type.c", 360, 1))->mHeap;
+        # 361 "05type.c"
         come_value->var=((void*)0);
-        # 363 "05function4.c"
+        # 363 "05type.c"
         __result100__ = (_Bool)1;
         come_call_finalizer3(left_type2_118,sType_finalize, 0, 0, 0, 0, (void*)0);
         tmp_122 = come_decrement_ref_count2(tmp_122, (void*)0, (void*)0, 0, 0, 0, (void*)0);
@@ -6300,94 +6300,94 @@ memset(&i_151, 0, sizeof(int));
         come_call_finalizer3(left_type2_118,sType_finalize, 0, 0, 0, 0, (void*)0);
         tmp_122 = come_decrement_ref_count2(tmp_122, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
-    # 366 "05function4.c"
+    # 366 "05type.c"
     left_no_solved_generics_type_126=left_type->mNoSolvedGenericsType->v1;
-    # 367 "05function4.c"
+    # 367 "05type.c"
     right_no_solved_generics_type_127=right_type2_117->mNoSolvedGenericsType->v1;
-    # 369 "05function4.c"
+    # 369 "05type.c"
     left_class_128=left_type->mClass;
-    # 370 "05function4.c"
+    # 370 "05type.c"
     right_class_129=right_type2_117->mClass;
-    # 372 "05function4.c"
+    # 372 "05type.c"
     parent_class_130=(_Bool)0;
-    # 387 "05function4.c"
-    # 373 "05function4.c"
+    # 387 "05type.c"
+    # 373 "05type.c"
     if(_if_conditional162=string_operator_not_equals(left_class_128->mName,right_class_129->mName),    _if_conditional162) {
-        # 385 "05function4.c"
+        # 385 "05type.c"
         while(_while_condtional33=left_class_128&&right_class_129,        _while_condtional33) {
-            # 378 "05function4.c"
-            # 375 "05function4.c"
+            # 378 "05type.c"
+            # 375 "05type.c"
             if(_if_conditional163=string_operator_equals(left_class_128->mName,right_class_129->mName),            _if_conditional163) {
-                # 376 "05function4.c"
+                # 376 "05type.c"
                 parent_class_130=(_Bool)1;
             }
-            # 384 "05function4.c"
-            # 378 "05function4.c"
+            # 384 "05type.c"
+            # 378 "05type.c"
             if(right_class_129->mParentClassName) {
-                # 379 "05function4.c"
+                # 379 "05type.c"
                 right_class_129=map$2charphsClassphp_operator_load_element(info->classes,right_class_129->mParentClassName);
             }
             else {
-                # 382 "05function4.c"
+                # 382 "05type.c"
                 right_class_129=((void*)0);
             }
         }
     }
-    # 744 "05function4.c"
-    # 387 "05function4.c"
+    # 744 "05type.c"
+    # 387 "05type.c"
     if(_if_conditional176=left_no_solved_generics_type_126&&right_no_solved_generics_type_127,    _if_conditional176) {
-        # 420 "05function4.c"
-        # 388 "05function4.c"
+        # 420 "05type.c"
+        # 388 "05type.c"
         if(_if_conditional177=string_operator_equals(left_type->mClass->mName,right_type2_117->mClass->mName)&&left_type->mPointerNum==right_type2_117->mPointerNum,        _if_conditional177) {
         }
         else {
-            # 420 "05function4.c"
-            # 390 "05function4.c"
+            # 420 "05type.c"
+            # 390 "05type.c"
             if(_if_conditional178=string_operator_equals(left_type->mClass->mName,right_type2_117->mClass->mName)&&(left_type->mPointerNum!=right_type2_117->mPointerNum||left_type->mHeap!=right_type2_117->mHeap),            _if_conditional178) {
-                # 391 "05function4.c"
+                # 391 "05type.c"
                 err_msg(info,"poinetr num err");
-                # 392 "05function4.c"
+                # 392 "05type.c"
                 printf("left type generics type parametor number is %d(%s)(%s)\n",list$1sTypeph_length(left_no_solved_generics_type_126->mGenericsTypes),left_no_solved_generics_type_126->mClass->mName,left_type->mClass->mName);
-                # 393 "05function4.c"
+                # 393 "05type.c"
                 printf("right type generics type parametor number is %d(%s)(%s)\n",list$1sTypeph_length(right_no_solved_generics_type_127->mGenericsTypes),right_no_solved_generics_type_127->mClass->mName,right_type2_117->mClass->mName);
-                # 394 "05function4.c"
+                # 394 "05type.c"
                 exit(2);
             }
             else {
-                # 420 "05function4.c"
-                # 396 "05function4.c"
+                # 420 "05type.c"
+                # 396 "05type.c"
                 if(_if_conditional179=list$1sTypeph_length(left_no_solved_generics_type_126->mGenericsTypes)>0,                _if_conditional179) {
-                    # 419 "05function4.c"
-                    # 397 "05function4.c"
+                    # 419 "05type.c"
+                    # 397 "05type.c"
                     if(_if_conditional180=(string_operator_equals(left_no_solved_generics_type_126->mClass->mName,"void")&&left_no_solved_generics_type_126->mPointerNum>0&&right_no_solved_generics_type_127->mPointerNum>0)||(string_operator_equals(right_no_solved_generics_type_127->mClass->mName,"void")&&right_no_solved_generics_type_127->mPointerNum>0&&left_no_solved_generics_type_126->mPointerNum>0),                    _if_conditional180) {
                     }
                     else {
-                        # 413 "05function4.c"
-                        # 401 "05function4.c"
+                        # 413 "05type.c"
+                        # 401 "05type.c"
                         if(_if_conditional181=list$1sTypeph_length(left_no_solved_generics_type_126->mGenericsTypes)!=list$1sTypeph_length(right_no_solved_generics_type_127->mGenericsTypes),                        _if_conditional181) {
-                            # 410 "05function4.c"
-                            # 403 "05function4.c"
+                            # 410 "05type.c"
+                            # 403 "05type.c"
                             if(print_err_msg) {
-                                # 404 "05function4.c"
+                                # 404 "05type.c"
                                 err_msg(info,"generics type parametor number error");
-                                # 405 "05function4.c"
+                                # 405 "05type.c"
                                 printf("left type generics type parametor number is %d(%s)(%s)\n",list$1sTypeph_length(left_no_solved_generics_type_126->mGenericsTypes),left_no_solved_generics_type_126->mClass->mName,left_type->mClass->mName);
-                                # 406 "05function4.c"
+                                # 406 "05type.c"
                                 printf("right type generics type parametor number is %d(%s)(%s)\n",list$1sTypeph_length(right_no_solved_generics_type_127->mGenericsTypes),right_no_solved_generics_type_127->mClass->mName,right_type2_117->mClass->mName);
-                                # 407 "05function4.c"
+                                # 407 "05type.c"
                                 exit(2);
                             }
-                            # 410 "05function4.c"
+                            # 410 "05type.c"
                             __result105__ = (_Bool)0;
                             come_call_finalizer3(right_type2_117,sType_finalize, 0, 0, 0, 0, (void*)0);
                             return __result105__;
                         }
-                        # 417 "05function4.c"
+                        # 417 "05type.c"
                         for(                        i_136=0;                        i_136<list$1sTypeph_length(left_no_solved_generics_type_126->mGenericsTypes);                        i_136++                        ){
-                            # 414 "05function4.c"
-                            check_assign_type(msg,((struct sType*)come_null_check(list$1sTypephp_operator_load_element(left_no_solved_generics_type_126->mGenericsTypes,i_136), "05function4.c", 414, 2)),((struct sType*)come_null_check(list$1sTypephp_operator_load_element(right_no_solved_generics_type_127->mGenericsTypes,i_136), "05function4.c", 414, 3)),come_value,(_Bool)0,(_Bool)1,info);
+                            # 414 "05type.c"
+                            check_assign_type(msg,((struct sType*)come_null_check(list$1sTypephp_operator_load_element(left_no_solved_generics_type_126->mGenericsTypes,i_136), "05type.c", 414, 2)),((struct sType*)come_null_check(list$1sTypephp_operator_load_element(right_no_solved_generics_type_127->mGenericsTypes,i_136), "05type.c", 414, 3)),come_value,(_Bool)0,(_Bool)1,info);
                         }
-                        # 417 "05function4.c"
+                        # 417 "05type.c"
                         check_assign_type(msg,left_no_solved_generics_type_126,right_no_solved_generics_type_127,come_value,(_Bool)0,(_Bool)1,info);
                     }
                 }
@@ -6395,63 +6395,63 @@ memset(&i_151, 0, sizeof(int));
         }
     }
     else {
-        # 744 "05function4.c"
-        # 421 "05function4.c"
+        # 744 "05type.c"
+        # 421 "05type.c"
         if(_if_conditional183=parent_class_130&&left_type->mPointerNum==1&&right_type->mPointerNum==1,        _if_conditional183) {
-            # 422 "05function4.c"
+            # 422 "05type.c"
             __dec_obj47=come_value->c_value;
             come_value->c_value=(char*)come_increment_ref_count(((char*)(right_value155=xsprintf("(struct %s*)%s",left_type->mClass->mName,come_value->c_value))));
             __dec_obj47 = come_decrement_ref_count2(__dec_obj47, (void*)0, (void*)0, 0,0,0, (void*)0);
             right_value155 = come_decrement_ref_count2(right_value155, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 423 "05function4.c"
+            # 423 "05type.c"
             __dec_obj48=come_value->type;
             come_value->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value156=sType_clone(left_type))));
             come_call_finalizer3(__dec_obj48,sType_finalize, 0, 0, 0, 0, (void*)0);
             come_call_finalizer3(right_value156,sType_finalize, 0, 1, 0, 0, __result_obj__);
-            # 424 "05function4.c"
+            # 424 "05type.c"
             come_value->var=((void*)0);
-            # 426 "05function4.c"
+            # 426 "05type.c"
             __dec_obj49=right_type2_117;
             right_type2_117=(struct sType*)come_increment_ref_count(((struct sType*)(right_value157=sType_clone(left_type))));
             come_call_finalizer3(__dec_obj49,sType_finalize, 0, 0, 0, 0, (void*)0);
             come_call_finalizer3(right_value157,sType_finalize, 0, 1, 0, 0, __result_obj__);
         }
         else {
-            # 744 "05function4.c"
-            # 428 "05function4.c"
+            # 744 "05type.c"
+            # 428 "05type.c"
             if(check_no_pointer) {
-                # 476 "05function4.c"
-                # 429 "05function4.c"
+                # 476 "05type.c"
+                # 429 "05type.c"
                 if(_if_conditional185=left_type->mPointerNum>0,                _if_conditional185) {
-                    # 455 "05function4.c"
-                    # 430 "05function4.c"
+                    # 455 "05type.c"
+                    # 430 "05type.c"
                     if(_if_conditional186=right_type2_117->mPointerNum>0,                    _if_conditional186) {
-                        # 444 "05function4.c"
-                        # 431 "05function4.c"
+                        # 444 "05type.c"
+                        # 431 "05type.c"
                         if(_if_conditional187=string_operator_equals(left_type->mClass->mName,"void")||string_operator_equals(right_type2_117->mClass->mName,"void"),                        _if_conditional187) {
                         }
                         else {
-                            # 444 "05function4.c"
-                            # 433 "05function4.c"
+                            # 444 "05type.c"
+                            # 433 "05type.c"
                             if(_if_conditional188=string_operator_equals(left_type->mClass->mName,"va_list")||string_operator_equals(right_type2_117->mClass->mName,"va_list"),                            _if_conditional188) {
                             }
                             else {
-                                # 444 "05function4.c"
-                                # 435 "05function4.c"
+                                # 444 "05type.c"
+                                # 435 "05type.c"
                                 if(_if_conditional189=string_operator_not_equals(left_type->mClass->mName,right_type2_117->mClass->mName),                                _if_conditional189) {
-                                    # 442 "05function4.c"
-                                    # 436 "05function4.c"
+                                    # 442 "05type.c"
+                                    # 436 "05type.c"
                                     if(print_err_msg) {
-                                        # 437 "05function4.c"
+                                        # 437 "05type.c"
                                         err_msg(info,"type error1");
-                                        # 438 "05function4.c"
+                                        # 438 "05type.c"
                                         printf("left type is %s pointer num %d\n",left_type->mClass->mName,left_type->mPointerNum);
-                                        # 439 "05function4.c"
+                                        # 439 "05type.c"
                                         printf("right type is %s pointer num %d\n",right_type2_117->mClass->mName,right_type2_117->mPointerNum);
-                                        # 440 "05function4.c"
+                                        # 440 "05type.c"
                                         exit(2);
                                     }
-                                    # 442 "05function4.c"
+                                    # 442 "05type.c"
                                     __result106__ = (_Bool)0;
                                     come_call_finalizer3(right_type2_117,sType_finalize, 0, 0, 0, 0, (void*)0);
                                     return __result106__;
@@ -6460,67 +6460,67 @@ memset(&i_151, 0, sizeof(int));
                         }
                     }
                     else {
-                        # 453 "05function4.c"
-                        # 446 "05function4.c"
+                        # 453 "05type.c"
+                        # 446 "05type.c"
                         if(print_err_msg) {
-                            # 447 "05function4.c"
+                            # 447 "05type.c"
                             err_msg(info,"type error2");
-                            # 448 "05function4.c"
+                            # 448 "05type.c"
                             printf("left type is %s pointer num %d\n",left_type->mClass->mName,left_type->mPointerNum);
-                            # 449 "05function4.c"
+                            # 449 "05type.c"
                             printf("right type is %s pointer num %d\n",right_type2_117->mClass->mName,right_type2_117->mPointerNum);
-                            # 450 "05function4.c"
+                            # 450 "05type.c"
                             exit(2);
                         }
-                        # 453 "05function4.c"
+                        # 453 "05type.c"
                         __result107__ = (_Bool)0;
                         come_call_finalizer3(right_type2_117,sType_finalize, 0, 0, 0, 0, (void*)0);
                         return __result107__;
                     }
                 }
                 else {
-                    # 476 "05function4.c"
-                    # 456 "05function4.c"
+                    # 476 "05type.c"
+                    # 456 "05type.c"
                     if(_if_conditional192=left_type->mPointerNum==0&&right_type2_117->mPointerNum>0,                    _if_conditional192) {
-                        # 463 "05function4.c"
-                        # 457 "05function4.c"
+                        # 463 "05type.c"
+                        # 457 "05type.c"
                         if(print_err_msg) {
-                            # 458 "05function4.c"
+                            # 458 "05type.c"
                             err_msg(info,"type error3");
-                            # 459 "05function4.c"
+                            # 459 "05type.c"
                             printf("left type is %s pointer num %d\n",left_type->mClass->mName,left_type->mPointerNum);
-                            # 460 "05function4.c"
+                            # 460 "05type.c"
                             printf("right type is %s pointer num %d\n",right_type2_117->mClass->mName,right_type2_117->mPointerNum);
-                            # 461 "05function4.c"
+                            # 461 "05type.c"
                             exit(2);
                         }
-                        # 463 "05function4.c"
+                        # 463 "05type.c"
                         __result108__ = (_Bool)0;
                         come_call_finalizer3(right_type2_117,sType_finalize, 0, 0, 0, 0, (void*)0);
                         return __result108__;
                     }
                     else {
-                        # 476 "05function4.c"
-                        # 465 "05function4.c"
+                        # 476 "05type.c"
+                        # 465 "05type.c"
                         if(_if_conditional194=left_type->mPointerNum>0&&right_type2_117->mPointerNum==0&&string_operator_equals(right_type2_117->mClass->mName,"lambda")&&string_operator_equals(left_type->mClass->mName,"lambda"),                        _if_conditional194) {
                         }
                         else {
-                            # 476 "05function4.c"
-                            # 467 "05function4.c"
+                            # 476 "05type.c"
+                            # 467 "05type.c"
                             if(_if_conditional195=string_operator_not_equals(left_type->mClass->mName,right_type2_117->mClass->mName),                            _if_conditional195) {
-                                # 474 "05function4.c"
-                                # 468 "05function4.c"
+                                # 474 "05type.c"
+                                # 468 "05type.c"
                                 if(print_err_msg) {
-                                    # 469 "05function4.c"
+                                    # 469 "05type.c"
                                     err_msg(info,"type error4");
-                                    # 470 "05function4.c"
+                                    # 470 "05type.c"
                                     printf("left type is %s pointer num %d\n",left_type->mClass->mName,left_type->mPointerNum);
-                                    # 471 "05function4.c"
+                                    # 471 "05type.c"
                                     printf("right type is %s pointer num %d\n",right_type2_117->mClass->mName,right_type2_117->mPointerNum);
-                                    # 472 "05function4.c"
+                                    # 472 "05type.c"
                                     exit(2);
                                 }
-                                # 474 "05function4.c"
+                                # 474 "05type.c"
                                 __result109__ = (_Bool)0;
                                 come_call_finalizer3(right_type2_117,sType_finalize, 0, 0, 0, 0, (void*)0);
                                 return __result109__;
@@ -6530,64 +6530,64 @@ memset(&i_151, 0, sizeof(int));
                 }
             }
             else {
-                # 744 "05function4.c"
-                # 477 "05function4.c"
+                # 744 "05type.c"
+                # 477 "05type.c"
                 if(_if_conditional197=!left_type->mNullValue&&right_type2_117->mNullValue,                _if_conditional197) {
-                    # 502 "05function4.c"
-                    # 478 "05function4.c"
+                    # 502 "05type.c"
+                    # 478 "05type.c"
                     if(_if_conditional198=string_operator_equals(left_type->mClass->mName,"__builtin_va_list")||string_operator_equals(right_type2_117->mClass->mName,"__builtin_va_list"),                    _if_conditional198) {
                     }
                     else {
-                        # 502 "05function4.c"
-                        # 480 "05function4.c"
+                        # 502 "05type.c"
+                        # 480 "05type.c"
                         if(_if_conditional199=string_operator_equals(left_type->mClass->mName,"va_list")||string_operator_equals(right_type2_117->mClass->mName,"va_list"),                        _if_conditional199) {
                         }
                         else {
-                            # 502 "05function4.c"
-                            # 482 "05function4.c"
+                            # 502 "05type.c"
+                            # 482 "05type.c"
                             if(_if_conditional200=string_operator_equals(right_type2_117->mClass->mName,"void")&&right_type2_117->mPointerNum==0,                            _if_conditional200) {
-                                # 489 "05function4.c"
-                                # 483 "05function4.c"
+                                # 489 "05type.c"
+                                # 483 "05type.c"
                                 if(print_err_msg) {
-                                    # 484 "05function4.c"
+                                    # 484 "05type.c"
                                     err_msg(info,"type error6");
-                                    # 485 "05function4.c"
+                                    # 485 "05type.c"
                                     printf("left type is %s pointer num %d\n",left_type->mClass->mName,left_type->mPointerNum);
-                                    # 486 "05function4.c"
+                                    # 486 "05type.c"
                                     printf("right type is %s pointer num %d\n",right_type2_117->mClass->mName,right_type2_117->mPointerNum);
-                                    # 487 "05function4.c"
+                                    # 487 "05type.c"
                                     exit(2);
                                 }
-                                # 489 "05function4.c"
+                                # 489 "05type.c"
                                 __result110__ = (_Bool)0;
                                 come_call_finalizer3(right_type2_117,sType_finalize, 0, 0, 0, 0, (void*)0);
                                 return __result110__;
                             }
                             else {
-                                # 492 "05function4.c"
-                                buf2_137=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value159=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value158=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "05function4.c", 492, "buffer"))))))));
+                                # 492 "05type.c"
+                                buf2_137=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value159=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value158=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "05type.c", 492, "buffer"))))))));
                                 come_call_finalizer3(right_value158,buffer_finalize, 0, 1, 0, 0, __result_obj__);
                                 come_call_finalizer3(right_value159,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-                                # 494 "05function4.c"
+                                # 494 "05type.c"
                                 buffer_append_str(buf2_137,((char*)(right_value164=xsprintf("come_null_check(\%s, \"\%s\", \%s, \%s)",((char*)(right_value160=string_to_string(come_value->c_value))),((char*)(right_value161=string_to_string(info->sname))),((char*)(right_value162=int_to_string(info->sline))),((char*)(right_value163=int_to_string(gComeDebugStackFrameID++)))))));
                                 right_value160 = come_decrement_ref_count2(right_value160, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 right_value161 = come_decrement_ref_count2(right_value161, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 right_value162 = come_decrement_ref_count2(right_value162, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 right_value163 = come_decrement_ref_count2(right_value163, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 right_value164 = come_decrement_ref_count2(right_value164, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                # 496 "05function4.c"
+                                # 496 "05type.c"
                                 __dec_obj50=come_value->c_value;
                                 come_value->c_value=(char*)come_increment_ref_count(((char*)(right_value165=buffer_to_string(buf2_137))));
                                 __dec_obj50 = come_decrement_ref_count2(__dec_obj50, (void*)0, (void*)0, 0,0,0, (void*)0);
                                 right_value165 = come_decrement_ref_count2(right_value165, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                # 497 "05function4.c"
+                                # 497 "05type.c"
                                 __dec_obj51=come_value->type;
                                 come_value->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value166=sType_clone(left_type))));
                                 come_call_finalizer3(__dec_obj51,sType_finalize, 0, 0, 0, 0, (void*)0);
                                 come_call_finalizer3(right_value166,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                                # 498 "05function4.c"
+                                # 498 "05type.c"
                                 come_value->var=((void*)0);
-                                # 500 "05function4.c"
+                                # 500 "05type.c"
                                 __dec_obj52=right_type2_117;
                                 right_type2_117=(struct sType*)come_increment_ref_count(((struct sType*)(right_value167=sType_clone(left_type))));
                                 come_call_finalizer3(__dec_obj52,sType_finalize, 0, 0, 0, 0, (void*)0);
@@ -6598,111 +6598,111 @@ memset(&i_151, 0, sizeof(int));
                     }
                 }
                 else {
-                    # 744 "05function4.c"
-                    # 503 "05function4.c"
+                    # 744 "05type.c"
+                    # 503 "05type.c"
                     if(_if_conditional202=string_operator_equals(left_type->mClass->mName,"integer")&&left_type->mPointerNum==1,                    _if_conditional202) {
-                        # 576 "05function4.c"
-                        # 504 "05function4.c"
+                        # 576 "05type.c"
+                        # 504 "05type.c"
                         if(_if_conditional203=string_operator_equals(right_type2_117->mClass->mName,"integer")&&right_type2_117->mPointerNum==1,                        _if_conditional203) {
                         }
                         else {
-                            # 576 "05function4.c"
-                            # 506 "05function4.c"
+                            # 576 "05type.c"
+                            # 506 "05type.c"
                             if(_if_conditional204=string_operator_equals(left_type->mClass->mName,"__builtin_va_list")||string_operator_equals(right_type2_117->mClass->mName,"__builtin_va_list"),                            _if_conditional204) {
                             }
                             else {
-                                # 576 "05function4.c"
-                                # 508 "05function4.c"
+                                # 576 "05type.c"
+                                # 508 "05type.c"
                                 if(_if_conditional205=string_operator_equals(left_type->mClass->mName,"va_list")||string_operator_equals(right_type2_117->mClass->mName,"va_list"),                                _if_conditional205) {
                                 }
                                 else {
-                                    # 576 "05function4.c"
-                                    # 510 "05function4.c"
+                                    # 576 "05type.c"
+                                    # 510 "05type.c"
                                     if(_if_conditional206=string_operator_equals(right_type2_117->mClass->mName,"lambda"),                                    _if_conditional206) {
-                                        # 517 "05function4.c"
-                                        # 511 "05function4.c"
+                                        # 517 "05type.c"
+                                        # 511 "05type.c"
                                         if(print_err_msg) {
-                                            # 512 "05function4.c"
+                                            # 512 "05type.c"
                                             err_msg(info,"type error6");
-                                            # 513 "05function4.c"
+                                            # 513 "05type.c"
                                             printf("left type is %s pointer num %d\n",left_type->mClass->mName,left_type->mPointerNum);
-                                            # 514 "05function4.c"
+                                            # 514 "05type.c"
                                             printf("right type is %s pointer num %d\n",right_type2_117->mClass->mName,right_type2_117->mPointerNum);
-                                            # 515 "05function4.c"
+                                            # 515 "05type.c"
                                             exit(2);
                                         }
-                                        # 517 "05function4.c"
+                                        # 517 "05type.c"
                                         __result111__ = (_Bool)0;
                                         come_call_finalizer3(right_type2_117,sType_finalize, 0, 0, 0, 0, (void*)0);
                                         return __result111__;
                                     }
                                     else {
-                                        # 576 "05function4.c"
-                                        # 519 "05function4.c"
+                                        # 576 "05type.c"
+                                        # 519 "05type.c"
                                         if(_if_conditional208=string_operator_equals(right_type2_117->mClass->mName,"void")&&right_type2_117->mPointerNum>0,                                        _if_conditional208) {
                                         }
                                         else {
-                                            # 576 "05function4.c"
-                                            # 521 "05function4.c"
+                                            # 576 "05type.c"
+                                            # 521 "05type.c"
                                             if(_if_conditional209=string_operator_equals(right_type2_117->mClass->mName,"void"),                                            _if_conditional209) {
-                                                # 528 "05function4.c"
-                                                # 522 "05function4.c"
+                                                # 528 "05type.c"
+                                                # 522 "05type.c"
                                                 if(print_err_msg) {
-                                                    # 523 "05function4.c"
+                                                    # 523 "05type.c"
                                                     err_msg(info,"type error6");
-                                                    # 524 "05function4.c"
+                                                    # 524 "05type.c"
                                                     printf("left type is %s pointer num %d\n",left_type->mClass->mName,left_type->mPointerNum);
-                                                    # 525 "05function4.c"
+                                                    # 525 "05type.c"
                                                     printf("right type is %s pointer num %d\n",right_type2_117->mClass->mName,right_type2_117->mPointerNum);
-                                                    # 526 "05function4.c"
+                                                    # 526 "05type.c"
                                                     exit(2);
                                                 }
-                                                # 528 "05function4.c"
+                                                # 528 "05type.c"
                                                 __result112__ = (_Bool)0;
                                                 come_call_finalizer3(right_type2_117,sType_finalize, 0, 0, 0, 0, (void*)0);
                                                 return __result112__;
                                             }
                                             else {
-                                                # 576 "05function4.c"
-                                                # 530 "05function4.c"
+                                                # 576 "05type.c"
+                                                # 530 "05type.c"
                                                 if(_if_conditional211=string_operator_equals(left_type->mClass->mName,"lambda")&&string_operator_equals(right_type2_117->mClass->mName,"lambda"),                                                _if_conditional211) {
                                                 }
                                                 else {
-                                                    # 576 "05function4.c"
-                                                    # 532 "05function4.c"
+                                                    # 576 "05type.c"
+                                                    # 532 "05type.c"
                                                     if(_if_conditional212=right_type2_117->mPointerNum>0,                                                    _if_conditional212) {
-                                                        # 539 "05function4.c"
-                                                        # 533 "05function4.c"
+                                                        # 539 "05type.c"
+                                                        # 533 "05type.c"
                                                         if(print_err_msg) {
-                                                            # 534 "05function4.c"
+                                                            # 534 "05type.c"
                                                             err_msg(info,"type error10");
-                                                            # 535 "05function4.c"
+                                                            # 535 "05type.c"
                                                             printf("left type is %s pointer num %d\n",left_type->mClass->mName,left_type->mPointerNum);
-                                                            # 536 "05function4.c"
+                                                            # 536 "05type.c"
                                                             printf("right type is %s pointer num %d\n",right_type2_117->mClass->mName,right_type2_117->mPointerNum);
-                                                            # 537 "05function4.c"
+                                                            # 537 "05type.c"
                                                             exit(2);
                                                         }
-                                                        # 539 "05function4.c"
+                                                        # 539 "05type.c"
                                                         __result113__ = (_Bool)0;
                                                         come_call_finalizer3(right_type2_117,sType_finalize, 0, 0, 0, 0, (void*)0);
                                                         return __result113__;
                                                     }
                                                     else {
-                                                        # 542 "05function4.c"
+                                                        # 542 "05type.c"
                                                         method_name_138=(char*)come_increment_ref_count(((char*)(right_value168=create_method_name(right_type2_117,(_Bool)0,"to_integer",info,(_Bool)1))));
                                                         right_value168 = come_decrement_ref_count2(right_value168, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                        # 559 "05function4.c"
-                                                        # 544 "05function4.c"
+                                                        # 559 "05type.c"
+                                                        # 544 "05type.c"
                                                         if(_if_conditional233=map$2charphsFunph_at(info->funcs,method_name_138,((void*)0))==((void*)0),                                                        _if_conditional233) {
-                                                            # 545 "05function4.c"
+                                                            # 545 "05type.c"
                                                             obj_type_141=right_type2_117->mNoSolvedGenericsType->v1;
-                                                            # 557 "05function4.c"
-                                                            # 546 "05function4.c"
+                                                            # 557 "05type.c"
+                                                            # 546 "05type.c"
                                                             if(_if_conditional234=obj_type_141&&list$1sTypeph_length(obj_type_141->mGenericsTypes)>0,                                                            _if_conditional234) {
-                                                                # 547 "05function4.c"
+                                                                # 547 "05type.c"
                                                                 obj_type2_142=right_type2_117;
-                                                                # 548 "05function4.c"
+                                                                # 548 "05type.c"
                                                                 __dec_obj53=method_name_138;
                                                                 method_name_138=(char*)come_increment_ref_count(((char*)(right_value170=make_generics_function(obj_type2_142,(char*)come_increment_ref_count(((char*)(right_value169=__builtin_string("to_integer")))),info,(_Bool)1))));
                                                                 __dec_obj53 = come_decrement_ref_count2(__dec_obj53, (void*)0, (void*)0, 0,0,0, (void*)0);
@@ -6710,55 +6710,55 @@ memset(&i_151, 0, sizeof(int));
                                                                 right_value170 = come_decrement_ref_count2(right_value170, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                             }
                                                             else {
-                                                                # 555 "05function4.c"
-                                                                # 551 "05function4.c"
+                                                                # 555 "05type.c"
+                                                                # 551 "05type.c"
                                                                 if(print_err_msg) {
-                                                                    # 552 "05function4.c"
+                                                                    # 552 "05type.c"
                                                                     err_msg(info,"require to_string implementation(%s)",right_type2_117->mClass->mName);
-                                                                    # 553 "05function4.c"
+                                                                    # 553 "05type.c"
                                                                     exit(2);
                                                                 }
-                                                                # 555 "05function4.c"
+                                                                # 555 "05type.c"
                                                                 __result118__ = (_Bool)0;
                                                                 method_name_138 = come_decrement_ref_count2(method_name_138, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                                                 come_call_finalizer3(right_type2_117,sType_finalize, 0, 0, 0, 0, (void*)0);
                                                                 return __result118__;
                                                             }
                                                         }
-                                                        # 559 "05function4.c"
-                                                        buf2_143=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value172=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value171=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "05function4.c", 559, "buffer"))))))));
+                                                        # 559 "05type.c"
+                                                        buf2_143=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value172=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value171=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "05type.c", 559, "buffer"))))))));
                                                         come_call_finalizer3(right_value171,buffer_finalize, 0, 1, 0, 0, __result_obj__);
                                                         come_call_finalizer3(right_value172,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-                                                        # 561 "05function4.c"
+                                                        # 561 "05type.c"
                                                         buffer_append_str(buf2_143,method_name_138);
-                                                        # 562 "05function4.c"
+                                                        # 562 "05type.c"
                                                         buffer_append_str(buf2_143,"(");
-                                                        # 563 "05function4.c"
+                                                        # 563 "05type.c"
                                                         buffer_append_str(buf2_143,come_value->c_value);
-                                                        # 564 "05function4.c"
+                                                        # 564 "05type.c"
                                                         buffer_append_str(buf2_143,")");
-                                                        # 566 "05function4.c"
-                                                        type_144=(struct sType*)come_increment_ref_count(((struct sType*)(right_value174=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value173=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 566, "sType")))),"integer",(_Bool)0,info))));
+                                                        # 566 "05type.c"
+                                                        type_144=(struct sType*)come_increment_ref_count(((struct sType*)(right_value174=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value173=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 566, "sType")))),"integer",(_Bool)0,info))));
                                                         come_call_finalizer3(right_value173,sType_finalize, 0, 1, 0, 0, __result_obj__);
                                                         come_call_finalizer3(right_value174,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                                                        # 567 "05function4.c"
+                                                        # 567 "05type.c"
                                                         type_144->mHeap=(_Bool)1;
-                                                        # 568 "05function4.c"
+                                                        # 568 "05type.c"
                                                         type_144->mPointerNum=1;
-                                                        # 570 "05function4.c"
+                                                        # 570 "05type.c"
                                                         __dec_obj54=come_value->c_value;
                                                         come_value->c_value=(char*)come_increment_ref_count(((char*)(right_value176=append_object_to_right_values(((char*)(right_value175=buffer_to_string(buf2_143))),(struct sType*)come_increment_ref_count(type_144),info))));
                                                         __dec_obj54 = come_decrement_ref_count2(__dec_obj54, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                         right_value175 = come_decrement_ref_count2(right_value175, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                         right_value176 = come_decrement_ref_count2(right_value176, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                        # 571 "05function4.c"
+                                                        # 571 "05type.c"
                                                         __dec_obj55=come_value->type;
                                                         come_value->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value177=sType_clone(type_144))));
                                                         come_call_finalizer3(__dec_obj55,sType_finalize, 0, 0, 0, 0, (void*)0);
                                                         come_call_finalizer3(right_value177,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                                                        # 572 "05function4.c"
+                                                        # 572 "05type.c"
                                                         come_value->var=((void*)0);
-                                                        # 574 "05function4.c"
+                                                        # 574 "05type.c"
                                                         __dec_obj56=right_type2_117;
                                                         right_type2_117=(struct sType*)come_increment_ref_count(((struct sType*)(right_value178=sType_clone(type_144))));
                                                         come_call_finalizer3(__dec_obj56,sType_finalize, 0, 0, 0, 0, (void*)0);
@@ -6776,23 +6776,23 @@ memset(&i_151, 0, sizeof(int));
                         }
                     }
                     else {
-                        # 744 "05function4.c"
-                        # 577 "05function4.c"
+                        # 744 "05type.c"
+                        # 577 "05type.c"
                         if(_if_conditional236=string_operator_equals(left_type->mClass->mName,"int")&&(string_operator_equals(right_type->mClass->mName,"integer")&&right_type->mPointerNum==1),                        _if_conditional236) {
-                            # 578 "05function4.c"
+                            # 578 "05type.c"
                             method_name_145=(char*)come_increment_ref_count(((char*)(right_value179=create_method_name(right_type2_117,(_Bool)0,"to_int",info,(_Bool)1))));
                             right_value179 = come_decrement_ref_count2(right_value179, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                            # 595 "05function4.c"
-                            # 580 "05function4.c"
+                            # 595 "05type.c"
+                            # 580 "05type.c"
                             if(_if_conditional237=map$2charphsFunph_at(info->funcs,method_name_145,((void*)0))==((void*)0),                            _if_conditional237) {
-                                # 581 "05function4.c"
+                                # 581 "05type.c"
                                 obj_type_146=right_type2_117->mNoSolvedGenericsType->v1;
-                                # 593 "05function4.c"
-                                # 582 "05function4.c"
+                                # 593 "05type.c"
+                                # 582 "05type.c"
                                 if(_if_conditional238=obj_type_146&&list$1sTypeph_length(obj_type_146->mGenericsTypes)>0,                                _if_conditional238) {
-                                    # 583 "05function4.c"
+                                    # 583 "05type.c"
                                     obj_type2_147=right_type2_117;
-                                    # 584 "05function4.c"
+                                    # 584 "05type.c"
                                     __dec_obj57=method_name_145;
                                     method_name_145=(char*)come_increment_ref_count(((char*)(right_value181=make_generics_function(obj_type2_147,(char*)come_increment_ref_count(((char*)(right_value180=__builtin_string("to_int")))),info,(_Bool)1))));
                                     __dec_obj57 = come_decrement_ref_count2(__dec_obj57, (void*)0, (void*)0, 0,0,0, (void*)0);
@@ -6800,50 +6800,50 @@ memset(&i_151, 0, sizeof(int));
                                     right_value181 = come_decrement_ref_count2(right_value181, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 }
                                 else {
-                                    # 591 "05function4.c"
-                                    # 587 "05function4.c"
+                                    # 591 "05type.c"
+                                    # 587 "05type.c"
                                     if(print_err_msg) {
-                                        # 588 "05function4.c"
+                                        # 588 "05type.c"
                                         err_msg(info,"require to_string implementation(%s)",right_type2_117->mClass->mName);
-                                        # 589 "05function4.c"
+                                        # 589 "05type.c"
                                         exit(1);
                                     }
-                                    # 591 "05function4.c"
+                                    # 591 "05type.c"
                                     __result119__ = (_Bool)0;
                                     method_name_145 = come_decrement_ref_count2(method_name_145, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                     come_call_finalizer3(right_type2_117,sType_finalize, 0, 0, 0, 0, (void*)0);
                                     return __result119__;
                                 }
                             }
-                            # 595 "05function4.c"
-                            buf2_148=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value183=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value182=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "05function4.c", 595, "buffer"))))))));
+                            # 595 "05type.c"
+                            buf2_148=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value183=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value182=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "05type.c", 595, "buffer"))))))));
                             come_call_finalizer3(right_value182,buffer_finalize, 0, 1, 0, 0, __result_obj__);
                             come_call_finalizer3(right_value183,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-                            # 597 "05function4.c"
+                            # 597 "05type.c"
                             buffer_append_str(buf2_148,method_name_145);
-                            # 598 "05function4.c"
+                            # 598 "05type.c"
                             buffer_append_str(buf2_148,"(");
-                            # 599 "05function4.c"
+                            # 599 "05type.c"
                             buffer_append_str(buf2_148,come_value->c_value);
-                            # 600 "05function4.c"
+                            # 600 "05type.c"
                             buffer_append_str(buf2_148,")");
-                            # 602 "05function4.c"
-                            type_149=(struct sType*)come_increment_ref_count(((struct sType*)(right_value185=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value184=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 602, "sType")))),"int",(_Bool)0,info))));
+                            # 602 "05type.c"
+                            type_149=(struct sType*)come_increment_ref_count(((struct sType*)(right_value185=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value184=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 602, "sType")))),"int",(_Bool)0,info))));
                             come_call_finalizer3(right_value184,sType_finalize, 0, 1, 0, 0, __result_obj__);
                             come_call_finalizer3(right_value185,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                            # 604 "05function4.c"
+                            # 604 "05type.c"
                             __dec_obj58=come_value->c_value;
                             come_value->c_value=(char*)come_increment_ref_count(((char*)(right_value186=buffer_to_string(buf2_148))));
                             __dec_obj58 = come_decrement_ref_count2(__dec_obj58, (void*)0, (void*)0, 0,0,0, (void*)0);
                             right_value186 = come_decrement_ref_count2(right_value186, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                            # 605 "05function4.c"
+                            # 605 "05type.c"
                             __dec_obj59=come_value->type;
                             come_value->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value187=sType_clone(type_149))));
                             come_call_finalizer3(__dec_obj59,sType_finalize, 0, 0, 0, 0, (void*)0);
                             come_call_finalizer3(right_value187,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                            # 606 "05function4.c"
+                            # 606 "05type.c"
                             come_value->var=((void*)0);
-                            # 608 "05function4.c"
+                            # 608 "05type.c"
                             __dec_obj60=right_type2_117;
                             right_type2_117=(struct sType*)come_increment_ref_count(((struct sType*)(right_value188=sType_clone(type_149))));
                             come_call_finalizer3(__dec_obj60,sType_finalize, 0, 0, 0, 0, (void*)0);
@@ -6853,87 +6853,87 @@ memset(&i_151, 0, sizeof(int));
                             come_call_finalizer3(type_149,sType_finalize, 0, 0, 0, 0, (void*)0);
                         }
                         else {
-                            # 744 "05function4.c"
-                            # 610 "05function4.c"
+                            # 744 "05type.c"
+                            # 610 "05type.c"
                             if(_if_conditional240=string_operator_equals(left_type->mClass->mName,"char")&&left_type->mPointerNum==1,                            _if_conditional240) {
-                                # 647 "05function4.c"
-                                # 611 "05function4.c"
+                                # 647 "05type.c"
+                                # 611 "05type.c"
                                 if(_if_conditional241=string_operator_equals(right_type2_117->mClass->mName,"char")&&right_type2_117->mPointerNum==1,                                _if_conditional241) {
                                 }
                                 else {
-                                    # 647 "05function4.c"
-                                    # 613 "05function4.c"
+                                    # 647 "05type.c"
+                                    # 613 "05type.c"
                                     if(_if_conditional242=string_operator_equals(left_type->mClass->mName,"__builtin_va_list")||string_operator_equals(right_type2_117->mClass->mName,"__builtin_va_list"),                                    _if_conditional242) {
                                     }
                                     else {
-                                        # 647 "05function4.c"
-                                        # 615 "05function4.c"
+                                        # 647 "05type.c"
+                                        # 615 "05type.c"
                                         if(_if_conditional243=string_operator_equals(left_type->mClass->mName,"va_list")||string_operator_equals(right_type2_117->mClass->mName,"va_list"),                                        _if_conditional243) {
                                         }
                                         else {
-                                            # 647 "05function4.c"
-                                            # 617 "05function4.c"
+                                            # 647 "05type.c"
+                                            # 617 "05type.c"
                                             if(_if_conditional244=string_operator_equals(right_type2_117->mClass->mName,"lambda"),                                            _if_conditional244) {
-                                                # 625 "05function4.c"
-                                                # 618 "05function4.c"
+                                                # 625 "05type.c"
+                                                # 618 "05type.c"
                                                 if(print_err_msg) {
-                                                    # 619 "05function4.c"
+                                                    # 619 "05type.c"
                                                     err_msg(info,"type error6");
-                                                    # 620 "05function4.c"
+                                                    # 620 "05type.c"
                                                     printf("left type is %s pointer num %d\n",left_type->mClass->mName,left_type->mPointerNum);
-                                                    # 621 "05function4.c"
+                                                    # 621 "05type.c"
                                                     printf("right type is %s pointer num %d\n",right_type2_117->mClass->mName,right_type2_117->mPointerNum);
-                                                    # 622 "05function4.c"
+                                                    # 622 "05type.c"
                                                     exit(2);
                                                 }
-                                                # 625 "05function4.c"
+                                                # 625 "05type.c"
                                                 __result120__ = (_Bool)0;
                                                 come_call_finalizer3(right_type2_117,sType_finalize, 0, 0, 0, 0, (void*)0);
                                                 return __result120__;
                                             }
                                             else {
-                                                # 647 "05function4.c"
-                                                # 627 "05function4.c"
+                                                # 647 "05type.c"
+                                                # 627 "05type.c"
                                                 if(_if_conditional246=string_operator_equals(right_type2_117->mClass->mName,"void")&&right_type2_117->mPointerNum>0,                                                _if_conditional246) {
                                                 }
                                                 else {
-                                                    # 647 "05function4.c"
-                                                    # 629 "05function4.c"
+                                                    # 647 "05type.c"
+                                                    # 629 "05type.c"
                                                     if(_if_conditional247=string_operator_equals(right_type2_117->mClass->mName,"void"),                                                    _if_conditional247) {
-                                                        # 636 "05function4.c"
-                                                        # 630 "05function4.c"
+                                                        # 636 "05type.c"
+                                                        # 630 "05type.c"
                                                         if(print_err_msg) {
-                                                            # 631 "05function4.c"
+                                                            # 631 "05type.c"
                                                             err_msg(info,"type error6");
-                                                            # 632 "05function4.c"
+                                                            # 632 "05type.c"
                                                             printf("left type is %s pointer num %d\n",left_type->mClass->mName,left_type->mPointerNum);
-                                                            # 633 "05function4.c"
+                                                            # 633 "05type.c"
                                                             printf("right type is %s pointer num %d\n",right_type2_117->mClass->mName,right_type2_117->mPointerNum);
-                                                            # 634 "05function4.c"
+                                                            # 634 "05type.c"
                                                             exit(2);
                                                         }
-                                                        # 636 "05function4.c"
+                                                        # 636 "05type.c"
                                                         __result121__ = (_Bool)0;
                                                         come_call_finalizer3(right_type2_117,sType_finalize, 0, 0, 0, 0, (void*)0);
                                                         return __result121__;
                                                     }
                                                     else {
-                                                        # 647 "05function4.c"
-                                                        # 638 "05function4.c"
+                                                        # 647 "05type.c"
+                                                        # 638 "05type.c"
                                                         if(_if_conditional249=string_operator_not_equals(left_type->mClass->mName,right_type2_117->mClass->mName),                                                        _if_conditional249) {
-                                                            # 645 "05function4.c"
-                                                            # 639 "05function4.c"
+                                                            # 645 "05type.c"
+                                                            # 639 "05type.c"
                                                             if(print_err_msg) {
-                                                                # 640 "05function4.c"
+                                                                # 640 "05type.c"
                                                                 err_msg(info,"type error5");
-                                                                # 641 "05function4.c"
+                                                                # 641 "05type.c"
                                                                 printf("left type is %s pointer num %d\n",left_type->mClass->mName,left_type->mPointerNum);
-                                                                # 642 "05function4.c"
+                                                                # 642 "05type.c"
                                                                 printf("right type is %s pointer num %d\n",right_type2_117->mClass->mName,right_type2_117->mPointerNum);
-                                                                # 643 "05function4.c"
+                                                                # 643 "05type.c"
                                                                 exit(2);
                                                             }
-                                                            # 645 "05function4.c"
+                                                            # 645 "05type.c"
                                                             __result122__ = (_Bool)0;
                                                             come_call_finalizer3(right_type2_117,sType_finalize, 0, 0, 0, 0, (void*)0);
                                                             return __result122__;
@@ -6946,74 +6946,74 @@ memset(&i_151, 0, sizeof(int));
                                 }
                             }
                             else {
-                                # 744 "05function4.c"
-                                # 648 "05function4.c"
+                                # 744 "05type.c"
+                                # 648 "05type.c"
                                 if(_if_conditional251=string_operator_equals(left_type->mClass->mName,"void")&&left_type->mPointerNum==1,                                _if_conditional251) {
-                                    # 676 "05function4.c"
-                                    # 649 "05function4.c"
+                                    # 676 "05type.c"
+                                    # 649 "05type.c"
                                     if(_if_conditional252=string_operator_equals(right_type2_117->mClass->mName,"void")&&right_type2_117->mPointerNum==1,                                    _if_conditional252) {
                                     }
                                     else {
-                                        # 676 "05function4.c"
-                                        # 651 "05function4.c"
+                                        # 676 "05type.c"
+                                        # 651 "05type.c"
                                         if(_if_conditional253=string_operator_equals(left_type->mClass->mName,"__builtin_va_list")||string_operator_equals(right_type2_117->mClass->mName,"__builtin_va_list"),                                        _if_conditional253) {
                                         }
                                         else {
-                                            # 676 "05function4.c"
-                                            # 653 "05function4.c"
+                                            # 676 "05type.c"
+                                            # 653 "05type.c"
                                             if(_if_conditional254=string_operator_equals(left_type->mClass->mName,"va_list")||string_operator_equals(right_type2_117->mClass->mName,"va_list"),                                            _if_conditional254) {
                                             }
                                             else {
-                                                # 676 "05function4.c"
-                                                # 655 "05function4.c"
+                                                # 676 "05type.c"
+                                                # 655 "05type.c"
                                                 if(_if_conditional255=string_operator_equals(right_type2_117->mClass->mName,"lambda"),                                                _if_conditional255) {
                                                 }
                                                 else {
-                                                    # 676 "05function4.c"
-                                                    # 657 "05function4.c"
+                                                    # 676 "05type.c"
+                                                    # 657 "05type.c"
                                                     if(_if_conditional256=string_operator_equals(right_type2_117->mClass->mName,"void")&&right_type2_117->mPointerNum>0,                                                    _if_conditional256) {
                                                     }
                                                     else {
-                                                        # 676 "05function4.c"
-                                                        # 659 "05function4.c"
+                                                        # 676 "05type.c"
+                                                        # 659 "05type.c"
                                                         if(_if_conditional257=string_operator_equals(right_type2_117->mClass->mName,"void"),                                                        _if_conditional257) {
-                                                            # 666 "05function4.c"
-                                                            # 660 "05function4.c"
+                                                            # 666 "05type.c"
+                                                            # 660 "05type.c"
                                                             if(print_err_msg) {
-                                                                # 661 "05function4.c"
+                                                                # 661 "05type.c"
                                                                 err_msg(info,"type error6");
-                                                                # 662 "05function4.c"
+                                                                # 662 "05type.c"
                                                                 printf("left type is %s pointer num %d\n",left_type->mClass->mName,left_type->mPointerNum);
-                                                                # 663 "05function4.c"
+                                                                # 663 "05type.c"
                                                                 printf("right type is %s pointer num %d\n",right_type2_117->mClass->mName,right_type2_117->mPointerNum);
-                                                                # 664 "05function4.c"
+                                                                # 664 "05type.c"
                                                                 exit(2);
                                                             }
-                                                            # 666 "05function4.c"
+                                                            # 666 "05type.c"
                                                             __result123__ = (_Bool)0;
                                                             come_call_finalizer3(right_type2_117,sType_finalize, 0, 0, 0, 0, (void*)0);
                                                             return __result123__;
                                                         }
                                                         else {
-                                                            # 676 "05function4.c"
-                                                            # 668 "05function4.c"
+                                                            # 676 "05type.c"
+                                                            # 668 "05type.c"
                                                             if(_if_conditional259=right_type2_117->mPointerNum==0,                                                            _if_conditional259) {
-                                                                # 669 "05function4.c"
+                                                                # 669 "05type.c"
                                                                 tmp_150=(char*)come_increment_ref_count(((char*)(right_value189=xsprintf("(void*)%s",come_value->c_value))));
                                                                 right_value189 = come_decrement_ref_count2(right_value189, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                                # 670 "05function4.c"
+                                                                # 670 "05type.c"
                                                                 __dec_obj61=come_value->c_value;
                                                                 come_value->c_value=(char*)come_increment_ref_count(((char*)(right_value190=string_clone(tmp_150))));
                                                                 __dec_obj61 = come_decrement_ref_count2(__dec_obj61, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                 right_value190 = come_decrement_ref_count2(right_value190, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                                # 671 "05function4.c"
+                                                                # 671 "05type.c"
                                                                 __dec_obj62=come_value->type;
                                                                 come_value->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value191=sType_clone(left_type))));
                                                                 come_call_finalizer3(__dec_obj62,sType_finalize, 0, 0, 0, 0, (void*)0);
                                                                 come_call_finalizer3(right_value191,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                                                                # 672 "05function4.c"
+                                                                # 672 "05type.c"
                                                                 come_value->var=((void*)0);
-                                                                # 674 "05function4.c"
+                                                                # 674 "05type.c"
                                                                 __dec_obj63=right_type2_117;
                                                                 right_type2_117=(struct sType*)come_increment_ref_count(((struct sType*)(right_value192=sType_clone(left_type))));
                                                                 come_call_finalizer3(__dec_obj63,sType_finalize, 0, 0, 0, 0, (void*)0);
@@ -7028,62 +7028,62 @@ memset(&i_151, 0, sizeof(int));
                                     }
                                 }
                                 else {
-                                    # 744 "05function4.c"
-                                    # 677 "05function4.c"
+                                    # 744 "05type.c"
+                                    # 677 "05type.c"
                                     if(_if_conditional260=left_type->mPointerNum>0||(left_type->mPointerNum==0&&left_type->mClass->mStruct),                                    _if_conditional260) {
-                                        # 731 "05function4.c"
-                                        # 678 "05function4.c"
+                                        # 731 "05type.c"
+                                        # 678 "05type.c"
                                         if(_if_conditional261=right_type2_117->mPointerNum>0||(right_type2_117->mPointerNum==0&&right_type2_117->mClass->mStruct),                                        _if_conditional261) {
-                                            # 702 "05function4.c"
-                                            # 679 "05function4.c"
+                                            # 702 "05type.c"
+                                            # 679 "05type.c"
                                             if(_if_conditional262=string_operator_equals(left_type->mClass->mName,"void")||string_operator_equals(right_type2_117->mClass->mName,"void"),                                            _if_conditional262) {
                                             }
                                             else {
-                                                # 702 "05function4.c"
-                                                # 681 "05function4.c"
+                                                # 702 "05type.c"
+                                                # 681 "05type.c"
                                                 if(_if_conditional263=string_operator_equals(left_type->mClass->mName,"va_list")||string_operator_equals(right_type2_117->mClass->mName,"va_list"),                                                _if_conditional263) {
                                                 }
                                                 else {
-                                                    # 702 "05function4.c"
-                                                    # 683 "05function4.c"
+                                                    # 702 "05type.c"
+                                                    # 683 "05type.c"
                                                     if(_if_conditional264=string_operator_not_equals(left_type->mClass->mName,right_type2_117->mClass->mName),                                                    _if_conditional264) {
-                                                        # 690 "05function4.c"
-                                                        # 684 "05function4.c"
+                                                        # 690 "05type.c"
+                                                        # 684 "05type.c"
                                                         if(print_err_msg) {
-                                                            # 685 "05function4.c"
+                                                            # 685 "05type.c"
                                                             err_msg(info,"type error5");
-                                                            # 686 "05function4.c"
+                                                            # 686 "05type.c"
                                                             printf("left type is %s pointer num %d\n",left_type->mClass->mName,left_type->mPointerNum);
-                                                            # 687 "05function4.c"
+                                                            # 687 "05type.c"
                                                             printf("right type is %s pointer num %d\n",right_type2_117->mClass->mName,right_type2_117->mPointerNum);
-                                                            # 688 "05function4.c"
+                                                            # 688 "05type.c"
                                                             exit(2);
                                                         }
-                                                        # 690 "05function4.c"
+                                                        # 690 "05type.c"
                                                         __result124__ = (_Bool)0;
                                                         come_call_finalizer3(right_type2_117,sType_finalize, 0, 0, 0, 0, (void*)0);
                                                         return __result124__;
                                                     }
                                                     else {
-                                                        # 702 "05function4.c"
-                                                        # 692 "05function4.c"
+                                                        # 702 "05type.c"
+                                                        # 692 "05type.c"
                                                         if(_if_conditional266=left_type->mPointerNum!=right_type2_117->mPointerNum,                                                        _if_conditional266) {
-                                                            # 693 "05function4.c"
+                                                            # 693 "05type.c"
                                                             printf("%s %d: warning invalid pointer number\n",info->sname,info->sline);
-                                                            # 694 "05function4.c"
+                                                            # 694 "05type.c"
                                                             printf("left type is %s pointer num %d\n",left_type->mClass->mName,left_type->mPointerNum);
-                                                            # 695 "05function4.c"
+                                                            # 695 "05type.c"
                                                             printf("right type is %s pointer num %d\n",right_type2_117->mClass->mName,right_type2_117->mPointerNum);
                                                         }
                                                         else {
-                                                            # 702 "05function4.c"
-                                                            # 697 "05function4.c"
+                                                            # 702 "05type.c"
+                                                            # 697 "05type.c"
                                                             if(_if_conditional268=list$1sNodeph_length(right_type2_117->mArrayNum)>0,                                                            _if_conditional268) {
-                                                                # 698 "05function4.c"
+                                                                # 698 "05type.c"
                                                                 printf("%s %d: warning invalid pointer number\n",info->sname,info->sline);
-                                                                # 699 "05function4.c"
+                                                                # 699 "05type.c"
                                                                 printf("left type is %s pointer num %d array dimetion num %d\n",left_type->mClass->mName,left_type->mPointerNum,list$1sNodeph_length(left_type->mArrayNum));
-                                                                # 700 "05function4.c"
+                                                                # 700 "05type.c"
                                                                 printf("right type is %s pointer num %d array dimetion num %d\n",right_type2_117->mClass->mName,right_type2_117->mPointerNum,list$1sNodeph_length(right_type2_117->mArrayNum));
                                                             }
                                                         }
@@ -7092,63 +7092,63 @@ memset(&i_151, 0, sizeof(int));
                                             }
                                         }
                                         else {
-                                            # 731 "05function4.c"
-                                            # 703 "05function4.c"
+                                            # 731 "05type.c"
+                                            # 703 "05type.c"
                                             if(_if_conditional269=string_operator_equals(left_type->mClass->mName,"void")||string_operator_equals(right_type2_117->mClass->mName,"void"),                                            _if_conditional269) {
                                             }
                                             else {
-                                                # 731 "05function4.c"
-                                                # 705 "05function4.c"
+                                                # 731 "05type.c"
+                                                # 705 "05type.c"
                                                 if(_if_conditional270=string_operator_equals(left_type->mClass->mName,"va_list")||string_operator_equals(right_type2_117->mClass->mName,"va_list"),                                                _if_conditional270) {
                                                 }
                                                 else {
-                                                    # 731 "05function4.c"
-                                                    # 707 "05function4.c"
+                                                    # 731 "05type.c"
+                                                    # 707 "05type.c"
                                                     if(_if_conditional271=string_operator_equals(left_type->mClass->mName,"__builtin_va_list")||string_operator_equals(right_type2_117->mClass->mName,"__builtin_va_list"),                                                    _if_conditional271) {
                                                     }
                                                     else {
-                                                        # 731 "05function4.c"
-                                                        # 709 "05function4.c"
+                                                        # 731 "05type.c"
+                                                        # 709 "05type.c"
                                                         if(_if_conditional272=string_operator_equals(left_type->mClass->mName,"lambda")&&string_operator_equals(right_type2_117->mClass->mName,"lambda"),                                                        _if_conditional272) {
                                                         }
                                                         else {
-                                                            # 731 "05function4.c"
-                                                            # 711 "05function4.c"
+                                                            # 731 "05type.c"
+                                                            # 711 "05type.c"
                                                             if(_if_conditional273=left_type->mPointerNum>0&&right_type2_117->mPointerNum==0&&string_operator_equals(right_type2_117->mClass->mName,"lambda")&&string_operator_equals(left_type->mClass->mName,"lambda"),                                                            _if_conditional273) {
-                                                                # 719 "05function4.c"
-                                                                # 712 "05function4.c"
+                                                                # 719 "05type.c"
+                                                                # 712 "05type.c"
                                                                 if(print_err_msg) {
-                                                                    # 713 "05function4.c"
+                                                                    # 713 "05type.c"
                                                                     err_msg(info,"type error10");
-                                                                    # 714 "05function4.c"
+                                                                    # 714 "05type.c"
                                                                     printf("left type is %s pointer num %d\n",left_type->mClass->mName,left_type->mPointerNum);
-                                                                    # 715 "05function4.c"
+                                                                    # 715 "05type.c"
                                                                     printf("right type is %s pointer num %d\n",right_type2_117->mClass->mName,right_type2_117->mPointerNum);
-                                                                    # 716 "05function4.c"
+                                                                    # 716 "05type.c"
                                                                     exit(2);
                                                                 }
-                                                                # 719 "05function4.c"
+                                                                # 719 "05type.c"
                                                                 __result127__ = (_Bool)0;
                                                                 come_call_finalizer3(right_type2_117,sType_finalize, 0, 0, 0, 0, (void*)0);
                                                                 return __result127__;
                                                             }
                                                             else {
-                                                                # 731 "05function4.c"
-                                                                # 721 "05function4.c"
+                                                                # 731 "05type.c"
+                                                                # 721 "05type.c"
                                                                 if(_if_conditional275=!(string_operator_equals(right_type2_117->mClass->mName,"lambda")&&string_operator_equals(left_type->mClass->mName,"lambda"))&&right_type2_117->mPointerNum==0,                                                                _if_conditional275) {
-                                                                    # 728 "05function4.c"
-                                                                    # 722 "05function4.c"
+                                                                    # 728 "05type.c"
+                                                                    # 722 "05type.c"
                                                                     if(print_err_msg) {
-                                                                        # 723 "05function4.c"
+                                                                        # 723 "05type.c"
                                                                         err_msg(info,"type error6");
-                                                                        # 724 "05function4.c"
+                                                                        # 724 "05type.c"
                                                                         printf("left type is %s pointer num %d\n",left_type->mClass->mName,left_type->mPointerNum);
-                                                                        # 725 "05function4.c"
+                                                                        # 725 "05type.c"
                                                                         printf("right type is %s pointer num %d\n",right_type2_117->mClass->mName,right_type2_117->mPointerNum);
-                                                                        # 726 "05function4.c"
+                                                                        # 726 "05type.c"
                                                                         exit(2);
                                                                     }
-                                                                    # 728 "05function4.c"
+                                                                    # 728 "05type.c"
                                                                     __result128__ = (_Bool)0;
                                                                     come_call_finalizer3(right_type2_117,sType_finalize, 0, 0, 0, 0, (void*)0);
                                                                     return __result128__;
@@ -7159,25 +7159,25 @@ memset(&i_151, 0, sizeof(int));
                                                 }
                                             }
                                         }
-                                        # 742 "05function4.c"
-                                        # 731 "05function4.c"
+                                        # 742 "05type.c"
+                                        # 731 "05type.c"
                                         if(_if_conditional277=list$1sTypeph_length(left_type->mGenericsTypes)>0,                                        _if_conditional277) {
-                                            # 738 "05function4.c"
-                                            # 732 "05function4.c"
+                                            # 738 "05type.c"
+                                            # 732 "05type.c"
                                             if(_if_conditional278=list$1sTypeph_length(left_type->mGenericsTypes)!=list$1sTypeph_length(right_type2_117->mGenericsTypes),                                            _if_conditional278) {
-                                                # 733 "05function4.c"
+                                                # 733 "05type.c"
                                                 err_msg(info,"generics type number error");
-                                                # 734 "05function4.c"
+                                                # 734 "05type.c"
                                                 printf("left type is %s pointer num %d\n",left_type->mClass->mName,left_type->mPointerNum);
-                                                # 735 "05function4.c"
+                                                # 735 "05type.c"
                                                 printf("right type is %s pointer num %d\n",right_type2_117->mClass->mName,right_type2_117->mPointerNum);
-                                                # 736 "05function4.c"
+                                                # 736 "05type.c"
                                                 exit(2);
                                             }
-                                            # 741 "05function4.c"
+                                            # 741 "05type.c"
                                             for(                                            i_151=0;                                            i_151<list$1sTypeph_length(left_type->mGenericsTypes);                                            i_151++                                            ){
-                                                # 739 "05function4.c"
-                                                check_assign_type(msg,((struct sType*)come_null_check(list$1sTypephp_operator_load_element(left_type->mGenericsTypes,i_151), "05function4.c", 739, 4)),((struct sType*)come_null_check(list$1sTypephp_operator_load_element(right_type2_117->mGenericsTypes,i_151), "05function4.c", 739, 5)),come_value,(_Bool)0,(_Bool)1,info);
+                                                # 739 "05type.c"
+                                                check_assign_type(msg,((struct sType*)come_null_check(list$1sTypephp_operator_load_element(left_type->mGenericsTypes,i_151), "05type.c", 739, 4)),((struct sType*)come_null_check(list$1sTypephp_operator_load_element(right_type2_117->mGenericsTypes,i_151), "05type.c", 739, 5)),come_value,(_Bool)0,(_Bool)1,info);
                                             }
                                         }
                                     }
@@ -7189,7 +7189,7 @@ memset(&i_151, 0, sizeof(int));
             }
         }
     }
-    # 744 "05function4.c"
+    # 744 "05type.c"
     __result129__ = (_Bool)1;
     come_call_finalizer3(right_type2_117,sType_finalize, 0, 0, 0, 0, (void*)0);
     return __result129__;
@@ -7708,66 +7708,66 @@ memset(&type_162, 0, sizeof(struct sType*));
 right_value212 = (void*)0;
 right_value213 = (void*)0;
 right_value214 = (void*)0;
-    # 749 "05function4.c"
+    # 749 "05type.c"
     right_type2_152=(struct sType*)come_increment_ref_count(((struct sType*)(right_value193=sType_clone(right_type))));
     come_call_finalizer3(right_value193,sType_finalize, 0, 1, 0, 0, __result_obj__);
-    # 830 "05function4.c"
-    # 750 "05function4.c"
+    # 830 "05type.c"
+    # 750 "05type.c"
     if(_if_conditional279=string_operator_equals(left_type->mClass->mName,"integer")&&left_type->mPointerNum==1,    _if_conditional279) {
-        # 799 "05function4.c"
-        # 751 "05function4.c"
+        # 799 "05type.c"
+        # 751 "05type.c"
         if(_if_conditional280=string_operator_equals(right_type2_152->mClass->mName,"integer")&&right_type2_152->mPointerNum==1,        _if_conditional280) {
         }
         else {
-            # 799 "05function4.c"
-            # 753 "05function4.c"
+            # 799 "05type.c"
+            # 753 "05type.c"
             if(_if_conditional281=string_operator_equals(left_type->mClass->mName,"__builtin_va_list")||string_operator_equals(right_type2_152->mClass->mName,"__builtin_va_list"),            _if_conditional281) {
             }
             else {
-                # 799 "05function4.c"
-                # 755 "05function4.c"
+                # 799 "05type.c"
+                # 755 "05type.c"
                 if(_if_conditional282=string_operator_equals(left_type->mClass->mName,"va_list")||string_operator_equals(right_type2_152->mClass->mName,"va_list"),                _if_conditional282) {
                 }
                 else {
-                    # 799 "05function4.c"
-                    # 757 "05function4.c"
+                    # 799 "05type.c"
+                    # 757 "05type.c"
                     if(_if_conditional283=string_operator_equals(right_type2_152->mClass->mName,"lambda"),                    _if_conditional283) {
                     }
                     else {
-                        # 799 "05function4.c"
-                        # 759 "05function4.c"
+                        # 799 "05type.c"
+                        # 759 "05type.c"
                         if(_if_conditional284=string_operator_equals(right_type2_152->mClass->mName,"void")&&right_type2_152->mPointerNum>0,                        _if_conditional284) {
                         }
                         else {
-                            # 799 "05function4.c"
-                            # 761 "05function4.c"
+                            # 799 "05type.c"
+                            # 761 "05type.c"
                             if(_if_conditional285=string_operator_equals(right_type2_152->mClass->mName,"void"),                            _if_conditional285) {
                             }
                             else {
-                                # 799 "05function4.c"
-                                # 763 "05function4.c"
+                                # 799 "05type.c"
+                                # 763 "05type.c"
                                 if(_if_conditional286=left_type->mPointerNum>0&&right_type2_152->mPointerNum==0&&string_operator_equals(right_type2_152->mClass->mName,"lambda")&&string_operator_equals(left_type->mClass->mName,"lambda"),                                _if_conditional286) {
                                 }
                                 else {
-                                    # 799 "05function4.c"
-                                    # 765 "05function4.c"
+                                    # 799 "05type.c"
+                                    # 765 "05type.c"
                                     if(_if_conditional287=right_type->mPointerNum>0,                                    _if_conditional287) {
                                     }
                                     else {
-                                        # 768 "05function4.c"
+                                        # 768 "05type.c"
                                         method_name_153=(char*)come_increment_ref_count(((char*)(right_value194=create_method_name(right_type2_152,(_Bool)0,"to_integer",info,(_Bool)1))));
                                         right_value194 = come_decrement_ref_count2(right_value194, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                        # 782 "05function4.c"
-                                        # 770 "05function4.c"
+                                        # 782 "05type.c"
+                                        # 770 "05type.c"
                                         if(_if_conditional288=map$2charphsFunph_at(info->funcs,method_name_153,((void*)0))==((void*)0),                                        _if_conditional288) {
-                                            # 771 "05function4.c"
+                                            # 771 "05type.c"
                                             obj_type_154=right_type2_152->mNoSolvedGenericsType->v1;
-                                            # 780 "05function4.c"
-                                            # 772 "05function4.c"
+                                            # 780 "05type.c"
+                                            # 772 "05type.c"
                                             if(_if_conditional289=obj_type_154&&list$1sTypeph_length(obj_type_154->mGenericsTypes)>0,                                            _if_conditional289) {
-                                                # 773 "05function4.c"
+                                                # 773 "05type.c"
                                                 obj_type2_155=right_type2_152;
-                                                # 774 "05function4.c"
+                                                # 774 "05type.c"
                                                 __dec_obj64=method_name_153;
                                                 method_name_153=(char*)come_increment_ref_count(((char*)(right_value196=make_generics_function(obj_type2_155,(char*)come_increment_ref_count(((char*)(right_value195=__builtin_string("to_integer")))),info,(_Bool)1))));
                                                 __dec_obj64 = come_decrement_ref_count2(__dec_obj64, (void*)0, (void*)0, 0,0,0, (void*)0);
@@ -7775,46 +7775,46 @@ right_value214 = (void*)0;
                                                 right_value196 = come_decrement_ref_count2(right_value196, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                             }
                                             else {
-                                                # 777 "05function4.c"
+                                                # 777 "05type.c"
                                                 err_msg(info,"require to_string implementation(%s)",right_type2_152->mClass->mName);
-                                                # 778 "05function4.c"
+                                                # 778 "05type.c"
                                                 exit(1);
                                             }
                                         }
-                                        # 782 "05function4.c"
-                                        buf2_156=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value198=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value197=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "05function4.c", 782, "buffer"))))))));
+                                        # 782 "05type.c"
+                                        buf2_156=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value198=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value197=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "05type.c", 782, "buffer"))))))));
                                         come_call_finalizer3(right_value197,buffer_finalize, 0, 1, 0, 0, __result_obj__);
                                         come_call_finalizer3(right_value198,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-                                        # 784 "05function4.c"
+                                        # 784 "05type.c"
                                         buffer_append_str(buf2_156,method_name_153);
-                                        # 785 "05function4.c"
+                                        # 785 "05type.c"
                                         buffer_append_str(buf2_156,"(");
-                                        # 786 "05function4.c"
+                                        # 786 "05type.c"
                                         buffer_append_str(buf2_156,come_value->c_value);
-                                        # 787 "05function4.c"
+                                        # 787 "05type.c"
                                         buffer_append_str(buf2_156,")");
-                                        # 789 "05function4.c"
-                                        type_157=(struct sType*)come_increment_ref_count(((struct sType*)(right_value200=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value199=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 789, "sType")))),"integer",(_Bool)0,info))));
+                                        # 789 "05type.c"
+                                        type_157=(struct sType*)come_increment_ref_count(((struct sType*)(right_value200=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value199=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 789, "sType")))),"integer",(_Bool)0,info))));
                                         come_call_finalizer3(right_value199,sType_finalize, 0, 1, 0, 0, __result_obj__);
                                         come_call_finalizer3(right_value200,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                                        # 790 "05function4.c"
+                                        # 790 "05type.c"
                                         type_157->mHeap=(_Bool)1;
-                                        # 791 "05function4.c"
+                                        # 791 "05type.c"
                                         type_157->mPointerNum=1;
-                                        # 793 "05function4.c"
+                                        # 793 "05type.c"
                                         __dec_obj65=come_value->c_value;
                                         come_value->c_value=(char*)come_increment_ref_count(((char*)(right_value202=append_object_to_right_values(((char*)(right_value201=buffer_to_string(buf2_156))),(struct sType*)come_increment_ref_count(type_157),info))));
                                         __dec_obj65 = come_decrement_ref_count2(__dec_obj65, (void*)0, (void*)0, 0,0,0, (void*)0);
                                         right_value201 = come_decrement_ref_count2(right_value201, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                         right_value202 = come_decrement_ref_count2(right_value202, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                        # 794 "05function4.c"
+                                        # 794 "05type.c"
                                         __dec_obj66=come_value->type;
                                         come_value->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value203=sType_clone(type_157))));
                                         come_call_finalizer3(__dec_obj66,sType_finalize, 0, 0, 0, 0, (void*)0);
                                         come_call_finalizer3(right_value203,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                                        # 795 "05function4.c"
+                                        # 795 "05type.c"
                                         come_value->var=((void*)0);
-                                        # 797 "05function4.c"
+                                        # 797 "05type.c"
                                         __dec_obj67=right_type2_152;
                                         right_type2_152=(struct sType*)come_increment_ref_count(((struct sType*)(right_value204=sType_clone(type_157))));
                                         come_call_finalizer3(__dec_obj67,sType_finalize, 0, 0, 0, 0, (void*)0);
@@ -7832,23 +7832,23 @@ right_value214 = (void*)0;
         }
     }
     else {
-        # 830 "05function4.c"
-        # 800 "05function4.c"
+        # 830 "05type.c"
+        # 800 "05type.c"
         if(_if_conditional290=string_operator_equals(left_type->mClass->mName,"int")&&(string_operator_equals(right_type->mClass->mName,"integer")&&right_type->mPointerNum==1),        _if_conditional290) {
-            # 801 "05function4.c"
+            # 801 "05type.c"
             method_name_158=(char*)come_increment_ref_count(((char*)(right_value205=create_method_name(right_type2_152,(_Bool)0,"to_int",info,(_Bool)1))));
             right_value205 = come_decrement_ref_count2(right_value205, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 815 "05function4.c"
-            # 803 "05function4.c"
+            # 815 "05type.c"
+            # 803 "05type.c"
             if(_if_conditional291=map$2charphsFunph_at(info->funcs,method_name_158,((void*)0))==((void*)0),            _if_conditional291) {
-                # 804 "05function4.c"
+                # 804 "05type.c"
                 obj_type_159=right_type2_152->mNoSolvedGenericsType->v1;
-                # 813 "05function4.c"
-                # 805 "05function4.c"
+                # 813 "05type.c"
+                # 805 "05type.c"
                 if(_if_conditional292=obj_type_159&&list$1sTypeph_length(obj_type_159->mGenericsTypes)>0,                _if_conditional292) {
-                    # 806 "05function4.c"
+                    # 806 "05type.c"
                     obj_type2_160=right_type2_152;
-                    # 807 "05function4.c"
+                    # 807 "05type.c"
                     __dec_obj68=method_name_158;
                     method_name_158=(char*)come_increment_ref_count(((char*)(right_value207=make_generics_function(obj_type2_160,(char*)come_increment_ref_count(((char*)(right_value206=__builtin_string("to_int")))),info,(_Bool)1))));
                     __dec_obj68 = come_decrement_ref_count2(__dec_obj68, (void*)0, (void*)0, 0,0,0, (void*)0);
@@ -7856,41 +7856,41 @@ right_value214 = (void*)0;
                     right_value207 = come_decrement_ref_count2(right_value207, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                 }
                 else {
-                    # 810 "05function4.c"
+                    # 810 "05type.c"
                     err_msg(info,"require to_string implementation(%s)",right_type2_152->mClass->mName);
-                    # 811 "05function4.c"
+                    # 811 "05type.c"
                     exit(1);
                 }
             }
-            # 815 "05function4.c"
-            buf2_161=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value209=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value208=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "05function4.c", 815, "buffer"))))))));
+            # 815 "05type.c"
+            buf2_161=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value209=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value208=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "05type.c", 815, "buffer"))))))));
             come_call_finalizer3(right_value208,buffer_finalize, 0, 1, 0, 0, __result_obj__);
             come_call_finalizer3(right_value209,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-            # 817 "05function4.c"
+            # 817 "05type.c"
             buffer_append_str(buf2_161,method_name_158);
-            # 818 "05function4.c"
+            # 818 "05type.c"
             buffer_append_str(buf2_161,"(");
-            # 819 "05function4.c"
+            # 819 "05type.c"
             buffer_append_str(buf2_161,come_value->c_value);
-            # 820 "05function4.c"
+            # 820 "05type.c"
             buffer_append_str(buf2_161,")");
-            # 822 "05function4.c"
-            type_162=(struct sType*)come_increment_ref_count(((struct sType*)(right_value211=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value210=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 822, "sType")))),"int",(_Bool)0,info))));
+            # 822 "05type.c"
+            type_162=(struct sType*)come_increment_ref_count(((struct sType*)(right_value211=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value210=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 822, "sType")))),"int",(_Bool)0,info))));
             come_call_finalizer3(right_value210,sType_finalize, 0, 1, 0, 0, __result_obj__);
             come_call_finalizer3(right_value211,sType_finalize, 0, 1, 0, 0, __result_obj__);
-            # 824 "05function4.c"
+            # 824 "05type.c"
             __dec_obj69=come_value->c_value;
             come_value->c_value=(char*)come_increment_ref_count(((char*)(right_value212=buffer_to_string(buf2_161))));
             __dec_obj69 = come_decrement_ref_count2(__dec_obj69, (void*)0, (void*)0, 0,0,0, (void*)0);
             right_value212 = come_decrement_ref_count2(right_value212, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 825 "05function4.c"
+            # 825 "05type.c"
             __dec_obj70=come_value->type;
             come_value->type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value213=sType_clone(type_162))));
             come_call_finalizer3(__dec_obj70,sType_finalize, 0, 0, 0, 0, (void*)0);
             come_call_finalizer3(right_value213,sType_finalize, 0, 1, 0, 0, __result_obj__);
-            # 826 "05function4.c"
+            # 826 "05type.c"
             come_value->var=((void*)0);
-            # 828 "05function4.c"
+            # 828 "05type.c"
             __dec_obj71=right_type2_152;
             right_type2_152=(struct sType*)come_increment_ref_count(((struct sType*)(right_value214=sType_clone(type_162))));
             come_call_finalizer3(__dec_obj71,sType_finalize, 0, 0, 0, 0, (void*)0);
@@ -7993,85 +7993,85 @@ right_value223 = (void*)0;
 memset(&node_181, 0, sizeof(struct sNode*));
 right_value227 = (void*)0;
 right_value228 = (void*)0;
-    # 834 "05function4.c"
+    # 834 "05type.c"
     result_type_163=(struct sType*)come_increment_ref_count(((struct sType*)(right_value215=sType_clone(base_type_name))));
     come_call_finalizer3(right_value215,sType_finalize, 0, 1, 0, 0, __result_obj__);
-    # 838 "05function4.c"
-    # 835 "05function4.c"
+    # 838 "05type.c"
+    # 835 "05type.c"
     if(_if_conditional293=!first,    _if_conditional293) {
-        # 836 "05function4.c"
+        # 836 "05type.c"
         result_type_163->mPointerNum=0;
     }
-    # 838 "05function4.c"
+    # 838 "05type.c"
     var_name_164=((void*)0);
-    # 860 "05function4.c"
+    # 860 "05type.c"
     {
-        # 841 "05function4.c"
+        # 841 "05type.c"
         p_165=info->p;
-        # 842 "05function4.c"
+        # 842 "05type.c"
         sline_166=info->sline;
-        # 858 "05function4.c"
-        # 844 "05function4.c"
+        # 858 "05type.c"
+        # 844 "05type.c"
         if(_if_conditional294=xisalpha(*info->p)||*info->p==95,        _if_conditional294) {
-            # 845 "05function4.c"
-            word_167=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 845, 6),__exception_result_var_b1=((char*)(right_value216=parse_word(info))), come_pop_stackframe(), __exception_result_var_b1));
+            # 845 "05type.c"
+            word_167=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 845, 6),__exception_result_var_b1=((char*)(right_value216=parse_word(info))), come_pop_stackframe(), __exception_result_var_b1));
             right_value216 = come_decrement_ref_count2(right_value216, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 853 "05function4.c"
-            # 847 "05function4.c"
+            # 853 "05type.c"
+            # 847 "05type.c"
             if(_if_conditional295=string_operator_equals(word_167,"const")||string_operator_equals(word_167,"__restrict")||string_operator_equals(word_167,"restrict")||string_operator_equals(word_167,"__user")||string_operator_equals(word_167,"volatile")||string_operator_equals(word_167,"_Nonnull")||string_operator_equals(word_167,"_Nullable")||string_operator_equals(word_167,"_Null_unspecified")||string_operator_equals(word_167,"__user")||string_operator_equals(word_167,"_Addr"),            _if_conditional295) {
             }
             else {
-                # 850 "05function4.c"
+                # 850 "05type.c"
                 info->p=p_165;
-                # 851 "05function4.c"
+                # 851 "05type.c"
                 info->sline=sline_166;
             }
             word_167 = come_decrement_ref_count2(word_167, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
         else {
-            # 855 "05function4.c"
+            # 855 "05type.c"
             info->p=p_165;
-            # 856 "05function4.c"
+            # 856 "05type.c"
             info->sline=sline_166;
         }
     }
-    # 860 "05function4.c"
+    # 860 "05type.c"
     between_brace_168=(_Bool)0;
-    # 889 "05function4.c"
+    # 889 "05type.c"
     {
-        # 862 "05function4.c"
+        # 862 "05type.c"
         p_169=info->p;
-        # 863 "05function4.c"
+        # 863 "05type.c"
         sline_170=info->sline;
-        # 885 "05function4.c"
-        # 865 "05function4.c"
+        # 885 "05type.c"
+        # 865 "05type.c"
         if(_if_conditional296=*info->p==40,        _if_conditional296) {
-            # 866 "05function4.c"
+            # 866 "05type.c"
             info->p++;
-            # 867 "05function4.c"
+            # 867 "05type.c"
             skip_spaces_and_lf(info);
-            # 883 "05function4.c"
-            # 869 "05function4.c"
+            # 883 "05type.c"
+            # 869 "05type.c"
             if(_if_conditional297=xisalpha(*info->p)||*info->p==95,            _if_conditional297) {
-                # 870 "05function4.c"
-                word_171=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 870, 7),__exception_result_var_b2=((char*)(right_value217=parse_word(info))), come_pop_stackframe(), __exception_result_var_b2));
+                # 870 "05type.c"
+                word_171=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 870, 7),__exception_result_var_b2=((char*)(right_value217=parse_word(info))), come_pop_stackframe(), __exception_result_var_b2));
                 right_value217 = come_decrement_ref_count2(right_value217, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 882 "05function4.c"
-                # 872 "05function4.c"
+                # 882 "05type.c"
+                # 872 "05type.c"
                 if(_if_conditional298=is_type_name(word_171,info),                _if_conditional298) {
                 }
                 else {
-                    # 882 "05function4.c"
-                    # 874 "05function4.c"
+                    # 882 "05type.c"
+                    # 874 "05type.c"
                     if(_if_conditional299=*info->p==41,                    _if_conditional299) {
-                        # 875 "05function4.c"
+                        # 875 "05type.c"
                         info->p++;
-                        # 876 "05function4.c"
+                        # 876 "05type.c"
                         skip_spaces_and_lf(info);
-                        # 881 "05function4.c"
-                        # 878 "05function4.c"
+                        # 881 "05type.c"
+                        # 878 "05type.c"
                         if(_if_conditional300=*info->p!=40,                        _if_conditional300) {
-                            # 879 "05function4.c"
+                            # 879 "05type.c"
                             between_brace_168=(_Bool)1;
                         }
                     }
@@ -8079,178 +8079,178 @@ right_value228 = (void*)0;
                 word_171 = come_decrement_ref_count2(word_171, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
         }
-        # 885 "05function4.c"
+        # 885 "05type.c"
         info->p=p_169;
-        # 886 "05function4.c"
+        # 886 "05type.c"
         info->sline=sline_170;
     }
-    # 889 "05function4.c"
+    # 889 "05type.c"
     parse_sharp_v5(info);
-    # 916 "05function4.c"
+    # 916 "05type.c"
     while(_while_condtional37=*info->p==42,    _while_condtional37) {
-        # 891 "05function4.c"
+        # 891 "05type.c"
         info->p++;
-        # 892 "05function4.c"
+        # 892 "05type.c"
         skip_spaces_and_lf(info);
-        # 914 "05function4.c"
+        # 914 "05type.c"
         {
-            # 895 "05function4.c"
+            # 895 "05type.c"
             p_172=info->p;
-            # 896 "05function4.c"
+            # 896 "05type.c"
             sline_173=info->sline;
-            # 912 "05function4.c"
-            # 898 "05function4.c"
+            # 912 "05type.c"
+            # 898 "05type.c"
             if(_if_conditional301=xisalpha(*info->p)||*info->p==95,            _if_conditional301) {
-                # 899 "05function4.c"
-                word_174=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 899, 8),__exception_result_var_b3=((char*)(right_value218=parse_word(info))), come_pop_stackframe(), __exception_result_var_b3));
+                # 899 "05type.c"
+                word_174=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 899, 8),__exception_result_var_b3=((char*)(right_value218=parse_word(info))), come_pop_stackframe(), __exception_result_var_b3));
                 right_value218 = come_decrement_ref_count2(right_value218, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 907 "05function4.c"
-                # 901 "05function4.c"
+                # 907 "05type.c"
+                # 901 "05type.c"
                 if(_if_conditional302=string_operator_equals(word_174,"const")||string_operator_equals(word_174,"__restrict")||string_operator_equals(word_174,"restrict")||string_operator_equals(word_174,"__user")||string_operator_equals(word_174,"volatile")||string_operator_equals(word_174,"_Nonnull")||string_operator_equals(word_174,"_Nullable")||string_operator_equals(word_174,"_Null_unspecified")||string_operator_equals(word_174,"__user")||string_operator_equals(word_174,"_Addr"),                _if_conditional302) {
                 }
                 else {
-                    # 904 "05function4.c"
+                    # 904 "05type.c"
                     info->p=p_172;
-                    # 905 "05function4.c"
+                    # 905 "05type.c"
                     info->sline=sline_173;
                 }
                 word_174 = come_decrement_ref_count2(word_174, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
             else {
-                # 909 "05function4.c"
+                # 909 "05type.c"
                 info->p=p_172;
-                # 910 "05function4.c"
+                # 910 "05type.c"
                 info->sline=sline_173;
             }
         }
-        # 914 "05function4.c"
+        # 914 "05type.c"
         result_type_163->mPointerNum++;
     }
-    # 916 "05function4.c"
+    # 916 "05type.c"
     parse_sharp_v5(info);
-    # 923 "05function4.c"
-    # 918 "05function4.c"
+    # 923 "05type.c"
+    # 918 "05type.c"
     if(_if_conditional303=between_brace_168&&*info->p==40,    _if_conditional303) {
-        # 919 "05function4.c"
+        # 919 "05type.c"
         info->p++;
-        # 920 "05function4.c"
+        # 920 "05type.c"
         skip_spaces_and_lf(info);
     }
-    # 932 "05function4.c"
-    # 923 "05function4.c"
+    # 932 "05type.c"
+    # 923 "05type.c"
     if(_if_conditional304=xisalnum(*info->p)||*info->p==95,    _if_conditional304) {
-        # 924 "05function4.c"
+        # 924 "05type.c"
         __dec_obj72=var_name_164;
-        var_name_164=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 924, 9),__exception_result_var_b4=((char*)(right_value219=parse_word(info))), come_pop_stackframe(), __exception_result_var_b4));
+        var_name_164=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 924, 9),__exception_result_var_b4=((char*)(right_value219=parse_word(info))), come_pop_stackframe(), __exception_result_var_b4));
         __dec_obj72 = come_decrement_ref_count2(__dec_obj72, (void*)0, (void*)0, 0,0,0, (void*)0);
         right_value219 = come_decrement_ref_count2(right_value219, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
     }
     else {
-        # 927 "05function4.c"
-        # 928 "05function4.c"
+        # 927 "05type.c"
+        # 928 "05type.c"
         num_anonymous_var_name_175++;
-        # 929 "05function4.c"
+        # 929 "05type.c"
         __dec_obj73=var_name_164;
         var_name_164=(char*)come_increment_ref_count(((char*)(right_value220=xsprintf("anonymous_var_nameYYY%d",num_anonymous_var_name_175))));
         __dec_obj73 = come_decrement_ref_count2(__dec_obj73, (void*)0, (void*)0, 0,0,0, (void*)0);
         right_value220 = come_decrement_ref_count2(right_value220, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
     }
-    # 937 "05function4.c"
-    # 932 "05function4.c"
+    # 937 "05type.c"
+    # 932 "05type.c"
     if(_if_conditional305=between_brace_168&&*info->p==41,    _if_conditional305) {
-        # 933 "05function4.c"
+        # 933 "05type.c"
         info->p++;
-        # 934 "05function4.c"
+        # 934 "05type.c"
         skip_spaces_and_lf(info);
     }
-    # 949 "05function4.c"
-    # 937 "05function4.c"
+    # 949 "05type.c"
+    # 937 "05type.c"
     if(_if_conditional306=*info->p==58,    _if_conditional306) {
-        # 938 "05function4.c"
+        # 938 "05type.c"
         info->p++;
-        # 939 "05function4.c"
+        # 939 "05type.c"
         skip_spaces_and_lf(info);
-        # 941 "05function4.c"
+        # 941 "05type.c"
         no_comma_176=info->no_comma;
-        # 942 "05function4.c"
+        # 942 "05type.c"
         info->no_comma=(_Bool)1;
-        # 943 "05function4.c"
+        # 943 "05type.c"
         node_177=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value221=expression_v13(info))));
         if(right_value221) { right_value221 = come_decrement_ref_count2(right_value221, ((struct sNode*)right_value221)->finalize, ((struct sNode*)right_value221)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-        # 944 "05function4.c"
+        # 944 "05type.c"
         info->no_comma=no_comma_176;
-        # 946 "05function4.c"
+        # 946 "05type.c"
         __dec_obj74=result_type_163->mSizeNum;
         result_type_163->mSizeNum=(struct sNode*)come_increment_ref_count(node_177);
         if(__dec_obj74) { __dec_obj74 = come_decrement_ref_count2(__dec_obj74, ((struct sNode*)__dec_obj74)->finalize, ((struct sNode*)__dec_obj74)->_protocol_obj, 0,0,0, (void*)0); }
         if(node_177) { node_177 = come_decrement_ref_count2(node_177, ((struct sNode*)node_177)->finalize, ((struct sNode*)node_177)->_protocol_obj, 0, 0, 0, (void*)0); } 
     }
-    # 990 "05function4.c"
+    # 990 "05type.c"
     while(_while_condtional38=*info->p==91,    _while_condtional38) {
-        # 950 "05function4.c"
+        # 950 "05type.c"
         info->p++;
-        # 951 "05function4.c"
+        # 951 "05type.c"
         skip_spaces_and_lf(info);
-        # 952 "05function4.c"
+        # 952 "05type.c"
         parse_sharp_v5(info);
-        # 974 "05function4.c"
+        # 974 "05type.c"
         {
-            # 955 "05function4.c"
+            # 955 "05type.c"
             p_178=info->p;
-            # 956 "05function4.c"
+            # 956 "05type.c"
             sline_179=info->sline;
-            # 972 "05function4.c"
-            # 958 "05function4.c"
+            # 972 "05type.c"
+            # 958 "05type.c"
             if(_if_conditional307=xisalpha(*info->p)||*info->p==95,            _if_conditional307) {
-                # 959 "05function4.c"
-                word_180=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 959, 10),__exception_result_var_b5=((char*)(right_value222=parse_word(info))), come_pop_stackframe(), __exception_result_var_b5));
+                # 959 "05type.c"
+                word_180=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 959, 10),__exception_result_var_b5=((char*)(right_value222=parse_word(info))), come_pop_stackframe(), __exception_result_var_b5));
                 right_value222 = come_decrement_ref_count2(right_value222, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 967 "05function4.c"
-                # 961 "05function4.c"
+                # 967 "05type.c"
+                # 961 "05type.c"
                 if(_if_conditional308=string_operator_equals(word_180,"const")||string_operator_equals(word_180,"__restrict")||string_operator_equals(word_180,"restrict")||string_operator_equals(word_180,"__user")||string_operator_equals(word_180,"volatile")||string_operator_equals(word_180,"_Nonnull")||string_operator_equals(word_180,"_Nullable")||string_operator_equals(word_180,"_Null_unspecified")||string_operator_equals(word_180,"__user")||string_operator_equals(word_180,"_Addr"),                _if_conditional308) {
                 }
                 else {
-                    # 964 "05function4.c"
+                    # 964 "05type.c"
                     info->p=p_178;
-                    # 965 "05function4.c"
+                    # 965 "05type.c"
                     info->sline=sline_179;
                 }
                 word_180 = come_decrement_ref_count2(word_180, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
             else {
-                # 969 "05function4.c"
+                # 969 "05type.c"
                 info->p=p_178;
-                # 970 "05function4.c"
+                # 970 "05type.c"
                 info->sline=sline_179;
             }
         }
-        # 981 "05function4.c"
-        # 974 "05function4.c"
+        # 981 "05type.c"
+        # 974 "05type.c"
         if(_if_conditional309=*info->p==93,        _if_conditional309) {
-            # 975 "05function4.c"
+            # 975 "05type.c"
             info->p++;
-            # 976 "05function4.c"
+            # 976 "05type.c"
             skip_spaces_and_lf(info);
-            # 978 "05function4.c"
+            # 978 "05type.c"
             result_type_163->mPointerNum++;
-            # 979 "05function4.c"
+            # 979 "05type.c"
             break;
         }
-        # 981 "05function4.c"
+        # 981 "05type.c"
         parse_sharp_v5(info);
-        # 983 "05function4.c"
+        # 983 "05type.c"
         node_181=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value223=expression_v13(info))));
         if(right_value223) { right_value223 = come_decrement_ref_count2(right_value223, ((struct sNode*)right_value223)->finalize, ((struct sNode*)right_value223)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-        # 984 "05function4.c"
+        # 984 "05type.c"
         list$1sNodeph_push_back(result_type_163->mArrayNum,(struct sNode*)come_increment_ref_count(node_181));
-        # 985 "05function4.c"
+        # 985 "05type.c"
         parse_sharp_v5(info);
-        # 987 "05function4.c"
+        # 987 "05type.c"
         expected_next_character(93,info);
         if(node_181) { node_181 = come_decrement_ref_count2(node_181, ((struct sNode*)node_181)->finalize, ((struct sNode*)node_181)->_protocol_obj, 0, 0, 0, (void*)0); } 
     }
-    # 990 "05function4.c"
-    __result132__ = __result_obj__ = ((struct tuple2$2sTypephcharph*)(right_value228=tuple2$2sTypephcharph_initialize((struct tuple2$2sTypephcharph*)come_increment_ref_count(((struct tuple2$2sTypephcharph*)(right_value227=(struct tuple2$2sTypephcharph*)come_calloc(1, sizeof(struct tuple2$2sTypephcharph)*(1), "05function4.c", 990, "struct tuple2$2sTypephcharph")))),(struct sType*)come_increment_ref_count(result_type_163),(char*)come_increment_ref_count(var_name_164))));
+    # 990 "05type.c"
+    __result132__ = __result_obj__ = ((struct tuple2$2sTypephcharph*)(right_value228=tuple2$2sTypephcharph_initialize((struct tuple2$2sTypephcharph*)come_increment_ref_count(((struct tuple2$2sTypephcharph*)(right_value227=(struct tuple2$2sTypephcharph*)come_calloc(1, sizeof(struct tuple2$2sTypephcharph)*(1), "05type.c", 990, "struct tuple2$2sTypephcharph")))),(struct sType*)come_increment_ref_count(result_type_163),(char*)come_increment_ref_count(var_name_164))));
     come_call_finalizer3(base_type_name,sType_finalize, 0, 0, 1, 0, (void*)0);
     come_call_finalizer3(result_type_163,sType_finalize, 0, 0, 0, 0, (void*)0);
     var_name_164 = come_decrement_ref_count2(var_name_164, (void*)0, (void*)0, 0, 0, 0, (void*)0);
@@ -8407,32 +8407,32 @@ memset(&p_185, 0, sizeof(char*));
 memset(&sline_186, 0, sizeof(int));
 right_value229 = (void*)0;
 memset(&word_187, 0, sizeof(char*));
-    # 995 "05function4.c"
+    # 995 "05type.c"
     p_185=info->p;
-    # 996 "05function4.c"
+    # 996 "05type.c"
     sline_186=info->sline;
-    # 1012 "05function4.c"
-    # 998 "05function4.c"
+    # 1012 "05type.c"
+    # 998 "05type.c"
     if(_if_conditional314=xisalpha(*info->p)||*info->p==95,    _if_conditional314) {
-        # 999 "05function4.c"
-        word_187=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 999, 11),__exception_result_var_b6=((char*)(right_value229=parse_word(info))), come_pop_stackframe(), __exception_result_var_b6));
+        # 999 "05type.c"
+        word_187=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 999, 11),__exception_result_var_b6=((char*)(right_value229=parse_word(info))), come_pop_stackframe(), __exception_result_var_b6));
         right_value229 = come_decrement_ref_count2(right_value229, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 1007 "05function4.c"
-        # 1001 "05function4.c"
+        # 1007 "05type.c"
+        # 1001 "05type.c"
         if(_if_conditional315=string_operator_equals(word_187,"const")||string_operator_equals(word_187,"__restrict")||string_operator_equals(word_187,"restrict")||string_operator_equals(word_187,"__user")||string_operator_equals(word_187,"volatile")||string_operator_equals(word_187,"_Nonnull")||string_operator_equals(word_187,"_Nullable")||string_operator_equals(word_187,"_Null_unspecified")||string_operator_equals(word_187,"__user")||string_operator_equals(word_187,"_Addr"),        _if_conditional315) {
         }
         else {
-            # 1004 "05function4.c"
+            # 1004 "05type.c"
             info->p=p_185;
-            # 1005 "05function4.c"
+            # 1005 "05type.c"
             info->sline=sline_186;
         }
         word_187 = come_decrement_ref_count2(word_187, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
     else {
-        # 1009 "05function4.c"
+        # 1009 "05type.c"
         info->p=p_185;
-        # 1010 "05function4.c"
+        # 1010 "05type.c"
         info->sline=sline_186;
     }
 }
@@ -9339,168 +9339,168 @@ right_value407 = (void*)0;
 memset(&asm_name_357, 0, sizeof(char*));
 right_value408 = (void*)0;
 right_value409 = (void*)0;
-    # 1016 "05function4.c"
+    # 1016 "05type.c"
     head_188=info->p;
-    # 1017 "05function4.c"
+    # 1017 "05type.c"
     head_sline_189=info->sline;
-    # 1018 "05function4.c"
+    # 1018 "05type.c"
     info->define_struct=(_Bool)0;
-    # 1020 "05function4.c"
-    type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1020, 12),__exception_result_var_b7=((char*)(right_value230=parse_word(info))), come_pop_stackframe(), __exception_result_var_b7));
+    # 1020 "05type.c"
+    type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1020, 12),__exception_result_var_b7=((char*)(right_value230=parse_word(info))), come_pop_stackframe(), __exception_result_var_b7));
     right_value230 = come_decrement_ref_count2(right_value230, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 1025 "05function4.c"
+    # 1025 "05type.c"
     while(_while_condtional39=string_operator_equals(type_name_190,"__extension__"),    _while_condtional39) {
-        # 1022 "05function4.c"
+        # 1022 "05type.c"
         __dec_obj80=type_name_190;
-        type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1022, 13),__exception_result_var_b8=((char*)(right_value231=parse_word(info))), come_pop_stackframe(), __exception_result_var_b8));
+        type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1022, 13),__exception_result_var_b8=((char*)(right_value231=parse_word(info))), come_pop_stackframe(), __exception_result_var_b8));
         __dec_obj80 = come_decrement_ref_count2(__dec_obj80, (void*)0, (void*)0, 0,0,0, (void*)0);
         right_value231 = come_decrement_ref_count2(right_value231, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
     }
-    # 1025 "05function4.c"
+    # 1025 "05type.c"
     record__191=(_Bool)0;
-    # 1026 "05function4.c"
+    # 1026 "05type.c"
     constant_192=(_Bool)0;
-    # 1027 "05function4.c"
+    # 1027 "05type.c"
     static__193=(_Bool)0;
-    # 1028 "05function4.c"
+    # 1028 "05type.c"
     volatile__194=(_Bool)0;
-    # 1029 "05function4.c"
+    # 1029 "05type.c"
     register__195=(_Bool)0;
-    # 1030 "05function4.c"
+    # 1030 "05type.c"
     unsigned__196=(_Bool)0;
-    # 1031 "05function4.c"
+    # 1031 "05type.c"
     long__197=(_Bool)0;
-    # 1032 "05function4.c"
+    # 1032 "05type.c"
     long_long_198=(_Bool)0;
-    # 1033 "05function4.c"
+    # 1033 "05type.c"
     short__199=(_Bool)0;
-    # 1034 "05function4.c"
+    # 1034 "05type.c"
     restrict__200=(_Bool)0;
-    # 1035 "05function4.c"
+    # 1035 "05type.c"
     struct__201=(_Bool)0;
-    # 1036 "05function4.c"
+    # 1036 "05type.c"
     union__202=(_Bool)0;
-    # 1037 "05function4.c"
+    # 1037 "05type.c"
     enum__203=(_Bool)0;
-    # 1038 "05function4.c"
+    # 1038 "05type.c"
     no_heap_204=(_Bool)0;
-    # 1039 "05function4.c"
+    # 1039 "05type.c"
     extern__205=(_Bool)0;
-    # 1040 "05function4.c"
+    # 1040 "05type.c"
     inline__206=(_Bool)0;
-    # 1041 "05function4.c"
+    # 1041 "05type.c"
     come_mem_core__207=(_Bool)0;
-    # 1043 "05function4.c"
+    # 1043 "05type.c"
     alignas__208=((void*)0);
-    # 1045 "05function4.c"
+    # 1045 "05type.c"
     anonymous_type_209=(_Bool)0;
-    # 1046 "05function4.c"
+    # 1046 "05type.c"
     anonymous_name_210=(_Bool)0;
-    # 1487 "05function4.c"
+    # 1487 "05type.c"
     while(_while_condtional40=(_Bool)1,    _while_condtional40) {
-        # 1485 "05function4.c"
-        # 1049 "05function4.c"
+        # 1485 "05type.c"
+        # 1049 "05type.c"
         if(_if_conditional316=string_operator_equals(type_name_190,"struct"),        _if_conditional316) {
-            # 1050 "05function4.c"
+            # 1050 "05type.c"
             struct__201=(_Bool)1;
-            # 1075 "05function4.c"
-            # 1052 "05function4.c"
+            # 1075 "05type.c"
+            # 1052 "05type.c"
             if(_if_conditional317=*info->p==123,            _if_conditional317) {
-                # 1053 "05function4.c"
+                # 1053 "05type.c"
                 p_211=info->p;
-                # 1054 "05function4.c"
+                # 1054 "05type.c"
                 sline_212=info->sline;
-                # 1056 "05function4.c"
+                # 1056 "05type.c"
                 ((char*)(right_value232=skip_block(info)));
                 right_value232 = come_decrement_ref_count2(right_value232, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 1073 "05function4.c"
-                # 1058 "05function4.c"
+                # 1073 "05type.c"
+                # 1058 "05type.c"
                 if(_if_conditional318=*info->p==59,                _if_conditional318) {
-                    # 1059 "05function4.c"
+                    # 1059 "05type.c"
                     anonymous_name_210=(_Bool)1;
-                    # 1060 "05function4.c"
+                    # 1060 "05type.c"
                     anonymous_type_209=(_Bool)1;
-                    # 1061 "05function4.c"
+                    # 1061 "05type.c"
                     __dec_obj81=type_name_190;
                     type_name_190=(char*)come_increment_ref_count(((char*)(right_value233=__builtin_string(""))));
                     __dec_obj81 = come_decrement_ref_count2(__dec_obj81, (void*)0, (void*)0, 0,0,0, (void*)0);
                     right_value233 = come_decrement_ref_count2(right_value233, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                    # 1062 "05function4.c"
+                    # 1062 "05type.c"
                     info->p=p_211;
-                    # 1063 "05function4.c"
+                    # 1063 "05type.c"
                     info->sline=sline_212;
-                    # 1064 "05function4.c"
+                    # 1064 "05type.c"
                     break;
                 }
                 else {
-                    # 1067 "05function4.c"
+                    # 1067 "05type.c"
                     anonymous_type_209=(_Bool)1;
-                    # 1068 "05function4.c"
+                    # 1068 "05type.c"
                     __dec_obj82=type_name_190;
                     type_name_190=(char*)come_increment_ref_count(((char*)(right_value234=__builtin_string(""))));
                     __dec_obj82 = come_decrement_ref_count2(__dec_obj82, (void*)0, (void*)0, 0,0,0, (void*)0);
                     right_value234 = come_decrement_ref_count2(right_value234, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                    # 1069 "05function4.c"
+                    # 1069 "05type.c"
                     info->p=p_211;
-                    # 1070 "05function4.c"
+                    # 1070 "05type.c"
                     info->sline=sline_212;
-                    # 1071 "05function4.c"
+                    # 1071 "05type.c"
                     break;
                 }
             }
-            # 1075 "05function4.c"
+            # 1075 "05type.c"
             parse_sharp_v5(info);
-            # 1132 "05function4.c"
-            # 1077 "05function4.c"
+            # 1132 "05type.c"
+            # 1077 "05type.c"
             if(_if_conditional319=*info->p!=62,            _if_conditional319) {
-                # 1078 "05function4.c"
+                # 1078 "05type.c"
                 __dec_obj83=type_name_190;
-                type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1078, 14),__exception_result_var_b9=((char*)(right_value235=parse_word(info))), come_pop_stackframe(), __exception_result_var_b9));
+                type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1078, 14),__exception_result_var_b9=((char*)(right_value235=parse_word(info))), come_pop_stackframe(), __exception_result_var_b9));
                 __dec_obj83 = come_decrement_ref_count2(__dec_obj83, (void*)0, (void*)0, 0,0,0, (void*)0);
                 right_value235 = come_decrement_ref_count2(right_value235, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 1080 "05function4.c"
+                # 1080 "05type.c"
                 parse_sharp_v5(info);
-                # 1112 "05function4.c"
-                # 1082 "05function4.c"
+                # 1112 "05type.c"
+                # 1082 "05type.c"
                 if(_if_conditional320=*info->p==60,                _if_conditional320) {
-                    # 1083 "05function4.c"
+                    # 1083 "05type.c"
                     p_213=info->p;
-                    # 1084 "05function4.c"
+                    # 1084 "05type.c"
                     sline_214=info->sline;
-                    # 1086 "05function4.c"
+                    # 1086 "05type.c"
                     info->p++;
-                    # 1087 "05function4.c"
+                    # 1087 "05type.c"
                     skip_spaces_and_lf(info);
-                    # 1110 "05function4.c"
+                    # 1110 "05type.c"
                     while(_while_condtional41=(_Bool)1,                    _while_condtional41) {
-                        # 1109 "05function4.c"
-                        # 1090 "05function4.c"
+                        # 1109 "05type.c"
+                        # 1090 "05type.c"
                         if(_if_conditional321=*info->p==62,                        _if_conditional321) {
-                            # 1091 "05function4.c"
+                            # 1091 "05type.c"
                             info->p++;
-                            # 1092 "05function4.c"
+                            # 1092 "05type.c"
                             skip_spaces_and_lf(info);
-                            # 1100 "05function4.c"
-                            # 1094 "05function4.c"
+                            # 1100 "05type.c"
+                            # 1094 "05type.c"
                             if(_if_conditional322=*info->p==123,                            _if_conditional322) {
                             }
                             else {
-                                # 1097 "05function4.c"
+                                # 1097 "05type.c"
                                 info->p=p_213;
-                                # 1098 "05function4.c"
+                                # 1098 "05type.c"
                                 info->sline=sline_214;
                             }
-                            # 1100 "05function4.c"
+                            # 1100 "05type.c"
                             break;
                         }
                         else {
-                            # 1109 "05function4.c"
-                            # 1102 "05function4.c"
+                            # 1109 "05type.c"
+                            # 1102 "05type.c"
                             if(_if_conditional323=*info->p==0,                            _if_conditional323) {
-                                # 1103 "05function4.c"
+                                # 1103 "05type.c"
                                 err_msg(info,"invalid struct definition");
-                                # 1104 "05function4.c"
-                                __result134__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value237=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value236=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05function4.c", 1104, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
+                                # 1104 "05type.c"
+                                __result134__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value237=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value236=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05type.c", 1104, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
                                 type_name_190 = come_decrement_ref_count2(type_name_190, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                 if(alignas__208) { alignas__208 = come_decrement_ref_count2(alignas__208, ((struct sNode*)alignas__208)->finalize, ((struct sNode*)alignas__208)->_protocol_obj, 0, 0, 0, (void*)0); } 
                                 come_call_finalizer3(right_value236,tuple3$3sTypephcharphboolp_finalize, 0, 1, 0, 0, __result_obj__);
@@ -9508,33 +9508,33 @@ right_value409 = (void*)0;
                                 return __result134__;
                             }
                             else {
-                                # 1107 "05function4.c"
+                                # 1107 "05type.c"
                                 info->p++;
                             }
                         }
                     }
                 }
-                # 1131 "05function4.c"
-                # 1112 "05function4.c"
+                # 1131 "05type.c"
+                # 1112 "05type.c"
                 if(_if_conditional324=*info->p==123,                _if_conditional324) {
-                    # 1113 "05function4.c"
+                    # 1113 "05type.c"
                     p_215=info->p;
-                    # 1114 "05function4.c"
+                    # 1114 "05type.c"
                     sline_216=info->sline;
-                    # 1116 "05function4.c"
+                    # 1116 "05type.c"
                     ((char*)(right_value238=skip_block(info)));
                     right_value238 = come_decrement_ref_count2(right_value238, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                    # 1130 "05function4.c"
-                    # 1118 "05function4.c"
+                    # 1130 "05type.c"
+                    # 1118 "05type.c"
                     if(_if_conditional325=*info->p==59,                    _if_conditional325) {
-                        # 1119 "05function4.c"
+                        # 1119 "05type.c"
                         info->p=head_188;
-                        # 1120 "05function4.c"
+                        # 1120 "05type.c"
                         info->sline=head_sline_189;
-                        # 1121 "05function4.c"
+                        # 1121 "05type.c"
                         info->define_struct=(_Bool)1;
-                        # 1122 "05function4.c"
-                        __result135__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value240=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value239=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05function4.c", 1122, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
+                        # 1122 "05type.c"
+                        __result135__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value240=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value239=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05type.c", 1122, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
                         type_name_190 = come_decrement_ref_count2(type_name_190, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         if(alignas__208) { alignas__208 = come_decrement_ref_count2(alignas__208, ((struct sNode*)alignas__208)->finalize, ((struct sNode*)alignas__208)->_protocol_obj, 0, 0, 0, (void*)0); } 
                         come_call_finalizer3(right_value239,tuple3$3sTypephcharphboolp_finalize, 0, 1, 0, 0, __result_obj__);
@@ -9542,103 +9542,103 @@ right_value409 = (void*)0;
                         return __result135__;
                     }
                     else {
-                        # 1125 "05function4.c"
+                        # 1125 "05type.c"
                         anonymous_type_209=(_Bool)1;
-                        # 1126 "05function4.c"
+                        # 1126 "05type.c"
                         info->p=p_215;
-                        # 1127 "05function4.c"
+                        # 1127 "05type.c"
                         info->sline=sline_216;
-                        # 1128 "05function4.c"
+                        # 1128 "05type.c"
                         break;
                     }
                 }
             }
         }
         else {
-            # 1485 "05function4.c"
-            # 1133 "05function4.c"
+            # 1485 "05type.c"
+            # 1133 "05type.c"
             if(_if_conditional326=string_operator_equals(type_name_190,"union"),            _if_conditional326) {
-                # 1134 "05function4.c"
+                # 1134 "05type.c"
                 union__202=(_Bool)1;
-                # 1162 "05function4.c"
-                # 1136 "05function4.c"
+                # 1162 "05type.c"
+                # 1136 "05type.c"
                 if(_if_conditional327=*info->p==123,                _if_conditional327) {
-                    # 1137 "05function4.c"
+                    # 1137 "05type.c"
                     p_217=info->p;
-                    # 1138 "05function4.c"
+                    # 1138 "05type.c"
                     sline_218=info->sline;
-                    # 1140 "05function4.c"
+                    # 1140 "05type.c"
                     ((char*)(right_value241=skip_block(info)));
                     right_value241 = come_decrement_ref_count2(right_value241, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                    # 1160 "05function4.c"
-                    # 1142 "05function4.c"
+                    # 1160 "05type.c"
+                    # 1142 "05type.c"
                     if(_if_conditional328=*info->p==59,                    _if_conditional328) {
-                        # 1143 "05function4.c"
+                        # 1143 "05type.c"
                         info->p=head_188;
-                        # 1144 "05function4.c"
+                        # 1144 "05type.c"
                         info->sline=head_sline_189;
-                        # 1146 "05function4.c"
+                        # 1146 "05type.c"
                         info->define_struct=(_Bool)0;
-                        # 1147 "05function4.c"
+                        # 1147 "05type.c"
                         anonymous_type_209=(_Bool)1;
-                        # 1148 "05function4.c"
+                        # 1148 "05type.c"
                         __dec_obj86=type_name_190;
                         type_name_190=(char*)come_increment_ref_count(((char*)(right_value242=__builtin_string(""))));
                         __dec_obj86 = come_decrement_ref_count2(__dec_obj86, (void*)0, (void*)0, 0,0,0, (void*)0);
                         right_value242 = come_decrement_ref_count2(right_value242, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                        # 1149 "05function4.c"
+                        # 1149 "05type.c"
                         info->p=p_217;
-                        # 1150 "05function4.c"
+                        # 1150 "05type.c"
                         info->sline=sline_218;
-                        # 1151 "05function4.c"
+                        # 1151 "05type.c"
                         break;
                     }
                     else {
-                        # 1154 "05function4.c"
+                        # 1154 "05type.c"
                         anonymous_type_209=(_Bool)1;
-                        # 1155 "05function4.c"
+                        # 1155 "05type.c"
                         __dec_obj87=type_name_190;
                         type_name_190=(char*)come_increment_ref_count(((char*)(right_value243=__builtin_string(""))));
                         __dec_obj87 = come_decrement_ref_count2(__dec_obj87, (void*)0, (void*)0, 0,0,0, (void*)0);
                         right_value243 = come_decrement_ref_count2(right_value243, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                        # 1156 "05function4.c"
+                        # 1156 "05type.c"
                         info->p=p_217;
-                        # 1157 "05function4.c"
+                        # 1157 "05type.c"
                         info->sline=sline_218;
-                        # 1158 "05function4.c"
+                        # 1158 "05type.c"
                         break;
                     }
                 }
-                # 1162 "05function4.c"
+                # 1162 "05type.c"
                 parse_sharp_v5(info);
-                # 1164 "05function4.c"
+                # 1164 "05type.c"
                 __dec_obj88=type_name_190;
-                type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1164, 15),__exception_result_var_b10=((char*)(right_value244=parse_word(info))), come_pop_stackframe(), __exception_result_var_b10));
+                type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1164, 15),__exception_result_var_b10=((char*)(right_value244=parse_word(info))), come_pop_stackframe(), __exception_result_var_b10));
                 __dec_obj88 = come_decrement_ref_count2(__dec_obj88, (void*)0, (void*)0, 0,0,0, (void*)0);
                 right_value244 = come_decrement_ref_count2(right_value244, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 1166 "05function4.c"
+                # 1166 "05type.c"
                 parse_sharp_v5(info);
-                # 1187 "05function4.c"
-                # 1168 "05function4.c"
+                # 1187 "05type.c"
+                # 1168 "05type.c"
                 if(_if_conditional329=*info->p==123,                _if_conditional329) {
-                    # 1169 "05function4.c"
+                    # 1169 "05type.c"
                     p_219=info->p;
-                    # 1170 "05function4.c"
+                    # 1170 "05type.c"
                     sline_220=info->sline;
-                    # 1172 "05function4.c"
+                    # 1172 "05type.c"
                     ((char*)(right_value245=skip_block(info)));
                     right_value245 = come_decrement_ref_count2(right_value245, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                    # 1186 "05function4.c"
-                    # 1174 "05function4.c"
+                    # 1186 "05type.c"
+                    # 1174 "05type.c"
                     if(_if_conditional330=*info->p==59,                    _if_conditional330) {
-                        # 1175 "05function4.c"
+                        # 1175 "05type.c"
                         info->p=head_188;
-                        # 1176 "05function4.c"
+                        # 1176 "05type.c"
                         info->sline=head_sline_189;
-                        # 1177 "05function4.c"
+                        # 1177 "05type.c"
                         info->define_struct=(_Bool)1;
-                        # 1178 "05function4.c"
-                        __result136__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value247=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value246=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05function4.c", 1178, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
+                        # 1178 "05type.c"
+                        __result136__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value247=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value246=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05type.c", 1178, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
                         type_name_190 = come_decrement_ref_count2(type_name_190, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         if(alignas__208) { alignas__208 = come_decrement_ref_count2(alignas__208, ((struct sNode*)alignas__208)->finalize, ((struct sNode*)alignas__208)->_protocol_obj, 0, 0, 0, (void*)0); } 
                         come_call_finalizer3(right_value246,tuple3$3sTypephcharphboolp_finalize, 0, 1, 0, 0, __result_obj__);
@@ -9646,46 +9646,46 @@ right_value409 = (void*)0;
                         return __result136__;
                     }
                     else {
-                        # 1181 "05function4.c"
+                        # 1181 "05type.c"
                         anonymous_type_209=(_Bool)1;
-                        # 1182 "05function4.c"
+                        # 1182 "05type.c"
                         info->p=p_219;
-                        # 1183 "05function4.c"
+                        # 1183 "05type.c"
                         info->sline=sline_220;
-                        # 1184 "05function4.c"
+                        # 1184 "05type.c"
                         break;
                     }
                 }
             }
             else {
-                # 1485 "05function4.c"
-                # 1188 "05function4.c"
+                # 1485 "05type.c"
+                # 1188 "05type.c"
                 if(_if_conditional331=string_operator_equals(type_name_190,"enum"),                _if_conditional331) {
-                    # 1189 "05function4.c"
+                    # 1189 "05type.c"
                     enum__203=(_Bool)1;
-                    # 1191 "05function4.c"
+                    # 1191 "05type.c"
                     parse_sharp_v5(info);
-                    # 1214 "05function4.c"
-                    # 1193 "05function4.c"
+                    # 1214 "05type.c"
+                    # 1193 "05type.c"
                     if(_if_conditional332=*info->p==123,                    _if_conditional332) {
-                        # 1194 "05function4.c"
+                        # 1194 "05type.c"
                         p_221=info->p;
-                        # 1195 "05function4.c"
+                        # 1195 "05type.c"
                         sline_222=info->sline;
-                        # 1197 "05function4.c"
+                        # 1197 "05type.c"
                         ((char*)(right_value248=skip_block(info)));
                         right_value248 = come_decrement_ref_count2(right_value248, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                        # 1212 "05function4.c"
-                        # 1199 "05function4.c"
+                        # 1212 "05type.c"
+                        # 1199 "05type.c"
                         if(_if_conditional333=*info->p==59,                        _if_conditional333) {
-                            # 1200 "05function4.c"
+                            # 1200 "05type.c"
                             info->p=head_188;
-                            # 1201 "05function4.c"
+                            # 1201 "05type.c"
                             info->sline=head_sline_189;
-                            # 1202 "05function4.c"
+                            # 1202 "05type.c"
                             info->define_struct=(_Bool)1;
-                            # 1203 "05function4.c"
-                            __result137__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value250=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value249=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05function4.c", 1203, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
+                            # 1203 "05type.c"
+                            __result137__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value250=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value249=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05type.c", 1203, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
                             type_name_190 = come_decrement_ref_count2(type_name_190, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                             if(alignas__208) { alignas__208 = come_decrement_ref_count2(alignas__208, ((struct sNode*)alignas__208)->finalize, ((struct sNode*)alignas__208)->_protocol_obj, 0, 0, 0, (void*)0); } 
                             come_call_finalizer3(right_value249,tuple3$3sTypephcharphboolp_finalize, 0, 1, 0, 0, __result_obj__);
@@ -9693,51 +9693,51 @@ right_value409 = (void*)0;
                             return __result137__;
                         }
                         else {
-                            # 1206 "05function4.c"
+                            # 1206 "05type.c"
                             anonymous_type_209=(_Bool)1;
-                            # 1207 "05function4.c"
+                            # 1207 "05type.c"
                             __dec_obj89=type_name_190;
                             type_name_190=(char*)come_increment_ref_count(((char*)(right_value251=__builtin_string(""))));
                             __dec_obj89 = come_decrement_ref_count2(__dec_obj89, (void*)0, (void*)0, 0,0,0, (void*)0);
                             right_value251 = come_decrement_ref_count2(right_value251, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                            # 1208 "05function4.c"
+                            # 1208 "05type.c"
                             info->p=p_221;
-                            # 1209 "05function4.c"
+                            # 1209 "05type.c"
                             info->sline=sline_222;
-                            # 1210 "05function4.c"
+                            # 1210 "05type.c"
                             break;
                         }
                     }
-                    # 1214 "05function4.c"
+                    # 1214 "05type.c"
                     parse_sharp_v5(info);
-                    # 1216 "05function4.c"
+                    # 1216 "05type.c"
                     __dec_obj90=type_name_190;
-                    type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1216, 16),__exception_result_var_b11=((char*)(right_value252=parse_word(info))), come_pop_stackframe(), __exception_result_var_b11));
+                    type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1216, 16),__exception_result_var_b11=((char*)(right_value252=parse_word(info))), come_pop_stackframe(), __exception_result_var_b11));
                     __dec_obj90 = come_decrement_ref_count2(__dec_obj90, (void*)0, (void*)0, 0,0,0, (void*)0);
                     right_value252 = come_decrement_ref_count2(right_value252, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                    # 1218 "05function4.c"
+                    # 1218 "05type.c"
                     parse_sharp_v5(info);
-                    # 1239 "05function4.c"
-                    # 1220 "05function4.c"
+                    # 1239 "05type.c"
+                    # 1220 "05type.c"
                     if(_if_conditional334=*info->p==123,                    _if_conditional334) {
-                        # 1221 "05function4.c"
+                        # 1221 "05type.c"
                         p_223=info->p;
-                        # 1222 "05function4.c"
+                        # 1222 "05type.c"
                         sline_224=info->sline;
-                        # 1224 "05function4.c"
+                        # 1224 "05type.c"
                         ((char*)(right_value253=skip_block(info)));
                         right_value253 = come_decrement_ref_count2(right_value253, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                        # 1238 "05function4.c"
-                        # 1226 "05function4.c"
+                        # 1238 "05type.c"
+                        # 1226 "05type.c"
                         if(_if_conditional335=*info->p==59,                        _if_conditional335) {
-                            # 1227 "05function4.c"
+                            # 1227 "05type.c"
                             info->p=head_188;
-                            # 1228 "05function4.c"
+                            # 1228 "05type.c"
                             info->sline=head_sline_189;
-                            # 1229 "05function4.c"
+                            # 1229 "05type.c"
                             info->define_struct=(_Bool)1;
-                            # 1230 "05function4.c"
-                            __result138__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value255=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value254=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05function4.c", 1230, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
+                            # 1230 "05type.c"
+                            __result138__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value255=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value254=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05type.c", 1230, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
                             type_name_190 = come_decrement_ref_count2(type_name_190, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                             if(alignas__208) { alignas__208 = come_decrement_ref_count2(alignas__208, ((struct sNode*)alignas__208)->finalize, ((struct sNode*)alignas__208)->_protocol_obj, 0, 0, 0, (void*)0); } 
                             come_call_finalizer3(right_value254,tuple3$3sTypephcharphboolp_finalize, 0, 1, 0, 0, __result_obj__);
@@ -9745,264 +9745,264 @@ right_value409 = (void*)0;
                             return __result138__;
                         }
                         else {
-                            # 1233 "05function4.c"
+                            # 1233 "05type.c"
                             anonymous_type_209=(_Bool)1;
-                            # 1234 "05function4.c"
+                            # 1234 "05type.c"
                             info->p=p_223;
-                            # 1235 "05function4.c"
+                            # 1235 "05type.c"
                             info->sline=sline_224;
-                            # 1236 "05function4.c"
+                            # 1236 "05type.c"
                             break;
                         }
                     }
                 }
                 else {
-                    # 1485 "05function4.c"
-                    # 1240 "05function4.c"
+                    # 1485 "05type.c"
+                    # 1240 "05type.c"
                     if(_if_conditional336=string_operator_equals(type_name_190,"_Alignas"),                    _if_conditional336) {
-                        # 1241 "05function4.c"
+                        # 1241 "05type.c"
                         expected_next_character(40,info);
-                        # 1243 "05function4.c"
+                        # 1243 "05type.c"
                         exp_225=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value256=expression_v13(info))));
                         if(right_value256) { right_value256 = come_decrement_ref_count2(right_value256, ((struct sNode*)right_value256)->finalize, ((struct sNode*)right_value256)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                        # 1245 "05function4.c"
+                        # 1245 "05type.c"
                         __dec_obj91=alignas__208;
                         alignas__208=(struct sNode*)come_increment_ref_count(exp_225);
                         if(__dec_obj91) { __dec_obj91 = come_decrement_ref_count2(__dec_obj91, ((struct sNode*)__dec_obj91)->finalize, ((struct sNode*)__dec_obj91)->_protocol_obj, 0,0,0, (void*)0); }
-                        # 1247 "05function4.c"
+                        # 1247 "05type.c"
                         expected_next_character(41,info);
-                        # 1249 "05function4.c"
+                        # 1249 "05type.c"
                         __dec_obj92=type_name_190;
-                        type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1249, 17),__exception_result_var_b12=((char*)(right_value257=parse_word(info))), come_pop_stackframe(), __exception_result_var_b12));
+                        type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1249, 17),__exception_result_var_b12=((char*)(right_value257=parse_word(info))), come_pop_stackframe(), __exception_result_var_b12));
                         __dec_obj92 = come_decrement_ref_count2(__dec_obj92, (void*)0, (void*)0, 0,0,0, (void*)0);
                         right_value257 = come_decrement_ref_count2(right_value257, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         if(exp_225) { exp_225 = come_decrement_ref_count2(exp_225, ((struct sNode*)exp_225)->finalize, ((struct sNode*)exp_225)->_protocol_obj, 0, 0, 0, (void*)0); } 
                     }
                     else {
-                        # 1485 "05function4.c"
-                        # 1251 "05function4.c"
+                        # 1485 "05type.c"
+                        # 1251 "05type.c"
                         if(_if_conditional337=string_operator_equals(type_name_190,"const"),                        _if_conditional337) {
-                            # 1252 "05function4.c"
+                            # 1252 "05type.c"
                             constant_192=(_Bool)1;
-                            # 1254 "05function4.c"
+                            # 1254 "05type.c"
                             __dec_obj93=type_name_190;
-                            type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1254, 18),__exception_result_var_b13=((char*)(right_value258=parse_word(info))), come_pop_stackframe(), __exception_result_var_b13));
+                            type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1254, 18),__exception_result_var_b13=((char*)(right_value258=parse_word(info))), come_pop_stackframe(), __exception_result_var_b13));
                             __dec_obj93 = come_decrement_ref_count2(__dec_obj93, (void*)0, (void*)0, 0,0,0, (void*)0);
                             right_value258 = come_decrement_ref_count2(right_value258, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         }
                         else {
-                            # 1485 "05function4.c"
-                            # 1256 "05function4.c"
+                            # 1485 "05type.c"
+                            # 1256 "05type.c"
                             if(_if_conditional338=string_operator_equals(type_name_190,"static"),                            _if_conditional338) {
-                                # 1257 "05function4.c"
+                                # 1257 "05type.c"
                                 static__193=(_Bool)1;
-                                # 1259 "05function4.c"
+                                # 1259 "05type.c"
                                 __dec_obj94=type_name_190;
-                                type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1259, 19),__exception_result_var_b14=((char*)(right_value259=parse_word(info))), come_pop_stackframe(), __exception_result_var_b14));
+                                type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1259, 19),__exception_result_var_b14=((char*)(right_value259=parse_word(info))), come_pop_stackframe(), __exception_result_var_b14));
                                 __dec_obj94 = come_decrement_ref_count2(__dec_obj94, (void*)0, (void*)0, 0,0,0, (void*)0);
                                 right_value259 = come_decrement_ref_count2(right_value259, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                             }
                             else {
-                                # 1485 "05function4.c"
-                                # 1261 "05function4.c"
+                                # 1485 "05type.c"
+                                # 1261 "05type.c"
                                 if(_if_conditional339=string_operator_equals(type_name_190,"record"),                                _if_conditional339) {
-                                    # 1262 "05function4.c"
+                                    # 1262 "05type.c"
                                     record__191=(_Bool)1;
-                                    # 1264 "05function4.c"
+                                    # 1264 "05type.c"
                                     __dec_obj95=type_name_190;
-                                    type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1264, 20),__exception_result_var_b15=((char*)(right_value260=parse_word(info))), come_pop_stackframe(), __exception_result_var_b15));
+                                    type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1264, 20),__exception_result_var_b15=((char*)(right_value260=parse_word(info))), come_pop_stackframe(), __exception_result_var_b15));
                                     __dec_obj95 = come_decrement_ref_count2(__dec_obj95, (void*)0, (void*)0, 0,0,0, (void*)0);
                                     right_value260 = come_decrement_ref_count2(right_value260, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 }
                                 else {
-                                    # 1485 "05function4.c"
-                                    # 1266 "05function4.c"
+                                    # 1485 "05type.c"
+                                    # 1266 "05type.c"
                                     if(_if_conditional340=string_operator_equals(type_name_190,"come_mem_core"),                                    _if_conditional340) {
-                                        # 1267 "05function4.c"
+                                        # 1267 "05type.c"
                                         come_mem_core__207=(_Bool)1;
-                                        # 1269 "05function4.c"
+                                        # 1269 "05type.c"
                                         __dec_obj96=type_name_190;
-                                        type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1269, 21),__exception_result_var_b16=((char*)(right_value261=parse_word(info))), come_pop_stackframe(), __exception_result_var_b16));
+                                        type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1269, 21),__exception_result_var_b16=((char*)(right_value261=parse_word(info))), come_pop_stackframe(), __exception_result_var_b16));
                                         __dec_obj96 = come_decrement_ref_count2(__dec_obj96, (void*)0, (void*)0, 0,0,0, (void*)0);
                                         right_value261 = come_decrement_ref_count2(right_value261, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                     }
                                     else {
-                                        # 1485 "05function4.c"
-                                        # 1271 "05function4.c"
+                                        # 1485 "05type.c"
+                                        # 1271 "05type.c"
                                         if(_if_conditional341=string_operator_equals(type_name_190,"extern"),                                        _if_conditional341) {
-                                            # 1272 "05function4.c"
+                                            # 1272 "05type.c"
                                             extern__205=(_Bool)1;
-                                            # 1274 "05function4.c"
+                                            # 1274 "05type.c"
                                             __dec_obj97=type_name_190;
-                                            type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1274, 22),__exception_result_var_b17=((char*)(right_value262=parse_word(info))), come_pop_stackframe(), __exception_result_var_b17));
+                                            type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1274, 22),__exception_result_var_b17=((char*)(right_value262=parse_word(info))), come_pop_stackframe(), __exception_result_var_b17));
                                             __dec_obj97 = come_decrement_ref_count2(__dec_obj97, (void*)0, (void*)0, 0,0,0, (void*)0);
                                             right_value262 = come_decrement_ref_count2(right_value262, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                         }
                                         else {
-                                            # 1485 "05function4.c"
-                                            # 1276 "05function4.c"
+                                            # 1485 "05type.c"
+                                            # 1276 "05type.c"
                                             if(_if_conditional342=string_operator_equals(type_name_190,"_Noreturn"),                                            _if_conditional342) {
-                                                # 1277 "05function4.c"
+                                                # 1277 "05type.c"
                                                 __dec_obj98=type_name_190;
-                                                type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1277, 23),__exception_result_var_b18=((char*)(right_value263=parse_word(info))), come_pop_stackframe(), __exception_result_var_b18));
+                                                type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1277, 23),__exception_result_var_b18=((char*)(right_value263=parse_word(info))), come_pop_stackframe(), __exception_result_var_b18));
                                                 __dec_obj98 = come_decrement_ref_count2(__dec_obj98, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                 right_value263 = come_decrement_ref_count2(right_value263, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                             }
                                             else {
-                                                # 1485 "05function4.c"
-                                                # 1279 "05function4.c"
+                                                # 1485 "05type.c"
+                                                # 1279 "05type.c"
                                                 if(_if_conditional343=string_operator_equals(type_name_190,"inline")||string_operator_equals(type_name_190,"__inline")||string_operator_equals(type_name_190,"__inline__")||string_operator_equals(type_name_190,"__always_inline"),                                                _if_conditional343) {
-                                                    # 1280 "05function4.c"
+                                                    # 1280 "05type.c"
                                                     inline__206=(_Bool)1;
-                                                    # 1282 "05function4.c"
+                                                    # 1282 "05type.c"
                                                     __dec_obj99=type_name_190;
-                                                    type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1282, 24),__exception_result_var_b19=((char*)(right_value264=parse_word(info))), come_pop_stackframe(), __exception_result_var_b19));
+                                                    type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1282, 24),__exception_result_var_b19=((char*)(right_value264=parse_word(info))), come_pop_stackframe(), __exception_result_var_b19));
                                                     __dec_obj99 = come_decrement_ref_count2(__dec_obj99, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                     right_value264 = come_decrement_ref_count2(right_value264, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                 }
                                                 else {
-                                                    # 1485 "05function4.c"
-                                                    # 1284 "05function4.c"
+                                                    # 1485 "05type.c"
+                                                    # 1284 "05type.c"
                                                     if(_if_conditional344=string_operator_equals(type_name_190,"volatile"),                                                    _if_conditional344) {
-                                                        # 1285 "05function4.c"
+                                                        # 1285 "05type.c"
                                                         volatile__194=(_Bool)1;
-                                                        # 1287 "05function4.c"
+                                                        # 1287 "05type.c"
                                                         __dec_obj100=type_name_190;
-                                                        type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1287, 25),__exception_result_var_b20=((char*)(right_value265=parse_word(info))), come_pop_stackframe(), __exception_result_var_b20));
+                                                        type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1287, 25),__exception_result_var_b20=((char*)(right_value265=parse_word(info))), come_pop_stackframe(), __exception_result_var_b20));
                                                         __dec_obj100 = come_decrement_ref_count2(__dec_obj100, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                         right_value265 = come_decrement_ref_count2(right_value265, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                     }
                                                     else {
-                                                        # 1485 "05function4.c"
-                                                        # 1289 "05function4.c"
+                                                        # 1485 "05type.c"
+                                                        # 1289 "05type.c"
                                                         if(_if_conditional345=string_operator_equals(type_name_190,"long"),                                                        _if_conditional345) {
-                                                            # 1356 "05function4.c"
+                                                            # 1356 "05type.c"
                                                             {
-                                                                # 1292 "05function4.c"
+                                                                # 1292 "05type.c"
                                                                 p_226=info->p;
-                                                                # 1293 "05function4.c"
+                                                                # 1293 "05type.c"
                                                                 sline_227=info->sline;
-                                                                # 1355 "05function4.c"
-                                                                # 1295 "05function4.c"
+                                                                # 1355 "05type.c"
+                                                                # 1295 "05type.c"
                                                                 if(_if_conditional346=!xisalpha(*info->p),                                                                _if_conditional346) {
-                                                                    # 1296 "05function4.c"
+                                                                    # 1296 "05type.c"
                                                                     info->p=p_226;
-                                                                    # 1297 "05function4.c"
+                                                                    # 1297 "05type.c"
                                                                     info->sline=sline_227;
-                                                                    # 1299 "05function4.c"
+                                                                    # 1299 "05type.c"
                                                                     __dec_obj101=type_name_190;
                                                                     type_name_190=(char*)come_increment_ref_count(((char*)(right_value266=__builtin_string("long"))));
                                                                     __dec_obj101 = come_decrement_ref_count2(__dec_obj101, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                     right_value266 = come_decrement_ref_count2(right_value266, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                                    # 1300 "05function4.c"
+                                                                    # 1300 "05type.c"
                                                                     break;
                                                                 }
                                                                 else {
-                                                                    # 1303 "05function4.c"
+                                                                    # 1303 "05type.c"
                                                                     __dec_obj102=type_name_190;
-                                                                    type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1303, 26),__exception_result_var_b21=((char*)(right_value267=parse_word(info))), come_pop_stackframe(), __exception_result_var_b21));
+                                                                    type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1303, 26),__exception_result_var_b21=((char*)(right_value267=parse_word(info))), come_pop_stackframe(), __exception_result_var_b21));
                                                                     __dec_obj102 = come_decrement_ref_count2(__dec_obj102, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                     right_value267 = come_decrement_ref_count2(right_value267, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                                    # 1354 "05function4.c"
-                                                                    # 1305 "05function4.c"
+                                                                    # 1354 "05type.c"
+                                                                    # 1305 "05type.c"
                                                                     if(_if_conditional347=string_operator_equals(type_name_190,"unsigned"),                                                                    _if_conditional347) {
-                                                                        # 1306 "05function4.c"
+                                                                        # 1306 "05type.c"
                                                                         __dec_obj103=type_name_190;
-                                                                        type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1306, 27),__exception_result_var_b22=((char*)(right_value268=parse_word(info))), come_pop_stackframe(), __exception_result_var_b22));
+                                                                        type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1306, 27),__exception_result_var_b22=((char*)(right_value268=parse_word(info))), come_pop_stackframe(), __exception_result_var_b22));
                                                                         __dec_obj103 = come_decrement_ref_count2(__dec_obj103, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                         right_value268 = come_decrement_ref_count2(right_value268, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                                        # 1312 "05function4.c"
-                                                                        # 1308 "05function4.c"
+                                                                        # 1312 "05type.c"
+                                                                        # 1308 "05type.c"
                                                                         if(_if_conditional348=string_operator_equals(type_name_190,"int"),                                                                        _if_conditional348) {
-                                                                            # 1309 "05function4.c"
+                                                                            # 1309 "05type.c"
                                                                             long__197=(_Bool)1;
-                                                                            # 1310 "05function4.c"
+                                                                            # 1310 "05type.c"
                                                                             break;
                                                                         }
                                                                     }
                                                                     else {
-                                                                        # 1354 "05function4.c"
-                                                                        # 1313 "05function4.c"
+                                                                        # 1354 "05type.c"
+                                                                        # 1313 "05type.c"
                                                                         if(_if_conditional349=string_operator_equals(type_name_190,"long"),                                                                        _if_conditional349) {
-                                                                            # 1314 "05function4.c"
+                                                                            # 1314 "05type.c"
                                                                             p_226=info->p;
-                                                                            # 1315 "05function4.c"
+                                                                            # 1315 "05type.c"
                                                                             sline_227=info->sline;
-                                                                            # 1325 "05function4.c"
-                                                                            # 1316 "05function4.c"
+                                                                            # 1325 "05type.c"
+                                                                            # 1316 "05type.c"
                                                                             if(_if_conditional350=xisalpha(*info->p),                                                                            _if_conditional350) {
-                                                                                # 1317 "05function4.c"
+                                                                                # 1317 "05type.c"
                                                                                 long_long_198=(_Bool)1;
-                                                                                # 1318 "05function4.c"
+                                                                                # 1318 "05type.c"
                                                                                 __dec_obj104=type_name_190;
-                                                                                type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1318, 28),__exception_result_var_b23=((char*)(right_value269=parse_word(info))), come_pop_stackframe(), __exception_result_var_b23));
+                                                                                type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1318, 28),__exception_result_var_b23=((char*)(right_value269=parse_word(info))), come_pop_stackframe(), __exception_result_var_b23));
                                                                                 __dec_obj104 = come_decrement_ref_count2(__dec_obj104, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                                 right_value269 = come_decrement_ref_count2(right_value269, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                                             }
                                                                             else {
-                                                                                # 1321 "05function4.c"
+                                                                                # 1321 "05type.c"
                                                                                 long__197=(_Bool)1;
-                                                                                # 1322 "05function4.c"
+                                                                                # 1322 "05type.c"
                                                                                 break;
                                                                             }
-                                                                            # 1336 "05function4.c"
-                                                                            # 1325 "05function4.c"
+                                                                            # 1336 "05type.c"
+                                                                            # 1325 "05type.c"
                                                                             if(_if_conditional351=string_operator_equals(type_name_190,"int"),                                                                            _if_conditional351) {
-                                                                                # 1326 "05function4.c"
+                                                                                # 1326 "05type.c"
                                                                                 long_long_198=(_Bool)1;
-                                                                                # 1327 "05function4.c"
+                                                                                # 1327 "05type.c"
                                                                                 break;
                                                                             }
                                                                             else {
-                                                                                # 1336 "05function4.c"
-                                                                                # 1329 "05function4.c"
+                                                                                # 1336 "05type.c"
+                                                                                # 1329 "05type.c"
                                                                                 if(_if_conditional352=!is_type_name(type_name_190,info),                                                                                _if_conditional352) {
-                                                                                    # 1330 "05function4.c"
+                                                                                    # 1330 "05type.c"
                                                                                     __dec_obj105=type_name_190;
                                                                                     type_name_190=(char*)come_increment_ref_count(((char*)(right_value270=__builtin_string("long"))));
                                                                                     __dec_obj105 = come_decrement_ref_count2(__dec_obj105, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                                     right_value270 = come_decrement_ref_count2(right_value270, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                                                    # 1331 "05function4.c"
+                                                                                    # 1331 "05type.c"
                                                                                     long_long_198=(_Bool)1;
-                                                                                    # 1332 "05function4.c"
+                                                                                    # 1332 "05type.c"
                                                                                     info->p=p_226;
-                                                                                    # 1333 "05function4.c"
+                                                                                    # 1333 "05type.c"
                                                                                     info->sline=sline_227;
-                                                                                    # 1334 "05function4.c"
+                                                                                    # 1334 "05type.c"
                                                                                     break;
                                                                                 }
                                                                             }
                                                                         }
                                                                         else {
-                                                                            # 1354 "05function4.c"
-                                                                            # 1337 "05function4.c"
+                                                                            # 1354 "05type.c"
+                                                                            # 1337 "05type.c"
                                                                             if(_if_conditional353=is_type_name(type_name_190,info),                                                                            _if_conditional353) {
-                                                                                # 1345 "05function4.c"
-                                                                                # 1338 "05function4.c"
+                                                                                # 1345 "05type.c"
+                                                                                # 1338 "05type.c"
                                                                                 if(long__197) {
-                                                                                    # 1339 "05function4.c"
+                                                                                    # 1339 "05type.c"
                                                                                     long_long_198=(_Bool)1;
-                                                                                    # 1340 "05function4.c"
+                                                                                    # 1340 "05type.c"
                                                                                     long__197=(_Bool)0;
                                                                                 }
                                                                                 else {
-                                                                                    # 1343 "05function4.c"
+                                                                                    # 1343 "05type.c"
                                                                                     long__197=(_Bool)1;
                                                                                 }
-                                                                                # 1345 "05function4.c"
+                                                                                # 1345 "05type.c"
                                                                                 break;
                                                                             }
                                                                             else {
-                                                                                # 1348 "05function4.c"
+                                                                                # 1348 "05type.c"
                                                                                 info->p=p_226;
-                                                                                # 1349 "05function4.c"
+                                                                                # 1349 "05type.c"
                                                                                 info->sline=sline_227;
-                                                                                # 1351 "05function4.c"
+                                                                                # 1351 "05type.c"
                                                                                 __dec_obj106=type_name_190;
                                                                                 type_name_190=(char*)come_increment_ref_count(((char*)(right_value271=__builtin_string("long"))));
                                                                                 __dec_obj106 = come_decrement_ref_count2(__dec_obj106, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                                 right_value271 = come_decrement_ref_count2(right_value271, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                                                # 1352 "05function4.c"
+                                                                                # 1352 "05type.c"
                                                                                 break;
                                                                             }
                                                                         }
@@ -10011,278 +10011,278 @@ right_value409 = (void*)0;
                                                             }
                                                         }
                                                         else {
-                                                            # 1485 "05function4.c"
-                                                            # 1357 "05function4.c"
+                                                            # 1485 "05type.c"
+                                                            # 1357 "05type.c"
                                                             if(_if_conditional355=string_operator_equals(type_name_190,"unsigned"),                                                            _if_conditional355) {
-                                                                # 1358 "05function4.c"
+                                                                # 1358 "05type.c"
                                                                 unsigned__196=(_Bool)1;
-                                                                # 1425 "05function4.c"
-                                                                # 1360 "05function4.c"
+                                                                # 1425 "05type.c"
+                                                                # 1360 "05type.c"
                                                                 if(_if_conditional356=xisalpha(*info->p)||*info->p==95,                                                                _if_conditional356) {
-                                                                    # 1361 "05function4.c"
+                                                                    # 1361 "05type.c"
                                                                     p_228=info->p;
-                                                                    # 1362 "05function4.c"
+                                                                    # 1362 "05type.c"
                                                                     sline_229=info->sline;
-                                                                    # 1364 "05function4.c"
+                                                                    # 1364 "05type.c"
                                                                     __dec_obj107=type_name_190;
-                                                                    type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1364, 29),__exception_result_var_b24=((char*)(right_value272=parse_word(info))), come_pop_stackframe(), __exception_result_var_b24));
+                                                                    type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1364, 29),__exception_result_var_b24=((char*)(right_value272=parse_word(info))), come_pop_stackframe(), __exception_result_var_b24));
                                                                     __dec_obj107 = come_decrement_ref_count2(__dec_obj107, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                     right_value272 = come_decrement_ref_count2(right_value272, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                                    # 1420 "05function4.c"
-                                                                    # 1366 "05function4.c"
+                                                                    # 1420 "05type.c"
+                                                                    # 1366 "05type.c"
                                                                     if(_if_conditional357=string_operator_equals(type_name_190,"short"),                                                                    _if_conditional357) {
-                                                                        # 1389 "05function4.c"
-                                                                        # 1367 "05function4.c"
+                                                                        # 1389 "05type.c"
+                                                                        # 1367 "05type.c"
                                                                         if(_if_conditional358=xisalpha(*info->p)||*info->p==95,                                                                        _if_conditional358) {
-                                                                            # 1368 "05function4.c"
+                                                                            # 1368 "05type.c"
                                                                             p_230=info->p;
-                                                                            # 1369 "05function4.c"
+                                                                            # 1369 "05type.c"
                                                                             sline_231=info->sline;
-                                                                            # 1371 "05function4.c"
+                                                                            # 1371 "05type.c"
                                                                             __dec_obj108=type_name_190;
-                                                                            type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1371, 30),__exception_result_var_b25=((char*)(right_value273=parse_word(info))), come_pop_stackframe(), __exception_result_var_b25));
+                                                                            type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1371, 30),__exception_result_var_b25=((char*)(right_value273=parse_word(info))), come_pop_stackframe(), __exception_result_var_b25));
                                                                             __dec_obj108 = come_decrement_ref_count2(__dec_obj108, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                             right_value273 = come_decrement_ref_count2(right_value273, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                                            # 1383 "05function4.c"
-                                                                            # 1373 "05function4.c"
+                                                                            # 1383 "05type.c"
+                                                                            # 1373 "05type.c"
                                                                             if(_if_conditional359=is_type_name(type_name_190,info),                                                                            _if_conditional359) {
-                                                                                # 1374 "05function4.c"
+                                                                                # 1374 "05type.c"
                                                                                 short__199=(_Bool)1;
                                                                             }
                                                                             else {
-                                                                                # 1377 "05function4.c"
+                                                                                # 1377 "05type.c"
                                                                                 short__199=(_Bool)1;
-                                                                                # 1378 "05function4.c"
+                                                                                # 1378 "05type.c"
                                                                                 __dec_obj109=type_name_190;
                                                                                 type_name_190=(char*)come_increment_ref_count(((char*)(right_value274=__builtin_string("int"))));
                                                                                 __dec_obj109 = come_decrement_ref_count2(__dec_obj109, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                                 right_value274 = come_decrement_ref_count2(right_value274, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                                                # 1380 "05function4.c"
+                                                                                # 1380 "05type.c"
                                                                                 info->p=p_230;
-                                                                                # 1381 "05function4.c"
+                                                                                # 1381 "05type.c"
                                                                                 info->sline=sline_231;
                                                                             }
                                                                         }
                                                                         else {
-                                                                            # 1385 "05function4.c"
+                                                                            # 1385 "05type.c"
                                                                             short__199=(_Bool)1;
-                                                                            # 1386 "05function4.c"
+                                                                            # 1386 "05type.c"
                                                                             __dec_obj110=type_name_190;
                                                                             type_name_190=(char*)come_increment_ref_count(((char*)(right_value275=__builtin_string("int"))));
                                                                             __dec_obj110 = come_decrement_ref_count2(__dec_obj110, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                             right_value275 = come_decrement_ref_count2(right_value275, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                                            # 1387 "05function4.c"
+                                                                            # 1387 "05type.c"
                                                                             break;
                                                                         }
                                                                     }
                                                                     else {
-                                                                        # 1420 "05function4.c"
-                                                                        # 1390 "05function4.c"
+                                                                        # 1420 "05type.c"
+                                                                        # 1390 "05type.c"
                                                                         if(_if_conditional360=string_operator_equals(type_name_190,"long"),                                                                        _if_conditional360) {
-                                                                            # 1413 "05function4.c"
-                                                                            # 1391 "05function4.c"
+                                                                            # 1413 "05type.c"
+                                                                            # 1391 "05type.c"
                                                                             if(_if_conditional361=xisalpha(*info->p)||*info->p==95,                                                                            _if_conditional361) {
-                                                                                # 1392 "05function4.c"
+                                                                                # 1392 "05type.c"
                                                                                 p_232=info->p;
-                                                                                # 1393 "05function4.c"
+                                                                                # 1393 "05type.c"
                                                                                 sline_233=info->sline;
-                                                                                # 1395 "05function4.c"
+                                                                                # 1395 "05type.c"
                                                                                 __dec_obj111=type_name_190;
-                                                                                type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1395, 31),__exception_result_var_b26=((char*)(right_value276=parse_word(info))), come_pop_stackframe(), __exception_result_var_b26));
+                                                                                type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1395, 31),__exception_result_var_b26=((char*)(right_value276=parse_word(info))), come_pop_stackframe(), __exception_result_var_b26));
                                                                                 __dec_obj111 = come_decrement_ref_count2(__dec_obj111, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                                 right_value276 = come_decrement_ref_count2(right_value276, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                                                # 1407 "05function4.c"
-                                                                                # 1397 "05function4.c"
+                                                                                # 1407 "05type.c"
+                                                                                # 1397 "05type.c"
                                                                                 if(_if_conditional362=is_type_name(type_name_190,info),                                                                                _if_conditional362) {
-                                                                                    # 1398 "05function4.c"
+                                                                                    # 1398 "05type.c"
                                                                                     long__197=(_Bool)1;
                                                                                 }
                                                                                 else {
-                                                                                    # 1401 "05function4.c"
+                                                                                    # 1401 "05type.c"
                                                                                     long__197=(_Bool)1;
-                                                                                    # 1402 "05function4.c"
+                                                                                    # 1402 "05type.c"
                                                                                     __dec_obj112=type_name_190;
                                                                                     type_name_190=(char*)come_increment_ref_count(((char*)(right_value277=__builtin_string("int"))));
                                                                                     __dec_obj112 = come_decrement_ref_count2(__dec_obj112, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                                     right_value277 = come_decrement_ref_count2(right_value277, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                                                    # 1404 "05function4.c"
+                                                                                    # 1404 "05type.c"
                                                                                     info->p=p_232;
-                                                                                    # 1405 "05function4.c"
+                                                                                    # 1405 "05type.c"
                                                                                     info->sline=sline_233;
                                                                                 }
                                                                             }
                                                                             else {
-                                                                                # 1409 "05function4.c"
+                                                                                # 1409 "05type.c"
                                                                                 long__197=(_Bool)1;
-                                                                                # 1410 "05function4.c"
+                                                                                # 1410 "05type.c"
                                                                                 __dec_obj113=type_name_190;
                                                                                 type_name_190=(char*)come_increment_ref_count(((char*)(right_value278=__builtin_string("int"))));
                                                                                 __dec_obj113 = come_decrement_ref_count2(__dec_obj113, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                                 right_value278 = come_decrement_ref_count2(right_value278, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                                                # 1411 "05function4.c"
+                                                                                # 1411 "05type.c"
                                                                                 break;
                                                                             }
                                                                         }
                                                                         else {
-                                                                            # 1420 "05function4.c"
-                                                                            # 1414 "05function4.c"
+                                                                            # 1420 "05type.c"
+                                                                            # 1414 "05type.c"
                                                                             if(_if_conditional363=!is_type_name(type_name_190,info),                                                                            _if_conditional363) {
-                                                                                # 1415 "05function4.c"
+                                                                                # 1415 "05type.c"
                                                                                 __dec_obj114=type_name_190;
                                                                                 type_name_190=(char*)come_increment_ref_count(((char*)(right_value279=__builtin_string("int"))));
                                                                                 __dec_obj114 = come_decrement_ref_count2(__dec_obj114, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                                 right_value279 = come_decrement_ref_count2(right_value279, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                                                # 1416 "05function4.c"
+                                                                                # 1416 "05type.c"
                                                                                 info->p=p_228;
-                                                                                # 1417 "05function4.c"
+                                                                                # 1417 "05type.c"
                                                                                 info->sline=sline_229;
-                                                                                # 1418 "05function4.c"
+                                                                                # 1418 "05type.c"
                                                                                 break;
                                                                             }
                                                                         }
                                                                     }
                                                                 }
                                                                 else {
-                                                                    # 1422 "05function4.c"
+                                                                    # 1422 "05type.c"
                                                                     __dec_obj115=type_name_190;
                                                                     type_name_190=(char*)come_increment_ref_count(((char*)(right_value280=__builtin_string("int"))));
                                                                     __dec_obj115 = come_decrement_ref_count2(__dec_obj115, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                     right_value280 = come_decrement_ref_count2(right_value280, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                                    # 1423 "05function4.c"
+                                                                    # 1423 "05type.c"
                                                                     break;
                                                                 }
                                                             }
                                                             else {
-                                                                # 1485 "05function4.c"
-                                                                # 1426 "05function4.c"
+                                                                # 1485 "05type.c"
+                                                                # 1426 "05type.c"
                                                                 if(_if_conditional364=string_operator_equals(type_name_190,"signed")||string_operator_equals(type_name_190,"__signed__"),                                                                _if_conditional364) {
-                                                                    # 1427 "05function4.c"
+                                                                    # 1427 "05type.c"
                                                                     unsigned__196=(_Bool)0;
-                                                                    # 1429 "05function4.c"
+                                                                    # 1429 "05type.c"
                                                                     __dec_obj116=type_name_190;
-                                                                    type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1429, 32),__exception_result_var_b27=((char*)(right_value281=parse_word(info))), come_pop_stackframe(), __exception_result_var_b27));
+                                                                    type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1429, 32),__exception_result_var_b27=((char*)(right_value281=parse_word(info))), come_pop_stackframe(), __exception_result_var_b27));
                                                                     __dec_obj116 = come_decrement_ref_count2(__dec_obj116, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                     right_value281 = come_decrement_ref_count2(right_value281, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                                 }
                                                                 else {
-                                                                    # 1485 "05function4.c"
-                                                                    # 1431 "05function4.c"
+                                                                    # 1485 "05type.c"
+                                                                    # 1431 "05type.c"
                                                                     if(_if_conditional365=string_operator_equals(type_name_190,"register"),                                                                    _if_conditional365) {
-                                                                        # 1432 "05function4.c"
+                                                                        # 1432 "05type.c"
                                                                         register__195=(_Bool)1;
-                                                                        # 1434 "05function4.c"
+                                                                        # 1434 "05type.c"
                                                                         __dec_obj117=type_name_190;
-                                                                        type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1434, 33),__exception_result_var_b28=((char*)(right_value282=parse_word(info))), come_pop_stackframe(), __exception_result_var_b28));
+                                                                        type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1434, 33),__exception_result_var_b28=((char*)(right_value282=parse_word(info))), come_pop_stackframe(), __exception_result_var_b28));
                                                                         __dec_obj117 = come_decrement_ref_count2(__dec_obj117, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                         right_value282 = come_decrement_ref_count2(right_value282, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                                     }
                                                                     else {
-                                                                        # 1485 "05function4.c"
-                                                                        # 1436 "05function4.c"
+                                                                        # 1485 "05type.c"
+                                                                        # 1436 "05type.c"
                                                                         if(_if_conditional366=string_operator_equals(type_name_190,"restrict"),                                                                        _if_conditional366) {
-                                                                            # 1437 "05function4.c"
+                                                                            # 1437 "05type.c"
                                                                             restrict__200=(_Bool)1;
-                                                                            # 1439 "05function4.c"
+                                                                            # 1439 "05type.c"
                                                                             __dec_obj118=type_name_190;
-                                                                            type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1439, 34),__exception_result_var_b29=((char*)(right_value283=parse_word(info))), come_pop_stackframe(), __exception_result_var_b29));
+                                                                            type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1439, 34),__exception_result_var_b29=((char*)(right_value283=parse_word(info))), come_pop_stackframe(), __exception_result_var_b29));
                                                                             __dec_obj118 = come_decrement_ref_count2(__dec_obj118, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                             right_value283 = come_decrement_ref_count2(right_value283, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                                         }
                                                                         else {
-                                                                            # 1485 "05function4.c"
-                                                                            # 1441 "05function4.c"
+                                                                            # 1485 "05type.c"
+                                                                            # 1441 "05type.c"
                                                                             if(_if_conditional367=string_operator_equals(type_name_190,"_Addr"),                                                                            _if_conditional367) {
-                                                                                # 1442 "05function4.c"
+                                                                                # 1442 "05type.c"
                                                                                 __dec_obj119=type_name_190;
-                                                                                type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1442, 35),__exception_result_var_b30=((char*)(right_value284=parse_word(info))), come_pop_stackframe(), __exception_result_var_b30));
+                                                                                type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1442, 35),__exception_result_var_b30=((char*)(right_value284=parse_word(info))), come_pop_stackframe(), __exception_result_var_b30));
                                                                                 __dec_obj119 = come_decrement_ref_count2(__dec_obj119, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                                 right_value284 = come_decrement_ref_count2(right_value284, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                                             }
                                                                             else {
-                                                                                # 1485 "05function4.c"
-                                                                                # 1444 "05function4.c"
+                                                                                # 1485 "05type.c"
+                                                                                # 1444 "05type.c"
                                                                                 if(_if_conditional368=string_operator_equals(type_name_190,"__restrict"),                                                                                _if_conditional368) {
-                                                                                    # 1445 "05function4.c"
+                                                                                    # 1445 "05type.c"
                                                                                     restrict__200=(_Bool)1;
-                                                                                    # 1447 "05function4.c"
+                                                                                    # 1447 "05type.c"
                                                                                     __dec_obj120=type_name_190;
-                                                                                    type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1447, 36),__exception_result_var_b31=((char*)(right_value285=parse_word(info))), come_pop_stackframe(), __exception_result_var_b31));
+                                                                                    type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1447, 36),__exception_result_var_b31=((char*)(right_value285=parse_word(info))), come_pop_stackframe(), __exception_result_var_b31));
                                                                                     __dec_obj120 = come_decrement_ref_count2(__dec_obj120, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                                     right_value285 = come_decrement_ref_count2(right_value285, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                                                                 }
                                                                                 else {
-                                                                                    # 1485 "05function4.c"
-                                                                                    # 1449 "05function4.c"
+                                                                                    # 1485 "05type.c"
+                                                                                    # 1449 "05type.c"
                                                                                     if(_if_conditional369=string_operator_equals(type_name_190,"short"),                                                                                    _if_conditional369) {
-                                                                                        # 1450 "05function4.c"
+                                                                                        # 1450 "05type.c"
                                                                                         short__199=(_Bool)1;
-                                                                                        # 1481 "05function4.c"
-                                                                                        # 1452 "05function4.c"
+                                                                                        # 1481 "05type.c"
+                                                                                        # 1452 "05type.c"
                                                                                         if(_if_conditional370=*info->p==58,                                                                                        _if_conditional370) {
-                                                                                            # 1453 "05function4.c"
+                                                                                            # 1453 "05type.c"
                                                                                             break;
                                                                                         }
                                                                                         else {
-                                                                                            # 1481 "05function4.c"
-                                                                                            # 1455 "05function4.c"
+                                                                                            # 1481 "05type.c"
+                                                                                            # 1455 "05type.c"
                                                                                             if(_if_conditional371=xisalnum(*info->p),                                                                                            _if_conditional371) {
-                                                                                                # 1456 "05function4.c"
+                                                                                                # 1456 "05type.c"
                                                                                                 p_234=info->p;
-                                                                                                # 1457 "05function4.c"
+                                                                                                # 1457 "05type.c"
                                                                                                 sline_235=info->sline;
-                                                                                                # 1458 "05function4.c"
+                                                                                                # 1458 "05type.c"
                                                                                                 __dec_obj121=type_name_190;
-                                                                                                type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1458, 37),__exception_result_var_b32=((char*)(right_value286=parse_word(info))), come_pop_stackframe(), __exception_result_var_b32));
+                                                                                                type_name_190=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1458, 37),__exception_result_var_b32=((char*)(right_value286=parse_word(info))), come_pop_stackframe(), __exception_result_var_b32));
                                                                                                 __dec_obj121 = come_decrement_ref_count2(__dec_obj121, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                                                 right_value286 = come_decrement_ref_count2(right_value286, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                                                                # 1477 "05function4.c"
-                                                                                                # 1460 "05function4.c"
+                                                                                                # 1477 "05type.c"
+                                                                                                # 1460 "05type.c"
                                                                                                 if(_if_conditional372=string_operator_equals(type_name_190,"int"),                                                                                                _if_conditional372) {
-                                                                                                    # 1461 "05function4.c"
+                                                                                                    # 1461 "05type.c"
                                                                                                     break;
                                                                                                 }
                                                                                                 else {
-                                                                                                    # 1477 "05function4.c"
-                                                                                                    # 1463 "05function4.c"
+                                                                                                    # 1477 "05type.c"
+                                                                                                    # 1463 "05type.c"
                                                                                                     if(_if_conditional373=string_operator_equals(type_name_190,"short"),                                                                                                    _if_conditional373) {
-                                                                                                        # 1464 "05function4.c"
+                                                                                                        # 1464 "05type.c"
                                                                                                         short__199=(_Bool)0;
-                                                                                                        # 1465 "05function4.c"
+                                                                                                        # 1465 "05type.c"
                                                                                                         break;
                                                                                                     }
                                                                                                     else {
-                                                                                                        # 1477 "05function4.c"
-                                                                                                        # 1467 "05function4.c"
+                                                                                                        # 1477 "05type.c"
+                                                                                                        # 1467 "05type.c"
                                                                                                         if(_if_conditional374=is_type_name(type_name_190,info),                                                                                                        _if_conditional374) {
-                                                                                                            # 1468 "05function4.c"
+                                                                                                            # 1468 "05type.c"
                                                                                                             info->p=p_234;
-                                                                                                            # 1469 "05function4.c"
+                                                                                                            # 1469 "05type.c"
                                                                                                             info->sline=sline_235;
                                                                                                         }
                                                                                                         else {
-                                                                                                            # 1472 "05function4.c"
+                                                                                                            # 1472 "05type.c"
                                                                                                             __dec_obj122=type_name_190;
                                                                                                             type_name_190=(char*)come_increment_ref_count(((char*)(right_value287=__builtin_string("short"))));
                                                                                                             __dec_obj122 = come_decrement_ref_count2(__dec_obj122, (void*)0, (void*)0, 0,0,0, (void*)0);
                                                                                                             right_value287 = come_decrement_ref_count2(right_value287, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                                                                                            # 1473 "05function4.c"
+                                                                                                            # 1473 "05type.c"
                                                                                                             info->p=p_234;
-                                                                                                            # 1474 "05function4.c"
+                                                                                                            # 1474 "05type.c"
                                                                                                             info->sline=sline_235;
-                                                                                                            # 1475 "05function4.c"
+                                                                                                            # 1475 "05type.c"
                                                                                                             break;
                                                                                                         }
                                                                                                     }
                                                                                                 }
                                                                                             }
                                                                                             else {
-                                                                                                # 1479 "05function4.c"
+                                                                                                # 1479 "05type.c"
                                                                                                 break;
                                                                                             }
                                                                                         }
                                                                                     }
                                                                                     else {
-                                                                                        # 1483 "05function4.c"
+                                                                                        # 1483 "05type.c"
                                                                                         break;
                                                                                     }
                                                                                 }
@@ -10305,102 +10305,102 @@ right_value409 = (void*)0;
             }
         }
     }
-    # 1487 "05function4.c"
+    # 1487 "05type.c"
     skip_pointer_attribute(info);
-    # 1489 "05function4.c"
+    # 1489 "05type.c"
     pointer_num_236=0;
-    # 1499 "05function4.c"
+    # 1499 "05type.c"
     while(_while_condtional42=*info->p==42,    _while_condtional42) {
-        # 1491 "05function4.c"
+        # 1491 "05type.c"
         info->p++;
-        # 1492 "05function4.c"
+        # 1492 "05type.c"
         skip_spaces_and_lf(info);
-        # 1494 "05function4.c"
+        # 1494 "05type.c"
         skip_pointer_attribute(info);
-        # 1496 "05function4.c"
+        # 1496 "05type.c"
         pointer_num_236++;
     }
-    # 1499 "05function4.c"
+    # 1499 "05type.c"
     heap_237=(_Bool)0;
-    # 1507 "05function4.c"
-    # 1500 "05function4.c"
+    # 1507 "05type.c"
+    # 1500 "05type.c"
     if(_if_conditional375=*info->p==37,    _if_conditional375) {
-        # 1501 "05function4.c"
+        # 1501 "05type.c"
         info->p++;
-        # 1502 "05function4.c"
+        # 1502 "05type.c"
         skip_spaces_and_lf(info);
-        # 1504 "05function4.c"
+        # 1504 "05type.c"
         heap_237=(_Bool)1;
     }
-    # 1507 "05function4.c"
+    # 1507 "05type.c"
     lambda_flag_238=(_Bool)0;
-    # 1524 "05function4.c"
+    # 1524 "05type.c"
     {
-        # 1509 "05function4.c"
+        # 1509 "05type.c"
         pX_239=info->p;
-        # 1510 "05function4.c"
+        # 1510 "05type.c"
         slineX_240=info->sline;
-        # 1520 "05function4.c"
-        # 1512 "05function4.c"
+        # 1520 "05type.c"
+        # 1512 "05type.c"
         if(_if_conditional376=xisalpha(*info->p)||*info->p==95,        _if_conditional376) {
-            # 1513 "05function4.c"
-            (void)(come_push_stackframe("05function4.c", 1513, 38),__exception_result_var_b33=((char*)(right_value288=parse_word(info))), come_pop_stackframe(), __exception_result_var_b33);
+            # 1513 "05type.c"
+            (void)(come_push_stackframe("05type.c", 1513, 38),__exception_result_var_b33=((char*)(right_value288=parse_word(info))), come_pop_stackframe(), __exception_result_var_b33);
             right_value288 = come_decrement_ref_count2(right_value288, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 1518 "05function4.c"
-            # 1515 "05function4.c"
+            # 1518 "05type.c"
+            # 1515 "05type.c"
             if(_if_conditional377=*info->p==40&&info->in_typedef,            _if_conditional377) {
-                # 1516 "05function4.c"
+                # 1516 "05type.c"
                 lambda_flag_238=(_Bool)1;
             }
         }
-        # 1520 "05function4.c"
+        # 1520 "05type.c"
         info->p=pX_239;
-        # 1521 "05function4.c"
+        # 1521 "05type.c"
         info->sline=slineX_240;
     }
-    # 1524 "05function4.c"
-    # 1525 "05function4.c"
-    # 1527 "05function4.c"
+    # 1524 "05type.c"
+    # 1525 "05type.c"
+    # 1527 "05type.c"
     function_pointer_flag_243=(_Bool)0;
-    # 1559 "05function4.c"
+    # 1559 "05type.c"
     {
-        # 1529 "05function4.c"
+        # 1529 "05type.c"
         p_244=info->p;
-        # 1530 "05function4.c"
+        # 1530 "05type.c"
         sline_245=info->sline;
-        # 1555 "05function4.c"
-        # 1532 "05function4.c"
+        # 1555 "05type.c"
+        # 1532 "05type.c"
         if(_if_conditional378=*info->p==40,        _if_conditional378) {
-            # 1533 "05function4.c"
+            # 1533 "05type.c"
             info->p++;
-            # 1534 "05function4.c"
+            # 1534 "05type.c"
             skip_spaces_and_lf(info);
-            # 1536 "05function4.c"
+            # 1536 "05type.c"
             skip_pointer_attribute(info);
-            # 1553 "05function4.c"
-            # 1538 "05function4.c"
+            # 1553 "05type.c"
+            # 1538 "05type.c"
             if(_if_conditional379=*info->p==42||*info->p==94,            _if_conditional379) {
-                # 1539 "05function4.c"
+                # 1539 "05type.c"
                 function_pointer_flag_243=(_Bool)1;
             }
             else {
-                # 1553 "05function4.c"
-                # 1541 "05function4.c"
+                # 1553 "05type.c"
+                # 1541 "05type.c"
                 if(_if_conditional380=xisalpha(*info->p)||*info->p==95,                _if_conditional380) {
-                    # 1542 "05function4.c"
-                    word_246=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1542, 39),__exception_result_var_b34=((char*)(right_value289=parse_word(info))), come_pop_stackframe(), __exception_result_var_b34));
+                    # 1542 "05type.c"
+                    word_246=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1542, 39),__exception_result_var_b34=((char*)(right_value289=parse_word(info))), come_pop_stackframe(), __exception_result_var_b34));
                     right_value289 = come_decrement_ref_count2(right_value289, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                    # 1552 "05function4.c"
-                    # 1544 "05function4.c"
+                    # 1552 "05type.c"
+                    # 1544 "05type.c"
                     if(_if_conditional381=*info->p==41,                    _if_conditional381) {
-                        # 1545 "05function4.c"
+                        # 1545 "05type.c"
                         info->p++;
-                        # 1546 "05function4.c"
+                        # 1546 "05type.c"
                         skip_spaces_and_lf(info);
-                        # 1551 "05function4.c"
-                        # 1548 "05function4.c"
+                        # 1551 "05type.c"
+                        # 1548 "05type.c"
                         if(_if_conditional382=*info->p==40,                        _if_conditional382) {
-                            # 1549 "05function4.c"
+                            # 1549 "05type.c"
                             function_pointer_flag_243=(_Bool)1;
                         }
                     }
@@ -10408,50 +10408,50 @@ right_value409 = (void*)0;
                 }
             }
         }
-        # 1555 "05function4.c"
+        # 1555 "05type.c"
         info->p=p_244;
-        # 1556 "05function4.c"
+        # 1556 "05type.c"
         info->sline=sline_245;
     }
-    # 1559 "05function4.c"
+    # 1559 "05type.c"
     var_name_between_brace_247=(_Bool)0;
-    # 1590 "05function4.c"
+    # 1590 "05type.c"
     {
-        # 1561 "05function4.c"
+        # 1561 "05type.c"
         p_248=info->p;
-        # 1562 "05function4.c"
+        # 1562 "05type.c"
         sline_249=info->sline;
-        # 1586 "05function4.c"
-        # 1564 "05function4.c"
+        # 1586 "05type.c"
+        # 1564 "05type.c"
         if(_if_conditional383=*info->p==40,        _if_conditional383) {
-            # 1565 "05function4.c"
+            # 1565 "05type.c"
             info->p++;
-            # 1566 "05function4.c"
+            # 1566 "05type.c"
             skip_spaces_and_lf(info);
-            # 1568 "05function4.c"
+            # 1568 "05type.c"
             skip_pointer_attribute(info);
-            # 1584 "05function4.c"
-            # 1570 "05function4.c"
+            # 1584 "05type.c"
+            # 1570 "05type.c"
             if(_if_conditional384=xisalpha(*info->p)||*info->p==95,            _if_conditional384) {
-                # 1571 "05function4.c"
-                word_250=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1571, 40),__exception_result_var_b35=((char*)(right_value290=parse_word(info))), come_pop_stackframe(), __exception_result_var_b35));
+                # 1571 "05type.c"
+                word_250=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1571, 40),__exception_result_var_b35=((char*)(right_value290=parse_word(info))), come_pop_stackframe(), __exception_result_var_b35));
                 right_value290 = come_decrement_ref_count2(right_value290, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 1583 "05function4.c"
-                # 1573 "05function4.c"
+                # 1583 "05type.c"
+                # 1573 "05type.c"
                 if(_if_conditional385=is_type_name(word_250,info),                _if_conditional385) {
                 }
                 else {
-                    # 1583 "05function4.c"
-                    # 1575 "05function4.c"
+                    # 1583 "05type.c"
+                    # 1575 "05type.c"
                     if(_if_conditional386=*info->p==41,                    _if_conditional386) {
-                        # 1576 "05function4.c"
+                        # 1576 "05type.c"
                         info->p++;
-                        # 1577 "05function4.c"
+                        # 1577 "05type.c"
                         skip_spaces_and_lf(info);
-                        # 1582 "05function4.c"
-                        # 1579 "05function4.c"
+                        # 1582 "05type.c"
+                        # 1579 "05type.c"
                         if(_if_conditional387=*info->p!=40,                        _if_conditional387) {
-                            # 1580 "05function4.c"
+                            # 1580 "05type.c"
                             var_name_between_brace_247=(_Bool)1;
                         }
                     }
@@ -10459,37 +10459,37 @@ right_value409 = (void*)0;
                 word_250 = come_decrement_ref_count2(word_250, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
         }
-        # 1586 "05function4.c"
+        # 1586 "05type.c"
         info->p=p_248;
-        # 1587 "05function4.c"
+        # 1587 "05type.c"
         info->sline=sline_249;
     }
-    # 2272 "05function4.c"
-    # 1590 "05function4.c"
+    # 2272 "05type.c"
+    # 1590 "05type.c"
     if(_if_conditional388=anonymous_type_209&&*info->p==123,    _if_conditional388) {
-        # 1591 "05function4.c"
-        # 1661 "05function4.c"
-        # 1592 "05function4.c"
+        # 1591 "05type.c"
+        # 1661 "05type.c"
+        # 1592 "05type.c"
         if(struct__201) {
-            # 1597 "05function4.c"
-            # 1593 "05function4.c"
+            # 1597 "05type.c"
+            # 1593 "05type.c"
             if(_if_conditional390=string_operator_equals(type_name_190,""),            _if_conditional390) {
-                # 1594 "05function4.c"
+                # 1594 "05type.c"
                 __dec_obj123=type_name_190;
                 type_name_190=(char*)come_increment_ref_count(((char*)(right_value291=xsprintf("anonymous_typeX%d",++anonymous_num_251))));
                 __dec_obj123 = come_decrement_ref_count2(__dec_obj123, (void*)0, (void*)0, 0,0,0, (void*)0);
                 right_value291 = come_decrement_ref_count2(right_value291, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
             }
-            # 1597 "05function4.c"
+            # 1597 "05type.c"
             node_252=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value292=parse_struct((char*)come_increment_ref_count(type_name_190),info))));
             if(right_value292) { right_value292 = come_decrement_ref_count2(right_value292, ((struct sNode*)right_value292)->finalize, ((struct sNode*)right_value292)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-            # 1604 "05function4.c"
-            # 1599 "05function4.c"
+            # 1604 "05type.c"
+            # 1599 "05type.c"
             if(_if_conditional391=!node_compile(node_252,info),            _if_conditional391) {
-                # 1600 "05function4.c"
+                # 1600 "05type.c"
                 err_msg(info,"parse_struct is failed");
-                # 1601 "05function4.c"
-                __result139__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value294=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value293=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05function4.c", 1601, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
+                # 1601 "05type.c"
+                __result139__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value294=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value293=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05type.c", 1601, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
                 if(node_252) { node_252 = come_decrement_ref_count2(node_252, ((struct sNode*)node_252)->finalize, ((struct sNode*)node_252)->_protocol_obj, 0, 0, 0, (void*)0); } 
                 type_name_190 = come_decrement_ref_count2(type_name_190, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 if(alignas__208) { alignas__208 = come_decrement_ref_count2(alignas__208, ((struct sNode*)alignas__208)->finalize, ((struct sNode*)alignas__208)->_protocol_obj, 0, 0, 0, (void*)0); } 
@@ -10499,53 +10499,53 @@ right_value409 = (void*)0;
                 come_call_finalizer3(right_value294,tuple3$3sTypephcharphboolp_finalize, 0, 1, 0, 0, __result_obj__);
                 return __result139__;
             }
-            # 1604 "05function4.c"
+            # 1604 "05type.c"
             pointer_num_253=0;
-            # 1611 "05function4.c"
+            # 1611 "05type.c"
             while(_while_condtional43=*info->p==42,            _while_condtional43) {
-                # 1607 "05function4.c"
+                # 1607 "05type.c"
                 info->p++;
-                # 1607 "05function4.c"
+                # 1607 "05type.c"
                 skip_spaces_and_lf(info);
-                # 1608 "05function4.c"
+                # 1608 "05type.c"
                 pointer_num_253++;
             }
-            # 1611 "05function4.c"
+            # 1611 "05type.c"
             __dec_obj124=type_241;
-            type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value296=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value295=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 1611, "sType")))),type_name_190,(_Bool)0,info))));
+            type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value296=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value295=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 1611, "sType")))),type_name_190,(_Bool)0,info))));
             come_call_finalizer3(__dec_obj124,sType_finalize, 0, 0, 0, 0, (void*)0);
             come_call_finalizer3(right_value295,sType_finalize, 0, 1, 0, 0, __result_obj__);
             come_call_finalizer3(right_value296,sType_finalize, 0, 1, 0, 0, __result_obj__);
-            # 1613 "05function4.c"
+            # 1613 "05type.c"
             type_241->mPointerNum=pointer_num_253;
             if(node_252) { node_252 = come_decrement_ref_count2(node_252, ((struct sNode*)node_252)->finalize, ((struct sNode*)node_252)->_protocol_obj, 0, 0, 0, (void*)0); } 
         }
         else {
-            # 1661 "05function4.c"
-            # 1615 "05function4.c"
+            # 1661 "05type.c"
+            # 1615 "05type.c"
             if(enum__203) {
-                # 1620 "05function4.c"
-                # 1616 "05function4.c"
+                # 1620 "05type.c"
+                # 1616 "05type.c"
                 if(_if_conditional393=string_operator_equals(type_name_190,""),                _if_conditional393) {
-                    # 1617 "05function4.c"
+                    # 1617 "05type.c"
                     __dec_obj125=type_name_190;
                     type_name_190=(char*)come_increment_ref_count(((char*)(right_value297=xsprintf("anonymous_typeY%d",++anonymous_num_251))));
                     __dec_obj125 = come_decrement_ref_count2(__dec_obj125, (void*)0, (void*)0, 0,0,0, (void*)0);
                     right_value297 = come_decrement_ref_count2(right_value297, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                 }
-                # 1620 "05function4.c"
+                # 1620 "05type.c"
                 node_254=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value298=parse_enum((char*)come_increment_ref_count(type_name_190),info))));
                 if(right_value298) { right_value298 = come_decrement_ref_count2(right_value298, ((struct sNode*)right_value298)->finalize, ((struct sNode*)right_value298)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                # 1629 "05function4.c"
-                # 1622 "05function4.c"
+                # 1629 "05type.c"
+                # 1622 "05type.c"
                 if(_if_conditional394=!info->no_output_err,                _if_conditional394) {
-                    # 1627 "05function4.c"
-                    # 1623 "05function4.c"
+                    # 1627 "05type.c"
+                    # 1623 "05type.c"
                     if(_if_conditional395=!node_compile(node_254,info),                    _if_conditional395) {
-                        # 1624 "05function4.c"
+                        # 1624 "05type.c"
                         printf("%s %d: compiling is failed(X)\n",info->sname,info->sline);
-                        # 1625 "05function4.c"
-                        __result140__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value300=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value299=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05function4.c", 1625, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
+                        # 1625 "05type.c"
+                        __result140__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value300=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value299=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05type.c", 1625, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
                         if(node_254) { node_254 = come_decrement_ref_count2(node_254, ((struct sNode*)node_254)->finalize, ((struct sNode*)node_254)->_protocol_obj, 0, 0, 0, (void*)0); } 
                         type_name_190 = come_decrement_ref_count2(type_name_190, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         if(alignas__208) { alignas__208 = come_decrement_ref_count2(alignas__208, ((struct sNode*)alignas__208)->finalize, ((struct sNode*)alignas__208)->_protocol_obj, 0, 0, 0, (void*)0); } 
@@ -10556,37 +10556,37 @@ right_value409 = (void*)0;
                         return __result140__;
                     }
                 }
-                # 1629 "05function4.c"
+                # 1629 "05type.c"
                 __dec_obj126=type_241;
-                type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value302=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value301=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 1629, "sType")))),type_name_190,(_Bool)0,info))));
+                type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value302=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value301=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 1629, "sType")))),type_name_190,(_Bool)0,info))));
                 come_call_finalizer3(__dec_obj126,sType_finalize, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer3(right_value301,sType_finalize, 0, 1, 0, 0, __result_obj__);
                 come_call_finalizer3(right_value302,sType_finalize, 0, 1, 0, 0, __result_obj__);
                 if(node_254) { node_254 = come_decrement_ref_count2(node_254, ((struct sNode*)node_254)->finalize, ((struct sNode*)node_254)->_protocol_obj, 0, 0, 0, (void*)0); } 
             }
             else {
-                # 1661 "05function4.c"
-                # 1631 "05function4.c"
+                # 1661 "05type.c"
+                # 1631 "05type.c"
                 if(union__202) {
-                    # 1636 "05function4.c"
-                    # 1632 "05function4.c"
+                    # 1636 "05type.c"
+                    # 1632 "05type.c"
                     if(_if_conditional397=string_operator_equals(type_name_190,""),                    _if_conditional397) {
-                        # 1633 "05function4.c"
+                        # 1633 "05type.c"
                         __dec_obj127=type_name_190;
                         type_name_190=(char*)come_increment_ref_count(((char*)(right_value303=xsprintf("anonymous_typeZ%d",++anonymous_num_251))));
                         __dec_obj127 = come_decrement_ref_count2(__dec_obj127, (void*)0, (void*)0, 0,0,0, (void*)0);
                         right_value303 = come_decrement_ref_count2(right_value303, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                     }
-                    # 1636 "05function4.c"
+                    # 1636 "05type.c"
                     node_255=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value304=parse_union((char*)come_increment_ref_count(type_name_190),info))));
                     if(right_value304) { right_value304 = come_decrement_ref_count2(right_value304, ((struct sNode*)right_value304)->finalize, ((struct sNode*)right_value304)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                    # 1645 "05function4.c"
-                    # 1639 "05function4.c"
+                    # 1645 "05type.c"
+                    # 1639 "05type.c"
                     if(_if_conditional398=!node_compile(node_255,info),                    _if_conditional398) {
-                        # 1640 "05function4.c"
+                        # 1640 "05type.c"
                         printf("%s %d: compiling is failed(X)\n",info->sname,info->sline);
-                        # 1641 "05function4.c"
-                        __result141__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value306=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value305=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05function4.c", 1641, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
+                        # 1641 "05type.c"
+                        __result141__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value306=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value305=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05type.c", 1641, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
                         if(node_255) { node_255 = come_decrement_ref_count2(node_255, ((struct sNode*)node_255)->finalize, ((struct sNode*)node_255)->_protocol_obj, 0, 0, 0, (void*)0); } 
                         type_name_190 = come_decrement_ref_count2(type_name_190, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         if(alignas__208) { alignas__208 = come_decrement_ref_count2(alignas__208, ((struct sNode*)alignas__208)->finalize, ((struct sNode*)alignas__208)->_protocol_obj, 0, 0, 0, (void*)0); } 
@@ -10596,32 +10596,32 @@ right_value409 = (void*)0;
                         come_call_finalizer3(right_value306,tuple3$3sTypephcharphboolp_finalize, 0, 1, 0, 0, __result_obj__);
                         return __result141__;
                     }
-                    # 1645 "05function4.c"
+                    # 1645 "05type.c"
                     pointer_num_256=0;
-                    # 1652 "05function4.c"
+                    # 1652 "05type.c"
                     while(_while_condtional44=*info->p==42,                    _while_condtional44) {
-                        # 1648 "05function4.c"
+                        # 1648 "05type.c"
                         info->p++;
-                        # 1648 "05function4.c"
+                        # 1648 "05type.c"
                         skip_spaces_and_lf(info);
-                        # 1649 "05function4.c"
+                        # 1649 "05type.c"
                         pointer_num_256++;
                     }
-                    # 1652 "05function4.c"
+                    # 1652 "05type.c"
                     __dec_obj128=type_241;
-                    type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value308=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value307=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 1652, "sType")))),type_name_190,(_Bool)0,info))));
+                    type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value308=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value307=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 1652, "sType")))),type_name_190,(_Bool)0,info))));
                     come_call_finalizer3(__dec_obj128,sType_finalize, 0, 0, 0, 0, (void*)0);
                     come_call_finalizer3(right_value307,sType_finalize, 0, 1, 0, 0, __result_obj__);
                     come_call_finalizer3(right_value308,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                    # 1654 "05function4.c"
+                    # 1654 "05type.c"
                     type_241->mPointerNum=pointer_num_256;
                     if(node_255) { node_255 = come_decrement_ref_count2(node_255, ((struct sNode*)node_255)->finalize, ((struct sNode*)node_255)->_protocol_obj, 0, 0, 0, (void*)0); } 
                 }
                 else {
-                    # 1657 "05function4.c"
+                    # 1657 "05type.c"
                     err_msg(info,"unexpected { character");
-                    # 1658 "05function4.c"
-                    __result142__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value310=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value309=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05function4.c", 1658, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
+                    # 1658 "05type.c"
+                    __result142__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value310=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value309=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05type.c", 1658, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
                     type_name_190 = come_decrement_ref_count2(type_name_190, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                     if(alignas__208) { alignas__208 = come_decrement_ref_count2(alignas__208, ((struct sNode*)alignas__208)->finalize, ((struct sNode*)alignas__208)->_protocol_obj, 0, 0, 0, (void*)0); } 
                     come_call_finalizer3(type_241,sType_finalize, 0, 0, 0, 0, (void*)0);
@@ -10632,56 +10632,56 @@ right_value409 = (void*)0;
                 }
             }
         }
-        # 1702 "05function4.c"
-        # 1661 "05function4.c"
+        # 1702 "05type.c"
+        # 1661 "05type.c"
         if(parse_variable_name) {
-            # 1662 "05function4.c"
+            # 1662 "05type.c"
             parse_sharp_v5(info);
-            # 1668 "05function4.c"
-            # 1663 "05function4.c"
+            # 1668 "05type.c"
+            # 1663 "05type.c"
             if(_if_conditional400=var_name_between_brace_247&&*info->p==40,            _if_conditional400) {
-                # 1664 "05function4.c"
+                # 1664 "05type.c"
                 info->p++;
-                # 1665 "05function4.c"
+                # 1665 "05type.c"
                 skip_spaces_and_lf(info);
             }
-            # 1685 "05function4.c"
-            # 1668 "05function4.c"
+            # 1685 "05type.c"
+            # 1668 "05type.c"
             if(_if_conditional401=*info->p==58,            _if_conditional401) {
-                # 1669 "05function4.c"
+                # 1669 "05type.c"
                 __dec_obj129=var_name_242;
                 var_name_242=(char*)come_increment_ref_count(((char*)(right_value311=__builtin_string(""))));
                 __dec_obj129 = come_decrement_ref_count2(__dec_obj129, (void*)0, (void*)0, 0,0,0, (void*)0);
                 right_value311 = come_decrement_ref_count2(right_value311, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
             }
             else {
-                # 1685 "05function4.c"
-                # 1671 "05function4.c"
+                # 1685 "05type.c"
+                # 1671 "05type.c"
                 if(anonymous_name_210) {
-                    # 1672 "05function4.c"
-                    # 1673 "05function4.c"
+                    # 1672 "05type.c"
+                    # 1673 "05type.c"
                     num_anonymous_var_name_257++;
-                    # 1674 "05function4.c"
+                    # 1674 "05type.c"
                     __dec_obj130=var_name_242;
                     var_name_242=(char*)come_increment_ref_count(((char*)(right_value312=xsprintf("anonymous_var_nameXYZ%d",num_anonymous_var_name_257))));
                     __dec_obj130 = come_decrement_ref_count2(__dec_obj130, (void*)0, (void*)0, 0,0,0, (void*)0);
                     right_value312 = come_decrement_ref_count2(right_value312, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                 }
                 else {
-                    # 1685 "05function4.c"
-                    # 1676 "05function4.c"
+                    # 1685 "05type.c"
+                    # 1676 "05type.c"
                     if(_if_conditional403=xisalnum(*info->p)||*info->p==95,                    _if_conditional403) {
-                        # 1677 "05function4.c"
+                        # 1677 "05type.c"
                         __dec_obj131=var_name_242;
-                        var_name_242=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1677, 41),__exception_result_var_b36=((char*)(right_value313=parse_word(info))), come_pop_stackframe(), __exception_result_var_b36));
+                        var_name_242=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1677, 41),__exception_result_var_b36=((char*)(right_value313=parse_word(info))), come_pop_stackframe(), __exception_result_var_b36));
                         __dec_obj131 = come_decrement_ref_count2(__dec_obj131, (void*)0, (void*)0, 0,0,0, (void*)0);
                         right_value313 = come_decrement_ref_count2(right_value313, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                     }
                     else {
-                        # 1680 "05function4.c"
-                        # 1681 "05function4.c"
+                        # 1680 "05type.c"
+                        # 1681 "05type.c"
                         num_anonymous_var_name_258++;
-                        # 1682 "05function4.c"
+                        # 1682 "05type.c"
                         __dec_obj132=var_name_242;
                         var_name_242=(char*)come_increment_ref_count(((char*)(right_value314=xsprintf("anonymous_var_nameY%d",num_anonymous_var_name_258))));
                         __dec_obj132 = come_decrement_ref_count2(__dec_obj132, (void*)0, (void*)0, 0,0,0, (void*)0);
@@ -10689,31 +10689,31 @@ right_value409 = (void*)0;
                     }
                 }
             }
-            # 1690 "05function4.c"
-            # 1685 "05function4.c"
+            # 1690 "05type.c"
+            # 1685 "05type.c"
             if(_if_conditional404=var_name_between_brace_247&&*info->p==41,            _if_conditional404) {
-                # 1686 "05function4.c"
+                # 1686 "05type.c"
                 info->p++;
-                # 1687 "05function4.c"
+                # 1687 "05type.c"
                 skip_spaces_and_lf(info);
             }
-            # 1701 "05function4.c"
-            # 1690 "05function4.c"
+            # 1701 "05type.c"
+            # 1690 "05type.c"
             if(_if_conditional405=*info->p==58,            _if_conditional405) {
-                # 1691 "05function4.c"
+                # 1691 "05type.c"
                 info->p++;
-                # 1692 "05function4.c"
+                # 1692 "05type.c"
                 skip_spaces_and_lf(info);
-                # 1694 "05function4.c"
+                # 1694 "05type.c"
                 no_comma_259=info->no_comma;
-                # 1695 "05function4.c"
+                # 1695 "05type.c"
                 info->no_comma=(_Bool)1;
-                # 1696 "05function4.c"
+                # 1696 "05type.c"
                 node_260=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value315=expression_v13(info))));
                 if(right_value315) { right_value315 = come_decrement_ref_count2(right_value315, ((struct sNode*)right_value315)->finalize, ((struct sNode*)right_value315)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                # 1697 "05function4.c"
+                # 1697 "05type.c"
                 info->no_comma=no_comma_259;
-                # 1699 "05function4.c"
+                # 1699 "05type.c"
                 __dec_obj133=type_241->mSizeNum;
                 type_241->mSizeNum=(struct sNode*)come_increment_ref_count(node_260);
                 if(__dec_obj133) { __dec_obj133 = come_decrement_ref_count2(__dec_obj133, ((struct sNode*)__dec_obj133)->finalize, ((struct sNode*)__dec_obj133)->_protocol_obj, 0,0,0, (void*)0); }
@@ -10722,33 +10722,33 @@ right_value409 = (void*)0;
         }
     }
     else {
-        # 2272 "05function4.c"
-        # 1703 "05function4.c"
+        # 2272 "05type.c"
+        # 1703 "05type.c"
         if(lambda_flag_238) {
-            # 1704 "05function4.c"
-            # 1727 "05function4.c"
-            # 1705 "05function4.c"
+            # 1704 "05type.c"
+            # 1727 "05type.c"
+            # 1705 "05type.c"
             if(_if_conditional411=map$2charphsTypephp_operator_load_element(info->types,type_name_190),            _if_conditional411) {
-                # 1706 "05function4.c"
+                # 1706 "05type.c"
                 __dec_obj134=result_type_261;
                 result_type_261=(struct sType*)come_increment_ref_count(((struct sType*)(right_value316=sType_clone(map$2charphsTypephp_operator_load_element(info->types,type_name_190)))));
                 come_call_finalizer3(__dec_obj134,sType_finalize, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer3(right_value316,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                # 1707 "05function4.c"
-                result_type_261->mClass=((struct sClass*)come_null_check(map$2charphsClassphp_operator_load_element(info->classes,result_type_261->mClass->mName), "05function4.c", 1707, 42));
+                # 1707 "05type.c"
+                result_type_261->mClass=((struct sClass*)come_null_check(map$2charphsClassphp_operator_load_element(info->classes,result_type_261->mClass->mName), "05type.c", 1707, 42));
             }
             else {
-                # 1727 "05function4.c"
-                # 1709 "05function4.c"
+                # 1727 "05type.c"
+                # 1709 "05type.c"
                 if(_if_conditional417=list$1charph_contained(info->generics_type_names,(char*)come_increment_ref_count(type_name_190)),                _if_conditional417) {
-                    # 1715 "05function4.c"
+                    # 1715 "05type.c"
                     for(                    i_270=0;                    i_270<list$1charph_length(info->generics_type_names);                    i_270++                    ){
-                        # 1714 "05function4.c"
-                        # 1711 "05function4.c"
-                        if(_if_conditional421=string_operator_equals(((char*)come_null_check(list$1charphp_operator_load_element(info->generics_type_names,i_270), "05function4.c", 1711, 43)),type_name_190),                        _if_conditional421) {
-                            # 1712 "05function4.c"
+                        # 1714 "05type.c"
+                        # 1711 "05type.c"
+                        if(_if_conditional421=string_operator_equals(((char*)come_null_check(list$1charphp_operator_load_element(info->generics_type_names,i_270), "05type.c", 1711, 43)),type_name_190),                        _if_conditional421) {
+                            # 1712 "05type.c"
                             __dec_obj135=result_type_261;
-                            result_type_261=(struct sType*)come_increment_ref_count(((struct sType*)(right_value319=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value317=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 1712, "sType")))),((char*)(right_value318=xsprintf("generics_type%d",i_270))),(_Bool)0,info))));
+                            result_type_261=(struct sType*)come_increment_ref_count(((struct sType*)(right_value319=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value317=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 1712, "sType")))),((char*)(right_value318=xsprintf("generics_type%d",i_270))),(_Bool)0,info))));
                             come_call_finalizer3(__dec_obj135,sType_finalize, 0, 0, 0, 0, (void*)0);
                             come_call_finalizer3(right_value317,sType_finalize, 0, 1, 0, 0, __result_obj__);
                             right_value318 = come_decrement_ref_count2(right_value318, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -10757,17 +10757,17 @@ right_value409 = (void*)0;
                     }
                 }
                 else {
-                    # 1727 "05function4.c"
-                    # 1716 "05function4.c"
+                    # 1727 "05type.c"
+                    # 1716 "05type.c"
                     if(_if_conditional422=list$1charph_contained(info->method_generics_type_names,(char*)come_increment_ref_count(type_name_190)),                    _if_conditional422) {
-                        # 1722 "05function4.c"
+                        # 1722 "05type.c"
                         for(                        i_274=0;                        i_274<list$1charph_length(info->method_generics_type_names);                        i_274++                        ){
-                            # 1721 "05function4.c"
-                            # 1718 "05function4.c"
-                            if(_if_conditional423=string_operator_equals(((char*)come_null_check(list$1charphp_operator_load_element(info->method_generics_type_names,i_274), "05function4.c", 1718, 44)),type_name_190),                            _if_conditional423) {
-                                # 1719 "05function4.c"
+                            # 1721 "05type.c"
+                            # 1718 "05type.c"
+                            if(_if_conditional423=string_operator_equals(((char*)come_null_check(list$1charphp_operator_load_element(info->method_generics_type_names,i_274), "05type.c", 1718, 44)),type_name_190),                            _if_conditional423) {
+                                # 1719 "05type.c"
                                 __dec_obj136=result_type_261;
-                                result_type_261=(struct sType*)come_increment_ref_count(((struct sType*)(right_value322=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value320=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 1719, "sType")))),((char*)(right_value321=xsprintf("mgenerics_type%d",i_274))),(_Bool)0,info))));
+                                result_type_261=(struct sType*)come_increment_ref_count(((struct sType*)(right_value322=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value320=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 1719, "sType")))),((char*)(right_value321=xsprintf("mgenerics_type%d",i_274))),(_Bool)0,info))));
                                 come_call_finalizer3(__dec_obj136,sType_finalize, 0, 0, 0, 0, (void*)0);
                                 come_call_finalizer3(right_value320,sType_finalize, 0, 1, 0, 0, __result_obj__);
                                 right_value321 = come_decrement_ref_count2(right_value321, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -10776,84 +10776,84 @@ right_value409 = (void*)0;
                         }
                     }
                     else {
-                        # 1724 "05function4.c"
+                        # 1724 "05type.c"
                         __dec_obj137=result_type_261;
-                        result_type_261=(struct sType*)come_increment_ref_count(((struct sType*)(right_value324=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value323=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 1724, "sType")))),type_name_190,(_Bool)0,info))));
+                        result_type_261=(struct sType*)come_increment_ref_count(((struct sType*)(right_value324=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value323=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 1724, "sType")))),type_name_190,(_Bool)0,info))));
                         come_call_finalizer3(__dec_obj137,sType_finalize, 0, 0, 0, 0, (void*)0);
                         come_call_finalizer3(right_value323,sType_finalize, 0, 1, 0, 0, __result_obj__);
                         come_call_finalizer3(right_value324,sType_finalize, 0, 1, 0, 0, __result_obj__);
                     }
                 }
             }
-            # 1727 "05function4.c"
+            # 1727 "05type.c"
             result_type_261->mConstant=result_type_261->mConstant||constant_192;
-            # 1728 "05function4.c"
+            # 1728 "05type.c"
             __dec_obj138=result_type_261->mAlignas;
             result_type_261->mAlignas=(struct sNode*)come_increment_ref_count(alignas__208);
             if(__dec_obj138) { __dec_obj138 = come_decrement_ref_count2(__dec_obj138, ((struct sNode*)__dec_obj138)->finalize, ((struct sNode*)__dec_obj138)->_protocol_obj, 0,0,0, (void*)0); }
-            # 1729 "05function4.c"
+            # 1729 "05type.c"
             result_type_261->mComeMemCore=result_type_261->mComeMemCore||come_mem_core__207;
-            # 1730 "05function4.c"
+            # 1730 "05type.c"
             result_type_261->mRegister=register__195;
-            # 1731 "05function4.c"
+            # 1731 "05type.c"
             result_type_261->mUnsigned=result_type_261->mUnsigned||unsigned__196;
-            # 1732 "05function4.c"
+            # 1732 "05type.c"
             result_type_261->mVolatile=volatile__194;
-            # 1733 "05function4.c"
+            # 1733 "05type.c"
             result_type_261->mRecord=result_type_261->mStatic||static__193;
-            # 1734 "05function4.c"
+            # 1734 "05type.c"
             result_type_261->mStatic=result_type_261->mRecord||record__191;
-            # 1735 "05function4.c"
+            # 1735 "05type.c"
             result_type_261->mExtern=result_type_261->mExtern||extern__205;
-            # 1736 "05function4.c"
+            # 1736 "05type.c"
             result_type_261->mInline=result_type_261->mInline||inline__206;
-            # 1737 "05function4.c"
+            # 1737 "05type.c"
             result_type_261->mRestrict=result_type_261->mRestrict||restrict__200;
-            # 1738 "05function4.c"
+            # 1738 "05type.c"
             result_type_261->mLongLong=result_type_261->mLongLong||long_long_198;
-            # 1739 "05function4.c"
+            # 1739 "05type.c"
             result_type_261->mLong=result_type_261->mLong||long__197;
-            # 1740 "05function4.c"
+            # 1740 "05type.c"
             result_type_261->mShort=result_type_261->mShort||short__199;
-            # 1741 "05function4.c"
+            # 1741 "05type.c"
             result_type_261->mPointerNum=pointer_num_236;
-            # 1742 "05function4.c"
+            # 1742 "05type.c"
             result_type_261->mHeap=result_type_261->mHeap||heap_237;
-            # 1744 "05function4.c"
+            # 1744 "05type.c"
             __dec_obj139=var_name_242;
-            var_name_242=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1744, 45),__exception_result_var_b37=((char*)(right_value325=parse_word(info))), come_pop_stackframe(), __exception_result_var_b37));
+            var_name_242=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1744, 45),__exception_result_var_b37=((char*)(right_value325=parse_word(info))), come_pop_stackframe(), __exception_result_var_b37));
             __dec_obj139 = come_decrement_ref_count2(__dec_obj139, (void*)0, (void*)0, 0,0,0, (void*)0);
             right_value325 = come_decrement_ref_count2(right_value325, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 1746 "05function4.c"
+            # 1746 "05type.c"
             multiple_assign_var2=((struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool*)(right_value326=parse_params(info,(_Bool)0)));
             param_types_275=(struct list$1sTypeph*)come_increment_ref_count(multiple_assign_var2->v1);
             param_names_276=(struct list$1charph*)come_increment_ref_count(multiple_assign_var2->v2);
             param_default_parametors_277=(struct list$1charph*)come_increment_ref_count(multiple_assign_var2->v3);
             var_args_278=multiple_assign_var2->v4;
             come_call_finalizer3(right_value326,tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolp_finalize, 0, 1, 0, 0, __result_obj__);
-            # 1748 "05function4.c"
+            # 1748 "05type.c"
             __dec_obj140=type_241;
-            type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value328=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value327=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 1748, "sType")))),"lambda",(_Bool)0,info))));
+            type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value328=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value327=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 1748, "sType")))),"lambda",(_Bool)0,info))));
             come_call_finalizer3(__dec_obj140,sType_finalize, 0, 0, 0, 0, (void*)0);
             come_call_finalizer3(right_value327,sType_finalize, 0, 1, 0, 0, __result_obj__);
             come_call_finalizer3(right_value328,sType_finalize, 0, 1, 0, 0, __result_obj__);
-            # 1750 "05function4.c"
+            # 1750 "05type.c"
             __dec_obj142=type_241->mResultType;
-            type_241->mResultType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value330=tuple1$1sTypeph_initialize((struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value329=(struct tuple1$1sTypeph*)come_calloc(1, sizeof(struct tuple1$1sTypeph)*(1), "05function4.c", 1750, "tuple1$1sTypeph")))),(struct sType*)come_increment_ref_count(result_type_261)))));
+            type_241->mResultType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value330=tuple1$1sTypeph_initialize((struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value329=(struct tuple1$1sTypeph*)come_calloc(1, sizeof(struct tuple1$1sTypeph)*(1), "05type.c", 1750, "tuple1$1sTypeph")))),(struct sType*)come_increment_ref_count(result_type_261)))));
             come_call_finalizer3(__dec_obj142,tuple1$1sTypeph_finalize, 0, 0, 0, 0, (void*)0);
             come_call_finalizer3(right_value329,tuple1$1sTypephp_finalize, 0, 1, 0, 0, __result_obj__);
             come_call_finalizer3(right_value330,tuple1$1sTypephp_finalize, 0, 1, 0, 0, __result_obj__);
-            # 1751 "05function4.c"
+            # 1751 "05type.c"
             __dec_obj143=type_241->mParamTypes;
             type_241->mParamTypes=(struct list$1sTypeph*)come_increment_ref_count(param_types_275);
             come_call_finalizer3(__dec_obj143,list$1sTypeph_finalize, 0, 0, 0, 0, (void*)0);
-            # 1752 "05function4.c"
+            # 1752 "05type.c"
             __dec_obj144=type_241->mParamNames;
             type_241->mParamNames=(struct list$1charph*)come_increment_ref_count(param_names_276);
             come_call_finalizer3(__dec_obj144,list$1charph_finalize, 0, 0, 0, 0, (void*)0);
-            # 1753 "05function4.c"
+            # 1753 "05type.c"
             type_241->mVarArgs=var_args_278;
-            # 1754 "05function4.c"
+            # 1754 "05type.c"
             type_241->mExtern=extern__205;
             come_call_finalizer3(result_type_261,sType_finalize, 0, 0, 0, 0, (void*)0);
             come_call_finalizer3(param_types_275,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
@@ -10861,49 +10861,49 @@ right_value409 = (void*)0;
             come_call_finalizer3(param_default_parametors_277,list$1charphp_finalize, 0, 0, 0, 0, (void*)0);
         }
         else {
-            # 2272 "05function4.c"
-            # 1756 "05function4.c"
+            # 2272 "05type.c"
+            # 1756 "05type.c"
             if(function_pointer_flag_243) {
-                # 1757 "05function4.c"
+                # 1757 "05type.c"
                 info->p++;
-                # 1758 "05function4.c"
+                # 1758 "05type.c"
                 skip_spaces_and_lf(info);
-                # 1760 "05function4.c"
+                # 1760 "05type.c"
                 skip_pointer_attribute(info);
-                # 1767 "05function4.c"
-                # 1762 "05function4.c"
+                # 1767 "05type.c"
+                # 1762 "05type.c"
                 if(_if_conditional425=*info->p==42||*info->p==94,                _if_conditional425) {
-                    # 1763 "05function4.c"
+                    # 1763 "05type.c"
                     info->p++;
-                    # 1764 "05function4.c"
+                    # 1764 "05type.c"
                     skip_spaces_and_lf(info);
                 }
-                # 1767 "05function4.c"
+                # 1767 "05type.c"
                 skip_pointer_attribute(info);
-                # 1769 "05function4.c"
-                # 1793 "05function4.c"
-                # 1770 "05function4.c"
+                # 1769 "05type.c"
+                # 1793 "05type.c"
+                # 1770 "05type.c"
                 if(_if_conditional426=map$2charphsTypephp_operator_load_element(info->types,type_name_190),                _if_conditional426) {
-                    # 1771 "05function4.c"
+                    # 1771 "05type.c"
                     __dec_obj145=result_type_279;
                     result_type_279=(struct sType*)come_increment_ref_count(((struct sType*)(right_value331=sType_clone(map$2charphsTypephp_operator_load_element(info->types,type_name_190)))));
                     come_call_finalizer3(__dec_obj145,sType_finalize, 0, 0, 0, 0, (void*)0);
                     come_call_finalizer3(right_value331,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                    # 1772 "05function4.c"
-                    result_type_279->mClass=((struct sClass*)come_null_check(map$2charphsClassphp_operator_load_element(info->classes,result_type_279->mClass->mName), "05function4.c", 1772, 46));
+                    # 1772 "05type.c"
+                    result_type_279->mClass=((struct sClass*)come_null_check(map$2charphsClassphp_operator_load_element(info->classes,result_type_279->mClass->mName), "05type.c", 1772, 46));
                 }
                 else {
-                    # 1793 "05function4.c"
-                    # 1775 "05function4.c"
+                    # 1793 "05type.c"
+                    # 1775 "05type.c"
                     if(_if_conditional427=list$1charph_contained(info->generics_type_names,(char*)come_increment_ref_count(type_name_190)),                    _if_conditional427) {
-                        # 1781 "05function4.c"
+                        # 1781 "05type.c"
                         for(                        i_280=0;                        i_280<list$1charph_length(info->generics_type_names);                        i_280++                        ){
-                            # 1780 "05function4.c"
-                            # 1777 "05function4.c"
-                            if(_if_conditional428=string_operator_equals(((char*)come_null_check(list$1charphp_operator_load_element(info->generics_type_names,i_280), "05function4.c", 1777, 47)),type_name_190),                            _if_conditional428) {
-                                # 1778 "05function4.c"
+                            # 1780 "05type.c"
+                            # 1777 "05type.c"
+                            if(_if_conditional428=string_operator_equals(((char*)come_null_check(list$1charphp_operator_load_element(info->generics_type_names,i_280), "05type.c", 1777, 47)),type_name_190),                            _if_conditional428) {
+                                # 1778 "05type.c"
                                 __dec_obj146=result_type_279;
-                                result_type_279=(struct sType*)come_increment_ref_count(((struct sType*)(right_value334=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value332=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 1778, "sType")))),((char*)(right_value333=xsprintf("generics_type%d",i_280))),(_Bool)0,info))));
+                                result_type_279=(struct sType*)come_increment_ref_count(((struct sType*)(right_value334=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value332=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 1778, "sType")))),((char*)(right_value333=xsprintf("generics_type%d",i_280))),(_Bool)0,info))));
                                 come_call_finalizer3(__dec_obj146,sType_finalize, 0, 0, 0, 0, (void*)0);
                                 come_call_finalizer3(right_value332,sType_finalize, 0, 1, 0, 0, __result_obj__);
                                 right_value333 = come_decrement_ref_count2(right_value333, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -10912,17 +10912,17 @@ right_value409 = (void*)0;
                         }
                     }
                     else {
-                        # 1793 "05function4.c"
-                        # 1782 "05function4.c"
+                        # 1793 "05type.c"
+                        # 1782 "05type.c"
                         if(_if_conditional429=list$1charph_contained(info->method_generics_type_names,(char*)come_increment_ref_count(type_name_190)),                        _if_conditional429) {
-                            # 1788 "05function4.c"
+                            # 1788 "05type.c"
                             for(                            i_281=0;                            i_281<list$1charph_length(info->method_generics_type_names);                            i_281++                            ){
-                                # 1787 "05function4.c"
-                                # 1784 "05function4.c"
-                                if(_if_conditional430=string_operator_equals(((char*)come_null_check(list$1charphp_operator_load_element(info->method_generics_type_names,i_281), "05function4.c", 1784, 48)),type_name_190),                                _if_conditional430) {
-                                    # 1785 "05function4.c"
+                                # 1787 "05type.c"
+                                # 1784 "05type.c"
+                                if(_if_conditional430=string_operator_equals(((char*)come_null_check(list$1charphp_operator_load_element(info->method_generics_type_names,i_281), "05type.c", 1784, 48)),type_name_190),                                _if_conditional430) {
+                                    # 1785 "05type.c"
                                     __dec_obj147=result_type_279;
-                                    result_type_279=(struct sType*)come_increment_ref_count(((struct sType*)(right_value337=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value335=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 1785, "sType")))),((char*)(right_value336=xsprintf("mgenerics_type%d",i_281))),(_Bool)0,info))));
+                                    result_type_279=(struct sType*)come_increment_ref_count(((struct sType*)(right_value337=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value335=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 1785, "sType")))),((char*)(right_value336=xsprintf("mgenerics_type%d",i_281))),(_Bool)0,info))));
                                     come_call_finalizer3(__dec_obj147,sType_finalize, 0, 0, 0, 0, (void*)0);
                                     come_call_finalizer3(right_value335,sType_finalize, 0, 1, 0, 0, __result_obj__);
                                     right_value336 = come_decrement_ref_count2(right_value336, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -10931,62 +10931,62 @@ right_value409 = (void*)0;
                             }
                         }
                         else {
-                            # 1790 "05function4.c"
+                            # 1790 "05type.c"
                             __dec_obj148=result_type_279;
-                            result_type_279=(struct sType*)come_increment_ref_count(((struct sType*)(right_value339=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value338=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 1790, "sType")))),type_name_190,(_Bool)0,info))));
+                            result_type_279=(struct sType*)come_increment_ref_count(((struct sType*)(right_value339=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value338=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 1790, "sType")))),type_name_190,(_Bool)0,info))));
                             come_call_finalizer3(__dec_obj148,sType_finalize, 0, 0, 0, 0, (void*)0);
                             come_call_finalizer3(right_value338,sType_finalize, 0, 1, 0, 0, __result_obj__);
                             come_call_finalizer3(right_value339,sType_finalize, 0, 1, 0, 0, __result_obj__);
                         }
                     }
                 }
-                # 1793 "05function4.c"
+                # 1793 "05type.c"
                 result_type_279->mConstant=result_type_279->mConstant||constant_192;
-                # 1794 "05function4.c"
+                # 1794 "05type.c"
                 __dec_obj149=result_type_279->mAlignas;
                 result_type_279->mAlignas=(struct sNode*)come_increment_ref_count(alignas__208);
                 if(__dec_obj149) { __dec_obj149 = come_decrement_ref_count2(__dec_obj149, ((struct sNode*)__dec_obj149)->finalize, ((struct sNode*)__dec_obj149)->_protocol_obj, 0,0,0, (void*)0); }
-                # 1795 "05function4.c"
+                # 1795 "05type.c"
                 result_type_279->mComeMemCore=result_type_279->mComeMemCore||come_mem_core__207;
-                # 1796 "05function4.c"
+                # 1796 "05type.c"
                 result_type_279->mRegister=register__195;
-                # 1797 "05function4.c"
+                # 1797 "05type.c"
                 result_type_279->mUnsigned=result_type_279->mUnsigned||unsigned__196;
-                # 1798 "05function4.c"
+                # 1798 "05type.c"
                 result_type_279->mVolatile=volatile__194;
-                # 1799 "05function4.c"
+                # 1799 "05type.c"
                 result_type_279->mStatic=result_type_279->mStatic||static__193;
-                # 1800 "05function4.c"
+                # 1800 "05type.c"
                 result_type_279->mRecord=result_type_279->mRecord||record__191;
-                # 1801 "05function4.c"
+                # 1801 "05type.c"
                 result_type_279->mExtern=result_type_279->mExtern||extern__205;
-                # 1802 "05function4.c"
+                # 1802 "05type.c"
                 result_type_279->mInline=result_type_279->mInline||inline__206;
-                # 1803 "05function4.c"
+                # 1803 "05type.c"
                 result_type_279->mRestrict=result_type_279->mRestrict||restrict__200;
-                # 1804 "05function4.c"
+                # 1804 "05type.c"
                 result_type_279->mLongLong=result_type_279->mLongLong||long_long_198;
-                # 1805 "05function4.c"
+                # 1805 "05type.c"
                 result_type_279->mLong=result_type_279->mLong||long__197;
-                # 1806 "05function4.c"
+                # 1806 "05type.c"
                 result_type_279->mShort=result_type_279->mShort||short__199;
-                # 1807 "05function4.c"
+                # 1807 "05type.c"
                 result_type_279->mPointerNum+=pointer_num_236;
-                # 1808 "05function4.c"
+                # 1808 "05type.c"
                 result_type_279->mHeap=result_type_279->mHeap||heap_237;
-                # 1821 "05function4.c"
-                # 1810 "05function4.c"
+                # 1821 "05type.c"
+                # 1810 "05type.c"
                 if(_if_conditional431=xisalnum(*info->p)||*info->p==95,                _if_conditional431) {
-                    # 1811 "05function4.c"
+                    # 1811 "05type.c"
                     __dec_obj150=var_name_242;
-                    var_name_242=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1811, 49),__exception_result_var_b38=((char*)(right_value340=parse_word(info))), come_pop_stackframe(), __exception_result_var_b38));
+                    var_name_242=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1811, 49),__exception_result_var_b38=((char*)(right_value340=parse_word(info))), come_pop_stackframe(), __exception_result_var_b38));
                     __dec_obj150 = come_decrement_ref_count2(__dec_obj150, (void*)0, (void*)0, 0,0,0, (void*)0);
                     right_value340 = come_decrement_ref_count2(right_value340, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                    # 1815 "05function4.c"
-                    # 1812 "05function4.c"
+                    # 1815 "05type.c"
+                    # 1812 "05type.c"
                     if(_if_conditional432=*info->p==40,                    _if_conditional432) {
-                        # 1813 "05function4.c"
-                        __result161__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value342=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value341=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05function4.c", 1813, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count(result_type_279),(char*)come_increment_ref_count(var_name_242),(_Bool)0)));
+                        # 1813 "05type.c"
+                        __result161__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value342=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value341=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05type.c", 1813, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count(result_type_279),(char*)come_increment_ref_count(var_name_242),(_Bool)0)));
                         come_call_finalizer3(result_type_279,sType_finalize, 0, 0, 0, 0, (void*)0);
                         type_name_190 = come_decrement_ref_count2(type_name_190, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         if(alignas__208) { alignas__208 = come_decrement_ref_count2(alignas__208, ((struct sNode*)alignas__208)->finalize, ((struct sNode*)alignas__208)->_protocol_obj, 0, 0, 0, (void*)0); } 
@@ -10998,47 +10998,47 @@ right_value409 = (void*)0;
                     }
                 }
                 else {
-                    # 1817 "05function4.c"
-                    # 1818 "05function4.c"
+                    # 1817 "05type.c"
+                    # 1818 "05type.c"
                     num_anonymous_var_name_282++;
-                    # 1819 "05function4.c"
+                    # 1819 "05type.c"
                     __dec_obj151=var_name_242;
                     var_name_242=(char*)come_increment_ref_count(((char*)(right_value343=xsprintf("anonymous_lambda_var_nameZ%d",num_anonymous_var_name_282))));
                     __dec_obj151 = come_decrement_ref_count2(__dec_obj151, (void*)0, (void*)0, 0,0,0, (void*)0);
                     right_value343 = come_decrement_ref_count2(right_value343, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                 }
-                # 1821 "05function4.c"
+                # 1821 "05type.c"
                 expected_next_character(41,info);
-                # 1823 "05function4.c"
+                # 1823 "05type.c"
                 multiple_assign_var3=((struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool*)(right_value344=parse_params(info,(_Bool)0)));
                 param_types_283=(struct list$1sTypeph*)come_increment_ref_count(multiple_assign_var3->v1);
                 param_names_284=(struct list$1charph*)come_increment_ref_count(multiple_assign_var3->v2);
                 param_default_parametors_285=(struct list$1charph*)come_increment_ref_count(multiple_assign_var3->v3);
                 var_args_286=multiple_assign_var3->v4;
                 come_call_finalizer3(right_value344,tuple4$4list$1sTypephphlist$1charphphlist$1charphphboolp_finalize, 0, 1, 0, 0, __result_obj__);
-                # 1825 "05function4.c"
+                # 1825 "05type.c"
                 __dec_obj152=type_241;
-                type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value346=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value345=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 1825, "sType")))),"lambda",(_Bool)0,info))));
+                type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value346=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value345=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 1825, "sType")))),"lambda",(_Bool)0,info))));
                 come_call_finalizer3(__dec_obj152,sType_finalize, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer3(right_value345,sType_finalize, 0, 1, 0, 0, __result_obj__);
                 come_call_finalizer3(right_value346,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                # 1827 "05function4.c"
+                # 1827 "05type.c"
                 __dec_obj153=type_241->mResultType;
-                type_241->mResultType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value348=tuple1$1sTypeph_initialize((struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value347=(struct tuple1$1sTypeph*)come_calloc(1, sizeof(struct tuple1$1sTypeph)*(1), "05function4.c", 1827, "tuple1$1sTypeph")))),(struct sType*)come_increment_ref_count(result_type_279)))));
+                type_241->mResultType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value348=tuple1$1sTypeph_initialize((struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value347=(struct tuple1$1sTypeph*)come_calloc(1, sizeof(struct tuple1$1sTypeph)*(1), "05type.c", 1827, "tuple1$1sTypeph")))),(struct sType*)come_increment_ref_count(result_type_279)))));
                 come_call_finalizer3(__dec_obj153,tuple1$1sTypeph_finalize, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer3(right_value347,tuple1$1sTypephp_finalize, 0, 1, 0, 0, __result_obj__);
                 come_call_finalizer3(right_value348,tuple1$1sTypephp_finalize, 0, 1, 0, 0, __result_obj__);
-                # 1828 "05function4.c"
+                # 1828 "05type.c"
                 __dec_obj154=type_241->mParamTypes;
                 type_241->mParamTypes=(struct list$1sTypeph*)come_increment_ref_count(param_types_283);
                 come_call_finalizer3(__dec_obj154,list$1sTypeph_finalize, 0, 0, 0, 0, (void*)0);
-                # 1829 "05function4.c"
+                # 1829 "05type.c"
                 __dec_obj155=type_241->mParamNames;
                 type_241->mParamNames=(struct list$1charph*)come_increment_ref_count(param_names_284);
                 come_call_finalizer3(__dec_obj155,list$1charph_finalize, 0, 0, 0, 0, (void*)0);
-                # 1830 "05function4.c"
+                # 1830 "05type.c"
                 type_241->mVarArgs=var_args_286;
-                # 1831 "05function4.c"
+                # 1831 "05type.c"
                 type_241->mExtern=extern__205;
                 come_call_finalizer3(result_type_279,sType_finalize, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer3(param_types_283,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
@@ -11046,25 +11046,25 @@ right_value409 = (void*)0;
                 come_call_finalizer3(param_default_parametors_285,list$1charphp_finalize, 0, 0, 0, 0, (void*)0);
             }
             else {
-                # 2272 "05function4.c"
-                # 1833 "05function4.c"
+                # 2272 "05type.c"
+                # 1833 "05type.c"
                 if(_if_conditional433=string_operator_equals(type_name_190,"__typeof__")&&*info->p==40,                _if_conditional433) {
-                    # 1834 "05function4.c"
+                    # 1834 "05type.c"
                     info->p++;
-                    # 1835 "05function4.c"
+                    # 1835 "05type.c"
                     skip_spaces_and_lf(info);
-                    # 1837 "05function4.c"
+                    # 1837 "05type.c"
                     exp_287=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value349=expression_v13(info))));
                     if(right_value349) { right_value349 = come_decrement_ref_count2(right_value349, ((struct sNode*)right_value349)->finalize, ((struct sNode*)right_value349)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                    # 1839 "05function4.c"
+                    # 1839 "05type.c"
                     expected_next_character(41,info);
-                    # 1846 "05function4.c"
-                    # 1841 "05function4.c"
+                    # 1846 "05type.c"
+                    # 1841 "05type.c"
                     if(_if_conditional434=!node_compile(exp_287,info),                    _if_conditional434) {
-                        # 1842 "05function4.c"
+                        # 1842 "05type.c"
                         err_msg(info,"invalid __typeof__ expression");
-                        # 1843 "05function4.c"
-                        __result163__ = __result_obj__ = ((struct tuple3$3sTypepcharphbool*)(right_value351=tuple3$3sTypepcharphbool_initialize((struct tuple3$3sTypepcharphbool*)come_increment_ref_count(((struct tuple3$3sTypepcharphbool*)(right_value350=(struct tuple3$3sTypepcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypepcharphbool)*(1), "05function4.c", 1843, "struct tuple3$3sTypepcharphbool")))),(struct sType*)((void*)0),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
+                        # 1843 "05type.c"
+                        __result163__ = __result_obj__ = ((struct tuple3$3sTypepcharphbool*)(right_value351=tuple3$3sTypepcharphbool_initialize((struct tuple3$3sTypepcharphbool*)come_increment_ref_count(((struct tuple3$3sTypepcharphbool*)(right_value350=(struct tuple3$3sTypepcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypepcharphbool)*(1), "05type.c", 1843, "struct tuple3$3sTypepcharphbool")))),(struct sType*)((void*)0),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
                         if(exp_287) { exp_287 = come_decrement_ref_count2(exp_287, ((struct sNode*)exp_287)->finalize, ((struct sNode*)exp_287)->_protocol_obj, 0, 0, 0, (void*)0); } 
                         type_name_190 = come_decrement_ref_count2(type_name_190, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         if(alignas__208) { alignas__208 = come_decrement_ref_count2(alignas__208, ((struct sNode*)alignas__208)->finalize, ((struct sNode*)alignas__208)->_protocol_obj, 0, 0, 0, (void*)0); } 
@@ -11074,66 +11074,66 @@ right_value409 = (void*)0;
                         come_call_finalizer3(right_value351,tuple3$3sTypepcharphboolp_finalize, 0, 1, 0, 0, __result_obj__);
                         return __result163__;
                     }
-                    # 1846 "05function4.c"
+                    # 1846 "05type.c"
                     come_value_288=(struct CVALUE*)come_increment_ref_count(((struct CVALUE*)(right_value352=get_value_from_stack(-1,info))));
                     come_call_finalizer3(right_value352,CVALUE_finalize, 0, 1, 0, 0, __result_obj__);
-                    # 1847 "05function4.c"
+                    # 1847 "05type.c"
                     dec_stack_ptr(1,info);
-                    # 1849 "05function4.c"
+                    # 1849 "05type.c"
                     __dec_obj157=type_241;
                     type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value353=sType_clone(come_value_288->type))));
                     come_call_finalizer3(__dec_obj157,sType_finalize, 0, 0, 0, 0, (void*)0);
                     come_call_finalizer3(right_value353,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                    # 1893 "05function4.c"
-                    # 1851 "05function4.c"
+                    # 1893 "05type.c"
+                    # 1851 "05type.c"
                     if(parse_variable_name) {
-                        # 1852 "05function4.c"
+                        # 1852 "05type.c"
                         parse_sharp_v5(info);
-                        # 1859 "05function4.c"
-                        # 1854 "05function4.c"
+                        # 1859 "05type.c"
+                        # 1854 "05type.c"
                         if(_if_conditional439=var_name_between_brace_247&&*info->p==40,                        _if_conditional439) {
-                            # 1855 "05function4.c"
+                            # 1855 "05type.c"
                             info->p++;
-                            # 1856 "05function4.c"
+                            # 1856 "05type.c"
                             skip_spaces_and_lf(info);
                         }
-                        # 1876 "05function4.c"
-                        # 1859 "05function4.c"
+                        # 1876 "05type.c"
+                        # 1859 "05type.c"
                         if(_if_conditional440=*info->p==58,                        _if_conditional440) {
-                            # 1860 "05function4.c"
+                            # 1860 "05type.c"
                             __dec_obj158=var_name_242;
                             var_name_242=(char*)come_increment_ref_count(((char*)(right_value354=__builtin_string(""))));
                             __dec_obj158 = come_decrement_ref_count2(__dec_obj158, (void*)0, (void*)0, 0,0,0, (void*)0);
                             right_value354 = come_decrement_ref_count2(right_value354, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         }
                         else {
-                            # 1876 "05function4.c"
-                            # 1862 "05function4.c"
+                            # 1876 "05type.c"
+                            # 1862 "05type.c"
                             if(anonymous_name_210) {
-                                # 1863 "05function4.c"
-                                # 1864 "05function4.c"
+                                # 1863 "05type.c"
+                                # 1864 "05type.c"
                                 num_anonymous_var_name_289++;
-                                # 1865 "05function4.c"
+                                # 1865 "05type.c"
                                 __dec_obj159=var_name_242;
                                 var_name_242=(char*)come_increment_ref_count(((char*)(right_value355=xsprintf("anonymous_var_nameXYZL%d",num_anonymous_var_name_289))));
                                 __dec_obj159 = come_decrement_ref_count2(__dec_obj159, (void*)0, (void*)0, 0,0,0, (void*)0);
                                 right_value355 = come_decrement_ref_count2(right_value355, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                             }
                             else {
-                                # 1876 "05function4.c"
-                                # 1867 "05function4.c"
+                                # 1876 "05type.c"
+                                # 1867 "05type.c"
                                 if(_if_conditional442=xisalnum(*info->p)||*info->p==95,                                _if_conditional442) {
-                                    # 1868 "05function4.c"
+                                    # 1868 "05type.c"
                                     __dec_obj160=var_name_242;
-                                    var_name_242=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 1868, 50),__exception_result_var_b39=((char*)(right_value356=parse_word(info))), come_pop_stackframe(), __exception_result_var_b39));
+                                    var_name_242=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 1868, 50),__exception_result_var_b39=((char*)(right_value356=parse_word(info))), come_pop_stackframe(), __exception_result_var_b39));
                                     __dec_obj160 = come_decrement_ref_count2(__dec_obj160, (void*)0, (void*)0, 0,0,0, (void*)0);
                                     right_value356 = come_decrement_ref_count2(right_value356, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 }
                                 else {
-                                    # 1871 "05function4.c"
-                                    # 1872 "05function4.c"
+                                    # 1871 "05type.c"
+                                    # 1872 "05type.c"
                                     num_anonymous_var_name_290++;
-                                    # 1873 "05function4.c"
+                                    # 1873 "05type.c"
                                     __dec_obj161=var_name_242;
                                     var_name_242=(char*)come_increment_ref_count(((char*)(right_value357=xsprintf("anonymous_var_nameX%d",num_anonymous_var_name_290))));
                                     __dec_obj161 = come_decrement_ref_count2(__dec_obj161, (void*)0, (void*)0, 0,0,0, (void*)0);
@@ -11141,31 +11141,31 @@ right_value409 = (void*)0;
                                 }
                             }
                         }
-                        # 1881 "05function4.c"
-                        # 1876 "05function4.c"
+                        # 1881 "05type.c"
+                        # 1876 "05type.c"
                         if(_if_conditional443=var_name_between_brace_247&&*info->p==41,                        _if_conditional443) {
-                            # 1877 "05function4.c"
+                            # 1877 "05type.c"
                             info->p++;
-                            # 1878 "05function4.c"
+                            # 1878 "05type.c"
                             skip_spaces_and_lf(info);
                         }
-                        # 1892 "05function4.c"
-                        # 1881 "05function4.c"
+                        # 1892 "05type.c"
+                        # 1881 "05type.c"
                         if(_if_conditional444=*info->p==58,                        _if_conditional444) {
-                            # 1882 "05function4.c"
+                            # 1882 "05type.c"
                             info->p++;
-                            # 1883 "05function4.c"
+                            # 1883 "05type.c"
                             skip_spaces_and_lf(info);
-                            # 1885 "05function4.c"
+                            # 1885 "05type.c"
                             no_comma_291=info->no_comma;
-                            # 1886 "05function4.c"
+                            # 1886 "05type.c"
                             info->no_comma=(_Bool)1;
-                            # 1887 "05function4.c"
+                            # 1887 "05type.c"
                             node_292=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value358=expression_v13(info))));
                             if(right_value358) { right_value358 = come_decrement_ref_count2(right_value358, ((struct sNode*)right_value358)->finalize, ((struct sNode*)right_value358)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                            # 1888 "05function4.c"
+                            # 1888 "05type.c"
                             info->no_comma=no_comma_291;
-                            # 1890 "05function4.c"
+                            # 1890 "05type.c"
                             __dec_obj162=type_241->mSizeNum;
                             type_241->mSizeNum=(struct sNode*)come_increment_ref_count(node_292);
                             if(__dec_obj162) { __dec_obj162 = come_decrement_ref_count2(__dec_obj162, ((struct sNode*)__dec_obj162)->finalize, ((struct sNode*)__dec_obj162)->_protocol_obj, 0,0,0, (void*)0); }
@@ -11176,177 +11176,177 @@ right_value409 = (void*)0;
                     come_call_finalizer3(come_value_288,CVALUE_finalize, 0, 0, 0, 0, (void*)0);
                 }
                 else {
-                    # 2060 "05function4.c"
-                    # 1895 "05function4.c"
+                    # 2060 "05type.c"
+                    # 1895 "05type.c"
                     if(_if_conditional445=map$2charphsTypephp_operator_load_element(info->types,type_name_190),                    _if_conditional445) {
-                        # 1896 "05function4.c"
+                        # 1896 "05type.c"
                         __dec_obj163=type_241;
                         type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value359=sType_clone(map$2charphsTypephp_operator_load_element(info->types,type_name_190)))));
                         come_call_finalizer3(__dec_obj163,sType_finalize, 0, 0, 0, 0, (void*)0);
                         come_call_finalizer3(right_value359,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 1897 "05function4.c"
-                        type_241->mClass=((struct sClass*)come_null_check(map$2charphsClassphp_operator_load_element(info->classes,type_241->mClass->mName), "05function4.c", 1897, 51));
-                        # 1898 "05function4.c"
+                        # 1897 "05type.c"
+                        type_241->mClass=((struct sClass*)come_null_check(map$2charphsClassphp_operator_load_element(info->classes,type_241->mClass->mName), "05type.c", 1897, 51));
+                        # 1898 "05type.c"
                         __dec_obj164=type_241->mOriginalTypeName;
                         type_241->mOriginalTypeName=(char*)come_increment_ref_count(((char*)(right_value360=__builtin_string(type_name_190))));
                         __dec_obj164 = come_decrement_ref_count2(__dec_obj164, (void*)0, (void*)0, 0,0,0, (void*)0);
                         right_value360 = come_decrement_ref_count2(right_value360, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                        # 1899 "05function4.c"
+                        # 1899 "05type.c"
                         type_241->mOriginalTypeNamePointerNum=pointer_num_236;
-                        # 1901 "05function4.c"
+                        # 1901 "05type.c"
                         type_241->mConstant=type_241->mConstant||constant_192;
-                        # 1902 "05function4.c"
+                        # 1902 "05type.c"
                         __dec_obj165=type_241->mAlignas;
                         type_241->mAlignas=(struct sNode*)come_increment_ref_count(alignas__208);
                         if(__dec_obj165) { __dec_obj165 = come_decrement_ref_count2(__dec_obj165, ((struct sNode*)__dec_obj165)->finalize, ((struct sNode*)__dec_obj165)->_protocol_obj, 0,0,0, (void*)0); }
-                        # 1903 "05function4.c"
+                        # 1903 "05type.c"
                         type_241->mComeMemCore=type_241->mComeMemCore||come_mem_core__207;
-                        # 1904 "05function4.c"
+                        # 1904 "05type.c"
                         type_241->mRegister=register__195;
-                        # 1905 "05function4.c"
+                        # 1905 "05type.c"
                         type_241->mUnsigned=type_241->mUnsigned||unsigned__196;
-                        # 1906 "05function4.c"
+                        # 1906 "05type.c"
                         type_241->mVolatile=volatile__194;
-                        # 1907 "05function4.c"
+                        # 1907 "05type.c"
                         type_241->mStatic=type_241->mStatic||static__193;
-                        # 1908 "05function4.c"
+                        # 1908 "05type.c"
                         type_241->mRecord=type_241->mRecord||record__191;
-                        # 1909 "05function4.c"
+                        # 1909 "05type.c"
                         type_241->mExtern=type_241->mExtern||extern__205;
-                        # 1910 "05function4.c"
+                        # 1910 "05type.c"
                         type_241->mInline=type_241->mInline||inline__206;
-                        # 1911 "05function4.c"
+                        # 1911 "05type.c"
                         type_241->mRestrict=type_241->mRestrict||restrict__200;
-                        # 1912 "05function4.c"
+                        # 1912 "05type.c"
                         type_241->mLongLong=type_241->mLongLong||long_long_198;
-                        # 1913 "05function4.c"
+                        # 1913 "05type.c"
                         type_241->mLong=type_241->mLong||long__197;
-                        # 1914 "05function4.c"
+                        # 1914 "05type.c"
                         type_241->mShort=type_241->mShort||short__199;
-                        # 1915 "05function4.c"
+                        # 1915 "05type.c"
                         type_241->mPointerNum+=pointer_num_236;
-                        # 1916 "05function4.c"
+                        # 1916 "05type.c"
                         type_241->mHeap=type_241->mHeap||heap_237;
                     }
                     else {
-                        # 2060 "05function4.c"
-                        # 1918 "05function4.c"
+                        # 2060 "05type.c"
+                        # 1918 "05type.c"
                         if(_if_conditional446=list$1charph_contained(info->generics_type_names,(char*)come_increment_ref_count(type_name_190)),                        _if_conditional446) {
-                            # 1925 "05function4.c"
+                            # 1925 "05type.c"
                             for(                            i_293=0;                            i_293<list$1charph_length(info->generics_type_names);                            i_293++                            ){
-                                # 1923 "05function4.c"
-                                # 1920 "05function4.c"
-                                if(_if_conditional447=string_operator_equals(((char*)come_null_check(list$1charphp_operator_load_element(info->generics_type_names,i_293), "05function4.c", 1920, 52)),type_name_190),                                _if_conditional447) {
-                                    # 1921 "05function4.c"
+                                # 1923 "05type.c"
+                                # 1920 "05type.c"
+                                if(_if_conditional447=string_operator_equals(((char*)come_null_check(list$1charphp_operator_load_element(info->generics_type_names,i_293), "05type.c", 1920, 52)),type_name_190),                                _if_conditional447) {
+                                    # 1921 "05type.c"
                                     __dec_obj166=type_241;
-                                    type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value363=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value361=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 1921, "sType")))),((char*)(right_value362=xsprintf("generics_type%d",i_293))),(_Bool)0,info))));
+                                    type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value363=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value361=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 1921, "sType")))),((char*)(right_value362=xsprintf("generics_type%d",i_293))),(_Bool)0,info))));
                                     come_call_finalizer3(__dec_obj166,sType_finalize, 0, 0, 0, 0, (void*)0);
                                     come_call_finalizer3(right_value361,sType_finalize, 0, 1, 0, 0, __result_obj__);
                                     right_value362 = come_decrement_ref_count2(right_value362, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                     come_call_finalizer3(right_value363,sType_finalize, 0, 1, 0, 0, __result_obj__);
                                 }
                             }
-                            # 1925 "05function4.c"
+                            # 1925 "05type.c"
                             type_241->mConstant=type_241->mConstant||constant_192;
-                            # 1926 "05function4.c"
+                            # 1926 "05type.c"
                             __dec_obj167=type_241->mAlignas;
                             type_241->mAlignas=(struct sNode*)come_increment_ref_count(alignas__208);
                             if(__dec_obj167) { __dec_obj167 = come_decrement_ref_count2(__dec_obj167, ((struct sNode*)__dec_obj167)->finalize, ((struct sNode*)__dec_obj167)->_protocol_obj, 0,0,0, (void*)0); }
-                            # 1927 "05function4.c"
+                            # 1927 "05type.c"
                             type_241->mComeMemCore=type_241->mComeMemCore||come_mem_core__207;
-                            # 1928 "05function4.c"
+                            # 1928 "05type.c"
                             type_241->mRegister=register__195;
-                            # 1929 "05function4.c"
+                            # 1929 "05type.c"
                             type_241->mUnsigned=type_241->mUnsigned||unsigned__196;
-                            # 1930 "05function4.c"
+                            # 1930 "05type.c"
                             type_241->mVolatile=volatile__194;
-                            # 1931 "05function4.c"
+                            # 1931 "05type.c"
                             type_241->mStatic=type_241->mStatic||static__193;
-                            # 1932 "05function4.c"
+                            # 1932 "05type.c"
                             type_241->mRecord=type_241->mRecord||record__191;
-                            # 1933 "05function4.c"
+                            # 1933 "05type.c"
                             type_241->mExtern=type_241->mExtern||extern__205;
-                            # 1934 "05function4.c"
+                            # 1934 "05type.c"
                             type_241->mInline=type_241->mInline||inline__206;
-                            # 1935 "05function4.c"
+                            # 1935 "05type.c"
                             type_241->mRestrict=type_241->mRestrict||restrict__200;
-                            # 1936 "05function4.c"
+                            # 1936 "05type.c"
                             type_241->mLongLong=type_241->mLongLong||long_long_198;
-                            # 1937 "05function4.c"
+                            # 1937 "05type.c"
                             type_241->mLong=type_241->mLong||long__197;
-                            # 1938 "05function4.c"
+                            # 1938 "05type.c"
                             type_241->mShort=type_241->mShort||short__199;
-                            # 1939 "05function4.c"
+                            # 1939 "05type.c"
                             type_241->mPointerNum+=pointer_num_236;
-                            # 1940 "05function4.c"
+                            # 1940 "05type.c"
                             type_241->mHeap=type_241->mHeap||heap_237;
                         }
                         else {
-                            # 2060 "05function4.c"
-                            # 1942 "05function4.c"
+                            # 2060 "05type.c"
+                            # 1942 "05type.c"
                             if(_if_conditional448=list$1charph_contained(info->method_generics_type_names,(char*)come_increment_ref_count(type_name_190)),                            _if_conditional448) {
-                                # 1949 "05function4.c"
+                                # 1949 "05type.c"
                                 for(                                i_294=0;                                i_294<list$1charph_length(info->method_generics_type_names);                                i_294++                                ){
-                                    # 1947 "05function4.c"
-                                    # 1944 "05function4.c"
-                                    if(_if_conditional449=string_operator_equals(((char*)come_null_check(list$1charphp_operator_load_element(info->method_generics_type_names,i_294), "05function4.c", 1944, 53)),type_name_190),                                    _if_conditional449) {
-                                        # 1945 "05function4.c"
+                                    # 1947 "05type.c"
+                                    # 1944 "05type.c"
+                                    if(_if_conditional449=string_operator_equals(((char*)come_null_check(list$1charphp_operator_load_element(info->method_generics_type_names,i_294), "05type.c", 1944, 53)),type_name_190),                                    _if_conditional449) {
+                                        # 1945 "05type.c"
                                         __dec_obj168=type_241;
-                                        type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value366=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value364=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 1945, "sType")))),((char*)(right_value365=xsprintf("mgenerics_type%d",i_294))),(_Bool)0,info))));
+                                        type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value366=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value364=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 1945, "sType")))),((char*)(right_value365=xsprintf("mgenerics_type%d",i_294))),(_Bool)0,info))));
                                         come_call_finalizer3(__dec_obj168,sType_finalize, 0, 0, 0, 0, (void*)0);
                                         come_call_finalizer3(right_value364,sType_finalize, 0, 1, 0, 0, __result_obj__);
                                         right_value365 = come_decrement_ref_count2(right_value365, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                         come_call_finalizer3(right_value366,sType_finalize, 0, 1, 0, 0, __result_obj__);
                                     }
                                 }
-                                # 1949 "05function4.c"
+                                # 1949 "05type.c"
                                 type_241->mConstant=type_241->mConstant||constant_192;
-                                # 1950 "05function4.c"
+                                # 1950 "05type.c"
                                 __dec_obj169=type_241->mAlignas;
                                 type_241->mAlignas=(struct sNode*)come_increment_ref_count(alignas__208);
                                 if(__dec_obj169) { __dec_obj169 = come_decrement_ref_count2(__dec_obj169, ((struct sNode*)__dec_obj169)->finalize, ((struct sNode*)__dec_obj169)->_protocol_obj, 0,0,0, (void*)0); }
-                                # 1951 "05function4.c"
+                                # 1951 "05type.c"
                                 type_241->mComeMemCore=type_241->mComeMemCore||come_mem_core__207;
-                                # 1952 "05function4.c"
+                                # 1952 "05type.c"
                                 type_241->mRegister=register__195;
-                                # 1953 "05function4.c"
+                                # 1953 "05type.c"
                                 type_241->mUnsigned=type_241->mUnsigned||unsigned__196;
-                                # 1954 "05function4.c"
+                                # 1954 "05type.c"
                                 type_241->mVolatile=volatile__194;
-                                # 1955 "05function4.c"
+                                # 1955 "05type.c"
                                 type_241->mStatic=type_241->mStatic||static__193;
-                                # 1956 "05function4.c"
+                                # 1956 "05type.c"
                                 type_241->mRecord=type_241->mRecord||record__191;
-                                # 1957 "05function4.c"
+                                # 1957 "05type.c"
                                 type_241->mExtern=type_241->mExtern||extern__205;
-                                # 1958 "05function4.c"
+                                # 1958 "05type.c"
                                 type_241->mInline=type_241->mInline||inline__206;
-                                # 1959 "05function4.c"
+                                # 1959 "05type.c"
                                 type_241->mRestrict=type_241->mRestrict||restrict__200;
-                                # 1960 "05function4.c"
+                                # 1960 "05type.c"
                                 type_241->mLongLong=type_241->mLongLong||long_long_198;
-                                # 1961 "05function4.c"
+                                # 1961 "05type.c"
                                 type_241->mLong=type_241->mLong||long__197;
-                                # 1962 "05function4.c"
+                                # 1962 "05type.c"
                                 type_241->mShort=type_241->mShort||short__199;
-                                # 1963 "05function4.c"
+                                # 1963 "05type.c"
                                 type_241->mPointerNum+=pointer_num_236;
-                                # 1964 "05function4.c"
+                                # 1964 "05type.c"
                                 type_241->mHeap=type_241->mHeap||heap_237;
                             }
                             else {
-                                # 2060 "05function4.c"
-                                # 1966 "05function4.c"
+                                # 2060 "05type.c"
+                                # 1966 "05type.c"
                                 if(_if_conditional450=*info->p==60,                                _if_conditional450) {
-                                    # 1967 "05function4.c"
+                                    # 1967 "05type.c"
                                     info->p++;
-                                    # 1968 "05function4.c"
+                                    # 1968 "05type.c"
                                     skip_spaces_and_lf(info);
-                                    # 1975 "05function4.c"
-                                    # 1970 "05function4.c"
+                                    # 1975 "05type.c"
+                                    # 1970 "05type.c"
                                     if(_if_conditional451=map$2charphsClassphp_operator_load_element(info->generics_classes,type_name_190)==((void*)0),                                    _if_conditional451) {
-                                        # 1972 "05function4.c"
-                                        __result164__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value368=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value367=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05function4.c", 1972, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
+                                        # 1972 "05type.c"
+                                        __result164__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value368=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value367=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05type.c", 1972, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
                                         type_name_190 = come_decrement_ref_count2(type_name_190, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                         if(alignas__208) { alignas__208 = come_decrement_ref_count2(alignas__208, ((struct sNode*)alignas__208)->finalize, ((struct sNode*)alignas__208)->_protocol_obj, 0, 0, 0, (void*)0); } 
                                         come_call_finalizer3(type_241,sType_finalize, 0, 0, 0, 0, (void*)0);
@@ -11355,25 +11355,25 @@ right_value409 = (void*)0;
                                         come_call_finalizer3(right_value368,tuple3$3sTypephcharphboolp_finalize, 0, 1, 0, 0, __result_obj__);
                                         return __result164__;
                                     }
-                                    # 1975 "05function4.c"
+                                    # 1975 "05type.c"
                                     __dec_obj170=type_241;
-                                    type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value370=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value369=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 1975, "sType")))),type_name_190,(_Bool)0,info))));
+                                    type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value370=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value369=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 1975, "sType")))),type_name_190,(_Bool)0,info))));
                                     come_call_finalizer3(__dec_obj170,sType_finalize, 0, 0, 0, 0, (void*)0);
                                     come_call_finalizer3(right_value369,sType_finalize, 0, 1, 0, 0, __result_obj__);
                                     come_call_finalizer3(right_value370,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                                    # 2002 "05function4.c"
+                                    # 2002 "05type.c"
                                     while(_while_condtional47=(_Bool)1,                                    _while_condtional47) {
-                                        # 1980 "05function4.c"
+                                        # 1980 "05type.c"
                                         multiple_assign_var4=((struct tuple3$3sTypephcharphbool*)(right_value371=parse_type(info,(_Bool)0,(_Bool)0,(_Bool)0)));
                                         generics_type_295=(struct sType*)come_increment_ref_count(multiple_assign_var4->v1);
                                         var_name_296=(char*)come_increment_ref_count(multiple_assign_var4->v2);
                                         err_297=multiple_assign_var4->v3;
                                         come_call_finalizer3(right_value371,tuple3$3sTypephcharphboolp_finalize, 0, 1, 0, 0, __result_obj__);
-                                        # 1984 "05function4.c"
-                                        # 1980 "05function4.c"
+                                        # 1984 "05type.c"
+                                        # 1980 "05type.c"
                                         if(_if_conditional452=!err_297,                                        _if_conditional452) {
-                                            # 1981 "05function4.c"
-                                            __result165__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value373=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value372=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05function4.c", 1981, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
+                                            # 1981 "05type.c"
+                                            __result165__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value373=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value372=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05type.c", 1981, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
                                             come_call_finalizer3(generics_type_295,sType_finalize, 0, 0, 0, 0, (void*)0);
                                             var_name_296 = come_decrement_ref_count2(var_name_296, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                             type_name_190 = come_decrement_ref_count2(type_name_190, (void*)0, (void*)0, 0, 0, 0, (void*)0);
@@ -11384,34 +11384,34 @@ right_value409 = (void*)0;
                                             come_call_finalizer3(right_value373,tuple3$3sTypephcharphboolp_finalize, 0, 1, 0, 0, __result_obj__);
                                             return __result165__;
                                         }
-                                        # 1984 "05function4.c"
+                                        # 1984 "05type.c"
                                         list$1sTypeph_push_back(type_241->mGenericsTypes,(struct sType*)come_increment_ref_count(generics_type_295));
-                                        # 2000 "05function4.c"
-                                        # 1986 "05function4.c"
+                                        # 2000 "05type.c"
+                                        # 1986 "05type.c"
                                         if(_if_conditional453=*info->p==44,                                        _if_conditional453) {
-                                            # 1987 "05function4.c"
+                                            # 1987 "05type.c"
                                             info->p++;
-                                            # 1988 "05function4.c"
+                                            # 1988 "05type.c"
                                             skip_spaces_and_lf(info);
                                         }
                                         else {
-                                            # 2000 "05function4.c"
-                                            # 1990 "05function4.c"
+                                            # 2000 "05type.c"
+                                            # 1990 "05type.c"
                                             if(_if_conditional454=*info->p==62,                                            _if_conditional454) {
-                                                # 1991 "05function4.c"
+                                                # 1991 "05type.c"
                                                 info->p++;
-                                                # 1992 "05function4.c"
+                                                # 1992 "05type.c"
                                                 skip_spaces_and_lf(info);
-                                                # 1994 "05function4.c"
+                                                # 1994 "05type.c"
                                                 come_call_finalizer3(generics_type_295,sType_finalize, 0, 0, 0, 0, (void*)0);
                                                 var_name_296 = come_decrement_ref_count2(var_name_296, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                                 break;
                                             }
                                             else {
-                                                # 1997 "05function4.c"
+                                                # 1997 "05type.c"
                                                 err_msg(info,"invalid generics type\n");
-                                                # 1998 "05function4.c"
-                                                __result166__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value375=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value374=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05function4.c", 1998, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
+                                                # 1998 "05type.c"
+                                                __result166__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value375=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value374=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05type.c", 1998, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
                                                 come_call_finalizer3(generics_type_295,sType_finalize, 0, 0, 0, 0, (void*)0);
                                                 var_name_296 = come_decrement_ref_count2(var_name_296, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                                 type_name_190 = come_decrement_ref_count2(type_name_190, (void*)0, (void*)0, 0, 0, 0, (void*)0);
@@ -11426,266 +11426,266 @@ right_value409 = (void*)0;
                                         come_call_finalizer3(generics_type_295,sType_finalize, 0, 0, 0, 0, (void*)0);
                                         var_name_296 = come_decrement_ref_count2(var_name_296, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                     }
-                                    # 2014 "05function4.c"
-                                    # 2002 "05function4.c"
+                                    # 2014 "05type.c"
+                                    # 2002 "05type.c"
                                     if(_if_conditional455=is_contained_generics_class(type_241,info),                                    _if_conditional455) {
-                                        # 2003 "05function4.c"
+                                        # 2003 "05type.c"
                                         __dec_obj171=type_241;
                                         type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value376=solve_generics(type_241,info->generics_type,info))));
                                         come_call_finalizer3(__dec_obj171,sType_finalize, 0, 0, 0, 0, (void*)0);
                                         come_call_finalizer3(right_value376,sType_finalize, 0, 1, 0, 0, __result_obj__);
                                     }
                                     else {
-                                        # 2012 "05function4.c"
-                                        # 2006 "05function4.c"
+                                        # 2012 "05type.c"
+                                        # 2006 "05type.c"
                                         if(_if_conditional456=!output_generics_struct(type_241,type_241,info),                                        _if_conditional456) {
-                                            # 2008 "05function4.c"
+                                            # 2008 "05type.c"
                                             new_name_298=(char*)come_increment_ref_count(((char*)(right_value377=create_generics_name(type_241,info))));
                                             right_value377 = come_decrement_ref_count2(right_value377, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                            # 2009 "05function4.c"
+                                            # 2009 "05type.c"
                                             printf("%s %d: output generics is failed(%s)\n",info->sname,info->sline,new_name_298);
-                                            # 2010 "05function4.c"
+                                            # 2010 "05type.c"
                                             exit(7);
                                             new_name_298 = come_decrement_ref_count2(new_name_298, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                         }
                                     }
-                                    # 2014 "05function4.c"
+                                    # 2014 "05type.c"
                                     type_241->mConstant=type_241->mConstant||constant_192;
-                                    # 2015 "05function4.c"
+                                    # 2015 "05type.c"
                                     __dec_obj172=type_241->mAlignas;
                                     type_241->mAlignas=(struct sNode*)come_increment_ref_count(alignas__208);
                                     if(__dec_obj172) { __dec_obj172 = come_decrement_ref_count2(__dec_obj172, ((struct sNode*)__dec_obj172)->finalize, ((struct sNode*)__dec_obj172)->_protocol_obj, 0,0,0, (void*)0); }
-                                    # 2016 "05function4.c"
+                                    # 2016 "05type.c"
                                     type_241->mComeMemCore=type_241->mComeMemCore||come_mem_core__207;
-                                    # 2017 "05function4.c"
+                                    # 2017 "05type.c"
                                     type_241->mRegister=register__195;
-                                    # 2018 "05function4.c"
+                                    # 2018 "05type.c"
                                     type_241->mUnsigned=type_241->mUnsigned||unsigned__196;
-                                    # 2019 "05function4.c"
+                                    # 2019 "05type.c"
                                     type_241->mVolatile=volatile__194;
-                                    # 2020 "05function4.c"
+                                    # 2020 "05type.c"
                                     type_241->mStatic=type_241->mStatic||static__193;
-                                    # 2021 "05function4.c"
+                                    # 2021 "05type.c"
                                     type_241->mRecord=type_241->mRecord||record__191;
-                                    # 2022 "05function4.c"
+                                    # 2022 "05type.c"
                                     type_241->mExtern=type_241->mExtern||extern__205;
-                                    # 2023 "05function4.c"
+                                    # 2023 "05type.c"
                                     type_241->mInline=type_241->mInline||inline__206;
-                                    # 2024 "05function4.c"
+                                    # 2024 "05type.c"
                                     type_241->mRestrict=type_241->mRestrict||restrict__200;
-                                    # 2025 "05function4.c"
+                                    # 2025 "05type.c"
                                     type_241->mLongLong=type_241->mLongLong||long_long_198;
-                                    # 2026 "05function4.c"
+                                    # 2026 "05type.c"
                                     type_241->mLong=type_241->mLong||long__197;
-                                    # 2027 "05function4.c"
+                                    # 2027 "05type.c"
                                     type_241->mShort=type_241->mShort||short__199;
-                                    # 2028 "05function4.c"
+                                    # 2028 "05type.c"
                                     type_241->mPointerNum+=pointer_num_236;
-                                    # 2029 "05function4.c"
+                                    # 2029 "05type.c"
                                     type_241->mHeap=type_241->mHeap||heap_237;
                                 }
                                 else {
-                                    # 2040 "05function4.c"
-                                    # 2032 "05function4.c"
+                                    # 2040 "05type.c"
+                                    # 2032 "05type.c"
                                     if(struct__201) {
-                                        # 2033 "05function4.c"
+                                        # 2033 "05type.c"
                                         klass_299=map$2charphsClassphp_operator_load_element(info->classes,type_name_190);
-                                        # 2038 "05function4.c"
-                                        # 2035 "05function4.c"
+                                        # 2038 "05type.c"
+                                        # 2035 "05type.c"
                                         if(_if_conditional458=klass_299==((void*)0)&&*info->p!=60,                                        _if_conditional458) {
-                                            # 2036 "05function4.c"
-                                            map$2charphsClassph_insert(info->classes,(char*)come_increment_ref_count(type_name_190),(struct sClass*)come_increment_ref_count(((struct sClass*)(right_value385=sClass_initialize((struct sClass*)come_increment_ref_count(((struct sClass*)(right_value384=(struct sClass*)come_calloc(1, sizeof(struct sClass)*(1), "05function4.c", 2036, "sClass")))),type_name_190,(_Bool)0,(_Bool)0,(_Bool)0,(_Bool)0,(_Bool)0,(_Bool)1,(_Bool)0,-1,-1,(_Bool)0,info)))));
+                                            # 2036 "05type.c"
+                                            map$2charphsClassph_insert(info->classes,(char*)come_increment_ref_count(type_name_190),(struct sClass*)come_increment_ref_count(((struct sClass*)(right_value385=sClass_initialize((struct sClass*)come_increment_ref_count(((struct sClass*)(right_value384=(struct sClass*)come_calloc(1, sizeof(struct sClass)*(1), "05type.c", 2036, "sClass")))),type_name_190,(_Bool)0,(_Bool)0,(_Bool)0,(_Bool)0,(_Bool)0,(_Bool)1,(_Bool)0,-1,-1,(_Bool)0,info)))));
                                             come_call_finalizer3(right_value384,sClass_finalize, 0, 1, 0, 0, __result_obj__);
                                             come_call_finalizer3(right_value385,sClass_finalize, 0, 1, 0, 0, __result_obj__);
                                         }
                                     }
-                                    # 2040 "05function4.c"
+                                    # 2040 "05type.c"
                                     __dec_obj173=type_241;
-                                    type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value387=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value386=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 2040, "sType")))),type_name_190,(_Bool)0,info))));
+                                    type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value387=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value386=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 2040, "sType")))),type_name_190,(_Bool)0,info))));
                                     come_call_finalizer3(__dec_obj173,sType_finalize, 0, 0, 0, 0, (void*)0);
                                     come_call_finalizer3(right_value386,sType_finalize, 0, 1, 0, 0, __result_obj__);
                                     come_call_finalizer3(right_value387,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                                    # 2042 "05function4.c"
+                                    # 2042 "05type.c"
                                     type_241->mConstant=type_241->mConstant||constant_192;
-                                    # 2043 "05function4.c"
+                                    # 2043 "05type.c"
                                     __dec_obj174=type_241->mAlignas;
                                     type_241->mAlignas=(struct sNode*)come_increment_ref_count(alignas__208);
                                     if(__dec_obj174) { __dec_obj174 = come_decrement_ref_count2(__dec_obj174, ((struct sNode*)__dec_obj174)->finalize, ((struct sNode*)__dec_obj174)->_protocol_obj, 0,0,0, (void*)0); }
-                                    # 2044 "05function4.c"
+                                    # 2044 "05type.c"
                                     type_241->mComeMemCore=type_241->mComeMemCore||come_mem_core__207;
-                                    # 2045 "05function4.c"
+                                    # 2045 "05type.c"
                                     type_241->mRegister=register__195;
-                                    # 2046 "05function4.c"
+                                    # 2046 "05type.c"
                                     type_241->mUnsigned=type_241->mUnsigned||unsigned__196;
-                                    # 2047 "05function4.c"
+                                    # 2047 "05type.c"
                                     type_241->mVolatile=volatile__194;
-                                    # 2048 "05function4.c"
+                                    # 2048 "05type.c"
                                     type_241->mStatic=type_241->mStatic||static__193;
-                                    # 2049 "05function4.c"
+                                    # 2049 "05type.c"
                                     type_241->mRecord=type_241->mRecord||record__191;
-                                    # 2050 "05function4.c"
+                                    # 2050 "05type.c"
                                     type_241->mExtern=type_241->mExtern||extern__205;
-                                    # 2051 "05function4.c"
+                                    # 2051 "05type.c"
                                     type_241->mInline=type_241->mInline||inline__206;
-                                    # 2052 "05function4.c"
+                                    # 2052 "05type.c"
                                     type_241->mRestrict=type_241->mRestrict||restrict__200;
-                                    # 2053 "05function4.c"
+                                    # 2053 "05type.c"
                                     type_241->mLongLong=type_241->mLongLong||long_long_198;
-                                    # 2054 "05function4.c"
+                                    # 2054 "05type.c"
                                     type_241->mLong=type_241->mLong||long__197;
-                                    # 2055 "05function4.c"
+                                    # 2055 "05type.c"
                                     type_241->mShort=type_241->mShort||short__199;
-                                    # 2056 "05function4.c"
+                                    # 2056 "05type.c"
                                     type_241->mPointerNum+=pointer_num_236;
-                                    # 2057 "05function4.c"
+                                    # 2057 "05type.c"
                                     type_241->mHeap=type_241->mHeap||heap_237;
                                 }
                             }
                         }
                     }
-                    # 2060 "05function4.c"
+                    # 2060 "05type.c"
                     skip_pointer_attribute(info);
-                    # 2074 "05function4.c"
+                    # 2074 "05type.c"
                     while(_while_condtional56=*info->p==42,                    _while_condtional56) {
-                        # 2063 "05function4.c"
+                        # 2063 "05type.c"
                         info->p++;
-                        # 2064 "05function4.c"
+                        # 2064 "05type.c"
                         skip_spaces_and_lf(info);
-                        # 2066 "05function4.c"
+                        # 2066 "05type.c"
                         skip_pointer_attribute(info);
-                        # 2068 "05function4.c"
+                        # 2068 "05type.c"
                         type_241->mPointerNum++;
-                        # 2072 "05function4.c"
-                        # 2069 "05function4.c"
+                        # 2072 "05type.c"
+                        # 2069 "05type.c"
                         if(type_241->mNoSolvedGenericsType->v1) {
-                            # 2070 "05function4.c"
+                            # 2070 "05type.c"
                             type_241->mNoSolvedGenericsType->v1->mPointerNum++;
                         }
                     }
-                    # 2084 "05function4.c"
-                    # 2074 "05function4.c"
+                    # 2084 "05type.c"
+                    # 2074 "05type.c"
                     if(_if_conditional507=*info->p==37,                    _if_conditional507) {
-                        # 2075 "05function4.c"
+                        # 2075 "05type.c"
                         info->p++;
-                        # 2076 "05function4.c"
+                        # 2076 "05type.c"
                         skip_spaces_and_lf(info);
-                        # 2078 "05function4.c"
+                        # 2078 "05type.c"
                         type_241->mHeap=(_Bool)1;
-                        # 2082 "05function4.c"
-                        # 2079 "05function4.c"
+                        # 2082 "05type.c"
+                        # 2079 "05type.c"
                         if(type_241->mNoSolvedGenericsType->v1) {
-                            # 2080 "05function4.c"
+                            # 2080 "05type.c"
                             type_241->mNoSolvedGenericsType->v1->mHeap=(_Bool)1;
                         }
                     }
-                    # 2095 "05function4.c"
-                    # 2084 "05function4.c"
+                    # 2095 "05type.c"
+                    # 2084 "05type.c"
                     if(_if_conditional509=*info->p==38,                    _if_conditional509) {
-                        # 2085 "05function4.c"
+                        # 2085 "05type.c"
                         info->p++;
-                        # 2086 "05function4.c"
+                        # 2086 "05type.c"
                         skip_spaces_and_lf(info);
-                        # 2088 "05function4.c"
+                        # 2088 "05type.c"
                         type_241->mNoHeap=(_Bool)1;
-                        # 2093 "05function4.c"
-                        # 2090 "05function4.c"
+                        # 2093 "05type.c"
+                        # 2090 "05type.c"
                         if(type_241->mNoSolvedGenericsType->v1) {
-                            # 2091 "05function4.c"
+                            # 2091 "05type.c"
                             type_241->mNoSolvedGenericsType->v1->mHeap=(_Bool)0;
                         }
                     }
-                    # 2108 "05function4.c"
-                    # 2095 "05function4.c"
+                    # 2108 "05type.c"
+                    # 2095 "05type.c"
                     if(_if_conditional511=*info->p==63,                    _if_conditional511) {
-                        # 2096 "05function4.c"
+                        # 2096 "05type.c"
                         info->p++;
-                        # 2106 "05function4.c"
-                        # 2098 "05function4.c"
+                        # 2106 "05type.c"
+                        # 2098 "05type.c"
                         if(_if_conditional512=*info->p==63,                        _if_conditional512) {
-                            # 2099 "05function4.c"
+                            # 2099 "05type.c"
                             info->p++;
-                            # 2100 "05function4.c"
+                            # 2100 "05type.c"
                             type_241->mGuardValue=(_Bool)1;
                         }
                         else {
-                            # 2103 "05function4.c"
+                            # 2103 "05type.c"
                             type_241->mNullValue=(_Bool)1;
                         }
-                        # 2106 "05function4.c"
+                        # 2106 "05type.c"
                         skip_spaces_and_lf(info);
                     }
-                    # 2115 "05function4.c"
-                    # 2108 "05function4.c"
+                    # 2115 "05type.c"
+                    # 2108 "05type.c"
                     if(_if_conditional513=*info->p==96,                    _if_conditional513) {
-                        # 2109 "05function4.c"
+                        # 2109 "05type.c"
                         info->p++;
-                        # 2110 "05function4.c"
+                        # 2110 "05type.c"
                         skip_spaces_and_lf(info);
-                        # 2112 "05function4.c"
+                        # 2112 "05type.c"
                         type_241->mNoCallingDestructor=(_Bool)1;
                     }
-                    # 2115 "05function4.c"
+                    # 2115 "05type.c"
                     skip_pointer_attribute(info);
-                    # 2130 "05function4.c"
+                    # 2130 "05type.c"
                     while(_while_condtional57=*info->p==42,                    _while_condtional57) {
-                        # 2118 "05function4.c"
+                        # 2118 "05type.c"
                         info->p++;
-                        # 2119 "05function4.c"
+                        # 2119 "05type.c"
                         skip_spaces_and_lf(info);
-                        # 2121 "05function4.c"
+                        # 2121 "05type.c"
                         skip_pointer_attribute(info);
-                        # 2123 "05function4.c"
+                        # 2123 "05type.c"
                         type_241->mPointerNum++;
-                        # 2128 "05function4.c"
-                        # 2125 "05function4.c"
+                        # 2128 "05type.c"
+                        # 2125 "05type.c"
                         if(type_241->mNoSolvedGenericsType->v1) {
-                            # 2126 "05function4.c"
+                            # 2126 "05type.c"
                             type_241->mNoSolvedGenericsType->v1->mPointerNum++;
                         }
                     }
-                    # 2140 "05function4.c"
-                    # 2130 "05function4.c"
+                    # 2140 "05type.c"
+                    # 2130 "05type.c"
                     if(_if_conditional515=*info->p==37,                    _if_conditional515) {
-                        # 2131 "05function4.c"
+                        # 2131 "05type.c"
                         info->p++;
-                        # 2132 "05function4.c"
+                        # 2132 "05type.c"
                         skip_spaces_and_lf(info);
-                        # 2134 "05function4.c"
+                        # 2134 "05type.c"
                         type_241->mHeap=(_Bool)1;
-                        # 2138 "05function4.c"
-                        # 2135 "05function4.c"
+                        # 2138 "05type.c"
+                        # 2135 "05type.c"
                         if(type_241->mNoSolvedGenericsType->v1) {
-                            # 2136 "05function4.c"
+                            # 2136 "05type.c"
                             type_241->mNoSolvedGenericsType->v1->mHeap=(_Bool)1;
                         }
                     }
-                    # 2180 "05function4.c"
-                    # 2140 "05function4.c"
+                    # 2180 "05type.c"
+                    # 2140 "05type.c"
                     if(_if_conditional517=parse_multiple_type&&*info->p==44,                    _if_conditional517) {
-                        # 2141 "05function4.c"
-                        types_344=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value389=list$1sTypeph_initialize((struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value388=(struct list$1sTypeph*)come_calloc(1, sizeof(struct list$1sTypeph)*(1), "05function4.c", 2141, "list$1sTypeph"))))))));
+                        # 2141 "05type.c"
+                        types_344=(struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value389=list$1sTypeph_initialize((struct list$1sTypeph*)come_increment_ref_count(((struct list$1sTypeph*)(right_value388=(struct list$1sTypeph*)come_calloc(1, sizeof(struct list$1sTypeph)*(1), "05type.c", 2141, "list$1sTypeph"))))))));
                         come_call_finalizer3(right_value388,list$1sTypephp_finalize, 0, 1, 0, 0, __result_obj__);
                         come_call_finalizer3(right_value389,list$1sTypephp_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 2143 "05function4.c"
+                        # 2143 "05type.c"
                         list$1sTypeph_push_back(types_344,(struct sType*)come_increment_ref_count(((struct sType*)(right_value390=sType_clone(type_241)))));
                         come_call_finalizer3(right_value390,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 2158 "05function4.c"
+                        # 2158 "05type.c"
                         while(_while_condtional58=*info->p==44,                        _while_condtional58) {
-                            # 2146 "05function4.c"
+                            # 2146 "05type.c"
                             info->p++;
-                            # 2147 "05function4.c"
+                            # 2147 "05type.c"
                             skip_spaces_and_lf(info);
-                            # 2149 "05function4.c"
+                            # 2149 "05type.c"
                             multiple_assign_var5=((struct tuple3$3sTypephcharphbool*)(right_value391=parse_type(info,(_Bool)0,(_Bool)0,(_Bool)0)));
                             type2_345=(struct sType*)come_increment_ref_count(multiple_assign_var5->v1);
                             name_346=(char*)come_increment_ref_count(multiple_assign_var5->v2);
                             err_347=multiple_assign_var5->v3;
                             come_call_finalizer3(right_value391,tuple3$3sTypephcharphboolp_finalize, 0, 1, 0, 0, __result_obj__);
-                            # 2155 "05function4.c"
-                            # 2151 "05function4.c"
+                            # 2155 "05type.c"
+                            # 2151 "05type.c"
                             if(_if_conditional518=!err_347,                            _if_conditional518) {
-                                # 2152 "05function4.c"
-                                __result191__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value393=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value392=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05function4.c", 2152, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
+                                # 2152 "05type.c"
+                                __result191__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value393=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value392=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05type.c", 2152, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count((struct sType*)((void*)0)),(char*)come_increment_ref_count((char*)((void*)0)),(_Bool)0)));
                                 come_call_finalizer3(type2_345,sType_finalize, 0, 0, 0, 0, (void*)0);
                                 name_346 = come_decrement_ref_count2(name_346, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                                 come_call_finalizer3(types_344,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
@@ -11697,107 +11697,107 @@ right_value409 = (void*)0;
                                 come_call_finalizer3(right_value393,tuple3$3sTypephcharphboolp_finalize, 0, 1, 0, 0, __result_obj__);
                                 return __result191__;
                             }
-                            # 2155 "05function4.c"
+                            # 2155 "05type.c"
                             list$1sTypeph_push_back(types_344,(struct sType*)come_increment_ref_count(((struct sType*)(right_value394=sType_clone(type2_345)))));
                             come_call_finalizer3(right_value394,sType_finalize, 0, 1, 0, 0, __result_obj__);
                             come_call_finalizer3(type2_345,sType_finalize, 0, 0, 0, 0, (void*)0);
                             name_346 = come_decrement_ref_count2(name_346, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         }
-                        # 2158 "05function4.c"
+                        # 2158 "05type.c"
                         num_tuples_348=list$1sTypeph_length(types_344);
-                        # 2160 "05function4.c"
+                        # 2160 "05type.c"
                         __dec_obj175=type_241;
-                        type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value397=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value395=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05function4.c", 2160, "sType")))),((char*)(right_value396=xsprintf("tuple%d",num_tuples_348))),(_Bool)0,info))));
+                        type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value397=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value395=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "05type.c", 2160, "sType")))),((char*)(right_value396=xsprintf("tuple%d",num_tuples_348))),(_Bool)0,info))));
                         come_call_finalizer3(__dec_obj175,sType_finalize, 0, 0, 0, 0, (void*)0);
                         come_call_finalizer3(right_value395,sType_finalize, 0, 1, 0, 0, __result_obj__);
                         right_value396 = come_decrement_ref_count2(right_value396, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         come_call_finalizer3(right_value397,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                        # 2161 "05function4.c"
+                        # 2161 "05type.c"
                         type_241->mPointerNum++;
-                        # 2162 "05function4.c"
+                        # 2162 "05type.c"
                         type_241->mHeap=(_Bool)1;
-                        # 2168 "05function4.c"
+                        # 2168 "05type.c"
                         for(                        o2_saved_349=(struct list$1sTypeph*)come_increment_ref_count((types_344)),it_350=list$1sTypeph_begin((o2_saved_349));                        !list$1sTypeph_end((o2_saved_349));                        it_350=list$1sTypeph_next((o2_saved_349))                        ){
-                            # 2165 "05function4.c"
+                            # 2165 "05type.c"
                             list$1sTypeph_push_back(type_241->mGenericsTypes,(struct sType*)come_increment_ref_count(((struct sType*)(right_value398=sType_clone(it_350)))));
                             come_call_finalizer3(right_value398,sType_finalize, 0, 1, 0, 0, __result_obj__);
                         }
                         come_call_finalizer3(o2_saved_349,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
-                        # 2179 "05function4.c"
-                        # 2168 "05function4.c"
+                        # 2179 "05type.c"
+                        # 2168 "05type.c"
                         if(_if_conditional519=is_contained_generics_class(type_241,info),                        _if_conditional519) {
-                            # 2169 "05function4.c"
+                            # 2169 "05type.c"
                             __dec_obj176=type_241;
                             type_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value399=solve_generics(type_241,info->generics_type,info))));
                             come_call_finalizer3(__dec_obj176,sType_finalize, 0, 0, 0, 0, (void*)0);
                             come_call_finalizer3(right_value399,sType_finalize, 0, 1, 0, 0, __result_obj__);
                         }
                         else {
-                            # 2178 "05function4.c"
-                            # 2172 "05function4.c"
+                            # 2178 "05type.c"
+                            # 2172 "05type.c"
                             if(_if_conditional520=!output_generics_struct(type_241,type_241,info),                            _if_conditional520) {
-                                # 2174 "05function4.c"
+                                # 2174 "05type.c"
                                 new_name_351=(char*)come_increment_ref_count(((char*)(right_value400=create_generics_name(type_241,info))));
                                 right_value400 = come_decrement_ref_count2(right_value400, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                # 2175 "05function4.c"
+                                # 2175 "05type.c"
                                 printf("output generics is failed(%s)\n",new_name_351);
-                                # 2176 "05function4.c"
+                                # 2176 "05type.c"
                                 exit(9);
                                 new_name_351 = come_decrement_ref_count2(new_name_351, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                             }
                         }
                         come_call_finalizer3(types_344,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
                     }
-                    # 2271 "05function4.c"
-                    # 2229 "05function4.c"
+                    # 2271 "05type.c"
+                    # 2229 "05type.c"
                     if(parse_variable_name) {
-                        # 2230 "05function4.c"
+                        # 2230 "05type.c"
                         parse_sharp_v5(info);
-                        # 2237 "05function4.c"
-                        # 2232 "05function4.c"
+                        # 2237 "05type.c"
+                        # 2232 "05type.c"
                         if(_if_conditional522=var_name_between_brace_247&&*info->p==40,                        _if_conditional522) {
-                            # 2233 "05function4.c"
+                            # 2233 "05type.c"
                             info->p++;
-                            # 2234 "05function4.c"
+                            # 2234 "05type.c"
                             skip_spaces_and_lf(info);
                         }
-                        # 2254 "05function4.c"
-                        # 2237 "05function4.c"
+                        # 2254 "05type.c"
+                        # 2237 "05type.c"
                         if(_if_conditional523=*info->p==58,                        _if_conditional523) {
-                            # 2238 "05function4.c"
+                            # 2238 "05type.c"
                             __dec_obj177=var_name_242;
                             var_name_242=(char*)come_increment_ref_count(((char*)(right_value401=__builtin_string(""))));
                             __dec_obj177 = come_decrement_ref_count2(__dec_obj177, (void*)0, (void*)0, 0,0,0, (void*)0);
                             right_value401 = come_decrement_ref_count2(right_value401, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                         }
                         else {
-                            # 2254 "05function4.c"
-                            # 2240 "05function4.c"
+                            # 2254 "05type.c"
+                            # 2240 "05type.c"
                             if(anonymous_name_210) {
-                                # 2241 "05function4.c"
-                                # 2242 "05function4.c"
+                                # 2241 "05type.c"
+                                # 2242 "05type.c"
                                 num_anonymous_var_name_352++;
-                                # 2243 "05function4.c"
+                                # 2243 "05type.c"
                                 __dec_obj178=var_name_242;
                                 var_name_242=(char*)come_increment_ref_count(((char*)(right_value402=xsprintf("anonymous_var_nameXYZLO%d",num_anonymous_var_name_352))));
                                 __dec_obj178 = come_decrement_ref_count2(__dec_obj178, (void*)0, (void*)0, 0,0,0, (void*)0);
                                 right_value402 = come_decrement_ref_count2(right_value402, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                             }
                             else {
-                                # 2254 "05function4.c"
-                                # 2245 "05function4.c"
+                                # 2254 "05type.c"
+                                # 2245 "05type.c"
                                 if(_if_conditional525=xisalnum(*info->p)||*info->p==95,                                _if_conditional525) {
-                                    # 2246 "05function4.c"
+                                    # 2246 "05type.c"
                                     __dec_obj179=var_name_242;
-                                    var_name_242=(char*)come_increment_ref_count((come_push_stackframe("05function4.c", 2246, 54),__exception_result_var_b40=((char*)(right_value403=parse_word(info))), come_pop_stackframe(), __exception_result_var_b40));
+                                    var_name_242=(char*)come_increment_ref_count((come_push_stackframe("05type.c", 2246, 54),__exception_result_var_b40=((char*)(right_value403=parse_word(info))), come_pop_stackframe(), __exception_result_var_b40));
                                     __dec_obj179 = come_decrement_ref_count2(__dec_obj179, (void*)0, (void*)0, 0,0,0, (void*)0);
                                     right_value403 = come_decrement_ref_count2(right_value403, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 }
                                 else {
-                                    # 2249 "05function4.c"
-                                    # 2250 "05function4.c"
+                                    # 2249 "05type.c"
+                                    # 2250 "05type.c"
                                     num_anonymous_var_name_353++;
-                                    # 2251 "05function4.c"
+                                    # 2251 "05type.c"
                                     __dec_obj180=var_name_242;
                                     var_name_242=(char*)come_increment_ref_count(((char*)(right_value404=xsprintf("anonymous_var_nameX%d",num_anonymous_var_name_353))));
                                     __dec_obj180 = come_decrement_ref_count2(__dec_obj180, (void*)0, (void*)0, 0,0,0, (void*)0);
@@ -11805,31 +11805,31 @@ right_value409 = (void*)0;
                                 }
                             }
                         }
-                        # 2259 "05function4.c"
-                        # 2254 "05function4.c"
+                        # 2259 "05type.c"
+                        # 2254 "05type.c"
                         if(_if_conditional526=var_name_between_brace_247&&*info->p==41,                        _if_conditional526) {
-                            # 2255 "05function4.c"
+                            # 2255 "05type.c"
                             info->p++;
-                            # 2256 "05function4.c"
+                            # 2256 "05type.c"
                             skip_spaces_and_lf(info);
                         }
-                        # 2270 "05function4.c"
-                        # 2259 "05function4.c"
+                        # 2270 "05type.c"
+                        # 2259 "05type.c"
                         if(_if_conditional527=*info->p==58,                        _if_conditional527) {
-                            # 2260 "05function4.c"
+                            # 2260 "05type.c"
                             info->p++;
-                            # 2261 "05function4.c"
+                            # 2261 "05type.c"
                             skip_spaces_and_lf(info);
-                            # 2263 "05function4.c"
+                            # 2263 "05type.c"
                             no_comma_354=info->no_comma;
-                            # 2264 "05function4.c"
+                            # 2264 "05type.c"
                             info->no_comma=(_Bool)1;
-                            # 2265 "05function4.c"
+                            # 2265 "05type.c"
                             node_355=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value405=expression_v13(info))));
                             if(right_value405) { right_value405 = come_decrement_ref_count2(right_value405, ((struct sNode*)right_value405)->finalize, ((struct sNode*)right_value405)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                            # 2266 "05function4.c"
+                            # 2266 "05type.c"
                             info->no_comma=no_comma_354;
-                            # 2268 "05function4.c"
+                            # 2268 "05type.c"
                             __dec_obj181=type_241->mSizeNum;
                             type_241->mSizeNum=(struct sNode*)come_increment_ref_count(node_355);
                             if(__dec_obj181) { __dec_obj181 = come_decrement_ref_count2(__dec_obj181, ((struct sNode*)__dec_obj181)->finalize, ((struct sNode*)__dec_obj181)->_protocol_obj, 0,0,0, (void*)0); }
@@ -11840,56 +11840,56 @@ right_value409 = (void*)0;
             }
         }
     }
-    # 2272 "05function4.c"
+    # 2272 "05type.c"
     parse_sharp_v5(info);
-    # 2297 "05function4.c"
+    # 2297 "05type.c"
     while(_while_condtional59=*info->p==91,    _while_condtional59) {
-        # 2275 "05function4.c"
+        # 2275 "05type.c"
         info->p++;
-        # 2276 "05function4.c"
+        # 2276 "05type.c"
         skip_spaces_and_lf(info);
-        # 2277 "05function4.c"
+        # 2277 "05type.c"
         parse_sharp_v5(info);
-        # 2279 "05function4.c"
+        # 2279 "05type.c"
         skip_pointer_attribute(info);
-        # 2289 "05function4.c"
-        # 2281 "05function4.c"
+        # 2289 "05type.c"
+        # 2281 "05type.c"
         if(_if_conditional528=*info->p==93,        _if_conditional528) {
-            # 2282 "05function4.c"
+            # 2282 "05type.c"
             info->p++;
-            # 2283 "05function4.c"
+            # 2283 "05type.c"
             skip_spaces_and_lf(info);
-            # 2285 "05function4.c"
+            # 2285 "05type.c"
             type_241->mArrayPointerType=(_Bool)1;
-            # 2286 "05function4.c"
+            # 2286 "05type.c"
             type_241->mPointerNum++;
-            # 2287 "05function4.c"
+            # 2287 "05type.c"
             break;
         }
-        # 2289 "05function4.c"
+        # 2289 "05type.c"
         parse_sharp_v5(info);
-        # 2291 "05function4.c"
+        # 2291 "05type.c"
         node_356=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value406=expression_v13(info))));
         if(right_value406) { right_value406 = come_decrement_ref_count2(right_value406, ((struct sNode*)right_value406)->finalize, ((struct sNode*)right_value406)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-        # 2292 "05function4.c"
+        # 2292 "05type.c"
         list$1sNodeph_push_back(type_241->mArrayNum,(struct sNode*)come_increment_ref_count(node_356));
-        # 2293 "05function4.c"
+        # 2293 "05type.c"
         parse_sharp_v5(info);
-        # 2295 "05function4.c"
+        # 2295 "05type.c"
         expected_next_character(93,info);
         if(node_356) { node_356 = come_decrement_ref_count2(node_356, ((struct sNode*)node_356)->finalize, ((struct sNode*)node_356)->_protocol_obj, 0, 0, 0, (void*)0); } 
     }
-    # 2297 "05function4.c"
+    # 2297 "05type.c"
     asm_name_357=(char*)come_increment_ref_count(((char*)(right_value407=parse_attribute(info))));
     right_value407 = come_decrement_ref_count2(right_value407, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 2299 "05function4.c"
+    # 2299 "05type.c"
     __dec_obj182=type_241->mAsmName;
     type_241->mAsmName=(char*)come_increment_ref_count(asm_name_357);
     __dec_obj182 = come_decrement_ref_count2(__dec_obj182, (void*)0, (void*)0, 0,0,0, (void*)0);
-    # 2301 "05function4.c"
+    # 2301 "05type.c"
     parse_sharp_v5(info);
-    # 2303 "05function4.c"
-    __result192__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value409=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value408=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05function4.c", 2303, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count(type_241),(char*)come_increment_ref_count(var_name_242),(_Bool)1)));
+    # 2303 "05type.c"
+    __result192__ = __result_obj__ = ((struct tuple3$3sTypephcharphbool*)(right_value409=tuple3$3sTypephcharphbool_initialize((struct tuple3$3sTypephcharphbool*)come_increment_ref_count(((struct tuple3$3sTypephcharphbool*)(right_value408=(struct tuple3$3sTypephcharphbool*)come_calloc(1, sizeof(struct tuple3$3sTypephcharphbool)*(1), "05type.c", 2303, "tuple3$3sTypephcharphbool")))),(struct sType*)come_increment_ref_count(type_241),(char*)come_increment_ref_count(var_name_242),(_Bool)1)));
     type_name_190 = come_decrement_ref_count2(type_name_190, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     if(alignas__208) { alignas__208 = come_decrement_ref_count2(alignas__208, ((struct sNode*)alignas__208)->finalize, ((struct sNode*)alignas__208)->_protocol_obj, 0, 0, 0, (void*)0); } 
     come_call_finalizer3(type_241,sType_finalize, 0, 0, 0, 0, (void*)0);
