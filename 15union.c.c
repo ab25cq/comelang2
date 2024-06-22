@@ -1723,6 +1723,8 @@ struct sNode* expression_node_v1(struct sInfo* info);
 
 struct sNode* expression_node_v99(struct sInfo* info);
 
+struct sNode* expression_node_v98(struct sInfo* info);
+
 int transpile_v5(struct sInfo* info);
 
 void parse_sharp_v5(struct sInfo* info);
@@ -1735,7 +1737,7 @@ char* create_method_name(struct sType* obj_type, _Bool no_pointer_name, char* fu
 
 char* create_method_name_using_class(struct sClass* obj_class, _Bool no_pointer_name, char* fun_name, struct sInfo* info, _Bool array_equal_pointer);
 
-struct sNode* expression_node_v98(struct sInfo* info);
+struct sNode* expression_node_v97(struct sInfo* info);
 
 struct sNode* parse_tuple(struct sInfo* info);
 

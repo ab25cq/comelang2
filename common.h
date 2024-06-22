@@ -482,6 +482,7 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 1;
 sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 99;
 sNode*% expression_node(sInfo* info=info) version 1;
 sNode*% expression_node(sInfo* info=info) version 99;
+sNode*% expression_node(sInfo* info=info) version 98;
 
 int transpile(sInfo* info) version 5;
 void parse_sharp(sInfo* info=info) version 5;
@@ -493,7 +494,7 @@ string create_method_name_using_class(sClass* obj_class, bool no_pointer_name, c
 /////////////////////////////////////////////////////////////////////
 /// 06str.c ///
 /////////////////////////////////////////////////////////////////////
-sNode*% expression_node(sInfo* info=info) version 98;
+sNode*% expression_node(sInfo* info=info) version 97;
 sNode*% parse_tuple(sInfo* info);
 
 /////////////////////////////////////////////////////////////////////
