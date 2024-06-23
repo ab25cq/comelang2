@@ -667,12 +667,12 @@ sNode*% parse_normal_block(sInfo* info=info)
 {
     sBlock*% block = parse_block();
     
-    return new sNode(new sNormalBlock(block, info));
+    return new sNormalBlock(block, info) implements sNode;
 }
 
 sNode*% craete_logical_denial(sNode*% node, sInfo* info)
 {
-    return new sNode(new sLogicalDenial(clone node, info));
+    return new sLogicalDenial(clone node, info) implements sNode;
 }
 
 sNode*% expression_node(sInfo* info=info) version 98
@@ -734,7 +734,7 @@ sNode*% expression_node(sInfo* info=info) version 98
 
         sNode*% node = expression_node();
 
-        return new sNode(new sMinusNode2(node, info));
+        return new sMinusNode2(node, info) implements sNode;
     }
     else if(*info->p == '+' && *(info->p+1) == '+') {
         info->p+=2;
@@ -742,7 +742,7 @@ sNode*% expression_node(sInfo* info=info) version 98
 
         sNode*% node = expression_node();
 
-        return new sNode(new sPlusPlusNode2(node, info));
+        return new sPlusPlusNode2(node, info) implements sNode;
     }
     else if(*info->p == '~') {
         info->p++;
@@ -750,7 +750,7 @@ sNode*% expression_node(sInfo* info=info) version 98
 
         sNode*% node = expression_node();
 
-        return new sNode(new sComplement(node, info));
+        return new sComplement(node, info) implements sNode;
     }
     
     /// hex number ///

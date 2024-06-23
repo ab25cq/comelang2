@@ -687,10 +687,5 @@ sNode*% expression_node(sInfo* info=info) version 99
         
         return node;
     }
-    
-    err_msg(info, "unexpected operator(%c)\n", *info->p);
-    exit(2);
-    
-    return (sNode*%)null;
 }
 

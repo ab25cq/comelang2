@@ -1679,10 +1679,6 @@ void cast_type(struct sType* left_type, struct sType* right_type, struct CVALUE*
 
 char* parse_attribute(struct sInfo* info);
 
-void come_init_v5();
-
-void come_final_v5();
-
 struct sNode* get_number(_Bool minus, struct sInfo* info);
 
 struct sNode* get_oct_number(struct sInfo* info);

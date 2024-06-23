@@ -913,7 +913,7 @@ sNode*% parse_function_call(char* fun_name, sInfo* info)
     
     parse_sharp();
     
-    sNode*% node = new sNode(new sFunCallNode(fun_name, params, guard_break, method_generics_types, info));
+    sNode*% node = new sFunCallNode(fun_name, params, guard_break, method_generics_types, info) implements sNode;
     
     return node;
 }

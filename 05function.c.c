@@ -1646,10 +1646,6 @@ _Bool check_assign_type(char* msg, struct sType* left_type, struct sType* right_
 
 void cast_type(struct sType* left_type, struct sType* right_type, struct CVALUE* come_value, struct sInfo* info);
 
-void come_init_v5();
-
-void come_final_v5();
-
 struct sNode* get_number(_Bool minus, struct sInfo* info);
 
 struct sNode* get_oct_number(struct sInfo* info);

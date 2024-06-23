@@ -1682,10 +1682,6 @@ void cast_type(struct sType* left_type, struct sType* right_type, struct CVALUE*
 
 char* parse_attribute(struct sInfo* info);
 
-void come_init_v5();
-
-void come_final_v5();
-
 struct sNode* post_position_operator3_v5(struct sNode* node, struct sInfo* info);
 
 struct tuple4$4list$1sTypephphlist$1charphphlist$1charphphbool* parse_params(struct sInfo* info, _Bool in_constructor_);
@@ -6260,7 +6256,6 @@ struct sNode* node_132;
 void* right_value287;
 struct sNode* __dec_obj69;
 struct sNode* __result180__;
-struct sNode* __result181__;
 memset(&__result_obj__, 0, sizeof(void*));
 right_value278 = (void*)0;
 memset(&node_128, 0, sizeof(struct sNode*));
@@ -6281,7 +6276,7 @@ right_value287 = (void*)0;
     skip_spaces_and_lf(info);
     # 647 "05number.c"
     parse_sharp_v5(info);
-    # 691 "05number.c"
+    # 690 "05number.c"
     # 649 "05number.c"
     if(_if_conditional254=*info->p==48&&(*(info->p+1)==120||*(info->p+1)==88),    _if_conditional254) {
         # 650 "05number.c"
@@ -6301,7 +6296,7 @@ right_value287 = (void*)0;
         if(node_128) { node_128 = come_decrement_ref_count2(node_128, ((struct sNode*)node_128)->finalize, ((struct sNode*)node_128)->_protocol_obj, 0, 0, 0, (void*)0); } 
     }
     else {
-        # 691 "05number.c"
+        # 690 "05number.c"
         # 658 "05number.c"
         if(_if_conditional255=*info->p==48&&xisdigit(*(info->p+1)),        _if_conditional255) {
             # 659 "05number.c"
@@ -6321,7 +6316,7 @@ right_value287 = (void*)0;
             if(node_129) { node_129 = come_decrement_ref_count2(node_129, ((struct sNode*)node_129)->finalize, ((struct sNode*)node_129)->_protocol_obj, 0, 0, 0, (void*)0); } 
         }
         else {
-            # 691 "05number.c"
+            # 690 "05number.c"
             # 667 "05number.c"
             if(_if_conditional256=xisdigit(*info->p),            _if_conditional256) {
                 # 668 "05number.c"
@@ -6339,7 +6334,7 @@ right_value287 = (void*)0;
                 if(node_130) { node_130 = come_decrement_ref_count2(node_130, ((struct sNode*)node_130)->finalize, ((struct sNode*)node_130)->_protocol_obj, 0, 0, 0, (void*)0); } 
             }
             else {
-                # 691 "05number.c"
+                # 690 "05number.c"
                 # 674 "05number.c"
                 if(_if_conditional257=*info->p==45&&xisdigit(*(info->p+1)),                _if_conditional257) {
                     # 675 "05number.c"
@@ -6376,12 +6371,5 @@ right_value287 = (void*)0;
             }
         }
     }
-    # 691 "05number.c"
-    err_msg(info,"unexpected operator(%c)\n",*info->p);
-    # 692 "05number.c"
-    exit(2);
-    # 694 "05number.c"
-    __result181__ = __result_obj__ = (struct sNode*)((void*)0);
-    return __result181__;
 }
 
