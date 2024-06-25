@@ -1568,10 +1568,6 @@ char* make_come_type_name_string(struct sType* type, struct sInfo* info);
 
 char* make_come_type_name_string_no_solved(struct sType* type, struct sInfo* info);
 
-void come_init_v3();
-
-void come_final_v3();
-
 char* make_define_var_no_solved(struct sType* type, char* name, _Bool in_header, struct sInfo* info);
 
 char* header_function(struct sFun* fun, struct sInfo* info);

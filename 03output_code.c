@@ -1,13 +1,5 @@
 #include "common.h"
 
-void come_init() version 3
-{
-}
-
-void come_final() version 3
-{
-}
-
 string make_type_name_string(sType* type, bool in_header=false, bool array_cast_pointer=false, bool no_pointer=false, sInfo* info=info)
 {
     var buf = new buffer();

@@ -379,9 +379,6 @@ string make_come_type_name_string_no_solved(sType* type, sInfo* info=info);
 /////////////////////////////////////////////////////////////////////
 /// 03transpile2.c ///
 /////////////////////////////////////////////////////////////////////
-void come_init() version 3;
-void come_final() version 3;
-
 string make_define_var_no_solved(sType* type, char* name, bool in_header=false, sInfo* info=info);
 string header_function(sFun* fun, sInfo* info);
 int transpile(sInfo* info) version 3;

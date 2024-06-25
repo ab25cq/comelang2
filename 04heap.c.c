@@ -1533,10 +1533,6 @@ char* make_come_type_name_string(struct sType* type, struct sInfo* info);
 
 char* make_come_type_name_string_no_solved(struct sType* type, struct sInfo* info);
 
-void come_init_v3();
-
-void come_final_v3();
-
 char* make_define_var_no_solved(struct sType* type, char* name, _Bool in_header, struct sInfo* info);
 
 char* header_function(struct sFun* fun, struct sInfo* info);
@@ -3489,39 +3485,39 @@ right_value82 = (void*)0;
         # 6 "04heap.c"
         return;
     }
-    # 38 "04heap.c"
-    # 17 "04heap.c"
+    # 29 "04heap.c"
+    # 8 "04heap.c"
     if(right_value->var) {
-        # 30 "04heap.c"
-        # 18 "04heap.c"
+        # 21 "04heap.c"
+        # 9 "04heap.c"
         if(right_value->var->mType->mDelegate) {
-            # 19 "04heap.c"
+            # 10 "04heap.c"
             __dec_obj12=right_value->var->mCValueName;
             right_value->var->mCValueName=((void*)0);
             __dec_obj12 = come_decrement_ref_count2(__dec_obj12, (void*)0, (void*)0, 0,0,0, (void*)0);
         }
         else {
-            # 30 "04heap.c"
             # 21 "04heap.c"
+            # 12 "04heap.c"
             if(right_value->var->mType->mShare) {
-                # 22 "04heap.c"
+                # 13 "04heap.c"
                 __dec_obj13=right_value->c_value;
                 right_value->c_value=(char*)come_increment_ref_count(((char*)(right_value79=increment_ref_count_object(right_value->type,right_value->c_value,info))));
                 __dec_obj13 = come_decrement_ref_count2(__dec_obj13, (void*)0, (void*)0, 0,0,0, (void*)0);
                 right_value79 = come_decrement_ref_count2(right_value79, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
             }
             else {
-                # 30 "04heap.c"
-                # 24 "04heap.c"
+                # 21 "04heap.c"
+                # 15 "04heap.c"
                 if(right_value->var->mType->mClone) {
-                    # 25 "04heap.c"
+                    # 16 "04heap.c"
                     __dec_obj14=right_value->c_value;
                     right_value->c_value=(char*)come_increment_ref_count(((char*)(right_value80=increment_ref_count_object(right_value->type,right_value->c_value,info))));
                     __dec_obj14 = come_decrement_ref_count2(__dec_obj14, (void*)0, (void*)0, 0,0,0, (void*)0);
                     right_value80 = come_decrement_ref_count2(right_value80, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                 }
                 else {
-                    # 28 "04heap.c"
+                    # 19 "04heap.c"
                     __dec_obj15=right_value->c_value;
                     right_value->c_value=(char*)come_increment_ref_count(((char*)(right_value81=increment_ref_count_object(right_value->type,right_value->c_value,info))));
                     __dec_obj15 = come_decrement_ref_count2(__dec_obj15, (void*)0, (void*)0, 0,0,0, (void*)0);
@@ -3531,12 +3527,12 @@ right_value82 = (void*)0;
         }
     }
     else {
-        # 37 "04heap.c"
-        # 32 "04heap.c"
+        # 28 "04heap.c"
+        # 23 "04heap.c"
         if(right_value->type->mDelegate) {
         }
         else {
-            # 35 "04heap.c"
+            # 26 "04heap.c"
             __dec_obj16=right_value->c_value;
             right_value->c_value=(char*)come_increment_ref_count(((char*)(right_value82=increment_ref_count_object(right_value->type,right_value->c_value,info))));
             __dec_obj16 = come_decrement_ref_count2(__dec_obj16, (void*)0, (void*)0, 0,0,0, (void*)0);
@@ -3680,47 +3676,47 @@ memset(&type_121, 0, sizeof(struct sType*));
 right_value134 = (void*)0;
 right_value135 = (void*)0;
 memset(&new_name_122, 0, sizeof(char*));
-    # 42 "04heap.c"
+    # 33 "04heap.c"
     result_77=(struct sType*)come_increment_ref_count(((struct sType*)(right_value118=sType_clone(type))));
     come_call_finalizer3(right_value118,sType_finalize, 0, 1, 0, 0, __result_obj__);
-    # 46 "04heap.c"
-    # 43 "04heap.c"
+    # 37 "04heap.c"
+    # 34 "04heap.c"
     if(_if_conditional116=generics_type==((void*)0),    _if_conditional116) {
-        # 44 "04heap.c"
+        # 35 "04heap.c"
         __result70__ = __result_obj__ = result_77;
         come_call_finalizer3(result_77,sType_finalize, 0, 0, 1, 0, (void*)0);
         return __result70__;
     }
-    # 50 "04heap.c"
-    # 46 "04heap.c"
+    # 41 "04heap.c"
+    # 37 "04heap.c"
     if(_if_conditional118=list$1sTypeph_length(generics_type->mGenericsTypes)==0,    _if_conditional118) {
-        # 47 "04heap.c"
+        # 38 "04heap.c"
         __result73__ = __result_obj__ = result_77;
         come_call_finalizer3(result_77,sType_finalize, 0, 0, 1, 0, (void*)0);
         return __result73__;
     }
-    # 50 "04heap.c"
+    # 41 "04heap.c"
     klass_78=type->mClass;
-    # 194 "04heap.c"
-    # 52 "04heap.c"
+    # 185 "04heap.c"
+    # 43 "04heap.c"
     if(_if_conditional119=string_operator_equals(klass_78->mName,"lambda"),    _if_conditional119) {
-        # 53 "04heap.c"
+        # 44 "04heap.c"
         result_type_79=(struct sType*)come_increment_ref_count(((struct sType*)(right_value119=solve_generics(type->mResultType->v1,generics_type,info))));
         come_call_finalizer3(right_value119,sType_finalize, 0, 1, 0, 0, __result_obj__);
-        # 55 "04heap.c"
+        # 46 "04heap.c"
         __dec_obj41=result_77->mResultType;
-        result_77->mResultType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value121=tuple1$1sTypeph_initialize((struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value120=(struct tuple1$1sTypeph*)come_calloc(1, sizeof(struct tuple1$1sTypeph)*(1), "04heap.c", 55, "tuple1$1sTypeph")))),(struct sType*)come_increment_ref_count(result_type_79)))));
+        result_77->mResultType=(struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value121=tuple1$1sTypeph_initialize((struct tuple1$1sTypeph*)come_increment_ref_count(((struct tuple1$1sTypeph*)(right_value120=(struct tuple1$1sTypeph*)come_calloc(1, sizeof(struct tuple1$1sTypeph)*(1), "04heap.c", 46, "tuple1$1sTypeph")))),(struct sType*)come_increment_ref_count(result_type_79)))));
         come_call_finalizer3(__dec_obj41,tuple1$1sTypeph_finalize, 0, 0, 0, 0, (void*)0);
         come_call_finalizer3(right_value120,tuple1$1sTypephp_finalize, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer3(right_value121,tuple1$1sTypephp_finalize, 0, 1, 0, 0, __result_obj__);
-        # 57 "04heap.c"
+        # 48 "04heap.c"
         list$1sTypeph_reset(result_77->mParamTypes);
-        # 64 "04heap.c"
+        # 55 "04heap.c"
         for(        o2_saved_82=(struct list$1sTypeph*)come_increment_ref_count((type->mParamTypes)),it_85=list$1sTypeph_begin((o2_saved_82));        !list$1sTypeph_end((o2_saved_82));        it_85=list$1sTypeph_next((o2_saved_82))        ){
-            # 60 "04heap.c"
+            # 51 "04heap.c"
             new_param_type_88=(struct sType*)come_increment_ref_count(((struct sType*)(right_value122=solve_generics(it_85,generics_type,info))));
             come_call_finalizer3(right_value122,sType_finalize, 0, 1, 0, 0, __result_obj__);
-            # 62 "04heap.c"
+            # 53 "04heap.c"
             list$1sTypeph_push_back(result_77->mParamTypes,(struct sType*)come_increment_ref_count(((struct sType*)(right_value126=sType_clone(new_param_type_88)))));
             come_call_finalizer3(right_value126,sType_finalize, 0, 1, 0, 0, __result_obj__);
             come_call_finalizer3(new_param_type_88,sType_finalize, 0, 0, 0, 0, (void*)0);
@@ -3729,244 +3725,244 @@ memset(&new_name_122, 0, sizeof(char*));
         come_call_finalizer3(result_type_79,sType_finalize, 0, 0, 0, 0, (void*)0);
     }
     else {
-        # 194 "04heap.c"
-        # 65 "04heap.c"
+        # 185 "04heap.c"
+        # 56 "04heap.c"
         if(_if_conditional126=klass_78->mMethodGenerics&&info->method_generics_types&&list$1sTypeph_length(info->method_generics_types)>0,        _if_conditional126) {
-            # 66 "04heap.c"
+            # 57 "04heap.c"
             generics_number_92=klass_78->mMethodGenericsNum;
-            # 74 "04heap.c"
-            # 68 "04heap.c"
+            # 65 "04heap.c"
+            # 59 "04heap.c"
             if(_if_conditional127=generics_number_92>=list$1sTypeph_length(info->method_generics_types),            _if_conditional127) {
-                # 70 "04heap.c"
+                # 61 "04heap.c"
                 err_msg(info,"invalid method generics parametor number. %d %d",generics_number_92,list$1sTypeph_length(info->method_generics_types));
-                # 71 "04heap.c"
+                # 62 "04heap.c"
                 exit(2);
             }
-            # 74 "04heap.c"
+            # 65 "04heap.c"
             array_num_93=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value127=list$1sNodephp_clone(type->mArrayNum))));
             come_call_finalizer3(right_value127,list$1sNodephp_finalize, 0, 1, 0, 0, __result_obj__);
-            # 75 "04heap.c"
+            # 66 "04heap.c"
             immutable__94=type->mImmutable;
-            # 76 "04heap.c"
+            # 67 "04heap.c"
             pointer_num_95=type->mPointerNum;
-            # 77 "04heap.c"
+            # 68 "04heap.c"
             heap_96=type->mHeap;
-            # 78 "04heap.c"
+            # 69 "04heap.c"
             guard__97=type->mGuardValue;
-            # 80 "04heap.c"
+            # 71 "04heap.c"
             no_heap_98=type->mNoHeap;
-            # 81 "04heap.c"
+            # 72 "04heap.c"
             no_calling_destructor_99=type->mNoCallingDestructor;
-            # 82 "04heap.c"
+            # 73 "04heap.c"
             null_value_100=type->mNullValue;
-            # 84 "04heap.c"
+            # 75 "04heap.c"
             __dec_obj45=result_77;
-            result_77=(struct sType*)come_increment_ref_count(((struct sType*)(right_value128=sType_clone(((struct sType*)come_null_check(list$1sTypephp_operator_load_element(info->method_generics_types,generics_number_92), "04heap.c", 84, 0))))));
+            result_77=(struct sType*)come_increment_ref_count(((struct sType*)(right_value128=sType_clone(((struct sType*)come_null_check(list$1sTypephp_operator_load_element(info->method_generics_types,generics_number_92), "04heap.c", 75, 0))))));
             come_call_finalizer3(__dec_obj45,sType_finalize, 0, 0, 0, 0, (void*)0);
             come_call_finalizer3(right_value128,sType_finalize, 0, 1, 0, 0, __result_obj__);
-            # 89 "04heap.c"
-            # 86 "04heap.c"
+            # 80 "04heap.c"
+            # 77 "04heap.c"
             if(heap_96) {
-                # 87 "04heap.c"
+                # 78 "04heap.c"
                 result_77->mHeap=heap_96;
             }
-            # 92 "04heap.c"
-            # 89 "04heap.c"
+            # 83 "04heap.c"
+            # 80 "04heap.c"
             if(guard__97) {
-                # 90 "04heap.c"
+                # 81 "04heap.c"
                 result_77->mGuardValue=guard__97;
             }
-            # 96 "04heap.c"
-            # 92 "04heap.c"
+            # 87 "04heap.c"
+            # 83 "04heap.c"
             if(no_heap_98) {
-                # 93 "04heap.c"
+                # 84 "04heap.c"
                 result_77->mNoHeap=(_Bool)1;
-                # 94 "04heap.c"
+                # 85 "04heap.c"
                 result_77->mHeap=(_Bool)0;
             }
-            # 99 "04heap.c"
-            # 96 "04heap.c"
+            # 90 "04heap.c"
+            # 87 "04heap.c"
             if(no_calling_destructor_99) {
-                # 97 "04heap.c"
+                # 88 "04heap.c"
                 result_77->mNoCallingDestructor=(_Bool)1;
             }
-            # 102 "04heap.c"
-            # 99 "04heap.c"
+            # 93 "04heap.c"
+            # 90 "04heap.c"
             if(immutable__94) {
-                # 100 "04heap.c"
+                # 91 "04heap.c"
                 result_77->mImmutable=immutable__94;
             }
-            # 106 "04heap.c"
-            # 102 "04heap.c"
+            # 97 "04heap.c"
+            # 93 "04heap.c"
             if(_if_conditional136=list$1sNodeph_length(array_num_93)>0,            _if_conditional136) {
-                # 103 "04heap.c"
+                # 94 "04heap.c"
                 __dec_obj46=result_77->mArrayNum;
                 result_77->mArrayNum=(struct list$1sNodeph*)come_increment_ref_count(array_num_93);
                 come_call_finalizer3(__dec_obj46,list$1sNodeph_finalize, 0, 0, 0, 0, (void*)0);
             }
-            # 110 "04heap.c"
-            # 106 "04heap.c"
+            # 101 "04heap.c"
+            # 97 "04heap.c"
             if(null_value_100) {
-                # 107 "04heap.c"
+                # 98 "04heap.c"
                 result_77->mNullValue=null_value_100;
             }
-            # 113 "04heap.c"
-            # 110 "04heap.c"
+            # 104 "04heap.c"
+            # 101 "04heap.c"
             if(_if_conditional138=pointer_num_95>0,            _if_conditional138) {
-                # 111 "04heap.c"
+                # 102 "04heap.c"
                 result_77->mPointerNum+=pointer_num_95;
             }
             come_call_finalizer3(array_num_93,list$1sNodephp_finalize, 0, 0, 0, 0, (void*)0);
         }
         else {
-            # 194 "04heap.c"
-            # 114 "04heap.c"
+            # 185 "04heap.c"
+            # 105 "04heap.c"
             if(klass_78->mGenerics) {
-                # 115 "04heap.c"
+                # 106 "04heap.c"
                 generics_number_104=klass_78->mGenericsNum;
-                # 123 "04heap.c"
-                # 117 "04heap.c"
+                # 114 "04heap.c"
+                # 108 "04heap.c"
                 if(_if_conditional140=generics_number_104>=list$1sTypeph_length(generics_type->mGenericsTypes),                _if_conditional140) {
-                    # 119 "04heap.c"
+                    # 110 "04heap.c"
                     err_msg(info,"invalid generics parametor number");
-                    # 120 "04heap.c"
+                    # 111 "04heap.c"
                     exit(2);
                 }
-                # 123 "04heap.c"
-                klass2_105=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(generics_type->mGenericsTypes,generics_number_104), "04heap.c", 123, 1))->mClass;
-                # 125 "04heap.c"
+                # 114 "04heap.c"
+                klass2_105=((struct sType*)come_null_check(list$1sTypephp_operator_load_element(generics_type->mGenericsTypes,generics_number_104), "04heap.c", 114, 1))->mClass;
+                # 116 "04heap.c"
                 generics_number2_106=klass2_105->mGenericsNum;
-                # 173 "04heap.c"
-                # 127 "04heap.c"
+                # 164 "04heap.c"
+                # 118 "04heap.c"
                 if(_if_conditional141=generics_number_104!=generics_number2_106,                _if_conditional141) {
-                    # 129 "04heap.c"
+                    # 120 "04heap.c"
                     array_num_107=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value129=list$1sNodephp_clone(type->mArrayNum))));
                     come_call_finalizer3(right_value129,list$1sNodephp_finalize, 0, 1, 0, 0, __result_obj__);
-                    # 130 "04heap.c"
+                    # 121 "04heap.c"
                     immutable__108=type->mImmutable;
-                    # 131 "04heap.c"
+                    # 122 "04heap.c"
                     pointer_num_109=type->mPointerNum;
-                    # 132 "04heap.c"
+                    # 123 "04heap.c"
                     heap_110=type->mHeap;
-                    # 133 "04heap.c"
+                    # 124 "04heap.c"
                     guard__111=type->mGuardValue;
-                    # 135 "04heap.c"
+                    # 126 "04heap.c"
                     no_heap_112=type->mNoHeap;
-                    # 136 "04heap.c"
+                    # 127 "04heap.c"
                     no_calling_destructor_113=type->mNoCallingDestructor;
-                    # 137 "04heap.c"
+                    # 128 "04heap.c"
                     null_value_114=type->mNullValue;
-                    # 138 "04heap.c"
+                    # 129 "04heap.c"
                     record__115=type->mRecord;
-                    # 140 "04heap.c"
+                    # 131 "04heap.c"
                     __dec_obj47=result_77;
-                    result_77=(struct sType*)come_increment_ref_count(((struct sType*)(right_value130=sType_clone(((struct sType*)come_null_check(list$1sTypephp_operator_load_element(generics_type->mGenericsTypes,generics_number_104), "04heap.c", 140, 2))))));
+                    result_77=(struct sType*)come_increment_ref_count(((struct sType*)(right_value130=sType_clone(((struct sType*)come_null_check(list$1sTypephp_operator_load_element(generics_type->mGenericsTypes,generics_number_104), "04heap.c", 131, 2))))));
                     come_call_finalizer3(__dec_obj47,sType_finalize, 0, 0, 0, 0, (void*)0);
                     come_call_finalizer3(right_value130,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                    # 145 "04heap.c"
-                    # 142 "04heap.c"
+                    # 136 "04heap.c"
+                    # 133 "04heap.c"
                     if(heap_110) {
-                        # 143 "04heap.c"
+                        # 134 "04heap.c"
                         result_77->mHeap=heap_110;
                     }
-                    # 148 "04heap.c"
-                    # 145 "04heap.c"
+                    # 139 "04heap.c"
+                    # 136 "04heap.c"
                     if(guard__111) {
-                        # 146 "04heap.c"
+                        # 137 "04heap.c"
                         result_77->mGuardValue=guard__111;
                     }
-                    # 151 "04heap.c"
-                    # 148 "04heap.c"
+                    # 142 "04heap.c"
+                    # 139 "04heap.c"
                     if(record__115) {
-                        # 149 "04heap.c"
+                        # 140 "04heap.c"
                         result_77->mRecord=record__115;
                     }
-                    # 155 "04heap.c"
-                    # 151 "04heap.c"
+                    # 146 "04heap.c"
+                    # 142 "04heap.c"
                     if(no_heap_112) {
-                        # 152 "04heap.c"
+                        # 143 "04heap.c"
                         result_77->mNoHeap=(_Bool)1;
-                        # 153 "04heap.c"
+                        # 144 "04heap.c"
                         result_77->mHeap=(_Bool)0;
                     }
-                    # 158 "04heap.c"
-                    # 155 "04heap.c"
+                    # 149 "04heap.c"
+                    # 146 "04heap.c"
                     if(no_calling_destructor_113) {
-                        # 156 "04heap.c"
+                        # 147 "04heap.c"
                         result_77->mNoCallingDestructor=(_Bool)1;
                     }
-                    # 161 "04heap.c"
-                    # 158 "04heap.c"
+                    # 152 "04heap.c"
+                    # 149 "04heap.c"
                     if(immutable__108) {
-                        # 159 "04heap.c"
+                        # 150 "04heap.c"
                         result_77->mImmutable=immutable__108;
                     }
-                    # 165 "04heap.c"
-                    # 161 "04heap.c"
+                    # 156 "04heap.c"
+                    # 152 "04heap.c"
                     if(_if_conditional148=list$1sNodeph_length(array_num_107)>0,                    _if_conditional148) {
-                        # 162 "04heap.c"
+                        # 153 "04heap.c"
                         __dec_obj48=result_77->mArrayNum;
                         result_77->mArrayNum=(struct list$1sNodeph*)come_increment_ref_count(array_num_107);
                         come_call_finalizer3(__dec_obj48,list$1sNodeph_finalize, 0, 0, 0, 0, (void*)0);
                     }
-                    # 169 "04heap.c"
-                    # 165 "04heap.c"
+                    # 160 "04heap.c"
+                    # 156 "04heap.c"
                     if(null_value_114) {
-                        # 166 "04heap.c"
+                        # 157 "04heap.c"
                         result_77->mNullValue=null_value_114;
                     }
-                    # 172 "04heap.c"
-                    # 169 "04heap.c"
+                    # 163 "04heap.c"
+                    # 160 "04heap.c"
                     if(_if_conditional150=pointer_num_109>0,                    _if_conditional150) {
-                        # 170 "04heap.c"
+                        # 161 "04heap.c"
                         result_77->mPointerNum+=pointer_num_109;
                     }
                     come_call_finalizer3(array_num_107,list$1sNodephp_finalize, 0, 0, 0, 0, (void*)0);
                 }
             }
             else {
-                # 175 "04heap.c"
+                # 166 "04heap.c"
                 list$1sTypeph_reset(result_77->mGenericsTypes);
-                # 180 "04heap.c"
+                # 171 "04heap.c"
                 for(                o2_saved_116=(struct list$1sTypeph*)come_increment_ref_count((type->mGenericsTypes)),it_117=list$1sTypeph_begin((o2_saved_116));                !list$1sTypeph_end((o2_saved_116));                it_117=list$1sTypeph_next((o2_saved_116))                ){
-                    # 177 "04heap.c"
+                    # 168 "04heap.c"
                     type_118=(struct sType*)come_increment_ref_count(((struct sType*)(right_value131=solve_generics(it_117,generics_type,info))));
                     come_call_finalizer3(right_value131,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                    # 178 "04heap.c"
+                    # 169 "04heap.c"
                     list$1sTypeph_push_back(result_77->mGenericsTypes,(struct sType*)come_increment_ref_count(((struct sType*)(right_value132=sType_clone(type_118)))));
                     come_call_finalizer3(right_value132,sType_finalize, 0, 1, 0, 0, __result_obj__);
                     come_call_finalizer3(type_118,sType_finalize, 0, 0, 0, 0, (void*)0);
                 }
                 come_call_finalizer3(o2_saved_116,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
-                # 180 "04heap.c"
+                # 171 "04heap.c"
                 list$1sTypeph_reset(result_77->mMultipleTypes);
-                # 186 "04heap.c"
+                # 177 "04heap.c"
                 for(                o2_saved_119=(struct list$1sTypeph*)come_increment_ref_count((type->mMultipleTypes)),it_120=list$1sTypeph_begin((o2_saved_119));                !list$1sTypeph_end((o2_saved_119));                it_120=list$1sTypeph_next((o2_saved_119))                ){
-                    # 182 "04heap.c"
+                    # 173 "04heap.c"
                     type_121=(struct sType*)come_increment_ref_count(((struct sType*)(right_value133=solve_generics(it_120,generics_type,info))));
                     come_call_finalizer3(right_value133,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                    # 183 "04heap.c"
+                    # 174 "04heap.c"
                     list$1sTypeph_push_back(result_77->mMultipleTypes,(struct sType*)come_increment_ref_count(((struct sType*)(right_value134=sType_clone(type_121)))));
                     come_call_finalizer3(right_value134,sType_finalize, 0, 1, 0, 0, __result_obj__);
                     come_call_finalizer3(type_121,sType_finalize, 0, 0, 0, 0, (void*)0);
                 }
                 come_call_finalizer3(o2_saved_119,list$1sTypephp_finalize, 0, 0, 0, 0, (void*)0);
-                # 192 "04heap.c"
-                # 186 "04heap.c"
+                # 183 "04heap.c"
+                # 177 "04heap.c"
                 if(_if_conditional151=!output_generics_struct(result_77,generics_type,info),                _if_conditional151) {
-                    # 188 "04heap.c"
+                    # 179 "04heap.c"
                     new_name_122=(char*)come_increment_ref_count(((char*)(right_value135=create_generics_name(type,info))));
                     right_value135 = come_decrement_ref_count2(right_value135, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                    # 189 "04heap.c"
+                    # 180 "04heap.c"
                     printf("output generics is failed(%s)",new_name_122);
-                    # 190 "04heap.c"
+                    # 181 "04heap.c"
                     exit(1);
                     new_name_122 = come_decrement_ref_count2(new_name_122, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 }
             }
         }
     }
-    # 194 "04heap.c"
+    # 185 "04heap.c"
     __result88__ = __result_obj__ = result_77;
     come_call_finalizer3(result_77,sType_finalize, 0, 0, 1, 0, (void*)0);
     return __result88__;
@@ -5645,101 +5641,101 @@ memset(&no_heap_131, 0, sizeof(_Bool));
 memset(&no_calling_destructor_132, 0, sizeof(_Bool));
 memset(&null_value_133, 0, sizeof(_Bool));
 right_value138 = (void*)0;
-    # 199 "04heap.c"
+    # 190 "04heap.c"
     result_123=(struct sType*)come_increment_ref_count(((struct sType*)(right_value136=sType_clone(type))));
     come_call_finalizer3(right_value136,sType_finalize, 0, 1, 0, 0, __result_obj__);
-    # 201 "04heap.c"
+    # 192 "04heap.c"
     klass_124=type->mClass;
-    # 253 "04heap.c"
-    # 203 "04heap.c"
+    # 244 "04heap.c"
+    # 194 "04heap.c"
     if(_if_conditional152=klass_124->mMethodGenerics&&info->method_generics_types&&list$1sTypeph_length(info->method_generics_types)>0,    _if_conditional152) {
-        # 204 "04heap.c"
+        # 195 "04heap.c"
         generics_number_125=klass_124->mMethodGenericsNum;
-        # 212 "04heap.c"
-        # 206 "04heap.c"
+        # 203 "04heap.c"
+        # 197 "04heap.c"
         if(_if_conditional153=generics_number_125>=list$1sTypeph_length(info->method_generics_types),        _if_conditional153) {
-            # 208 "04heap.c"
+            # 199 "04heap.c"
             err_msg(info,"invalid method generics parametor number. %d %d",generics_number_125,list$1sTypeph_length(info->method_generics_types));
-            # 209 "04heap.c"
+            # 200 "04heap.c"
             exit(2);
         }
-        # 212 "04heap.c"
+        # 203 "04heap.c"
         array_num_126=(struct list$1sNodeph*)come_increment_ref_count(((struct list$1sNodeph*)(right_value137=list$1sNodephp_clone(type->mArrayNum))));
         come_call_finalizer3(right_value137,list$1sNodephp_finalize, 0, 1, 0, 0, __result_obj__);
-        # 213 "04heap.c"
+        # 204 "04heap.c"
         immutable__127=type->mImmutable;
-        # 214 "04heap.c"
+        # 205 "04heap.c"
         pointer_num_128=type->mPointerNum;
-        # 215 "04heap.c"
+        # 206 "04heap.c"
         heap_129=type->mHeap;
-        # 216 "04heap.c"
+        # 207 "04heap.c"
         guard__130=type->mGuardValue;
-        # 218 "04heap.c"
+        # 209 "04heap.c"
         no_heap_131=type->mNoHeap;
-        # 219 "04heap.c"
+        # 210 "04heap.c"
         no_calling_destructor_132=type->mNoCallingDestructor;
-        # 220 "04heap.c"
+        # 211 "04heap.c"
         null_value_133=type->mNullValue;
-        # 222 "04heap.c"
+        # 213 "04heap.c"
         __dec_obj49=result_123;
-        result_123=(struct sType*)come_increment_ref_count(((struct sType*)(right_value138=sType_clone(((struct sType*)come_null_check(list$1sTypephp_operator_load_element(info->method_generics_types,generics_number_125), "04heap.c", 222, 3))))));
+        result_123=(struct sType*)come_increment_ref_count(((struct sType*)(right_value138=sType_clone(((struct sType*)come_null_check(list$1sTypephp_operator_load_element(info->method_generics_types,generics_number_125), "04heap.c", 213, 3))))));
         come_call_finalizer3(__dec_obj49,sType_finalize, 0, 0, 0, 0, (void*)0);
         come_call_finalizer3(right_value138,sType_finalize, 0, 1, 0, 0, __result_obj__);
-        # 227 "04heap.c"
-        # 224 "04heap.c"
+        # 218 "04heap.c"
+        # 215 "04heap.c"
         if(heap_129) {
-            # 225 "04heap.c"
+            # 216 "04heap.c"
             result_123->mHeap=heap_129;
         }
-        # 230 "04heap.c"
-        # 227 "04heap.c"
+        # 221 "04heap.c"
+        # 218 "04heap.c"
         if(guard__130) {
-            # 228 "04heap.c"
+            # 219 "04heap.c"
             result_123->mGuardValue=guard__130;
         }
-        # 234 "04heap.c"
-        # 230 "04heap.c"
+        # 225 "04heap.c"
+        # 221 "04heap.c"
         if(no_heap_131) {
-            # 231 "04heap.c"
+            # 222 "04heap.c"
             result_123->mNoHeap=(_Bool)1;
-            # 232 "04heap.c"
+            # 223 "04heap.c"
             result_123->mHeap=(_Bool)0;
         }
-        # 237 "04heap.c"
-        # 234 "04heap.c"
+        # 228 "04heap.c"
+        # 225 "04heap.c"
         if(no_calling_destructor_132) {
-            # 235 "04heap.c"
+            # 226 "04heap.c"
             result_123->mNoCallingDestructor=(_Bool)1;
         }
-        # 240 "04heap.c"
-        # 237 "04heap.c"
+        # 231 "04heap.c"
+        # 228 "04heap.c"
         if(immutable__127) {
-            # 238 "04heap.c"
+            # 229 "04heap.c"
             result_123->mImmutable=immutable__127;
         }
-        # 244 "04heap.c"
-        # 240 "04heap.c"
+        # 235 "04heap.c"
+        # 231 "04heap.c"
         if(_if_conditional159=list$1sNodeph_length(array_num_126)>0,        _if_conditional159) {
-            # 241 "04heap.c"
+            # 232 "04heap.c"
             __dec_obj50=result_123->mArrayNum;
             result_123->mArrayNum=(struct list$1sNodeph*)come_increment_ref_count(array_num_126);
             come_call_finalizer3(__dec_obj50,list$1sNodeph_finalize, 0, 0, 0, 0, (void*)0);
         }
-        # 248 "04heap.c"
-        # 244 "04heap.c"
+        # 239 "04heap.c"
+        # 235 "04heap.c"
         if(null_value_133) {
-            # 245 "04heap.c"
+            # 236 "04heap.c"
             result_123->mNullValue=null_value_133;
         }
-        # 251 "04heap.c"
-        # 248 "04heap.c"
+        # 242 "04heap.c"
+        # 239 "04heap.c"
         if(_if_conditional161=pointer_num_128>0,        _if_conditional161) {
-            # 249 "04heap.c"
+            # 240 "04heap.c"
             result_123->mPointerNum+=pointer_num_128;
         }
         come_call_finalizer3(array_num_126,list$1sNodephp_finalize, 0, 0, 0, 0, (void*)0);
     }
-    # 253 "04heap.c"
+    # 244 "04heap.c"
     __result89__ = __result_obj__ = result_123;
     come_call_finalizer3(result_123,sType_finalize, 0, 0, 1, 0, (void*)0);
     return __result89__;
@@ -5758,19 +5754,19 @@ memset(&__result_obj__, 0, sizeof(void*));
 right_value139 = (void*)0;
 memset(&result_134, 0, sizeof(struct sType*));
 right_value140 = (void*)0;
-    # 258 "04heap.c"
+    # 249 "04heap.c"
     result_134=(struct sType*)come_increment_ref_count(((struct sType*)(right_value139=sType_clone(type))));
     come_call_finalizer3(right_value139,sType_finalize, 0, 1, 0, 0, __result_obj__);
-    # 264 "04heap.c"
-    # 260 "04heap.c"
+    # 255 "04heap.c"
+    # 251 "04heap.c"
     if(generics_type) {
-        # 261 "04heap.c"
+        # 252 "04heap.c"
         __dec_obj51=result_134;
         result_134=(struct sType*)come_increment_ref_count(((struct sType*)(right_value140=solve_generics(result_134,generics_type,info))));
         come_call_finalizer3(__dec_obj51,sType_finalize, 0, 0, 0, 0, (void*)0);
         come_call_finalizer3(right_value140,sType_finalize, 0, 1, 0, 0, __result_obj__);
     }
-    # 264 "04heap.c"
+    # 255 "04heap.c"
     __result90__ = __result_obj__ = result_134;
     come_call_finalizer3(result_134,sType_finalize, 0, 0, 1, 0, (void*)0);
     return __result90__;
@@ -5792,43 +5788,43 @@ int __result92__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&p_135, 0, sizeof(char*));
 memset(&n_136, 0, sizeof(int));
-    # 271 "04heap.c"
+    # 262 "04heap.c"
     p_135=obj;
-    # 294 "04heap.c"
-    # 272 "04heap.c"
+    # 285 "04heap.c"
+    # 263 "04heap.c"
     if(_if_conditional163=*p_135==40,    _if_conditional163) {
-        # 273 "04heap.c"
+        # 264 "04heap.c"
         p_135++;
-        # 277 "04heap.c"
+        # 268 "04heap.c"
         while(_while_condtional18=*p_135!=41,        _while_condtional18) {
-            # 275 "04heap.c"
+            # 266 "04heap.c"
             p_135++;
         }
-        # 277 "04heap.c"
+        # 268 "04heap.c"
         p_135++;
-        # 292 "04heap.c"
-        # 278 "04heap.c"
+        # 283 "04heap.c"
+        # 269 "04heap.c"
         if(_if_conditional164=*p_135==40,        _if_conditional164) {
-            # 279 "04heap.c"
+            # 270 "04heap.c"
             p_135++;
-            # 291 "04heap.c"
-            # 280 "04heap.c"
+            # 282 "04heap.c"
+            # 271 "04heap.c"
             if(_if_conditional165=strcmp(p_135,"right_value")==0,            _if_conditional165) {
-                # 281 "04heap.c"
+                # 272 "04heap.c"
                 p_135+=strlen("right_value");
-                # 290 "04heap.c"
-                # 282 "04heap.c"
+                # 281 "04heap.c"
+                # 273 "04heap.c"
                 if(_if_conditional166=xisdigit(*p_135),                _if_conditional166) {
-                    # 283 "04heap.c"
+                    # 274 "04heap.c"
                     n_136=0;
-                    # 288 "04heap.c"
+                    # 279 "04heap.c"
                     while(_while_condtional19=xisdigit(*p_135),                    _while_condtional19) {
-                        # 285 "04heap.c"
+                        # 276 "04heap.c"
                         n_136=n_136*10+*p_135-48;
-                        # 286 "04heap.c"
+                        # 277 "04heap.c"
                         p_135++;
                     }
-                    # 288 "04heap.c"
+                    # 279 "04heap.c"
                     __result91__ = n_136;
                     obj = come_decrement_ref_count2(obj, (void*)0, (void*)0, 0, 1, 0, (void*)0);
                     return __result91__;
@@ -5836,7 +5832,7 @@ memset(&n_136, 0, sizeof(int));
             }
         }
     }
-    # 294 "04heap.c"
+    # 285 "04heap.c"
     __result92__ = -1;
     obj = come_decrement_ref_count2(obj, (void*)0, (void*)0, 0, 1, 0, (void*)0);
     return __result92__;
@@ -5874,57 +5870,57 @@ right_value149 = (void*)0;
 memset(&buf_141, 0, sizeof(char*));
 right_value150 = (void*)0;
 right_value151 = (void*)0;
-    # 302 "04heap.c"
-    # 299 "04heap.c"
+    # 293 "04heap.c"
+    # 290 "04heap.c"
     if(gComeGC) {
-        # 300 "04heap.c"
+        # 291 "04heap.c"
         __result93__ = __result_obj__ = ((char*)(right_value141=__builtin_string(obj)));
         come_call_finalizer3(type,sType_finalize, 0, 0, 1, 0, (void*)0);
         right_value141 = come_decrement_ref_count2(right_value141, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         return __result93__;
     }
-    # 305 "04heap.c"
-    # 302 "04heap.c"
+    # 296 "04heap.c"
+    # 293 "04heap.c"
     if(info->no_output_come_code) {
-        # 303 "04heap.c"
+        # 294 "04heap.c"
         __result94__ = __result_obj__ = ((char*)(right_value142=__builtin_string("")));
         come_call_finalizer3(type,sType_finalize, 0, 0, 1, 0, (void*)0);
         right_value142 = come_decrement_ref_count2(right_value142, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         return __result94__;
     }
-    # 305 "04heap.c"
-    new_value_137=(struct sRightValueObject*)come_increment_ref_count(((struct sRightValueObject*)(right_value143=(struct sRightValueObject*)come_calloc(1, sizeof(struct sRightValueObject)*(1), "04heap.c", 305, "sRightValueObject"))));
+    # 296 "04heap.c"
+    new_value_137=(struct sRightValueObject*)come_increment_ref_count(((struct sRightValueObject*)(right_value143=(struct sRightValueObject*)come_calloc(1, sizeof(struct sRightValueObject)*(1), "04heap.c", 296, "sRightValueObject"))));
     come_call_finalizer3(right_value143,sRightValueObject_finalize, 0, 1, 0, 0, __result_obj__);
-    # 306 "04heap.c"
+    # 297 "04heap.c"
     __dec_obj52=new_value_137->mType;
     new_value_137->mType=(struct sType*)come_increment_ref_count(type);
     come_call_finalizer3(__dec_obj52,sType_finalize, 0, 0, 0, 0, (void*)0);
-    # 307 "04heap.c"
+    # 298 "04heap.c"
     new_value_137->mFreed=(_Bool)0;
-    # 308 "04heap.c"
+    # 299 "04heap.c"
     new_value_137->mID=gRightValueNum;
-    # 309 "04heap.c"
+    # 300 "04heap.c"
     __dec_obj53=new_value_137->mVarName;
     new_value_137->mVarName=(char*)come_increment_ref_count(((char*)(right_value144=xsprintf("right_value%d",gRightValueNum++))));
     __dec_obj53 = come_decrement_ref_count2(__dec_obj53, (void*)0, (void*)0, 0,0,0, (void*)0);
     right_value144 = come_decrement_ref_count2(right_value144, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 310 "04heap.c"
+    # 301 "04heap.c"
     __dec_obj54=new_value_137->mFunName;
     new_value_137->mFunName=(char*)come_increment_ref_count(((char*)(right_value145=string_clone(info->come_fun->mName))));
     __dec_obj54 = come_decrement_ref_count2(__dec_obj54, (void*)0, (void*)0, 0,0,0, (void*)0);
     right_value145 = come_decrement_ref_count2(right_value145, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 311 "04heap.c"
+    # 302 "04heap.c"
     new_value_137->mBlockLevel=info->block_level;
-    # 313 "04heap.c"
+    # 304 "04heap.c"
     list$1sRightValueObjectph_push_back(info->right_value_objects,(struct sRightValueObject*)come_increment_ref_count(new_value_137));
-    # 315 "04heap.c"
+    # 306 "04heap.c"
     buf_141=(char*)come_increment_ref_count(((char*)(right_value149=xsprintf("void* right_value%d;\n",gRightValueNum-1))));
     right_value149 = come_decrement_ref_count2(right_value149, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 316 "04heap.c"
+    # 307 "04heap.c"
     add_come_code_at_function_head(info,buf_141);
-    # 317 "04heap.c"
+    # 308 "04heap.c"
     add_come_code_at_function_head2(info,"right_value%d = (void*)0;\n",gRightValueNum-1);
-    # 319 "04heap.c"
+    # 310 "04heap.c"
     __result96__ = __result_obj__ = ((char*)(right_value151=xsprintf("((%s)(%s=%s))",((char*)(right_value150=make_type_name_string(type,(_Bool)0,(_Bool)1,(_Bool)0,info))),new_value_137->mVarName,obj)));
     come_call_finalizer3(type,sType_finalize, 0, 0, 1, 0, (void*)0);
     come_call_finalizer3(new_value_137,sRightValueObject_finalize, 0, 0, 0, 0, (void*)0);
@@ -6073,27 +6069,27 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&i_142, 0, sizeof(int));
 memset(&o2_saved_143, 0, sizeof(struct list$1sRightValueObjectph*));
 memset(&it_146, 0, sizeof(struct sRightValueObject*));
-    # 327 "04heap.c"
-    # 324 "04heap.c"
+    # 318 "04heap.c"
+    # 315 "04heap.c"
     if(gComeGC) {
-        # 325 "04heap.c"
+        # 316 "04heap.c"
         return;
     }
-    # 327 "04heap.c"
+    # 318 "04heap.c"
     i_142=0;
-    # 335 "04heap.c"
+    # 326 "04heap.c"
     for(    o2_saved_143=(struct list$1sRightValueObjectph*)come_increment_ref_count((info->right_value_objects)),it_146=list$1sRightValueObjectph_begin((o2_saved_143));    !list$1sRightValueObjectph_end((o2_saved_143));    it_146=list$1sRightValueObjectph_next((o2_saved_143))    ){
-        # 332 "04heap.c"
-        # 329 "04heap.c"
+        # 323 "04heap.c"
+        # 320 "04heap.c"
         if(_if_conditional180=it_146->mID==right_value_num,        _if_conditional180) {
-            # 330 "04heap.c"
+            # 321 "04heap.c"
             break;
         }
-        # 332 "04heap.c"
+        # 323 "04heap.c"
         i_142++;
     }
     come_call_finalizer3(o2_saved_143,list$1sRightValueObjectphp_finalize, 0, 0, 0, 0, (void*)0);
-    # 335 "04heap.c"
+    # 326 "04heap.c"
     list$1sRightValueObjectph_delete(info->right_value_objects,i_142,i_142+1);
 }
 
@@ -6497,20 +6493,20 @@ memset(&klass_165, 0, sizeof(struct sClass*));
 right_value153 = (void*)0;
 memset(&type_name_166, 0, sizeof(char*));
 right_value154 = (void*)0;
-    # 343 "04heap.c"
-    # 340 "04heap.c"
+    # 334 "04heap.c"
+    # 331 "04heap.c"
     if(gComeGC) {
-        # 341 "04heap.c"
+        # 332 "04heap.c"
         __result107__ = __result_obj__ = ((char*)(right_value152=__builtin_string(obj)));
         right_value152 = come_decrement_ref_count2(right_value152, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         return __result107__;
     }
-    # 343 "04heap.c"
+    # 334 "04heap.c"
     klass_165=type->mClass;
-    # 345 "04heap.c"
+    # 336 "04heap.c"
     type_name_166=(char*)come_increment_ref_count(((char*)(right_value153=make_type_name_string(type,(_Bool)0,(_Bool)0,(_Bool)0,info))));
     right_value153 = come_decrement_ref_count2(right_value153, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 347 "04heap.c"
+    # 338 "04heap.c"
     __result108__ = __result_obj__ = ((char*)(right_value154=xsprintf("(%s)come_increment_ref_count(%s)",type_name_166,obj)));
     type_name_166 = come_decrement_ref_count2(type_name_166, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     right_value154 = come_decrement_ref_count2(right_value154, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -6618,89 +6614,89 @@ right_value167 = (void*)0;
 memset(&type_name_195, 0, sizeof(char*));
 right_value168 = (void*)0;
 right_value169 = (void*)0;
-    # 355 "04heap.c"
-    # 352 "04heap.c"
+    # 346 "04heap.c"
+    # 343 "04heap.c"
     if(gComeGC) {
-        # 353 "04heap.c"
+        # 344 "04heap.c"
         return;
     }
-    # 355 "04heap.c"
+    # 346 "04heap.c"
     stack_saved_167=(struct list$1CVALUEph*)come_increment_ref_count(info->stack);
-    # 356 "04heap.c"
+    # 347 "04heap.c"
     right_value_objects_168=info->right_value_objects;
-    # 358 "04heap.c"
+    # 349 "04heap.c"
     klass_169=type->mClass;
-    # 360 "04heap.c"
-    # 362 "04heap.c"
+    # 351 "04heap.c"
+    # 353 "04heap.c"
     name_171=(char*)come_increment_ref_count(((char*)(right_value155=xsprintf("__dec_obj%d",++dec_num_170))));
     right_value155 = come_decrement_ref_count2(right_value155, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 363 "04heap.c"
+    # 354 "04heap.c"
     add_come_code_at_function_head(info,"%s;\n",((char*)(right_value156=make_define_var(type,name_171,(_Bool)0,info))));
     right_value156 = come_decrement_ref_count2(right_value156, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 365 "04heap.c"
+    # 356 "04heap.c"
     add_come_code(info,"%s=%s;\n",name_171,obj);
-    # 367 "04heap.c"
+    # 358 "04heap.c"
     obj=name_171;
-    # 368 "04heap.c"
+    # 359 "04heap.c"
     no_decrement_172=(_Bool)0;
-    # 369 "04heap.c"
+    # 360 "04heap.c"
     no_free_173=(_Bool)0;
-    # 460 "04heap.c"
-    # 371 "04heap.c"
+    # 451 "04heap.c"
+    # 362 "04heap.c"
     if(_if_conditional201=type->mPointerNum>0,    _if_conditional201) {
-        # 372 "04heap.c"
+        # 363 "04heap.c"
         c_value_174=(char*)come_increment_ref_count(((char*)(right_value157=__builtin_string(obj))));
         right_value157 = come_decrement_ref_count2(right_value157, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 374 "04heap.c"
+        # 365 "04heap.c"
         klass_175=type->mClass;
-        # 376 "04heap.c"
+        # 367 "04heap.c"
         class_name_176=klass_175->mName;
-        # 378 "04heap.c"
+        # 369 "04heap.c"
         fun_name_177="finalize";
-        # 380 "04heap.c"
+        # 371 "04heap.c"
         type2_178=(struct sType*)come_increment_ref_count(((struct sType*)(right_value158=sType_clone(type))));
         come_call_finalizer3(right_value158,sType_finalize, 0, 1, 0, 0, __result_obj__);
-        # 381 "04heap.c"
+        # 372 "04heap.c"
         type2_178->mHeap=(_Bool)0;
-        # 383 "04heap.c"
+        # 374 "04heap.c"
         fun_name2_179=(char*)come_increment_ref_count(((char*)(right_value159=create_method_name(type,(_Bool)0,fun_name_177,info,(_Bool)1))));
         right_value159 = come_decrement_ref_count2(right_value159, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 389 "04heap.c"
-        # 385 "04heap.c"
+        # 380 "04heap.c"
+        # 376 "04heap.c"
         if(type->mNoSolvedGenericsType->v1) {
-            # 386 "04heap.c"
+            # 377 "04heap.c"
             type=type->mNoSolvedGenericsType->v1;
         }
-        # 389 "04heap.c"
+        # 380 "04heap.c"
         finalizer_180=((void*)0);
-        # 427 "04heap.c"
-        # 390 "04heap.c"
+        # 418 "04heap.c"
+        # 381 "04heap.c"
         if(_if_conditional203=list$1sTypeph_length(type->mGenericsTypes)>0,        _if_conditional203) {
-            # 391 "04heap.c"
+            # 382 "04heap.c"
             finalizer_180=map$2charphsFunphp_operator_load_element(info->funcs,fun_name2_179);
-            # 409 "04heap.c"
-            # 394 "04heap.c"
+            # 400 "04heap.c"
+            # 385 "04heap.c"
             if(_if_conditional223=finalizer_180==((void*)0),            _if_conditional223) {
-                # 395 "04heap.c"
+                # 386 "04heap.c"
                 none_generics_name_184=(char*)come_increment_ref_count(((char*)(right_value160=get_none_generics_name(type2_178->mClass->mName))));
                 right_value160 = come_decrement_ref_count2(right_value160, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 397 "04heap.c"
+                # 388 "04heap.c"
                 generics_fun_name_185=(char*)come_increment_ref_count(((char*)(right_value161=xsprintf("%s_%s",none_generics_name_184,fun_name_177))));
                 right_value161 = come_decrement_ref_count2(right_value161, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 398 "04heap.c"
+                # 389 "04heap.c"
                 generics_fun_189=map$2charphsGenericsFunphp_operator_load_element(info->generics_funcs,generics_fun_name_185);
-                # 408 "04heap.c"
-                # 400 "04heap.c"
+                # 399 "04heap.c"
+                # 391 "04heap.c"
                 if(generics_fun_189) {
-                    # 406 "04heap.c"
-                    # 401 "04heap.c"
+                    # 397 "04heap.c"
+                    # 392 "04heap.c"
                     if(_if_conditional239=!create_generics_fun((char*)come_increment_ref_count(fun_name2_179),generics_fun_189,type,info),                    _if_conditional239) {
-                        # 403 "04heap.c"
+                        # 394 "04heap.c"
                         printf("%s %d: can't create generics finalizer\n",info->sname,info->sline);
-                        # 404 "04heap.c"
+                        # 395 "04heap.c"
                         exit(2);
                     }
-                    # 406 "04heap.c"
+                    # 397 "04heap.c"
                     finalizer_180=map$2charphsFunphp_operator_load_element(info->funcs,fun_name2_179);
                 }
                 none_generics_name_184 = come_decrement_ref_count2(none_generics_name_184, (void*)0, (void*)0, 0, 0, 0, (void*)0);
@@ -6708,92 +6704,92 @@ right_value169 = (void*)0;
             }
         }
         else {
-            # 411 "04heap.c"
-            # 422 "04heap.c"
+            # 402 "04heap.c"
+            # 413 "04heap.c"
             for(            i_190=128-1;            i_190>=1;            i_190--            ){
-                # 413 "04heap.c"
+                # 404 "04heap.c"
                 new_fun_name_191=(char*)come_increment_ref_count(((char*)(right_value162=xsprintf("%s_v%d",fun_name2_179,i_190))));
                 right_value162 = come_decrement_ref_count2(right_value162, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 414 "04heap.c"
+                # 405 "04heap.c"
                 finalizer_180=map$2charphsFunphp_operator_load_element(info->funcs,new_fun_name_191);
-                # 420 "04heap.c"
-                # 416 "04heap.c"
+                # 411 "04heap.c"
+                # 407 "04heap.c"
                 if(finalizer_180) {
-                    # 417 "04heap.c"
+                    # 408 "04heap.c"
                     __dec_obj58=fun_name2_179;
                     fun_name2_179=(char*)come_increment_ref_count(((char*)(right_value163=__builtin_string(new_fun_name_191))));
                     __dec_obj58 = come_decrement_ref_count2(__dec_obj58, (void*)0, (void*)0, 0,0,0, (void*)0);
                     right_value163 = come_decrement_ref_count2(right_value163, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                    # 418 "04heap.c"
+                    # 409 "04heap.c"
                     new_fun_name_191 = come_decrement_ref_count2(new_fun_name_191, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                     break;
                 }
                 new_fun_name_191 = come_decrement_ref_count2(new_fun_name_191, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
-            # 425 "04heap.c"
-            # 422 "04heap.c"
+            # 416 "04heap.c"
+            # 413 "04heap.c"
             if(_if_conditional241=finalizer_180==((void*)0),            _if_conditional241) {
-                # 423 "04heap.c"
+                # 414 "04heap.c"
                 finalizer_180=map$2charphsFunphp_operator_load_element(info->funcs,fun_name2_179);
             }
         }
-        # 436 "04heap.c"
         # 427 "04heap.c"
+        # 418 "04heap.c"
         if(_if_conditional242=finalizer_180==((void*)0)&&!type->mClass->mProtocol&&!type->mClass->mNumber,        _if_conditional242) {
-            # 429 "04heap.c"
+            # 420 "04heap.c"
             multiple_assign_var1=((struct tuple2$2sFunpcharph*)(right_value164=create_finalizer_automatically(type,fun_name_177,info)));
             fun_192=multiple_assign_var1->v1;
             new_fun_name_193=(char*)come_increment_ref_count(multiple_assign_var1->v2);
             come_call_finalizer3(right_value164,tuple2$2sFunpcharphp_finalize, 0, 1, 0, 0, __result_obj__);
-            # 431 "04heap.c"
+            # 422 "04heap.c"
             __dec_obj59=fun_name2_179;
             fun_name2_179=(char*)come_increment_ref_count(new_fun_name_193);
             __dec_obj59 = come_decrement_ref_count2(__dec_obj59, (void*)0, (void*)0, 0,0,0, (void*)0);
-            # 432 "04heap.c"
+            # 423 "04heap.c"
             finalizer_180=fun_192;
             new_fun_name_193 = come_decrement_ref_count2(new_fun_name_193, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
-        # 458 "04heap.c"
-        # 436 "04heap.c"
+        # 449 "04heap.c"
+        # 427 "04heap.c"
         if(_if_conditional244=finalizer_180!=((void*)0),        _if_conditional244) {
-            # 448 "04heap.c"
-            # 437 "04heap.c"
+            # 439 "04heap.c"
+            # 428 "04heap.c"
             if(_if_conditional245=klass_175->mProtocol&&type->mPointerNum==1,            _if_conditional245) {
-                # 438 "04heap.c"
+                # 429 "04heap.c"
                 type_name_194=(char*)come_increment_ref_count(((char*)(right_value165=make_type_name_string(type,(_Bool)0,(_Bool)0,(_Bool)0,info))));
                 right_value165 = come_decrement_ref_count2(right_value165, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 442 "04heap.c"
-                # 439 "04heap.c"
+                # 433 "04heap.c"
+                # 430 "04heap.c"
                 if(c_value_174) {
-                    # 440 "04heap.c"
+                    # 431 "04heap.c"
                     add_come_last_code2(info,"come_call_finalizer2(%s, %s, ((%s)%s)->finalize, ((%s)%s)->_protocol_obj, %d, %d, %d, %d, (void*)0);\n",fun_name2_179,c_value_174,type_name_194,c_value_174,type_name_194,c_value_174,type->mAllocaValue,no_decrement_172,no_free_173,force_delete_);
                 }
                 type_name_194 = come_decrement_ref_count2(type_name_194, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
             else {
-                # 447 "04heap.c"
-                # 444 "04heap.c"
+                # 438 "04heap.c"
+                # 435 "04heap.c"
                 if(c_value_174) {
-                    # 445 "04heap.c"
+                    # 436 "04heap.c"
                     add_come_last_code2(info,((char*)(right_value166=xsprintf("come_call_finalizer3(%s,%s, %d, %d, %d, %d, (void*)0);\n",c_value_174,fun_name2_179,type->mAllocaValue,no_decrement_172,no_free_173,force_delete_))));
                     right_value166 = come_decrement_ref_count2(right_value166, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                 }
             }
         }
         else {
-            # 457 "04heap.c"
-            # 450 "04heap.c"
+            # 448 "04heap.c"
+            # 441 "04heap.c"
             if(_if_conditional248=klass_175->mProtocol&&type->mPointerNum==1,            _if_conditional248) {
-                # 451 "04heap.c"
+                # 442 "04heap.c"
                 type_name_195=(char*)come_increment_ref_count(((char*)(right_value167=make_type_name_string(type,(_Bool)0,(_Bool)0,(_Bool)0,info))));
                 right_value167 = come_decrement_ref_count2(right_value167, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 452 "04heap.c"
+                # 443 "04heap.c"
                 add_come_last_code2(info,((char*)(right_value168=xsprintf("if(%s) { %s = come_decrement_ref_count2(%s, ((%s)%s)->finalize, ((%s)%s)->_protocol_obj, 0,0,0, (void*)0); }\n",name_171,name_171,name_171,type_name_195,name_171,type_name_195,name_171))));
                 right_value168 = come_decrement_ref_count2(right_value168, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                 type_name_195 = come_decrement_ref_count2(type_name_195, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
             else {
-                # 455 "04heap.c"
+                # 446 "04heap.c"
                 add_come_last_code2(info,((char*)(right_value169=xsprintf("%s = come_decrement_ref_count2(%s, (void*)0, (void*)0, 0,0,0, (void*)0);\n",name_171,name_171))));
                 right_value169 = come_decrement_ref_count2(right_value169, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
             }
@@ -6802,11 +6798,11 @@ right_value169 = (void*)0;
         come_call_finalizer3(type2_178,sType_finalize, 0, 0, 0, 0, (void*)0);
         fun_name2_179 = come_decrement_ref_count2(fun_name2_179, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
-    # 460 "04heap.c"
+    # 451 "04heap.c"
     __dec_obj60=info->right_value_objects;
     info->right_value_objects=(struct list$1sRightValueObjectph*)come_increment_ref_count(right_value_objects_168);
     come_call_finalizer3(__dec_obj60,list$1sRightValueObjectph_finalize, 0, 0, 0, 0, (void*)0);
-    # 461 "04heap.c"
+    # 452 "04heap.c"
     __dec_obj61=info->stack;
     info->stack=(struct list$1CVALUEph*)come_increment_ref_count(stack_saved_167);
     come_call_finalizer3(__dec_obj61,list$1CVALUEph_finalize, 0, 0, 0, 0, (void*)0);
@@ -7527,77 +7523,77 @@ right_value204 = (void*)0;
 memset(&obj_261, 0, sizeof(char*));
 right_value205 = (void*)0;
 memset(&type_name_262, 0, sizeof(char*));
-    # 469 "04heap.c"
-    # 466 "04heap.c"
+    # 460 "04heap.c"
+    # 457 "04heap.c"
     if(gComeGC) {
-        # 467 "04heap.c"
+        # 458 "04heap.c"
         return;
     }
-    # 469 "04heap.c"
+    # 460 "04heap.c"
     stack_saved_202=(struct list$1CVALUEph*)come_increment_ref_count(info->stack);
-    # 470 "04heap.c"
+    # 461 "04heap.c"
     right_value_objects_203=info->right_value_objects;
-    # 472 "04heap.c"
+    # 463 "04heap.c"
     type_before_204=type;
-    # 479 "04heap.c"
-    # 475 "04heap.c"
+    # 470 "04heap.c"
+    # 466 "04heap.c"
     if(type->mNoSolvedGenericsType->v1) {
-        # 476 "04heap.c"
+        # 467 "04heap.c"
         type=type->mNoSolvedGenericsType->v1;
     }
-    # 828 "04heap.c"
-    # 479 "04heap.c"
+    # 819 "04heap.c"
+    # 470 "04heap.c"
     if(_if_conditional254=type->mPointerNum>0||type->mClass->mProtocol||list$1sTypeph_length(type->mGenericsTypes)>0||(info->come_fun->mCloner&&ret_value),    _if_conditional254) {
-        # 826 "04heap.c"
-        # 480 "04heap.c"
+        # 817 "04heap.c"
+        # 471 "04heap.c"
         if(force_delete_) {
-            # 481 "04heap.c"
+            # 472 "04heap.c"
             c_value_205=(char*)come_increment_ref_count(((char*)(right_value170=__builtin_string(obj))));
             right_value170 = come_decrement_ref_count2(right_value170, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 483 "04heap.c"
+            # 474 "04heap.c"
             klass_206=type->mClass;
-            # 485 "04heap.c"
+            # 476 "04heap.c"
             class_name_207=klass_206->mName;
-            # 487 "04heap.c"
+            # 478 "04heap.c"
             fun_name_208="force_finalize";
-            # 489 "04heap.c"
+            # 480 "04heap.c"
             type2_209=(struct sType*)come_increment_ref_count(((struct sType*)(right_value171=sType_clone(type))));
             come_call_finalizer3(right_value171,sType_finalize, 0, 1, 0, 0, __result_obj__);
-            # 490 "04heap.c"
+            # 481 "04heap.c"
             type2_209->mHeap=(_Bool)0;
-            # 492 "04heap.c"
+            # 483 "04heap.c"
             fun_name2_210=(char*)come_increment_ref_count(((char*)(right_value172=create_method_name(type,(_Bool)0,fun_name_208,info,(_Bool)1))));
             right_value172 = come_decrement_ref_count2(right_value172, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 494 "04heap.c"
+            # 485 "04heap.c"
             finalizer_211=((void*)0);
-            # 531 "04heap.c"
-            # 495 "04heap.c"
+            # 522 "04heap.c"
+            # 486 "04heap.c"
             if(_if_conditional256=list$1sTypeph_length(type->mGenericsTypes)>0,            _if_conditional256) {
-                # 496 "04heap.c"
+                # 487 "04heap.c"
                 finalizer_211=map$2charphsFunphp_operator_load_element(info->funcs,fun_name2_210);
-                # 513 "04heap.c"
-                # 498 "04heap.c"
+                # 504 "04heap.c"
+                # 489 "04heap.c"
                 if(_if_conditional257=finalizer_211==((void*)0),                _if_conditional257) {
-                    # 499 "04heap.c"
+                    # 490 "04heap.c"
                     none_generics_name_212=(char*)come_increment_ref_count(((char*)(right_value173=get_none_generics_name(type2_209->mClass->mName))));
                     right_value173 = come_decrement_ref_count2(right_value173, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                    # 501 "04heap.c"
+                    # 492 "04heap.c"
                     generics_fun_name_213=(char*)come_increment_ref_count(((char*)(right_value174=xsprintf("%s_%s",none_generics_name_212,fun_name_208))));
                     right_value174 = come_decrement_ref_count2(right_value174, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                    # 502 "04heap.c"
+                    # 493 "04heap.c"
                     generics_fun_214=map$2charphsGenericsFunphp_operator_load_element(info->generics_funcs,generics_fun_name_213);
-                    # 512 "04heap.c"
-                    # 504 "04heap.c"
+                    # 503 "04heap.c"
+                    # 495 "04heap.c"
                     if(generics_fun_214) {
-                        # 510 "04heap.c"
-                        # 505 "04heap.c"
+                        # 501 "04heap.c"
+                        # 496 "04heap.c"
                         if(_if_conditional259=!create_generics_fun((char*)come_increment_ref_count(fun_name2_210),generics_fun_214,type,info),                        _if_conditional259) {
-                            # 507 "04heap.c"
+                            # 498 "04heap.c"
                             printf("%s %d: can't create generics finalizer\n",info->sname,info->sline);
-                            # 508 "04heap.c"
+                            # 499 "04heap.c"
                             exit(2);
                         }
-                        # 510 "04heap.c"
+                        # 501 "04heap.c"
                         finalizer_211=map$2charphsFunphp_operator_load_element(info->funcs,fun_name2_210);
                     }
                     none_generics_name_212 = come_decrement_ref_count2(none_generics_name_212, (void*)0, (void*)0, 0, 0, 0, (void*)0);
@@ -7605,86 +7601,86 @@ memset(&type_name_262, 0, sizeof(char*));
                 }
             }
             else {
-                # 515 "04heap.c"
-                # 526 "04heap.c"
+                # 506 "04heap.c"
+                # 517 "04heap.c"
                 for(                i_215=128-1;                i_215>=1;                i_215--                ){
-                    # 517 "04heap.c"
+                    # 508 "04heap.c"
                     new_fun_name_216=(char*)come_increment_ref_count(((char*)(right_value175=xsprintf("%s_v%d",fun_name2_210,i_215))));
                     right_value175 = come_decrement_ref_count2(right_value175, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                    # 518 "04heap.c"
+                    # 509 "04heap.c"
                     finalizer_211=map$2charphsFunphp_operator_load_element(info->funcs,new_fun_name_216);
-                    # 524 "04heap.c"
-                    # 520 "04heap.c"
+                    # 515 "04heap.c"
+                    # 511 "04heap.c"
                     if(finalizer_211) {
-                        # 521 "04heap.c"
+                        # 512 "04heap.c"
                         __dec_obj62=fun_name2_210;
                         fun_name2_210=(char*)come_increment_ref_count(((char*)(right_value176=__builtin_string(new_fun_name_216))));
                         __dec_obj62 = come_decrement_ref_count2(__dec_obj62, (void*)0, (void*)0, 0,0,0, (void*)0);
                         right_value176 = come_decrement_ref_count2(right_value176, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                        # 522 "04heap.c"
+                        # 513 "04heap.c"
                         new_fun_name_216 = come_decrement_ref_count2(new_fun_name_216, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         break;
                     }
                     new_fun_name_216 = come_decrement_ref_count2(new_fun_name_216, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 }
-                # 529 "04heap.c"
-                # 526 "04heap.c"
+                # 520 "04heap.c"
+                # 517 "04heap.c"
                 if(_if_conditional261=finalizer_211==((void*)0),                _if_conditional261) {
-                    # 527 "04heap.c"
+                    # 518 "04heap.c"
                     finalizer_211=map$2charphsFunphp_operator_load_element(info->funcs,fun_name2_210);
                 }
             }
-            # 540 "04heap.c"
             # 531 "04heap.c"
+            # 522 "04heap.c"
             if(_if_conditional262=finalizer_211==((void*)0)&&!type->mClass->mProtocol&&!type->mClass->mNumber,            _if_conditional262) {
-                # 533 "04heap.c"
+                # 524 "04heap.c"
                 multiple_assign_var2=((struct tuple2$2sFunpcharph*)(right_value177=create_force_finalizer_automatically(type,fun_name_208,info)));
                 fun_217=multiple_assign_var2->v1;
                 new_fun_name_218=(char*)come_increment_ref_count(multiple_assign_var2->v2);
                 come_call_finalizer3(right_value177,tuple2$2sFunpcharphp_finalize, 0, 1, 0, 0, __result_obj__);
-                # 535 "04heap.c"
+                # 526 "04heap.c"
                 __dec_obj63=fun_name2_210;
                 fun_name2_210=(char*)come_increment_ref_count(new_fun_name_218);
                 __dec_obj63 = come_decrement_ref_count2(__dec_obj63, (void*)0, (void*)0, 0,0,0, (void*)0);
-                # 536 "04heap.c"
+                # 527 "04heap.c"
                 finalizer_211=fun_217;
                 new_fun_name_218 = come_decrement_ref_count2(new_fun_name_218, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
-            # 652 "04heap.c"
-            # 540 "04heap.c"
+            # 643 "04heap.c"
+            # 531 "04heap.c"
             if(_if_conditional263=finalizer_211!=((void*)0),            _if_conditional263) {
-                # 582 "04heap.c"
-                # 541 "04heap.c"
+                # 573 "04heap.c"
+                # 532 "04heap.c"
                 if(_if_conditional264=klass_206->mProtocol&&type->mPointerNum==1,                _if_conditional264) {
-                    # 542 "04heap.c"
+                    # 533 "04heap.c"
                     type_name_219=(char*)come_increment_ref_count(((char*)(right_value178=make_type_name_string(type,(_Bool)0,(_Bool)0,(_Bool)0,info))));
                     right_value178 = come_decrement_ref_count2(right_value178, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                    # 561 "04heap.c"
-                    # 543 "04heap.c"
+                    # 552 "04heap.c"
+                    # 534 "04heap.c"
                     if(c_value_205) {
-                        # 560 "04heap.c"
-                        # 544 "04heap.c"
+                        # 551 "04heap.c"
+                        # 535 "04heap.c"
                         if(no_decrement) {
-                            # 551 "04heap.c"
-                            # 545 "04heap.c"
+                            # 542 "04heap.c"
+                            # 536 "04heap.c"
                             if(comma) {
-                                # 546 "04heap.c"
+                                # 537 "04heap.c"
                                 add_come_code(info,"come_call_finalizer2(%s, %s, ((%s)%s)->finalize, ((%s)%s)->_protocol_obj, %d, %d, %d, %d, __result_obj__),\n",fun_name2_210,c_value_205,type_name_219,c_value_205,type_name_219,c_value_205,type->mAllocaValue,no_decrement,no_free,force_delete_);
                             }
                             else {
-                                # 549 "04heap.c"
+                                # 540 "04heap.c"
                                 add_come_code(info,"come_call_finalizer2(%s, %s, ((%s)%s)->finalize, ((%s)%s)->_protocol_obj, %d, %d, %d, %d, __result_obj__);\n",fun_name2_210,c_value_205,type_name_219,c_value_205,type_name_219,c_value_205,type->mAllocaValue,no_decrement,no_free,force_delete_);
                             }
                         }
                         else {
-                            # 559 "04heap.c"
-                            # 553 "04heap.c"
+                            # 550 "04heap.c"
+                            # 544 "04heap.c"
                             if(comma) {
-                                # 554 "04heap.c"
+                                # 545 "04heap.c"
                                 add_come_code(info,"come_call_finalizer2(%s, %s, ((%s)%s)->finalize, ((%s)%s)->_protocol_obj, %d, %d, %d, %d, (void*)0),\n",fun_name2_210,c_value_205,type_name_219,c_value_205,type_name_219,c_value_205,type->mAllocaValue,no_decrement,no_free,force_delete_);
                             }
                             else {
-                                # 557 "04heap.c"
+                                # 548 "04heap.c"
                                 add_come_code(info,"come_call_finalizer2(%s, %s, ((%s)%s)->finalize, ((%s)%s)->_protocol_obj, %d, %d, %d, %d, (void*)0);\n",fun_name2_210,c_value_205,type_name_219,c_value_205,type_name_219,c_value_205,type->mAllocaValue,no_decrement,no_free,force_delete_);
                             }
                         }
@@ -7692,35 +7688,35 @@ memset(&type_name_262, 0, sizeof(char*));
                     type_name_219 = come_decrement_ref_count2(type_name_219, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 }
                 else {
-                    # 581 "04heap.c"
-                    # 563 "04heap.c"
+                    # 572 "04heap.c"
+                    # 554 "04heap.c"
                     if(c_value_205) {
-                        # 580 "04heap.c"
-                        # 564 "04heap.c"
+                        # 571 "04heap.c"
+                        # 555 "04heap.c"
                         if(no_decrement) {
-                            # 571 "04heap.c"
-                            # 565 "04heap.c"
+                            # 562 "04heap.c"
+                            # 556 "04heap.c"
                             if(comma) {
-                                # 566 "04heap.c"
+                                # 557 "04heap.c"
                                 add_come_code(info,((char*)(right_value179=xsprintf("come_call_finalizer3(%s,%s, %d, %d, %d, %d, __result_obj__),\n",c_value_205,fun_name2_210,type->mAllocaValue,no_decrement,no_free,force_delete_))));
                                 right_value179 = come_decrement_ref_count2(right_value179, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                             }
                             else {
-                                # 569 "04heap.c"
+                                # 560 "04heap.c"
                                 add_come_code(info,((char*)(right_value180=xsprintf("come_call_finalizer3(%s,%s, %d, %d, %d, %d, __result_obj__);\n",c_value_205,fun_name2_210,type->mAllocaValue,no_decrement,no_free,force_delete_))));
                                 right_value180 = come_decrement_ref_count2(right_value180, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                             }
                         }
                         else {
-                            # 579 "04heap.c"
-                            # 573 "04heap.c"
+                            # 570 "04heap.c"
+                            # 564 "04heap.c"
                             if(comma) {
-                                # 574 "04heap.c"
+                                # 565 "04heap.c"
                                 add_come_code(info,((char*)(right_value181=xsprintf("come_call_finalizer3(%s,%s, %d, %d, %d, %d, (void*)0),\n",c_value_205,fun_name2_210,type->mAllocaValue,no_decrement,no_free,force_delete_))));
                                 right_value181 = come_decrement_ref_count2(right_value181, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                             }
                             else {
-                                # 577 "04heap.c"
+                                # 568 "04heap.c"
                                 add_come_code(info,((char*)(right_value182=xsprintf("come_call_finalizer3(%s,%s, %d, %d, %d, %d, (void*)0);\n",c_value_205,fun_name2_210,type->mAllocaValue,no_decrement,no_free,force_delete_))));
                                 right_value182 = come_decrement_ref_count2(right_value182, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                             }
@@ -7729,23 +7725,23 @@ memset(&type_name_262, 0, sizeof(char*));
                 }
             }
             else {
-                # 608 "04heap.c"
-                # 584 "04heap.c"
+                # 599 "04heap.c"
+                # 575 "04heap.c"
                 if(_if_conditional273=klass_206->mStruct&&type->mPointerNum==0,                _if_conditional273) {
-                    # 594 "04heap.c"
+                    # 585 "04heap.c"
                     for(                    o2_saved_220=(struct list$1tuple2$2charphsTypephph*)come_increment_ref_count((klass_206->mFields)),it_223=list$1tuple2$2charphsTypephph_begin((o2_saved_220));                    !list$1tuple2$2charphsTypephph_end((o2_saved_220));                    it_223=list$1tuple2$2charphsTypephph_next((o2_saved_220))                    ){
-                        # 587 "04heap.c"
+                        # 578 "04heap.c"
                         multiple_assign_var3=it_223;
                         name_226=(char*)come_increment_ref_count(multiple_assign_var3->v1);
                         field_type_227=(struct sType*)come_increment_ref_count(multiple_assign_var3->v2);
-                        # 593 "04heap.c"
-                        # 589 "04heap.c"
+                        # 584 "04heap.c"
+                        # 580 "04heap.c"
                         if(_if_conditional278=field_type_227->mHeap&&field_type_227->mPointerNum>0,                        _if_conditional278) {
-                            # 590 "04heap.c"
+                            # 581 "04heap.c"
                             obj_228=(char*)come_increment_ref_count(((char*)(right_value184=xsprintf("(((%s)%s).%s)",((char*)(right_value183=make_type_name_string(type,(_Bool)0,(_Bool)0,(_Bool)0,info))),c_value_205,name_226))));
                             right_value183 = come_decrement_ref_count2(right_value183, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                             right_value184 = come_decrement_ref_count2(right_value184, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                            # 591 "04heap.c"
+                            # 582 "04heap.c"
                             free_object(field_type_227,obj_228,no_decrement,no_free,info,(_Bool)0,(_Bool)0,(_Bool)0);
                             obj_228 = come_decrement_ref_count2(obj_228, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         }
@@ -7755,23 +7751,23 @@ memset(&type_name_262, 0, sizeof(char*));
                     come_call_finalizer3(o2_saved_220,list$1tuple2$2charphsTypephphp_finalize, 0, 0, 0, 0, (void*)0);
                 }
                 else {
-                    # 608 "04heap.c"
-                    # 595 "04heap.c"
+                    # 599 "04heap.c"
+                    # 586 "04heap.c"
                     if(_if_conditional282=klass_206->mStruct&&type->mPointerNum==1,                    _if_conditional282) {
-                        # 605 "04heap.c"
+                        # 596 "04heap.c"
                         for(                        o2_saved_231=(struct list$1tuple2$2charphsTypephph*)come_increment_ref_count((klass_206->mFields)),it_232=list$1tuple2$2charphsTypephph_begin((o2_saved_231));                        !list$1tuple2$2charphsTypephph_end((o2_saved_231));                        it_232=list$1tuple2$2charphsTypephph_next((o2_saved_231))                        ){
-                            # 598 "04heap.c"
+                            # 589 "04heap.c"
                             multiple_assign_var4=it_232;
                             name_233=(char*)come_increment_ref_count(multiple_assign_var4->v1);
                             field_type_234=(struct sType*)come_increment_ref_count(multiple_assign_var4->v2);
-                            # 604 "04heap.c"
-                            # 600 "04heap.c"
+                            # 595 "04heap.c"
+                            # 591 "04heap.c"
                             if(_if_conditional283=field_type_234->mHeap&&field_type_234->mPointerNum>0,                            _if_conditional283) {
-                                # 601 "04heap.c"
+                                # 592 "04heap.c"
                                 obj_235=(char*)come_increment_ref_count(((char*)(right_value186=xsprintf("(((%s)%s)->%s)",((char*)(right_value185=make_type_name_string(type,(_Bool)0,(_Bool)0,(_Bool)0,info))),c_value_205,name_233))));
                                 right_value185 = come_decrement_ref_count2(right_value185, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 right_value186 = come_decrement_ref_count2(right_value186, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                # 602 "04heap.c"
+                                # 593 "04heap.c"
                                 free_object(field_type_234,obj_235,no_decrement,no_free,info,(_Bool)0,(_Bool)0,(_Bool)0);
                                 obj_235 = come_decrement_ref_count2(obj_235, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                             }
@@ -7781,41 +7777,41 @@ memset(&type_name_262, 0, sizeof(char*));
                         come_call_finalizer3(o2_saved_231,list$1tuple2$2charphsTypephphp_finalize, 0, 0, 0, 0, (void*)0);
                     }
                 }
-                # 651 "04heap.c"
-                # 608 "04heap.c"
+                # 642 "04heap.c"
+                # 599 "04heap.c"
                 if(_if_conditional284=!type->mAllocaValue,                _if_conditional284) {
-                    # 650 "04heap.c"
-                    # 609 "04heap.c"
+                    # 641 "04heap.c"
+                    # 600 "04heap.c"
                     if(_if_conditional285=klass_206->mProtocol&&type->mPointerNum==1,                    _if_conditional285) {
-                        # 629 "04heap.c"
-                        # 610 "04heap.c"
+                        # 620 "04heap.c"
+                        # 601 "04heap.c"
                         if(c_value_205) {
-                            # 611 "04heap.c"
+                            # 602 "04heap.c"
                             type_name_236=(char*)come_increment_ref_count(((char*)(right_value187=make_type_name_string(type,(_Bool)0,(_Bool)0,(_Bool)0,info))));
                             right_value187 = come_decrement_ref_count2(right_value187, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                            # 628 "04heap.c"
-                            # 612 "04heap.c"
+                            # 619 "04heap.c"
+                            # 603 "04heap.c"
                             if(no_decrement) {
-                                # 619 "04heap.c"
-                                # 613 "04heap.c"
+                                # 610 "04heap.c"
+                                # 604 "04heap.c"
                                 if(comma) {
-                                    # 614 "04heap.c"
+                                    # 605 "04heap.c"
                                     add_come_code(info,"(%s) ? %s = come_decrement_ref_count2(%s, ((%s)%s)->finalize, ((%s)%s)->_protocol_obj, %d, %d,%d, __result_obj__):0,\n",c_value_205,c_value_205,c_value_205,type_name_236,c_value_205,type_name_236,c_value_205,no_decrement,no_free,force_delete_);
                                 }
                                 else {
-                                    # 617 "04heap.c"
+                                    # 608 "04heap.c"
                                     add_come_code(info,"if(%s) { %s = come_decrement_ref_count2(%s, ((%s)%s)->finalize, ((%s)%s)->_protocol_obj, %d, %d, %d, __result_obj__); } \n",c_value_205,c_value_205,c_value_205,type_name_236,c_value_205,type_name_236,c_value_205,no_decrement,no_free,force_delete_);
                                 }
                             }
                             else {
-                                # 627 "04heap.c"
-                                # 621 "04heap.c"
+                                # 618 "04heap.c"
+                                # 612 "04heap.c"
                                 if(comma) {
-                                    # 622 "04heap.c"
+                                    # 613 "04heap.c"
                                     add_come_code(info,"(%s) ? %s = come_decrement_ref_count2(%s, ((%s)%s)->finalize, ((%s)%s)->_protocol_obj, %d, %d, %d, (void*)0):0,\n",c_value_205,c_value_205,c_value_205,type_name_236,c_value_205,type_name_236,c_value_205,no_decrement,no_free,force_delete_);
                                 }
                                 else {
-                                    # 625 "04heap.c"
+                                    # 616 "04heap.c"
                                     add_come_code(info,"if(%s) { %s = come_decrement_ref_count2(%s, ((%s)%s)->finalize, ((%s)%s)->_protocol_obj, %d, %d, %d, (void*)0); } \n",c_value_205,c_value_205,c_value_205,type_name_236,c_value_205,type_name_236,c_value_205,no_decrement,no_free,force_delete_);
                                 }
                             }
@@ -7823,32 +7819,32 @@ memset(&type_name_262, 0, sizeof(char*));
                         }
                     }
                     else {
-                        # 649 "04heap.c"
-                        # 631 "04heap.c"
+                        # 640 "04heap.c"
+                        # 622 "04heap.c"
                         if(c_value_205) {
-                            # 648 "04heap.c"
-                            # 632 "04heap.c"
+                            # 639 "04heap.c"
+                            # 623 "04heap.c"
                             if(no_decrement) {
-                                # 639 "04heap.c"
-                                # 633 "04heap.c"
+                                # 630 "04heap.c"
+                                # 624 "04heap.c"
                                 if(comma) {
-                                    # 634 "04heap.c"
+                                    # 625 "04heap.c"
                                     add_come_code(info,"%s = come_decrement_ref_count2(%s, (void*)0, (void*)0, %d, %d, %d, __result_obj__),\n",c_value_205,c_value_205,no_decrement,no_free,force_delete_);
                                 }
                                 else {
-                                    # 637 "04heap.c"
+                                    # 628 "04heap.c"
                                     add_come_code(info,"%s = come_decrement_ref_count2(%s, (void*)0, (void*)0, %d, %d, %d, __result_obj__);\n",c_value_205,c_value_205,no_decrement,no_free,force_delete_);
                                 }
                             }
                             else {
-                                # 647 "04heap.c"
-                                # 641 "04heap.c"
+                                # 638 "04heap.c"
+                                # 632 "04heap.c"
                                 if(comma) {
-                                    # 642 "04heap.c"
+                                    # 633 "04heap.c"
                                     add_come_code(info,"%s = come_decrement_ref_count2(%s, (void*)0, (void*)0, %d, %d, %d, (void*)0),\n",c_value_205,c_value_205,no_decrement,no_free,force_delete_);
                                 }
                                 else {
-                                    # 645 "04heap.c"
+                                    # 636 "04heap.c"
                                     add_come_code(info,"%s = come_decrement_ref_count2(%s, (void*)0, (void*)0, %d, %d, %d, (void*)0);\n",c_value_205,c_value_205,no_decrement,no_free,force_delete_);
                                 }
                             }
@@ -7861,53 +7857,53 @@ memset(&type_name_262, 0, sizeof(char*));
             fun_name2_210 = come_decrement_ref_count2(fun_name2_210, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
         else {
-            # 654 "04heap.c"
+            # 645 "04heap.c"
             c_value_237=(char*)come_increment_ref_count(((char*)(right_value188=__builtin_string(obj))));
             right_value188 = come_decrement_ref_count2(right_value188, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 656 "04heap.c"
+            # 647 "04heap.c"
             klass_238=type->mClass;
-            # 658 "04heap.c"
+            # 649 "04heap.c"
             class_name_239=klass_238->mName;
-            # 660 "04heap.c"
+            # 651 "04heap.c"
             fun_name_240="finalize";
-            # 662 "04heap.c"
+            # 653 "04heap.c"
             type2_241=(struct sType*)come_increment_ref_count(((struct sType*)(right_value189=sType_clone(type))));
             come_call_finalizer3(right_value189,sType_finalize, 0, 1, 0, 0, __result_obj__);
-            # 663 "04heap.c"
+            # 654 "04heap.c"
             type2_241->mHeap=(_Bool)0;
-            # 665 "04heap.c"
+            # 656 "04heap.c"
             fun_name2_242=(char*)come_increment_ref_count(((char*)(right_value190=create_method_name(type,(_Bool)0,fun_name_240,info,(_Bool)1))));
             right_value190 = come_decrement_ref_count2(right_value190, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 667 "04heap.c"
+            # 658 "04heap.c"
             finalizer_243=((void*)0);
-            # 704 "04heap.c"
-            # 668 "04heap.c"
+            # 695 "04heap.c"
+            # 659 "04heap.c"
             if(_if_conditional294=list$1sTypeph_length(type->mGenericsTypes)>0,            _if_conditional294) {
-                # 669 "04heap.c"
+                # 660 "04heap.c"
                 finalizer_243=map$2charphsFunphp_operator_load_element(info->funcs,fun_name2_242);
-                # 686 "04heap.c"
-                # 671 "04heap.c"
+                # 677 "04heap.c"
+                # 662 "04heap.c"
                 if(_if_conditional295=finalizer_243==((void*)0),                _if_conditional295) {
-                    # 672 "04heap.c"
+                    # 663 "04heap.c"
                     none_generics_name_244=(char*)come_increment_ref_count(((char*)(right_value191=get_none_generics_name(type2_241->mClass->mName))));
                     right_value191 = come_decrement_ref_count2(right_value191, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                    # 674 "04heap.c"
+                    # 665 "04heap.c"
                     generics_fun_name_245=(char*)come_increment_ref_count(((char*)(right_value192=xsprintf("%s_%s",none_generics_name_244,fun_name_240))));
                     right_value192 = come_decrement_ref_count2(right_value192, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                    # 675 "04heap.c"
+                    # 666 "04heap.c"
                     generics_fun_246=map$2charphsGenericsFunphp_operator_load_element(info->generics_funcs,generics_fun_name_245);
-                    # 685 "04heap.c"
-                    # 677 "04heap.c"
+                    # 676 "04heap.c"
+                    # 668 "04heap.c"
                     if(generics_fun_246) {
-                        # 683 "04heap.c"
-                        # 678 "04heap.c"
+                        # 674 "04heap.c"
+                        # 669 "04heap.c"
                         if(_if_conditional297=!create_generics_fun((char*)come_increment_ref_count(fun_name2_242),generics_fun_246,type,info),                        _if_conditional297) {
-                            # 680 "04heap.c"
+                            # 671 "04heap.c"
                             printf("%s %d: can't create generics finalizer\n",info->sname,info->sline);
-                            # 681 "04heap.c"
+                            # 672 "04heap.c"
                             exit(2);
                         }
-                        # 683 "04heap.c"
+                        # 674 "04heap.c"
                         finalizer_243=map$2charphsFunphp_operator_load_element(info->funcs,fun_name2_242);
                     }
                     none_generics_name_244 = come_decrement_ref_count2(none_generics_name_244, (void*)0, (void*)0, 0, 0, 0, (void*)0);
@@ -7915,86 +7911,86 @@ memset(&type_name_262, 0, sizeof(char*));
                 }
             }
             else {
-                # 688 "04heap.c"
-                # 699 "04heap.c"
+                # 679 "04heap.c"
+                # 690 "04heap.c"
                 for(                i_247=128-1;                i_247>=1;                i_247--                ){
-                    # 690 "04heap.c"
+                    # 681 "04heap.c"
                     new_fun_name_248=(char*)come_increment_ref_count(((char*)(right_value193=xsprintf("%s_v%d",fun_name2_242,i_247))));
                     right_value193 = come_decrement_ref_count2(right_value193, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                    # 691 "04heap.c"
+                    # 682 "04heap.c"
                     finalizer_243=map$2charphsFunphp_operator_load_element(info->funcs,new_fun_name_248);
-                    # 697 "04heap.c"
-                    # 693 "04heap.c"
+                    # 688 "04heap.c"
+                    # 684 "04heap.c"
                     if(finalizer_243) {
-                        # 694 "04heap.c"
+                        # 685 "04heap.c"
                         __dec_obj64=fun_name2_242;
                         fun_name2_242=(char*)come_increment_ref_count(((char*)(right_value194=__builtin_string(new_fun_name_248))));
                         __dec_obj64 = come_decrement_ref_count2(__dec_obj64, (void*)0, (void*)0, 0,0,0, (void*)0);
                         right_value194 = come_decrement_ref_count2(right_value194, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                        # 695 "04heap.c"
+                        # 686 "04heap.c"
                         new_fun_name_248 = come_decrement_ref_count2(new_fun_name_248, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         break;
                     }
                     new_fun_name_248 = come_decrement_ref_count2(new_fun_name_248, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 }
-                # 702 "04heap.c"
-                # 699 "04heap.c"
+                # 693 "04heap.c"
+                # 690 "04heap.c"
                 if(_if_conditional299=finalizer_243==((void*)0),                _if_conditional299) {
-                    # 700 "04heap.c"
+                    # 691 "04heap.c"
                     finalizer_243=map$2charphsFunphp_operator_load_element(info->funcs,fun_name2_242);
                 }
             }
-            # 713 "04heap.c"
             # 704 "04heap.c"
+            # 695 "04heap.c"
             if(_if_conditional300=finalizer_243==((void*)0)&&!type->mClass->mProtocol&&!type->mClass->mNumber,            _if_conditional300) {
-                # 706 "04heap.c"
+                # 697 "04heap.c"
                 multiple_assign_var5=((struct tuple2$2sFunpcharph*)(right_value195=create_finalizer_automatically(type,fun_name_240,info)));
                 fun_249=multiple_assign_var5->v1;
                 new_fun_name_250=(char*)come_increment_ref_count(multiple_assign_var5->v2);
                 come_call_finalizer3(right_value195,tuple2$2sFunpcharphp_finalize, 0, 1, 0, 0, __result_obj__);
-                # 708 "04heap.c"
+                # 699 "04heap.c"
                 __dec_obj65=fun_name2_242;
                 fun_name2_242=(char*)come_increment_ref_count(new_fun_name_250);
                 __dec_obj65 = come_decrement_ref_count2(__dec_obj65, (void*)0, (void*)0, 0,0,0, (void*)0);
-                # 709 "04heap.c"
+                # 700 "04heap.c"
                 finalizer_243=fun_249;
                 new_fun_name_250 = come_decrement_ref_count2(new_fun_name_250, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             }
-            # 825 "04heap.c"
-            # 713 "04heap.c"
+            # 816 "04heap.c"
+            # 704 "04heap.c"
             if(_if_conditional301=finalizer_243!=((void*)0),            _if_conditional301) {
-                # 755 "04heap.c"
-                # 714 "04heap.c"
+                # 746 "04heap.c"
+                # 705 "04heap.c"
                 if(_if_conditional302=klass_238->mProtocol&&type->mPointerNum==1,                _if_conditional302) {
-                    # 715 "04heap.c"
+                    # 706 "04heap.c"
                     type_name_251=(char*)come_increment_ref_count(((char*)(right_value196=make_type_name_string(type,(_Bool)0,(_Bool)0,(_Bool)0,info))));
                     right_value196 = come_decrement_ref_count2(right_value196, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                    # 734 "04heap.c"
-                    # 716 "04heap.c"
+                    # 725 "04heap.c"
+                    # 707 "04heap.c"
                     if(c_value_237) {
-                        # 733 "04heap.c"
-                        # 717 "04heap.c"
+                        # 724 "04heap.c"
+                        # 708 "04heap.c"
                         if(no_decrement) {
-                            # 724 "04heap.c"
-                            # 718 "04heap.c"
+                            # 715 "04heap.c"
+                            # 709 "04heap.c"
                             if(comma) {
-                                # 719 "04heap.c"
+                                # 710 "04heap.c"
                                 add_come_code(info,"come_call_finalizer2(%s, %s, ((%s)%s)->finalize, ((%s)%s)->_protocol_obj, %d, %d, %d, %d, __result_obj__),\n",fun_name2_242,c_value_237,type_name_251,c_value_237,type_name_251,c_value_237,type->mAllocaValue,no_decrement,no_free,force_delete_);
                             }
                             else {
-                                # 722 "04heap.c"
+                                # 713 "04heap.c"
                                 add_come_code(info,"come_call_finalizer2(%s, %s, ((%s)%s)->finalize, ((%s)%s)->_protocol_obj, %d, %d, %d, %d, __result_obj__);\n",fun_name2_242,c_value_237,type_name_251,c_value_237,type_name_251,c_value_237,type->mAllocaValue,no_decrement,no_free,force_delete_);
                             }
                         }
                         else {
-                            # 732 "04heap.c"
-                            # 726 "04heap.c"
+                            # 723 "04heap.c"
+                            # 717 "04heap.c"
                             if(comma) {
-                                # 727 "04heap.c"
+                                # 718 "04heap.c"
                                 add_come_code(info,"come_call_finalizer2(%s, %s, ((%s)%s)->finalize, ((%s)%s)->_protocol_obj, %d, %d, %d, %d, (void*)0),\n",fun_name2_242,c_value_237,type_name_251,c_value_237,type_name_251,c_value_237,type->mAllocaValue,no_decrement,no_free,force_delete_);
                             }
                             else {
-                                # 730 "04heap.c"
+                                # 721 "04heap.c"
                                 add_come_code(info,"come_call_finalizer2(%s, %s, ((%s)%s)->finalize, ((%s)%s)->_protocol_obj, %d, %d, %d, %d, (void*)0);\n",fun_name2_242,c_value_237,type_name_251,c_value_237,type_name_251,c_value_237,type->mAllocaValue,no_decrement,no_free,force_delete_);
                             }
                         }
@@ -8002,35 +7998,35 @@ memset(&type_name_262, 0, sizeof(char*));
                     type_name_251 = come_decrement_ref_count2(type_name_251, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 }
                 else {
-                    # 754 "04heap.c"
-                    # 736 "04heap.c"
+                    # 745 "04heap.c"
+                    # 727 "04heap.c"
                     if(c_value_237) {
-                        # 753 "04heap.c"
-                        # 737 "04heap.c"
+                        # 744 "04heap.c"
+                        # 728 "04heap.c"
                         if(no_decrement) {
-                            # 744 "04heap.c"
-                            # 738 "04heap.c"
+                            # 735 "04heap.c"
+                            # 729 "04heap.c"
                             if(comma) {
-                                # 739 "04heap.c"
+                                # 730 "04heap.c"
                                 add_come_code(info,((char*)(right_value197=xsprintf("come_call_finalizer3(%s,%s, %d, %d, %d, %d, __result_obj__),\n",c_value_237,fun_name2_242,type->mAllocaValue,no_decrement,no_free,force_delete_))));
                                 right_value197 = come_decrement_ref_count2(right_value197, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                             }
                             else {
-                                # 742 "04heap.c"
+                                # 733 "04heap.c"
                                 add_come_code(info,((char*)(right_value198=xsprintf("come_call_finalizer3(%s,%s, %d, %d, %d, %d, __result_obj__);\n",c_value_237,fun_name2_242,type->mAllocaValue,no_decrement,no_free,force_delete_))));
                                 right_value198 = come_decrement_ref_count2(right_value198, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                             }
                         }
                         else {
-                            # 752 "04heap.c"
-                            # 746 "04heap.c"
+                            # 743 "04heap.c"
+                            # 737 "04heap.c"
                             if(comma) {
-                                # 747 "04heap.c"
+                                # 738 "04heap.c"
                                 add_come_code(info,((char*)(right_value199=xsprintf("come_call_finalizer3(%s,%s, %d, %d, %d, %d, (void*)0),\n",c_value_237,fun_name2_242,type->mAllocaValue,no_decrement,no_free,force_delete_))));
                                 right_value199 = come_decrement_ref_count2(right_value199, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                             }
                             else {
-                                # 750 "04heap.c"
+                                # 741 "04heap.c"
                                 add_come_code(info,((char*)(right_value200=xsprintf("come_call_finalizer3(%s,%s, %d, %d, %d, %d, (void*)0);\n",c_value_237,fun_name2_242,type->mAllocaValue,no_decrement,no_free,force_delete_))));
                                 right_value200 = come_decrement_ref_count2(right_value200, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                             }
@@ -8039,23 +8035,23 @@ memset(&type_name_262, 0, sizeof(char*));
                 }
             }
             else {
-                # 781 "04heap.c"
-                # 757 "04heap.c"
+                # 772 "04heap.c"
+                # 748 "04heap.c"
                 if(_if_conditional311=klass_238->mStruct&&type->mPointerNum==0,                _if_conditional311) {
-                    # 767 "04heap.c"
+                    # 758 "04heap.c"
                     for(                    o2_saved_252=(struct list$1tuple2$2charphsTypephph*)come_increment_ref_count((klass_238->mFields)),it_253=list$1tuple2$2charphsTypephph_begin((o2_saved_252));                    !list$1tuple2$2charphsTypephph_end((o2_saved_252));                    it_253=list$1tuple2$2charphsTypephph_next((o2_saved_252))                    ){
-                        # 760 "04heap.c"
+                        # 751 "04heap.c"
                         multiple_assign_var6=it_253;
                         name_254=(char*)come_increment_ref_count(multiple_assign_var6->v1);
                         field_type_255=(struct sType*)come_increment_ref_count(multiple_assign_var6->v2);
-                        # 766 "04heap.c"
-                        # 762 "04heap.c"
+                        # 757 "04heap.c"
+                        # 753 "04heap.c"
                         if(_if_conditional312=field_type_255->mHeap&&field_type_255->mPointerNum>0,                        _if_conditional312) {
-                            # 763 "04heap.c"
+                            # 754 "04heap.c"
                             obj_256=(char*)come_increment_ref_count(((char*)(right_value202=xsprintf("(((%s)%s).%s)",((char*)(right_value201=make_type_name_string(type,(_Bool)0,(_Bool)0,(_Bool)0,info))),c_value_237,name_254))));
                             right_value201 = come_decrement_ref_count2(right_value201, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                             right_value202 = come_decrement_ref_count2(right_value202, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                            # 764 "04heap.c"
+                            # 755 "04heap.c"
                             free_object(field_type_255,obj_256,no_decrement,no_free,info,(_Bool)0,(_Bool)0,(_Bool)0);
                             obj_256 = come_decrement_ref_count2(obj_256, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                         }
@@ -8065,23 +8061,23 @@ memset(&type_name_262, 0, sizeof(char*));
                     come_call_finalizer3(o2_saved_252,list$1tuple2$2charphsTypephphp_finalize, 0, 0, 0, 0, (void*)0);
                 }
                 else {
-                    # 781 "04heap.c"
-                    # 768 "04heap.c"
+                    # 772 "04heap.c"
+                    # 759 "04heap.c"
                     if(_if_conditional313=klass_238->mStruct&&type->mPointerNum==1,                    _if_conditional313) {
-                        # 778 "04heap.c"
+                        # 769 "04heap.c"
                         for(                        o2_saved_257=(struct list$1tuple2$2charphsTypephph*)come_increment_ref_count((klass_238->mFields)),it_258=list$1tuple2$2charphsTypephph_begin((o2_saved_257));                        !list$1tuple2$2charphsTypephph_end((o2_saved_257));                        it_258=list$1tuple2$2charphsTypephph_next((o2_saved_257))                        ){
-                            # 771 "04heap.c"
+                            # 762 "04heap.c"
                             multiple_assign_var7=it_258;
                             name_259=(char*)come_increment_ref_count(multiple_assign_var7->v1);
                             field_type_260=(struct sType*)come_increment_ref_count(multiple_assign_var7->v2);
-                            # 777 "04heap.c"
-                            # 773 "04heap.c"
+                            # 768 "04heap.c"
+                            # 764 "04heap.c"
                             if(_if_conditional314=field_type_260->mHeap&&field_type_260->mPointerNum>0,                            _if_conditional314) {
-                                # 774 "04heap.c"
+                                # 765 "04heap.c"
                                 obj_261=(char*)come_increment_ref_count(((char*)(right_value204=xsprintf("(((%s)%s)->%s)",((char*)(right_value203=make_type_name_string(type,(_Bool)0,(_Bool)0,(_Bool)0,info))),c_value_237,name_259))));
                                 right_value203 = come_decrement_ref_count2(right_value203, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
                                 right_value204 = come_decrement_ref_count2(right_value204, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                                # 775 "04heap.c"
+                                # 766 "04heap.c"
                                 free_object(field_type_260,obj_261,no_decrement,no_free,info,(_Bool)0,(_Bool)0,(_Bool)0);
                                 obj_261 = come_decrement_ref_count2(obj_261, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                             }
@@ -8091,41 +8087,41 @@ memset(&type_name_262, 0, sizeof(char*));
                         come_call_finalizer3(o2_saved_257,list$1tuple2$2charphsTypephphp_finalize, 0, 0, 0, 0, (void*)0);
                     }
                 }
-                # 824 "04heap.c"
-                # 781 "04heap.c"
+                # 815 "04heap.c"
+                # 772 "04heap.c"
                 if(_if_conditional315=!type->mAllocaValue,                _if_conditional315) {
-                    # 823 "04heap.c"
-                    # 782 "04heap.c"
+                    # 814 "04heap.c"
+                    # 773 "04heap.c"
                     if(_if_conditional316=klass_238->mProtocol&&type->mPointerNum==1,                    _if_conditional316) {
-                        # 802 "04heap.c"
-                        # 783 "04heap.c"
+                        # 793 "04heap.c"
+                        # 774 "04heap.c"
                         if(c_value_237) {
-                            # 784 "04heap.c"
+                            # 775 "04heap.c"
                             type_name_262=(char*)come_increment_ref_count(((char*)(right_value205=make_type_name_string(type,(_Bool)0,(_Bool)0,(_Bool)0,info))));
                             right_value205 = come_decrement_ref_count2(right_value205, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                            # 801 "04heap.c"
-                            # 785 "04heap.c"
+                            # 792 "04heap.c"
+                            # 776 "04heap.c"
                             if(no_decrement) {
-                                # 792 "04heap.c"
-                                # 786 "04heap.c"
+                                # 783 "04heap.c"
+                                # 777 "04heap.c"
                                 if(comma) {
-                                    # 787 "04heap.c"
+                                    # 778 "04heap.c"
                                     add_come_code(info,"(%s) ? %s = come_decrement_ref_count2(%s, ((%s)%s)->finalize, ((%s)%s)->_protocol_obj, %d, %d,%d, __result_obj__):0,\n",c_value_237,c_value_237,c_value_237,type_name_262,c_value_237,type_name_262,c_value_237,no_decrement,no_free,force_delete_);
                                 }
                                 else {
-                                    # 790 "04heap.c"
+                                    # 781 "04heap.c"
                                     add_come_code(info,"if(%s) { %s = come_decrement_ref_count2(%s, ((%s)%s)->finalize, ((%s)%s)->_protocol_obj, %d, %d, %d, __result_obj__); } \n",c_value_237,c_value_237,c_value_237,type_name_262,c_value_237,type_name_262,c_value_237,no_decrement,no_free,force_delete_);
                                 }
                             }
                             else {
-                                # 800 "04heap.c"
-                                # 794 "04heap.c"
+                                # 791 "04heap.c"
+                                # 785 "04heap.c"
                                 if(comma) {
-                                    # 795 "04heap.c"
+                                    # 786 "04heap.c"
                                     add_come_code(info,"(%s) ? %s = come_decrement_ref_count2(%s, ((%s)%s)->finalize, ((%s)%s)->_protocol_obj, %d, %d, %d, (void*)0):0,\n",c_value_237,c_value_237,c_value_237,type_name_262,c_value_237,type_name_262,c_value_237,no_decrement,no_free,force_delete_);
                                 }
                                 else {
-                                    # 798 "04heap.c"
+                                    # 789 "04heap.c"
                                     add_come_code(info,"if(%s) { %s = come_decrement_ref_count2(%s, ((%s)%s)->finalize, ((%s)%s)->_protocol_obj, %d, %d, %d, (void*)0); } \n",c_value_237,c_value_237,c_value_237,type_name_262,c_value_237,type_name_262,c_value_237,no_decrement,no_free,force_delete_);
                                 }
                             }
@@ -8133,32 +8129,32 @@ memset(&type_name_262, 0, sizeof(char*));
                         }
                     }
                     else {
-                        # 822 "04heap.c"
-                        # 804 "04heap.c"
+                        # 813 "04heap.c"
+                        # 795 "04heap.c"
                         if(c_value_237) {
-                            # 821 "04heap.c"
-                            # 805 "04heap.c"
+                            # 812 "04heap.c"
+                            # 796 "04heap.c"
                             if(no_decrement) {
-                                # 812 "04heap.c"
-                                # 806 "04heap.c"
+                                # 803 "04heap.c"
+                                # 797 "04heap.c"
                                 if(comma) {
-                                    # 807 "04heap.c"
+                                    # 798 "04heap.c"
                                     add_come_code(info,"%s = come_decrement_ref_count2(%s, (void*)0, (void*)0, %d, %d, %d, __result_obj__),\n",c_value_237,c_value_237,no_decrement,no_free,force_delete_);
                                 }
                                 else {
-                                    # 810 "04heap.c"
+                                    # 801 "04heap.c"
                                     add_come_code(info,"%s = come_decrement_ref_count2(%s, (void*)0, (void*)0, %d, %d, %d, __result_obj__);\n",c_value_237,c_value_237,no_decrement,no_free,force_delete_);
                                 }
                             }
                             else {
-                                # 820 "04heap.c"
-                                # 814 "04heap.c"
+                                # 811 "04heap.c"
+                                # 805 "04heap.c"
                                 if(comma) {
-                                    # 815 "04heap.c"
+                                    # 806 "04heap.c"
                                     add_come_code(info,"%s = come_decrement_ref_count2(%s, (void*)0, (void*)0, %d, %d, %d, (void*)0),\n",c_value_237,no_decrement,no_free,force_delete_);
                                 }
                                 else {
-                                    # 818 "04heap.c"
+                                    # 809 "04heap.c"
                                     add_come_code(info,"%s = come_decrement_ref_count2(%s, (void*)0, (void*)0, %d, %d, %d, (void*)0);\n",c_value_237,c_value_237,no_decrement,no_free,force_delete_);
                                 }
                             }
@@ -8171,11 +8167,11 @@ memset(&type_name_262, 0, sizeof(char*));
             fun_name2_242 = come_decrement_ref_count2(fun_name2_242, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
     }
-    # 828 "04heap.c"
+    # 819 "04heap.c"
     __dec_obj66=info->right_value_objects;
     info->right_value_objects=(struct list$1sRightValueObjectph*)come_increment_ref_count(right_value_objects_203);
     come_call_finalizer3(__dec_obj66,list$1sRightValueObjectph_finalize, 0, 0, 0, 0, (void*)0);
-    # 829 "04heap.c"
+    # 820 "04heap.c"
     __dec_obj67=info->stack;
     info->stack=(struct list$1CVALUEph*)come_increment_ref_count(stack_saved_202);
     come_call_finalizer3(__dec_obj67,list$1CVALUEph_finalize, 0, 0, 0, 0, (void*)0);
@@ -8442,63 +8438,63 @@ right_value227 = (void*)0;
 right_value228 = (void*)0;
 right_value229 = (void*)0;
 right_value230 = (void*)0;
-    # 834 "04heap.c"
+    # 825 "04heap.c"
     type2_263=(struct sType*)come_increment_ref_count(((struct sType*)(right_value206=sType_clone(type))));
     come_call_finalizer3(right_value206,sType_finalize, 0, 1, 0, 0, __result_obj__);
-    # 839 "04heap.c"
-    # 835 "04heap.c"
+    # 830 "04heap.c"
+    # 826 "04heap.c"
     if(type->mNoSolvedGenericsType->v1) {
-        # 836 "04heap.c"
+        # 827 "04heap.c"
         type=type->mNoSolvedGenericsType->v1;
     }
-    # 840 "04heap.c"
+    # 831 "04heap.c"
     result_264=((void*)0);
-    # 840 "04heap.c"
+    # 831 "04heap.c"
     result_type_265=((void*)0);
-    # 841 "04heap.c"
+    # 832 "04heap.c"
     stack_saved_266=(struct list$1CVALUEph*)come_increment_ref_count(info->stack);
-    # 842 "04heap.c"
+    # 833 "04heap.c"
     right_value_objects_267=info->right_value_objects;
-    # 844 "04heap.c"
+    # 835 "04heap.c"
     c_value_268=(char*)come_increment_ref_count(((char*)(right_value207=__builtin_string(obj))));
     right_value207 = come_decrement_ref_count2(right_value207, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-    # 846 "04heap.c"
+    # 837 "04heap.c"
     klass_269=type->mClass;
-    # 848 "04heap.c"
+    # 839 "04heap.c"
     class_name_270=klass_269->mName;
-    # 850 "04heap.c"
+    # 841 "04heap.c"
     fun_name_271="clone";
-    # 852 "04heap.c"
+    # 843 "04heap.c"
     cloner_272=((void*)0);
-    # 853 "04heap.c"
-    # 891 "04heap.c"
-    # 854 "04heap.c"
+    # 844 "04heap.c"
+    # 882 "04heap.c"
+    # 845 "04heap.c"
     if(_if_conditional326=list$1sTypeph_length(type->mGenericsTypes)>0,    _if_conditional326) {
-        # 855 "04heap.c"
+        # 846 "04heap.c"
         none_generics_name_274=(char*)come_increment_ref_count(((char*)(right_value208=get_none_generics_name(type->mClass->mName))));
         right_value208 = come_decrement_ref_count2(right_value208, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 857 "04heap.c"
+        # 848 "04heap.c"
         obj_type_275=(struct sType*)come_increment_ref_count(((struct sType*)(right_value209=solve_generics(type,info->generics_type,info))));
         come_call_finalizer3(right_value209,sType_finalize, 0, 1, 0, 0, __result_obj__);
-        # 859 "04heap.c"
+        # 850 "04heap.c"
         __dec_obj68=fun_name2_273;
         fun_name2_273=(char*)come_increment_ref_count(((char*)(right_value210=create_method_name(obj_type_275,(_Bool)0,fun_name_271,info,(_Bool)1))));
         __dec_obj68 = come_decrement_ref_count2(__dec_obj68, (void*)0, (void*)0, 0,0,0, (void*)0);
         right_value210 = come_decrement_ref_count2(right_value210, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 860 "04heap.c"
+        # 851 "04heap.c"
         fun_name3_276=(char*)come_increment_ref_count(((char*)(right_value211=xsprintf("%s_%s",none_generics_name_274,fun_name_271))));
         right_value211 = come_decrement_ref_count2(right_value211, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 862 "04heap.c"
+        # 853 "04heap.c"
         generics_fun_279=map$2charphsGenericsFunph_at(info->generics_funcs,fun_name3_276,((void*)0));
-        # 870 "04heap.c"
-        # 864 "04heap.c"
+        # 861 "04heap.c"
+        # 855 "04heap.c"
         if(generics_fun_279) {
-            # 868 "04heap.c"
-            # 865 "04heap.c"
+            # 859 "04heap.c"
+            # 856 "04heap.c"
             if(_if_conditional332=!create_generics_fun((char*)come_increment_ref_count(((char*)(right_value212=__builtin_string(fun_name2_273)))),generics_fun_279,obj_type_275,info),            right_value212 = come_decrement_ref_count2(right_value212, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
             _if_conditional332) {
-                # 866 "04heap.c"
-                __result129__ = __result_obj__ = ((struct tuple2$2sTypephcharph*)(right_value217=tuple2$2sTypephcharph_initialize((struct tuple2$2sTypephcharph*)come_increment_ref_count(((struct tuple2$2sTypephcharph*)(right_value216=(struct tuple2$2sTypephcharph*)come_calloc(1, sizeof(struct tuple2$2sTypephcharph)*(1), "04heap.c", 866, "struct tuple2$2sTypephcharph")))),(struct sType*)come_increment_ref_count(((struct sType*)(right_value214=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value213=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "04heap.c", 866, "sType")))),"void",(_Bool)0,info)))),(char*)come_increment_ref_count(((char*)(right_value215=__builtin_string("")))))));
+                # 857 "04heap.c"
+                __result129__ = __result_obj__ = ((struct tuple2$2sTypephcharph*)(right_value217=tuple2$2sTypephcharph_initialize((struct tuple2$2sTypephcharph*)come_increment_ref_count(((struct tuple2$2sTypephcharph*)(right_value216=(struct tuple2$2sTypephcharph*)come_calloc(1, sizeof(struct tuple2$2sTypephcharph)*(1), "04heap.c", 857, "struct tuple2$2sTypephcharph")))),(struct sType*)come_increment_ref_count(((struct sType*)(right_value214=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value213=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "04heap.c", 857, "sType")))),"void",(_Bool)0,info)))),(char*)come_increment_ref_count(((char*)(right_value215=__builtin_string("")))))));
                 none_generics_name_274 = come_decrement_ref_count2(none_generics_name_274, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 come_call_finalizer3(obj_type_275,sType_finalize, 0, 0, 0, 0, (void*)0);
                 fun_name3_276 = come_decrement_ref_count2(fun_name3_276, (void*)0, (void*)0, 0, 0, 0, (void*)0);
@@ -8516,84 +8512,84 @@ right_value230 = (void*)0;
                 return __result129__;
             }
         }
-        # 870 "04heap.c"
+        # 861 "04heap.c"
         cloner_272=map$2charphsFunphp_operator_load_element(info->funcs,fun_name2_273);
         none_generics_name_274 = come_decrement_ref_count2(none_generics_name_274, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         come_call_finalizer3(obj_type_275,sType_finalize, 0, 0, 0, 0, (void*)0);
         fun_name3_276 = come_decrement_ref_count2(fun_name3_276, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
     else {
-        # 873 "04heap.c"
+        # 864 "04heap.c"
         __dec_obj71=fun_name2_273;
         fun_name2_273=(char*)come_increment_ref_count(((char*)(right_value218=create_method_name(type,(_Bool)0,fun_name_271,info,(_Bool)1))));
         __dec_obj71 = come_decrement_ref_count2(__dec_obj71, (void*)0, (void*)0, 0,0,0, (void*)0);
         right_value218 = come_decrement_ref_count2(right_value218, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 875 "04heap.c"
-        # 886 "04heap.c"
+        # 866 "04heap.c"
+        # 877 "04heap.c"
         for(        i_280=128-1;        i_280>=1;        i_280--        ){
-            # 877 "04heap.c"
+            # 868 "04heap.c"
             new_fun_name_281=(char*)come_increment_ref_count(((char*)(right_value219=xsprintf("%s_v%d",fun_name2_273,i_280))));
             right_value219 = come_decrement_ref_count2(right_value219, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 878 "04heap.c"
+            # 869 "04heap.c"
             cloner_272=map$2charphsFunphp_operator_load_element(info->funcs,new_fun_name_281);
-            # 884 "04heap.c"
-            # 880 "04heap.c"
+            # 875 "04heap.c"
+            # 871 "04heap.c"
             if(cloner_272) {
-                # 881 "04heap.c"
+                # 872 "04heap.c"
                 __dec_obj72=fun_name2_273;
                 fun_name2_273=(char*)come_increment_ref_count(((char*)(right_value220=__builtin_string(new_fun_name_281))));
                 __dec_obj72 = come_decrement_ref_count2(__dec_obj72, (void*)0, (void*)0, 0,0,0, (void*)0);
                 right_value220 = come_decrement_ref_count2(right_value220, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 882 "04heap.c"
+                # 873 "04heap.c"
                 new_fun_name_281 = come_decrement_ref_count2(new_fun_name_281, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 break;
             }
             new_fun_name_281 = come_decrement_ref_count2(new_fun_name_281, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
-        # 889 "04heap.c"
-        # 886 "04heap.c"
+        # 880 "04heap.c"
+        # 877 "04heap.c"
         if(_if_conditional336=cloner_272==((void*)0),        _if_conditional336) {
-            # 887 "04heap.c"
+            # 878 "04heap.c"
             cloner_272=map$2charphsFunphp_operator_load_element(info->funcs,fun_name2_273);
         }
     }
-    # 900 "04heap.c"
     # 891 "04heap.c"
+    # 882 "04heap.c"
     if(_if_conditional337=cloner_272==((void*)0)&&!type->mClass->mNumber,    _if_conditional337) {
-        # 893 "04heap.c"
+        # 884 "04heap.c"
         multiple_assign_var8=((struct tuple2$2sFunpcharph*)(right_value221=create_cloner_automatically(type,fun_name_271,info)));
         fun_282=multiple_assign_var8->v1;
         new_fun_name_283=(char*)come_increment_ref_count(multiple_assign_var8->v2);
         come_call_finalizer3(right_value221,tuple2$2sFunpcharphp_finalize, 0, 1, 0, 0, __result_obj__);
-        # 895 "04heap.c"
+        # 886 "04heap.c"
         __dec_obj73=fun_name2_273;
         fun_name2_273=(char*)come_increment_ref_count(new_fun_name_283);
         __dec_obj73 = come_decrement_ref_count2(__dec_obj73, (void*)0, (void*)0, 0,0,0, (void*)0);
-        # 896 "04heap.c"
+        # 887 "04heap.c"
         cloner_272=fun_282;
         new_fun_name_283 = come_decrement_ref_count2(new_fun_name_283, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
-    # 920 "04heap.c"
-    # 900 "04heap.c"
+    # 911 "04heap.c"
+    # 891 "04heap.c"
     if(_if_conditional338=cloner_272!=((void*)0),    _if_conditional338) {
-        # 901 "04heap.c"
+        # 892 "04heap.c"
         __dec_obj74=result_type_265;
         result_type_265=(struct sType*)come_increment_ref_count(cloner_272->mResultType);
         come_call_finalizer3(__dec_obj74,sType_finalize, 0, 0, 0, 0, (void*)0);
-        # 902 "04heap.c"
+        # 893 "04heap.c"
         __dec_obj75=result_type_265;
         result_type_265=(struct sType*)come_increment_ref_count(((struct sType*)(right_value222=solve_generics(result_type_265,type,info))));
         come_call_finalizer3(__dec_obj75,sType_finalize, 0, 0, 0, 0, (void*)0);
         come_call_finalizer3(right_value222,sType_finalize, 0, 1, 0, 0, __result_obj__);
-        # 904 "04heap.c"
+        # 895 "04heap.c"
         __dec_obj76=result_264;
         result_264=(char*)come_increment_ref_count(((char*)(right_value223=xsprintf("%s(%s)",fun_name2_273,c_value_268))));
         __dec_obj76 = come_decrement_ref_count2(__dec_obj76, (void*)0, (void*)0, 0,0,0, (void*)0);
         right_value223 = come_decrement_ref_count2(right_value223, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 909 "04heap.c"
-        # 906 "04heap.c"
+        # 900 "04heap.c"
+        # 897 "04heap.c"
         if(gComeDebug) {
-            # 907 "04heap.c"
+            # 898 "04heap.c"
             __dec_obj77=result_264;
             result_264=(char*)come_increment_ref_count(((char*)(right_value224=append_stackframe(result_264,result_type_265,info))));
             __dec_obj77 = come_decrement_ref_count2(__dec_obj77, (void*)0, (void*)0, 0,0,0, (void*)0);
@@ -8601,25 +8597,25 @@ right_value230 = (void*)0;
         }
     }
     else {
-        # 911 "04heap.c"
+        # 902 "04heap.c"
         __dec_obj78=result_type_265;
         result_type_265=(struct sType*)come_increment_ref_count(((struct sType*)(right_value225=sType_clone(type))));
         come_call_finalizer3(__dec_obj78,sType_finalize, 0, 0, 0, 0, (void*)0);
         come_call_finalizer3(right_value225,sType_finalize, 0, 1, 0, 0, __result_obj__);
-        # 912 "04heap.c"
+        # 903 "04heap.c"
         type2_263->mHeap=(_Bool)1;
-        # 913 "04heap.c"
+        # 904 "04heap.c"
         type_name_284=(char*)come_increment_ref_count(((char*)(right_value226=make_type_name_string(type2_263,(_Bool)0,(_Bool)0,(_Bool)0,info))));
         right_value226 = come_decrement_ref_count2(right_value226, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 914 "04heap.c"
+        # 905 "04heap.c"
         __dec_obj79=result_264;
         result_264=(char*)come_increment_ref_count(((char*)(right_value227=xsprintf("(%s)come_memdup(%s, \"%s\", %d, \"%s\")",type_name_284,c_value_268,info->sname,info->sline,type_name_284))));
         __dec_obj79 = come_decrement_ref_count2(__dec_obj79, (void*)0, (void*)0, 0,0,0, (void*)0);
         right_value227 = come_decrement_ref_count2(right_value227, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 918 "04heap.c"
-        # 915 "04heap.c"
+        # 909 "04heap.c"
+        # 906 "04heap.c"
         if(gComeDebug) {
-            # 916 "04heap.c"
+            # 907 "04heap.c"
             __dec_obj80=result_264;
             result_264=(char*)come_increment_ref_count(((char*)(right_value228=append_stackframe(result_264,result_type_265,info))));
             __dec_obj80 = come_decrement_ref_count2(__dec_obj80, (void*)0, (void*)0, 0,0,0, (void*)0);
@@ -8627,16 +8623,16 @@ right_value230 = (void*)0;
         }
         type_name_284 = come_decrement_ref_count2(type_name_284, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
-    # 920 "04heap.c"
+    # 911 "04heap.c"
     __dec_obj81=info->right_value_objects;
     info->right_value_objects=(struct list$1sRightValueObjectph*)come_increment_ref_count(right_value_objects_267);
     come_call_finalizer3(__dec_obj81,list$1sRightValueObjectph_finalize, 0, 0, 0, 0, (void*)0);
-    # 921 "04heap.c"
+    # 912 "04heap.c"
     __dec_obj82=info->stack;
     info->stack=(struct list$1CVALUEph*)come_increment_ref_count(stack_saved_266);
     come_call_finalizer3(__dec_obj82,list$1CVALUEph_finalize, 0, 0, 0, 0, (void*)0);
-    # 923 "04heap.c"
-    __result130__ = __result_obj__ = ((struct tuple2$2sTypephcharph*)(right_value230=tuple2$2sTypephcharph_initialize((struct tuple2$2sTypephcharph*)come_increment_ref_count(((struct tuple2$2sTypephcharph*)(right_value229=(struct tuple2$2sTypephcharph*)come_calloc(1, sizeof(struct tuple2$2sTypephcharph)*(1), "04heap.c", 923, "struct tuple2$2sTypephcharph")))),(struct sType*)come_increment_ref_count(result_type_265),(char*)come_increment_ref_count(result_264))));
+    # 914 "04heap.c"
+    __result130__ = __result_obj__ = ((struct tuple2$2sTypephcharph*)(right_value230=tuple2$2sTypephcharph_initialize((struct tuple2$2sTypephcharph*)come_increment_ref_count(((struct tuple2$2sTypephcharph*)(right_value229=(struct tuple2$2sTypephcharph*)come_calloc(1, sizeof(struct tuple2$2sTypephcharph)*(1), "04heap.c", 914, "struct tuple2$2sTypephcharph")))),(struct sType*)come_increment_ref_count(result_type_265),(char*)come_increment_ref_count(result_264))));
     come_call_finalizer3(type2_263,sType_finalize, 0, 0, 0, 0, (void*)0);
     result_264 = come_decrement_ref_count2(result_264, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     come_call_finalizer3(result_type_265,sType_finalize, 0, 0, 0, 0, (void*)0);
@@ -8839,59 +8835,59 @@ memset(&fun_300, 0, sizeof(struct sFun*));
 memset(&new_fun_name_301, 0, sizeof(char*));
 memset(&fun_300, 0, sizeof(struct sFun*));
 memset(&new_fun_name_301, 0, sizeof(char*));
-    # 931 "04heap.c"
-    # 928 "04heap.c"
+    # 922 "04heap.c"
+    # 919 "04heap.c"
     if(type->mNoSolvedGenericsType->v1) {
-        # 929 "04heap.c"
+        # 920 "04heap.c"
         type=type->mNoSolvedGenericsType->v1;
     }
-    # 932 "04heap.c"
+    # 923 "04heap.c"
     result_285=((void*)0);
-    # 932 "04heap.c"
+    # 923 "04heap.c"
     stack_saved_286=(struct list$1CVALUEph*)come_increment_ref_count(info->stack);
-    # 933 "04heap.c"
+    # 924 "04heap.c"
     right_value_objects_287=info->right_value_objects;
-    # 935 "04heap.c"
+    # 926 "04heap.c"
     klass_288=type->mClass;
-    # 937 "04heap.c"
+    # 928 "04heap.c"
     class_name_289=klass_288->mName;
-    # 939 "04heap.c"
+    # 930 "04heap.c"
     fun_name_290="equals";
-    # 941 "04heap.c"
+    # 932 "04heap.c"
     type2_291=(struct sType*)come_increment_ref_count(((struct sType*)(right_value231=sType_clone(type))));
     come_call_finalizer3(right_value231,sType_finalize, 0, 1, 0, 0, __result_obj__);
-    # 942 "04heap.c"
+    # 933 "04heap.c"
     type2_291->mHeap=(_Bool)0;
-    # 944 "04heap.c"
+    # 935 "04heap.c"
     cloner_292=((void*)0);
-    # 945 "04heap.c"
-    # 983 "04heap.c"
-    # 946 "04heap.c"
+    # 936 "04heap.c"
+    # 974 "04heap.c"
+    # 937 "04heap.c"
     if(_if_conditional342=list$1sTypeph_length(type->mGenericsTypes)>0,    _if_conditional342) {
-        # 947 "04heap.c"
+        # 938 "04heap.c"
         none_generics_name_294=(char*)come_increment_ref_count(((char*)(right_value232=get_none_generics_name(type->mClass->mName))));
         right_value232 = come_decrement_ref_count2(right_value232, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 949 "04heap.c"
+        # 940 "04heap.c"
         obj_type_295=(struct sType*)come_increment_ref_count(((struct sType*)(right_value233=solve_generics(type,info->generics_type,info))));
         come_call_finalizer3(right_value233,sType_finalize, 0, 1, 0, 0, __result_obj__);
-        # 951 "04heap.c"
+        # 942 "04heap.c"
         __dec_obj83=fun_name2_293;
         fun_name2_293=(char*)come_increment_ref_count(((char*)(right_value234=create_method_name(obj_type_295,(_Bool)0,fun_name_290,info,(_Bool)1))));
         __dec_obj83 = come_decrement_ref_count2(__dec_obj83, (void*)0, (void*)0, 0,0,0, (void*)0);
         right_value234 = come_decrement_ref_count2(right_value234, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 952 "04heap.c"
+        # 943 "04heap.c"
         fun_name3_296=(char*)come_increment_ref_count(((char*)(right_value235=xsprintf("%s_%s",none_generics_name_294,fun_name_290))));
         right_value235 = come_decrement_ref_count2(right_value235, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 954 "04heap.c"
+        # 945 "04heap.c"
         generics_fun_297=map$2charphsGenericsFunph_at(info->generics_funcs,fun_name3_296,((void*)0));
-        # 962 "04heap.c"
-        # 956 "04heap.c"
+        # 953 "04heap.c"
+        # 947 "04heap.c"
         if(generics_fun_297) {
-            # 960 "04heap.c"
-            # 957 "04heap.c"
+            # 951 "04heap.c"
+            # 948 "04heap.c"
             if(_if_conditional344=!create_generics_fun((char*)come_increment_ref_count(((char*)(right_value236=__builtin_string(fun_name2_293)))),generics_fun_297,obj_type_295,info),            right_value236 = come_decrement_ref_count2(right_value236, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
             _if_conditional344) {
-                # 958 "04heap.c"
+                # 949 "04heap.c"
                 __result131__ = (_Bool)0;
                 none_generics_name_294 = come_decrement_ref_count2(none_generics_name_294, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 come_call_finalizer3(obj_type_295,sType_finalize, 0, 0, 0, 0, (void*)0);
@@ -8903,72 +8899,72 @@ memset(&new_fun_name_301, 0, sizeof(char*));
                 return __result131__;
             }
         }
-        # 962 "04heap.c"
+        # 953 "04heap.c"
         cloner_292=map$2charphsFunphp_operator_load_element(info->funcs,fun_name2_293);
         none_generics_name_294 = come_decrement_ref_count2(none_generics_name_294, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         come_call_finalizer3(obj_type_295,sType_finalize, 0, 0, 0, 0, (void*)0);
         fun_name3_296 = come_decrement_ref_count2(fun_name3_296, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
     else {
-        # 965 "04heap.c"
+        # 956 "04heap.c"
         __dec_obj84=fun_name2_293;
         fun_name2_293=(char*)come_increment_ref_count(((char*)(right_value237=create_method_name(type,(_Bool)0,fun_name_290,info,(_Bool)1))));
         __dec_obj84 = come_decrement_ref_count2(__dec_obj84, (void*)0, (void*)0, 0,0,0, (void*)0);
         right_value237 = come_decrement_ref_count2(right_value237, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 967 "04heap.c"
-        # 978 "04heap.c"
+        # 958 "04heap.c"
+        # 969 "04heap.c"
         for(        i_298=128-1;        i_298>=1;        i_298--        ){
-            # 969 "04heap.c"
+            # 960 "04heap.c"
             new_fun_name_299=(char*)come_increment_ref_count(((char*)(right_value238=xsprintf("%s_v%d",fun_name2_293,i_298))));
             right_value238 = come_decrement_ref_count2(right_value238, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 970 "04heap.c"
+            # 961 "04heap.c"
             cloner_292=map$2charphsFunphp_operator_load_element(info->funcs,new_fun_name_299);
-            # 976 "04heap.c"
-            # 972 "04heap.c"
+            # 967 "04heap.c"
+            # 963 "04heap.c"
             if(cloner_292) {
-                # 973 "04heap.c"
+                # 964 "04heap.c"
                 __dec_obj85=fun_name2_293;
                 fun_name2_293=(char*)come_increment_ref_count(((char*)(right_value239=__builtin_string(new_fun_name_299))));
                 __dec_obj85 = come_decrement_ref_count2(__dec_obj85, (void*)0, (void*)0, 0,0,0, (void*)0);
                 right_value239 = come_decrement_ref_count2(right_value239, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 974 "04heap.c"
+                # 965 "04heap.c"
                 new_fun_name_299 = come_decrement_ref_count2(new_fun_name_299, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 break;
             }
             new_fun_name_299 = come_decrement_ref_count2(new_fun_name_299, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
-        # 981 "04heap.c"
-        # 978 "04heap.c"
+        # 972 "04heap.c"
+        # 969 "04heap.c"
         if(_if_conditional346=cloner_292==((void*)0),        _if_conditional346) {
-            # 979 "04heap.c"
+            # 970 "04heap.c"
             cloner_292=map$2charphsFunphp_operator_load_element(info->funcs,fun_name2_293);
         }
     }
-    # 991 "04heap.c"
-    # 983 "04heap.c"
+    # 982 "04heap.c"
+    # 974 "04heap.c"
     if(_if_conditional347=cloner_292==((void*)0)&&!type->mClass->mProtocol&&!type->mClass->mNumber,    _if_conditional347) {
-        # 985 "04heap.c"
+        # 976 "04heap.c"
         multiple_assign_var9=((struct tuple2$2sFunpcharph*)(right_value240=create_equals_automatically(type,fun_name_290,info)));
         fun_300=multiple_assign_var9->v1;
         new_fun_name_301=(char*)come_increment_ref_count(multiple_assign_var9->v2);
         come_call_finalizer3(right_value240,tuple2$2sFunpcharphp_finalize, 0, 1, 0, 0, __result_obj__);
-        # 987 "04heap.c"
+        # 978 "04heap.c"
         __dec_obj86=fun_name2_293;
         fun_name2_293=(char*)come_increment_ref_count(new_fun_name_301);
         __dec_obj86 = come_decrement_ref_count2(__dec_obj86, (void*)0, (void*)0, 0,0,0, (void*)0);
-        # 988 "04heap.c"
+        # 979 "04heap.c"
         cloner_292=fun_300;
         new_fun_name_301 = come_decrement_ref_count2(new_fun_name_301, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
-    # 991 "04heap.c"
+    # 982 "04heap.c"
     __dec_obj87=info->right_value_objects;
     info->right_value_objects=(struct list$1sRightValueObjectph*)come_increment_ref_count(right_value_objects_287);
     come_call_finalizer3(__dec_obj87,list$1sRightValueObjectph_finalize, 0, 0, 0, 0, (void*)0);
-    # 992 "04heap.c"
+    # 983 "04heap.c"
     __dec_obj88=info->stack;
     info->stack=(struct list$1CVALUEph*)come_increment_ref_count(stack_saved_286);
     come_call_finalizer3(__dec_obj88,list$1CVALUEph_finalize, 0, 0, 0, 0, (void*)0);
-    # 994 "04heap.c"
+    # 985 "04heap.c"
     __result132__ = (_Bool)1;
     result_285 = come_decrement_ref_count2(result_285, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     come_call_finalizer3(stack_saved_286,list$1CVALUEphp_finalize, 0, 0, 0, 0, (void*)0);
@@ -9056,59 +9052,59 @@ memset(&fun_317, 0, sizeof(struct sFun*));
 memset(&new_fun_name_318, 0, sizeof(char*));
 memset(&fun_317, 0, sizeof(struct sFun*));
 memset(&new_fun_name_318, 0, sizeof(char*));
-    # 1002 "04heap.c"
-    # 999 "04heap.c"
+    # 993 "04heap.c"
+    # 990 "04heap.c"
     if(type->mNoSolvedGenericsType->v1) {
-        # 1000 "04heap.c"
+        # 991 "04heap.c"
         type=type->mNoSolvedGenericsType->v1;
     }
-    # 1003 "04heap.c"
+    # 994 "04heap.c"
     result_302=((void*)0);
-    # 1003 "04heap.c"
+    # 994 "04heap.c"
     stack_saved_303=(struct list$1CVALUEph*)come_increment_ref_count(info->stack);
-    # 1004 "04heap.c"
+    # 995 "04heap.c"
     right_value_objects_304=info->right_value_objects;
-    # 1006 "04heap.c"
+    # 997 "04heap.c"
     klass_305=type->mClass;
-    # 1008 "04heap.c"
+    # 999 "04heap.c"
     class_name_306=klass_305->mName;
-    # 1010 "04heap.c"
+    # 1001 "04heap.c"
     fun_name_307="operator_equals";
-    # 1012 "04heap.c"
+    # 1003 "04heap.c"
     type2_308=(struct sType*)come_increment_ref_count(((struct sType*)(right_value241=sType_clone(type))));
     come_call_finalizer3(right_value241,sType_finalize, 0, 1, 0, 0, __result_obj__);
-    # 1013 "04heap.c"
+    # 1004 "04heap.c"
     type2_308->mHeap=(_Bool)0;
-    # 1015 "04heap.c"
+    # 1006 "04heap.c"
     cloner_309=((void*)0);
-    # 1016 "04heap.c"
-    # 1054 "04heap.c"
-    # 1017 "04heap.c"
+    # 1007 "04heap.c"
+    # 1045 "04heap.c"
+    # 1008 "04heap.c"
     if(_if_conditional349=list$1sTypeph_length(type->mGenericsTypes)>0,    _if_conditional349) {
-        # 1018 "04heap.c"
+        # 1009 "04heap.c"
         none_generics_name_311=(char*)come_increment_ref_count(((char*)(right_value242=get_none_generics_name(type->mClass->mName))));
         right_value242 = come_decrement_ref_count2(right_value242, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 1020 "04heap.c"
+        # 1011 "04heap.c"
         obj_type_312=(struct sType*)come_increment_ref_count(((struct sType*)(right_value243=solve_generics(type,info->generics_type,info))));
         come_call_finalizer3(right_value243,sType_finalize, 0, 1, 0, 0, __result_obj__);
-        # 1022 "04heap.c"
+        # 1013 "04heap.c"
         __dec_obj89=fun_name2_310;
         fun_name2_310=(char*)come_increment_ref_count(((char*)(right_value244=create_method_name(obj_type_312,(_Bool)0,fun_name_307,info,(_Bool)1))));
         __dec_obj89 = come_decrement_ref_count2(__dec_obj89, (void*)0, (void*)0, 0,0,0, (void*)0);
         right_value244 = come_decrement_ref_count2(right_value244, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 1023 "04heap.c"
+        # 1014 "04heap.c"
         fun_name3_313=(char*)come_increment_ref_count(((char*)(right_value245=xsprintf("%s_%s",none_generics_name_311,fun_name_307))));
         right_value245 = come_decrement_ref_count2(right_value245, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 1025 "04heap.c"
+        # 1016 "04heap.c"
         generics_fun_314=map$2charphsGenericsFunph_at(info->generics_funcs,fun_name3_313,((void*)0));
-        # 1033 "04heap.c"
-        # 1027 "04heap.c"
+        # 1024 "04heap.c"
+        # 1018 "04heap.c"
         if(generics_fun_314) {
-            # 1031 "04heap.c"
-            # 1028 "04heap.c"
+            # 1022 "04heap.c"
+            # 1019 "04heap.c"
             if(_if_conditional351=!create_generics_fun((char*)come_increment_ref_count(((char*)(right_value246=__builtin_string(fun_name2_310)))),generics_fun_314,obj_type_312,info),            right_value246 = come_decrement_ref_count2(right_value246, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
             _if_conditional351) {
-                # 1029 "04heap.c"
+                # 1020 "04heap.c"
                 __result133__ = (_Bool)0;
                 none_generics_name_311 = come_decrement_ref_count2(none_generics_name_311, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 come_call_finalizer3(obj_type_312,sType_finalize, 0, 0, 0, 0, (void*)0);
@@ -9120,72 +9116,72 @@ memset(&new_fun_name_318, 0, sizeof(char*));
                 return __result133__;
             }
         }
-        # 1033 "04heap.c"
+        # 1024 "04heap.c"
         cloner_309=map$2charphsFunphp_operator_load_element(info->funcs,fun_name2_310);
         none_generics_name_311 = come_decrement_ref_count2(none_generics_name_311, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         come_call_finalizer3(obj_type_312,sType_finalize, 0, 0, 0, 0, (void*)0);
         fun_name3_313 = come_decrement_ref_count2(fun_name3_313, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
     else {
-        # 1036 "04heap.c"
+        # 1027 "04heap.c"
         __dec_obj90=fun_name2_310;
         fun_name2_310=(char*)come_increment_ref_count(((char*)(right_value247=create_method_name(type,(_Bool)0,fun_name_307,info,(_Bool)1))));
         __dec_obj90 = come_decrement_ref_count2(__dec_obj90, (void*)0, (void*)0, 0,0,0, (void*)0);
         right_value247 = come_decrement_ref_count2(right_value247, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 1038 "04heap.c"
-        # 1049 "04heap.c"
+        # 1029 "04heap.c"
+        # 1040 "04heap.c"
         for(        i_315=128-1;        i_315>=1;        i_315--        ){
-            # 1040 "04heap.c"
+            # 1031 "04heap.c"
             new_fun_name_316=(char*)come_increment_ref_count(((char*)(right_value248=xsprintf("%s_v%d",fun_name2_310,i_315))));
             right_value248 = come_decrement_ref_count2(right_value248, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 1041 "04heap.c"
+            # 1032 "04heap.c"
             cloner_309=map$2charphsFunphp_operator_load_element(info->funcs,new_fun_name_316);
-            # 1047 "04heap.c"
-            # 1043 "04heap.c"
+            # 1038 "04heap.c"
+            # 1034 "04heap.c"
             if(cloner_309) {
-                # 1044 "04heap.c"
+                # 1035 "04heap.c"
                 __dec_obj91=fun_name2_310;
                 fun_name2_310=(char*)come_increment_ref_count(((char*)(right_value249=__builtin_string(new_fun_name_316))));
                 __dec_obj91 = come_decrement_ref_count2(__dec_obj91, (void*)0, (void*)0, 0,0,0, (void*)0);
                 right_value249 = come_decrement_ref_count2(right_value249, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 1045 "04heap.c"
+                # 1036 "04heap.c"
                 new_fun_name_316 = come_decrement_ref_count2(new_fun_name_316, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 break;
             }
             new_fun_name_316 = come_decrement_ref_count2(new_fun_name_316, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
-        # 1052 "04heap.c"
-        # 1049 "04heap.c"
+        # 1043 "04heap.c"
+        # 1040 "04heap.c"
         if(_if_conditional353=cloner_309==((void*)0),        _if_conditional353) {
-            # 1050 "04heap.c"
+            # 1041 "04heap.c"
             cloner_309=map$2charphsFunphp_operator_load_element(info->funcs,fun_name2_310);
         }
     }
-    # 1062 "04heap.c"
-    # 1054 "04heap.c"
+    # 1053 "04heap.c"
+    # 1045 "04heap.c"
     if(_if_conditional354=cloner_309==((void*)0)&&!type->mClass->mProtocol&&!type->mClass->mNumber,    _if_conditional354) {
-        # 1056 "04heap.c"
+        # 1047 "04heap.c"
         multiple_assign_var10=((struct tuple2$2sFunpcharph*)(right_value250=create_operator_equals_automatically(type,fun_name_307,info)));
         fun_317=multiple_assign_var10->v1;
         new_fun_name_318=(char*)come_increment_ref_count(multiple_assign_var10->v2);
         come_call_finalizer3(right_value250,tuple2$2sFunpcharphp_finalize, 0, 1, 0, 0, __result_obj__);
-        # 1058 "04heap.c"
+        # 1049 "04heap.c"
         __dec_obj92=fun_name2_310;
         fun_name2_310=(char*)come_increment_ref_count(new_fun_name_318);
         __dec_obj92 = come_decrement_ref_count2(__dec_obj92, (void*)0, (void*)0, 0,0,0, (void*)0);
-        # 1059 "04heap.c"
+        # 1050 "04heap.c"
         cloner_309=fun_317;
         new_fun_name_318 = come_decrement_ref_count2(new_fun_name_318, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
-    # 1062 "04heap.c"
+    # 1053 "04heap.c"
     __dec_obj93=info->right_value_objects;
     info->right_value_objects=(struct list$1sRightValueObjectph*)come_increment_ref_count(right_value_objects_304);
     come_call_finalizer3(__dec_obj93,list$1sRightValueObjectph_finalize, 0, 0, 0, 0, (void*)0);
-    # 1063 "04heap.c"
+    # 1054 "04heap.c"
     __dec_obj94=info->stack;
     info->stack=(struct list$1CVALUEph*)come_increment_ref_count(stack_saved_303);
     come_call_finalizer3(__dec_obj94,list$1CVALUEph_finalize, 0, 0, 0, 0, (void*)0);
-    # 1065 "04heap.c"
+    # 1056 "04heap.c"
     __result134__ = (_Bool)1;
     result_302 = come_decrement_ref_count2(result_302, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     come_call_finalizer3(stack_saved_303,list$1CVALUEphp_finalize, 0, 0, 0, 0, (void*)0);
@@ -9273,59 +9269,59 @@ memset(&fun_334, 0, sizeof(struct sFun*));
 memset(&new_fun_name_335, 0, sizeof(char*));
 memset(&fun_334, 0, sizeof(struct sFun*));
 memset(&new_fun_name_335, 0, sizeof(char*));
-    # 1073 "04heap.c"
-    # 1070 "04heap.c"
+    # 1064 "04heap.c"
+    # 1061 "04heap.c"
     if(type->mNoSolvedGenericsType->v1) {
-        # 1071 "04heap.c"
+        # 1062 "04heap.c"
         type=type->mNoSolvedGenericsType->v1;
     }
-    # 1074 "04heap.c"
+    # 1065 "04heap.c"
     result_319=((void*)0);
-    # 1074 "04heap.c"
+    # 1065 "04heap.c"
     stack_saved_320=(struct list$1CVALUEph*)come_increment_ref_count(info->stack);
-    # 1075 "04heap.c"
+    # 1066 "04heap.c"
     right_value_objects_321=info->right_value_objects;
-    # 1077 "04heap.c"
+    # 1068 "04heap.c"
     klass_322=type->mClass;
-    # 1079 "04heap.c"
+    # 1070 "04heap.c"
     class_name_323=klass_322->mName;
-    # 1081 "04heap.c"
+    # 1072 "04heap.c"
     fun_name_324="operator_not_equals";
-    # 1083 "04heap.c"
+    # 1074 "04heap.c"
     type2_325=(struct sType*)come_increment_ref_count(((struct sType*)(right_value251=sType_clone(type))));
     come_call_finalizer3(right_value251,sType_finalize, 0, 1, 0, 0, __result_obj__);
-    # 1084 "04heap.c"
+    # 1075 "04heap.c"
     type2_325->mHeap=(_Bool)0;
-    # 1086 "04heap.c"
+    # 1077 "04heap.c"
     cloner_326=((void*)0);
-    # 1087 "04heap.c"
-    # 1125 "04heap.c"
-    # 1088 "04heap.c"
+    # 1078 "04heap.c"
+    # 1116 "04heap.c"
+    # 1079 "04heap.c"
     if(_if_conditional356=list$1sTypeph_length(type->mGenericsTypes)>0,    _if_conditional356) {
-        # 1089 "04heap.c"
+        # 1080 "04heap.c"
         none_generics_name_328=(char*)come_increment_ref_count(((char*)(right_value252=get_none_generics_name(type->mClass->mName))));
         right_value252 = come_decrement_ref_count2(right_value252, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 1091 "04heap.c"
+        # 1082 "04heap.c"
         obj_type_329=(struct sType*)come_increment_ref_count(((struct sType*)(right_value253=solve_generics(type,info->generics_type,info))));
         come_call_finalizer3(right_value253,sType_finalize, 0, 1, 0, 0, __result_obj__);
-        # 1093 "04heap.c"
+        # 1084 "04heap.c"
         __dec_obj95=fun_name2_327;
         fun_name2_327=(char*)come_increment_ref_count(((char*)(right_value254=create_method_name(obj_type_329,(_Bool)0,fun_name_324,info,(_Bool)1))));
         __dec_obj95 = come_decrement_ref_count2(__dec_obj95, (void*)0, (void*)0, 0,0,0, (void*)0);
         right_value254 = come_decrement_ref_count2(right_value254, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 1094 "04heap.c"
+        # 1085 "04heap.c"
         fun_name3_330=(char*)come_increment_ref_count(((char*)(right_value255=xsprintf("%s_%s",none_generics_name_328,fun_name_324))));
         right_value255 = come_decrement_ref_count2(right_value255, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 1096 "04heap.c"
+        # 1087 "04heap.c"
         generics_fun_331=map$2charphsGenericsFunph_at(info->generics_funcs,fun_name3_330,((void*)0));
-        # 1104 "04heap.c"
-        # 1098 "04heap.c"
+        # 1095 "04heap.c"
+        # 1089 "04heap.c"
         if(generics_fun_331) {
-            # 1102 "04heap.c"
-            # 1099 "04heap.c"
+            # 1093 "04heap.c"
+            # 1090 "04heap.c"
             if(_if_conditional358=!create_generics_fun((char*)come_increment_ref_count(((char*)(right_value256=__builtin_string(fun_name2_327)))),generics_fun_331,obj_type_329,info),            right_value256 = come_decrement_ref_count2(right_value256, (void*)0, (void*)0, 1, 0, 0, __result_obj__),
             _if_conditional358) {
-                # 1100 "04heap.c"
+                # 1091 "04heap.c"
                 __result135__ = (_Bool)0;
                 none_generics_name_328 = come_decrement_ref_count2(none_generics_name_328, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 come_call_finalizer3(obj_type_329,sType_finalize, 0, 0, 0, 0, (void*)0);
@@ -9337,72 +9333,72 @@ memset(&new_fun_name_335, 0, sizeof(char*));
                 return __result135__;
             }
         }
-        # 1104 "04heap.c"
+        # 1095 "04heap.c"
         cloner_326=map$2charphsFunphp_operator_load_element(info->funcs,fun_name2_327);
         none_generics_name_328 = come_decrement_ref_count2(none_generics_name_328, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         come_call_finalizer3(obj_type_329,sType_finalize, 0, 0, 0, 0, (void*)0);
         fun_name3_330 = come_decrement_ref_count2(fun_name3_330, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
     else {
-        # 1107 "04heap.c"
+        # 1098 "04heap.c"
         __dec_obj96=fun_name2_327;
         fun_name2_327=(char*)come_increment_ref_count(((char*)(right_value257=create_method_name(type,(_Bool)0,fun_name_324,info,(_Bool)1))));
         __dec_obj96 = come_decrement_ref_count2(__dec_obj96, (void*)0, (void*)0, 0,0,0, (void*)0);
         right_value257 = come_decrement_ref_count2(right_value257, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 1109 "04heap.c"
-        # 1120 "04heap.c"
+        # 1100 "04heap.c"
+        # 1111 "04heap.c"
         for(        i_332=128-1;        i_332>=1;        i_332--        ){
-            # 1111 "04heap.c"
+            # 1102 "04heap.c"
             new_fun_name_333=(char*)come_increment_ref_count(((char*)(right_value258=xsprintf("%s_v%d",fun_name2_327,i_332))));
             right_value258 = come_decrement_ref_count2(right_value258, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 1112 "04heap.c"
+            # 1103 "04heap.c"
             cloner_326=map$2charphsFunphp_operator_load_element(info->funcs,new_fun_name_333);
-            # 1118 "04heap.c"
-            # 1114 "04heap.c"
+            # 1109 "04heap.c"
+            # 1105 "04heap.c"
             if(cloner_326) {
-                # 1115 "04heap.c"
+                # 1106 "04heap.c"
                 __dec_obj97=fun_name2_327;
                 fun_name2_327=(char*)come_increment_ref_count(((char*)(right_value259=__builtin_string(new_fun_name_333))));
                 __dec_obj97 = come_decrement_ref_count2(__dec_obj97, (void*)0, (void*)0, 0,0,0, (void*)0);
                 right_value259 = come_decrement_ref_count2(right_value259, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                # 1116 "04heap.c"
+                # 1107 "04heap.c"
                 new_fun_name_333 = come_decrement_ref_count2(new_fun_name_333, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                 break;
             }
             new_fun_name_333 = come_decrement_ref_count2(new_fun_name_333, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
-        # 1123 "04heap.c"
-        # 1120 "04heap.c"
+        # 1114 "04heap.c"
+        # 1111 "04heap.c"
         if(_if_conditional360=cloner_326==((void*)0),        _if_conditional360) {
-            # 1121 "04heap.c"
+            # 1112 "04heap.c"
             cloner_326=map$2charphsFunphp_operator_load_element(info->funcs,fun_name2_327);
         }
     }
-    # 1133 "04heap.c"
-    # 1125 "04heap.c"
+    # 1124 "04heap.c"
+    # 1116 "04heap.c"
     if(_if_conditional361=cloner_326==((void*)0)&&!type->mClass->mProtocol&&!type->mClass->mNumber,    _if_conditional361) {
-        # 1127 "04heap.c"
+        # 1118 "04heap.c"
         multiple_assign_var11=((struct tuple2$2sFunpcharph*)(right_value260=create_operator_not_equals_automatically(type,fun_name_324,info)));
         fun_334=multiple_assign_var11->v1;
         new_fun_name_335=(char*)come_increment_ref_count(multiple_assign_var11->v2);
         come_call_finalizer3(right_value260,tuple2$2sFunpcharphp_finalize, 0, 1, 0, 0, __result_obj__);
-        # 1129 "04heap.c"
+        # 1120 "04heap.c"
         __dec_obj98=fun_name2_327;
         fun_name2_327=(char*)come_increment_ref_count(new_fun_name_335);
         __dec_obj98 = come_decrement_ref_count2(__dec_obj98, (void*)0, (void*)0, 0,0,0, (void*)0);
-        # 1130 "04heap.c"
+        # 1121 "04heap.c"
         cloner_326=fun_334;
         new_fun_name_335 = come_decrement_ref_count2(new_fun_name_335, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
-    # 1133 "04heap.c"
+    # 1124 "04heap.c"
     __dec_obj99=info->right_value_objects;
     info->right_value_objects=(struct list$1sRightValueObjectph*)come_increment_ref_count(right_value_objects_321);
     come_call_finalizer3(__dec_obj99,list$1sRightValueObjectph_finalize, 0, 0, 0, 0, (void*)0);
-    # 1134 "04heap.c"
+    # 1125 "04heap.c"
     __dec_obj100=info->stack;
     info->stack=(struct list$1CVALUEph*)come_increment_ref_count(stack_saved_320);
     come_call_finalizer3(__dec_obj100,list$1CVALUEph_finalize, 0, 0, 0, 0, (void*)0);
-    # 1136 "04heap.c"
+    # 1127 "04heap.c"
     __result136__ = (_Bool)1;
     result_319 = come_decrement_ref_count2(result_319, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     come_call_finalizer3(stack_saved_320,list$1CVALUEphp_finalize, 0, 0, 0, 0, (void*)0);
@@ -9430,30 +9426,30 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&right_value_objects_336, 0, sizeof(struct list$1sRightValueObjectph*));
 memset(&o2_saved_337, 0, sizeof(struct list$1sRightValueObjectph*));
 memset(&it_338, 0, sizeof(struct sRightValueObject*));
-    # 1144 "04heap.c"
-    # 1141 "04heap.c"
+    # 1135 "04heap.c"
+    # 1132 "04heap.c"
     if(gComeGC) {
-        # 1142 "04heap.c"
+        # 1133 "04heap.c"
         __result137__ = (_Bool)0;
         return __result137__;
     }
-    # 1144 "04heap.c"
+    # 1135 "04heap.c"
     right_value_objects_336=info->right_value_objects;
-    # 1154 "04heap.c"
+    # 1145 "04heap.c"
     for(    o2_saved_337=(right_value_objects_336),it_338=list$1sRightValueObjectph_begin((o2_saved_337));    !list$1sRightValueObjectph_end((o2_saved_337));    it_338=list$1sRightValueObjectph_next((o2_saved_337))    ){
-        # 1152 "04heap.c"
-        # 1147 "04heap.c"
+        # 1143 "04heap.c"
+        # 1138 "04heap.c"
         if(_if_conditional363=it_338&&!it_338->mFreed,        _if_conditional363) {
-            # 1151 "04heap.c"
-            # 1148 "04heap.c"
+            # 1142 "04heap.c"
+            # 1139 "04heap.c"
             if(_if_conditional364=string_operator_equals(it_338->mFunName,info->come_fun->mName)&&it_338->mBlockLevel==info->block_level,            _if_conditional364) {
-                # 1149 "04heap.c"
+                # 1140 "04heap.c"
                 __result138__ = (_Bool)1;
                 return __result138__;
             }
         }
     }
-    # 1154 "04heap.c"
+    # 1145 "04heap.c"
     __result139__ = (_Bool)0;
     return __result139__;
 }
@@ -9481,44 +9477,44 @@ memset(&it_343, 0, sizeof(struct sRightValueObject*));
 right_value261 = (void*)0;
 memset(&type_344, 0, sizeof(struct sType*));
 right_value262 = (void*)0;
-    # 1162 "04heap.c"
-    # 1159 "04heap.c"
+    # 1153 "04heap.c"
+    # 1150 "04heap.c"
     if(gComeGC) {
-        # 1160 "04heap.c"
+        # 1151 "04heap.c"
         return;
     }
-    # 1162 "04heap.c"
+    # 1153 "04heap.c"
     free_right_value_339=(_Bool)0;
-    # 1163 "04heap.c"
+    # 1154 "04heap.c"
     right_value_objects_340=info->right_value_objects;
-    # 1165 "04heap.c"
+    # 1156 "04heap.c"
     n_341=0;
-    # 1184 "04heap.c"
+    # 1175 "04heap.c"
     for(    o2_saved_342=(right_value_objects_340),it_343=list$1sRightValueObjectph_begin((o2_saved_342));    !list$1sRightValueObjectph_end((o2_saved_342));    it_343=list$1sRightValueObjectph_next((o2_saved_342))    ){
-        # 1182 "04heap.c"
-        # 1167 "04heap.c"
+        # 1173 "04heap.c"
+        # 1158 "04heap.c"
         if(_if_conditional366=it_343&&!it_343->mFreed,        _if_conditional366) {
-            # 1180 "04heap.c"
-            # 1168 "04heap.c"
+            # 1171 "04heap.c"
+            # 1159 "04heap.c"
             if(_if_conditional367=string_operator_equals(it_343->mFunName,info->come_fun->mName)&&it_343->mBlockLevel==info->block_level,            _if_conditional367) {
-                # 1169 "04heap.c"
+                # 1160 "04heap.c"
                 type_344=(struct sType*)come_increment_ref_count(((struct sType*)(right_value261=sType_clone(it_343->mType))));
                 come_call_finalizer3(right_value261,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                # 1171 "04heap.c"
+                # 1162 "04heap.c"
                 __dec_obj101=type_344;
                 type_344=(struct sType*)come_increment_ref_count(((struct sType*)(right_value262=solve_type(type_344,info->generics_type,info->method_generics_types,info))));
                 come_call_finalizer3(__dec_obj101,sType_finalize, 0, 0, 0, 0, (void*)0);
                 come_call_finalizer3(right_value262,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                # 1174 "04heap.c"
+                # 1165 "04heap.c"
                 free_object(type_344,it_343->mVarName,(_Bool)1,(_Bool)0,info,comma,(_Bool)0,(_Bool)0);
-                # 1177 "04heap.c"
+                # 1168 "04heap.c"
                 it_343->mFreed=(_Bool)1;
-                # 1178 "04heap.c"
+                # 1169 "04heap.c"
                 free_right_value_339=(_Bool)1;
                 come_call_finalizer3(type_344,sType_finalize, 0, 0, 0, 0, (void*)0);
             }
         }
-        # 1182 "04heap.c"
+        # 1173 "04heap.c"
         n_341++;
     }
 }
@@ -9535,26 +9531,26 @@ _Bool __result142__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&o2_saved_345, 0, sizeof(struct list$1sRightValueObjectph*));
 memset(&it_346, 0, sizeof(struct sRightValueObject*));
-    # 1191 "04heap.c"
-    # 1188 "04heap.c"
+    # 1182 "04heap.c"
+    # 1179 "04heap.c"
     if(gComeGC) {
-        # 1189 "04heap.c"
+        # 1180 "04heap.c"
         __result140__ = (_Bool)0;
         return __result140__;
     }
-    # 1197 "04heap.c"
+    # 1188 "04heap.c"
     for(    o2_saved_345=(struct list$1sRightValueObjectph*)come_increment_ref_count((info->right_value_objects)),it_346=list$1sRightValueObjectph_begin((o2_saved_345));    !list$1sRightValueObjectph_end((o2_saved_345));    it_346=list$1sRightValueObjectph_next((o2_saved_345))    ){
-        # 1195 "04heap.c"
-        # 1192 "04heap.c"
+        # 1186 "04heap.c"
+        # 1183 "04heap.c"
         if(_if_conditional369=it_346->mID==right_value_num,        _if_conditional369) {
-            # 1193 "04heap.c"
+            # 1184 "04heap.c"
             __result141__ = (_Bool)1;
             come_call_finalizer3(o2_saved_345,list$1sRightValueObjectphp_finalize, 0, 0, 0, 0, (void*)0);
             return __result141__;
         }
     }
     come_call_finalizer3(o2_saved_345,list$1sRightValueObjectphp_finalize, 0, 0, 0, 0, (void*)0);
-    # 1197 "04heap.c"
+    # 1188 "04heap.c"
     __result142__ = (_Bool)0;
     return __result142__;
 }
@@ -9569,23 +9565,23 @@ struct sVar* __result148__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_347, 0, sizeof(struct sVarTable*));
 memset(&var__351, 0, sizeof(struct sVar*));
-    # 1203 "04heap.c"
+    # 1193 "04heap.c"
     it_347=table;
-    # 1215 "04heap.c"
+    # 1205 "04heap.c"
     while(it_347) {
-        # 1206 "04heap.c"
+        # 1196 "04heap.c"
         var__351=map$2charphsVarphp_operator_load_element(it_347->mVars,name);
-        # 1212 "04heap.c"
-        # 1208 "04heap.c"
+        # 1202 "04heap.c"
+        # 1198 "04heap.c"
         if(var__351) {
-            # 1209 "04heap.c"
+            # 1199 "04heap.c"
             __result147__ = __result_obj__ = var__351;
             return __result147__;
         }
-        # 1212 "04heap.c"
+        # 1202 "04heap.c"
         it_347=it_347->mParent;
     }
-    # 1215 "04heap.c"
+    # 1205 "04heap.c"
     __result148__ = __result_obj__ = ((void*)0);
     return __result148__;
 }
@@ -9720,54 +9716,54 @@ right_value263 = (void*)0;
 memset(&c_value_361, 0, sizeof(char*));
 right_value264 = (void*)0;
 memset(&type2_362, 0, sizeof(struct sType*));
-    # 1223 "04heap.c"
-    # 1220 "04heap.c"
+    # 1213 "04heap.c"
+    # 1210 "04heap.c"
     if(gComeGC) {
-        # 1221 "04heap.c"
+        # 1211 "04heap.c"
         return;
     }
-    # 1253 "04heap.c"
+    # 1237 "04heap.c"
     for(    o2_saved_352=(struct map$2charphsVarph*)come_increment_ref_count((table->mVars)),it_355=map$2charphsVarph_begin((o2_saved_352));    !map$2charphsVarph_end((o2_saved_352));    it_355=map$2charphsVarph_next((o2_saved_352))    ){
-        # 1224 "04heap.c"
+        # 1214 "04heap.c"
         p_358=map$2charphsVarphp_operator_load_element(table->mVars,it_355);
-        # 1225 "04heap.c"
+        # 1215 "04heap.c"
         type_359=p_358->mType;
-        # 1226 "04heap.c"
+        # 1216 "04heap.c"
         klass_360=type_359->mClass;
-        # 1252 "04heap.c"
-        # 1234 "04heap.c"
+        # 1236 "04heap.c"
+        # 1218 "04heap.c"
         if(_if_conditional384=ret_value!=((void*)0)&&p_358->mCValueName!=((void*)0)&&string_operator_equals(p_358->mCValueName,ret_value->mCValueName)&&type_359->mHeap,        _if_conditional384) {
-            # 1236 "04heap.c"
+            # 1220 "04heap.c"
             free_object(p_358->mType,p_358->mCValueName,(_Bool)0,(_Bool)1,info,(_Bool)0,(_Bool)1,(_Bool)0);
         }
         else {
-            # 1252 "04heap.c"
-            # 1238 "04heap.c"
+            # 1236 "04heap.c"
+            # 1222 "04heap.c"
             if(_if_conditional385=type_359->mHeap&&p_358->mCValueName,            _if_conditional385) {
-                # 1245 "04heap.c"
-                # 1239 "04heap.c"
+                # 1229 "04heap.c"
+                # 1223 "04heap.c"
                 if(type_359->mFunctionParam) {
-                    # 1240 "04heap.c"
+                    # 1224 "04heap.c"
                     free_object(p_358->mType,p_358->mCValueName,(_Bool)0,(_Bool)1,info,(_Bool)0,(_Bool)0,(_Bool)0);
                 }
                 else {
-                    # 1243 "04heap.c"
+                    # 1227 "04heap.c"
                     free_object(p_358->mType,p_358->mCValueName,(_Bool)0,(_Bool)0,info,(_Bool)0,(_Bool)0,(_Bool)0);
                 }
             }
             else {
-                # 1252 "04heap.c"
-                # 1246 "04heap.c"
+                # 1236 "04heap.c"
+                # 1230 "04heap.c"
                 if(_if_conditional387=klass_360->mStruct&&p_358->mCValueName&&type_359->mAllocaValue&&!type_359->mNoCallingDestructor,                _if_conditional387) {
-                    # 1247 "04heap.c"
+                    # 1231 "04heap.c"
                     c_value_361=(char*)come_increment_ref_count(((char*)(right_value263=xsprintf("(&%s)",p_358->mCValueName))));
                     right_value263 = come_decrement_ref_count2(right_value263, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-                    # 1248 "04heap.c"
+                    # 1232 "04heap.c"
                     type2_362=(struct sType*)come_increment_ref_count(((struct sType*)(right_value264=sType_clone(type_359))));
                     come_call_finalizer3(right_value264,sType_finalize, 0, 1, 0, 0, __result_obj__);
-                    # 1249 "04heap.c"
+                    # 1233 "04heap.c"
                     type2_362->mPointerNum++;
-                    # 1250 "04heap.c"
+                    # 1234 "04heap.c"
                     free_object(type2_362,c_value_361,(_Bool)0,(_Bool)0,info,(_Bool)0,(_Bool)0,(_Bool)0);
                     c_value_361 = come_decrement_ref_count2(c_value_361, (void*)0, (void*)0, 0, 0, 0, (void*)0);
                     come_call_finalizer3(type2_362,sType_finalize, 0, 0, 0, 0, (void*)0);
@@ -9946,29 +9942,29 @@ _Bool _if_conditional393;
 _Bool _while_condtional34;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&it_367, 0, sizeof(struct sVarTable*));
-    # 1260 "04heap.c"
-    # 1257 "04heap.c"
+    # 1244 "04heap.c"
+    # 1241 "04heap.c"
     if(gComeGC) {
-        # 1258 "04heap.c"
+        # 1242 "04heap.c"
         return;
     }
-    # 1260 "04heap.c"
+    # 1244 "04heap.c"
     it_367=info->lv_table;
-    # 1273 "04heap.c"
-    # 1262 "04heap.c"
+    # 1257 "04heap.c"
+    # 1246 "04heap.c"
     if(_if_conditional393=it_367==info->come_fun->mBlock->mVarTable,    _if_conditional393) {
-        # 1263 "04heap.c"
+        # 1247 "04heap.c"
         free_objects(it_367,ret_value,info);
     }
     else {
-        # 1271 "04heap.c"
+        # 1255 "04heap.c"
         while(_while_condtional34=it_367!=info->come_fun->mBlock->mVarTable,        _while_condtional34) {
-            # 1267 "04heap.c"
+            # 1251 "04heap.c"
             free_objects(it_367,ret_value,info);
-            # 1269 "04heap.c"
+            # 1253 "04heap.c"
             it_367=it_367->mParent;
         }
-        # 1271 "04heap.c"
+        # 1255 "04heap.c"
         free_objects(it_367,ret_value,info);
     }
 }
@@ -9985,29 +9981,29 @@ memset(&__result_obj__, 0, sizeof(void*));
 memset(&ret_value_368, 0, sizeof(struct sVar*));
 memset(&current_loop_vtable_369, 0, sizeof(struct sVarTable*));
 memset(&it_370, 0, sizeof(struct sVarTable*));
-    # 1280 "04heap.c"
-    # 1277 "04heap.c"
+    # 1264 "04heap.c"
+    # 1261 "04heap.c"
     if(gComeGC) {
-        # 1278 "04heap.c"
+        # 1262 "04heap.c"
         return;
     }
-    # 1280 "04heap.c"
+    # 1264 "04heap.c"
     ret_value_368=((void*)0);
-    # 1282 "04heap.c"
+    # 1266 "04heap.c"
     current_loop_vtable_369=info->current_loop_vtable;
-    # 1293 "04heap.c"
-    # 1284 "04heap.c"
+    # 1277 "04heap.c"
+    # 1268 "04heap.c"
     if(_if_conditional395=current_loop_vtable_369!=((void*)0),    _if_conditional395) {
-        # 1285 "04heap.c"
+        # 1269 "04heap.c"
         it_370=info->lv_table;
-        # 1291 "04heap.c"
+        # 1275 "04heap.c"
         while(_while_condtional35=it_370!=current_loop_vtable_369,        _while_condtional35) {
-            # 1287 "04heap.c"
+            # 1271 "04heap.c"
             free_objects(it_370,ret_value_368,info);
-            # 1289 "04heap.c"
+            # 1273 "04heap.c"
             it_370=it_370->mParent;
         }
-        # 1291 "04heap.c"
+        # 1275 "04heap.c"
         free_objects(it_370,ret_value_368,info);
     }
 }
@@ -10054,13 +10050,13 @@ right_value276 = (void*)0;
 right_value277 = (void*)0;
 right_value278 = (void*)0;
 right_value279 = (void*)0;
-    # 1311 "04heap.c"
-    # 1297 "04heap.c"
+    # 1295 "04heap.c"
+    # 1281 "04heap.c"
     if(_if_conditional396=string_operator_equals(type->mClass->mName,"void")&&type->mPointerNum==0,    _if_conditional396) {
-        # 1301 "04heap.c"
-        # 1298 "04heap.c"
+        # 1285 "04heap.c"
+        # 1282 "04heap.c"
         if(_if_conditional397=gComeDebug||type->mRecord,        _if_conditional397) {
-            # 1299 "04heap.c"
+            # 1283 "04heap.c"
             __result156__ = __result_obj__ = ((char*)(right_value269=xsprintf("(come_push_stackframe(\"\%s\", \%s,\%s),\%s,come_pop_stackframe())",((char*)(right_value265=string_to_string(info->sname))),((char*)(right_value266=int_to_string(info->sline))),((char*)(right_value267=int_to_string(gComeDebugStackFrameID++))),((char*)(right_value268=charp_to_string(c_value))))));
             right_value265 = come_decrement_ref_count2(right_value265, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
             right_value266 = come_decrement_ref_count2(right_value266, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -10071,19 +10067,19 @@ right_value279 = (void*)0;
         }
     }
     else {
-        # 1311 "04heap.c"
-        # 1302 "04heap.c"
+        # 1295 "04heap.c"
+        # 1286 "04heap.c"
         if(_if_conditional398=gComeDebug||type->mRecord,        _if_conditional398) {
-            # 1303 "04heap.c"
-            # 1304 "04heap.c"
+            # 1287 "04heap.c"
+            # 1288 "04heap.c"
             ++n_371;
-            # 1306 "04heap.c"
+            # 1290 "04heap.c"
             var_name_372=(char*)come_increment_ref_count(((char*)(right_value270=xsprintf("__exception_result_var_b%d",n_371))));
             right_value270 = come_decrement_ref_count2(right_value270, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 1307 "04heap.c"
+            # 1291 "04heap.c"
             add_come_code_at_function_head(info,"%s;\n",((char*)(right_value271=make_define_var(type,var_name_372,(_Bool)0,info))));
             right_value271 = come_decrement_ref_count2(right_value271, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-            # 1308 "04heap.c"
+            # 1292 "04heap.c"
             __result157__ = __result_obj__ = ((char*)(right_value278=xsprintf("(come_push_stackframe(\"\%s\", \%s, \%s),\%s=\%s, come_pop_stackframe(), \%s)",((char*)(right_value272=string_to_string(info->sname))),((char*)(right_value273=int_to_string(info->sline))),((char*)(right_value274=int_to_string(gComeDebugStackFrameID++))),((char*)(right_value275=string_to_string(var_name_372))),((char*)(right_value276=charp_to_string(c_value))),((char*)(right_value277=string_to_string(var_name_372))))));
             var_name_372 = come_decrement_ref_count2(var_name_372, (void*)0, (void*)0, 0, 0, 0, (void*)0);
             right_value272 = come_decrement_ref_count2(right_value272, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -10097,7 +10093,7 @@ right_value279 = (void*)0;
             var_name_372 = come_decrement_ref_count2(var_name_372, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
     }
-    # 1311 "04heap.c"
+    # 1295 "04heap.c"
     __result158__ = __result_obj__ = ((char*)(right_value279=__builtin_string(c_value)));
     right_value279 = come_decrement_ref_count2(right_value279, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
     return __result158__;

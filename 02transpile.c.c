@@ -1720,10 +1720,6 @@ char* make_come_type_name_string(struct sType* type, struct sInfo* info);
 
 char* make_come_type_name_string_no_solved(struct sType* type, struct sInfo* info);
 
-void come_init_v3();
-
-void come_final_v3();
-
 char* make_define_var_no_solved(struct sType* type, char* name, _Bool in_header, struct sInfo* info);
 
 char* header_function(struct sFun* fun, struct sInfo* info);
@@ -9676,7 +9672,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
             (come_push_stackframe("02transpile.c", 574, 8),__exception_result_var_b9=die("truncate"), come_pop_stackframe(), __exception_result_var_b9);
         }
         # 576 "02transpile.c"
-        come_init_v3();
+        come_init_v2();
         # 578 "02transpile.c"
         tmp_file_240=(char*)come_increment_ref_count(((char*)(right_value344=__builtin_string("tmp-common-header"))));
         right_value344 = come_decrement_ref_count2(right_value344, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
@@ -9858,7 +9854,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
         right_value411 = come_decrement_ref_count2(right_value411, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         right_value412 = come_decrement_ref_count2(right_value412, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
         # 642 "02transpile.c"
-        come_final_v3();
+        come_final_v2();
         come_call_finalizer3(clang_option_225,buffer_finalize, 0, 0, 0, 0, (void*)0);
         come_call_finalizer3(cpp_option_226,buffer_finalize, 0, 0, 0, 0, (void*)0);
         come_call_finalizer3(files_227,list$1charphp_finalize, 0, 0, 0, 0, (void*)0);
@@ -10199,7 +10195,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                         }
                                     }
                                     # 778 "02transpile.c"
-                                    come_init_v3();
+                                    come_init_v2();
                                     # 853 "02transpile.c"
                                     for(                                    o2_saved_294=(struct list$1charph*)come_increment_ref_count((files_283)),it_295=list$1charph_begin((o2_saved_294));                                    !list$1charph_end((o2_saved_294));                                    it_295=list$1charph_next((o2_saved_294))                                    ){
                                         # 781 "02transpile.c"
@@ -10442,7 +10438,7 @@ memset(&__current_stack2__, 0, sizeof(struct __current_stack2__));
                                         come_call_finalizer3((&info_298),sInfo_finalize, 1, 0, 0, 0, (void*)0);
                                     }
                                     # 875 "02transpile.c"
-                                    come_final_v3();
+                                    come_final_v2();
                                     come_call_finalizer3(clang_option_281,buffer_finalize, 0, 0, 0, 0, (void*)0);
                                     come_call_finalizer3(cpp_option_282,buffer_finalize, 0, 0, 0, 0, (void*)0);
                                     come_call_finalizer3(files_283,list$1charphp_finalize, 0, 0, 0, 0, (void*)0);

@@ -78,8 +78,6 @@ class sReturnNode extends sNodeBase
             free_objects_on_return(come_fun.mBlock, info, come_value.var, false@top_block);
             free_right_value_objects(info);
             
-            caller_end();
-            
             if(info.come_fun.mName === "main") {
                 free_objects(info->gv_table, null@ret_value, info);
                 add_come_code(info, xsprintf("come_heap_final();\n"));
@@ -89,7 +87,6 @@ class sReturnNode extends sNodeBase
         }
         else {
             sFun* come_fun = info.come_fun;
-            caller_end();
             
             add_last_code_to_source(info);
             free_objects_on_return(come_fun.mBlock, info, null, false@top_block);
@@ -1290,11 +1287,6 @@ string create_method_name(sType* obj_type, bool no_pointer_name, char* fun_name,
     if(obj_type->mOriginalTypeName !== "") {
         struct_name = string(obj_type->mOriginalTypeName);
         if(!obj_type->mClass->mStruct) {
-/*
-            if(obj_type->mArrayNum.length() > 0) {
-                buf.append_str("p");
-            }
-*/
             for(int i=0; i<obj_type->mOriginalTypeNamePointerNum; i++)
             {
                 buf.append_str("p");
@@ -1306,11 +1298,6 @@ string create_method_name(sType* obj_type, bool no_pointer_name, char* fun_name,
     }
     else {
         struct_name = create_generics_name(obj_type, info);
-/*
-        if(obj_type->mArrayNum.length() > 0) {
-            buf.append_str("p");
-        }
-*/
         for(int i=0; i<obj_type->mPointerNum; i++)
         {
             buf.append_str("p");
@@ -1334,7 +1321,6 @@ string create_method_name_using_class(sClass* obj_class, bool no_pointer_name, c
     
     return xsprintf("%s_%s", struct_name, fun_name);
 }
-
 
 sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 1
 {

@@ -5,15 +5,6 @@ void std_move(sType* left_type, sType* right_type, CVALUE* right_value, sInfo* i
     if(gComeGC) {
         return;
     }
-/*
-    if(left_type->mHeap && right_type->mHeap) {
-        sVar* var_ = right_value.var;
-        
-        if(var_) {
-            var_->mCValueName = null; //mNoFree = true;
-        }
-    }
-*/
     if(right_value.var) {
         if(right_value.var.mType.mDelegate) {
             right_value.var->mCValueName = null;
@@ -1197,7 +1188,6 @@ bool is_right_values(int right_value_num, sInfo* info)
     return false;
 }
 
-
 sVar* get_variable_from_table(sVarTable* table, char* name)
 {
     sVarTable* it = table;
@@ -1225,12 +1215,6 @@ void free_objects(sVarTable* table, sVar* ret_value, sInfo* info)
         sType* type = p->mType;
         sClass* klass = type->mClass;
         
-/*
-        if(type->mGuardValue) {
-            err_msg(info, "require guard variable");
-            exit(2);
-        }
-*/
         if(ret_value != null && p->mCValueName != null && p->mCValueName === ret_value->mCValueName && type->mHeap) 
         {
             free_object(p->mType, p->mCValueName, false@no_decrement, true@no_free, info, false, true);

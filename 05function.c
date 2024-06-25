@@ -51,14 +51,6 @@ class sLambdaNode extends sNodeBase
     }
 };
 
-void caller_begin(sInfo* info=info)
-{
-}
-
-void caller_end(sInfo* info=info)
-{
-}
-
 class sFunNode extends sNodeBase
 {
     sFun*% mFun;
@@ -85,15 +77,6 @@ class sFunNode extends sNodeBase
         sFun* come_fun = info.come_fun;
         info.come_fun = self.mFun;
         
-        caller_begin();
-        
-    /*
-        string var_name = s"__caller_sname_stack__";
-        add_come_code_at_function_head(info, "%s;\n", make_define_var(new sType("char*"), var_name));
-        
-        string var_name2 = s"__caller_sline_stack__";
-        add_come_code_at_function_head(info, "%s;\n", make_define_var(new sType("int"), var_name2));
-    */
         string come_fun_name = info.come_fun_name;
         info.come_fun_name = string(info.come_fun.mName);
         
@@ -113,8 +96,6 @@ class sFunNode extends sNodeBase
                 add_come_code(info, xsprintf("come_heap_final();\n"));
             }
         }
-        
-        caller_end();
         
         info.come_fun = come_fun;
         info.come_fun_name = come_fun_name;
