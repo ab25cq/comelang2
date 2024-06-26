@@ -590,11 +590,6 @@ class sRangeCheckNode extends sNodeBase
     }
 };
 
-sNode*% store_field(sNode* left, sNode*% right, string name, sInfo* info)
-{
-    return new sStoreFieldNode(left, right, name, info) implements sNode;
-}
-
 class sLoadFieldNode extends sNodeBase
 {
     sNode*% mLeft;
