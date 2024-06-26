@@ -1,26 +1,6 @@
 #include "common.h"
 #include <limits.h>
 
-static string double_quoted_string(char* str)
-{
-    buffer*% buf = new buffer();
-    char* p = str;
-    while(*p) {
-        if(*p == '"') {
-            p++;
-            
-            buf.append_char('\\');
-            buf.append_char('"');
-        }
-        else {
-            buf.append_char(*p);
-            p++;
-        }
-    }
-    
-    return buf.to_string();
-}
-
 class sStrNode extends sNodeBase
 {
     string value;

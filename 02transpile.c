@@ -17,14 +17,6 @@ bool gComeDebug = false;
 bool gComeOriginalSourcePosition = true;
 int gComeDebugStackFrameID = 0;
 
-void come_init() version 2
-{
-}
-
-void come_final() version 2
-{
-}
-
 static void write_source_file_position_to_source(sInfo* info=info)
 {
     if(gComeOriginalSourcePosition) {
@@ -469,10 +461,6 @@ static void init_classes(sInfo* info)
     }
 }
 
-void init_module(sInfo* info)
-{
-}
-                
 int come_main(int argc, char** argv) version 2
 {
     if(argv[1] === "header" && argc >= 3) {
@@ -573,8 +561,6 @@ int come_main(int argc, char** argv) version 2
         
         truncate(output_file_name, 0) or die("truncate");
         
-        come_init();
-        
         string tmp_file = string("tmp-common-header");
         
         system(s"cat \{files.join(" ")} > \{tmp_file}");
@@ -614,7 +600,6 @@ int come_main(int argc, char** argv) version 2
         info.output_file_name = string(output_file_name);
         
         init_classes(&info);
-        init_module(&info);
         
         clear_tmp_file(&info);
         
@@ -638,8 +623,6 @@ int come_main(int argc, char** argv) version 2
         }
         
         system(s"rm -rf \{tmp_file}*");
-        
-        come_final();
     }
     else if(argv[1] === "new" && argc == 3) {
         if(!new_project(argc, argv)) {
@@ -775,8 +758,6 @@ int come_main(int argc, char** argv) version 2
             }
         }
         
-        come_init();
-        
         foreach(it, files) {
             sInfo info;
             
@@ -805,7 +786,6 @@ int come_main(int argc, char** argv) version 2
             info.verbose = verbose;
             
             init_classes(&info);
-            init_module(&info);
             
             clear_tmp_file(&info);
             
@@ -871,8 +851,6 @@ int come_main(int argc, char** argv) version 2
                 exit(13);
             }
         }
-        
-        come_final();
     }
 
     

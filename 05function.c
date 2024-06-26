@@ -894,9 +894,7 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 99
         info.p = head;
         
         if(xisalpha(*info->p) || *info->p == '_') {
-            info.no_output_err = true;
-            var result_type, fun_name, err = parse_type();
-            info.no_output_err = false;
+            var result_type, fun_name, err = backtrace_parse_type();
 
             
             if(*info->p == '(') {
@@ -938,12 +936,9 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 99
         char* p = info.p;
         info.p = head;
         
-        bool invalid_type = false;
-        info.no_output_err = true;
         if(xisalpha(*info->p) || *info->p == '_') {
-            var result_type, fun_name, err = parse_type();
+            var result_type, fun_name, err = backtrace_parse_type();
         }
-        info.no_output_err = false;
         
         if(!info.define_struct) {
             info.define_struct = false;
@@ -1008,9 +1003,7 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 99
         }
         
         if(xisalpha(*info->p) || *info->p == '_') {
-            info.no_output_err = true;
-            var result_type, fun_name, err = parse_type();
-            info.no_output_err = false;
+            var result_type, fun_name, err = backtrace_parse_type();
             
             if(*info->p == '(') {
                 info->p ++;

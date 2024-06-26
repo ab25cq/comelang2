@@ -482,10 +482,7 @@ sNode*% parse_struct(string type_name, sInfo* info)
             char* p = info.p;
             int sline = info.sline;
             
-            bool no_output_err = info.no_output_err;
-            info.no_output_err = true;
-            var type, name, err = parse_type(parse_variable_name:true);
-            info.no_output_err = no_output_err;
+            var type, name, err = backtrace_parse_type(parse_variable_name:true);
             
             if(err && *info->p == ',') {
                 multiple_declare = true;
@@ -719,10 +716,7 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
                         char* p = info.p;
                         int sline = info.sline;
                         
-                        bool no_output_err = info.no_output_err;
-                        info.no_output_err = true;
-                        var type, name, err = parse_type(parse_variable_name:true);
-                        info.no_output_err = no_output_err;
+                        var type, name, err = backtrace_parse_type(parse_variable_name:true);
                         
                         if(err && *info->p == ',') {
                             multiple_declare = true;
@@ -898,10 +892,7 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
                 int sline = info.sline;
                 
                 if(memcmp(info.p, "new(", 4) != 0) {
-                    bool no_output_err = info.no_output_err;
-                    info.no_output_err = true;
-                    var type, name, err = parse_type(parse_variable_name:true);
-                    info.no_output_err = no_output_err;
+                    var type, name, err = backtrace_parse_type(parse_variable_name:true);
                     
                     if(err && *info->p == ',') {
                         multiple_declare = true;
@@ -922,11 +913,9 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
                 }
                 else {
                     bool invalid_type = false;
-                    info.no_output_err = true;
                     if(xisalpha(*info->p) || *info->p == '_') {
-                        var result_type, fun_name, err = parse_type();
+                        var result_type, fun_name, err = backtrace_parse_type();
                     }
-                    info.no_output_err = false;
                     
                     string word = null;
                     if(xisalnum(*info.p) || *info->p == '_') {

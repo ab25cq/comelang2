@@ -915,17 +915,6 @@ sNode*% parse_function_call(char* fun_name, sInfo* info)
     return node;
 }
 
-sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 5
-{
-    err_msg(info, "unexpected word(%s)(1)\n", buf);
-    exit(2);
-}
-
-sNode*% post_position_operator(sNode*% node, sInfo* info) version 5
-{
-    return node;
-}
-
 sNode*% expression_node(sInfo* info=info) version 1
 {
     skip_spaces_and_lf();

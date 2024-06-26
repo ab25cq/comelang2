@@ -2237,13 +2237,13 @@ struct smart_pointer$1char* result_6;
 struct smart_pointer$1char* __result8__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_6, 0, sizeof(struct smart_pointer$1char*));
-    # 1947 "./neo-c.h"
-    result_6=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 1947, "smart_pointer$1char");
-    # 1949 "./neo-c.h"
-    result_6->memory=buffer_clone(self);
+    # 1948 "./neo-c.h"
+    result_6=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 1948, "smart_pointer$1char");
     # 1950 "./neo-c.h"
+    result_6->memory=buffer_clone(self);
+    # 1951 "./neo-c.h"
     result_6->p=result_6->memory->buf;
-    # 1952 "./neo-c.h"
+    # 1953 "./neo-c.h"
     __result8__ = __result_obj__ = result_6;
     return __result8__;
 }
@@ -2253,13 +2253,13 @@ struct smart_pointer$1char* result_7;
 struct smart_pointer$1char* __result9__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_7, 0, sizeof(struct smart_pointer$1char*));
-    # 1957 "./neo-c.h"
-    result_7=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 1957, "smart_pointer$1char");
-    # 1959 "./neo-c.h"
-    result_7->memory=buffer_clone(self);
+    # 1958 "./neo-c.h"
+    result_7=(struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 1958, "smart_pointer$1char");
     # 1960 "./neo-c.h"
+    result_7->memory=buffer_clone(self);
+    # 1961 "./neo-c.h"
     result_7->p=(char*)result_7->memory->buf;
-    # 1962 "./neo-c.h"
+    # 1963 "./neo-c.h"
     __result9__ = __result_obj__ = result_7;
     return __result9__;
 }
@@ -2269,13 +2269,13 @@ struct smart_pointer$1short* result_8;
 struct smart_pointer$1short* __result10__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_8, 0, sizeof(struct smart_pointer$1short*));
-    # 1967 "./neo-c.h"
-    result_8=(struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 1967, "smart_pointer$1short");
-    # 1969 "./neo-c.h"
-    result_8->memory=buffer_clone(self);
+    # 1968 "./neo-c.h"
+    result_8=(struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 1968, "smart_pointer$1short");
     # 1970 "./neo-c.h"
+    result_8->memory=buffer_clone(self);
+    # 1971 "./neo-c.h"
     result_8->p=(short short*)result_8->memory->buf;
-    # 1972 "./neo-c.h"
+    # 1973 "./neo-c.h"
     __result10__ = __result_obj__ = result_8;
     return __result10__;
 }
@@ -2285,13 +2285,13 @@ struct smart_pointer$1int* result_9;
 struct smart_pointer$1int* __result11__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_9, 0, sizeof(struct smart_pointer$1int*));
-    # 1977 "./neo-c.h"
-    result_9=(struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 1977, "smart_pointer$1int");
-    # 1979 "./neo-c.h"
-    result_9->memory=buffer_clone(self);
+    # 1978 "./neo-c.h"
+    result_9=(struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 1978, "smart_pointer$1int");
     # 1980 "./neo-c.h"
+    result_9->memory=buffer_clone(self);
+    # 1981 "./neo-c.h"
     result_9->p=(int*)result_9->memory->buf;
-    # 1982 "./neo-c.h"
+    # 1983 "./neo-c.h"
     __result11__ = __result_obj__ = result_9;
     return __result11__;
 }
@@ -2301,13 +2301,13 @@ struct smart_pointer$1long* result_10;
 struct smart_pointer$1long* __result12__;
 memset(&__result_obj__, 0, sizeof(void*));
 memset(&result_10, 0, sizeof(struct smart_pointer$1long*));
-    # 1987 "./neo-c.h"
-    result_10=(struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 1987, "smart_pointer$1long");
-    # 1989 "./neo-c.h"
-    result_10->memory=buffer_clone(self);
+    # 1988 "./neo-c.h"
+    result_10=(struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 1988, "smart_pointer$1long");
     # 1990 "./neo-c.h"
+    result_10->memory=buffer_clone(self);
+    # 1991 "./neo-c.h"
     result_10->p=(long*)result_10->memory->buf;
-    # 1992 "./neo-c.h"
+    # 1993 "./neo-c.h"
     __result12__ = __result_obj__ = result_10;
     return __result12__;
 }
@@ -2315,103 +2315,103 @@ static inline struct smart_pointer$1char* charpa_to_pointer(char* self, unsigned
 void* __result_obj__;
 struct smart_pointer$1char* __result14__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2158 "./neo-c.h"
-    __result14__ = __result_obj__ = smart_pointer$1char_initialize((struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 2158, "smart_pointer$1char"),self,len);
+    # 2159 "./neo-c.h"
+    __result14__ = __result_obj__ = smart_pointer$1char_initialize((struct smart_pointer$1char*)come_calloc(1, sizeof(struct smart_pointer$1char)*(1), "./neo-c.h", 2159, "smart_pointer$1char"),self,len);
     return __result14__;
 }
 static inline struct smart_pointer$1short* shortpa_to_pointer(short short* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1short* __result16__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2163 "./neo-c.h"
-    __result16__ = __result_obj__ = smart_pointer$1short_initialize((struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 2163, "smart_pointer$1short"),self,len);
+    # 2164 "./neo-c.h"
+    __result16__ = __result_obj__ = smart_pointer$1short_initialize((struct smart_pointer$1short*)come_calloc(1, sizeof(struct smart_pointer$1short)*(1), "./neo-c.h", 2164, "smart_pointer$1short"),self,len);
     return __result16__;
 }
 static inline struct smart_pointer$1int* intpa_to_pointer(int* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1int* __result18__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2168 "./neo-c.h"
-    __result18__ = __result_obj__ = smart_pointer$1int_initialize((struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 2168, "smart_pointer$1int"),self,len);
+    # 2169 "./neo-c.h"
+    __result18__ = __result_obj__ = smart_pointer$1int_initialize((struct smart_pointer$1int*)come_calloc(1, sizeof(struct smart_pointer$1int)*(1), "./neo-c.h", 2169, "smart_pointer$1int"),self,len);
     return __result18__;
 }
 static inline struct smart_pointer$1long* longpa_to_pointer(long* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1long* __result20__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2173 "./neo-c.h"
-    __result20__ = __result_obj__ = smart_pointer$1long_initialize((struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 2173, "smart_pointer$1long"),self,len);
+    # 2174 "./neo-c.h"
+    __result20__ = __result_obj__ = smart_pointer$1long_initialize((struct smart_pointer$1long*)come_calloc(1, sizeof(struct smart_pointer$1long)*(1), "./neo-c.h", 2174, "smart_pointer$1long"),self,len);
     return __result20__;
 }
 static inline struct smart_pointer$1float* floatpa_to_pointer(float* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1float* __result22__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2178 "./neo-c.h"
-    __result22__ = __result_obj__ = smart_pointer$1float_initialize((struct smart_pointer$1float*)come_calloc(1, sizeof(struct smart_pointer$1float)*(1), "./neo-c.h", 2178, "smart_pointer$1float"),self,len);
+    # 2179 "./neo-c.h"
+    __result22__ = __result_obj__ = smart_pointer$1float_initialize((struct smart_pointer$1float*)come_calloc(1, sizeof(struct smart_pointer$1float)*(1), "./neo-c.h", 2179, "smart_pointer$1float"),self,len);
     return __result22__;
 }
 static inline struct smart_pointer$1double* doublepa_to_pointer(double* self, unsigned long int len){
 void* __result_obj__;
 struct smart_pointer$1double* __result24__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2183 "./neo-c.h"
-    __result24__ = __result_obj__ = smart_pointer$1double_initialize((struct smart_pointer$1double*)come_calloc(1, sizeof(struct smart_pointer$1double)*(1), "./neo-c.h", 2183, "smart_pointer$1double"),self,len);
+    # 2184 "./neo-c.h"
+    __result24__ = __result_obj__ = smart_pointer$1double_initialize((struct smart_pointer$1double*)come_calloc(1, sizeof(struct smart_pointer$1double)*(1), "./neo-c.h", 2184, "smart_pointer$1double"),self,len);
     return __result24__;
 }
 static inline struct list$1char* charpa_to_list(char* self, unsigned long int len){
 void* __result_obj__;
 struct list$1char* __result27__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2188 "./neo-c.h"
-    __result27__ = __result_obj__ = list$1char_initialize_with_values((struct list$1char*)come_calloc(1, sizeof(struct list$1char)*(1), "./neo-c.h", 2188, "list$1char"),len,self);
+    # 2189 "./neo-c.h"
+    __result27__ = __result_obj__ = list$1char_initialize_with_values((struct list$1char*)come_calloc(1, sizeof(struct list$1char)*(1), "./neo-c.h", 2189, "list$1char"),len,self);
     return __result27__;
 }
 static inline struct list$1short* shortpa_to_list(short short* self, unsigned long int len){
 void* __result_obj__;
 struct list$1short* __result30__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2193 "./neo-c.h"
-    __result30__ = __result_obj__ = list$1short_initialize_with_values((struct list$1short*)come_calloc(1, sizeof(struct list$1short)*(1), "./neo-c.h", 2193, "list$1short"),len,self);
+    # 2194 "./neo-c.h"
+    __result30__ = __result_obj__ = list$1short_initialize_with_values((struct list$1short*)come_calloc(1, sizeof(struct list$1short)*(1), "./neo-c.h", 2194, "list$1short"),len,self);
     return __result30__;
 }
 static inline struct list$1int* intpa_to_list(int* self, unsigned long int len){
 void* __result_obj__;
 struct list$1int* __result33__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2198 "./neo-c.h"
-    __result33__ = __result_obj__ = list$1int_initialize_with_values((struct list$1int*)come_calloc(1, sizeof(struct list$1int)*(1), "./neo-c.h", 2198, "list$1int"),len,self);
+    # 2199 "./neo-c.h"
+    __result33__ = __result_obj__ = list$1int_initialize_with_values((struct list$1int*)come_calloc(1, sizeof(struct list$1int)*(1), "./neo-c.h", 2199, "list$1int"),len,self);
     return __result33__;
 }
 static inline struct list$1long* longpa_to_list(long* self, unsigned long int len){
 void* __result_obj__;
 struct list$1long* __result36__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2203 "./neo-c.h"
-    __result36__ = __result_obj__ = list$1long_initialize_with_values((struct list$1long*)come_calloc(1, sizeof(struct list$1long)*(1), "./neo-c.h", 2203, "list$1long"),len,self);
+    # 2204 "./neo-c.h"
+    __result36__ = __result_obj__ = list$1long_initialize_with_values((struct list$1long*)come_calloc(1, sizeof(struct list$1long)*(1), "./neo-c.h", 2204, "list$1long"),len,self);
     return __result36__;
 }
 static inline struct list$1float* floatpa_to_list(float* self, unsigned long int len){
 void* __result_obj__;
 struct list$1float* __result39__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2208 "./neo-c.h"
-    __result39__ = __result_obj__ = list$1float_initialize_with_values((struct list$1float*)come_calloc(1, sizeof(struct list$1float)*(1), "./neo-c.h", 2208, "list$1float"),len,self);
+    # 2209 "./neo-c.h"
+    __result39__ = __result_obj__ = list$1float_initialize_with_values((struct list$1float*)come_calloc(1, sizeof(struct list$1float)*(1), "./neo-c.h", 2209, "list$1float"),len,self);
     return __result39__;
 }
 static inline struct list$1double* doublepa_to_list(double* self, unsigned long int len){
 void* __result_obj__;
 struct list$1double* __result42__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2213 "./neo-c.h"
-    __result42__ = __result_obj__ = list$1double_initialize_with_values((struct list$1double*)come_calloc(1, sizeof(struct list$1double)*(1), "./neo-c.h", 2213, "list$1double"),len,self);
+    # 2214 "./neo-c.h"
+    __result42__ = __result_obj__ = list$1double_initialize_with_values((struct list$1double*)come_calloc(1, sizeof(struct list$1double)*(1), "./neo-c.h", 2214, "list$1double"),len,self);
     return __result42__;
 }
 static inline unsigned long int charpa_length(char* self, unsigned long int len){
 void* __result_obj__;
 unsigned long int __result43__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2243 "./neo-c.h"
+    # 2244 "./neo-c.h"
     __result43__ = len;
     return __result43__;
 }
@@ -2419,7 +2419,7 @@ static inline unsigned long int shortpa_length(short short* self, unsigned long 
 void* __result_obj__;
 unsigned long int __result44__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2248 "./neo-c.h"
+    # 2249 "./neo-c.h"
     __result44__ = len;
     return __result44__;
 }
@@ -2427,7 +2427,7 @@ static inline unsigned long int intpa_length(int* self, unsigned long int len){
 void* __result_obj__;
 unsigned long int __result45__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2253 "./neo-c.h"
+    # 2254 "./neo-c.h"
     __result45__ = len;
     return __result45__;
 }
@@ -2435,7 +2435,7 @@ static inline unsigned long int longpa_length(long* self, unsigned long int len)
 void* __result_obj__;
 unsigned long int __result46__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2258 "./neo-c.h"
+    # 2259 "./neo-c.h"
     __result46__ = len;
     return __result46__;
 }
@@ -2443,7 +2443,7 @@ static inline unsigned long int floatpa_length(float* self, unsigned long int le
 void* __result_obj__;
 unsigned long int __result47__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2263 "./neo-c.h"
+    # 2264 "./neo-c.h"
     __result47__ = len;
     return __result47__;
 }
@@ -2451,7 +2451,7 @@ static inline unsigned long int doublepa_length(double* self, unsigned long int 
 void* __result_obj__;
 unsigned long int __result48__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2268 "./neo-c.h"
+    # 2269 "./neo-c.h"
     __result48__ = len;
     return __result48__;
 }
@@ -2459,7 +2459,7 @@ static inline char* string_xsprintf(char* self, char* msg, ...){
 void* __result_obj__;
 char* __result49__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2329 "./neo-c.h"
+    # 2330 "./neo-c.h"
     __result49__ = __result_obj__ = xsprintf(msg,self);
     return __result49__;
 }
@@ -2467,7 +2467,7 @@ static inline char* charp_xsprintf(char* self, char* msg, ...){
 void* __result_obj__;
 char* __result50__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2334 "./neo-c.h"
+    # 2335 "./neo-c.h"
     __result50__ = __result_obj__ = xsprintf(msg,self);
     return __result50__;
 }
@@ -2475,7 +2475,7 @@ static inline char* int_xsprintf(int self, char* msg, ...){
 void* __result_obj__;
 char* __result51__;
 memset(&__result_obj__, 0, sizeof(void*));
-    # 2339 "./neo-c.h"
+    # 2340 "./neo-c.h"
     __result51__ = __result_obj__ = xsprintf(msg,self);
     return __result51__;
 }
@@ -2826,13 +2826,13 @@ static struct smart_pointer$1char* smart_pointer$1char_initialize(struct smart_p
 void* __result_obj__;
 struct smart_pointer$1char* __result13__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 1999 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1999, "buffer"));
-        # 2001 "./neo-c.h"
+        # 2000 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2000, "buffer"));
+        # 2002 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(char)*size);
-        # 2003 "./neo-c.h"
+        # 2004 "./neo-c.h"
         self->p=(char*)self->memory->buf;
-        # 2005 "./neo-c.h"
+        # 2006 "./neo-c.h"
         __result13__ = __result_obj__ = self;
         return __result13__;
 }
@@ -2842,13 +2842,13 @@ static struct smart_pointer$1short* smart_pointer$1short_initialize(struct smart
 void* __result_obj__;
 struct smart_pointer$1short* __result15__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 1999 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1999, "buffer"));
-        # 2001 "./neo-c.h"
+        # 2000 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2000, "buffer"));
+        # 2002 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(short short)*size);
-        # 2003 "./neo-c.h"
+        # 2004 "./neo-c.h"
         self->p=(short short*)self->memory->buf;
-        # 2005 "./neo-c.h"
+        # 2006 "./neo-c.h"
         __result15__ = __result_obj__ = self;
         return __result15__;
 }
@@ -2858,13 +2858,13 @@ static struct smart_pointer$1int* smart_pointer$1int_initialize(struct smart_poi
 void* __result_obj__;
 struct smart_pointer$1int* __result17__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 1999 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1999, "buffer"));
-        # 2001 "./neo-c.h"
+        # 2000 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2000, "buffer"));
+        # 2002 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(int)*size);
-        # 2003 "./neo-c.h"
+        # 2004 "./neo-c.h"
         self->p=(int*)self->memory->buf;
-        # 2005 "./neo-c.h"
+        # 2006 "./neo-c.h"
         __result17__ = __result_obj__ = self;
         return __result17__;
 }
@@ -2874,13 +2874,13 @@ static struct smart_pointer$1long* smart_pointer$1long_initialize(struct smart_p
 void* __result_obj__;
 struct smart_pointer$1long* __result19__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 1999 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1999, "buffer"));
-        # 2001 "./neo-c.h"
+        # 2000 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2000, "buffer"));
+        # 2002 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(long)*size);
-        # 2003 "./neo-c.h"
+        # 2004 "./neo-c.h"
         self->p=(long*)self->memory->buf;
-        # 2005 "./neo-c.h"
+        # 2006 "./neo-c.h"
         __result19__ = __result_obj__ = self;
         return __result19__;
 }
@@ -2890,13 +2890,13 @@ static struct smart_pointer$1float* smart_pointer$1float_initialize(struct smart
 void* __result_obj__;
 struct smart_pointer$1float* __result21__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 1999 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1999, "buffer"));
-        # 2001 "./neo-c.h"
+        # 2000 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2000, "buffer"));
+        # 2002 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(float)*size);
-        # 2003 "./neo-c.h"
+        # 2004 "./neo-c.h"
         self->p=(float*)self->memory->buf;
-        # 2005 "./neo-c.h"
+        # 2006 "./neo-c.h"
         __result21__ = __result_obj__ = self;
         return __result21__;
 }
@@ -2906,13 +2906,13 @@ static struct smart_pointer$1double* smart_pointer$1double_initialize(struct sma
 void* __result_obj__;
 struct smart_pointer$1double* __result23__;
 memset(&__result_obj__, 0, sizeof(void*));
-        # 1999 "./neo-c.h"
-        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 1999, "buffer"));
-        # 2001 "./neo-c.h"
+        # 2000 "./neo-c.h"
+        self->memory=buffer_initialize((struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "./neo-c.h", 2000, "buffer"));
+        # 2002 "./neo-c.h"
         buffer_append(self->memory,memory,sizeof(double)*size);
-        # 2003 "./neo-c.h"
+        # 2004 "./neo-c.h"
         self->p=(double*)self->memory->buf;
-        # 2005 "./neo-c.h"
+        # 2006 "./neo-c.h"
         __result23__ = __result_obj__ = self;
         return __result23__;
 }

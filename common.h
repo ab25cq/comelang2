@@ -26,7 +26,8 @@ struct sType;
 
 struct sClass;
 
-struct sClass {
+struct sClass 
+{
     bool mStruct;
     bool mFloat;
     bool mUnion;
@@ -53,7 +54,8 @@ struct sClass {
 
 struct sInfo;
 
-interface sNode {
+interface sNode 
+{
     bool compile(sInfo* info);
     int sline();
     string sname();
@@ -142,13 +144,15 @@ struct sType
 
 struct sVar;
 
-struct CVALUE {
+struct CVALUE 
+{
     string c_value;
     sType*% type;
     sVar* var;
 };
 
-struct sVar {
+struct sVar 
+{
     string mName;
     string mCValueName;
     sType*% mType;
@@ -231,7 +235,8 @@ struct sModule
 
 struct sVarTable;
 
-struct sVarTable {
+struct sVarTable 
+{
     map<string, sVar*%>*% mVars;
     bool mGlobal;
     struct sVarTable* mParent;
@@ -360,8 +365,6 @@ int come_main(int argc, char** argv) version 1;
 /////////////////////////////////////////////////////////////////////
 bool node_compile(sNode* node, sInfo* info=info);
 int come_main(int argc, char** argv) version 2;
-void come_init() version 2;
-void come_final() version 2;
 void err_msg(sInfo* info, char* msg, ...);
 int transpile(sInfo* info) version 2;
 bool output_source_file(sInfo* info) version 2;
@@ -435,7 +438,7 @@ bool strmemcmp(char* p, char* p2);
 void caller_begin(sInfo* info=info);
 void caller_end(sInfo* info=info);
 sNode*% craete_logical_denial(sNode*% node, sInfo* info);
-void backtrace_parse_type(sInfo* info=info);
+tuple3<sType*%,string,bool>*% backtrace_parse_type(bool parse_variable_name=false,sInfo* info=info);
 void transpile_toplevel(bool block=false, sInfo* info=info);
 void skip_pointer_attribute(sInfo* info=info);
 sNode*% parse_normal_block(sInfo* info=info);
@@ -482,8 +485,6 @@ sNode*% expression_node(sInfo* info=info) version 97;
 
 int transpile(sInfo* info) version 5;
 void parse_sharp(sInfo* info=info) version 5;
-sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 5;
-sNode*% post_position_operator(sNode*% node, sInfo* info) version 5;
 string create_method_name(sType* obj_type, bool no_pointer_name, char* fun_name, sInfo* info, bool array_equal_pointer=true);
 string create_method_name_using_class(sClass* obj_class, bool no_pointer_name, char* fun_name, sInfo* info, bool array_equal_pointer=true);
 
@@ -577,9 +578,9 @@ bool compiletime_get_exception_value(sInfo* info);
 sNode*% store_field(sNode* left, sNode*% right, string name, sInfo* info);
 sNode*% exception_get_value(sNode*% node, sInfo* info);
 
- sNode*% post_position_operator(sNode*% node, sInfo* info) version 18;
- sNode*% post_position_operator2(sNode*% node, sInfo* info) version 18;
- sNode*% parse_method_call(sNode*% obj, string fun_name, sInfo* info) version 18;
+sNode*% post_position_operator(sNode*% node, sInfo* info) version 18;
+sNode*% post_position_operator2(sNode*% node, sInfo* info) version 18;
+sNode*% parse_method_call(sNode*% obj, string fun_name, sInfo* info) version 18;
 
 /////////////////////////////////////////////////////////////////////
 /// 19eq.c

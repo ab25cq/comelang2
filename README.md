@@ -1,9 +1,9 @@
 
 # neo-c
 
-Another modern Object Oriented C compiler. It has a heap system that is a cross between an automatically-free-system and a reference-counted GC, and includes a collection library and a string library. In debug mode, we add as many memory-safe features as possible to the C language.
+Another modern Object Oriented C compiler. It has a heap system that is a cross between an automatically-free-system and a reference-counted GC, and includes a collection library and a string library. 
 
-もう一つのモダンなオブジェクト指向Cコンパイラ。automatically-free-systemとリファレンスカウントGCの間をとったようなヒープシステムがありコレクションライブラリ、文字列ライブラリを備えてます。デバッグモードではC言語にできる限りのメモリセーフの機能を加えてます。
+もう一つのモダンなオブジェクト指向Cコンパイラ。automatically-free-systemとリファレンスカウントGCの間をとったようなヒープシステムがありコレクションライブラリ、文字列ライブラリを備えてます。
 
 version 1.0.0.9.1
 
@@ -256,6 +256,8 @@ int main()
 
 13. Array range check. 
 
+14. class and inheritance system supported.
+
 1. C言語と互換性があります。Cプリプロセッサーも動きます。
 
 2. RustやVやNimのようなautomatically-free-systemがあります。
@@ -281,6 +283,8 @@ int main()
 12. メモリリーク検出機能があります。
 
 13. 配列の範囲外アクセスをチェックします。
+
+14. クラスと継承システムをサポートします。
 
 # インストール
 
@@ -328,6 +332,7 @@ bash all_build.sh
 
 # Histories
 
+1.0.0.9.2 Refactoring.
 1.0.0.9.1 Refactoring.
 1.0.0.9 Refactoring.
 1.0.0.8 Refactoring.

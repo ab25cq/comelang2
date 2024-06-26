@@ -1,5 +1,5 @@
-#ifndef COMELANG2_H
-#define COMELANG2_H
+#ifndef NEO_C_H
+#define NEO_C_H
 
 #define _GNU_SOURCE
 
@@ -1825,7 +1825,6 @@ impl tuple4 <T, T2, T3, T4>
     }
 }
 
-
 struct tuple5<T, T2, T3, T4, T5>
 {
     T v1;
@@ -1866,7 +1865,8 @@ impl tuple5 <T, T2, T3, T4, T5>
 //////////////////////////////
 // buffer
 //////////////////////////////
-struct buffer {
+struct buffer 
+{
     char*% buf;
     int len;
     int size;
@@ -1937,7 +1937,8 @@ static inline buffer*% double[]::to_buffer(double* self, size_t len)
 //////////////////////////////
 // smart_pointer
 //////////////////////////////
-struct smart_pointer<T> {
+struct smart_pointer<T> 
+{
     buffer*% memory;
     T* p;
 };
