@@ -892,11 +892,7 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
             right_value = post_position_operator3(right_value, info);
             parse_sharp();
             
-            sNode*% result = new sStoreNode(string(buf2)@name, multiple_assign, null@multiple_declare, null@type, true@alloc, right_value, null@array_initializer, info) implements sNode;
-    
-            //result = post_position_operator4(result, info);
-            
-            return result;
+            return new sStoreNode(string(buf2)@name, multiple_assign, null@multiple_declare, null@type, true@alloc, right_value, null@array_initializer, info) implements sNode;
         }
         else {
             err_msg(info, "var requires a right value(%c)", *info->p);
@@ -928,11 +924,7 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
             multiple_declare.push_back(variable_name2);
         }
         
-        sNode*% result = new sStoreNode(string(buf)@name, null@multiple_assign, multiple_declare, base_type@type, true@alloc, null@right_value, null@array_initializer, info) implements sNode;
-    
-        //result = post_position_operator4(result, info);
-        
-        return result;
+        return new sStoreNode(string(buf)@name, null@multiple_assign, multiple_declare, base_type@type, true@alloc, null@right_value, null@array_initializer, info) implements sNode;
     }
     else if(multiple_declare2) {
         info.p = head;
@@ -990,11 +982,7 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
             }
         }
         
-        sNode*% result = new sStoreNode(string(buf)@name, null@multiple_assign, multiple_declare, base_type@type, true@alloc, null@right_value, null@array_initializer, info) implements sNode;
-    
-        //result = post_position_operator4(result, info);
-        
-        return result;
+        return new sStoreNode(string(buf)@name, null@multiple_assign, multiple_declare, base_type@type, true@alloc, null@right_value, null@array_initializer, info) implements sNode;
     }
     else if(!is_type_name_flag && *info->p == '=' && *(info->p+1) != '=' && !info->no_assign) {
         info.p++;
@@ -1008,11 +996,7 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
         
         parse_sharp();
         
-        sNode*% result = new sStoreNode(string(buf)@name, null@multiple_assign, null@multiple_declare, null@type, false@alloc, right_value, null@array_initializer, info) implements sNode;
-    
-        //result = post_position_operator4(result, info);
-        
-        return result;
+        return new sStoreNode(string(buf)@name, null@multiple_assign, null@multiple_declare, null@type, false@alloc, right_value, null@array_initializer, info) implements sNode;
     }
     else if(!is_type_name_flag || info.funcs[buf]??) {
         sNode*% node = new sLoadNode(string(buf)@name, info) implements sNode;
@@ -1024,6 +1008,7 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
         return node;
     }
     else {
+        /// backtrace ///
         info.p = head;
         info.sline = head_sline;
         
@@ -1121,11 +1106,7 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
                     }
                     string array_initializer = buf2.to_string();
                     
-                    sNode*% result = new sStoreNode(name, null@multiple_assign, null@multiple_declare, type, true@alloc, null@right_value, array_initializer@array_initializer, info) implements sNode;
-    
-                    //result = post_position_operator4(result, info);
-                    
-                    return result;
+                    return new sStoreNode(name, null@multiple_assign, null@multiple_declare, type, true@alloc, null@right_value, array_initializer@array_initializer, info) implements sNode;
                 }
                 else {
                     parse_sharp();
@@ -1139,19 +1120,11 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
                     
                     right_value = post_position_operator3(right_value, info);
                     
-                    sNode*% result = new sStoreNode(name, null@multiple_assign, null@multiple_declare, type, true@alloc, right_value, null@array_initializer, info) implements sNode;
-    
-                    //result = post_position_operator4(result, info);
-                    
-                    return result;
+                    return new sStoreNode(name, null@multiple_assign, null@multiple_declare, type, true@alloc, right_value, null@array_initializer, info) implements sNode;
                 }
             }
             else {
-                sNode*% result = new sStoreNode(name, null@multiple_assign, null@multiple_declare, type, true@alloc, null@right_value, null@array_initializer, info) implements sNode;
-    
-                //result = post_position_operator4(result, info);
-                
-                return result;
+                return new sStoreNode(name, null@multiple_assign, null@multiple_declare, type, true@alloc, null@right_value, null@array_initializer, info) implements sNode;
             }
         }
     }
