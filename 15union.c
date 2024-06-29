@@ -114,7 +114,7 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 97
         
         string type_name = parse_word();
         bool output = true;
-                
+        
         if(info.classes.at(type_name, null) == null) {
             info.classes.insert(type_name, new sClass(name:string(type_name), union_:true));
         }
@@ -162,9 +162,9 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 97
     return inherit(buf, head, head_sline, info);
 }
 
-
 sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 15
 {
+    /// backtrace ///
     bool define_struct = false;
     {
         char* p = info.p;

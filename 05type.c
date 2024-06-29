@@ -166,6 +166,25 @@ record string parse_word(sInfo* info=info)
     return result;
 }
 
+string backtrace_parse_word(sInfo* info=info)
+{
+    char* p = info.p;
+    int sline = info.sline;
+    
+    string buf;
+    if(xisalpha(*info->p) || *info->p == '_') {
+        buf = parse_word();
+    }
+    else {
+        buf = string("");
+    }
+    
+    info.p = p;
+    info.sline = sline;
+    
+    return buf;
+}
+
 void skip_spaces_and_lf(sInfo* info=info)
 {
     while(true) {

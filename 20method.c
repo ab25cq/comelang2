@@ -865,6 +865,7 @@ sNode*% parse_method_call(sNode*% obj, string fun_name, sInfo* info) version 20
         skip_spaces_and_lf();
     }
     
+    /// backtrace ///
     bool parse_method_generics_type = false;
     {
         char* p = info->p;
@@ -1015,9 +1016,3 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
     return inherit(buf, head, head_sline, info);
 }
 
-
-sNode*% post_position_operator3(sNode*% node, sInfo* info) version 20
-{
-    
-    return inherit(node, info);
-}

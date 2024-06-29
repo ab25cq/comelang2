@@ -153,6 +153,7 @@ class sExternalGlobalVariable extends sNodeBase
 
 sNode*% parse_global_variable(sInfo* info)
 {
+    /// backtrace ///
     bool multiple_declare = false;
     {
         char* p = info.p;

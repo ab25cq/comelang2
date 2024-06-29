@@ -1352,6 +1352,7 @@ sNode*% parse_method_call(sNode*% obj, string fun_name, sInfo* info) version 18
 sNode*% post_position_operator(sNode*% node, sInfo* info) version 18
 {
     while(true){
+        /// backtrace ///
         bool range_array = false;
         {
             char* p = info.p;

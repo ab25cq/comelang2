@@ -806,7 +806,6 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
             }
         }
         
-        
         list<sClass*>*% parent_classes = new list<sClass*>();
         
         sClass* parent_class2 = parent_class;
@@ -1109,6 +1108,7 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 98
 
 sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 14
 {
+    /// backtrace ///
     bool define_struct = false;
     {
         char* p = info.p;

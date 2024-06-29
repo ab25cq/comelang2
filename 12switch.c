@@ -26,9 +26,6 @@ class sSwitchNode extends sNodeBase
     
     bool compile(sInfo* info)
     {
-    //    bool in_loop = info.in_loop;
-    //    info.in_loop = true;
-        
         sBlock* block = self.mBlock;
         
         /// compile expression ///
@@ -48,8 +45,6 @@ class sSwitchNode extends sNodeBase
         add_come_code(info, "}\n");
         
         transpiler_clear_last_code(info);
-        
-    //    info.in_loop = in_loop;
     
         return true;
     }

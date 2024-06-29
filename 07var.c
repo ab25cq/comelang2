@@ -575,15 +575,6 @@ class sStoreNode extends sNodeBase
     }
 };
 
-sNode*% store_var(string name, list<string>*% multiple_assign, sType*% type, bool alloc, sNode*% right_node, sInfo* info)
-{
-    sNode*% result = new sStoreNode(name, multiple_assign, null@multiple_declare, type, alloc, right_node, null@array_initializer, info) implements sNode;
-    
-    //result = post_position_operator4(result, info);
-    
-    return result;
-}
-
 class sLoadNode extends sNodeBase
 {
     string name;
@@ -678,12 +669,6 @@ class sLoadNode extends sNodeBase
     }
 };
 
-
-sNode*% load_var(string name, sInfo* info)
-{
-    return new sLoadNode(name, info) implements sNode;
-}
-
 class sFunLoadNode extends sNodeBase
 {
     string name;
@@ -727,7 +712,6 @@ class sFunLoadNode extends sNodeBase
         return true;
     }
 };
-
 
 void add_variable_to_table(char* name, sType*% type, sInfo* info)
 {
@@ -820,6 +804,7 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
         info.sline = sline;
     }
     
+    /// backtrace ////
     bool multiple_declare2 = false;
     if(is_type_name_flag)
     {
@@ -1042,9 +1027,12 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
         info.p = head;
         info.sline = head_sline;
         
-        string word = string("");
+        string word;
         if(xisalpha(*info->p) || *info->p == '_') {
             word = parse_word();
+        }
+        else {
+            word = string("");
         }
         
         bool is_type_name_flag = is_type_name(word);

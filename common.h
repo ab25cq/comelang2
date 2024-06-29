@@ -462,8 +462,9 @@ bool is_contained_generics_class(sType* type, sInfo* info);
 bool is_type_name(char* buf, sInfo* info=info);
 bool parsecmp(char* str, sInfo* info);
 string parse_word(sInfo* info=info);
+string backtrace_parse_word(sInfo* info=info);
 void skip_spaces_and_lf(sInfo* info=info);
-int expected_next_character(char c, sInfo* info=info);
+record int expected_next_character(char c, sInfo* info=info);
 sBlock*% sBlock*::initialize(sBlock*% self, sInfo* info);
 bool create_generics_fun(string fun_name, sGenericsFun* generics_fun, sType* generics_type, sInfo* info);
 
@@ -541,7 +542,6 @@ bool operator_overload_fun(sType* type, char* fun_name, CVALUE* left_value, CVAL
  sNode*% expression(sInfo* info=info) version 13;
  sNode*% post_op(sNode*% node, sInfo* info) version 13;
 sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 13;
-sNode*% create_null_object(sInfo* info);
 
 /////////////////////////////////////////////////////////////////////
 /// 14struct.c
@@ -593,7 +593,6 @@ sNode*% parse_method_call(sNode*% obj, string fun_name, sInfo* info) version 18;
 string make_generics_function(sType* type, string fun_name, sInfo* info, bool array_equal_pointer=true);
  sNode*% parse_method_call(sNode*% obj, string fun_name, sInfo* info) version 20;
 sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 20;
- sNode*% post_position_operator3(sNode*% node, sInfo* info) version 20;
 
 /////////////////////////////////////////////////////////////////////
 /// 21obj.c

@@ -956,21 +956,7 @@ sNode*% expression_node(sInfo* info=info) version 97
         char* head = info.p;
         int head_sline = info.sline;
         
-        string buf;
-        {
-            char* p = info.p;
-            int sline = info.sline;
-            
-            if(xisalpha(*info->p) || *info->p == '_') {
-                buf = parse_word();
-            }
-            else {
-                buf = string("");
-            }
-            
-            info.p = p;
-            info.sline = sline;
-        }
+        string buf = backtrace_parse_word();
         
         bool is_type_name_ = is_type_name(buf);
         
@@ -996,7 +982,7 @@ sNode*% expression_node(sInfo* info=info) version 97
             info.sline = head_sline;
         }
         
-        /// backtrace2 ///
+        /// backtrace ///
         bool lambda_flag = false;
         if(buf !== "if" && buf !== "while" && buf !== "for" && buf !== "switch" && buf !== "return" && buf !== "sizeof" && buf !== "_Alignof" && buf !== "__alignof__" && buf !== "_Alignas" && buf !== "isheap" && buf !== "guard" && buf !== "ispointer" && buf !== "__typeof__" && buf !== "dynamic_typeof" && buf !== "typeof" && buf !== "gc_inc" && buf !== "gc_dec" && buf !== "case" && is_type_name_)
         {
@@ -1005,19 +991,17 @@ sNode*% expression_node(sInfo* info=info) version 97
             
             backtrace_parse_type();
             
-            if(xisalpha(*info.p) || *info.p == '_') {
-                var word2 = parse_word();
-                
-                if(word2 === "lambda") {
-                    lambda_flag = true;
-                }
+            var word2 = backtrace_parse_word();
+            
+            if(word2 === "lambda") {
+                lambda_flag = true;
             }
             
             info.p = head;
             info.sline = head_sline;
         }
         
-        /// backtrace3 ///
+        /// backtrace ///
         bool fun_name_with_type_name = false;
         if(buf !== "if" && buf !== "while" && buf !== "for" && buf !== "switch" && buf !== "return" && buf !== "sizeof" && buf !== "_Alignof" && buf !== "__alignof__" && buf !== "_Alignas" && buf !== "isheap" && buf !== "guard" && buf !== "ispointer" && buf !== "dynamic_typeof" && buf !== "__typeof__" && buf !== "typeof" && buf !== "gc_inc" && buf !== "gc_dec"&& buf !== "case" )
         {
@@ -1047,6 +1031,7 @@ sNode*% expression_node(sInfo* info=info) version 97
             info.sline = head_sline;
         }
         
+        /// backtrace ///
         bool call_method_generics_fun_call = false;
         {
             info.p = head;

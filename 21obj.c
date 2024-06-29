@@ -1,6 +1,6 @@
 #include "common.h"
 
-class sNullNodeX extends sNodeBase
+class sNothingNode extends sNodeBase
 {
     new(sInfo* info)
     {
@@ -15,7 +15,7 @@ class sNullNodeX extends sNodeBase
     
     string kind()
     {
-        return string("sNullNodeX");
+        return string("sNothingNode");
     }
     
     bool compile(sInfo* info)
@@ -1541,7 +1541,7 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
             
             gComeC = false;
         
-            return new sNullNodeX(info) implements sNode;
+            return new sNothingNode(info) implements sNode;
         }
         else if(strmemcmp(info->p, "c") || strmemcmp(info->p, "C")) {
             info->p += strlen("c");
@@ -1557,33 +1557,33 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
                 return node;
             }
             else {
-                return new sNullNodeX(info) implements sNode;
+                return new sNothingNode(info) implements sNode;
             }
         }
         else if(strmemcmp(info->p, "gc")) {
             info->p += strlen("gc");
             skip_spaces_and_lf();
         
-            return new sNullNodeX(info) implements sNode;
+            return new sNothingNode(info) implements sNode;
         }
         else if(strmemcmp(info->p, "no-gc")) {
             info->p += strlen("no-gc");
             skip_spaces_and_lf();
             
         
-            return new sNullNodeX(info) implements sNode;
+            return new sNothingNode(info) implements sNode;
         }
         else if(strmemcmp(info->p, "unsafe")) {
             info->p += strlen("unsafe");
             skip_spaces_and_lf();
         
-            return new sNullNodeX(info) implements sNode;
+            return new sNothingNode(info) implements sNode;
         }
         else if(strmemcmp(info->p, "no-null-check")) {
             info->p += strlen("no-null-check");
             skip_spaces_and_lf();
         
-            return new sNullNodeX(info) implements sNode;
+            return new sNothingNode(info) implements sNode;
         }
         else {
             err_msg(info, "invalid using");
@@ -1849,7 +1849,7 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 94
             exit(2);
         }
         
-        return new sNullNodeX(info) implements sNode;
+        return new sNothingNode(info) implements sNode;
     }
     
     return inherit(buf, head, head_sline, info);

@@ -157,11 +157,6 @@ class sNullNode extends sNodeBase
     }
 };
 
-sNode*% create_null_object(sInfo* info)
-{
-    return new sNullNode(info) implements sNode;
-}
-
 class sNilNode extends sNodeBase
 {
     new(sInfo* info)
@@ -196,12 +191,6 @@ class sNilNode extends sNodeBase
         return true;
     }
 };
-
-sNode*% create_null_object(sInfo* info)
-{
-    return new sNilNode(info) implements sNode;
-}
-
 
 class sAddNode extends sNodeBase
 {
