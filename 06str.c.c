@@ -2453,6 +2453,8 @@ _Bool parsecmp(char* str, struct sInfo* info);
 
 char* parse_word(struct sInfo* info);
 
+char* backtrace_parse_word(struct sInfo* info);
+
 void skip_spaces_and_lf(struct sInfo* info);
 
 int expected_next_character(char c, struct sInfo* info);
@@ -2537,8 +2539,6 @@ struct sNode* post_op_v13(struct sNode* node, struct sInfo* info);
 
 struct sNode* string_node_v13(char* buf, char* head, int head_sline, struct sInfo* info);
 
-struct sNode* create_null_object(struct sInfo* info);
-
 struct sNode* string_node_v14(char* buf, char* head, int head_sline, struct sInfo* info);
 
 struct sNode* parse_struct(char* type_name, struct sInfo* info);
@@ -2582,8 +2582,6 @@ char* make_generics_function(struct sType* type, char* fun_name, struct sInfo* i
 struct sNode* parse_method_call_v20(struct sNode* obj, char* fun_name, struct sInfo* info);
 
 struct sNode* string_node_v20(char* buf, char* head, int head_sline, struct sInfo* info);
-
-struct sNode* post_position_operator3_v20(struct sNode* node, struct sInfo* info);
 
 struct sNode* create_object(struct sType* type, struct sInfo* info);
 
@@ -9409,10 +9407,12 @@ struct sNode* _inf_value8;
 struct sMapNode* _inf_obj_value8;
 void* right_value423;
 struct sNode* __result180__;
+int __exception_result_var_b1;
 _Bool _while_condtional40;
 _Bool no_comma_308;
 void* right_value424;
 struct sNode* node2_309;
+int __exception_result_var_b2;
 void* right_value425;
 struct sNode* node3_310;
 _Bool _if_conditional327;
@@ -11105,7 +11105,7 @@ right_value440 = (void*)0;
                                         }
                                         else {
                                             # 1726 "06str.c"
-                                            expected_next_character(44,info);
+                                            (come_push_stackframe("06str.c", 1726, 15),__exception_result_var_b1=expected_next_character(44,info), come_pop_stackframe(), __exception_result_var_b1);
                                             # 1768 "06str.c"
                                             while(_while_condtional40=(_Bool)1,                                            _while_condtional40) {
                                                 # 1729 "06str.c"
@@ -11120,7 +11120,7 @@ right_value440 = (void*)0;
                                                 # 1736 "06str.c"
                                                 list$1sNodeph_push_back(map_keys_303,(struct sNode*)come_increment_ref_count(node2_309));
                                                 # 1738 "06str.c"
-                                                expected_next_character(58,info);
+                                                (come_push_stackframe("06str.c", 1738, 16),__exception_result_var_b2=expected_next_character(58,info), come_pop_stackframe(), __exception_result_var_b2);
                                                 # 1740 "06str.c"
                                                 no_comma_308=info->no_comma;
                                                 # 1741 "06str.c"

@@ -2402,6 +2402,8 @@ _Bool parsecmp(char* str, struct sInfo* info);
 
 char* parse_word(struct sInfo* info);
 
+char* backtrace_parse_word(struct sInfo* info);
+
 void skip_spaces_and_lf(struct sInfo* info);
 
 int expected_next_character(char c, struct sInfo* info);
@@ -2488,8 +2490,6 @@ struct sNode* post_op_v13(struct sNode* node, struct sInfo* info);
 
 struct sNode* string_node_v13(char* buf, char* head, int head_sline, struct sInfo* info);
 
-struct sNode* create_null_object(struct sInfo* info);
-
 struct sNode* string_node_v14(char* buf, char* head, int head_sline, struct sInfo* info);
 
 struct sNode* parse_struct(char* type_name, struct sInfo* info);
@@ -2533,8 +2533,6 @@ char* make_generics_function(struct sType* type, char* fun_name, struct sInfo* i
 struct sNode* parse_method_call_v20(struct sNode* obj, char* fun_name, struct sInfo* info);
 
 struct sNode* string_node_v20(char* buf, char* head, int head_sline, struct sInfo* info);
-
-struct sNode* post_position_operator3_v20(struct sNode* node, struct sInfo* info);
 
 struct sNode* create_object(struct sType* type, struct sInfo* info);
 
@@ -6109,8 +6107,10 @@ _Bool _if_conditional127;
 void* right_value112;
 char* sname_126;
 int sline_127;
+int __exception_result_var_b1;
 void* right_value113;
 struct sNode* expression_node_128;
+int __exception_result_var_b2;
 void* right_value114;
 struct sBlock* block_129;
 void* right_value115;
@@ -6142,12 +6142,12 @@ right_value122 = (void*)0;
         # 86 "09while.c"
         sline_127=info->sline;
         # 88 "09while.c"
-        expected_next_character(40,info);
+        (come_push_stackframe("09while.c", 88, 0),__exception_result_var_b1=expected_next_character(40,info), come_pop_stackframe(), __exception_result_var_b1);
         # 91 "09while.c"
         expression_node_128=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value113=expression_v13(info))));
         if(right_value113) { right_value113 = come_decrement_ref_count2(right_value113, ((struct sNode*)right_value113)->finalize, ((struct sNode*)right_value113)->_protocol_obj, 1, 0, 0, __result_obj__); } 
         # 93 "09while.c"
-        expected_next_character(41,info);
+        (come_push_stackframe("09while.c", 93, 1),__exception_result_var_b2=expected_next_character(41,info), come_pop_stackframe(), __exception_result_var_b2);
         # 95 "09while.c"
         block_129=(struct sBlock*)come_increment_ref_count(((struct sBlock*)(right_value114=parse_block(info,(_Bool)0,(_Bool)0))));
         come_call_finalizer3(right_value114,sBlock_finalize, 0, 1, 0, 0, __result_obj__);

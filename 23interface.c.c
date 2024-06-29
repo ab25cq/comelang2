@@ -2403,6 +2403,8 @@ _Bool parsecmp(char* str, struct sInfo* info);
 
 char* parse_word(struct sInfo* info);
 
+char* backtrace_parse_word(struct sInfo* info);
+
 void skip_spaces_and_lf(struct sInfo* info);
 
 int expected_next_character(char c, struct sInfo* info);
@@ -2491,8 +2493,6 @@ struct sNode* post_op_v13(struct sNode* node, struct sInfo* info);
 
 struct sNode* string_node_v13(char* buf, char* head, int head_sline, struct sInfo* info);
 
-struct sNode* create_null_object(struct sInfo* info);
-
 struct sNode* string_node_v14(char* buf, char* head, int head_sline, struct sInfo* info);
 
 struct sNode* parse_struct(char* type_name, struct sInfo* info);
@@ -2536,8 +2536,6 @@ char* make_generics_function(struct sType* type, char* fun_name, struct sInfo* i
 struct sNode* parse_method_call_v20(struct sNode* obj, char* fun_name, struct sInfo* info);
 
 struct sNode* string_node_v20(char* buf, char* head, int head_sline, struct sInfo* info);
-
-struct sNode* post_position_operator3_v20(struct sNode* node, struct sInfo* info);
 
 struct sNode* create_object(struct sType* type, struct sInfo* info);
 
@@ -7947,6 +7945,7 @@ struct sClass* __dec_obj67;
 void* right_value186;
 struct sClass* __dec_obj68;
 _Bool _if_conditional237;
+int __exception_result_var_b1;
 void* right_value187;
 void* right_value188;
 struct sType* voidp_178;
@@ -7999,6 +7998,7 @@ void* right_value224;
 struct tuple2$2sTypephcharph* multiple_assign_var4;
 struct sType* type2_190;
 char* name_191;
+int __exception_result_var_b2;
 void* right_value225;
 void* right_value226;
 _Bool _if_conditional240;
@@ -8114,7 +8114,7 @@ right_value238 = (void*)0;
             }
         }
         # 106 "23interface.c"
-        expected_next_character(123,info);
+        (come_push_stackframe("23interface.c", 106, 0),__exception_result_var_b1=expected_next_character(123,info), come_pop_stackframe(), __exception_result_var_b1);
         # 108 "23interface.c"
         voidp_178=(struct sType*)come_increment_ref_count(((struct sType*)(right_value188=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value187=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "23interface.c", 108, "sType")))),"void",(_Bool)0,info))));
         come_call_finalizer3(right_value187,sType_finalize, 0, 1, 0, 0, __result_obj__);
@@ -8205,7 +8205,7 @@ right_value238 = (void*)0;
             name_191=(char*)come_increment_ref_count(multiple_assign_var4->v2);
             come_call_finalizer3(right_value224,tuple2$2sTypephcharphp_finalize, 0, 1, 0, 0, __result_obj__);
             # 134 "23interface.c"
-            expected_next_character(59,info);
+            (come_push_stackframe("23interface.c", 134, 1),__exception_result_var_b2=expected_next_character(59,info), come_pop_stackframe(), __exception_result_var_b2);
             # 136 "23interface.c"
             list$1tuple2$2charphsTypephph_push_back(klass_177->mFields,(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value226=tuple2$2charphsTypeph_initialize((struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value225=(struct tuple2$2charphsTypeph*)come_calloc(1, sizeof(struct tuple2$2charphsTypeph)*(1), "23interface.c", 136, "tuple2$2charphsTypeph")))),(char*)come_increment_ref_count(name_191),(struct sType*)come_increment_ref_count(type2_190))))));
             come_call_finalizer3(right_value225,tuple2$2charphsTypephp_finalize, 0, 1, 0, 0, __result_obj__);

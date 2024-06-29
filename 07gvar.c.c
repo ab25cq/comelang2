@@ -2428,6 +2428,8 @@ _Bool parsecmp(char* str, struct sInfo* info);
 
 char* parse_word(struct sInfo* info);
 
+char* backtrace_parse_word(struct sInfo* info);
+
 void skip_spaces_and_lf(struct sInfo* info);
 
 int expected_next_character(char c, struct sInfo* info);
@@ -2514,8 +2516,6 @@ struct sNode* post_op_v13(struct sNode* node, struct sInfo* info);
 
 struct sNode* string_node_v13(char* buf, char* head, int head_sline, struct sInfo* info);
 
-struct sNode* create_null_object(struct sInfo* info);
-
 struct sNode* string_node_v14(char* buf, char* head, int head_sline, struct sInfo* info);
 
 struct sNode* parse_struct(char* type_name, struct sInfo* info);
@@ -2559,8 +2559,6 @@ char* make_generics_function(struct sType* type, char* fun_name, struct sInfo* i
 struct sNode* parse_method_call_v20(struct sNode* obj, char* fun_name, struct sInfo* info);
 
 struct sNode* string_node_v20(char* buf, char* head, int head_sline, struct sInfo* info);
-
-struct sNode* post_position_operator3_v20(struct sNode* node, struct sInfo* info);
 
 struct sNode* create_object(struct sType* type, struct sInfo* info);
 
@@ -6493,35 +6491,35 @@ right_value194 = (void*)0;
 right_value195 = (void*)0;
 right_value196 = (void*)0;
 right_value205 = (void*)0;
-    # 156 "07gvar.c"
+    # 157 "07gvar.c"
     multiple_declare_106=(_Bool)0;
-    # 177 "07gvar.c"
+    # 178 "07gvar.c"
     {
-        # 158 "07gvar.c"
-        p_107=info->p;
         # 159 "07gvar.c"
+        p_107=info->p;
+        # 160 "07gvar.c"
         sline_108=info->sline;
-        # 173 "07gvar.c"
-        # 161 "07gvar.c"
+        # 174 "07gvar.c"
+        # 162 "07gvar.c"
         if(_if_conditional156=xisalpha(*info->p)||*info->p==95,        _if_conditional156) {
-            # 162 "07gvar.c"
+            # 163 "07gvar.c"
             multiple_assign_var3=((struct tuple3$3sTypephcharphbool*)(right_value146=parse_type(info,(_Bool)0,(_Bool)1,(_Bool)0)));
             type_109=(struct sType*)come_increment_ref_count(multiple_assign_var3->v1);
             name_110=(char*)come_increment_ref_count(multiple_assign_var3->v2);
             err_111=multiple_assign_var3->v3;
             come_call_finalizer3(right_value146,tuple3$3sTypephcharphboolp_finalize, 0, 1, 0, 0, __result_obj__);
-            # 171 "07gvar.c"
-            # 164 "07gvar.c"
+            # 172 "07gvar.c"
+            # 165 "07gvar.c"
             if(err_111) {
-                # 165 "07gvar.c"
+                # 166 "07gvar.c"
                 multiple_assign_var4=((struct tuple2$2sTypephcharph*)(right_value147=parse_variable_name((struct sType*)come_increment_ref_count(type_109),(_Bool)1,info)));
                 type_112=(struct sType*)come_increment_ref_count(multiple_assign_var4->v1);
                 name_113=(char*)come_increment_ref_count(multiple_assign_var4->v2);
                 come_call_finalizer3(right_value147,tuple2$2sTypephcharphp_finalize, 0, 1, 0, 0, __result_obj__);
-                # 170 "07gvar.c"
-                # 167 "07gvar.c"
+                # 171 "07gvar.c"
+                # 168 "07gvar.c"
                 if(_if_conditional160=!is_type_name(name_113,info)&&*info->p==44,                _if_conditional160) {
-                    # 168 "07gvar.c"
+                    # 169 "07gvar.c"
                     multiple_declare_106=(_Bool)1;
                 }
                 come_call_finalizer3(type_112,sType_finalize, 0, 0, 0, 0, (void*)0);
@@ -6530,88 +6528,88 @@ right_value205 = (void*)0;
             come_call_finalizer3(type_109,sType_finalize, 0, 0, 0, 0, (void*)0);
             name_110 = come_decrement_ref_count2(name_110, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
-        # 173 "07gvar.c"
-        info->p=p_107;
         # 174 "07gvar.c"
+        info->p=p_107;
+        # 175 "07gvar.c"
         info->sline=sline_108;
     }
-    # 320 "07gvar.c"
-    # 177 "07gvar.c"
+    # 321 "07gvar.c"
+    # 178 "07gvar.c"
     if(multiple_declare_106) {
-        # 178 "07gvar.c"
-        multiple_declare_114=(struct list$1tuple2$2sTypephcharphph*)come_increment_ref_count(((struct list$1tuple2$2sTypephcharphph*)(right_value149=list$1tuple2$2sTypephcharphph_initialize((struct list$1tuple2$2sTypephcharphph*)come_increment_ref_count(((struct list$1tuple2$2sTypephcharphph*)(right_value148=(struct list$1tuple2$2sTypephcharphph*)come_calloc(1, sizeof(struct list$1tuple2$2sTypephcharphph)*(1), "07gvar.c", 178, "list$1tuple2$2sTypephcharphph"))))))));
+        # 179 "07gvar.c"
+        multiple_declare_114=(struct list$1tuple2$2sTypephcharphph*)come_increment_ref_count(((struct list$1tuple2$2sTypephcharphph*)(right_value149=list$1tuple2$2sTypephcharphph_initialize((struct list$1tuple2$2sTypephcharphph*)come_increment_ref_count(((struct list$1tuple2$2sTypephcharphph*)(right_value148=(struct list$1tuple2$2sTypephcharphph*)come_calloc(1, sizeof(struct list$1tuple2$2sTypephcharphph)*(1), "07gvar.c", 179, "list$1tuple2$2sTypephcharphph"))))))));
         come_call_finalizer3(right_value148,list$1tuple2$2sTypephcharphphp_finalize, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer3(right_value149,list$1tuple2$2sTypephcharphphp_finalize, 0, 1, 0, 0, __result_obj__);
-        # 180 "07gvar.c"
+        # 181 "07gvar.c"
         multiple_assign_var5=((struct tuple3$3sTypephcharphbool*)(right_value150=parse_type(info,(_Bool)0,(_Bool)1,(_Bool)0)));
         base_type_115=(struct sType*)come_increment_ref_count(multiple_assign_var5->v1);
         name_116=(char*)come_increment_ref_count(multiple_assign_var5->v2);
         err_117=multiple_assign_var5->v3;
         come_call_finalizer3(right_value150,tuple3$3sTypephcharphboolp_finalize, 0, 1, 0, 0, __result_obj__);
-        # 187 "07gvar.c"
-        # 182 "07gvar.c"
+        # 188 "07gvar.c"
+        # 183 "07gvar.c"
         if(_if_conditional162=!err_117,        _if_conditional162) {
-            # 183 "07gvar.c"
-            printf("%s %d: parse_type failed\n",info->sname,info->sline);
             # 184 "07gvar.c"
+            printf("%s %d: parse_type failed\n",info->sname,info->sline);
+            # 185 "07gvar.c"
             exit(2);
         }
-        # 187 "07gvar.c"
-        parse_sharp_v5(info);
         # 188 "07gvar.c"
+        parse_sharp_v5(info);
+        # 189 "07gvar.c"
         multiple_assign_var6=((struct tuple2$2sTypephcharph*)(right_value151=parse_variable_name((struct sType*)come_increment_ref_count(base_type_115),(_Bool)1,info)));
         type2_118=(struct sType*)come_increment_ref_count(multiple_assign_var6->v1);
         var_name_119=(char*)come_increment_ref_count(multiple_assign_var6->v2);
         come_call_finalizer3(right_value151,tuple2$2sTypephcharphp_finalize, 0, 1, 0, 0, __result_obj__);
-        # 189 "07gvar.c"
+        # 190 "07gvar.c"
         parse_sharp_v5(info);
-        # 191 "07gvar.c"
-        list$1tuple2$2sTypephcharphph_push_back(multiple_declare_114,(struct tuple2$2sTypephcharph*)come_increment_ref_count(((struct tuple2$2sTypephcharph*)(right_value156=tuple2$2sTypephcharph_initialize((struct tuple2$2sTypephcharph*)come_increment_ref_count(((struct tuple2$2sTypephcharph*)(right_value155=(struct tuple2$2sTypephcharph*)come_calloc(1, sizeof(struct tuple2$2sTypephcharph)*(1), "07gvar.c", 191, "struct tuple2$2sTypephcharph")))),(struct sType*)come_increment_ref_count(type2_118),(char*)come_increment_ref_count(var_name_119))))));
+        # 192 "07gvar.c"
+        list$1tuple2$2sTypephcharphph_push_back(multiple_declare_114,(struct tuple2$2sTypephcharph*)come_increment_ref_count(((struct tuple2$2sTypephcharph*)(right_value156=tuple2$2sTypephcharph_initialize((struct tuple2$2sTypephcharph*)come_increment_ref_count(((struct tuple2$2sTypephcharph*)(right_value155=(struct tuple2$2sTypephcharph*)come_calloc(1, sizeof(struct tuple2$2sTypephcharph)*(1), "07gvar.c", 192, "struct tuple2$2sTypephcharph")))),(struct sType*)come_increment_ref_count(type2_118),(char*)come_increment_ref_count(var_name_119))))));
         come_call_finalizer3(right_value155,tuple2$2sTypephcharph_finalize, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer3(right_value156,tuple2$2sTypephcharphp_finalize, 0, 1, 0, 0, __result_obj__);
-        # 204 "07gvar.c"
+        # 205 "07gvar.c"
         while(_while_condtional19=*info->p==44,        _while_condtional19) {
-            # 194 "07gvar.c"
-            info->p++;
             # 195 "07gvar.c"
+            info->p++;
+            # 196 "07gvar.c"
             skip_spaces_and_lf(info);
-            # 197 "07gvar.c"
-            parse_sharp_v5(info);
             # 198 "07gvar.c"
+            parse_sharp_v5(info);
+            # 199 "07gvar.c"
             multiple_assign_var7=((struct tuple2$2sTypephcharph*)(right_value157=parse_variable_name((struct sType*)come_increment_ref_count(base_type_115),(_Bool)0,info)));
             type2_123=(struct sType*)come_increment_ref_count(multiple_assign_var7->v1);
             var_name_124=(char*)come_increment_ref_count(multiple_assign_var7->v2);
             come_call_finalizer3(right_value157,tuple2$2sTypephcharphp_finalize, 0, 1, 0, 0, __result_obj__);
-            # 199 "07gvar.c"
+            # 200 "07gvar.c"
             parse_sharp_v5(info);
-            # 201 "07gvar.c"
-            list$1tuple2$2sTypephcharphph_push_back(multiple_declare_114,(struct tuple2$2sTypephcharph*)come_increment_ref_count(((struct tuple2$2sTypephcharph*)(right_value159=tuple2$2sTypephcharph_initialize((struct tuple2$2sTypephcharph*)come_increment_ref_count(((struct tuple2$2sTypephcharph*)(right_value158=(struct tuple2$2sTypephcharph*)come_calloc(1, sizeof(struct tuple2$2sTypephcharph)*(1), "07gvar.c", 201, "struct tuple2$2sTypephcharph")))),(struct sType*)come_increment_ref_count(type2_123),(char*)come_increment_ref_count(var_name_124))))));
+            # 202 "07gvar.c"
+            list$1tuple2$2sTypephcharphph_push_back(multiple_declare_114,(struct tuple2$2sTypephcharph*)come_increment_ref_count(((struct tuple2$2sTypephcharph*)(right_value159=tuple2$2sTypephcharph_initialize((struct tuple2$2sTypephcharph*)come_increment_ref_count(((struct tuple2$2sTypephcharph*)(right_value158=(struct tuple2$2sTypephcharph*)come_calloc(1, sizeof(struct tuple2$2sTypephcharph)*(1), "07gvar.c", 202, "struct tuple2$2sTypephcharph")))),(struct sType*)come_increment_ref_count(type2_123),(char*)come_increment_ref_count(var_name_124))))));
             come_call_finalizer3(right_value158,tuple2$2sTypephcharph_finalize, 0, 1, 0, 0, __result_obj__);
             come_call_finalizer3(right_value159,tuple2$2sTypephcharphp_finalize, 0, 1, 0, 0, __result_obj__);
             come_call_finalizer3(type2_123,sType_finalize, 0, 0, 0, 0, (void*)0);
             var_name_124 = come_decrement_ref_count2(var_name_124, (void*)0, (void*)0, 0, 0, 0, (void*)0);
         }
-        # 204 "07gvar.c"
-        right_node_125=((void*)0);
         # 205 "07gvar.c"
-        array_initializer_126=((void*)0);
+        right_node_125=((void*)0);
         # 206 "07gvar.c"
+        array_initializer_126=((void*)0);
+        # 207 "07gvar.c"
         var_name2_127=(char*)come_increment_ref_count(((char*)(right_value160=__builtin_string(""))));
         right_value160 = come_decrement_ref_count2(right_value160, (void*)0, (void*)0, 1, 0, 0, __result_obj__);
-        # 218 "07gvar.c"
-        # 208 "07gvar.c"
+        # 219 "07gvar.c"
+        # 209 "07gvar.c"
         if(base_type_115->mExtern) {
-            # 213 "07gvar.c"
-            # 209 "07gvar.c"
+            # 214 "07gvar.c"
+            # 210 "07gvar.c"
             if(right_node_125) {
-                # 210 "07gvar.c"
-                err_msg(info,"invalid right value");
                 # 211 "07gvar.c"
+                err_msg(info,"invalid right value");
+                # 212 "07gvar.c"
                 exit(2);
             }
-            # 213 "07gvar.c"
-            _inf_value1=(struct sNode*)come_calloc(1, sizeof(struct sNode), "07gvar.c", 213, "struct sNode");
-            _inf_obj_value1=come_increment_ref_count(((struct sExternalGlobalVariable*)(right_value162=sExternalGlobalVariable_initialize((struct sExternalGlobalVariable*)come_increment_ref_count(((struct sExternalGlobalVariable*)(right_value161=(struct sExternalGlobalVariable*)come_calloc(1, sizeof(struct sExternalGlobalVariable)*(1), "07gvar.c", 213, "sExternalGlobalVariable")))),(struct list$1tuple2$2sTypephcharphph*)come_increment_ref_count(multiple_declare_114),base_type_115,(char*)come_increment_ref_count(var_name2_127),info))));
+            # 214 "07gvar.c"
+            _inf_value1=(struct sNode*)come_calloc(1, sizeof(struct sNode), "07gvar.c", 214, "struct sNode");
+            _inf_obj_value1=come_increment_ref_count(((struct sExternalGlobalVariable*)(right_value162=sExternalGlobalVariable_initialize((struct sExternalGlobalVariable*)come_increment_ref_count(((struct sExternalGlobalVariable*)(right_value161=(struct sExternalGlobalVariable*)come_calloc(1, sizeof(struct sExternalGlobalVariable)*(1), "07gvar.c", 214, "sExternalGlobalVariable")))),(struct list$1tuple2$2sTypephcharphph*)come_increment_ref_count(multiple_declare_114),base_type_115,(char*)come_increment_ref_count(var_name2_127),info))));
             _inf_value1->_protocol_obj=_inf_obj_value1;
             _inf_value1->finalize=(void*)sExternalGlobalVariable_finalize;
             _inf_value1->clone=(void*)sExternalGlobalVariable_clone;
@@ -6635,9 +6633,9 @@ right_value205 = (void*)0;
             return __result96__;
         }
         else {
-            # 216 "07gvar.c"
-            _inf_value2=(struct sNode*)come_calloc(1, sizeof(struct sNode), "07gvar.c", 216, "struct sNode");
-            _inf_obj_value2=come_increment_ref_count(((struct sGlobalVariable*)(right_value171=sGlobalVariable_initialize((struct sGlobalVariable*)come_increment_ref_count(((struct sGlobalVariable*)(right_value170=(struct sGlobalVariable*)come_calloc(1, sizeof(struct sGlobalVariable)*(1), "07gvar.c", 216, "sGlobalVariable")))),(struct list$1tuple2$2sTypephcharphph*)come_increment_ref_count(multiple_declare_114),base_type_115,(char*)come_increment_ref_count(var_name2_127),(struct sNode*)come_increment_ref_count(right_node_125),(char*)come_increment_ref_count(array_initializer_126),info))));
+            # 217 "07gvar.c"
+            _inf_value2=(struct sNode*)come_calloc(1, sizeof(struct sNode), "07gvar.c", 217, "struct sNode");
+            _inf_obj_value2=come_increment_ref_count(((struct sGlobalVariable*)(right_value171=sGlobalVariable_initialize((struct sGlobalVariable*)come_increment_ref_count(((struct sGlobalVariable*)(right_value170=(struct sGlobalVariable*)come_calloc(1, sizeof(struct sGlobalVariable)*(1), "07gvar.c", 217, "sGlobalVariable")))),(struct list$1tuple2$2sTypephcharphph*)come_increment_ref_count(multiple_declare_114),base_type_115,(char*)come_increment_ref_count(var_name2_127),(struct sNode*)come_increment_ref_count(right_node_125),(char*)come_increment_ref_count(array_initializer_126),info))));
             _inf_value2->_protocol_obj=_inf_obj_value2;
             _inf_value2->finalize=(void*)sGlobalVariable_finalize;
             _inf_value2->clone=(void*)sGlobalVariable_clone;
@@ -6670,159 +6668,159 @@ right_value205 = (void*)0;
         var_name2_127 = come_decrement_ref_count2(var_name2_127, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
     else {
-        # 220 "07gvar.c"
+        # 221 "07gvar.c"
         multiple_assign_var8=((struct tuple3$3sTypephcharphbool*)(right_value181=parse_type(info,(_Bool)1,(_Bool)1,(_Bool)0)));
         result_type_130=(struct sType*)come_increment_ref_count(multiple_assign_var8->v1);
         var_name_131=(char*)come_increment_ref_count(multiple_assign_var8->v2);
         err_132=multiple_assign_var8->v3;
         come_call_finalizer3(right_value181,tuple3$3sTypephcharphboolp_finalize, 0, 1, 0, 0, __result_obj__);
-        # 227 "07gvar.c"
-        # 222 "07gvar.c"
+        # 228 "07gvar.c"
+        # 223 "07gvar.c"
         if(_if_conditional195=!err_132,        _if_conditional195) {
-            # 223 "07gvar.c"
-            printf("%s %d: parse_type failed\n",info->sname,info->sline);
             # 224 "07gvar.c"
+            printf("%s %d: parse_type failed\n",info->sname,info->sline);
+            # 225 "07gvar.c"
             exit(2);
         }
-        # 227 "07gvar.c"
-        right_node_133=((void*)0);
         # 228 "07gvar.c"
+        right_node_133=((void*)0);
+        # 229 "07gvar.c"
         array_initializer_134=((void*)0);
-        # 308 "07gvar.c"
-        # 230 "07gvar.c"
+        # 309 "07gvar.c"
+        # 231 "07gvar.c"
         if(_if_conditional196=*info->p==61,        _if_conditional196) {
-            # 231 "07gvar.c"
-            info->p++;
             # 232 "07gvar.c"
+            info->p++;
+            # 233 "07gvar.c"
             skip_spaces_and_lf(info);
-            # 306 "07gvar.c"
-            # 234 "07gvar.c"
+            # 307 "07gvar.c"
+            # 235 "07gvar.c"
             if(_if_conditional197=*info->p==123,            _if_conditional197) {
-                # 235 "07gvar.c"
-                buf_135=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value183=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value182=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "07gvar.c", 235, "buffer"))))))));
+                # 236 "07gvar.c"
+                buf_135=(struct buffer*)come_increment_ref_count(((struct buffer*)(right_value183=buffer_initialize((struct buffer*)come_increment_ref_count(((struct buffer*)(right_value182=(struct buffer*)come_calloc(1, sizeof(struct buffer)*(1), "07gvar.c", 236, "buffer"))))))));
                 come_call_finalizer3(right_value182,buffer_finalize, 0, 1, 0, 0, __result_obj__);
                 come_call_finalizer3(right_value183,buffer_finalize, 0, 1, 0, 0, __result_obj__);
-                # 237 "07gvar.c"
-                buffer_append_char(buf_135,*info->p);
                 # 238 "07gvar.c"
+                buffer_append_char(buf_135,*info->p);
+                # 239 "07gvar.c"
                 info->p++;
-                # 240 "07gvar.c"
-                squort_136=(_Bool)0;
                 # 241 "07gvar.c"
-                dquort_137=(_Bool)0;
+                squort_136=(_Bool)0;
                 # 242 "07gvar.c"
+                dquort_137=(_Bool)0;
+                # 243 "07gvar.c"
                 nest_138=1;
-                # 299 "07gvar.c"
+                # 300 "07gvar.c"
                 while(_while_condtional20=1,                _while_condtional20) {
-                    # 298 "07gvar.c"
-                    # 244 "07gvar.c"
+                    # 299 "07gvar.c"
+                    # 245 "07gvar.c"
                     if(_if_conditional198=*info->p==0,                    _if_conditional198) {
-                        # 245 "07gvar.c"
-                        err_msg(info,"unexpected source end in array initiailizer");
                         # 246 "07gvar.c"
+                        err_msg(info,"unexpected source end in array initiailizer");
+                        # 247 "07gvar.c"
                         exit(2);
                     }
                     else {
-                        # 298 "07gvar.c"
-                        # 248 "07gvar.c"
+                        # 299 "07gvar.c"
+                        # 249 "07gvar.c"
                         if(_if_conditional199=*info->p==92,                        _if_conditional199) {
-                            # 249 "07gvar.c"
-                            buffer_append_char(buf_135,*info->p);
                             # 250 "07gvar.c"
-                            info->p++;
-                            # 254 "07gvar.c"
+                            buffer_append_char(buf_135,*info->p);
                             # 251 "07gvar.c"
+                            info->p++;
+                            # 255 "07gvar.c"
+                            # 252 "07gvar.c"
                             if(_if_conditional200=*info->p==10,                            _if_conditional200) {
-                                # 252 "07gvar.c"
+                                # 253 "07gvar.c"
                                 info->sline++;
                             }
-                            # 254 "07gvar.c"
-                            buffer_append_char(buf_135,*info->p);
                             # 255 "07gvar.c"
+                            buffer_append_char(buf_135,*info->p);
+                            # 256 "07gvar.c"
                             info->p++;
                         }
                         else {
-                            # 298 "07gvar.c"
-                            # 257 "07gvar.c"
+                            # 299 "07gvar.c"
+                            # 258 "07gvar.c"
                             if(_if_conditional201=!squort_136&&*info->p==34,                            _if_conditional201) {
-                                # 258 "07gvar.c"
-                                buffer_append_char(buf_135,*info->p);
                                 # 259 "07gvar.c"
-                                info->p++;
+                                buffer_append_char(buf_135,*info->p);
                                 # 260 "07gvar.c"
+                                info->p++;
+                                # 261 "07gvar.c"
                                 dquort_137=!dquort_137;
                             }
                             else {
-                                # 298 "07gvar.c"
-                                # 262 "07gvar.c"
+                                # 299 "07gvar.c"
+                                # 263 "07gvar.c"
                                 if(_if_conditional202=!dquort_137&&*info->p==39,                                _if_conditional202) {
-                                    # 263 "07gvar.c"
-                                    buffer_append_char(buf_135,*info->p);
                                     # 264 "07gvar.c"
-                                    info->p++;
+                                    buffer_append_char(buf_135,*info->p);
                                     # 265 "07gvar.c"
+                                    info->p++;
+                                    # 266 "07gvar.c"
                                     squort_136=!squort_136;
                                 }
                                 else {
-                                    # 298 "07gvar.c"
-                                    # 267 "07gvar.c"
+                                    # 299 "07gvar.c"
+                                    # 268 "07gvar.c"
                                     if(_if_conditional203=squort_136||dquort_137,                                    _if_conditional203) {
-                                        # 271 "07gvar.c"
-                                        # 268 "07gvar.c"
+                                        # 272 "07gvar.c"
+                                        # 269 "07gvar.c"
                                         if(_if_conditional204=*info->p==10,                                        _if_conditional204) {
-                                            # 269 "07gvar.c"
+                                            # 270 "07gvar.c"
                                             info->sline++;
                                         }
-                                        # 271 "07gvar.c"
-                                        buffer_append_char(buf_135,*info->p);
                                         # 272 "07gvar.c"
+                                        buffer_append_char(buf_135,*info->p);
+                                        # 273 "07gvar.c"
                                         info->p++;
                                     }
                                     else {
-                                        # 298 "07gvar.c"
-                                        # 274 "07gvar.c"
+                                        # 299 "07gvar.c"
+                                        # 275 "07gvar.c"
                                         if(_if_conditional205=*info->p==123,                                        _if_conditional205) {
-                                            # 275 "07gvar.c"
-                                            nest_138++;
                                             # 276 "07gvar.c"
-                                            buffer_append_char(buf_135,*info->p);
+                                            nest_138++;
                                             # 277 "07gvar.c"
+                                            buffer_append_char(buf_135,*info->p);
+                                            # 278 "07gvar.c"
                                             info->p++;
                                         }
                                         else {
-                                            # 298 "07gvar.c"
-                                            # 279 "07gvar.c"
+                                            # 299 "07gvar.c"
+                                            # 280 "07gvar.c"
                                             if(_if_conditional206=*info->p==125,                                            _if_conditional206) {
-                                                # 280 "07gvar.c"
-                                                nest_138--;
                                                 # 281 "07gvar.c"
-                                                buffer_append_char(buf_135,*info->p);
+                                                nest_138--;
                                                 # 282 "07gvar.c"
+                                                buffer_append_char(buf_135,*info->p);
+                                                # 283 "07gvar.c"
                                                 info->p++;
-                                                # 288 "07gvar.c"
-                                                # 284 "07gvar.c"
+                                                # 289 "07gvar.c"
+                                                # 285 "07gvar.c"
                                                 if(_if_conditional207=nest_138==0,                                                _if_conditional207) {
-                                                    # 285 "07gvar.c"
-                                                    skip_spaces_and_lf(info);
                                                     # 286 "07gvar.c"
+                                                    skip_spaces_and_lf(info);
+                                                    # 287 "07gvar.c"
                                                     break;
                                                 }
                                             }
                                             else {
-                                                # 298 "07gvar.c"
-                                                # 289 "07gvar.c"
+                                                # 299 "07gvar.c"
+                                                # 290 "07gvar.c"
                                                 if(_if_conditional208=*info->p==10,                                                _if_conditional208) {
-                                                    # 290 "07gvar.c"
-                                                    info->sline++;
                                                     # 291 "07gvar.c"
-                                                    buffer_append_char(buf_135,*info->p);
+                                                    info->sline++;
                                                     # 292 "07gvar.c"
+                                                    buffer_append_char(buf_135,*info->p);
+                                                    # 293 "07gvar.c"
                                                     info->p++;
                                                 }
                                                 else {
-                                                    # 295 "07gvar.c"
-                                                    buffer_append_char(buf_135,*info->p);
                                                     # 296 "07gvar.c"
+                                                    buffer_append_char(buf_135,*info->p);
+                                                    # 297 "07gvar.c"
                                                     info->p++;
                                                 }
                                             }
@@ -6833,7 +6831,7 @@ right_value205 = (void*)0;
                         }
                     }
                 }
-                # 299 "07gvar.c"
+                # 300 "07gvar.c"
                 __dec_obj69=array_initializer_134;
                 array_initializer_134=(char*)come_increment_ref_count(((char*)(right_value184=buffer_to_string(buf_135))));
                 __dec_obj69 = come_decrement_ref_count2(__dec_obj69, (void*)0, (void*)0, 0,0,0, (void*)0);
@@ -6841,31 +6839,31 @@ right_value205 = (void*)0;
                 come_call_finalizer3(buf_135,buffer_finalize, 0, 0, 0, 0, (void*)0);
             }
             else {
-                # 302 "07gvar.c"
-                parse_sharp_v5(info);
                 # 303 "07gvar.c"
+                parse_sharp_v5(info);
+                # 304 "07gvar.c"
                 __dec_obj70=right_node_133;
                 right_node_133=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value185=expression_v13(info))));
                 if(__dec_obj70) { __dec_obj70 = come_decrement_ref_count2(__dec_obj70, ((struct sNode*)__dec_obj70)->finalize, ((struct sNode*)__dec_obj70)->_protocol_obj, 0,0,0, (void*)0); }
                 if(right_value185) { right_value185 = come_decrement_ref_count2(right_value185, ((struct sNode*)right_value185)->finalize, ((struct sNode*)right_value185)->_protocol_obj, 1, 0, 0, __result_obj__); } 
-                # 304 "07gvar.c"
+                # 305 "07gvar.c"
                 parse_sharp_v5(info);
             }
         }
-        # 318 "07gvar.c"
-        # 308 "07gvar.c"
+        # 319 "07gvar.c"
+        # 309 "07gvar.c"
         if(result_type_130->mExtern) {
-            # 313 "07gvar.c"
-            # 309 "07gvar.c"
+            # 314 "07gvar.c"
+            # 310 "07gvar.c"
             if(right_node_133) {
-                # 310 "07gvar.c"
-                err_msg(info,"invalid right value");
                 # 311 "07gvar.c"
+                err_msg(info,"invalid right value");
+                # 312 "07gvar.c"
                 exit(2);
             }
-            # 313 "07gvar.c"
-            _inf_value3=(struct sNode*)come_calloc(1, sizeof(struct sNode), "07gvar.c", 313, "struct sNode");
-            _inf_obj_value3=come_increment_ref_count(((struct sExternalGlobalVariable*)(right_value187=sExternalGlobalVariable_initialize((struct sExternalGlobalVariable*)come_increment_ref_count(((struct sExternalGlobalVariable*)(right_value186=(struct sExternalGlobalVariable*)come_calloc(1, sizeof(struct sExternalGlobalVariable)*(1), "07gvar.c", 313, "sExternalGlobalVariable")))),((void*)0),result_type_130,(char*)come_increment_ref_count(var_name_131),info))));
+            # 314 "07gvar.c"
+            _inf_value3=(struct sNode*)come_calloc(1, sizeof(struct sNode), "07gvar.c", 314, "struct sNode");
+            _inf_obj_value3=come_increment_ref_count(((struct sExternalGlobalVariable*)(right_value187=sExternalGlobalVariable_initialize((struct sExternalGlobalVariable*)come_increment_ref_count(((struct sExternalGlobalVariable*)(right_value186=(struct sExternalGlobalVariable*)come_calloc(1, sizeof(struct sExternalGlobalVariable)*(1), "07gvar.c", 314, "sExternalGlobalVariable")))),((void*)0),result_type_130,(char*)come_increment_ref_count(var_name_131),info))));
             _inf_value3->_protocol_obj=_inf_obj_value3;
             _inf_value3->finalize=(void*)sExternalGlobalVariable_finalize;
             _inf_value3->clone=(void*)sExternalGlobalVariable_clone;
@@ -6885,9 +6883,9 @@ right_value205 = (void*)0;
             return __result102__;
         }
         else {
-            # 316 "07gvar.c"
-            _inf_value4=(struct sNode*)come_calloc(1, sizeof(struct sNode), "07gvar.c", 316, "struct sNode");
-            _inf_obj_value4=come_increment_ref_count(((struct sGlobalVariable*)(right_value196=sGlobalVariable_initialize((struct sGlobalVariable*)come_increment_ref_count(((struct sGlobalVariable*)(right_value195=(struct sGlobalVariable*)come_calloc(1, sizeof(struct sGlobalVariable)*(1), "07gvar.c", 316, "sGlobalVariable")))),((void*)0),result_type_130,(char*)come_increment_ref_count(var_name_131),(struct sNode*)come_increment_ref_count(right_node_133),(char*)come_increment_ref_count(array_initializer_134),info))));
+            # 317 "07gvar.c"
+            _inf_value4=(struct sNode*)come_calloc(1, sizeof(struct sNode), "07gvar.c", 317, "struct sNode");
+            _inf_obj_value4=come_increment_ref_count(((struct sGlobalVariable*)(right_value196=sGlobalVariable_initialize((struct sGlobalVariable*)come_increment_ref_count(((struct sGlobalVariable*)(right_value195=(struct sGlobalVariable*)come_calloc(1, sizeof(struct sGlobalVariable)*(1), "07gvar.c", 317, "sGlobalVariable")))),((void*)0),result_type_130,(char*)come_increment_ref_count(var_name_131),(struct sNode*)come_increment_ref_count(right_node_133),(char*)come_increment_ref_count(array_initializer_134),info))));
             _inf_value4->_protocol_obj=_inf_obj_value4;
             _inf_value4->finalize=(void*)sGlobalVariable_finalize;
             _inf_value4->clone=(void*)sGlobalVariable_clone;
@@ -6911,7 +6909,7 @@ right_value205 = (void*)0;
         if(right_node_133) { right_node_133 = come_decrement_ref_count2(right_node_133, ((struct sNode*)right_node_133)->finalize, ((struct sNode*)right_node_133)->_protocol_obj, 0, 0, 0, (void*)0); } 
         array_initializer_134 = come_decrement_ref_count2(array_initializer_134, (void*)0, (void*)0, 0, 0, 0, (void*)0);
     }
-    # 320 "07gvar.c"
+    # 321 "07gvar.c"
     __result106__ = __result_obj__ = (struct sNode*)((void*)0);
     return __result106__;
 }

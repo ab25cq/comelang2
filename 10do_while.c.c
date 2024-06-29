@@ -2402,6 +2402,8 @@ _Bool parsecmp(char* str, struct sInfo* info);
 
 char* parse_word(struct sInfo* info);
 
+char* backtrace_parse_word(struct sInfo* info);
+
 void skip_spaces_and_lf(struct sInfo* info);
 
 int expected_next_character(char c, struct sInfo* info);
@@ -2488,8 +2490,6 @@ struct sNode* post_op_v13(struct sNode* node, struct sInfo* info);
 
 struct sNode* string_node_v13(char* buf, char* head, int head_sline, struct sInfo* info);
 
-struct sNode* create_null_object(struct sInfo* info);
-
 struct sNode* string_node_v14(char* buf, char* head, int head_sline, struct sInfo* info);
 
 struct sNode* parse_struct(char* type_name, struct sInfo* info);
@@ -2533,8 +2533,6 @@ char* make_generics_function(struct sType* type, char* fun_name, struct sInfo* i
 struct sNode* parse_method_call_v20(struct sNode* obj, char* fun_name, struct sInfo* info);
 
 struct sNode* string_node_v20(char* buf, char* head, int head_sline, struct sInfo* info);
-
-struct sNode* post_position_operator3_v20(struct sNode* node, struct sInfo* info);
 
 struct sNode* create_object(struct sType* type, struct sInfo* info);
 
@@ -6116,8 +6114,10 @@ struct sBlock* block_128;
 void* right_value114;
 char* buf2_129;
 _Bool _if_conditional128;
+int __exception_result_var_b1;
 void* right_value115;
 struct sNode* expression_node_130;
+int __exception_result_var_b2;
 void* right_value116;
 void* right_value117;
 struct sNode* _inf_value1;
@@ -6163,12 +6163,12 @@ right_value123 = (void*)0;
             exit(2);
         }
         # 99 "10do_while.c"
-        expected_next_character(40,info);
+        (come_push_stackframe("10do_while.c", 99, 0),__exception_result_var_b1=expected_next_character(40,info), come_pop_stackframe(), __exception_result_var_b1);
         # 102 "10do_while.c"
         expression_node_130=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value115=expression_v13(info))));
         if(right_value115) { right_value115 = come_decrement_ref_count2(right_value115, ((struct sNode*)right_value115)->finalize, ((struct sNode*)right_value115)->_protocol_obj, 1, 0, 0, __result_obj__); } 
         # 104 "10do_while.c"
-        expected_next_character(41,info);
+        (come_push_stackframe("10do_while.c", 104, 1),__exception_result_var_b2=expected_next_character(41,info), come_pop_stackframe(), __exception_result_var_b2);
         # 106 "10do_while.c"
         _inf_value1=(struct sNode*)come_calloc(1, sizeof(struct sNode), "10do_while.c", 106, "struct sNode");
         _inf_obj_value1=come_increment_ref_count(((struct sDoWhileNode*)(right_value117=sDoWhileNode_initialize((struct sDoWhileNode*)come_increment_ref_count(((struct sDoWhileNode*)(right_value116=(struct sDoWhileNode*)come_calloc(1, sizeof(struct sDoWhileNode)*(1), "10do_while.c", 106, "sDoWhileNode")))),(struct sNode*)come_increment_ref_count(expression_node_130),block_128,info))));

@@ -2402,6 +2402,8 @@ _Bool parsecmp(char* str, struct sInfo* info);
 
 char* parse_word(struct sInfo* info);
 
+char* backtrace_parse_word(struct sInfo* info);
+
 void skip_spaces_and_lf(struct sInfo* info);
 
 int expected_next_character(char c, struct sInfo* info);
@@ -2490,8 +2492,6 @@ struct sNode* post_op_v13(struct sNode* node, struct sInfo* info);
 
 struct sNode* string_node_v13(char* buf, char* head, int head_sline, struct sInfo* info);
 
-struct sNode* create_null_object(struct sInfo* info);
-
 struct sNode* string_node_v14(char* buf, char* head, int head_sline, struct sInfo* info);
 
 struct sNode* parse_struct(char* type_name, struct sInfo* info);
@@ -2535,8 +2535,6 @@ char* make_generics_function(struct sType* type, char* fun_name, struct sInfo* i
 struct sNode* parse_method_call_v20(struct sNode* obj, char* fun_name, struct sInfo* info);
 
 struct sNode* string_node_v20(char* buf, char* head, int head_sline, struct sInfo* info);
-
-struct sNode* post_position_operator3_v20(struct sNode* node, struct sInfo* info);
 
 struct sNode* create_object(struct sType* type, struct sInfo* info);
 
@@ -4587,6 +4585,7 @@ char* word_63;
 _Bool _if_conditional38;
 _Bool _if_conditional39;
 _Bool _if_conditional40;
+int __exception_result_var_b1;
 char* source_head_64;
 char* source_tail_65;
 void* right_value100;
@@ -4735,7 +4734,7 @@ right_value127 = (void*)0;
             }
         }
         # 90 "24module.c"
-        expected_next_character(123,info);
+        (come_push_stackframe("24module.c", 90, 0),__exception_result_var_b1=expected_next_character(123,info), come_pop_stackframe(), __exception_result_var_b1);
         # 92 "24module.c"
         source_head_64=info->p;
         # 93 "24module.c"

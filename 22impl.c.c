@@ -2395,6 +2395,8 @@ _Bool parsecmp(char* str, struct sInfo* info);
 
 char* parse_word(struct sInfo* info);
 
+char* backtrace_parse_word(struct sInfo* info);
+
 void skip_spaces_and_lf(struct sInfo* info);
 
 int expected_next_character(char c, struct sInfo* info);
@@ -2483,8 +2485,6 @@ struct sNode* post_op_v13(struct sNode* node, struct sInfo* info);
 
 struct sNode* string_node_v13(char* buf, char* head, int head_sline, struct sInfo* info);
 
-struct sNode* create_null_object(struct sInfo* info);
-
 struct sNode* string_node_v14(char* buf, char* head, int head_sline, struct sInfo* info);
 
 struct sNode* parse_struct(char* type_name, struct sInfo* info);
@@ -2528,8 +2528,6 @@ char* make_generics_function(struct sType* type, char* fun_name, struct sInfo* i
 struct sNode* parse_method_call_v20(struct sNode* obj, char* fun_name, struct sInfo* info);
 
 struct sNode* string_node_v20(char* buf, char* head, int head_sline, struct sInfo* info);
-
-struct sNode* post_position_operator3_v20(struct sNode* node, struct sInfo* info);
 
 struct sNode* create_object(struct sType* type, struct sInfo* info);
 
@@ -4124,6 +4122,7 @@ _Bool _if_conditional24;
 _Bool _if_conditional25;
 int pointer_num_55;
 _Bool _while_condtional9;
+int __exception_result_var_b1;
 void* right_value85;
 void* right_value86;
 struct sType* __dec_obj15;
@@ -4136,6 +4135,7 @@ struct sNode* node_64;
 _Bool _while_condtional14;
 _Bool _if_conditional42;
 _Bool _if_conditional43;
+int __exception_result_var_b2;
 struct sType* __dec_obj16;
 char* source_tail_65;
 void* right_value89;
@@ -4233,7 +4233,7 @@ right_value92 = (void*)0;
             pointer_num_55++;
         }
         # 43 "22impl.c"
-        expected_next_character(123,info);
+        (come_push_stackframe("22impl.c", 43, 0),__exception_result_var_b1=expected_next_character(123,info), come_pop_stackframe(), __exception_result_var_b1);
         # 45 "22impl.c"
         __dec_obj15=info->impl_type;
         info->impl_type=(struct sType*)come_increment_ref_count(((struct sType*)(right_value86=sType_initialize((struct sType*)come_increment_ref_count(((struct sType*)(right_value85=(struct sType*)come_calloc(1, sizeof(struct sType)*(1), "22impl.c", 45, "sType")))),word_48,(_Bool)0,info))));
@@ -4287,7 +4287,7 @@ right_value92 = (void*)0;
             if(node_64) { node_64 = come_decrement_ref_count2(node_64, ((struct sNode*)node_64)->finalize, ((struct sNode*)node_64)->_protocol_obj, 0, 0, 0, (void*)0); } 
         }
         # 76 "22impl.c"
-        expected_next_character(125,info);
+        (come_push_stackframe("22impl.c", 76, 1),__exception_result_var_b2=expected_next_character(125,info), come_pop_stackframe(), __exception_result_var_b2);
         # 77 "22impl.c"
         list$1charph_reset(info->generics_type_names);
         # 78 "22impl.c"

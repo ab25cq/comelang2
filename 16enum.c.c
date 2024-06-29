@@ -2422,6 +2422,8 @@ _Bool parsecmp(char* str, struct sInfo* info);
 
 char* parse_word(struct sInfo* info);
 
+char* backtrace_parse_word(struct sInfo* info);
+
 void skip_spaces_and_lf(struct sInfo* info);
 
 int expected_next_character(char c, struct sInfo* info);
@@ -2510,8 +2512,6 @@ struct sNode* post_op_v13(struct sNode* node, struct sInfo* info);
 
 struct sNode* string_node_v13(char* buf, char* head, int head_sline, struct sInfo* info);
 
-struct sNode* create_null_object(struct sInfo* info);
-
 struct sNode* string_node_v14(char* buf, char* head, int head_sline, struct sInfo* info);
 
 struct sNode* parse_struct(char* type_name, struct sInfo* info);
@@ -2551,8 +2551,6 @@ char* make_generics_function(struct sType* type, char* fun_name, struct sInfo* i
 struct sNode* parse_method_call_v20(struct sNode* obj, char* fun_name, struct sInfo* info);
 
 struct sNode* string_node_v20(char* buf, char* head, int head_sline, struct sInfo* info);
-
-struct sNode* post_position_operator3_v20(struct sNode* node, struct sInfo* info);
 
 struct sNode* create_object(struct sType* type, struct sInfo* info);
 
@@ -5289,6 +5287,7 @@ void* right_value109;
 struct sClass* __dec_obj21;
 void* right_value168;
 struct sClass* __dec_obj56;
+int __exception_result_var_b1;
 void* right_value169;
 void* right_value170;
 struct list$1tuple2$2charphsNodephph* elements_163;
@@ -5360,7 +5359,7 @@ right_value187 = (void*)0;
         come_call_finalizer3(right_value168,sClass_finalize, 0, 1, 0, 0, __result_obj__);
     }
     # 124 "16enum.c"
-    expected_next_character(123,info);
+    (come_push_stackframe("16enum.c", 124, 0),__exception_result_var_b1=expected_next_character(123,info), come_pop_stackframe(), __exception_result_var_b1);
     # 126 "16enum.c"
     elements_163=(struct list$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list$1tuple2$2charphsNodephph*)(right_value170=list$1tuple2$2charphsNodephph_initialize((struct list$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list$1tuple2$2charphsNodephph*)(right_value169=(struct list$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list$1tuple2$2charphsNodephph)*(1), "16enum.c", 126, "list$1tuple2$2charphsNodephph"))))))));
     come_call_finalizer3(right_value169,list$1tuple2$2charphsNodephphp_finalize, 0, 1, 0, 0, __result_obj__);
@@ -8011,6 +8010,7 @@ void* right_value189;
 char* __dec_obj67;
 void* right_value190;
 void* right_value191;
+int __exception_result_var_b2;
 void* right_value192;
 void* right_value193;
 struct list$1tuple2$2charphsNodephph* elements_174;
@@ -8107,7 +8107,7 @@ right_value211 = (void*)0;
             come_call_finalizer3(right_value191,sClass_finalize, 0, 1, 0, 0, __result_obj__);
         }
         # 197 "16enum.c"
-        expected_next_character(123,info);
+        (come_push_stackframe("16enum.c", 197, 1),__exception_result_var_b2=expected_next_character(123,info), come_pop_stackframe(), __exception_result_var_b2);
         # 199 "16enum.c"
         elements_174=(struct list$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list$1tuple2$2charphsNodephph*)(right_value193=list$1tuple2$2charphsNodephph_initialize((struct list$1tuple2$2charphsNodephph*)come_increment_ref_count(((struct list$1tuple2$2charphsNodephph*)(right_value192=(struct list$1tuple2$2charphsNodephph*)come_calloc(1, sizeof(struct list$1tuple2$2charphsNodephph)*(1), "16enum.c", 199, "list$1tuple2$2charphsNodephph"))))))));
         come_call_finalizer3(right_value192,list$1tuple2$2charphsNodephphp_finalize, 0, 1, 0, 0, __result_obj__);

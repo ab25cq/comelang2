@@ -2404,6 +2404,8 @@ _Bool parsecmp(char* str, struct sInfo* info);
 
 char* parse_word(struct sInfo* info);
 
+char* backtrace_parse_word(struct sInfo* info);
+
 void skip_spaces_and_lf(struct sInfo* info);
 
 int expected_next_character(char c, struct sInfo* info);
@@ -2490,8 +2492,6 @@ struct sNode* post_op_v13(struct sNode* node, struct sInfo* info);
 
 struct sNode* string_node_v13(char* buf, char* head, int head_sline, struct sInfo* info);
 
-struct sNode* create_null_object(struct sInfo* info);
-
 struct sNode* string_node_v14(char* buf, char* head, int head_sline, struct sInfo* info);
 
 struct sNode* parse_struct(char* type_name, struct sInfo* info);
@@ -2535,8 +2535,6 @@ char* make_generics_function(struct sType* type, char* fun_name, struct sInfo* i
 struct sNode* parse_method_call_v20(struct sNode* obj, char* fun_name, struct sInfo* info);
 
 struct sNode* string_node_v20(char* buf, char* head, int head_sline, struct sInfo* info);
-
-struct sNode* post_position_operator3_v20(struct sNode* node, struct sInfo* info);
 
 struct sNode* create_object(struct sType* type, struct sInfo* info);
 
@@ -6358,21 +6356,25 @@ memset(&__result_obj__, 0, sizeof(void*));
 struct sNode* string_node_v11(char* buf, char* head, int head_sline, struct sInfo* info){
 void* __result_obj__;
 _Bool _if_conditional140;
+int __exception_result_var_b1;
 struct sNode* expression_node_135;
 _Bool _if_conditional141;
 struct sNode* __dec_obj32;
 void* right_value120;
 struct sNode* __dec_obj33;
+int __exception_result_var_b2;
 struct sNode* expression_node2_136;
 _Bool _if_conditional142;
 struct sNode* __dec_obj34;
 void* right_value121;
 struct sNode* __dec_obj35;
+int __exception_result_var_b3;
 struct sNode* expression_node3_137;
 _Bool _if_conditional143;
 struct sNode* __dec_obj36;
 void* right_value122;
 struct sNode* __dec_obj37;
+int __exception_result_var_b4;
 void* right_value123;
 struct sBlock* block_138;
 void* right_value124;
@@ -6400,7 +6402,7 @@ right_value133 = (void*)0;
     # 189 "11for.c"
     if(_if_conditional140=charp_operator_equals(buf,"for"),    _if_conditional140) {
         # 190 "11for.c"
-        expected_next_character(40,info);
+        (come_push_stackframe("11for.c", 190, 0),__exception_result_var_b1=expected_next_character(40,info), come_pop_stackframe(), __exception_result_var_b1);
         # 193 "11for.c"
         parse_sharp_v5(info);
         # 194 "11for.c"
@@ -6422,7 +6424,7 @@ right_value133 = (void*)0;
         # 201 "11for.c"
         parse_sharp_v5(info);
         # 202 "11for.c"
-        expected_next_character(59,info);
+        (come_push_stackframe("11for.c", 202, 1),__exception_result_var_b2=expected_next_character(59,info), come_pop_stackframe(), __exception_result_var_b2);
         # 203 "11for.c"
         parse_sharp_v5(info);
         # 204 "11for.c"
@@ -6444,7 +6446,7 @@ right_value133 = (void*)0;
         # 211 "11for.c"
         parse_sharp_v5(info);
         # 212 "11for.c"
-        expected_next_character(59,info);
+        (come_push_stackframe("11for.c", 212, 2),__exception_result_var_b3=expected_next_character(59,info), come_pop_stackframe(), __exception_result_var_b3);
         # 213 "11for.c"
         parse_sharp_v5(info);
         # 214 "11for.c"
@@ -6466,7 +6468,7 @@ right_value133 = (void*)0;
         # 221 "11for.c"
         parse_sharp_v5(info);
         # 222 "11for.c"
-        expected_next_character(41,info);
+        (come_push_stackframe("11for.c", 222, 3),__exception_result_var_b4=expected_next_character(41,info), come_pop_stackframe(), __exception_result_var_b4);
         # 223 "11for.c"
         parse_sharp_v5(info);
         # 225 "11for.c"

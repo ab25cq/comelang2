@@ -2457,6 +2457,8 @@ _Bool parsecmp(char* str, struct sInfo* info);
 
 char* parse_word(struct sInfo* info);
 
+char* backtrace_parse_word(struct sInfo* info);
+
 void skip_spaces_and_lf(struct sInfo* info);
 
 int expected_next_character(char c, struct sInfo* info);
@@ -2543,8 +2545,6 @@ struct sNode* post_op_v13(struct sNode* node, struct sInfo* info);
 
 struct sNode* string_node_v13(char* buf, char* head, int head_sline, struct sInfo* info);
 
-struct sNode* create_null_object(struct sInfo* info);
-
 struct sNode* string_node_v14(char* buf, char* head, int head_sline, struct sInfo* info);
 
 struct sNode* parse_struct(char* type_name, struct sInfo* info);
@@ -2588,8 +2588,6 @@ char* make_generics_function(struct sType* type, char* fun_name, struct sInfo* i
 struct sNode* parse_method_call_v20(struct sNode* obj, char* fun_name, struct sInfo* info);
 
 struct sNode* string_node_v20(char* buf, char* head, int head_sline, struct sInfo* info);
-
-struct sNode* post_position_operator3_v20(struct sNode* node, struct sInfo* info);
 
 struct sNode* create_object(struct sType* type, struct sInfo* info);
 
@@ -9479,6 +9477,7 @@ struct sType* type_245;
 char* name_246;
 _Bool err_247;
 _Bool _if_conditional358;
+int __exception_result_var_b1;
 void* right_value327;
 struct sNode* node_248;
 void* right_value328;
@@ -9491,6 +9490,7 @@ void* right_value335;
 struct sNode* __result209__;
 void* right_value336;
 struct sNode* node_250;
+int __exception_result_var_b2;
 void* right_value337;
 void* right_value338;
 struct sNode* _inf_value12;
@@ -10128,7 +10128,7 @@ right_value345 = (void*)0;
                                                                     # 895 "05pre_op.c"
                                                                     parse_sharp_v5(info);
                                                                     # 896 "05pre_op.c"
-                                                                    expected_next_character(41,info);
+                                                                    (come_push_stackframe("05pre_op.c", 896, 3),__exception_result_var_b1=expected_next_character(41,info), come_pop_stackframe(), __exception_result_var_b1);
                                                                     # 898 "05pre_op.c"
                                                                     node_248=(struct sNode*)come_increment_ref_count(((struct sNode*)(right_value327=expression_node_v99(info))));
                                                                     if(right_value327) { right_value327 = come_decrement_ref_count2(right_value327, ((struct sNode*)right_value327)->finalize, ((struct sNode*)right_value327)->_protocol_obj, 1, 0, 0, __result_obj__); } 
@@ -10169,7 +10169,7 @@ right_value345 = (void*)0;
                                                                     # 907 "05pre_op.c"
                                                                     parse_sharp_v5(info);
                                                                     # 909 "05pre_op.c"
-                                                                    expected_next_character(41,info);
+                                                                    (come_push_stackframe("05pre_op.c", 909, 4),__exception_result_var_b2=expected_next_character(41,info), come_pop_stackframe(), __exception_result_var_b2);
                                                                     # 910 "05pre_op.c"
                                                                     parse_sharp_v5(info);
                                                                     # 912 "05pre_op.c"

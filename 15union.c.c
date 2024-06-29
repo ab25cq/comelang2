@@ -2402,6 +2402,8 @@ _Bool parsecmp(char* str, struct sInfo* info);
 
 char* parse_word(struct sInfo* info);
 
+char* backtrace_parse_word(struct sInfo* info);
+
 void skip_spaces_and_lf(struct sInfo* info);
 
 int expected_next_character(char c, struct sInfo* info);
@@ -2490,8 +2492,6 @@ struct sNode* post_op_v13(struct sNode* node, struct sInfo* info);
 
 struct sNode* string_node_v13(char* buf, char* head, int head_sline, struct sInfo* info);
 
-struct sNode* create_null_object(struct sInfo* info);
-
 struct sNode* string_node_v14(char* buf, char* head, int head_sline, struct sInfo* info);
 
 struct sNode* parse_struct(char* type_name, struct sInfo* info);
@@ -2529,8 +2529,6 @@ char* make_generics_function(struct sType* type, char* fun_name, struct sInfo* i
 struct sNode* parse_method_call_v20(struct sNode* obj, char* fun_name, struct sInfo* info);
 
 struct sNode* string_node_v20(char* buf, char* head, int head_sline, struct sInfo* info);
-
-struct sNode* post_position_operator3_v20(struct sNode* node, struct sInfo* info);
 
 struct sNode* create_object(struct sType* type, struct sInfo* info);
 
@@ -6709,6 +6707,7 @@ struct sClass* __dec_obj47;
 void* right_value154;
 void* right_value155;
 struct sType* type_166;
+int __exception_result_var_b1;
 _Bool _while_condtional31;
 void* right_value156;
 struct tuple3$3sTypephcharphbool* multiple_assign_var2;
@@ -6716,6 +6715,7 @@ struct sType* type2_169;
 char* name_170;
 _Bool err_171;
 _Bool _if_conditional232;
+int __exception_result_var_b2;
 _Bool _if_conditional233;
 void* right_value160;
 void* right_value161;
@@ -6783,7 +6783,7 @@ right_value167 = (void*)0;
     come_call_finalizer3(right_value154,sType_finalize, 0, 1, 0, 0, __result_obj__);
     come_call_finalizer3(right_value155,sType_finalize, 0, 1, 0, 0, __result_obj__);
     # 83 "15union.c"
-    expected_next_character(123,info);
+    (come_push_stackframe("15union.c", 83, 0),__exception_result_var_b1=expected_next_character(123,info), come_pop_stackframe(), __exception_result_var_b1);
     # 85 "15union.c"
     list$1tuple2$2charphsTypephph_reset(type_166->mClass->mFields);
     # 107 "15union.c"
@@ -6803,7 +6803,7 @@ right_value167 = (void*)0;
             exit(2);
         }
         # 94 "15union.c"
-        expected_next_character(59,info);
+        (come_push_stackframe("15union.c", 94, 1),__exception_result_var_b2=expected_next_character(59,info), come_pop_stackframe(), __exception_result_var_b2);
         # 100 "15union.c"
         # 96 "15union.c"
         if(_if_conditional233=!info->no_output_err,        _if_conditional233) {
@@ -7917,6 +7917,7 @@ void* right_value177;
 void* right_value178;
 void* right_value179;
 struct sType* type_179;
+int __exception_result_var_b3;
 _Bool _while_condtional32;
 void* right_value180;
 struct tuple3$3sTypephcharphbool* multiple_assign_var3;
@@ -7924,6 +7925,7 @@ struct sType* type2_180;
 char* name_181;
 _Bool err_182;
 _Bool _if_conditional246;
+int __exception_result_var_b4;
 void* right_value181;
 void* right_value182;
 _Bool _if_conditional247;
@@ -8013,7 +8015,7 @@ right_value192 = (void*)0;
         come_call_finalizer3(right_value178,sType_finalize, 0, 1, 0, 0, __result_obj__);
         come_call_finalizer3(right_value179,sType_finalize, 0, 1, 0, 0, __result_obj__);
         # 130 "15union.c"
-        expected_next_character(123,info);
+        (come_push_stackframe("15union.c", 130, 2),__exception_result_var_b3=expected_next_character(123,info), come_pop_stackframe(), __exception_result_var_b3);
         # 132 "15union.c"
         list$1tuple2$2charphsTypephph_reset(type_179->mClass->mFields);
         # 151 "15union.c"
@@ -8033,7 +8035,7 @@ right_value192 = (void*)0;
                 exit(2);
             }
             # 140 "15union.c"
-            expected_next_character(59,info);
+            (come_push_stackframe("15union.c", 140, 3),__exception_result_var_b4=expected_next_character(59,info), come_pop_stackframe(), __exception_result_var_b4);
             # 142 "15union.c"
             list$1tuple2$2charphsTypephph_push_back(type_179->mClass->mFields,(struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value182=tuple2$2charphsTypeph_initialize((struct tuple2$2charphsTypeph*)come_increment_ref_count(((struct tuple2$2charphsTypeph*)(right_value181=(struct tuple2$2charphsTypeph*)come_calloc(1, sizeof(struct tuple2$2charphsTypeph)*(1), "15union.c", 142, "tuple2$2charphsTypeph")))),(char*)come_increment_ref_count(name_181),(struct sType*)come_increment_ref_count(type2_180))))));
             come_call_finalizer3(right_value181,tuple2$2charphsTypephp_finalize, 0, 1, 0, 0, __result_obj__);
