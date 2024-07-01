@@ -37,6 +37,6 @@ if [ ! -e Makefile ]
 then
     git add .
     git commit 
-    git push -f -u origin master
+    git push -f -u origin main
 fi
 
