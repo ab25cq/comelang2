@@ -13,8 +13,6 @@ then
     (cd vin; make distclean)
 fi
 
-(cd x; comelang2 clean)
-
 if [ -e trueby/Makefile ]
 then
     (cd trueby; make clean)
@@ -39,8 +37,6 @@ if [ ! -e Makefile ]
 then
     git add .
     git commit 
-#    git remote add origin https://gitlab.com/ab25cqx/comelang2
-    git remote add origin https://github.com/ab25cq/comelang2
     git push -f -u origin master
 fi
 
