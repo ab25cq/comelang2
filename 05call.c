@@ -882,7 +882,6 @@ sNode*% parse_function_call(char* fun_name, sInfo* info)
         sNode*% node = expression();
         
         node = post_position_operator(node, info);
-        node = post_position_operator3(node, info);
         
         info.no_comma = no_comma;
         
@@ -944,7 +943,6 @@ sNode*% expression_node(sInfo* info=info) version 97
             sNode*% value = expression();
             char* tail = info.p;
             value = post_position_operator(value, info);
-            value = post_position_operator3(value, info);
             
             char buf[tail-head+1];
             memcpy(buf, head, tail-head);
@@ -1086,7 +1084,6 @@ sNode*% expression_node(sInfo* info=info) version 97
             sNode*% node = parse_function_call(buf, info);
             
             node = post_position_operator(node, info);
-            node = post_position_operator3(node, info);
             
             return node;
         }
@@ -1112,7 +1109,6 @@ sNode*% expression_node(sInfo* info=info) version 97
             sNode*% node = string_node(buf, head, head_sline, info)
             
             node = post_position_operator(node, info);
-            node = post_position_operator3(node, info);
             
             return node;
         }
@@ -1156,7 +1152,6 @@ sNode*% expression_node(sInfo* info=info) version 97
             sNode*% node = parse_function_call(fun_name.to_string(), info);
             
             node = post_position_operator(node, info);
-            node = post_position_operator3(node, info);
             
             return node;
         }
@@ -1177,7 +1172,6 @@ sNode*% expression_node(sInfo* info=info) version 97
             sNode*% node = parse_function_call(fun_name.to_string(), info);
             
             node = post_position_operator(node, info);
-            node = post_position_operator3(node, info);
             
             return node;
         }
@@ -1185,7 +1179,6 @@ sNode*% expression_node(sInfo* info=info) version 97
             sNode*% node = parse_function_call(buf, info);
             
             node = post_position_operator(node, info);
-            node = post_position_operator3(node, info);
             
             return node;
         }
@@ -1194,7 +1187,6 @@ sNode*% expression_node(sInfo* info=info) version 97
             sNode*% node = parse_function_call(buf, info);
             
             node = post_position_operator(node, info);
-            node = post_position_operator3(node, info);
             
             return node;
         }
@@ -1202,7 +1194,6 @@ sNode*% expression_node(sInfo* info=info) version 97
             sNode*% node = string_node(buf, head, head_sline, info);
             
             node = post_position_operator(node, info);
-            node = post_position_operator3(node, info);
             
             return node;
         }
@@ -1211,7 +1202,6 @@ sNode*% expression_node(sInfo* info=info) version 97
         sNode*% node = inherit(info);
         
         node = post_position_operator(node, info);
-        node = post_position_operator3(node, info);
         
         return node;
     }
@@ -1306,10 +1296,5 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 1
     exit(2);
     
     return (sNode*%)null;
-}
-
-sNode*% post_position_operator3(sNode*% node, sInfo* info) version 5
-{
-    return node;
 }
 

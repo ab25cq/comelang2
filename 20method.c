@@ -957,7 +957,6 @@ sNode*% parse_method_call(sNode*% obj, string fun_name, sInfo* info) version 20
             sNode*% node = expression();
             
             node = post_position_operator(node, info);
-            node = post_position_operator3(node, info);
             
             info.no_comma = no_comma;
             

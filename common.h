@@ -449,7 +449,6 @@ sNode*% get_number(bool minus, sInfo* info);
 sNode*% get_oct_number(sInfo* info);
 sNode*% get_hex_number(bool minus, sInfo* info);
 sNode*% create_int_node(int value, sInfo* info);
-sNode*% post_position_operator3(sNode*% node, sInfo* info) version 5;
 list<sType*%>*%, list<string>*%, list<string>*%, bool parse_params(sInfo* info, bool in_constructor_=false);
 sFun*,string create_finalizer_automatically(sType* type, char* fun_name, sInfo* info);
 sFun*,string create_force_finalizer_automatically(sType* type, char* fun_name, sInfo* info);
@@ -602,7 +601,7 @@ sNode*% create_false_object(sInfo* info);
 
 sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 21;
 sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 94;
-sNode*% post_position_operator3(sNode*% node, sInfo* info) version 21;
+sNode*% post_position_operator(sNode*% node, sInfo* info) version 21;
 
 /////////////////////////////////////////////////////////////////////
 /// 22impl.c

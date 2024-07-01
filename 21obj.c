@@ -1855,7 +1855,7 @@ sNode*% top_level(char* buf, char* head, int head_sline, sInfo* info) version 94
     return inherit(buf, head, head_sline, info);
 }
 
-sNode*% post_position_operator3(sNode*% node, sInfo* info) version 21
+sNode*% post_position_operator(sNode*% node, sInfo* info) version 21
 {
     if(strmemcmp(info->p, "implements")) {
         info->p += strlen("implements");

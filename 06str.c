@@ -1839,7 +1839,6 @@ sNode*% parse_tuple(sInfo* info)
         
         sNode*% node = expression();
         node = post_position_operator(node, info);
-        node = post_position_operator3(node, info);
         
         info.no_comma = no_comma;
         

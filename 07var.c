@@ -890,7 +890,6 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
             parse_sharp();
             
             right_value = post_position_operator(right_value, info);
-            right_value = post_position_operator3(right_value, info);
             parse_sharp();
             
             return new sStoreNode(string(buf2)@name, multiple_assign, null@multiple_declare, null@type, true@alloc, right_value, null@array_initializer, info) implements sNode;
@@ -994,7 +993,6 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
         parse_sharp();
         
         right_value = post_position_operator(right_value, info);
-        right_value = post_position_operator3(right_value, info);
         
         parse_sharp();
         
@@ -1004,7 +1002,6 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
         sNode*% node = new sLoadNode(string(buf)@name, info) implements sNode;
         
         node = post_position_operator(node, info);
-        node = post_position_operator3(node, info);
         
         return node;
     }
@@ -1120,7 +1117,6 @@ sNode*% string_node(char* buf, char* head, int head_sline, sInfo* info) version 
                     }
                     
                     right_value = post_position_operator(right_value, info);
-                    right_value = post_position_operator3(right_value, info);
                     
                     return new sStoreNode(name, null@multiple_assign, null@multiple_declare, type, true@alloc, right_value, null@array_initializer, info) implements sNode;
                 }

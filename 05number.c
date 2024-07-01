@@ -652,7 +652,6 @@ sNode*% expression_node(sInfo* info=info) version 99
         sNode*% node = get_hex_number(false@minus, info);
         
         node = post_position_operator(node, info);
-        node = post_position_operator3(node, info);
         
         return node;
     }
@@ -662,7 +661,6 @@ sNode*% expression_node(sInfo* info=info) version 99
         sNode*% node = get_oct_number(info);
         
         node = post_position_operator(node, info);
-        node = post_position_operator3(node, info);
         
         return node;
     }
@@ -670,7 +668,6 @@ sNode*% expression_node(sInfo* info=info) version 99
         sNode*% node = get_number(false@minus, info);
         
         node = post_position_operator(node, info);
-        node = post_position_operator3(node, info);
         
         return node;
     }
@@ -680,7 +677,6 @@ sNode*% expression_node(sInfo* info=info) version 99
         sNode*% node = get_number(true@minus, info);
         
         node = post_position_operator(node, info);
-        node = post_position_operator3(node, info);
         
         return node;
     }
@@ -688,7 +684,6 @@ sNode*% expression_node(sInfo* info=info) version 99
         sNode*% node = inherit(info);
         
         node = post_position_operator(node, info);
-        node = post_position_operator3(node, info);
         
         return node;
     }
