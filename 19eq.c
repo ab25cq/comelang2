@@ -930,10 +930,10 @@ class sExpEqualNode extends sNodeBase
     }
 };
 
-sNode*% post_position_operator2(sNode*% node, sInfo* info) version 19
+sNode*% post_position_operator(sNode*% node, sInfo* info) version 19
 {
     if((*info->p == '\\' && *(info->p+1) == '+' && *(info->p+2) == '+') || (*info->p == '+' && *(info->p+1) == '+')) {
-         bool quote
+         bool quote;
          if(*info->p == '\\') {
              info->p+=3;
              skip_spaces_and_lf();

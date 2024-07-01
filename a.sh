@@ -1,7 +1,4 @@
-#!/bin/bash
 
-git config --global user.email ab25cq@icloud.com
-git config --global user.name ab25cq
 
 if [ -e Makefile ]
 then
@@ -34,13 +31,3 @@ if [ -e shsh/Makefile ]
 then
     (cd shsh; make distclean)
 fi
-
-if [ ! -e Makefile ]
-then
-    git add .
-    git commit 
-#    git remote add origin https://gitlab.com/ab25cqx/comelang2
-    git remote add origin https://github.com/ab25cq/comelang2
-    git push -f -u origin master
-fi
-

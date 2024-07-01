@@ -760,6 +760,7 @@ sNode*% expression_node(sInfo* info=info) version 98
         sNode*% node = get_hex_number(false@minus, info);
         
         node = post_position_operator(node, info);
+        node = post_position_operator3(node, info);
         
         return node;
     }
@@ -770,6 +771,7 @@ sNode*% expression_node(sInfo* info=info) version 98
         sNode*% node = get_oct_number(info);
         
         node = post_position_operator(node, info);
+        node = post_position_operator3(node, info);
         
         return node;
     }
@@ -777,6 +779,7 @@ sNode*% expression_node(sInfo* info=info) version 98
         sNode*% node = get_number(false@minus, info);
         
         node = post_position_operator(node, info);
+        node = post_position_operator3(node, info);
         
         return node;
     }
@@ -786,6 +789,7 @@ sNode*% expression_node(sInfo* info=info) version 98
         sNode*% node = get_number(true@minus, info);
         
         node = post_position_operator(node, info);
+        node = post_position_operator3(node, info);
         
         return node;
     }
@@ -862,6 +866,7 @@ sNode*% expression_node(sInfo* info=info) version 98
             info.no_output_come_code = true;
             
             sNode*% node = expression();
+            node = post_position_operator(node, info);
             sNode*% node2 = post_position_operator3(node, info);
             
             info.no_comma = no_comma;
@@ -880,6 +885,7 @@ sNode*% expression_node(sInfo* info=info) version 98
             sNode*% node = parse_tuple(info);
             
             node = post_position_operator(node, info);
+            node = post_position_operator3(node, info);
             
             return node;
         }
@@ -898,6 +904,7 @@ sNode*% expression_node(sInfo* info=info) version 98
             sNode*% node = expression_node();
             
             node = post_position_operator(node, info);
+            node = post_position_operator3(node, info);
             
             return new sCastNode(type, node, info) implements sNode;
         }
@@ -912,6 +919,7 @@ sNode*% expression_node(sInfo* info=info) version 98
             node = new sParenNode(node, info) implements sNode;
             
             node = post_position_operator(node, info);
+            node = post_position_operator3(node, info);
             
             return node;
         }
@@ -920,6 +928,7 @@ sNode*% expression_node(sInfo* info=info) version 98
         sNode*% node = inherit(info);
         
         node = post_position_operator(node, info);
+        node = post_position_operator3(node, info);
         
         return node;
     }

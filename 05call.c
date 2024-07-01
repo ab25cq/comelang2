@@ -881,6 +881,7 @@ sNode*% parse_function_call(char* fun_name, sInfo* info)
         
         sNode*% node = expression();
         
+        node = post_position_operator(node, info);
         node = post_position_operator3(node, info);
         
         info.no_comma = no_comma;
@@ -1111,6 +1112,7 @@ sNode*% expression_node(sInfo* info=info) version 97
             sNode*% node = string_node(buf, head, head_sline, info)
             
             node = post_position_operator(node, info);
+            node = post_position_operator3(node, info);
             
             return node;
         }
@@ -1200,6 +1202,7 @@ sNode*% expression_node(sInfo* info=info) version 97
             sNode*% node = string_node(buf, head, head_sline, info);
             
             node = post_position_operator(node, info);
+            node = post_position_operator3(node, info);
             
             return node;
         }
@@ -1208,6 +1211,7 @@ sNode*% expression_node(sInfo* info=info) version 97
         sNode*% node = inherit(info);
         
         node = post_position_operator(node, info);
+        node = post_position_operator3(node, info);
         
         return node;
     }

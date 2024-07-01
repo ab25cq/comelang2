@@ -1336,11 +1336,6 @@ class sLoadRangeArrayNode extends sNodeBase
     }
 };
 
-sNode*% post_position_operator2(sNode*% node, sInfo* info) version 18
-{
-    return (sNode*%)null;
-}
-
 sNode*% parse_method_call(sNode*% obj, string fun_name, sInfo* info) version 18
 {
     err_msg(info, "parse_method_call is failed");
@@ -1349,7 +1344,7 @@ sNode*% parse_method_call(sNode*% obj, string fun_name, sInfo* info) version 18
     return (sNode*%)null;
 }
 
-sNode*% post_position_operator(sNode*% node, sInfo* info) version 18
+sNode*% post_position_operator(sNode*% node, sInfo* info) version 99
 {
     while(true){
         /// backtrace ///
@@ -1602,7 +1597,7 @@ sNode*% post_position_operator(sNode*% node, sInfo* info) version 18
             }
         }
         else {
-            sNode*% node2 = post_position_operator2(node, info);
+            sNode*% node2 = inherit(node, info);
             
             if(node2 == null) {
                 break;

@@ -578,14 +578,13 @@ bool compiletime_get_exception_value(sInfo* info);
 sNode*% store_field(sNode* left, sNode*% right, string name, sInfo* info);
 sNode*% exception_get_value(sNode*% node, sInfo* info);
 
-sNode*% post_position_operator(sNode*% node, sInfo* info) version 18;
-sNode*% post_position_operator2(sNode*% node, sInfo* info) version 18;
+sNode*% post_position_operator(sNode*% node, sInfo* info) version 99;
 sNode*% parse_method_call(sNode*% obj, string fun_name, sInfo* info) version 18;
 
 /////////////////////////////////////////////////////////////////////
 /// 19eq.c
 /////////////////////////////////////////////////////////////////////
- sNode*% post_position_operator2(sNode*% node, sInfo* info) version 19;
+sNode*% post_position_operator(sNode*% node, sInfo* info) version 19;
 
 /////////////////////////////////////////////////////////////////////
 /// 20method.c
